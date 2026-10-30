@@ -1,10 +1,10 @@
 claim_id: TH-004
-result: "'Multiplication makes more' (a(x)b >= a) is inconsistent with left distributivity on any carrier closed under + and division by positive integers (Q>0, R>0), with no regularity assumption; consistent on Z>=1 (witness 2ab). Regular (continuous, strictly increasing, associative) increasing operations are conjugate to addition (imported Aczel/Craigen-Pales)."
-formalization_status: "Paper proof (3 lines, Archimedean); finite z3 certificate for the H1 instance (1(x)1/4 = 1/2 < 1); A7 imported."
+result: "'Multiplication makes more' in its weak form (a(x)b >= a for all positive a, b) is inconsistent with left distributivity on any S in R that contains a positive element and whose positive elements are closed under + and division by positive integers (Q, R, Q>0, R>0), with no regularity assumption; mirror for RD and a(x)b >= b. Consistent on Z>=1 (witness 2ab). Regular (continuous, strictly increasing, associative) increasing operations are conjugate to addition (imported Aczel/Craigen-Pales)."
+formalization_status: "Lean: archimedean_ld_generic, archimedean_rd_generic (generic carrier: positives closed under +, monotone +, n-th parts, Archimedean; no axioms); instances archimedean_{ld,rd}_rat and lattice cores core_{ld,rd}_inc_rat over Q (core Rat; Classical.choice inherited from core Rat). R instance on paper (R is not in Lean core). Finite z3 certificates only with H1 or H2 (1(x)1/4 = 1/2 < 1; 2(x)1/4 = 1/2 < 2); none exists for LD+INC alone, since {LD,RD,AS,CM,INC} has a model over the real closed field R((t^Q)). A7 imported."
 internal_consistency: "INC with + is consistent (a(x)b = a+b satisfies H1,H2,SQ,INC,BAL,AS,CM)."
-proof_status: "Proven (paper + z3 ground certificate). Not in Lean (core Lean lacks Q/R)."
+proof_status: "Proven (Lean generic + Q; paper for the R instance; z3 for the H1/H2 cases). Hypotheses corrected 2026-10-30: the earlier statement lacked a positive element and quantified over all a, b (counterexamples S={0}; S=R<=0 with (x)=0)."
 novelty: "Low-moderate (elementary; we know of no prior statement in the Howard literature)."
-reproducibility: "python3 computation/howard/axiom_lattice.py (core H1+LD+INC UNSAT; LD+INC, RD+INC paper cores)"
+reproducibility: "lean proofs/lean/howard/HowardArith.lean; python3 computation/howard/axiom_lattice.py (cores H1/H2+LD/RD+INC UNSAT; LD+INC, RD+INC by Thm A6)"
 empirical_testability: n/a
 dependencies: [Archimedean property of Q/R, Aczel 1966 s6.2, Craigen & Pales 1989]
 confidence: "High."

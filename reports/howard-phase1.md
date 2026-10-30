@@ -11,7 +11,7 @@
 
 **Obtained**
 - *Rolling Stone* 2015 quotes, taken verbatim from the CBS News reprint, which is preserved in a public news corpus (TH-S1).
-- A complete timestamped machine transcript of JRE #2152, 2024-05-18, 3 h 08 min (TH-S2).
+- A complete timestamped third-party machine transcript of JRE #2152, 2024-05-18, 3 h 08 min (TH-S2; GitHub `zreese/jre-excerpts`). It was not checked against the audio, so speaker attribution and digits may be wrong. INC and BAL rest on it alone.
 - Patent metadata and abstract-level summaries for US 11,117,065 B2 (Lynchpin), D1,002,750, and the building-block family (TH-S6–S8).
 
 **Not obtained, flagged rather than guessed**
@@ -26,7 +26,7 @@ Most hosts were blocked by the sandbox proxy. Note: the coordinator's "JRE #2126
 
 ## 2. Main results (Phase 2)
 
-**(a) Arithmetic.** These results are proven. The arithmetic theorems on ℤ, plus the Euler bound G1, are machine-checked in Lean 4 core, which used only `propext` and `Quot.sound`.
+**(a) Arithmetic.** These results are proven. The arithmetic theorems on ℤ, the generic (magma) forms of A1 and A2, A6 in generic form, the ℚ instances of A1, A2 and A6, and the Euler bound G1 are machine-checked in Lean 4 core (4.35.0). A `#print axioms` audit covers all 80 theorems. The generic theorems use no axioms, the ℤ ones at most `propext` and `Quot.sound`, and the ℚ instances also `Classical.choice`, inherited from core's `Rat` library.
 
 Howard's stated data are:
 - H1: $1\otimes1=2$;
@@ -36,15 +36,15 @@ Howard's stated data are:
 | Result | Status |
 |---|---|
 | A0. $1\cdot1=1$ in Peano arithmetic, so TH-001 can only define a new $\otimes$. | Lean |
-| A1/A2. **No-go.** H1+H2 is inconsistent with {LD,RD}, {LD,AS}, {LD,CM}, {RD,AS} and {RD,CM} over any char-0 structure. So **no ring, semiring or near-ring over ordinary + realises Howard's data.** The bound is sharp: $\mathbb Z/4$ is a model. | Lean + z3 |
-| A3/A4. **Classification.** If H2 is dropped, the only distributive option is $a\otimes b=2ab$, and $(\mathbb Z,+,\otimes)\cong(2\mathbb Z,+,\cdot)$. This is ordinary arithmetic counted in pairs. It satisfies H1, EFF, INC and BAL on positive integers, but gives $2\otimes2=8$. | Lean (ℤ); paper (ℚ, ℝ) |
+| A1/A2. **No-go.** In any additive magma, H1+H2 together with {LD,RD}, {LD,AS}, {LD,CM}, {RD,AS} or {RD,CM} forces $\bar8=\bar4$. So these sets are inconsistent on ℕ, ℤ, ℚ, ℝ and in every ring whose characteristic does not divide 4. Hence **no ring or semiring on these carriers with ordinary +, and no near-ring on ℤ, ℚ or ℝ, realises Howard's data.** The condition is needed: $\mathbb Z/4$ with $2ab$ is a ring model. | Lean (magma, ℤ, ℚ) + z3 |
+| A3/A4. **Classification.** If H2 is dropped, the only bi-additive option on ℤ and ℚ is $a\otimes b=2ab$; on ℝ this needs a regularity condition (continuity, say). $x\mapsto2x$ maps $(\mathbb Z,+,\otimes)$ onto $(2\mathbb Z,+,\cdot)$ (not onto $(\mathbb Z,+,\cdot)$). This is ordinary arithmetic counted in pairs. It satisfies H1, EFF, INC and BAL on positive integers, but gives $2\otimes2=8$. | Lean (ℤ); paper (ℚ, ℝ) |
 | A5. Any identity element is idempotent, so the strong form of EFF excludes every unital reconstruction. | Lean |
-| A6. **Archimedean no-go.** "Multiplication always makes more" contradicts either distributive law on $\mathbb Q_{>0}$ and $\mathbb R_{>0}$. It is consistent on $\mathbb Z_{\ge1}$. | paper + z3 |
+| A6. **Archimedean no-go.** "Multiplication always makes more" contradicts either distributive law on $\mathbb Q$, $\mathbb R$, $\mathbb Q_{>0}$ and $\mathbb R_{>0}$. The carrier must contain a positive element, and the inequality is quantified over positive $a,b$ (hypotheses corrected 2026-10-30). It is consistent on $\mathbb Z_{\ge1}$. | Lean (generic, ℚ); ℝ instance on paper; z3 with H1 or H2 |
 | A7. Regular increasing $\otimes$ are additions in disguise (imported Aczél theorem). $\otimes=+$ satisfies **every** verbatim rule, but is not distributive. | paper |
-| Lattice. All 128 subsets of {H1,H2,LD,RD,AS,CM,INC} are decided: 58 inconsistent, 70 consistent, 0 open. | z3 + paper |
+| Lattice. All 128 subsets of the seven rules {H1,H2,LD,RD,AS,CM,INC} are decided: 58 inconsistent, 70 consistent, 0 open. EFF and BAL are not among the seven. Adding BAL changes no verdict; EFF-strong is not decided. | 46 inconsistent by z3 ground certificates, 12 by A6 alone; 70 by witnesses |
 | §5. With a non-standard addition (log₂ or tropical semiring), H1, H2 and distributivity all hold. These structures are isomorphic to standard ones, and in them the numerals stop counting. | sympy |
 
-**The idea inside the claim.** Every consistent reading is a relabelling of standard arithmetic: pairs, addition, or exponents (where $2^1\cdot2^1=2^2$). None yields a new number system. Once we fix any reading that keeps ordinary +, the failing parts of Howard's text are determined.
+**The idea inside the claim.** The four readings we examine are relabellings of standard structures: pairs, addition, exponents (where $2^1\cdot2^1=2^2$), and the tropical semiring. None of them yields a new number system. This is not a classification of all consistent readings. The only classifications are A3 (bi-additive) and A7 (continuous, strictly monotone, associative), and each has hypotheses. Other consistent sets have witnesses that are not relabellings, e.g. $2b$ and $2a$ for {H1,H2,LD} and {H1,H2,RD}. Once we fix any reading that keeps ordinary +, the failing parts of Howard's text are determined.
 
 **(b) Numerical claims.** These are exact unless a precision is stated.
 - The √2 "loop" is exactly true arithmetic. It is the fixed point $\sqrt c$ of $x^3/c$, and it is repelling: in float64 it escapes after 28 steps.
@@ -64,12 +64,12 @@ Howard's stated data are:
 | (d) conjectured | P-TH-1 (3-limit numerology), P-TH-3 (octave reading of 1×1=2), P-TH-5 (models are Plateau-compliant), L-T as the patent's intent. |
 | (e) testable | TH-009 (once "tone" is defined); TH-020 (patent angles); TH-035 (curricula in 2035). |
 
-No result in this phase is new mathematics. The new content is the complete consistency analysis of Howard's rule set, and its machine-checked certificates.
+No result in this phase is new mathematics. The new content is the complete consistency analysis of seven of Howard's rules, with its certificates: z3 ground certificates for 46 inconsistent subsets, and Lean proofs of A6 in generic form and over ℚ for the other 12.
 
 ## 4. Proposed formalization order
 
 1. **Obtain TH-S5 (book) and TH-S3 (JRE #2171).** Extract every stated product and re-run `axiom_lattice.py`. This is the cheapest step and decides whether H2 stands.
-2. **Port A3 (ℚ, ℝ), A6 and G1 to Lean + Mathlib** once the cache is reachable. The ℤ results are already done.
+2. **Port A3 (ℚ, ℝ) and the ℝ instances of A1, A2, A6 to Lean + Mathlib** once the cache is reachable. Already done in core Lean: the ℤ results, A1/A2 for any magma and over ℚ, A6 in generic form and over ℚ, and G1.
 3. **Obtain the patent full text (TH-S6).** Check L-T against the figure angles; prediction: 109.47° and 120°. If it matches, formalize T1 in Mathlib's Euclidean geometry.
 4. **Define "tone" (TH-G06)** and test TH-009 against NIST spectral lines.
 5. Only once definitions exist: TH-022 (poles), TH-023 (wave conjugations) and TH-025 (star prediction).

@@ -1,11 +1,25 @@
-"""TH-001/TH-002: which subsets of {H1,H2,LD,RD,AS,CM,INC} are jointly satisfiable?
+"""TH-001/TH-002/TH-004: which subsets of {H1,H2,LD,RD,AS,CM,INC} are jointly satisfiable over R?
 
-Part 1. For an UNINTERPRETED operation op : R x R -> R, z3 is given only finitely many ground
-        instances of each axiom (enough to derive the contradiction). UNSAT on ground instances
-        is a proof that the full (universal) axiom set is inconsistent.
-Part 2. Every subset of the 7 axioms is classified: inconsistent if it contains one of the
-        certified cores, consistent if one of the explicit witnesses (checked universally in
-        arith_candidates.py / HowardArith.lean) satisfies it, otherwise 'open'.
+The seven rules (INC = "multiplication makes more"; EFF-strong and BAL are NOT among them, see Part 2b):
+  H1  1(x)1 = 2            H2  2(x)2 = 4
+  LD  a(x)(b+c) = a(x)b + a(x)c          RD  (a+b)(x)c = a(x)c + b(x)c
+  AS  associativity        CM  commutativity
+  INC a(x)b > max(a,b) for all positive a, b
+
+Part 1. Ground certificates. For an UNINTERPRETED operation op : R x R -> R, z3 is given finitely many
+        ground instances of each rule. UNSAT of the ground instances of a subset is a proof that the
+        subset (with its rules universally quantified) is inconsistent. Nine cores are certified this
+        way: the five H1+H2 cores, and H1+LD+INC, H1+RD+INC, H2+LD+INC, H2+RD+INC (H1 or H2 fixes a
+        value, e.g. 1(x)1/4 = 1/2 or 2(x)1/4 = 1/2, that INC forbids). The two Archimedean cores LD+INC
+        and RD+INC have NO such certificate: {LD,RD,AS,CM,INC} has a model over the non-Archimedean
+        real closed field R((t^Q)) (formalization/howard/arithmetic.md, A6), and a finite set of ground
+        instances true there is satisfiable over R. They are certified by Theorem A6 instead (Lean: archimedean_ld_generic / archimedean_rd_generic, instantiated for Q
+        as core_ld_inc_rat / core_rd_inc_rat in proofs/lean/howard/HowardArith.lean; for R the
+        generic hypotheses are the standard ordered-field and Archimedean properties of R).
+Part 2. Every subset of the 7 rules is classified: inconsistent if it contains a core, consistent if
+        one of the explicit witnesses (checked universally in arith_candidates.py / HowardArith.lean,
+        2a below) satisfies it, otherwise 'open'. Counts are reported per certificate type.
+Part 2b. The same with BAL (a(x)b >= a+b for positive a, b) added as an eighth rule.
 Part 3. Finite models: all bi-additive operations on Z/n (n <= 12) satisfying H1, H2.
         Brute force over ALL n^(n^2) operations for n <= 3 confirms that bi-additive ops on Z/n
         are exactly a(x)b = k*a*b.
@@ -22,16 +36,22 @@ def RD(p, q, r): return op(p + q, r) == op(p, r) + op(q, r)
 GROUND = {
     "H1": [op(1, 1) == 2],
     "H2": [op(2, 2) == 4],
-    "LD": [LD(1, 1, 1), LD(2, 1, 1), LD(1, R(1) / 2, R(1) / 2), LD(1, R(1) / 4, R(1) / 4)],
-    "RD": [RD(1, 1, 1), RD(1, 1, 2)],
+    "LD": [LD(1, 1, 1), LD(2, 1, 1), LD(1, R(1) / 2, R(1) / 2), LD(1, R(1) / 4, R(1) / 4),
+           LD(2, R(1) / 2, R(1) / 2), LD(2, R(1) / 4, R(1) / 4)],
+    "RD": [RD(1, 1, 1), RD(1, 1, 2), RD(R(1) / 2, R(1) / 2, 1), RD(R(1) / 4, R(1) / 4, 1),
+           RD(R(1) / 2, R(1) / 2, 2), RD(R(1) / 4, R(1) / 4, 2)],
     "AS": [op(op(1, 1), 1) == op(1, op(1, 1))],
     "CM": [op(2, 1) == op(1, 2)],
-    # INC instance used: 1 (x) 1/4 > max(1, 1/4) = 1   (only meaningful on a carrier containing 1/4)
-    "INC": [op(1, R(1) / 4) > 1],
+    # INC instances used: 1 (x) 1/4 > max(1, 1/4) = 1, 2 (x) 1/4 > 2, and their mirrors
+    "INC": [op(1, R(1) / 4) > 1, op(R(1) / 4, 1) > 1, op(2, R(1) / 4) > 2, op(R(1) / 4, 2) > 2],
+    # BAL instances (Part 2b only): a (x) b >= a + b at the same four points
+    "BAL": [op(1, R(1) / 4) >= R(5) / 4, op(R(1) / 4, 1) >= R(5) / 4,
+            op(2, R(1) / 4) >= R(9) / 4, op(R(1) / 4, 2) >= R(9) / 4],
 }
 
 CORES = [("H1", "H2", "LD", "RD"), ("H1", "H2", "LD", "AS"), ("H1", "H2", "LD", "CM"),
-         ("H1", "H2", "RD", "AS"), ("H1", "H2", "RD", "CM"), ("H1", "LD", "INC")]
+         ("H1", "H2", "RD", "AS"), ("H1", "H2", "RD", "CM"), ("H1", "LD", "INC"), ("H1", "RD", "INC"),
+         ("H2", "LD", "INC"), ("H2", "RD", "INC")]
 
 def check_core(core):
     s = z3.Solver()
@@ -41,7 +61,7 @@ def check_core(core):
 
 # Witness operations over R (properties certified universally by arith_candidates.py, z3 nlsat)
 WITNESSES = {
-    "a+b":       {"H1", "H2", "AS", "CM", "INC"},
+    "a+b":       {"H1", "H2", "AS", "CM", "INC", "BAL"},
     "2ab":       {"H1", "LD", "RD", "AS", "CM"},
     "2b":        {"H1", "H2", "LD"},
     "a(b+1)":    {"H1", "RD"},
@@ -61,23 +81,33 @@ def verify_2a():
 
 AX = ["H1", "H2", "LD", "RD", "AS", "CM", "INC"]
 
-# Cores proved on paper only (formalization/howard/arithmetic.md, Thm A6: an additive map that is
-# positive on positives is linear, then Archimedes). No finite set of ground instances suffices.
-PAPER_CORES = [("LD", "INC"), ("RD", "INC")]
+# Archimedean cores: Theorem A6 (formalization/howard/arithmetic.md). Lean: archimedean_ld_generic,
+# archimedean_rd_generic (no axioms), instances core_ld_inc_rat, core_rd_inc_rat over Q. Not z3: no finite
+# set of ground instances is UNSAT ({LD,RD,AS,CM,INC} has a model over the real closed field R((t^Q))).
+ARCH_CORES = [("LD", "INC"), ("RD", "INC")]
 
-def classify(use_paper=False):
-    stats = {"inconsistent": [], "consistent": [], "open": []}
-    cores = CORES + (PAPER_CORES if use_paper else [])
-    for r in range(len(AX) + 1):
-        for sub in itertools.combinations(AX, r):
+def classify(ax, z3_cores, arch_cores, witnesses):
+    """Return {'z3': [...], 'A6': [...], 'consistent': [...], 'open': [...]} over all subsets of ax.
+    A subset counts as 'z3' if it contains a z3-certified core, else 'A6' if it contains an Archimedean core."""
+    stats = {"z3": [], "A6": [], "consistent": [], "open": []}
+    for r in range(len(ax) + 1):
+        for sub in itertools.combinations(ax, r):
             S = set(sub)
-            if any(set(c) <= S for c in cores):
-                stats["inconsistent"].append(sub)
-            elif any(S <= w for w in WITNESSES.values()):
+            if any(set(c) <= S for c in z3_cores):
+                stats["z3"].append(sub)
+            elif any(set(c) <= S for c in arch_cores):
+                stats["A6"].append(sub)
+            elif any(S <= w for w in witnesses):
                 stats["consistent"].append(sub)
             else:
                 stats["open"].append(sub)
     return stats
+
+def allsubs7(ax):
+    return [c for r in range(len(ax) + 1) for c in itertools.combinations(ax, r)]
+
+def minimal(core, witnesses):
+    return all(any(set(core) - {k} <= w for w in witnesses) for k in core)
 
 def zn_models(nmax=12):
     out = []
@@ -102,31 +132,56 @@ def brute_biadditive(n):
 
 if __name__ == "__main__":
     print("z3", z3.get_version_string())
-    print("\nPart 1: certified inconsistent cores (ground instances only)")
+    W7 = [w - {"BAL"} for w in WITNESSES.values()]
+    print("\nPart 1: z3 ground certificates (UNSAT of the subset's own ground instances)")
     for core in CORES:
         print("  ", "+".join(core).ljust(18), check_core(core))
-    print("  minimality: every proper subset of each core is satisfied by a witness:")
-    for core in CORES:
-        subs = [set(core) - {k} for k in core]
-        ok = all(any(sb <= w for w in WITNESSES.values()) for sb in subs)
-        print("  ", "+".join(core).ljust(18), "minimal" if ok else
-              "not minimal: LD+INC alone is inconsistent (Thm A6); H1 only shortens the certificate")
+    print("  minimality (every proper subset satisfied by a witness):")
+    for core in CORES + ARCH_CORES:
+        tag = "minimal" if minimal(core, W7) else "not minimal"
+        if len(core) == 3:
+            tag += (f": contains the Archimedean core {'+'.join(core[1:])} (Thm A6);"
+                    f" {core[0]} makes it finitely certifiable")
+        src = "z3" if core in CORES else "A6 (Lean generic; Q instance)"
+        print("  ", "+".join(core).ljust(18), src.ljust(30), tag)
     print("  witness a(x)b = 2a satisfies RD, H1, H2 (z3):", verify_2a())
     print("\nPart 2: all 2^7 = 128 subsets of", AX)
-    st = classify()
-    for k, v in st.items():
-        print(f"  {k}: {len(v)}")
-    print("  maximal consistent subsets found:")
+    st = classify(AX, CORES, ARCH_CORES, W7)
+    print(f"  inconsistent: {len(st['z3']) + len(st['A6'])}"
+          f"  (z3 ground certificate: {len(st['z3'])}; Archimedean Thm A6 only: {len(st['A6'])})")
+    print(f"  consistent: {len(st['consistent'])}")
+    print(f"  open: {len(st['open'])}")
+    print("  subsets certified by A6 only:")
+    print("    ", st["A6"])
+    expect = [s for s in allsubs7(AX) if set(s) <= {"LD", "RD", "AS", "CM", "INC"} and "INC" in s
+              and ({"LD", "RD"} & set(s))]
+    print("  check: A6-only subsets = subsets of {LD,RD,AS,CM,INC} containing INC and LD or RD:",
+          sorted(map(sorted, st["A6"])) == sorted(map(sorted, expect)))
+    print("  maximal consistent subsets:")
     cons = [set(s) for s in st["consistent"]]
     maxi = [s for s in cons if not any(s < t for t in cons)]
     for s in maxi:
         print("    ", sorted(s, key=AX.index))
-    print("  open subsets:", st["open"])
-    st2 = classify(use_paper=True)
-    print("  adding the paper cores LD+INC, RD+INC (Thm A6):",
-          {k: len(v) for k, v in st2.items()})
-    print("  every previously open subset contains LD+INC or RD+INC:",
-          all(({"LD", "INC"} <= set(o)) or ({"RD", "INC"} <= set(o)) for o in st["open"]))
+    allsubs = [set(c) for r in range(len(AX) + 1) for c in itertools.combinations(AX, r)]
+    free = [x for x in allsubs if not any(set(k) <= x for k in CORES + ARCH_CORES)]
+    maxfree = [x for x in free if not any(x < y for y in free)]
+    print("  maximal consistent = maximal core-free:", sorted(map(sorted, maxi)) == sorted(map(sorted, maxfree)))
+    print("  sanity: ground instances of each maximal consistent set are SAT (z3):",
+          [str(check_core(sorted(m, key=AX.index))) for m in maxi])
+    print("\nPart 2b: BAL added as an eighth rule (2^8 = 256 subsets)")
+    AX8 = AX + ["BAL"]
+    EXTRA8 = [("H1", "LD", "BAL"), ("H1", "RD", "BAL"), ("H2", "LD", "BAL"), ("H2", "RD", "BAL")]
+    CORES8 = CORES + EXTRA8
+    for c in EXTRA8:
+        print("  ", "+".join(c).ljust(18), check_core(c))
+    A_BAL = ARCH_CORES + [("LD", "BAL"), ("RD", "BAL")]   # BAL implies a(x)b >= a and >= b: A6 weak form
+    st8 = classify(AX8, CORES8, A_BAL, list(WITNESSES.values()))
+    print(f"  inconsistent: {len(st8['z3']) + len(st8['A6'])} (z3: {len(st8['z3'])}; A6 only: {len(st8['A6'])});"
+          f" consistent: {len(st8['consistent'])}; open: {len(st8['open'])}")
+    same = all(((s in st8["consistent"]) ==
+                (tuple(sorted((set(s) - {"BAL"}) | ({"INC"} if "BAL" in s else set()), key=AX.index))
+                 in st["consistent"])) for s in [x for r in range(9) for x in itertools.combinations(AX8, r)])
+    print("  every subset has the verdict of the subset with BAL replaced by INC:", same)
     print("\nPart 3: bi-additive a(x)b = k*a*b on Z/n with H1 and H2, n <= 12  -> (n, k, 2 != 0 in Z/n)")
     print("  ", zn_models())
     for n in (2, 3):

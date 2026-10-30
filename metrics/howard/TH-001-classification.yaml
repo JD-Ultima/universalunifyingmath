@@ -1,5 +1,5 @@
 claim_id: TH-001
-result: "Every bi-additive (x) on Z is a(x)b = ab(1(x)1); with 1(x)1=2 it is forced to be a(x)b=2ab, and x -> 2x is an isomorphism (Z,+,(x)) ~ (2Z,+,*): a commutative ring without identity, without nonzero idempotents, strictly increasing and dominating + on Z>=1. On R (under continuity) the same operation is isomorphic to (R,+,*) with identity 1/2."
+result: "Every bi-additive (x) on Z is a(x)b = ab(1(x)1); with 1(x)1=2 it is forced to be a(x)b=2ab, and x -> 2x is an isomorphism (Z,+,(x)) ~ (2Z,+,*): a commutative ring without identity, without nonzero idempotents, strictly increasing and dominating + on Z>=1. On R the same uniqueness needs a regularity condition (continuity, measurability or local boundedness; Hamel-basis solutions exist otherwise), and the operation is isomorphic to (R,+,*) with identity 1/2."
 formalization_status: "Fully formal on Z (Lean: biadditive_classification, forced_two_ab, phi_*, op2_*); Q by the same proof (paper); R via imported Cauchy theorem (paper)."
 internal_consistency: "Consistent (explicit model)."
 proof_status: "Proven (Lean on Z; paper on Q, R with cited Aczel 1966)."

@@ -7,80 +7,89 @@
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
 
-\title{Which arithmetics satisfy ``$1\times1=2$''?\\ A complete consistency analysis with machine-checked certificates}
+\title{Which arithmetics satisfy ``$1\times1=2$''?\\ Deciding seven rules, with machine-checked certificates}
 \author{universalunifyingmath project}
-\date{Draft, 30 October 2026}
+\date{Draft, 30 October 2026 (revised after referee report)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We formalise the arithmetic rules stated informally by T.~Howard in public interviews:
+We formalise arithmetic rules stated informally by T.~Howard in public interviews:
 \begin{itemize}
 \item H1: $1\otimes1=2$;
 \item H2: $2\otimes2=4$, read from ``the square root of four is two'';
-\item ``multiplication makes more'';
-\item ``one times itself must have an effect''.
+\item INC, ``multiplication makes more'': $a\otimes b>\max(a,b)$ for positive $a,b$;
+\item EFF, ``one times itself must have an effect'', and BAL, a ``balance'' rule (\S\ref{sec:sources}).
 \end{itemize}
-We decide every combination of these with distributivity, associativity and commutativity over $\mathbb R$. All $2^7$ subsets of seven rules are settled: 58 are inconsistent and 70 consistent, each with a certificate.
+We decide all $2^7=128$ subsets of the seven rules H1, H2, LD, RD, AS, CM, INC over $\mathbb R$, where LD and RD are left and right distributivity over ordinary $+$ and AS and CM are associativity and commutativity. 58 subsets are inconsistent and 70 consistent. Every consistent subset has an explicit witness. 46 inconsistent subsets have a z3 certificate (unsatisfiability of finitely many of their own ground instances). The other 12 rest on the Archimedean Theorem~\ref{thm:arch}, which is proved in Lean in a generic form and instantiated there for $\mathbb Q$. EFF and BAL are not among the seven: the weak form of EFF follows from H1; adding BAL as an eighth rule changes no verdict; the strong form of EFF (no identity element) is not decided here.
 
-No ring, semiring or near-ring over ordinary addition realises H1 and H2. With H2 dropped, the unique bi-additive operation with H1 is $a\otimes b=2ab$, which is isomorphic to ordinary multiplication via $x\mapsto 2x$. ``Multiplication always makes more'' is inconsistent with either distributive law on $\mathbb Q_{>0}$ or $\mathbb R_{>0}$, with no regularity assumption. Every consistent reading is a relabelling of standard arithmetic. The core lemmas are checked in Lean~4.
+On $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R$, and more generally in every ring whose characteristic does not divide $4$, no operation satisfying H1 and H2 is distributive on both sides, or on one side together with AS or CM. So no ring or semiring structure on these carriers with ordinary addition, and no left or right near-ring structure on $\mathbb Z$, $\mathbb Q$ or $\mathbb R$, realises H1 and H2. The characteristic condition is needed: $\mathbb Z/4$ with $a\otimes b=2ab$ is a ring that satisfies H1 and H2. With H2 dropped, the only bi-additive operation with H1 on $\mathbb Z$ or $\mathbb Q$ is $a\otimes b=2ab$; on $\mathbb R$ this holds under a regularity condition such as continuity. The map $x\mapsto 2x$ carries $(\mathbb Z,+,\otimes)$ isomorphically onto $(2\mathbb Z,+,\cdot)$, and $(\mathbb Q,+,\otimes)$, $(\mathbb R,+,\otimes)$ onto ordinary multiplication. ``Multiplication always makes more'' is inconsistent with either distributive law on $\mathbb Q$, $\mathbb R$, $\mathbb Q_{>0}$ and $\mathbb R_{>0}$, with no regularity assumption. Only two classes of consistent readings are classified here. The bi-additive ones with H1 or H2 (on $\mathbb R$, under regularity) are relabellings of ordinary multiplication. The continuous, associative ones that are strictly increasing in each argument are conjugate to addition (an imported theorem). Other consistent subsets have witnesses that are relabellings of neither, for example $a\otimes b=2b$.
 
-The mathematics is elementary. The contribution is completeness and certification, not depth.
+The mathematics is elementary. The contribution is completeness for these seven rules and certification, not depth.
 \end{abstract}
 
-\section{Sources and readings}
-The sources are informal: a 2015 magazine interview, reprinted verbatim, and a timestamped transcript of a 2024 podcast (JRE \#2152). The primary book \emph{One Times One Equals Two} was not obtainable. A secondary report says Howard later called $1\times1=2$ ``a metaphor''; we evaluate the mathematical readings regardless.
+\section{Sources and readings}\label{sec:sources}
+The sources are informal. H1, H2 and EFF come from a 2015 magazine profile \cite{RS15}, which we read only as reprinted verbatim by CBS News \cite{CBS15}. INC and BAL come only from JRE \#2152 \cite{JRE2152}, which we read in a third-party machine transcript with speaker labels. That transcript was not checked against the audio, so attributions and figures in it may be wrong. The primary book \emph{One Times One Equals Two} \cite{OTOET} was not obtainable. A secondary report says Howard later called $1\times1=2$ ``a metaphor'' \cite{JRE2171}; we evaluate the mathematical readings regardless.
 
 H2 rests on one sentence, and the conclusions are stated separately with and without it. Our readings are as follows.
 \begin{itemize}
 \item LD, RD: left and right distributivity over ordinary $+$.
 \item AS, CM: associativity and commutativity.
 \item INC: $a\otimes b>\max(a,b)$ for positive $a,b$.
-\item EFF, weak form: $1\otimes 1\neq 1$. Strong form: $\otimes$ has no identity element.
+\item BAL: $a\otimes b\ge a+b$ for positive $a,b$.
+\item EFF, weak form: $1\otimes 1\neq 1$ (implied by H1). Strong form: $\otimes$ has no identity element.
 \end{itemize}
+The lattice of Corollary~\ref{cor:lattice} is over the seven rules H1, H2, LD, RD, AS, CM, INC. It does not contain EFF or BAL.
 
 \section{Results}
-\begin{theorem}[two-sided distributivity]
-Let $(S,+)$ be any magma containing $1$, and write $\bar2=1+1$, $\bar4=\bar2+\bar2$, $\bar8=\bar4+\bar4$. If $\otimes$ satisfies LD and RD, then H1 implies $\bar2\otimes\bar2=\bar8$. In particular, H1, H2, LD and RD are jointly inconsistent in $\mathbb N$, $\mathbb Z$, $\mathbb Q$, $\mathbb R$, and in every ring whose characteristic does not divide $4$. The bound is sharp: $\mathbb Z/4$ with $a\otimes b=2ab$ satisfies all four.
+Throughout, in an additive magma $(S,+)$ containing $1$ we write $\bar2=1+1$, $\bar4=\bar2+\bar2$ and $\bar8=\bar4+\bar4$.
+
+\begin{theorem}[two-sided distributivity]\label{thm:two}
+Let $(S,+)$ be any magma containing $1$. If $\otimes$ satisfies LD and RD, then H1 ($1\otimes1=\bar2$) implies $\bar2\otimes\bar2=\bar8$, so H2 ($\bar2\otimes\bar2=\bar4$) would give $\bar8=\bar4$. Hence H1, H2, LD and RD are jointly inconsistent wherever $\bar4+\bar4\neq\bar4$: in $\mathbb N$, $\mathbb Z$, $\mathbb Q$, $\mathbb R$, and in every ring whose characteristic does not divide $4$. The condition is sharp: $\mathbb Z/4$ with $a\otimes b=2ab$ satisfies all four.
 \end{theorem}
 \begin{proof}
-$(1+1)\otimes(1+1)$ expands by LD and RD into four copies of $1\otimes1$.
+$(1+1)\otimes(1+1)$ expands by RD and then LD into four copies of $1\otimes1$.
 \end{proof}
 
-\begin{theorem}[one distributive law]
-Over $\mathbb Z$, each of the four sets $\{\mathrm{LD},\mathrm{AS}\}$, $\{\mathrm{LD},\mathrm{CM}\}$, $\{\mathrm{RD},\mathrm{AS}\}$, $\{\mathrm{RD},\mathrm{CM}\}$, taken together with H1 and H2, is inconsistent. Each proof uses a single instance of AS or CM. Hence no left or right near-ring $(\mathbb Z,+,\otimes)$ satisfies H1 and H2.
-\end{theorem}
-
-\begin{theorem}[classification]
-Every bi-additive $\otimes$ on $\mathbb Z$ or $\mathbb Q$ satisfies $a\otimes b=ab\,(1\otimes1)$, so H1 forces $a\otimes b=2ab$. On $\mathbb R$ the same conclusion holds under any standard regularity condition (Cauchy). The map $\varphi(x)=2x$ is a ring isomorphism $(\mathbb R,+,\otimes)\to(\mathbb R,+,\cdot)$, and it embeds $(\mathbb Z,+,\otimes)$ onto $(2\mathbb Z,+,\cdot)$.
-\end{theorem}
-
-\begin{theorem}[Archimedean no-go]
-Let $S$ be closed under $+$ and under division by positive integers. Then no $\otimes$ on $S$ satisfies LD together with $a\otimes b\ge a$. Likewise, none satisfies RD together with $a\otimes b\ge b$.
+\begin{theorem}[one distributive law]\label{thm:one}
+Let $(S,+)$ be any magma containing $1$. Each of the four sets $\{\mathrm{LD},\mathrm{AS}\}$, $\{\mathrm{LD},\mathrm{CM}\}$, $\{\mathrm{RD},\mathrm{AS}\}$, $\{\mathrm{RD},\mathrm{CM}\}$, taken together with H1 and H2, forces $\bar8=\bar4$. Each proof uses a single instance of AS, $(1\otimes1)\otimes1=1\otimes(1\otimes1)$, or of CM, $\bar2\otimes1=1\otimes\bar2$. Hence each set is inconsistent in $\mathbb N$, $\mathbb Z$, $\mathbb Q$, $\mathbb R$ and in every ring whose characteristic does not divide $4$. In particular no left or right near-ring \cite{Pilz} $(\mathbb Z,+,\otimes)$, $(\mathbb Q,+,\otimes)$ or $(\mathbb R,+,\otimes)$ satisfies H1 and H2.
 \end{theorem}
 \begin{proof}
-With LD, $a\otimes b=n\,(a\otimes b/n)\ge na$ for all $n$.
+Case $\{\mathrm{LD},\mathrm{AS}\}$: LD gives $1\otimes\bar2=\bar2+\bar2=\bar4$. AS with H1 gives $\bar2\otimes1=1\otimes\bar2=\bar4$. LD then gives $\bar2\otimes\bar2=\bar2\otimes1+\bar2\otimes1=\bar8$. The case with CM is the same computation. The RD cases are the mirror images: RD gives $\bar2\otimes1=\bar4$, AS or CM gives $1\otimes\bar2=\bar4$, and RD gives $\bar2\otimes\bar2=\bar8$.
 \end{proof}
 
-\begin{corollary}[the lattice]
-Over $\mathbb R$, the minimal inconsistent cores among $\{$H1, H2, LD, RD, AS, CM, INC$\}$ are $\{$H1,H2,LD,RD$\}$, $\{$H1,H2,LD,AS$\}$, $\{$H1,H2,LD,CM$\}$, $\{$H1,H2,RD,AS$\}$, $\{$H1,H2,RD,CM$\}$, $\{$LD,INC$\}$ and $\{$RD,INC$\}$. The maximal consistent sets, each with a witness, are:
+\begin{theorem}[classification]\label{thm:class}
+Every bi-additive $\otimes$ on $\mathbb Z$ or $\mathbb Q$ satisfies $a\otimes b=ab\,(1\otimes1)$, so H1 forces $a\otimes b=2ab$. On $\mathbb R$ the same conclusion holds if, in each argument, $\otimes$ is continuous, measurable or bounded on an interval (Cauchy's equation \cite{Aczel}). Without such a condition, other bi-additive solutions with H1 exist (Hamel basis \cite{Hamel}). The map $\varphi(x)=2x$ is a ring isomorphism $(\mathbb R,+,\otimes)\to(\mathbb R,+,\cdot)$ that restricts to $(\mathbb Q,+,\otimes)\cong(\mathbb Q,+,\cdot)$. It maps $(\mathbb Z,+,\otimes)$ isomorphically onto $(2\mathbb Z,+,\cdot)$, a ring without identity, not onto $(\mathbb Z,+,\cdot)$.
+\end{theorem}
+
+\begin{theorem}[Archimedean no-go]\label{thm:arch}
+Let $S\subseteq\mathbb R$ contain a positive element, and let its positive elements be closed under $+$ and under division by positive integers; for example $S=\mathbb Q,\mathbb R,\mathbb Q_{>0},\mathbb R_{>0}$. Then no $\otimes:S\times S\to\mathbb R$ satisfies LD together with $a\otimes b\ge a$ for all positive $a,b\in S$. Likewise, none satisfies RD together with $a\otimes b\ge b$ for all positive $a,b\in S$. In particular $\{\mathrm{LD},\mathrm{INC}\}$ and $\{\mathrm{RD},\mathrm{INC}\}$ are inconsistent on these carriers, with no regularity assumption.
+\end{theorem}
+\begin{proof}
+Fix positive $a,b\in S$. LD, used only at positive arguments, gives $a\otimes b=n\,(a\otimes b/n)\ge na$ for every integer $n\ge1$. This contradicts the Archimedean property of $\mathbb R$. The RD case is the mirror image.
+\end{proof}
+The positivity hypothesis is needed: $S=\{0\}$, or $S=\mathbb R_{\le0}$ with $\otimes\equiv0$, satisfies LD and $a\otimes b\ge a$ for all $a,b$. Arbitrarily small elements are also needed: on $\mathbb Z_{\ge1}$ the operation $2ab$ satisfies LD, RD and INC.
+
+\begin{corollary}[the lattice]\label{cor:lattice}
+Over $\mathbb R$, the minimal inconsistent subsets of $\{$H1, H2, LD, RD, AS, CM, INC$\}$ are $\{$H1,H2,LD,RD$\}$, $\{$H1,H2,LD,AS$\}$, $\{$H1,H2,LD,CM$\}$, $\{$H1,H2,RD,AS$\}$, $\{$H1,H2,RD,CM$\}$, $\{$LD,INC$\}$ and $\{$RD,INC$\}$. Of the $128$ subsets, $58$ contain one of them and are inconsistent; the other $70$ are consistent. The maximal consistent sets, each with a witness, are:
 \begin{itemize}
-\item $\{$H1,H2,LD$\}$, witness $2b$;
-\item $\{$H1,H2,RD$\}$, witness $2a$;
-\item $\{$H1,H2,AS,CM,INC$\}$, witness $a+b$;
-\item $\{$H1,LD,RD,AS,CM$\}$, witness $2ab$;
-\item $\{$H2,LD,RD,AS,CM$\}$, witness $ab$.
+\item $\{$H1,H2,LD$\}$, witness $a\otimes b=2b$;
+\item $\{$H1,H2,RD$\}$, witness $a\otimes b=2a$;
+\item $\{$H1,H2,AS,CM,INC$\}$, witness $a\otimes b=a+b$;
+\item $\{$H1,LD,RD,AS,CM$\}$, witness $a\otimes b=2ab$;
+\item $\{$H2,LD,RD,AS,CM$\}$, witness $a\otimes b=ab$.
 \end{itemize}
+Adding BAL as an eighth rule changes no verdict. BAL implies INC on positive arguments, and the only witness with INC, $a+b$, satisfies BAL. So a subset containing BAL is consistent exactly when the subset with BAL replaced by INC is.
 \end{corollary}
 
 \begin{remark}[the idea inside the claim]
-Each consistent reading is isomorphic to a standard structure:
+The following four readings are each isomorphic to a standard structure:
 \begin{itemize}
 \item pairs: $(2\mathbb Z,+,\cdot)$;
 \item addition: $\otimes=+$;
-\item exponents: the $\log_2$ semiring, where $\oplus$ is $\log_2(2^a+2^b)$ and $1\otimes 1=2$ becomes $2\cdot2=4$;
-\item the tropical semiring.
+\item exponents: the $\log_2$ semiring \cite{Litvinov}, where $\oplus$ is $\log_2(2^a+2^b)$ and $1\otimes 1=2$ becomes $2\cdot2=4$;
+\item the tropical semiring \cite{MS}.
 \end{itemize}
 Each has a cost:
 \begin{itemize}
@@ -88,13 +97,47 @@ Each has a cost:
 \item in the addition reading, distributivity fails;
 \item in the exponent and tropical readings, numerals stop counting (for example $2\oplus2\neq4$).
 \end{itemize}
-No reading yields a new number system.
+None of these four readings yields a new number system. This is not a classification of all consistent readings. The only classification results here are Theorem~\ref{thm:class} (bi-additive operations) and the imported theorem that a continuous, associative operation on a real interval that is strictly increasing in each argument has the form $a\otimes b=\psi^{-1}(\psi(a)+\psi(b))$ for a continuous, strictly monotone $\psi$ \cite{Aczel,CP}. Both carry hypotheses. Other consistent sets have witnesses that are not relabellings of any standard multiplication. For example, the witnesses $2b$ and $2a$ of $\{$H1,H2,LD$\}$ and $\{$H1,H2,RD$\}$ are neither associative nor commutative.
 \end{remark}
 
 \section{Formal verification}
-The theorems over $\mathbb Z$, the $\mathbb Z/4$ model and the isomorphism are proved in Lean~4 with the core library only, and no \texttt{sorry}. The axioms used are at most \texttt{propext} and \texttt{Quot.sound}. The file has been checked with Lean 4.24.0 and 4.35.0. The lattice is decided by z3 (negation UNSAT for each inconsistent subset) and by explicit witnesses for the consistent ones. Files: \texttt{proofs/lean/howard/HowardArith.lean} and \texttt{computation/howard/axiom\_lattice.py}.
+\paragraph{Lean.} The file \texttt{proofs/lean/howard/HowardArith.lean} uses the Lean~4 core library only \cite{Lean4}, with no \texttt{sorry}. It proves the following:
+\begin{itemize}
+\item Theorems~\ref{thm:two} and~\ref{thm:one} for an arbitrary magma, directly over $\mathbb Z$, and over $\mathbb Q$ as instances of the magma versions;
+\item the $\mathbb Z/4$ model;
+\item Theorem~\ref{thm:class} over $\mathbb Z$, and the isomorphism onto $(2\mathbb Z,+,\cdot)$;
+\item the witnesses $2b$, $+$ and $2ab$ on $\mathbb Z$;
+\item Theorem~\ref{thm:arch} in a generic form, instantiated for $\mathbb Q$.
+\end{itemize}
+The generic form of Theorem~\ref{thm:arch} assumes four properties of the carrier: its positive elements are closed under addition, addition is monotone, every positive element has positive $n$-th parts, and the order is Archimedean. Lean core has no $\mathbb R$. For $\mathbb R$, these four hypotheses are the standard properties of $\mathbb R$, and that instance is on paper.
+
+The file ends with one \texttt{\#print axioms} line for each of its 80 theorems. The generic theorems use no axioms. The $\mathbb Z$ and $\mathbb Z/4$ theorems use at most \texttt{propext} and \texttt{Quot.sound}. The $\mathbb Q$ instances also use \texttt{Classical.choice}, which they inherit from core's \texttt{Rat} library. The file was checked with Lean 4.35.0. The theorems present before this revision, none of them over $\mathbb Q$, were also checked with Lean 4.24.0; the additions were not.
+
+\paragraph{z3.} The script \texttt{computation/howard/axiom\_lattice.py} uses z3 \cite{z3} with an uninterpreted $\otimes$. It certifies an inconsistent subset by the unsatisfiability of finitely many ground instances of that subset's own rules. (\texttt{arith\_candidates.py} instead proves universal properties of concrete candidate operations, by unsatisfiability of their negations.) Nine cores are certified in this way:
+\begin{itemize}
+\item the five cores of Corollary~\ref{cor:lattice} that contain H1 and H2;
+\item $\{$H1,LD,INC$\}$, $\{$H1,RD,INC$\}$, $\{$H2,LD,INC$\}$ and $\{$H2,RD,INC$\}$. For example, H1 and LD force $1\otimes\tfrac14=\tfrac12<1$, and H2 and LD force $2\otimes\tfrac14=\tfrac12<2$.
+\end{itemize}
+These nine cores cover 46 of the 58 inconsistent subsets. The other 12 are the subsets of $\{$LD,RD,AS,CM,INC$\}$ that contain INC and LD or RD. They have no finite ground certificate. The set $\{$LD,RD,AS,CM,INC$\}$ has a model over the non-Archimedean real closed field $\mathbb R((t^{\mathbb Q}))$ (\texttt{formalization/howard/arithmetic.md}, A6). Every finite set of ground instances therefore holds there, and so, by Tarski's transfer principle, it is satisfiable over $\mathbb R$. These 12 rest on Theorem~\ref{thm:arch} alone, which is checked in Lean in generic form and for $\mathbb Q$. The 70 consistent subsets are certified by the five witnesses, whose properties z3 verifies universally.
 
 \section*{Prior remarks}
-The tension $2\otimes2=8$ versus $4$ was noted informally by Lipton and Regan (2018). The present derivation is independent of theirs.
+A search-result summary reports that a 2018 blog post by Lipton and Regan \cite{LR18} discusses the tension $2\otimes2=8$ versus $4$ and the operation $2ab$. We could not reach the post, so we attribute nothing to it. Our derivations do not depend on it.
+
+\begin{thebibliography}{99}
+\bibitem{RS15} \emph{Rolling Stone}, ``Terrence Howard's Dangerous Mind'' (profile), September 2015. Original not obtained; quoted from \cite{CBS15}.
+\bibitem{CBS15} CBS News, ``Terrence Howard challenges the times tables'', 15 September 2015. Read as archived verbatim in the WMT16 corpus file \texttt{newsdev2016.en}, lines 205--230.
+\bibitem{JRE2152} \emph{The Joe Rogan Experience} \#2152, ``Terrence Howard'', 18 May 2024. Read in a third-party machine transcript (GitHub \texttt{zreese/jre-excerpts}, commit \texttt{e4338df1}), not checked against the audio.
+\bibitem{JRE2171} \emph{The Joe Rogan Experience} \#2171, ``Eric Weinstein \& Terrence Howard'', 1 July 2024. Not obtained; known only from search-result summaries.
+\bibitem{OTOET} T.~Howard, \emph{One Times One Equals Two}, initial public draft (\texttt{tcotlc.com}), not later than 2019. Not obtained.
+\bibitem{LR18} R.~J.~Lipton and K.~W.~Regan, ``Does 1 Times 1 Equal 2?'', \emph{G\"odel's Lost Letter and P=NP} (blog), 22 May 2018. Not read; known to us only from a search-result summary.
+\bibitem{Aczel} J.~Acz\'el, \emph{Lectures on Functional Equations and Their Applications}, Academic Press, 1966 (Cauchy's equation, Ch.~2; the associativity equation, \S6.2).
+\bibitem{CP} R.~Craigen and Zs.~P\'ales, The associativity equation revisited, \emph{Aequationes Math.} 37 (1989), 306--312.
+\bibitem{Hamel} G.~Hamel, Eine Basis aller Zahlen und die unstetigen L\"osungen der Funktionalgleichung $f(x+y)=f(x)+f(y)$, \emph{Math.\ Ann.} 60 (1905), 459--462.
+\bibitem{Pilz} G.~Pilz, \emph{Near-Rings}, 2nd ed., North-Holland, 1983.
+\bibitem{Litvinov} G.~L.~Litvinov, Maslov dequantization, idempotent and tropical mathematics: a brief introduction, \emph{J.\ Math.\ Sci.} 140 (2007), 426--444.
+\bibitem{MS} D.~Maclagan and B.~Sturmfels, \emph{Introduction to Tropical Geometry}, Graduate Studies in Mathematics 161, AMS, 2015.
+\bibitem{Lean4} L.~de Moura and S.~Ullrich, The Lean 4 theorem prover and programming language, in \emph{CADE-28}, LNCS 12699, Springer, 2021, 625--635.
+\bibitem{z3} L.~de Moura and N.~Bj{\o}rner, Z3: an efficient SMT solver, in \emph{TACAS 2008}, LNCS 4963, Springer, 2008, 337--340.
+\end{thebibliography}
 
 \end{document}

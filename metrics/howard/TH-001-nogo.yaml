@@ -1,9 +1,9 @@
 claim_id: TH-001   # with TH-002 (H2 from "the square root of four is two")
-result: "No operation on Z, Q or R satisfies 1(x)1=2 and 2(x)2=4 together with {LD,RD}, {LD,AS}, {LD,CM}, {RD,AS} or {RD,CM}; hence no ring, semiring or (left/right) near-ring over ordinary + realises Howard's two data points. Sharp: Z/4 with a(x)b=2ab satisfies H1,H2,LD,RD."
-formalization_status: "Fully formal (Lean 4.24.0 core): nogo_generic (any additive magma, no axioms), nogo_int, nogo_int_ld_assoc, nogo_int_ld_comm, nogo_int_rd_assoc, char4_*"
+result: "In any additive magma, 1(x)1=2 and 2(x)2=4 together with {LD,RD}, {LD,AS}, {LD,CM}, {RD,AS} or {RD,CM} force 8=4. Hence no operation on N, Z, Q or R, or on any ring whose characteristic does not divide 4, satisfies these sets; no ring or semiring on these carriers over ordinary +, and no (left/right) near-ring on Z, Q or R, realises Howard's two data points. The characteristic condition is needed: Z/4 with a(x)b=2ab is a ring satisfying H1,H2,LD,RD (and AS, CM)."
+formalization_status: "Fully formal (Lean 4 core; 4.35.0, Z part also 4.24.0): nogo_generic and nogo_generic_{ld,rd}_{assoc,comm} (any additive magma, no axioms); nogo_int, nogo_int_{ld,rd}_{assoc,comm} (Z); nogo_rat, nogo_rat_{ld,rd}_{assoc,comm} (Q; Classical.choice inherited from core Rat); char4_*. R: the magma theorems plus 4+4 != 4 in R (paper step)."
 internal_consistency: "The source rule set {H1, H2} plus any one distributive law and AS or CM is inconsistent. {H1,H2} alone is consistent (witnesses a+b, 2b, 2a)."
-proof_status: "Proven (Lean; z3 UNSAT on ground instances, axiom_lattice.out). All 128 subsets of {H1,H2,LD,RD,AS,CM,INC} decided over R: 58 inconsistent, 70 consistent, 0 open."
-novelty: "Low. The 2(x)2=8 tension was noted by Lipton & Regan (2018, TH-S9). The complete axiom lattice, the one-sided cores and the Lean certificates are new as far as we know."
+proof_status: "Proven (Lean; z3 UNSAT on ground instances, axiom_lattice.out). All 128 subsets of the seven rules {H1,H2,LD,RD,AS,CM,INC} decided over R: 58 inconsistent (46 by z3 ground certificates, 12 by Thm A6 alone: Lean generic and Q, R on paper), 70 consistent (witnesses), 0 open. EFF and BAL are not in the lattice; adding BAL changes no verdict."
+novelty: "Low. A search-result summary reports that Lipton & Regan (2018, TH-S9) discussed the 2(x)2=8 tension; the post was not read and nothing is attributed to it. The complete axiom lattice, the one-sided cores and the Lean certificates are new as far as we know."
 reproducibility: "lean proofs/lean/howard/HowardArith.lean; python3 computation/howard/axiom_lattice.py"
 empirical_testability: n/a
 dependencies: [H2 inferred from RS 2015 wording (TH-G04), ordinary + on the carrier (TH-G02)]

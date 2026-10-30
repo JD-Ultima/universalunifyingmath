@@ -1,34 +1,52 @@
 z3 5.3.3
 
-Part 1: certified inconsistent cores (ground instances only)
+Part 1: z3 ground certificates (UNSAT of the subset's own ground instances)
    H1+H2+LD+RD        unsat
    H1+H2+LD+AS        unsat
    H1+H2+LD+CM        unsat
    H1+H2+RD+AS        unsat
    H1+H2+RD+CM        unsat
    H1+LD+INC          unsat
-  minimality: every proper subset of each core is satisfied by a witness:
-   H1+H2+LD+RD        minimal
-   H1+H2+LD+AS        minimal
-   H1+H2+LD+CM        minimal
-   H1+H2+RD+AS        minimal
-   H1+H2+RD+CM        minimal
-   H1+LD+INC          not minimal: LD+INC alone is inconsistent (Thm A6); H1 only shortens the certificate
+   H1+RD+INC          unsat
+   H2+LD+INC          unsat
+   H2+RD+INC          unsat
+  minimality (every proper subset satisfied by a witness):
+   H1+H2+LD+RD        z3                             minimal
+   H1+H2+LD+AS        z3                             minimal
+   H1+H2+LD+CM        z3                             minimal
+   H1+H2+RD+AS        z3                             minimal
+   H1+H2+RD+CM        z3                             minimal
+   H1+LD+INC          z3                             not minimal: contains the Archimedean core LD+INC (Thm A6); H1 makes it finitely certifiable
+   H1+RD+INC          z3                             not minimal: contains the Archimedean core RD+INC (Thm A6); H1 makes it finitely certifiable
+   H2+LD+INC          z3                             not minimal: contains the Archimedean core LD+INC (Thm A6); H2 makes it finitely certifiable
+   H2+RD+INC          z3                             not minimal: contains the Archimedean core RD+INC (Thm A6); H2 makes it finitely certifiable
+   LD+INC             A6 (Lean generic; Q instance)  minimal
+   RD+INC             A6 (Lean generic; Q instance)  minimal
   witness a(x)b = 2a satisfies RD, H1, H2 (z3): True
 
 Part 2: all 2^7 = 128 subsets of ['H1', 'H2', 'LD', 'RD', 'AS', 'CM', 'INC']
-  inconsistent: 29
+  inconsistent: 58  (z3 ground certificate: 46; Archimedean Thm A6 only: 12)
   consistent: 70
-  open: 29
-  maximal consistent subsets found:
+  open: 0
+  subsets certified by A6 only:
+     [('LD', 'INC'), ('RD', 'INC'), ('LD', 'RD', 'INC'), ('LD', 'AS', 'INC'), ('LD', 'CM', 'INC'), ('RD', 'AS', 'INC'), ('RD', 'CM', 'INC'), ('LD', 'RD', 'AS', 'INC'), ('LD', 'RD', 'CM', 'INC'), ('LD', 'AS', 'CM', 'INC'), ('RD', 'AS', 'CM', 'INC'), ('LD', 'RD', 'AS', 'CM', 'INC')]
+  check: A6-only subsets = subsets of {LD,RD,AS,CM,INC} containing INC and LD or RD: True
+  maximal consistent subsets:
      ['H1', 'H2', 'LD']
      ['H1', 'H2', 'RD']
      ['H1', 'H2', 'AS', 'CM', 'INC']
      ['H1', 'LD', 'RD', 'AS', 'CM']
      ['H2', 'LD', 'RD', 'AS', 'CM']
-  open subsets: [('LD', 'INC'), ('RD', 'INC'), ('H1', 'RD', 'INC'), ('H2', 'LD', 'INC'), ('H2', 'RD', 'INC'), ('LD', 'RD', 'INC'), ('LD', 'AS', 'INC'), ('LD', 'CM', 'INC'), ('RD', 'AS', 'INC'), ('RD', 'CM', 'INC'), ('H1', 'H2', 'RD', 'INC'), ('H1', 'RD', 'AS', 'INC'), ('H1', 'RD', 'CM', 'INC'), ('H2', 'LD', 'RD', 'INC'), ('H2', 'LD', 'AS', 'INC'), ('H2', 'LD', 'CM', 'INC'), ('H2', 'RD', 'AS', 'INC'), ('H2', 'RD', 'CM', 'INC'), ('LD', 'RD', 'AS', 'INC'), ('LD', 'RD', 'CM', 'INC'), ('LD', 'AS', 'CM', 'INC'), ('RD', 'AS', 'CM', 'INC'), ('H1', 'RD', 'AS', 'CM', 'INC'), ('H2', 'LD', 'RD', 'AS', 'INC'), ('H2', 'LD', 'RD', 'CM', 'INC'), ('H2', 'LD', 'AS', 'CM', 'INC'), ('H2', 'RD', 'AS', 'CM', 'INC'), ('LD', 'RD', 'AS', 'CM', 'INC'), ('H2', 'LD', 'RD', 'AS', 'CM', 'INC')]
-  adding the paper cores LD+INC, RD+INC (Thm A6): {'inconsistent': 58, 'consistent': 70, 'open': 0}
-  every previously open subset contains LD+INC or RD+INC: True
+  maximal consistent = maximal core-free: True
+  sanity: ground instances of each maximal consistent set are SAT (z3): ['sat', 'sat', 'sat', 'sat', 'sat']
+
+Part 2b: BAL added as an eighth rule (2^8 = 256 subsets)
+   H1+LD+BAL          unsat
+   H1+RD+BAL          unsat
+   H2+LD+BAL          unsat
+   H2+RD+BAL          unsat
+  inconsistent: 154 (z3: 118; A6 only: 36); consistent: 102; open: 0
+  every subset has the verdict of the subset with BAL replaced by INC: True
 
 Part 3: bi-additive a(x)b = k*a*b on Z/n with H1 and H2, n <= 12  -> (n, k, 2 != 0 in Z/n)
    [(1, 0, False), (2, 0, False), (4, 2, True)]

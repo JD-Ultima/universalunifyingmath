@@ -1,11 +1,80 @@
-'Howard.nogo_int' depends on axioms: [propext, Quot.sound]
+'Howard.std_one_mul_one' does not depend on any axioms
+'Howard.std_peano' does not depend on any axioms
+'Howard.identity_idempotent' does not depend on any axioms
+'Howard.h1_not_left_identity' depends on axioms: [propext, Quot.sound]
+'Howard.h1_not_right_identity' depends on axioms: [propext, Quot.sound]
+'Howard.two_two_eq_eight' does not depend on any axioms
 'Howard.nogo_generic' does not depend on any axioms
+'Howard.nogo_int' depends on axioms: [propext, Quot.sound]
+'Howard.char4_h1' depends on axioms: [propext]
+'Howard.char4_h2' depends on axioms: [propext]
+'Howard.char4_ld' depends on axioms: [propext]
+'Howard.char4_rd' depends on axioms: [propext]
 'Howard.nogo_int_ld_assoc' depends on axioms: [propext, Quot.sound]
+'Howard.nogo_int_ld_comm' depends on axioms: [propext, Quot.sound]
+'Howard.nogo_int_rd_assoc' depends on axioms: [propext, Quot.sound]
 'Howard.nogo_int_rd_comm' depends on axioms: [propext, Quot.sound]
+'Howard.nogo_generic_ld_assoc' does not depend on any axioms
+'Howard.nogo_generic_ld_comm' does not depend on any axioms
+'Howard.nogo_generic_rd_assoc' does not depend on any axioms
+'Howard.nogo_generic_rd_comm' does not depend on any axioms
+'Howard.rat_one_add_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.rat_two_add_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.rat_eight_ne_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.rat_eight_ne_four'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.nogo_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.nogo_rat_ld_assoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.nogo_rat_ld_comm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.nogo_rat_rd_assoc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.nogo_rat_rd_comm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.right_additive_linear' depends on axioms: [propext, Quot.sound]
+'Howard.left_additive_linear' depends on axioms: [propext, Quot.sound]
 'Howard.biadditive_classification' depends on axioms: [propext, Quot.sound]
 'Howard.forced_two_ab' depends on axioms: [propext, Quot.sound]
+'Howard.op2_h1' does not depend on any axioms
+'Howard.op2_not_h2' does not depend on any axioms
+'Howard.op2_ld' depends on axioms: [propext]
+'Howard.op2_rd' depends on axioms: [propext]
+'Howard.op2_comm' depends on axioms: [propext]
 'Howard.op2_assoc' depends on axioms: [propext]
+'Howard.phi_add' depends on axioms: [propext, Quot.sound]
+'Howard.phi_mul' depends on axioms: [propext]
+'Howard.phi_inj' depends on axioms: [propext, Quot.sound]
+'Howard.phi_image' depends on axioms: [propext, Quot.sound]
+'Howard.op2_no_identity' depends on axioms: [propext, Quot.sound]
 'Howard.op2_idempotent' depends on axioms: [propext, Quot.sound]
+'Howard.op2_increasing' depends on axioms: [propext, Quot.sound]
 'Howard.op2_ge_add' depends on axioms: [propext, Quot.sound]
-'Howard.char4_ld' depends on axioms: [propext]
+'Howard.opAdd_h1' does not depend on any axioms
+'Howard.opAdd_h2' does not depend on any axioms
+'Howard.opAdd_assoc' depends on axioms: [propext, Quot.sound]
+'Howard.opAdd_comm' depends on axioms: [propext, Quot.sound]
+'Howard.opAdd_not_ld' does not depend on any axioms
+'Howard.opAdd_ld_fails_everywhere' depends on axioms: [propext, Quot.sound]
+'Howard.opLeft_h1' does not depend on any axioms
+'Howard.opLeft_h2' does not depend on any axioms
+'Howard.opLeft_ld' depends on axioms: [propext, Quot.sound]
+'Howard.opLeft_not_rd' does not depend on any axioms
+'Howard.opLeft_not_comm' does not depend on any axioms
+'Howard.opLeft_not_assoc' does not depend on any axioms
+'Howard.tropical_ld' depends on axioms: [propext, Quot.sound]
+'Howard.tropical_idempotent_add' does not depend on any axioms
+'Howard.nsm_pos' does not depend on any axioms
+'Howard.nsm_mono' does not depend on any axioms
+'Howard.ld_nsm' does not depend on any axioms
+'Howard.archimedean_ld_generic' does not depend on any axioms
+'Howard.archimedean_rd_generic' does not depend on any axioms
+'Howard.rat_lt_of_lt_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.rat_natCast_one' depends on axioms: [propext, Quot.sound]
+'Howard.rat_nsm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.rat_pos_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.rat_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.rat_succ_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.rat_div' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.rat_arch' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.archimedean_ld_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.archimedean_rd_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.core_ld_inc_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.core_rd_inc_rat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Howard.pentagon_faces_ge_12' depends on axioms: [propext, Quot.sound]
 'Howard.no_six_pentagon_sphere' depends on axioms: [propext, Quot.sound]

@@ -1,8 +1,14 @@
 /-
   HowardArith.lean — core lemmas for the "1 ⊗ 1 = 2" reconstructions (claims TH-001, TH-002).
-  Lean 4 core only (no Mathlib, no imports). Checked with Lean 4.24.0 and 4.35.0 (identical output):
+  Lean 4 core only (no Mathlib, no imports). Checked with Lean 4.35.0 (exit 0, output = HowardArith.lean.out):
       lean proofs/lean/howard/HowardArith.lean
-  Write-up: formalization/howard/arithmetic.md (theorem numbers A1–A9 refer to it).
+  The ℤ part (everything except the sections marked "added 2026-10-30") was also checked with Lean 4.24.0.
+  The added sections (generic one-sided no-go, ℚ instances, A6) were checked with 4.35.0 only.
+  Write-up: formalization/howard/arithmetic.md (theorem numbers A0–A7 refer to it).
+
+  Axioms (full audit at the end of the file): every ℤ / Fin 4 / generic theorem uses at most
+  `propext` and `Quot.sound`. The ℚ instances also use `Classical.choice`, inherited from core's own
+  `Rat` order and cast lemmas (e.g. `Rat.le_trans`, `Rat.natCast_add` depend on it).
 
   Notation. `op` is a candidate operation ⊗. H1 : op 1 1 = 2.  H2 : op 2 2 = 4.
   LD (left distributivity):  op a (b + c) = op a b + op a c.
@@ -102,6 +108,120 @@ theorem nogo_int_rd_comm (op : Int → Int → Int)
   have e1 : op 2 2 = op 1 2 + op 1 2 := by have := hr 1 1 2; simpa using this
   have e2 : op 2 1 = op 1 1 + op 1 1 := by have := hr 1 1 1; simpa using this
   omega
+
+/-! ### A1/A2, generic and over ℚ (added 2026-10-30).
+   The one-sided cores hold in any magma `(α, add)`: each forces 8̄ = 4̄, where 2̄ = 1+1, 4̄ = 2̄+2̄,
+   8̄ = 4̄+4̄. Hence they are inconsistent wherever 4̄ + 4̄ ≠ 4̄ (e.g. any cancellative monoid with
+   4̄ ≠ 0: ℕ, ℤ, ℚ, ℝ, rings of characteristic not dividing 4). ℤ/4 (`char4_*`) shows this is sharp. -/
+
+theorem nogo_generic_ld_assoc {α : Type} (add op : α → α → α) (one : α)
+    (hl : ∀ a b c, op a (add b c) = add (op a b) (op a c))
+    (hassoc : op (op one one) one = op one (op one one))
+    (h1 : op one one = add one one)
+    (h2 : op (add one one) (add one one) = add (add one one) (add one one)) :
+    add (add (add one one) (add one one)) (add (add one one) (add one one))
+      = add (add one one) (add one one) := by
+  have e1 : op one (add one one) = add (add one one) (add one one) := by rw [hl, h1]
+  have e2 : op (add one one) one = add (add one one) (add one one) := by
+    rw [h1] at hassoc; rw [hassoc, e1]
+  calc _ = add (op (add one one) one) (op (add one one) one) := by rw [e2]
+    _ = op (add one one) (add one one) := (hl _ _ _).symm
+    _ = _ := h2
+
+theorem nogo_generic_ld_comm {α : Type} (add op : α → α → α) (one : α)
+    (hl : ∀ a b c, op a (add b c) = add (op a b) (op a c))
+    (hcomm : op (add one one) one = op one (add one one))
+    (h1 : op one one = add one one)
+    (h2 : op (add one one) (add one one) = add (add one one) (add one one)) :
+    add (add (add one one) (add one one)) (add (add one one) (add one one))
+      = add (add one one) (add one one) := by
+  have e1 : op one (add one one) = add (add one one) (add one one) := by rw [hl, h1]
+  have e2 : op (add one one) one = add (add one one) (add one one) := by rw [hcomm, e1]
+  calc _ = add (op (add one one) one) (op (add one one) one) := by rw [e2]
+    _ = op (add one one) (add one one) := (hl _ _ _).symm
+    _ = _ := h2
+
+theorem nogo_generic_rd_assoc {α : Type} (add op : α → α → α) (one : α)
+    (hr : ∀ a b c, op (add a b) c = add (op a c) (op b c))
+    (hassoc : op (op one one) one = op one (op one one))
+    (h1 : op one one = add one one)
+    (h2 : op (add one one) (add one one) = add (add one one) (add one one)) :
+    add (add (add one one) (add one one)) (add (add one one) (add one one))
+      = add (add one one) (add one one) := by
+  have e1 : op (add one one) one = add (add one one) (add one one) := by rw [hr, h1]
+  have e2 : op one (add one one) = add (add one one) (add one one) := by
+    rw [h1] at hassoc; rw [← hassoc, e1]
+  calc _ = add (op one (add one one)) (op one (add one one)) := by rw [e2]
+    _ = op (add one one) (add one one) := (hr _ _ _).symm
+    _ = _ := h2
+
+theorem nogo_generic_rd_comm {α : Type} (add op : α → α → α) (one : α)
+    (hr : ∀ a b c, op (add a b) c = add (op a c) (op b c))
+    (hcomm : op (add one one) one = op one (add one one))
+    (h1 : op one one = add one one)
+    (h2 : op (add one one) (add one one) = add (add one one) (add one one)) :
+    add (add (add one one) (add one one)) (add (add one one) (add one one))
+      = add (add one one) (add one one) := by
+  have e1 : op (add one one) one = add (add one one) (add one one) := by rw [hr, h1]
+  have e2 : op one (add one one) = add (add one one) (add one one) := by rw [← hcomm, e1]
+  calc _ = add (op one (add one one)) (op one (add one one)) := by rw [e2]
+    _ = op (add one one) (add one one) := (hr _ _ _).symm
+    _ = _ := h2
+
+/-- Numerals in core `Rat`. -/
+theorem rat_one_add_one : (1 + 1 : Rat) = 2 := by
+  rw [show (1 : Rat) = ((1 : Nat) : Rat) from rfl, ← Rat.natCast_add]; rfl
+theorem rat_two_add_two : (2 + 2 : Rat) = 4 := by
+  rw [show (2 : Rat) = ((2 : Nat) : Rat) from rfl, ← Rat.natCast_add]; rfl
+theorem rat_eight_ne_four : (4 + 4 : Rat) ≠ 4 := by
+  rw [show (4 : Rat) = ((4 : Nat) : Rat) from rfl, ← Rat.natCast_add]
+  intro h; exact absurd (Rat.natCast_inj.mp h) (by decide)
+theorem rat_eight_ne_four' : ((1 + 1) + (1 + 1)) + ((1 + 1) + (1 + 1)) ≠ ((1 + 1) + (1 + 1) : Rat) := by
+  rw [rat_one_add_one, rat_two_add_two]; exact rat_eight_ne_four
+
+/-- A1 over ℚ. -/
+theorem nogo_rat (op : Rat → Rat → Rat)
+    (hl : ∀ a b c, op a (b + c) = op a b + op a c)
+    (hr : ∀ a b c, op (a + b) c = op a c + op b c)
+    (h1 : op 1 1 = 2) (h2 : op 2 2 = 4) : False :=
+  rat_eight_ne_four' (nogo_generic (· + ·) op 1 hl hr
+    (by show op 1 1 = 1 + 1; rw [rat_one_add_one]; exact h1)
+    (by show op (1 + 1) (1 + 1) = (1 + 1) + (1 + 1); rw [rat_one_add_one, rat_two_add_two]; exact h2))
+
+/-- A2 over ℚ (the four one-sided cores). -/
+theorem nogo_rat_ld_assoc (op : Rat → Rat → Rat)
+    (hl : ∀ a b c, op a (b + c) = op a b + op a c)
+    (hassoc : op (op 1 1) 1 = op 1 (op 1 1))
+    (h1 : op 1 1 = 2) (h2 : op 2 2 = 4) : False :=
+  rat_eight_ne_four' (nogo_generic_ld_assoc (· + ·) op 1 hl hassoc
+    (by show op 1 1 = 1 + 1; rw [rat_one_add_one]; exact h1)
+    (by show op (1 + 1) (1 + 1) = (1 + 1) + (1 + 1); rw [rat_one_add_one, rat_two_add_two]; exact h2))
+
+theorem nogo_rat_ld_comm (op : Rat → Rat → Rat)
+    (hl : ∀ a b c, op a (b + c) = op a b + op a c)
+    (hcomm : op 2 1 = op 1 2)
+    (h1 : op 1 1 = 2) (h2 : op 2 2 = 4) : False :=
+  rat_eight_ne_four' (nogo_generic_ld_comm (· + ·) op 1 hl
+    (by show op (1 + 1) 1 = op 1 (1 + 1); rw [rat_one_add_one]; exact hcomm)
+    (by show op 1 1 = 1 + 1; rw [rat_one_add_one]; exact h1)
+    (by show op (1 + 1) (1 + 1) = (1 + 1) + (1 + 1); rw [rat_one_add_one, rat_two_add_two]; exact h2))
+
+theorem nogo_rat_rd_assoc (op : Rat → Rat → Rat)
+    (hr : ∀ a b c, op (a + b) c = op a c + op b c)
+    (hassoc : op (op 1 1) 1 = op 1 (op 1 1))
+    (h1 : op 1 1 = 2) (h2 : op 2 2 = 4) : False :=
+  rat_eight_ne_four' (nogo_generic_rd_assoc (· + ·) op 1 hr hassoc
+    (by show op 1 1 = 1 + 1; rw [rat_one_add_one]; exact h1)
+    (by show op (1 + 1) (1 + 1) = (1 + 1) + (1 + 1); rw [rat_one_add_one, rat_two_add_two]; exact h2))
+
+theorem nogo_rat_rd_comm (op : Rat → Rat → Rat)
+    (hr : ∀ a b c, op (a + b) c = op a c + op b c)
+    (hcomm : op 2 1 = op 1 2)
+    (h1 : op 1 1 = 2) (h2 : op 2 2 = 4) : False :=
+  rat_eight_ne_four' (nogo_generic_rd_comm (· + ·) op 1 hr
+    (by show op (1 + 1) 1 = op 1 (1 + 1); rw [rat_one_add_one]; exact hcomm)
+    (by show op 1 1 = 1 + 1; rw [rat_one_add_one]; exact h1)
+    (by show op (1 + 1) (1 + 1) = (1 + 1) + (1 + 1); rw [rat_one_add_one, rat_two_add_two]; exact h2))
 
 /-! ### A3. Classification on ℤ: every bi-additive ⊗ is a ⊗ b = a·b·(1 ⊗ 1). -/
 
@@ -206,7 +326,7 @@ theorem op2_ge_add (a b : Int) (ha : 1 ≤ a) (hb : 1 ≤ b) : a + b ≤ op2 a b
   rw [Int.sub_mul, Int.mul_sub, Int.mul_sub, Int.one_mul, Int.mul_one, Int.one_mul] at h2
   omega
 
-/-! ### A5. Witnesses for the consistent axiom subsets (each fails exactly where stated). -/
+/-! ### Witnesses for the consistent axiom subsets (each fails exactly where stated). -/
 
 /-- ⊗ = + : H1, H2, associative, commutative; not left-distributive. -/
 def opAdd (a b : Int) : Int := a + b
@@ -233,6 +353,143 @@ theorem opLeft_not_assoc : opLeft (opLeft 1 1) 1 ≠ opLeft 1 (opLeft 1 1) := by
 theorem tropical_ld (a b c : Int) : a + max b c = max (a + b) (a + c) := by omega
 theorem tropical_idempotent_add : max (1 : Int) 1 = 1 := by decide
 
+/-! ### A6. Archimedean no-go (added 2026-10-30): one distributive law + "multiplication makes more".
+   Generic form: a carrier `α` with `add`, a relation `le` and a predicate `pos` such that positives are
+   closed under `add`, `add` is monotone for `le`, every positive element has positive (n+1)-th parts,
+   and `le` is Archimedean on positives. Then no `op` satisfies LD (needed only at positive right
+   arguments) together with `le a (op a b)` for all positive a, b; mirror for RD and `le b (op a b)`.
+   The generic theorems use no axioms. ℚ (core `Rat`) is instantiated below; ℝ satisfies the same four
+   hypotheses (ordered field + Archimedean property), but ℝ is not in Lean core, so that instance is
+   on paper. The positive-only hypotheses also cover the carriers ℚ_{>0}, ℝ_{>0}. -/
+
+/-- `nsm add n x` is the (n+1)-fold sum `x + x + ⋯ + x` (left-nested). -/
+def nsm {α : Type} (add : α → α → α) : Nat → α → α
+  | 0, x => x
+  | n + 1, x => add (nsm add n x) x
+
+theorem nsm_pos {α : Type} (add : α → α → α) (pos : α → Prop)
+    (hpa : ∀ x y, pos x → pos y → pos (add x y)) (x : α) (hx : pos x) :
+    ∀ n, pos (nsm add n x)
+  | 0 => hx
+  | n + 1 => hpa _ _ (nsm_pos add pos hpa x hx n) hx
+
+theorem nsm_mono {α : Type} (add : α → α → α) (le : α → α → Prop)
+    (hmono : ∀ x y x' y', le x y → le x' y' → le (add x x') (add y y'))
+    (x y : α) (h : le x y) : ∀ n, le (nsm add n x) (nsm add n y)
+  | 0 => h
+  | n + 1 => hmono _ _ _ _ (nsm_mono add le hmono x y h n) h
+
+/-- LD (needed only at positive arguments) commutes with (n+1)-fold sums in the right slot. -/
+theorem ld_nsm {α : Type} (add : α → α → α) (pos : α → Prop) (op : α → α → α)
+    (hpa : ∀ x y, pos x → pos y → pos (add x y))
+    (hl : ∀ a b c, pos b → pos c → op a (add b c) = add (op a b) (op a c))
+    (a t : α) (ht : pos t) : ∀ n, op a (nsm add n t) = nsm add n (op a t)
+  | 0 => rfl
+  | n + 1 => by
+      show op a (add (nsm add n t) t) = add (nsm add n (op a t)) (op a t)
+      rw [hl a _ _ (nsm_pos add pos hpa t ht n) ht, ld_nsm add pos op hpa hl a t ht n]
+
+theorem archimedean_ld_generic {α : Type} (add : α → α → α) (le : α → α → Prop) (pos : α → Prop)
+    (hpa : ∀ x y, pos x → pos y → pos (add x y))
+    (hmono : ∀ x y x' y', le x y → le x' y' → le (add x x') (add y y'))
+    (hdiv : ∀ n x, pos x → ∃ y, pos y ∧ nsm add n y = x)
+    (harch : ∀ x z, pos x → ∃ n, ¬ le (nsm add n x) z)
+    (p : α) (hp : pos p) (op : α → α → α)
+    (hl : ∀ a b c, pos b → pos c → op a (add b c) = add (op a b) (op a c))
+    (hge : ∀ a b, pos a → pos b → le a (op a b)) : False := by
+  obtain ⟨n, hn⟩ := harch p (op p p) hp
+  obtain ⟨y, hy, hny⟩ := hdiv n p hp
+  apply hn
+  have e : op p p = nsm add n (op p y) := by
+    have h := ld_nsm add pos op hpa hl p y hy n
+    rw [hny] at h
+    exact h
+  rw [e]
+  exact nsm_mono add le hmono _ _ (hge p y hp hy) n
+
+theorem archimedean_rd_generic {α : Type} (add : α → α → α) (le : α → α → Prop) (pos : α → Prop)
+    (hpa : ∀ x y, pos x → pos y → pos (add x y))
+    (hmono : ∀ x y x' y', le x y → le x' y' → le (add x x') (add y y'))
+    (hdiv : ∀ n x, pos x → ∃ y, pos y ∧ nsm add n y = x)
+    (harch : ∀ x z, pos x → ∃ n, ¬ le (nsm add n x) z)
+    (p : α) (hp : pos p) (op : α → α → α)
+    (hr : ∀ a b c, pos a → pos b → op (add a b) c = add (op a c) (op b c))
+    (hge : ∀ a b, pos a → pos b → le b (op a b)) : False :=
+  archimedean_ld_generic add le pos hpa hmono hdiv harch p hp (fun x y => op y x)
+    (fun a b c hb hc => hr b c a hb hc) (fun a b ha hb => hge b a hb ha)
+
+/-! Instance ℚ (core `Rat`). -/
+
+theorem rat_lt_of_lt_of_le {a b c : Rat} (h1 : a < b) (h2 : b ≤ c) : a < c :=
+  Rat.not_le.mp fun h3 => Rat.not_le.mpr h1 (Rat.le_trans h2 h3)
+
+theorem rat_natCast_one : ((1 : Nat) : Rat) = 1 := rfl
+
+theorem rat_nsm (x : Rat) : ∀ n, nsm (· + ·) n x = ((n + 1 : Nat) : Rat) * x
+  | 0 => by
+      show x = ((0 + 1 : Nat) : Rat) * x
+      rw [Nat.zero_add, rat_natCast_one, Rat.one_mul]
+  | n + 1 => by
+      show nsm (· + ·) n x + x = ((n + 1 + 1 : Nat) : Rat) * x
+      rw [rat_nsm x n, Rat.natCast_add (n + 1) 1, Rat.add_mul, rat_natCast_one, Rat.one_mul]
+
+theorem rat_pos_add (x y : Rat) (hx : 0 < x) (hy : 0 < y) : 0 < x + y := by
+  have h : 0 + y < x + y := Rat.add_lt_add_right.mpr hx
+  rw [Rat.zero_add] at h
+  exact rat_lt_of_lt_of_le hy (Rat.le_of_lt h)
+
+theorem rat_mono (x y x' y' : Rat) (h : x ≤ y) (h' : x' ≤ y') : x + x' ≤ y + y' :=
+  Rat.le_trans (Rat.add_le_add_right.mpr h) (Rat.add_le_add_left.mpr h')
+
+theorem rat_succ_pos (n : Nat) : (0 : Rat) < ((n + 1 : Nat) : Rat) :=
+  Rat.natCast_pos.mpr (Nat.succ_pos n)
+
+theorem rat_div (n : Nat) (x : Rat) (hx : 0 < x) :
+    ∃ y : Rat, 0 < y ∧ nsm (· + ·) n y = x := by
+  have hc := rat_succ_pos n
+  have hc0 : ((n + 1 : Nat) : Rat) ≠ 0 := fun h => Rat.lt_irrefl (h ▸ hc)
+  refine ⟨x / ((n + 1 : Nat) : Rat), ?_, ?_⟩
+  · apply (Rat.lt_div_iff hc).mpr
+    rw [Rat.zero_mul]; exact hx
+  · rw [rat_nsm, Rat.mul_comm, Rat.div_mul_cancel hc0]
+
+theorem rat_arch (x z : Rat) (hx : 0 < x) :
+    ∃ n, ¬ nsm (· + ·) n x ≤ z := by
+  refine ⟨(z / x).floor.toNat, ?_⟩
+  rw [rat_nsm]
+  apply Rat.not_le.mpr
+  apply (Rat.div_lt_iff hx).mp
+  apply rat_lt_of_lt_of_le (Rat.lt_floor_add_one (z / x))
+  rw [← Rat.intCast_natCast]
+  apply Rat.intCast_le_intCast.mpr
+  omega
+
+/-- A6 over ℚ: no ⊗ satisfies LD (at positive arguments) and a ⊗ b ≥ a for all positive a, b. -/
+theorem archimedean_ld_rat (op : Rat → Rat → Rat)
+    (hl : ∀ a b c, 0 < b → 0 < c → op a (b + c) = op a b + op a c)
+    (hge : ∀ a b, 0 < a → 0 < b → a ≤ op a b) : False :=
+  archimedean_ld_generic (· + ·) (· ≤ ·) (0 < ·) rat_pos_add rat_mono rat_div rat_arch
+    1 (Rat.natCast_pos.mpr Nat.one_pos) op hl hge
+
+theorem archimedean_rd_rat (op : Rat → Rat → Rat)
+    (hr : ∀ a b c, 0 < a → 0 < b → op (a + b) c = op a c + op b c)
+    (hge : ∀ a b, 0 < a → 0 < b → b ≤ op a b) : False :=
+  archimedean_rd_generic (· + ·) (· ≤ ·) (0 < ·) rat_pos_add rat_mono rat_div rat_arch
+    1 (Rat.natCast_pos.mpr Nat.one_pos) op hr hge
+
+/-- Lattice core {LD, INC} over ℚ, with INC : a ⊗ b > max(a, b) for positive a, b. -/
+theorem core_ld_inc_rat (op : Rat → Rat → Rat)
+    (hl : ∀ a b c, op a (b + c) = op a b + op a c)
+    (hinc : ∀ a b, 0 < a → 0 < b → a < op a b ∧ b < op a b) : False :=
+  archimedean_ld_rat op (fun a b c _ _ => hl a b c)
+    (fun a b ha hb => Rat.le_of_lt (hinc a b ha hb).1)
+
+theorem core_rd_inc_rat (op : Rat → Rat → Rat)
+    (hr : ∀ a b c, op (a + b) c = op a c + op b c)
+    (hinc : ∀ a b, 0 < a → 0 < b → a < op a b ∧ b < op a b) : False :=
+  archimedean_rd_rat op (fun a b c _ _ => hr a b c)
+    (fun a b ha hb => Rat.le_of_lt (hinc a b ha hb).2)
+
 /-! ### G1. Euler bound used for the Lynchpin (claim TH-020):
    a polyhedral 2-sphere whose faces are all pentagons and whose vertices all have degree ≥ 3
    has at least 12 faces; in particular six pentagonal faces are impossible. -/
@@ -247,15 +504,86 @@ theorem no_six_pentagon_sphere (V E : Int)
 
 end Howard
 
--- Axiom audit: every theorem should depend on at most propext / Quot.sound / Classical.choice.
-#print axioms Howard.nogo_int
+-- Full axiom audit (added 2026-10-30): one `#print axioms` line for each of the file's
+-- 80 theorems, in file order. Expected: at most propext / Quot.sound, plus Classical.choice
+-- for the ℚ instances (inherited from core `Rat`); never sorryAx.
+#print axioms Howard.std_one_mul_one
+#print axioms Howard.std_peano
+#print axioms Howard.identity_idempotent
+#print axioms Howard.h1_not_left_identity
+#print axioms Howard.h1_not_right_identity
+#print axioms Howard.two_two_eq_eight
 #print axioms Howard.nogo_generic
+#print axioms Howard.nogo_int
+#print axioms Howard.char4_h1
+#print axioms Howard.char4_h2
+#print axioms Howard.char4_ld
+#print axioms Howard.char4_rd
 #print axioms Howard.nogo_int_ld_assoc
+#print axioms Howard.nogo_int_ld_comm
+#print axioms Howard.nogo_int_rd_assoc
 #print axioms Howard.nogo_int_rd_comm
+#print axioms Howard.nogo_generic_ld_assoc
+#print axioms Howard.nogo_generic_ld_comm
+#print axioms Howard.nogo_generic_rd_assoc
+#print axioms Howard.nogo_generic_rd_comm
+#print axioms Howard.rat_one_add_one
+#print axioms Howard.rat_two_add_two
+#print axioms Howard.rat_eight_ne_four
+#print axioms Howard.rat_eight_ne_four'
+#print axioms Howard.nogo_rat
+#print axioms Howard.nogo_rat_ld_assoc
+#print axioms Howard.nogo_rat_ld_comm
+#print axioms Howard.nogo_rat_rd_assoc
+#print axioms Howard.nogo_rat_rd_comm
+#print axioms Howard.right_additive_linear
+#print axioms Howard.left_additive_linear
 #print axioms Howard.biadditive_classification
 #print axioms Howard.forced_two_ab
+#print axioms Howard.op2_h1
+#print axioms Howard.op2_not_h2
+#print axioms Howard.op2_ld
+#print axioms Howard.op2_rd
+#print axioms Howard.op2_comm
 #print axioms Howard.op2_assoc
+#print axioms Howard.phi_add
+#print axioms Howard.phi_mul
+#print axioms Howard.phi_inj
+#print axioms Howard.phi_image
+#print axioms Howard.op2_no_identity
 #print axioms Howard.op2_idempotent
+#print axioms Howard.op2_increasing
 #print axioms Howard.op2_ge_add
-#print axioms Howard.char4_ld
+#print axioms Howard.opAdd_h1
+#print axioms Howard.opAdd_h2
+#print axioms Howard.opAdd_assoc
+#print axioms Howard.opAdd_comm
+#print axioms Howard.opAdd_not_ld
+#print axioms Howard.opAdd_ld_fails_everywhere
+#print axioms Howard.opLeft_h1
+#print axioms Howard.opLeft_h2
+#print axioms Howard.opLeft_ld
+#print axioms Howard.opLeft_not_rd
+#print axioms Howard.opLeft_not_comm
+#print axioms Howard.opLeft_not_assoc
+#print axioms Howard.tropical_ld
+#print axioms Howard.tropical_idempotent_add
+#print axioms Howard.nsm_pos
+#print axioms Howard.nsm_mono
+#print axioms Howard.ld_nsm
+#print axioms Howard.archimedean_ld_generic
+#print axioms Howard.archimedean_rd_generic
+#print axioms Howard.rat_lt_of_lt_of_le
+#print axioms Howard.rat_natCast_one
+#print axioms Howard.rat_nsm
+#print axioms Howard.rat_pos_add
+#print axioms Howard.rat_mono
+#print axioms Howard.rat_succ_pos
+#print axioms Howard.rat_div
+#print axioms Howard.rat_arch
+#print axioms Howard.archimedean_ld_rat
+#print axioms Howard.archimedean_rd_rat
+#print axioms Howard.core_ld_inc_rat
+#print axioms Howard.core_rd_inc_rat
+#print axioms Howard.pentagon_faces_ge_12
 #print axioms Howard.no_six_pentagon_sphere
