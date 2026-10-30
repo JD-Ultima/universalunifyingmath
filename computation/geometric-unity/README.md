@@ -11,6 +11,7 @@ No script reads the source PDF; inputs are transcribed in the code with section/
 | `clifford77.py` | Explicit real $\mathrm{Cl}(7,7)$ on $\mathbb R^{128}$; Majorana–Weyl; invariant forms; grade rules for $\mathfrak{so}(64,64)$, $\mathfrak u(64,64)$; complex structure and commutant on $S^+_\mathbb R$ | GU-016…020 | exact except one SVD (tolerance printed) | ~25 s | `clifford77.out` |
 | `gauge_group_identities.py` | Inhomogeneous gauge group $\mathcal G=\mathcal H\ltimes\mathcal N$: group law, actions, $\tau$, stabiliser, $\pi$, $\mu$, augmented torsion (draft Secs. 5–7); sign repair | GU-034…044 | exact (sympy polynomial identities) | ~65 s | `gauge_group_identities.out` |
 | `xcheck_dewitt.py` | Independent coordinator cross-check of the fiber/chimeric signature tables | GU-010…015 | numerical (eigvalsh, tol $10^{-9}$) | <1 s | `xcheck_dewitt.out` |
+| `xcheck_144.py` | Independent coordinator cross-check: SM content of $144_\pm$ via explicit Cl(10) and Casimirs | GU-058…065 | numerical (eigh, tol $10^{-9}$) | ~2 s | `xcheck_144.out` |
 | `register_stats.py` | Counts of claim types/statuses and gaps quoted in the report | — | exact | <1 s | `register_stats.out` |
 | `shiab_checks.py` | Shiab operator family in $d=14$, $\mathfrak u(64,64)\subset \mathrm{Cl}(7,7)\otimes\mathbb C$: degrees, Einstein contraction, Weyl annihilation, tilted equivariance, formal self-adjointness of $\circledast\circ d_B$, cubic term | GU-045, 047, 048, 050, 051, 053 | floating point (complex128), relative errors printed | ~35 s | `shiab_checks.out` |
 

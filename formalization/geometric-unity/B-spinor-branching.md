@@ -59,3 +59,13 @@ In the MW reading the spin-3/2 content is $(3,2)\otimes16_-$, which is the draft
 - **Not established (layer d):** the dynamical claims that the "dark/looking-glass" sector decouples (12.12–12.20), that the 144 and the spin-3/2 matter are heavy, and that the three $16_+$ differ in mass. No mechanism, scale or coupling is given.
 - **Empirically testable (layer e), in principle:** the predicted extra spin-½ states (SM content of $144_-$ minus one generation: 128 states, including colour sextets and octets and charges $\pm\tfrac43,\pm\tfrac53,\pm2$) and spin-3/2 states with conjugate generation quantum numbers. With no mass scale these are not yet falsifiable predictions.
 - **Physical caveat (not mathematics):** the internal symmetry acting on the 16 is the non-compact $\mathrm{Spin}(6,4)$. Only its maximal compact subgroup is Pati–Salam, and the draft acknowledges the unitarity issue (§4.2).
+
+## Independent cross-check (coordinator)
+
+`computation/geometric-unity/xcheck_144.py` checks the representation content by a different method from `spinor_branching.py`. It does not use weight multisets. Instead it builds an explicit $\mathrm{Cl}(10)$ on $\mathbb C^{32}$ and realises $144_\pm=\ker(V\otimes S_\pm\to S_\mp)$ concretely. It then reads off SM labels by joint diagonalisation of the SU(3) and SU(2)$_L$ Casimirs, $Y$ and $B-L$, and separates $3$ from $\bar3$ by triality $3(B-L)\bmod 3$.
+
+- $16_+$ is exactly one left-handed generation with $\nu^c$, which fixes the sign of $B-L$.
+- **$144_-$ contains the SM content of one $16_+$ generation; $144_+$ contains that of its conjugate.**
+- Both have 23 SM irreducibles and electric charges $\{0,\pm\tfrac13,\pm\tfrac23,\pm1,\pm\tfrac43,\pm\tfrac53,\pm2\}$.
+
+This confirms the representation-theoretic part of B6/B8. The count "four generation-equivalents" additionally uses the chirality assignment $3\times16_+\oplus144_-$ of Theorem B3, which this cross-check does not re-derive.
