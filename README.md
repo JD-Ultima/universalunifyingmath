@@ -10,6 +10,8 @@ The investigation is hypothesis-neutral. For each framework we reconstruct the s
 
 ## Where to start
 
+**Overview and graded ledger:** [`reports/SYNTHESIS.md`](reports/SYNTHESIS.md).
+
 | Framework | Phase summary | Main formal results |
 |---|---|---|
 | Chain Theory — α(0) Letter | [`reports/chain-theory-alpha.md`](reports/chain-theory-alpha.md) | [`formalization/chain-theory/alpha/audit.md`](formalization/chain-theory/alpha/audit.md) |
