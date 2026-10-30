@@ -70,3 +70,30 @@ The answer depends on three choices the draft leaves open:
 - the readout (projection, reduced action, or the field equation on $Y$).
 
 An exact 4D vacuum reduction exists only at $\lambda=1/(n+1)$, which is incompatible with the draft's $(7,7)$ choice. Claims: GU-006 C, GU-021 C, GU-024 V, GU-054 C (previously O).
+
+## Round 2 — Shiab operators and the field equation (GU-P09, GU-G10, GU-G13)
+
+Write-ups: `formalization/geometric-unity/D-selfadjoint-shiab.md` and `E-lean-tilt.md`. Code: `computation/geometric-unity/D_{rep_counts,selfadjoint_shiab}.py`, outputs committed. All results are exact (integer characters; integer or dyadic Clifford data). Lean: `proofs/lean/geometric-unity/GUTilt.lean`. Records: `metrics/geometric-unity/D-*.yaml`.
+
+**Hypotheses.** $\mathcal S=\mathrm{Hom}_{\mathrm{Spin}(7,7)}(\Lambda^2\otimes\mathfrak g,\Lambda^{13}\otimes\mathfrak g)$ (Def. 8.1), with:
+- $\mathfrak g$ one of $\mathfrak u(64,64)$, $\mathfrak{so}(64,64)$, or the subalgebras $\mathfrak{so}(8,8)$ and $\mathfrak{so}(7,8)$;
+- an $\mathrm{Ad}$-invariant pairing;
+- $\varpi$ varied with $\varepsilon$ fixed, as in (9.7).
+
+| # | Statement | Status |
+|---|---|---|
+| D1 | $\dim\mathcal S=200$ and $\dim\mathcal S_{\rm sa}=48$ for $\mathfrak u(64,64)$. For $\mathfrak{so}(64,64)$ the values are 52 and 12. For $\mathfrak{so}(7,7)$, $\mathcal S=0$, so no Shiab operator exists. $[\Lambda^i\otimes\mathfrak u]^{\mathrm{Spin}(7,7)}$ is 2-dimensional for every $i$, so Def. 8.1's 15-element basis is half of the 30. | Proven (characters; brute force in $D_2$, $D_3$) |
+| D2 | $\circledast\circ d_B$ is formally self-adjoint iff $\circledast=\Psi\wedge$ with $\Psi\in\Lambda^3\otimes S^2\mathfrak g^*$. This holds for any structure group. | Proven |
+| D3 | Every $\circledast\in\mathcal S$ kills Weyl (Schur), so the draft's Weyl claim selects nothing. Every $\circledast\in\mathcal S$ sends Levi-Civita curvature to $x\,\mathrm{Ric}+y\,\mathrm{Scal}\,g$. Self-adjointness forces $y=-x/2$, the exact Einstein tensor of $Y^{14}$. $W_A=[*\Phi^3\wedge\cdot]_A$ (draft form (8.1), $r=11$) and $W'_A$ are self-adjoint with $W_A(F_R)=-*G$. Among the 8 single-term members of (8.1), the self-adjoint combinations are exactly $\mathrm{span}(W_A,W'_A)$. **GU-P09 as stated is false.** | Proven (exact) |
+| D4 | $\Upsilon=\circledast F_A+\kappa_1*T$ is a $\varpi$-gradient only if $\circledast=\Omega\wedge(\cdot)$ with $\Omega$ an 11-form (generalized Chern–Simons). Such an operator has no Einstein output, whatever its equivariance. If moreover $\circledast$ is $\mathrm{Spin}(7,7)$-equivariant, or $\mathrm{Spin}(1,3)\times\mathrm{Spin}(6,4)$-equivariant, then $\circledast=0$. | Proven (Helmholtz); exact illustrations and controls |
+| D5 | For $\circledast\in\mathcal S_{\rm sa}$, the $\varpi$-EL equation of (9.4) is $\circledast F_A+\kappa_1*T-\tfrac13h(T)=0$. For $W_A$, $h(T)=[T\wedge[T\wedge\Phi_{11}]_C]_A\neq0$. | Proven; exact check |
+| E | Props. C1–C3′ are machine-checked in Lean 4 core: 42 theorems, no `sorry`. These include the $-2c(h)$ residual, "printed Lemma 7.2 holds at $h$ iff $2c(h)=0$", and the $\tau'$ repair. The model is abstract (a group, a module and a 1-cocycle); L-C1 is an axiom of the model. | Proven (Lean) |
+
+**Verdict on GU-P09 and GU-G13.** The quadratic part of (9.4) can be made variational in a way compatible with the Einstein and Weyl properties. The field equation (9.7) cannot be made variational with any nonzero admissible Shiab operator, any coefficients, or any invariant pairing. The obstruction is the $T\wedge T$ term of $F_A$, and it is equivalent to the absence of a $\mathrm{Spin}(7,7)$-invariant 11-form. GU-G13 is now proved for the whole admissible space. Remedy (a) is closed in the negative; remedies (b) (take $\Upsilon=0$ as the definition) and (c) (use D5's equation) remain.
+
+**Claims.**
+- GU-045: Def. 8.1 undercounts the invariants.
+- GU-047 C: the Weyl part is automatic, and the Einstein ratio is forced by self-adjointness.
+- GU-053 F: for all of $\mathcal S$.
+
+Round-1 Prop. C6′'s criterion is superseded; see `reports/CORRECTIONS.md`.

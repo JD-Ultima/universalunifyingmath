@@ -49,7 +49,7 @@ Two further facts:
 
 *Checks.*
 - The identity $\dim\mathcal S=\dim\mathcal S_{\rm sa}+\dim\mathcal S_{\rm skew}+\dim\mathrm{Hom}_K(V\oplus\Gamma_{21},\mathfrak g\otimes\mathfrak g)$, which follows from $V\otimes\Lambda^2=\Lambda^3\oplus V\oplus\Gamma_{21}$, holds in every row.
-- For $D_2$ and $D_3$ ($n=4,6$, $\mathfrak g=\Lambda^\bullet$), brute force gives $\dim\mathcal S=40,72$ and $\dim\mathcal S_{\rm sa}=8,16$. Brute force here means zero-weight vectors killed by the simple raising operators, with the symmetry conditions of D2 imposed as linear constraints. All 86 blocks agree with the characters. The smallest kept singular value is $0.73$; the largest dropped is $1.2\times10^{-15}$. This tests D2 itself, not only the character code. ∎
+- For $D_2$ and $D_3$ ($n=4,6$, $\mathfrak g=\Lambda^\bullet$), brute force gives $\dim\mathcal S=40,72$ and $\dim\mathcal S_{\rm sa}=8,16$. Brute force here means zero-weight vectors killed by the simple raising operators, with the symmetry conditions of D2 imposed as linear constraints. All 86 block checks agree with the characters. The smallest kept singular value is $0.73$; the largest dropped is $1.2\times10^{-15}$. This tests D2 itself, not only the character code. ∎
 
 **Theorem D2 (symbol criterion; any $K$, any $b$).** For a pointwise map $\circledast:\Lambda^2\otimes\mathfrak g\to\Lambda^{13}\otimes\mathfrak g$, set
 $$\theta(a,b,c;X,Y):=b\bigl(e^a X\wedge\circledast(e^b\wedge e^c\,Y)\bigr)_{\rm top}.$$
@@ -104,7 +104,7 @@ $$h(T)=\bigl[T\wedge[T\wedge\Phi_{11}]_C\bigr]_A .$$
 - Under the other reading $[T,T]=[T\wedge T]_C$ (G12), the $T\wedge T$ coefficient is also off, by a factor of 2.
 
 **Theorem D (answer to GU-P09; the two layers).** Under H1–H6, for each $\mathfrak g$ in H2 containing a copy of $V$ and each pairing in H4:
-1. The *quadratic* part of (9.4) can be made variational together with the Einstein and Weyl properties. The possible operators form a 48-dimensional space ($\mathfrak u(64,64)$), and on curvature they reduce to $xW_A+yW'_A$ with the exact Einstein ratio.
+1. The *quadratic* part of (9.4) can be made variational together with the Einstein and Weyl properties. The possible operators are the elements of the 48-dimensional space $\mathcal S_{\rm sa}$ ($\mathfrak u(64,64)$) with $(x_1,x_{13})\neq0$. On curvature they reduce to $xW_A+yW'_A$, with the exact Einstein ratio.
 2. The *equation* (9.7) is variational for **no** nonzero admissible $\circledast$, for any coefficients in (9.4) and any $K$-invariant pairing. Without equivariance it is variational only for generalized Chern–Simons operators, which have no Einstein output.
 
 The answer does not depend on the interpretive choices listed in D.1. Outside the scope of D4: field-dependent multipliers, $\varpi$-dependent $\circledast$, and the $\varepsilon$-variation.

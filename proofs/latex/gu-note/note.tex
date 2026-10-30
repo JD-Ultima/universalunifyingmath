@@ -63,9 +63,12 @@ They hold for $\tau'(h)=(h,+c(h))$, the left stabiliser. The map $(\varepsilon,\
 \section{Shiab operators and the field equation}
 For the reconstruction R-S, soldering invariants $\Phi^1,\Phi^2$ in $\mathfrak u(64,64)\subset\mathrm{Cl}(7,7)\otimes\mathbb C$ define a family of Shiab operators $\Omega^2(\mathrm{ad})\to\Omega^{13}(\mathrm{ad})$.
 \begin{proposition}
-One member of the family maps the Levi-Civita spin curvature to (a multiple of) the Einstein tensor of $Y^{14}$ and annihilates the Weyl part. For every member, $\circledast\circ d_B$ fails to be formally self-adjoint; there is an exact counterexample for the Einstein-reproducing member at every value of its parameter. Hence the printed equation (9.7) is not the Euler--Lagrange equation of the printed action (9.4) within R-S.
+One member of the family maps the Levi-Civita spin curvature to (a multiple of) the Einstein tensor of $Y^{14}$ and annihilates the Weyl part. For every member of R-S, $\circledast\circ d_B$ fails to be formally self-adjoint; there is an exact counterexample for the Einstein-reproducing member at every value of its parameter. Hence the printed equation (9.7) is not the Euler--Lagrange equation of the printed action (9.4) within R-S.
 \end{proposition}
-% Round 2 (D): result on existence of a self-adjoint Shiab over the full equivariant space -- to be inserted.
+Over the whole equivariant space $\mathcal S=\mathrm{Hom}_{\mathrm{Spin}(7,7)}(\Lambda^2\otimes\mathfrak u(64,64),\Lambda^{13}\otimes\mathfrak u(64,64))$ the answer is sharper:
+\begin{theorem}
+$\dim\mathcal S=200$. The subspace on which $\circledast\circ d_B$ is formally self-adjoint has dimension $48$. It is exactly the space of operators of the form $\Psi\wedge$ with $\Psi\in\Lambda^3\otimes S^2\mathfrak g^*$. Every $\circledast\in\mathcal S$ annihilates the Weyl part of a Levi-Civita curvature, while self-adjointness forces the exact Einstein ratio. The operator $W_A=[*\Phi^3\wedge\cdot]_A$, of the draft's form (8.1) with $r=11$, is self-adjoint and yields $-*G$. However, (9.7) is the gradient of some functional only if $\circledast=\Omega\wedge$ for an $11$-form $\Omega$ (generalised Chern--Simons). Such an operator never outputs the Einstein tensor, and it vanishes under $\mathrm{Spin}(7,7)$ or $\mathrm{Spin}(1,3)\times\mathrm{Spin}(6,4)$ symmetry. Hence (9.7) is not variational for any nonzero admissible Shiab operator. The true Euler--Lagrange equation of (9.4) with $W_A$ is $W_AF_A+\kappa_1*T-\tfrac13[T\wedge[T\wedge\Phi_{11}]_C]_A=0$.
+\end{theorem}
 
 \section{The 14$\to$4 reduction}
 No $\mathrm{Diff}(X)$-natural connection exists on $\Met(X)$. We therefore use the Levi-Civita connection of the base metric. The draft supports two horizontal blocks: Z1, the point $y$ itself, and Z2, the pulled-back base metric. The fiber is the symmetric space $\mathbb R\times SL(n)/SO(p,q)$, whose curvature is independent of $\lambda$.
