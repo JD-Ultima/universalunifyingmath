@@ -1,0 +1,91 @@
+xcheck_round7.py  (REVIEW5-GU; exact Fractions/sympy; seed random.Random(20261107); no repository imports)
+
+X0  controls
+  [True] unit sphere 4|dx|^2/(1+|x|^2)^2 at 0, m = 3: Ric == (m-1) g
+  [True] Lemma K3 (i)-(iii): G_lam^-1 = (1/2)(g g + g g) + mu g g, sum G^AB E_A g^-1 E_B = ((n+1)/2 + mu) g, sum G^AB tr(g^-1 E_A) E_B = g/(1 - n lam), exact, n = 1..6, non-diagonal indefinite g
+
+X1  Lemma K1 on random exact 2-jets (h, delta with delta(0) = 0)
+  [True] m = 4, signature (2,2): Ric(h+delta) - Ric(h) == sum of the eight terms (quadratic part nonzero: True; nabla^2 delta symmetric in its derivative slots: True)
+  [True] m = 5, signature (3,2): Ric(h+delta) - Ric(h) == sum of the eight terms (quadratic part nonzero: True; nabla^2 delta symmetric in its derivative slots: True)
+
+X2  K3 term table: the eight terms on the K2 data (adapted frame), every block
+  [True] n = 1, sig (0,1), (lam, cH, cV) = (1/3, 2, -3/4): every entry of the K3 table (HH, VV), every HV block 0; totals cH/(4cV(n lam-1)) g and -(1/4) G_0
+  [True] n = 2, sig (1,1), (lam, cH, cV) = (1/3, -5/3, 3/4): every entry of the K3 table (HH, VV), every HV block 0; totals cH/(4cV(n lam-1)) g and -(1/4) G_0
+  [True] n = 3, sig (2,1), (lam, cH, cV) = (1, 3/2, -2/3): every entry of the K3 table (HH, VV), every HV block 0; totals cH/(4cV(n lam-1)) g and -(1/4) G_0
+  [True] n = 4, sig (1,3), (lam, cH, cV) = (-3/5, 2, 5/2): every entry of the K3 table (HH, VV), every HV block 0; totals cH/(4cV(n lam-1)) g and -(1/4) G_0
+
+X3  brute force: Ricci of Z1, Z2 at p = (0, g(0)) from the exact 2-jet on Y; random polynomial bases
+  n = 3, base (2,1), dim Y = 9: Gamma_g(0) != 0: True, Ric_g(0) != 0: True, Ric_g(0) not Einstein: True   [jets 0.0s]
+  [True] n = 3 (2,1), (lam, cH, cV) = (1/2, 1, 1): Ric(Z1) at p == F4(c) [HH = Ric_g + cH/(4cV(n lam-1)) g, HV = 0, VV = -((n+1)/4) G_1/(n+1)]
+  [True] n = 3 (2,1), (lam, cH, cV) = (1/2, 1, 1): Ric(Z2) at p == F3 [HH = Ric_g, HV = 0, VV = -(n/4) G_1/n]
+  [True]    K2: nabla^Z2 delta, nabla^Z2 nabla^Z2 delta at p (adapted frame) are exactly (nabla_U delta)(X,Y) = cH U(X,Y), (nabla^2_UW delta)(X,Y) = (cH/2)(U g^-1 W + W g^-1 U)(X,Y), all else 0
+  [True]    chain: Ric(Z1) - Ric(Z2) (brute force, coordinates) == referee's K1 formula on the brute-force jets   [1.5s]
+  [True] n = 3 (2,1), (lam, cH, cV) = (-2/7, -5/3, 3/4): Ric(Z1) at p == F4(c) [HH = Ric_g + cH/(4cV(n lam-1)) g, HV = 0, VV = -((n+1)/4) G_1/(n+1)]
+  [True] n = 3 (2,1), (lam, cH, cV) = (-2/7, -5/3, 3/4): Ric(Z2) at p == F3 [HH = Ric_g, HV = 0, VV = -(n/4) G_1/n]
+  [True]    K2: nabla^Z2 delta, nabla^Z2 nabla^Z2 delta at p (adapted frame) are exactly (nabla_U delta)(X,Y) = cH U(X,Y), (nabla^2_UW delta)(X,Y) = (cH/2)(U g^-1 W + W g^-1 U)(X,Y), all else 0
+  [True]    chain: Ric(Z1) - Ric(Z2) (brute force, coordinates) == referee's K1 formula on the brute-force jets   [1.6s]
+  n = 3, base (3,0), dim Y = 9: Gamma_g(0) != 0: True, Ric_g(0) != 0: True, Ric_g(0) not Einstein: True   [jets 0.1s]
+  [True] n = 3 (3,0), (lam, cH, cV) = (1, 3/2, -2/3): Ric(Z1) at p == F4(c) [HH = Ric_g + cH/(4cV(n lam-1)) g, HV = 0, VV = -((n+1)/4) G_1/(n+1)]
+  [True] n = 3 (3,0), (lam, cH, cV) = (1, 3/2, -2/3): Ric(Z2) at p == F3 [HH = Ric_g, HV = 0, VV = -(n/4) G_1/n]
+  [True]    K2: nabla^Z2 delta, nabla^Z2 nabla^Z2 delta at p (adapted frame) are exactly (nabla_U delta)(X,Y) = cH U(X,Y), (nabla^2_UW delta)(X,Y) = (cH/2)(U g^-1 W + W g^-1 U)(X,Y), all else 0
+  [True]    chain: Ric(Z1) - Ric(Z2) (brute force, coordinates) == referee's K1 formula on the brute-force jets   [1.4s]
+  n = 4, base (1,3), dim Y = 14: Gamma_g(0) != 0: True, Ric_g(0) != 0: True, Ric_g(0) not Einstein: True   [jets 0.2s]
+  [True] n = 4 (1,3), (lam, cH, cV) = (1/2, 1, 1): Ric(Z1) at p == F4(c) [HH = Ric_g + cH/(4cV(n lam-1)) g, HV = 0, VV = -((n+1)/4) G_1/(n+1)]
+  [True] n = 4 (1,3), (lam, cH, cV) = (1/2, 1, 1): Ric(Z2) at p == F3 [HH = Ric_g, HV = 0, VV = -(n/4) G_1/n]
+  [True]    K2: nabla^Z2 delta, nabla^Z2 nabla^Z2 delta at p (adapted frame) are exactly (nabla_U delta)(X,Y) = cH U(X,Y), (nabla^2_UW delta)(X,Y) = (cH/2)(U g^-1 W + W g^-1 U)(X,Y), all else 0
+  [True]    chain: Ric(Z1) - Ric(Z2) (brute force, coordinates) == referee's K1 formula on the brute-force jets   [13.2s]
+  [True] n = 4 (1,3), (lam, cH, cV) = (3/8, -1/2, -4/5): Ric(Z1) at p == F4(c) [HH = Ric_g + cH/(4cV(n lam-1)) g, HV = 0, VV = -((n+1)/4) G_1/(n+1)]
+  [True] n = 4 (1,3), (lam, cH, cV) = (3/8, -1/2, -4/5): Ric(Z2) at p == F3 [HH = Ric_g, HV = 0, VV = -(n/4) G_1/n]
+  [True]    K2: nabla^Z2 delta, nabla^Z2 nabla^Z2 delta at p (adapted frame) are exactly (nabla_U delta)(X,Y) = cH U(X,Y), (nabla^2_UW delta)(X,Y) = (cH/2)(U g^-1 W + W g^-1 U)(X,Y), all else 0
+  [True]    chain: Ric(Z1) - Ric(Z2) (brute force, coordinates) == referee's K1 formula on the brute-force jets   [13.4s]
+  n = 4, base (2,2), dim Y = 14: Gamma_g(0) != 0: True, Ric_g(0) != 0: True, Ric_g(0) not Einstein: True   [jets 0.2s]
+  [True] n = 4 (2,2), (lam, cH, cV) = (-1/3, 7/4, -1/3): Ric(Z1) at p == F4(c) [HH = Ric_g + cH/(4cV(n lam-1)) g, HV = 0, VV = -((n+1)/4) G_1/(n+1)]
+  [True] n = 4 (2,2), (lam, cH, cV) = (-1/3, 7/4, -1/3): Ric(Z2) at p == F3 [HH = Ric_g, HV = 0, VV = -(n/4) G_1/n]
+  [True]    K2: nabla^Z2 delta, nabla^Z2 nabla^Z2 delta at p (adapted frame) are exactly (nabla_U delta)(X,Y) = cH U(X,Y), (nabla^2_UW delta)(X,Y) = (cH/2)(U g^-1 W + W g^-1 U)(X,Y), all else 0
+  [True]    chain: Ric(Z1) - Ric(Z2) (brute force, coordinates) == referee's K1 formula on the brute-force jets   [12.6s]
+
+X4  J5d L0: expansion of the leaf condition at y = g + eps h (n = 4)
+  [True] (1,3): tr(y^-1 (B.y)) = 0 for B in so(g) at 3 random y (the lambda-term of G_lambda drops at every y)
+  [True] (1,3): Phi_(g + eps h)(X,Y) = 0 + 0 eps + F(X,Y;h,h) eps^2 + O(eps^3), for a g-traceless and for a general h (random R, X, Y)
+  [True] (2,2): tr(y^-1 (B.y)) = 0 for B in so(g) at 3 random y (the lambda-term of G_lambda drops at every y)
+  [True] (2,2): Phi_(g + eps h)(X,Y) = 0 + 0 eps + F(X,Y;h,h) eps^2 + O(eps^3), for a g-traceless and for a general h (random R, X, Y)
+
+X5  J5d L1: the traces C1, C2 of the write-up, the h <-> h' asymmetry, and the symmetrised trace
+  [True] n = 4 (4,0): write-up identities C1 = (n+2)|R|^2, C2 = 3/4|R|^2 + (n+3)/2|Ric|^2 (C2 with h != h' in the polarised form)
+  [True] n = 4 (4,0): observation: F(X,Y;h,h') - F(X,Y;h',h) = -sum_i eta_i tr([R(X,e_i),R(Y,e_i)][H',H]) (H = g^-1 h) and is nonzero (-3433295/1944); the leaf condition constrains only the h-symmetric part
+  [True] n = 4 (4,0): C2 != C2' (h, h' swapped: 1727/2 vs 1851/2), so F(X,Y;h,h) = 0 does not by itself give C2 = 0
+  [True] n = 4 (4,0): symmetrised trace C2sym := (C2 + C2')/2 equals the polarisation of the quadratic form F(e_a,e_b;h,h) and C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2   [1.9s]
+  [True] n = 4 (1,3): write-up identities C1 = (n+2)|R|^2, C2 = 3/4|R|^2 + (n+3)/2|Ric|^2 (C2 with h != h' in the polarised form)
+  [True] n = 4 (1,3): observation: F(X,Y;h,h') - F(X,Y;h',h) = -sum_i eta_i tr([R(X,e_i),R(Y,e_i)][H',H]) (H = g^-1 h) and is nonzero (7211/24); the leaf condition constrains only the h-symmetric part
+  [True] n = 4 (1,3): C2 != C2' (h, h' swapped: 121/2 vs 553/2), so F(X,Y;h,h) = 0 does not by itself give C2 = 0
+  [True] n = 4 (1,3): symmetrised trace C2sym := (C2 + C2')/2 equals the polarisation of the quadratic form F(e_a,e_b;h,h) and C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2   [1.9s]
+  [True] n = 4 (2,2): write-up identities C1 = (n+2)|R|^2, C2 = 3/4|R|^2 + (n+3)/2|Ric|^2 (C2 with h != h' in the polarised form)
+  [True] n = 4 (2,2): observation: F(X,Y;h,h') - F(X,Y;h',h) = -sum_i eta_i tr([R(X,e_i),R(Y,e_i)][H',H]) (H = g^-1 h) and is nonzero (15071/72); the leaf condition constrains only the h-symmetric part
+  [True] n = 4 (2,2): C2 != C2' (h, h' swapped: 161/4 vs -497/4), so F(X,Y;h,h) = 0 does not by itself give C2 = 0
+  [True] n = 4 (2,2): symmetrised trace C2sym := (C2 + C2')/2 equals the polarisation of the quadratic form F(e_a,e_b;h,h) and C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2   [1.8s]
+  [True] n = 3 (1,2): write-up identities C1 = (n+2)|R|^2, C2 = 3/4|R|^2 + (n+3)/2|Ric|^2 (C2 with h != h' in the polarised form)
+  [True] n = 3 (1,2): observation: F(X,Y;h,h') - F(X,Y;h',h) = -sum_i eta_i tr([R(X,e_i),R(Y,e_i)][H',H]) (H = g^-1 h) and is nonzero (-2893/27); the leaf condition constrains only the h-symmetric part
+  [True] n = 3 (1,2): C2 != C2' (h, h' swapped: 84 vs 104), so F(X,Y;h,h) = 0 does not by itself give C2 = 0
+  [True] n = 3 (1,2): symmetrised trace C2sym := (C2 + C2')/2 equals the polarisation of the quadratic form F(e_a,e_b;h,h) and C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2   [0.3s]
+  [True] n = 5 (2,3): write-up identities C1 = (n+2)|R|^2, C2 = 3/4|R|^2 + (n+3)/2|Ric|^2 (C2 with h != h' in the polarised form)
+  [True] n = 5 (2,3): observation: F(X,Y;h,h') - F(X,Y;h',h) = -sum_i eta_i tr([R(X,e_i),R(Y,e_i)][H',H]) (H = g^-1 h) and is nonzero (3518713/1296); the leaf condition constrains only the h-symmetric part
+  [True] n = 5 (2,3): C2 != C2' (h, h' swapped: 111/4 vs -1123/12), so F(X,Y;h,h) = 0 does not by itself give C2 = 0
+  [True] n = 5 (2,3): symmetrised trace C2sym := (C2 + C2')/2 equals the polarisation of the quadratic form F(e_a,e_b;h,h) and C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2   [7.9s]
+  Hence under the leaf condition C1 = 0 and C2sym = 0, so |R|^2 = |Ric|^2 = 0 (and then C2 = 0 a posteriori);
+  for n = 4: 4 C2sym - C1 = 8 |Ric|^2, and = 32 Lambda^2 for an Einstein tensor.
+  [True] (4,0) Einstein R = W + (Lambda/3) R_1, Lambda = 1, |W|^2 = 202: W algebraic, Ric(W) = 0, Ric(R) = Lambda g; write-up: C1 = 6|W|^2 + 16 Lambda^2, C2 = 3/4|W|^2 + 16 Lambda^2, 8 C2 - C1 = 112 Lambda^2
+  [True] (4,0) Einstein R = W + (Lambda/3) R_1, Lambda = 1, |W|^2 = 202: corrected: C2sym = 3/2|W|^2 + 12 Lambda^2, 4 C2sym - C1 = 32 Lambda^2 != 0   [1.7s]
+  [True] (1,3) Einstein R = W + (Lambda/3) R_1, Lambda = -2, |W|^2 = -88/3: W algebraic, Ric(W) = 0, Ric(R) = Lambda g; write-up: C1 = 6|W|^2 + 16 Lambda^2, C2 = 3/4|W|^2 + 16 Lambda^2, 8 C2 - C1 = 112 Lambda^2
+  [True] (1,3) Einstein R = W + (Lambda/3) R_1, Lambda = -2, |W|^2 = -88/3: corrected: C2sym = 3/2|W|^2 + 12 Lambda^2, 4 C2sym - C1 = 32 Lambda^2 != 0   [1.7s]
+  [True] (2,2) Einstein R = W + (Lambda/3) R_1, Lambda = -1, |W|^2 = 314/3: W algebraic, Ric(W) = 0, Ric(R) = Lambda g; write-up: C1 = 6|W|^2 + 16 Lambda^2, C2 = 3/4|W|^2 + 16 Lambda^2, 8 C2 - C1 = 112 Lambda^2
+  [True] (2,2) Einstein R = W + (Lambda/3) R_1, Lambda = -1, |W|^2 = 314/3: corrected: C2sym = 3/2|W|^2 + 12 Lambda^2, 4 C2sym - C1 = 32 Lambda^2 != 0   [1.8s]
+
+X6  J5d L3, L4: positivity identity; an explicit (2,2) solution R = n (x) n
+  [True] (1,3): F(T,T;T^b (x) T^b) = 2 g(T,T) sum_a eta_a g(R(T,e_a)T, R(T,e_a)T) at a random T (g(T,T) = -10/9); over T^perp this is L3's sum of squares when T^perp is definite
+  [True] (2,2): F(T,T;T^b (x) T^b) = 2 g(T,T) sum_a eta_a g(R(T,e_a)T, R(T,e_a)T) at a random T (g(T,T) = 3); over T^perp this is L3's sum of squares when T^perp is definite
+  [True] (2,2): n = [2, 0, -2, -2, 0, -2] on e^a^e^b (a<b) is anti-self-dual (*n = -n) and null; R = (5/3) n (x) n is an algebraic curvature tensor with Ric = 0 (Lambda = 0)
+  [True] (2,2): for this R, F(X,Y;h,h) = 0 and even the polarised F(X,Y;h,h') = 0 at 4 random (X,Y,h,h'), and the full condition Phi_y(X,Y) = 0 at 4 random nondegenerate y (L4)
+  [True] (2,2) control: constant curvature fails the leaf condition, F(e_0,e_0;h,h) != 0 for a random h
+
+SUMMARY: 67 checks, 67 True, 0 False
+runtime 65 s
