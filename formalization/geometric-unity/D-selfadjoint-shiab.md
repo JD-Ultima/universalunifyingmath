@@ -125,3 +125,6 @@ The answer does not depend on the interpretive choices listed in D.1. Outside th
 
 
 **Coordinator reproduction (2026-10-30).** `D_rep_counts.py` and `D_selfadjoint_shiab.py` were re-run and their outputs are byte-identical to the committed `.out` files. `GUTilt.lean` was rebuilt with Lean 4.35.0, with identical axiom report.
+
+
+**Independent cross-check of D1 (coordinator).** `computation/geometric-unity/xcheck_shiab_dim.py` uses a method different from `D_rep_counts.py`: the Brauer/Racah–Speiser alternating sum over all $322\,560$ elements of $W(D_7)$, applied to explicit torus characters. It uses $\mathfrak{gl}(128)=\mathrm{End}(S)\cong\Lambda^\bullet V$ and $\Lambda^{13}\cong\Lambda^1$. For $\mathfrak{so}(64,64)$ it uses the Clifford grades antisymmetric for the symmetric invariant form, $\{1,2,5,6,9,10,13,14\}$. It reproduces $\dim\mathcal S=200$ ($\mathfrak u(64,64)$) and $52$ ($\mathfrak{so}(64,64)$), and the 30 invariants of $\mathrm{End}_{\mathfrak{so}}(\Lambda^\bullet)$, which is the source of "30, not 15". The self-adjoint dimensions 48 and 12 are not re-derived by this check.
