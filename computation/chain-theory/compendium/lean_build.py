@@ -6,6 +6,9 @@ Usage:
                            [--targets ChainTheory AlphaDerivation ...] [--jobs 3] [--mem-mb 12000]
                            [--record outputs/lean_build_record.tsv]
 
+Requires Linux (including WSL): child processes are reaped with os.wait4, and
+ru_maxrss is interpreted using Linux's KiB units.
+
 What it does (nothing is executed from inside SRC; no lake, no lakefile, no script of the source is run):
   1. Discovers the library modules of the six packages from their `lean_lib` names (lakefile.toml read as
      text): module M of library N in package P is the file P/N.lean or P/N/.../M.lean.
@@ -84,6 +87,11 @@ def main():
     ap.add_argument("--resume", action="store_true",
                     help="continue in an existing WORK: modules recorded in WORK/status.tsv with exit 0 are kept")
     a = ap.parse_args()
+    if sys.platform != "linux" or not hasattr(os, "wait4"):
+        raise SystemExit(
+            "lean_build.py requires Linux/WSL (os.wait4 and Linux peak-RSS units). "
+            "Use Linux Python and a Linux Lean binary; native Windows is unsupported."
+        )
     lean = os.path.abspath(a.lean)
     src = pathlib.Path(a.src).resolve()
     work = pathlib.Path(a.work).resolve()

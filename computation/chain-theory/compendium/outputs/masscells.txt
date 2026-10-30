@@ -1,4 +1,3 @@
-[PDG] transcription checked against mass_width_2024.mcd (318 particle ids)
 [TARGETS] CODATA 2022: m_p/m_e = 1836.152673426(32), m_mu/m_e = 206.7682827(46); PDG 2024: m_tau/m_e = 3477.365(176) (CODATA 2022 3477.23(23)), m_tau/m_mu = 16.81769(85), Koide 0.6666645(51)
 
 [ANCHORS] verbatim check of the curated strings (whitespace-normalised) against their statement units
@@ -106,8 +105,11 @@
   CODATA 2022 1836.152673426 lies inside that band; deviations -1.01e-04 to +1.84e-05;
   in sigma (3.2e-8): -5.82e+06 to +1.06e+06. Measured Koide (PDG 2024) 0.6666645.
 
-[SPACES] distributions of predicted ratios and look-elsewhere estimates. A 'variant' is one (numerator cell, electron cell,
-         exponent) choice; lambda = 2 delta x (distinct values per unit ln near the target); P = 1 - exp(-lambda)
+[SPACES] distributions of predicted ratios and illustrative density references. A 'variant' is one (numerator cell, electron cell,
+         exponent) choice; lambda = 2 delta x (distinct values per unit ln near the target). P = 1 - exp(-lambda) belongs
+         only to an illustrative homogeneous Poisson process in ln with that intensity; no calibrated p-value is claimed.
+         Integer/power-lattice coverage uses a uniform target phase modulo the spacing; combined electron choices additionally
+         use independent phases. None of these assumptions establishes a construction search history or author intent.
   achieved |ln dev|: p 1.840e-05, mu 8.772e-04, tau 9.123e-03; source's own convention spread for p (MASSLAW) 1.20e-04
   (1) printed space for m_p/m_e: 15 printed proton cells x 4 printed electron cells [67, 201, 79, 237] x p in {1,2}
       ten closest (value, cell, e, p, rel. dev.):
@@ -123,54 +125,54 @@
            1175.882230    2709 /  79  p=2  -3.596e-01   20.1 adopted reading (strike 18); 186.1 strike at a capped entry
       |ln dev| quantiles: median 4.91, 10% 1.047; within 1%: 2, within 10%: 2, within a factor 2: 11
   printed space: 120 variants, 103 distinct; closest |ln dev| 1.84e-05 (rank 1); next 1.03e-01
-    window |ln| < 0.5: 8.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 2.94e-04, P(>=1) = 2.94e-04
-    window |ln| < 1.0: 5.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 1.84e-04, P(>=1) = 1.84e-04
+    window |ln| < 0.5: 8.0 distinct values per unit ln -> density-window reference count within 1.84e-05: 2.94e-04, Poisson-reference P(>=1) = 2.94e-04
+    window |ln| < 1.0: 5.0 distinct values per unit ln -> density-window reference count within 1.84e-05: 1.84e-04, Poisson-reference P(>=1) = 1.84e-04
   printed space at the convention spread: 120 variants, 103 distinct; closest |ln dev| 1.84e-05 (rank 1); next 1.03e-01
-    window |ln| < 0.5: 8.0 distinct values per unit ln -> expected chance hits within 1.20e-04: 1.92e-03, P(>=1) = 1.92e-03
-    window |ln| < 1.0: 5.0 distinct values per unit ln -> expected chance hits within 1.20e-04: 1.20e-03, P(>=1) = 1.20e-03
+    window |ln| < 0.5: 8.0 distinct values per unit ln -> density-window reference count within 1.20e-04: 1.92e-03, Poisson-reference P(>=1) = 1.92e-03
+    window |ln| < 1.0: 5.0 distinct values per unit ln -> density-window reference count within 1.20e-04: 1.20e-03, Poisson-reference P(>=1) = 1.20e-03
   printed space for m_mu/m_e (3 cells x 4 x 2): 24 variants, 24 distinct; closest |ln dev| 8.77e-04 (rank 1); next 3.30e-01
-    window |ln| < 0.5: 2.0 distinct values per unit ln -> expected chance hits within 8.77e-04: 3.51e-03, P(>=1) = 3.50e-03
-    window |ln| < 1.0: 1.5 distinct values per unit ln -> expected chance hits within 8.77e-04: 2.63e-03, P(>=1) = 2.63e-03
+    window |ln| < 0.5: 2.0 distinct values per unit ln -> density-window reference count within 8.77e-04: 3.51e-03, Poisson-reference P(>=1) = 3.50e-03
+    window |ln| < 1.0: 1.5 distinct values per unit ln -> density-window reference count within 8.77e-04: 2.63e-03, Poisson-reference P(>=1) = 2.63e-03
   printed space for m_tau/m_e (5 cells x 4 x 2): 40 variants, 40 distinct; closest |ln dev| 9.12e-03 (rank 1); next 2.27e-02
-    window |ln| < 0.5: 8.0 distinct values per unit ln -> expected chance hits within 9.12e-03: 1.46e-01, P(>=1) = 1.36e-01
-    window |ln| < 1.0: 4.0 distinct values per unit ln -> expected chance hits within 9.12e-03: 7.30e-02, P(>=1) = 7.04e-02
+    window |ln| < 0.5: 8.0 distinct values per unit ln -> density-window reference count within 9.12e-03: 1.46e-01, Poisson-reference P(>=1) = 1.36e-01
+    window |ln| < 1.0: 4.0 distinct values per unit ln -> density-window reference count within 9.12e-03: 7.30e-02, Poisson-reference P(>=1) = 7.04e-02
     joint, printed: mu/e and tau/e both within 1% (p = 2) at 1 of 60 (e, mu, tau): [(67, 963, 3969)]
   (2) reading grid, each body's cell chosen independently: cells e [67, 79, 201, 237]; mu 12; tau 12; p [63, 81, 83, 101, 301, 319, 567, 729, 747, 909, 1701, 2187, 2241, 2709, 2727, 2871, 8127, 8613]
   per-body choice, m_p/m_e: 144 variants, 120 distinct; closest |ln dev| 1.84e-05 (rank 1); next 1.03e-01
-    window |ln| < 0.5: 7.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 2.58e-04, P(>=1) = 2.58e-04
-    window |ln| < 1.0: 5.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 1.84e-04, P(>=1) = 1.84e-04
+    window |ln| < 0.5: 7.0 distinct values per unit ln -> density-window reference count within 1.84e-05: 2.58e-04, Poisson-reference P(>=1) = 2.58e-04
+    window |ln| < 1.0: 5.0 distinct values per unit ln -> density-window reference count within 1.84e-05: 1.84e-04, Poisson-reference P(>=1) = 1.84e-04
   per-body choice, m_mu/m_e: 96 variants, 62 distinct; closest |ln dev| 8.77e-04 (rank 1); next 1.52e-01
-    window |ln| < 0.5: 4.0 distinct values per unit ln -> expected chance hits within 8.77e-04: 7.02e-03, P(>=1) = 6.99e-03
-    window |ln| < 1.0: 3.5 distinct values per unit ln -> expected chance hits within 8.77e-04: 6.14e-03, P(>=1) = 6.12e-03
+    window |ln| < 0.5: 4.0 distinct values per unit ln -> density-window reference count within 8.77e-04: 7.02e-03, Poisson-reference P(>=1) = 6.99e-03
+    window |ln| < 1.0: 3.5 distinct values per unit ln -> density-window reference count within 8.77e-04: 6.14e-03, Poisson-reference P(>=1) = 6.12e-03
   per-body choice, m_tau/m_e: 96 variants, 80 distinct; closest |ln dev| 9.12e-03 (rank 1); next 1.15e-01
-    window |ln| < 0.5: 4.0 distinct values per unit ln -> expected chance hits within 9.12e-03: 7.30e-02, P(>=1) = 7.04e-02
-    window |ln| < 1.0: 2.0 distinct values per unit ln -> expected chance hits within 9.12e-03: 3.65e-02, P(>=1) = 3.58e-02
+    window |ln| < 0.5: 4.0 distinct values per unit ln -> density-window reference count within 9.12e-03: 7.30e-02, Poisson-reference P(>=1) = 7.04e-02
+    window |ln| < 1.0: 2.0 distinct values per unit ln -> density-window reference count within 9.12e-03: 3.65e-02, Poisson-reference P(>=1) = 3.58e-02
   uniform readings only, m_p/m_e: 144 variants, 34 distinct; closest |ln dev| 1.84e-05 (rank 1); next 1.16e-01
-    window |ln| < 0.5: 3.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 1.10e-04, P(>=1) = 1.10e-04
-    window |ln| < 1.0: 1.5 distinct values per unit ln -> expected chance hits within 1.84e-05: 5.52e-05, P(>=1) = 5.52e-05
+    window |ln| < 0.5: 3.0 distinct values per unit ln -> density-window reference count within 1.84e-05: 1.10e-04, Poisson-reference P(>=1) = 1.10e-04
+    window |ln| < 1.0: 1.5 distinct values per unit ln -> density-window reference count within 1.84e-05: 5.52e-05, Poisson-reference P(>=1) = 5.52e-05
   (3) round-2 declared space (330 cells x {67, 201} x 2): 1320 variants, 874 distinct; closest |ln dev| 1.84e-05 (rank 1); next 1.25e-02
-    window |ln| < 0.5: 69.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 2.54e-03, P(>=1) = 2.54e-03
-    window |ln| < 1.0: 62.5 distinct values per unit ln -> expected chance hits within 1.84e-05: 2.30e-03, P(>=1) = 2.30e-03
+    window |ln| < 0.5: 69.0 distinct values per unit ln -> density-window reference count within 1.84e-05: 2.54e-03, Poisson-reference P(>=1) = 2.54e-03
+    window |ln| < 1.0: 62.5 distinct values per unit ln -> density-window reference count within 1.84e-05: 2.30e-03, Poisson-reference P(>=1) = 2.30e-03
   (4) narrow family (319 3^u / (67 3^v))^p, u 0..4, v 0..1, p 1..2: hits at the achieved precision [(2, 0, 2), (3, 1, 2)]; spacing in ln is p ln 3,
-      so a fixed (u - v, p) rule is hit by chance with probability 1.7e-05 (p = 2) and some p with 5.0e-05
+      uniform log-phase reference coverage 1.7e-05 (spacing 2 ln 3, p = 2); summed reference coverage over p: 5.0e-05
   (5) the saturation censuses as candidate spaces (154.1: 300 three-hub sinks, 63 distinct first powers 369..4617; 189.1:
       231 two-hub sinks, 92 values 95..3321); values not printed, so log-uniform spacing is assumed; e = 67, p = 2:
-      m_tau/m_e: target cell 67 sqrt(ratio) = 3950.9 inside [369, 4617]; 12.5 values per unit ln -> expected chance hits within 9.12e-03: 0.227
-      m_mu/m_e: target cell 67 sqrt(ratio) = 963.4 inside [95, 3321]; 12.9 values per unit ln -> expected chance hits within 8.77e-04: 0.023
+      m_tau/m_e: target cell 67 sqrt(ratio) = 3950.9 inside [369, 4617]; 12.5 values per unit ln -> log-uniform reference count within 9.12e-03: 0.227
+      m_mu/m_e: target cell 67 sqrt(ratio) = 963.4 inside [95, 3321]; 12.9 values per unit ln -> log-uniform reference count within 8.77e-04: 0.023
       the proton saturation (175.1, 175.3: 16946 and 44341 sinks) prints no first powers, so no density can be formed;
       the source reports only that none equals the candidate integer
-  (6) any-integer baselines over e = 67, p = 2: target numerator 2870.9736; nearest integer 2871 (off +0.0264);
+  (6) uniform-phase integer reference coverage over e = 67, p = 2: target numerator 2870.9736; nearest integer 2871 (off +0.0264);
       achieved           delta 1.84e-05: any integer 0.053; multiples of 9 0.0059; with the electron cell free in [67, 201, 79, 237]: any integer 0.392
       convention spread  delta 1.20e-04: any integer 0.344; multiples of 9 0.0382; with the electron cell free in [67, 201, 79, 237]: any integer 1.000
 
 [LEPTON] face-free content and the factor nine
   m_tau/m_mu = (3969/963)^2 = (441/107)^2 = 16.9867 at every face (both numerators hub); PDG 2024 16.8177(9): +1.005%, +198 sigma
   face-consistent ratios (176.2 prints them): m_mu/m_e = 22.9541, m_tau/m_e = 389.915; measured/predicted = 9.0079, 8.9183; nearest power of 3: 9 (+8.77e-04, -9.12e-03 in ln)
-  chance that a fixed prediction lands within 8.77e-04 of a factor 3^n away from the measured m_mu/m_e: 1.6e-03
-  chance that a fixed prediction lands within 8.77e-04 of a factor 9^n away from the measured m_mu/m_e: 8.0e-04
+  uniform log-phase reference coverage within 8.77e-04 of the 3^n rescaling lattice: 1.6e-03
+  uniform log-phase reference coverage within 8.77e-04 of the 9^n rescaling lattice: 8.0e-04
   given mu/e, tau/e follows from tau/mu; its deviation +0.917% is tau/mu's +1.005% plus mu/e's -0.088%
-  integer level, m_mu/m_e at e = 67: target cell 963.42, printed 963 (off -0.42); nearest integer 963, nearest multiple of 9 963; P(any integer this close) = 0.84, P(multiple of 9) = 0.094
-  integer level, m_tau/m_e at e = 67: target cell 3950.94, printed 3969 (off +18.06); nearest integer 3951, nearest multiple of 27 3942; P(any integer this close) = 1.00, P(multiple of 27) = 1.000
+  integer level, m_mu/m_e at e = 67: target cell 963.42, printed 963 (off -0.42); nearest integer 963, nearest multiple of 9 963; uniform-phase coverage (any integer) = 0.84, coverage (multiple of 9) = 0.094
+  integer level, m_tau/m_e at e = 67: target cell 3950.94, printed 3969 (off +18.06); nearest integer 3951, nearest multiple of 27 3942; uniform-phase coverage (any integer) = 1.00, coverage (multiple of 27) = 1.000
   Koide at the mixed (e 67) face: 16684819/24990001 = 0.667660 (+0.149% against 0.6666645, +196 sigma)
   Koide at the hub (e 201) face: 1857859/2927521 = 0.634619 (-4.807% against 0.6666645, -6307 sigma)
 
@@ -184,11 +186,11 @@
   top sink         2871      1836.19    42.85        337711.1
   the top and the proton share the cell 319*9: at either exponent m_t = m_p, against m_t/m_p = 183.9; ordering s > c = b > t
 
-[DIGITS] information put in against agreement obtained
-  m_p/m_e   (2871/67)^2: integers carry log10(2871) + log10(67) = 5.28 digits; agreement 4.74 digits; numerator alone 3.46
-  m_mu/m_e  (963/67)^2: integers carry log10(963) + log10(67) = 4.81 digits; agreement 3.06 digits; numerator alone 2.98
-  m_tau/m_e (3969/67)^2: integers carry log10(3969) + log10(67) = 5.42 digits; agreement 2.04 digits; numerator alone 3.60
-  For a nearest-integer numerator the expected agreement is log10(S) + log10(2) digits: 3.76 for S ~ 2871; obtained 4.74.
+[DIGITS] decimal sizes of specified integers and observed relative agreement
+  m_p/m_e   (2871/67)^2: sum of integer decimal logarithms log10(2871) + log10(67) = 5.28; agreement 4.74 digits; numerator alone 3.46
+  m_mu/m_e  (963/67)^2: sum of integer decimal logarithms log10(963) + log10(67) = 4.81; agreement 3.06 digits; numerator alone 2.98
+  m_tau/m_e (3969/67)^2: sum of integer decimal logarithms log10(3969) + log10(67) = 5.42; agreement 2.04 digits; numerator alone 3.60
+  Nearest-integer reference scale log10(S) + log10(2): 3.76 for S ~ 2871; observed agreement 4.74 digits (not an information or significance test).
 
 [SWEEP] integers 50..99999 within 120 characters after a first-power keyword, in statements whose box names the proton or
         nucleon (fractions, \texttt office strings, picture coordinates and surd coefficients removed first). Classes: P printed

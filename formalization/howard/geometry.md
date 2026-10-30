@@ -76,7 +76,7 @@ Place $n$ equal tangent unit balls at the vertices of a polyhedron with edge len
 - tetrahedron $(4,4)$ ↔ "four contractive poles";
 - cube $(8,6)$ ↔ "eight contractive … six magnetic".
 
-No candidate cluster reproduces the counts for $n=6,12,24$, including octahedron, icosahedron, cuboctahedron, truncated solids and snub cube (table in `.out`). For example, the octahedron gives $(6,8)$ against the stated "30 poles". **Verdict:** not reproducible from any vertex-transitive cluster we tried. Fitting the counts after the fact would be numerology (P-TH-4).
+No candidate cluster reproduces the counts for $n=6,12,24$, including octahedron, icosahedron, cuboctahedron, truncated solids and snub cube (table in `.out`). For example, the octahedron gives $(6,8)$ against the stated "30 poles". **Verdict:** not reproducible from any vertex-transitive cluster we tried. A further reconstruction would need an independently specified counting rule before these counts could be used as a test (P-TH-4).
 
 ## 4. Status of "wave conjugations", "supersymmetric systems", "predicts every star"
 

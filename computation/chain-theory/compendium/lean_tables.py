@@ -27,73 +27,7 @@ SUB = ("restated_theorem", "kernel_check", "other_theorem")
 TAB = ("table_check", "cond_table_check")
 EXCL = ("AxiomsCheck", "Certificate", "Roots", "AlphaAxiomsCheck")   # the source's own audit scripts, not library
 
-ORD = {w: i + 1 for i, w in enumerate("first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth "
-                                      "thirteenth fourteenth fifteenth sixteenth seventeenth eighteenth nineteenth".split())}
-ORD.update({"twentieth": 20, "thirtieth": 30, "fortieth": 40, "fiftieth": 50, "sixtieth": 60, "seventieth": 70,
-            "eightieth": 80, "ninetieth": 90, "hundredth": 100})
-
-
-def cardinals(text):
-    """digits as in round 6's numbers_in, and number words parsed within punctuation-free segments with two rules
-    numbers_in lacks: punctuation ends a number ('four, thirty-two' is 4 and 32, not 36), and a unit or teen word after a
-    unit or teen word starts a new number ('four one-pair' is 4 and 1, not 5)."""
-    t = re.sub(r"\\label\{[^}]*\}", " ", text)
-    t = re.sub(r"\\[a-zA-Z]+", " ", t)
-    nums = {int(x) for x in re.findall(r"(?<![\w.])(\d+)(?![\w.]*\d)", t)}
-    for seg in re.split(r"[,;:.()$\[\]{}]", t.replace("-", " ")):
-        words = re.findall(r"[A-Za-z]+", seg)
-        total = cur = None
-        last = None
-
-        def flush():
-            nonlocal total, cur
-            if cur is not None or total is not None:
-                nums.add((total or 0) + (cur or 0))
-            total = cur = None
-        for w in words:
-            w = w.lower()
-            if w in lr.UNITS:
-                if last in ("unit", "teen"):
-                    flush()
-                cur = (cur or 0) + lr.UNITS[w]
-                last = "teen" if lr.UNITS[w] >= 10 else "unit"
-            elif w in lr.TENS:
-                if last in ("unit", "teen", "tens"):
-                    flush()
-                cur = (cur or 0) + lr.TENS[w]
-                last = "tens"
-            elif w == "hundred" and cur is not None and last in ("unit", "teen"):
-                cur *= 100; last = "hundred"
-            elif w == "thousand" and cur is not None:
-                total = (total or 0) + cur * 1000; cur = None; last = "thousand"
-            elif w == "and" and last in ("hundred", "thousand"):
-                continue
-            else:
-                flush(); last = None
-        flush()
-    return nums
-
-
-def printed_numbers(text):
-    """cardinals() after replacing ordinal words by their digits ('twenty-fourth' -> 24, 'tenth' -> 10).
-    Returns (all numbers, the numbers that come from ordinal words only)."""
-    t = re.sub(r"\\label\{[^}]*\}", " ", text)
-    ords = set()
-
-    def comp(m):
-        v = lr.TENS[m.group(1).lower()] + ORD[m.group(2).lower()]
-        ords.add(v)
-        return f" {v} "
-    t = re.sub(r"\b(twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)[- ](first|second|third|fourth|fifth|sixth|seventh|"
-               r"eighth|ninth)\b", comp, t, flags=re.I)
-
-    def simple(m):
-        v = ORD[m.group(1).lower()]
-        ords.add(v)
-        return f" {v} "
-    t = re.sub(r"\b(" + "|".join(sorted(ORD, key=len, reverse=True)) + r")\b", simple, t, flags=re.I)
-    base = cardinals(text)
-    return cardinals(t), ords - base
+from number_words import printed_numbers, legacy_round6_numbers_in  # noqa: E402
 
 
 # ---------------------------------------------------------------- parsing the source's data modules
@@ -229,7 +163,7 @@ def main():
         ks = [check_kind(c, mi["fields"]) for c in mi["conj"]]
         kinds_all.update(ks)
         types = collections.Counter(mi["fields"].values())
-        P(f"\n  {n}  ({p.relative_to(L)}:{ln})  cited by {', '.join(names[n])}")
+        P(f"\n  {n}  ({p.relative_to(L).as_posix()}:{ln})  cited by {', '.join(names[n])}")
         P("    " + blk.replace("\n", "\n    "))
         if cls(n).startswith("cond"):
             hyp = re.match(r"(\w+)\s*->", lr.split_type(blk)[1]).group(1)
@@ -240,7 +174,7 @@ def main():
             cond_info[n] = (hyp, hk[0] if hk else "?", unused, uses)
             P(f"    hypothesis: {hk[3].strip() if hk else '?'}  [{hk[0] if hk else '?'}]; proof `fun _ => ...` (binder unused): {unused}; "
               f"other theorems mentioning it: {len(uses)}")
-        P(f"    module {mod.split('.')[-1]} ({mi['path'].relative_to(L)}): Row fields {dict(types)}; entered rows {len(mi['rows'])}; "
+        P(f"    module {mod.split('.')[-1]} ({mi['path'].relative_to(L).as_posix()}): Row fields {dict(types)}; entered rows {len(mi['rows'])}; "
           f"check_i proofs {dict(collections.Counter(x[1] for x in mi['check_proofs']))}; checks := {norm(mi['checks_proof'])[:60]}...")
         P(f"    checks ({len(mi['conj'])} conjuncts; kinds {dict(collections.Counter(ks))}):")
         for c, kk in zip(mi["conj"], ks):
@@ -287,7 +221,7 @@ def main():
             else:
                 target = "record alias: " + norm(blk.split(":=", 1)[1])[:80]
         oc[(c, bool(th_uses))] += 1
-        P(f"  {c:<12} {n}  ({p.relative_to(L)}:{ln})  [{', '.join(names[n])}]")
+        P(f"  {c:<12} {n}  ({p.relative_to(L).as_posix()}:{ln})  [{', '.join(names[n])}]")
         P(f"      {norm(blk)[:240]}")
         if target:
             P(f"      -> {target}")
@@ -423,7 +357,7 @@ def main():
       f"{dict(collections.Counter(verdict_a.values()))}; rows that change: {[x for x in verdict if verdict_a[x] != verdict[x]]}")
     diffs = []
     for no in [r["number"] for r in pop + sixteen]:
-        old_ = sorted(x for x in lr.numbers_in(B[no]["body"]) if x >= 5)
+        old_ = sorted(x for x in legacy_round6_numbers_in(B[no]["body"]) if x >= 5)
         new_ = sorted(x for x in printed_numbers(B[no]["body"])[0] if x >= 5)
         if old_ != new_:
             diffs.append((no, old_, new_))

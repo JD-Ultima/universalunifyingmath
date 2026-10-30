@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 .lake/
+.venv/
+.verification-output/

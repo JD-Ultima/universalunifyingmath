@@ -1,4 +1,4 @@
-# Howard ("Terryology") — Phase 1 report and first Phase 2 results
+# Howard arithmetic and geometry — Phase 1 report and first Phase 2 results
 
 **Scope.** We tested the mathematical content of Terrence Howard's public claims: arithmetic, numerical statements, and the Lynchpin geometry. Physical claims are registered but not evaluated.
 
@@ -7,7 +7,7 @@
 - Proofs and write-ups: `formalization/howard/{arithmetic,numerics,geometry}.md`, Lean `proofs/lean/howard/HowardArith.lean`.
 - Code: `computation/howard/`. Metrics: `metrics/howard/`.
 
-## 1. Sources (all informal)
+## 1. Sources and acquisition limits
 
 **Obtained**
 - *Rolling Stone* 2015 quotes, taken verbatim from the CBS News reprint, which is preserved in a public news corpus (TH-S1).
@@ -44,7 +44,7 @@ Howard's stated data are:
 | Lattice. All 128 subsets of the seven rules {H1,H2,LD,RD,AS,CM,INC} are decided: 58 inconsistent, 70 consistent, 0 open. EFF and BAL are not among the seven. Adding BAL changes no verdict; EFF-strong is not decided. | 46 inconsistent by z3 ground certificates, 12 by A6 alone; 70 by witnesses |
 | §5. With a non-standard addition (log₂ or tropical semiring), H1, H2 and distributivity all hold. These structures are isomorphic to standard ones, and in them the numerals stop counting. | sympy |
 
-**The idea inside the claim.** The four readings we examine are relabellings of standard structures: pairs, addition, exponents (where $2^1\cdot2^1=2^2$), and the tropical semiring. None of them yields a new number system. This is not a classification of all consistent readings. The only classifications are A3 (bi-additive) and A7 (continuous, strictly monotone, associative), and each has hypotheses. Other consistent sets have witnesses that are not relabellings, e.g. $2b$ and $2a$ for {H1,H2,LD} and {H1,H2,RD}. Once we fix any reading that keeps ordinary +, the failing parts of Howard's text are determined.
+**Mathematical reconstructions examined.** The four readings we examine are relabellings of standard structures: pairs, addition, exponents (where $2^1\cdot2^1=2^2$), and the tropical semiring. None of them yields a new number system. This is not a classification of all consistent readings. The only classifications are A3 (bi-additive) and A7 (continuous, strictly monotone, associative), and each has hypotheses. Other consistent sets have witnesses that are not relabellings, e.g. $2b$ and $2a$ for {H1,H2,LD} and {H1,H2,RD}. For each reading that keeps ordinary +, the analysis identifies the compatible and incompatible sets of the explicitly stated rules.
 
 **(b) Numerical claims.** These are exact unless a precision is stated.
 - The √2 "loop" is exactly true arithmetic. It is the fixed point $\sqrt c$ of $x^3/c$, and it is repelling: in float64 it escapes after 28 steps.
@@ -53,7 +53,7 @@ Howard's stated data are:
 - The element "tones" 40.5/81/162/324 Hz are exactly the Pythagorean E over C = 256 Hz. No tested element property doubles.
 - 64 is not a Flower-of-Life lattice count.
 
-**(c) Lynchpin.** The sources alone do not define it well. Six pentagons cannot close a polyhedron (Lean). Under the best-supported reconstruction (six walls, four pyramidal chambers, tetrahedral support), it is the four-film junction of Plateau's laws, i.e. Taylor's T-cone: rays at 109.47°, walls meeting at 120°. That object is well posed but classical. Regular pentagons miss the required angle by 1.4712°. An explicit pentagonal instance is given. "Wave conjugation", "super symmetrical system" and "poles" are undefined, so they cannot be formalized.
+**(c) Lynchpin.** The sources alone do not define it well. Six pentagons cannot close a polyhedron (Lean). Under reconstruction L-T (six walls, four pyramidal chambers, tetrahedral support), the resulting mathematical object is the four-film junction of Plateau's laws, i.e. Taylor's T-cone: rays at 109.47°, walls meeting at 120°. That object is well posed but classical. Regular pentagons miss the required angle by 1.4712°. An explicit pentagonal instance is given. "Wave conjugation", "super symmetrical system" and "poles" are undefined, so they cannot be formalized.
 
 ## 3. Assessment
 
@@ -61,14 +61,14 @@ Howard's stated data are:
 |---|---|
 | (a) asserted | 31 claims. 13 are mathematically formalizable or partially so (TH-001–010, 020, 022, 024). The rest are physical, historical or undefined. |
 | (c) proven | A0–A7, G1, T1–T3, N1–N5. |
-| (d) conjectured | P-TH-1 (3-limit numerology), P-TH-3 (octave reading of 1×1=2), P-TH-5 (models are Plateau-compliant), L-T as the patent's intent. |
+| (d) conjectured | P-TH-1 (prime-factor observation in the stated units), P-TH-3 (octave reading of 1×1=2), P-TH-5 (whether measured models satisfy Plateau's laws), and whether primary drawings support reconstruction L-T. |
 | (e) testable | TH-009 (once "tone" is defined); TH-020 (patent angles); TH-035 (curricula in 2035). |
 
-No result in this phase is new mathematics. The new content is the complete consistency analysis of seven of Howard's rules, with its certificates: z3 ground certificates for 46 inconsistent subsets, and Lean proofs of A6 in generic form and over ℚ for the other 12.
+This phase makes no claim of mathematical novelty. Its reproducible contribution is a complete consistency analysis of the seven specified rules, with certificates: z3 ground certificates for 46 inconsistent subsets, and Lean proofs of A6 in generic form and over ℚ for the other 12.
 
 ## 4. Proposed formalization order
 
-1. **Obtain TH-S5 (book) and TH-S3 (JRE #2171).** Extract every stated product and re-run `axiom_lattice.py`. This is the cheapest step and decides whether H2 stands.
+1. **Obtain TH-S5 (book) and TH-S3 (JRE #2171).** Extract every stated product and re-run `axiom_lattice.py`. This would determine whether the primary text supports the inferred rule H2.
 2. **Port A3 (ℚ, ℝ) and the ℝ instances of A1, A2, A6 to Lean + Mathlib** once the cache is reachable. Already done in core Lean: the ℤ results, A1/A2 for any magma and over ℚ, A6 in generic form and over ℚ, and G1.
 3. **Obtain the patent full text (TH-S6).** Check L-T against the figure angles; prediction: 109.47° and 120°. If it matches, formalize T1 in Mathlib's Euclidean geometry.
 4. **Define "tone" (TH-G06)** and test TH-009 against NIST spectral lines.

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Freedom (look-elsewhere) tests for the scorecard agreements other than alpha(0) (round 2, task 3).
+"""Declared-family sensitivity for scorecard agreements other than alpha(0) (round 2, task 3).
 
 Usage: python3 -I scorecard_freedom.py
 
 Modelled on F-CT-4 of the alpha audit (formalization/chain-theory/alpha/audit.md): for each agreement,
 (A) the source's own printed alternatives, (B) a declared rule space built only from choices the
 source itself prints or names, with the number of variants, the number of distinct values, the hits
-at the achieved precision and the expected number of chance hits from the local density of values,
+at the achieved precision and density-times-window reference counts,
 and (C) the list of discrete choices behind the agreeing face.
 
   W  weak angle: sin^2(theta_W) = (17/36)^2 = 289/1296 (164.2, OPEN), on-shell -0.83 sigma
@@ -14,6 +14,9 @@ and (C) the list of discrete choices behind the agreeing face.
   P  proton-electron mass ratio (2871/67)^2 (186.1 'derived cell' = 21.1/175.4 'candidate cell')
 Exact arithmetic (sympy) for the re-derivation of 17/36; floating point (mpmath, 30 digits) for
 densities. Reference values as in scorecard.py (CODATA 2022 from scipy.constants, PDG 2024).
+Reference counts use illustrative uniform-value or locally uniform log-value assumptions.
+Integer reference coverage assumes a uniform phase modulo the integer spacing. These are
+not calibrated p-values for the deterministic constructions or evidence of a search history.
 """
 import itertools, math
 import sympy as sp
@@ -109,8 +112,8 @@ def part_W():
     for k, t in SCHEMES.items():
         hits = [x for x in dist if abs(x - t) <= delta]
         print(f"      within |delta| = {delta:.2e} of {k}: {len(hits)}")
-    print(f"      chance estimate, values uniform on [0,1]: {len(dist)} values x {len(SCHEMES)} schemes x 2 delta = "
-          f"{len(dist) * len(SCHEMES) * 2 * delta:.3f} expected hits")
+    print(f"      illustrative uniform-value reference, values uniform on [0,1]: {len(dist)} values x {len(SCHEMES)} schemes x 2 delta = "
+          f"{len(dist) * len(SCHEMES) * 2 * delta:.3f} expected matches (counts summed over schemes)")
     # (B) declared space: the count-face family at the six genres
     vals = []
     for (d1, d2) in [(2, 2), (3, 2), (4, 2), (3, 3), (4, 3), (4, 4)]:
@@ -129,9 +132,9 @@ def part_W():
         hits = [x for x in dvals if abs(x - t) <= delta]
         dens = sum(1 for x in dvals if abs(x - t) <= 0.1) / 0.2
         print(f"      {k:32s} hits within {delta:.2e}: {len(hits)} {[round(h, 6) for h in hits]}; "
-              f"local density {dens:.1f}/unit -> expected {dens * 2 * delta:.4f}")
+              f"local density {dens:.1f}/unit -> density-window reference count {dens * 2 * delta:.4f}")
     tot_exp = sum(sum(1 for x in dvals if abs(x - t) <= 0.1) / 0.2 * 2 * delta for t in SCHEMES.values())
-    print(f"      expected chance hits summed over the four schemes: {tot_exp:.3f}")
+    print(f"      density-window reference counts summed over the four schemes: {tot_exp:.3f}")
     print("  (C) discrete choices behind the agreeing face: (1) the Born square of the count face rather than the count face the")
     print("      bridge names (the source refuses this step: 'refused at its first step'); (2) whole (17) rather than cut (14); (3) Weyl")
     print("      letters rather than another letter basis (Gell-Mann/Pauli gives 5); (4) sin^2 rather than cos^2; (5) the on-shell")
@@ -163,7 +166,7 @@ def part_L():
         dens, n = local_density(vals, tgt[lab])
         hits = sorted({round(v, 6) for v in vals if abs(v / tgt[lab] - 1) <= ach[lab]})
         print(f"      {lab}: {len(vals)} variants, {len({round(v, 9) for v in vals})} distinct; hits within {ach[lab]:.2e}: {hits}; "
-              f"local density {dens:.2f}/unit ln -> expected chance hits {dens * 2 * ach[lab]:.4f}")
+              f"local density {dens:.2f}/unit ln -> density-window reference count {dens * 2 * ach[lab]:.4f}")
     joint = [(e, mu, ta, p) for e in cells["e"] for mu in cells["mu"] for ta in cells["tau"] for p in (1, 2)
              if abs((mu / e) ** p / MMU - 1) <= 0.01 and abs((ta / e) ** p / MTAU - 1) <= 0.01]
     ntot = len(cells["e"]) * len(cells["mu"]) * len(cells["tau"]) * 2
@@ -200,11 +203,11 @@ def part_P():
     print(f"  (B) declared space: S_p = (records - strike) x dressing, records in the six genre Born counts {R[:6]} or the printed proton")
     print(f"      measures {R[6:]}, strike in {{0, 18}}, dressing 3^a 4^b with a + b <= 4 (198.3: three per qutrit in-leg, four per ququart");
     print(f"      in-leg), e in {{67, 201}}, p in {{1, 2}}: {len(cells)} cells, {len(vals)} variants")
-    print(f"      hits within {ach:.2e}: {hits}; local density {dens:.1f} distinct values per unit ln -> expected chance hits {dens * 2 * ach:.4f}")
+    print(f"      hits within {ach:.2e}: {hits}; local density {dens:.1f} distinct values per unit ln -> density-window reference count {dens * 2 * ach:.4f}")
     w = sum(1 for v in vals if abs(v / MP - 1) <= 0.01)
     print(f"      variants within 1%: {w}")
-    print(f"  integer argument: the nearest integer to {s_t:.4f} is 2871, off by {2871 - s_t:+.4f}; if any integer can be built, the chance")
-    print(f"  of landing this close is {2 * abs(2871 - s_t):.3f}; if only multiples of 9 (dressing 9) can, {2 * abs(2871 - s_t) / 9:.4f}.")
+    print(f"  integer reference: nearest integer to {s_t:.4f} is 2871, off by {2871 - s_t:+.4f}; under a uniform target phase modulo the spacing,")
+    print(f"  coverage this close is {2 * abs(2871 - s_t):.3f} for spacing 1 and {2 * abs(2871 - s_t) / 9:.4f} for spacing 9 (dressing 9).")
     print("  (C) discrete choices: (1) entry segment = the capped (2,3) link at its cap 319 with nothing struck (striking gives 2709,")
     print("      -11%); (2) dressing 9 from two unpassed in-legs (27 gives 8613 over 67, x9); (3) 'a capped link beyond the first cap reads")
     print("      nothing' (merging gives 8613); (4) electron at 67 (with 2871) or at 201 (with 8613): same ratio; (5) mass = S^2. The source")
@@ -213,5 +216,7 @@ def part_P():
 
 
 if __name__ == "__main__":
+    print("[STATISTICAL SCOPE] density-window counts are illustrative uniform/local-uniform references; integer coverage assumes a uniform phase.")
+    print("They are not calibrated p-values, do not supply a selection model, and establish no construction search history or author intent.\n")
     part_W(); part_L(); part_P()
-    print("[reference] alpha(0), F-CT-4 of the alpha audit: expected chance hits within 1 sigma 4.4e-6 in a declared 46 080-rule space.")
+    print("[reference] alpha(0), F-CT-4: unique 1-sigma match in 46 080 rules; illustrative uniform-target expected count 4.4e-6, not a calibrated p-value.")

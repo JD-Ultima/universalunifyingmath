@@ -99,41 +99,7 @@ def proof_method(proof):
 
 
 # ---------------------------------------------------------------- numbers printed in a box
-UNITS = {w: i for i, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve thirteen "
-                                    "fourteen fifteen sixteen seventeen eighteen nineteen".split())}
-TENS = {w: 10 * (i + 2) for i, w in enumerate("twenty thirty forty fifty sixty seventy eighty ninety".split())}
-
-
-def numbers_in(text):
-    t = re.sub(r"\\label\{[^}]*\}", " ", text)
-    t = re.sub(r"\\[a-zA-Z]+", " ", t)
-    nums = {int(x) for x in re.findall(r"(?<![\w.])(\d+)(?![\w.]*\d)", t)}
-    words = re.findall(r"[A-Za-z]+", t.replace("-", " "))
-    i = 0
-    while i < len(words):
-        w = words[i].lower()
-        if w in UNITS or w in TENS:
-            total, cur, j = 0, 0, i
-            while j < len(words):
-                v = words[j].lower()
-                if v in UNITS:
-                    cur += UNITS[v]
-                elif v in TENS:
-                    cur += TENS[v]
-                elif v == "hundred" and cur:
-                    cur *= 100
-                elif v == "thousand" and cur:
-                    total += cur * 1000; cur = 0
-                elif v == "and" and j + 1 < len(words) and (words[j + 1].lower() in UNITS or words[j + 1].lower() in TENS) and cur >= 100:
-                    pass
-                else:
-                    break
-                j += 1
-            nums.add(total + cur)
-            i = j
-        else:
-            i += 1
-    return nums
+from number_words import numbers_in  # noqa: E402; shared cardinal/ordinal parser
 
 
 def code_in_title(code, title):
@@ -263,7 +229,7 @@ def main():
     P(f"    the {len(sixteen)} rows: {', '.join(r['number'] for r in sixteen)}")
     P(f"    distinct restated/kernel declarations they cite: {len(tied)}")
     for n in tied:
-        P(f"      {cls(n):<22} {n}  ({IDX[n][1].relative_to(L)}:{IDX[n][2]})  cited by "
+        P(f"      {cls(n):<22} {n}  ({IDX[n][1].relative_to(L).as_posix()}:{IDX[n][2]})  cited by "
           + ", ".join(r["number"] for r in sixteen if n in r["lean"].split()))
     allg = collections.defaultdict(list)
     for r in rows:
@@ -283,7 +249,7 @@ def main():
     conj_rows = []
     for n in tied:
         k, p, ln, blk = IDX[n]
-        P(f"\n  {n}   ({p.relative_to(L)}:{ln})")
+        P(f"\n  {n}   ({p.relative_to(L).as_posix()}:{ln})")
         P("    " + blk.replace("\n", "\n    "))
         if cls(n).startswith("kernel"):
             continue
@@ -303,7 +269,7 @@ def main():
             for an in anchors:
                 if norm(an) not in alpha_txt:
                     anchor_fail.append((short, an))
-            P(f"\n    conjunct {short}  ->  {tgt}  ({tp.relative_to(L)}:{tln})")
+            P(f"\n    conjunct {short}  ->  {tgt}  ({tp.relative_to(L).as_posix()}:{tln})")
             P(f"      statement: {norm(ty)}")
             if binders:
                 P(f"      binders: {norm(binders)}" + (f"  [opaque Prop hypotheses: {', '.join(opq)}; unused in the proof: {', '.join(unused)}]" if opq else ""))
@@ -359,7 +325,7 @@ def main():
             for n in r["lean"].split():
                 if n in decls and decls[n][1].replace(" ", "").find(km.replace(" ", "") + ".checks") >= 0:
                     cit[r["grade"]] += 1; citing.append(r["number"])
-        P(f"  {km}  ({IDX[km + '.checks'][1].relative_to(L)})")
+        P(f"  {km}  ({IDX[km + '.checks'][1].relative_to(L).as_posix()})")
         P(f"    rows := {rdef}{' ...' if len(rdef) >= 110 else ''}   [{'literal' if lit else 'computed'}]")
         P(f"    checks decided over {over}; checks conjuncts: {norm(split_type(chk[3])[1]).count('/\\') + 1}")
         P(f"    cited by statement rows: {dict(cit)} {citing}")
@@ -469,7 +435,7 @@ def main():
         pthms.append(re.match(r"theorem\s+(\S+)", line).group(1))
     blocked = set().union(*[upward(m) for m in pmods]) - set(pmods)
     first_only = upward("AxiomDeclaration.Theorems")
-    lake_files = sorted(str(q.relative_to(L)) for q in L.glob("*/lakefile.toml"))
+    lake_files = sorted(q.relative_to(L).as_posix() for q in L.glob("*/lakefile.toml"))
     pins = sorted({(L / q).read_text(encoding="utf-8").strip() for q in [str(x.relative_to(L)) for x in L.glob("*/lean-toolchain")]})
     req = sorted(set(re.findall(r'path\s*=\s*"([^"]+)"', " ".join((L / f).read_text(encoding="utf-8") for f in lake_files))))
     git = sum(("git" in (L / f).read_text(encoding="utf-8")) for f in lake_files)
@@ -481,7 +447,7 @@ def main():
     P(f"  modules importing AxiomDeclaration.Theorems transitively: {len(first_only)}; importing a patched module: "
       f"{len(blocked)}; importing neither: {len(need - blocked - set(pmods))} "
       f"(AlphaDerivation modules among them: {sum(1 for m in need - blocked if m.startswith('AlphaDerivation'))})")
-    refs = sorted({str(q.relative_to(L)) for q in L.rglob("*.lean") for t in pthms
+    refs = sorted({q.relative_to(L).as_posix() for q in L.rglob("*.lean") for t in pthms
                    if re.search(r"(?<![\w])" + re.escape(t) + r"(?![\w])", q.read_text(encoding="utf-8"))})
     lib_refs = [f for f in refs if f.count("/") >= 2]
     P(f"  files mentioning a patched theorem: {refs}; library modules among them: {lib_refs} "

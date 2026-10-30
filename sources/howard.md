@@ -2,7 +2,7 @@
 
 Accessed 2026-10-30 from a sandbox with restricted egress. Most news, patent and video hosts were refused by the proxy or did not resolve: rollingstone.com, wikipedia.org, patents.google.com, USPTO ppubs, justia.com, grantland.com, archive.org, youtube.com. Only WebSearch result summaries, GitHub and raw.githubusercontent.com were usable.
 
-**Every Howard source is informal**: interviews, a podcast, a talk, a self-published book, tweets and patent filings. None is peer-reviewed. Howard mentions "three papers that's been peer reviewed" (JRE #2152 136:09), but these were not located (TH-G12).
+The source register distinguishes interviews, transcript material, self-published writing, social-media statements, and patent records. Acquisition status is listed per item; several primary texts were unavailable. Publication type alone does not decide the mathematical claims. Howard mentions "three papers that's been peer reviewed" (JRE #2152 136:09), but these were not located (TH-G12).
 
 Timestamps "mm:ss" follow the transcript file, so 124:37 means 2:04:37. Downloaded files are kept outside the repo, under the session scratchpad (`howard-dl/`), and are not committed.
 

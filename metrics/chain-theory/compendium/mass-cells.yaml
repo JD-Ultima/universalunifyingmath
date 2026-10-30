@@ -7,7 +7,7 @@ code: [computation/chain-theory/compendium/masscells.py, computation/chain-theor
 outputs: [computation/chain-theory/compendium/outputs/masscells.txt, computation/chain-theory/compendium/outputs/masscells_readings.tsv]
 references:
   codata: "CODATA 2022 via scipy.constants 1.18.1: m_p/m_e 1836.152673426(32), m_mu/m_e 206.7682827(46)"
-  pdg: "PDG 2024 mass_width_2024.mcd (checked at run time): m_tau/m_e 3477.365(176), m_tau/m_mu 16.81769(85), Koide 0.6666645(51); quark masses for the 181.5 cross-check"
+  pdg: "PDG 2024 mass_width_2024.mcd (checked in the original recorded run; file unavailable for the current rerun): m_tau/m_e 3477.365(176), m_tau/m_mu 16.81769(85), Koide 0.6666645(51); quark masses for the 181.5 cross-check"
 anchors: {checked: 102, missing: 0}
 trace:
   "67":   {value: "79 - 12", status: "forced given the roster electron web (entered); first power 67 vs 201 is one of two printed readings; 198.3 gives 201"}
@@ -39,7 +39,8 @@ mass_law_variants_mp_me:
   S: {value: 42.850746, rel: -0.977}
   spread_relative: 1.20e-4
   codata_inside_band: true
-look_elsewhere_mp_me:   # lambda = 2 delta rho (window 0.5 / 1.0 in ln); rank of (2871/67)^2 is 1 in every space
+look_elsewhere_mp_me:   # illustrative reference lambda = 2 delta rho (window 0.5 / 1.0 in ln); rank is 1 in every space
+  statistical_scope: "Density-window references assume local uniformity in log-value. Output P = 1-exp(-lambda) belongs only to an illustrative homogeneous Poisson process with estimated intensity rho. Integer/power-lattice coverage assumes a uniform target phase modulo the spacing; combined electron choices additionally assume independent phases. These are not calibrated p-values or evidence of construction search history or author intent."
   printed: {variants: 120, distinct: 103, lambda: [2.9e-4, 1.8e-4], lambda_at_spread: [1.9e-3, 1.2e-3]}
   grid_per_body: {variants: 144, distinct: 120, lambda: [2.6e-4, 1.8e-4]}
   grid_uniform: {variants: 144, distinct: 34, lambda: [1.1e-4, 5.5e-5]}
@@ -47,9 +48,9 @@ look_elsewhere_mp_me:   # lambda = 2 delta rho (window 0.5 / 1.0 in ln); rank of
   narrow_family_319_67: {p_fixed: 1.7e-5, p_free: 5.0e-5}
   any_integer_over_67: {achieved: 0.053, at_spread: 0.34}
   multiples_of_9_over_67: {achieved: 0.0059, at_spread: 0.038}
-  trials_factor_across_quantities: "up to 34 (numerical scorecard rows)"
+  quantities_compared: "34 numerical scorecard rows; a justified joint null model would need to account for their multiplicity; no calibrated trial factor is inferred"
 look_elsewhere_leptons:
-  mu: {printed: [3.5e-3, 2.6e-3], grid_per_body: [7.0e-3, 6.1e-3], census_189_1: 0.023, integer: "963 nearest to 963.42; P(any integer) 0.84, P(multiple of 9) 0.094"}
+  mu: {printed: [3.5e-3, 2.6e-3], grid_per_body: [7.0e-3, 6.1e-3], census_189_1: 0.023, integer: "963 nearest to 963.42; uniform-phase reference coverage 0.84 (spacing 1), 0.094 (spacing 9)"}
   tau: {printed: [0.15, 0.073], grid_per_body: [0.073, 0.037], census_154_1: 0.23, integer: "3969 is 18.1 above 3950.9"}
   face_free_tau_over_mu: {value: 16.9867, rel: +1.005e-2, n_sigma: +198}
 cross_check_181_5: "same segment walk: top sink 2871 = proton cell; m_t = m_p at either exponent vs measured m_t/m_p = 183.9; order s > c = b > t"
@@ -69,4 +70,4 @@ empirical_testability:
   detail: "Exact: p >= 3.6e5 sigma, mu 3.9e4 sigma, tau 181 sigma, tau/mu 198 sigma, Koide 196 sigma. Approximate: no error budget; the printed second-order laws move m_p/m_e by 1.2e-4."
 confidence:
   value: medium_high
-  justification: "Every quoted string is verbatim-checked; webs, paths and printed tuples are reproduced; the reading grid and the printed-space membership are documented reconstructions; lambda values assume cells fixed without the target and are not p-values."
+  justification: "Every quoted string is verbatim-checked; webs, paths and printed tuples are reproduced; the reading grid and printed-space membership are documented reconstructions. Reference density/Poisson/uniform-phase models are illustrative; prior fixation of a cell alone does not establish them, and they are not calibrated p-values."

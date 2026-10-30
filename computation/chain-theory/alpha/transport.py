@@ -32,12 +32,25 @@ The definitions of operator_origin.py (which imports records_independent.py and 
 loaded by executing its source up to the start of its F1 enumeration. The diagnostic loop of its
 section 1 is left out; it draws no random numbers, so the random state is the same. None of the
 three files is modified, and the F1/F2 searches are not rerun.
-Run: python3 transport.py > transport.out    (~13 min on 4 shared cores; part 6 uses 4 worker processes)
+Run on Linux/WSL: python3 transport.py > transport.out
+    (~13 min on 4 shared cores; part 6 uses 4 forked worker processes)
 """
 import os
+import sys
+import multiprocessing
+
+# The workers inherit the operator maps (including closures) and the large arrays
+# constructed below. Spawn cannot recreate that state without rerunning the audit.
+# Check before loading numerical dependencies or doing the expensive setup.
+if "fork" not in multiprocessing.get_all_start_methods():
+    raise SystemExit(
+        "transport.py requires the multiprocessing 'fork' start method. "
+        "Run this audit in Linux/WSL with its Linux Python; native Windows is unsupported."
+    )
+
 for _v in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS"):
     os.environ.setdefault(_v, "1")         # one BLAS thread per process; part 6 runs 4 processes
-import io, contextlib, itertools, sys, time, types, hashlib, multiprocessing
+import io, contextlib, itertools, time, types, hashlib
 from fractions import Fraction
 from collections import Counter, defaultdict
 import numpy as np

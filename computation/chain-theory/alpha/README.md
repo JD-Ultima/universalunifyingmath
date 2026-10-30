@@ -2,6 +2,8 @@
 
 Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip install numpy==2.5.3 sympy==1.14.0 mpmath==1.3.0`). Randomness only with fixed seeds (`readcap_lemmas.py`: 20261030; `symmetry.py`: 7; `operator_origin.py`: 20261030; `transport.py`: 20261031; `mechanical_mutations.py`: 20261030, for the sample of pairs checked in Lean).
 
+The complete reproduction loop below uses Bash and was run on Linux. `transport.py` requires the `fork` multiprocessing start method: its workers inherit the operator closures and large arrays built by the parent. On Windows, run it in WSL using Linux Python; it now exits immediately with that requirement on native Windows. The other Python scripts can run natively with `python -X utf8 script.py` so Unicode output uses UTF-8.
+
 | Script | Purpose | Runtime | Output |
 |---|---|---|---|
 | `records_independent.py` | Operator-level rebuild of the 172 records; sectors; exact value; 60 digits (F-CT-1) | ~2 s | `records_independent.out` |
@@ -20,7 +22,7 @@ Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip insta
 | `chainalpha_transcription.py` | Python transcription of Parts 0–1 of `ChainAlpha.lean` with one hook per mutation site; module used by `mechanical_mutations.py`, checked against Lean on every single mutant (`proofs/lean/chain-theory/mutation_spotcheck.out`) | — | — |
 | `algebraic.py` | Minimal polynomial, Galois conjugates, $f(d_Q,d_q)$, deviations from measurements (F-CT-6, F-CT-7) | <1 s | `algebraic.out` |
 
-Run all of them:
+Run all of them from this directory in Linux/WSL Bash:
 
 ```bash
 for s in records_independent freedom charge_conventions algebraic weight_functionals config_enumeration readcap_lemmas symmetry mutations_classified operator_origin xcheck_operator_form transport; do python3 $s.py > $s.out; done

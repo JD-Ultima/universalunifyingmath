@@ -1,0 +1,6 @@
+# Dependencies for scripts/verify.py and the selected source-consistency checks.
+numpy==2.5.3
+sympy==1.14.0
+mpmath==1.3.0
+scipy==1.18.1
+z3-solver==5.3.3.0

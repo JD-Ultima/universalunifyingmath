@@ -774,7 +774,7 @@ def i6_reduction(res):
             P(f"     (real polynomials: {ok_real})")
             assert ok_real
             sh1, sh13 = e1.subs({xr: 1, yr: 0}), e13.subs({xr: 1, yr: 0})
-            P(f"   Shiab# (x' = z' = 1, y' = w' = 0) [identical for W_A: z' absent]:  G(g_aleph) = -({sh1}) g_aleph,"
+            P(f"   Shiab# (x' = z' = 1, y' = w' = 0) [algebraic terms identical for W_A: z' absent]:  G(g_aleph) = -({sh1}) g_aleph,"
               f"  0 = {sp.factor(sh13)}")
             br1 = sh1.subs(r_, 0)
             sq1 = sp.expand(312 * (s_ + kap / 624) ** 2 - kap ** 2 / 1248)
@@ -794,7 +794,7 @@ def i6_reduction(res):
             tt, uu = sp.Symbol('t'), sp.Symbol('u')
             sh1, sh13 = C1.subs({xs: 1, ys: 0}), C13.subs({xs: 1, ys: 0})
             P(f"  (7,7), u(64,64)-real (code normalisation, real x,y,z,w,t,u,kappa):  Upsilon = 0 <=> x G = c1 g and y G = c13 g")
-            P(f"   Shiab# (x = z = 1, y = w = 0) [identical for W_A]:  G(g_aleph) = ({sh1}) g_aleph,  0 = {sp.factor(sh13)}")
+            P(f"   Shiab# (x = z = 1, y = w = 0) [algebraic terms identical for W_A]:  G(g_aleph) = ({sh1}) g_aleph,  0 = {sp.factor(sh13)}")
             br1 = sh1.subs(uu, 0)
             sq1 = sp.expand(312 * (tt + kap / 624) ** 2 - kap ** 2 / 1248)
             br2 = sp.expand(sh1.subs(tt, -kap / 208))

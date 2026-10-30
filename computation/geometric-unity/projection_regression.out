@@ -1,0 +1,11 @@
+Z2, flat Lorentzian base, lambda=1/2, c_H=1, c_V=3/52, kappa=208
+t=-1, u|s=1/2; dt=0; du=e^1 normal to the section
+c1=78; c13=0; Lambda_P=78; Lambda_4=0
+W_A derivative output vanishes at every form slot: True
+Twist derivative output at retained tangential form slots (common phase i omitted):
+  a=0: {16380: 24}
+  a=7: {16253: 24}
+  a=8: {16125: -24}
+  a=9: {15869: 24}
+Exact result: this first jet satisfies (P) for W_A and fails (P) for W_A+W_C.Ad_Gamma.
+The 4D algebraic equation agrees; the projected normal-derivative constraint differs.

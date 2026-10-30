@@ -14,15 +14,19 @@ Blocks (each prints its own header):
             155.1, 198.3 name), validated against the six printed tuples; which readings meet the cells / the ratios
   FACES     the 155.1 faces (dock, hub, mixed) per body and the ratio at each
   MASSLAW   the agreeing cells under every printed mass law (S, S^2, S^2 + closure of 195.1, T1(1+G2^2) of 176.2)
-  SPACES    distribution of predicted ratios and look-elsewhere estimates: printed cells; per-body choice over the
+  SPACES    distribution of predicted ratios and density references: printed cells; per-body choice over the
             reading grid; the round-2 declared space; the narrow family 319*3^u/(67*3^v); any-integer baselines
   LEPTON    the face-free content (tau/mu) and the factor nine
   CROSS     the same segment rule at the quark sinks of 181.5
-  DIGITS    digits put in against digits matched
+  DIGITS    decimal sizes of specified integers and observed relative agreement
   SWEEP     mechanical sweep of integers in proton first-power contexts, classified (audit of the printed space)
 Exact arithmetic with sympy; 30-digit mpmath for logs. References: CODATA 2022 from scipy.constants 1.18.1 (asserted
 against the transcription); PDG 2024 lepton and quark masses from the MC table mass_width_2024.mcd (checked when
 --pdg-mcd is given). Read-only: nothing in the source is executed.
+Statistical reference counts assume local uniformity in log-value, or an illustrative Poisson
+process with that estimated intensity. Integer/power-lattice coverage assumes a uniform target
+phase modulo its spacing. These models are illustrative, not calibrated for the deterministic
+constructions, and establish no search history or author intent.
 """
 import collections, itertools, math, pathlib, re, sys
 import sympy as sp
@@ -408,14 +412,17 @@ def lee(name, vals, t, delta, extra=""):
     for w in (0.5, 1.0):
         rho, _ = density(vals, t, w)
         lam = 2 * delta * rho
-        out.append(f"    window |ln| < {w}: {rho:.1f} distinct values per unit ln -> expected chance hits within {delta:.2e}: {lam:.2e}, "
-                   f"P(>=1) = {1 - math.exp(-lam):.2e}")
+        out.append(f"    window |ln| < {w}: {rho:.1f} distinct values per unit ln -> density-window reference count within {delta:.2e}: {lam:.2e}, "
+                   f"Poisson-reference P(>=1) = {1 - math.exp(-lam):.2e}")
     print("\n".join(out) + extra)
 
 
 def spaces(grid, W, spread):
-    print("[SPACES] distributions of predicted ratios and look-elsewhere estimates. A 'variant' is one (numerator cell, electron cell,")
-    print("         exponent) choice; lambda = 2 delta x (distinct values per unit ln near the target); P = 1 - exp(-lambda)")
+    print("[SPACES] distributions of predicted ratios and illustrative density references. A 'variant' is one (numerator cell, electron cell,")
+    print("         exponent) choice; lambda = 2 delta x (distinct values per unit ln near the target). P = 1 - exp(-lambda) belongs")
+    print("         only to an illustrative homogeneous Poisson process in ln with that intensity; no calibrated p-value is claimed.")
+    print("         Integer/power-lattice coverage uses a uniform target phase modulo the spacing; combined electron choices additionally")
+    print("         use independent phases. None of these assumptions establishes a construction search history or author intent.")
     dp = lnd(R(2871, 67) ** 2, MP); dmu = lnd(R(963, 67) ** 2, MMU); dtau = lnd(R(3969, 67) ** 2, MTAU)
     print(f"  achieved |ln dev|: p {dp:.3e}, mu {dmu:.3e}, tau {dtau:.3e}; source's own convention spread for p (MASSLAW) {spread:.2e}")
     # (1) printed cells
@@ -461,19 +468,19 @@ def spaces(grid, W, spread):
     hits = sorted({(u, v, p) for u in range(5) for v in range(2) for p in (1, 2) if lnd(R(319 * 3 ** u, 67 * 3 ** v) ** p, MP) <= dp * 1.0000001})
     print(f"  (4) narrow family (319 3^u / (67 3^v))^p, u 0..4, v 0..1, p 1..2: hits at the achieved precision {hits}; spacing in ln is p ln 3,")
     lamf = sum(2 * dp / (p * math.log(3)) for p in (1, 2))
-    print(f"      so a fixed (u - v, p) rule is hit by chance with probability {2*dp/(2*math.log(3)):.1e} (p = 2) and some p with {lamf:.1e}")
+    print(f"      uniform log-phase reference coverage {2*dp/(2*math.log(3)):.1e} (spacing 2 ln 3, p = 2); summed reference coverage over p: {lamf:.1e}")
     # (5) the source's own lepton censuses: only the number of distinct first powers and their range are printed
     print("  (5) the saturation censuses as candidate spaces (154.1: 300 three-hub sinks, 63 distinct first powers 369..4617; 189.1:")
     print("      231 two-hub sinks, 92 values 95..3321); values not printed, so log-uniform spacing is assumed; e = 67, p = 2:")
     for lab, nd, lo_, hi_, tg, dd in (("tau", 63, 369, 4617, MTAU, dtau), ("mu", 92, 95, 3321, MMU, dmu)):
         rho = nd / (2 * math.log(hi_ / lo_))
         print(f"      m_{lab}/m_e: target cell 67 sqrt(ratio) = {67 * math.sqrt(tg):.1f} inside [{lo_}, {hi_}]; {rho:.1f} values per unit ln -> "
-              f"expected chance hits within {dd:.2e}: {2 * dd * rho:.3f}")
+              f"log-uniform reference count within {dd:.2e}: {2 * dd * rho:.3f}")
     print("      the proton saturation (175.1, 175.3: 16946 and 44341 sinks) prints no first powers, so no density can be formed;")
     print("      the source reports only that none equals the candidate integer")
     # (6) any integer
     st = 67 * math.sqrt(MP)
-    print(f"  (6) any-integer baselines over e = 67, p = 2: target numerator {st:.4f}; nearest integer 2871 (off {2871 - st:+.4f});")
+    print(f"  (6) uniform-phase integer reference coverage over e = 67, p = 2: target numerator {st:.4f}; nearest integer 2871 (off {2871 - st:+.4f});")
     for lab, dl in (("achieved", dp), ("convention spread", spread)):
         print(f"      {lab:18s} delta {dl:.2e}: any integer {min(1, dl * st):.3f}; multiples of 9 {min(1, dl * st / 9):.4f}; "
               f"with the electron cell free in {eu}: any integer {1 - math.prod(1 - min(1, dl * e * math.sqrt(MP)) for e in eu):.3f}")
@@ -490,15 +497,15 @@ def lepton():
     print(f"  face-consistent ratios (176.2 prints them): m_mu/m_e = {h_mu:.4f}, m_tau/m_e = {h_tau:.3f}; measured/predicted = "
           f"{MMU/h_mu:.4f}, {MTAU/h_tau:.4f}; nearest power of 3: 9 ({math.log(MMU/h_mu/9):+.2e}, {math.log(MTAU/h_tau/9):+.2e} in ln)")
     for lab, base in (("3^n", 3), ("9^n", 9)):
-        print(f"  chance that a fixed prediction lands within {abs(math.log(MMU/h_mu/9)):.2e} of a factor {lab} away from the measured m_mu/m_e: "
+        print(f"  uniform log-phase reference coverage within {abs(math.log(MMU/h_mu/9)):.2e} of the {lab} rescaling lattice: "
               f"{2*abs(math.log(MMU/h_mu/9))/math.log(base):.1e}")
     print(f"  given mu/e, tau/e follows from tau/mu; its deviation {rel(R(3969,67)**2, MTAU):+.3%} is tau/mu's {rel(tm, TAUMU):+.3%} plus mu/e's "
           f"{rel(R(963,67)**2, MMU):+.3%}")
     for lab, cell, tg, step in (("mu", 963, MMU, 9), ("tau", 3969, MTAU, 27)):
         t_ = 67 * math.sqrt(tg); near = round(t_ / step) * step
         print(f"  integer level, m_{lab}/m_e at e = 67: target cell {t_:.2f}, printed {cell} (off {cell - t_:+.2f}); nearest integer "
-              f"{round(t_)}, nearest multiple of {step} {near}; P(any integer this close) = {min(1, 2 * abs(cell - t_)):.2f}, "
-              f"P(multiple of {step}) = {min(1, 2 * abs(cell - t_) / step):.3f}")
+              f"{round(t_)}, nearest multiple of {step} {near}; uniform-phase coverage (any integer) = {min(1, 2 * abs(cell - t_)):.2f}, "
+              f"coverage (multiple of {step}) = {min(1, 2 * abs(cell - t_) / step):.3f}")
     for lab, e in (("mixed (e 67)", 67), ("hub (e 201)", 201)):
         k = R(e ** 2 + 963 ** 2 + 3969 ** 2, (e + 963 + 3969) ** 2)
         print(f"  Koide at the {lab} face: {k} = {float(k):.6f} ({rel(k, KOIDE):+.3%} against {KOIDE:.7f}, {(float(k)-KOIDE)/sKOIDE:+.0f} sigma)")
@@ -518,12 +525,12 @@ def cross():
 
 # ------------------------------------------------------------------ DIGITS
 def digits():
-    print("[DIGITS] information put in against agreement obtained")
+    print("[DIGITS] decimal sizes of specified integers and observed relative agreement")
     for lab, num, den, t in (("m_p/m_e", 2871, 67, MP), ("m_mu/m_e", 963, 67, MMU), ("m_tau/m_e", 3969, 67, MTAU)):
         d = -math.log10(abs(rel(R(num, den) ** 2, t)))
-        print(f"  {lab:9s} ({num}/{den})^2: integers carry log10({num}) + log10({den}) = {math.log10(num) + math.log10(den):.2f} digits; "
+        print(f"  {lab:9s} ({num}/{den})^2: sum of integer decimal logarithms log10({num}) + log10({den}) = {math.log10(num) + math.log10(den):.2f}; "
               f"agreement {d:.2f} digits; numerator alone {math.log10(num):.2f}")
-    print("  For a nearest-integer numerator the expected agreement is log10(S) + log10(2) digits: 3.76 for S ~ 2871; obtained 4.74.\n")
+    print("  Nearest-integer reference scale log10(S) + log10(2): 3.76 for S ~ 2871; observed agreement 4.74 digits (not an information or significance test).\n")
 
 
 # ------------------------------------------------------------------ SWEEP

@@ -1,12 +1,14 @@
-"""Freedom (look-elsewhere) analysis for the Chain Theory alpha candidate.
+"""Declared rule-space sensitivity analysis for the Chain Theory alpha candidate.
 
 Part A recomputes, from the record classes alone, the computed row and the 12 weight-law alternatives in the
 Letter's Table S-alternatives (its other three rows change the counting unit, N, or the configuration).
 
 Part B enumerates a declared rule space built from the same record classes
 and asks how many rules land near alpha(0) and how dense the outputs are
-near 137.036. This bounds the trial factor implied by the *stated*
-alternatives; it cannot bound choices not visible in the paper.
+near 137.036. An illustrative random-target model is reported separately:
+the target is uniform on (120,155), while the rule outputs remain fixed.
+Its expected match count is not a calibrated p-value for the observed target,
+and the declared family does not identify the construction's search history.
 
 Part C counts generic elements (a + b r2 + c r3 + d r6)/31104 with small
 non-negative integer coefficients near alpha(0) (density of the number field
@@ -98,17 +100,24 @@ for w in win:
     n = sum(1 for v in {mp.nstr(v, 30): v for v in values.values()}.values()
             if abs(v - INV_CODATA) / INV_CODATA < w)
     print(f"  distinct values within relative {mp.nstr(w, 2)} of 1/alpha: {n}")
-band = [v for v in {mp.nstr(v, 30): v for v in values.values()}.values() if 120 < v < 155]
+distinct_values = list({mp.nstr(v, 30): v for v in values.values()}.values())
+band_lo, band_hi = mp.mpf(120), mp.mpf(155)
+band = [v for v in distinct_values if band_lo < v < band_hi]
 dens = len(band) / 35
 print(f"  density of distinct values in 1/alpha in (120,155): {mp.nstr(dens, 4)} per unit")
-p = dens * 2 * SIG
-print(f"  expected number of chance values within +-1 sigma: {mp.nstr(p, 4)}")
+# Illustrative null: U is uniform on (120,155), independent of the fixed
+# output set. E[# {v: |v-U| <= SIG}] is the total clipped interval length
+# divided by the band width. No independence between the intervals is needed.
+uniform_target_count = sum(max(mp.mpf(0), min(band_hi, v + SIG) - max(band_lo, v - SIG))
+                           for v in distinct_values) / (band_hi - band_lo)
+print("  illustrative model: target U uniform on (120,155); rule outputs fixed")
+print(f"  expected match count in that model within +-1 sigma: {mp.nstr(uniform_target_count, 4)}")
+print("  this reference count is not a calibrated p-value for the observed alpha or a search-history estimate")
 # relative spacing near target
 band_s = sorted(band)
 gaps = [b - a for a, b in zip(band_s, band_s[1:])]
 print(f"  median gap between adjacent distinct values in (120,155): {mp.nstr(sorted(gaps)[len(gaps)//2], 4)}")
 print(f"  1-sigma window (absolute, 1/alpha): {mp.nstr(2*SIG, 3)}")
-print(f"  rules needed for O(1) chance hit at this density: ~{mp.nstr(1/(2*SIG*dens/len(values)) , 3)}")
 
 # ---------------- Part C ----------------
 # count (a,b,c,d) in [0,M]^4 with |31104/(a+b r2+c r3+d r6) - 1/alpha| < sigma
@@ -128,10 +137,11 @@ for M in (50, 100, 200):
                 if 0 <= a <= M and abs(rest - a) < tl:
                     hits.append((a, b, c, d))
     tot = (M + 1) ** 4
-    # expected under uniform fractional parts: (#(b,c,d) with 0<=rest<=M) * 2*tol
     print(f"  coefficients in [0,{M}]: {tot:.3e} tuples, hits within 1 sigma: {len(hits)} {hits[:6]}")
 
-# expected chance hits in Part C: count (b,c,d) admitting a in [0,M], times window width
+# A separate uniform-fractional-part heuristic: candidate triples times the
+# window width. The actual fractional parts are deterministic; this quantity
+# is a reference density calculation, not their expected number of matches.
 for M in (100, 200):
     cnt = 0
     for b in range(M + 1):
@@ -140,4 +150,5 @@ for M in (100, 200):
                 rest = t - b * R2 - c * R3 - d * R6
                 if -0.5 <= rest <= M + 0.5:
                     cnt += 1
-    print(f"  M={M}: (b,c,d) triples with admissible a: {cnt}; expected chance hits = {cnt*2*tl:.4f}")
+    print(f"  M={M}: (b,c,d) triples with admissible a: {cnt}; uniform-fractional-part reference count = {cnt*2*tl:.4f}")
+print("  fractional-part reference counts are heuristic; the enumerated lattice and target are deterministic")

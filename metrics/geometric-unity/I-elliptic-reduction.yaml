@@ -2,7 +2,8 @@ result: "I1-I7. The elliptic twist W_C o Ad_Gamma in Upsilon = 0 and in the 14 -
 claim_id: [GU-054, GU-057, GU-072]
 gaps: [GU-G14, GU-G15, GU-G16]
 writeup: formalization/geometric-unity/I-elliptic-reduction.md (Propositions I1-I3, I5, I6; Theorems I4, I7; Corollaries I2.1, I2.2)
-code: [computation/geometric-unity/I_elliptic_reduction.py, computation/geometric-unity/I_elliptic_reduction.out]
+code: [computation/geometric-unity/I_elliptic_reduction.py, computation/geometric-unity/I_elliptic_reduction.out,
+       computation/geometric-unity/projection_regression.py, computation/geometric-unity/projection_regression.out]
 formalization_status: >
   Formalized in the unitary gauge of G1 for the true Upsilon of D5 and all of S_sa (48 basis types, H3), in particular
   the elliptic family x W_A + y W'_A + z W_C Ad_Gamma + w W'_C Ad_Gamma (H7); signatures (14,0) and (7,7), with the
@@ -20,10 +21,15 @@ internal_consistency: >
   and invariant sectors (one 2x2 block) has determinant 4i(xz + yw) in (14,0), up to a constant: H7's ellipticity
   factor by construction, since there the constraint is the principal symbol of Shiab o d (H4's blocks C_Lambda0,
   C_H1). Independent check: computation/geometric-unity/xcheck_round5.py (own Clifford algebra, no repo imports).
+  Projected solution sets for W_A and Shiab# differ: the 4D Bianchi identity fixes u along the section but
+  not its normal derivatives; the twist requires du = 0 including those derivatives (I6.1, exact regression).
+  Their invariant-sector full-neighbourhood solution sets coincide by the 14D Bianchi identity.
 proof_status: >
   Proven: I2, I3, I4 (proofs, with exact checks on random exact fields); I1, I5, I6 (exact computation plus Schur;
   the I5(a) fit is complete by the SO(14) multiplicities of Sym^2(Sym^2 V)); Cor. I2.1 for kappa != 0 and
   (x_1, x_13) != 0, in Z1 and Z2 (F4(c) proven for every n in K-z1-ricci-general-n.md);
+  I6.1 (rational coefficients and direct integer Clifford evaluation, no repo imports; distinguishes projected
+  constraints from the common induced 4D algebraic equations and cosmological ranges);
   I7(a), I7(b) (exact sympy identities from the F3-F6 closed forms); I7(c) (substitution); I7(d) (inverse function
   theorem, equivariance and Gauss formula; 4D condition stated at leading order in 1/kappa, HHH components only).
 novelty: >
@@ -32,7 +38,7 @@ novelty: >
   elliptic family, including the open constants of F8 (alpha = -312, beta = -1, code normalisation); the free
   cosmological constant of the underdetermined reading (P) for invariant T != 0, while solutions of Upsilon = 0 near
   s(X) satisfy (E) (none in the invariant sector in (7,7), Lambda_4 = 0 in (14,0)). Not in the source.
-reproducibility: "Exact; fixed seeds (random.seed(20210401); numpy default_rng(1) for the curvature sample, default_rng(20210401) for the (7,7) real-form check); ~100 s on one core; output re-run identical apart from the runtime line (and, after REVIEW3-GU, two reworded summary lines, one with an added exact check)."
+reproducibility: "Exact; fixed seeds (random.seed(20210401); numpy default_rng(1) for the curvature sample, default_rng(20210401) for the (7,7) real-form check); ~100 s on one core; output re-run identical apart from the runtime line (and, after REVIEW3-GU, two reworded summary lines, one with an added exact check). I6.1 regression uses only standard-library integers and Fractions, no randomness; output deterministic."
 empirical_testability: >
   None new. Reading (P) is underdetermined: for invariant T != 0 its cosmological constant is not a prediction of the
   fibre geometry (every real value in (7,7); for Shiab#, bounded below by Lambda_P - c_H kappa^2/1248 in (14,0),
