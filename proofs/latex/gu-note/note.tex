@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newcommand{\Met}{\mathrm{Met}}
+
+\title{The algebraic core of Geometric Unity:\\ signatures, spinor content, gauge equivariance and the 14$\to$4 reduction}
+\author{universalunifyingmath project}
+\date{Draft, 30 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We reconstruct, as precise mathematics, the finite-dimensional and first-order parts of E.~Weinstein's \emph{Geometric Unity: Author's Working Draft v1.0} (1 April 2021) [W21], and test them.
+
+\emph{Signature.} The natural fiber metrics on $Y=\Met(X^4)$ form the DeWitt family $G_\lambda$. The chimeric bundle has signature $(7,7)$ if and only if the base is Lorentzian, $\lambda>\tfrac14$, and a fixed relative block sign holds.
+
+\emph{Spinors.} One Majorana--Weyl spinor of $\mathrm{Spin}(7,7)$, restricted to $\mathrm{Spin}(1,3)\times\mathrm{Spin}(6,4)$, is exactly one Standard Model generation with $\nu_R$. The draft's three tables of quantum numbers are reproduced exactly. In Standard Model quantum numbers, the Rarita--Schwinger $144$ carries a further full generation.
+
+\emph{Gauge equivariance.} Two equivariance lemmas of the inhomogeneous gauge group are false as printed, and a single sign repair restores consistency.
+
+\emph{Field equations.} For the natural reconstructed family of ``Shiab'' operators, the printed field equation is not the Euler--Lagrange equation of the printed action.
+
+\emph{Reduction.} Along a section, a natural observerse metric reproduces the 4D Einstein equation with a cosmological term set by the fiber geometry. That term depends on choices the draft does not make.
+
+All computations are exact or have stated tolerances, and the code and outputs are public.
+\end{abstract}
+
+\section{Source and method}
+The source is the 69-page draft [W21], obtained from a third-party mirror (sha256 \texttt{3f28d742\ldots86d4}; PDF timestamps 2021-04-01). It has not been verified against the author's host. Every statement of the draft that we use is cited by equation or page. Where the draft is ambiguous, we fix an explicit reconstruction, labelled R-$\ast$, and test the alternatives. Critiques of the draft were treated as leads only; none is used as evidence.
+
+\section{Fiber metrics and the chimeric signature}
+Let $Y=\Met_{(p,q)}(X^n)$. Its vertical bundle is $V=\pi^*\mathrm{Sym}^2T^*X$. A $GL(n)$-natural fiber metric is, up to scale, one of
+\[ G_\lambda(h,k)=\operatorname{tr}(g^{-1}hg^{-1}k)-\lambda\operatorname{tr}(g^{-1}h)\operatorname{tr}(g^{-1}k). \]
+\begin{theorem}
+Set $P=\binom{p+1}2+\binom{q+1}2$. Then $\operatorname{sig}G_\lambda=(P,pq)$ for $\lambda<1/n$ and $(P-1,pq+1)$ for $\lambda>1/n$. Let $n=4$ and $g_C=c_VG_\lambda\oplus c_Hg^{-1}$ on $C=V\oplus\pi^*T^*X$. Then $\operatorname{sig}g_C=(7,7)$ if and only if the base is Lorentzian, $\lambda>\tfrac14$, and $c_Hg^{-1}$ has exactly one eigenvalue of the sign of $c_V$. A Riemannian base never gives $(7,7)$. Over all $n$, neutral chimeric signatures occur exactly for bases $(1,3)$, $(3,1)$, $(2,2)$ and $(2,3)$, $(3,2)$. Finally, $w_2(C)=\pi^*w_2(X)$, so the $\mathrm{Spin}(7,7)$ structure exists if and only if $X$ is spin.
+\end{theorem}
+The $(7,7)$ choice of [W21, \S3.5] is therefore available, but not forced. It needs the DeWitt parameter on the supermetric side and a relative sign.
+
+\section{Spinor content}
+\begin{theorem}
+$\mathrm{Cl}(7,7)\cong\mathbb R(128)$, and Majorana--Weyl spinors exist. A Majorana--Weyl spinor restricted to $\mathrm{Spin}(1,3)\times\mathrm{Spin}(6,4)$ is $((2,1)\otimes16)_{\mathbb R}$. Under $SU(3)\times SU(2)\times U(1)$, embedded via the Pati--Salam maximal compact $\mathrm{Spin}(6)\times\mathrm{Spin}(4)$, this is one generation with $\nu^c$.
+
+Take the field content $\nu\in S^+$, $\zeta\in T^*Y\otimes S^-$. Its left-handed spin-$\tfrac12$ part is $3\times16_+\oplus144_-$. The module $144_-=\ker(V\otimes S^-\to S^+)$ contains the Standard Model content of one further generation, together with 128 exotic states carrying charges $\pm\tfrac43,\pm\tfrac53,\pm2$.
+\end{theorem}
+The $144_-$ content was verified by two independent methods: weight multisets, and an explicit $\mathrm{Cl}(10)$ realisation with Casimir and triality labels. The draft's ``$2+1$'' (two generations plus an ``imposter'') counts $\mathrm{Spin}(6,4)$-$16_+$ multiplets. At the level of Standard Model quantum numbers the count is four. With complex Dirac spinors the content is vector-like, and ``$\mathrm{Spin}(14,\mathbb C)\to U(128)$'' is ill-typed.
+
+\section{The inhomogeneous gauge group}
+Write $\mathcal G=\mathcal H\ltimes\Omega^1(\mathrm{ad})$ with $(\varepsilon_1,\varpi_1)(\varepsilon_2,\varpi_2)=(\varepsilon_1\varepsilon_2,\varepsilon_2^{-1}\varpi_1\varepsilon_2+\varpi_2)$, and let $c(h)=h^{-1}d_{A_0}h$.
+\begin{proposition}
+$\tau(h)=(h,-c(h))$ is an injective homomorphism onto the right stabiliser of $A_0$. Lemmas 6.5 and 7.2 of [W21] are false as printed:
+\[ \mu(g\tau(h))-\mu(g)\cdot h=(-2c(h),0),\qquad T_{g\tau(h)}-h^{-1}T_gh=-2c(h). \]
+They hold for $\tau'(h)=(h,+c(h))$, the left stabiliser. The map $(\varepsilon,\varpi)\mapsto(\varepsilon,-\varpi)$ is an automorphism of $\mathcal G$ exchanging $\tau$ and $\tau'$, so one global sign choice makes Sections 6--7 of [W21] consistent.
+\end{proposition}
+
+\section{Shiab operators and the field equation}
+For the reconstruction R-S, soldering invariants $\Phi^1,\Phi^2$ in $\mathfrak u(64,64)\subset\mathrm{Cl}(7,7)\otimes\mathbb C$ define a family of Shiab operators $\Omega^2(\mathrm{ad})\to\Omega^{13}(\mathrm{ad})$.
+\begin{proposition}
+One member of the family maps the Levi-Civita spin curvature to (a multiple of) the Einstein tensor of $Y^{14}$ and annihilates the Weyl part. For every member, $\circledast\circ d_B$ fails to be formally self-adjoint; there is an exact counterexample for the Einstein-reproducing member at every value of its parameter. Hence the printed equation (9.7) is not the Euler--Lagrange equation of the printed action (9.4) within R-S.
+\end{proposition}
+% Round 2 (D): result on existence of a self-adjoint Shiab over the full equivariant space -- to be inserted.
+
+\section{The 14$\to$4 reduction}
+No $\mathrm{Diff}(X)$-natural connection exists on $\Met(X)$. We therefore use the Levi-Civita connection of the base metric. The draft supports two horizontal blocks: Z1, the point $y$ itself, and Z2, the pulled-back base metric. The fiber is the symmetric space $\mathbb R\times SL(n)/SO(p,q)$, whose curvature is independent of $\lambda$.
+\begin{theorem}
+Along a section $s=g$, $s^*g_\aleph=c_Hg$, and the normal bundle is the vertical bundle.
+\begin{itemize}
+\item Under Z2, the restricted Einstein tensor of $Y$ yields $G(g)+\Lambda g$ with $\Lambda=9c_H/(2c_V)$ for every $\lambda$; with the $(7,7)$ sign rule this is the anti-de Sitter sign.
+\item Under Z1, $\Lambda$ depends on both $\lambda$ and the route (projection vs reduced action).
+\item $g_\aleph$ is Einstein along the section if and only if the reading is Z1, $\lambda=1/(n+1)$ and $\mathrm{Ric}(g)=0$. For $n=4$, that value $\lambda=\tfrac15$ forces a signature other than $(7,7)$.
+\end{itemize}
+\end{theorem}
+Matching the observed cosmological constant under Z2 requires a fiber length scale of about $2\times10^{26}$\,m, and in addition the sign is wrong.
+
+\section{Summary}
+The finite-dimensional algebra of [W21] is largely correct and is reproducible exactly. The parts that carry physical content are each well-posed only after explicit choices the draft does not fix: the parameter $\lambda$ and the block sign, the tilt sign, the Shiab operator, and the observerse metric (Z1 or Z2). One sign error and one non-variational field equation are established within the natural reconstructions. No prediction yet has a mass scale.
+
+\begin{thebibliography}{9}
+\bibitem{W21} E.~Weinstein, \emph{Geometric Unity: Author's Working Draft, v1.0}, self-published, 1 April 2021.
+\bibitem{BH} J.~Baez and J.~Huerta, The algebra of grand unified theories, Bull.\ AMS \textbf{47}, 483 (2010).
+\bibitem{ON} B.~O'Neill, The fundamental equations of a submersion, Michigan Math.\ J.\ \textbf{13}, 459 (1966).
+\bibitem{DW} B.~S.~DeWitt, Quantum theory of gravity I, Phys.\ Rev.\ \textbf{160}, 1113 (1967).
+\end{thebibliography}
+\end{document}
