@@ -379,3 +379,76 @@ proposed further work item 5. All 53 quoted strings are checked verbatim.
 - F6's "none selected" holds for 143.1. 229.1 later resolves the unit to the dock, at a register (16) that matches
   neither printed face.
 - G1 and G2 in `gaps/chain-theory-compendium.md` get dated notes.
+
+## Round 6 — the Lean at scale: restated theorems, kernel modules, build and axioms
+
+Note: `formalization/chain-theory/compendium/09-lean-audit-at-scale.md`. Code, in `computation/chain-theory/compendium/`:
+`lean_resolve.py` and `lean_resolve_data.py`; `lean_build.py` with `lean_build_patch.tsv`; `lean_audit.sh`;
+`lean_audit/{ResolveChecks,Diagnose,AxiomTrace}.lean`. Outputs: `outputs/lean_resolve.{txt,tsv}`,
+`outputs/lean_build_{A,B}.{txt,tsv}`, `outputs/lean_axioms.txt`, `outputs/lean_resolve_checks.txt`,
+`outputs/lean_diagnose.txt` and `outputs/lean_axiom_trace.txt`. Metrics:
+`metrics/chain-theory/compendium/lean-audit-at-scale.yaml`. The task is proposed further work item 6. All 44 Lean
+quotes and all 52 box quotes are checked verbatim.
+
+**F24. What the 16 "restated or kernel" theorems cite** (c).
+- They cite 8 declarations: 7 restated `AlphaDerivation` conjunctions, with 26 conjuncts in all, and one kernel check.
+- All of them compute. 18 conjuncts are proved by `decide +kernel`, 4 by an anonymous constructor and 4 by short
+  tactic proofs. None uses `sorry`, `native_decide` or a declared axiom.
+- Part of the computation is genuine linear algebra: the 12-matrix su(2) + su(3) + u(1) algebra, its closure, its
+  one-dimensional centre, TU = i·Id_6 on C²⊗C³, and a scalar commutant.
+- Where the computation stops:
+  - The (2,2) centre is not computed. `Expected.centreDims` is entered and no theorem uses it.
+  - "Abelian", "conserved", "massless" and "spin one" are Boolean definitions. "Conserved" reduces to d1 ≠ d2,
+    because one of its two clauses is true at every pair (checked here).
+  - Five opaque hypotheses (`SoftPhotonTheorem` and four others) are not used. The "on-shell coupling" equals the
+    alpha closed form at (2,3) by a case split in its definition.
+  - The zero momentum transfer is entered: (0,0,0) in 172 of 172 rows.
+  - The 172-record weight check is an identity over {±1}², so it does not depend on the records.
+  - The "Ward identity" is a set of telescoping-sum lemmas.
+  - Six conjunct parts are entered constants equal to literals.
+- Some parts are never restated by any chapter declaration:
+  - LemmaA, CollapseG1–G3, Generation, Span and SpanRank. Six of these are among the 8 modules at 4 GB or more.
+  - GainLemma, which states 18.2's end-set sums and Born count, OneLinkWord and Correspondence.
+
+**F25. For 10 of the 16 rows, the computation belongs to another box or to none** (c).
+- Clause by clause:
+  - MATCH: 1 (9.4).
+  - PARTIAL: 5 (2.1, 9.2, 9.3, 18.2, 196.2).
+  - NONE: 10 (2.3, 2.6, 2.9, 2.10, 9.5, 9.6, 56.1, 74.1, 74.4, 78.3).
+- Five of the 8 declarations state content of a CONDITIONAL box in their section: ORKC 2.2, GWDC 18.3, MDFN 74.2,
+  WDCL 78.1, WSWC 78.2. Where legible, their four-letter codes are those boxes' initials. They reach THEOREM rows only
+  because the `lean` column is per section.
+- 56.1 says "the deciding table re-derived in Lean at the forty-eight matchings". Its numbers 322714 and 319332 occur
+  nowhere in the Lean tree.
+- The three kernel modules compute their rows. All 147 data modules enter theirs as literal lists.
+- **Coverage re-stated.** By kind, the tiers are unchanged at 16 / 37 / 11. By content, 6 rows cite a computation that
+  states their box, in whole or in part. The other 10 fall back to table checks (9) or to opaque Props (1). That gives
+  6 / 46 / 12, with the table tier not checked for content.
+
+**F26. Build and axioms** (c).
+- The tree is core-only: no Mathlib, requirements by path only, pinned to Lean 4.32.1.
+- **Build A.** Under Lean 4.35.0 the published sources do not build. `AxiomDeclaration/Theorems.lean:42` and `:52`
+  fail because `decide` finds no `Decidable` instance: 4.35.0 does not unify `Fin worldThree.qudits` with `Fin 3`.
+  277 of the 493 modules depend on that module.
+- **Build B.** Five such leaf proofs (the two above and `AxiomDeclarationTwo/Theorems.lean:42`, `:52`, `:56`) were
+  changed to `rfl`, with no statement changed and no other library declaration using them. Then 493 of 493 modules
+  compile, with 0 errors, 0 warnings and 0 `sorry`. Cost: 5398 s summed, 2494 s wall, peak 7.7 GB.
+- 215 modules, including all of `AlphaDerivation` and ORKC, AGUQ and GWDC, do not depend on the patch.
+- `#print axioms` on the source's full list of 6662 names:
+  - `sorryAx`: 0.
+  - No axiom other than `propext`, `Quot.sound` and `Classical.choice`.
+- Compared with the source's 4.32.1 report, 6259 axiom sets are equal. The other 403 gain `Classical.choice`. It enters
+  through core 4.35.0 order instances (`Int`/`Fin.instLinearOrderPackage` → `Classical.propDecidable`), so the profile
+  depends on the toolchain.
+- The pinned 4.32.1 could not be fetched (the download was refused in this session), so the source's own record is
+  not re-verified on its toolchain.
+
+**Changes to rounds 1–5.**
+- No number is wrong, and nothing is added to `reports/CORRECTIONS.md`.
+- F2's 11/37/16 stands as a classification by kind. By content, its top tier is 6.
+- "Build not re-run" (F2, G6, CT-C003) is superseded by F26.
+- `04-lean-coverage.md` §1 calls these lists "hand-entered". That fails for 2 of the 137 string-only modules, the kernel
+  modules LGIS and ESRL, whose rows are computed.
+- G6 in `gaps/chain-theory-compendium.md` gets a dated note.
+- Item 6 is done as far as core Lean 4.35.0 allows. Still open: a build on 4.32.1, and the content of the 37 table-check
+  rows.

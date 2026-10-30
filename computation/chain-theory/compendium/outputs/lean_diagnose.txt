@@ -1,0 +1,7 @@
+fun a b => instDecidableEqList a b
+'a42' depends on axioms: [propext, Classical.choice, Quot.sound]
+'a52' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AxiomDeclarationTwo.b42' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AxiomDeclarationTwo.b52' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AxiomDeclarationTwo.b56' depends on axioms: [propext, Classical.choice, Quot.sound]
+'AxiomDeclaration.World.sharedQudits' depends on axioms: [propext, Classical.choice, Quot.sound]

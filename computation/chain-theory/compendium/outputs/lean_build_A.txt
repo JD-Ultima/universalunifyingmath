@@ -1,0 +1,9 @@
+lean: Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+library modules discovered: 897; in the import closure of ['AxiomDeclaration']: 4
+safety gate: no forbidden construct in the 4 modules
+sources copied; sha256 over sorted 'module sha256' lines: 5e9c7c64674dc3c53a06449e1fed7b268075bcbe45e73fd0dd8e5fea42113f23
+[  1/4] AxiomDeclaration.Structure  2.1s  482 MB  exit 0
+[  2/4] AxiomDeclaration.Words  2.6s  507 MB  exit 0
+[  3/4] AxiomDeclaration.Theorems  0.7s  461 MB  exit 1  ERROR src/AxiomDeclaration/Theorems.lean:42:79: error: failed to synthesize | src/AxiomDeclaration/Theorems.lean:52:116: error: failed to synthesize
+
+built 2 of 4 modules; failed 2; wall 3 s; sum of module times 5 s; max peak 507 MB; warnings 0; sorry warnings 0

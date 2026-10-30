@@ -1,0 +1,110 @@
+claim_id: CT-LA (round 6 Lean audit at scale; covers CT-C003 and report finding F2, gap G6)
+source_statement: "Front matter: 'in this release 64 of the 100 theorems are tied to named Lean declarations, which check the finite computations their derivations use'; compendium/README.md: 'only the three kernel modules derive theirs inside Lean'; lean/README.md: 'all 493 modules of lake build in ChainTheory compile, with no sorry'"
+source_location: "compendium/tex/front.tex:34; compendium/README.md 'What the Lean checks'; compendium/lean/README.md; compendium/lean/ChainTheory/axioms_report.txt"
+source_commit: a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+note: formalization/chain-theory/compendium/09-lean-audit-at-scale.md
+code: [computation/chain-theory/compendium/lean_resolve.py, computation/chain-theory/compendium/lean_resolve_data.py, computation/chain-theory/compendium/lean_build.py, computation/chain-theory/compendium/lean_build_patch.tsv, computation/chain-theory/compendium/lean_audit.sh, computation/chain-theory/compendium/lean_audit/ResolveChecks.lean, computation/chain-theory/compendium/lean_audit/Diagnose.lean]
+outputs: [computation/chain-theory/compendium/outputs/lean_resolve.txt, computation/chain-theory/compendium/outputs/lean_resolve.tsv, computation/chain-theory/compendium/outputs/lean_build_A.txt, computation/chain-theory/compendium/outputs/lean_build_A.tsv, computation/chain-theory/compendium/outputs/lean_build_B.txt, computation/chain-theory/compendium/outputs/lean_build_B.tsv, computation/chain-theory/compendium/outputs/lean_axioms.txt, computation/chain-theory/compendium/outputs/lean_resolve_checks.txt]
+formalization_status:
+  value: built_and_resolved
+  detail: "The 16 restated/kernel rows resolved conjunct by conjunct (26 AlphaDerivation conjuncts, 1 kernel check), each quoted verbatim; clause-level verdicts with 52 verbatim box quotes; the tree compiled with core Lean 4.35.0 in a scratch copy; #print axioms on the source's full 6,662-name list."
+population:
+  theorem_rows_tied: 64
+  round1_tiers: {restated_or_kernel: 16, table_checks: 37, opaque_or_records_only: 11}
+  restated_kernel_rows: ["2.1", "2.3", "2.6", "2.9", "2.10", "9.2", "9.3", "9.4", "9.5", "9.6", "18.2", "56.1", "74.1", "74.4", "78.3", "196.2"]
+  distinct_declarations: {restated_alphaderivation: 7, kernel_check: 1}
+declarations:
+  row_524038_ORKC: {conjuncts: 2, rows: ["2.1", "2.3", "2.6", "2.9", "2.10"], content_of_box: "2.2 (C)"}
+  row_518160_AGUQ: {conjuncts: 12, rows: ["9.2", "9.3", "9.4", "9.5", "9.6"], content_of_box: "9.2 (T)"}
+  row_520119_GWDC: {conjuncts: 1, rows: ["18.2"], content_of_box: "18.3 (C)"}
+  row_521104_OUTR: {conjuncts: 3, rows: ["56.1"], content_of_box: none}
+  row_518830_MDFN: {conjuncts: 1, rows: ["74.1", "74.4"], content_of_box: "74.2 (C)"}
+  row_521443_WDCL: {conjuncts: 5, rows: ["78.3"], content_of_box: "78.1 (C)"}
+  row_524064_WSWC: {conjuncts: 2, rows: ["78.3"], content_of_box: "78.2 (C)"}
+  row_527992_ESRL: {kernel_checks: 8, rows: ["196.2"], content_of_box: "196.2 (T)"}
+  carry_content_of_a_conditional_box: 5
+conjuncts:
+  resolved: 26
+  kinds: {COMPUTED: 13, COMPUTED_LITERAL: 6, GENERAL: 5, DEFINITIONAL_COMPUTED: 1, ENTERED: 1}
+  proof_methods: {decide_kernel: 18, anonymous_constructor: 4, tactic: 4}
+  sorry_native_decide_or_declared_axiom: 0
+  lean_anchors_verbatim: "44 of 44"
+  opaque_hypotheses: {conjuncts_with: 1, hypotheses: 5, used_in_proof: 0}
+  findings:
+    centre_2_2_not_computed: "Expected.centreDims = [1, 1] used by 0 theorems; TU22 entered"
+    conserved_reduces_to_d1_ne_d2: "generatorBlocksScalar true at every pair (Round6.generatorBlocksScalar_always); abelian = conserved = (d1 != d2) on 1..12"
+    on_shell_coupling_case_split: "onShellCoupling o = closed form if o = objectOfRecord, (0,1) otherwise (Round6.onShellCoupling_elsewhere)"
+    zero_transfer_entered: "172 of 172 step rows carry (0,0,0) as entered"
+    weight_check_record_independent: "((2-x)(3-y))/2 = 3^[x=-1] 2^[y=-1] for all (x,y) in {+-1}^2 (Round6.weight_identity)"
+    literal_parts_rfl: 6
+  never_restated_groups: {LemmaA: "0/6", CollapseG1: "0/1", CollapseG2: "0/1", CollapseG3: "0/1", CollapseD2: "0/1", Generation: "0/1", Span: "0/2", SpanRank: "0/2", GainLemma: "0/4", OneLinkWord: "0/4", Correspondence: "0/3"}
+  heavy_modules_never_restated: "6 of the 8 modules at >= 4 GB in the source's build record"
+verdicts_16:
+  rule: "MATCH every clause of the box has a counterpart conjunct; PARTIAL some; NONE none"
+  box_quotes_verbatim: "52 of 52"
+  MATCH: ["9.4"]
+  PARTIAL: ["2.1", "9.2", "9.3", "18.2", "196.2"]
+  NONE: ["2.3", "2.6", "2.9", "2.10", "9.5", "9.6", "56.1", "74.1", "74.4", "78.3"]
+  printed_numbers_absent_from_lean_tree: {"56.1": [319332, 322714]}
+kernel_modules:
+  D524748_SCGI: {rows: computed, checks_over: computed rows, cited_by: ["172.1 C", "172.2 O"]}
+  D525490_LGIS: {rows: computed, checks_over: "target list after a computed equation", cited_by: ["54.1 C"]}
+  D527992_ESRL: {rows: computed, checks_over: computed rows, cited_by: ["196.1 C", "196.2 T"]}
+  inputs_entered_KernelDerivationC_Inputs: 26
+data_modules_with_row: {entered_rows: 147, entered_string_only: 135, computed_rows: 3, computed_string_only: 2}
+build:
+  lean: {version: "4.35.0", library: core_only, source_pin: "leanprover/lean4:v4.32.1", pinned_toolchain_built: false, reason: "download refused by the session's permission policy"}
+  tree: {lakefiles: 6, requirements: path_only, mathlib: false, library_modules: 897, lake_build_modules: 493, safety_gate_refusals: 0, declared_axioms: 0}
+  build_A_published_sources:
+    result: fails
+    first_failure: "AxiomDeclaration/Theorems.lean:42, :52 (failed to synthesize Decidable; instance resolution does not unify Fin worldThree.qudits with Fin 3)"
+    modules_importing_it: 277
+    not_importing: 215
+  build_B_patched_copies:
+    patch: "5 proofs `by decide` -> `rfl` / `⟨rfl, rfl, rfl⟩` (AxiomDeclaration/Theorems.lean:42,52; AxiomDeclarationTwo/Theorems.lean:42,52,56); statements unchanged; referenced by no other library declaration"
+    modules_built: "493 of 493"
+    errors: 0
+    warnings: 0
+    sorry_warnings: 0
+    modules_independent_of_patch: 215
+    tied_names_in_patch_dependent_modules: "125 of 195"
+    restated_kernel_buildable_unpatched: [ORKC, AGUQ, GWDC]
+    sum_module_seconds: 5398
+    wall_seconds: 2494
+    runs: 3
+    jobs: 3
+    peak_MB: 7677
+    source_record: {seconds: 3845, peak_MB: 5926}
+axioms:
+  file: "ours: import ChainTheory, AlphaDerivation; 6662 #print axioms = the source's AxiomsCheck list"
+  reported: 6662
+  sorryAx: 0
+  non_core_axioms: 0
+  profile_4_35_0: {none: 5965, propext: 290, propext_quot_sound: 4, propext_quot_sound_classical_choice: 403}
+  profile_4_32_1_source_report: {none: 6047, propext: 605, propext_quot_sound: 10, classical_choice: 0}
+  equal_sets: 6259
+  differ: {total: 403, from_propext: 315, from_none: 82, from_propext_quot_sound: 6, all_by_gaining: Classical.choice}
+  classical_choice_source: "core 4.35.0: Int/Fin.instLinearOrderPackage -> Std.LinearOrderPackage.ofLE._proof_1 -> Std.instLawfulOrderMinOf... -> Classical.propDecidable"
+  theorem_tied_names_195_4_35_0: {opaque_prop: {none: 69}, open_record: {none: 69}, alias_prop: {none: 3}, cond_table_check: {none: 16}, table_check: {none: 27, three: 3}, restated: {three: 7}, kernel: {three: 1}}
+  theorem_tied_names_195_4_32_1: {none: 188, propext: 7}
+  rows_64_union: {"4.35.0": {three: 23, none: 41}, "4.32.1": {propext: 14, none: 50}}
+  opaque_usage_64_rows: {rows_with_opaque_props: 35, opaque_props: 145, rows_with_opaque_hypothesis_checks: 31, opaque_hypothesis_checks: 37, rows_with_open_records: 42, open_records: 125}
+  own_checks: {theorems: 8, compile: true, axiom_free: 1, three_axioms: 7}
+coverage_restated:
+  by_kind_unchanged: {restated_or_kernel: 16, table_checks: 37, opaque_or_records_only: 11}
+  by_content: {computation_states_whole_box: 1, computation_states_part_of_box: 5, unrelated_then_table_checks: 9, unrelated_then_opaque_only: 1, table_checks_not_resolved: 37, opaque_or_records_only: 11}
+  changes_to_04: "top tier by content 6 not 16; gloss 'hand-entered list' fails for 2 of 137 string-only modules (LGIS, ESRL); 'Build not re-run' superseded; no count wrong, no CORRECTIONS entry"
+internal_consistency:
+  value: kind_count_consistent; content_partial
+  detail: "All 16 cite declarations whose proofs compute; for 10 of them the computation is that of another box of the section (or of none)."
+proof_status:
+  value: machine_checked_at_4_35_0_with_patch
+  detail: "All 493 modules compile under core Lean 4.35.0 after five leaf proofs are re-tacticked (published sources fail at 4.35.0); no sorryAx, no non-core axiom; the source's 4.32.1 build and axiom report are not re-verified on 4.32.1."
+reproducibility: {value: reproduced_classification_and_build, detail: "LEAN=... SRC=... WORK=... ./lean_audit.sh"}
+confidence:
+  value: high
+  justification: "Resolution is mechanical (verbatim quotes, 44 Lean and 52 box anchors checked); verdicts are clause-level judgments recorded with their quotes; the build, axiom report and own checks are kernel outputs of Lean 4.35.0."
+limits:
+  - "Not built with the pinned Lean 4.32.1 (download refused by the session's permission policy); Build B differs from the published sources in two proofs."
+  - "Axiom sets under 4.35.0 differ from 4.32.1 because core library proofs changed; only sorryAx and non-core axioms are toolchain-independent findings."
+  - "The 37 table-check rows and 11 opaque rows are not content-checked here."

@@ -1,0 +1,5 @@
+module	seconds	peak_rss_MB	exit	warnings	sorry_warnings	sha256_original	patched_lines	errors
+AxiomDeclaration	0.0	0	-1	0	0	35fa5f305413f2513ea7fe76a49f523ff35c313f520dd881adf54911c83ff7c9		dependency failed
+AxiomDeclaration.Structure	2.1	482	0	0	0	acfa801cf992cfeb4ae6a16a00021a4a034bb875f879f0ddc2a986ea6c60a1a4		
+AxiomDeclaration.Theorems	0.7	461	1	0	0	0e7a5dd99923398a5303c03463b967a8f3309a1040c2b99502f6ca9408f0413c		src/AxiomDeclaration/Theorems.lean:42:79: error: failed to synthesize | src/AxiomDeclaration/Theorems.lean:52:116: error: failed to synthesize
+AxiomDeclaration.Words	2.6	507	0	0	0	8be8f90693d4150295819f8526b655dc07df332bda4a06fed6c250681ce880cb		

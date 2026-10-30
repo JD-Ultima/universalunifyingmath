@@ -1,0 +1,8 @@
+'Round6.generatorBlocksScalar_always' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round6.abelian_conserved_distinct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round6.weight_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round6.onShellCoupling_elsewhere' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round6.correspondence_without_hypotheses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round6.identityAt_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round6.literal_parts' does not depend on any axioms
+'Round6.steps_entered_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

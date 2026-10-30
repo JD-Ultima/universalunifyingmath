@@ -2,7 +2,10 @@
 
 Source audited: `chain-theory` repository, commit `a28db8998bce5bd5ef11195c05f13c86cd9dac5c`
 (2026-10-24), directory `compendium/`. The source is treated as untrusted data: it is read as
-text only; none of its scripts, build files or Lean packages are executed or built.
+text only; none of its scripts, build files or Lean packages are executed or built. Exception (round 6):
+`lean_build.py` copies the Lean *library* sources into a fresh scratch directory, refuses any module that runs code at
+elaboration time (`#eval`, `run_cmd`, `IO.`, `import Lean`, macros, `extern`, `unsafe`, `native_decide`; none found),
+and compiles the copies with `lean -o`; no lakefile, lake, script or `AxiomsCheck` file of the source is run.
 
 ## Environment (as run, 2026-10-30)
 
@@ -13,6 +16,7 @@ text only; none of its scripts, build files or Lean packages are executed or bui
 | mpmath | 1.3.0 |
 | numpy | 2.5.3 (only `hydrogen_audit.py`, Monte Carlo check) |
 | scipy | 1.18.1 (round 2 `scorecard*.py`: CODATA 2022 via `scipy.constants`) |
+| Lean | 4.35.0, core only (round 6 `lean_audit.sh`; the source pins 4.32.1) |
 
 Install: `pip install sympy==1.14.0 mpmath==1.3.0 numpy==2.5.3 scipy==1.18.1`. Round 2 optionally checks its PDG 2024
 transcription against `mass_width_2024.mcd` from `pip download particle==0.25.2` (data file read as text; the package is not imported).
@@ -42,10 +46,14 @@ python3 -I masscells.py $SRC --pdg-mcd $MCD --tsv outputs/masscells_readings.tsv
 python3 -I premises.py $SRC --tsv outputs/premises_items.tsv > outputs/premises.txt
 # round 5: hydrogen body registers, the ladder beyond n = 8 (about 3 s; uses scipy.constants and masscells.parse_figure)
 python3 -I hydrogen_registers.py $SRC > outputs/hydrogen_registers.txt
+# round 6: Lean at scale (build with Lean 4.35.0 in WORK, #print axioms, own checks, resolution; see below for time)
+LEAN=/path/to/lean-4.35.0/bin/lean SRC=$SRC WORK=/fresh/scratch/dir ./lean_audit.sh
+python3 -I lean_resolve.py $SRC          # static part alone (about 5 s), without build, axioms or checks
 # MCD=.../particle/data/mass_width_2024.mcd (optional; without it the PDG transcription is not re-checked)
 ```
 
-Wall time: each script < 10 s. Outputs are identical across runs and across `PYTHONHASHSEED` values
+Wall time: each script < 10 s (round 6: `lean_resolve.py` about 3 s; `lean_audit.sh` about 45 min, almost all of it
+Build B: 2494 s wall at 3 jobs on 4 shared cores, 5398 s summed over modules, peak 7677 MB; the axioms file 5 s). Outputs are identical across runs and across `PYTHONHASHSEED` values
 (checked). `hydrogen_audit.py` uses a fixed seed (20261030); its Monte Carlo
 eigenvalues are reproducible to the printed 3 decimals.
 
@@ -69,6 +77,13 @@ eigenvalues are reproducible to the printed 3 decimals.
 | `masscells.py` | R3-1..4 | mass cells: (2,3) record census (319, 79 = 48+28+3); electron web parsed from the 152.1 figure, muon/tau/proton webs built and checked; measuring-read paths; 72-reading grid validated against 6 printed tuples; 155.1 faces; printed mass-law variants; look-elsewhere in printed / grid / declared / narrow / census / integer spaces; tau/mu; 181.5 cross-check; sweep audit |
 | `premises.py` | R4 | statement-level premises from the derivations' premise sentences: segmentation into derivation groups, 1069 premise items with verbatim quotes, candidates by grade word under two designator readings (module numbering / `designators.tsv`), a separate judgment layer (21 groups), chain-rule re-grade, cycles (any-of, strict, forced under every resolution), F4 upper/lower bounds; writes `outputs/premises_items.tsv` |
 | `hydrogen_registers.py` | R5 | 143.1 body registers: per-link faces (16.1, 103.1) against the 16 printed genre faces; the product rule at the W/Z body and gluon word (port-only cut against every-link cut); electron web parsed from the 152.1 figure, whole register 2^30 3^18 and cut register 2^31 3^17 under 9 register readings; mass face 36 against the printed link counts; E1 at every unit and register reading; mechanical scan of every ladder sentence (range n <= 8); reconstruction R exactly at n <= 200 (sl2 commutant), support dimension 2/3/4/6, order and per-record readings; E1 against R_inf hc / m_e c^2 and IE(H) (CODATA 2022, NIST), a 36-variant declared conversion family, and E_2/E_1 against the measured 1S-2S centroid (Parthey et al. 2011) |
+| `lean_resolve.py` | R6 | resolves the 16 "restated/kernel" THEOREM rows of `lean_classify.py` (imported unchanged): verbatim type of each of the 8 declarations, its 26 `AlphaDerivation.Statements` conjuncts and their Proofs-level theorems (proof method, binders, opaque hypotheses and whether used, entered `Expected` constants), content kind per conjunct, the entered step table, restatement counts per Statements group; the 3 kernel modules (rows computed or entered, what `checks` is decided over, citing rows); clause-level verdicts against the box text with printed numbers looked up in the tied statements and the whole tree; the box each declaration's content states; entered vs computed `rows` in all 150 Row modules; build facts (pins, imports, patched modules and their dependents); `#print axioms` summary and comparison with the source's 4.32.1 report; own checks; the re-stated 64-row table (`outputs/lean_resolve.tsv`); `--emit-axioms-file` writes our `#print axioms` file |
+| `lean_resolve_data.py` | R6 | curated data (module): per conjunct a content kind, note and verbatim Lean anchors (44); per row the box clauses (52 verbatim quotes) with their counterpart conjuncts; the box each declaration's content states, with anchors |
+| `lean_build.py` | R6 | builds the six packages' library modules (import closure of the targets) in dependency order with `lean -o`, `LEAN_PATH` in a fresh scratch directory; safety gate; optional `--patch` (TSV of single-line edits to the copies, recorded); critical-path scheduling with a memory budget; per-module time, peak RSS, exit, warnings, `sorry` warnings, sha256 of the original; `--resume` |
+| `lean_build_patch.tsv` | R6 | the five compatibility edits of Build B: `:= by decide` -> `:= rfl` / `⟨rfl, rfl, rfl⟩` at AxiomDeclaration/Theorems.lean:42, :52 and AxiomDeclarationTwo/Theorems.lean:42, :52, :56 (statements unchanged; the theorems are referenced by no other library declaration) |
+| `lean_audit.sh` | R6 | the round-6 pipeline: Build A (published sources, AxiomDeclaration library), Build B (all 493 modules, patched), `Diagnose.lean`, our `#print axioms` file, `ResolveChecks.lean`, `lean_resolve.py` |
+| `lean_audit/Diagnose.lean` | R6 | why the five proofs fail under 4.35.0: `fail_if_success decide` then `rfl` on the five statements verbatim; `#synth` of the instance at the stated type |
+| `lean_audit/ResolveChecks.lean` | R6 | own theorems about the source's definitions: `generatorBlocksScalar` always true; abelian = conserved = (d1 != d2) on 1..12; the record-wise weight identity over {+-1}^2; `onShellCoupling` = (0,1) off the object of record; the correspondence conclusion without its opaque hypotheses; `identityAt` of the unit functional on every path; six literal parts by `rfl`; the entered zero transfer in 172 rows |
 
 ## Interpretive choices in the dependency graph (`depgraph.py`)
 
@@ -142,6 +157,18 @@ premises (round 4):
           14 requested THEOREMs: index OPEN 10, OPEN/COND 12; derivations (J) declared OPEN 8, violate 10, undetermined 4, consistent 0
           all 100 THEOREMs: declared OPEN 38, other violations 35, undetermined 22, consistent 3, no premise sentence 2
           F4 lower bounds (T+C): 2.2 -> 1; 2.4/2.5/2.7/2.8 -> 153; 9.1/9.7 -> 151 (J); 9.8 -> 0; 18.x -> 0; 124.1 -> 152 (313 all grades)
+lean (round 6):
+          16 rows -> 8 declarations (7 restated AlphaDerivation, 1 kernel); 26 conjuncts: COMPUTED 13, +LITERAL 6, GENERAL 5,
+          DEFINITIONAL 1, ENTERED 1; decide +kernel 18, constructor 4, tactic 4; Lean anchors 44/44, box anchors 52/52
+          5 opaque hypotheses (one conjunct), 0 used; Expected.centreDims used by 0 theorems; zero transfer entered 172/172
+          verdicts: MATCH 1 (9.4), PARTIAL 5 (2.1 9.2 9.3 18.2 196.2), NONE 10; 56.1's 322714, 319332 nowhere in the tree
+          content of a CONDITIONAL box of the section: ORKC->2.2, GWDC->18.3, MDFN->74.2, WDCL->78.1, WSWC->78.2
+          Row modules: 147 data modules entered (135 String-only), 3 kernel modules computed
+          Build A (published, 4.35.0): AxiomDeclaration.Theorems:42,:52 fail (Decidable not synthesized); 277 of 493 import it
+          Build B (5 proofs -> rfl): 493/493, 0 errors, 0 warnings, 0 sorry; 5398 s summed, 2494 s wall, peak 7677 MB
+          #print axioms (6662 = source's list): sorryAx 0; none 5965, propext 290, propext+Quot.sound 4, +Classical.choice 403
+          vs source 4.32.1 report: 6259 equal, 403 gain Classical.choice (via core Int/Fin.instLinearOrderPackage)
+          coverage by content: 6 / 46 / 12 (by kind unchanged 16 / 37 / 11)
 ```
 
 ## External values used (with sources)

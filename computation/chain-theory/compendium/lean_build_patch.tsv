@@ -1,0 +1,6 @@
+module	line	old	new
+AxiomDeclaration.Theorems	42	:= by decide	:= rfl
+AxiomDeclaration.Theorems	52	:= by decide	:= rfl
+AxiomDeclarationTwo.Theorems	42	:= by decide	:= rfl
+AxiomDeclarationTwo.Theorems	52	:= by decide	:= ⟨rfl, rfl, rfl⟩
+AxiomDeclarationTwo.Theorems	56	:= by decide	:= ⟨rfl, rfl, rfl⟩

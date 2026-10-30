@@ -1,0 +1,526 @@
+# Build B, recorded in three runs of lean_build.py on the same WORK: (1) fresh start, stopped after 27 modules to add --mem-scale (a 4.35.0 peak of 7.7 GB exceeded the source's 5.9 GB); (2) --resume --mem-scale 1.35 with the first two patch rows: AxiomDeclarationTwo.Theorems failed the same way and blocked 3 modules; (3) --resume with all five rows. Absolute scratch paths removed.
+
+## run 1
+lean: Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+library modules discovered: 897; in the import closure of ['ChainTheory', 'AlphaDerivation']: 493
+safety gate: no forbidden construct in the 493 modules
+sources copied; sha256 over sorted 'module sha256' lines: bad39beeaf49a7c02a7554a180a0fe68b310fe17bc8a1d296750f3e660263df4
+PATCHED AxiomDeclaration.Theorems:42: ':= by decide' -> ':= rfl'
+PATCHED AxiomDeclaration.Theorems:52: ':= by decide' -> ':= rfl'
+[  1/493] AlphaDerivation.Data.Patterns  1.8s  468 MB  exit 0
+[  2/493] AlphaDerivation.Data.GaussMatrix  2.4s  482 MB  exit 0
+[  3/493] AlphaDerivation.Data.Certificates  69.6s  651 MB  exit 0
+[  4/493] AlphaDerivation.Proofs.LemmaA  173.3s  2130 MB  exit 0
+[  5/493] ChainTheory.Data.D530533_ANDB  312.0s  671 MB  exit 0
+[  6/493] AxiomDeclaration.Words  4.8s  494 MB  exit 0
+[  7/493] AxiomDeclaration.Structure  1.4s  482 MB  exit 0
+[  8/493] AxiomDeclaration.Theorems  1.7s  470 MB  exit 0
+[  9/493] AxiomDeclaration  1.4s  453 MB  exit 0
+[ 10/493] KernelDerivationC.Exact  2.6s  484 MB  exit 0
+[ 11/493] AxiomDeclarationTwo.Structure  2.0s  475 MB  exit 0
+[ 12/493] KernelDerivationC.Targets  3.8s  501 MB  exit 0
+[ 13/493] ChainTheory.Data.D531942_CASM  396.0s  740 MB  exit 0
+[ 14/493] ChainTheory.Data.D530067_HRCP  173.9s  603 MB  exit 0
+[ 15/493] ChainTheory.Data.D532023_DST2  139.3s  606 MB  exit 0
+[ 16/493] ActClosure.Web  2.0s  491 MB  exit 0
+[ 17/493] ActClosure.Data.Acts  1.8s  475 MB  exit 0
+[ 18/493] ActClosure.Data.Words  3.8s  504 MB  exit 0
+[ 19/493] ActClosure.Structure  1.5s  471 MB  exit 0
+[ 20/493] ActClosure.Data.Sinks  2.5s  491 MB  exit 0
+[ 21/493] AxiomDeclarationTwo.Acts  1.1s  476 MB  exit 0
+[ 22/493] ActClosure.Words  1.2s  482 MB  exit 0
+[ 23/493] ActClosure.Sinks  1.0s  473 MB  exit 0
+[ 24/493] AxiomDeclarationTwo.Words  0.9s  474 MB  exit 0
+[ 25/493] AxiomDeclarationTwo.Sinks  1.2s  475 MB  exit 0
+[ 26/493] AlphaDerivation.Proofs.CollapseG2  336.2s  7677 MB  exit 0
+[ 27/493] ChainTheory.Data.D533150_DRM2  92.3s  608 MB  exit 0
+
+## run 2
+lean: Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+library modules discovered: 897; in the import closure of ['ChainTheory', 'AlphaDerivation']: 493
+safety gate: no forbidden construct in the 493 modules
+sources already copied (resume); sha256 over sorted 'module sha256' lines: bad39beeaf49a7c02a7554a180a0fe68b310fe17bc8a1d296750f3e660263df4
+resume: 27 modules already built (status.tsv)
+[ 28/493] AlphaDerivation.Data.Records  10.4s  507 MB  exit 0
+[ 29/493] AlphaDerivation.Data.Expected  2.0s  476 MB  exit 0
+[ 30/493] ChainTheory.Data.D530196_ERMT  57.3s  544 MB  exit 0
+[ 31/493] AlphaDerivation.Proofs.ClosureSign  8.3s  596 MB  exit 0
+[ 32/493] AlphaDerivation.Data.FieldElement  1.7s  470 MB  exit 0
+[ 33/493] AlphaDerivation.Proofs.Census  6.1s  587 MB  exit 0
+[ 34/493] ChainTheory.Data.D528827_XSSF  51.1s  539 MB  exit 0
+[ 35/493] AxiomDeclarationTwo.ClosureWebsB  155.1s  2375 MB  exit 0
+[ 36/493] ChainTheory.Data.D530610_PCHS  44.9s  565 MB  exit 0
+[ 37/493] ActClosure.Data.Admission  2.2s  489 MB  exit 0
+[ 38/493] ActClosure.Data.Refused  1.6s  484 MB  exit 0
+[ 39/493] ActClosure.Clauses  2.3s  485 MB  exit 0
+[ 40/493] ChainTheory.Data.D530247_TOP2  23.8s  528 MB  exit 0
+[ 41/493] ChainTheory.Data.D533868_MXAS  38.4s  536 MB  exit 0
+[ 42/493] AlphaDerivation.Data.GainCells  0.9s  466 MB  exit 0
+[ 43/493] ChainTheory.Data.D525231_RGAD  19.4s  568 MB  exit 0
+[ 44/493] AlphaDerivation.Data.RotationCertificates  1.0s  463 MB  exit 0
+[ 45/493] AxiomDeclarationTwo.ClosureWebsC  138.5s  2381 MB  exit 0
+[ 46/493] AlphaDerivation.Proofs.AdjointRotation  24.6s  1004 MB  exit 0
+[ 47/493] AlphaDerivation.Proofs.CollapseG3  333.0s  7661 MB  exit 0
+[ 48/493] ChainTheory.Kernel.D527992_ESRL  91.8s  918 MB  exit 0
+[ 49/493] AxiomDeclarationTwo.ClosureWebsD  92.8s  1926 MB  exit 0
+[ 50/493] ActClosure.ClosureWebsA  22.2s  1079 MB  exit 0
+[ 51/493] AxiomDeclarationTwo.ClosureWebsE  87.1s  1904 MB  exit 0
+[ 52/493] AxiomDeclarationTwo.ClosureWebsA  69.2s  1464 MB  exit 0
+[ 53/493] AlphaDerivation.Data.Webs  3.0s  500 MB  exit 0
+[ 54/493] ChainTheory.Data.D529072_HGHL  14.2s  517 MB  exit 0
+[ 55/493] ChainTheory.Data.D528772_QEHL  12.9s  516 MB  exit 0
+[ 56/493] AlphaDerivation.Data.Cyclotomic  1.5s  475 MB  exit 0
+[ 57/493] KernelDerivationC.Inputs  1.6s  475 MB  exit 0
+[ 58/493] AlphaDerivation.Proofs.OrbitReading  10.9s  693 MB  exit 0
+[ 59/493] ChainTheory.Data.D535439_OLDC  26.9s  545 MB  exit 0
+[ 60/493] AlphaDerivation.Proofs.CollapseD2  12.1s  760 MB  exit 0
+[ 61/493] AlphaDerivation.Data.CapBases  0.6s  466 MB  exit 0
+[ 62/493] AlphaDerivation.Proofs.Theorem0  89.0s  2239 MB  exit 0
+[ 63/493] ChainTheory.Data.D525911_QLHL  10.7s  540 MB  exit 0
+[ 64/493] AlphaDerivation.Proofs.Generation  250.5s  6693 MB  exit 0
+[ 65/493] ActClosure.ClosureWebsB  30.9s  1526 MB  exit 0
+[ 66/493] AxiomDeclarationTwo.ClosureWebsF  64.7s  1576 MB  exit 0
+[ 67/493] ActClosure.ClosureWebsD  44.4s  1793 MB  exit 0
+[ 68/493] AlphaDerivation.Proofs.TransverseStates  2.7s  548 MB  exit 0
+[ 69/493] KernelDerivationC.Objects  10.2s  848 MB  exit 0
+[ 70/493] ChainTheory.Data.D530584_ENT2  8.0s  507 MB  exit 0
+[ 71/493] ChainTheory.Data.D529099_LSRC  6.4s  511 MB  exit 0
+[ 72/493] ChainTheory.Data.D529015_YOGC  5.6s  502 MB  exit 0
+[ 73/493] ChainTheory.Data.D530896_UHLF  5.7s  514 MB  exit 0
+[ 74/493] ChainTheory.Data.D528854_FFNW  5.4s  505 MB  exit 0
+[ 75/493] ChainTheory.Data.D531680_PHTR  3.7s  506 MB  exit 0
+[ 76/493] ChainTheory.Data.D530477_LWE3  4.8s  507 MB  exit 0
+[ 77/493] ChainTheory.Data.D525309_LBHL  3.2s  515 MB  exit 0
+[ 78/493] ChainTheory.Data.D531706_MUG2  3.2s  490 MB  exit 0
+[ 79/493] ChainTheory.Data.D528073_PQCD  3.8s  510 MB  exit 0
+[ 80/493] ChainTheory.Data.D532499_HPK2  4.1s  494 MB  exit 0
+[ 81/493] ChainTheory.Data.D528961_LHAM  3.2s  491 MB  exit 0
+[ 82/493] ActClosure.Closure  62.6s  1365 MB  exit 0
+[ 83/493] ChainTheory.Data.D529618_NSKC  3.8s  498 MB  exit 0
+[ 84/493] ChainTheory.Data.D526261_RLRO  1.3s  474 MB  exit 0
+[ 85/493] ChainTheory.Data.D524826_DHLP  1.7s  481 MB  exit 0
+[ 86/493] ChainTheory.Data.D526310_FPAR  2.3s  483 MB  exit 0
+[ 87/493] ChainTheory.Data.D527268_ENSB  2.9s  495 MB  exit 0
+[ 88/493] ChainTheory.Data.D532153_ENBG  1.2s  489 MB  exit 0
+[ 89/493] ChainTheory.Data.D524722_MOTC  0.6s  476 MB  exit 0
+[ 90/493] ChainTheory.Data.D525516_NCRE  3.2s  533 MB  exit 0
+[ 91/493] ChainTheory.Data.D526148_CPEG  0.9s  482 MB  exit 0
+[ 92/493] ChainTheory.Data.D525464_MDTS  1.3s  480 MB  exit 0
+[ 93/493] ChainTheory.Data.D525257_HTOR  1.4s  484 MB  exit 0
+[ 94/493] ChainTheory.Data.D526972_NRGE  3.2s  510 MB  exit 0
+[ 95/493] ChainTheory.Data.D528101_ATSR  2.2s  502 MB  exit 0
+[ 96/493] ChainTheory.Data.D527937_LJBP  2.2s  494 MB  exit 0
+[ 97/493] ChainTheory.Data.D525335_SLBC  3.8s  536 MB  exit 0
+[ 98/493] ChainTheory.Data.D525646_RTSE  1.4s  487 MB  exit 0
+[ 99/493] ChainTheory.Data.D527373_LATW  2.2s  495 MB  exit 0
+[100/493] ChainTheory.Data.D527777_AJBP  2.1s  514 MB  exit 0
+[101/493] ChainTheory.Data.D527294_ENPC  1.6s  486 MB  exit 0
+[102/493] ChainTheory.Data.D529516_PJFC  1.7s  484 MB  exit 0
+[103/493] ChainTheory.Data.D530016_GSTB  1.6s  484 MB  exit 0
+[104/493] ChainTheory.ConditionUnions  1.1s  491 MB  exit 0
+[105/493] ChainTheory.Data.D527964_MWSP  1.8s  490 MB  exit 0
+[106/493] ChainTheory.Data.D524963_MCQH  0.9s  476 MB  exit 0
+[107/493] ChainTheory.Data.D531107_FDIS  1.2s  488 MB  exit 0
+[108/493] ChainTheory.Data.D527216_QMCR  1.7s  490 MB  exit 0
+[109/493] ActClosure.ClosureWebsC  47.6s  2312 MB  exit 0
+[110/493] ChainTheory.Data.D525963_SWNR  0.8s  474 MB  exit 0
+[111/493] ChainTheory.Data.D525542_TTCF  0.5s  474 MB  exit 0
+[112/493] ChainTheory.Data.D531390_LATD  1.7s  494 MB  exit 0
+[113/493] ChainTheory.Data.D532075_LGDS  0.9s  488 MB  exit 0
+[114/493] ChainTheory.Data.D526564_TLWN  1.3s  487 MB  exit 0
+[115/493] ChainTheory.Data.D525205_PSNS  0.8s  474 MB  exit 0
+[116/493] ChainTheory.Data.D524561_HOTW  1.8s  494 MB  exit 0
+[117/493] ChainTheory.Data.D532262_STZC  1.2s  484 MB  exit 0
+[118/493] ChainTheory.Data.D527751_DCRH  1.7s  493 MB  exit 0
+[119/493] ChainTheory.Data.D528421_TISK  1.1s  477 MB  exit 0
+[120/493] ChainTheory.Data.D527104_PJRK  1.6s  492 MB  exit 0
+[121/493] ChainTheory.Kernel.D524748_SCGI  0.8s  484 MB  exit 0
+[122/493] ChainTheory.Data.D526513_MPJW  0.8s  474 MB  exit 0
+[123/493] ChainTheory.Data.D525780_EWDI  1.0s  476 MB  exit 0
+[124/493] ChainTheory.Data.D527399_DRLA  1.7s  490 MB  exit 0
+[125/493] ChainTheory.Data.D526019_WAMR  1.1s  476 MB  exit 0
+[126/493] ChainTheory.Data.D527696_MWMB  1.7s  493 MB  exit 0
+[127/493] ChainTheory.Data.D526870_PAET  1.4s  478 MB  exit 0
+[128/493] ChainTheory.Data.D528475_DURA  1.3s  475 MB  exit 0
+[129/493] ChainTheory.OpenResult  0.7s  464 MB  exit 0
+[130/493] ChainTheory.Data.D532628_NKS2  1.2s  478 MB  exit 0
+[131/493] ChainTheory.Data.D531654_DPIN  1.2s  480 MB  exit 0
+[132/493] ChainTheory.Data.D527724_MWDM  1.6s  486 MB  exit 0
+[133/493] ChainTheory.Data.D527909_NVCI  1.4s  483 MB  exit 0
+[134/493] ChainTheory.Data.D527242_PRCM  1.8s  496 MB  exit 0
+[135/493] ChainTheory.Data.D530426_UB4H  1.6s  490 MB  exit 0
+[136/493] ChainTheory.Data.D532679_NOSG  0.9s  474 MB  exit 0
+[137/493] ChainTheory.Data.D531550_SSDI  1.1s  472 MB  exit 0
+[138/493] ChainTheory.Data.D531081_GPOE  0.7s  470 MB  exit 0
+[139/493] ChainTheory.Data.D528882_LTGO  1.0s  470 MB  exit 0
+[140/493] ChainTheory.Data.D527645_YCLC  1.1s  474 MB  exit 0
+[141/493] ChainTheory.Data.D531968_AMBL  0.6s  470 MB  exit 0
+[142/493] ChainTheory.Data.D526045_MBRJ  1.1s  478 MB  exit 0
+[143/493] ChainTheory.Data.D524535_SCGH  0.7s  470 MB  exit 0
+[144/493] ChainTheory.Data.D532049_DIM1  1.0s  470 MB  exit 0
+[145/493] ChainTheory.Data.D537003_AJBQ  7.0s  517 MB  exit 0
+[146/493] AxiomDeclarationTwo.Closure  32.2s  1323 MB  exit 0
+[147/493] ChainTheory.Data.D533444_OSA3  6.1s  518 MB  exit 0
+[148/493] ChainTheory.Data.D535412_OLUS  4.4s  507 MB  exit 0
+[149/493] ChainTheory.Data.D535202_HRNC  3.5s  512 MB  exit 0
+[150/493] ChainTheory.Data.D533123_QUIN  3.6s  496 MB  exit 0
+[151/493] ChainTheory.Data.D535521_PRCI  3.9s  513 MB  exit 0
+[152/493] AlphaDerivation.Proofs.CollapseG1  232.1s  7677 MB  exit 0
+[153/493] ChainTheory.Data.D537221_FINS  5.6s  518 MB  exit 0
+[154/493] ChainTheory.Data.D534449_SPM2  3.9s  495 MB  exit 0
+[155/493] ActClosure.ClosureWebsE  35.2s  1679 MB  exit 0
+[156/493] ChainTheory.Data.D533919_TST4  5.1s  502 MB  exit 0
+[157/493] ChainTheory.Data.D535653_PICP  2.9s  498 MB  exit 0
+[158/493] ChainTheory.Data.D532861_GRP3  2.6s  495 MB  exit 0
+[159/493] ChainTheory.Data.D532943_RTOP  2.9s  486 MB  exit 0
+[160/493] ChainTheory.Data.D537247_ST2T  4.2s  500 MB  exit 0
+[161/493] ChainTheory.Data.D535360_NDFE  2.7s  488 MB  exit 0
+[162/493] ChainTheory.Data.D535814_PNCB  2.7s  494 MB  exit 0
+[163/493] ChainTheory.Data.D533546_BRCH  2.8s  486 MB  exit 0
+[164/493] ChainTheory.Data.D535840_CHOS  2.6s  504 MB  exit 0
+[165/493] ChainTheory.Data.D537536_LBSC  3.7s  506 MB  exit 0
+[166/493] ChainTheory.Data.D534263_TSC2  3.0s  498 MB  exit 0
+[167/493] ChainTheory.Data.D535008_DEFM  3.0s  489 MB  exit 0
+[168/493] ChainTheory.Data.D535680_RPHG  1.4s  477 MB  exit 0
+[169/493] ChainTheory.Data.D533468_DNGH  1.4s  478 MB  exit 0
+[170/493] ChainTheory.ConditionUnionsEighth  2.7s  499 MB  exit 0
+[171/493] ChainTheory.ConditionUnionsV10  2.3s  482 MB  exit 0
+[172/493] ChainTheory.Data.D533893_HLGR  2.0s  484 MB  exit 0
+[173/493] ChainTheory.Data.D536267_QLSK  2.9s  488 MB  exit 0
+[174/493] ChainTheory.Data.D535091_HGDN  1.7s  486 MB  exit 0
+[175/493] ChainTheory.Data.D538680_NMSU  1.8s  492 MB  exit 0
+[176/493] ChainTheory.Data.D534501_TRDR  1.0s  473 MB  exit 0
+[177/493] ChainTheory.Data.D539022_WAZB  2.3s  494 MB  exit 0
+[178/493] ChainTheory.Data.D536583_PSYO  1.2s  482 MB  exit 0
+[179/493] ChainTheory.Data.D534608_ESOF  1.4s  483 MB  exit 0
+[180/493] ChainTheory.Data.D537406_RTMC  0.9s  474 MB  exit 0
+[181/493] ChainTheory.Data.D535895_ASJN  1.1s  470 MB  exit 0
+[182/493] ChainTheory.Data.D535548_LPSC  1.1s  469 MB  exit 0
+[183/493] ActClosure.ClosureStructure  25.4s  834 MB  exit 0
+[184/493] ChainTheory.Data.D534290_LOWD  1.4s  478 MB  exit 0
+[185/493] ChainTheory.Data.D533228_HYSK  1.1s  470 MB  exit 0
+[186/493] ChainTheory.Data.D536716_SSFP  1.3s  469 MB  exit 0
+[187/493] ChainTheory.Data.D534343_CRDU  1.0s  472 MB  exit 0
+[188/493] ChainTheory.Data.D537836_JHMT  2.2s  484 MB  exit 0
+[189/493] ChainTheory.Data.D533023_TD2S  1.3s  469 MB  exit 0
+[190/493] ChainTheory.Data.D533706_LFHR  0.8s  474 MB  exit 0
+[191/493] ChainTheory.Data.D538156_SBJW  1.0s  476 MB  exit 0
+[192/493] ChainTheory.Data.D532705_CUTK  0.6s  470 MB  exit 0
+[193/493] ChainTheory.Data.D533815_LMBN  1.3s  469 MB  exit 0
+[194/493] ChainTheory.Data.D538575_FLXF  1.9s  486 MB  exit 0
+[195/493] ChainTheory.Data.D538212_QARM  0.5s  474 MB  exit 0
+[196/493] ChainTheory.Data.D538315_AEBS  0.4s  474 MB  exit 0
+[197/493] ChainTheory.Data.D537322_BSBA  1.7s  471 MB  exit 0
+[198/493] ChainTheory.Data.D538865_NCZR  1.4s  469 MB  exit 0
+[199/493] ChainTheory.Data.D537113_RCTJ  1.9s  474 MB  exit 0
+[200/493] ChainTheory.Data.D536770_ALZB  1.6s  474 MB  exit 0
+[201/493] ChainTheory.Data.D537780_NSNG  0.7s  472 MB  exit 0
+[202/493] ChainTheory.Data.D537808_ESWS  0.8s  474 MB  exit 0
+[203/493] ChainTheory.Data.D536819_AUSC  1.6s  469 MB  exit 0
+[204/493] ChainTheory.Data.D538602_RRES  1.2s  469 MB  exit 0
+[205/493] ChainTheory.Data.D539493_ZMRH  8.8s  527 MB  exit 0
+[206/493] ChainTheory.Data.D538733_HCOS  1.3s  474 MB  exit 0
+[207/493] ChainTheory.Data.D539098_KCFM  9.4s  521 MB  exit 0
+[208/493] ChainTheory.Data.D539285_TFLR  2.9s  492 MB  exit 0
+[209/493] ChainTheory.Data.D539621_KCSC  2.1s  498 MB  exit 0
+[210/493] ChainTheory.Data.D539543_MPRT  1.1s  475 MB  exit 0
+[211/493] ChainTheory.ConditionUnionsNinth  1.2s  467 MB  exit 0
+[212/493] ChainTheory.Data.D539669_UDAO  1.7s  473 MB  exit 0
+[213/493] ChainTheory.Data.D539571_EPCL  1.6s  473 MB  exit 0
+[214/493] AxiomDeclarationTwo.ClosureStructure  22.1s  963 MB  exit 0
+[215/493] AxiomDeclarationTwo.Theorems  0.9s  463 MB  exit 1  ERROR src/AxiomDeclarationTwo/Theorems.lean:42:111: error: failed to synthesize | src/AxiomDeclarationTwo/Theorems.lean:52:189: error: failed to synthesize | [scratch path cut]
+[219/493] ActClosure  0.8s  461 MB  exit 0
+[220/493] AlphaDerivation.Axiom  5.3s  549 MB  exit 0
+[221/493] ChainTheory.Hypotheses  0.9s  464 MB  exit 0
+[222/493] AlphaDerivation.Proofs.Span  159.9s  7115 MB  exit 0
+[223/493] AlphaDerivation.Proofs.IdentificationAlgebra  169.9s  5368 MB  exit 0
+[224/493] AlphaDerivation.Proofs.LemmaB  2.7s  513 MB  exit 0
+[225/493] AlphaDerivation.Proofs.Theorem1  2.9s  525 MB  exit 0
+[226/493] AlphaDerivation.Proofs.MomentumTransfer  3.3s  539 MB  exit 0
+[227/493] AlphaDerivation.Proofs.MasslessOpenLink  1.7s  487 MB  exit 0
+[228/493] AlphaDerivation.Proofs.Theorem4  6.1s  556 MB  exit 0
+[229/493] AlphaDerivation.Proofs.GainLemma  14.9s  601 MB  exit 0
+[230/493] AlphaDerivation.Proofs.OneLinkWord  1.4s  488 MB  exit 0
+[231/493] AlphaDerivation.Proofs.OneLinkWordAlpha  4.6s  557 MB  exit 0
+[232/493] AlphaDerivation.Proofs.Theorem5  44.6s  1858 MB  exit 0
+[233/493] AlphaDerivation.Proofs.Correspondence  0.7s  476 MB  exit 0
+[234/493] KernelDerivationC.Brackets  163.7s  5767 MB  exit 0
+[235/493] ChainTheory.Kernel.D525490_LGIS  17.6s  546 MB  exit 0
+[236/493] AlphaDerivation.Proofs.SpanRank  126.9s  6557 MB  exit 0
+[237/493] AlphaDerivation.Statements  1.2s  491 MB  exit 0
+[238/493] AlphaDerivation  0.5s  468 MB  exit 0
+[239/493] ChainTheory.Discussion.Landed93  1.4s  485 MB  exit 0
+[240/493] ChainTheory.Foundations.Ch03  1.7s  493 MB  exit 0
+[241/493] ChainTheory.Foundations.Ch04  1.8s  505 MB  exit 0
+[242/493] ChainTheory.StandardModel.Ch12  1.1s  497 MB  exit 0
+[243/493] ChainTheory.Fields.Ch07  1.1s  479 MB  exit 0
+[244/493] ChainTheory.StandardModel.Ch11  1.7s  496 MB  exit 0
+[245/493] ChainTheory.Foundations.Ch02  1.3s  491 MB  exit 0
+[246/493] ChainTheory.StandardModel.Ch13  1.3s  491 MB  exit 0
+[247/493] ChainTheory.CompositeMatter.Ch17  1.2s  492 MB  exit 0
+[248/493] ChainTheory.Fields.Ch06  1.4s  491 MB  exit 0
+[249/493] ChainTheory.Thermodynamics.Landed93  1.3s  481 MB  exit 0
+[250/493] ChainTheory.Fields.Ch08  1.3s  489 MB  exit 0
+[251/493] ChainTheory.Foundations.Ch05  1.3s  491 MB  exit 0
+[252/493] ChainTheory.CompositeMatter.Ch15  1.1s  489 MB  exit 0
+[253/493] ChainTheory.Foundations.Ch01  1.1s  479 MB  exit 0
+[254/493] ChainTheory.Discussion.Appendices  1.3s  475 MB  exit 0
+[255/493] ChainTheory.CompositeMatter.Ch14  1.4s  488 MB  exit 0
+[256/493] ChainTheory.Fields.Ch09  1.1s  489 MB  exit 0
+[257/493] ChainTheory.Gravity.Ch19  1.0s  475 MB  exit 0
+[258/493] ChainTheory.Foundations.Measurement  1.0s  476 MB  exit 0
+[259/493] ChainTheory.StandardModel.Ch10  1.1s  481 MB  exit 0
+[260/493] ChainTheory.InformationComputation.Landed93  0.8s  490 MB  exit 0
+[261/493] ChainTheory.Discussion.Ch20  1.3s  475 MB  exit 0
+[262/493] ChainTheory.CompositeMatter.Ch16  1.2s  486 MB  exit 0
+[263/493] ChainTheory.Gravity.Ch18  1.2s  489 MB  exit 0
+[264/493] ChainTheory.Correspondence  0.8s  480 MB  exit 0
+[265/493] ChainTheory.ManyBodies.Landed93  1.0s  471 MB  exit 0
+[266/493] ChainTheory.Open  5.0s  652 MB  exit 0
+[267/493] ChainTheory.Plan.P08.Ch4  0.8s  504 MB  exit 0
+[268/493] ChainTheory.Plan.P08.Ch7  1.1s  506 MB  exit 0
+[269/493] ChainTheory.Plan.P09.Ch10  1.1s  505 MB  exit 0
+[270/493] ChainTheory.Plan.P11.Ch5  1.0s  504 MB  exit 0
+[271/493] ChainTheory.Plan.P10.Ch5  1.3s  503 MB  exit 0
+[272/493] ChainTheory.Plan.P03.Ch5  1.8s  508 MB  exit 0
+[273/493] ChainTheory.Open.Eighth  3.8s  584 MB  exit 0
+[274/493] ChainTheory.Plan.P06.Ch3  1.1s  509 MB  exit 0
+[275/493] ChainTheory.Plan.P09.Ch1  1.4s  505 MB  exit 0
+[276/493] ChainTheory.Plan.P06.Ch2  1.1s  506 MB  exit 0
+[277/493] ChainTheory.Plan.P01.Ch6  0.9s  510 MB  exit 0
+[278/493] ChainTheory.Plan.P11.Ch4  1.2s  505 MB  exit 0
+[279/493] ChainTheory.Plan.P03.Ch3  1.1s  505 MB  exit 0
+[280/493] ChainTheory.Plan.P06.Ch6  0.7s  506 MB  exit 0
+[281/493] ChainTheory.Plan.P05.Ch3  0.8s  505 MB  exit 0
+[282/493] ChainTheory.Plan.P02.Ch1  1.0s  509 MB  exit 0
+[283/493] ChainTheory.Plan.P07.Ch5  1.0s  508 MB  exit 0
+[284/493] ChainTheory.Plan.P08.Ch3  0.6s  506 MB  exit 0
+[285/493] ChainTheory.Plan.P06.Ch1  0.8s  506 MB  exit 0
+[286/493] ChainTheory.Plan.P05.Ch2  0.8s  506 MB  exit 0
+[287/493] ChainTheory.Plan.P05.Ch1  1.1s  513 MB  exit 0
+[288/493] ChainTheory.Plan.P04.Ch8  1.1s  509 MB  exit 0
+[289/493] ChainTheory.Plan.P07.Ch11  1.1s  510 MB  exit 0
+[290/493] ChainTheory.Plan.P10.Ch7  0.9s  506 MB  exit 0
+[291/493] ChainTheory.Plan.P07.Ch8  1.3s  508 MB  exit 0
+[292/493] ChainTheory.Plan.P02.Ch5  1.3s  505 MB  exit 0
+[293/493] ChainTheory.Plan.P02.Ch3  1.5s  503 MB  exit 0
+[294/493] ChainTheory.Plan.P04.Ch1  2.0s  505 MB  exit 0
+[295/493] ChainTheory.Plan.P02.Ch8  1.3s  506 MB  exit 0
+[296/493] ChainTheory.Plan.P03.Ch8  0.9s  505 MB  exit 0
+[297/493] ChainTheory.Plan.P04.Ch11  0.6s  505 MB  exit 0
+[298/493] ChainTheory.Plan.P04.Ch9  1.2s  505 MB  exit 0
+[299/493] ChainTheory.Plan.P07.Ch1  0.7s  511 MB  exit 0
+[300/493] ChainTheory.Plan.P04.Ch2  0.7s  503 MB  exit 0
+[301/493] ChainTheory.Plan.P01.Ch5  1.0s  512 MB  exit 0
+[302/493] ChainTheory.Plan.P02.Ch9  0.7s  504 MB  exit 0
+[303/493] ChainTheory.Plan.P06.Ch4  1.2s  509 MB  exit 0
+[304/493] ChainTheory.Plan.P07.Ch7  1.3s  503 MB  exit 0
+[305/493] ChainTheory.Plan.P09.Ch2  1.3s  505 MB  exit 0
+[306/493] ChainTheory.Plan.P05.Ch6  1.2s  509 MB  exit 0
+[307/493] ChainTheory.Plan.P07.Ch6  0.9s  506 MB  exit 0
+[308/493] ChainTheory.Plan.P03.Ch6  1.1s  508 MB  exit 0
+[309/493] ChainTheory.Plan.P04.Ch4  1.0s  506 MB  exit 0
+[310/493] ChainTheory.Plan.P11.Ch3  1.2s  506 MB  exit 0
+[311/493] ChainTheory.Plan.P10.Ch1  1.5s  503 MB  exit 0
+[312/493] ChainTheory.Plan.P08.Ch6  0.8s  507 MB  exit 0
+[313/493] ChainTheory.Plan.P02.Ch7  0.9s  507 MB  exit 0
+[314/493] ChainTheory.Plan.P12.Ch1  1.0s  503 MB  exit 0
+[315/493] ChainTheory.Plan.P12.Ch2  0.9s  506 MB  exit 0
+[316/493] ChainTheory.Plan.P01.Ch4  1.0s  508 MB  exit 0
+[317/493] ChainTheory.Plan.P09.Ch6  0.7s  503 MB  exit 0
+[318/493] ChainTheory.Plan.P08.Ch1  1.2s  509 MB  exit 0
+[319/493] ChainTheory.Plan.P05.Ch4  1.0s  510 MB  exit 0
+[320/493] ChainTheory.Plan.P03.Ch7  0.9s  504 MB  exit 0
+[321/493] ChainTheory.Plan.P07.Ch3  0.6s  510 MB  exit 0
+[322/493] ChainTheory.Plan.P12.Ch6  0.9s  510 MB  exit 0
+[323/493] ChainTheory.Plan.P05.Ch8  1.6s  509 MB  exit 0
+[324/493] ChainTheory.Plan.P13.Ch4  0.9s  506 MB  exit 0
+[325/493] ChainTheory.Plan.P02.Ch4  1.5s  506 MB  exit 0
+[326/493] ChainTheory.Plan.P11.Ch6  1.4s  504 MB  exit 0
+[327/493] ChainTheory.Plan.P11.Ch1  1.3s  506 MB  exit 0
+[328/493] ChainTheory.Plan.P12.Ch4  1.0s  505 MB  exit 0
+[329/493] ChainTheory.Plan.P03.Ch2  1.0s  506 MB  exit 0
+[330/493] ChainTheory.Plan.P09.Ch5  1.1s  505 MB  exit 0
+[331/493] ChainTheory.Plan.P06.Ch7  1.0s  508 MB  exit 0
+[332/493] ChainTheory.Plan.P12.Ch5  1.0s  506 MB  exit 0
+[333/493] ChainTheory.Plan.P01.Ch1  1.1s  509 MB  exit 0
+[334/493] ChainTheory.Plan.P02.Ch10  0.9s  503 MB  exit 0
+[335/493] ChainTheory.Plan.P04.Ch3  1.1s  509 MB  exit 0
+[336/493] ChainTheory.Plan.P05.Ch5  1.2s  505 MB  exit 0
+[337/493] ChainTheory.Plan.P04.Ch6  0.9s  509 MB  exit 0
+[338/493] ChainTheory.Plan.P01.Ch2  0.8s  510 MB  exit 0
+[339/493] ChainTheory.Plan.P11.Ch2  1.1s  505 MB  exit 0
+[340/493] ChainTheory.Plan.P09.Ch3  1.0s  507 MB  exit 0
+[341/493] ChainTheory.Plan.P09.Ch4  1.0s  506 MB  exit 0
+[342/493] ChainTheory.Plan.P06.Ch9  0.9s  510 MB  exit 0
+[343/493] ChainTheory.Plan.P13.Ch7  1.0s  509 MB  exit 0
+[344/493] ChainTheory.Plan.P05.Ch7  1.1s  507 MB  exit 0
+[345/493] ChainTheory.Plan.P02.Ch6  0.9s  506 MB  exit 0
+[346/493] ChainTheory.Plan.P01.Ch3  1.3s  512 MB  exit 0
+[347/493] ChainTheory.Plan.P02.Ch2  1.1s  505 MB  exit 0
+[348/493] ChainTheory.Plan.P07.Ch10  0.9s  504 MB  exit 0
+[349/493] ChainTheory.Plan.P04.Ch5  0.7s  506 MB  exit 0
+[350/493] ChainTheory.Plan.P08.Ch2  1.1s  508 MB  exit 0
+[351/493] ChainTheory.Plan.P13.Ch2  1.2s  503 MB  exit 0
+[352/493] ChainTheory.Plan.P07.Ch4  0.9s  504 MB  exit 0
+[353/493] ChainTheory.Plan.P10.Ch4  0.9s  508 MB  exit 0
+[354/493] ChainTheory.Plan.P06.Ch5  1.0s  506 MB  exit 0
+[355/493] ChainTheory.Plan.P07.Ch2  0.9s  508 MB  exit 0
+[356/493] ChainTheory.Plan.P12.Ch3  0.9s  506 MB  exit 0
+[357/493] ChainTheory.Plan.P10.Ch3  0.8s  503 MB  exit 0
+[358/493] ChainTheory.Plan.P03.Ch1  1.7s  505 MB  exit 0
+[359/493] ChainTheory.Plan.P04.Ch7  1.1s  509 MB  exit 0
+[360/493] ChainTheory.Plan.P08.Ch5  0.8s  507 MB  exit 0
+[361/493] ChainTheory.Plan.P03.Ch4  1.1s  505 MB  exit 0
+[362/493] ChainTheory.Plan.P09.Ch7  1.2s  504 MB  exit 0
+[363/493] ChainTheory.Plan.P04.Ch10  0.8s  507 MB  exit 0
+[364/493] ChainTheory.Plan.P07.Ch9  1.0s  507 MB  exit 0
+[365/493] ChainTheory.Plan.P10.Ch2  0.9s  506 MB  exit 0
+[366/493] ChainTheory.Plan.P04.Ch12  1.1s  503 MB  exit 0
+[367/493] ChainTheory.Frame.P05.Ch10  1.3s  511 MB  exit 0
+[368/493] ChainTheory.Frame.P02.Ch9  1.0s  507 MB  exit 0
+[369/493] ChainTheory.Frame.P04.Ch4  1.1s  507 MB  exit 0
+[370/493] ChainTheory.Frame.P03.Ch2  1.3s  507 MB  exit 0
+[371/493] ChainTheory.Frame.P03.Ch4  1.2s  506 MB  exit 0
+[372/493] ChainTheory.Frame.P13.Ch2  0.9s  505 MB  exit 0
+[373/493] ChainTheory.Frame.P04.Ch9  0.6s  505 MB  exit 0
+[374/493] ChainTheory.Frame.P03.Ch3  1.2s  509 MB  exit 0
+[375/493] ChainTheory.Frame.P11.Ch2  1.1s  507 MB  exit 0
+[376/493] ChainTheory.Frame.P06.Ch2b  1.0s  509 MB  exit 0
+[377/493] ChainTheory.Frame.P01.Ch4  0.9s  511 MB  exit 0
+[378/493] ChainTheory.Frame.P10.Ch5  0.9s  504 MB  exit 0
+[379/493] ChainTheory.Frame.P09.Ch3  1.3s  507 MB  exit 0
+[380/493] ChainTheory.Frame.P13.Ch1  0.9s  507 MB  exit 0
+[381/493] ChainTheory.Frame.P11.Ch4  1.0s  510 MB  exit 0
+[382/493] ChainTheory.Frame.P14.Ch4  1.0s  507 MB  exit 0
+[383/493] ChainTheory.Frame.P09.Ch1  1.0s  509 MB  exit 0
+[384/493] ChainTheory.Frame.P02.Ch5  1.0s  506 MB  exit 0
+[385/493] ChainTheory.Frame.P14.Ch2  1.0s  506 MB  exit 0
+[386/493] ChainTheory.Frame.P12.Ch2  1.1s  504 MB  exit 0
+[387/493] ChainTheory.Frame.P06.Ch2  0.9s  504 MB  exit 0
+[388/493] ChainTheory.Frame.P01.Ch5  1.4s  513 MB  exit 0
+[389/493] ChainTheory.Frame.P07.Ch4  1.3s  510 MB  exit 0
+[390/493] ChainTheory.Frame.P10.Ch7  1.1s  507 MB  exit 0
+[391/493] ChainTheory.Frame.P02.Ch1  1.0s  513 MB  exit 0
+[392/493] ChainTheory.Frame.P05.Ch4  0.9s  511 MB  exit 0
+[393/493] ChainTheory.Frame.P10.Ch1  1.0s  507 MB  exit 0
+[394/493] ChainTheory.Frame.P01.Ch3  1.3s  513 MB  exit 0
+[395/493] ChainTheory.Frame.P11.Ch7  0.6s  506 MB  exit 0
+[396/493] ChainTheory.Frame.P06.Ch3  0.7s  509 MB  exit 0
+[397/493] ChainTheory.Frame.P02.Ch2  1.1s  506 MB  exit 0
+[398/493] ChainTheory.Frame.P09.Ch4  0.8s  505 MB  exit 0
+[399/493] ChainTheory.Frame.P10.Ch2  0.7s  507 MB  exit 0
+[400/493] ChainTheory.Frame.P04.Ch2  0.9s  506 MB  exit 0
+[401/493] ChainTheory.Frame.P01.Ch1  1.1s  510 MB  exit 0
+[402/493] ChainTheory.Frame.P11.Ch5  0.9s  505 MB  exit 0
+[403/493] ChainTheory.Frame.P01.Ch2  1.3s  512 MB  exit 0
+[404/493] ChainTheory.Frame.P07.Ch7  0.8s  510 MB  exit 0
+[405/493] ChainTheory.Frame.P12.Ch4  1.3s  510 MB  exit 0
+[406/493] ChainTheory.Frame.P12.Ch6  1.3s  505 MB  exit 0
+[407/493] ChainTheory.Frame.P06.Ch5  1.5s  509 MB  exit 0
+[408/493] ChainTheory.Frame.P03.Ch1  0.9s  506 MB  exit 0
+[409/493] ChainTheory.Frame.P08.Ch2  1.1s  505 MB  exit 0
+[410/493] ChainTheory.Frame.P03.Ch5  1.1s  510 MB  exit 0
+[411/493] ChainTheory.Frame.P06.Ch8  0.9s  507 MB  exit 0
+[412/493] ChainTheory.Frame.P10.Ch4  1.7s  511 MB  exit 0
+[413/493] ChainTheory.Frame.P06.Ch6  0.8s  509 MB  exit 0
+[414/493] ChainTheory.Frame.P05.Ch12  0.9s  505 MB  exit 0
+[415/493] ChainTheory.Frame.P06.Ch7  1.0s  511 MB  exit 0
+[416/493] ChainTheory.Frame.P03.Ch6  0.7s  509 MB  exit 0
+[417/493] ChainTheory.Frame.P07.Ch1  0.8s  509 MB  exit 0
+[418/493] ChainTheory.Frame.P13.Ch5  1.0s  507 MB  exit 0
+[419/493] ChainTheory.Frame.P12.Ch1  1.1s  510 MB  exit 0
+[420/493] ChainTheory.Frame.P09.Ch8  0.9s  507 MB  exit 0
+[421/493] ChainTheory.Frame.P02.Ch8  0.8s  508 MB  exit 0
+[422/493] ChainTheory.Frame.P05.Ch7  0.9s  510 MB  exit 0
+[423/493] ChainTheory.Frame.P05.Ch1  1.1s  515 MB  exit 0
+[424/493] ChainTheory.Frame.P13.Ch3  0.9s  508 MB  exit 0
+[425/493] ChainTheory.Frame.P08.Ch4  0.8s  508 MB  exit 0
+[426/493] ChainTheory.Frame.P03.Ch8  0.8s  507 MB  exit 0
+[427/493] ChainTheory.Frame.P06.Ch4  0.9s  509 MB  exit 0
+[428/493] ChainTheory.Frame.P02.Ch6  1.0s  507 MB  exit 0
+[429/493] ChainTheory.Frame.P12.Ch3  1.2s  509 MB  exit 0
+[430/493] ChainTheory.Frame.P05.Ch8  1.1s  508 MB  exit 0
+[431/493] ChainTheory.Frame.P10.Ch6  1.4s  504 MB  exit 0
+[432/493] ChainTheory.Frame.P09.Ch6  1.1s  507 MB  exit 0
+[433/493] ChainTheory.Frame.P07.Ch3  1.5s  507 MB  exit 0
+[434/493] ChainTheory.Frame.P04.Ch1  1.1s  504 MB  exit 0
+[435/493] ChainTheory.Frame.P13.Ch6  0.7s  512 MB  exit 0
+[436/493] ChainTheory.Frame.P13.Ch4  1.0s  506 MB  exit 0
+[437/493] ChainTheory.Frame.P07.Ch5  1.0s  509 MB  exit 0
+[438/493] ChainTheory.Frame.P02.Ch10  1.0s  507 MB  exit 0
+[439/493] ChainTheory.Frame.P06.Ch1  1.3s  508 MB  exit 0
+[440/493] ChainTheory.Frame.P08.Ch5  1.3s  508 MB  exit 0
+[441/493] ChainTheory.Frame.P02.Ch7  1.5s  507 MB  exit 0
+[442/493] ChainTheory.Frame.P03.Ch7  0.8s  508 MB  exit 0
+[443/493] ChainTheory.Frame.P07.Ch6  0.9s  509 MB  exit 0
+[444/493] ChainTheory.Frame.P04.Ch7  0.9s  507 MB  exit 0
+[445/493] ChainTheory.Frame.P09.Ch2  1.0s  508 MB  exit 0
+[446/493] ChainTheory.Frame.P11.Ch3  1.0s  505 MB  exit 0
+[447/493] ChainTheory.Frame.P05.Ch2  1.2s  507 MB  exit 0
+[448/493] ChainTheory.Frame.P10.Ch3  1.2s  511 MB  exit 0
+[449/493] ChainTheory.Frame.P10.Ch10  1.0s  505 MB  exit 0
+[450/493] ChainTheory.Frame.P04.Ch3  0.9s  511 MB  exit 0
+[451/493] ChainTheory.Frame.P05.Ch11  0.8s  510 MB  exit 0
+[452/493] ChainTheory.Frame.P05.Ch6  1.2s  510 MB  exit 0
+[453/493] ChainTheory.Frame.P04.Ch8  1.0s  511 MB  exit 0
+[454/493] ChainTheory.Frame.P11.Ch1  1.1s  507 MB  exit 0
+[455/493] ChainTheory.Frame.P02.Ch3  1.2s  506 MB  exit 0
+[456/493] ChainTheory.Frame.P11.Ch6  0.9s  507 MB  exit 0
+[457/493] ChainTheory.Frame.P08.Ch1  1.0s  513 MB  exit 0
+[458/493] ChainTheory.Frame.P12.Ch5  0.9s  505 MB  exit 0
+[459/493] ChainTheory.Frame.P01.Ch6  1.2s  508 MB  exit 0
+[460/493] ChainTheory.Frame.P05.Ch9  1.3s  509 MB  exit 0
+[461/493] ChainTheory.Frame.P07.Ch9  1.4s  510 MB  exit 0
+[462/493] ChainTheory.Frame.P05.Ch5  0.9s  507 MB  exit 0
+[463/493] ChainTheory.Frame.P09.Ch7  1.1s  505 MB  exit 0
+[464/493] ChainTheory.Frame.P05.Ch3  1.1s  506 MB  exit 0
+[465/493] ChainTheory.Frame.P04.Ch6  1.2s  513 MB  exit 0
+[466/493] ChainTheory.Frame.P14.Ch7  1.0s  511 MB  exit 0
+[467/493] ChainTheory.Frame.P02.Ch4  1.1s  507 MB  exit 0
+[468/493] ChainTheory.Frame.P06.Ch10  1.0s  508 MB  exit 0
+[469/493] ChainTheory.Frame.P04.Ch5  1.0s  510 MB  exit 0
+[470/493] ChainTheory.Frame.P04.Ch10  1.0s  504 MB  exit 0
+[471/493] ChainTheory.Frame.P08.Ch3  0.8s  508 MB  exit 0
+[472/493] ChainTheory.Frame.P07.Ch2  0.8s  507 MB  exit 0
+[473/493] ChainTheory.Frame.P07.Ch8  0.9s  509 MB  exit 0
+[474/493] ChainTheory.Open.Ninth  5.1s  582 MB  exit 0
+[475/493] ChainTheory.FrameNinth.P01.Ch1  1.6s  507 MB  exit 0
+[476/493] ChainTheory.Plan  6.5s  612 MB  exit 0
+[477/493] ChainTheory.FrameNinth.P06.Ch6  1.2s  507 MB  exit 0
+[478/493] ChainTheory.FrameNinth.P01.Ch5  1.1s  509 MB  exit 0
+[479/493] ChainTheory.FrameNinth.P02.Ch9  1.2s  507 MB  exit 0
+[480/493] ChainTheory.FrameNinth.P06.Ch10  1.2s  507 MB  exit 0
+[481/493] ChainTheory.FrameNinth.P09.Ch6  1.6s  507 MB  exit 0
+[482/493] ChainTheory.FrameNinth.P14.Ch7  1.4s  507 MB  exit 0
+[483/493] ChainTheory.Frame  11.0s  670 MB  exit 0
+[484/493] ChainTheory.FrameNinth.P07.Ch7  0.9s  503 MB  exit 0
+[485/493] ChainTheory.FrameNinth.P08.Ch1  1.1s  505 MB  exit 0
+[486/493] ChainTheory.FrameNinth.P06.Ch7  0.7s  505 MB  exit 0
+[487/493] ChainTheory.FrameNinth.P04.Ch7  0.8s  504 MB  exit 0
+[488/493] ChainTheory.FrameNinth.P06.Ch2a  1.0s  508 MB  exit 0
+[489/493] ChainTheory.FrameNinth.P05.Ch10  0.9s  505 MB  exit 0
+[490/493] ChainTheory.FrameNinth.P10.Ch3  0.9s  503 MB  exit 0
+[491/493] ChainTheory.FrameNinth.P01.Ch2  0.8s  507 MB  exit 0
+[492/493] ChainTheory.FrameNinth.P01.Ch3  0.4s  507 MB  exit 0
+[493/493] ChainTheory.FrameNinth  4.2s  686 MB  exit 0
+
+built 489 of 493 modules; failed 4; wall 1544 s; sum of module times 5396 s; max peak 7677 MB; warnings 0; sorry warnings 0
+EXIT 1
+
+## run 3
+lean: Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)
+library modules discovered: 897; in the import closure of ['ChainTheory', 'AlphaDerivation']: 493
+safety gate: no forbidden construct in the 493 modules
+sources already copied (resume); sha256 over sorted 'module sha256' lines: bad39beeaf49a7c02a7554a180a0fe68b310fe17bc8a1d296750f3e660263df4
+PATCHED (resume) AxiomDeclarationTwo.Theorems:42: ':= by decide' -> ':= rfl'
+PATCHED (resume) AxiomDeclarationTwo.Theorems:52: ':= by decide' -> ':= ⟨rfl, rfl, rfl⟩'
+PATCHED (resume) AxiomDeclarationTwo.Theorems:56: ':= by decide' -> ':= ⟨rfl, rfl, rfl⟩'
+resume: 489 modules already built (status.tsv)
+[490/493] AxiomDeclarationTwo.Theorems  0.8s  471 MB  exit 0
+[491/493] AxiomDeclarationTwo  0.5s  460 MB  exit 0
+[492/493] ChainTheory.FormalAxiom  0.8s  484 MB  exit 0
+[493/493] ChainTheory  0.6s  530 MB  exit 0
+
+built 493 of 493 modules; failed 0; wall 3 s; sum of module times 5398 s; max peak 7677 MB; warnings 0; sorry warnings 0
+EXIT 0

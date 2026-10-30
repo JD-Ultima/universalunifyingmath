@@ -115,3 +115,28 @@ consistent with all observed fields but is not experimentally established (CT-C0
   - Under X/m_e c² nothing changes: E1 is 9.18 or 9.49 orders low. In a declared family of 36 conversions built from
     the source's unit spellings, none is within a factor 10.
   - The unit-free ratio E_2/E_1 = 1/4 differs from the measured ratio by 4.5×10⁻⁶.
+
+*2026-10-30 note on G6, from round 6 (`formalization/chain-theory/compendium/09-lean-audit-at-scale.md`, `computation/chain-theory/compendium/lean_resolve.py`, `lean_build.py`):*
+
+- **G6, sharpened.**
+  - The 16 tied THEOREMs that cite a restated `AlphaDerivation` theorem or a kernel module cite declarations whose
+    proofs compute. 26 conjuncts were resolved; none uses `sorry` or an axiom of the source's own.
+  - By clause, the computation states the whole box at 1 row (9.4) and part of it at 5 (2.1, 9.2, 9.3, 18.2, 196.2).
+    At the other 10 it states nothing of the box. Five of the eight declarations carry content of a CONDITIONAL box of
+    their section (2.2, 18.3, 74.2, 78.1, 78.2), and reach THEOREM rows only through the per-section tie.
+  - "Abelian", "conserved", "massless" and "spin one" are Boolean definitions ("conserved" reduces to d1 ≠ d2). The
+    (2,2) centre is not computed. The zero momentum transfer is entered. The coupling equals the alpha closed form at
+    (2,3) by a case split, under five opaque hypotheses that are never used.
+  - 56.1 says its deciding table was "re-derived in Lean". Its numbers 322714 and 319332 occur nowhere in the tree.
+- **G6, build and axioms (were "not re-verified").**
+  - Under core Lean 4.35.0, the published tree does not build: `AxiomDeclaration.Theorems` fails, and 277 of 493
+    modules depend on it.
+  - With five leaf proofs changed from `decide` to `rfl` (statements unchanged), all 493 modules compile, with no
+    error, warning or `sorry`.
+  - `#print axioms` over the source's 6662 names gives `sorryAx` 0 and no axiom beyond `propext`, `Quot.sound` and
+    `Classical.choice`. 403 declarations gain `Classical.choice` relative to the source's 4.32.1 report, through core
+    4.35.0 order instances.
+  - Still open:
+    - a build on the pinned 4.32.1 (the download was refused in this session);
+    - Lean statements whose types mention the mathematical objects of the 10 unmatched rows and of the 37 table-check
+      rows.

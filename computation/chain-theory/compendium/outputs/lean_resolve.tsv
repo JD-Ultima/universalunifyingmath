@@ -1,0 +1,65 @@
+number	title	round1_tier	resolved_tier	verdict_16	lean_names	opaque_props	opaque_hypothesis_checks	open_records	axioms_union_4.35.0	sorryAx	names_with_axiom_report
+2.1	The fourth definition from the axiom	restated/kernel	computation stating part of the box	PARTIAL	11	5	1	3	Classical.choice,Quot.sound,propext	no	11
+2.3	One act from the derived act	restated/kernel	unrelated computation; best other: table checks	NONE	11	5	1	3	Classical.choice,Quot.sound,propext	no	11
+2.6	The restated text at both faces at every cell	restated/kernel	unrelated computation; best other: table checks	NONE	11	5	1	3	Classical.choice,Quot.sound,propext	no	11
+2.9	The one-dimensional end excluded at the axiom	restated/kernel	unrelated computation; best other: table checks	NONE	11	5	1	3	Classical.choice,Quot.sound,propext	no	11
+2.10	The single read, a corollary of the definitions	restated/kernel	unrelated computation; best other: table checks	NONE	11	5	1	3	Classical.choice,Quot.sound,propext	no	11
+3.1	The far end fixed direction by direction as the read	table	table checks (not resolved here)		1	0	0	0		no	1
+9.2	Abelian genre uniqueness	restated/kernel	computation stating part of the box	PARTIAL	11	7	1	2	Classical.choice,Quot.sound,propext	no	11
+9.3	Coupling genre	restated/kernel	computation stating part of the box	PARTIAL	11	7	1	2	Classical.choice,Quot.sound,propext	no	11
+9.4	Link lemmas	restated/kernel	computation stating the box	MATCH	11	7	1	2	Classical.choice,Quot.sound,propext	no	11
+9.5	Ordering theorem	restated/kernel	unrelated computation; best other: table checks	NONE	11	7	1	2	Classical.choice,Quot.sound,propext	no	11
+9.6	The one link tables at every genre	restated/kernel	unrelated computation; best other: table checks	NONE	11	7	1	2	Classical.choice,Quot.sound,propext	no	11
+11.1	The readout unit as the scheme at the one link	table	table checks (not resolved here)		1	0	0	0		no	1
+13.1	The record phase group at every genre	table	table checks (not resolved here)		1	0	0	0		no	1
+18.2	The gain lemma at the spectrum of records	restated/kernel	computation stating part of the box	PARTIAL	11	6	1	2	Classical.choice,Quot.sound,propext	no	11
+28.1	Measurement as the wash at one act	table	table checks (not resolved here)		6	0	0	4	Classical.choice,Quot.sound,propext	no	6
+28.2	The star-pair and one-link apparatus webs built	table	table checks (not resolved here)		6	0	0	4	Classical.choice,Quot.sound,propext	no	6
+28.5	The classical limit as the zero-density register	table	table checks (not resolved here)		6	0	0	4	Classical.choice,Quot.sound,propext	no	6
+56.1	The order register at the three directions	restated/kernel	unrelated computation; otherwise opaque/records only	NONE	6	5	0	0	Classical.choice,Quot.sound,propext	no	6
+57.1	Spin at the differing body	table	table checks (not resolved here)		8	5	0	1		no	8
+62.1	The group moves preserve the order parameter and the transfers raise it	opaque	opaque/records only		2	1	0	1		no	2
+64.1	Gauge invariance as the known clause	opaque	opaque/records only		2	2	0	0		no	2
+64.2	The gauge group as the face group of the tether	opaque	opaque/records only		2	2	0	0		no	2
+65.1	The gauge group as a corollary of one construction	table	table checks (not resolved here)		2	0	1	0		no	2
+65.2	The hub pair as one qudit of dimension four	table	table checks (not resolved here)		2	0	1	0		no	2
+73.1	The sign from the side at the hub reached through its qutrit	opaque	opaque/records only		12	8	0	4		no	12
+74.1	The conserved functionals of the full move set	restated/kernel	unrelated computation; best other: table checks	NONE	19	8	0	8	Classical.choice,Quot.sound,propext	no	19
+74.4	The junction count at the moves, restated	restated/kernel	unrelated computation; best other: table checks	NONE	19	8	0	8	Classical.choice,Quot.sound,propext	no	19
+78.3	The anomaly read at the body part	restated/kernel	unrelated computation; best other: table checks	NONE	3	0	0	0	Classical.choice,Quot.sound,propext	no	3
+145.1	The Casimir effect as the boundary count between two sinks	table	table checks (not resolved here)		1	0	0	0		no	1
+170.1	Beta decay as the release at the plus-two arm	opaque	opaque/records only		2	0	0	2		no	2
+181.5	The quark offices as the star arm reads	table	table checks (not resolved here)		8	6	0	1		no	8
+186.1	The first power as the sum over the segments of the read	table	table checks (not resolved here)		1	0	0	0		no	1
+196.2	The lepton joined face at the open attach site	restated/kernel	computation stating part of the box	PARTIAL	3	0	0	1	Classical.choice,Quot.sound,propext	no	3
+200.6	The Higgs and carrier offices at their sinks	table	table checks (not resolved here)		9	2	1	3		no	9
+203.5	Beta decay as the release at the plus-two arm	table	table checks (not resolved here)		4	1	0	2		no	4
+217.1	The second law at the counting face	table	table checks (not resolved here)		3	2	0	0	Classical.choice,Quot.sound,propext	no	3
+217.2	The boundary count at the counting face	table	table checks (not resolved here)		3	2	0	0	Classical.choice,Quot.sound,propext	no	3
+219.1	The ensembles as cap readings at the joined web	table	table checks (not resolved here)		1	0	0	0		no	1
+220.2	The order parameter at the forward saturation	table	table checks (not resolved here)		3	0	2	1		no	3
+220.3	The distillation theorem at the forward saturation	table	table checks (not resolved here)		3	0	2	1		no	3
+221.1	The phase transition as the sink-class change	table	table checks (not resolved here)		1	0	1	0		no	1
+223.2	The thermodynamic remainder at the forward saturation	table	table checks (not resolved here)		2	0	1	1		no	2
+224.1	The chain of copies and the periodic readout	table	table checks (not resolved here)		4	0	1	1		no	4
+224.2	The periodic network admitted by the grammar	table	table checks (not resolved here)		4	0	1	1		no	4
+224.3	The periodic sink at a named cell count	table	table checks (not resolved here)		4	0	1	1		no	4
+225.1	The band at the periodic web	table	table checks (not resolved here)		1	0	0	0		no	1
+226.1	The chain of pairs at the periodic web	table	table checks (not resolved here)		3	0	1	2		no	3
+229.1	The probe read at the four bodies joined to the measuring body	opaque	opaque/records only		1	0	0	1		no	1
+230.1	The closure as the computation	table	table checks (not resolved here)		1	0	0	0		no	1
+232.2	The Hadamard inside the finite gate group at the pair register	opaque	opaque/records only		1	0	0	1		no	1
+233.1	The distilling line as a corollary of the Axiom	opaque	opaque/records only		4	4	0	0		no	4
+233.2	The read as the maximal distillation	opaque	opaque/records only		4	4	0	0		no	4
+233.4	The subdivision as a path of four one-act moves	opaque	opaque/records only		4	4	0	0		no	4
+234.1	The enumeration of the records as the cost of a read	table	table checks (not resolved here)		3	0	1	1	Classical.choice,Quot.sound,propext	no	3
+234.3	The adiabatic theorem at the untouched records	table	table checks (not resolved here)		3	0	1	1	Classical.choice,Quot.sound,propext	no	3
+235.1	The read transport from the pair	table	table checks (not resolved here)		8	2	2	3		no	8
+235.2	The holonomy of the basis transport around a closed path	table	table checks (not resolved here)		8	2	2	3		no	8
+235.3	The step generator as a number operator	table	table checks (not resolved here)		8	2	2	3		no	8
+235.4	The carrier phase datum at the four-cycle	table	table checks (not resolved here)		8	2	2	3		no	8
+D.3	The hub step as the pair ket move	table	table checks (not resolved here)		12	2	1	7		no	12
+D.4	The orientation law at the root	table	table checks (not resolved here)		12	2	1	7		no	12
+H.3	The termination of seeded saturation	table	table checks (not resolved here)		21	2	1	17		no	21
+I.7.1	The open system as the wash at a sub-web	table	table checks (not resolved here)		1	0	0	0		no	1
+I.16.2		opaque	opaque/records only		1	1	0	0		no	1

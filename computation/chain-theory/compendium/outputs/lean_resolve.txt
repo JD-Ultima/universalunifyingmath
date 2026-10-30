@@ -1,0 +1,465 @@
+Round 6: restated AlphaDerivation theorems and kernel modules tied to compendium theorems
+====================================================================================================
+
+[1] Population (lean_classify.py, unchanged): THEOREM rows tied to Lean 64; round-1 tiers restated/kernel 16, table checks 37, opaque/records only 11
+    the 16 rows: 2.1, 2.3, 2.6, 2.9, 2.10, 9.2, 9.3, 9.4, 9.5, 9.6, 18.2, 56.1, 74.1, 74.4, 78.3, 196.2
+    distinct restated/kernel declarations they cite: 8
+      restated_theorem       ChainTheory.Foundations.Ch01.row_524038_ORKC  (ChainTheory/ChainTheory/Foundations/Ch01.lean:12)  cited by 2.1, 2.3, 2.6, 2.9, 2.10
+      restated_theorem       ChainTheory.Foundations.Ch03.row_521104_OUTR  (ChainTheory/ChainTheory/Foundations/Ch03.lean:89)  cited by 56.1
+      restated_theorem       ChainTheory.Foundations.Ch05.row_518830_MDFN  (ChainTheory/ChainTheory/Foundations/Ch05.lean:31)  cited by 74.1, 74.4
+      restated_theorem       ChainTheory.Foundations.Ch05.row_521443_WDCL  (ChainTheory/ChainTheory/Foundations/Ch05.lean:41)  cited by 78.3
+      restated_theorem       ChainTheory.Foundations.Ch05.row_524064_WSWC  (ChainTheory/ChainTheory/Foundations/Ch05.lean:53)  cited by 78.3
+      restated_theorem       ChainTheory.StandardModel.Ch10.row_518160_AGUQ  (ChainTheory/ChainTheory/StandardModel/Ch10.lean:40)  cited by 9.2, 9.3, 9.4, 9.5, 9.6
+      restated_theorem       ChainTheory.StandardModel.Ch10.row_520119_GWDC  (ChainTheory/ChainTheory/StandardModel/Ch10.lean:63)  cited by 18.2
+      kernel_check[strings]  ChainTheory.StandardModel.Ch12.row_527992_ESRL  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:121)  cited by 196.2
+    over all grades, 27 distinct restated/kernel/other-theorem declarations are cited; those of the 16 rows are cited by:
+      row_524038_ORKC  2.1T 2.2C 2.3T 2.4O 2.5O 2.6T 2.7O 2.8O 2.9T 2.10T
+      row_521104_OUTR  56.1T 56.2O
+      row_518830_MDFN  74.1T 74.2C 74.3C 74.4T 74.5O
+      row_521443_WDCL  78.1C 78.2C 78.3T
+      row_524064_WSWC  78.1C 78.2C 78.3T
+      row_518160_AGUQ  9.1C 9.2T 9.3T 9.4T 9.5T 9.6T 9.7C 9.8O
+      row_520119_GWDC  18.1C 18.2T 18.3C 18.4C 18.5O 18.6O
+      row_527992_ESRL  196.1C 196.2T
+
+[2] What each declaration states (verbatim type), and what each conjunct resolves to
+
+  ChainTheory.Foundations.Ch01.row_524038_ORKC   (ChainTheory/ChainTheory/Foundations/Ch01.lean:12)
+    theorem row_524038_ORKC :
+        (type_of% AlphaDerivation.Statements.OrbitReading_orbit_reading) /\
+        (type_of% AlphaDerivation.Statements.OrbitReading_no_fixedness_asked) :=
+      And.intro AlphaDerivation.Statements.OrbitReading_orbit_reading (AlphaDerivation.Statements.OrbitReading_no_fixedness_asked)
+
+    conjunct OrbitReading_orbit_reading  ->  AlphaDerivation.OrbitReading.orbit_reading  (ChainTheory/AlphaDerivation/Proofs/OrbitReading.lean:97)
+      statement: webs.length = Expected.recordCount ∧ webs.map Web.id = records.map Rec.id ∧ (websOf .oddOrbit).length = Expected.orbitRecords ∧ (websOf .evenOrbit).length = Expected.orbitRecords ∧ (websOf .fixed).length = Expected.fixedRecords ∧ (websOf .reentry).length = Expected.reentryCount ∧ 2 * Expected.orbitRecords + Expected.fixedRecords + Expected.reentryCount = Expected.recordCount ∧ allLabels.length = Expected.rosterCount ∧ (websOf .oddOrbit).all (isOrbitWeb (-1)) = true ∧ (websOf .evenOrbit).all (isOrbitWeb 1) = true ∧ (websOf .fixed).all isFixedWeb = true ∧ (websOf .reentry).all isCommutatorWeb = true ∧ sort (((websOf .oddOrbit).map label).map labelCode ++ ((websOf .oddOrbit).map (fun w => swapPair (label w))).map labelCode ++ ((websOf .fixed).map label).map labelCode) = sort (allLabels.map labelCode) ∧ sort (((websOf .oddOrbit).map label).map labelCode) = sort (((websOf .evenOrbit).map label).map labelCode) ∧ (webs.zip records).all (fun p => typingOK p.1 p.2) = true
+      proof: decide +kernel
+      entered constants (Data/Expected.lean): fixedRecords := 11; orbitRecords := 79; recordCount := 172; reentryCount := 3; rosterCount := 169
+      kind: COMPUTED+LITERAL -- typing of the 172 entered webs against the 172 entered records: 79 odd-orbit, 79 even-orbit, 11 fixed, 3 re-entry webs; re-entry webs are commutators +(x,y) -(y,x) of two letters at slot 1 (the dimension-2 slot); the odd orbits, their swaps and the fixed webs cover the 169 slot-pair labels; literal part 2*79+11+3 = 172
+
+    conjunct OrbitReading_no_fixedness_asked  ->  AlphaDerivation.OrbitReading.no_fixedness_asked  (ChainTheory/AlphaDerivation/Proofs/OrbitReading.lean:109)
+      statement: fixedUnder (LemmaA.gens3.getD 2 []) (identity 2) (webs.getD 0 ⟨"", .fixed, []⟩) = false ∧ LemmaA.gens3.all (fun u => fixedUnder u (identity 2) (webs.getD (Expected.recordCount - Expected.reentryCount - 1) ⟨"", .fixed, []⟩)) = true ∧ LemmaA.gens2.all (fun u => fixedUnder (identity 3) u (webs.getD (Expected.recordCount - Expected.reentryCount - 1) ⟨"", .fixed, []⟩)) = true ∧ (webs.getD (Expected.recordCount - Expected.reentryCount - 1) ⟨"", .fixed, []⟩).id = Expected.recordFixedUnderGroupId
+      proof: decide +kernel
+      entered constants (Data/Expected.lean): recordCount := 172; recordFixedUnderGroupId := "R169"; reentryCount := 3
+      kind: COMPUTED -- matrix action of the entered generators: web R001 is not fixed by the third qutrit generator; the web at index 168 (R169) is fixed by every qutrit and qubit generator
+
+  ChainTheory.Foundations.Ch03.row_521104_OUTR   (ChainTheory/ChainTheory/Foundations/Ch03.lean:89)
+    theorem row_521104_OUTR :
+        (type_of% AlphaDerivation.Statements.IdAlg_tensor_commutant_scalars) /\
+        (type_of% AlphaDerivation.Statements.Theorem1_register) /\
+        (type_of% AlphaDerivation.Statements.Theorem1_readout_is_trace_form) :=
+      And.intro AlphaDerivation.Statements.IdAlg_tensor_commutant_scalars (And.intro AlphaDerivation.Statements.Theorem1_register (AlphaDerivation.Statements.Theorem1_readout_is_trace_form))
+
+    conjunct IdAlg_tensor_commutant_scalars  ->  AlphaDerivation.IdAlg.tensor_commutant_scalars  (ChainTheory/AlphaDerivation/Proofs/IdentificationAlgebra.lean:104)
+      statement: ZM.mulVec tensorConstraint identityVector = List.replicate 432 0 ∧ ZM.det (ZM.minor tensorConstraint tensorMinorRows tensorMinorCols) ≠ 0
+      proof: decide +kernel
+      kind: COMPUTED -- the commutant of rho(algebra) on C^6 is the scalars: identity in the kernel of 432 linear constraints on 36 unknowns, a 35x35 minor nonzero
+
+    conjunct Theorem1_register  ->  AlphaDerivation.Theorem1.register  (ChainTheory/AlphaDerivation/Proofs/Theorem1.lean:30)
+      statement: whole 2 3 = Expected.registerWhole ∧ cut 2 3 = Expected.registerCut ∧ dimR 2 3 = Expected.registerDimR ∧ oneLink 2 3 = Expected.oneLinkRegister ∧ whole 2 3 = 9 * 4 ∧ cut 2 3 = 8 * 3 ∧ dimR 2 3 = 24 * 36 * 36 ∧ dimR 2 3 = Expected.closedFormDen
+      proof: decide +kernel
+      entered constants (Data/Expected.lean): closedFormDen := 31104; oneLinkRegister := 6; registerCut := 24; registerDimR := 31104; registerWhole := 36
+      kind: COMPUTED -- products of 2 and 3: whole = 36, cut = 24, dimR = 24*36*36 = 31104, one-link register 6
+
+    conjunct Theorem1_readout_is_trace_form  ->  AlphaDerivation.Theorem1.readout_is_trace_form  (ChainTheory/AlphaDerivation/Proofs/Theorem1.lean:43)
+      statement: (ZM.mulVec IdAlg.killing IdAlg.tuVector = List.replicate 12 0 ∧ ZM.det (ZM.minor IdAlg.killing (List.range 11) (List.range 11)) ≠ 0 ∧ ZM.det IdAlg.traceForm ≠ 0 ∧ ZM.entry IdAlg.traceForm 11 11 = -30) ∧ (ZM.mulVec IdAlg.tensorConstraint IdAlg.identityVector = List.replicate 432 0 ∧ ZM.det (ZM.minor IdAlg.tensorConstraint IdAlg.tensorMinorRows IdAlg.tensorMinorCols) ≠ 0) ∧ Expected.tensorCommutantDim23 = 1 ∧ Expected.killingRank23 = 11
+      proof: anonymous constructor (⟨IdAlg.forms, IdAlg.tensor_commutant_scalars, by decide, by decide⟩)
+      entered constants (Data/Expected.lean): killingRank23 := 11; tensorCommutantDim23 := 1
+      kind: COMPUTED+LITERAL -- the conjunction IdAlg.forms and IdAlg.tensor_commutant_scalars, plus two entered constants equal to literals (Expected.tensorCommutantDim23 = 1, Expected.killingRank23 = 11, proved `by decide`); the statement does not relate the two constants to the computed ranks
+
+  ChainTheory.Foundations.Ch05.row_518830_MDFN   (ChainTheory/ChainTheory/Foundations/Ch05.lean:31)
+    theorem row_518830_MDFN :
+        (type_of% AlphaDerivation.Statements.LemmaB_zero_transfer) :=
+      AlphaDerivation.Statements.LemmaB_zero_transfer
+
+    conjunct LemmaB_zero_transfer  ->  AlphaDerivation.LemmaB.zero_transfer  (ChainTheory/AlphaDerivation/Proofs/LemmaB.lean:169)
+      statement: zeroTransfer = true ∧ steps.length = records.length
+      proof: decide +kernel
+      kind: ENTERED -- the 172 entered step triples: third component (0,0,0) in every entry as entered, second component the negative of the first; plus steps.length = records.length
+
+  ChainTheory.Foundations.Ch05.row_521443_WDCL   (ChainTheory/ChainTheory/Foundations/Ch05.lean:41)
+    theorem row_521443_WDCL :
+        (type_of% AlphaDerivation.Statements.Theorem5_sub_add_sub) /\
+        (type_of% AlphaDerivation.Statements.Theorem5_telescoping) /\
+        (type_of% AlphaDerivation.Statements.Theorem5_one_link_iff) /\
+        (type_of% AlphaDerivation.Statements.Theorem5_line_of_record) /\
+        (type_of% AlphaDerivation.Statements.Theorem5_ward_identity) :=
+      And.intro AlphaDerivation.Statements.Theorem5_sub_add_sub (And.intro AlphaDerivation.Statements.Theorem5_telescoping (And.intro AlphaDerivation.Statements.Theorem5_one_link_iff (And.intro AlphaDerivation.Statements.Theorem5_line_of_record (AlphaDerivation.Statements.Theorem5_ward_identity))))
+
+    conjunct Theorem5_sub_add_sub  ->  AlphaDerivation.Theorem5.sub_add_sub  (ChainTheory/AlphaDerivation/Proofs/Theorem5.lean:19)
+      statement: (x - y) + (y - z) = x - z
+      binders: (x y z : Int)
+      proof: tactic proof (rw)
+      kind: GENERAL -- (x - y) + (y - z) = x - z over Int
+
+    conjunct Theorem5_telescoping  ->  AlphaDerivation.Theorem5.telescoping  (ChainTheory/AlphaDerivation/Proofs/Theorem5.lean:22)
+      statement: vertex W count (subdivided a c b) = vertex W count [(a, b)]
+      binders: (W : Functional) (count : Int) (a c b : Nat)
+      proof: tactic proof (rw, simp only, unfold)
+      kind: GENERAL -- vertex W c [(a,c'),(c',b),(c',c')] = vertex W c [(a,b)] for every functional W: a sum of differences telescopes
+
+    conjunct Theorem5_one_link_iff  ->  AlphaDerivation.Theorem5.one_link_iff  (ChainTheory/AlphaDerivation/Proofs/Theorem5.lean:28)
+      statement: vertex W count [(a, b)] = count ↔ W a = W b
+      binders: (W : Functional) (count : Int) (a b : Nat)
+      proof: tactic proof (constructor, exact, intro, rw, simp only, unfold)
+      kind: GENERAL -- count + (W a - W b) = count iff W a = W b
+
+    conjunct Theorem5_line_of_record  ->  AlphaDerivation.Theorem5.line_of_record  (ChainTheory/AlphaDerivation/Proofs/Theorem5.lean:200)
+      statement: vertex unitFunctional 0 [(3, 2)] = 0 ∧ alphabetPairs.all (fun p => vertex unitFunctional 0 [p] == 0) = true ∧ subdivisionsOfRecord.all (fun s => vertex unitFunctional 0 (subdivided s.1 s.2.1 s.2.2) == vertex unitFunctional 0 [(s.1, s.2.2)]) = true ∧ subdivisionsOfRecord.all (fun s => vertex wallFunctional 0 (subdivided s.1 s.2.1 s.2.2) == vertex wallFunctional 0 [(s.1, s.2.2)]) = true ∧ vertex wallFunctional 0 [(3, 2)] = -12 ∧ Expected.wardRecordIdentity = "172 of 172" ∧ Expected.wardLinkPaths = "48 of 48"
+      proof: decide +kernel
+      entered constants (Data/Expected.lean): wardLinkPaths := "48 of 48"; wardRecordIdentity := "172 of 172"
+      kind: COMPUTED+LITERAL -- evaluations of the unit and wall functionals at the 9 alphabet pairs and 6 subdivisions (wall vertex at (3,2) = -6 - 6 = -12); literal parts Expected.wardRecordIdentity = "172 of 172", Expected.wardLinkPaths = "48 of 48" (entered strings equal to literals)
+
+    conjunct Theorem5_ward_identity  ->  AlphaDerivation.Theorem5.ward_identity  (ChainTheory/AlphaDerivation/Proofs/Theorem5.lean:218)
+      statement: (∀ (W : Functional) (count : Int) (a c b : Nat), vertex W count (subdivided a c b) = vertex W count [(a, b)]) ∧ (∀ (W : Functional) (count : Int) (a b : Nat), vertex W count [(a, b)] = count ↔ W a = W b) ∧ (∀ (count : Int) (pairs : List (Nat × Nat)), vertex unitFunctional count pairs = count) ∧ vertex unitFunctional 0 [(3, 2)] = 0
+      proof: anonymous constructor (⟨telescoping, one_link_iff, unit_washed, line_of_record.1⟩)
+      kind: GENERAL -- the conjunction of telescoping, one_link_iff, unit_washed and one evaluation
+
+  ChainTheory.Foundations.Ch05.row_524064_WSWC   (ChainTheory/ChainTheory/Foundations/Ch05.lean:53)
+    theorem row_524064_WSWC :
+        (type_of% AlphaDerivation.Statements.Theorem5_unit_washed) /\
+        (type_of% AlphaDerivation.Statements.Theorem5_readings_washed) :=
+      And.intro AlphaDerivation.Statements.Theorem5_unit_washed (AlphaDerivation.Statements.Theorem5_readings_washed)
+
+    conjunct Theorem5_unit_washed  ->  AlphaDerivation.Theorem5.unit_washed  (ChainTheory/AlphaDerivation/Proofs/Theorem5.lean:55)
+      statement: vertex unitFunctional count pairs = count
+      binders: (count : Int) (pairs : List (Nat × Nat))
+      proof: tactic proof (exact, rw, unfold)
+      kind: GENERAL -- for the constant functional every link difference is 0, so the vertex equals the count
+
+    conjunct Theorem5_readings_washed  ->  AlphaDerivation.Theorem5.readings_washed  (ChainTheory/AlphaDerivation/Proofs/Theorem5.lean:179)
+      statement: readings.length = Expected.readingsCount ∧ (readings.filter fun r => r.unit == .path).length = Expected.readingsPath ∧ (readings.filter fun r => r.unit == .single).length = Expected.readingsSingle ∧ (readings.filter fun r => r.unit == .open').length = Expected.readingsOpen ∧ [orderingFirst.length, orderingsA.length, orderingsB.length, orderingsC.length] = [1, 8, 4, 24] ∧ readings.all (fun rd => readClasses.all fun ends => recordHolds unitFunctional rd ends) = true ∧ identityAt wallFunctional [oneLink true] = false ∧ vertex wallFunctional 0 (dims (oneLink true)) = -12
+      proof: decide +kernel
+      entered constants (Data/Expected.lean): readingsCount := 41; readingsOpen := 1; readingsPath := 32; readingsSingle := 8
+      kind: COMPUTED -- 41 readings enumerated (32 path, 8 single, 1 open); orderings 1/8/4/24; the unit functional holds at every reading and read class; the wall functional fails at one link (-12). That the unit functional's identity holds on every path follows from unit_washed (own check identityAt_unit)
+
+  ChainTheory.StandardModel.Ch10.row_518160_AGUQ   (ChainTheory/ChainTheory/StandardModel/Ch10.lean:40)
+    theorem row_518160_AGUQ :
+        (type_of% AlphaDerivation.Statements.IdAlg_closure) /\
+        (type_of% AlphaDerivation.Statements.IdAlg_centre_one_dimensional) /\
+        (type_of% AlphaDerivation.Statements.IdAlg_tu_central) /\
+        (type_of% AlphaDerivation.Statements.IdAlg_forms) /\
+        (type_of% AlphaDerivation.Statements.IdAlg_centre_acts) /\
+        (type_of% AlphaDerivation.Statements.LemmaB_readable_and_acting) /\
+        (type_of% AlphaDerivation.Statements.LemmaB_centre_generators) /\
+        (type_of% AlphaDerivation.Statements.LemmaB_spin_content) /\
+        (type_of% AlphaDerivation.Statements.LemmaB_massless_faces) /\
+        (type_of% AlphaDerivation.Statements.LemmaB_unique_object) /\
+        (type_of% AlphaDerivation.Statements.LemmaB_objectOfRecord_electromagneticLike) /\
+        (type_of% AlphaDerivation.Statements.Theorem5_correspondence_at_structure) :=
+      And.intro AlphaDerivation.Statements.IdAlg_closure (And.intro AlphaDerivation.Statements.IdAlg_centre_one_dimensional (And.intro AlphaDerivation.Statements.IdAlg_tu_central (And.intro AlphaDerivation.Statements.IdAlg_forms (And.intro AlphaDerivation.Statements.IdAlg_centre_acts (And.intro AlphaDerivation.Statements.LemmaB_readable_and_acting (And.intro AlphaDerivation.Statements.LemmaB_centre_generators (And.intro AlphaDerivation.Statements.LemmaB_spin_content (And.intro AlphaDerivation.Statements.LemmaB_massless_faces (And.intro AlphaDerivation.Statements.LemmaB_unique_object (And.intro AlphaDerivation.Statements.LemmaB_objectOfRecord_electromagneticLike (AlphaDerivation.Statements.Theorem5_correspondence_at_structure)))))))))))
+
+    conjunct IdAlg_closure  ->  AlphaDerivation.IdAlg.closure  (ChainTheory/AlphaDerivation/Proofs/IdentificationAlgebra.lean:90)
+      statement: closureHolds = true ∧ basis.length = 12
+      proof: decide +kernel
+      kind: COMPUTED -- the 12 entered 5x5 Gaussian-integer matrices (su(2)+su(3)+u(1) block basis) close under the bracket
+
+    conjunct IdAlg_centre_one_dimensional  ->  AlphaDerivation.IdAlg.centre_one_dimensional  (ChainTheory/AlphaDerivation/Proofs/IdentificationAlgebra.lean:92)
+      statement: ZM.mulVec adjointConstraint tuVector = List.replicate 144 0 ∧ ZM.det (ZM.minor adjointConstraint centreMinorRows (List.range 11)) ≠ 0
+      proof: decide +kernel
+      kind: COMPUTED -- the centre of that 12-dimensional algebra (genre (2,3)) is one-dimensional: TU in the kernel of the adjoint constraint and an 11x11 minor nonzero
+
+    conjunct IdAlg_tu_central  ->  AlphaDerivation.IdAlg.tu_central  (ChainTheory/AlphaDerivation/Proofs/IdentificationAlgebra.lean:96)
+      statement: basis.all (fun b => isZero (comm n TU b)) = true ∧ isZero (comm n TU TU) = true
+      proof: decide +kernel
+      kind: COMPUTED -- TU = diag(3i,3i,-2i,-2i,-2i) commutes with every basis element
+
+    conjunct IdAlg_forms  ->  AlphaDerivation.IdAlg.forms  (ChainTheory/AlphaDerivation/Proofs/IdentificationAlgebra.lean:99)
+      statement: ZM.mulVec killing tuVector = List.replicate 12 0 ∧ ZM.det (ZM.minor killing (List.range 11) (List.range 11)) ≠ 0 ∧ ZM.det traceForm ≠ 0 ∧ ZM.entry traceForm 11 11 = -30
+      proof: decide +kernel
+      kind: COMPUTED -- Killing form: TU in its kernel, rank 11; trace form nondegenerate, entry (11,11) = -30
+
+    conjunct IdAlg_centre_acts  ->  AlphaDerivation.IdAlg.centre_acts  (ChainTheory/AlphaDerivation/Proofs/IdentificationAlgebra.lean:108)
+      statement: rho TU = smul G.iu (identity 6) ∧ mulVec (rho TU) pairKet23 = smulVec G.iu pairKet23 ∧ isZero (rho22 TU22) = true
+      proof: decide +kernel
+      kind: COMPUTED -- rho(TU) = i Id_6 on C^2 (x) C^3; at (2,2) the entered element TU22 = diag(i,i,-i,-i) acts as 0 (TU22 is entered, not computed as the (2,2) centre)
+
+    conjunct LemmaB_readable_and_acting  ->  AlphaDerivation.LemmaB.readable_and_acting  (ChainTheory/AlphaDerivation/Proofs/LemmaB.lean:143)
+      statement: readableGenres = Expected.readableGenres ∧ readCap = Expected.readCap ∧ readableGenres.filter abelian = Expected.actingGenres ∧ [pairScalar (2, 2), pairScalar (2, 3)] = Expected.pairScalars
+      proof: decide +kernel
+      entered constants (Data/Expected.lean): actingGenres := [(2, 3)]; pairScalars := [0, 1]; readCap := 6; readableGenres := [(2, 2), (2, 3)]
+      kind: COMPUTED -- readable genres from alphabet {2,3,4} and read cap 6 (both definitions): [(2,2),(2,3)]; 'abelian' (pairScalar = (d2-d1)/gcd != 0) selects [(2,3)]
+
+    conjunct LemmaB_centre_generators  ->  AlphaDerivation.LemmaB.centre_generators  (ChainTheory/AlphaDerivation/Proofs/LemmaB.lean:148)
+      statement: (let (a, b) := centralFunctional (2, 3); List.replicate 2 a ++ List.replicate 3 b) = Expected.centreGenerator23 ∧ (List.replicate 2 (1 : Int) ++ List.replicate 2 (-1 : Int)) = Expected.centreGenerator22 ∧ centralFunctional (2, 2) = (0, 0) ∧ centralFunctional (2, 3) = (3, -2)
+      proof: decide +kernel
+      entered constants (Data/Expected.lean): centreGenerator22 := [1,1,-1,-1]; centreGenerator23 := [3,3,-2,-2,-2]
+      kind: COMPUTED+LITERAL -- centralFunctional (2,3) = (3,-2) -> [3,3,-2,-2,-2]; (2,2) -> (0,0) by the case g.1 == g.2; literal part: [1,1,-1,-1] = Expected.centreGenerator22 (an entered list equal to a literal list)
+
+    conjunct LemmaB_spin_content  ->  AlphaDerivation.LemmaB.spin_content  (ChainTheory/AlphaDerivation/Proofs/LemmaB.lean:153)
+      statement: cutRegister (2, 3) = List.replicate 8 2 ∧ dimOf (cutRegister (2, 3)) = 24 ∧ spinOne (2, 3) = true ∧ labels (cutRegister (2, 2)) = [0, 2, 4] ∧ dimOf (cutRegister (2, 2)) = 9 ∧ spinOne (2, 2) = false ∧ cg 1 1 = [0, 2] ∧ 2 * 2 = 1 + 3 ∧ 1 * (1 + 1) = 2 ∧ traceless 2 = [2]
+      proof: decide +kernel
+      kind: COMPUTED+LITERAL -- angular-momentum labels from entered frame contents (2 -> [1], 3 -> [0,0,0], 4 -> [0,2]): cut register at (2,3) is 8 copies of label 2 (spin one), dim 24; at (2,2) labels [0,2,4], dim 9; literal parts 2*2 = 1+3 and 1*(1+1) = 2
+
+    conjunct LemmaB_massless_faces  ->  AlphaDerivation.LemmaB.massless_faces  (ChainTheory/AlphaDerivation/Proofs/LemmaB.lean:158)
+      statement: closedReads objectOfRecord = [] ∧ restEnergy objectOfRecord = 0 ∧ restEnergy objectOfRecord = Expected.photonChainSum ∧ displacement (chain objectOfRecord) = (-1, 1, 0) ∧ massless objectOfRecord = true ∧ massless ⟨(2, 3), .closed⟩ = false ∧ massless ⟨(2, 2), .open⟩ = false ∧ (closedReads ⟨(2, 3), .closed⟩).length = 1 ∧ restEnergy ⟨(2, 3), .closed⟩ = 2
+      proof: decide +kernel
+      entered constants (Data/Expected.lean): photonChainSum := 0
+      kind: COMPUTED -- no closed non-backtracking walk on the open one-link graph (2,3): rest energy 0, displacement (-1,1,0); the closed (2,3) form and the open (2,2) form are not 'massless'
+
+    conjunct LemmaB_unique_object  ->  AlphaDerivation.LemmaB.unique_object  (ChainTheory/AlphaDerivation/Proofs/LemmaB.lean:164)
+      statement: (readableObjects.filter allFour).map name = Expected.allFourObjects ∧ (readableObjects.filter allFour).length = Expected.allFourCount ∧ readableObjects.filter allFour = [objectOfRecord] ∧ readableObjects.length = 4
+      proof: decide +kernel
+      entered constants (Data/Expected.lean): allFourCount := 1; allFourObjects := ["G23.open"]
+      kind: COMPUTED -- of the 4 readable objects ((2,2),(2,3) x open, closed) only (2,3).open satisfies abelian && conserved && massless && spinOne
+
+    conjunct LemmaB_objectOfRecord_electromagneticLike  ->  AlphaDerivation.LemmaB.objectOfRecord_electromagneticLike  (ChainTheory/AlphaDerivation/Proofs/LemmaB.lean:171)
+      statement: ElectromagneticLike objectOfRecord
+      proof: anonymous constructor (⟨by decide +kernel, by decide +kernel, by decide +kernel, by decide +kernel, by decide +kernel⟩)
+      kind: COMPUTED -- the structure ElectromagneticLike bundles five Booleans defined in LemmaB (abelian, conserved, massless, spinOne, zeroTransfer) at (2,3).open; 'conserved' is 'generatorBlocksScalar && centralFunctional != (0,0)', and generatorBlocksScalar is true at every pair (own check), so 'conserved' and 'abelian' both reduce to d1 != d2
+
+    conjunct Theorem5_correspondence_at_structure  ->  AlphaDerivation.Theorem5.correspondence_at_structure  (ChainTheory/AlphaDerivation/Proofs/Theorem5.lean:225)
+      statement: LemmaB.ElectromagneticLike LemmaB.objectOfRecord ∧ Theorem4.onShellCoupling LemmaB.objectOfRecord = Theorem4.closedFormOfRecord
+      binders: (_cap : ReadCapWoronowiczStormer) (_soft : SoftPhotonTheorem) (_dec : Decoupling) (_onshell : OnShellDefinition) (_ident : OnShellIdentification)  [opaque Prop hypotheses: ReadCapWoronowiczStormer, SoftPhotonTheorem, Decoupling, OnShellDefinition, OnShellIdentification; unused in the proof: _cap, _soft, _dec, _onshell, _ident]
+      proof: anonymous constructor (⟨LemmaB.objectOfRecord_electromagneticLike, Theorem4.value_at_structure LemmaB.objectOfRecord_electromagneticLike⟩)
+      kind: DEFINITIONAL+COMPUTED -- five opaque hypotheses, none used (underscore binders; the proof term does not mention them); onShellCoupling o is defined as (registerSum, register) when o is the object of record and (0,1) otherwise, so its value at (2,3).open is the closed form by definition; registerSum = (79,48,42,3) is computed from the 172 entered records
+
+  ChainTheory.StandardModel.Ch10.row_520119_GWDC   (ChainTheory/ChainTheory/StandardModel/Ch10.lean:63)
+    theorem row_520119_GWDC :
+        (type_of% AlphaDerivation.Statements.Census_weights_from_construction) :=
+      AlphaDerivation.Statements.Census_weights_from_construction
+
+    conjunct Census_weights_from_construction  ->  AlphaDerivation.Census.weights_from_construction  (ChainTheory/AlphaDerivation/Proofs/Census.lean:106)
+      statement: records.all (fun r => squaredWeightProduct r == squaredWeightCount r) = true ∧ closureRecords.map exchanges = Expected.closureEigenvalues ∧ histogram = Expected.histogram ∧ [countSector .odd, countSector .evenMixed, countSector .evenSame, countSector .closure] = [Expected.sectorOdd, Expected.sectorEvenMixed, Expected.sectorEvenSame, Expected.sectorClosure] ∧ [oddSector, evenMixedSector, evenSameSector, closureSector] = [Expected.sectorOdd, Expected.sectorEvenMixed, Expected.sectorEvenSame, Expected.sectorClosure] ∧ dimX * dimY = Expected.closureCount ∧ Expected.endMap = "X:centre:3;Y:far:2"
+      proof: decide +kernel
+      entered constants (Data/Expected.lean): closureCount := 6; closureEigenvalues := [(-1, -1), (-1, -1), (-1, -1)]; endMap := "X:centre:3;Y:far:2"; histogram := [(1, 79), (2, 48), (3, 42), (6, 3)]; sectorClosure := 3; sectorEvenMixed := 48; sectorEvenSame := 42; sectorOdd := 79
+      kind: COMPUTED+LITERAL -- exchange pairs (x,y) from the entered records' parity and kinds by the end rule (same: (-p,1), mixed: (1,-p), closure: from ClosureSign); squared weight = 3^[x=-1] * 2^[y=-1]; histogram (1,79),(2,48),(3,42),(6,3); sector counts also from the formulas in a = 8, b = 3. The record-wise identity ((2-x)(3-y))/2 = 3^[x=-1] 2^[y=-1] holds for every (x,y) in {+-1}^2 (own check), so it does not depend on the records; literal part Expected.endMap = "X:centre:3;Y:far:2"
+
+  ChainTheory.StandardModel.Ch12.row_527992_ESRL   (ChainTheory/ChainTheory/StandardModel/Ch12.lean:121)
+    theorem row_527992_ESRL : type_of% ChainTheory.Kernel.D527992_ESRL.checks :=
+      ChainTheory.Kernel.D527992_ESRL.checks
+
+  conjuncts resolved: 26 (distinct 26); by kind: {'COMPUTED+LITERAL': 6, 'COMPUTED': 13, 'ENTERED': 1, 'GENERAL': 5, 'DEFINITIONAL+COMPUTED': 1}
+  proof methods: {'decide +kernel': 18, 'anonymous constructor': 4, 'tactic proof': 4}
+  conjuncts with opaque Prop hypotheses: 1 (all such hypotheses unused: True)
+  Lean anchors checked: 44, not found: 0 []
+  entered step table (Data/Records.lean): 172 entries; third triple (0,0,0) as entered in 172; second = -first in 172; first triples {'(0,0,0)': 82, '(1,-1,0)': 48, '(-1,1,0)': 42}
+  Expected.centreDims (the (2,2) and (2,3) centre dimensions, entered [1, 1]) is used by 0 theorems
+  AlphaDerivation.Statements groups restated by chapter declarations (group: restatements / statements): AdjointRotation: 0/1, Census: 4/4, ClosureSign: 6/4, CollapseD2: 0/1, CollapseG1: 0/1, CollapseG2: 0/1, CollapseG3: 0/1, Correspondence: 0/3, GainLemma: 0/4, Generation: 0/1, IdAlg: 6/6, LemmaA: 0/6, LemmaB: 10/8, MasslessOpenLink: 0/1, MomentumTransfer: 0/1, OneLinkWord: 0/4, OrbitReading: 4/2, Span: 0/2, SpanRank: 0/2, Theorem0: 6/6, Theorem1: 4/4, Theorem4: 4/3, Theorem5: 10/9, TransverseStates: 0/1
+  modules at >= 4 GB in the source's build record: 8; of these, AlphaDerivation modules whose Statements group no chapter declaration restates: CollapseG1, CollapseG2, CollapseG3, Generation, Span, SpanRank; the others: AlphaDerivation.Proofs.IdentificationAlgebra, KernelDerivationC.Brackets
+
+[3] The three kernel modules (ChainTheory/Kernel)
+  ChainTheory.Kernel.D524748_SCGI  (ChainTheory/ChainTheory/Kernel/D524748_SCGI.lean)
+    rows := KernelDerivationC.Objects.bodies.flatMap (fun b => KernelDerivationC.Objects.faces.map (fun f => { body := b.1 ...   [computed]
+    checks decided over the computed rows (decide +kernel); checks conjuncts: 5
+    cited by statement rows: {'CONDITIONAL': 1, 'OPEN': 1} ['172.1', '172.2']
+  ChainTheory.Kernel.D525490_LGIS  (ChainTheory/ChainTheory/Kernel/D525490_LGIS.lean)
+    rows := KernelDerivationC.Brackets.derivedCells.map rowOfCell   [computed]
+    checks decided over the rewritten target list (rw [rows_eq_record]) after a computed equation; checks conjuncts: 20
+    cited by statement rows: {'CONDITIONAL': 1} ['54.1']
+  ChainTheory.Kernel.D527992_ESRL  (ChainTheory/ChainTheory/Kernel/D527992_ESRL.lean)
+    rows := bodies.flatMap Body.rows   [computed]
+    checks decided over the computed rows (decide +kernel); checks conjuncts: 8
+    cited by statement rows: {'CONDITIONAL': 1, 'THEOREM': 1} ['196.1', '196.2']
+  inputs entered in KernelDerivationC.Inputs: 26 definitions
+
+[4] Does the tied proposition state the box? (clauses quoted verbatim from the box; counterparts by name)
+
+  2.1 [THEOREM] The fourth definition from the axiom  --  PARTIAL (2 of 3 clauses)   tied: row_524038_ORKC  (named for box 2.2)
+     - "is a corollary of the Axiom at both clauses"  [not a finite statement; nothing in Lean]
+     + "fix jointly with certainty whichever way the basis directions are matched across its pairs"  <- OrbitReading_no_fixedness_asked  [one entered web (R169) fixed by every generator, R001 not]
+     + "two reads commuting only up to a sign are a further record with their order as the sign, by the holonomy sign at dimension two"  <- OrbitReading_orbit_reading  [3 re-entry webs are commutators at the dimension-2 slot]
+     numbers >= 5 printed in the box: [6]; in the tied statements: []; nowhere in the Lean tree: []
+
+  2.3 [THEOREM] One act from the derived act  --  NONE (0 of 3 clauses)   tied: row_524038_ORKC  (named for box 2.2)
+     - "The one-act clause is a theorem of the derived act"
+     - "every entry of the census of moves then carries at most one act"
+     - "a subdivision being a path of four one-pair acts"
+     numbers >= 5 printed in the box: [5]; in the tied statements: []; nowhere in the Lean tree: []
+
+  2.6 [THEOREM] The restated text at both faces at every cell  --  NONE (0 of 2 clauses)   tied: row_524038_ORKC  (named for box 2.2)
+     - "all thirty-two derived cells with a phase input read the same at both of its faces"
+     - "the re-spelling of the tenth from the ninth is an instrument"
+     numbers >= 5 printed in the box: [32]; in the tied statements: []; nowhere in the Lean tree: []
+
+  2.9 [THEOREM] The one-dimensional end excluded at the axiom  --  NONE (0 of 2 clauses)   tied: row_524038_ORKC  (named for box 2.2)
+     - "A pair with an end of dimension one is a product state"
+     - "excludes the one-dimensional end"
+     numbers >= 5 printed in the box: []; in the tied statements: []; nowhere in the Lean tree: []
+
+  2.10 [THEOREM] The single read, a corollary of the definitions  --  NONE (0 of 3 clauses)   tied: row_524038_ORKC  (named for box 2.2)
+     - "No second copy of a pair exists"
+     - "a read acts once on the one copy of each pair the qudit meets"
+     - "has no statistics over fresh copies of the pair to draw on"
+     numbers >= 5 printed in the box: []; in the tied statements: []; nowhere in the Lean tree: []
+
+  9.2 [THEOREM] Abelian genre uniqueness  --  PARTIAL (4 of 5 clauses)   tied: row_518160_AGUQ  (named for box 9.2)
+     + "Exactly one readable type carries an acting centre"  <- LemmaB_readable_and_acting  [readable [(2,2),(2,3)] under cap 6; 'acting' as abelian = pairScalar != 0]
+     - "the centre of the identification algebra has dimension one at (2,2)"  [not computed: Expected.centreDims = [1, 1] is defined and used by no theorem]
+     + "and at (2,3)"  <- IdAlg_centre_one_dimensional, IdAlg_tu_central  [computed]
+     + "it acts on the pair space as a scalar only at (2,3)"  <- IdAlg_centre_acts  [i Id_6 at (2,3); 0 at (2,2) (entered TU22)]
+     + "whose open read alone is abelian, conserved, massless and of spin one"  <- LemmaB_unique_object, LemmaB_objectOfRecord_electromagneticLike  [by the Boolean definitions of the four words]
+     numbers >= 5 printed in the box: []; in the tied statements: []; nowhere in the Lean tree: []
+
+  9.3 [THEOREM] Coupling genre  --  PARTIAL (1 of 3 clauses)   tied: row_518160_AGUQ  (named for box 9.2)
+     - "is a function of the link type alone"  [onShellCoupling is defined on objects; no proposition states it]
+     + "re-meeting the derived fine-structure cell at (2,3)"  <- Theorem5_correspondence_at_structure  [by the case-split definition of onShellCoupling]
+     - "printing the other types as exact faces"  [onShellCoupling is (0,1) at every other object]
+     numbers >= 5 printed in the box: []; in the tied statements: []; nowhere in the Lean tree: []
+
+  9.4 [THEOREM] Link lemmas  --  MATCH (3 of 3 clauses)   tied: row_518160_AGUQ  (named for box 9.2)
+     + "The open (2,3) link carries no mass face"  <- LemmaB_massless_faces  [computed on the one-link graph]
+     + "its two-read record at the qubit end carries spin one"  <- LemmaB_spin_content  [from the entered frame contents]
+     + "zero register displacement equals zero momentum transfer at the one-link star"  <- LemmaB_objectOfRecord_electromagneticLike  [its zeroTransfer field: a property of the entered step table]
+     numbers >= 5 printed in the box: []; in the tied statements: []; nowhere in the Lean tree: []
+
+  9.5 [THEOREM] Ordering theorem  --  NONE (0 of 2 clauses)   tied: row_518160_AGUQ  (named for box 9.2)
+     - "The passed-hub count is monotone against the hub dressing"
+     - "at every pair of bodies and every face"
+     numbers >= 5 printed in the box: []; in the tied statements: []; nowhere in the Lean tree: []
+
+  9.6 [THEOREM] The one link tables at every genre  --  NONE (0 of 2 clauses)   tied: row_518160_AGUQ  (named for box 9.2)
+     - "The one-link tables are defined at all six types by the machinery of the support-rank result"
+     - "the (2,3) table agreeing with that result at every cell"  [no one-link table is restated (OneLinkWord_* restated nowhere)]
+     numbers >= 5 printed in the box: [6]; in the tied statements: [6]; nowhere in the Lean tree: []
+
+  18.2 [THEOREM] The gain lemma at the spectrum of records  --  PARTIAL (2 of 4 clauses)   tied: row_520119_GWDC  (named for box 18.3)
+     + "The multiplicity of every record is the product of the dimensions of the ends it passes, one at no end, two at the qubit end, three at the qutrit end and six at both"  <- Census_weights_from_construction  [the squared weight is defined as that product; the checked identity holds for every exchange pair]
+     + "at all one hundred seventy-two records of the qutrit-qubit link"  <- Census_weights_from_construction  [records.all over the 172 entered records; histogram sums to 172]
+     - "its four end-set sums agreeing with the support-rank result"  [stated in GainLemma.end_set_sums, which no chapter declaration restates]
+     - "a link-product measure equal to the Born count at every end set and every link type"  [GainLemma.born_count_is_a_measure (not restated); only (2,3) anywhere]
+     numbers >= 5 printed in the box: [6, 172]; in the tied statements: [6]; nowhere in the Lean tree: []
+
+  56.1 [THEOREM] The order register at the three directions  --  NONE (0 of 5 clauses)   tied: row_521104_OUTR  (named for box -)
+     - "the forty-eight matchings of the five coordinates that the construction admits"
+     - "0 of 322714 records at 0 of 3072 pairs of a web and a matching over the 64 catalogued webs"  [322714 occurs nowhere in the Lean tree]
+     - "carries 319332 of those records"  [319332 occurs nowhere in the Lean tree]
+     - "384 maps against 48"
+     - "the deciding table re-derived in Lean at the forty-eight matchings"  [no such declaration found]
+     numbers >= 5 printed in the box: [5, 9, 24, 48, 64, 384, 3072, 319332, 322714]; in the tied statements: [9, 24]; nowhere in the Lean tree: [319332, 322714]
+
+  74.1 [THEOREM] The conserved functionals of the full move set  --  NONE (0 of 3 clauses)   tied: row_518830_MDFN  (named for box 74.2)
+     - "The left kernel of the adopted move matrix over the grade vector has rank zero at both faces"
+     - "the lepton number as the dark-triangle count is broken at a freed-at-cut column"
+     - "the dart charge at the pure open-leg column"
+     numbers >= 5 printed in the box: []; in the tied statements: []; nowhere in the Lean tree: []
+
+  74.4 [THEOREM] The junction count at the moves, restated  --  NONE (0 of 4 clauses)   tied: row_518830_MDFN  (named for box 74.2)
+     - "Baryon number read as the unsigned junction count is conserved at every interaction and moved by the non-interactions alone"
+     - "the structure counts at the moves are broken at the pinned release"
+     - "the triangle count is broken with the join count not additive"
+     - "the lepton number as the dark-triangle count under the hub step is unequal at the freed-at-cut attachments alone"
+     numbers >= 5 printed in the box: []; in the tied statements: []; nowhere in the Lean tree: []
+
+  78.3 [THEOREM] The anomaly read at the body part  --  NONE (0 of 4 clauses)   tied: row_521443_WDCL, row_524064_WSWC  (named for box 78.1)
+     - "every record of the direct sum over records is classified into the body, the cross records across the join and the apparatus self-terms"
+     - "the dock-struck first power of the electron, sixty-seven, with the sign plus"
+     - "at order two an exact element of the field with the sign plus and a nonzero cross term"
+     - "the order-three term zero"
+     numbers >= 5 printed in the box: [67]; in the tied statements: []; nowhere in the Lean tree: []
+
+  196.2 [THEOREM] The lepton joined face at the open attach site  --  PARTIAL (2 of 4 clauses)   tied: row_527992_ESRL  (named for box 196.2)
+     + "Every site of the tau is typed under the definition of open, the far end of the entered link open exactly when the near end is the larger"  <- check_1  [every site of the 5 built bodies typed by openAt (69 rows, computed)]
+     + "twelve of the seventeen sites are open attach sites"  <- check_6  [12 open sites at the kit tau (computed); 17 sites only in derived_bodies_counts, outside `checks`]
+     - "the joined face of the tau is defined at one of them"
+     - "the body alone at the first order and the second-order object an exact element of the field"
+     numbers >= 5 printed in the box: [12, 17]; in the tied statements: [12, 17]; nowhere in the Lean tree: []
+
+  verdicts: {'PARTIAL': 5, 'NONE': 10, 'MATCH': 1}; box anchors checked: 52, failures: []
+
+[5] Which box each restated/kernel declaration was made for (content, with the 4-letter code as a second sign)
+  row_524038_ORKC  -> 2.2    CONDITIONAL  code = initials of 'Orbit Reading ... Knowledge Clause'; the box's 'invariant under every matching' is no_fixedness_asked   [boxes of the section whose title contains the code letters in order: ['2.2']]
+  row_518160_AGUQ  -> 9.2    THEOREM      code = 'Abelian Genre UniQueness'   [boxes of the section whose title contains the code letters in order: ['9.2']]
+  row_520119_GWDC  -> 18.3   CONDITIONAL  code = initials of 'Gain ... Washed Direction Count'; 18.3: 'The gain squared of a record is the product, over the signed exchanges a record survives, of the dimension of the end each exchange acts at'   [boxes of the section whose title contains the code letters in order: ['18.3']]
+  row_521104_OUTR  -> -      -            no box of section 56 states a tensor commutant, a register or a trace form   [boxes of the section whose title contains the code letters in order: []]
+  row_518830_MDFN  -> 74.2   CONDITIONAL  74.2: 'the momentum transfer composes to the zero signed step along the direction register at every record'   [boxes of the section whose title contains the code letters in order: []]
+  row_521443_WDCL  -> 78.1   CONDITIONAL  code = 'Ward iDentity ... Conservation ... Link'; 78.1 states one_link_iff and telescoping in words   [boxes of the section whose title contains the code letters in order: ['78.1']]
+  row_524064_WSWC  -> 78.2   CONDITIONAL  78.2: 'the identity holds at every one of the forty-one readings of the records the definitions admit'   [boxes of the section whose title contains the code letters in order: []]
+  row_527992_ESRL  -> 196.2  THEOREM      196.2: 'Every site of the tau is typed under the definition of open'   [boxes of the section whose title contains the code letters in order: []]
+  5 of 8 declarations carry the content of a CONDITIONAL box of their section; they reach THEOREM rows only because the tie is per section
+
+[6] Data and kernel modules with a Row structure: are the rows entered or computed?
+  (provenance, all fields String) -> modules: {('computed', False): 1, ('computed', True): 2, ('entered', False): 12, ('entered', True): 135}
+    computed rows: ChainTheory.Kernel.D524748_SCGI: rows := KernelDerivationC.Objects.bodies.flatMap (fun b => KernelDerivationC.Objects.faces.map (fu
+    computed rows: ChainTheory.Kernel.D525490_LGIS: rows := KernelDerivationC.Brackets.derivedCells.map rowOfCell
+    computed rows: ChainTheory.Kernel.D527992_ESRL: rows := bodies.flatMap Body.rows
+
+[7] Build (Lean 4.35.0, core only; lean_build.py)
+  lakefiles 6; toolchain pins ['leanprover/lean4:v4.32.1']; requirements by path only ['../ActClosure', '../ActClosureCapFree', '../AxiomDeclaration', '../AxiomDeclarationTwo', '../KernelDerivationC']; git requirements 0
+  import roots of the 897 library modules: {'AxiomDeclaration': 6, 'ActClosure': 220, 'AxiomDeclarationTwo': 37, 'ActClosureCapFree': 1449, 'KernelDerivationC': 15, 'AlphaDerivation': 174, 'ChainTheory': 2324} (no Mathlib, no Std; `import Lean` only outside the libraries)
+  modules of the source's `lake build` (closure of ChainTheory + AlphaDerivation): 493
+  patched modules ['AxiomDeclaration.Theorems', 'AxiomDeclarationTwo.Theorems']; patched theorems (5): ['worldThree_shared_list', 'worldThree_passed_to', 'worldTwoThree_shared_end', 'worldTwoHub_sharing', 'worldTwoSix_shared']
+  modules importing AxiomDeclaration.Theorems transitively: 277; importing a patched module: 276; importing neither: 215 (AlphaDerivation modules among them: 39)
+  files mentioning a patched theorem: ['AxiomDeclaration/AxiomDeclaration/Theorems.lean', 'AxiomDeclaration/AxiomsCheck.lean', 'AxiomDeclarationTwo/AxiomDeclarationTwo/Theorems.lean', 'AxiomDeclarationTwo/AxiomsCheck.lean', 'AxiomDeclarationTwo/Roots.lean']; library modules among them: ['AxiomDeclaration/AxiomDeclaration/Theorems.lean', 'AxiomDeclarationTwo/AxiomDeclarationTwo/Theorems.lean'] (the others are the source's AxiomsCheck/Roots scripts, outside the libraries)
+  of the 195 declarations cited by the 64 THEOREM rows, 125 live in modules that import a patched module; the 8 restated/kernel declarations: row_524038_ORKC:A and B, row_521104_OUTR:B only, row_518830_MDFN:B only, row_521443_WDCL:B only, row_524064_WSWC:B only, row_518160_AGUQ:A and B, row_520119_GWDC:A and B, row_527992_ESRL:B only
+  Build A (published sources, unchanged): 2 of 4 modules of the AxiomDeclaration library built; failures:
+    AxiomDeclaration: exit -1: dependency failed
+    AxiomDeclaration.Theorems: exit 1: src/AxiomDeclaration/Theorems.lean:42:79: error: failed to synthesize | src/AxiomDeclaration/Theorems.lean:52:116: error: failed to synthesize
+  Build B (five proofs re-tacticked, lean_build_patch.tsv): 493 of 493 modules built; sum of module times 5398 s; max peak 7677 MB; warnings 0; 'sorry' warnings 0
+  patched: AxiomDeclaration.Theorems lines 42,52; AxiomDeclarationTwo.Theorems lines 42,52,56
+  source record (4.32.1): 493 modules, 3845 s, max 5926 MB; modules in both records: 493
+
+[8] #print axioms (our file, against Build B): 6662 declarations reported; error lines 0
+  axiom sets over all reported declarations: none: 5965, [Classical.choice, Quot.sound, propext]: 403, [propext]: 290, [Quot.sound, propext]: 4
+  axioms occurring: ['Classical.choice', 'Quot.sound', 'propext']; sorryAx: 0; outside propext/Quot.sound/Classical.choice: []
+  the 195 names cited by the 64 THEOREM rows: reported 195, not reported 0 []
+    alias_prop         none                                       3
+    cond_table_check   none                                       16
+    kernel_check       [Classical.choice, Quot.sound, propext]    1
+    opaque_prop        none                                       69
+    open_record        none                                       69
+    restated_theorem   [Classical.choice, Quot.sound, propext]    7
+    table_check        [Classical.choice, Quot.sound, propext]    3
+    table_check        none                                       27
+  the restated/kernel declarations and their conjuncts:
+    row_524038_ORKC  ('Classical.choice', 'Quot.sound', 'propext')
+    row_521104_OUTR  ('Classical.choice', 'Quot.sound', 'propext')
+    row_518830_MDFN  ('Classical.choice', 'Quot.sound', 'propext')
+    row_521443_WDCL  ('Classical.choice', 'Quot.sound', 'propext')
+    row_524064_WSWC  ('Classical.choice', 'Quot.sound', 'propext')
+    row_518160_AGUQ  ('Classical.choice', 'Quot.sound', 'propext')
+    row_520119_GWDC  ('Classical.choice', 'Quot.sound', 'propext')
+    row_527992_ESRL  ('Classical.choice', 'Quot.sound', 'propext')
+      OrbitReading_orbit_reading                   ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      OrbitReading_no_fixedness_asked              ('propext',)  (Proofs: ('propext',))
+      IdAlg_tensor_commutant_scalars               ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      Theorem1_register                            ()  (Proofs: ())
+      Theorem1_readout_is_trace_form               ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      LemmaB_zero_transfer                         ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      Theorem5_sub_add_sub                         ('propext',)  (Proofs: ('propext',))
+      Theorem5_telescoping                         ('propext',)  (Proofs: ('propext',))
+      Theorem5_one_link_iff                        ('propext',)  (Proofs: ('propext',))
+      Theorem5_line_of_record                      ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      Theorem5_ward_identity                       ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      Theorem5_unit_washed                         ('propext',)  (Proofs: ('propext',))
+      Theorem5_readings_washed                     ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      IdAlg_closure                                ('propext',)  (Proofs: ('propext',))
+      IdAlg_centre_one_dimensional                 ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      IdAlg_tu_central                             ('propext',)  (Proofs: ('propext',))
+      IdAlg_forms                                  ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      IdAlg_centre_acts                            ('propext',)  (Proofs: ('propext',))
+      LemmaB_readable_and_acting                   ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      LemmaB_centre_generators                     ()  (Proofs: ())
+      LemmaB_spin_content                          ()  (Proofs: ())
+      LemmaB_massless_faces                        ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      LemmaB_unique_object                         ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      LemmaB_objectOfRecord_electromagneticLike    ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      Theorem5_correspondence_at_structure         ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+      Census_weights_from_construction             ('Classical.choice', 'Quot.sound', 'propext')  (Proofs: ('Classical.choice', 'Quot.sound', 'propext'))
+  against the source's axioms_report.txt (Lean 4.32.1): 6662 declarations there, 6662 also here; same axiom set 6259, different 403
+    ['propext'] -> ['Classical.choice', 'Quot.sound', 'propext']: 315
+    [] -> ['Classical.choice', 'Quot.sound', 'propext']: 82
+    ['Quot.sound', 'propext'] -> ['Classical.choice', 'Quot.sound', 'propext']: 6
+  at 4.32.1, names with sorryAx 0, with Classical.choice 0
+  the 195 THEOREM-tied names at 4.32.1 (source report): {'none': 188, '[propext]': 7}
+  per THEOREM row, union of the axioms of its cited names, 4.35.0 (ours): {'[Classical.choice, Quot.sound, propext]': 23, '[]': 41}
+  per THEOREM row, union of the axioms of its cited names, 4.32.1 (source): {'[propext]': 14, '[]': 50}
+  restated/kernel declarations at 4.32.1: row_524038_ORKC ['propext'], row_521104_OUTR ['propext'], row_518830_MDFN [], row_521443_WDCL ['propext'], row_524064_WSWC ['propext'], row_518160_AGUQ ['propext'], row_520119_GWDC ['propext'], row_527992_ESRL ['propext']
+
+[9] Own checks (lean_audit/ResolveChecks.lean): 8 theorems reported; error lines: 0
+    Round6.generatorBlocksScalar_always                  axioms ['Classical.choice', 'Quot.sound', 'propext']
+    Round6.abelian_conserved_distinct                    axioms ['Classical.choice', 'Quot.sound', 'propext']
+    Round6.weight_identity                               axioms ['Classical.choice', 'Quot.sound', 'propext']
+    Round6.onShellCoupling_elsewhere                     axioms ['Classical.choice', 'Quot.sound', 'propext']
+    Round6.correspondence_without_hypotheses             axioms ['Classical.choice', 'Quot.sound', 'propext']
+    Round6.identityAt_unit                               axioms ['Classical.choice', 'Quot.sound', 'propext']
+    Round6.literal_parts                                 axioms []
+    Round6.steps_entered_zero                            axioms ['Classical.choice', 'Quot.sound', 'propext']
+
+[10] The 64-theorem coverage table, re-stated
+  table checks (not resolved here)                           37
+  opaque/records only                                        11
+  unrelated computation; best other: table checks            9
+  computation stating part of the box                        5
+  computation stating the box                                1
+  unrelated computation; otherwise opaque/records only       1
+  (round-1 tiers: restated/kernel 16, table 37, opaque 11)
