@@ -2,7 +2,7 @@
 
 **Source:** Wissner-Gross, *A Parameter-Free Candidate for the Fine-Structure Constant from Entangled Qudits*, v1.0.0, 2026-10-23, with Supplement and Lean file (`sources/chain-theory.md`, commit `a28db89`).
 **Details:** `formalization/chain-theory/alpha/audit.md`.
-**Registers:** `claims/chain-theory-alpha.md` (CT-001…023) and `gaps/chain-theory-alpha.md` (CT-G01…G10).
+**Registers:** `claims/chain-theory-alpha.md` (CT-001…023) and `gaps/chain-theory-alpha.md` (CT-G01…G12).
 
 ## What the Letter claims
 
@@ -26,6 +26,7 @@
 | Configurations | 76 / 42 / 23 reproduced. Selected: 1 configuration under A, 2 under A* (the competitor has $1/\text{value}=31.81$), none under B. | **Computed** |
 | Read-cap lemmas | Choi's map is positive and non-decomposable by SDP, including after embedding. | **Cross-checked** |
 | Algebraic data | $\alpha_\text{cand}$ has degree 4. The minimal polynomial and Galois conjugates are given. | **Proven** |
+| Operator origin of the weights (CT-G01) | The dressed insertion has an exact operator form in the model's primitives, but its qutrit projector is the end rule (CT-G02). No word of length ≤ 3 in 38 primitives and no local dressing reproduces the weights (Galois, factorization and locality arguments). Transporting qubit letters through the read links reproduces them only with two further choices: which exchange is assessed in which frame, and a rank-3 join credit for letters on a rank-2 support. | **Proven** (negative within declared families; F-CT-11, `operator-origin.md`, `transport.md`) |
 
 ## Assessment, by layer
 
@@ -49,8 +50,8 @@
 
 ## Proposed next steps (formalization order)
 
-1. **CT-G01/G02.** Attempt to construct the dressed insertion $M$ as an operator built from projections and twirls, with no reference to the record list. Test whether its diagonal is $\sqrt{k_r}$. This would settle whether the weight law is derived or chosen.
+1. **CT-G02.** Done for CT-G01 (F-CT-11): the operator construction exists but carries the end rule as an input. What remains is a principle that fixes the end attribution (equivalently, the frame choice and join credit of `transport.md`), or a proof that none of a declared kind exists.
 2. **CT-G03/G04.** Determine whether any axiom-level statement fixes the far-end conjugation. If none does, the uniqueness theorem should carry the convention as an explicit hypothesis.
-3. Extend the Lean companion to prove the class-function form (Prop. 2) inside the upstream definitions.
-4. Rerun the trial-factor analysis on a rule space generated mechanically from the Lean definitions (mutating each definition), rather than our hand-declared space.
+3. Done: `weight_is_class_function` in `proofs/lean/chain-theory/ConventionCheck.lean` proves the class-function form inside the upstream definitions.
+4. Partly done: the author's 19 Lean mutations are classified against the declared space (`mutations_classified.py`; 13 lie in it). A rule space generated mechanically from all Lean definitions remains to be built.
 5. Compendium: see `reports/chain-theory-compendium.md`.
