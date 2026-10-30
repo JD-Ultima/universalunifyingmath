@@ -1,0 +1,23 @@
+result: "D3. Weyl annihilation is automatic for every admissible Shiab; self-adjointness forces the exact Einstein ratio; self-adjoint Einstein Shiab operators exist (W_A = [*Phi^3 ^ .]_A, W'_A), so GU-P09 as stated is false"
+claim_id: [GU-045, GU-047, GU-048]
+writeup: formalization/geometric-unity/D-selfadjoint-shiab.md (Theorem D3)
+code: [computation/geometric-unity/D_rep_counts.py, computation/geometric-unity/D_rep_counts.out, computation/geometric-unity/D_selfadjoint_shiab.py, computation/geometric-unity/D_selfadjoint_shiab.out]
+formalization_status: >
+  Fully formalized for K = Spin(7,7) and g in {u(64,64), so(64,64), so(8,8), so(7,8)}: Schur on
+  Lambda^1 (x) Lambda^l (no Weyl constituent; trivial and S^2_0 only for l = 1, 13).
+internal_consistency: >
+  Every element of the 200-dim space S kills Weyl and maps Levi-Civita curvature to
+  x Ric + y Scal g (two copies of V). For S in S_sa, y = -x/2 exactly. W_A(F_R) = -*(G e^a (x) gamma^b),
+  W'_A(F_R) = -*(G e^a (x) gamma^b Gamma), exact in rational arithmetic; W_A = R-S(C;A,A; c=1) on
+  curvature but differs on generic 2-forms. Within the 8 single-term members of (8.1) into Omega^13,
+  the self-adjoint combinations are exactly span(W_A, W'_A) (exact rank 6). Einstein tensor is that of Y^14.
+proof_status: >
+  Proven (Schur + exact multiplicities + exact evaluation of W_A, W'_A; Weyl annihilation also checked
+  exactly on 312 W for W, W' and all six R-S terms).
+novelty: >
+  New: refutes round-1 conjecture GU-P09; shows the draft's "kills Weyl" carries no information and that
+  its Einstein ratio is forced by self-adjointness (Cartan-Palatini Einstein form).
+reproducibility: "Exact; fixed seed; ~2 min single-threaded."
+empirical_testability: "None."
+dependencies: ["D1", "D2", "C5"]
+confidence: "High for the stated hypotheses; whether W_A is the author's lost operator is unknowable (fn. 10)."

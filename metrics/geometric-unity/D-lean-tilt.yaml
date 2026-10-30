@@ -1,0 +1,14 @@
+result: "E. Lean 4 (core) formalization of Props C1-C3' : semidirect product with a 1-cocycle, the -2c(h) residual of Lemmas 6.5/7.2, and the sign repair tau'"
+claim_id: [GU-034, GU-035, GU-038, GU-039, GU-040, GU-041, GU-042, GU-043, GU-044]
+writeup: formalization/geometric-unity/E-lean-tilt.md
+code: [proofs/lean/geometric-unity/GUTilt.lean, proofs/lean/geometric-unity/GUTilt.lean.out]
+formalization_status: >
+  Machine-checked abstract model (group H, abelian group N with right H-action, 1-cocycle c); 42 theorems,
+  no sorry; axioms only propext / Quot.sound. Counter-model (Z, trivial action, c = id) for the printed lemmas.
+internal_consistency: "Agrees with round-1 symbolic checks G1-G9a, P1-P10; adds the sharp form: printed Lemma 7.2 holds at h iff 2c(h) = 0."
+proof_status: "Proven (Lean 4.35.0 core)."
+novelty: "Machine-checked version of round-1 results."
+reproducibility: "lean proofs/lean/geometric-unity/GUTilt.lean (no dependencies)."
+empirical_testability: "None."
+dependencies: ["C1", "L-C1 (cocycle identity, assumed as an axiom of the model)"]
+confidence: "High that the model captures the algebra of Secs. 5-7 under reading R-C1; it does not verify L-C1 itself."

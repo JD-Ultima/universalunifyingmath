@@ -1,0 +1,30 @@
+setup: Gamma^2 = 1: True; i gamma_abc in u(64,64): True; i gamma_abc Gamma in u(64,64): True; grades 1,2,13,14 in u(64,64): True
+degrees: Phi11 has 364 components of degree {11}; W(e^01 (x) X) has degrees {13}
+
+=== E1. Formal self-adjointness (symbol criterion, Lemma C6a); exact ===
+  W_A  = [Phi11 ^ .]_A: max_b |beta_b(T,a) + beta_b(a,T)| = 0.0  (max_b |beta_b| = 1.799e+04; T, a random integer in Omega^1 (x) u(64,64))  => self-adjoint: True
+  W'_A = [Phi11' ^ .]_A: max_b |beta_b(T,a) + beta_b(a,T)| = 0.0  (max_b |beta_b| = 1.254e+04; T, a random integer in Omega^1 (x) u(64,64))  => self-adjoint: True
+  W_C  = [Phi11 ^ .]_C: max_b |beta_b(T,a) - beta_b(a,T)| = 0.0  (max_b |beta_b| = 8.896e+03; T, a random integer in Omega^1 (x) u(64,64))  => skew-adjoint: True
+  W'_C = [Phi11' ^ .]_C: max_b |beta_b(T,a) - beta_b(a,T)| = 0.0  (max_b |beta_b| = 1.027e+04; T, a random integer in Omega^1 (x) u(64,64))  => skew-adjoint: True
+  (8.1) single-term members into Omega^13 (8: [Phi11^.]_A, [Phi11'^.]_A, [Phi11^.]_C, [Phi11'^.]_C, [Phi1^*.]_A, [Phi1^*.]_C, [Phi1'^*.]_A, [Phi1'^*.]_C)
+    exact rank of the self-adjointness defect matrix (28 x 8) = 6; null space (self-adjoint combinations) = [1, 0, 0, 0, 0, 0, 0, 0]; [0, 1, 0, 0, 0, 0, 0, 0]
+  round-1 counterexample T = gamma_0 gamma_1 e^0, a = gamma_0 e^1: W_A gives beta_0(T,a) = +0, beta_0(a,T) = +0 (R-S (C;A,A): +256, 0)
+
+=== E2. Levi-Civita curvature: Einstein tensor, Weyl annihilation; exact ===
+  W_A (F_R) = *( e^a (x) K_ab gamma^b ): residual outside this grade = 0.0; K = x Ric + y Scal eta exactly (rational arithmetic): True; x = -1, y = 1/2, y/x = -1/2
+  W'_A(F_R) = *( e^a (x) K_ab gamma^b Gamma ): residual outside this grade = 0.0; K = x Ric + y Scal eta exactly (rational arithmetic): True; x = -1, y = 1/2, y/x = -1/2
+  W_A(F_R) = +1 x R-S(C;A,A; c=1)(F_R) exactly: True; on a random grade-2-valued 2-form xi (not a curvature tensor) max|W_A(xi) - (+1) R-S(xi)| = 68 (different operators)
+  Weyl part: 312 W = 312 R - KN(26 Ric - Scal eta, eta) has Ric = 0 exactly: True, max|W| = 42640; images (max entry): W_A: 0, W'_A: 0, W_C: 0, W'_C: 0, R-S term1_C: 0, R-S term1_A: 0, R-S term2_(C,C): 0, R-S term2_(C,A): 0, R-S term2_(A,C): 0, R-S term2_(A,A): 0
+
+=== E3. Helmholtz condition for Upsilon = Shiab F_{B+T} + kappa *T (T-linear part); exact ===
+  a, b, T random integer in Omega^1 (x) so(8,8) [grades 1,2,13,14]: (H_W, H_W') for two samples = [['-526336+0i', '-719872+0i'], ['-1054208+0i', '+1385472+0i']]; det = -1.488e+12+0.0e+00i
+  => x W_A + y W'_A satisfies Helmholtz only for x = y = 0: True
+  a, b, T random integer in Omega^1 (x) u(64,64): H_W = -3.1173e+05
+  control (Chern-Simons, d = 3, Shiab = Id, u(2)): H = 0.0
+  control (d = 14, non-invariant Omega = e^(3..13) (x) 1, Shiab = Omega ^ .): self-adjointness defect = 0.0, H = 0.0  (variational; excluded only by Spin(7,7)-invariance)
+
+=== E4. First variation of (9.4) with Shiab = W_A: the cubic term; exact ===
+  sample 0: C(T) = -1.0281e+06; derivative identity exact: True; 3*(dC/3 - p(a,S(T^T))) = -H(a,T;T) exact: True; H(a,T;T) = -3.1777e+05+0.0e+00i; H / p(a,[T^[T^Phi11]_C]_A) = 1
+  sample 1: C(T) = +2.9160e+05; derivative identity exact: True; 3*(dC/3 - p(a,S(T^T))) = -H(a,T;T) exact: True; H(a,T;T) = +1.0441e+05+0.0e+00i; H / p(a,[T^[T^Phi11]_C]_A) = 1
+  => with k (T,S(T^T)) in the action, k = 1/3 is forced by a = T (C(T) != 0), and the EL equation of (9.4) is
+     W_A F_A + kappa *T - (1/3) h(T) = 0 with p(a, h(T)) = H(a,T;T) = 1 * p(a, [T^[T^Phi11]_C]_A) != 0: constant over samples: True

@@ -1,0 +1,25 @@
+result: "D4/D5. The field equation (9.7) Upsilon = Shiab F_A + kappa_1 *T is the Euler-Lagrange equation of no functional of varpi for any nonzero admissible Shiab; true EL equation of (9.4) computed"
+claim_id: [GU-050, GU-052, GU-053]
+writeup: formalization/geometric-unity/D-selfadjoint-shiab.md (Theorem D4, Corollary D5, Theorem D)
+code: [computation/geometric-unity/D_selfadjoint_shiab.py, computation/geometric-unity/D_selfadjoint_shiab.out]
+formalization_status: >
+  Fully formalized: Helmholtz (symmetric second variation) conditions for Upsilon on the affine space of
+  varpi, with eps fixed, constant pairing, F_A = F_B + d_B T + T^T.
+internal_consistency: >
+  INCONSISTENT for every nonzero Shiab: variationality forces b(a ^ Shiab xi) = sum_k Omega_k ^ I_k(a ^ xi)
+  with I_k ad-invariant (generalized Chern-Simons). (a) No such operator has an Einstein output (any
+  structure group); (b) with (Lambda^3 V)^K = 0 (Spin(7,7), its identity component, Spin(1,3) x Spin(6,4))
+  Shiab = 0. For Shiab in S_sa the EL equation of (9.4) is Shiab F_A + kappa *T - (1/3) h(T) with
+  h(T) = [T ^ [T ^ Phi11]_C]_A for W_A (exact, ratio 1 on two samples).
+proof_status: >
+  Proven analytically. Exact illustrations: Helmholtz defect matrix for (W_A, W'_A) has det -1.49e12 != 0;
+  controls (d=3 Chern-Simons; d=14 non-invariant Omega ^ .) give 0 exactly.
+novelty: >
+  New. Supersedes round-1 Prop C6' (whose stated necessary condition was not necessary) and closes
+  remedy (a) of GU-G13 in the negative for (9.7).
+reproducibility: "Exact; fixed seed."
+empirical_testability: "None."
+dependencies: ["D2", "D3", "C1 (repair R-C1')"]
+confidence: >
+  High under the hypotheses. Not excluded: field-dependent multipliers, varpi-dependent Shiab, and a
+  different field-equation reading; the eps-variation is not analysed.

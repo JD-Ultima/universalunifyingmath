@@ -1,0 +1,28 @@
+=== D0. Cross-check of the character code and of Theorem D2 by brute force (D_2, D_3) ===
+  D_2 (n = 4), g = Lambda^0..4: brute force dim S = 40, dim S_sa = 8; characters + Thm D2: 40, 8; block mismatches: 0 (of 30); SVD gap: smallest kept 7.32e-01, largest dropped 1.2e-15
+  D_3 (n = 6), g = Lambda^0..6: brute force dim S = 72, dim S_sa = 16; characters + Thm D2: 72, 16; block mismatches: 0 (of 56); SVD gap: smallest kept 7.32e-01, largest dropped 9.7e-16
+
+=== D1. D_7 = so(14,C): decompositions used below (all pass the Weyl-dimension check) ===
+  |W(D_7)| = 322560
+  Lambda^k irreducible except k = 7: 0:[1], 1:[1], 2:[1], 3:[1], 4:[1], 5:[1], 6:[1], 7:[1, 1], 8:[1], 9:[1], 10:[1], 11:[1], 12:[1], 13:[1], 14:[1]
+  Lambda^1 (x) Lambda^2 = {(1, 0, 0, 0, 0, 0, 0): 1, (1, 1, 1, 0, 0, 0, 0): 1, (2, 1, 0, 0, 0, 0, 0): 1}  (= Lambda^3 + Lambda^1 + Gamma_21)
+  S^2(Lambda^2) = {(0, 0, 0, 0, 0, 0, 0): 1, (1, 1, 1, 1, 0, 0, 0): 1, (2, 0, 0, 0, 0, 0, 0): 1, (2, 2, 0, 0, 0, 0, 0): 1}; algebraic curvature tensors Curv = S^2(Lambda^2) - Lambda^4 = trivial + S^2_0 + Weyl (dims 1, 104, 3080)
+
+=== D2. Def. 8.1: dim [Lambda^i (x) u(64,64)]^Spin(7,7) ===
+  i = 0..14: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]  (total 30; the draft's 'basis {Phi_i}_{i=0}^{14}' has 15 elements)
+
+=== D3. Size of the admissible space and of its self-adjoint part ===
+  g = u(64,64)                     (dim 16384): dim S =   200; dim S_sa =   48; dim S_asa =   48; rest (V + Gamma_21 channels) =   104; identity holds
+  g = so(64,64)                    (dim  8128): dim S =    52; dim S_sa =   12; dim S_asa =   12; rest (V + Gamma_21 channels) =    28; identity holds
+  g = so(8,8) [grades 1,2,13,14]   (dim   120): dim S =    16; dim S_sa =    2; dim S_asa =    2; rest (V + Gamma_21 channels) =    12; identity holds
+  g = so(7,8) [grades 1,2]         (dim   105): dim S =     6; dim S_sa =    1; dim S_asa =    1; rest (V + Gamma_21 channels) =     4; identity holds
+  g = so(7,7) [grade 2]            (dim    91): dim S =     0; dim S_sa =    0; dim S_asa =    0; rest (V + Gamma_21 channels) =     0; identity holds
+  nonzero blocks of Hom(Lambda^3, S^2 u):  (j,l): mult  [j<l: Lambda^j (x) Lambda^l; (j,j): S^2 Lambda^j]
+   (0,3):1, (0,11):1, (1,2):1, (1,4):1, (1,10):1, (1,12):1, (2,3):1, (2,5):1, (2,9):1, (2,11):1, (2,13):1, (3,4):1, (3,6):1, (3,8):1, (3,10):1, (3,12):1, (3,14):1, (4,5):1, (4,7):2, (4,9):1, (4,11):1, (4,13):1, (5,6):2, (5,8):2, (5,10):1, (5,12):1, (6,7):2, (6,9):2, (6,11):1, (7,8):2, (7,10):2, (8,9):2, (8,11):1, (9,10):1, (9,12):1, (10,11):1, (10,13):1, (11,12):1, (11,14):1, (12,13):1
+
+=== D4. Einstein channels: which outputs can an equivariant map Curv -> Lambda^13 (x) g have? ===
+  l: (mult of trivial, S^2_0, Weyl) in Lambda^1 (x) Lambda^l:
+   0:(0,0,0); 1:(1,1,0); 2:(0,0,0); 3:(0,0,0); 4:(0,0,0); 5:(0,0,0); 6:(0,0,0); 7:(0,0,0); 8:(0,0,0); 9:(0,0,0); 10:(0,0,0); 11:(0,0,0); 12:(0,0,0); 13:(1,1,0); 14:(0,0,0)
+  Weyl occurs in Lambda^1 (x) g for no l => every K-equivariant Shiab operator annihilates Weyl curvature; trivial and S^2_0 occur only for l in [1, 13]
+  Hom(Lambda^3, Lambda^1 (x) Lambda^2) = 1;  Hom(Lambda^3, Lambda^2 (x) Lambda^13) = 1;  (Lambda^3)^K = 0
+  self-adjoint Shiab operators restricted to so(7,8) x so(7,8): dim 1;  to so(8,8) x so(8,8): dim 2

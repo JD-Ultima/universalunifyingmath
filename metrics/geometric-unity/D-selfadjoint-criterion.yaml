@@ -1,0 +1,18 @@
+result: "D2. Shiab o d_B is formally self-adjoint iff its symbol form is totally antisymmetric in the three form indices and symmetric on g (Shiab = Psi ^ ., Psi in Lambda^3 (x) S^2 g*)"
+claim_id: [GU-050, GU-053]
+writeup: formalization/geometric-unity/D-selfadjoint-shiab.md (Theorem D2)
+code: [computation/geometric-unity/D_rep_counts.py, computation/geometric-unity/D_rep_counts.out, computation/geometric-unity/D_selfadjoint_shiab.py, computation/geometric-unity/D_selfadjoint_shiab.out]
+formalization_status: >
+  Fully formalized for any structure group and any nondegenerate pairing: reduction of Lemma C6a to the
+  sign character of S_3 x S_2 acting on the five slots of the symbol form.
+internal_consistency: >
+  Consistent with round 1 (R-S members fail) and with Chern-Simons (theta = eps_abc Tr). The constraints
+  imposed directly by brute force in D_2, D_3 reproduce dim Hom_K(Lambda^3, S^2 g) block by block.
+proof_status: >
+  Proven (algebraic, 5 lines); confirmed by brute force (D_2, D_3) and by exact self-adjointness of
+  W_A, W'_A and exact skewness of W_C, W'_C on random integer u(64,64) data (E1).
+novelty: "New."
+reproducibility: "Exact; fixed seeds."
+empirical_testability: "None."
+dependencies: [L-C2, "Lemma C6a"]
+confidence: "High."

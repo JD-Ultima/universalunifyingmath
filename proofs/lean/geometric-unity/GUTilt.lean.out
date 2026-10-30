@@ -1,0 +1,12 @@
+'GUTilt.gmul_assoc' depends on axioms: [propext]
+'GUTilt.actL_mul' depends on axioms: [propext, Quot.sound]
+'GUTilt.stab_right' does not depend on any axioms
+'GUTilt.pi_mul' depends on axioms: [propext, Quot.sound]
+'GUTilt.T_tau_residual' depends on axioms: [propext, Quot.sound]
+'GUTilt.T_tau_iff' depends on axioms: [propext, Quot.sound]
+'GUTilt.stab_left' does not depend on any axioms
+'GUTilt.T_tau'' depends on axioms: [propext, Quot.sound]
+'GUTilt.pi'_tau'' depends on axioms: [propext, Quot.sound]
+'GUTilt.phi_hom' depends on axioms: [propext, Quot.sound]
+'GUTilt.lemma72_as_printed_false' depends on axioms: [propext, Quot.sound]
+'GUTilt.pi_not_tau'_invariant' depends on axioms: [propext, Quot.sound]

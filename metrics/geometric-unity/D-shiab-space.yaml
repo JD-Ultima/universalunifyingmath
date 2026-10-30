@@ -1,0 +1,20 @@
+result: "D1. Size of the space S of Spin(7,7)-equivariant Shiab operators Lambda^2 (x) g -> Lambda^13 (x) g and of its self-adjoint part"
+claim_id: [GU-045]
+writeup: formalization/geometric-unity/D-selfadjoint-shiab.md (Proposition D1)
+code: [computation/geometric-unity/D_rep_counts.py, computation/geometric-unity/D_rep_counts.out]
+formalization_status: >
+  Fully formalized as finite invariant theory: dim S = dim Hom_K(Lambda^2 (x) g, Lambda^1 (x) g),
+  dim S_sa = dim Hom_K(Lambda^3, S^2 g), with g a sum of exterior powers by Clifford grade.
+internal_consistency: >
+  u(64,64): dim S = 200, dim S_sa = 48, dim S_skew = 48; so(64,64): 52/12/12; so(8,8): 16/2/2;
+  so(7,8): 6/1/1; so(7,7): 0 (no Shiab operator exists). dim [Lambda^i (x) u(64,64)]^Spin(7,7) = 2 for
+  every i, so Def. 8.1's 15-element "basis" names 15 of 30 invariants (Phi_i and Phi_i Gamma).
+proof_status: >
+  Proven: exact Weyl-character multiplicities for D_7, each decomposition checked by the Weyl dimension
+  formula; additive identity dim S = S_sa + S_skew + rest holds; independent brute-force check in D_2, D_3
+  (40/8 and 72/16, 0 block mismatches of 86; SVD gap 0.73 vs 1.2e-15).
+novelty: "New: the source gives no dimension and its Def. 8.1 undercounts the invariants by a factor 2."
+reproducibility: "Exact integers; deterministic; ~3 min on 4 idle cores (brute-force SVDs dominate)."
+empirical_testability: "None."
+dependencies: ["B (Clifford grade rule)", "H1-H3 of D.1"]
+confidence: "High."
