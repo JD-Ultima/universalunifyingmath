@@ -1,0 +1,10 @@
+claim_id: CT-017   # Theorem 2 (Value), with CT-014, CT-015, CT-018
+result: "(79 + 48√2 + 42√3 + 3√6)/31104 from the Letter's definitions"
+formalization_status: Fully formal (author's Lean; our independent Python reconstruction)
+internal_consistency: Verified (counts, orthogonality, sector sizes, value)
+proof_status: Proven (as arithmetic of the stated definitions)
+novelty: No known precedent (as a construction)
+reproducibility: "Code public (author); independent replication in computation/chain-theory/alpha/records_independent.py: replicated exactly"
+empirical_testability: n/a (mathematical statement)
+dependencies: [definitions of record, survival, weight law (CT-016), N (CT-013)]
+confidence: "High that the arithmetic is right: two independent implementations plus the Lean kernel agree. Says nothing about whether the definitions are forced."

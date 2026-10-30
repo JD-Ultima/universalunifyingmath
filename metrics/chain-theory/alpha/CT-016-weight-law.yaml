@@ -1,0 +1,10 @@
+claim_id: CT-016
+result: "k_r = 3^[X=-1] 2^[Y=-1], weight sqrt(k_r)"
+formalization_status: Partially formal (encoded as definitions wX, wY, kOf in Lean)
+internal_consistency: "Verified as stated; X and Y coincide as operators on product records (F-CT-2)"
+proof_status: "Open: the weight law is introduced by argument, not derived as the trace of an independently constructed operator (gap CT-G01)"
+novelty: No known precedent
+reproducibility: freedom.py reproduces all 13 published alternatives
+empirical_testability: Only through CT-020
+dependencies: [three wording clauses of Table S-inputs, amplitude-vs-Born choice]
+confidence: "Medium-low that the rule is forced; alternatives in the author's own table span 1/value ∈ [97.5, 180.8]"

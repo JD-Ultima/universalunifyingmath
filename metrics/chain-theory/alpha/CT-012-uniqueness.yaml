@@ -1,0 +1,10 @@
+claim_id: CT-012   # Theorem 1 (Uniqueness), with CT-007
+result: "The qutrit with three qubit links, two read, is the unique admissible configuration"
+formalization_status: Fully formal under the Letter's convention (Lean, actingCharge := d1 ≠ d2)
+internal_consistency: Verified under reading A
+proof_status: "Proven under reading A; disproven under readings A*, C (a second configuration qualifies) and B (none qualifies). Lean: proofs/lean/chain-theory/ConventionCheck.lean"
+novelty: n/a
+reproducibility: "charge_conventions.py; ConventionCheck.lean (builds with Lean 4.35.0 on the pinned upstream file)"
+empirical_testability: n/a
+dependencies: [read cap (imported Størmer/Woronowicz/Choi), end rule, two-point definition, direct-sum trace convention (gap CT-G03/G04)]
+confidence: "High that the theorem holds under A and fails under A*/B/C (elementary algebra, machine-checked). Whether A is forced by the axiom is open."

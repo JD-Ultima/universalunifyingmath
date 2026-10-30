@@ -1,0 +1,11 @@
+types (d1<=d2<=5); readable = d1 d2 <= 6: [(2, 2), (2, 3)]
+  reading A : readable types with an acting central charge = [(2, 3)]
+  reading A*: readable types with an acting central charge = [(2, 2), (2, 3)]
+  reading B : readable types with an acting central charge = []
+  reading C : readable types with an acting central charge = [(2, 2), (2, 3)]
+  reading A: Q acts on the (2,3) link as 1*i, i.e. 6Y = 1, Y = 1/6
+  reading A*: Q acts on the (2,3) link as 5*i, i.e. 6Y = 5, Y = 5/6
+  (2,3), far end by xi2: algebra dim 12, stabiliser of pair ket dim 4
+  (2,3), far end by conj(xi2): algebra dim 12, stabiliser of pair ket dim 4
+  (2,2), far end by xi2: algebra dim 7, stabiliser of pair ket dim 4
+  (2,2), far end by conj(xi2): algebra dim 7, stabiliser of pair ket dim 3
