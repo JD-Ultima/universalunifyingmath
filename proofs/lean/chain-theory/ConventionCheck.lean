@@ -1,8 +1,9 @@
 /-! # Convention check appended to the author's ChainAlpha.lean (sha256 522844e9…c331da)
 
 The upstream file defines `actingCharge d1 d2 := d1 ≠ d2`. This encodes ONE convention: the
-centre (x·1, y·1) of s(u(d1) ⊕ u(d2)), traceless on the direct sum (d1 x + d2 y = 0, primitive
-solution x = d2, y = -d1), acting on the link as x + y (far end by ξ₂).
+centre (x·1, y·1) of s(u(d1) ⊕ u(d2)), traceless on the direct sum (d1 x + d2 y = 0, solution
+x = d2, y = -d1, primitive when gcd(d1,d2) = 1), acting on the link as x + y (far end by ξ₂).
+Only whether that value vanishes is used, which does not depend on the normalisation.
 If the far end acts by conj ξ₂ (the far end transforms by Ū under a matching), it acts as x - y.
 We show that under that convention the upstream uniqueness theorem's hypotheses are satisfied by a
 second configuration, a shared qubit with two read (2,2) links and one unread (2,2) link.
@@ -11,7 +12,8 @@ Nothing here modifies an upstream definition. -/
 namespace ConventionCheck
 open ChainAlpha
 
-/-- Value by which the primitive central element acts on a (d1,d2) link, upstream convention. -/
+/-- Value by which the central element (d2·1, -d1·1) acts on a (d1,d2) link, upstream convention
+(primitive when gcd(d1,d2) = 1; only its vanishing is used). -/
 def actA (d1 d2 : Nat) : Int := (d2 : Int) + (-(d1 : Int))
 /-- Same element, far end acting by the complex conjugate. -/
 def actConj (d1 d2 : Nat) : Int := (d2 : Int) - (-(d1 : Int))
