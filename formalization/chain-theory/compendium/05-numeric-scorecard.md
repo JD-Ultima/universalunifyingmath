@@ -199,7 +199,7 @@ For comparison, F-CT-4 for α(0) gives 4.4×10⁻⁶ expected chance hits within
   5. The agreement needs the on-shell scheme.
 
   Against this agreement stand two facts. The source's adopted value for the angle is cos²θ_W = 1/2,
-  which is 1070σ away. And its bridge for 164.5 names the office ratio, not the count face, as the
+  which is ≈1.07×10³σ away. And its bridge for 164.5 names the office ratio, not the count face, as the
   angle.
 - *Verdict.* The agreement is real at the on-shell scheme and re-derivable. It sits at an OPEN box
   whose identification step the source rejects, and chance odds of a few percent cannot be excluded.

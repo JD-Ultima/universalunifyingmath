@@ -45,3 +45,8 @@ confidence: >
   slaved T_e != 0 (where z, w enter the odd equation), odd grades 3-11 beyond I4, reading (A) with T != 0, the
   (P)-projected constraint in the symmetric sector,
   the (8,6)/(10,4) signatures of the F6 case, and the remaining components of the (E) constraint.
+round_6_amendment: >
+  2026-10-30. The (E) statements above ("none in the invariant sector in (7,7)", "Lambda_4 = 0 in (14,0)") are for
+  T_e = 0. With T_o = t Phi^1 + u Phi^1 Gamma and the slaved T_e != 0 in the vector sector, (E) at the points of s(X)
+  with an isotropy-invariant 2-jet has solutions in (7,7) and (14,0) with Lambda_4 not fixed, and z, w enter the
+  reduced equations (J-slaved-sector.md, Prop. J4, Cor. J2.1).

@@ -10,7 +10,7 @@
 
 For each framework the repository reconstructs the strongest precise mathematics the sources support, proves or refutes what can be decided, and states plainly what remains open. Mathematical validity and physical validity are graded separately. Every number in the write-ups is printed by a committed script, or checked by Lean, or cited.
 
-> **Status (2026-10-30).** Working research repository. The results have been through three internal referee rounds ([`reports/reviews/`](reports/reviews/)) but **not external peer review**. Corrections are logged in [`reports/CORRECTIONS.md`](reports/CORRECTIONS.md).
+> **Status (2026-10-30).** Working research repository. Most results have been through internal referee rounds ([`reports/reviews/`](reports/reviews/)) but **not external peer review**. Not yet refereed: compendium round 7 (Lean table rows) and the mechanical trial-factor space (F-CT-4 E). Corrections are logged in [`reports/CORRECTIONS.md`](reports/CORRECTIONS.md).
 
 ---
 
@@ -49,14 +49,14 @@ The Letter proposes $\alpha_{\rm cand}=(79+48\sqrt2+42\sqrt3+3\sqrt6)/31104$, i.
 - **Reproduced exactly.** An independent operator-level implementation reproduces the 172 records, the sector sizes 79/48/42/3 and the value. It lies 0.6σ from CODATA 2022. ([F-CT-1](formalization/chain-theory/alpha/audit.md))
 - **The uniqueness theorem depends on a convention.** The selection of the qutrit–qubit link holds under one far-end conjugation convention. Under the conjugate convention a second configuration satisfies every hypothesis. This is checked in Lean against the author's own definitions. ([F-CT-3](formalization/chain-theory/alpha/audit.md), [`ConventionCheck.lean`](proofs/lean/chain-theory/ConventionCheck.lean))
 - **Covariance.** The records as defined are not covariant under the symmetry group of their own joint state. A covariant repair leaves the value unchanged. Symmetry alone leaves a 9-parameter (real) family of readouts. ([F-CT-10](formalization/chain-theory/alpha/audit.md))
-- **The weight law is an input, not a derivation.** The weights have an exact operator form in the model's primitives, but its qutrit projector is the "end rule" written as an operator. No local or short multiplicative construction reproduces them. ([F-CT-11](formalization/chain-theory/alpha/audit.md); [`operator-origin.md`](formalization/chain-theory/alpha/operator-origin.md), [`transport.md`](formalization/chain-theory/alpha/transport.md))
-- **Trial factor.** The declared rule space has 46 080 variants and contains all twelve weight-law alternatives the author lists. In it the expected number of chance values within 1σ is $4.4\times10^{-6}$. A space generated mechanically from the author's Lean file (332 308 single and paired mutants, checked against Lean) gives $1.3\times10^{-6}$ ([mechanical space](formalization/chain-theory/alpha/mechanical-trial-factor.md)). Whether the rules were fixed before the value was computed is not documented. ([F-CT-4](formalization/chain-theory/alpha/audit.md))
+- **The weight law is an input, not a derivation.** The weights have an exact operator form in the model's primitives, but its qutrit projector is the "end rule" written as an operator. No construction local in the original frame, and no short multiplicative one, reproduces them; a frame-local one after transporting the qubit letters needs the frame assignment and the full-join credit as inputs. ([F-CT-11](formalization/chain-theory/alpha/audit.md); [`operator-origin.md`](formalization/chain-theory/alpha/operator-origin.md), [`transport.md`](formalization/chain-theory/alpha/transport.md))
+- **Trial factor.** The declared rule space has 46 080 variants and contains all twelve weight-law alternatives the author lists. In it the expected number of chance values within 1σ is $4.4\times10^{-6}$. A space generated mechanically from the author's Lean file (332 308 single and paired mutants, evaluated by a transcription that agrees with Lean on all 818 singles and a 300-pair sample) gives $1.3\times10^{-6}$ ([mechanical space](formalization/chain-theory/alpha/mechanical-trial-factor.md)). Whether the rules were fixed before the value was computed is not documented. ([F-CT-4](formalization/chain-theory/alpha/audit.md))
 - **Testability.** The candidate fixes every digit. It is falsifiable by determinations of $\alpha(0)$ with absolute uncertainty $\lesssim2.5\times10^{-9}$ in $1/\alpha$.
 
 ### Chain Theory — the compendium (release 0.1)
 
 - **Grades against the source's own chain rule.** At statement level, 41 of 100 THEOREMs declare an OPEN premise in their own derivation, and at least 76 violate the rule. ([`07-statement-premises.md`](formalization/chain-theory/compendium/07-statement-premises.md))
-- **Premise cycle.** Under the better-supported reading of the source's chapter designators, a premise cycle runs through the α theorem: 124.1 → the gain lemma (chapter 18) → 124.1. The cycles shown in the source's own index are an artefact of chapter-level citation.
+- **Premise cycle.** Under the better-supported reading of the source's chapter designators, and with "theorem" read as admitting CONDITIONAL, a premise cycle runs through the α theorem: 124.1 → the gain lemma (chapter 18) → 124.1. The premise line printed under 18.1–18.6 does not cite 124.1. The cycles shown in the source's own index are an artefact of chapter-level citation.
 - **Numbers against experiment.** Where the source's adopted identifications give numbers, they mostly disagree with experiment: the weak angle, the third-order $a_e$ coefficient, and the hydrogen scale (off by about $10^9$). ([`05-numeric-scorecard.md`](formalization/chain-theory/compendium/05-numeric-scorecard.md), [`08-hydrogen-registers.md`](formalization/chain-theory/compendium/08-hydrogen-registers.md))
 - **The compendium's Lean.** The source pins Lean 4.32.1, and the tree does not build under Lean 4.35.0 as published. With five proof-only edits all 493 modules build, with no `sorry`. Of the 64 theorem rows the compendium ties to Lean, 1 is fully stated by its Lean, 7 partly, and 56 not at all: most table checks only confirm that an entered string occurs. ([`09-lean-audit-at-scale.md`](formalization/chain-theory/compendium/09-lean-audit-at-scale.md), [`10-lean-table-rows.md`](formalization/chain-theory/compendium/10-lean-table-rows.md))
 - **Gauge-group selection.** Certified in core Lean (71 theorems). With alphabet {2,3,4}, the link (3,2) is selected uniquely exactly for read caps 6 and 7. ([`GaugeSelection.lean`](proofs/lean/chain-theory/GaugeSelection.lean))
@@ -96,9 +96,9 @@ cd computation/chain-theory/alpha
 python3 records_independent.py | diff - records_independent.out
 ```
 
-Randomness, where used, has fixed seeds. Most scripts run in seconds. The longest searches take about 15–20 minutes on 4 cores, and longer on a shared machine.
+Randomness, where used, has fixed seeds. Most scripts run in seconds. The longest searches take about 15–20 minutes on 4 cores, and longer on a shared machine; the compendium Lean rebuild (`lean_audit.sh`) takes about 45 minutes and 7.7 GB of memory.
 
-**Lean.** Each check prints `#print axioms` for every theorem.
+**Lean.** Each check prints `#print axioms` for its main theorems (for every theorem in `HowardArith` and `GaugeSelection`).
 
 ```bash
 lean proofs/lean/howard/HowardArith.lean

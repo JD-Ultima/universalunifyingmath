@@ -18,3 +18,9 @@ dependencies: []
 confidence:
   value: high
   justification: "Classification is syntactic and the cited declarations were read verbatim for the five audited statements; the README itself states that 'the physical reading of the result lives in the text, not in the Lean statement'."
+round_6_7_amendment: >
+  2026-10-30. Superseded in part. Round 6 rebuilt the tree: under Lean 4.35.0 all 493 modules build with five
+  proof-only edits (the source pins 4.32.1), and the axiom trace finds no sorryAx among 6662 names
+  (lean-audit-at-scale.yaml). Round 7 compared the 64 tied theorem rows with the cited Lean by content: 1 matched
+  clause by clause, 7 partly, 56 not at all (lean-table-rows.yaml). The "37 at best string-label table checks" of
+  the register is too narrow for 7 rows whose tables check relations over entered Int fields (reports/CORRECTIONS.md).

@@ -40,7 +40,7 @@ agreements:
     quantity: "sin^2 theta_W (on-shell)"
     value: "(17/36)^2 = 289/1296 = 0.222994 (164.2, OPEN); 17/36 re-derived (17 of 36 Weyl pair letters nonzero at the (3,2) pair ket)"
     deviation: "-0.83 sigma vs 0.223209(259) (PDG 2024 masses); -0.24 sigma vs CODATA 2022 0.22305(23); -3.6% vs MS-bar 0.2312"
-    source_position: "the step to 'the square of the angle is refused at its first step'; adopted value cos^2 = 1/2 (164.5, C) is 1070 sigma off"
+    source_position: "the step to 'the square of the angle is refused at its first step'; adopted value cos^2 = 1/2 (164.5, C) is about 1.07e3 sigma off"
     discrete_choices: 5
     freedom: "printed faces 11 distinct: 0.019 expected chance hits; declared count-face family (192 variants): 0.14"
   - id: SC-35/36/37

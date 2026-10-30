@@ -2,7 +2,7 @@ claim_id: CT-016
 result: "k_r = 3^[X=-1] 2^[Y=-1], weight sqrt(k_r)"
 formalization_status: Partially formal (encoded as definitions wX, wY, kOf in Lean)
 internal_consistency: "Verified as stated; X and Y coincide as operators on product records (F-CT-2)"
-proof_status: "Open: the weight law is introduced by argument, not derived as the trace of an independently constructed operator (gap CT-G01)"
+proof_status: "Open: the weight law is introduced by argument. It has an exact operator form in the model's primitives (F-CT-11, operator-origin.md Prop. 2), but its qutrit projector Pi_X is the end rule itself (CT-G02), so CT-G01 reduces to CT-G02 and CT-G08 (amended 2026-10-30; the earlier criterion, the trace of an independently constructed operator, is met and too weak, reports/CORRECTIONS.md)"
 novelty: No known precedent
 reproducibility: "freedom.py reproduces the computed row and the 12 weight-law alternatives of Table S5 from the record classes; mutations_classified.py rechecks all 15 closed-form alternatives (3 of them, which change the unit, N or the configuration, lie outside the declared space)"
 empirical_testability: Only through CT-020

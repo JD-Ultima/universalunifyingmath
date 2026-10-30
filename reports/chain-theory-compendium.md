@@ -3,7 +3,7 @@
 Source: A. D. Wissner-Gross, *Chain Theory ... A Compendium of Preliminary Findings*, release 0.1,
 `chain-theory` commit `a28db899` (2026-10-24). Scope: the compendium only; the alpha Letter is audited
 separately and enters here only as a dependency. Register: `claims/chain-theory-compendium.md`
-(CT-C001-CT-C037). Notes: `formalization/chain-theory/compendium/00-04`. Code and recorded outputs:
+(CT-C001-CT-C037). Notes: `formalization/chain-theory/compendium/00-10`. Code and recorded outputs:
 `computation/chain-theory/compendium/`. Metrics: `metrics/chain-theory/compendium/*.yaml`.
 
 ## Findings
@@ -49,7 +49,7 @@ two-dimensional; with dimension 3 or 4 the ladder is not Bohr. Fine structure an
 **F7. Gauge group (64.2, 65.1, T): the mathematics is correct and standard; the physics rests on choices**
 (a, c, e). Verified exactly: image of U(2) x U(3) on C^2 (x) C^3 = S(U(2) x U(3)) =
 (SU(2) x SU(3) x U(1))/Z6; all six genre-matrix (dimension, central scalar) entries; the u(1)
-representative = 6Y on the 5. The (3,2) genre is singled out only under read cap d1 d2 <= 6
+representative = 6Y on the 5. The (3,2) genre is singled out only under read cap d1 d2 <= 6 or 7
 (9.1, CONDITIONAL) plus d1 != d2; cap 8 admits (4,2) as well. The "dim 12, rank 4" uniqueness cell uses
 the Standard Model's numbers as targets. The Z6 global form is consistent with every observed field but
 not experimentally established. Representations and hypercharges are not derived (66.x OPEN).
@@ -69,6 +69,9 @@ experiment. The abstract's physics list should be read as correspondences by nam
 chapters themselves describe them.
 
 ## Proposed order of further work
+
+This is the plan as written after Phase 1. Items 1, 2, 5 and 6 have since been done: round 4 (statement-level premises, `07`), `proofs/lean/chain-theory/GaugeSelection.lean` (G1-G3 in core Lean, not Mathlib), round 5 (hydrogen registers, `08`), and rounds 6-7 (Lean at scale, `09`, `10`). Items 3, 4 and 7 remain open.
+
 
 1. **Statement-level premises** (cheap, decisive for F3/F4): ask for, or reconstruct, per-statement
    logical premises for 2.2-2.8, 9.1, 18.x, 124.1, 200.x; re-grade under the chain rule; break the
@@ -125,7 +128,7 @@ source prints without selecting one.
 - **sin²θ_W = (17/36)² = 289/1296.** This face is printed at 164.2 (OPEN). We re-derived it: 17 of the 36 Weyl
   pair letters are nonzero at the (3,2) pair ket. It lies −0.83σ from the on-shell value
   1 − (M_W/M_Z)² = 0.223209(259), but 3.6% from the MS-bar value. The source refuses this identification step,
-  and its adopted value, cos²θ_W = 1/2 (164.5), is 1070σ off. Expected chance hits: 0.019 among the source's 11
+  and its adopted value, cos²θ_W = 1/2 (164.5), is ≈1.07×10³σ off against the on-shell value (1067σ against $(M_W/M_Z)^2$, Findings above). Expected chance hits: 0.019 among the source's 11
   distinct printed values; 0.14 in a declared family of 192 variants. Five discrete choices lie behind it.
 - **Lepton and proton mass ratios.** The "derived cells" of 186.1 (THEOREM) are e = 67, μ = 963, τ = 3969 and
   p = 2871. Combined with mass = (first power)² (185.9), they give:

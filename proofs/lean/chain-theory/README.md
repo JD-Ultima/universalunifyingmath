@@ -14,7 +14,7 @@ LEAN=/path/to/lean-4.35.0-linux/bin/lean UPSTREAM=/path/to/chain-theory ./run.sh
 
 Theorems added (see `formalization/chain-theory/alpha/audit.md`, F-CT-3):
 
-- `actA_ne_zero_iff` — the upstream `actingCharge` is exactly "the primitive central element acts nontrivially under the unconjugated convention".
+- `actA_ne_zero_iff` — the upstream `actingCharge` is exactly "the central element $(d_2,-d_1)$ (primitive when $\gcd(d_1,d_2)=1$) acts nontrivially under the unconjugated convention".
 - `uniqueness_fails_under_conjugate_convention` — under the conjugate convention, a second configuration (2R 2R 2U at a shared qubit) satisfies all hypotheses of upstream `configuration_unique`.
 - `upstream_excludes_qubitConfig` — the upstream convention excludes it.
 - `weight_is_class_function` — Prop. 2 of the audit (F-CT-2): on the object, the upstream `kOf` equals a function of (commutator?, `parity` under `exchAssign`, `sameEnd`) only. Proved by `decide +kernel` over all 172 records.

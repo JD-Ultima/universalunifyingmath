@@ -112,3 +112,20 @@ Entries are appended, never edited. Format: date — file — what changed — w
      - 04 §1 ("at best data-table checks") and report F2 ("`decide` proofs over hand-entered tables") are right for all 37.
      - The tiers 16 / 37 / 11 are unchanged.
      - The register is not edited.
+- 2026-10-30 — Repository-wide consistency audit (read-only fresh-eyes pass over README, SYNTHESIS, reports, registers, metrics and drafts).
+  1. **GU claim-status counts.** `computation/geometric-unity/register_stats.py` took the *first* status letter of each status cell. For the re-graded rows (GU-021, 052, 054, 056, 057, 072, written "O … → **C** …") that letter is the pre-Phase-2 status. The script now takes the last bolded status letter and lists the rows graded with more than one status (GU-057 V/F/C, GU-072 F/C, both counted as C). Together with item 2 the counts are V 34, C 19, O 6, F 6, T 2, — 5, against the 34 / 13 / 13 / 5 / 2 / 5 printed in `reports/geometric-unity-phase1.md` §Status.
+  2. **GU-045** was still graded O. Round 2 (D1) shows that $[\Lambda^i\otimes\mathfrak u(64,64)]^{\mathrm{Spin}(7,7)}$ is 2-dimensional for every $i$, so Def. 8.1's 15-element "basis" is half of the 30 invariants; the phase-1 report already listed this. The register now reads "→ **F** for the basis claim".
+  3. **"No local or short multiplicative construction reproduces them"** had re-entered `README.md` and abstract (iv) of `proofs/latex/ct-alpha-comment/comment.tex`, after R3-CT-2 corrected it elsewhere. Both now say "local in the original frame", and that a frame-local construction after transport needs two further inputs.
+  4. **"Checked against Lean"** (mechanical trial-factor space, F-CT-4 E) in `README.md`, `reports/SYNTHESIS.md`, `reports/chain-theory-alpha.md` and `audit.md` (summary row): Lean checked all 818 single mutants and a seeded sample of 300 pairs; the other pairs are evaluated only by the transcription. Also "does not depend on the space being declared by hand" now reads "robust to replacing the hand-declared space by a mechanically generated one, whose operator set is also ours", and the CT-G10 note says B is "complemented", not "replaced".
+  5. Smaller items:
+     - the README's premise-cycle bullet now carries both qualifiers of R3-CT-9;
+     - the README now says which results are not yet refereed, and that `#print axioms` covers every theorem only in `HowardArith` and `GaugeSelection`;
+     - the SYNTHESIS header gives seven compendium rounds;
+     - CT-C013 and compendium report F7 now give read caps 6 or 7 (Lean `unique_iff_cap`);
+     - CT-C014 now carries a round-4 pointer for its index cycles, and CT-C003 a pointer to the previous entry;
+     - GU-P10 is marked verified (round 2, F3/F4);
+     - CT-016's metric no longer gives the superseded closure criterion;
+     - CT-C003's metric and the round-5 GU metric now carry amendments for rounds 6–7 and round 6;
+     - the scorecard's weak-angle figure is ≈1.07×10³σ (against the on-shell value; the register's 1067σ is against $(M_W/M_Z)^2$);
+     - the GU note cites write-ups A–J;
+     - the Lean README's `actA_ne_zero_iff` gloss now reads "primitive when gcd(d1,d2) = 1".
