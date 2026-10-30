@@ -16,7 +16,7 @@ extraction:
   items: 1069
   items_quoted_verbatim: 1069
   statement_number_citations_in_derivations: 0
-  candidates_per_item: {none: 83, one: 236, several: 750}
+  candidates_per_item: {none: 82, one: 237, several: 750}   # 83 / 236 before R3-CT-8 (217 back-reference resolved to 217.3)
   designator_items: 397
   designator_readings_differ: 171
   title_overlap_favours: {MOD: 129, FIF: 3, tie: 39}
@@ -34,10 +34,11 @@ regrade_requested_theorems:   # 2.3, 2.6, 18.2, 16.1, 58.1, 200.6, 8.1, 27.1, 39
 regrade_reconstructed_theorems: {count: 23, index_open: 17, index_open_or_conditional: 19, J_violates: 17, J_declared_open: 8, J_undetermined: 6}
 conditionals_resting_on_open: {reconstructed: 17, derivation_J: 6, index: 10, list_J: ["18.1", "18.3", "18.4", "124.1", "146.1", "66.4"]}
 all_theorems_derivation_level:
-  J: {declared_open: 38, other_violations: 35, undetermined: 22, consistent: 3, no_premise_sentence: 2}
-  M_any_reading: {declared_open: 38, other_violations: 29, undetermined: 28, consistent: 3, no_premise_sentence: 2}
+  J: {declared_open: 41, other_violations: 35, undetermined: 19, consistent: 3, no_premise_sentence: 2}
+  M_any_reading: {declared_open: 41, other_violations: 29, undetermined: 25, consistent: 3, no_premise_sentence: 2}
   index_open: 66
-  overlap: {declared_and_index_open: 31, index_open_only: 35, declared_only: 7}
+  overlap: {declared_and_index_open: 34, index_open_only: 32, declared_only: 7}
+  corrected_after_review: "REVIEW3-CT R3-CT-8: 217.1, 217.2 ('the parent theorem and the open result stated above', 13-thermodynamics.tex:45; 217.3 O) and 223.2 ('(an open result and two theorems, read at their faces)', :297; 220.1 O) were undetermined in the first run (J 38/35/22/3/2, M 38/29/28/3/2, overlap 31/35/7); the extraction rule now gives the back-reference its grade word and treats a conjunctive grade phrase naming an open result as declaring an OPEN premise"
 cycles:
   index: {scc: 22, two_cycles_through_124_1: ["124.1<->16.1", "124.1<->58.1"], edges_cited_in_derivations: 0}
   index_sensitivity: {"4-5 module reading": {edges: 8366, scc: 22, two_cycles: ["124.1<->16.1"]}, "all chapter-form designators module reading": {edges: 8263, scc: 13, two_cycles: ["124.1<->16.1"]}}
@@ -60,14 +61,14 @@ load_bearing_T_plus_C:   # of 209; lower = holds whatever box each any-of citati
   "124.1": {index: 42, upper: 184, lower_M: 152, lower_J: 152, direct_index: 22, direct_M: 14, direct_J: 25, all_grades: {index: 70, lower: 313, upper_J: 391}}
 internal_consistency:
   value: violated
-  detail: "At statement level 38 of 100 THEOREMs declare an OPEN premise in their own derivation and at least 73 rest on a premise all of whose candidate boxes are CONDITIONAL or OPEN. The index cycles of 124.1 with 16.1 and 58.1 are absent from the derivations, but 124.1 rests on itself under every resolution of the any-of citations (via chapter 18), with 35.1 and 40.1 in the same forced component."
+  detail: "At statement level 41 of 100 THEOREMs declare an OPEN premise in their own derivation and at least 76 rest on a premise all of whose candidate boxes are CONDITIONAL or OPEN. The index cycles of 124.1 with 16.1 and 58.1 are absent from the derivations. Under the module-numbering reading of 'chapter 5-1' at 01-framework.tex:691 and with 'theorem' admitting CONDITIONAL, 124.1 rests on itself under every resolution of the any-of citations (via chapter 18), with 35.1 and 40.1 in the same forced component; the premise line printed beneath 18.1-18.6 (01-framework.tex:657-684) does not cite 124.1."
 proof_status: {value: not_applicable}
 novelty: {value: not_applicable}
 reproducibility:
   value: reproduced
   detail: "Index counts of round 1 (8367 edges, SCC 22) reproduced; outputs identical across runs and hash seeds; wall time about 6 s."
 empirical_testability: {value: not_applicable}
-dependencies: ["forced 124.1 cycle requires the module-numbering reading of 'chapter 5-1' in the derivation of 18.1-18.6 (under FIF 124.1 is on no forced cycle)", "per-box premises of 2.2-2.8, 9.7, 9.8, 18.1-18.6 not separable: shared derivations"]
+dependencies: ["forced 124.1 cycle requires the module-numbering reading of 'chapter 5-1' in the derivation of 18.1-18.6 (under FIF 124.1 is on no forced cycle; back.tex:1024: the running text cites by the module numbering)", "forced 124.1 cycle requires 'theorem' to admit CONDITIONAL (124.1 is C; section 124 holds no THEOREM)", "the forced 124.1 cycle is between the derivation sentence at 01-framework.tex:691 and the boxes' printed premise line, which does not cite chapter 5-1", "per-box premises of 2.2-2.8, 9.7, 9.8, 18.1-18.6 not separable: shared derivations"]
 confidence:
   value: medium_high
-  justification: "The declared-OPEN count (38) and the absence of the index 124.1 edges are mechanical and reading-independent. Lower bounds are exact under the stated rule; upper bounds are loose by construction. Judgment enters the J columns only, and every judged choice cites a verbatim title or text."
+  justification: "The declared-OPEN count (41; 38 before the R3-CT-8 fix of the extraction rule) and the absence of the index 124.1 edges are mechanical and reading-independent. Lower bounds are exact under the stated rule; upper bounds are loose by construction. Judgment enters the J columns only, and every judged choice cites a verbatim title or text."

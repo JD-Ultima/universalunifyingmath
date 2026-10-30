@@ -12,8 +12,8 @@ boxes with no derivation in their section: 9 ['1.1', '1.2', '1.3', '1.4', '1.5',
 [1] Layer M coverage (all derivations)
   groups with a premise sentence: 261 of 294; without: 33 (boxes 37, grades {'CONDITIONAL': 3, 'OPEN': 1, 'TABLE': 31, 'THEOREM': 2})
   items: 1069; by kind {'DES': 397, 'FRAME': 7, 'NOWHERE': 9, 'REF': 618, 'SELF': 38}
-  by grade word {'C': 4, 'D': 213, 'DT': 1, 'None': 30, 'O': 189, 'T': 579, 'TO': 2, 'Tab': 51}
-  candidates per item (MOD): none 83, one 236, several 750
+  by grade word {'C': 4, 'D': 213, 'DT': 1, 'None': 29, 'O': 190, 'T': 579, 'TO': 2, 'Tab': 51}
+  candidates per item (MOD): none 82, one 237, several 750
   item quotes found verbatim in the source: 1069 of 1069
   statement-number citations inside derivations ('Theorem 9.1', 'Open result 2.4', ...): 0; \ref{box:...} inside derivations: 0
   designator items (chapter P-c): 397; with a grade-compatible box under MOD 359, under FIF 303; readings differ at 171
@@ -319,10 +319,10 @@ boxes with no derivation in their section: 9 ['1.1', '1.2', '1.3', '1.4', '1.5',
     index edge 16.1 -> 124.1: derivation of 124.1 cites 16.1? M: no; J: no
     index edge 124.1 -> 58.1: derivation of 58.1 cites 124.1? M: no; J: no
     index edge 58.1 -> 124.1: derivation of 124.1 cites 58.1? M: no; J: no
-  layer M (MOD): 6304 edges; SCCs > 1: [261, 2]; SCC of 124.1: 261; shortest cycle through 124.1: ['124.1', '18.1']
-  layer M (FIF): 5668 edges; SCCs > 1: [208, 2, 2]; SCC of 124.1: 208; shortest cycle through 124.1: ['124.1', '172.1', 'Q.1', '2.4']
-  layer M (UNION): 6703 edges; SCCs > 1: [290, 2]; SCC of 124.1: 290; shortest cycle through 124.1: ['124.1', '18.1']
-  layer J (J where judged, M elsewhere): 5889 edges; SCC of 124.1: 258
+  layer M (MOD): 6306 edges; SCCs > 1: [261, 2]; SCC of 124.1: 261; shortest cycle through 124.1: ['124.1', '18.1']
+  layer M (FIF): 5670 edges; SCCs > 1: [208, 2, 2]; SCC of 124.1: 208; shortest cycle through 124.1: ['124.1', '172.1', 'Q.1', '2.4']
+  layer M (UNION): 6705 edges; SCCs > 1: [290, 2]; SCC of 124.1: 290; shortest cycle through 124.1: ['124.1', '18.1']
+  layer J (J where judged, M elsewhere): 5891 edges; SCC of 124.1: 258
   transitive premises of 124.1 (M MOD): 293; 16.1 among them: True; 58.1 among them: False
   transitive premises of 124.1 (M FIF): 231; 16.1 among them: True; 58.1 among them: False
   transitive premises of 124.1 (M UNION): 317; 16.1 among them: True; 58.1 among them: True
@@ -331,8 +331,8 @@ boxes with no derivation in their section: 9 ['1.1', '1.2', '1.3', '1.4', '1.5',
      16.1 -> 3.1: item g2.1 (any-of, 11 candidates) "the link with its six types (chapter 1-2, a theorem)"
      3.1 -> 28.1: item g23.1 (any-of, 8 candidates) "the one-act clause as a theorem of the derived act (chapter 1-1, a theorem)"
      28.1 -> 124.1: item g116.4 (any-of, 3 candidates) "the theorem of chapter~\ref{mod:I-6-read-at-a-register-the-probe-and-the-measurement}"
-  strict graph without J (single-candidate items only): 279 edges; SCCs > 1: []
-  strict graph (J choices where judged, single-candidate items elsewhere): 536 edges; SCCs > 1: [3]; SCC of 124.1: ['124.1', '18.2', '18.3']
+  strict graph without J (single-candidate items only): 281 edges; SCCs > 1: []
+  strict graph (J choices where judged, single-candidate items elsewhere): 538 edges; SCCs > 1: [3]; SCC of 124.1: ['124.1', '18.2', '18.3']
   boxes on a cycle under every resolution of the any-of items (M MOD): 6 ['35.1', '40.1', '73.1', '98.1', '121.1', '124.1']
   boxes on a cycle under every resolution of the any-of items (M FIF): 5 ['35.1', '40.1', '44.1', '98.1', '121.1']
   boxes on a cycle under every resolution of the any-of items (J): 10 ['2.3', '9.1', '35.1', '40.1', '66.4', '72.1', '73.1', '98.1', '121.1', '124.1']
@@ -368,14 +368,14 @@ boxes with no derivation in their section: 9 ['1.1', '1.2', '1.3', '1.4', '1.5',
 [8] All 100 THEOREMs, derivation level (J where judged, M elsewhere)
   consistent: 3
   no premise sentence: 2
-  undetermined: 22
+  undetermined: 19
   violates (CONDITIONAL/OPEN premise): 35
-  violates (declared OPEN premise): 38
+  violates (declared OPEN premise): 41
   (index: 66 of 100 list an OPEN premise)
-  sensitivity, layer M with reading FIF (no J): {'consistent': 3, 'no premise sentence': 2, 'undetermined': 28, 'violates (CONDITIONAL/OPEN premise)': 29, 'violates (declared OPEN premise)': 38}
-  sensitivity, layer M with reading UNION (no J): {'consistent': 3, 'no premise sentence': 2, 'undetermined': 28, 'violates (CONDITIONAL/OPEN premise)': 29, 'violates (declared OPEN premise)': 38}
-  layer M with reading MOD (no J): {'consistent': 3, 'no premise sentence': 2, 'undetermined': 28, 'violates (CONDITIONAL/OPEN premise)': 29, 'violates (declared OPEN premise)': 38}
+  sensitivity, layer M with reading FIF (no J): {'consistent': 3, 'no premise sentence': 2, 'undetermined': 25, 'violates (CONDITIONAL/OPEN premise)': 29, 'violates (declared OPEN premise)': 41}
+  sensitivity, layer M with reading UNION (no J): {'consistent': 3, 'no premise sentence': 2, 'undetermined': 25, 'violates (CONDITIONAL/OPEN premise)': 29, 'violates (declared OPEN premise)': 41}
+  layer M with reading MOD (no J): {'consistent': 3, 'no premise sentence': 2, 'undetermined': 25, 'violates (CONDITIONAL/OPEN premise)': 29, 'violates (declared OPEN premise)': 41}
   consistent: ['2.10', 'I.7.1', 'I.52.1']
   no premise sentence: ['I.1.2', 'I.16.2']
-  violates (declared OPEN premise): ['8.1', '16.1', '18.2', '27.1', '39.1', '55.1', '58.1', '61.1', '69.1', '70.1', '73.1', '79.1', '80.1', '83.1', '86.1', '104.1', '154.1', '170.1', '219.1', '220.2', '220.3', '221.1', '229.1', '230.1', '232.2', '233.1', '233.2', '233.4', '235.1', '235.2', '235.3', '235.4', 'P.1', 'R.1', 'U.1', 'I.12.1', 'I.13.1', 'I.40.1']
-  declared OPEN in the derivation and OPEN in the index list: 31; declared only: 7; index only: 35
+  violates (declared OPEN premise): ['8.1', '16.1', '18.2', '27.1', '39.1', '55.1', '58.1', '61.1', '69.1', '70.1', '73.1', '79.1', '80.1', '83.1', '86.1', '104.1', '154.1', '170.1', '217.1', '217.2', '219.1', '220.2', '220.3', '221.1', '223.2', '229.1', '230.1', '232.2', '233.1', '233.2', '233.4', '235.1', '235.2', '235.3', '235.4', 'P.1', 'R.1', 'U.1', 'I.12.1', 'I.13.1', 'I.40.1']
+  declared OPEN in the derivation and OPEN in the index list: 34; declared only: 7; index only: 32

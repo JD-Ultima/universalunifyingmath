@@ -31,6 +31,11 @@
 'GaugeSelection.readable_unbounded' depends on axioms: [propext, Quot.sound]
 'GaugeSelection.selection_any_alphabet' depends on axioms: [propext, Quot.sound]
 'GaugeSelection.unique_iff_cap_unbounded' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.unique_iff_cap_23' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.unique_iff_cap_235' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.alphabet_23_cap100' does not depend on any axioms
+'GaugeSelection.alphabet_235_cap9' does not depend on any axioms
+'GaugeSelection.alphabet_235_not_interval' does not depend on any axioms
 'GaugeSelection.alphabet_with_one' does not depend on any axioms
 'GaugeSelection.cap6_acting_with_one' depends on axioms: [propext, Quot.sound]
 'GaugeSelection.drop_cap_unbounded' depends on axioms: [propext, Quot.sound]

@@ -155,7 +155,7 @@ premises (round 4):
           forced cycle (every resolution of any-of items, MOD): {35.1, 40.1, 124.1} via "the theorem of chapter 18" and
           "the explicit two-point function with its records (chapter 5-1)"; strict graph with judgment: one SCC {124.1, 18.2, 18.3}
           14 requested THEOREMs: index OPEN 10, OPEN/COND 12; derivations (J) declared OPEN 8, violate 10, undetermined 4, consistent 0
-          all 100 THEOREMs: declared OPEN 38, other violations 35, undetermined 22, consistent 3, no premise sentence 2
+          all 100 THEOREMs: declared OPEN 41, other violations 35, undetermined 19, consistent 3, no premise sentence 2 (rule fixed after REVIEW3-CT R3-CT-8; was 38 / 35 / 22)
           F4 lower bounds (T+C): 2.2 -> 1; 2.4/2.5/2.7/2.8 -> 153; 9.1/9.7 -> 151 (J); 9.8 -> 0; 18.x -> 0; 124.1 -> 152 (313 all grades)
 lean (round 6):
           16 rows -> 8 declarations (7 restated AlphaDerivation, 1 kernel); 26 conjuncts: COMPUTED 13, +LITERAL 6, GENERAL 5,

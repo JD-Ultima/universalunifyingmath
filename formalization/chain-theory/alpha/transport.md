@@ -1,9 +1,9 @@
 # Transporting the qubit letters to the qutrit copies (gaps CT-G01, CT-G02)
 
 **Object.** The weight law of the α Letter (Wissner-Gross, v1.0.0, Eq. (5), Supplement Thm S-gain): record $r$ has weight $\sqrt{k_r}$, with $k_r=1$ on E′-odd products, $2$ on E′-even mixed, $3$ on E′-even same-end (the 6 E′-even qubit–qubit records included), $6$ on the 3 commutator records. As in `operator-origin.md`, the records are the 172 covariant ones (exchange $E'=E\circ T$, F-CT-10), and $M_L=\operatorname{diag}\sqrt{k_r}$, $K_L=M_L^2$.
-**Question.** `operator-origin.md` §5 left one direction untested. First carry the qubit letters to the qutrit copies through the read links $|\omega_2\rangle_{Q_iq_i}$ (support: levels 0, 1 of $Q_i$), by the transpose identity $(A\otimes1)|\omega\rangle=(1\otimes A^{\mathsf T})|\omega\rangle$. Then credit the three directions of the join $|\omega_3\rangle_{Q_1Q_2}$. Can a construction of this kind give $3$ and $6$ on the 12 qubit-only records and $1,2,3$ on the other records? It is tested as an operator, as its diagonal, and as per-isotypic traces.
+**Question.** `operator-origin.md` left one direction open (its §5 now points here). First carry the qubit letters to the qutrit copies through the read links $|\omega_2\rangle_{Q_iq_i}$ (support: levels 0, 1 of $Q_i$), by the transpose identity $(A\otimes1)|\omega\rangle=(1\otimes A^{\mathsf T})|\omega\rangle$. Then credit the three directions of the join $|\omega_3\rangle_{Q_1Q_2}$. Can a construction of this kind give $3$ and $6$ on the 12 qubit-only records and $1,2,3$ on the other records? It is tested as an operator, as its diagonal, and as per-isotypic traces.
 **Code.** `computation/chain-theory/alpha/transport.py` → `transport.out`. It loads the definitions and tests of `operator_origin.py`, which itself imports `records_independent.py` and `symmetry.py`; none of the three is modified. "out §n" means section n of the output.
-**Date.** 2026-10-30. Exploratory analysis toward CT-G01/CT-G02. The audited value is not changed.
+**Date.** 2026-10-30. Exploratory analysis toward CT-G01/CT-G02. The audited value is not changed. The negative statement and the naming of the two frames revised after review REVIEW3-CT (R3-CT-5, R3-CT-6; `reports/CORRECTIONS.md`).
 
 ## Result in brief
 
@@ -22,16 +22,16 @@
 5. **Words with transport letters** (family F3a: 22 635 words containing a transport letter, 5953 distinct compressions analysed). No word is class-scalar or has a class-constant diagonal in any test. The best per-isotypic residual is 0.0947, against 0.2070 for the identity and 0.1008 for the best word of F1.
 
 **Precise negative statement.**
-- No linear construction through the transport reproduces $M_L$ or $K_L$. Uniform transport fails by Theorem 4, for any $D$. Selective transport needs the selector $[\hat N_Q=0]$ of the 12 qubit-only records, which is the content of $\Pi_X$ again (Prop. 3(5)).
+- No compression $T^\dagger DT$ and no Rayleigh quotient of any $D$ through any of the six transports gives $M_L$ or $K_L$ (Theorem 4). Selective transport needs the selector $[\hat N_Q=0]$ of the 12 qubit-only records, which is the content of $\Pi_X$ again (Prop. 3(5)). Sums such as $A+T^\dagger BT$ are not covered.
 - Among the record-wise frame rules F3, $M_L$ requires all three of the following:
-  - (a) the exchange of reads assessed in the transported frame;
-  - (b) the exchange of links assessed in the original frame;
+  - (a) the exchange that credits the 6 E′-even qubit–qubit records assessed in the transported frame;
+  - (b) the exchange that credits the 48 E′-even mixed records assessed in the original frame, at the qubit end;
   - (c) the rank-3 credit J1, given to letters that are supported on a rank-2 subspace.
   
-  Each is a choice. (a) and (b) are forced by $M_L$ itself (Theorem 6), not derived. (c) is the $G_\Omega$-invariant credit, while the transport is only $H$-covariant.
+  Each is a choice. (a) and (b) are forced by $M_L$ itself (Theorem 6), not derived. With the Letter's domains these two exchanges are its X and Y; in the other two of the 3 unordered hits the transported exchange acts on {qq, comm} only and the original one on {QQ, mix, comm} (out §5), so "the exchange of reads transported" names the exchange by its role. (c) is the $G_\Omega$-invariant credit, while the transport is only $H$-covariant.
 - No word in F3a reproduces $\sqrt{k_r}$ or $k_r$ as operator, diagonal or per-isotypic traces. This holds also after the $G_\Omega\times\langle E'\rangle$-twirl, and for $|C|$ and $\sqrt C$.
 
-**Consequence.** The transport gives the end rule an operator-level reading: "the exchange of reads is assessed where every letter has been carried to the end at which its read is taken." In that frame, crediting the qutrit to the qubit–qubit records is local: their transported images *are* QQ records of the same E′-parity (Prop. 3(1)), and the pull-back of $M_L$ agrees with $M_L$ on them. The cost is two separate choices. One is which exchange is assessed in which frame. The other is whether the join is credited with the symmetry of the join ($\sqrt3$) or with that of the transport ($2/\sqrt3$ or $\sqrt2$). The Letter's value needs the first option in both. CT-G01 is not closed. It reduces to CT-G02, now as these two choices, and to CT-G08.
+**Consequence.** The transport gives the end rule an operator-level reading (for the Letter's domains): "the exchange of reads is assessed where every letter has been carried to the end at which its read is taken." In that frame, crediting the qutrit to the qubit–qubit records is local: their transported images *are* QQ records of the same E′-parity (Prop. 3(1)), and the pull-back of $M_L$ agrees with $M_L$ on them. The cost is two separate choices. One is which exchange is assessed in which frame. The other is whether the join is credited with the symmetry of the join ($\sqrt3$) or with that of the transport ($2/\sqrt3$ or $\sqrt2$). The Letter's value needs the first option in both. CT-G01 is not closed. It reduces to CT-G02, now as these two choices, and to CT-G08.
 
 ---
 
@@ -214,7 +214,7 @@ All 9 are E′-covariant and $H$-equivariant, and $\mathbb Q$-rational (denomina
 
 - **Derived (record-wise).** In the 6 F3 choices that give $M_L$, the end credited to each class follows from the frame and locality. In particular, the qutrit credit of the 9 qq records follows from the operator identity $T_*(\text{qq})=$ QQ records (Prop. 3(1)).
 - **Input.**
-  - (i) The frame of each exchange: X transported, Y original. By Theorem 6 this is forced by $M_L$, but nothing in the construction selects it. It restates the end-rule clause ("a read is an act at the end at which it is taken") and the copies clause ("the exchange of links moves only what sits at the far ends").
+  - (i) The frame of each exchange: the exchange that credits the qubit–qubit records is transported, the one that credits the mixed records is original (for the Letter's domains: X and Y). By Theorem 6 this is forced by $M_L$, but nothing in the construction selects it. It restates the end-rule clause ("a read is an act at the end at which it is taken") and the copies clause ("the exchange of links moves only what sits at the far ends").
   - (ii) The credit at the join, J1. It is the $G_\Omega$-invariant credit, while the transport is only $H$-covariant. Under $H$, the minimal invariant support of a transported letter has rank 2 (Theorem 5).
   - (iii) At the level of linear operators, the selector $[\hat N_Q=0]$ (Prop. 3(5)), or else the fiber obstruction (Theorem 4).
 - **Symmetry.**
@@ -246,7 +246,7 @@ All 9 are E′-covariant and $H$-equivariant, and $\mathbb Q$-rational (denomina
 - **CT-G01.** The direction left open in `operator-origin.md` §5 is tested.
   - A transport construction reproduces $M_L$ exactly. In it, the class-by-class attribution is derived from a frame and locality, and the qubit–qubit records inherit the QQ weight because their transported images are QQ records.
   - It is not an operator origin in CT-G01's sharpened sense ("an operator construction in which the end attribution is not an input"):
-    - as a linear operator it either fails for every $D$ (Theorem 4) or needs the qubit-only selector (Prop. 3(5));
+    - as a compression $T^\dagger DT$ or a Rayleigh quotient of $D$ it fails for every $D$ (Theorem 4), and selective transport needs the qubit-only selector (Prop. 3(5));
     - as a record-wise rule it needs the frame assignment and the credit J1 as inputs (Theorem 6, Theorem 5).
   - With the transport-compatible credits the value moves to 140.702 (J2) or 139.030 (J3). The gap stays open.
 - **CT-G02.** "The end at which an exchange acts" now has an operator-level reading: the frame obtained by transporting along the read links. It no longer refers to the wording. Two things still have to be chosen: which exchange is read in which frame (of the 9 frame pairs, only {tr, orig-q} works), and whether the join is credited with the symmetry of the join ($\sqrt3$) or of the transport ($2/\sqrt3$, $\sqrt2$). The Letter's value corresponds to the first option in each.

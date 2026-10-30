@@ -32,10 +32,10 @@ LEAN=/path/to/lean-4.35.0-linux/bin/lean ./run_gauge.sh > GaugeSelection.out
 
 - Wall time is about 10 s.
 - The output is in `GaugeSelection.out`: exit 0, no warnings.
-- 66 theorems, each followed by `#print axioms`:
-  - 33 use no axioms;
+- 71 theorems, each followed by `#print axioms`:
+  - 36 use no axioms;
   - 7 use `propext` only;
-  - 26 use `propext` and `Quot.sound`.
+  - 28 use `propext` and `Quot.sound`.
 - No theorem uses `Classical.choice` or `sorryAx`.
 - The two `#eval` tables in the output (the selection for caps 0-16, and the six kernel triples) are for reading only; the theorems are the certificates.
 
@@ -43,7 +43,7 @@ LEAN=/path/to/lean-4.35.0-linux/bin/lean ./run_gauge.sh > GaugeSelection.out
 
 - **G3, the selection.** The inputs are the read cap $d_1d_2\le c$, the acting centre $d_1\ne d_2$, and the alphabet $\{2,3,4\}$, which is 9.1's "admitted alphabet". It is not 2.7 "The act alphabet", which is about the two move letters.
   - `selection`: the three inputs together select $(3,2)$. `readable_types`: the cap alone selects $(2,2),(3,2)$; this is also the result of dropping the acting centre. `drop_cap`: the acting centre alone selects $(3,2),(4,2),(4,3)$.
-  - `cap_profile` holds for every cap $c$: $(3,2)$ enters at 6, $(4,2)$ at 8 and $(4,3)$ at 12. `unique_iff_cap`: the selection is exactly $\{(3,2)\}$ iff $6\le c\le7$. `unique_iff_cap_unbounded` proves the same for every alphabet of integers $\ge2$. `cap_4`, `cap_8`, `cap_9` and `cap_12` give the sensitivity values in the note.
+  - `cap_profile` holds for every cap $c$: $(3,2)$ enters at 6, $(4,2)$ at 8 and $(4,3)$ at 12. `unique_iff_cap`: the selection is exactly $\{(3,2)\}$ iff $6\le c\le7$. `unique_iff_cap_unbounded` proves the same over the alphabet of all integers $\ge2$ (every pair $d_1>d_2\ge2$), hence over every alphabet of integers $\ge2$ that contains 2, 3 and 4. Without 4 the interval differs: every cap $\ge6$ over $\{2,3\}$ (`unique_iff_cap_23`), caps 6-9 over $\{2,3,5\}$ (`unique_iff_cap_235`; instances `alphabet_23_cap100`, `alphabet_235_cap9`, `alphabet_235_not_interval`). `cap_4`, `cap_8`, `cap_9` and `cap_12` give the sensitivity values in the note.
   - The upper end of the alphabet does not matter. `alphabet_2_to_8` gives 28 genres, with the same selection. `selection_any_alphabet` holds for any alphabet of integers $\ge2$ that contains 2 and 3. The lower end does matter: admitting $d=1$ adds $(2,1),(3,1),(4,1)$, and, with no upper end, also $(5,1),(6,1)$ (`alphabet_with_one`, `cap6_acting_with_one`).
   - Under the conjugate convention of F-CT-3, the acting criterion holds at every genre (`actingConj_always`). The selection is then $(2,2),(3,2)$ (`conj_selection`).
   - Under the upstream readability predicate (both ends $\le3$), $(3,2)$ is still the only selection (`upstream_selection`). Under the conjugate convention with that predicate, $(2,2),(3,2),(3,3)$ survive (`upstream_conj_selection`; cf. `ReviewCheck`).

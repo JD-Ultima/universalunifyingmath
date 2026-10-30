@@ -9,7 +9,9 @@ What is checked (section numbers below):
   types under the cap d1 d2 ≤ 6; the selection of (3,2) by "readable and acting centre"; each input
   dropped or varied in turn (cap, d1 ≠ d2, alphabet upper end, alphabet lower end, the conjugate
   convention of the alpha audit, the upstream "both ends ≤ 3" readability predicate); the exact set of
-  caps for which (3,2) is the unique selection, over {2,3,4} and over every alphabet of integers ≥ 2.
+  caps for which (3,2) is the unique selection, over {2,3,4} and over the alphabet of all integers ≥ 2
+  (hence over every alphabet of integers ≥ 2 that contains 2, 3 and 4); alphabets without 4 have
+  other cap sets ({2,3}: every cap ≥ 6; {2,3,5}: caps 6-9).
 * §2 (G2/G3, the genre-matrix formulas). dim f = d1² + d2² - 1, derived dim = dim f - 1,
   rank = d1 + d2 - 1, central scalar d2 - d1: the printed genre matrix; the "dim 12 and rank 4"
   uniqueness cell, and each of its two conditions alone, over the six genres and over all of ℕ.
@@ -147,7 +149,9 @@ theorem selection_any_alphabet (A : List Nat) (hA : ∀ a ∈ A, 2 ≤ a) (h2 : 
     obtain ⟨rfl, rfl⟩ := he
     exact ⟨⟨2, h2, 3, ⟨h3, by decide⟩, rfl⟩, by decide⟩
 
-/-- Unique selection over every alphabet of integers ≥ 2 holds exactly for caps 6 and 7. -/
+/-- Over the alphabet of all integers ≥ 2 (every pair d1 > d2 ≥ 2), (3,2) is the only readable acting
+pair exactly for caps 6 and 7. Hence the same holds over every alphabet of integers ≥ 2 that contains
+2, 3 and 4; it is not a statement about alphabets without 4 (`unique_iff_cap_23`, `unique_iff_cap_235`). -/
 theorem unique_iff_cap_unbounded (c : Nat) :
     (∀ d1 d2, 2 ≤ d2 → d2 < d1 → (d1 * d2 ≤ c ↔ d1 = 3 ∧ d2 = 2)) ↔ 6 ≤ c ∧ c < 8 := by
   constructor
@@ -166,6 +170,22 @@ theorem unique_iff_cap_unbounded (c : Nat) :
         omega
       exact ⟨by omega, by omega⟩
     · rintro ⟨rfl, rfl⟩; omega
+
+/-- Alphabets of integers ≥ 2 without 4 have other cap sets. Over {2,3}: every cap ≥ 6. -/
+theorem unique_iff_cap_23 (c : Nat) : select c [2, 3] = [(3,2)] ↔ 6 ≤ c := by
+  simp only [select, genres, readable, acting]
+  by_cases h6 : 6 ≤ c <;> simp [List.filter, h6]
+
+/-- Over {2,3,5}: caps 6 to 9 ((5,2) enters at 10, (5,3) at 15). -/
+theorem unique_iff_cap_235 (c : Nat) : select c [2, 3, 5] = [(3,2)] ↔ 6 ≤ c ∧ c < 10 := by
+  simp only [select, genres, readable, acting]
+  by_cases h6 : 6 ≤ c <;> by_cases h10 : 10 ≤ c <;> by_cases h15 : 15 ≤ c <;>
+    simp [List.filter, h6, h10, h15] <;> omega
+
+/-- Two instances (review R3-CT-10), and the interval 6 ≤ c < 8 failing at {2,3,5}. -/
+theorem alphabet_23_cap100 : select 100 [2, 3] = [(3,2)] := by decide
+theorem alphabet_235_cap9 : select 9 [2, 3, 5] = [(3,2)] := by decide
+theorem alphabet_235_not_interval : ¬ (select 9 [2, 3, 5] = [(3,2)] ↔ 6 ≤ 9 ∧ 9 < 8) := by decide
 
 /-- Drop the lower end of the alphabet (admit d = 1): at cap 6 four genres over {1,2,3,4}. -/
 theorem alphabet_with_one : select 6 [1, 2, 3, 4] = [(2,1), (3,1), (4,1), (3,2)] := by decide
@@ -669,6 +689,11 @@ end GaugeSelection
 #print axioms GaugeSelection.readable_unbounded
 #print axioms GaugeSelection.selection_any_alphabet
 #print axioms GaugeSelection.unique_iff_cap_unbounded
+#print axioms GaugeSelection.unique_iff_cap_23
+#print axioms GaugeSelection.unique_iff_cap_235
+#print axioms GaugeSelection.alphabet_23_cap100
+#print axioms GaugeSelection.alphabet_235_cap9
+#print axioms GaugeSelection.alphabet_235_not_interval
 #print axioms GaugeSelection.alphabet_with_one
 #print axioms GaugeSelection.cap6_acting_with_one
 #print axioms GaugeSelection.drop_cap_unbounded

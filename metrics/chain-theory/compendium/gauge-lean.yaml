@@ -6,16 +6,17 @@ note: formalization/chain-theory/compendium/03-gauge-group.md (section 7)
 code: [proofs/lean/chain-theory/GaugeSelection.lean, proofs/lean/chain-theory/run_gauge.sh]
 outputs: [proofs/lean/chain-theory/GaugeSelection.out]
 lean: {version: "4.35.0", library: core_only, imports: none, upstream_file: not_used, wall_time_s: 10}
-theorems: 66
-axioms: {none: 33, propext: 7, propext_quot_sound: 26, classical_choice: 0, sorryAx: 0}
+theorems: 71
+axioms: {none: 36, propext: 7, propext_quot_sound: 28, classical_choice: 0, sorryAx: 0}
 certified:
   G3_selection:
     alphabet_2_3_4_cap_6_acting: "[(3,2)]"
     drop_acting_centre: "[(2,2),(3,2)]"
     drop_cap: "[(3,2),(4,2),(4,3)]"
     cap_profile: "(3,2) from cap 6, (4,2) from 8, (4,3) from 12 (all caps)"
-    unique_iff_cap: "6 <= cap <= 7 (alphabet {2,3,4}; also every alphabet of integers >= 2)"
-    alphabet_upper_end: "irrelevant: any alphabet of integers >= 2 containing 2 and 3 selects (3,2) only"
+    unique_iff_cap: "6 <= cap <= 7 (alphabet {2,3,4}; also the alphabet of all integers >= 2, hence every alphabet of integers >= 2 containing 2, 3 and 4)"
+    alphabets_without_4: "{2,3}: every cap >= 6; {2,3,5}: 6 <= cap <= 9 (unique_iff_cap_23, unique_iff_cap_235)"
+    alphabet_upper_end: "irrelevant at cap 6: any alphabet of integers >= 2 containing 2 and 3 selects (3,2) only"
     alphabet_lower_end: "d = 1 admitted: (2,1),(3,1),(4,1) added over {1..4}; (d,1), d <= 6, with no upper end"
     conjugate_convention: "acting criterion holds at every genre; selection (2,2),(3,2)"
     upstream_readable_ends_le_3: {readable: "[(2,2),(3,2),(3,3)]", with_acting: "[(3,2)]", with_conjugate: "[(2,2),(3,2),(3,3)]"}
@@ -48,8 +49,8 @@ not_certified:
   - "det(l 1_d) = l^d for d other than 2, 3"
   - "the read cap value (9.1, CONDITIONAL) and the choice of criteria; physics identifications (G5)"
 findings:
-  cap_interval: "uniqueness of (3,2) holds exactly for caps 6 and 7"
-  alphabet: "enters only through min >= 2 and 2, 3 in A"
+  cap_interval: "uniqueness of (3,2) holds exactly for caps 6 and 7 over any alphabet of integers >= 2 containing 2, 3, 4; other intervals without 4"
+  alphabet: "at cap 6, enters only through min >= 2 and 2, 3 in A; the cap interval depends on 4 in A"
   dim_rank_cell: "each of dim 12, rank 4 alone selects (3,2)"
   normalisation: "printed central scalars use the unreduced generator (d2,-d1); the primitive one gives 1 at (4,2); lcm kernel order needs the primitive covering"
 corrections_logged: "ConventionCheck.lean comment calls (d2,-d1) primitive (true only for gcd 1); no theorem affected"
@@ -67,4 +68,4 @@ reproducibility:
   detail: "LEAN=... ./run_gauge.sh > GaugeSelection.out (standalone)."
 confidence:
   value: high
-  justification: "Kernel-checked; statements quantify over all caps, all alphabets of integers >= 2 and all commutative rings where stated; the uncertified steps are listed and standard."
+  justification: "Kernel-checked; statements quantify over all caps, all pairs of integers >= 2, all alphabets of integers >= 2 containing 2 and 3, and all commutative rings where stated; the uncertified steps are listed and standard."

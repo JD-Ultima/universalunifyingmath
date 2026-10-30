@@ -259,7 +259,7 @@ What changes in `04-lean-coverage.md`:
 - §1's gloss "hand-entered list" fails for 2 of the 137 string-only modules (§4 above).
 - "Build not re-run" is superseded by §5-6.
 
-No count of rounds 1-5 is wrong, so `reports/CORRECTIONS.md` gets no entry.
+No count of rounds 1-5 is wrong; one gloss is corrected (`reports/CORRECTIONS.md`, 2026-10-30: the 04 "hand-entered" gloss and "Build not re-run").
 
 ## 8. Limits
 

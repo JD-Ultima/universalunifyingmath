@@ -40,19 +40,24 @@ Layer **M** (mechanical, all derivations; implemented in `premises.py`, rules M1
 3. *Items.* Every chapter reference in the sentence is an item: `chapter~\ref{mod:L}` (one section, printed as its
    number), a designator "chapter P-c", "this/the present chapter/the ... chapter above", "the framework", or a
    premise "outside the chapters"/"placed at no chapter" of the compendium. The grade word comes from the item's own
-   parenthesis, "the theorem/open result of chapter", a following ", a theorem", or a plural grade closing a run of
-   references. 1069 items; each quote occurs verbatim in the source (1069 of 1069).
+   parenthesis, "the theorem/open result of chapter", "the open result stated above", a following ", a theorem", or a
+   plural grade closing a run of references. 1069 items; each quote occurs verbatim in the source (1069 of 1069).
 4. *Candidates.* The boxes of the cited sections whose grade fits the grade word. "Theorem" admits T and C, because
    the source uses it for conditional theorems: 9.1 (C) is "a theorem" at `01-framework.tex:582` and "a conditional
    theorem" at `:691`. "Open result" admits O, "table"/"instrument" Tab, and "the text"/"definitions" D (Definitions
-   1.1-1.6 when the description names the axiom or definitions). An ungraded item admits every box. Items with no
-   candidate: 83. Items with one: 236. Items with several: 750; for these the text says only that the box rests on
-   one of them ("any-of").
+   1.1-1.6 when the description names the axiom or definitions). A conjunctive phrase that names an open result ("a
+   theorem and an open result", "an open result and two theorems") admits T, C and O. "This/the present chapter"
+   admits the boxes of the own module chapter outside the group, "the ... chapter above" only those before it, and
+   "the open result stated above" the boxes above the derivation, the group's own included (the box itself
+   excluded). An ungraded item admits every box. Items with no candidate: 82. Items with one: 237. Items with
+   several: 750; for these the text says only that the box rests on one of them ("any-of").
 5. *Designators.* Two readings. **MOD**: the module numbering, i.e. the sections whose label begins
    `<roman P>-c-`. **FIF**: the `first_section..last_section` range of `designators.tsv`, which is the index's own
    mapping. The two differ at 171 of 397 designator items. At those 171, the description shares more title words with
    the MOD candidates at 129 and with the FIF candidates at 3 (39 ties). MOD is used throughout, and FIF is reported
-   as a sensitivity run. In one checked case the index's own explicit list also follows MOD: 16.1's index list has
+   as a sensitivity run. The source states the convention (`tex/back.tex:1024`): "Much of the running text cites by
+   the module numbering, and the lists of premises beneath the boxes cite by the current one." Derivation sentences
+   are running text. In one checked case the index's own explicit list also follows MOD: 16.1's index list has
    "Theorem 124.1", "Theorems 185.1 to 185.12" and "Theorems 200.1 to 200.3". These lie in sections 124, 185 and 200,
    the first sections of the module chapters 5-1, 8-1 and 6-10 that 16.1's derivation cites. Under FIF those
    designators are the chapters IV-1, VI-1 and X-10.
@@ -65,7 +70,8 @@ unresolved (M kept), and 1 is dropped: "the gauge group ... as a comparison targ
 derivation itself marks as not an input.
 
 **Test.** A THEOREM *violates* the rule if, for one of its items, every candidate (itself excluded) is C or O. It
-violates with a *declared OPEN* premise if the item's own grade word is "open result". It is *undetermined* if an item
+violates with a *declared OPEN* premise if the item's own grade word is "open result" or a conjunction naming one
+(the item then names an OPEN box among those it lists). It is *undetermined* if an item
 mixes T/D/Tab candidates with C/O candidates. Tab and instruments are neutral, per the front-matter sentence above.
 
 ## 3. Results
@@ -144,12 +150,24 @@ standing". The source does not say which of the two readings it intends.
    exactly one cycle component, {124.1, 18.2, 18.3}; its two-cycle is 124.1 ↔ 18.2. Its two edges are the sentences at
    `01-framework.tex:691` and `07-cell-3-2-photon.tex:44`. Under J the forced component grows to {9.1, 35.1, 40.1,
    66.4, 72.1, 73.1, 124.1}.
-3. *What the cycle depends on.* It needs the shared-derivation rule and the MOD reading of "chapter 5-1". Under FIF,
-   5-1 is chapter IV-1 (64.1, 64.2), and 124.1 is on no forced cycle. 35.1, 40.1 and 44.1 are on one. The evidence for
-   MOD is in §2.5.
+3. *What the cycle depends on.* It needs three things: the shared-derivation rule (structural: one `chproof`
+   follows the six boxes 18.1-18.6, `01-framework.tex:652-690`), the MOD reading of "chapter 5-1" in the sentence at
+   `:691`, and "theorem" admitting CONDITIONAL (§5.6: read strictly, "(chapter 5-1, a theorem)" excludes 124.1 and
+   leaves 134.1 and 135.1, whose own step to 124.1, "the fine-structure constant at the one link ..., a theorem",
+   would then be unlocated, since section 124 holds no THEOREM). Under FIF, 5-1 is chapter IV-1 (64.1 "Gauge
+   invariance as the known clause", 64.2 "The gauge group as the face group of the tether"), which holds no two-point
+   function, and 124.1 is on no forced cycle; 35.1, 40.1 and 44.1 are on one. The evidence for MOD is in §2.5.
+
+   *Evidence against the cycle.* The premise line printed beneath each of 18.1-18.6 (`\chdeps`, `01-framework.tex:657,
+   662, 668, 674, 679, 684`; the same in `index/statements.tsv`) reads "Definitions 1.1 to 1.6, Theorems 2.1 to 2.3,
+   Open results 2.4 and 2.5, Theorem 2.6, Open results 2.7 and 2.8 and Theorems 2.9 and 2.10 and Theorems 9.1 to 9.7
+   and Open result 9.8". It cites neither chapter 5-1 nor the chapter-1-5 open result of the `:691` sentence. So the
+   cycle is the derivation sentence at `:691`, read by the module numbering and with "theorem" admitting CONDITIONAL,
+   against the boxes' own premise line. It is not a cycle in any one premise record of the source. MOD is the
+   better-supported reading of `:691`, not a forced one.
 4. *The any-of graph is no evidence either way.* Expanding every chapter citation to all its grade-compatible boxes
    gives strongly connected components of 261 (MOD), 208 (FIF) and 290 (union) statements. This is the same mechanism
-   that produced the index cycles. Other forced cycles outside the request: 73.1, 98.1, 121.1 (MOD).
+   that produced the index cycles. Other forced cycles outside the request: 73.1, 98.1, 121.1 (MOD). Each is a one-box component, i.e. a self-loop: the derivation cites its own chapter, whose only candidate is the box itself. The re-grade ignores such self-references; the cycle test reports them (and 2.3 in J) so that they stay visible. They are not cycles through other statements.
 
 **R5. F3 and F4 recomputed.**
 
@@ -157,16 +175,22 @@ standing". The source does not say which of the two readings it intends.
 
 | verdict | count |
 |---|---|
-| declare an OPEN premise | 38 |
+| declare an OPEN premise | 41 |
 | other definite violations | 35 |
-| undetermined | 22 |
+| undetermined | 19 |
 | consistent (2.10, I.7.1, I.52.1) | 3 |
 | no premise sentence (I.1.2, I.16.2) | 2 |
 
-Without J, under any of MOD, FIF or the union of the two: 38 / 29 / 28 / 3 / 2.
+Without J, under any of MOD, FIF or the union of the two: 41 / 29 / 25 / 3 / 2.
 
-Of the index's 66 THEOREMs with an OPEN premise, 31 declare one in their derivation and 35 do not. Another 7 declare
+Of the index's 66 THEOREMs with an OPEN premise, 34 declare one in their derivation and 32 do not. Another 7 declare
 one that the index does not list.
+
+Three of the 41 were classed undetermined before review REVIEW3-CT (R3-CT-8). 217.1 and 217.2 share their derivation
+with 217.3 (O); it rests on "the parent theorem and the open result stated above" (`13-thermodynamics.tex:45`), and
+the open result above it is 217.3. 223.2 rests on "the order parameter of Section~\ref{mod:XI-4-...} (an open result
+and two theorems, read at their faces)" (`:297`), which names 220.1 (O), 220.2 and 220.3 (T). Both readings are
+section-level or SELF, so they do not depend on the designator reading.
 
 *F4* ([7]): transitive T+C dependents (of 209), index against derivation level. The upper bound is reachability in
 the any-of graph. The lower bound counts dependence that holds whatever box each any-of citation means (fixpoint).
@@ -184,15 +208,15 @@ the any-of graph. The lower bound counts dependence that holds whatever box each
 ## 4. Which earlier numbers change
 
 - **Robust.**
-  - Most THEOREMs violate the chain rule. The index gives 84 (OPEN or CONDITIONAL); the derivations give at least 73
-    definite violations and 22 undetermined cases.
+  - Most THEOREMs violate the chain rule. The index gives 84 (OPEN or CONDITIONAL); the derivations give at least 76
+    definite violations and 19 undetermined cases.
   - "Premise lists cite whole chapters" is now the source's own statement (`01-framework.tex:109`).
   - Kind words are unreliable in the derivations too: CONDITIONAL boxes are cited as "a theorem".
   - The OPEN axiom readings 2.4/2.5/2.7/2.8, taken as a set, still sit under at least 153 of 209 T+C statements: many
     derivations cite "the open result of chapter 2".
   - 9.1/9.7 sit under at least 151, given J.
 - **Changed.**
-  - "66 of 100 THEOREMs list an OPEN premise" is a property of the index. At statement level, 38 THEOREMs declare an
+  - "66 of 100 THEOREMs list an OPEN premise" is a property of the index. At statement level, 41 THEOREMs declare an
     OPEN premise in their own derivation.
   - The F4 loads of 2.2 (183), 9.8 (175) and 18.1/18.3/18.4 and 18.5/18.6 (152 each) are not supported statement by
     statement. Their lower bounds are 1, 0, 0 and 0: these boxes are load-bearing only as members of whole-chapter
@@ -201,13 +225,21 @@ the any-of graph. The lower bound counts dependence that holds whatever box each
     index; its definite transitive dependents are at least 313, against 70 (152 against 42 among T+C). The reason is
     that the gain-lemma chapter, which most derivations cite, rests on 124.1.
   - The 124.1 cycles with 16.1 and 58.1 are artifacts of whole-chapter citation. The forced cycle {124.1, 35.1, 40.1}
-    through chapter 18 is not.
+    through chapter 18 is not, but it rests on the derivation sentence at `01-framework.tex:691` read by the module
+    numbering and with "theorem" admitting CONDITIONAL; the premise line printed beneath 18.1-18.6 does not cite 124.1
+    (R4.3).
 - **Earlier statement corrected** (logged in `reports/CORRECTIONS.md`). `00-dependency-structure.md` §2 says that
   `designators.tsv` "resolves 1-2 and 4-5 uniquely, so the 124.1 cycles do not depend on that ambiguity". But
   `designators.tsv` gives 4-5 two readings (first_section III-5, module IV-5; mapped_by "fifteen"). With 4-5 read by
   the module numbering, the index two-cycle 124.1 ↔ 58.1 disappears (8366 edges, component still 22). With every
   chapter-form designator read that way, the component has 13 members and only 124.1 ↔ 16.1 remains ([2]). All index
   counts are reproduced unchanged.
+- **Round-4 counts corrected** (review REVIEW3-CT, R3-CT-8; logged in `reports/CORRECTIONS.md`). The extraction rule
+  gave the SELF item "the open result stated above" no grade word and no candidate, and counted the conjunction "(an
+  open result and two theorems, ...)" as any-of. With both fixed in `premises.py`, the all-THEOREM re-grade is
+  41 / 35 / 19 / 3 / 2 (was 38 / 35 / 22 / 3 / 2), at least 76 definite violations (was 73), and the overlap with the
+  index is 34 / 32 / 7 (was 31 / 35 / 7). The item counts of §2.4 move by one (no candidate 83 → 82, one 236 → 237);
+  R2-R4, the cycles and the F4 bounds are unchanged.
 
 ## 5. Limits of the extraction rule
 

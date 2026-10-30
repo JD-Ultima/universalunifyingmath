@@ -29,13 +29,20 @@ Extraction rule (layer M, mechanical; every step below is implemented in this fi
              begins "<roman P>-c-" (module numbering; "1-0" -> FRAMEWORK); reading FIF: the
              designators.tsv first_section..last_section range (the index's own mapping).
         SELF "this chapter", "the present chapter", "the ... chapter above" -> the boxes of the own
-             module chapter other than the group's ("above": only the boxes before the group)
+             module chapter other than the group's ("chapter above": only the boxes before the group);
+             "the <grade> stated above" -> the boxes of the own module chapter that stand above the
+             derivation, the group's own boxes included (13-thermodynamics.tex:45, "the parent theorem
+             and the open result stated above", shared by 217.1-217.3: 217.3 is the open result)
         FRAME "the framework" -> section 1
         NOWHERE "(... outside the chapters of this compendium)", "(... placed at no chapter ...)"
       The item's grade word is (i) the grade phrase inside the item's own parenthesis, or
-      (ii) "the theorem/open result/table of chapter~\\ref", or (iii) ", <grade>" / " (<grade>)"
-      right after the reference, or (iv) a plural grade ("definitions", "theorems", "open
-      results") closing a run of ungraded references. Otherwise the item is ungraded.
+      (ii) "the theorem/open result/table of chapter~\\ref", or "the theorem/open result/table
+      stated above" for a SELF back-reference, or (iii) ", <grade>" / " (<grade>)" right after
+      the reference, or (iv) a plural grade ("definitions", "theorems", "open results") closing a
+      run of ungraded references. Otherwise the item is ungraded. A conjunctive grade phrase that
+      names an open result ("a theorem and an open result", "an open result and two theorems")
+      is class TO: its candidates are THEOREM, CONDITIONAL and OPEN, and it declares an OPEN
+      premise (the item names all the boxes it lists).
   M4  Candidates. The statements of the resolved sections whose index grade is compatible with
       the grade word: "theorem(s)" -> THEOREM or CONDITIONAL (the source writes "theorem" for
       conditional theorems, e.g. 9.1 is "a theorem" at 01-framework.tex:582 and "a conditional
@@ -58,8 +65,9 @@ Analyses printed (outputs/premises.txt):
   [2] the index graph as in depgraph.py (8367 edges, one SCC of 22);
   [3]-[4] layer J and the statement-level premises of the reconstructed statements;
   [5] re-grade: a THEOREM violates the rule if one item's candidate set (self excluded) is
-      non-empty and all CONDITIONAL/OPEN, or the item's own grade word is "open result"
-      ("declared OPEN"); undetermined if an item mixes proven and unproven candidates;
+      non-empty and all CONDITIONAL/OPEN, or the item's own grade word is "open result" or a
+      conjunction naming one (class TO) ("declared OPEN"); undetermined if an item mixes proven
+      and unproven candidates;
   [6] cycles: the index two-cycles through 124.1 checked edge by edge in the derivations; SCCs of
       the any-of graphs (an upper bound); the strict graph (J choices, single-candidate items);
       cycles forced under every resolution of the any-of items (fixpoint below);
@@ -190,6 +198,7 @@ GALT = "|".join(re.escape(p) for p, _ in GRADE_PHRASES)
 GRADE_RE = re.compile(r"\b(" + GALT + r")\b")
 GCLASS = dict(GRADE_PHRASES)
 PRE_GRADE = re.compile(r"\bthe (theorem|open result|table|conditional theorem) of (?:the chapter titled [^()]*?\()?\s*$")
+SELF_PRE = re.compile(r"\bthe (theorem|open result|table|conditional theorem)\s+$")   # "the open result stated above"
 POST_GRADE = re.compile(r"\s*(?:,\s*|\()(" + GALT + r")\b")
 PLURAL = re.compile(r"(?:,\s*|\()(definitions|theorems|open results)\b")
 REF = re.compile(r"(?:chapter|Section|section)~?\\ref\{mod:([^}]+)\}")
@@ -261,6 +270,13 @@ def items_of(sent):
             if gm: x["grade"], x["gword"], x["item_end"] = GCLASS[gm.group(1)], gm.group(1), gm.end()
             continue
         pre = PRE_GRADE.search(sent, max(0, x["a"] - 200), x["a"])   # (ii) "the theorem of chapter~\ref"
+        if x["kind"] == "SELF" and sent[x["a"]:x["b"]] == "stated above":   # (ii) "the open result stated above"
+            sp = SELF_PRE.search(sent, max(0, x["a"] - 40), x["a"])
+            if sp:
+                w = sp.group(1)
+                x["grade"] = {"theorem": "T", "open result": "O", "table": "Tab", "conditional theorem": "C"}[w]
+                x["gword"] = "the " + w + " stated above"
+                continue
         if pre:
             w = pre.group(1)
             x["grade"] = {"theorem": "T", "open result": "O", "table": "Tab", "conditional theorem": "C"}[w]
@@ -369,6 +385,10 @@ def candidates(item, g, sections, boxes, desig, reading):
     secs = set(resolve(item, g, sections, boxes, desig, reading))
     allowed = ALLOWED[item["grade"]]
     c = [n for n, b in boxes.items() if b["section"] in secs and b["grade"] in allowed]
+    stated_above = item["kind"] == "SELF" and re.search(r"\bstated above\b", item["quote"])
+    if stated_above:                       # the boxes standing above the derivation, the group's own included
+        order = list(boxes.keys()); last = order.index(g["boxes"][-1])
+        return [n for n in c if order.index(n) <= last]
     if item["kind"] == "SELF" and "above" in item["quote"]:
         order = list(boxes.keys()); first = order.index(g["boxes"][0])
         c = [n for n in c if order.index(n) < first]
@@ -649,7 +669,7 @@ def item_status(x, b, boxes, layer):
     """'open-declared', 'unproven', 'mixed', 'proven' or 'none' for item x as a premise of box b."""
     c = [n for n in layer_cands(x, layer) if n != b]
     gs = {boxes[n]["grade"] for n in c}
-    if x["grade"] == "O": return "open-declared"
+    if x["grade"] in ("O", "TO"): return "open-declared"         # "open result", or a conjunction naming one
     if x["grade"] == "C" and not c: return "unproven"
     if not c: return "none"
     if gs <= UNPROVEN: return "unproven"
@@ -726,13 +746,17 @@ def shortest_path(a, b, E):
     return None
 
 def forced_cycles(groups, gitems, gof, boxes, layer):
-    """Boxes X that rest on X under every resolution of the any-of items (X definitely depends on X)."""
+    """Boxes X that rest on X under every resolution of the any-of items (X definitely depends on X).
+    A SELF item never names the box itself (rule M3), so X is dropped from its candidates
+    ("the open result stated above" is 217.3 for 217.1 and 217.2, not a premise of 217.3)."""
     out = []
     for X in boxes:
         if X not in gof: continue
         D = {X} | definite_dependents([X], groups, gitems, layer)
-        if any(layer_cands(x, layer) and set(c for c in layer_cands(x, layer)) <= D for x in gitems[gof[X]]):
-            out.append(X)
+        for x in gitems[gof[X]]:
+            c = set(layer_cands(x, layer)) - ({X} if x["kind"] == "SELF" else set())
+            if c and c <= D:
+                out.append(X); break
     return out
 
 def overlap(desc, titles):

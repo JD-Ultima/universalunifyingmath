@@ -249,7 +249,7 @@ F3 and F4 from what each derivation says it rests on.
 - The 297 derivations contain 0 citations by statement number.
 - 2.1–2.9, 9.1–9.8 and 18.1–18.6 each share one derivation, so the source gives no per-box premises for 2.2–2.8, 9.7,
   9.8 or 18.1–18.6. The three procedures conclude 2.7, 9.1 and 18.1.
-- The mechanical rule (layer M) gives 1069 items, with candidates filtered by grade word: 236 items have one
+- The mechanical rule (layer M) gives 1069 items, with candidates filtered by grade word: 237 items have one
   candidate, 750 have several. A separate judgment layer (J) covers 21 derivation groups: 101 items, 30 narrowed by a
   verbatim title or text.
 - In derivation text, chapter designators follow the module numbering. Where the two readings differ (171 items),
@@ -263,9 +263,11 @@ chain."
   undetermined (2.3, 2.6, 74.1, 74.4) and 0 are consistent.
 - **Verdicts that move.** 74.1 and 74.4 (index: 14 CONDITIONAL premises) become undetermined. 9.2–9.6 have no OPEN
   premise in their derivation (index: 4); under J they violate through 66.4 (CONDITIONAL).
-- **All 100 THEOREMs.** 38 declare an OPEN premise, the same under every reading. With J: 35 more violate definitely,
-  22 are undetermined, 3 are consistent (2.10, I.7.1, I.52.1) and 2 have no premise sentence.
-- **Against the index's 66.** Of the 66 THEOREMs the index gives an OPEN premise, 31 declare one in their derivation;
+- **All 100 THEOREMs.** 41 declare an OPEN premise, the same under every reading. With J: 35 more violate definitely,
+  19 are undetermined, 3 are consistent (2.10, I.7.1, I.52.1) and 2 have no premise sentence. (Corrected after review
+  REVIEW3-CT, R3-CT-8: the first run read 217.1, 217.2 and 223.2 as undetermined, giving 38 / 35 / 22; see
+  `reports/CORRECTIONS.md`.)
+- **Against the index's 66.** Of the 66 THEOREMs the index gives an OPEN premise, 34 declare one in their derivation;
   7 more declare one that the index does not list.
 - **124.1 (CONDITIONAL).** Its derivation names two OPEN premises (an open result of section 2, and 57.2). The
   "lowest status" clause would grade it OPEN; its box treats these premises as conditions "each at its own standing".
@@ -280,8 +282,11 @@ chain."
   citation means.
 - The cycle passes through 35.1 (state space) and 40.1 (Born rule): the component forced under every resolution is
   {35.1, 40.1, 124.1}. With J, the strict graph has one cycle component, {124.1, 18.2, 18.3}.
-- The cycle needs the module-numbering reading of "chapter 5-1". Under the `designators.tsv` reading, 124.1 is on no
-  forced cycle.
+- The cycle needs the module-numbering reading of "chapter 5-1" in the derivation sentence at `01-framework.tex:691`,
+  and "theorem" read as admitting CONDITIONAL. Under the `designators.tsv` reading, 124.1 is on no forced cycle. The
+  source says that its running text cites by the module numbering (`back.tex:1024`). But the premise line printed
+  beneath 18.1–18.6 (`01-framework.tex:657`–`684`) cites neither chapter 5-1 nor 124.1. So the cycle sets that
+  derivation sentence, under its better-supported but not forced reading, against the boxes' own premise line.
 - 16.1 and 58.1 lie on no cycle in the strict graph.
 
 **F20. Load-bearing premises at statement level** (c). Transitive THEOREM+CONDITIONAL dependents, of 209, index against
@@ -304,9 +309,9 @@ every row.
 **Changes to rounds 1–3.**
 - Unchanged:
   - All index numbers, recomputed: 8367 edges, an SCC of 22, 66 / 84 THEOREMs, and 183 / 175 / 152.
-  - The conclusion that most THEOREMs violate the chain rule: ≥ 73 at statement level.
+  - The conclusion that most THEOREMs violate the chain rule: ≥ 76 at statement level (≥ 73 before R3-CT-8).
 - Changed:
-  - The 66 is an index count; at statement level the count is 38.
+  - The 66 is an index count; at statement level the count is 41.
   - The F4 loads of 2.2, 9.8 and 18.x are not supported box by box.
   - 124.1's load is larger than F4 states.
   - The F3/F4 cycle statement holds for the index only. At statement level the cycle runs through chapter 18, not
@@ -444,7 +449,8 @@ quotes and all 52 box quotes are checked verbatim.
   not re-verified on its toolchain.
 
 **Changes to rounds 1–5.**
-- No number is wrong, and nothing is added to `reports/CORRECTIONS.md`.
+- No number is wrong; one gloss is corrected (`reports/CORRECTIONS.md`, 2026-10-30: the 04 "hand-entered" gloss and
+  "Build not re-run").
 - F2's 11/37/16 stands as a classification by kind. By content, its top tier is 6.
 - "Build not re-run" (F2, G6, CT-C003) is superseded by F26.
 - `04-lean-coverage.md` §1 calls these lists "hand-entered". That fails for 2 of the 137 string-only modules, the kernel
