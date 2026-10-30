@@ -1,0 +1,61 @@
+sanity: random u(64,64) element satisfies X^H B + B X = 0: True; gamma_m in u(64,64): True
+
+=== S0. Degrees ===
+Shiab(2-form) has components of degrees [13]; <T, Shiab(xi)> degree = 1 + 13 = 14 = dim Y
+
+=== S1. Shiab on Levi-Civita-type spin curvature (random algebraic curvature tensor) ===
+|R| = 4.823e+03; Bianchi |R_[abc]d| = 0.0e+00; |Ric(W)| = 1.8e-13
+term1 [Phi1 ^ *xi]_C: |term1| = 1.431e+04; fit x Ric + y R eta: x = -1.000000+0.000000j, y = 0.000000+0.000000j, rel. residual 2.7e-18; |term1(Weyl)| = 3.7e-12
+term1 [Phi1 ^ *xi]_A: |term1| = 0.000e+00; fit x Ric + y R eta: x = 0.000000+0.000000j, y = 0.000000+0.000000j, rel. residual 0.0e+00; |term1(Weyl)| = 2.1e-12
+term2 [Phi1 ^ *[Phi2 ^ *xi]_C]_C: identically 0 on Riemann-type xi (|term2| = 0.0e+00)
+term2 [Phi1 ^ *[Phi2 ^ *xi]_A]_C: identically 0 on Riemann-type xi (|term2| = 0.0e+00)
+term2 [Phi1 ^ *[Phi2 ^ *xi]_C]_A: identically 0 on Riemann-type xi (|term2| = 0.0e+00)
+term2 [Phi1 ^ *[Phi2 ^ *xi]_A]_A: |term2| = 1.168e+04; fit: x = -0.000000+0.000000j, y = -1.000000+0.000000j, rel. residual 2.1e-16; |term2(Weyl)| = 7.4e-12
+
+=== S2. Equivariance ===
+Cayley elements are B-unitary: True
+brackets (C,A,A): tilted rel. error 2.8e-14; untilted (eps fixed = 1) rel. error 1.2e+00
+brackets (C,C,C): tilted rel. error 2.7e-14; untilted (eps fixed = 1) rel. error 1.2e+00
+
+=== S3. Formal self-adjointness of Shiab o d (pointwise symbol condition) ===
+CS check (d=3, L=d): max_b |beta_b(T,a)+beta_b(a,T)|/|beta| = 0.0e+00  (0 => self-adjoint)
+-- T, a in Omega^1 (x) u(64,64)
+   [Phi1^*xi]_C                : max|beta_b| = 1.47e+03; antisymmetry defect max/min over b = 1.86e+00/2.09e-01; symmetry defect max/min = 1.79e+00/1.36e-01
+   [Phi1^*xi]_A                : max|beta_b| = 2.33e+03; antisymmetry defect max/min over b = 1.77e+00/5.75e-02; symmetry defect max/min = 1.94e+00/2.33e-01
+   [Phi1^*[Phi2^*xi]_C]_C      : max|beta_b| = 8.23e+03; antisymmetry defect max/min over b = 1.81e+00/4.52e-01; symmetry defect max/min = 1.55e+00/1.93e-01
+   [Phi1^*[Phi2^*xi]_A]_C      : max|beta_b| = 6.78e+03; antisymmetry defect max/min over b = 1.75e+00/1.18e-01; symmetry defect max/min = 1.88e+00/2.46e-01
+   [Phi1^*[Phi2^*xi]_C]_A      : max|beta_b| = 6.98e+03; antisymmetry defect max/min over b = 1.72e+00/9.54e-02; symmetry defect max/min = 1.90e+00/2.83e-01
+   [Phi1^*[Phi2^*xi]_A]_A      : max|beta_b| = 9.18e+03; antisymmetry defect max/min over b = 1.62e+00/1.51e-01; symmetry defect max/min = 1.85e+00/3.78e-01
+-- T, a in Omega^1 (x) grade 1 (span gamma_a)
+   [Phi1^*xi]_C                : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*xi]_A                : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*[Phi2^*xi]_C]_C      : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*[Phi2^*xi]_A]_C      : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*[Phi2^*xi]_C]_A      : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*[Phi2^*xi]_A]_A      : beta_b = 0 for all b (|beta| < 1e-9)
+-- T, a in Omega^1 (x) grade 2 (spin(7,7))
+   [Phi1^*xi]_C                : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*xi]_A                : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*[Phi2^*xi]_C]_C      : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*[Phi2^*xi]_A]_C      : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*[Phi2^*xi]_C]_A      : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*[Phi2^*xi]_A]_A      : beta_b = 0 for all b (|beta| < 1e-9)
+-- T, a in Omega^1 (x) grade 1 + grade 2 (so(7,7) (+) R^{7,7} inside so(64,64))
+   [Phi1^*xi]_C                : max|beta_b| = 1.78e+04; antisymmetry defect max/min over b = 1.56e+00/7.25e-02; symmetry defect max/min = 1.93e+00/4.35e-01
+   [Phi1^*xi]_A                : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*[Phi2^*xi]_C]_C      : max|beta_b| = 3.24e+04; antisymmetry defect max/min over b = 1.92e+00/2.12e-01; symmetry defect max/min = 1.79e+00/7.81e-02
+   [Phi1^*[Phi2^*xi]_A]_C      : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*[Phi2^*xi]_C]_A      : beta_b = 0 for all b (|beta| < 1e-9)
+   [Phi1^*[Phi2^*xi]_A]_A      : max|beta_b| = 2.53e+04; antisymmetry defect max/min over b = 1.82e+00/2.52e-01; symmetry defect max/min = 1.75e+00/1.76e-01
+full Shiab = term1_C - (c/2) term2_(A,A): defect as a function of c
+  least-squares c = 0.1468-0.0000j; relative defect at best c = 9.448e-01 (0 would mean some c works)
+explicit counterexample (proof in C-gauge-shiab.md, Prop. C5): T = gamma_0 gamma_1 e^0, a = gamma_0 e^1, b = 0
+  c = +0: beta_0(T,a) = +256.0+0.0i, beta_0(a,T) = +0.0+0.0i
+  c = +1: beta_0(T,a) = +256.0+0.0i, beta_0(a,T) = +0.0+0.0i
+  c = +2: beta_0(T,a) = +256.0+0.0i, beta_0(a,T) = +0.0+0.0i
+  c = -1: beta_0(T,a) = +256.0+0.0i, beta_0(a,T) = +0.0+0.0i
+
+=== S4. Cubic term ===
+brackets (C,A,A): tau(T,T,a)/tau(a,T,T) over 3 random samples = -2.9507+3.5e-15i, -0.0872-6.5e-16i, +1.0472+6.3e-17i
+brackets (C,C,C): tau(T,T,a)/tau(a,T,T) over 3 random samples = +0.2611+1.1e-15i, +1.1603-1.3e-15i, +0.6549+9.2e-17i
+CS check (d=3, Shiab = identity): ratios = +1.0000, +1.0000, +1.0000

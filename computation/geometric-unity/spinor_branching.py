@@ -4,7 +4,7 @@ then Spin(10) -> Spin(6) x Spin(4) = SU(4) x SU(2)_L x SU(2)_R  (Pati-Salam)
 then -> SU(3) x SU(2)_L x U(1)_Y  with  Y = (B-L)/2 + T3R.
 
 Exact weight-multiset (character) computations; integer arithmetic on doubled weights.
-Claims tested: GU-020 .. GU-031 (claims/geometric-unity.md).
+Claims tested: GU-025 ... GU-027, GU-029, GU-058 ... GU-065 (claims/geometric-unity.md).
 Write-up: formalization/geometric-unity/B-spinor-branching.md
 
 Complex representations only: reality (Majorana) structure is handled separately in

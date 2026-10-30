@@ -1,7 +1,7 @@
 """GU Phase 2(a): signature of natural fiber metrics on the metric bundle Y = Met(X^n)
 and of the chimeric metric on C = V (+) H*.
 
-Claims tested: GU-012, GU-013, GU-014, GU-015 (claims/geometric-unity.md).
+Claims tested: GU-010 ... GU-015, GU-022, GU-023 (claims/geometric-unity.md).
 Write-up: formalization/geometric-unity/A-chimeric-signature.md
 
 Everything is exact (sympy Rationals). Inertia of a real symmetric matrix is computed
@@ -287,5 +287,37 @@ def main():
               f" source lists (minus, plus) -> match: {src == (ours_traceless[1], ours_traceless[0])}")
 
 
+def stiefel_whitney_check():
+    """A7. w1, w2 of C = V (+) H* with V = pi^*Sym^2 T*X, H* = pi^*T*X, rank T*X = 4, by the splitting principle:
+    for T*X = L1+...+L4 with w1(Li) = x_i, Sym^2 has roots x_i + x_j (i<=j); everything mod 2."""
+    print("\n=== A7. Stiefel-Whitney classes of the chimeric bundle (splitting principle, mod 2) ===")
+    xs = sp.symbols('x1:5')
+    e1 = sum(xs)
+    e2 = sum(a * b for a, b in itertools.combinations(xs, 2))
+    def mod2_parts(expr):
+        p = sp.Poly(sp.expand(expr), *xs)
+        parts = {}
+        for mon, c in p.terms():
+            if c % 2:
+                deg = sum(mon)
+                parts[deg] = parts.get(deg, 0) + sp.prod([v ** k for v, k in zip(xs, mon)])
+        return parts
+    def express_deg2(q):
+        # find a, b in {0,1} with q = a e1^2 + b e2 (mod 2)
+        for a, b in itertools.product((0, 1), repeat=2):
+            if not mod2_parts(sp.expand(q - a * e1 ** 2 - b * e2)).get(2):
+                return a, b
+        return None
+    wV = sp.prod([1 + xs[i] + xs[j] for i in range(4) for j in range(i, 4)])
+    wH = sp.prod([1 + x for x in xs])
+    for name, w in [('V = Sym^2', wV), ('H* = T*X', wH), ('C = V + H*', sp.expand(wV * wH))]:
+        parts = mod2_parts(w)
+        w1 = parts.get(1, 0)
+        a = 1 if not mod2_parts(sp.expand(w1 - e1)).get(1) else (0 if w1 == 0 else None)
+        ab = express_deg2(parts.get(2, 0))
+        print(f"  {name:11s}: w1 = {a}*w1(X); w2 = {ab[0]}*w1(X)^2 + {ab[1]}*w2(X)")
+
+
 if __name__ == '__main__':
     main()
+    stiefel_whitney_check()

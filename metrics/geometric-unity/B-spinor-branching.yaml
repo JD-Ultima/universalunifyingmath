@@ -1,0 +1,31 @@
+result: "B. Cl(7,7) structure; MW spinor = one generation; RS branching; nu+zeta content vs source tables"
+claim_id: [GU-016, GU-017, GU-018, GU-019, GU-020, GU-025, GU-026, GU-027, GU-029, GU-058, GU-059, GU-060, GU-061, GU-062, GU-063, GU-064, GU-065, GU-066]
+writeup: formalization/geometric-unity/B-spinor-branching.md
+code: [computation/geometric-unity/clifford77.py, computation/geometric-unity/spinor_branching.py]
+formalization_status: >
+  Fully formalized at the level of finite-dimensional representation theory (complex weights +
+  explicit real Clifford model). The field reality condition is a reconstruction choice (GU-G07);
+  all three readings (Majorana-Weyl, complex Weyl, Dirac) are computed.
+internal_consistency: >
+  The source's Clifford grade lists (3.21)-(3.27), (8.6), RS branching (11.3), F/Q/Z decomposition
+  (11.6) and all three SM tables (pp. 52-53) are exactly reproduced. Inconsistent: (3.20)/(12.23)
+  ill-typed; "imposter generation" defined two different ways ((12.22) vs p.53 table); Dirac/U(64,64)
+  framework vs Weyl-based generation count; SM-level count is 4, not 3 (GU-G17).
+proof_status: >
+  Theorems B1-B4, Prop B5 proven: exact integer weight computations and exact signed-permutation
+  Clifford computations; one numerical SVD (commutant dimension 2, gap 1.58 vs tol 2.3e-8) backed by
+  the complex-weight argument (L-B3).
+novelty: >
+  Rep-theoretic facts are standard (KK/SO(10) lore). New relative to the source: exact verification of
+  its tables, the reality-reading table (Thm B4), the four-copies count, and the observation that the
+  p.53 'imposter' entries lie in 144_-, not in the S(TX)(x)S(N) summand of (12.22).
+reproducibility: "Deterministic; spinor_branching <1 s (exact), clifford77 ~25 s."
+empirical_testability: >
+  In principle: extra spin-1/2 states with SM content 144_- minus one generation (128 states, charges
+  +-4/3, +-5/3, +-2, colour sextets/octets) and spin-3/2 states with conjugate-generation quantum
+  numbers. Not currently falsifiable: no mass scale or couplings are specified (GU-G18).
+dependencies: [L-B1, L-B2, L-B3, L-B4, "A (signature (7,7) and block split (1,3)+(6,4))"]
+confidence: >
+  High for the mathematics (two independent methods: complex characters and an explicit real model).
+  Low relevance-confidence for the physics claims, which depend on unspecified reality conditions,
+  chirality assignments and symmetry breaking.

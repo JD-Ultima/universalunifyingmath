@@ -1,0 +1,22 @@
+result: "C1. Inhomogeneous gauge group G = H x| N, tilted homomorphism, stabiliser, bi-connection, augmented torsion"
+claim_id: [GU-034, GU-035, GU-038, GU-039, GU-040, GU-041, GU-042, GU-043, GU-044]
+writeup: formalization/geometric-unity/C-gauge-shiab.md (Props C1, C2, C3, C3')
+code: [computation/geometric-unity/gauge_group_identities.py, computation/geometric-unity/gauge_group_identities.out]
+formalization_status: >
+  Fully formalized (local model; identities are pointwise-algebraic plus Leibniz, hence global).
+  Reading of (5.9) is forced by associativity.
+internal_consistency: >
+  INCONSISTENT as printed: Lemmas 6.1, 6.3, 6.4 and the stabiliser statement hold for tau(h) =
+  (h, -h^-1 d h); Lemmas 6.5 and 7.2 fail for it (residual -2 h^-1 d_A0 h) and hold for the
+  opposite-sign tilt tau'. Consistent after one global sign repair (Prop C3').
+proof_status: "Proven (one-line cocycle proofs) and verified as exact polynomial identities in a generic GL(2) model."
+novelty: >
+  The sign error in the proofs of Lemmas 6.5/7.2 and the identification tau(H) = Stab_right(A0),
+  tau'(H) = Stab_left(A0) exchanged by w -> -w are new relative to the source (draft fn. 7 only
+  warns of conflicting conventions).
+reproducibility: "Exact sympy, deterministic, ~65 s."
+empirical_testability: "None (structural)."
+dependencies: [L-C1]
+confidence: >
+  High. Exact symbolic identities with generic non-commuting polynomial data; failures come with
+  closed-form residuals that are themselves verified (G8b, G9a).

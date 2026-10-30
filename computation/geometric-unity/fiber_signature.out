@@ -102,3 +102,8 @@ exact check of closed form (Theorem A1) for all (p,q), 2<=n<=6, lambda in {0, 1}
   i=1, n=4: source (first,second)=(3, 6); ours (+,-) traceless = (6, 3); source lists (minus, plus) -> match: True
   i=0, n=4: source (first,second)=(0, 9); ours (+,-) traceless = (9, 0); source lists (minus, plus) -> match: True
   i=2, n=4: source (first,second)=(4, 5); ours (+,-) traceless = (5, 4); source lists (minus, plus) -> match: True
+
+=== A7. Stiefel-Whitney classes of the chimeric bundle (splitting principle, mod 2) ===
+  V = Sym^2  : w1 = 1*w1(X); w2 = 1*w1(X)^2 + 0*w2(X)
+  H* = T*X   : w1 = 1*w1(X); w2 = 0*w1(X)^2 + 1*w2(X)
+  C = V + H* : w1 = 0*w1(X); w2 = 0*w1(X)^2 + 1*w2(X)

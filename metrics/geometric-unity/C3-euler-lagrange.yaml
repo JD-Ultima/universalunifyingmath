@@ -1,0 +1,22 @@
+result: "C3. The printed first-order field equation (9.7)-(9.9) is not the Euler-Lagrange equation of (9.4)"
+claim_id: [GU-050, GU-053, GU-055]
+writeup: formalization/geometric-unity/C-gauge-shiab.md (Lemma C6a, Props C6, C6')
+code: [computation/geometric-unity/shiab_checks.py, computation/geometric-unity/shiab_checks.out]
+formalization_status: >
+  Formalized for family R-S: criterion (Lemma C6a) reduces formal self-adjointness of Shiab o d_B to
+  a pointwise antisymmetry condition; tested on all 6 bracket variants and the full operator for all c.
+internal_consistency: >
+  INCONSISTENT for every member of R-S: L = Shiab o d_B is not formally self-adjoint (exact
+  counterexample beta_0(T,a) = 256, beta_0(a,T) = 0 for the Einstein-reproducing member, all c;
+  numerical O(1) defects for all variants); cubic term lacks the required symmetry.
+  GU-055 (second-order equations automatically satisfied when Upsilon = 0) holds trivially.
+proof_status: >
+  Proven for the Einstein-reproducing member (exact hand computation, confirmed numerically);
+  numerical for the other members (max relative antisymmetry defects 1.56-1.92; 0.94 at least-squares optimal c).
+novelty: "New: the source asserts (9.7) without derivation."
+reproducibility: "complex128, fixed seeds; S3/S4 sample values vary with RNG stream, conclusions do not."
+empirical_testability: "None."
+dependencies: ["C2", "C1 (repair R-C1')", L-C2]
+confidence: >
+  High that (9.7) does not follow from (9.4) under R-S. Medium as a verdict on GU: a different Shiab
+  operator (outside R-S) could be self-adjoint; deciding this is pattern GU-P09 (finite linear algebra).

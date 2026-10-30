@@ -1,0 +1,24 @@
+result: "C2. Shiab operator: degrees, tilted equivariance, Einstein contraction and Weyl annihilation (family R-S)"
+claim_id: [GU-045, GU-047, GU-048, GU-051]
+writeup: formalization/geometric-unity/C-gauge-shiab.md (Prop C4, Theorem C5)
+code: [computation/geometric-unity/shiab_checks.py, computation/geometric-unity/shiab_checks.out]
+formalization_status: >
+  Partially formalized: the source gives a family; we fix reconstruction R-S (soldering invariants
+  Phi1, Phi2; brackets C/A; coefficient c). Other members of Def. 8.1 untested (GU-G10).
+internal_consistency: >
+  Consistent: degree bookkeeping 2 -> 13, 1+13 = 14 holds; tilted covariance holds; the annotated
+  Ricci / g / scalar structure of (9.3) is reproduced exactly for brackets (C;A,A), c = 1.
+  Caveat: the Einstein tensor is that of Y^14, not X^4.
+proof_status: >
+  Theorem C5 proven analytically (Clifford identities, Bianchi, pair symmetry) and verified numerically
+  in d=14 (relative residuals <= 2.1e-16; Weyl image <= 7.4e-12 vs |R| ~ 4.8e3). C4.3 proven (Schur /
+  Cl(7,7)(x)C = M_128(C)).
+novelty: >
+  The bracket-mix requirement and the explicit identification of the Shiab image of the Levi-Civita
+  curvature as -*G(g_Y) are not in the source (which lost its operator).
+reproducibility: "complex128, fixed seeds, ~35 s; tolerances printed."
+empirical_testability: "None directly."
+dependencies: ["B (Clifford model)", L-C1, L-C2, L-C3]
+confidence: >
+  High for the stated reconstruction; medium that R-S is the author's intended operator (fn. 10:
+  intended operator unknown).

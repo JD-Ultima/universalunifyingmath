@@ -1,6 +1,6 @@
 """GU Phase 2(b), explicit Clifford model: real Cl(7,7) on R^128.
 
-Checks (claims GU-016 .. GU-019, GU-021 in claims/geometric-unity.md):
+Checks (claims GU-016 ... GU-020 in claims/geometric-unity.md):
   C1  real 128x128 matrices gamma_a, a=0..13, with {g_a,g_b} = 2 eta_ab, eta = (+^7, -^7); exact integers.
   C2  the 2^14 Clifford monomials are trace-orthogonal => linearly independent => Cl(7,7) = R(128).
   C3  volume element Gamma: Gamma^2 = +1, real => real (Majorana-Weyl) half-spinors S^+-, dim 64 each.

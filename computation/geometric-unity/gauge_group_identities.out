@@ -2,3 +2,32 @@
 G1  (5.9) associativity (g1 g2) g3 = g1 (g2 g3)                                      holds
 G1' inverse: g g^-1 = (1, 0)                                                         holds
 G2  (5.10) right action: (A.g1).g2 = A.(g1 g2)                                       holds
+G3  (5.11) left action: (g1 g2).A = g1.(g2.A)                                        holds
+-- the printed tilt tau(h) = (h, -h^-1 d_A0 h)  (draft (6.4), (6.9), (6.13))
+G4  (6.4) tau(h) = (h, A0 - A0.h) agrees with (h, -h^-1 d_A0 h)                      holds
+G4' Lemma 6.1: tau(h1 h2) = tau(h1) tau(h2)                                          holds
+G5  (6.6)-(6.9): A0 . tau(h) = A0  [tau(H) = stabiliser of A0, RIGHT action]         holds
+G6  Lemma 6.3: pi(g tau(h)) = pi(g)                                                  holds
+G6' pi(g) = A0 - A0.g^-1                                                             holds
+G7  Lemma 6.4: (g1 g2).gamma = g1.(g2.gamma) on N                                    holds
+G7' pi(g1 g2) = g1 . pi(g2)                                                          holds
+G8  Lemma 6.5 as printed: mu(g tau(h)) = mu(g).h                                     FAILS
+G8a   second component only: A0.(e h) = (A0.e).h                                     holds
+G8b   first component residual = -2 h^-1 d_A0 h                                      holds
+G9  (7.3) T = delta(mu(g)) = (A0 + w) - A0.e = w - e^-1 d_A0 e                       holds
+G9' Lemma 7.2 as printed: T(g tau(h)) = h^-1 T(g) h                                  FAILS
+G9a   residual = -2 h^-1 d_A0 h                                                      holds
+-- the opposite-sign tilt tau'(h) = (h, +h^-1 d_A0 h)  (repair R-C1')
+P1  tau'(h1 h2) = tau'(h1) tau'(h2)                                                  holds
+P2  tau'(h) . A0 = A0  [tau'(H) = stabiliser of A0, LEFT action (5.11)]              holds
+P3  A0 . tau'(h) = A0  (expected false)                                              FAILS
+P4  Lemma 6.5 for tau': mu(g tau'(h)) = mu(g).h                                      holds
+P5  Lemma 7.2 for tau': T(g tau'(h)) = h^-1 T(g) h                                   holds
+P6  B-connection: A0.(e h) = (A0.e).h  (any tilt)                                    holds
+P7  Lemma 6.3 for tau': pi(g tau'(h)) = pi(g)  (expected false)                      FAILS
+P8  pi'(g) = e w e^-1 - (d_A0 e) e^-1 is tau'-invariant                              holds
+P9  (e,w) -> (e,-w) is an automorphism of G                                          holds
+P10 it maps tau to tau'                                                              holds
+-- control: untilted subgroup H x {0}
+N1  T(g (h,0)) = h^-1 T(g) h  (expected false)                                       FAILS
+N1' residual = -h^-1 d_A0 h                                                          holds

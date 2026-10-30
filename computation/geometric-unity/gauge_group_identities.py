@@ -1,4 +1,5 @@
 """GU Phase 2(c)-I: exact symbolic check of the inhomogeneous gauge group G = H x| N (draft Secs. 5-7).
+Claims tested: GU-034 ... GU-044 (claims/geometric-unity.md).
 
 Model (local, structure-group independent): base R^2 with coordinates (x, y); structure group GL(2)
 realised by matrix-valued polynomial functions; an ad-valued 1-form is a pair (A_x, A_y) of 2x2
