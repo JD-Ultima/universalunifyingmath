@@ -23,3 +23,16 @@ R5a repair B: pi(g1 g2) = g1 . pi(g2) with printed (6.15)                       
 R5b repair A: pi'(g1 g2) = g1 . pi'(g2) with printed (6.15) (expected false)         FAILS
 R5c repair A: pi'(g1 g2) = g1 * pi'(g2) with flipped (6.15)                          holds
 R5d flipped (6.15) is a left action: (g1 g2) * gamma = g1 * (g2 * gamma)             holds
+
+=== R6. Printed restatements of tau and mu: (6.13) and (6.22) ===
+R6a (6.13) as printed, with tau (repair B)                                           holds
+R6b (6.13) as printed, with tau' (repair A) (expected false)                         FAILS
+R6c (6.22) as printed, (A_w, B_w) = mu(g) (repair A)                                 holds
+R6d (6.22) as printed, (A_w, B_w) = mu''(g) (repair B) (expected false)              FAILS
+R6e B_w = nabla0 + e^-1 (nabla0 e) under mu'' (second entry unchanged)               holds
+
+=== R7. The infinitesimal tilted action (10.6) ===
+R7a repair A (tau'): d/ds g.tau'(e^{s gamma}) = (e gamma, d_A0 gamma - [gamma, w])   holds
+R7b   and = (e gamma, d_A gamma) with A = mu(g)[0] = A0 + w                          holds
+R7c repair B (tau): d/ds g.tau(e^{s gamma}) = printed (10.6) (expected false)        FAILS
+R7d   it is (e gamma, -d_A'' gamma) with A'' = mu''(g)[0] = A0 - w                   holds

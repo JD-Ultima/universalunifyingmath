@@ -87,7 +87,6 @@ end ConventionCheck
 /-! ## Referee addition (review 2026-10-30, CT-4): the upstream `readable` predicate is d ≤ 3, not the
 read cap d1 d2 ≤ 6, so under the conjugate convention a third configuration (3R 3R 3U at a shared qutrit)
 also satisfies the hypotheses of `configuration_unique`. The #evals confirm the readouts of the (2,2) and (3,3) worlds. -/
-/-! Referee additions (not part of the manuscript). -/
 namespace ReviewCheck
 open ChainAlpha ConventionCheck
 

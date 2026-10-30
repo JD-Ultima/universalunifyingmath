@@ -1,0 +1,49 @@
+Declared space B: 46080 rules, 15639 distinct values (freedom.py prints 15 639).
+
+Table S5 closed-form rows: printed vs recomputed inverse; relative change of the value and of 1/value; in B?
+  computed                                   (79 + 48√2 + 42√3 + 3√6)/31104     1/value  137.035999 (printed 137.036)  change: value       0.0%, 1/value     0.0%  in B: yes
+  the two ends swapped                       (79 + 42√2 + 48√3 + 3√6)/31104     1/value  135.894237 (printed 135.894)  change: value    0.8402%, 1/value  0.8332%  in B: yes
+  both exchanges at the qubit end            (85 + 90√2)/31104                  1/value  146.523998 (printed 146.524)  change: value     6.475%, 1/value   6.924%  in B: yes
+  both exchanges at the qutrit end           (88 + 90√3)/31104                  1/value  127.535742 (printed 127.536)  change: value     7.449%, 1/value   6.933%  in B: yes
+  exchange of reads where the letters sit    (85 + 54√2 + 36√3)/31104           1/value  139.030085 (printed 139.030)  change: value     1.434%, 1/value   1.455%  in B: yes
+  qubit-qubit records moved by Y             (79 + 48√2 + 36√3 + 9√6)/31104     1/value  134.485472 (printed 134.485)  change: value     1.897%, 1/value   1.861%  in B: yes
+  copies of the qutrit as separate qudits    (79 + 42√3 + 51√6)/31104           1/value  112.422697 (printed 112.423)  change: value     21.89%, 1/value   17.96%  in B: yes
+  survival without the record's own sign     (82 + 48√2 + 42√3)/31104           1/value  139.712643 (printed 139.713)  change: value     1.916%, 1/value   1.953%  in B: yes
+  commutator records survive X only          (79 + 48√2 + 45√3)/31104           1/value  138.347888 (printed 138.348)  change: value    0.9483%, 1/value  0.9573%  in B: yes
+  sums and differences of commutators kept   (79 + 48√2 + 42√3 + 6√6)/31104     1/value  132.738534 (printed 132.739)  change: value     3.238%, 1/value   3.136%  in B: yes
+  no commutator records                      (79 + 48√2 + 42√3)/31104           1/value  141.621039 (printed 141.621)  change: value     3.238%, 1/value   3.346%  in B: yes
+  Born weights k_r                           (319)/31104                        1/value  97.5047022 (printed  97.505)  change: value     40.54%, 1/value   28.85%  in B: yes
+  count of read ends                         (158 + 96√2 + 82√3 + 3√6)/31104    1/value  70.1898275 (printed  70.190)  change: value     95.24%, 1/value   48.78%  in B: no
+  normalised by the 172 records              (79 + 48√2 + 42√3 + 3√6)/172       1/value 0.757786518 (printed   0.758)  change: value  1.798e+4%, 1/value   99.45%  in B: no
+  no weights                                 (172)/31104                        1/value  180.837209 (printed 180.837)  change: value     24.22%, 1/value   31.96%  in B: yes
+  smallest readable configuration            (30 + 30√2)/256                    1/value   3.5346224 (printed   3.535)  change: value    3777.0%, 1/value   97.42%  in B: no
+  => 15 closed-form alternatives; 12 in B, 3 outside B; all printed inverses match.
+  => inverses of the alternatives span [0.75779, 180.84]
+  => within 1%: the two ends swapped: 1/value 0.8332%, value 0.8402%
+  => within 1%: commutator records survive X only: 1/value 0.9573%, value 0.9483%
+  => all other alternatives change both by more than 1%: True
+
+The 19 Lean mutations (upstream_mutations_lean.out)
+  mutation                             numerator / N                            1/value  in Table S5?                               in B? witness in B / class
+  fixesFar_always_true                 (79 + 48√2 + 42√3 + 3√6)/31104      137.03599919  computed                                   yes   k=(1, 2, 3, 3) comm k=6 x3 amp N=24*36^2 [unchanged]
+  reads_at_qubit                       (79 + 90√2)/31104                  150.785910028  -                                          yes   k=(1, 2, 2, 2) comm k=1 x0 amp N=24*36^2 [in B only]
+  X_at_far_end                         (85 + 90√2)/31104                  146.523997545  both exchanges at the qubit end            yes   k=(1, 2, 2, 1) comm k=2 x6 amp N=24*36^2 [in B, Table S5 row]
+  X_where_letters_sit                  (85 + 54√2 + 36√3)/31104           139.030085459  exchange of reads where the letters sit    yes   k=(1, 2, 3, 1) comm k=2 x6 amp N=24*36^2 [in B, Table S5 row]
+  Y_at_center                          (88 + 90√3)/31104                  127.535742249  both exchanges at the qutrit end           yes   k=(1, 3, 3, 3) comm k=9 x3 amp N=24*36^2 [in B, Table S5 row]
+  X_Y_factors_swapped                  (79 + 42√2 + 48√3 + 3√6)/31104     135.894237395  the two ends swapped                       yes   k=(1, 3, 2, 2) comm k=6 x3 amp N=24*36^2 [in B, Table S5 row]
+  moved_per_letter                     (79 + 48√2 + 36√3 + 9√6)/31104     134.485471805  qubit-qubit records moved by Y             yes   k=(1, 2, 3, 6) comm k=6 x3 amp N=24*36^2 [in B, Table S5 row]
+  copies_separate                      (79 + 42√3 + 51√6)/31104           112.422696872  copies of the qutrit as separate qudits    yes   k=(1, 6, 3, 3) comm k=6 x3 amp N=24*36^2 [in B, Table S5 row]
+  survival_ignores_own_sign            (82 + 48√2 + 42√3)/31104           139.712642718  survival without the record's own sign     yes   k=(1, 2, 3, 3) comm k=1 x3 amp N=24*36^2 [in B, Table S5 row]
+  commutator_records_carry_no_reads    (79 + 51√2 + 42√3)/31104           138.937139886  -                                          yes   k=(1, 2, 3, 3) comm k=2 x3 amp N=24*36^2 [in B only]
+  register_full_unread                 (79 + 48√2 + 42√3 + 3√6)/46656     205.553998784  -                                          yes   k=(1, 2, 3, 3) comm k=6 x3 amp N=36^3 [in B only]
+  no_commutator_records                (79 + 48√2 + 42√3)/31104           141.621038704  no commutator records                      yes   k=(1, 2, 3, 3) comm k=1 x0 amp N=24*36^2 [in B, Table S5 row]
+  commutators_keep_sums                (79 + 48√2 + 45√3)/31104           138.347888397  commutator records survive X only          yes   k=(1, 2, 3, 3) comm k=3 x3 amp N=24*36^2 [in B, Table S5 row]
+  commutators_keep_both                (79 + 48√2 + 45√3 + 3√6)/31104     133.969062384  -                                          no    no rule of B (175 weighted records) [outside B]
+  exch_shift1                          (117 + 3√3)/31104                  254.541566026  -                                          no    no rule of B (120 weighted records) [outside B]
+  drop_fixed                           (79 + 48√2 + 31√3 + 3√6)/31104     149.592908138  -                                          no    no rule of B (161 weighted records) [outside B]
+  drop_even                            (79 + 11√3 + 3√6)/31104            295.101485794  -                                          no    no rule of B (93 weighted records) [outside B]
+  born_weights                         (319)/31104                        97.5047021944  Born weights k_r                           yes   k=(1, 2, 2, 3) comm k=9 x6 born N=24*36^2 [in B, Table S5 row]
+  wX_dA_equiv                          (79 + 48√2 + 42√3 + 3√6)/31104      137.03599919  computed                                   yes   k=(1, 2, 3, 3) comm k=6 x3 amp N=24*36^2 [unchanged]
+  => {'unchanged': 2, 'in B, Table S5 row': 10, 'in B only': 3, 'outside B': 4}, total 19
+  => 13 of 19 lie in B (10 of them Table S5 rows, 3 in B only); 4 lie outside B; 2 leave the value unchanged.
+     For each of the 13, the Lean numerator equals the numerator of the witness rule of B exactly.

@@ -20,7 +20,7 @@
 \begin{abstract}
 We reconstruct, as precise mathematics, the finite-dimensional and first-order parts of E.~Weinstein's \emph{Geometric Unity: Author's Working Draft v1.0} (1 April 2021) \cite{W21}, and test them.
 
-\emph{Signature.} The natural fiber metrics on $Y=\Met(X^4)$ form the DeWitt family $G_\lambda$. Among bases of signature $(1,3)$, $(3,1)$ and $(4,0)$, the chimeric bundle has signature $(7,7)$ if and only if the base is Lorentzian, $\lambda>\tfrac14$, and a fixed relative block sign holds. A base of signature $(2,2)$ also gives $(7,7)$. Over $\Met(X)$ itself the chimeric bundle admits no $\mathrm{Spin}(7,7)$ structure, for any $X$. Over the time-oriented double cover that the draft writes in (3.33), it admits one if and only if $w_2(X)=0$.
+\emph{Signature.} The natural fiber metrics on $Y=\Met(X^4)$ form the DeWitt family $G_\lambda$. Among bases of signature $(1,3)$, $(3,1)$ and $(4,0)$, the chimeric bundle has signature $(7,7)$ if and only if the base is Lorentzian, $\lambda>\tfrac14$, and a fixed relative block sign holds. A base of signature $(2,2)$ also gives $(7,7)$, for every $\lambda>\tfrac14$ and either block sign. Over $\Met(X)$ itself the chimeric bundle admits no $\mathrm{Spin}(7,7)$ structure, for any $X$, both for a Lorentzian base and for a base of signature $(2,2)$. For a Lorentzian base, over the time-oriented double cover that the draft writes in (3.33), it admits one if and only if $w_2(X)=0$.
 
 \emph{Spinors.} One Majorana--Weyl spinor of $\mathrm{Spin}(7,7)$, restricted to $\mathrm{Spin}(1,3)\times\mathrm{Spin}(6,4)$, is exactly one Standard Model generation with $\nu_R$. The draft's three tables of quantum numbers are reproduced exactly. In Standard Model quantum numbers, the Rarita--Schwinger $144$ carries a further full generation.
 
@@ -56,11 +56,15 @@ The $(7,7)$ choice of \cite[\S3.5, p.~22]{W21} is therefore available, but not f
 In the Lorentzian $(7,7)$ case of Theorem~\ref{thm:sig}, let $\ell\subset\pi^*TX$ be the time line of the tautological metric. Then $w_1(C)=0$ and $w_2(C)=\pi^*w_2(X)$. Moreover $C=C_+\oplus C_-$ with $w_1(C_+)=w_1(C_-)=w_1(\ell)$. The $SO(7,7)$ frame bundle of $C$ lifts to $\mathrm{Spin}(7,7)$ if and only if
 \[ w_2(C_+)+w_2(C_-)=\pi^*w_2(X)+w_1(\ell)^2=0 . \]
 Hence over $Y=\Met(X)$ no $\mathrm{Spin}(7,7)$ structure on $C$ exists, for any $X$. Over the time-oriented double cover $Y'$ of \cite[(3.33), p.~24]{W21} one exists if and only if $w_2(X)=0$, that is, if and only if $X$ is spin when $X$ is orientable.
+
+For a base of signature $(2,2)$, let $P,N\subset\pi^*TX$ be the positive and negative planes of the tautological metric. Then $w_1(C_+)=w_1(C_-)=w_1(N)$ and the obstruction is $\pi^*w_2(X)+w_1(N)^2$ (with $P$ in place of $N$ for the other block sign). This is nonzero on every fiber, so over $\Met_{(2,2)}(X)$ no $\mathrm{Spin}(7,7)$ structure on $C$ exists either, for any $X$.
 \end{proposition}
 \begin{proof}[Sketch]
 The criterion $w_2(E_+)+w_2(E_-)=0$ for an indefinite bundle is due to Karoubi \cite{K68}; see also \cite{B81}. It differs from $w_2(E)$ by $w_1(E_+)w_1(E_-)$. To verify it, reduce to the maximal compact subgroup $S(O(7)\times O(7))$, whose classifying space has $H^2(\,\cdot\,;\mathbb Z_2)$ spanned by $w_2(C_+)$, $w_2(C_-)$ and $w_1(C_\pm)^2$. A reflection in two orthonormal vectors lifts to $\pm\gamma_a\gamma_b$. Here $(\gamma_a\gamma_b)^2=-1$ when the two vectors have the same sign and $+1$ when their signs differ, which fixes the extension class.
 
 For $c_V,c_H>0$ and $\lambda>\tfrac14$, put $\Sigma=\ell^\perp$. Then $C_+\simeq\mathrm{Sym}^2_0\Sigma^*\oplus\mathbb R\oplus\ell^*$ and $C_-\simeq\mathbb Rg\oplus(\ell^*\otimes\Sigma^*)\oplus\Sigma^*$, and the splitting principle gives the classes. The fiber of $\Met(X)$ is homotopy equivalent to $\mathbb{RP}^3$, and $\ell$ restricts to the tautological line there, so $w_1(\ell)^2\neq0$ on every fiber. On $Y'$ the line $\ell$ is oriented, and $\pi^*$ is injective on $H^2$ by the Gysin sequence. Every step is checked exactly in \texttt{A\_spin\_obstruction.out}.
+
+For the base $(2,2)$, $c_V,c_H>0$ and $\lambda>\tfrac14$: $C_+\simeq\mathrm{Sym}^2_0P^*\oplus\mathrm{Sym}^2_0N^*\oplus\mathbb R\oplus P^*$ and $C_-\simeq\mathbb Rg\oplus(P^*\otimes N^*)\oplus N^*$; for $c_H<0$ exchange $P^*$ and $N^*$ in the last summands, and an overall sign change swaps $C_\pm$. The splitting principle gives the classes. On a fiber $P\oplus N$ is trivial, so $w_1(P)=w_1(N)$ there, and $u\mapsto(2uu^{\mathsf T}-\mathbf 1_3)\oplus1$, $u\in S^2$, embeds $\mathbb{RP}^2$ in the fiber with $N=u^\perp\subset\mathbb R^3$, the complement of the tautological line $\gamma$, so $w_1(N)^2=w_1(\gamma)^2\neq0$. These steps are checked exactly in \texttt{A\_spin\_obstruction\_22.out}.
 \end{proof}
 The draft therefore must, not merely may, use the space $Y'$ of (3.33) rather than $\Met(X)$ of Def.~3.1 for the bundle $P_{\widetilde{\mathrm{Fr}}(C)}$ of (3.32).
 
@@ -81,11 +85,11 @@ They hold for $\tau'(h)=(h,+c(h))$, the left stabiliser, but then Lemma~6.3 fail
 \[ \pi(g\tau'(h))-\pi(g)=2\,\varepsilon\,(d_{A_0}h)h^{-1}\varepsilon^{-1}. \]
 The map $(\varepsilon,\varpi)\mapsto(\varepsilon,-\varpi)$ is an automorphism of $\mathcal G$ exchanging $\tau$ and $\tau'$. Sections 6--7 of \cite{W21} become consistent after one global sign choice, but no single printed formula can be changed alone. Either
 \begin{enumerate}
-\item[(A)] replace $\tau$ by $\tau'$ in (6.4) and $\pi$ by $\pi'$ in (6.11); if the left action of Lemma~6.4 is to remain the one induced through the projection, also flip the sign of $(d_{A_0}\varepsilon)\varepsilon^{-1}$ in (6.15); or
-\item[(B)] keep $\tau$, $\pi$ and (6.15), and flip the sign of $\varpi$ in $\mu$ (6.18)--(6.19) and in $T$ (7.3).
+\item[(A)] replace $\tau$ by $\tau'$ in (6.4) and in its expansion (6.13), and $\pi$ by $\pi'$ in (6.11); if the left action of Lemma~6.4 is to remain the one induced through the projection, also flip the sign of $(d_{A_0}\varepsilon)\varepsilon^{-1}$ in (6.15). This agrees with (6.18), (6.19), (6.22), (7.3) and (10.6) as printed; or
+\item[(B)] keep $\tau$, $\pi$ and (6.15), and flip the sign of $\varpi$ in $\mu$ (6.18)--(6.19), in the connection $A_\omega=\nabla_0+\varpi_\omega$ of (6.22), and in $T$ (7.3). This conflicts with (10.6), which is computed with the sign of $\tau'$: under (B) its right-hand side becomes $(\varepsilon\gamma,-d_{A_0-\varpi}\gamma)$, for $\gamma$ in the Lie algebra of $\mathcal H$.
 \end{enumerate}
 \end{proposition}
-All identities are exact (\texttt{gauge\_group\_identities.out}, \texttt{C\_tilt\_repair.out}). The draft warns of ``2 or more conflicting conventions in this section'' \cite[fn.~7, p.~36]{W21}, and its own (10.6) uses the sign of $\tau'$. We use (A), and call it R-C1$'$.
+All identities are exact (\texttt{gauge\_group\_identities.out}, \texttt{C\_tilt\_repair.out} R1--R7). Not counting proof lines, (A) changes three displayed formulas, or four with (6.15). (B) changes four, or five if (6.18) and (6.19) are counted separately. The draft warns of ``2 or more conflicting conventions in this section'' \cite[fn.~7, p.~36]{W21}. We use (A), which agrees with the draft's own (10.6), and call it R-C1$'$.
 
 \section{Shiab operators and the field equation}
 For R-S, the soldering invariants $\Phi^1,\Phi^2$ define the family $\circledast^{(s_1;s_2,s_3)}_c:\Omega^2(\mathrm{ad})\to\Omega^{13}(\mathrm{ad})$ of \S1.

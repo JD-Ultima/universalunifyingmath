@@ -10,16 +10,19 @@ internal_consistency: >
   INCONSISTENT as printed: Lemmas 6.1, 6.3, 6.4 and the stabiliser statement hold for tau(h) =
   (h, -h^-1 d h); Lemmas 6.5 and 7.2 fail for it (residual -2 h^-1 d_A0 h) and hold for the
   opposite-sign tilt tau'. Consistent after one global sign choice (Prop C3'), which is not a one-formula
-  change (C_tilt_repair R4). Repair A changes tau (6.4) and pi (6.11), with pi(g tau'(h)) - pi(g) =
-  2 e (d_A0 h) h^-1 e^-1 otherwise; it also changes (6.15) if the left action is to stay the one induced
-  through pi (R5). Repair B keeps tau, pi, (6.15) and flips w in mu (6.18)-(6.19) and T (7.3).
-  (Wording corrected 2026-10-30, referee GU-4.)
+  change (C_tilt_repair R4). Repair A changes tau (6.4) with its expansion (6.13) (R6b) and pi (6.11),
+  with pi(g tau'(h)) - pi(g) = 2 e (d_A0 h) h^-1 e^-1 otherwise; it also changes (6.15) if the left action
+  is to stay the one induced through pi (R5); it agrees with (6.18), (6.19), (6.22), (7.3) and (10.6) as printed (R6c, R7a).
+  Repair B keeps tau, pi, (6.15) and flips w in mu (6.18)-(6.19), in A_w of (6.22) (R6d) and in T (7.3), and it
+  conflicts with (10.6), which the draft computes with the tau' sign (R7c, R7d). Not counting proof lines,
+  A changes 3 displayed formulas (4 with (6.15)) and B 4 (5 counting (6.18), (6.19) separately).
+  (Wording corrected 2026-10-30, referee GU-4; formula count corrected after second-round review N1.)
 proof_status: "Proven (one-line cocycle proofs) and verified as exact polynomial identities in a generic GL(2) model."
 novelty: >
   The sign error in the proofs of Lemmas 6.5/7.2 and the identification tau(H) = Stab_right(A0),
   tau'(H) = Stab_left(A0) exchanged by w -> -w are new relative to the source (draft fn. 7 only
   warns of conflicting conventions).
-reproducibility: "Exact sympy, deterministic, ~65 s."
+reproducibility: "Exact sympy, deterministic: gauge_group_identities.py ~65 s, C_tilt_repair.py ~75 s."
 empirical_testability: "None (structural)."
 dependencies: [L-C1]
 confidence: >

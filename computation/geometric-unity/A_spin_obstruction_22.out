@@ -1,0 +1,28 @@
+=== S1. Exact Gram check of C+- at y = diag(1,1,-1,-1), c_V = 1 ===
+  lambda = 3/10  c_H = +1: V-blocks {'Sym^2_0 P*': (2, 0), 'Sym^2_0 N*': (2, 0), 'P*(x)N*': (0, 4), 'R y': (0, 1), 'R y^perp': (1, 0)}; G-orthogonal: True; H*: P* (2, 0), N* (0, 2); total (7, 7); as stated in the docstring: True
+  lambda = 3/10  c_H = -1: V-blocks {'Sym^2_0 P*': (2, 0), 'Sym^2_0 N*': (2, 0), 'P*(x)N*': (0, 4), 'R y': (0, 1), 'R y^perp': (1, 0)}; G-orthogonal: True; H*: P* (0, 2), N* (2, 0); total (7, 7); as stated in the docstring: True
+  lambda = 1/2   c_H = +1: V-blocks {'Sym^2_0 P*': (2, 0), 'Sym^2_0 N*': (2, 0), 'P*(x)N*': (0, 4), 'R y': (0, 1), 'R y^perp': (1, 0)}; G-orthogonal: True; H*: P* (2, 0), N* (0, 2); total (7, 7); as stated in the docstring: True
+  lambda = 1/2   c_H = -1: V-blocks {'Sym^2_0 P*': (2, 0), 'Sym^2_0 N*': (2, 0), 'P*(x)N*': (0, 4), 'R y': (0, 1), 'R y^perp': (1, 0)}; G-orthogonal: True; H*: P* (0, 2), N* (2, 0); total (7, 7); as stated in the docstring: True
+  lambda = 1     c_H = +1: V-blocks {'Sym^2_0 P*': (2, 0), 'Sym^2_0 N*': (2, 0), 'P*(x)N*': (0, 4), 'R y': (0, 1), 'R y^perp': (1, 0)}; G-orthogonal: True; H*: P* (2, 0), N* (0, 2); total (7, 7); as stated in the docstring: True
+  lambda = 1     c_H = -1: V-blocks {'Sym^2_0 P*': (2, 0), 'Sym^2_0 N*': (2, 0), 'P*(x)N*': (0, 4), 'R y': (0, 1), 'R y^perp': (1, 0)}; G-orthogonal: True; H*: P* (0, 2), N* (2, 0); total (7, 7); as stated in the docstring: True
+  lambda = 3     c_H = +1: V-blocks {'Sym^2_0 P*': (2, 0), 'Sym^2_0 N*': (2, 0), 'P*(x)N*': (0, 4), 'R y': (0, 1), 'R y^perp': (1, 0)}; G-orthogonal: True; H*: P* (2, 0), N* (0, 2); total (7, 7); as stated in the docstring: True
+  lambda = 3     c_H = -1: V-blocks {'Sym^2_0 P*': (2, 0), 'Sym^2_0 N*': (2, 0), 'P*(x)N*': (0, 4), 'R y': (0, 1), 'R y^perp': (1, 0)}; G-orthogonal: True; H*: P* (0, 2), N* (2, 0); total (7, 7); as stated in the docstring: True
+
+=== S2. Stiefel-Whitney classes of C+ and C- (splitting principle, mod 2) ===
+  c_H = +1: w1(C+) = n1 + n2, w1(C-) = n1 + n2; w1(C+) = w1(C-) = w1(N): True
+           o = w2(C+) + w2(C-) == w2(X) + w1(N)^2 (mod 2): True;  w2(C) == w2(X): True
+  c_H = -1: w1(C+) = p1 + p2, w1(C-) = p1 + p2; w1(C+) = w1(C-) = w1(P): True
+           o = w2(C+) + w2(C-) == w2(X) + w1(P)^2 (mod 2): True;  w2(C) == w2(X): True
+  On a fiber P (+) N is trivial, so w1(P) = w1(N) there and pi^* w2(X) = 0: o restricts to w1(N)^2 in both cases.
+
+=== S3. An RP^2 inside one fiber of Met_(2,2) ===
+  y_u = (2 u u^T - I_3) (+) (1); y_u = y_{-u}, so u -> y_u factors through RP^2.
+  u = (1, 0, 0): eigenvalues {1: 2, -1: 2} (signature (2,2): True); P = Ru + Re4: True; N = u^perp in R^3: True
+  u = (3/5, 4/5, 0): eigenvalues {-1: 2, 1: 2} (signature (2,2): True); P = Ru + Re4: True; N = u^perp in R^3: True
+  u = (2/3, 2/3, 1/3): eigenvalues {1: 2, -1: 2} (signature (2,2): True); P = Ru + Re4: True; N = u^perp in R^3: True
+  u = (0, 5/13, 12/13): eigenvalues {-1: 2, 1: 2} (signature (2,2): True); P = Ru + Re4: True; N = u^perp in R^3: True
+  So on this RP^2, P = gamma (+) R and N = gamma^perp: w1(P) = w1(N) = a, and a^2 != 0 in H^2(RP^2; Z2).
+  Hence o = pi^* w2(X) + w1(N)^2 (or + w1(P)^2) != 0 on every fiber: no Spin(7,7) structure on C over
+  Met_(2,2)(X), for any X and either block sign.
+
+all checks pass: True

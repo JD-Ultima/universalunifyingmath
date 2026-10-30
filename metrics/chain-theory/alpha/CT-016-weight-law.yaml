@@ -4,7 +4,7 @@ formalization_status: Partially formal (encoded as definitions wX, wY, kOf in Le
 internal_consistency: "Verified as stated; X and Y coincide as operators on product records (F-CT-2)"
 proof_status: "Open: the weight law is introduced by argument, not derived as the trace of an independently constructed operator (gap CT-G01)"
 novelty: No known precedent
-reproducibility: freedom.py reproduces all 13 published alternatives
+reproducibility: "freedom.py reproduces the computed row and the 12 weight-law alternatives of Table S5 from the record classes; mutations_classified.py rechecks all 15 closed-form alternatives (3 of them, which change the unit, N or the configuration, lie outside the declared space)"
 empirical_testability: Only through CT-020
 dependencies: [three wording clauses of Table S-inputs, amplitude-vs-Born choice]
 confidence: "Medium-low that the rule is forced; the author's own weight-law alternatives span 1/value ∈ [97.5, 180.8] (Table S5 overall: [0.758, 180.8])"

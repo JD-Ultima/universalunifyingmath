@@ -15,7 +15,7 @@
 | F-CT-5 | `ChainAlpha.lean` builds under Lean 4.35.0 with standard axioms only. It certifies arithmetic of the definitions. The physically load-bearing choices (CT-G01–G05) enter as definitions. | Verified |
 | F-CT-6 | Deviations from the measurements are reproduced. The candidate is algebraic of degree 4; its minimal polynomial is given. | Verified |
 | F-CT-9 | The imported read-cap lemma is cross-checked numerically: Choi's map is positive and non-decomposable (SDP), also after embedding. | Computed |
-| F-CT-10 | The Letter's exchange $E$ does not commute with the symmetry group $G_\Omega$ of its own joint state, and its record span is not $G_\Omega$-invariant. The covariant version $E'$ gives identical counts and value. Symmetry leaves a 10-parameter family of readouts. | Proven (numerical, exact structure) |
+| F-CT-10 | The Letter's exchange $E$ does not commute with the symmetry group $G_\Omega$ of its own joint state, and its record span is not $G_\Omega$-invariant. The covariant version $E'$ gives identical counts and value. Symmetry leaves a 9-parameter (real) family of readouts (10 complex parameters). | Proven (numerical, exact structure) |
 | F-CT-8 | Exploration: the record weights are not the vacuum amplitudes or norms of the record operators. | Computed (negative) |
 | F-CT-7 | The construction's formula $f(d_Q,d_q)$ at other dimension pairs gives values far from $\alpha^{-1}$. $(3,2)$ is the only pair within 1% of $\alpha^{-1}$; the next closest, $(2,3)$, is 2.5% away. | Computed |
 
@@ -126,9 +126,9 @@ This gives $4^4\cdot6\cdot3\cdot2\cdot5=46\,080$ rules and 15 639 distinct value
 
 The single hit is $(79,48,42,3)$ in both cases. At this denominator, 10-digit agreement is not a generic property of small-coefficient elements of the field.
 
-**D. Lean-side cross-check.** We ran the author's `mutations.py` with Lean 4.35.0 on the pinned file. It applies 19 single-definition rewordings and has Lean evaluate each readout (`upstream_mutations_lean.out`; values in `mutations_values.out`).
+**D. Lean-side cross-check.** We ran the author's `mutations.py` with Lean 4.35.0 on the pinned file. It applies 19 single-definition rewordings and has Lean evaluate each readout (`upstream_mutations_lean.out`; values in `mutations_values.out`). The row-by-row classification below (numerator, 1/value, Table S5 row, membership of B with a witness rule) is printed by `mutations_classified.py` → `mutations_classified.out`, which also rechecks all 16 closed-form rows of Table S5 against their printed inverses.
 
-- 13 of the 19 rewordings lie in the declared space B, and Lean reproduces our numerator exactly for each. 10 are Table S5 rows reproduced in Part A. Three are in B only: normalisation $36^3$ (205.55), reads at the qubit (150.79) and commutator records carrying no reads (138.94).
+- 13 of the 19 rewordings lie in the declared space B, and Lean reproduces our numerator exactly for each: for each of the 13, `mutations_classified.out` gives a rule of B whose numerator equals the Lean numerator exactly. 10 are Table S5 rows reproduced in Part A. Three are in B only: normalisation $36^3$ (205.55), reads at the qubit (150.79) and commutator records carrying no reads (138.94).
 - Four rewordings lie outside B: keeping both commutator combinations (133.97), a shifted slot exchange (254.54), dropping the exchange-fixed records (149.59) and dropping the even records (295.10).
 - (Corrected after review 2026-10-30, CT-2; see `reports/CORRECTIONS.md`.)
 - Two rewordings leave the value unchanged: `fixesFar_always_true` (which breaks the end-rule statement but not the readout) and an equivalent definition of `wX`.
@@ -197,7 +197,7 @@ $G_\Omega$ is the symmetry group of the joint read state $\lvert\Omega\rangle=\l
    | $+$ | $(1,1)^{\times2}$, $(1,5)$, $(8,1)$, $(8,3)^{\times2}$, $(27,1)$ |
    | $-$ | $(1,3)^{\times2}$, $(8,1)$, $(8,3)^{\times2}$, $(10,1)$, $(\overline{10},1)$ |
 
-   That is 10 isotypic components over $\mathbb C$, and the commutant has real dimension 22. Any invariant dressing $M$ has $\operatorname{tr}M=\sum_{i=1}^{10}\dim\rho_i\,\operatorname{tr}A_i$. A dressing that maps Hermitian records to Hermitian records commutes with $A\mapsto A^\dagger$, which exchanges the $10$ and $\overline{10}$ components, so those two weights are equal. The result is a **9-parameter (real)** family of readouts; the count was corrected after review CT-5. The Letter's rule is one point in it, fixed by the wording clauses of CT-G02. In particular, within the single isotypic component $(1,3)_-$ the Letter gives weight 1 to the three antisymmetric qubit–qubit products and $\sqrt6$ to the three commutator records. Symmetry does not distinguish these two copies of the same representation; only the "one letter vs two letters" construction rule does.
+   That is 10 isotypic components over $\mathbb C$, and the commutant has real dimension 22. Any invariant dressing $M$ has $\operatorname{tr}M=\sum_{i=1}^{10}\dim\rho_i\,\operatorname{tr}A_i$. A dressing that maps Hermitian records to Hermitian records commutes with $A\mapsto A^\dagger$, which exchanges the $10$ and $\overline{10}$ components, so those two weights are complex conjugates (equal only if the dressing is also self-adjoint), and only their real part enters the trace. The result is a **9-parameter (real)** family of readouts; the count was corrected after review CT-5, and the wording after the second-round review. The Letter's rule is one point in it, fixed by the wording clauses of CT-G02. In particular, within the single isotypic component $(1,3)_-$ the Letter gives weight 1 to the three antisymmetric qubit–qubit products and $\sqrt6$ to the three commutator records. Symmetry does not distinguish these two copies of the same representation; only the "one letter vs two letters" construction rule does.
 
 ## F-CT-8 Exploration: do natural state functionals give the weights? (negative)
 
