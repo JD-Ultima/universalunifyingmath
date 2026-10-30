@@ -14,6 +14,6 @@ closest_misses:
   F1_traces: "L_PL2 . Pi+ . L_PL2 (read-link sandwich around the exchange symmetrizer): per-isotypic residual 0.1008 vs 0.2070 for the identity; non-covariant, with the wrong class ordering"
   F2_local: "97+48√2+36√3 (1/value 136.880, distance 0.057) and Table S5 'X where letters sit' (139.030, distance 0.062): they agree with M_L except on the 12 qubit-only records"
 proof_status: "CT-G01 reduced to CT-G02 (end attribution) and CT-G08 (amplitude level); not closed. CT-G01's original closure criterion is met by Prop. 2 without closing the gap, and is sharpened to: an operator construction in which the end attribution is not an input."
-reproducibility: "operator_origin.py imports records_independent.py and symmetry.py; fixed seed 20261030; about 16 min on 4 cores (926 s)"
+reproducibility: "operator_origin.py imports records_independent.py and symmetry.py; fixed seed 20261030; about 16 min on 4 cores (926 s). Coordinator rerun 2026-10-30 (shared machine, 4350 s): output identical apart from the timing lines; Prop. 2 also cross-checked separately by xcheck_operator_form.py"
 dependencies: [covariant records (F-CT-10), E' = E o T, end rule and copies clause (CT-G02), amplitude level (CT-G08)]
 confidence: "High for the theorems (elementary, machine-checked) and for the negatives within the declared families. The families are ours. A G_Omega-breaking construction that transports qubit letters to the qutrit copies through the read links before crediting the join is not tested."
