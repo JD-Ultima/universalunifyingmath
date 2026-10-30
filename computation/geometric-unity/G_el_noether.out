@@ -34,3 +34,7 @@ setup: d = 3, eta = [1, 1, -1], sl(2) basis tau_i; M_sa Tr-symmetric: True; M_ns
   [M_id = Id (CS)] N3 Upsilon (Euler operator) = Sh F_A + kappa *T - (1/3) h(T) + (1/2) D(T) at 0: True  [D(T) = d_B(Sh T) - Sh(d_B T) = 0: True; h(T) = 0: True]
       without the D-term (Corollary D5, which assumes d_B Sh_eps = 0): True; = printed Sh F_A + kappa *T (9.7): True (max |difference| x6 = 0)
       Xi = d_A Upsilon^pr (redundancy (9.6) for the printed Upsilon): True   [predicted: False unless h = D = 0, i.e. True only for the Chern-Simons control]
+  N4 tau'-invariance of the density: L(eps h, h^-1 varpi h + h^-1 d_A0 h) = L(eps, varpi) (all Taylor coefficients, random polynomial h): True
+
+runtime 42 s
+EXIT 0
