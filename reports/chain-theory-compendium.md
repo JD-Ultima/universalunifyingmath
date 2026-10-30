@@ -86,3 +86,81 @@ chapters themselves describe them.
    the three kernel modules; only those can certify any computation.
 7. Lower priority: Parts XIII-XV theorems (second law, distillation, bands), which appear to hold by
    construction (e.g. fidelity 1 "by the Axiom") and need only a tautology check.
+
+## Round 2 — numeric scorecard
+
+Note: `formalization/chain-theory/compendium/05-numeric-scorecard.md`. Code and outputs:
+`computation/chain-theory/compendium/scorecard_extract.py`, `scorecard_data.py`, `scorecard.py`,
+`scorecard_freedom.py`, `outputs/scorecard*.{txt,tsv}`. Metrics: `metrics/chain-theory/compendium/scorecard.yaml`.
+References: CODATA 2022 (`scipy.constants` 1.18.1) and PDG 2024 (MC table `mass_width_2024.mcd`, with some values
+transcribed and flagged in the note).
+
+**F9. Coverage** (c). A mechanical screen of the 468 boxes found 242 that name a physical quantity, 174 of them
+with numerals. The curated scorecard covers 53 named quantities and 124 printed numbers ("faces"). All 210
+anchors (numbers, identification sentences and verdicts) are verbatim. Each of the 114 screened boxes without a row has a reason code. The source states a
+normalisation or unit for 9 quantities: α(0) at zero momentum transfer, and masses, binding and the vacuum value
+"in the electron unit". The other 43 are correspondences "by name" or "nearest", and for one more the pairing is
+ours. The release defers its comparisons 25 times to "the comparison table", and the release contains no such
+table.
+
+**F10. Tally** (c, e). 34 quantities can be compared numerically. Classified at their best face: 2 lie within 3σ,
+5 within 1%, 9 within a factor 10, and 18 disagree beyond a factor 10 (or are zero where the measured value is
+nonzero). Only 16 of the 34 have a face the source adopts; at that face the count is 1 / 1 / 3 / 11. Of the
+qualitative checks, 10 agree and 7 disagree. The 10 agreements are the Tsirelson and CGLMP values, the signature,
+the gauge dimensions, the 3 generations, the photon, the n⁻², the Lamb sign, the asymptotic-freedom sign and the
+Chern integrality. Most of them rest on round-1 choices or on standard quantum mechanics. The 7 disagreements are
+a_e at order 3, the hyperfine interval, the Casimir form, the direction of QED running, the electron decay cell,
+the rate ordering and the periodic table. Large failures include:
+- the W, Z and H masses and v in the electron unit: factors 10³ to 10⁶;
+- G_F: factor 10¹⁰;
+- α_s at its adopted face: 6.5e-8 against 0.118;
+- CKM |J| = √3/18, the maximum possible value: factor 3×10³;
+- trimaximal PMNS: factor 15 at |U_e3|²;
+- the heavy-quark masses: in the wrong order;
+- the decay-board ratios: off by 7 to 15 orders, as the source itself states;
+- G: factor 10³⁵.
+
+**F11. Agreements besides α(0)** (b, c, e). Five of the seven agreements within 1% rest on a choice among faces the
+source prints without selecting one.
+- **sin²θ_W = (17/36)² = 289/1296.** This face is printed at 164.2 (OPEN). We re-derived it: 17 of the 36 Weyl
+  pair letters are nonzero at the (3,2) pair ket. It lies −0.83σ from the on-shell value
+  1 − (M_W/M_Z)² = 0.223209(259), but 3.6% from the MS-bar value. The source refuses this identification step,
+  and its adopted value, cos²θ_W = 1/2 (164.5), is 1070σ off. Expected chance hits: 0.019 among the source's 11
+  distinct printed values; 0.14 in a declared family of 192 variants. Five discrete choices lie behind it.
+- **Lepton and proton mass ratios.** The "derived cells" of 186.1 (THEOREM) are e = 67, μ = 963, τ = 3969 and
+  p = 2871. Combined with mass = (first power)² (185.9), they give:
+  - m_μ/m_e = 206.587 (−0.088%);
+  - m_τ/m_e = 3509.24 (+0.92%);
+  - Koide = 0.667660 (+0.15%);
+  - m_p/m_e = (2871/67)² = 1836.18646 (+1.84×10⁻⁵, about 10⁶σ).
+
+  The source displays none of these. It prints the hub face of the lepton ratios instead, (963/201)² = 22.95
+  and (3969/201)² = 389.9, both a factor 9 low. It calls 2871 "the candidate cell" (20.1, 175.4) and reports it
+  "refuted at the bounded closures" (175.3).
+
+  The agreement needs the electron undressed and the muon and tau dressed. That violates the source's own face
+  dissolution theorem 155.1 by the factor 3² = 9.
+
+  Freedom in declared spaces built from the source's own alternatives: expected chance hits 0.007 (μ), 0.07 (τ)
+  and 0.0025 (p); one lepton combination in 504 puts both ratios within 1%; one of the 9 printed proton cells lies
+  within 1%; at least 4 or 5 discrete choices each. As with α, the order in which cells and targets were fixed is
+  not documented. Here, unlike for α, the text itself marks the proton cell as a candidate.
+- **m_n/m_p = 1 (−0.14%).** This is the isospin value. The printed splitting, 5.4×10⁻⁸, is too small by a
+  factor 2.6×10⁴.
+
+None of these approaches the improbability of the α(0) agreement: F-CT-4 gives 4.4×10⁻⁶ expected chance hits
+within 1σ for α(0).
+
+**F12. Internal inconsistencies exposed by scoring** (c).
+- The source uses two mass conventions:
+  - mass = S² (185.9 and the Koide arithmetic);
+  - office = S² = mass² (the 181.5 and 200.6 bridges; the Higgs "mass displays" 16/67 and 12/67).
+
+  The lepton and proton agreements exist only under the first. "Stands outside the comparison by orders" (176.1)
+  is true only under the second.
+- 176.1 says the lepton ratios are displayed "nowhere", while 176.2 displays them.
+- 211.1 derives the rate ordering electromagnetic > weak > strong, opposite to the ordering its own bridge cites.
+
+**Changes to round 1.** These are logged in `reports/CORRECTIONS.md`. CT-C027 ("No model number" for Koide) is
+wrong: 157.1 and 154.1 print four Koide values. CT-C026 and the round-1 summary need the qualification of F11.
+The round-1 summary sentence still holds for chapters 141, 143, 64 and 65.

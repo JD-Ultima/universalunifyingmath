@@ -1,0 +1,243 @@
+number	grade	file	line	numerals	lexicon	scorecard	excluded
+1.7	CONDITIONAL	01-framework.tex	60	2	alpha(0);generations		STRUCT
+1.8	OPEN	01-framework.tex	69	85	alpha(0);alpha_s;Yukawa;generations		DUP
+1.9	OPEN	01-framework.tex	81	4	alpha(0);generations		STRUCT
+8.1	THEOREM	01-framework.tex	306	24	decay rates		STRUCT
+13.1	THEOREM	01-framework.tex	497	23	Chern, Hall		STRUCT
+15.1	TABLE	01-framework.tex	528	18	Higgs mass, quartic, vev;Yukawa		STRUCT
+20.1	OPEN	01-framework.tex	722	28	Yukawa;lepton masses		DUP
+21.1	OPEN	01-framework.tex	759	8	lepton masses;nucleon masses		DUP
+23.1	OPEN	01-framework.tex	804	10	nucleon masses		STRUCT
+27.1	THEOREM	01-framework.tex	881	19	CKM		STRUCT
+29.1	OPEN	01-framework.tex	954	9	widths		STRUCT
+32.1	OPEN	01-framework.tex	1023	14	lepton masses;nucleon masses		DUP
+36.1	OPEN	03-quantum-mechanics.tex	55	31	Bell, Tsirelson	SC-01	
+38.1	OPEN	03-quantum-mechanics.tex	113	9	generations		STRUCT
+39.1	THEOREM	03-quantum-mechanics.tex	130	63	Higgs mass, quartic, vev;Yukawa		STRUCT
+43.1	CONDITIONAL	03-quantum-mechanics.tex	321	32	spin-statistics		AMBIG
+45.1	OPEN	03-quantum-mechanics.tex	457	11	hydrogen levels		STRUCT
+46.1	CONDITIONAL	03-quantum-mechanics.tex	482	68	spin-statistics		STRUCT
+47.1	CONDITIONAL	03-quantum-mechanics.tex	550	6	Bell, Tsirelson		DUP
+54.1	CONDITIONAL	04-spacetime-and-symmetry.tex	167	37	signature	SC-02	
+55.1	THEOREM	04-spacetime-and-symmetry.tex	212	82	signature		DUP
+57.1	THEOREM	04-spacetime-and-symmetry.tex	385	2	spin-statistics		STRUCT
+57.2	OPEN	04-spacetime-and-symmetry.tex	390	10	spin-statistics		STRUCT
+64.1	THEOREM	05-gauge-structure.tex	25	0	gauge group		
+64.2	THEOREM	05-gauge-structure.tex	30	11	gauge group	SC-03	
+65.1	THEOREM	05-gauge-structure.tex	54	1	gauge group	SC-03	
+65.2	THEOREM	05-gauge-structure.tex	59	10	gauge group		STRUCT
+66.1	OPEN	05-gauge-structure.tex	87	0	gauge group		
+66.2	OPEN	05-gauge-structure.tex	92	0	gauge group		
+66.3	OPEN	05-gauge-structure.tex	97	0	gauge group		
+66.4	CONDITIONAL	05-gauge-structure.tex	102	6	signature;gauge group		STRUCT
+66.5	OPEN	05-gauge-structure.tex	108	5	gauge group		STRUCT
+67.1	OPEN	05-gauge-structure.tex	127	3	generations;gauge group		STRUCT
+68.1	OPEN	05-gauge-structure.tex	148	6	widths;generations;gauge group		STRUCT
+69.1	THEOREM	05-gauge-structure.tex	169	63	Higgs mass, quartic, vev;nucleon masses		DUP
+70.1	THEOREM	05-gauge-structure.tex	200	96	nuclei		STRUCT
+71.1	TABLE	05-gauge-structure.tex	235	18	abundances		STRUCT
+72.1	OPEN	05-gauge-structure.tex	254	0	gauge group		
+72.2	OPEN	05-gauge-structure.tex	259	0	gauge group		
+72.3	OPEN	05-gauge-structure.tex	264	0	gauge group		
+72.4	CONDITIONAL	05-gauge-structure.tex	269	0	gauge group		
+72.5	OPEN	05-gauge-structure.tex	275	6	gauge group		AMBIG
+75.1	OPEN	05-gauge-structure.tex	407	6	Casimir		MATH
+78.1	CONDITIONAL	05-gauge-structure.tex	491	0	a_e, a_mu		
+78.2	CONDITIONAL	05-gauge-structure.tex	497	0	a_e, a_mu		
+78.3	THEOREM	05-gauge-structure.tex	503	4	a_e, a_mu	SC-07;SC-08	
+79.1	THEOREM	05-gauge-structure.tex	528	3	alpha(0);a_e, a_mu		NOVAL
+80.1	THEOREM	05-gauge-structure.tex	547	84	a_e, a_mu		NOVAL
+83.1	THEOREM	05-gauge-structure.tex	651	25	generations	SC-04	
+84.1	OPEN	05-gauge-structure.tex	690	0	W, Z masses;gauge group		
+84.2	OPEN	05-gauge-structure.tex	695	2	W, Z masses;gauge group		DUP
+84.3	OPEN	05-gauge-structure.tex	700	10	W, Z masses;gauge group		DUP
+85.1	OPEN	05-gauge-structure.tex	721	32	spin-statistics		STRUCT
+86.1	THEOREM	05-gauge-structure.tex	744	96	Higgs mass, quartic, vev	SC-23	
+88.1	OPEN	05-gauge-structure.tex	814	52	Casimir		MATH
+90.1	CONDITIONAL	06-cell-2-2-metric-and-horizon.tex	63	0	signature		
+91.1	OPEN	06-cell-2-2-metric-and-horizon.tex	123	64	G_N;Lambda	SC-46	
+92.1	OPEN	06-cell-2-2-metric-and-horizon.tex	166	8	Lambda		STRUCT
+95.1	OPEN	06-cell-2-2-metric-and-horizon.tex	263	42	alpha(0);G_N	SC-46	
+96.1	OPEN	06-cell-2-2-metric-and-horizon.tex	292	57	Lambda	SC-47	
+98.1	OPEN	06-cell-2-2-metric-and-horizon.tex	352	54	BH entropy	SC-49	
+99.2	CONDITIONAL	06-cell-2-2-metric-and-horizon.tex	453	0	G_N		
+100.1	OPEN	06-cell-2-2-metric-and-horizon.tex	762	6	Hubble		STRUCT
+103.1	CONDITIONAL	06-cell-2-2-metric-and-horizon.tex	814	60	Higgs mass, quartic, vev		DUP
+104.1	THEOREM	06-cell-2-2-metric-and-horizon.tex	865	56	abundances	SC-51	
+111.1	OPEN	06-cell-2-2-metric-and-horizon.tex	1149	44	BH entropy	SC-49	
+113.1	CONDITIONAL	06-cell-2-2-metric-and-horizon.tex	1309	0	G_N	SC-46	
+115.1	CONDITIONAL	06-cell-2-2-metric-and-horizon.tex	1410	25	Lambda	SC-47	
+117.1	OPEN	06-cell-2-2-metric-and-horizon.tex	1481	23	Lambda		DUP
+122.1	OPEN	06-cell-2-2-metric-and-horizon.tex	1636	40	Lambda;Hubble	SC-48	
+123.1	OPEN	06-cell-2-2-metric-and-horizon.tex	1675	46	signature		STRUCT
+124.1	CONDITIONAL	07-cell-3-2-photon.tex	26	35	alpha(0)	SC-05;SC-06	
+126.1	TABLE	07-cell-3-2-photon.tex	110	0	alpha(0);nucleon masses		
+131.1	OPEN	07-cell-3-2-photon.tex	221	71	Higgs mass, quartic, vev		STRUCT
+132.1	OPEN	07-cell-3-2-photon.tex	256	105	alpha(0)		DUP
+134.1	THEOREM	07-cell-3-2-photon.tex	298	35	photon		DUP
+135.1	THEOREM	07-cell-3-2-photon.tex	366	13	photon		DUP
+141.1	CONDITIONAL	07-cell-3-2-photon.tex	426	23	a_e, a_mu	SC-08	
+143.1	CONDITIONAL	07-cell-3-2-photon.tex	481	53	hydrogen levels;Lamb shift;hyperfine;nucleon masses	SC-09;SC-10;SC-11	
+144.1	OPEN	07-cell-3-2-photon.tex	551	15	a_e, a_mu;Lamb shift;hyperfine;Casimir	SC-12	
+145.1	THEOREM	07-cell-3-2-photon.tex	572	13	Lamb shift;Casimir	SC-13	
+147.1	CONDITIONAL	07-cell-3-2-photon.tex	647	66	running of alpha	SC-14	
+148.1	CONDITIONAL	07-cell-3-2-photon.tex	709	75	alpha(0);running of alpha	SC-14;SC-15	
+149.1	CONDITIONAL	07-cell-3-2-photon.tex	764	100	alpha_s;gauge group	SC-16	
+150.1	CONDITIONAL	07-cell-3-2-photon.tex	803	10	photon;nuclei		STRUCT
+151.1	THEOREM	07-cell-3-2-photon.tex	857	29	photon		STRUCT
+152.1	CONDITIONAL	07-cell-3-2-photon.tex	897	26	Yukawa;generations		DUP
+154.1	THEOREM	07-cell-3-2-photon.tex	993	45	Yukawa;lepton masses;generations	SC-35;SC-37	
+157.1	OPEN	07-cell-3-2-photon.tex	1161	83	lepton masses	SC-35;SC-37	
+159.1	OPEN	08-cell-4-2-weak.tex	103	21	W, Z masses		DUP
+159.2	OPEN	08-cell-4-2-weak.tex	109	105	W, Z masses		DUP
+160.1	OPEN	08-cell-4-2-weak.tex	177	35	weak angle;W, Z masses	SC-18	
+162.1	CONDITIONAL	08-cell-4-2-weak.tex	257	4	lepton masses		STRUCT
+163.1	CONDITIONAL	08-cell-4-2-weak.tex	312	13	lepton masses		STRUCT
+164.1	CONDITIONAL	08-cell-4-2-weak.tex	383	0	weak angle		
+164.2	OPEN	08-cell-4-2-weak.tex	389	1	weak angle	SC-18;SC-20	
+164.3	OPEN	08-cell-4-2-weak.tex	395	0	weak angle	SC-18	
+164.4	OPEN	08-cell-4-2-weak.tex	401	58	weak angle	SC-18	
+164.5	CONDITIONAL	08-cell-4-2-weak.tex	436	12	weak angle	SC-18	
+166.1	CONDITIONAL	08-cell-4-2-weak.tex	469	0	CKM;PMNS	SC-34	
+166.2	OPEN	08-cell-4-2-weak.tex	475	0	CKM;PMNS		
+166.3	OPEN	08-cell-4-2-weak.tex	481	15	CKM;PMNS		NOVAL
+166.4	OPEN	08-cell-4-2-weak.tex	520	30	CKM;PMNS	SC-32;SC-33	
+166.5	OPEN	08-cell-4-2-weak.tex	547	18	CKM		DUP
+166.6	OPEN	08-cell-4-2-weak.tex	575	26	CKM;nucleon masses	SC-32;SC-33	
+168.1	OPEN	08-cell-4-2-weak.tex	622	45	CKM;Higgs mass, quartic, vev	SC-32	
+169.1	OPEN	08-cell-4-2-weak.tex	652	34	CKM		DUP
+170.1	THEOREM	08-cell-4-2-weak.tex	685	6	widths;decay rates		UNMAPPED
+170.2	OPEN	08-cell-4-2-weak.tex	691	34	W, Z masses;widths;decay rates	SC-26;SC-27	
+172.1	CONDITIONAL	09-cell-3-3-strong.tex	63	0	alpha_s;nucleon masses		
+172.2	OPEN	09-cell-3-3-strong.tex	69	41	alpha_s	SC-16	
+173.1	CONDITIONAL	09-cell-3-3-strong.tex	101	40	alpha_s	SC-16;SC-17	
+174.1	CONDITIONAL	09-cell-3-3-strong.tex	131	0	nucleon masses		
+174.2	CONDITIONAL	09-cell-3-3-strong.tex	137	3	nucleon masses		STRUCT
+174.3	OPEN	09-cell-3-3-strong.tex	143	30	nucleon masses		DUP
+176.1	CONDITIONAL	09-cell-3-3-strong.tex	325	0	lepton masses	SC-38	
+176.2	OPEN	09-cell-3-3-strong.tex	331	57	lepton masses	SC-35;SC-36;SC-37	
+177.1	CONDITIONAL	09-cell-3-3-strong.tex	366	4512	widths;nucleon masses;hadron masses;nuclei		STRUCT
+177.2	CONDITIONAL	09-cell-3-3-strong.tex	1062	0	nucleon masses;nuclei		
+177.3	OPEN	09-cell-3-3-strong.tex	1068	10	nuclei		STRUCT
+178.1	OPEN	09-cell-3-3-strong.tex	1092	26	quark masses;hadron masses	SC-42;SC-43	
+179.1	OPEN	09-cell-3-3-strong.tex	1121	35	hadron masses		NOVAL
+180.1	OPEN	09-cell-3-3-strong.tex	1151	17	nucleon masses;hadron masses	SC-38	
+181.1	CONDITIONAL	09-cell-3-3-strong.tex	1180	0	quark masses		
+181.2	CONDITIONAL	09-cell-3-3-strong.tex	1186	0	lepton masses;quark masses		
+181.3	OPEN	09-cell-3-3-strong.tex	1192	41	quark masses;signature		STRUCT
+181.4	CONDITIONAL	09-cell-3-3-strong.tex	1220	29	W, Z masses;quark masses	SC-42;SC-43;SC-44	
+181.5	THEOREM	09-cell-3-3-strong.tex	1248	14	quark masses	SC-41	
+184.1	TABLE	09-cell-3-3-strong.tex	1310	3	nucleon masses		STRUCT
+185.1	CONDITIONAL	10-cell-4-3-yukawa.tex	27	0	Higgs mass, quartic, vev;Yukawa		
+185.2	CONDITIONAL	10-cell-4-3-yukawa.tex	32	0	Higgs mass, quartic, vev;Yukawa		
+185.3	CONDITIONAL	10-cell-4-3-yukawa.tex	37	0	Higgs mass, quartic, vev;Yukawa		
+185.4	CONDITIONAL	10-cell-4-3-yukawa.tex	42	0	Higgs mass, quartic, vev;Yukawa		
+185.5	CONDITIONAL	10-cell-4-3-yukawa.tex	47	0	Higgs mass, quartic, vev;Yukawa		
+185.6	CONDITIONAL	10-cell-4-3-yukawa.tex	52	0	Higgs mass, quartic, vev;Yukawa		
+185.7	CONDITIONAL	10-cell-4-3-yukawa.tex	57	0	Higgs mass, quartic, vev;Yukawa		
+185.8	CONDITIONAL	10-cell-4-3-yukawa.tex	62	0	Higgs mass, quartic, vev;Yukawa		
+185.9	CONDITIONAL	10-cell-4-3-yukawa.tex	67	0	Higgs mass, quartic, vev;Yukawa		
+185.10	CONDITIONAL	10-cell-4-3-yukawa.tex	72	0	Higgs mass, quartic, vev;Yukawa		
+185.11	CONDITIONAL	10-cell-4-3-yukawa.tex	77	0	Higgs mass, quartic, vev;Yukawa		
+185.12	CONDITIONAL	10-cell-4-3-yukawa.tex	82	63	Higgs mass, quartic, vev;Yukawa		DUP
+186.1	THEOREM	10-cell-4-3-yukawa.tex	130	11	nuclei	SC-35;SC-36;SC-38;SC-39	
+187.1	OPEN	10-cell-4-3-yukawa.tex	164	17	Yukawa;lepton masses		STRUCT
+189.1	OPEN	10-cell-4-3-yukawa.tex	196	18	generations		STRUCT
+191.1	THEOREM	10-cell-4-3-yukawa.tex	245	25	Yukawa		STRUCT
+193.1	OPEN	10-cell-4-3-yukawa.tex	280	98	alpha(0);alpha_s;gauge group	SC-16	
+195.1	THEOREM	10-cell-4-3-yukawa.tex	331	25	nuclei		STRUCT
+196.1	CONDITIONAL	10-cell-4-3-yukawa.tex	1154	0	widths;lepton masses		
+196.2	THEOREM	10-cell-4-3-yukawa.tex	1159	116	widths		NOREF
+197.1	CONDITIONAL	10-cell-4-3-yukawa.tex	1217	0	generations		
+197.2	CONDITIONAL	10-cell-4-3-yukawa.tex	1222	0	generations		
+197.3	CONDITIONAL	10-cell-4-3-yukawa.tex	1227	0	generations		
+197.4	CONDITIONAL	10-cell-4-3-yukawa.tex	1232	0	generations		
+197.5	OPEN	10-cell-4-3-yukawa.tex	1237	12	generations		DUP
+199.1	OPEN	10-cell-4-3-yukawa.tex	1326	27	Higgs mass, quartic, vev;Yukawa	SC-25	
+200.1	CONDITIONAL	11-cell-4-4-higgs.tex	9	2	Higgs mass, quartic, vev;Yukawa		STRUCT
+200.2	CONDITIONAL	11-cell-4-4-higgs.tex	15	5	Higgs mass, quartic, vev;Yukawa		DUP
+200.3	CONDITIONAL	11-cell-4-4-higgs.tex	21	2	Higgs mass, quartic, vev;Yukawa	SC-24	
+200.4	OPEN	11-cell-4-4-higgs.tex	27	12	Higgs mass, quartic, vev;Yukawa		DUP
+200.5	OPEN	11-cell-4-4-higgs.tex	59	23	Higgs mass, quartic, vev	SC-21;SC-23;SC-24	
+200.6	THEOREM	11-cell-4-4-higgs.tex	83	38	Higgs mass, quartic, vev	SC-22	
+202.1	THEOREM	11-cell-4-4-higgs.tex	377	21	Higgs mass, quartic, vev	SC-23	
+203.1	CONDITIONAL	12-decays-and-nuclei.tex	23	0	decay rates;nuclei		
+203.2	OPEN	12-decays-and-nuclei.tex	28	0	decay rates		
+203.3	CONDITIONAL	12-decays-and-nuclei.tex	33	2	decay rates		STRUCT
+203.4	OPEN	12-decays-and-nuclei.tex	38	0	decay rates		
+203.5	THEOREM	12-decays-and-nuclei.tex	43	2	widths;decay rates		UNMAPPED
+203.6	OPEN	12-decays-and-nuclei.tex	48	7	decay rates		STRUCT
+204.1	OPEN	12-decays-and-nuclei.tex	81	46	decay rates		STRUCT
+205.1	TABLE	12-decays-and-nuclei.tex	128	0	widths;lifetimes, branching	SC-28;SC-29;SC-30	
+206.1	CONDITIONAL	12-decays-and-nuclei.tex	162	0	decay rates		
+206.2	CONDITIONAL	12-decays-and-nuclei.tex	167	0	decay rates		
+206.3	CONDITIONAL	12-decays-and-nuclei.tex	172	0	widths;decay rates		
+206.4	CONDITIONAL	12-decays-and-nuclei.tex	177	52	widths;lifetimes, branching;decay rates		STRUCT
+207.1	OPEN	12-decays-and-nuclei.tex	224	20	alpha_s		DUP
+208.1	OPEN	12-decays-and-nuclei.tex	250	26	W, Z masses;lifetimes, branching;Fermi constant		DUP
+209.1	OPEN	12-decays-and-nuclei.tex	278	42	G_N;Lambda;BH entropy	SC-47;SC-49	
+210.1	OPEN	12-decays-and-nuclei.tex	311	0	widths;decay rates		
+210.2	CONDITIONAL	12-decays-and-nuclei.tex	316	5	widths;decay rates		STRUCT
+211.1	CONDITIONAL	12-decays-and-nuclei.tex	341	6	widths;lifetimes, branching;decay rates	SC-31	
+211.2	CONDITIONAL	12-decays-and-nuclei.tex	346	75	widths;lifetimes, branching;decay rates	SC-52	
+212.1	OPEN	12-decays-and-nuclei.tex	411	40	widths;lifetimes, branching;Fermi constant		NOVAL
+214.1	OPEN	12-decays-and-nuclei.tex	554	0	binding;nuclei		
+214.2	OPEN	12-decays-and-nuclei.tex	559	0	binding;nuclei		
+214.3	OPEN	12-decays-and-nuclei.tex	564	0	binding;nuclei		
+214.4	OPEN	12-decays-and-nuclei.tex	569	0	binding;nuclei		
+214.5	OPEN	12-decays-and-nuclei.tex	574	0	binding;nuclei	SC-45	
+214.6	OPEN	12-decays-and-nuclei.tex	579	48	binding;nuclei	SC-38;SC-45	
+216.1	OPEN	12-decays-and-nuclei.tex	634	20	nuclei		STRUCT
+221.1	THEOREM	13-thermodynamics.tex	226	22	phase transition		NOREF
+225.1	THEOREM	14-condensed-matter-and-atoms.tex	70	50	bands		STRUCT
+227.1	TABLE	14-condensed-matter-and-atoms.tex	131	3	Chern, Hall		STRUCT
+228.1	OPEN	14-condensed-matter-and-atoms.tex	162	51	periodic table	SC-53	
+229.1	THEOREM	14-condensed-matter-and-atoms.tex	192	49	nucleon masses		STRUCT
+231.1	OPEN	15-quantum-information.tex	55	31	gauge group		MATH
+236.1	OPEN	15-quantum-information.tex	314	33	Chern, Hall		STRUCT
+238.1	TABLE	16-scorecard.tex	64	27	generations;Lambda;theta		STRUCT
+239.1	TABLE	16-scorecard.tex	125	7	Lambda		STRUCT
+E.1	OPEN	back.tex	166	6	W, Z masses		STRUCT
+H.2	OPEN	back.tex	263	1766	widths		STRUCT
+J.1	OPEN	back.tex	591	4	generations;gauge group		STRUCT
+O.1	OPEN	back.tex	669	32	quark masses;nucleon masses;nuclei	SC-39;SC-40	
+P.1	THEOREM	back.tex	707	43	lifetimes, branching;dark matter		NOVAL
+Q.1	CONDITIONAL	back.tex	743	44	PMNS		STRUCT
+U.1	THEOREM	back.tex	839	23	baryon asymmetry	SC-51;SC-52	
+W.1	OPEN	back.tex	1002	9	nucleon masses;binding;nuclei		STRUCT
+I.1.2	THEOREM	instruments.tex	18	16	spin-statistics		STRUCT
+I.2.2	TABLE	instruments.tex	189	70	widths		STRUCT
+I.4.1	OPEN	instruments.tex	247	78	signature		STRUCT
+I.8.1	TABLE	instruments.tex	349	2	signature		STRUCT
+I.9.1	TABLE	instruments.tex	365	34	Yukawa		STRUCT
+I.10.1	TABLE	instruments.tex	384	46	Higgs mass, quartic, vev		STRUCT
+I.11.1	TABLE	instruments.tex	403	12	gauge group		STRUCT
+I.13.1	THEOREM	instruments.tex	458	8	gauge group		STRUCT
+I.16.1	TABLE	instruments.tex	533	0	generations;gauge group		
+I.16.2	THEOREM	instruments.tex	538	5	generations;gauge group		STRUCT
+I.18.1	TABLE	instruments.tex	649	0	Fermi constant		
+I.19.1	TABLE	instruments.tex	668	37	gauge group		MATH
+I.20.1	TABLE	instruments.tex	687	85	Bell, Tsirelson	SC-01	
+I.23.1	THEOREM	instruments.tex	767	39	signature		DUP
+I.25.1	OPEN	instruments.tex	845	58	Casimir		MATH
+I.27.1	OPEN	instruments.tex	912	74	alpha(0);nuclei		STRUCT
+I.28.1	TABLE	instruments.tex	953	0	Hubble		
+I.29.1	TABLE	instruments.tex	969	0	G_N;Lambda;Hubble		
+I.30.1	TABLE	instruments.tex	989	0	a_e, a_mu;Casimir		
+I.31.1	TABLE	instruments.tex	1006	0	a_e, a_mu		
+I.38.1	OPEN	instruments.tex	1121	131	weak angle;W, Z masses	SC-18	
+I.39.1	TABLE	instruments.tex	1157	0	weak angle		
+I.40.1	THEOREM	instruments.tex	1188	28	weak angle	SC-18	
+I.42.1	TABLE	instruments.tex	1251	2	W, Z masses;Fermi constant;decay rates		DUP
+I.43.1	OPEN	instruments.tex	1282	40	W, Z masses;Fermi constant;decay rates	SC-19;SC-20	
+I.44.1	TABLE	instruments.tex	1315	0	weak angle;widths;Fermi constant		
+I.45.1	CONDITIONAL	instruments.tex	1346	43	Higgs mass, quartic, vev		STRUCT
+I.46.1	TABLE	instruments.tex	1376	0	quark masses;theta		
+I.47.1	TABLE	instruments.tex	1407	0	nucleon masses		
+I.48.1	TABLE	instruments.tex	1439	0	widths;decay rates;nuclei		
+I.49.1	TABLE	instruments.tex	1454	0	nuclei		
+I.51.1	TABLE	instruments.tex	1501	0	Chern, Hall		
+I.51.2	THEOREM	instruments.tex	1507	4	Chern, Hall	SC-50	
+I.51.3	THEOREM	instruments.tex	1512	5	Chern, Hall	SC-50	
+I.51.4	OPEN	instruments.tex	1518	0	Chern, Hall		
+I.52.1	THEOREM	instruments.tex	1548	29	Chern, Hall		DUP

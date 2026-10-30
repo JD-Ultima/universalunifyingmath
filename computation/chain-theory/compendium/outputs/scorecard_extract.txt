@@ -1,0 +1,268 @@
+[segmentation] 468 boxed statements; grades {'DEFINITION': 7, 'CONDITIONAL': 109, 'OPEN': 198, 'THEOREM': 100, 'TABLE': 54}
+  index rows 468; numbering/grade mismatches against statements.tsv: 0 []
+  mentions of 'the comparison table' in the statement units: 25; boxed statements whose title contains 'compar': []
+
+[screen] units naming a physical quantity (box or cleaned bridge): 242
+  of which with >= 1 numeral in box or display equations: 174; numerals counted: 11723
+  by grade: {'CONDITIONAL': 68, 'OPEN': 100, 'THEOREM': 45, 'TABLE': 29}
+
+[anchors] scorecard rows 53, faces 124, verbatim anchors checked 210 (numbers, identification sentences, verdicts), missing 0
+
+[coverage] candidate units with numerals: 174
+  carrying a scorecard row: 60
+  excluded with a reason code: 114 {'AMBIG': 2, 'DUP': 29, 'MATH': 5, 'NOREF': 2, 'NOVAL': 6, 'STRUCT': 68, 'UNMAPPED': 2}
+  unassigned: 0 []
+  scorecard statements outside the screen (added by reading): ['171.1', '175.1', '175.3', '175.4']
+
+  reason codes:
+    STRUCT: numerals are counts, registers or dimensions of the construction; no value is given for the named quantity
+    DUP: the number is a face already carried by a scorecard row (see note)
+    NOVAL: the quantity is named but the unit prints no value for it
+    MATH: the named object is mathematical (a group, an algebra, an operator) with no measured value beyond its structure
+    NOREF: a number is printed but the named quantity has no measured or textbook counterpart value
+    AMBIG: the bodies the number refers to are not identified, so no measured value can be assigned
+    UNMAPPED: a dimensionful number in a unit the source leaves unmapped (the tick, the count metric), with no unit-free ratio to a measured quantity
+
+[candidates] num grade numerals | title | lexicon keys | scorecard row or exclusion code
+  1.7     COND    2 | Conjecture 0, the three registers                          | alpha(0),generations                             | STRUCT
+  1.8     OPEN   85 | Conjecture 1, the six genres in three lines                | alpha(0),alpha_s,Yukawa,generations              | DUP
+  1.9     OPEN    4 | Conjecture 2, spacetime at the (2,2) cell                  | alpha(0),generations                             | STRUCT
+  8.1     THEO   24 | The washed level as an output of the definition of open    | decay rates                                      | STRUCT
+  13.1    THEO   23 | The record phase group at every genre                      | Chern, Hall                                      | STRUCT
+  15.1    TABL   18 | The six genres against the terms of the Standard Model     | Higgs mass, quartic, vev,Yukawa                  | STRUCT
+  20.1    OPEN   28 | The read dresses what it does not pass                     | Yukawa,lepton masses                             | DUP
+  21.1    OPEN    8 | The read stops at the cap                                  | lepton masses,nucleon masses                     | DUP
+  23.1    OPEN   10 | The geodesic as the passage and the tie as the far-end rul | nucleon masses                                   | STRUCT
+  27.1    THEO   19 | The phase at the junction at the read order                | CKM                                              | STRUCT
+  29.1    OPEN    9 | The classical limit as the large-register limit            | widths                                           | STRUCT
+  32.1    OPEN   14 | The register as the reach bounded at the cap               | lepton masses,nucleon masses                     | DUP
+  36.1    OPEN   31 | The Bell bound at every basis of the read clause           | Bell, Tsirelson                                  | SC-01
+  38.1    OPEN    9 | The attach-site basis from the saturation waves            | generations                                      | STRUCT
+  39.1    THEO   63 | The three-four pair ket at the hub                         | Higgs mass, quartic, vev,Yukawa                  | STRUCT
+  43.1    COND   32 | Indistinguishability from the twirl                        | spin-statistics                                  | AMBIG
+  45.1    OPEN   11 | The path integral as the finite record sum                 | hydrogen levels                                  | STRUCT
+  46.1    COND   68 | The Wigner function and the many-body sign                 | spin-statistics                                  | STRUCT
+  47.1    COND    6 | The quantum-mechanics corollaries at their established roo | Bell, Tsirelson                                  | DUP
+  54.1    COND   37 | The Lorentz group as the isometries of the Hermitian split | signature                                        | SC-02
+  55.1    THEO   82 | One against three at every step of the chain               | signature                                        | DUP
+  57.1    THEO    2 | Spin at the differing body                                 | spin-statistics                                  | STRUCT
+  57.2    OPEN   10 | Spin from the open-end label                               | spin-statistics                                  | STRUCT
+  64.1    THEO    0 | Gauge invariance as the known clause                       | gauge group                                      | -
+  64.2    THEO   11 | The gauge group as the face group of the tether            | gauge group                                      | SC-03
+  65.1    THEO    1 | The gauge group as a corollary of one construction         | gauge group                                      | SC-03
+  65.2    THEO   10 | The hub pair as one qudit of dimension four                | gauge group                                      | STRUCT
+  66.1    OPEN    0 | The representations from the open-end census               | gauge group                                      | -
+  66.2    OPEN    0 | Chirality as the dock count of the read                    | gauge group                                      | -
+  66.3    OPEN    0 | The open-end census at the sinks and the words reached     | gauge group                                      | -
+  66.4    COND    6 | The carriers as the closed reads of their type faces       | signature,gauge group                            | STRUCT
+  66.5    OPEN    5 | The roster as the sinks of the move graph                  | gauge group                                      | STRUCT
+  67.1    OPEN    3 | The representation census at the saturated sinks, second c | generations,gauge group                          | STRUCT
+  68.1    OPEN    6 | The representation census at the saturated sinks, third co | widths,generations,gauge group                   | STRUCT
+  69.1    THEO   63 | The carrier sink offices                                   | Higgs mass, quartic, vev,nucleon masses          | DUP
+  70.1    THEO   96 | The same power at the shifted origin                       | nuclei                                           | STRUCT
+  71.1    TABL   18 | The wave as the carrier advance and the removing moves     | abundances                                       | STRUCT
+  72.1    OPEN    0 | The Cartan weights and the charge                          | gauge group                                      | -
+  72.2    OPEN    0 | The representation table at the seeded sinks               | gauge group                                      | -
+  72.3    OPEN    0 | The charge as a centralizer weight at the dock face        | gauge group                                      | -
+  72.4    COND    0 | The signed open-end count under the persistence matching   | gauge group                                      | -
+  72.5    OPEN    6 | The Cartan functionals and the dart at the second-order fa | gauge group                                      | AMBIG
+  75.1    OPEN    6 | The kernel as the center of the Weyl algebra at the sinks  | Casimir                                          | MATH
+  78.1    COND    0 | The Ward identity from conservation as one link            | a_e, a_mu                                        | -
+  78.2    COND    0 | The reading of the records washed                          | a_e, a_mu                                        | -
+  78.3    THEO    4 | The anomaly read at the body part                          | a_e, a_mu                                        | SC-07,SC-08
+  79.1    THEO    3 | The anomaly with every body at its own sink                | alpha(0),a_e, a_mu                               | NOVAL
+  80.1    THEO   84 | The images moved by a recorded cell                        | a_e, a_mu                                        | NOVAL
+  83.1    THEO   25 | Three, a theorem of the valence                            | generations                                      | SC-04
+  84.1    OPEN    0 | The one rule of a read and the word table                  | W, Z masses,gauge group                          | -
+  84.2    OPEN    2 | The passage web of the cross read against the W word       | W, Z masses,gauge group                          | DUP
+  84.3    OPEN   10 | The Z read as the two-line read of the W word              | W, Z masses,gauge group                          | DUP
+  85.1    OPEN   32 | The quantum numbers of every body as the end counts of its | spin-statistics                                  | STRUCT
+  86.1    THEO   96 | The diagonal self couplings in one form                    | Higgs mass, quartic, vev                         | SC-23
+  88.1    OPEN   52 | The frame at every end as the stabiliser of its dimension  | Casimir                                          | MATH
+  90.1    COND    0 | Depth metric with the rung term                            | signature                                        | -
+  91.1    OPEN   64 | The curvature coefficient as the inverse register tower    | G_N,Lambda                                       | SC-46
+  92.1    OPEN    8 | The field equation at the counting face                    | Lambda                                           | STRUCT
+  95.1    OPEN   42 | The linear field equation at the counting face             | alpha(0),G_N                                     | SC-46
+  96.1    OPEN   57 | The nonlinear field equation at the counting face          | Lambda                                           | SC-47
+  98.1    OPEN   54 | The area law at the horizon web                            | BH entropy                                       | SC-49
+  99.2    COND    0 | Horizon register face at the closure                       | G_N                                              | -
+  100.1   OPEN    6 | The horizon web at the cap wave                            | Hubble                                           | STRUCT
+  103.1   COND   60 | The vacuum register and the horizon cut register           | Higgs mass, quartic, vev                         | DUP
+  104.1   THEO   56 | The abundances and the rate at the horizon                 | abundances                                       | SC-51
+  111.1   OPEN   44 | The area coefficient as the depth count                    | BH entropy                                       | SC-49
+  113.1   COND    0 | The register tower and the metric                          | G_N                                              | SC-46
+  115.1   COND   25 | The cosmological term at the depth exponent                | Lambda                                           | SC-47
+  117.1   OPEN   23 | The serial (2,2) link at the washed Laplacian              | Lambda                                           | DUP
+  122.1   OPEN   40 | The tick scale as a coupling scale                         | Lambda,Hubble                                    | SC-48
+  123.1   OPEN   46 | The frame as the qubit end of the two two link             | signature                                        | STRUCT
+  124.1   COND   35 | The fine-structure constant at the one link                | alpha(0)                                         | SC-05,SC-06
+  126.1   TABL    0 | The mass-chain premise census                              | alpha(0),nucleon masses                          | -
+  131.1   OPEN   71 | The stabilizer of the pair ket and the unbroken charge     | Higgs mass, quartic, vev                         | STRUCT
+  132.1   OPEN  105 | The Ward functional and the dressing per unit at the one l | alpha(0)                                         | DUP
+  134.1   THEO   35 | The (2,3) open link against the (2,2) pair ket as the phot | photon                                           | DUP
+  135.1   THEO   13 | The (2,3) open link against the (2,2) pair ket, restated   | photon                                           | DUP
+  141.1   COND   23 | The electron dipole factor at order three from the self-te | a_e, a_mu                                        | SC-08
+  143.1   COND   53 | Hydrogen from the held carrier                             | hydrogen levels,Lamb shift,hyperfine,nucleon mas | SC-09,SC-10,SC-11
+  144.1   OPEN   15 | The hyperfine interval as the junction holonomy at the hyd | a_e, a_mu,Lamb shift,hyperfine,Casimir           | SC-12
+  145.1   THEO   13 | The Casimir effect as the boundary count between two sinks | Lamb shift,Casimir                               | SC-13
+  147.1   COND   66 | The scale as the body at the carrier readouts              | running of alpha                                 | SC-14
+  148.1   COND   75 | The scale body as the joined apparatus web                 | alpha(0),running of alpha                        | SC-14,SC-15
+  149.1   COND  100 | The strong coupling as the gluon pair-ket office through t | alpha_s,gauge group                              | SC-16
+  150.1   COND   10 | The photon docks at both faces                             | photon,nuclei                                    | STRUCT
+  151.1   THEO   29 | The photon as the (2,2) pair ket at the join               | photon                                           | STRUCT
+  152.1   COND   26 | The lepton ladder as hub assemblies                        | Yukawa,generations                               | DUP
+  154.1   THEO   45 | The tau as the third hub on the triangle core              | Yukawa,lepton masses,generations                 | SC-35,SC-37
+  157.1   OPEN   83 | The Koide relation at the dock unit                        | lepton masses                                    | SC-35,SC-37
+  159.1   OPEN   21 | The Z as the two-line read of the W word                   | W, Z masses                                      | DUP
+  159.2   OPEN  105 | The W word as the passage web of the cross read            | W, Z masses                                      | DUP
+  160.1   OPEN   35 | The W over Z ratio at the dock and the hub leg             | weak angle,W, Z masses                           | SC-18
+  162.1   COND    4 | The released body as one anatomy                           | lepton masses                                    | STRUCT
+  163.1   COND   13 | The weak doublet at the internal ends of the leptons       | lepton masses                                    | STRUCT
+  164.1   COND    0 | The weak angle as the dock share                           | weak angle                                       | -
+  164.2   OPEN    1 | The weak angle as the office of the W word                 | weak angle                                       | SC-18,SC-20
+  164.3   OPEN    0 | The weak angle from the stabilizer weights                 | weak angle                                       | SC-18
+  164.4   OPEN   58 | The weak angle per family at the tau sink                  | weak angle                                       | SC-18
+  164.5   COND   12 | The weak angle as the ratio of offices at the Z body       | weak angle                                       | SC-18
+  166.1   COND    0 | Mixing as the overlap of the corner frame with the depth e | CKM,PMNS                                         | SC-34
+  166.2   OPEN    0 | Mixing as the corner-frame overlap through the W           | CKM,PMNS                                         | -
+  166.3   OPEN   15 | The mixing phase at the four-cycle and the dock weights    | CKM,PMNS                                         | NOVAL
+  166.4   OPEN   30 | The mixing as the sink-basis overlap                       | CKM,PMNS                                         | SC-32,SC-33
+  166.5   OPEN   18 | The mixing as the washed overlap of the arm reads          | CKM                                              | DUP
+  166.6   OPEN   26 | The quark mixing block at the read sites                   | CKM,nucleon masses                               | SC-32,SC-33
+  168.1   OPEN   45 | The mixing blocks at the (3,4) legs                        | CKM,Higgs mass, quartic, vev                     | SC-32
+  169.1   OPEN   34 | The mixing as the overlap Gram of the (3,4) pairings       | CKM                                              | DUP
+  170.1   THEO    6 | Beta decay as the release at the plus-two arm              | widths,decay rates                               | UNMAPPED
+  170.2   OPEN   34 | The boson widths as the hub-leg genre reads                | W, Z masses,widths,decay rates                   | SC-26,SC-27
+  172.1   COND    0 | The strong coupling as the gluon closed read through the h | alpha_s,nucleon masses                           | -
+  172.2   OPEN   41 | The running and the one genre per force                    | alpha_s                                          | SC-16
+  173.1   COND   40 | The strong coupling at the depth scale                     | alpha_s                                          | SC-16,SC-17
+  174.1   COND    0 | Nucleon structure as the star record census                | nucleon masses                                   | -
+  174.2   COND    3 | The junction sharing, the register, the form factor, the o | nucleon masses                                   | STRUCT
+  174.3   OPEN   30 | The five readings beside                                   | nucleon masses                                   | DUP
+  176.1   COND    0 | The mass ratio at the second-order read                    | lepton masses                                    | SC-38
+  176.2   OPEN   57 | The six readings beside                                    | lepton masses                                    | SC-35,SC-36,SC-37
+  177.1   COND 4512 | The hadron spectrum as the roster of saturated joined webs | widths,nucleon masses,hadron masses,nuclei       | STRUCT
+  177.2   COND    0 | The mixed composition, the meson apparatus and the corolla | nucleon masses,nuclei                            | -
+  177.3   OPEN   10 | The direct sum at the deuteron                             | nuclei                                           | STRUCT
+  178.1   OPEN   26 | The heavy-flavor sinks at the hadron rows                  | quark masses,hadron masses                       | SC-42,SC-43
+  179.1   OPEN   35 | Hadron spectroscopy at the cap sinks                       | hadron masses                                    | NOVAL
+  180.1   OPEN   17 | The hadron offices from membership                         | nucleon masses,hadron masses                     | SC-38
+  181.1   COND    0 | The quark register at the second-order junction read       | quark masses                                     | -
+  181.2   COND    0 | Flavor as the rung name and the quark ladder               | lepton masses,quark masses                       | -
+  181.3   OPEN   41 | The five readings beside                                   | quark masses,signature                           | STRUCT
+  181.4   COND   29 | The quark ladder at the saturated sinks                    | W, Z masses,quark masses                         | SC-42,SC-43,SC-44
+  181.5   THEO   14 | The quark offices as the star arm reads                    | quark masses                                     | SC-41
+  184.1   TABL    3 | The instrument tables of this Part                         | nucleon masses                                   | STRUCT
+  185.1   COND    0 | The mass unit and the first power                          | Higgs mass, quartic, vev,Yukawa                  | -
+  185.2   COND    0 | Junction register from the pair-ket unit                   | Higgs mass, quartic, vev,Yukawa                  | -
+  185.3   COND    0 | Rest energy as the Born face                               | Higgs mass, quartic, vev,Yukawa                  | -
+  185.4   COND    0 | Carrier mass as the square of the closed read              | Higgs mass, quartic, vev,Yukawa                  | -
+  185.5   COND    0 | Rung naming from the depth ladder                          | Higgs mass, quartic, vev,Yukawa                  | -
+  185.6   COND    0 | Hub dressing as the in-end dimension                       | Higgs mass, quartic, vev,Yukawa                  | -
+  185.7   COND    0 | Register reading at the first differing body               | Higgs mass, quartic, vev,Yukawa                  | -
+  185.8   COND    0 | Office as the first order read at the common support       | Higgs mass, quartic, vev,Yukawa                  | -
+  185.9   COND    0 | Mass as the order-two chain sum at the common support      | Higgs mass, quartic, vev,Yukawa                  | -
+  185.10  COND    0 | Dressing as the hub leg Born product                       | Higgs mass, quartic, vev,Yukawa                  | -
+  185.11  COND    0 | Mass as the direct two-exchange sum at the common support  | Higgs mass, quartic, vev,Yukawa                  | -
+  185.12  COND   63 | The placement per web at the joined read                   | Higgs mass, quartic, vev,Yukawa                  | DUP
+  186.1   THEO   11 | The first power as the sum over the segments of the read   | nuclei                                           | SC-35,SC-36,SC-38,SC-39
+  187.1   OPEN   17 | The dressing as the closed legs of the passage             | Yukawa,lepton masses                             | STRUCT
+  189.1   OPEN   18 | The lepton-form sinks at hub count two                     | generations                                      | STRUCT
+  191.1   THEO   25 | The dressing as the unpassed (3,4) in-legs                 | Yukawa                                           | STRUCT
+  193.1   OPEN   98 | The six dressings at the six genres                        | alpha(0),alpha_s,gauge group                     | SC-16
+  195.1   THEO   25 | The body-alone office rule                                 | nuclei                                           | STRUCT
+  196.1   COND    0 | The next terms and the unstable rows                       | widths,lepton masses                             | -
+  196.2   THEO  116 | The lepton joined face at the open attach site             | widths                                           | NOREF
+  197.1   COND    0 | Generation as depth momentum                               | generations                                      | -
+  197.2   COND    0 | Sector key as the depth momentum                           | generations                                      | -
+  197.3   COND    0 | The generation bound at the hub dimension                  | generations                                      | -
+  197.4   COND    0 | The generation basis as the attach site basis              | generations                                      | -
+  197.5   OPEN   12 | Three generations as attach sites                          | generations                                      | DUP
+  199.1   OPEN   27 | The Yukawa as the (3,4)-leg office at every body           | Higgs mass, quartic, vev,Yukawa                  | SC-25
+  200.1   COND    2 | The Higgs as the closed hub read                           | Higgs mass, quartic, vev,Yukawa                  | STRUCT
+  200.2   COND    5 | The port, the rows and the weight of the Higgs word        | Higgs mass, quartic, vev,Yukawa                  | DUP
+  200.3   COND    2 | The mass, the vacuum port and the exponent                 | Higgs mass, quartic, vev,Yukawa                  | SC-24
+  200.4   OPEN   12 | The three readings of the attachment                       | Higgs mass, quartic, vev,Yukawa                  | DUP
+  200.5   OPEN   23 | The Higgs attachment at the saturated web                  | Higgs mass, quartic, vev                         | SC-21,SC-23,SC-24
+  200.6   THEO   38 | The Higgs and carrier offices at their sinks               | Higgs mass, quartic, vev                         | SC-22
+  202.1   THEO   21 | The Higgs quartic as the ratio of offices                  | Higgs mass, quartic, vev                         | SC-23
+  203.1   COND    0 | The process census against the eight derived moves         | decay rates,nuclei                               | -
+  203.2   OPEN    0 | Decay graph as the census graph                            | decay rates                                      | -
+  203.3   COND    2 | Decay as the forward edge of a non-sink                    | decay rates                                      | STRUCT
+  203.4   OPEN    0 | Decay graph as the census graph at the stop condition      | decay rates                                      | -
+  203.5   THEO    2 | Beta decay as the release at the plus-two arm              | widths,decay rates                               | UNMAPPED
+  203.6   OPEN    7 | Alpha decay as the cut at the many-body readout            | decay rates                                      | STRUCT
+  204.1   OPEN   46 | The release at the passed arm                              | decay rates                                      | STRUCT
+  205.1   TABL    0 | The decay board                                            | widths,lifetimes, branching                      | SC-28,SC-29,SC-30
+  206.1   COND    0 | The rate as the washed square of the read                  | decay rates                                      | -
+  206.2   COND    0 | Coherent release as the unwashed square at the joined web  | decay rates                                      | -
+  206.3   COND    0 | The decay rate as the imbalance readout                    | widths,decay rates                               | -
+  206.4   COND   52 | The branching ratios as the shares of the washed squares   | widths,lifetimes, branching,decay rates          | STRUCT
+  207.1   OPEN   20 | The strong reading as a theorem of the rate law            | alpha_s                                          | DUP
+  208.1   OPEN   26 | The hub-step rate as the composite of three cells          | W, Z masses,lifetimes, branching,Fermi constant  | DUP
+  209.1   OPEN   42 | The number and the vacuum term in tick units               | G_N,Lambda,BH entropy                            | SC-47,SC-49
+  210.1   OPEN    0 | Prefactor from record office width                         | widths,decay rates                               | -
+  210.2   COND    5 | The prefactor as the tick width                            | widths,decay rates                               | STRUCT
+  211.1   COND    6 | The imbalance readout, lifetimes and branching             | widths,lifetimes, branching,decay rates          | SC-31
+  211.2   COND   75 | The baryon asymmetry as the sign of the imbalance at the u | widths,lifetimes, branching,decay rates          | SC-52
+  212.1   OPEN   40 | The lifetimes as termination depths                        | widths,lifetimes, branching,Fermi constant       | NOVAL
+  214.1   OPEN    0 | Binding as the cross term of the joined first power        | binding,nuclei                                   | -
+  214.2   OPEN    0 | Binding as the cross term at the two-vertex read           | binding,nuclei                                   | -
+  214.3   OPEN    0 | Binding as the exact joined Born face                      | binding,nuclei                                   | -
+  214.4   OPEN    0 | Nuclear web records at the joined stars                    | binding,nuclei                                   | -
+  214.5   OPEN    0 | Binding as the pairing records: the deuteron and the alpha | binding,nuclei                                   | SC-45
+  214.6   OPEN   48 | The standing binding entry as the placement at the joined  | binding,nuclei                                   | SC-38,SC-45
+  216.1   OPEN   20 | The nuclear rows at the joined seeded web                  | nuclei                                           | STRUCT
+  221.1   THEO   22 | The phase transition as the sink-class change              | phase transition                                 | NOREF
+  225.1   THEO   50 | The band at the periodic web                               | bands                                            | STRUCT
+  227.1   TABL    3 | The instrument tables of this Part                         | Chern, Hall                                      | STRUCT
+  228.1   OPEN   51 | The periodic table as the joined-electron sinks            | periodic table                                   | SC-53
+  229.1   THEO   49 | The probe read at the four bodies joined to the measuring  | nucleon masses                                   | STRUCT
+  231.1   OPEN   31 | The gate set at the Weyl criterion                         | gauge group                                      | MATH
+  236.1   OPEN   33 | The holonomy of the transport identity at the fan loops    | Chern, Hall                                      | STRUCT
+  238.1   TABL   27 | The census of the open results by form, status and Part    | generations,Lambda,theta                         | STRUCT
+  239.1   TABL    7 | The register of what the construction has not reached      | Lambda                                           | STRUCT
+  E.1     OPEN    6 | The forces as the move classes at the genres               | W, Z masses                                      | STRUCT
+  H.2     OPEN 1766 | The webs of the network list as seeds                      | widths                                           | STRUCT
+  J.1     OPEN    4 | The Standard Model list at the saturated sinks             | generations,gauge group                          | STRUCT
+  O.1     OPEN   32 | The neutron closure at its own typing                      | quark masses,nucleon masses,nuclei               | SC-39,SC-40
+  P.1     THEO   43 | The dark sinks at the office and the stability             | lifetimes, branching,dark matter                 | NOVAL
+  Q.1     COND   44 | The coherent production at the joined web                  | PMNS                                             | STRUCT
+  U.1     THEO   23 | The termination census as the abundances                   | baryon asymmetry                                 | SC-51,SC-52
+  W.1     OPEN    9 | The joined webs at the office formula                      | nucleon masses,binding,nuclei                    | STRUCT
+  I.1.2   THEO   16 |                                                            | spin-statistics                                  | STRUCT
+  I.2.2   TABL   70 | The move table as the rule                                 | widths                                           | STRUCT
+  I.4.1   OPEN   78 | The causal cone of the chain automaton                     | signature                                        | STRUCT
+  I.8.1   TABL    2 | The chapter counted empty                                  | signature                                        | STRUCT
+  I.9.1   TABL   34 | The Lagrangian table at the twelve slots                   | Yukawa                                           | STRUCT
+  I.10.1  TABL   46 | The twelve slots at both definitions                       | Higgs mass, quartic, vev                         | STRUCT
+  I.11.1  TABL   12 | The six genres as the pairs of the three registers         | gauge group                                      | STRUCT
+  I.13.1  THEO    8 | Three registers reached and nothing else                   | gauge group                                      | STRUCT
+  I.16.1  TABL    0 | The standard-model entries at their grades                 | generations,gauge group                          | -
+  I.16.2  THEO    5 |                                                            | generations,gauge group                          | STRUCT
+  I.18.1  TABL    0 | The grades of the textbook corpus                          | Fermi constant                                   | -
+  I.19.1  TABL   37 | The face groups of the six cells                           | gauge group                                      | MATH
+  I.20.1  TABL   85 | The Bell bound column                                      | Bell, Tsirelson                                  | SC-01
+  I.23.1  THEO   39 | The Lorentz group at the (2,2) pair                        | signature                                        | DUP
+  I.25.1  OPEN   58 | The rotation group on the (2,2) increment                  | Casimir                                          | MATH
+  I.27.1  OPEN   74 | The (2,2) two-point function at zero displacement          | alpha(0),nuclei                                  | STRUCT
+  I.28.1  TABL    0 | The horizon as a non-sink: the Hubble rate and the baryon  | Hubble                                           | -
+  I.29.1  TABL    0 | The gravitational and cosmological constants table         | G_N,Lambda,Hubble                                | -
+  I.30.1  TABL    0 | The chapter counted empty                                  | a_e, a_mu,Casimir                                | -
+  I.31.1  TABL    0 | The chapter counted empty                                  | a_e, a_mu                                        | -
+  I.38.1  OPEN  131 | The weak angle as the ratio of the (2,3) and (2,4) dressin | weak angle,W, Z masses                           | SC-18
+  I.39.1  TABL    0 | The currents chapter                                       | weak angle                                       | -
+  I.40.1  THEO   28 | The neutral current as the Z read at the whole sinks       | weak angle                                       | SC-18
+  I.42.1  TABL    2 | The Fermi-constant chapter                                 | W, Z masses,Fermi constant,decay rates           | DUP
+  I.43.1  OPEN   40 | The Fermi constant as the W word office at low transfer    | W, Z masses,Fermi constant,decay rates           | SC-19,SC-20
+  I.44.1  TABL    0 | The electroweak table                                      | weak angle,widths,Fermi constant                 | -
+  I.45.1  COND   43 | The electroweak breaking as the stabilizer of the vacuum r | Higgs mass, quartic, vev                         | STRUCT
+  I.46.1  TABL    0 | The chiral-breaking chapter                                | quark masses,theta                               | -
+  I.47.1  TABL    0 | The cap chapter                                            | nucleon masses                                   | -
+  I.48.1  TABL    0 | Alpha decay                                                | widths,decay rates,nuclei                        | -
+  I.49.1  TABL    0 | Fission, fusion and stellar bounds                         | nuclei                                           | -
+  I.51.1  TABL    0 | The Chern number, awaited                                  | Chern, Hall                                      | -
+  I.51.2  THEO    4 | The winding of the wash holonomy around one period         | Chern, Hall                                      | SC-50
+  I.51.3  THEO    5 | The winding around the full cycle of a joined periodic net | Chern, Hall                                      | SC-50
+  I.51.4  OPEN    0 | The flux quantization premise re-posed                     | Chern, Hall                                      | -
+  I.52.1  THEO   29 | The flux clause re-posed at the face                       | Chern, Hall                                      | DUP

@@ -12,8 +12,10 @@ text only; none of its scripts, build files or Lean packages are executed or bui
 | sympy | 1.14.0 |
 | mpmath | 1.3.0 |
 | numpy | 2.5.3 (only `hydrogen_audit.py`, Monte Carlo check) |
+| scipy | 1.18.1 (round 2 `scorecard*.py`: CODATA 2022 via `scipy.constants`) |
 
-Install: `pip install sympy==1.14.0 mpmath==1.3.0 numpy==2.5.3`.
+Install: `pip install sympy==1.14.0 mpmath==1.3.0 numpy==2.5.3 scipy==1.18.1`. Round 2 optionally checks its PDG 2024
+transcription against `mass_width_2024.mcd` from `pip download particle==0.25.2` (data file read as text; the package is not imported).
 All scripts run with `python3 -I` (isolated mode). No network access is needed.
 
 ## Run
@@ -30,6 +32,11 @@ python3 -I hydrogen_audit.py                                     > outputs/hydro
 python3 -I gauge_audit.py                                        > outputs/gauge_audit.txt
 python3 -I register_checks.py                                    > outputs/register_checks.txt
 python3 -I boxes.py         $SRC 141.1 143.1 64.2               # prints box text (helper)
+# round 2: numeric scorecard
+python3 -I scorecard_extract.py  $SRC --tsv outputs/scorecard_candidates.tsv > outputs/scorecard_extract.txt
+python3 -I scorecard.py --src $SRC --pdg-mcd $MCD --tsv outputs/scorecard.tsv > outputs/scorecard.txt
+python3 -I scorecard_freedom.py                                       > outputs/scorecard_freedom.txt
+# MCD=.../particle/data/mass_width_2024.mcd (optional; without it the PDG transcription is not re-checked)
 ```
 
 Wall time: each script < 10 s. Outputs are identical across runs and across `PYTHONHASHSEED` values
@@ -48,6 +55,10 @@ eigenvalues are reproducible to the printed 3 decimals.
 | `hydrogen_audit.py` | 3(ii) | exact check of the printed level-one binding; comparison with alpha^2 mu/2; reconstruction of the 1/n^2 ladder and its dependence on the support dimension |
 | `gauge_audit.py` | 3(iii) | for all six genres: dimension, derived algebra, centre action, kernels; Z_6 cover for (3,2); the u(1) representative; monomial group orders; Z_6 neutrality of SM fields; sensitivity of the genre selection to the read cap and alphabet |
 | `register_checks.py` | 1 | weak angle 1/2 vs (M_W/M_Z)^2; form of the printed running; Koide ratio |
+| `scorecard_extract.py` | R2-1 | segments the tex into 468 statement units (index numbering, grades checked), screens them with a 42-entry physical-quantity lexicon (242 candidates, 174 with numerals), verifies the 210 verbatim anchors of the curated rows (numbers, identification sentences, verdicts), assigns every non-covered candidate a reason code |
+| `scorecard_data.py` | R2-1 | curated data (module): 53 named quantities, 124 printed faces, verbatim anchors, identification / derivation codes, the source's verdicts, exclusion codes |
+| `scorecard.py` | R2-2,3 | exact evaluation of every face, conversion to the measured quantity, deviation (sigma, relative, factor), bins, summary table; block REDERIVE re-derives 784/1568, 3/8, sqrt3/18, the CHSH value, the lepton and proton cells, the Koide values (17/36 is re-derived in `scorecard_freedom.py`) |
+| `scorecard_freedom.py` | R2-3 | F-CT-4-style freedom tests for the agreements besides alpha(0): weak angle (count-face family), lepton cells, proton cell |
 
 ## Interpretive choices in the dependency graph (`depgraph.py`)
 
@@ -92,6 +103,18 @@ gauge:    dims 7,12,19,17,24,31 and |central scalar| 0,1,2,0,1,0 reproduce the g
           (3,2) unique under (dim 12, rank 4) and under (d1 d2 <= 6 and d1 != d2); cap 8 selects (3,2),(4,2)
           ker(SU2 x SU3 x U1 -> S(U2 x U3)) = Z_6; diag(3,3,-2,-2,-2) = 6 Y on the 5; |mu4 wr S_n| = 4,32,384,6144
 weak:     printed cos^2(theta_W) = 1/2 vs (M_W/M_Z)^2 = 0.77679(26): 1067 sigma
+scorecard (round 2):
+          screen 242 candidates / 174 with numerals; 60 carry a row, 114 reason-coded; 210 anchors verbatim (125 numbers, 53 identification sentences, 32 verdicts), 0 missing
+          53 named quantities, 124 printed numbers; identification E 9, N 43, P 1
+          34 numerical rows by best face: <=3 sigma 2, <=1% 5, <=x10 9, disagree 18 (adopted face, 16 rows: 1/1/3/11)
+          <=3 sigma: 1/alpha(0) +0.60 sigma; sin^2 theta_W = (17/36)^2 = 289/1296 (164.2 O) -0.83 sigma on-shell (-3.6% MS-bar)
+          <=1%: (963/67)^2 = 206.587 (-0.088%), (3969/67)^2 = 3509.24 (+0.92%), Koide 0.667660 (+0.15%),
+                (2871/67)^2 = 1836.18646 (+1.84e-5), m_n/m_p = 1 (-0.14%)
+          5 of the 7 agreements rest on a choice among printed faces; the release's 'comparison table' (25 mentions) is absent
+freedom:  17/36 re-derived (17 of 36 Weyl pair letters nonzero at the (3,2) pair ket; Gell-Mann/Pauli: 5)
+          weak angle: 0.019 (printed faces) / 0.14 (192-variant count-face family) expected chance hits
+          leptons: 0.007 (mu), 0.07 (tau); 1 of 504 combinations has both within 1%
+          proton: 1 of 9 printed cells within 1%; 0.0025 in a 1320-variant space; nearest-integer 0.053 / 0.006
 ```
 
 ## External values used (with sources)
@@ -107,3 +130,10 @@ weak:     printed cos^2(theta_W) = 1/2 vs (M_W/M_Z)^2 = 0.77679(26): 1067 sigma
   Hellwig et al., IEEE Trans. Instrum. Meas. 19, 200 (1970).
 - M_W = 80.3692(133) GeV, M_Z = 91.1880(20) GeV, sin^2 theta_W(MS-bar, M_Z) = 0.23122, lepton masses: PDG 2024.
 - Global form of the SM gauge group: Tong, JHEP 07 (2017) 104.
+- Round 2 (`scorecard.py`): CODATA 2022 from `scipy.constants` 1.18.1 (alpha, m_mu/m_e = 206.7682827(46), m_tau/m_e =
+  3477.23(23), m_p/m_e, m_n/m_p, G_F, sin^2 theta_W = 0.22305(23), masses, G); PDG 2024 masses and widths from
+  `mass_width_2024.mcd` (RPP 2024; M_W 80.3692(133) GeV summary value); transcribed, not machine-checked:
+  alpha_s(M_Z) = 0.1180(9), alpha^-1(M_Z) = 127.951(9), |V_ud| = 0.97367(32), J = 3.08(14)e-5, sin^2 theta_13 =
+  0.0220(7), N_nu = 2.9963(74), Planck 2018 Omega_c h^2 = 0.1200(12), Omega_b h^2 = 0.02237(15), Omega_Lambda =
+  0.6847(73), H0 = 67.4(5); CGLMP: Collins, Gisin, Linden, Massar, Popescu, PRL 88, 040404 (2002); sin^2 = 3/8:
+  Georgi, Quinn, Weinberg, PRL 33, 451 (1974).

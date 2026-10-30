@@ -1,0 +1,6 @@
+'GStueckelberg.decomp' does not depend on any axioms
+'GStueckelberg.pi'_unit' does not depend on any axioms
+'GStueckelberg.fiber' depends on axioms: [propext, Quot.sound]
+'GStueckelberg.free' does not depend on any axioms
+'GStueckelberg.factor' does not depend on any axioms
+'GStueckelberg.factor_converse' depends on axioms: [propext, Quot.sound]

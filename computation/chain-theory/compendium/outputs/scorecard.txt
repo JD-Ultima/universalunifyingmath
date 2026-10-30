@@ -1,0 +1,306 @@
+[references] PDG 2024 transcription checked against mass_width_2024.mcd (318 ids parsed): OK
+[references] CODATA 2022 values asserted against scipy.constants 1.18.1
+  derived: v = 246.2197 GeV; on-shell sin^2 = 0.223209(259e-6); Koide(PDG 2024) = 0.66666446(508e-8); lambda_tree = 0.12928; f_dm = 0.8429(16e-4)
+
+[REDERIVE] exact arithmetic from the construction as printed
+  alpha(0): records 79+48+42+3 = 172; Born count 79*1+48*2+42*3+3*6 = 319; 1/alpha = 137.035999189566
+  W word: two (2,4) and two (2,3) links, S_W = sum of d1 d2 = 28; S_Z^2 = S_W^2 + S_U^2 = 1568; (S_W/S_Z)^2 = 1/2 (164.5, 159.2)
+  count face (17/36)^2 = 289/1296, (14/36)^2 = 49/324
+  164.3 dock figure: tr(T3^2)/tr(Q^2) on the 5 of SU(5) = 3/8 (the Georgi-Quinn-Weinberg unification value); the hub figure 2/5 is not re-derived (register not specified)
+  166.1/166.6: order-3 Fourier block, |F_jk|^2 = 1/3 at all nine; J = Im(F11 F22 F12* F21*) = sqrt(3)/18 = 1/(6 sqrt3), the maximum of |J| over 3x3 unitaries; J^2 = 1/108
+  36.1: CHSH value at the two-qubit maximally entangled state, standard settings = 2*sqrt(2); (12+8 sqrt3)/9 - 4(3+2 sqrt3)/9 = 0
+  152.1 ranks 27 + 40k = [67, 107, 147]; first powers rank*3^d: hub d = (1,2,3) -> [201, 963, 3969], derived cells d = (0,2,3) -> [67, 963, 3969]
+  155.1 face dissolution M 3^k/67 = M 3^(k+1)/201 at every M, k: True
+  186.1 proton 319*9 = 2871; 8613 = 3*2871: True; 2709 = (319-18)*9: True
+  Koide with roots (67,963,3969) = 16684819/24990001, (201,963,3969) = 1857859/2927521, (67,963,4212) = 9336401/13739282
+  (2871/67)^2 = 8242641/4489 = 1836.18645578; (8613/201)^2 = 8242641/4489 (same: hub/hub = dock/dock)
+  67 sqrt(m_p/m_e) = 2870.9736: 2871 is the integer nearest the target, off by 0.0264
+  143.1 E1: 36*201/(2^30 3^18) = 67/3851755393646592, 36*67/(2^31 3^17) = 67/7703510787293184
+  209.1 cut register 81*81*36 = 236196 = 2^2 3^10: True
+  170.2 (121/16)/(270/49) = 5929/4320
+  211.1 class ratios (Born-face ratio x register ratio^2): [199375/32616, 81664/2331, 927744/161875] -> (2,3) > (2,4) > (3,3) forced by the registers
+  202.1 lambda_hub = 46656001681/7845264902250000; 200.6 M_H/M_W = 0.5714265601
+
+[SCORECARD] per face: value as the measured quantity; reference; deviation
+id     stmt    gr  idt der face                                                               value           ref    n_sigma        rel    factor bin
+SC-01  36.1    OPE N   R   *p(2,2),(2,3),(2,4): two root two                                2.82843       2.82843          -  0.000e+00         1 T
+SC-01  36.1    OPE N   R     (3,3),(3,4): (12+8 root 3)/9 [vs CGLMP 4(3+2sqrt3)/9]          2.87293       2.87293          -  0.000e+00         1 T
+SC-02  54.1    CON N   R   *ptr(XY) on span{1, i sigma_k}                                     (1,3)       (qual.)          -          -         - QA
+SC-03  64.2    THE N   R   *pdim 12 = 8+3+1, kernel Z6 at the (3,2) genre                    (12,6)       (qual.)          -          -         - QA
+SC-04  83.1    THE N   A   *prungs at the core, electron, muon, tau                               3       (qual.)          -          -         - QA
+SC-05  124.1   CON N   A   *pmassless, two transverse states                                  (0,2)       (qual.)          -          -         - QA
+SC-06  124.1   CON E   R   *p1/alpha(0) = 31104/(79+48 sqrt2+42 sqrt3+3 sqrt6)              137.036       137.036      0.598  9.170e-11         1 A3s
+SC-07  78.3    THE N   A   *porder one: the unit itself, 67, sign plus                           67           0.5          -  1.330e+02       134 D
+SC-08  141.1   CON N   A   *porder-three term zero                                                0       (qual.)          -          -         - QD
+SC-09  143.1   CON E   A   * whole face 67/(2^28 3^15)                                  1.73947e-14   2.66112e-05          - -1.000e+00  1.53e+09 D
+SC-09  143.1   CON E   A     cut face 67/(2^29 3^15)                                    8.69733e-15   2.66112e-05          - -1.000e+00  3.06e+09 D
+SC-10  143.1   CON N   R   *pE_n = E_1/n^2, n = 1..8                                              2       (qual.)          -          -         - QA
+SC-11  143.1   CON N   N   *ppositive                                                             1       (qual.)          -          -         - QA
+SC-12  144.1   OPE N   A   *pinterval at the standing transport                                   0       (qual.)          -          -         - QD
+SC-13  145.1   THE N   N   *pexcluded count: one sign, 'a power at no chain'               nonpower       (qual.)          -          -         - QD
+SC-14  148.1   CON N   A   *palpha_joined(Z) = 4213628189/3645000 + 197/151875 sqrt2           1156    0.00781549          -  1.479e+05  1.48e+05 D
+SC-14  148.1   CON N   A     alpha_joined at the anomaly and hydrogen webs = 1764              1764    0.00781549          -  2.257e+05  2.26e+05 D
+SC-14  147.1   CON N   A     147.1 coupling readouts through the carrier body: (28/53   3.84909e-08    0.00781549          - -1.000e+00  2.03e+05 D
+SC-15  148.1   CON N   A   *palpha_cap(k+1)/alpha_cap(k) = 1/319, growth (-,-,-,-)               -1       (qual.)          -          -         - QD
+SC-16  149.1   CON N   A    p149.1 through the Z body (Born square)                     6.51247e-08         0.118       -131 -1.000e+00  1.81e+06 D
+SC-16  172.2   OPE N   A     172 proton, dock face                                        0.0173672         0.118       -112 -8.528e-01      6.79 AOM
+SC-16  172.2   OPE N   A     172 proton, port face                                       0.00343056         0.118       -127 -9.709e-01      34.4 D
+SC-16  173.1   CON N   A     173.1 depth-scale ladder, rung 1                              0.711123         0.118        659  5.026e+00      6.03 AOM
+SC-16  173.1   CON N   A   * 173.1 depth-scale ladder, rung 2                             0.0197534         0.118       -109 -8.326e-01      5.97 AOM
+SC-16  193.1   OPE N   A     193.1 (3,3) dressing, count law                             0.00146322         0.118       -129 -9.876e-01      80.6 D
+SC-16  193.1   OPE N   A     193.1 (3,3) dressing, package                               0.00132033         0.118       -130 -9.888e-01      89.4 D
+SC-17  173.1   CON N   A   *pg_k/g_(k-1) = 1/36                                                  -1       (qual.)          -          -         - QA
+SC-18  164.5   CON N   R    p164.5 (C) ratio of offices = cos^2 = 1/2                           0.5      0.223209   1.07e+03  1.240e+00      2.24 AOM
+SC-18  164.2   OPE N   R     164.2 (O) count face, whole: 17/36                            0.472222      0.223209        960  1.116e+00      2.12 AOM
+SC-18  164.2   OPE N   R     164.2 (O) count face, cut: 14/36                              0.388889      0.223209        639  7.423e-01      1.74 AOM
+SC-18  164.2   OPE N   R   * 164.2 (O) Born square of the count face, whole: 289/1296      0.222994      0.223209     -0.832 -9.662e-04         1 A3s
+SC-18  164.2   OPE N   R     164.2 (O) Born square of the count face, cut: 49/324          0.151235      0.223209       -278 -3.225e-01      1.48 AOM
+SC-18  164.3   OPE N   R     164.3 (O) stabiliser weights, dock: 3/8                          0.375      0.223209        585  6.800e-01      1.68 AOM
+SC-18  164.3   OPE N   R     164.3 (O) stabiliser weights, hub: 2/5                             0.4      0.223209        682  7.920e-01      1.79 AOM
+SC-18  164.4   OPE N   R     164.4 (O) family share, electron: 2/3                         0.666667      0.223209   1.71e+03  1.987e+00      2.99 AOM
+SC-18  164.4   OPE N   R     164.4 (O) family share, muon: 1/3                             0.333333      0.223209        425  4.934e-01      1.49 AOM
+SC-18  164.4   OPE N   R     164.4 (O) family share tau = family average: 1/2                   0.5      0.223209   1.07e+03  1.240e+00      2.24 AOM
+SC-18  I.40.1  THE N   R     I.40.1 (T) Born share of the centre line: 1/2                      0.5      0.223209   1.07e+03  1.240e+00      2.24 AOM
+SC-18  160.1   OPE N   R     160.1 (O) Omega_W/Omega_Z = 1 (M_W = M_Z)                            0      0.223209          - -1.000e+00       inf D
+SC-18  I.38.1  OPE N   R     I.38.1 (O) ratio of dressings per unit r = D23/D24, read      0.611879      0.223209    1.5e+03  1.741e+00      2.74 AOM
+SC-19  I.43.1  OPE N   A    pW office over the dock unit: 784/4489                         0.174649   3.04565e-12          -  5.734e+10  5.73e+10 D
+SC-19  I.43.1  OPE N   A   * W office over the hub unit: 784/40401                        0.0194055   3.04565e-12          -  6.372e+09  6.37e+09 D
+SC-20  164.2   OPE E   A   * first power 28 over the dock unit 67 (mass = S, as the H       0.41791        157279  -6.04e+03 -1.000e+00  3.76e+05 D
+SC-20  164.2   OPE E   A     (28/67)^2 (mass = S^2, 185.9)                                 0.174649        157279  -6.04e+03 -1.000e+00  9.01e+05 D
+SC-21  200.5   OPE E   A   * hub face 16/67                                                0.238806        245010  -1.14e+03 -1.000e+00  1.03e+06 D
+SC-21  200.5   OPE E   A     leg face 12/67                                                0.179104        245010  -1.14e+03 -1.000e+00  1.37e+06 D
+SC-22  200.6   THE N   A   *psqrt(Higgs office / carrier office)                           0.571427       1.55781       -708 -6.332e-01      2.73 AOM
+SC-23  202.1   THE N   A    p202.1/86.1 lambda_hub = Higgs office / 6561^2              5.94703e-06      0.129281       -569 -1.000e+00  2.17e+04 D
+SC-23  200.5   OPE N   A     200.5 self-coupling, product register, hub face: 16                 16      0.129281   6.99e+04  1.228e+02       124 D
+SC-23  200.5   OPE N   A     200.5 self-coupling, product register, leg face: 9                   9      0.129281    3.9e+04  6.862e+01      69.6 D
+SC-23  200.5   OPE N   A     200.5 self-coupling, whole register, hub face: 1                     1      0.129281   3.83e+03  6.735e+00      7.74 AOM
+SC-23  200.5   OPE N   A   * 200.5 self-coupling, whole register, leg face: 9/16             0.5625      0.129281   1.91e+03  3.351e+00      4.35 AOM
+SC-24  200.5   OPE E   A     200.5 product register: 16/67                                 0.238806        481840          - -1.000e+00  2.02e+06 D
+SC-24  200.5   OPE E   A     200.5 whole register: 256/67                                    3.8209        481840          - -1.000e+00  1.26e+05 D
+SC-24  200.3   CON E   A   * 200.3 register 6561 at the dock unit 67                        97.9254        481840          - -9.998e-01  4.92e+03 D
+SC-25  199.1   OPE N   A   *pper-leg cell 319/9 (y_t)                                       35.4444      0.991192   2.07e+04  3.476e+01      35.8 D
+SC-25  199.1   OPE N   A     cell 101761/81 read as y_t^2                                   35.4444      0.991192   2.07e+04  3.476e+01      35.8 D
+SC-26  170.2   OPE N   A   * 270/49 over 270/49 (readings beside)                                 1       1.19976      -8.66 -1.665e-01       1.2 AOM
+SC-27  170.2   OPE N   A   * (121/16)/(270/49) = 5929/4320                                  1.37245    0.00177885          -  7.705e+02       772 D
+SC-28  205.1   TAB N   N   *p(1651/7203)/(3217/11449)                                      0.815737    7.5668e+06          - -1.000e+00  9.28e+06 D
+SC-29  205.1   TAB N   N   *p(121/16)/(3217/11449)                                          26.9142   1.23499e+16          - -1.000e+00  4.59e+14 D
+SC-30  205.1   TAB N   N   *pelectron cell 1108/4489 per tick                         Rational(1108,4489)       (qual.)          -          -         - QD
+SC-31  211.1   CON N   A   *p(2,3) EM > (2,4) weak > (3,3) strong                            EM>W>S       (qual.)          -          -         - QD
+SC-32  166.6   OPE N   R     J^2 = 1/108 (166.4, 166.6; 168.1 at hub letter Z)             0.096225      3.08e-05   6.87e+04  3.123e+03  3.12e+03 D
+SC-32  168.1   OPE N   R     168.1 J^2 = 16/2187                                          0.0855334      3.08e-05   6.11e+04  2.776e+03  2.78e+03 D
+SC-32  168.1   OPE N   R   * 168.1 J^2 = 4/2187                                           0.0427667      3.08e-05   3.05e+04  1.388e+03  1.39e+03 D
+SC-32  168.1   OPE N   R     168.1 J^2 = 4/729                                            0.0740741      3.08e-05   5.29e+04  2.404e+03  2.41e+03 D
+SC-32  168.1   OPE N   R     168.1 J^2 = 8/2187                                           0.0604812      3.08e-05   4.32e+04  1.963e+03  1.96e+03 D
+SC-32  166.6   OPE N   R     166.6 identity pairs: J = 0                                          0      3.08e-05          - -1.000e+00       inf D
+SC-33  166.4   OPE N   R     flat block, every |V|^2 = 1/3                                 0.333333      0.948033       -986 -6.484e-01      2.84 AOM
+SC-33  166.4   OPE N   R   * identity block                                                       1      0.948033       83.4  5.482e-02      1.05 AOM
+SC-34  166.1   CON N   R   *porder-3 Fourier matrix, every squared modulus 1/3             0.333333         0.022        445  1.415e+01      15.2 D
+SC-35  176.2   OPE E   T     176.2 printed: (963/201)^2 = 103041/4489                       22.9541       206.768     -4e+07 -8.890e-01      9.01 AOM
+SC-35  186.1   THE E   T   * 186.1 derived cells e = 67, mu = 963 with mass = S^2 (18       206.587       206.768  -3.94e+04 -8.768e-04         1 A1%
+SC-35  186.1   THE E   T     S ratio 963/67 (mass = S)                                      14.3731       206.768  -4.18e+07 -9.305e-01      14.4 D
+SC-35  176.2   OPE E   T     S ratio 963/201 (mass = S)                                     4.79104       206.768  -4.39e+07 -9.768e-01      43.2 D
+SC-36  176.2   OPE E   T     176.2 printed: (3969/201)^2 = 1750329/4489                     389.915       3477.23  -1.34e+04 -8.879e-01      8.92 AOM
+SC-36  186.1   THE E   T   * 186.1 derived cells e = 67, tau = 3969, mass = S^2: (396       3509.24       3477.23        139  9.204e-03      1.01 A1%
+SC-36  186.1   THE E   T     S ratio 3969/67 (mass = S)                                     59.2388       3477.23  -1.49e+04 -9.830e-01      58.7 D
+SC-37  157.1   OPE N   A   * 157.1 dock face K1 = 16684819/24990001 (roots 67, 963, 3       0.66766      0.666664        196  1.493e-03         1 A1%
+SC-37  157.1   OPE N   A     157.1/176.2 hub face K1 = 1857859/2927521 (roots 201, 96      0.634619      0.666664  -6.31e+03 -4.807e-02      1.05 AOM
+SC-37  154.1   THE N   A     154.1 generation-step web (67, 963, 4212)                     0.679541      0.666664   2.53e+03  1.931e-02      1.02 AOM
+SC-37  154.1   THE N   A     154.1 tau sink, star kind (first power 4185)                  0.678259      0.666664   2.28e+03  1.739e-02      1.02 AOM
+SC-38  186.1   THE E   T   * 186.1 'derived cell' 2871 = 319*9 over e = 67, mass = S^       1836.19       1836.15   1.06e+06  1.840e-05         1 A1%
+SC-38  186.1   THE E   T     same cell, mass = S                                            42.8507       1836.15   -5.6e+10 -9.767e-01      42.8 D
+SC-38  175.1   OPE E   T     175.1 seed, hub spelling 2727 over 201                         184.068       1836.15  -5.16e+10 -8.998e-01      9.98 AOM
+SC-38  175.1   OPE E   T     175.1 seed, dock spelling 101 over 67                          2.27244       1836.15  -5.73e+10 -9.988e-01       808 D
+SC-38  175.3   OPE E   T     175.3 first catalogued proton sink 2187 (hub) over 201         118.387       1836.15  -5.37e+10 -9.355e-01      15.5 D
+SC-38  175.4   OPE E   T     175.4 counted reading 25839 over 201                           16525.7       1836.15   4.59e+11  8.000e+00         9 AOM
+SC-38  186.1   THE E   T     186.1 check: strike at the capped entry 2709 over 67           1634.81       1836.15  -6.29e+09 -1.097e-01      1.12 AOM
+SC-38  180.1   OPE E   T     180.1 formula at the junction register 729 over 67             118.387       1836.15  -5.37e+10 -9.355e-01      15.5 D
+SC-38  214.6   OPE E   T     214.6 S_p at the hub unit 201 (office S_p^2/201^2)            0.557288       1836.15  -5.74e+10 -9.997e-01  3.29e+03 D
+SC-39  186.1   THE N   A   *pneutron through the deuteron 2871 = proton 2871                      1       1.00138  -3.45e+06 -1.377e-03         1 A1%
+SC-39  171.1   CON N   A     171.1 registers: neutron 125 over proton 85                    1.47059       1.00138   1.17e+09  4.686e-01      1.47 AOM
+SC-39  186.1   THE N   A     186.1 neutron at the proton-style entry 8613 over 2871,              9       1.00138      2e+10  7.988e+00      8.99 AOM
+SC-40  O.1     OPE N   A    pact read: closure 0                                                  0    0.00137842          - -1.000e+00       inf D
+SC-40  O.1     OPE N   A   * mass-row weight: C_mass/2871^2 (office = mass)             5.35358e-08    0.00137842          - -1.000e+00  2.57e+04 D
+SC-40  O.1     OPE N   A     mass-row weight, office = mass^2                           2.67679e-08    0.00137842          - -1.000e+00  5.15e+04 D
+SC-41  181.5   THE N   A   *parm offices equal, ratio one                                         1      0.459574         33  1.176e+00      2.18 AOM
+SC-42  178.1   OPE N   A     178.1 offices: sqrt(319^2 9^2 / 319^2 9^3) = 1/3              0.333333       135.562          - -9.975e-01       407 D
+SC-42  181.4   CON N   A     181.4 first powers 17820/11907 (mass = S)                       1.4966       135.562          - -9.890e-01      90.6 D
+SC-42  181.4   CON N   A   * 181.4 first powers, mass = S^2                                 2.23981       135.562          - -9.835e-01      60.5 D
+SC-43  178.1   OPE N   A   * 178.1 offices: sqrt(9^4/9^3) = 3                                     3     0.0734485          -  3.984e+01      40.8 D
+SC-43  181.4   CON N   A     181.4 first powers 41796/11907 (mass = S)                       3.5102     0.0734485          -  4.679e+01      47.8 D
+SC-44  181.4   CON N   N   *ptop-to-W ratio 891                                                 891       2.14722   2.45e+05  4.140e+02       415 D
+SC-45  214.6   OPE E   A     2X at the dock face = 21/2                                        10.5       4.35337          -  1.412e+00      2.41 AOM
+SC-45  214.6   OPE E   A   * 2X at the port face = 56/27                                    2.07407       4.35337          - -5.236e-01       2.1 AOM
+SC-46  91.1    OPE N   A   * 91.1 coefficient of the field equation 1/1088391168        9.18787e-10   1.75181e-45          -  5.245e+35  5.24e+35 D
+SC-46  95.1    OPE N   A     95.1 (2,2) coupling 5/384 (1+sqrt2)                          0.0314351   1.75181e-45          -  1.794e+43  1.79e+43 D
+SC-47  209.1   OPE N   A   * 209.1 vacuum term in tick units 2/36^6                     9.18787e-10             -          -          -         - NC
+SC-47  115.1   CON N   A     115.1 cosmological term 36^-63                              8.9731e-99             -          -          -         - NC
+SC-47  96.1    OPE N   A     96.1 vacuum term at depth 3: 1/23328                       4.28669e-05             -          -          -         - NC
+SC-48  122.1   OPE N   A   *pgrowth 36 per wave (per tick)                                       36             -          -          -         - NC
+SC-49  209.1   OPE N   R     entropy/hidden records at rungs 0, 1: (2 ln2 + 10 ln3)/3       4.12414          0.25          -  1.550e+01      16.5 D
+SC-49  209.1   OPE N   R     entropy/hidden records at rung 2: (2 ln2 + 10 ln3)/6           2.06207          0.25          -  7.248e+00      8.25 AOM
+SC-49  209.1   OPE N   R   * printed ratio hidden/entropy at rungs 0, 1 (inverted rea      0.242475          0.25          - -3.010e-02      1.03 AOM
+SC-50  I.51.2  THE N   N   *pwinding an exact integer at every periodic sink                integer       (qual.)          -          -         - QA
+SC-51  104.1   THE P   A     104.1 dock-free share, rung 1: 19994/20791                    0.961666      0.842874       74.5  1.409e-01      1.14 AOM
+SC-51  104.1   THE P   A   * 104.1 dock-free share, rung 2: 233459/243015                  0.960677      0.842874       73.9  1.398e-01      1.14 AOM
+SC-51  U.1     THE P   A     U.1 dock-free share 28/43                                     0.651163      0.842874       -120 -2.274e-01      1.29 AOM
+SC-51  U.1     THE P   A     U.1 dark share at unit weights 2040/2923                      0.697913      0.842874      -90.9 -1.720e-01      1.21 AOM
+SC-52  U.1     THE N   N     U.1 census symmetric under the end swap (asymmetry 0)                0       (qual.)          -          -         - QD
+SC-52  211.2   CON N   N   * 211.2 'a definite excess' (nonzero; sign unmapped)                   1       (qual.)          -          -         - QA
+SC-53  228.1   OPE N   N   *pperiod (hub count) 2 at one electron, 11 at ten                 (2,11)       (qual.)          -          -         - QD
+
+[IDENTIFICATION] per row: code, the verbatim identification sentence, the source's own verdict (both checked by scorecard_extract.py)
+  SC-01 [N] (I.20.1) "The pair ket is a maximally entangled state and the bound its Bell value, both tags nearest."
+  SC-02 [N] (54.1) "it equals the Lorentz algebra of the literature by name"
+  SC-03 [N] (64.2) "isomorphic to $(SU(2)$ x $SU(3)$ x $U(1))/\mathbb{Z}_6$ by an explicit covering whose kernel is the cyclic group of order six"
+  SC-04 [N] (83.1) "the three generations are named by correspondence"
+  SC-05 [N] (124.1) "abelian, conserved and massless, with two transverse states at its open read"
+  SC-06 [E] (124.1) "under the correspondence the fine-structure constant at zero momentum transfer"
+  SC-07 [N] (78.3) "the Ward identity, the anomaly, and the dipole factor are named by correspondence" | verdict (78.3): "every number is an exact object of the derivation, compared with nothing here"
+  SC-08 [N] (141.1) "and the order-three term is zero" | verdict (141.1): "no digit of any constant displayed here"
+  SC-09 [E] (143.1) "its level-one binding through the electron body is an exact element of the field in the electron unit"
+  SC-10 [N] (143.1) "E_{n} = \frac{E_{1}}{n^{2}}, \qquad n = 1, \dots, 8"
+  SC-11 [N] (143.1) "the Lamb interval at the hydrogen sink, the s self-term less the p self-term at rung two, is one exact element, positive and split"
+  SC-12 [N] (144.1) "the hyperfine interval is no output of it as yet" | verdict (144.1): "the hyperfine interval an output of nothing as yet"
+  SC-13 [N] (145.1) "so the Casimir effect is a composed cell of the second-law and chain results"
+  SC-14 [N] (148.1) "the coupling through the joined web is an exact nonzero element of the field at all three" | verdict (148.1): "no value of the coupling at any scale is displayed at this chapter"
+  SC-15 [N] (148.1) "and the running is its register growth, the readout at the cap register negative at every rung"
+  SC-16 [N] (172.2) "What this chapter calls the gluon closed read the literature calls the strong coupling, the closure sector its value at the hadron scale" | verdict (172.2): "the value of the coupling stands in the comparison table alone"
+  SC-17 [N] (173.1) "the running, the ratio of successive rungs, is one over thirty-six"
+  SC-18 [N] (164.4) "What this chapter calls the dock share, the count face and the office ratio the literature calls the squared sine of the weak mixing angle, each the nearest object." | verdict (164.5): "The comparison of the cell with the measured angle stands at the comparison table alone."
+  SC-19 [N] (I.43.1) "What this chapter calls the office of the W word the literature calls the Fermi constant" | verdict (I.43.1): "they are equal across the bodies at no reading of the grid"
+  SC-20 [E] (I.43.1) "the first power the mass of the body" | verdict (159.2): "no value of either mass is displayed in this chapter"
+  SC-21 [E] (200.5) "The mass displays at the two faces 16 over 67 and 12 over 67." | verdict (200.5): "the three displays are compared at the comparison table"
+  SC-22 [N] (200.6) "What this chapter calls the Higgs office the literature calls the squared Higgs mass in the unit of the construction, the carrier offices the squared boson masses"
+  SC-23 [N] (202.1) "The Higgs quartic is the ratio of two offices at every Higgs-form sink" | verdict (200.5): "the three displays are compared at the comparison table"
+  SC-24 [E] (200.5) "the vacuum value the register over the dock-struck electron unit 67" | verdict (200.4): "every mass figure stands at the comparison table"
+  SC-25 [N] (199.1) "the top Yukawa cell of the Higgs-and-carrier-offices entry is re-met as the proton office over the register $101761/81$ with the implied per-leg cell $319/9$"
+  SC-26 [N] (170.2) "the W and the Z at 270 over 49 each and the Higgs at 121 over 16" | verdict (170.2): "no width and no rate is displayed in this chapter"
+  SC-27 [N] (170.2) "the W and the Z at 270 over 49 each and the Higgs at 121 over 16" | verdict (170.2): "no width and no rate is displayed in this chapter"
+  SC-28 [N] (205.1) "every cell an exact count per tick with the tick a name" | verdict (205.1): "the ratios of the cells against the ratios of the observed widths part at every pair by many orders"
+  SC-29 [N] (205.1) "every cell an exact count per tick with the tick a name" | verdict (205.1): "the ratios of the cells against the ratios of the observed widths part at every pair by many orders"
+  SC-30 [N] (205.1) "every cell an exact count per tick with the tick a name"
+  SC-31 [N] (211.1) "the (2,3) kind above the hub-leg kind at (2,4) above the (3,3) kind"
+  SC-32 [N] (166.4) "its Jarlskog cell the Jarlskog determinant, the nearest objects" | verdict (166.4): "the comparison with the measured entries is made at the comparison table alone"
+  SC-33 [N] (166.6) "What this chapter calls the block at the read sites the literature calls the quark mixing matrix" | verdict (166.6): "no element of the block is displayed here"
+  SC-34 [N] (166.1) "What this chapter calls the overlap of the corner frame with the depth eigenbasis the literature calls the lepton mixing matrix" | verdict (166.1): "no angle, phase or figure is displayed at this page"
+  SC-35 [E] (176.2) "What this chapter calls the ratio at the second-order read the literature calls the ratio of two lepton masses" | verdict (176.1): "this compendium displays them nowhere"
+  SC-36 [E] (176.2) "What this chapter calls the ratio at the second-order read the literature calls the ratio of two lepton masses" | verdict (176.1): "this compendium displays them nowhere"
+  SC-37 [N] (157.1) "The Koide relation states that the sum of the three charged-lepton masses divided by the square of the sum of their square roots is two thirds" | verdict (157.1): "so it equals two thirds in the field at no reading"
+  SC-38 [E] (176.1) "The proton in the electron unit stands outside the comparison by orders at every reading the construction has produced" | verdict (175.3): "so the candidate is refuted at the bounded closures"
+  SC-39 [N] (O.1) "the mass difference is named by correspondence"
+  SC-40 [N] (O.1) "the mass difference is named by correspondence" | verdict (O.1): "the neutron office parts from the proton office by that closure"
+  SC-41 [N] (181.5) "the ratios the quark mass ratios, each the nearest object" | verdict (181.5): "no quark mass and no mass ratio is displayed here"
+  SC-42 [N] (181.5) "the heavy sink offices the squared masses of the strange, charm, bottom and top" | verdict (181.4): "the quark rows are compared with experiment at the comparison table alone"
+  SC-43 [N] (181.5) "the heavy sink offices the squared masses of the strange, charm, bottom and top" | verdict (181.4): "the quark rows are compared with experiment at the comparison table alone"
+  SC-44 [N] (181.4) "the top-to-W ratio the ratio of the top and W masses" | verdict (181.4): "the quark rows are compared with experiment at the comparison table alone"
+  SC-45 [E] (214.5) "The deuteron and the alpha are exact objects at the register of the common support in the electron unit at both readings of the binding" | verdict (214.5): "the deuteron office parting at both register faces"
+  SC-46 [N] (91.1) "the coefficient that couples the curvature to its source is the gravitational constant" | verdict (113.1): "no comparison with observation is made here"
+  SC-47 [N] (209.1) "the cosmological constant is the vacuum energy density of the field equations" | verdict (115.1): "no value of the term is displayed here"
+  SC-48 [N] (122.1) "the Hubble ratio as the growth thirty-six per wave" | verdict (122.1): "no value of the scale or of the rate is displayed here"
+  SC-49 [N] (209.1) "The entropy of a black hole is proportional to the area of its horizon with a coefficient of one quarter in Planck units" | verdict (209.1): "Open is the area coefficient"
+  SC-50 [N] (I.51.3) "the quantum Hall integer a name beside"
+  SC-51 [P] (104.1) "In cosmology the abundances of the species are fixed at an epoch by the expansion rate and the reaction rates"
+  SC-52 [N] (U.1) "the baryon asymmetry is named by correspondence"
+  SC-53 [N] (228.1) "the objects named the periodic table of Mendeleev"
+
+[SUMMARY]
+  named quantities (rows): 53; printed numbers attached to them (faces): 124
+  identification: {'N': 43, 'E': 9, 'P': 1}  (E explicit normalisation/unit, N name/nearest only, P pairing ours)
+  derivation: {'R': 10, 'A': 31, 'N': 9, 'T': 3}  (R re-derived here, A arithmetic of printed inputs, T target-like/candidate, N stated only)
+  kinds: {'theory': 1, 'int': 7, 'num': 34, 'zero': 3, 'sign': 4, 'form': 2, 'nc': 2}
+  rows by best face: {'A1%': 5, 'A3s': 2, 'AOM': 9, 'D': 18, 'NC': 2, 'QA': 9, 'QD': 7, 'T': 1}
+  numerical rows: 34; by best face {'A3s': 2, 'D': 18, 'AOM': 9, 'A1%': 5}
+  numerical rows with an explicit identification (E): 9; by best face {'A3s': 1, 'D': 4, 'A1%': 3, 'AOM': 1}
+  numerical rows with a face the source adopts: 16; by that face {'A3s': 1, 'D': 11, 'AOM': 3, 'A1%': 1}
+  numerical faces: 101; {'A1%': 5, 'A3s': 2, 'AOM': 39, 'D': 55}
+
+  TABLE (rows classified at their best face; faces counted individually)
+                                                            rows  faces
+    named physical quantities / printed numbers               53    124
+      source states a normalisation or unit (E)                9     28
+      name / nearest object only (N), pairing ours (P)        44     96
+    numerical comparison possible                             34    101
+      within 3 sigma                                           2      2
+      within 1% (beyond 3 sigma)                               5      5
+      within a factor 10 (beyond 1%)                           9     39
+      beyond a factor 10, or zero against nonzero             18     55
+    theorem of standard QM reproduced                          1      2
+    integer / sign / form: agrees                              9      9
+    integer / sign / form / zero: disagrees                    7      8
+    not comparable (unit unmapped)                             2      4
+    numerical agreements within 1%: 7 rows; of these resting on a choice among printed faces: 5 ['SC-18', 'SC-35', 'SC-36', 'SC-37', 'SC-38']
+    structural agreements (QA, T): 10 rows; resting on a choice among printed faces: 1
+
+  agreements (best face A3s, A1%, T or QA), with the choice behind them:
+    SC-01 CHSH maximum at a maximally entangled pair (Tsirelson bound);  [T] face '(2,2),(2,3),(2,4): two root two' ; 2 face(s), choice: no; ident N; derived R
+    SC-02 spacetime signature                                            [QA] face 'tr(XY) on span{1, i sigma_k}' ; 1 face(s), choice: no; ident N; derived R
+    SC-03 gauge algebra dimensions su(3)+su(2)+u(1) and global form Z6   [QA] face 'dim 12 = 8+3+1, kernel Z6 at the (3,2) genre' ; 1 face(s), choice: no; ident N; derived R
+    SC-04 number of fermion generations                                  [QA] face 'rungs at the core, electron, muon, tau' ; 1 face(s), choice: no; ident N; derived A
+    SC-05 photon mass and number of polarisation states                  [QA] face 'massless, two transverse states' ; 1 face(s), choice: no; ident N; derived A
+    SC-06 fine-structure constant alpha(0) (inverse)                     [A3s] face '1/alpha(0) = 31104/(79+48 sqrt2+42 sqrt3+3 sqrt6)' rel +9.170e-11, +0.598 sigma; 1 face(s), choice: no; ident E; derived R
+    SC-10 hydrogen levels: exponent of n in E_n                          [QA] face 'E_n = E_1/n^2, n = 1..8' ; 1 face(s), choice: no; ident N; derived R
+    SC-11 sign of the Lamb shift 2S1/2 - 2P1/2                           [QA] face 'positive' ; 1 face(s), choice: no; ident N; derived N
+    SC-17 direction of the running of alpha_s (asymptotic freedom)       [QA] face 'g_k/g_(k-1) = 1/36' ; 1 face(s), choice: no; ident N; derived A
+    SC-18 weak mixing angle, as sin^2(theta_W)                           [A3s] face '164.2 (O) Born square of the count face, whole: 289/1296' rel -9.662e-04, -0.832 sigma; 13 face(s), choice: yes; ident N; derived R
+    SC-35 muon-electron mass ratio m_mu/m_e                              [A1%] face '186.1 derived cells e = 67, mu = 963 with mass = S^2 (185.9)' rel -8.768e-04, -3.94e+04 sigma; 4 face(s), choice: yes; ident E; derived T
+    SC-36 tau-electron mass ratio m_tau/m_e                              [A1%] face '186.1 derived cells e = 67, tau = 3969, mass = S^2: (3969/67' rel +9.204e-03, +139 sigma; 3 face(s), choice: yes; ident E; derived T
+    SC-37 Koide ratio Q = (sum m)/(sum sqrt m)^2 of the charged leptons  [A1%] face '157.1 dock face K1 = 16684819/24990001 (roots 67, 963, 3969)' rel +1.493e-03, +196 sigma; 4 face(s), choice: yes; ident N; derived A
+    SC-38 proton-electron mass ratio m_p/m_e                             [A1%] face '186.1 'derived cell' 2871 = 319*9 over e = 67, mass = S^2' rel +1.840e-05, +1.06e+06 sigma; 9 face(s), choice: yes; ident E; derived T
+    SC-39 neutron-proton mass ratio m_n/m_p                              [A1%] face 'neutron through the deuteron 2871 = proton 2871' rel -1.377e-03, -3.45e+06 sigma; 3 face(s), choice: no; ident N; derived A
+    SC-50 Chern / Hall integer: integrality of the winding               [QA] face 'winding an exact integer at every periodic sink' ; 1 face(s), choice: no; ident N; derived N
+    SC-52 baryon asymmetry: nonzero?                                     [QA] face '211.2 'a definite excess' (nonzero; sign unmapped)' ; 2 face(s), choice: yes; ident N; derived N
+
+  references used:
+    BH: 0.25 +- 0.0  [Bekenstein-Hawking S = A/(4 l_P^2) (theory)]
+    Bd_me: 4.353367785 +- -  [CODATA 2022 masses, B_d = m_p + m_n - m_d]
+    C1: 0.5 +- 0.0  [QED one-loop coefficient (Schwinger 1948)]
+    C3: 1.181241457 +- 1e-12  [QED three-loop coefficient (Laporta & Remiddi 1996)]
+    E1H: 2.661118432e-05 +- -  [alpha^2 mu/(2 m_e), CODATA 2022 alpha and m_p/m_e (reduced-mass Bohr level)]
+    GFme2: 3.045647217e-12 +- -  [G_F m_e^2, CODATA 2022]
+    GH_GW: 0.001778846154 +- -  [PDG 2024 widths (Gamma_H = 3.7 +1.9 -1.4 MeV)]
+    GH_Gmu: 1.234986734e+16 +- -  [PDG 2024 widths]
+    GZ_GW: 1.199759615 +- 0.023072300295857988  [PDG 2024 widths]
+    Ge: electron stable, tau_e > 6.6e28 yr (Borexino 2015)
+    Gtau_Gmu: 7566797.095 +- -  [PDG 2024 widths]
+    H0: H0 t_P = 1.18e-61 (Planck units)
+    J: 3.08e-05 +- 1.4e-06  [PDG 2024 CKM review, J = (3.08 +0.15 -0.13)e-5 (transcribed)]
+    Lambda: Lambda l_P^2 = 2.85e-122 (Planck units), Lambda (hbar/m_e c)^2 = 1.63e-77 (electron units); H0 = 67.4(5) km/s/Mpc, Omega_Lambda = 0.6847(73)
+    MH_MW: 1.557810704 +- 0.0013927503455820165  [PDG 2024]
+    MH_me: 245010.2879 +- 215.2646299008391  [PDG 2024 M_H = 125.20(11) GeV / CODATA 2022 m_e]
+    MW_me: 157278.6008 +- 26.02745070619236  [PDG 2024 M_W / CODATA 2022 m_e]
+    Nnu: N_nu = 2.9963(74) (PDG 2024, Z line shape; transcribed)
+    Ue3: 0.022 +- 0.0007  [PDG 2024 sin^2 theta_13 = 0.0220(7) (transcribed)]
+    Vud2: 0.9480332689 +- 0.0006231488000000001  [PDG 2024 |V_ud| = 0.97367(32) (transcribed)]
+    alphaG: 1.751809399e-45 +- -  [G m_e^2/(hbar c), CODATA 2022]
+    alphaMZ: 0.007815491868 +- -  [PDG 2024: alpha^-1(M_Z) = 127.951(9), MS-bar (transcribed)]
+    alpha_inv: 137.0359992 +- 2.1e-08  [CODATA 2022]
+    alphas: 0.118 +- 0.0009  [PDG 2024 world average alpha_s(M_Z) (transcribed)]
+    baryon: eta = n_B/n_gamma ~ 6.1e-10 != 0 (BBN, CMB)
+    bohr_exp: E_n proportional to 1/n^2 (Bohr; fine structure aside)
+    casimir: pressure pi^2 hbar c/(240 a^4): a power law
+    chern: Hall conductance quantised in integers of e^2/h
+    dnp: 0.001378419463 +- -  [CODATA 2022]
+    fdm: 0.842874201 +- 0.0015945498848579807  [Omega_c h^2 = 0.1200(12), Omega_b h^2 = 0.02237(15) (Planck 2018 via PDG 2024; transcribed)]
+    gauge: su(3)+su(2)+u(1), dims 8+3+1 = 12; global quotient Z6 consistent, not established
+    hfs: 1420.405751768 MHz (Hellwig et al. 1970)
+    hierarchy: strong > electromagnetic > weak
+    koide: 0.6666644634 +- 5.080956696360287e-06  [PDG 2024 lepton masses]
+    lamb: 2S1/2 - 2P1/2 = +1057.845(9) MHz (Lundeen & Pipkin 1981)
+    lambdaH: 0.1292805646 +- 0.00022717032114223488  [tree level M_H^2/(2 v^2), v = (sqrt2 G_F)^(-1/2) = 246.2197 GeV]
+    mmu_me: 206.7682827 +- 4.6e-06  [CODATA 2022]
+    mn_mp: 1.001378419 +- 4e-10  [CODATA 2022]
+    mp_me: 1836.152673 +- 3.2e-08  [CODATA 2022]
+    ms_mc: 0.07344854674 +- -  [PDG 2024 MS-bar masses]
+    mt_MW: 2.1472156 +- 0.0036258011909534697  [PDG 2024]
+    mt_mc: 135.5616654 +- -  [PDG 2024 m_t (pole) / m_c(m_c) MS-bar]
+    mtau_me: 3477.23 +- 0.23  [CODATA 2022]
+    mu_md: 0.4595744681 +- 0.016391159313482728  [PDG 2024 m_u = 2.16(7), m_d = 4.70(7) MeV (MS-bar, 2 GeV)]
+    period: H (Z = 1) in period 1, Ne (Z = 10) in period 2
+    photon: m_gamma = 0 (< 1e-18 eV), two helicities
+    qcd_running: alpha_s decreases with Q^2 (asymptotic freedom)
+    qed_running: alpha increases with Q^2 (QED beta > 0)
+    s2w_os: 0.2232094928 +- 0.0002593445278076618  [on-shell 1 - (M_W/M_Z)^2, PDG 2024 M_W = 80.3692(133), M_Z = 91.1880(20) GeV]
+    signature: (1,3) (Lorentzian)
+    tsirelson: 2.828427125 +- 0.0  [Tsirelson bound 2 sqrt2; CGLMP max-entangled value 4(3+2sqrt3)/9 (Collins et al. 2002)]
+    v_me: 481839.8364 +- -  [v = (sqrt2 G_F)^(-1/2), CODATA 2022]
+    yt: 0.9911915384 +- 0.0016656750660047756  [sqrt2 m_t/v, PDG 2024 m_t = 172.57(29) GeV]

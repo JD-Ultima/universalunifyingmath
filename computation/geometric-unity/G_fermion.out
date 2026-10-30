@@ -1,0 +1,50 @@
+=== F0. Sh_Phi o d = Rarita-Schwinger operator ===
+  *^-1 Sh_Phi(xi ^ zeta)_a = lam * gamma_a gamma^b gamma^c xi_b zeta_c (b, c, a distinct) exactly, lam = +1: True   (random integer xi, zeta)
+
+=== F1. Chirality ===
+  Sh_Phi : maps Lambda^2 (x) S^+- into Lambda^13 (x) S^-+ (flips chirality): True; preserves chirality: False
+  Sh_Phi': maps Lambda^2 (x) S^+- into Lambda^13 (x) S^-+ (flips chirality): True; preserves chirality: False
+  Sh_gam : maps Lambda^2 (x) S^+- into Lambda^13 (x) S^-+ (flips chirality): True; preserves chirality: False
+  d_0 = d + spin connection (Clifford grade 2, even) preserves chirality.  In row zeta-bar_- of (9.16) the entry
+  *Sh(d_0 + w_{+-}) acts on zeta_- and the entry d_0 + w_{+-} on nu_-: outputs S^+ and S^- respectively, which no
+  single invariant pairing with zeta-bar_- accepts (B, B' and the dual pairing are chirality-homogeneous).
+  rank of [Sh_Phi(xi) | Sh_gam(xi)] on sample S^+-valued 2-forms (exact): 2  (2 => independent)
+
+=== F2. Symbol criterion: beta_b(z1,z2) = C(top z1 ^ Sh(e^b ^ z2)) ===
+  C = B (sym)      Sh_Phi : max_b|beta_b(z1,z2) - beta_b(z2,z1)| =    718 (Grassmann/Majorana-consistent iff 0); max_b|beta + beta^t| =      0 (bosonic s.a. iff 0); max|beta| = 359
+  C = B (sym)      Sh_Phi': max_b|beta_b(z1,z2) - beta_b(z2,z1)| =   1258 (Grassmann/Majorana-consistent iff 0); max_b|beta + beta^t| =      0 (bosonic s.a. iff 0); max|beta| = 629
+  C = B (sym)      Sh_gam : max_b|beta_b(z1,z2) - beta_b(z2,z1)| =    318 (Grassmann/Majorana-consistent iff 0); max_b|beta + beta^t| =    271 (bosonic s.a. iff 0); max|beta| = 208
+  C = B' (antisym) Sh_Phi : max_b|beta_b(z1,z2) - beta_b(z2,z1)| =   1258 (Grassmann/Majorana-consistent iff 0); max_b|beta + beta^t| =      0 (bosonic s.a. iff 0); max|beta| = 629
+  C = B' (antisym) Sh_Phi': max_b|beta_b(z1,z2) - beta_b(z2,z1)| =    718 (Grassmann/Majorana-consistent iff 0); max_b|beta + beta^t| =      0 (bosonic s.a. iff 0); max|beta| = 359
+  C = B' (antisym) Sh_gam : max_b|beta_b(z1,z2) - beta_b(z2,z1)| =    394 (Grassmann/Majorana-consistent iff 0); max_b|beta + beta^t| =    253 (bosonic s.a. iff 0); max|beta| = 200
+  C = B : Grassmann-defect matrix on (s Sh_Phi + t Sh_gam): exact rank 2 of 2; null space []
+  C = B': Grassmann-defect matrix on (s Sh_Phi + t Sh_gam): exact rank 2 of 2; null space []
+
+=== F3. Symmetry of C gamma_I on S^eps x S^eps (eps = +, -), all monomials of grades 1,3,5,7 ===
+  C = B : k=1: ['antisym']; k=3: ['sym']; k=5: ['antisym']; k=7: ['sym']
+  C = B': k=1: ['antisym']; k=3: ['sym']; k=5: ['antisym']; k=7: ['sym']
+  even grades vanish on S^eps x S^eps (C pairs S^eps with S^-eps).  Hence (Schur + dimensions 14+2002 = 2016,
+  364+1716 = 2080): Lambda^2(S^eps)* = Lambda^1 + Lambda^5 and Sym^2(S^eps)* = Lambda^3 + Lambda^7_eps; in particular
+  Hom_Spin(7,7)(Lambda^3, Lambda^2 S^eps*) = 0 and Hom(Lambda^3, Lambda^2 S*) = 0 (S^+ (x) S^- = even forms).
+
+=== F4. Cross block (zeta-bar nu, nu-bar zeta) with printed signs (+d_0, -d_0^*) ===
+  C = B (sym)     : max_b |k_b(psi1,psi2) - k_b(psi2,psi1)| = 0  (Grassmann-consistent iff 0)
+  C = B' (antisym): max_b |k_b(psi1,psi2) - k_b(psi2,psi1)| = 88  (Grassmann-consistent iff 0)
+
+=== F5. Hermitian (complex) reading, H(psi,chi) = psi^dagger B chi ===
+  Shiab block with gamma_abc (real)        : max|kappa_b(z1,z2) + conj kappa_b(z2,z1)| =       0 (real action <=> 0); max|kappa - conj kappa^t| =    2382
+  Shiab block with i gamma_abc (u(64,64))  : max|kappa_b(z1,z2) + conj kappa_b(z2,z1)| =    2382 (real action <=> 0); max|kappa - conj kappa^t| =       0
+  cross block as printed:                    max|k + conj k^t| =     238; max|k - conj k^t| =       0
+
+=== F6. Principal symbol of D = [[*Sh_Phi d, d], [-d^*, 0]] ===
+  (7,7) xi = e^0 (eta=+1)            : rank sigma(D) = 1920 / 1920 (deficit    0); Weyl sector (zeta in S^-, nu in S^+): 960 / 960 (block-diagonal: True); without the Shiab block (Majorana):  256
+  (7,7) xi = e^7 (eta=-1)            : rank sigma(D) = 1920 / 1920 (deficit    0); Weyl sector (zeta in S^-, nu in S^+): 960 / 960 (block-diagonal: True); without the Shiab block (Majorana):  256
+  (7,7) xi = e^0+e^1 (eta=+2)        : rank sigma(D) = 1920 / 1920 (deficit    0); Weyl sector (zeta in S^-, nu in S^+): 960 / 960 (block-diagonal: True); without the Shiab block (Majorana):  256
+  (7,7) xi = e^0+e^7 (null)          : rank sigma(D) = 1024 / 1920 (deficit  896); Weyl sector (zeta in S^-, nu in S^+): 512 / 960 (block-diagonal: True); without the Shiab block (Majorana):  256
+  (7,7) xi = e^0+e^1+e^7+e^8 (null)  : rank sigma(D) = 1024 / 1920 (deficit  896); Weyl sector (zeta in S^-, nu in S^+): 512 / 960 (block-diagonal: True); without the Shiab block (Majorana):  256
+  (14,0) xi = e^0     : rank sigma(D) = 1920 / 1920 (deficit 0)   [gamma'_a = gamma_a (a<7), i gamma_a (a>=7)]
+  (14,0) xi = e^0+e^1 : rank sigma(D) = 1920 / 1920 (deficit 0)   [gamma'_a = gamma_a (a<7), i gamma_a (a>=7)]
+  (14,0) xi = e^0+e^7 : rank sigma(D) = 1920 / 1920 (deficit 0)   [gamma'_a = gamma_a (a<7), i gamma_a (a>=7)]
+
+runtime 177 s
+EXIT 0

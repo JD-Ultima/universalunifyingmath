@@ -1,0 +1,13 @@
+Y0. monomial products E_J E_K = sign * E_(J^K) agree with clifford77 matrices (200 random pairs): True
+    monomial WA  = matrix WA  on 4 random inputs e^b ^ e^a (x) E_K (exact): True
+    monomial WpA = matrix WpA on 4 random inputs e^b ^ e^a (x) E_K (exact): True
+    monomial RS  = matrix RS  on 4 random inputs e^b ^ e^a (x) E_K (exact): True
+Y0b. (i) int_rank = sympy rank on 40 random low-rank integer matrices: True
+     (ii) assembled symbol columns = direct application (30 random columns, xi = e^0+e^7): True
+     (iii) xi = {0: 1}: rank of W_A(xi ^ .) on Lambda^1 (x) span{E_K: |K|<=1} (210 columns): matrix route (random projection, lower bound) 195, monomial route 195: equal True
+     (iii) xi = {0: 1, 7: 1}: rank of W_A(xi ^ .) on Lambda^1 (x) span{E_K: |K|<=1} (210 columns): matrix route (random projection, lower bound) 195, monomial route 195: equal True
+
+ dim g = 16384; Lambda^1 (x) g = Lambda^13 (x) g has dimension 229376; exactness of the symbol sequence <=> rank sigma(delta_2) = 229376
+
+=== Y1. signature (7,7) ===
+  WA      xi = e^0      (eta = +1)     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact: False  [49276 blocks, max size 13, 3634 distinct]
