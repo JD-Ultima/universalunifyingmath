@@ -38,8 +38,8 @@ Status as of 2026-10-30. Phase 1 is complete. Phase 2 has finished five rounds o
 
 | Draft | Content | Location |
 |---|---|---|
-| Comment on the α Letter | F-CT-1–4 and F-CT-10: reproduction, single involution, convention dependence (Lean), trial factor, covariance repair | `proofs/latex/ct-alpha-comment/comment.tex` |
-| Note on GU's algebraic core | Signature classification; spinor content (fourth generation-equivalent; complex-Weyl doubling); sign error with repair; non-variational field equation for every admissible Shiab; Stueckelberg/Noether; ellipticity (generic yes, draft form no); 14→4 reduction | `proofs/latex/gu-note/note.tex` (draft) |
+| Comment on the α Letter | F-CT-1–4, F-CT-10, F-CT-11: reproduction, single involution, convention dependence (Lean), trial factor, covariance repair, operator form of the weights and its limits | `proofs/latex/ct-alpha-comment/comment.tex` |
+| Note on GU's algebraic core | Signature classification; spinor content (fourth generation-equivalent; complex-Weyl doubling); sign error with repair; non-variational field equation for every admissible Shiab; Stueckelberg/Noether; ellipticity (generic yes, draft form no); 14→4 reduction, including the displacement field (round 5) | `proofs/latex/gu-note/note.tex` (draft) |
 | Note on "$1\times1=2$" | Complete axiom lattice of seven rules, with z3 and Lean certificates. Low novelty; suitable as an expository note. | `proofs/latex/howard-note/note.tex` (draft) |
 
 ## 4. Next steps, in priority order
