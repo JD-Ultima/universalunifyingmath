@@ -18,6 +18,7 @@
 | F-CT-10 | The Letter's exchange $E$ does not commute with the symmetry group $G_\Omega$ of its own joint state, and its record span is not $G_\Omega$-invariant. The covariant version $E'$ gives identical counts and value. Symmetry leaves a 9-parameter (real) family of readouts (10 complex parameters). | Proven (numerical, exact structure) |
 | F-CT-8 | Exploration: the record weights are not the vacuum amplitudes or norms of the record operators. | Computed (negative) |
 | F-CT-11 | Operator origin of the weights (CT-G01). The dressed insertion has an exact operator form in the model's primitives, $M=(1+(\sqrt3-1)S\Pi_X)(1+(\sqrt2-1)S\Pi_Y)$, but $\Pi_X$ encodes the end rule (CT-G02). No word of length ≤ 3 in 38 primitives and no survival × attribution dressing local in the original frame reproduces the weights; a Galois lemma, a factorization theorem and a locality proposition extend parts of these negatives (scope in F-CT-11). After transport through the read links a frame-local dressing reproduces them, with the frame assignment and the full-join credit as inputs. | Proven (finite linear algebra; negative within declared families) |
+| F-CT-12 | Records without the exception clause (CT-G09). The qubit/qutrit half of the clause is a uniform rule (order-definiteness). The "difference only" half is no sign rule and no isotypic sum; orthogonality to the identifications the exchange preserves gives it. This yields the Letter's 172 records exactly for its plain exchange. Covariantly it yields $P_2\oplus\{S_x,D_y,S_z\}$, which has the Letter's sectors and value iff the read qubits are identified by $\sigma_y$; under $E'$ it gives 139.713 or 138.348. There are four covariant letter-wise exchanges, all with the same value (`records-uniform.md`). | Proven (finite linear algebra; resolution conditional on two readings and, covariantly, one choice) |
 | F-CT-7 | The construction's formula $f(d_Q,d_q)$ at other dimension pairs gives values far from $\alpha^{-1}$. $(3,2)$ is the only pair within 1% of $\alpha^{-1}$; the next closest, $(2,3)$, is 2.5% away. | Computed |
 
 ---
@@ -49,7 +50,8 @@ Machine-checked against the author's definitions: `ConventionCheck.weight_is_cla
 *Proof.* On slots, the read exchange is $Q_1\leftrightarrow Q_2,\ q_1\leftrightarrow q_2$. The link exchange carries each end of one read link to the same end of the other, which is the same permutation. The Supplement's own trace count writes $X=-E$ on same-end products and $Y=-E$ on mixed ones. In `ChainAlpha.lean`, `sigX` (via `Rec.reads`) and `sigY` both apply `exchAssign`. Substituting into $k_r=3^{[X_r=-1]}2^{[Y_r=-1]}$ gives the table. ∎
 
 **Consequence.** For a center of dimension $d_Q$ and far ends of dimension $d_q$, with $a=d_Q^2-1$ and $b=d_q^2-1$, the numerator is
-$$\Big[\tbinom a2+\tbinom b2+2ab\Big]+2ab\sqrt{d_q}+\Big[\tfrac{a(a+1)}2+\tfrac{b(b+1)}2\Big]\sqrt{d_Q}+\tbinom b2\sqrt{d_Qd_q}\,[d_q\text{ even}].$$
+$$\Big[\tbinom a2+\tbinom b2+2ab\Big]+2ab\sqrt{d_q}+\Big[\tfrac{a(a+1)}2+\tfrac{b(b+1)}2\Big]\sqrt{d_Q}+\tbinom b2\sqrt{d_Qd_q}\,[d_q=2].$$
+(The last term counts the commutator records, three at a qubit far end. It had read $[d_q\text{ even}]$; at $d_q=4$ the $\binom b2=105$ commutator pairs span only 15 dimensions, and Lean's `commutatorRecs` gives none there, `weylIsSign 4 = false`. Corrected 2026-10-30, F-CT-12; see `reports/CORRECTIONS.md`.)
 The content of the weight law is therefore two assignments:
 
 - which dimension multiplies even same-end records (3, by the end rule);
@@ -171,13 +173,13 @@ Its Galois conjugates are $465.71$, $406.51$ and $-573.03$ (`algebraic.py`).
 
 ## F-CT-7 The same construction at other dimensions
 
-$f(d_Q,d_q)$ is the Letter's construction with a center of dimension $d_Q$ and far ends of dimension $d_q$, with commutator records present only for even $d_q$. Values of $1/f$:
+$f(d_Q,d_q)$ is the Letter's construction with a center of dimension $d_Q$ and far ends of dimension $d_q$, with commutator records present only for $d_q=2$ (corrected 2026-10-30: the text and `algebraic.py` had them for every even $d_q$, which overcounts at $d_q=4$; F-CT-12). Values of $1/f$:
 
 | $(d_Q,d_q)$ | (2,2) | (2,3) | (2,4) | (3,2) | (3,3) | (4,2) |
 |---|---|---|---|---|---|---|
-| $1/f$ | 31.81 | 140.40 | 216.04 | **137.036** | 791.66 | 314.67 |
+| $1/f$ | 31.81 | 140.40 | 331.40 | **137.036** | 791.66 | 314.67 |
 
-(Full table in `algebraic.out`.) Most of these pairs are excluded by the read cap or the end rule. They are listed only to show that $1/f$ varies by orders of magnitude across neighbouring constructions, so the agreement is specific to $(3,2)$.
+(Full table in `algebraic.out`.) Most of these pairs are excluded by the read cap or the end rule. They are listed only to show that $1/f$ varies by orders of magnitude across neighbouring constructions, so the agreement is specific to $(3,2)$. (The $(2,4)$ entry was 216.04 with the overcounted commutator term; with 15 commutator records it would be 307.91. The conclusion is unchanged.)
 
 ## F-CT-9 Cross-check of the imported read-cap lemmas
 
@@ -196,7 +198,7 @@ $G_\Omega$ is the symmetry group of the joint read state $\lvert\Omega\rangle=\l
 
 1. **The plain exchange is not covariant.** The plain slot swap $E$ used by the Letter (and its Lean file) does not commute with $G_\Omega$; the relative defect is $1.4$. The exchange composed with transposition at the slots, $E'$, does commute (defect $5\times10^{-16}$). The reason is that $E$ identifies $Q_1$ with $Q_2$ (and $q_1$ with $q_2$) by the identity map, whereas the join and the qubit pair identify them by the transpose (CT-002 transpose identity).
 2. **The Letter's records are not covariant.** The span of the 169 products is invariant. Its splitting into $E$-even and $E$-odd parts is not (leakage $0.89$), and neither is the span of the three commutator records (leakage $0.97$). So the Letter's record set depends on a choice of bases at the two read links, which the axiom says nothing lines up.
-3. **The covariant version gives the same number.** Records built with $E'$ span a $G_\Omega\times\langle E'\rangle$-invariant 172-dimensional space. The commutator-type records become $D_x$, $D_z$ and $S_y=\sigma_y^{(q_1)}+\sigma_y^{(q_2)}$. The sector sizes are again $79/48/42/3$, so the value is unchanged. The construction can be repaired with no change to the number.
+3. **The covariant version gives the same number.** Records built with $E'$ span a $G_\Omega\times\langle E'\rangle$-invariant 172-dimensional space. The commutator-type records become $D_x$, $D_z$ and $S_y=\sigma_y^{(q_1)}+\sigma_y^{(q_2)}$. The sector sizes are again $79/48/42/3$, so the value is unchanged. ($E'$ is one of four covariant letter-wise exchanges, which differ by signs at the qutrit copies and at the read qubits; with $\sigma_y$ at the read qubits the commutator-type records are $S_x$, $D_y$, $S_z$, with the same counts and value; F-CT-12.) The construction can be repaired with no change to the number.
 4. **Freedom left by symmetry.** Under $SU(3)\times SU(2)\times\langle E'\rangle$ the covariant record space decomposes into irreducible summands (SU(3), SU(2); $E'$-parity; multiplicity):
 
    | Parity | Summands |
@@ -228,11 +230,22 @@ CT-G01 therefore reduces to CT-G02 (which end each exchange is credited to) and 
 
 4. **Transport** (`transport.md`, `transport.py`). Carrying qubit letters to the qutrit copies through the read links is unique ($t(B)=\iota B^{\mathsf T}\iota^\dagger$) but only $SU(2)\times U(1)$-equivariant. Transporting every record is many-to-one, so no compression $T^\dagger DT$ and no Rayleigh quotient of any $D$ through a transport gives the weights (Theorem 4 there). Among 338 688 frame-local dressings, the weights are reproduced exactly by 6, and every one needs (a) the exchange that credits the qubit–qubit records assessed after transport, (b) the one that credits the mixed records before it (for the Letter's domains, X and Y), and (c) the full-join credit $\sqrt3$ for letters supported on a rank-2 subspace, where the transport's own symmetry gives $2/\sqrt3$ or $\sqrt2$ (140.702 and 139.030; the latter is Table S5's "X where letters sit"). The end rule thus has an operator-level reading, but (a)–(c) are inputs.
 
+## F-CT-12 Records without an exception clause (CT-G09)
+
+Full statement: `formalization/chain-theory/alpha/records-uniform.md` (`records_uniform.py`, 1964 exact checks).
+
+1. **Order-definiteness.** The reversal of the two insertions has a well-defined sign exactly on $D=1\oplus P_2\oplus V_{q_1}\oplus V_{q_2}$: at a qubit the anticommutator of two letters is a scalar, at a qutrit every traceless single letter is also a symmetric composite (Thm 2). This replaces the Letter's determinant argument, which covers invertible reads only; the Gell-Mann letters contain five anticommuting pairs (Prop. 3; literal rule 132.977).
+2. **No sign rule.** On $D_0$ the records are "own sign $+1$, or survivor", three of the four (own sign, exchange) classes; no single sign test and no sum of isotypic components gives them (Thm 4, Prop. 5).
+3. **Identification rule.** Records are the order-definite composites orthogonal to the identifications whose action the exchange preserves. For $E$ this gives the Letter's 172 records exactly. For every covariant exchange it gives $P_2\oplus C^+$, $C^+=\{S_x,D_y,S_z\}$ (Thm 6).
+4. **Covariant exchanges.** By Schur these are $\varepsilon_Q^{\hat N_Q}\varepsilon_q^{\hat N_q}E'$; all four give the Letter's sectors, value and isotypic table. The commutator-type records are $D_x,D_z,S_y$ for $\varepsilon_q=+1$ (F-CT-10) and $S_x,D_y,S_z$ for $\varepsilon_q=-1$. With $\varepsilon_q=-1$ the read qubits are exchanged by the unitary $(\sigma_y\otimes\sigma_y)\mathrm{SWAP}$, as in the Letter's readers remark (Thm 7). Under $E'$ the uniform rule's records give 139.713 (operator form) or 138.348 (word rule), and the Letter's records need a second clause: the order-definite matchings are records.
+
+The value and F-CT-1–F-CT-11 are unchanged, apart from the commutator count of F-CT-7 at $d_q=4$ (corrected above).
+
 ## Graded ledger (α Letter)
 
 | Claim | Mathematical validity | Physical validity |
 |---|---|---|
-| CT-014, 015, 017, 018 (counts, value) | Proven (independently) | n/a |
+| CT-014, 015, 017, 018 (counts, value) | Proven (independently); the commutator records' exception clause has a uniform form under two unstated readings (F-CT-12) | n/a |
 | CT-005 (read cap) | Proven from imported theorems + definition of "fix" | n/a |
 | CT-007, 012 (acting charge, uniqueness) | Proven under reading A; fails under A*, B, C | n/a |
 | CT-016 (weight law) | Definition; three wording clauses; alternatives give 112–147. Has an operator form but no operator origin local in the original frame; a frame-local one after transport needs the frame assignment and the full-join credit as inputs (F-CT-11) | Untested |

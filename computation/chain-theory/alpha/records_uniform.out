@@ -1,0 +1,246 @@
+
+0. Source anchors (alpha.tex, supplement.tex, ChainAlpha.lean at a28db89)
+-------------------------------------------------------------------------
+ChainAlpha.lean sha256 matches the pin 522844e9...c331da
+  alpha.tex:60: found  "Each pair has its own matching, so nothing lines up the bases of a shar..."
+  alpha.tex:60: found  "three at a qubit (the Pauli matrices) and eight at a qutrit (the Gell-M..."
+  alpha.tex:62: found  "Two reads fix their product jointly, and exchanging them returns the pr..."
+  alpha.tex:62: found  "two anticommuting reads thus fix one thing more than either alone, thei..."
+  alpha.tex:79: found  "the far end can take that basis as its own only if a matching undoes th..."
+  alpha.tex:109: found  "A qutrit end has $3^{2}-1=8$ letters, the Gell-Mann matrices"
+  alpha.tex:109: found  "A \emph{measurement record} carries the two insertions as two letters"
+  alpha.tex:109: found  "Two letters at the same slot act on the same end, where their product i..."
+  alpha.tex:109: found  "So the two letters of a record sit at different slots [Fig.~\ref{fig:li..."
+  alpha.tex:109: found  "At a qubit two reads in different bases anticommute (the Weyl phase the..."
+  alpha.tex:109: found  "At the qutrit no two reads anticommute, since $AB=-BA$ would give $\det..."
+  alpha.tex:109: found  "of the two combinations only their difference reads the order sign $-1$..."
+  alpha.tex:109: found  "so the exchange sorts that space into its two eigenspaces, keeping both..."
+  alpha.tex:111: found  "These are the $73$ products with both slots at one end and the three co..."
+  alpha.tex:113: found  "which is $+1$ for a product, whose two letters sit at distinct slots an..."
+  supplement.tex:35: found  "a record: two letters, the two insertions"
+  supplement.tex:70: found  "the mutually unbiased eigenbases of the clock and shift operators"
+  supplement.tex:78: found  "Two reads that anticommute therefore fix a further record, their produc..."
+  supplement.tex:81: found  "the first part fixed whatever their order and the second by it"
+  supplement.tex:81: found  "For two invertible reads with $AB=\lambda BA$ at an end of dimension $d..."
+  supplement.tex:81: found  "a sign is possible only at even $d$, which the qubit's reads realize"
+  supplement.tex:170: found  "At a qubit $\sigma_{y}$ does, $\sigma_{y}\bar{U}\sigma_{y}=(\det\bar{U}..."
+  supplement.tex:170: found  "so this route is a second one and not the one the Letter takes"
+  supplement.tex:300: found  "A product record is a product of one letter at each of two of the four ..."
+  supplement.tex:303: found  "A single letter is one insertion, and three or four letters are more th..."
+  supplement.tex:303: found  "Two letters at one slot multiply to a multiple of the identity plus one..."
+  supplement.tex:306: found  "it does not quotient it, and both eigenvalues are kept, the eigenvalue ..."
+  supplement.tex:310: found  "The commutator records are the three differences"
+  supplement.tex:313: found  "on their span it reads $+1$ at the sum and $-1$ at the difference. The ..."
+  supplement.tex:313: found  "Each difference is a single qubit element at each qubit slot, so it is ..."
+  supplement.tex:364: found  "the three commutator records span a copy of $\Lambda^{2}V_{3}$"
+  supplement.tex:461: found  "sums and differences of the commutators both kept"
+  supplement.tex:573: found  "product of letters at two slots, or a commutator record"
+  supplement.tex:575: found  "$+1$ for a product, the order sign for a commutator record"
+  lean/ChainAlpha.lean:216: found  "A read can place a letter, an element of the real traceless basis of an..."
+  lean/ChainAlpha.lean:217: found  "Pauli matrices, up to factors of i)"
+  lean/ChainAlpha.lean:219: found  "carries letters at two of the four slots and the identity at the others..."
+  lean/ChainAlpha.lean:220: found  "is a single letter at the far end of one read minus its image at the fa..."
+  lean/ChainAlpha.lean:280: found  "def weylIsSign (d : Nat) : Bool := (List.range d).all (fun j => weylPha..."
+  lean/ChainAlpha.lean:295: found  "def orderSign (d : Nat) : Int := if weylIsSign d then -1 else 1"
+  lean/ChainAlpha.lean:300: found  "def commutatorCandidates (dA dB i j : Nat) : List Formal :="
+  lean/ChainAlpha.lean:301: found  "let c1 := commAt dA dB i j 1"
+  lean/ChainAlpha.lean:302: found  "let c3 := commAt dA dB i j 3"
+  lean/ChainAlpha.lean:324: found  "def commutatorRecs (dA dB : Nat) : List Rec :="
+  lean/ChainAlpha.lean:325: found  "if weylIsSign dB then"
+  lean/ChainAlpha.lean:329: found  "if eqZ (parity fg.1) (orderSign dB) then some ⟨fg.1, orderSign dB, some..."
+  lean/ChainAlpha.lean:350: found  "odd ++ even ++ fixedP ++ commutatorRecs dA dB"
+  lean/ChainAlpha.lean:638: found  "theorem weyl_sign : weylIsSign 2 = true ∧ weylIsSign 3 = false := by de..."
+  lean/ChainAlpha.lean:665: found  "theorem record_count : (records 3 2).length = 172 := by decide +kernel"
+
+1. Exact model: letters, P<=2, cells; cross-check with records_independent.py and symmetry.py
+---------------------------------------------------------------------------------------------
+letters: 8 at a qutrit, 3 at a qubit (15 at d = 4, for Thm 2); structure constants exact and checked
+P<=2 (at most two letters): dim 192 = 1 + 22 + 169
+cells (class, exchange parity) and their dimensions, the same in every frame:
+  id+:1, Q+:8, Q-:8, q+:3, q-:3, QQ+:36, QQ-:28, qq+:6, qq-:3, mS+:24, mS-:24, mC+:24, mC-:24
+  (id identity; Q, q single letter at a qutrit copy / read qubit; QQ, qq, mS same-link mixed, mC cross mixed)
+cross-check (records_independent.py and symmetry.py, imported unmodified; numerical rank tests, tol 1e-8):
+  R_E = span of the Letter's 172 records; R_E' = span of the 172 covariant records of F-CT-10; their
+  single-qubit parts are the Letter's three commutator records and symmetry.py's D_x, D_z, S_y.
+
+2. Record spaces R_f = P2 + (f-odd single-qubit operators); C_L, C, C+; matchings
+---------------------------------------------------------------------------------
+C_L = E-odd single-qubit = span of the Letter's [s_mu,s_nu]_q1 - [s_mu,s_nu]_q2;  C = E'-odd;  C+ = E'-even:
+  dim(C_L cap C) = 2
+  dim(C_L cap C+) = 1
+  dim(C cap C+) = 0
+Lie(G_Omega) = E'-odd single-letter operators (8 at the join Q1Q2, 3 at the qubit pair q1q2); C is its qubit
+  part.  Plain frame: dim(C_L cap Lie) = 2 (the x and z differences), dim(C_L+ cap Lie) = 1 (the y sum).
+  R_f, f = E (plain; Letter, Lean) : classes (79, 48, 42, 3), numerator 79+48r2+42r3+3r6, 1/value 137.035999
+  R_f, f = E' = E o T (F-CT-10)    : classes (79, 48, 42, 3), numerator 79+48r2+42r3+3r6, 1/value 137.035999
+  R_f, f = Fm = (-1)^Nq E'         : classes (79, 48, 42, 3), numerator 79+48r2+42r3+3r6, 1/value 137.035999
+  R_f, f = (-1)^NQ E'              : classes (79, 48, 42, 3), numerator 79+48r2+42r3+3r6, 1/value 137.035999
+  R_f, f = sigma E' = (-1)^N E'    : classes (79, 48, 42, 3), numerator 79+48r2+42r3+3r6, 1/value 137.035999
+  R_E = P2 + C_L,  R_E' = R_(-1)^NQ E' = P2 + C,  R_Fm = R_sigma E' = P2 + C+: three distinct spaces, same value
+
+3. Order-definite composites (Thm 2); anticommuting letters at the qutrit (Prop. 3)
+-----------------------------------------------------------------------------------
+at one end of dimension d: dim m(Sym^2 V), dim m(Lambda^2 V), dim of the intersection, dim traceless part of m(Sym^2 V)
+  d = 2:  1,  3,  0,  0
+  d = 3:  9,  8,  8,  8
+  d = 4: 16, 15, 15, 15
+m(V(x)V) = P<=2 (192); m(Sym^2 V) = 1 + P2 + V_Q1 + V_Q2 (186); m(Lambda^2 V) = the 22 single letters;
+A = m(Sym^2 V) cap m(Lambda^2 V) = V_Q1 + V_Q2 (16).  The reversal of the two insertions descends to
+m(V(x)V)/A; with the trace pairing, D = A^perp = 1 + P2 + V_q1 + V_q2 (176), D_+ = 1 + P2, D_- = V_q1 + V_q2,
+and on D the order sign equals the own sign (-1)^N.  D_0 = D cap 1^perp = P2 + V_q1 + V_q2 (175).
+one letter per read: QQ + qq + cross-mixed (121); both letters from one read: 1 + singles + same-link mixed (71)
+  Gell-Mann (the Letter's letters)    : 5 anticommuting pairs, their commutators span dim 4; pairs [(1, 2), (1, 3), (2, 3), (4, 5), (6, 7)]
+  Lean real basis, d = 3              : 5 anticommuting pairs, their commutators span dim 4
+  Weyl X^a Z^b, d = 3                 : 0 anticommuting pairs, their commutators span dim 0
+  generic rational orthogonal, d = 3  : 0 anticommuting pairs, their commutators span dim 0
+  Pauli                               : 3 anticommuting pairs, their commutators span dim 3
+  Lean real basis, d = 2              : 3 anticommuting pairs, their commutators span dim 3
+  Weyl X^a Z^b, d = 2                 : 3 anticommuting pairs, their commutators span dim 3
+  generic rational orthogonal, d = 2  : 3 anticommuting pairs, their commutators span dim 3
+  lambda_1..lambda_7 are singular (det 0), lambda_8 is not; the five anticommuting pairs' commutators span
+  {lambda_1, lambda_2, lambda_3, lambda_8}.  The det argument of alpha.tex:109 excludes invertible reads only.
+
+4. Uniform sign rules (Thm 4); isotypic sums (Prop. 5)
+------------------------------------------------------
+On D_0, classes by (own sign sigma, exchange parity f): (+,+) 90, (+,-) 79, (-,+) 3, (-,-) 3.
+  the seven uniform sign rules give dims [6, 82, 82, 93, 93, 169, 175]
+  frame E (plain; Letter, Lean) : unions of dim 172: [[(1, 1), (1, -1), (-1, -1)], [(1, 1), (1, -1), (-1, 1)]]; neither is one sign test; R_f = (+,+)(+,-)(-,-) = 'sigma = +1 or sigma f = +1'
+  frame E' = E o T (F-CT-10)    : unions of dim 172: [[(1, 1), (1, -1), (-1, -1)], [(1, 1), (1, -1), (-1, 1)]]; neither is one sign test; R_f = (+,+)(+,-)(-,-) = 'sigma = +1 or sigma f = +1'
+  frame Fm = (-1)^Nq E'         : unions of dim 172: [[(1, 1), (1, -1), (-1, -1)], [(1, 1), (1, -1), (-1, 1)]]; neither is one sign test; R_f = (+,+)(+,-)(-,-) = 'sigma = +1 or sigma f = +1'
+  on P<=2,0 : classes [90, 79, 11, 11]; sign-rule dims [22, 90, 101, 169, 191]; 172 is not a union of classes
+  on P<=2   : classes [91, 79, 11, 11]; sign-rule dims [22, 90, 102, 170, 192]; 172 is not a union of classes
+  on D      : classes [91, 79, 3, 3]; sign-rule dims [6, 82, 94, 170, 176]; 172 is not a union of classes
+isotypic decomposition of P<=2 under SU(3) x SU(2) x <E'> (quadratic Casimirs, exact; 10 and 10b share one):
+  (1,1)_+: dim  3  [id+ 1, QQ+ 1, qq+ 1]
+  (1,3)_+: dim  3  [q+ 3]
+  (1,5)_+: dim  5  [qq+ 5]
+  (27,1)_+: dim 27  [QQ+ 27]
+  (8,1)_+: dim 16  [Q+ 8, QQ+ 8]
+  (8,3)_+: dim 48  [mS+ 24, mC+ 24]
+  (1,3)_-: dim  6  [q- 3, qq- 3]
+  (10+10b,1)_-: dim 20  [QQ- 20]
+  (8,1)_-: dim 16  [Q- 8, QQ- 8]
+  (8,3)_-: dim 48  [mS- 24, mC- 24]
+  of the 2^11 sums of isotypic components, exactly one has dim 172: all but (10,1)_- and (10b,1)_- (it keeps
+  the identity and all 22 single letters and drops 20 odd QQ records).  R_E' meets (8,1)_- (dim 16) in dim 8,
+  (8,1)_+ in 8 and (1,1)_+ in 2 of 3: it is not a sum of isotypic components.
+  R_Fm under SU(3) x SU(2) x <Fm> has the same isotypic table as R_E' under <E'> (F-CT-10 item 4): (1,1)_+ 2, (1,5)_+ 5, (27,1)_+ 27, (8,1)_+ 8, (8,3)_+ 48, (1,3)_- 6, (10+10b,1)_- 20, (8,1)_- 8, (8,3)_- 48
+
+5. Identification rules (Thm 6); the covariant exchanges (Thm 7)
+----------------------------------------------------------------
+I = image of the identification algebras of the two read links = P<=1 (identity + 22 single letters, dim 23).
+stab_Omega = {X in I : X|Omega> in C|Omega>} = 1 + Lie(G_Omega) (dim 12).
+Comp_f = {X in I : f ad_X f = ad_X}:  Comp_E = I^E (the E-even part, 12);  Comp_f = stab_Omega for each of the
+  four covariant exchanges;  I^f = f-even part of I, and I^E' != Comp_E'.
+  I^E' is not a Lie algebra: the bracket of two E'-even qubit identifications is E'-odd (a matching).
+  the part of I^f that D sees, I^f cap D = 1 + (f-even single-qubit), closed under brackets? equal to Comp_f cap D?
+    E (plain; Letter, Lean) : closed True; = Comp_f cap D True
+    E' = E o T (F-CT-10)    : closed False; = Comp_f cap D False
+    Fm = (-1)^Nq E'         : closed True; = Comp_f cap D True
+    (-1)^NQ E'              : closed False; = Comp_f cap D False
+    sigma E' = (-1)^N E'    : closed True; = Comp_f cap D True
+Rules on D:
+  f = E   D cap (I^f)^perp: dim 172, classes (79, 48, 42, 3), = R_f: True; 1/value 137.035999 (M_L), 137.035999 (word rule)
+  f = E   D cap (Comp_f)^perp: dim 172, classes (79, 48, 42, 3), = R_f: True; 1/value 137.035999 (M_L), 137.035999 (word rule)
+  f = E'  D cap (I^f)^perp: dim 172, classes (79, 48, 42, 3), = R_f: True; 1/value 137.035999 (M_L), 137.035999 (word rule)
+  f = E'  D cap (Comp_f)^perp: dim 172, classes (79, 48, 42, 0) + 3 outside, = R_f: False; 1/value 139.712643 (M_L), 138.347888 (word rule)
+  f = Fm  D cap (I^f)^perp: dim 172, classes (79, 48, 42, 3), = R_f: True; 1/value 137.035999 (M_L), 137.035999 (word rule)
+  f = Fm  D cap (Comp_f)^perp: dim 172, classes (79, 48, 42, 3), = R_f: True; 1/value 137.035999 (M_L), 137.035999 (word rule)
+  f = FQ  D cap (I^f)^perp: dim 172, classes (79, 48, 42, 3), = R_f: True; 1/value 137.035999 (M_L), 137.035999 (word rule)
+  f = FQ  D cap (Comp_f)^perp: dim 172, classes (79, 48, 42, 0) + 3 outside, = R_f: False; 1/value 139.712643 (M_L), 138.347888 (word rule)
+  f = sE' D cap (I^f)^perp: dim 172, classes (79, 48, 42, 3), = R_f: True; 1/value 137.035999 (M_L), 137.035999 (word rule)
+  f = sE' D cap (Comp_f)^perp: dim 172, classes (79, 48, 42, 3), = R_f: True; 1/value 137.035999 (M_L), 137.035999 (word rule)
+  D cap stab_Omega^perp = P2 + C+ (every frame); P<=2 cap stab_Omega^perp has dim 180 (D is needed).
+  two-clause covariant form for E': R_E' = P2 + (D_0 cap stab_Omega) = D_0 cap (P2 + Lie(G_Omega)).
+Exchanges on P<=2: G_Omega-covariance (f ad_K = ad_K f, 11 generators), involution, algebra type on two letters:
+  E (plain; Letter, Lean) : covariant False; involution True; automorphism
+  E' = E o T (F-CT-10)    : covariant True; involution True; anti-automorphism
+  Fm = (-1)^Nq E'         : covariant True; involution True; neither
+  (-1)^NQ E'              : covariant True; involution True; neither
+  sigma E' = (-1)^N E'    : covariant True; involution True; neither
+  Schur: the G_Omega-intertwiners V_q1 -> V_q2 and V_Q1 -> V_Q2 are lines (b -> b^T), so the covariant
+  letter-wise exchanges are (eps_Q)^NQ (eps_q)^Nq E'; only E' is an (anti-)automorphism of B(H).
+  readers remark: -b^T = sigma_y b sigma_y on qubit letters, and Fm = Ad_W, W = (sigma_y (x) sigma_y) SWAP_q, on all
+  16 basis operators of P<=2 without qutrit letters: Fm identifies the read qubits by the matching that undoes
+  the conjugation; at the qutrit copies the only intertwiner is the transpose (no unitary does it).
+  operator form, every frame: R_f = D_0 cap ker((1 + f)[N = 1]); the occupation projector [N = 1] is the clause.
+
+6. Collapse X -> X|Omega> under the transpose identity (Prop. 8)
+----------------------------------------------------------------
+rank kappa on P<=2: 36 (of 36);  ker kappa cap P<=1 = Lie(G_Omega) (11);  kappa(C) = 0;
+kappa(C+) = kappa(E'-odd qq products), dim 3, inside kappa(P2);  plain frame: dim kappa(C_L) = 1, dim kappa(C_L+) = 2;
+P2 + (D_0 cap ker kappa) = D_0.
+
+7. The declared family F (Prop. 9)
+----------------------------------
+F: 8 composite spaces (with and without the identity where it occurs) x 24 conditions x 3 frames (E, E', Fm) = 864 members
+  composite spaces: P2 (two letters at distinct slots), P<=2 = m(V(x)V), m(Sym2 V), m(Lambda2 V), D, D_+, D_-,
+  one letter per read.  Conditions: none; traceless; f-even; f-odd; own sign +; own sign -; survivor; non-survivor; perp I; perp I^f; perp Comp_f; perp stab; perp Lie; perp G-inv; G-invariant; perp RL-match; perp all-match; ker kappa; <Om|X|Om>=0; X Om in C Om; [X,P_Om]=0; ker kappa_L; [X,P_Li]=0; [X,P_3]=[X,P_2]=0
+  dimensions attained: [0, 2, 3, 6, 8, 11, 16, 22, 44, 45, 50, 51, 54, 55, 60, 61, 66, 67, 78, 79, 81, 82, 85, 86, 87, 90, 91, 93, 94, 95, 97, 98, 99, 101, 102, 119, 120, 121, 126, 127, 129, 130, 133, 134, 135, 139, 140, 141, 142, 143, 145, 146, 149, 150, 151, 155, 156, 157, 167, 168, 169, 170, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 183, 184, 185, 186, 189, 190, 191, 192]
+  members of dimension 172: 21
+    [E  ] D cap perp I^f    : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ['E']; 1/value 137.035999 (M_L), 137.035999 (word)
+    [E' ] D cap perp I^f    : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ["E'"]; 1/value 137.035999 (M_L), 137.035999 (word)
+    [Fm ] D cap perp I^f    : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ['Fm']; 1/value 137.035999 (M_L), 137.035999 (word)
+    [E  ] D cap perp Comp_f : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ['E']; 1/value 137.035999 (M_L), 137.035999 (word)
+    [E' ] D cap perp Comp_f : graded True ; classes (79, 48, 42, 0) + 3 outside; equals R_f for f in ['Fm']; 1/value 139.712643 (M_L), 138.347888 (word)
+    [Fm ] D cap perp Comp_f : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ['Fm']; 1/value 137.035999 (M_L), 137.035999 (word)
+    [E  ] D cap perp stab   : graded True ; classes (79, 48, 42, 1) + 2 outside; equals R_f for f in ['Fm']; 1/value 138.808885 (M_L), 137.90781 (word)
+    [E' ] D cap perp stab   : graded True ; classes (79, 48, 42, 0) + 3 outside; equals R_f for f in ['Fm']; 1/value 139.712643 (M_L), 138.347888 (word)
+    [Fm ] D cap perp stab   : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ['Fm']; 1/value 137.035999 (M_L), 137.035999 (word)
+    [E  ] D_0 cap perp I^f    : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ['E']; 1/value 137.035999 (M_L), 137.035999 (word)
+    [E' ] D_0 cap perp I^f    : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ["E'"]; 1/value 137.035999 (M_L), 137.035999 (word)
+    [Fm ] D_0 cap perp I^f    : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ['Fm']; 1/value 137.035999 (M_L), 137.035999 (word)
+    [E  ] D_0 cap perp Comp_f : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ['E']; 1/value 137.035999 (M_L), 137.035999 (word)
+    [E' ] D_0 cap perp Comp_f : graded True ; classes (79, 48, 42, 0) + 3 outside; equals R_f for f in ['Fm']; 1/value 139.712643 (M_L), 138.347888 (word)
+    [Fm ] D_0 cap perp Comp_f : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ['Fm']; 1/value 137.035999 (M_L), 137.035999 (word)
+    [E  ] D_0 cap perp stab   : graded True ; classes (79, 48, 42, 1) + 2 outside; equals R_f for f in ['Fm']; 1/value 138.808885 (M_L), 137.90781 (word)
+    [E' ] D_0 cap perp stab   : graded True ; classes (79, 48, 42, 0) + 3 outside; equals R_f for f in ['Fm']; 1/value 139.712643 (M_L), 138.347888 (word)
+    [Fm ] D_0 cap perp stab   : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ['Fm']; 1/value 137.035999 (M_L), 137.035999 (word)
+    [E  ] D_0 cap perp Lie    : graded True ; classes (79, 48, 42, 1) + 2 outside; equals R_f for f in ['Fm']; 1/value 138.808885 (M_L), 137.90781 (word)
+    [E' ] D_0 cap perp Lie    : graded True ; classes (79, 48, 42, 0) + 3 outside; equals R_f for f in ['Fm']; 1/value 139.712643 (M_L), 138.347888 (word)
+    [Fm ] D_0 cap perp Lie    : graded True ; classes (79, 48, 42, 3) + 0 outside; equals R_f for f in ['Fm']; 1/value 137.035999 (M_L), 137.035999 (word)
+  members equal to the frame's own record space R_f, f = E: [('D', 'perp Comp_f'), ('D', 'perp I^f'), ('D_0', 'perp Comp_f'), ('D_0', 'perp I^f')]
+  members equal to the frame's own record space R_f, f = E': [('D', 'perp I^f'), ('D_0', 'perp I^f')]
+  members equal to the frame's own record space R_f, f = Fm: [('D', 'perp Comp_f'), ('D', 'perp I^f'), ('D', 'perp stab'), ('D_0', 'perp Comp_f'), ('D_0', 'perp I^f'), ('D_0', 'perp Lie'), ('D_0', 'perp stab')]
+
+8. Single-letter content of Phi(P2) for natural superoperators Phi (Prop. 10)
+-----------------------------------------------------------------------------
+Phi(X) for the 169 basis products X, projected onto P<=1 (identity and single letters); dims per cell (E'):
+  L_join P3               : dim  9; graded True ; in cells: id+:1, Q+:8
+  R_join P3               : dim  9; graded True ; in cells: id+:1, Q+:8
+  Ad_join P3              : dim  1; graded True ; in cells: id+:1
+  L_qubit pair P2         : dim  4; graded True ; in cells: id+:1, q+:3
+  R_qubit pair P2         : dim  4; graded True ; in cells: id+:1, q+:3
+  Ad_qubit pair P2        : dim  1; graded True ; in cells: id+:1
+  L_joint state P_Om      : dim 12; graded True ; in cells: id+:1, Q+:8, q+:3
+  R_joint state P_Om      : dim 12; graded True ; in cells: id+:1, Q+:8, q+:3
+  Ad_joint state P_Om     : dim  1; graded True ; in cells: id+:1
+  L_read link P_L1        : dim 17; graded False; in cells: Q+:2, Q-:2
+  R_read link P_L1        : dim 17; graded False; in cells: Q+:2, Q-:2
+  Ad_read link P_L1       : dim 12; graded False; in cells: -
+  L_read link P_L2        : dim 17; graded False; in cells: Q+:2, Q-:2
+  R_read link P_L2        : dim 17; graded False; in cells: Q+:2, Q-:2
+  Ad_read link P_L2       : dim 12; graded False; in cells: -
+  L_read links P_L1 P_L2  : dim 11; graded False; in cells: -
+  R_read links P_L1 P_L2  : dim 11; graded False; in cells: -
+  Ad_read links P_L1 P_L2 : dim  1; graded False; in cells: -
+  none of these 18 has single-letter part equal to C, C_L or C+.
+
+9. Record-space variants and their values (weights: M_L of the stated frame, and the word rule)
+-----------------------------------------------------------------------------------------------
+  the Letter: P2 + C_L, E                        dim 172  M_L 79+48r2+42r3+3r6      137.035999   word 79+48r2+42r3+3r6      137.035999
+  F-CT-10: P2 + C, E'                            dim 172  M_L 79+48r2+42r3+3r6      137.035999   word 79+48r2+42r3+3r6      137.035999
+  D cap stab^perp = P2 + C+, Fm                  dim 172  M_L 79+48r2+42r3+3r6      137.035999   word 79+48r2+42r3+3r6      137.035999
+  D cap stab^perp = P2 + C+, E'                  dim 172  M_L 82+48r2+42r3          139.712643   word 79+48r2+45r3          138.347888
+  P2 only (no commutator records)                dim 169  M_L 79+48r2+42r3          141.621039   word 79+48r2+42r3          141.621039
+  D_0 = P2 + all six single-qubit (both kept)    dim 175  M_L 82+48r2+42r3+3r6      135.248393   word 79+48r2+45r3+3r6      133.969062
+  P2 + Lie(G_Omega) (all matchings)              dim 180  M_L 79+48r2+50r3+3r6      129.151596   word 79+48r2+50r3+3r6      129.151596
+  P<=2,0 (all traceless two-letter composites)   dim 191  M_L 90+48r2+50r3+3r6      123.510294   word 79+48r2+61r3+3r6      119.683329
+  survivors only: even products + C              dim  93  M_L 48r2+42r3+3r6         210.195035   word 48r2+42r3+3r6         210.195035
+  Gell-Mann literal: R_E + 4 qutrit differences  dim 176  M_L 79+48r2+46r3+3r6      132.977031   word 79+48r2+46r3+3r6      132.977031
+  Table S5 'sums and differences kept' gives the sums r6: 79+48r2+42r3+6r6, 1/value 132.738534; the Letter's
+  survival rule gives them r3 at own sign -1 (the word rule above, 133.969062) or r2 at own sign +1
+  (79+51r2+42r3+3r6, 1/value 134.521529).
+
+1964 checks passed.
+runtime: 75.5 s

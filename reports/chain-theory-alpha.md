@@ -27,6 +27,7 @@
 | Read-cap lemmas | Choi's map is positive and non-decomposable by SDP, including after embedding. | **Cross-checked** |
 | Algebraic data | $\alpha_\text{cand}$ has degree 4. The minimal polynomial and Galois conjugates are given. | **Proven** |
 | Operator origin of the weights (CT-G01) | The dressed insertion has an exact operator form in the model's primitives, but its qutrit projector is the end rule (CT-G02). No word of length ≤ 3 in 38 primitives and no dressing local in the original frame reproduces the weights. A Galois lemma extends the $\sqrt{k_r}$ and trace negatives to all lengths, a factorization theorem the $k_r$ negative to all products of factorizing letters; for words with $\Pi_\pm$ or a read link the $k_r$ negative holds up to length 3. Transporting qubit letters through the read links reproduces the weights with a frame-local dressing, but only with two further choices: which exchange is assessed in which frame, and a rank-3 join credit for letters on a rank-2 support. | **Proven** (negative within declared families; F-CT-11, `operator-origin.md`, `transport.md`) |
+| Commutator records (CT-G09) | The exception clause has a uniform replacement: records are the order-definite two-letter composites orthogonal to the identifications the exchange preserves. This gives the Letter's 172 records exactly for its plain exchange. Covariantly it gives the Letter's sectors and value iff the read qubits are identified by $\sigma_y$; under $E'$ it gives 139.713/138.348. The Gell-Mann letters contain five anticommuting pairs, which the Letter's determinant argument does not exclude. | **Proven** (conditional on two readings and one choice; `records-uniform.md`) |
 
 ## Assessment, by layer
 
@@ -36,7 +37,7 @@
   - three wording clauses assigning $\sqrt3$ vs $\sqrt2$ (CT-G02);
   - amplitude rather than Born weights (CT-G08);
   - the definition of $N$ (CT-G05);
-  - an exception admitting single-slot commutator records (CT-G09).
+  - the commutator records: uniform only under order-definiteness, orthogonality to the exchange-preserved identifications and, covariantly, the $\sigma_y$ identification of the read qubits (CT-G09, `records-uniform.md`).
 
   None of these is shown to be forced. Their published weight-law alternatives spread $1/x$ over $[97.5,\,180.8]$ (Table S5 as a whole: $[0.758,\,180.8]$).
 - **(d) Conjectured.** The Photon Conjecture. Physically it lacks:

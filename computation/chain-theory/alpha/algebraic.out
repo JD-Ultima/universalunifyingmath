@@ -9,16 +9,16 @@ general formula reproduces alpha_cand at (dQ,dq)=(3,2)
 same construction at other (dQ,dq) [records, 1/value]:
    (2,2): numerator 30 + 30*sqrt(2), N=2304, 1/value = 31.8116015903
    (2,3): numerator 42*sqrt(2) + 79 + 48*sqrt(3), N=31104, 1/value = 140.401934964
-   (2,4): numerator 378 + 336*sqrt(2), N=184320, 1/value = 216.039893887
+   (2,4): numerator 126*sqrt(2) + 378, N=184320, 1/value = 331.397002476
    (3,2): numerator 3*sqrt(6) + 48*sqrt(2) + 42*sqrt(3) + 79, N=31104, 1/value = 137.035999190
    (3,3): numerator 184 + 200*sqrt(3), N=419904, 1/value = 791.659041376
-   (3,4): numerator 366*sqrt(3) + 853, N=2488320, 1/value = 1673.46075695
+   (3,4): numerator 156*sqrt(3) + 853, N=2488320, 1/value = 2215.38476138
    (4,2): numerator 96*sqrt(2) + 450, N=184320, 1/value = 314.665705031
    (4,3): numerator 240*sqrt(3) + 685, N=2488320, 1/value = 2260.68651525
-   (4,4): numerator 2460, N=14745600, 1/value = 5994.14634146
+   (4,4): numerator 2040, N=14745600, 1/value = 7228.23529412
    (5,2): numerator 3*sqrt(10) + 144*sqrt(2) + 423 + 306*sqrt(5), N=720000, 1/value = 545.301535877
    (5,3): numerator 384*sqrt(3) + 688 + 336*sqrt(5), N=9720000, 1/value = 4618.83591102
-   (5,4): numerator 630*sqrt(5) + 2541, N=57600000, 1/value = 14583.3018012
+   (5,4): numerator 420*sqrt(5) + 2541, N=57600000, 1/value = 16551.0176256
    CODATA 2022        (cand - meas)/u = 0.5984
    e g-2 (Fan 2023)   (cand - meas)/u = 1.571
    Rb (Morel 2020)    (cand - meas)/u = -1.494

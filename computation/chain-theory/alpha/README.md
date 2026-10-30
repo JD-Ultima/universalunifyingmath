@@ -21,6 +21,7 @@ The complete reproduction loop below uses Bash and was run on Linux. `transport.
 | `mechanical_mutations.py` | Rule family generated mechanically from `ChainAlpha.lean`, for rule-family sensitivity (F-CT-4 E, CT-G10; `formalization/chain-theory/alpha/mechanical-trial-factor.md`): readout cone (44 definitions), 15 declared operators at 425 sites, 818 single mutants and 331 490 pairs with disjoint sites (mutation depth ≤ 2); exact readout of each via `chainalpha_transcription.py`; validation against `upstream_mutations_lean.out` (20/20 lines); F-CT-4 metrics (distinct values, density, and the illustrative uniform-target reference count of `freedom.py`, not a calibrated p-value) and comparison with B, Table S5 and the author's 19 rewordings, with every mutant that has the Born-weight value. Reads the pinned upstream file (needs `UPSTREAM` or `--lean`); imports `mutations_classified.py`; 2 worker processes. `--emit-lean DIR` / `--compare DIR` are the halves of `proofs/lean/chain-theory/mutation_spotcheck.sh` | ~17 min | `mechanical_mutations.out` |
 | `chainalpha_transcription.py` | Python transcription of Parts 0–1 of `ChainAlpha.lean` with one hook per mutation site; module used by `mechanical_mutations.py`, checked against Lean on every single mutant (`proofs/lean/chain-theory/mutation_spotcheck.out`) | — | — |
 | `conjugation.py` | Far-end conjugation and the direct-sum trace (CT-G03, CT-G04; `formalization/chain-theory/alpha/conjugation.md`): off-diagonal blocks of $\Lambda^2W$, $\mathrm{Sym}^2W$, $\mathrm{End}\,W$ and their central charges; trace coefficients $(\alpha_F,\beta_F)$ of 17 natural spaces checked against representation matrices; the four relabellings $\varepsilon\in\{\pm1\}^2$; stabilizer, matching closure, Lie closure of $\mathfrak{su}\oplus\mathfrak{su}$ with the matchings; selection per reading through `config_enumeration.py`'s predicates (imported unmodified; its printout is compared with `config_enumeration.out`). Exact (sympy). `--upstream` (the pinned clone, read as text) adds the check of the quoted source lines (2365 checks; 2329 without) | ~30 s | `conjugation.out` |
+| `records_uniform.py` | Uniform definition of the records (CT-G09; `formalization/chain-theory/alpha/records-uniform.md`): order-definite composites; sign rules on the (own sign, exchange) classes; isotypic sums; identification rules (exchange-preserved identifications, stabilizer of the joint state) in the plain, $E'$ and $\sigma_y$ frames; the four covariant letter-wise exchanges (Schur); collapse under the transpose identity; a declared family of 864 constructions; single-letter content of 18 one-step images; variants and values. Exact (rational linear algebra; sympy for the Gell-Mann and Weyl letters). Imports `symmetry.py` (and through it `records_independent.py`) unmodified for a numerical cross-check. `--upstream` (the pinned clone, read as text) adds the source-anchor check (1964 checks; 1914 without) | ~1–3 min | `records_uniform.out` |
 | `algebraic.py` | Minimal polynomial, Galois conjugates, $f(d_Q,d_q)$, deviations from measurements (F-CT-6, F-CT-7) | <1 s | `algebraic.out` |
 
 Run all of them from this directory in Linux/WSL Bash:
@@ -39,6 +40,12 @@ UPSTREAM=/path/to/chain-theory python3 mechanical_mutations.py > mechanical_muta
 
 ```bash
 UPSTREAM=/path/to/chain-theory python3 -I conjugation.py --upstream "$UPSTREAM" > conjugation.out
+```
+
+`records_uniform.out` was recorded the same way:
+
+```bash
+UPSTREAM=/path/to/chain-theory python3 -I -X utf8 records_uniform.py --upstream "$UPSTREAM" > records_uniform.out
 ```
 
 These scripts were written from the Letter's prose. They do not import or copy the author's code. The exceptions are `mechanical_mutations.py`, which reads the pinned `ChainAlpha.lean` as text in order to generate its mutants, and `chainalpha_transcription.py`, a line-by-line Python transcription of that file's Parts 0–1; neither runs the author's code. The cross-check against the author's `records.csv` is described in `formalization/chain-theory/alpha/audit.md` (F-CT-1).

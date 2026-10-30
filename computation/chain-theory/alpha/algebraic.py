@@ -20,7 +20,10 @@ def f(dQ, dq, comm=True):
     n_odd = sp.binomial(a, 2) + sp.binomial(b, 2) + 2*a*b
     n_em = 2*a*b
     n_es = a*(a+1)//2 + b*(b+1)//2
-    n_c = sp.binomial(b, 2) if (comm and dq % 2 == 0) else 0
+    # commutator records: the 3 single-slot differences at a qubit far end only. At dq = 4 the
+    # binom(b, 2) commutator pairs span only su(4), and Lean's weylIsSign 4 = false gives none
+    # (corrected 2026-10-30, records-uniform.md; the count had been binom(b, 2) for every even dq).
+    n_c = sp.binomial(b, 2) if (comm and dq == 2) else 0
     N = (dQ**2 - 1)*(dq**2 - 1)*(dQ*dq)**4
     num = n_odd + n_em*sp.sqrt(dq) + n_es*sp.sqrt(dQ) + n_c*sp.sqrt(dQ*dq)
     return num, N
