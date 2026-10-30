@@ -1,0 +1,151 @@
+J0 (14,0): c1 = kappa*t + 312*t**2*x + 208*t*u*y + 104*u**2*x;  c13 = kappa*u + 104*t**2*y + 208*t*u*x + 312*u**2*y  (= I6: True)
+
+=== J1 (14,0). Closure of the even equation on the vector sector (exact, every basis covector e^c) ===
+  source Y_ev[Shiab(dt ^ Phi^1 + du ^ Phi^1 Gamma)] = sum_k P_k(S_k,t dt + S_k,u du), rows k = (0, 2, 12, 14): S = [[0, 0], [-24*x, -24*y], [24*I*w, -24*I*z], [0, 0]]
+  Y_ev[kappa T_e + 2B(T_e, T_o)] = sum_j P_j((M A)_j), A = (A_0, A_2, A_12, A_14):  M = kappa 1 + t M1 + u M13,
+   M = [[kappa, 0, 208*t*y - 208*u*x, 0], [0, kappa + 224*t*x + 224*u*y, 384*I*t*w - 384*I*u*z, 16*t*y - 16*u*x], [16*t*y - 16*u*x, -384*I*t*w + 384*I*u*z, kappa + 544*t*x + 544*u*y, 0], [0, 208*t*y - 208*u*x, 0, kappa]]
+  every output is exactly of this form for all 14 basis covectors, both maps, all four operators: True
+  det M = kappa**4 + 768*kappa**3*t*x + 768*kappa**3*u*y - 147456*kappa**2*t**2*w**2 + 121856*kappa**2*t**2*x**2 - 6656*kappa**2*t**2*y**2 + 294912*kappa**2*t*u*w*z + 257024*kappa**2*t*u*x*y - 6656*kappa**2*u**2*x**2 + 121856*kappa**2*u**2*y**2 - 147456*kappa**2*u**2*z**2 - 2555904*kappa*t**3*x*y**2 + 5111808*kappa*t**2*u*x**2*y - 2555904*kappa*t**2*u*y**3 - 2555904*kappa*t*u**2*x**3 + 5111808*kappa*t*u**2*x*y**2 - 2555904*kappa*u**3*x**2*y + 11075584*t**4*y**4 - 44302336*t**3*u*x*y**3 + 66453504*t**2*u**2*x**2*y**2 - 44302336*t*u**3*x**3*y + 11075584*u**4*x**4
+  M = [[k, 0, 208 e d, 0], [0, k + 224 s, 384 i e th, 16 e d], [16 d, -384 i th, k + 544 s, 0], [0, 208 d, 0, k]] with s = tx + e uy, th = tw - uz, d = ty - ux, e = +1: True;  det M = 11075584*delta**4 - 6656*delta**2*kappa**2 - 2555904*delta**2*kappa*sigma + kappa**4 + 768*kappa**3*sigma + 121856*kappa**2*sigma**2 - 147456*kappa**2*theta**2
+  det M = (r + 224 k s)(r + 544 k s) - e (384 k th)^2 with r = k^2 - 3328 e d^2: True
+  slaved T_e: (A_0, A_2, A_12, A_14) = Sigma (dt, du)^T, Sigma = -M^-1 S;  to leading order Sigma = -S/kappa: A_2 = C = 24*x/kappa dt + 24*y/kappa du,  A_12 = D = -24*I*w/kappa dt + 24*I*z/kappa du;  A_0 = A and A_14 = B are O(kappa^-2)
+  Shiab#: Sigma (exact) = [[-1916928*I*kappa*u**2/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4), 4992*I*u*(kappa**2 + 224*kappa*t - 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)], [24*kappa*(kappa**2 + 544*kappa*t - 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4), -9216*kappa**2*u/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)], [-9216*I*kappa**2*u/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4), 24*I*kappa*(kappa**2 + 224*kappa*t - 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)], [4992*u*(kappa**2 + 544*kappa*t - 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4), -1916928*kappa*u**2/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)]]
+  W_A: Sigma (exact) = [[0, 0], [24*kappa/(kappa**2 + 224*kappa*t - 3328*u**2), 0], [0, 0], [4992*u/(kappa**2 + 224*kappa*t - 3328*u**2), 0]]
+  z, w occur in the slaved T_e: True (through the D-row of S, already at O(1/kappa), and through M)
+
+=== J2 (14,0). The odd equation on the vector sector (exact) ===
+  derivative map, N_k = nabla A_k (N_ab = nabla_a A_b):  Y_odd[Shiab(d_0 P_k(A_k))] has E1, E13 = l_k (N_k^T - tr N_k g) (alpha = 0, alpha'' = -alpha' for all k and all four operators: True),  w3, w11 = l_k dA_k:
+    k =  0 (A): E1: 0;  E13: 0;  w3: -x;  w11: -y
+    k =  2 (C): E1: 24*x;  E13: 24*y;  w3: 11*I*z;  w11: 11*I*w
+    k = 12 (D): E1: 24*I*w;  E13: -24*I*z;  w3: 11*y;  w11: -11*x
+    k = 14 (B): E1: 0;  E13: 0;  w3: -I*w;  w11: I*z
+  checked exactly on all 196 basis tensors e^p (x) e^q, k = 0, 2, 12, 14, four operators: True
+  quadratic map: Y_odd[2B(P_k(A), P_l(A'))] has E = b1 A(x)A' + b2 A'(x)A + b3 <A,A'> g,  w = b4 A ^ A' (nonzero entries):
+    (A, A): 0
+    (A, C): w3: -22*x/3; w11: -22*y/3
+    (A, D): E1: (0, -16*y, 16*y); E13: (0, 16*x, -16*x)
+    (A, B): w3: 2*y/3; w11: -2*x/3
+    (C, C): E1: (-224*x, -224*x, -176*x); E13: (-224*y, -224*y, -176*y)
+    (C, D): E1: (-32*I*w, -32*I*w, -352*I*w); E13: (32*I*z, 32*I*z, 352*I*z); w3: -266*y/3; w11: 266*x/3
+    (C, B): E1: (16*y, 0, -16*y); E13: (-16*x, 0, 16*x)
+    (D, D): E1: (-160*x, -160*x, 528*x); E13: (-160*y, -160*y, 528*y)
+    (D, B): w3: 22*x/3; w11: 22*y/3
+    (B, B): 0
+  checked exactly on every basis pair (e^p, e^q) (p <= q on the diagonal blocks), four operators: True;  the twisted pair enters Q(T_e) only through the (C, D) cross term: True
+  assembled (A_k = Sigma_k,t dt + Sigma_k,u du):  E^(i) = -x_i G + c_i g + sum_phi H_i,phi (nabla^2 phi - Box phi g) + sum Q_i,phi,psi dphi(x)dpsi + sum Q'_i,phi,psi <dphi,dpsi> g,  (x_1, x_13) = (x, y);  H = l_E Sigma (2 x 2, rows E1, E13, columns t, u)
+  H to leading order: H = -l_E S / kappa = [[576*(w**2 + x**2)/kappa, 576*(-w*z + x*y)/kappa], [576*(-w*z + x*y)/kappa, 576*(y**2 + z**2)/kappa]],  det = 331776*(w*y + x*z)**2/kappa**2
+  symmetric (Gram-weighted) form diag(1, +1) H_0 = [[576*(w**2 + x**2)/kappa, 576*(-w*z + x*y)/kappa], [576*(-w*z + x*y)/kappa, 576*(y**2 + z**2)/kappa]], symmetric: True
+  (14,0) u(128)-real form (x = -i x', ..., t = i s, u = i r; equation multiplied by -i): Hessian coefficients -K with K = [[576*w'**2/kappa + 576*x'**2/kappa, -576*w'*z'/kappa + 576*x'*y'/kappa], [-576*w'*z'/kappa + 576*x'*y'/kappa, 576*y'**2/kappa + 576*z'**2/kappa]] = (576/kappa) Gram((x', w'), (y', -z')), det K = 331776*(w'*y' + x'*z')**2/kappa**2
+  Shiab#: H (exact) = [[576*kappa*(kappa**2 + 544*kappa*t - 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4), -221184*kappa**2*u/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)], [-221184*kappa**2*u/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4), 576*kappa*(kappa**2 + 224*kappa*t - 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)]];  det H = 331776*kappa**2/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)
+  W_A: H (exact) = [[576*kappa/(kappa**2 + 224*kappa*t - 3328*u**2), 0], [0, 0]];  det H = 0
+  gradient-quadratic terms (leading order, O(1/kappa^2); exact ones are used in J3):
+    E1: Q_tt = -36864*x*(19*w**2 + 7*x**2)/kappa**2, Q_uu = -18432*(-31*w*y*z + 14*x*y**2 + 7*x*z**2)/kappa**2, (Q_tu + Q_ut)/2 = -9216*(31*w**2*y - 45*w*x*z + 28*x**2*y)/kappa**2;  Q'_tt = 4608*x*(87*w**2 + 17*x**2)/kappa**2, Q'_uu = 4608*(-72*w*y*z + 17*x*y**2 + 15*x*z**2)/kappa**2, (Q'_tu + Q'_ut)/2 = 4608*(36*w**2*y - 51*w*x*z + 17*x**2*y)/kappa**2
+    E13: Q_tt = -18432*(7*w**2*y - 31*w*x*z + 14*x**2*y)/kappa**2, Q_uu = -36864*y*(7*y**2 + 19*z**2)/kappa**2, (Q_tu + Q_ut)/2 = -9216*(-45*w*y*z + 28*x*y**2 + 31*x*z**2)/kappa**2;  Q'_tt = 4608*(15*w**2*y - 72*w*x*z + 17*x**2*y)/kappa**2, Q'_uu = 4608*y*(17*y**2 + 87*z**2)/kappa**2, (Q'_tu + Q'_ut)/2 = 4608*(-51*w*y*z + 17*x*y**2 + 36*x*z**2)/kappa**2
+  Lambda^2-type equations  varpi dt ^ du = 0  (antisymmetric part of E1, E13; w3; w11), leading order:
+    E1: varpi = -46080*w*(w*y + x*z)/kappa**2;  at Shiab#: 0;  at W_A: 0
+    E13: varpi = 46080*z*(w*y + x*z)/kappa**2;  at Shiab#: 46080/kappa**2;  at W_A: 0
+    w3: varpi = -88320*I*y*(w*y + x*z)/kappa**2;  at Shiab#: 0;  at W_A: 0
+    w11: varpi = 88320*I*x*(w*y + x*z)/kappa**2;  at Shiab#: 88320*I/kappa**2;  at W_A: 0
+  Shiab#, exact: varpi(E13) = -9216*kappa**2*(-5*kappa**4 + 1600*kappa**3*t + 609280*kappa**2*t**2 + 930304*kappa**2*u**2 + 56016896*kappa*t*u**2 - 587005952*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)**2  (nonzero at T_o = 0, so dt ^ du = 0 wherever Upsilon = 0 holds on an open set and this does not vanish)
+
+=== J3 (14,0). End-to-end check on a random 2-jet (exact; scaled Gaussian integers) ===
+  numeric member (x, y, z, w, kappa, t, u) = (2, -1, 3, 1, 5, 1/7, -1/3), random dt, du, Hess t, Hess u (seed 20261031): T_e = Sigma (dt, du) solves Y_ev = Shiab(d_0 T_o) + kappa T_e + 2B(T_e, T_o) = 0 exactly: True  (392 monomials in T_e)
+  direct Y_odd[Shiab(d_0 T_e)] and Y_odd[Q(T_e)] are g_odd-valued: True; equal to the assembled formula (H and the derivative parts of Q, Q', varpi; the quadratic parts of Q, Q', varpi) exactly: [True, True]  (112 s)
+  [(14,0) done, 333 s]
+J0 (7,7): c1 = kappa*t + 312*t**2*x - 208*t*u*y - 104*u**2*x;  c13 = kappa*u + 104*t**2*y + 208*t*u*x - 312*u**2*y  (= I6: True)
+
+=== J1 (7,7). Closure of the even equation on the vector sector (exact, every basis covector e^c) ===
+  source Y_ev[Shiab(dt ^ Phi^1 + du ^ Phi^1 Gamma)] = sum_k P_k(S_k,t dt + S_k,u du), rows k = (0, 2, 12, 14): S = [[0, 0], [-24*x, 24*y], [24*I*w, -24*I*z], [0, 0]]
+  Y_ev[kappa T_e + 2B(T_e, T_o)] = sum_j P_j((M A)_j), A = (A_0, A_2, A_12, A_14):  M = kappa 1 + t M1 + u M13,
+   M = [[kappa, 0, -208*t*y + 208*u*x, 0], [0, kappa + 224*t*x - 224*u*y, -384*I*t*w + 384*I*u*z, -16*t*y + 16*u*x], [16*t*y - 16*u*x, -384*I*t*w + 384*I*u*z, kappa + 544*t*x - 544*u*y, 0], [0, 208*t*y - 208*u*x, 0, kappa]]
+  every output is exactly of this form for all 14 basis covectors, both maps, all four operators: True
+  det M = kappa**4 + 768*kappa**3*t*x - 768*kappa**3*u*y + 147456*kappa**2*t**2*w**2 + 121856*kappa**2*t**2*x**2 + 6656*kappa**2*t**2*y**2 - 294912*kappa**2*t*u*w*z - 257024*kappa**2*t*u*x*y + 6656*kappa**2*u**2*x**2 + 121856*kappa**2*u**2*y**2 + 147456*kappa**2*u**2*z**2 + 2555904*kappa*t**3*x*y**2 - 5111808*kappa*t**2*u*x**2*y - 2555904*kappa*t**2*u*y**3 + 2555904*kappa*t*u**2*x**3 + 5111808*kappa*t*u**2*x*y**2 - 2555904*kappa*u**3*x**2*y + 11075584*t**4*y**4 - 44302336*t**3*u*x*y**3 + 66453504*t**2*u**2*x**2*y**2 - 44302336*t*u**3*x**3*y + 11075584*u**4*x**4
+  M = [[k, 0, 208 e d, 0], [0, k + 224 s, 384 i e th, 16 e d], [16 d, -384 i th, k + 544 s, 0], [0, 208 d, 0, k]] with s = tx + e uy, th = tw - uz, d = ty - ux, e = -1: True;  det M = 11075584*delta**4 + 6656*delta**2*kappa**2 + 2555904*delta**2*kappa*sigma + kappa**4 + 768*kappa**3*sigma + 121856*kappa**2*sigma**2 + 147456*kappa**2*theta**2
+  det M = (r + 224 k s)(r + 544 k s) - e (384 k th)^2 with r = k^2 - 3328 e d^2: True
+  slaved T_e: (A_0, A_2, A_12, A_14) = Sigma (dt, du)^T, Sigma = -M^-1 S;  to leading order Sigma = -S/kappa: A_2 = C = 24*x/kappa dt + -24*y/kappa du,  A_12 = D = -24*I*w/kappa dt + 24*I*z/kappa du;  A_0 = A and A_14 = B are O(kappa^-2)
+  Shiab#: Sigma (exact) = [[1916928*I*kappa*u**2/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4), -4992*I*u*(kappa**2 + 224*kappa*t + 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)], [24*kappa*(kappa**2 + 544*kappa*t + 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4), 9216*kappa**2*u/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)], [-9216*I*kappa**2*u/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4), 24*I*kappa*(kappa**2 + 224*kappa*t + 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)], [4992*u*(kappa**2 + 544*kappa*t + 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4), 1916928*kappa*u**2/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)]]
+  W_A: Sigma (exact) = [[0, 0], [24*kappa/(kappa**2 + 224*kappa*t + 3328*u**2), 0], [0, 0], [4992*u/(kappa**2 + 224*kappa*t + 3328*u**2), 0]]
+  z, w occur in the slaved T_e: True (through the D-row of S, already at O(1/kappa), and through M)
+
+=== J2 (7,7). The odd equation on the vector sector (exact) ===
+  derivative map, N_k = nabla A_k (N_ab = nabla_a A_b):  Y_odd[Shiab(d_0 P_k(A_k))] has E1, E13 = l_k (N_k^T - tr N_k g) (alpha = 0, alpha'' = -alpha' for all k and all four operators: True),  w3, w11 = l_k dA_k:
+    k =  0 (A): E1: 0;  E13: 0;  w3: -x;  w11: -y
+    k =  2 (C): E1: 24*x;  E13: 24*y;  w3: 11*I*z;  w11: 11*I*w
+    k = 12 (D): E1: -24*I*w;  E13: -24*I*z;  w3: -11*y;  w11: -11*x
+    k = 14 (B): E1: 0;  E13: 0;  w3: I*w;  w11: I*z
+  checked exactly on all 196 basis tensors e^p (x) e^q, k = 0, 2, 12, 14, four operators: True
+  quadratic map: Y_odd[2B(P_k(A), P_l(A'))] has E = b1 A(x)A' + b2 A'(x)A + b3 <A,A'> g,  w = b4 A ^ A' (nonzero entries):
+    (A, A): 0
+    (A, C): w3: -22*x/3; w11: -22*y/3
+    (A, D): E1: (0, 16*y, -16*y); E13: (0, 16*x, -16*x)
+    (A, B): w3: -2*y/3; w11: -2*x/3
+    (C, C): E1: (-224*x, -224*x, -176*x); E13: (-224*y, -224*y, -176*y)
+    (C, D): E1: (32*I*w, 32*I*w, 352*I*w); E13: (32*I*z, 32*I*z, 352*I*z); w3: 266*y/3; w11: 266*x/3
+    (C, B): E1: (-16*y, 0, 16*y); E13: (-16*x, 0, 16*x)
+    (D, D): E1: (160*x, 160*x, -528*x); E13: (160*y, 160*y, -528*y)
+    (D, B): w3: -22*x/3; w11: -22*y/3
+    (B, B): 0
+  checked exactly on every basis pair (e^p, e^q) (p <= q on the diagonal blocks), four operators: True;  the twisted pair enters Q(T_e) only through the (C, D) cross term: True
+  assembled (A_k = Sigma_k,t dt + Sigma_k,u du):  E^(i) = -x_i G + c_i g + sum_phi H_i,phi (nabla^2 phi - Box phi g) + sum Q_i,phi,psi dphi(x)dpsi + sum Q'_i,phi,psi <dphi,dpsi> g,  (x_1, x_13) = (x, y);  H = l_E Sigma (2 x 2, rows E1, E13, columns t, u)
+  H to leading order: H = -l_E S / kappa = [[576*(-w + x)*(w + x)/kappa, -576*(-w*z + x*y)/kappa], [576*(-w*z + x*y)/kappa, -576*(y - z)*(y + z)/kappa]],  det = 331776*(-w*y + x*z)**2/kappa**2
+  symmetric (Gram-weighted) form diag(1, -1) H_0 = [[576*(-w + x)*(w + x)/kappa, -576*(-w*z + x*y)/kappa], [-576*(-w*z + x*y)/kappa, 576*(y - z)*(y + z)/kappa]], symmetric: True
+  Shiab#: H (exact) = [[576*kappa*(kappa**2 + 544*kappa*t + 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4), 221184*kappa**2*u/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)], [-221184*kappa**2*u/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4), 576*kappa*(kappa**2 + 224*kappa*t + 3328*u**2)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)]];  det H = 331776*kappa**2/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)
+  W_A: H (exact) = [[576*kappa/(kappa**2 + 224*kappa*t + 3328*u**2), 0], [0, 0]];  det H = 0
+  gradient-quadratic terms (leading order, O(1/kappa^2); exact ones are used in J3):
+    E1: Q_tt = -36864*x*(-19*w**2 + 7*x**2)/kappa**2, Q_uu = -18432*(-31*w*y*z + 14*x*y**2 - 7*x*z**2)/kappa**2, (Q_tu + Q_ut)/2 = 9216*(-31*w**2*y - 45*w*x*z + 28*x**2*y)/kappa**2;  Q'_tt = 4608*x*(-87*w**2 + 17*x**2)/kappa**2, Q'_uu = 4608*(-72*w*y*z + 17*x*y**2 - 15*x*z**2)/kappa**2, (Q'_tu + Q'_ut)/2 = -4608*(-36*w**2*y - 51*w*x*z + 17*x**2*y)/kappa**2
+    E13: Q_tt = -18432*(-7*w**2*y - 31*w*x*z + 14*x**2*y)/kappa**2, Q_uu = -36864*y*(7*y**2 - 19*z**2)/kappa**2, (Q_tu + Q_ut)/2 = 9216*(-45*w*y*z + 28*x*y**2 - 31*x*z**2)/kappa**2;  Q'_tt = 4608*(-15*w**2*y - 72*w*x*z + 17*x**2*y)/kappa**2, Q'_uu = 4608*y*(17*y**2 - 87*z**2)/kappa**2, (Q'_tu + Q'_ut)/2 = -4608*(-51*w*y*z + 17*x*y**2 - 36*x*z**2)/kappa**2
+  Lambda^2-type equations  varpi dt ^ du = 0  (antisymmetric part of E1, E13; w3; w11), leading order:
+    E1: varpi = 46080*w*(-w*y + x*z)/kappa**2;  at Shiab#: 0;  at W_A: 0
+    E13: varpi = 46080*z*(-w*y + x*z)/kappa**2;  at Shiab#: 46080/kappa**2;  at W_A: 0
+    w3: varpi = 88320*I*y*(-w*y + x*z)/kappa**2;  at Shiab#: 0;  at W_A: 0
+    w11: varpi = 88320*I*x*(-w*y + x*z)/kappa**2;  at Shiab#: 88320*I/kappa**2;  at W_A: 0
+  Shiab#, exact: varpi(E13) = -9216*kappa**2*(-5*kappa**4 + 1600*kappa**3*t + 609280*kappa**2*t**2 - 930304*kappa**2*u**2 - 56016896*kappa*t*u**2 - 587005952*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)**2  (nonzero at T_o = 0, so dt ^ du = 0 wherever Upsilon = 0 holds on an open set and this does not vanish)
+
+=== J3 (7,7). End-to-end check on a random 2-jet (exact; scaled Gaussian integers) ===
+  numeric member (x, y, z, w, kappa, t, u) = (2, -1, 3, 1, 5, 1/7, -1/3), random dt, du, Hess t, Hess u (seed 20261029): T_e = Sigma (dt, du) solves Y_ev = Shiab(d_0 T_o) + kappa T_e + 2B(T_e, T_o) = 0 exactly: True  (336 monomials in T_e)
+  direct Y_odd[Shiab(d_0 T_e)] and Y_odd[Q(T_e)] are g_odd-valued: True; equal to the assembled formula (H and the derivative parts of Q, Q', varpi; the quadratic parts of Q, Q', varpi) exactly: [True, True]  (77 s)
+  [(7,7) done, 630 s]
+
+=== J4. Reduction along s(X), n = 4 (closed forms of F2-F6; exact sympy) ===
+  Z1: on s(X), Ric(g) = Lambda_g g:  G^Y = ((-4*Lambda_g*c_V*(4*lambda - 1) + 5*c_H*(18*lambda - 5) + c_H)/(4*c_H*c_V*(4*lambda - 1))) h + ((-16*Lambda_g*c_V*lambda + 4*Lambda_g*c_V + 35*c_H*lambda - 10*c_H)/(2*c_H*(4*lambda - 1))) G_0 + ((c_H*(4*lambda - 1) + lambda*(8*Lambda_g*c_V*(4*lambda - 1) + 5*c_H*(5 - 18*lambda)))/(4*c_H*(4*lambda - 1))) tau(x)tau  (h = c_H g on H),  Lambda_P = 3*c_H*(15*lambda - 4)/(2*c_V*(4*lambda - 1));  Hess of a function with dt = a tau, t const on s(X): HH = (1/(2*c_V*(1 - 4*lambda))) a h
+  Z2: on s(X), Ric(g) = Lambda_g g:  G^Y = (-Lambda_g/c_H + 9/(2*c_V)) h + (-2*Lambda_g*c_V/c_H + 7/2) G_0 + ((c_H + 2*lambda*(4*Lambda_g*c_V - 9*c_H))/(4*c_H)) tau(x)tau  (h = c_H g on H),  Lambda_P = 9*c_H/(2*c_V);  Hess of a function with dt = a tau, t const on s(X): HH = (0) a h
+  (B) basic t = pi^* tau, u = pi^* upsilon.  On s(X): Hess_HH = Hess_g, Hess_VV = 0 (fibres totally geodesic, F3/F4(a)), Hess(X, U) = 0 (Z2: A = 0) or g_aleph(II(X, grad phi), U) (Z1, F4(a)); dphi horizontal.
+    (P) keeps the HH and HV blocks: Z2 -> the 4D system  -x_i (G(g) + Lambda_P g) + c_H c_i g + sum H_i,phi (nabla^2 tau_phi - Box tau_phi g) + sum Q dtau dtau + sum Q' <dtau,dtau> g = 0 (i = 1, 13) and varpi dtau ^ dupsilon = 0 (coefficients of J2, unchanged); Z1 -> in addition HV:  II(X, H_i,t grad tau + H_i,u grad upsilon) = 0, i.e. H (dtau, dupsilon)^T = 0.
+    (E) adds the VV block, -x_i G^Y_VV + (scalar) g_VV = 0:  needs Ric^Y_VV proportional to g_VV, i.e. Z1 with lambda = 1/5 (F6) when (x, y) != 0; and HV as in (P)-Z1.
+  (J) isotropy-invariant 2-jet along s(X): t, u constant on s(X), dphi = a_phi tau (a const), Hess phi = beta_phi h + p_phi G_0 + q_phi tau(x)tau with beta_phi = beta a_phi; G(g) traceless part must vanish (g Einstein) when (x, y) != 0.
+  (14,0) Z1: balance identity [h] - [G_0]/c_V of E^(i):  x_i (Lambda_g/c_H + rho) = sum_phi H_i,phi (beta a_phi - p_phi/c_V) with rho = (5*lambda - 1)/(c_V*(4*lambda - 1))  (polynomial identity for generic Sigma, i = 1, 13)
+  (14,0) Z2: balance identity [h] - [G_0]/c_V of E^(i):  x_i (Lambda_g/c_H + rho) = sum_phi H_i,phi (beta a_phi - p_phi/c_V) with rho = 1/c_V  (polynomial identity for generic Sigma, i = 1, 13)
+  (14,0) Z1, branch a = 0 (T_e = 0 on s(X), nabla T_e != 0):  E^(i) = [-x_i G_h + c_i - B_i] h + [-x_i G_G0 + c_V (c_i - B_i) + P_i] G_0 + [-x_i G_tt - lambda c_V (c_i - B_i) + Q_i] tau tau with P_i = sum H_i,phi p_phi, Q_i = sum H_i,phi q_phi, B_i = tr: True;  eliminating P_i, Q_i, B_i:  c_i(t, u) = x_i Theta,  Theta = tr_V G^Y_VV - 9 G^Y_h = 3*(2 - 15*lambda)/(2*c_V*(4*lambda - 1)) + (-11/c_H) Lambda_g
+  (14,0) Z2, branch a = 0 (T_e = 0 on s(X), nabla T_e != 0):  E^(i) = [-x_i G_h + c_i - B_i] h + [-x_i G_G0 + c_V (c_i - B_i) + P_i] G_0 + [-x_i G_tt - lambda c_V (c_i - B_i) + Q_i] tau tau with P_i = sum H_i,phi p_phi, Q_i = sum H_i,phi q_phi, B_i = tr: True;  eliminating P_i, Q_i, B_i:  c_i(t, u) = x_i Theta,  Theta = tr_V G^Y_VV - 9 G^Y_h = -9/(2*c_V) + (-11/c_H) Lambda_g
+  (7,7) Z1: balance identity [h] - [G_0]/c_V of E^(i):  x_i (Lambda_g/c_H + rho) = sum_phi H_i,phi (beta a_phi - p_phi/c_V) with rho = (5*lambda - 1)/(c_V*(4*lambda - 1))  (polynomial identity for generic Sigma, i = 1, 13)
+  (7,7) Z2: balance identity [h] - [G_0]/c_V of E^(i):  x_i (Lambda_g/c_H + rho) = sum_phi H_i,phi (beta a_phi - p_phi/c_V) with rho = 1/c_V  (polynomial identity for generic Sigma, i = 1, 13)
+  (7,7) Z1, branch a = 0 (T_e = 0 on s(X), nabla T_e != 0):  E^(i) = [-x_i G_h + c_i - B_i] h + [-x_i G_G0 + c_V (c_i - B_i) + P_i] G_0 + [-x_i G_tt - lambda c_V (c_i - B_i) + Q_i] tau tau with P_i = sum H_i,phi p_phi, Q_i = sum H_i,phi q_phi, B_i = tr: True;  eliminating P_i, Q_i, B_i:  c_i(t, u) = x_i Theta,  Theta = tr_V G^Y_VV - 9 G^Y_h = 3*(2 - 15*lambda)/(2*c_V*(4*lambda - 1)) + (-11/c_H) Lambda_g
+  (7,7) Z2, branch a = 0 (T_e = 0 on s(X), nabla T_e != 0):  E^(i) = [-x_i G_h + c_i - B_i] h + [-x_i G_G0 + c_V (c_i - B_i) + P_i] G_0 + [-x_i G_tt - lambda c_V (c_i - B_i) + Q_i] tau tau with P_i = sum H_i,phi p_phi, Q_i = sum H_i,phi q_phi, B_i = tr: True;  eliminating P_i, Q_i, B_i:  c_i(t, u) = x_i Theta,  Theta = tr_V G^Y_VV - 9 G^Y_h = -9/(2*c_V) + (-11/c_H) Lambda_g
+
+  exact sample solutions of (E) at s(X) in ansatz (J), branch a = 0 (all six components, Einstein base):
+   (14,0) Shiab# Z1 lambda = 0, c_H = c_V = kappa = 1, u = 0, t = i*1/1000:  Lambda_g = -8519/31250;  det H = 576000000/3281;  {p_t: -386427*I/250000000, p_u: 0, q_t: 17*I/32000, q_u: 0};  all six = 0: True;  real in the real form: True
+   (14,0) Shiab# Z1 lambda = 0, c_H = c_V = kappa = 1, u = 0, t = i*-1/1000:  Lambda_g = -187543/687500;  det H = 1728000000/1843;  {p_t: -48495829*I/49500000000, p_u: 0, q_t: 97*I/288000, q_u: 0};  all six = 0: True;  real in the real form: True
+   (14,0) Shiab# Z2 lambda = 0, c_H = c_V = kappa = 1, u = 0, t = i*1/1000:  Lambda_g = -70292/171875;  det H = 576000000/3281;  {p_t: -1726911*I/1375000000, p_u: 0, q_t: 17*I/32000, q_u: 0};  all six = 0: True;  real in the real form: True
+   (14,0) Shiab# Z2 lambda = 0, c_H = c_V = kappa = 1, u = 0, t = i*-1/1000:  Lambda_g = -281293/687500;  det H = 1728000000/1843;  {p_t: -39402079*I/49500000000, p_u: 0, q_t: 97*I/288000, q_u: 0};  all six = 0: True;  real in the real form: True
+   (14,0) W_A    Z1 lambda = 0, c_H = c_V = kappa = 1, u = 0, t = i*1/1000:  Lambda_g = -8519/31250;  det H = 0;  {p_t: -386427*I/250000000, q_t: 17*I/32000};  all six = 0: True;  real in the real form: True
+   (14,0) W_A    Z1 lambda = 0, c_H = c_V = kappa = 1, u = 0, t = i*-1/1000:  Lambda_g = -187543/687500;  det H = 0;  {p_t: -48495829*I/49500000000, q_t: 97*I/288000};  all six = 0: True;  real in the real form: True
+   (14,0) W_A    Z2 lambda = 0, c_H = c_V = kappa = 1, u = 0, t = i*1/1000:  Lambda_g = -70292/171875;  det H = 0;  {p_t: -1726911*I/1375000000, q_t: 17*I/32000};  all six = 0: True;  real in the real form: True
+   (14,0) W_A    Z2 lambda = 0, c_H = c_V = kappa = 1, u = 0, t = i*-1/1000:  Lambda_g = -281293/687500;  det H = 0;  {p_t: -39402079*I/49500000000, q_t: 97*I/288000};  all six = 0: True;  real in the real form: True
+   (7,7) Shiab# Z1 lambda = 1/2, c_H = c_V = kappa = 1, u = 0, t = 1/1000:  Lambda_g = -515707/687500;  det H = 576000000/3281;  {p_t: -8764231/5500000000, p_u: 0, q_t: -697/5500000000, q_u: 0};  all six = 0: True;  real in the real form: True
+   (7,7) Shiab# Z1 lambda = 1/2, c_H = c_V = kappa = 1, u = 0, t = -1/1000:  Lambda_g = -257791/343750;  det H = 1728000000/1843;  {p_t: -12504949/12375000000, p_u: 0, q_t: 4171/99000000000, q_u: 0};  all six = 0: True;  real in the real form: True
+   (7,7) Shiab# Z2 lambda = 1/2, c_H = c_V = kappa = 1, u = 0, t = 1/1000:  Lambda_g = -70333/171875;  det H = 576000000/3281;  {p_t: -863107/687500000, p_u: 0, q_t: 530553/5500000000, q_u: 0};  all six = 0: True;  real in the real form: True
+   (7,7) Shiab# Z2 lambda = 1/2, c_H = c_V = kappa = 1, u = 0, t = -1/1000:  Lambda_g = -281207/687500;  det H = 1728000000/1843;  {p_t: -13136807/16500000000, p_u: 0, q_t: 6066671/99000000000, q_u: 0};  all six = 0: True;  real in the real form: True
+   (7,7) W_A    Z1 lambda = 1/2, c_H = c_V = kappa = 1, u = 0, t = 1/1000:  Lambda_g = -515707/687500;  det H = 0;  {p_t: -8764231/5500000000, q_t: -697/5500000000};  all six = 0: True;  real in the real form: True
+   (7,7) W_A    Z1 lambda = 1/2, c_H = c_V = kappa = 1, u = 0, t = -1/1000:  Lambda_g = -257791/343750;  det H = 0;  {p_t: -12504949/12375000000, q_t: 4171/99000000000};  all six = 0: True;  real in the real form: True
+   (7,7) W_A    Z2 lambda = 1/2, c_H = c_V = kappa = 1, u = 0, t = 1/1000:  Lambda_g = -70333/171875;  det H = 0;  {p_t: -863107/687500000, q_t: 530553/5500000000};  all six = 0: True;  real in the real form: True
+   (7,7) W_A    Z2 lambda = 1/2, c_H = c_V = kappa = 1, u = 0, t = -1/1000:  Lambda_g = -281207/687500;  det H = 0;  {p_t: -13136807/16500000000, q_t: 6066671/99000000000};  all six = 0: True;  real in the real form: True
+
+  radial sub-case of (J) (t = f(s), u = h(s), s = log|det(g^-1 y)|/4 near s(X): p_phi = 0); geometry only, both signatures:
+   Z1: rho = (5*lambda - 1)/(c_V*(4*lambda - 1)); x_i (Lambda_g/c_H + rho) = beta sum_phi H_i,phi a_phi, beta = 1/(2*c_V*(1 - 4*lambda)): the normal gradient a shifts Lambda_g; at a = 0, Lambda_g = -c_H*(5*lambda - 1)/(c_V*(4*lambda - 1)) (= 0 at lambda = 1/5, the F6 value: True)
+   Z2: rho = 1/c_V; beta = 0 and p = 0, so the balance identity gives x_i (Lambda_g/c_H + 1/c_V) = 0:  Lambda_g = -c_H/c_V for every member with (x, y) != 0 and every (z, w)
+
+=== J5. Radial ansatz on a neighbourhood, Z2: order-eps^2 leaf condition for constant-curvature bases ===
+  base signature (1, 1, 1, 1): F(e0,e0; h) = 4*(3*h1**2 + 3*h2**2 + 3*h3**2 + 3*h4**2 + 5*h4*h7 + 5*h4*h9 + h5**2 + h6**2 + 3*h7**2 + 5*h7*h9 + h8**2 + 3*h9**2);  nonzero for (e0,e0), (e0,e1), (e1,e1): [True, True, True]
+  base signature (1, -1, -1, -1): F(e0,e0; h) = -4*(3*h1**2 + 3*h2**2 + 3*h3**2 - 3*h4**2 - 5*h4*h7 - 5*h4*h9 - h5**2 - h6**2 - 3*h7**2 - 5*h7*h9 - h8**2 - 3*h9**2);  nonzero for (e0,e0), (e0,e1), (e1,e1): [True, True, True]
+
+runtime 651 s

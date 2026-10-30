@@ -1,0 +1,52 @@
+result: "J1-J5. The slaved even sector: the elliptic twist (z, w) in Upsilon = 0 and in the 14 -> 4 reduction once T_e != 0"
+claim_id: [GU-054, GU-057, GU-072]
+gaps: [GU-G14, GU-G15, GU-G16]
+writeup: formalization/geometric-unity/J-slaved-sector.md (Proposition J1, Theorem J2, Corollary J2.1, Propositions J3, J4, Theorem J5)
+code: [computation/geometric-unity/J_slaved_sector.py, computation/geometric-unity/J_slaved_sector.out]
+formalization_status: >
+  Formalized in the unitary gauge of G1 for the true Upsilon of D5 and the elliptic family
+  x W_A + y W'_A + z W_C Ad_Gamma + w W'_C Ad_Gamma (H7, code normalisation), signatures (14,0) and (7,7). Declared
+  sector V: T_o = t Phi^1 + u Phi^1 Gamma (the invariant sector of I6, t and u now non-constant) and T_e in the four
+  copies of the vector representation in Lambda^1 (x) g_ev, T_e = P_0(A) + P_2(C) + P_12(D) + P_14(B). The even equation
+  closes exactly on V (a 4 x 4 linear system), so the slaving T_e = -L_{T_o}^{-1} Shiab(d_0 T_o) of I2.2 is explicit.
+  Reductions along s(X): Z1 and Z2, readings (P) and (E), for three declared rules fixing (t, u) near s(X): basic
+  (pulled back from X), the isotropy-invariant 2-jet along s(X), and the radial ansatz t = f(s), u = h(s),
+  s = log|det(g^-1 y)|/4; and Upsilon = 0 on a neighbourhood for the radial ansatz in Z2.
+internal_consistency: >
+  The evaluator is that of round 5 (imported unchanged); J0 re-derives the I6 coefficients c1, c13 exactly. Every
+  linear map is checked on a full basis (14 covectors; 196 two-tensors) and every bilinear map on all basis pairs,
+  so the tables hold for all inputs by (bi)linearity, without representation theory. An end-to-end check on a random
+  2-jet (fixed seed, numeric family member, exact scaled Gaussian integers) confirms that the slaved T_e solves the
+  even equation exactly and that the directly evaluated odd part equals the assembled formula. The leading-order
+  kinetic matrix has determinant 576^2 (xz +- yw)^2 / kappa^2: H7's ellipticity factor, by construction (the source and
+  output maps are the Lambda^1 blocks of the symbol of Shiab o d). The a = 0 branch of (E) in the 2-jet ansatz
+  reproduces the F6 case (Lambda_g = 0 at lambda = 1/5) when the slaved terms are switched off.
+proof_status: >
+  Proven: J1, J2 (exact computation on full bases plus (bi)linearity; parity from I2); Cor. J2.1 (exact; the
+  gradient-quadratic and Lambda^2 coefficients are printed to leading order in 1/kappa, the exact ones are used in
+  the end-to-end check, and the exact Lambda^2 coefficient is printed for Shiab#); J3 (Hessian of basic functions
+  along s(X) from F3/F4(a)); J4 (polynomial identities for a generic slaving matrix, exact sample solutions);
+  J5 (proof: parallel ds in Z2, Schur, O'Neill; definite signature). Z1 statements inherit the status of F4(c)
+  (proven n = 1, 2; exact verification n = 3, 4, 5; general-n sketch).
+novelty: >
+  New within this audit: once T_e != 0 the twist enters the reduced odd equation, through the kinetic matrix
+  H = -l M^-1 S of the two scalars (rank 2 for Shiab#, rank 1 for W_A), the O(1/kappa^2) gradient terms and the
+  Lambda^2-type equations (all proportional to xz + yw at leading order); the zeroth-order (cosmological) part is
+  unchanged. Reading (E) at the points of s(X) becomes solvable in (7,7) and in (14,0), in Z1 and Z2, with the 4D
+  cosmological constant free, so the (7,7) no-go and Lambda_4 = 0 of round 5 are properties of T_e = 0. For the radial
+  ansatz in Z2, Upsilon = 0 on a neighbourhood of a point of s(X) has no solution in definite signature, for every
+  member with (x, y) != 0. Not in the source.
+reproducibility: "Exact; fixed seeds (random.seed(20261030); random.Random(20261031) and (20261029) for the (14,0) and (7,7) 2-jets); 651 s (~11 min) on one core, re-run identical apart from timing annotations (626 s); imports I_elliptic_reduction.py unchanged."
+empirical_testability: >
+  None new. The reduced 4D content depends on the declared rule for T off s(X) and on the reading: under (P) with
+  basic scalars in Z2 the 4D theory is Einstein gravity coupled to two scalars with Hessian couplings and a field-
+  dependent cosmological term; under (E) at s(X) the cosmological constant is free; in the radial Z2 sector no
+  solution of Upsilon = 0 exists near s(X) in definite signature.
+dependencies: ["D3", "D5", "G1", "G2", "H3", "H4", "H7", "I2", "I3", "I6", "I7", "F2", "F3", "F4", "F5", "F6"]
+confidence: >
+  High for J1, J2 and Cor. J2.1 (exact, full bases, both signatures, end-to-end check). High for J3-J5 under the
+  declared ansatze and hypotheses. Not covered: T_o outside the invariant sector; components of T_e outside V (which
+  vanish for the slaved solution only where L_{T_o} is invertible on all of Lambda^1 (x) g_ev, e.g. |T_o| small);
+  Upsilon = 0 on a neighbourhood beyond the radial Z2 ansatz (in particular Z1, and non-radial t, u); the
+  indefinite (7,7) case of J5 beyond constant-curvature bases; reading (A); a classification of solutions of the
+  4D (P) system.

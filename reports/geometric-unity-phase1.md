@@ -177,3 +177,43 @@ Round 4's elliptic operator $\circledast_\sharp=W_A+W_C\circ\mathrm{Ad}_\Gamma$ 
   - (E), which solutions of $\Upsilon=0$ near $s(X)$ satisfy (for these I2.1 gives $T_o\neq0$): for $(x,y)\neq0$, no solution in (7,7) in the invariant sector. In (14,0) a solution needs Z1, $\lambda=\tfrac15$, $\mathrm{Ric}(g)=0$ and $c_V\kappa^2\ge9360$, and has $\Lambda_4=0$. In the symmetric sector (E) is solvable pointwise for $|G^Y|\ll\kappa^2$ (on $s(X)$ this needs $c_V\kappa^2\gg1$), so it imposes no *pointwise* 4D condition. The HHH constraint requires $s^*\theta$ to be Codazzi, i.e. $G(g)$ Codazzi to leading order in $1/\kappa$.
   - **In none of these does $\circledast_\sharp$ differ from $W_A$.**
 - **Verdict.** Ellipticity is bought without changing the reduced 4D content in these sectors. What the reduction yields for $T\neq0$ is fixed less by the operator than by the unspecified rule for $T$ off $s(X)$ and by the choice of reading. G.2.5's "any open set" is narrowed to open sets meeting the fibre-scaling cone through $s(X)$. That still excludes compact support along the fibres. For a real-analytic base metric the original statement holds (`reports/CORRECTIONS.md`).
+
+## Round 6 — the slaved even sector (GU-054, GU-G14, GU-G16)
+
+Write-up: `formalization/geometric-unity/J-slaved-sector.md`. Code: `computation/geometric-unity/J_slaved_sector.py`, output committed, exact, ~11 min (651 s) on one core. Record: `metrics/geometric-unity/J-slaved-sector.yaml`.
+
+Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $z,w$ drop out (I7(e)). The question was whether they change the reduced equations once the even equation forces $T_e\neq0$ (Cor. I2.2).
+
+- **Sector.** $T_o=t\Phi^1+u\Phi^1\Gamma$ with nonconstant $t,u$, and $T_e$ in the four copies of the vector representation in $\Lambda^1\otimes\mathfrak g_{\rm ev}$ (grades 0, 2, 12, 14). The even equation closes exactly on this sector. It is a 4×4 linear system $M\vec A=-S(dt,du)^\top$, so the slaved field is explicit, $T_e=-M^{-1}S\,(dt,du)$ (J1). $z,w$ enter both the source $S$ and $M$.
+- **Odd equation (J2).** On this sector it is second order in $(t,u)$:
+  - two Einstein-type channels, $-x_iG+c_ig+\sum_\phi H_{i\phi}(\nabla^2\phi-\Box\phi\,g)+(\text{gradient terms})=0$ for $i=1,13$;
+  - $\Lambda^2$-type equations $\varpi\,dt\wedge du=0$.
+
+  Every coefficient is exact. The linear maps were checked on full bases, the bilinear ones on all basis pairs, and the assembled formula end to end on a random 2-jet.
+- **Where the twist enters (Cor. J2.1).**
+  - It enters the kinetic matrix $H=-\ell M^{-1}S$, to leading order $\tfrac{576}{\kappa}$ times a Gram matrix. In the $\mathfrak u(128)$ real form this is $\mathrm{Gram}((x',w'),(y',-z'))$, definite iff $x'z'+y'w'\neq0$: H7's ellipticity factor, by construction.
+  - It enters the $O(\kappa^{-2})$ gradient terms, and the $\Lambda^2$ coefficients, which are all $\propto xz\pm yw$ at leading order.
+  - It does not enter the zeroth-order (cosmological) part.
+  - For $\circledast_\sharp$, $\det H=576^2\kappa^2/\det M\neq0$ and $dt\wedge du=0$ is forced on open solution sets. For $W_A$, $H$ has rank 1 and only $t$ is kinetic.
+  - **So $\circledast_\sharp$ and $W_A$ give different reduced equations once $T_e\neq0$.**
+- **Reduction along $s(X)$.**
+  - *Basic scalars* ($t,u$ pulled back from $X$):
+    - (P) in Z2 gives 4D Einstein gravity coupled to two scalars with Hessian couplings and a field-dependent cosmological term.
+    - (P) in Z1 contains $H(d\tau,d\upsilon)=0$, so the scalars are constant ($\det H\neq0$): round 5 again.
+    - (E) gives exactly round 5's solutions (J3).
+  - *Isotropy-invariant 2-jet along $s(X)$:* (E) at the points of $s(X)$ reduces to six scalar equations and a balance identity.
+    - It has solutions in **(7,7) and (14,0), in Z1 and Z2, for every λ**, with $T_e=0$ on $s(X)$ but $\nabla T_e\neq0$. Exact samples exist for $\circledast_\sharp$ and $W_A$.
+    - The 4D cosmological constant $\Lambda_g=\tfrac{c_H}{11}(\Theta_0-c_1/x)$ is free: every real value in (7,7) for $\circledast_\sharp$, a half-line in (14,0) (J4).
+    - So round 5's "(E): none in (7,7), $\Lambda_4=0$ in (14,0)" is a property of $T_e\equiv0$.
+  - *Radial ansatz* $t=f(s)$, $u=h(s)$, with $s$ the fibre-scaling coordinate:
+    - in Z2, (E) at $s(X)$ forces $\Lambda_g=-c_H/c_V$;
+    - $\Upsilon=0$ on a neighbourhood of a point of $s(X)$ has **no solution in definite signature**, for every member with $(x,y)\neq0$ and every $(z,w)$. The proof uses a parallel $ds$, Einstein leaves and O'Neill's A-tensor.
+    - In (7,7) a solution would need a non-constant-curvature Einstein base with $\Lambda_g=-c_H/c_V$ and a quadratic curvature condition; existence is open (J5).
+- **Verdict.** The twist does change the reduced equations once $T_e\neq0$. It acts on the derivative (kinetic) structure, never on the cosmological term.
+  - The physically relevant output still depends on the undeclared rule for $T$ off $s(X)$. With free second normal derivatives, (E) at $s(X)$ becomes as underdetermined as (P). A genuine neighbourhood condition can exclude solutions altogether (radial Z2, definite signature).
+  - No earlier statement is contradicted: round 5's (E) statements are all qualified by "invariant sector" ($T_e=0$). No `CORRECTIONS.md` entry.
+  - Not covered:
+    - $T_o$ outside the invariant sector;
+    - $T_e$ outside the vector sector for large $|T_o|$;
+    - neighbourhood solutions beyond the radial Z2 ansatz (in particular Z1);
+    - reading (A).
