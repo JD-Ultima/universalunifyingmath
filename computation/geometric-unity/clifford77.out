@@ -1,0 +1,22 @@
+C1. matrix size 128; entries in {-1,0,1}: True
+    Clifford relations {g_a,g_b} = 2 eta_ab exact: True
+C2. number of nonempty monomials with nonzero trace: 0 (0 => 16384 independent monomials => Cl(7,7) -> End(R^128) is an isomorphism, dim 16384 = 128^2)
+C3. Gamma^2 = +1: True; Gamma real diagonal: True; dim(+1) = 64, dim(-1) = 64
+C4. transpose signs t_a (g^T = t_a g): [1, 1, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -1, -1]
+    form with adjoint(gamma_a) = -1 gamma_a: B = product of gammas (7, 8, 9, 10, 11, 12, 13); B is symmetric; signature (64,64); B(S+,S+)=B(S-,S-)=0: True; B(S+,S-)=0: False
+      adjoint sign by grade k=0..14: [1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1]
+      skew grades [1, 2, 5, 6, 9, 10, 13, 14], total dim 8128  (n(n-1)/2 = 8128, n(n+1)/2 = 8256)
+      matches Clifford-conjugation rule (-1)^(k(k+1)/2): True
+      draft (3.26) so(64,64) grades [1, 2, 5, 6, 9, 10, 13, 14] == skew grades: True
+      u(64,64) = skew (+) i*sym; i*-grades [0, 3, 4, 7, 8, 11, 12]; draft (3.27)/(8.6) i-grades [0, 3, 4, 7, 8, 11, 12]: True
+      even skew grades [2, 6, 10, 14] (draft (3.22) gl(64,R)): dim 4096 = 64^2 = 4096
+      odd skew grades [1, 5, 9, 13]: dim 4032 = 2*dim Lambda^2(R^64) = 4032
+    form with adjoint(gamma_a) = +1 gamma_a: B = product of gammas (0, 1, 2, 3, 4, 5, 6); B is antisymmetric; B(S+,S+)=B(S-,S-)=0: True; B(S+,S-)=0: False
+      adjoint sign by grade k=0..14: [1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1]
+      skew grades [2, 3, 6, 7, 10, 11, 14], total dim 8256  (n(n-1)/2 = 8128, n(n+1)/2 = 8256)
+C5. X-part gammas [0, 7, 8, 9] (signature (1,3)); N-part [1, 2, 3, 4, 5, 6, 10, 11, 12, 13] (signature (6,4))
+    omega_4^2 = -1: True; omega_10^2 = -1: True; [omega_4, Gamma] = 0: True
+    omega_4 commutes with all 51 generators of spin(1,3)+spin(6,4): True
+    on S+: omega_10 = -1 * omega_4  (4d and 10d chiralities locked)
+    commutant dimension of two generic elements of spin(1,3)+spin(6,4) on S+_R: 2 (singular values below 2.3e-08; next smallest 1.576e+00)
+    (commutant contains span{1, omega_4}, so the full commutant is exactly C: S+_R is irreducible of complex type, i.e. one complex irreducible (2,1)(x)16 viewed as a real 64-dim module)

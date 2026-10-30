@@ -1,0 +1,90 @@
+=== B0. Dimensions ===
+D2: dim S+ = 2, dim S- = 2, dim V = 4, dim R+ = 6, dim R- = 6
+D5: dim S+ = 16, dim S- = 16, dim V = 10, dim R+ = 144, dim R- = 144
+D7: dim S+ = 64, dim S- = 64, dim V = 14, dim R+ = 832, dim R- = 832
+
+=== B1. Spin(14) -> Spin(4) x Spin(10) (complexified Spin(7,7) -> Spin(1,3) x Spin(6,4)) ===
+S+(14) [dim 64] -> (2+=(2,1) x 16+) + (2-=(1,2) x 16-)
+S-(14) [dim 64] -> (2+=(2,1) x 16-) + (2-=(1,2) x 16+)
+V(14) [dim 14] -> (1 x 10) + (4=(2,2) x 1)
+R+(14) [dim 832] -> (6+=(3,2) x 16+) + (6-=(2,3) x 16-) + (2+=(2,1) x 144+) + (2+=(2,1) x 16-) + (2-=(1,2) x 144-) + (2-=(1,2) x 16+)
+R-(14) [dim 832] -> (6+=(3,2) x 16-) + (6-=(2,3) x 16+) + (2+=(2,1) x 144-) + (2+=(2,1) x 16+) + (2-=(1,2) x 144+) + (2-=(1,2) x 16-)
+
+=== B2. Field content nu in Omega^0(S^a), zeta in Omega^1(S^b): count of spin-1/2 x 16 pieces ===
+  zeta = V(x)S- [dim 896] -> (6+=(3,2) x 16-) + (6-=(2,3) x 16+) + (2+=(2,1) x 144-) + 2*(2+=(2,1) x 16+) + (2-=(1,2) x 144+) + 2*(2-=(1,2) x 16-)
+  nu in S+, zeta in V(x)S-: #(2+x16+ or 2-x16-) = 6, #(2+x16- or 2-x16+) = 0
+  zeta = V(x)S+ [dim 896] -> (6+=(3,2) x 16+) + (6-=(2,3) x 16-) + (2+=(2,1) x 144+) + 2*(2+=(2,1) x 16-) + (2-=(1,2) x 144-) + 2*(2-=(1,2) x 16+)
+  nu in S+, zeta in V(x)S+: #(2+x16+ or 2-x16-) = 2, #(2+x16- or 2-x16+) = 4
+
+=== B3. Spin(10) -> Pati-Salam SU(4) x SU(2)_L x SU(2)_R ===
+  16+ -> (4,2,1) + (4b,1,2)
+  16- -> (4,1,2) + (4b,2,1)
+   10 -> (1,2,2) + (6,1,1)
+ 144+ -> (20,2,1) + (20b,1,2) + (4,1,2) + (4,3,2) + (4b,2,1) + (4b,2,3)
+ 144- -> (20,1,2) + (20b,2,1) + (4,2,1) + (4,2,3) + (4b,1,2) + (4b,3,2)
+
+=== B4. Spin(10) -> SU(3) x SU(2)_L x U(1)_Y, entries [SU3 x SU2]^{n = 6Y} ===
+  16+: [1x1]^+6, [3bx1]^+2, [3x2]^+1, [1x1]^+0, [1x2]^-3, [3bx1]^-4
+  16-: [3x1]^+4, [1x2]^+3, [1x1]^+0, [3bx2]^-1, [3x1]^-2, [1x1]^-6
+   10: [1x2]^+3, [3bx1]^+2, [3x1]^-2, [1x2]^-3
+ 144+: [1x2]^+9, [3bx1]^+8, [3bx2]^+5, [3x1]^+4 x2, [3x3]^+4, [6bx1]^+4, [1x2]^+3 x2, [8x2]^+3, [3bx1]^+2, [1x1]^+0, [1x3]^+0, [8x1]^+0, [3bx2]^-1 x3, [6x2]^-1, [3x1]^-2 x2, [3x3]^-2, [6bx1]^-2, [1x2]^-3, [3x2]^-5, [1x1]^-6, [1x3]^-6, [8x1]^-6, [3bx2]^-7
+ 144-: [3x2]^+7, [1x1]^+6, [1x3]^+6, [8x1]^+6, [3bx2]^+5, [1x2]^+3, [3bx1]^+2 x2, [3bx3]^+2, [6x1]^+2, [3x2]^+1 x3, [6bx2]^+1, [1x1]^+0, [1x3]^+0, [8x1]^+0, [3x1]^-2, [1x2]^-3 x2, [8x2]^-3, [3bx1]^-4 x2, [3bx3]^-4, [6x1]^-4, [3x2]^-5, [3x1]^-8, [1x2]^-9
+
+=== B5. Comparison with the draft's tables (Sec. 11.3, pp. 52-53) ===
+source 'Left' generation table == SM content of 16+ : True
+source spin-3/2 'cousin' table == SM content of 16- : True
+source 144 table total dimension: 144
+source 144 table == SM content of 144+: False
+   in source not ours: {('8', 2, -3): 1, ('8', 1, 6): 1, ('6b', 2, 1): 1, ('6', 1, 2): 1, ('6', 1, -4): 1, ('3b', 3, 2): 1, ('3b', 3, -4): 1, ('3', 2, 7): 1, ('3', 2, 1): 3, ('3', 1, -8): 1, ('3b', 1, 2): 1, ('3b', 1, -4): 2, ('1', 3, 6): 1, ('1', 2, -9): 1, ('1', 2, -3): 1, ('1', 1, 6): 1}
+   in ours not source: {('1', 2, 9): 1, ('3b', 1, 8): 1, ('6b', 1, 4): 1, ('3', 3, 4): 1, ('3', 1, 4): 2, ('8', 2, 3): 1, ('1', 2, 3): 1, ('6', 2, -1): 1, ('3b', 2, -1): 3, ('6b', 1, -2): 1, ('3', 3, -2): 1, ('3', 1, -2): 1, ('8', 1, -6): 1, ('1', 3, -6): 1, ('1', 1, -6): 1, ('3b', 2, -7): 1}
+source 144 table == SM content of 144-: True
+electric charges in 144- blocks (Q = T3 + n/6):
+   [1x3]^+0 x1: Q = 1, 0, -1
+   [1x3]^+6 x1: Q = 2, 1, 0
+   [1x2]^-9 x1: Q = -1, -2
+   [1x2]^-3 x2: Q = 0, -1
+   [1x2]^+3 x1: Q = 1, 0
+   [1x1]^+0 x1: Q = 0
+   [1x1]^+6 x1: Q = 1
+   [3x2]^-5 x1: Q = -1/3, -4/3
+   [3x2]^+1 x3: Q = 2/3, -1/3
+   [3x2]^+7 x1: Q = 5/3, 2/3
+   [3x1]^-8 x1: Q = -4/3
+   [3x1]^-2 x1: Q = -1/3
+   [3bx3]^-4 x1: Q = 1/3, -2/3, -5/3
+   [3bx3]^+2 x1: Q = 4/3, 1/3, -2/3
+   [3bx2]^+5 x1: Q = 4/3, 1/3
+   [3bx1]^-4 x2: Q = -2/3
+   [3bx1]^+2 x2: Q = 1/3
+   [6x1]^-4 x1: Q = -2/3
+   [6x1]^+2 x1: Q = 1/3
+   [6bx2]^+1 x1: Q = 2/3, -1/3
+   [8x2]^-3 x1: Q = 0, -1
+   [8x1]^+0 x1: Q = 0
+   [8x1]^+6 x1: Q = 1
+
+=== B6. Does 144 contain a copy of the SM content of 16+ ? (multiset containment) ===
+144+: max copies of SM(16+) contained = 0; of SM(16-) = 1
+144-: max copies of SM(16+) contained = 1; of SM(16-) = 0
+
+=== B8. Majorana-Weyl reading: left-handed spin-1/2 content of nu (+) zeta, nu in S+, zeta in T*(x)S- ===
+left-handed spin-1/2 Spin(10) content: {'S+': 3, 'R-': 1}
+max number of copies of the SM content of one generation (16+) contained: 4
+remaining spin-1/2 states after removing them: 128
+left-handed spin-3/2 [(3,2) x .] Spin(10) content of zeta: {'S-': 1}
+
+=== B9. Reality readings: left-handed spin-1/2 Spin(10) content, net chirality #16+ - #16- ===
+  Majorana-Weyl (real)   zeta in T*(x)(S-): LH spin-1/2 = {'R-': 1, 'S+': 3}; #16+ - #16- = 3; #144- - #144+ = 1
+  Majorana-Weyl (real)   zeta in T*(x)(S+): LH spin-1/2 = {'R+': 1, 'S+': 1, 'S-': 2}; #16+ - #16- = -1; #144- - #144+ = -1
+  complex Weyl           zeta in T*(x)(S-): LH spin-1/2 = {'R-': 2, 'S+': 6}; #16+ - #16- = 6; #144- - #144+ = 2
+  complex Weyl           zeta in T*(x)(S+): LH spin-1/2 = {'R+': 2, 'S+': 2, 'S-': 4}; #16+ - #16- = -2; #144- - #144+ = -2
+  Dirac (S+ + S-)        zeta in T*(x)(S++S-): LH spin-1/2 = {'R+': 2, 'R-': 2, 'S+': 6, 'S-': 6}; #16+ - #16- = 0; #144- - #144+ = 0
+
+=== B7. Source formula (4.2): internal spinor dimension for normal bundle of rank n(n+1)/2 ===
+n=2: rank N = 3 odd -> no Weyl splitting
+n=3: rank N = 6, Dirac 2^(r/2) = 8, Weyl = 4; total dim Y = 9
+n=4: rank N = 10, Dirac 2^(r/2) = 32, Weyl = 16; total dim Y = 14
+n=5: rank N = 15 odd -> no Weyl splitting
+n=6: rank N = 21 odd -> no Weyl splitting
+n=7: rank N = 28, Dirac 2^(r/2) = 16384, Weyl = 8192; total dim Y = 35
+n=8: rank N = 36, Dirac 2^(r/2) = 262144, Weyl = 131072; total dim Y = 44
