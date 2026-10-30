@@ -1,0 +1,72 @@
+claim_id: CT-MC (round 3 mass cells; covers scorecard rows SC-35, SC-36, SC-38 and CT-C026)
+source_statement: "m_p/m_e ~ (2871/67)^2, m_mu/m_e ~ (963/67)^2, m_tau/m_e ~ (3969/67)^2 from the 'derived cells' of 186.1 with mass = first power squared (185.9)"
+source_location: "compendium/tex: 152.1, 154.1, 155.1, 157.1, 175.1-175.4, 176.1, 176.2, 179.1, 181.5, 185.1-185.12, 186.1, 189.1, 195.1, 198.3, 20.1, 21.1, 32.1"
+source_commit: a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+note: formalization/chain-theory/compendium/06-mass-cells.md
+code: [computation/chain-theory/compendium/masscells.py, computation/chain-theory/compendium/masscells_data.py]
+outputs: [computation/chain-theory/compendium/outputs/masscells.txt, computation/chain-theory/compendium/outputs/masscells_readings.tsv]
+references:
+  codata: "CODATA 2022 via scipy.constants 1.18.1: m_p/m_e 1836.152673426(32), m_mu/m_e 206.7682827(46)"
+  pdg: "PDG 2024 mass_width_2024.mcd (checked at run time): m_tau/m_e 3477.365(176), m_tau/m_mu 16.81769(85), Koide 0.6666645(51); quark masses for the 181.5 cross-check"
+anchors: {checked: 102, missing: 0}
+trace:
+  "67":   {value: "79 - 12", status: "forced given the roster electron web (entered); first power 67 vs 201 is one of two printed readings; 198.3 gives 201"}
+  "963":  {value: "(117 - 10) * 9", status: "forced under 198.3; under the 186.1 path the muon tie must be 'unpassed' (20.1: 'both passed')"}
+  "3969": {value: "(155 - 8) * 27", status: "forced given the library tau web, which no sink of the saturation reaches (189.1 O); census tau sink 4185 (154.1)"}
+  "319":  {value: "79*1 + 48*2 + 42*3 + 3*6", status: "forced given the alpha weight law (19 of 4608 squared-factor rules give 319)"}
+  "2871": {value: "319 * 9", status: "entered as 'the candidate cell' / 'the proton figure of the comparison table'; nearest integer to 67 sqrt(m_p/m_e) = 2870.9736; 186.1's rule is tested against it"}
+  mass_law: {value: "m = S^2", status: "one of S, S^2, S^2 + closure (195.1), S^2 (1 + G2^2) (176.2)"}
+webs_rederived: "electron parsed from the 152.1 figure; muon, tau, proton seed and sink built from the printed descriptions; sites, links, measure, strike, rank, dressing equal to the printed values at 5 of 5"
+reading_grid:
+  readings: 72      # 4 records typings x 3 strike rules x 6 dressing rules
+  printed_tuples_reproduced: 6
+  all_four_cells: 1               # reach, strike at the uncapped entry alone, tie unpassed (186.1)
+  all_four_cells_without_186_strike_clause: 0   # as 20.1 states
+  ratios_within_1pct_p2: {mu_and_tau: 12, p: 8, all_three: 1}
+  ratios_within_1pct_p1: 0
+  mass_register_row_195_1: "(201, 963, 3969, 1701) -> 22.95, 389.9, 71.6"
+faces_155_1:
+  dock_dock: {mu: 22.954, tau: 389.92, p: 1836.19}
+  hub_hub:   {mu: 22.954, tau: 389.92, p: 1836.19}
+  mixed:     {mu: 206.587, tau: 3509.24, p: 16525.7}
+  path_186_1: {mu: 206.587, tau: 3509.24, p: 1836.19}
+  single_face_giving_all_three: false
+mass_law_variants_mp_me:
+  S2: {value: 1836.186456, rel: +1.84e-5}
+  office_195_1: {value: 1836.164052, rel: +6.20e-6}
+  G2_at_e_mu_p: {value: 1836.186456, rel: +1.84e-5}
+  G2_at_e_mu_only: {value: 1835.966478, rel: -1.01e-4}
+  S: {value: 42.850746, rel: -0.977}
+  spread_relative: 1.20e-4
+  codata_inside_band: true
+look_elsewhere_mp_me:   # lambda = 2 delta rho (window 0.5 / 1.0 in ln); rank of (2871/67)^2 is 1 in every space
+  printed: {variants: 120, distinct: 103, lambda: [2.9e-4, 1.8e-4], lambda_at_spread: [1.9e-3, 1.2e-3]}
+  grid_per_body: {variants: 144, distinct: 120, lambda: [2.6e-4, 1.8e-4]}
+  grid_uniform: {variants: 144, distinct: 34, lambda: [1.1e-4, 5.5e-5]}
+  round2_declared: {variants: 1320, distinct: 874, lambda: [2.5e-3, 2.3e-3]}
+  narrow_family_319_67: {p_fixed: 1.7e-5, p_free: 5.0e-5}
+  any_integer_over_67: {achieved: 0.053, at_spread: 0.34}
+  multiples_of_9_over_67: {achieved: 0.0059, at_spread: 0.038}
+  trials_factor_across_quantities: "up to 34 (numerical scorecard rows)"
+look_elsewhere_leptons:
+  mu: {printed: [3.5e-3, 2.6e-3], grid_per_body: [7.0e-3, 6.1e-3], census_189_1: 0.023, integer: "963 nearest to 963.42; P(any integer) 0.84, P(multiple of 9) 0.094"}
+  tau: {printed: [0.15, 0.073], grid_per_body: [0.073, 0.037], census_154_1: 0.23, integer: "3969 is 18.1 above 3950.9"}
+  face_free_tau_over_mu: {value: 16.9867, rel: +1.005e-2, n_sigma: +198}
+cross_check_181_5: "same segment walk: top sink 2871 = proton cell; m_t = m_p at either exponent vs measured m_t/m_p = 183.9; order s > c = b > t"
+grade:
+  m_p_over_m_e: selection_of_reading
+  m_mu_over_m_e: conditional_on_choice_excluded_by_198_3_and_155_1
+  m_tau_over_m_e: conditional_on_choice_excluded_by_198_3_and_155_1
+  joint: no_single_definitional_reading
+formalization_status:
+  value: not_applicable
+  detail: "Arithmetic is exact (sympy) and decide-level; the load-bearing steps are readings, not theorems."
+internal_consistency:
+  value: fails
+  detail: "THEOREM 186.1 and the 195.1 checkpoint (electron dressing 1; 195.1's mass-register row uses 3) against CONDITIONALs 198.3/185.6/185.12/152.1/155.1 (dressing 3); 20.1 and 186.1 resolve the muon tie oppositely; 176.1 holds only under m = S; 181.5 assigns 2871 to the top sink as well."
+empirical_testability:
+  value: falsified_as_exact_untestable_as_approximate
+  detail: "Exact: p >= 3.6e5 sigma, mu 3.9e4 sigma, tau 181 sigma, tau/mu 198 sigma, Koide 196 sigma. Approximate: no error budget; the printed second-order laws move m_p/m_e by 1.2e-4."
+confidence:
+  value: medium_high
+  justification: "Every quoted string is verbatim-checked; webs, paths and printed tuples are reproduced; the reading grid and the printed-space membership are documented reconstructions; lambda values assume cells fixed without the target and are not p-values."

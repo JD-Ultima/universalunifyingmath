@@ -164,3 +164,72 @@ within 1σ for α(0).
 **Changes to round 1.** These are logged in `reports/CORRECTIONS.md`. CT-C027 ("No model number" for Koide) is
 wrong: 157.1 and 154.1 print four Koide values. CT-C026 and the round-1 summary need the qualification of F11.
 The round-1 summary sentence still holds for chapters 141, 143, 64 and 65.
+
+## Round 3 — mass cells
+
+Note: `formalization/chain-theory/compendium/06-mass-cells.md`. Code: `computation/chain-theory/compendium/masscells.py`,
+`masscells_data.py`. Outputs: `outputs/masscells.txt`, `outputs/masscells_readings.tsv`. Metrics:
+`metrics/chain-theory/compendium/mass-cells.yaml`. The question is whether m_p/m_e ≈ (2871/67)² and
+m_μ,τ/m_e ≈ (963/67)², (3969/67)² are derivations or selections. All 102 quoted strings are checked verbatim.
+
+**F13. Trace of the integers** (a, c).
+- Re-derived from the construction:
+  - 67 = 79 − 12: the electron web is parsed from the 152.1 figure.
+  - 963 = 107·9 and 3969 = 147·27: the webs are built from 152.1 and 195.1, and site, link, measure, strike, rank and
+    dressing all equal the printed values.
+  - 319 = 79 + 2·48 + 3·42 + 6·3: from a combinatorial (2,3) record census. This is fixed once the α weight law is
+    fixed; 19 of 4608 squared-factor rules give 319.
+- Entered:
+  - The tau web is the "fixed library" tau, which no sink of the saturation reaches (189.1).
+  - 2871 = 319·9 is introduced as "the candidate cell" and "the proton figure of the comparison table" (175.3). It is
+    the integer nearest 67√(m_p/m_e) = 2870.97.
+  - 186.1's rule, which "returns" 2871, is tested against it.
+- Choices among printed readings:
+  - The electron first power: 67 at the path reading of 186.1/195.1, or 201 under the dressing law 198.3.
+  - The muon tie: "both passed" (20.1) or "both unpassed" (186.1).
+  - The proton typing: capped at 319, or uncapped (747).
+  - The proton strike: 0 (186.1) or 18 (2709, 20.1).
+  - The proton dressing: 9 or 27.
+  - The mass law: S, S², S² + closure, or S²(1 + G₂²).
+
+**F14. Distribution and look-elsewhere** (c, e). (2871/67)² is the closest value in every space considered. The
+expected chance hits at 1.84×10⁻⁵ are:
+
+| space | expected chance hits |
+|---|---|
+| printed proton cells × printed electron cells × p (120 variants) | 2–3×10⁻⁴ |
+| 72-reading grid, cells chosen per body | 2–3×10⁻⁴ |
+| round-2 declared space | 2.5×10⁻³ |
+| narrow family (319·3^u/67·3^v)^p | 2–5×10⁻⁵ |
+| any integer over 67 | 0.053 |
+
+These assume the cell was fixed without the target, which the text does not document. The source's own mass laws
+spread m_p/m_e over a relative width of 1.2×10⁻⁴: +1.84×10⁻⁵ at S², +6.2×10⁻⁶ at the 195.1 offices, and −1.0×10⁻⁴
+under 176.2's second-order law without G₂ at the proton. CODATA lies inside this band, so the quoted precision is not a
+prediction of the source. At that spread the any-integer chance is 0.34. For the muon the expected chance hits are 3–7×10⁻³;
+963 is also the integer nearest 67√(m_μ/m_e). For the tau they are 0.04–0.23.
+
+**F15. Consistency** (c). No face of the mass law gives all three agreements.
+- The proton ratio holds at both faces that 155.1 equates (2871/67 = 8613/201).
+- The lepton ratios hold only at the "mixed face" (the hub numerator over the dock unit). At the definitional dressing
+  of 198.3, 185.6 and 152.1 they are 9× low (22.95 and 389.9, as 176.2 prints).
+- In a 72-reading grid that reproduces 6 printed tuples, the four cells meet together at exactly one reading, that of
+  186.1. Without 186.1's clause "struck at an uncapped entry alone" they meet at none, as 20.1 states.
+- The THEOREM 186.1 and the checkpoint of THEOREM 195.1 (electron dressing 1) contradict the CONDITIONALs 198.3, 155.1
+  and 185.12 (dressing 3); 195.1's own mass-register row uses dressing 3.
+- The same segment walk gives the top sink the proton's cell 2871 (181.5), so m_t = m_p, against a measured
+  m_t/m_p = 184.
+
+**F16. Grade** (b, e).
+- m_p/m_e: selection of the reading. One coincidence remains, 2871 = 9 × 319, with an expected chance of about 2.5×10⁻³
+  in the declared space if the cell had been fixed beforehand.
+- m_μ/m_e and m_τ/m_e: conditional on a face choice that the compendium's own definitions exclude.
+- The only content independent of the reading is m_τ/m_μ = (441/107)² = 16.987, +1.0% (198σ).
+- As exact statements all three are excluded: p at ≥3.6×10⁵σ, μ at 3.9×10⁴σ, τ at 181σ.
+- As approximate statements they carry no error budget.
+
+**Changes to round 2** are logged in `reports/CORRECTIONS.md`:
+- SC-38's precision is convention-dependent.
+- There are 15 printed proton cells, not 9.
+- The face remark of F11 applies to the leptons only.
+- The τ reference is now PDG 2024: +0.917%.

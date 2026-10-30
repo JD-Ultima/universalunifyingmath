@@ -371,3 +371,12 @@ This list is copied from `outputs/scorecard.txt` block [IDENTIFICATION]. LaTeX i
 - **SC-51** [P] (104.1): "In cosmology the abundances of the species are fixed at an epoch by the expansion rate and the reaction rates"
 - **SC-52** [N] (U.1): "the baryon asymmetry is named by correspondence"
 - **SC-53** [N] (228.1): "the objects named the periodic table of Mendeleev"
+
+
+## Round 3 amendments (from `06-mass-cells.md`; see `reports/CORRECTIONS.md`)
+
+- **SC-38.** The $+1.84\times10^{-5}$ figure depends on the mass-law convention. The source's own printed laws give $+1.84\times10^{-5}$, $+6.2\times10^{-6}$ (195.1 offices) or $-1.0\times10^{-4}$ (176.2). CODATA lies inside this $1.2\times10^{-4}$ band, so the precision is not a prediction of the source.
+- **Proton cells.** There are 15 printed proton cells, not 9.
+- **Face violation.** The remark that a reading violates face dissolution (155.1) applies to the leptons only. The proton ratio holds at both faces that 155.1 equates ($2871/67=8613/201$).
+- **τ value.** Now evaluated with PDG 2024: $+0.917\%$.
+- **Grading.** 2871 is *entered* as a candidate, the integer nearest $67\sqrt{m_p/m_e}$. The proton agreement is a selection of reading, and the lepton agreements are conditional on a face choice the compendium's own definitions exclude. The only face-free content is $m_\tau/m_\mu=16.987$, which is $+1.0\%$ ($198\sigma$).

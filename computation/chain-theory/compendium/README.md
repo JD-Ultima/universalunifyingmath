@@ -36,6 +36,8 @@ python3 -I boxes.py         $SRC 141.1 143.1 64.2               # prints box tex
 python3 -I scorecard_extract.py  $SRC --tsv outputs/scorecard_candidates.tsv > outputs/scorecard_extract.txt
 python3 -I scorecard.py --src $SRC --pdg-mcd $MCD --tsv outputs/scorecard.tsv > outputs/scorecard.txt
 python3 -I scorecard_freedom.py                                       > outputs/scorecard_freedom.txt
+# round 3: mass cells
+python3 -I masscells.py $SRC --pdg-mcd $MCD --tsv outputs/masscells_readings.tsv  > outputs/masscells.txt
 # MCD=.../particle/data/mass_width_2024.mcd (optional; without it the PDG transcription is not re-checked)
 ```
 
@@ -59,6 +61,8 @@ eigenvalues are reproducible to the printed 3 decimals.
 | `scorecard_data.py` | R2-1 | curated data (module): 53 named quantities, 124 printed faces, verbatim anchors, identification / derivation codes, the source's verdicts, exclusion codes |
 | `scorecard.py` | R2-2,3 | exact evaluation of every face, conversion to the measured quantity, deviation (sigma, relative, factor), bins, summary table; block REDERIVE re-derives 784/1568, 3/8, sqrt3/18, the CHSH value, the lepton and proton cells, the Koide values (17/36 is re-derived in `scorecard_freedom.py`) |
 | `scorecard_freedom.py` | R2-3 | F-CT-4-style freedom tests for the agreements besides alpha(0): weak angle (count-face family), lepton cells, proton cell |
+| `masscells_data.py` | R3 | curated data (module): 102 verbatim anchors for the trace, the printed closures and G2, the printed proton/electron/muon/tau cells, exclusions with reasons, web descriptions |
+| `masscells.py` | R3-1..4 | mass cells: (2,3) record census (319, 79 = 48+28+3); electron web parsed from the 152.1 figure, muon/tau/proton webs built and checked; measuring-read paths; 72-reading grid validated against 6 printed tuples; 155.1 faces; printed mass-law variants; look-elsewhere in printed / grid / declared / narrow / census / integer spaces; tau/mu; 181.5 cross-check; sweep audit |
 
 ## Interpretive choices in the dependency graph (`depgraph.py`)
 
@@ -115,6 +119,14 @@ freedom:  17/36 re-derived (17 of 36 Weyl pair letters nonzero at the (3,2) pair
           weak angle: 0.019 (printed faces) / 0.14 (192-variant count-face family) expected chance hits
           leptons: 0.007 (mu), 0.07 (tau); 1 of 504 combinations has both within 1%
           proton: 1 of 9 printed cells within 1%; 0.0025 in a 1320-variant space; nearest-integer 0.053 / 0.006
+masscells (round 3):
+          anchors 102/102; 319 = 79+96+126+18 re-derived (172 records; 19 of 4608 alpha weight rules give 319)
+          webs: e (9, 10, 79, 12, 67, 3), mu (13, 15, 117, 10, 107, 9), tau (17, 20, 155, 8, 147, 27), proton seed (10, 12, 101, 18), sink (8, 9, 81, 18) = printed
+          grid 72 readings, 6 printed tuples reproduced; all four cells at 1 (186.1), at 0 without its strike clause; ratios within 1%:
+          mu+tau 12, p 8, all three 1; faces: dock = hub -> 22.95, 389.9, 1836.19; mixed -> 206.59, 3509.2, 16525.7
+          m_p/m_e by mass law: S^2 +1.84e-5, 195.1 office +6.20e-6, 176.2 G2 at e,mu only -1.01e-4 (spread 1.2e-4)
+          lambda(p): printed 2.9e-4, grid 2.6e-4, declared 2.5e-3, narrow 1.7e-5..5e-5, any integer 0.053 (0.34 at the spread)
+          tau/mu = (441/107)^2 = 16.987, +1.0% (198 sigma); 181.5 top sink 2871 = proton cell
 ```
 
 ## External values used (with sources)
@@ -137,3 +149,5 @@ freedom:  17/36 re-derived (17 of 36 Weyl pair letters nonzero at the (3,2) pair
   0.0220(7), N_nu = 2.9963(74), Planck 2018 Omega_c h^2 = 0.1200(12), Omega_b h^2 = 0.02237(15), Omega_Lambda =
   0.6847(73), H0 = 67.4(5); CGLMP: Collins, Gisin, Linden, Massar, Popescu, PRL 88, 040404 (2002); sin^2 = 3/8:
   Georgi, Quinn, Weinberg, PRL 33, 451 (1974).
+- Round 3 (`masscells.py`): CODATA 2022 m_p/m_e, m_mu/m_e from `scipy.constants` 1.18.1; PDG 2024 m_e, m_mu, m_tau and the quark
+  masses of the 181.5 cross-check from `mass_width_2024.mcd` (checked with --pdg-mcd): m_tau/m_e = 3477.365(176), m_tau/m_mu = 16.81769(85).

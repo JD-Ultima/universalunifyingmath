@@ -1,0 +1,73 @@
+records	strike	dressing	S_e	S_mu	S_tau	S_p	mu_e_p2	tau_e_p2	p_e_p2	p_e_p1
+reach (32.1; 186.1)	every entry (20.1)	path, tie passed (20.1)	67	107	3969	2709	2.5504567	3509.2361	1634.8142	40.432836
+reach (32.1; 186.1)	every entry (20.1)	path, tie unpassed (186.1)	67	963	3969	2709	206.58699	3509.2361	1634.8142	40.432836
+reach (32.1; 186.1)	every entry (20.1)	all in-legs (198.3, 185.6; hub face)	201	963	3969	8127	22.95411	389.91513	1634.8142	40.432836
+reach (32.1; 186.1)	every entry (20.1)	all but one (155.1 dock face)	67	321	1323	2709	22.95411	389.91513	1634.8142	40.432836
+reach (32.1; 186.1)	every entry (20.1)	stop clause (21.1)	67	963	3969	8127	206.58699	3509.2361	14713.328	121.29851
+reach (32.1; 186.1)	every entry (20.1)	none	67	107	147	301	2.5504567	4.813767	20.182892	4.4925373
+reach (32.1; 186.1)	uncapped entry alone (186.1)	path, tie passed (20.1)	67	107	3969	2871	2.5504567	3509.2361	1836.1865	42.850746
+reach (32.1; 186.1)	uncapped entry alone (186.1)	path, tie unpassed (186.1)	67	963	3969	2871	206.58699	3509.2361	1836.1865	42.850746
+reach (32.1; 186.1)	uncapped entry alone (186.1)	all in-legs (198.3, 185.6; hub face)	201	963	3969	8613	22.95411	389.91513	1836.1865	42.850746
+reach (32.1; 186.1)	uncapped entry alone (186.1)	all but one (155.1 dock face)	67	321	1323	2871	22.95411	389.91513	1836.1865	42.850746
+reach (32.1; 186.1)	uncapped entry alone (186.1)	stop clause (21.1)	67	963	3969	8613	206.58699	3509.2361	16525.678	128.55224
+reach (32.1; 186.1)	uncapped entry alone (186.1)	none	67	107	147	319	2.5504567	4.813767	22.668969	4.761194
+reach (32.1; 186.1)	none ('nothing removed', 20.1)	path, tie passed (20.1)	79	117	4185	2871	2.1933985	2806.3171	1320.7244	36.341772
+reach (32.1; 186.1)	none ('nothing removed', 20.1)	path, tie unpassed (186.1)	79	1053	4185	2871	177.66528	2806.3171	1320.7244	36.341772
+reach (32.1; 186.1)	none ('nothing removed', 20.1)	all in-legs (198.3, 185.6; hub face)	237	1053	4185	8613	19.740586	311.81301	1320.7244	36.341772
+reach (32.1; 186.1)	none ('nothing removed', 20.1)	all but one (155.1 dock face)	79	351	1395	2871	19.740586	311.81301	1320.7244	36.341772
+reach (32.1; 186.1)	none ('nothing removed', 20.1)	stop clause (21.1)	79	1053	4185	8613	177.66528	2806.3171	11886.52	109.02532
+reach (32.1; 186.1)	none ('nothing removed', 20.1)	none	79	117	155	319	2.1933985	3.8495433	16.30524	4.0379747
+register (20.1)	every entry (20.1)	path, tie passed (20.1)	67	69	432	2709	1.0605926	41.573624	1634.8142	40.432836
+register (20.1)	every entry (20.1)	path, tie unpassed (186.1)	67	621	432	2709	85.907997	41.573624	1634.8142	40.432836
+register (20.1)	every entry (20.1)	all in-legs (198.3, 185.6; hub face)	201	621	432	8127	9.545333	4.6192916	1634.8142	40.432836
+register (20.1)	every entry (20.1)	all but one (155.1 dock face)	67	207	144	2709	9.545333	4.6192916	1634.8142	40.432836
+register (20.1)	every entry (20.1)	stop clause (21.1)	67	621	432	8127	85.907997	41.573624	14713.328	121.29851
+register (20.1)	every entry (20.1)	none	67	69	16	301	1.0605926	0.057028291	20.182892	4.4925373
+register (20.1)	uncapped entry alone (186.1)	path, tie passed (20.1)	67	69	432	2871	1.0605926	41.573624	1836.1865	42.850746
+register (20.1)	uncapped entry alone (186.1)	path, tie unpassed (186.1)	67	621	432	2871	85.907997	41.573624	1836.1865	42.850746
+register (20.1)	uncapped entry alone (186.1)	all in-legs (198.3, 185.6; hub face)	201	621	432	8613	9.545333	4.6192916	1836.1865	42.850746
+register (20.1)	uncapped entry alone (186.1)	all but one (155.1 dock face)	67	207	144	2871	9.545333	4.6192916	1836.1865	42.850746
+register (20.1)	uncapped entry alone (186.1)	stop clause (21.1)	67	621	432	8613	85.907997	41.573624	16525.678	128.55224
+register (20.1)	uncapped entry alone (186.1)	none	67	69	16	319	1.0605926	0.057028291	22.668969	4.761194
+register (20.1)	none ('nothing removed', 20.1)	path, tie passed (20.1)	79	79	648	2871	1	67.281525	1320.7244	36.341772
+register (20.1)	none ('nothing removed', 20.1)	path, tie unpassed (186.1)	79	711	648	2871	81	67.281525	1320.7244	36.341772
+register (20.1)	none ('nothing removed', 20.1)	all in-legs (198.3, 185.6; hub face)	237	711	648	8613	9	7.475725	1320.7244	36.341772
+register (20.1)	none ('nothing removed', 20.1)	all but one (155.1 dock face)	79	237	216	2871	9	7.475725	1320.7244	36.341772
+register (20.1)	none ('nothing removed', 20.1)	stop clause (21.1)	79	711	648	8613	81	67.281525	11886.52	109.02532
+register (20.1)	none ('nothing removed', 20.1)	none	79	79	24	319	1	0.092292902	16.30524	4.0379747
+measure, all uncapped, seed (179.1)	every entry (20.1)	path, tie passed (20.1)	67	107	3969	747	2.5504567	3509.2361	124.30586	11.149254
+measure, all uncapped, seed (179.1)	every entry (20.1)	path, tie unpassed (186.1)	67	963	3969	747	206.58699	3509.2361	124.30586	11.149254
+measure, all uncapped, seed (179.1)	every entry (20.1)	all in-legs (198.3, 185.6; hub face)	201	963	3969	2241	22.95411	389.91513	124.30586	11.149254
+measure, all uncapped, seed (179.1)	every entry (20.1)	all but one (155.1 dock face)	67	321	1323	747	22.95411	389.91513	124.30586	11.149254
+measure, all uncapped, seed (179.1)	every entry (20.1)	stop clause (21.1)	67	963	3969	747	206.58699	3509.2361	124.30586	11.149254
+measure, all uncapped, seed (179.1)	every entry (20.1)	none	67	107	147	83	2.5504567	4.813767	1.5346402	1.238806
+measure, all uncapped, seed (179.1)	uncapped entry alone (186.1)	path, tie passed (20.1)	67	107	3969	747	2.5504567	3509.2361	124.30586	11.149254
+measure, all uncapped, seed (179.1)	uncapped entry alone (186.1)	path, tie unpassed (186.1)	67	963	3969	747	206.58699	3509.2361	124.30586	11.149254
+measure, all uncapped, seed (179.1)	uncapped entry alone (186.1)	all in-legs (198.3, 185.6; hub face)	201	963	3969	2241	22.95411	389.91513	124.30586	11.149254
+measure, all uncapped, seed (179.1)	uncapped entry alone (186.1)	all but one (155.1 dock face)	67	321	1323	747	22.95411	389.91513	124.30586	11.149254
+measure, all uncapped, seed (179.1)	uncapped entry alone (186.1)	stop clause (21.1)	67	963	3969	747	206.58699	3509.2361	124.30586	11.149254
+measure, all uncapped, seed (179.1)	uncapped entry alone (186.1)	none	67	107	147	83	2.5504567	4.813767	1.5346402	1.238806
+measure, all uncapped, seed (179.1)	none ('nothing removed', 20.1)	path, tie passed (20.1)	79	117	4185	909	2.1933985	2806.3171	132.39561	11.506329
+measure, all uncapped, seed (179.1)	none ('nothing removed', 20.1)	path, tie unpassed (186.1)	79	1053	4185	909	177.66528	2806.3171	132.39561	11.506329
+measure, all uncapped, seed (179.1)	none ('nothing removed', 20.1)	all in-legs (198.3, 185.6; hub face)	237	1053	4185	2727	19.740586	311.81301	132.39561	11.506329
+measure, all uncapped, seed (179.1)	none ('nothing removed', 20.1)	all but one (155.1 dock face)	79	351	1395	909	19.740586	311.81301	132.39561	11.506329
+measure, all uncapped, seed (179.1)	none ('nothing removed', 20.1)	stop clause (21.1)	79	1053	4185	909	177.66528	2806.3171	132.39561	11.506329
+measure, all uncapped, seed (179.1)	none ('nothing removed', 20.1)	none	79	117	155	101	2.1933985	3.8495433	1.6345137	1.278481
+measure, all uncapped, sink (195.1)	every entry (20.1)	path, tie passed (20.1)	67	107	3969	567	2.5504567	3509.2361	71.617064	8.4626866
+measure, all uncapped, sink (195.1)	every entry (20.1)	path, tie unpassed (186.1)	67	963	3969	567	206.58699	3509.2361	71.617064	8.4626866
+measure, all uncapped, sink (195.1)	every entry (20.1)	all in-legs (198.3, 185.6; hub face)	201	963	3969	1701	22.95411	389.91513	71.617064	8.4626866
+measure, all uncapped, sink (195.1)	every entry (20.1)	all but one (155.1 dock face)	67	321	1323	567	22.95411	389.91513	71.617064	8.4626866
+measure, all uncapped, sink (195.1)	every entry (20.1)	stop clause (21.1)	67	963	3969	567	206.58699	3509.2361	71.617064	8.4626866
+measure, all uncapped, sink (195.1)	every entry (20.1)	none	67	107	147	63	2.5504567	4.813767	0.88416128	0.94029851
+measure, all uncapped, sink (195.1)	uncapped entry alone (186.1)	path, tie passed (20.1)	67	107	3969	567	2.5504567	3509.2361	71.617064	8.4626866
+measure, all uncapped, sink (195.1)	uncapped entry alone (186.1)	path, tie unpassed (186.1)	67	963	3969	567	206.58699	3509.2361	71.617064	8.4626866
+measure, all uncapped, sink (195.1)	uncapped entry alone (186.1)	all in-legs (198.3, 185.6; hub face)	201	963	3969	1701	22.95411	389.91513	71.617064	8.4626866
+measure, all uncapped, sink (195.1)	uncapped entry alone (186.1)	all but one (155.1 dock face)	67	321	1323	567	22.95411	389.91513	71.617064	8.4626866
+measure, all uncapped, sink (195.1)	uncapped entry alone (186.1)	stop clause (21.1)	67	963	3969	567	206.58699	3509.2361	71.617064	8.4626866
+measure, all uncapped, sink (195.1)	uncapped entry alone (186.1)	none	67	107	147	63	2.5504567	4.813767	0.88416128	0.94029851
+measure, all uncapped, sink (195.1)	none ('nothing removed', 20.1)	path, tie passed (20.1)	79	117	4185	729	2.1933985	2806.3171	85.153181	9.2278481
+measure, all uncapped, sink (195.1)	none ('nothing removed', 20.1)	path, tie unpassed (186.1)	79	1053	4185	729	177.66528	2806.3171	85.153181	9.2278481
+measure, all uncapped, sink (195.1)	none ('nothing removed', 20.1)	all in-legs (198.3, 185.6; hub face)	237	1053	4185	2187	19.740586	311.81301	85.153181	9.2278481
+measure, all uncapped, sink (195.1)	none ('nothing removed', 20.1)	all but one (155.1 dock face)	79	351	1395	729	19.740586	311.81301	85.153181	9.2278481
+measure, all uncapped, sink (195.1)	none ('nothing removed', 20.1)	stop clause (21.1)	79	1053	4185	729	177.66528	2806.3171	85.153181	9.2278481
+measure, all uncapped, sink (195.1)	none ('nothing removed', 20.1)	none	79	117	155	81	2.1933985	3.8495433	1.0512738	1.0253165

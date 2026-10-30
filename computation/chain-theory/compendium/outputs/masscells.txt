@@ -1,0 +1,211 @@
+[PDG] transcription checked against mass_width_2024.mcd (318 particle ids)
+[TARGETS] CODATA 2022: m_p/m_e = 1836.152673426(32), m_mu/m_e = 206.7682827(46); PDG 2024: m_tau/m_e = 3477.365(176) (CODATA 2022 3477.23(23)), m_tau/m_mu = 16.81769(85), Koide 0.6666645(51)
+
+[ANCHORS] verbatim check of the curated strings (whitespace-normalised) against their statement units
+  trace           68 strings, 0 missing
+  closures         5 strings, 0 missing
+  printed cells   27 strings, 0 missing
+  file-level       2 strings, 0 missing
+  grades of the statements cited: 20.1 O, 21.1 O, 32.1 O, 152.1 C, 154.1 T, 155.1 C, 157.1 O, 175.3 O, 175.4 O, 176.1 C, 176.2 O, 179.1 O, 181.5 T, 185.6 C, 185.9 C, 185.12 C, 186.1 T, 189.1 O, 195.1 T, 198.3 C, 200.3 C
+  total 102 strings, 0 missing
+
+[RECORDS] the (2,3) record census re-derived (letters: 8 traceless at each qutrit slot Q1,Q2; 3 at each qubit slot q1,q2;
+          two-slot products; exchange E: Q1<->Q2, q1<->q2; records p +/- E(p), E-fixed products, 3 commutator records)
+  169 products, 11 E-fixed, 79 pairs; records 172 = odd 79 + even mixed 48 + even same-end 42 + commutator 3
+  closed (odd, k = 1) records 79 = mixed 48 + two qutrit slots 28 + two qubit slots 3 (176.2 prints 79 = 48 + 28 + 3)
+  Born count with the Letter's weights k = 1, 2, 3, 6: 79*1 + 48*2 + 42*3 + 3*6 = 319 (176.2: 319, 'the cap' of the (2,3) genre)
+  over the alpha audit's 4^4 x 6 x 3 = 4608 weight rules the Born count takes 517 values (169 to 1068); 319 occurs at 19 rules; so 319 is fixed once the alpha weight law is fixed
+
+[WEBS] electron parsed from the 152.1 figure; muon, tau, proton built from the printed descriptions (masscells_data.WEB_NOTES)
+  152.1 figure: 9 sites [('A', 3), ('B', 3), ('C', 3), ('H', 4), ('g1', 2), ('g2', 2), ('g3', 2), ('w1', 2), ('w2', 2)], 10 links, every printed genre = (dim, dim) of its ends: True
+  web                    sites links measure strike rank in-legs dressing(198.3) | printed (sites, links, measure, strike, rank, dressing)
+  electron                   9    10      79     12   67       1        3      | (9, 10, 79, 12, 67, 3) equal
+  muon                      13    15     117     10  107       2        9      | (13, 15, 117, 10, 107, 9) equal
+  tau                       17    20     155      8  147       3       27      | (17, 20, 155, 8, 147, 27) equal
+  proton seed               10    12     101     18   83       3       27      | (10, 12, 101, 18, 83, 27) equal
+  proton sink of record      8     9      81     18   63       3       27      | (8, 9, 81, 18, 63, 27) equal
+  printed sources: 152.1 (79 = 27+40+12, ranks 67/107/147), 186.1/195.1 (117, 10; 155, 8; links 10/15/20), 195.1 (sites 9/13/17;
+  sink 8 sites, 9 links, measure 81, dock set 18, dressing 27 at the mass-register row), 175.3 (seed 101 = 27+18+36+16+4, ten
+  sites, twelve links, three in-legs). Ranks 27 + 40k: [67, 107, 147]
+
+[PATHS] the measuring read (20.1, 186.1): breadth-first from the entered site to the first hub reached;
+        an in-leg on a geodesic to that hub is 'passed', the other hub in-legs are 'not passed'
+  electron               entered at w1: first hub(s) ['H'] at step 3; in-legs 1, on the geodesic 1
+  muon                   entered at w2: first hub(s) ['H', 'H2'] at step 3; in-legs 2, on the geodesic 2 (a tie: two hubs at once)
+  tau                    entered at w1: first hub(s) ['H2'] at step 2; in-legs 3, on the geodesic 0
+  proton seed            entered at n1: first hub(s) ['H'] at step 2; in-legs 3, on the geodesic 1
+  proton sink of record  entered at s0: first hub(s) ['s7'] at step 2; in-legs 3, on the geodesic 1
+  printed: electron 'reaches the hub at the third step with the one in-leg on the geodesic passed'; muon 'reaches two hubs at
+  the third step at once through two in-legs, a tie, both passed' (20.1) / 'with both in-legs unpassed' (186.1); tau 'at the
+  second step through a (2,4) leg with no in-leg on the geodesic'; proton 'at the second step through one in-leg passed and
+  leaves two in-legs not passed' (20.1)
+
+[READINGS] uniform readings: one records typing, one strike rule, one dressing rule for every body; S = (records - strike) 3^u
+  grid: 4 records typings x 3 strike rules x 6 dressing rules = 72 readings (20.1 names a grid of 'four of the register, three of the records and five of the path' = 60)
+  validation against the printed tuples (e, mu, tau, p):
+    20.1 adopted reading             (67, 69, 432, 2709)  printed (67, 69, 432, 2709)  equal
+    21.1 stop clause                 (67, 621, 432, 8613)  printed (67, 621, 432, 8613)  equal
+    186.1 segment rule               (67, 963, 3969, 2871)  printed (67, 963, 3969, 2871)  equal
+    185.12 / 152.1 hub (leptons)     (201, 963, 3969, 8127)  printed (201, 963, 3969, '-')  equal
+    179.1 typing uncapped (proton)   (67, 107, 3969, 747)  printed ('-', '-', '-', 747)  equal
+    195.1 mass-register row          (201, 963, 3969, 1701)  printed (201, 963, 3969, 1701)  equal
+  readings meeting each derived cell: e 67 at 40, mu 963 at 18, tau 3969 at 24, p 2871 at 12 of 72
+  p 2871 with the strike rules of 20.1 only (every entry, none): 6 readings, all at 'nothing removed' and a capped register (6; 20.1: 'The proton is met at six readings, every one at the capped register of its entered link with nothing removed')
+  the three lepton cells at once, 20.1 strike rules: 6 reading(s): [('reach (32.1; 186.1)', 'every entry (20.1)', 'path, tie unpassed (186.1)'), ('reach (32.1; 186.1)', 'every entry (20.1)', 'stop clause (21.1)'), ('measure, all uncapped, seed (179.1)', 'every entry (20.1)', 'path, tie unpassed (186.1)'), ('measure, all uncapped, seed (179.1)', 'every entry (20.1)', 'stop clause (21.1)'), ('measure, all uncapped, sink (195.1)', 'every entry (20.1)', 'path, tie unpassed (186.1)'), ('measure, all uncapped, sink (195.1)', 'every entry (20.1)', 'stop clause (21.1)')]
+  all four derived cells at once: 1 of 72 readings: [('reach (32.1; 186.1)', 'uncapped entry alone (186.1)', 'path, tie unpassed (186.1)')]; without the 186.1 strike clause: 0 (20.1: 'no one reading meets the four derived cells at once')
+  ratios within 1% of the measured value, by exponent (mass = S^p):
+    p = 2: mu/e 12, tau/e 18, p/e 8, mu and tau 12, all three 1 of 72
+      mu and tau ('measure, all uncapped, seed (179.1)', 'every entry (20.1)', 'path, tie unpassed (186.1)')  -> (67, 963, 3969, 747)
+      mu and tau ('measure, all uncapped, seed (179.1)', 'every entry (20.1)', 'stop clause (21.1)')  -> (67, 963, 3969, 747)
+      mu and tau ('measure, all uncapped, seed (179.1)', 'uncapped entry alone (186.1)', 'path, tie unpassed (186.1)')  -> (67, 963, 3969, 747)
+      mu and tau ('measure, all uncapped, seed (179.1)', 'uncapped entry alone (186.1)', 'stop clause (21.1)')  -> (67, 963, 3969, 747)
+      mu and tau ('measure, all uncapped, sink (195.1)', 'every entry (20.1)', 'path, tie unpassed (186.1)')  -> (67, 963, 3969, 567)
+      mu and tau ('measure, all uncapped, sink (195.1)', 'every entry (20.1)', 'stop clause (21.1)')  -> (67, 963, 3969, 567)
+      mu and tau ('measure, all uncapped, sink (195.1)', 'uncapped entry alone (186.1)', 'path, tie unpassed (186.1)')  -> (67, 963, 3969, 567)
+      mu and tau ('measure, all uncapped, sink (195.1)', 'uncapped entry alone (186.1)', 'stop clause (21.1)')  -> (67, 963, 3969, 567)
+      mu and tau ('reach (32.1; 186.1)', 'every entry (20.1)', 'path, tie unpassed (186.1)')  -> (67, 963, 3969, 2709)
+      mu and tau ('reach (32.1; 186.1)', 'every entry (20.1)', 'stop clause (21.1)')  -> (67, 963, 3969, 8127)
+      mu and tau ('reach (32.1; 186.1)', 'uncapped entry alone (186.1)', 'path, tie unpassed (186.1)')  -> (67, 963, 3969, 2871)
+      mu and tau ('reach (32.1; 186.1)', 'uncapped entry alone (186.1)', 'stop clause (21.1)')  -> (67, 963, 3969, 8613)
+      p/e        ('reach (32.1; 186.1)', 'uncapped entry alone (186.1)', 'all but one (155.1 dock face)')  -> (67, 321, 1323, 2871)
+      p/e        ('reach (32.1; 186.1)', 'uncapped entry alone (186.1)', 'all in-legs (198.3, 185.6; hub face)')  -> (201, 963, 3969, 8613)
+      p/e        ('reach (32.1; 186.1)', 'uncapped entry alone (186.1)', 'path, tie passed (20.1)')  -> (67, 107, 3969, 2871)
+      p/e        ('reach (32.1; 186.1)', 'uncapped entry alone (186.1)', 'path, tie unpassed (186.1)')  -> (67, 963, 3969, 2871)
+      p/e        ('register (20.1)', 'uncapped entry alone (186.1)', 'all but one (155.1 dock face)')  -> (67, 207, 144, 2871)
+      p/e        ('register (20.1)', 'uncapped entry alone (186.1)', 'all in-legs (198.3, 185.6; hub face)')  -> (201, 621, 432, 8613)
+      p/e        ('register (20.1)', 'uncapped entry alone (186.1)', 'path, tie passed (20.1)')  -> (67, 69, 432, 2871)
+      p/e        ('register (20.1)', 'uncapped entry alone (186.1)', 'path, tie unpassed (186.1)')  -> (67, 621, 432, 2871)
+      all three  ('reach (32.1; 186.1)', 'uncapped entry alone (186.1)', 'path, tie unpassed (186.1)')  -> (67, 963, 3969, 2871)
+    p = 1: mu/e 0, tau/e 0, p/e 0, mu and tau 0, all three 0 of 72
+
+[FACES] the 155.1 faces: dock = every body with one in-leg absorbed into the unit (M 3^k / 67), hub = no leg absorbed
+        (M 3^(k+1) / 201), mixed = 'the hub numerator over the dock unit'; ranks M and in-legs as in WEBS, proton records 319
+  numerators: dock {'e': 67, 'mu': 321, 'tau': 1323, 'p': 2871}; hub {'e': 201, 'mu': 963, 'tau': 3969, 'p': 8613}; 186.1 {'e': 67, 'mu': 963, 'tau': 3969, 'p': 2871}
+  face                         m_mu/m_e    m_tau/m_e      m_p/m_e   (mass = S^2; measured 206.7683, 3477.365, 1836.1527)
+  dock / dock                   22.9541      389.915    1836.1865   ['x0.11', 'x0.11', 'ok']
+  hub / hub                     22.9541      389.915    1836.1865   ['x0.11', 'x0.11', 'ok']
+  mixed: hub / dock unit       206.5870     3509.236   16525.6781   ['ok', 'ok', 'x9.00']
+  186.1 path reading           206.5870     3509.236    1836.1865   ['ok', 'ok', 'ok']
+  in-legs absorbed per body: dock face 1, 1, 1, 1; hub face 0, 0, 0, 0; 186.1 path reading e 1 of 1, mu 0 of 2, tau 0 of 3,
+  p 1 of 3. The proton ratio is the same at the dock and hub faces (2871/67 = 8613/201) and at 186.1; the lepton ratios
+  meet only where the electron absorbs a leg and the muon and tau do not (the mixed face). No single face gives all three.
+  occurrences of the numerators as whole numbers in the tex sources: {67: 143, 201: 52, 321: 0, 963: 41, 1323: 0, 3969: 29, 2871: 29, 8613: 17} (the muon and tau dock-face numerators are never printed)
+
+[MASSLAW] the agreeing cells under each printed mass law (exact; float to 12 digits)
+  law                                                                                     m_p/m_e        rel    m_mu/m_e       rel  m_tau/m_e      rel     Koide
+  m = S^2 (185.9 leading term; 176.2 first order)                                     1836.186456  +1.84e-05    206.5870 -8.77e-04    3509.24 +9.17e-03  0.667660
+  m = office = S^2 + closure (195.1 T; = 185.9 with its body term)                    1836.164052  +6.20e-06    206.5864 -8.79e-04    3509.22 +9.16e-03  0.667660
+  m = office, proton closure at the mass-row weight (O.1)                             1836.164054  +6.20e-06    206.5864 -8.79e-04    3509.22 +9.16e-03  0.667660
+  m = T1 (1 + G2^2) (176.2), one G2 at e, mu and the (2,3) proton entry               1836.186456  +1.84e-05    206.5870 -8.77e-04    3508.82 +9.04e-03  0.667648
+  m = T1 (1 + G2^2) (176.2), G2 at e, mu only (capped proton entry, tau pendant)      1835.966478  -1.01e-04    206.5870 -8.77e-04    3508.82 +9.04e-03  0.667648
+  m = S (office = m^2: 181.5, 200.6 bridges; 200.3 exponent one)                        42.850746  -9.77e-01     14.3731 -9.30e-01      59.24 -9.83e-01  0.478445
+  as exact statements, m = S^2: n_sigma p +1.06e+06, mu -3.94e+04, tau +181
+  as exact statements, m = office = S^2 + closure: n_sigma p +3.56e+05, mu -3.95e+04, tau +181
+  electron closure / 67^2 = 1.220e-05; G2^2 = 1.198e-04; proton mass-row closure / 2871^2 = 1.4e-09
+  spread of m_p/m_e over the printed second-order laws (S^2 family): 1835.966478 to 1836.186456, relative width 1.20e-04;
+  CODATA 2022 1836.152673426 lies inside that band; deviations -1.01e-04 to +1.84e-05;
+  in sigma (3.2e-8): -5.82e+06 to +1.06e+06. Measured Koide (PDG 2024) 0.6666645.
+
+[SPACES] distributions of predicted ratios and look-elsewhere estimates. A 'variant' is one (numerator cell, electron cell,
+         exponent) choice; lambda = 2 delta x (distinct values per unit ln near the target); P = 1 - exp(-lambda)
+  achieved |ln dev|: p 1.840e-05, mu 8.772e-04, tau 9.123e-03; source's own convention spread for p (MASSLAW) 1.20e-04
+  (1) printed space for m_p/m_e: 15 printed proton cells x 4 printed electron cells [67, 201, 79, 237] x p in {1,2}
+      ten closest (value, cell, e, p, rel. dev.):
+           1836.186456    2871 /  67  p=2  +1.840e-05   186.1/195.1 derived cell; 20.1, 175.4 'candidate cell'
+           1836.186456    8613 / 201  p=2  +1.840e-05   21.1 stop clause (hub numerator); 175.1 'candidate cell 8613'; 186.1 merge
+           1656.611495    2727 /  67  p=2  -9.778e-02   175.1 seed, hub spelling
+           1634.814213    2709 /  67  p=2  -1.097e-01   20.1 adopted reading (strike 18); 186.1 strike at a capped entry
+           2151.852083    3108 /  67  p=2  +1.719e-01   175.3 Born count over the open end sets of the junction legs
+           1547.775036    3108 /  79  p=2  -1.571e-01   175.3 Born count over the open end sets of the junction legs
+           1320.724403    2871 /  79  p=2  -2.807e-01   186.1/195.1 derived cell; 20.1, 175.4 'candidate cell'
+           1320.724403    8613 / 237  p=2  -2.807e-01   21.1 stop clause (hub numerator); 175.1 'candidate cell 8613'; 186.1 merge
+           1191.560487    2727 /  79  p=2  -3.511e-01   175.1 seed, hub spelling
+           1175.882230    2709 /  79  p=2  -3.596e-01   20.1 adopted reading (strike 18); 186.1 strike at a capped entry
+      |ln dev| quantiles: median 4.91, 10% 1.047; within 1%: 2, within 10%: 2, within a factor 2: 11
+  printed space: 120 variants, 103 distinct; closest |ln dev| 1.84e-05 (rank 1); next 1.03e-01
+    window |ln| < 0.5: 8.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 2.94e-04, P(>=1) = 2.94e-04
+    window |ln| < 1.0: 5.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 1.84e-04, P(>=1) = 1.84e-04
+  printed space at the convention spread: 120 variants, 103 distinct; closest |ln dev| 1.84e-05 (rank 1); next 1.03e-01
+    window |ln| < 0.5: 8.0 distinct values per unit ln -> expected chance hits within 1.20e-04: 1.92e-03, P(>=1) = 1.92e-03
+    window |ln| < 1.0: 5.0 distinct values per unit ln -> expected chance hits within 1.20e-04: 1.20e-03, P(>=1) = 1.20e-03
+  printed space for m_mu/m_e (3 cells x 4 x 2): 24 variants, 24 distinct; closest |ln dev| 8.77e-04 (rank 1); next 3.30e-01
+    window |ln| < 0.5: 2.0 distinct values per unit ln -> expected chance hits within 8.77e-04: 3.51e-03, P(>=1) = 3.50e-03
+    window |ln| < 1.0: 1.5 distinct values per unit ln -> expected chance hits within 8.77e-04: 2.63e-03, P(>=1) = 2.63e-03
+  printed space for m_tau/m_e (5 cells x 4 x 2): 40 variants, 40 distinct; closest |ln dev| 9.12e-03 (rank 1); next 2.27e-02
+    window |ln| < 0.5: 8.0 distinct values per unit ln -> expected chance hits within 9.12e-03: 1.46e-01, P(>=1) = 1.36e-01
+    window |ln| < 1.0: 4.0 distinct values per unit ln -> expected chance hits within 9.12e-03: 7.30e-02, P(>=1) = 7.04e-02
+    joint, printed: mu/e and tau/e both within 1% (p = 2) at 1 of 60 (e, mu, tau): [(67, 963, 3969)]
+  (2) reading grid, each body's cell chosen independently: cells e [67, 79, 201, 237]; mu 12; tau 12; p [63, 81, 83, 101, 301, 319, 567, 729, 747, 909, 1701, 2187, 2241, 2709, 2727, 2871, 8127, 8613]
+  per-body choice, m_p/m_e: 144 variants, 120 distinct; closest |ln dev| 1.84e-05 (rank 1); next 1.03e-01
+    window |ln| < 0.5: 7.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 2.58e-04, P(>=1) = 2.58e-04
+    window |ln| < 1.0: 5.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 1.84e-04, P(>=1) = 1.84e-04
+  per-body choice, m_mu/m_e: 96 variants, 62 distinct; closest |ln dev| 8.77e-04 (rank 1); next 1.52e-01
+    window |ln| < 0.5: 4.0 distinct values per unit ln -> expected chance hits within 8.77e-04: 7.02e-03, P(>=1) = 6.99e-03
+    window |ln| < 1.0: 3.5 distinct values per unit ln -> expected chance hits within 8.77e-04: 6.14e-03, P(>=1) = 6.12e-03
+  per-body choice, m_tau/m_e: 96 variants, 80 distinct; closest |ln dev| 9.12e-03 (rank 1); next 1.15e-01
+    window |ln| < 0.5: 4.0 distinct values per unit ln -> expected chance hits within 9.12e-03: 7.30e-02, P(>=1) = 7.04e-02
+    window |ln| < 1.0: 2.0 distinct values per unit ln -> expected chance hits within 9.12e-03: 3.65e-02, P(>=1) = 3.58e-02
+  uniform readings only, m_p/m_e: 144 variants, 34 distinct; closest |ln dev| 1.84e-05 (rank 1); next 1.16e-01
+    window |ln| < 0.5: 3.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 1.10e-04, P(>=1) = 1.10e-04
+    window |ln| < 1.0: 1.5 distinct values per unit ln -> expected chance hits within 1.84e-05: 5.52e-05, P(>=1) = 5.52e-05
+  (3) round-2 declared space (330 cells x {67, 201} x 2): 1320 variants, 874 distinct; closest |ln dev| 1.84e-05 (rank 1); next 1.25e-02
+    window |ln| < 0.5: 69.0 distinct values per unit ln -> expected chance hits within 1.84e-05: 2.54e-03, P(>=1) = 2.54e-03
+    window |ln| < 1.0: 62.5 distinct values per unit ln -> expected chance hits within 1.84e-05: 2.30e-03, P(>=1) = 2.30e-03
+  (4) narrow family (319 3^u / (67 3^v))^p, u 0..4, v 0..1, p 1..2: hits at the achieved precision [(2, 0, 2), (3, 1, 2)]; spacing in ln is p ln 3,
+      so a fixed (u - v, p) rule is hit by chance with probability 1.7e-05 (p = 2) and some p with 5.0e-05
+  (5) the saturation censuses as candidate spaces (154.1: 300 three-hub sinks, 63 distinct first powers 369..4617; 189.1:
+      231 two-hub sinks, 92 values 95..3321); values not printed, so log-uniform spacing is assumed; e = 67, p = 2:
+      m_tau/m_e: target cell 67 sqrt(ratio) = 3950.9 inside [369, 4617]; 12.5 values per unit ln -> expected chance hits within 9.12e-03: 0.227
+      m_mu/m_e: target cell 67 sqrt(ratio) = 963.4 inside [95, 3321]; 12.9 values per unit ln -> expected chance hits within 8.77e-04: 0.023
+      the proton saturation (175.1, 175.3: 16946 and 44341 sinks) prints no first powers, so no density can be formed;
+      the source reports only that none equals the candidate integer
+  (6) any-integer baselines over e = 67, p = 2: target numerator 2870.9736; nearest integer 2871 (off +0.0264);
+      achieved           delta 1.84e-05: any integer 0.053; multiples of 9 0.0059; with the electron cell free in [67, 201, 79, 237]: any integer 0.392
+      convention spread  delta 1.20e-04: any integer 0.344; multiples of 9 0.0382; with the electron cell free in [67, 201, 79, 237]: any integer 1.000
+
+[LEPTON] face-free content and the factor nine
+  m_tau/m_mu = (3969/963)^2 = (441/107)^2 = 16.9867 at every face (both numerators hub); PDG 2024 16.8177(9): +1.005%, +198 sigma
+  face-consistent ratios (176.2 prints them): m_mu/m_e = 22.9541, m_tau/m_e = 389.915; measured/predicted = 9.0079, 8.9183; nearest power of 3: 9 (+8.77e-04, -9.12e-03 in ln)
+  chance that a fixed prediction lands within 8.77e-04 of a factor 3^n away from the measured m_mu/m_e: 1.6e-03
+  chance that a fixed prediction lands within 8.77e-04 of a factor 9^n away from the measured m_mu/m_e: 8.0e-04
+  given mu/e, tau/e follows from tau/mu; its deviation +0.917% is tau/mu's +1.005% plus mu/e's -0.088%
+  integer level, m_mu/m_e at e = 67: target cell 963.42, printed 963 (off -0.42); nearest integer 963, nearest multiple of 9 963; P(any integer this close) = 0.84, P(multiple of 9) = 0.094
+  integer level, m_tau/m_e at e = 67: target cell 3950.94, printed 3969 (off +18.06); nearest integer 3951, nearest multiple of 27 3942; P(any integer this close) = 1.00, P(multiple of 27) = 1.000
+  Koide at the mixed (e 67) face: 16684819/24990001 = 0.667660 (+0.149% against 0.6666645, +196 sigma)
+  Koide at the hub (e 201) face: 1857859/2927521 = 0.634619 (-4.807% against 0.6666645, -6307 sigma)
+
+[CROSS] the same segment walk at the quark sinks (181.5, THEOREM: 'entered at the dock and stopped at the hub', capped entry)
+  body                S     (S/67)^2     S/67  measured m/m_e  (PDG 2024: u, d, s MS-bar 2 GeV; c, b MS-bar at m; t direct)
+  up arm            319        22.67     4.76             4.2
+  down arm          319        22.67     4.76             9.2
+  strange sink    25839    148731.10   385.66           183.0
+  charm sink       8613     16525.68   128.55          2491.2
+  bottom sink      8613     16525.68   128.55          8185.9
+  top sink         2871      1836.19    42.85        337711.1
+  the top and the proton share the cell 319*9: at either exponent m_t = m_p, against m_t/m_p = 183.9; ordering s > c = b > t
+
+[DIGITS] information put in against agreement obtained
+  m_p/m_e   (2871/67)^2: integers carry log10(2871) + log10(67) = 5.28 digits; agreement 4.74 digits; numerator alone 3.46
+  m_mu/m_e  (963/67)^2: integers carry log10(963) + log10(67) = 4.81 digits; agreement 3.06 digits; numerator alone 2.98
+  m_tau/m_e (3969/67)^2: integers carry log10(3969) + log10(67) = 5.42 digits; agreement 2.04 digits; numerator alone 3.60
+  For a nearest-integer numerator the expected agreement is log10(S) + log10(2) digits: 3.76 for S ~ 2871; obtained 4.74.
+
+[SWEEP] integers 50..99999 within 120 characters after a first-power keyword, in statements whose box names the proton or
+        nucleon (fractions, \texttt office strings, picture coordinates and surd coefficients removed first). Classes: P printed
+        proton cell (in the space); L lepton cell; N register, measure, rank, count or square; O another body or a census size;
+        ? unclassified
+  P: 7 [255, 729, 1701, 2727, 2871, 8613, 25839]
+  L: 7 [67, 201, 237, 432, 621, 963, 3969]
+  N: 14 [64, 79, 80, 81, 85, 101, 107, 113, 125, 133, 243, 300, 319, 4489]
+  O: 28 [71, 75, 94, 95, 120, 123, 231, 516, 542, 630, 720, 999, 1035, 1044, 1071, 1125, 1647, 1746, 1971, 2565, 2889, 3321, 3591, 4617, 4941, 8046, 9315, 10773]
+  ?: 0 
+  printed proton cells not caught by the sweep (anchored by hand): [2709, 2187, 3108, 747]
+  excluded by reason (masscells_data.EXCLUDED):
+    116.1: first powers 67, 71, 75, 79 / 963 ... 1071 / 3969 ... 4293 / 2871: bodies with serially inserted (2,2) links at the metric, not the bodies' own webs
+    175.3: 10773, 133: the neutron reading of the seed (another body)
+    186.1, O.1: 8127, 2873 and the neutron-through-deuteron 2871: neutron readings (round 2, SC-39/40)
+    W.1: 1647, 1971: deuteron at the joined-web office formula (another body)
+    176.2: 'the electron at its dock-struck rank 67 against 350': 350 is not identified as an electron first power (ambiguous)
+    154.1: the 300 three-hub sinks of the tau census: only the range 369 to 4617 and 63 distinct values are printed, not the values
+    181.5: the arm and heavy-sink cells 319, 8613, 25839, 2871 belong to quark bodies; used as a cross-check, not as proton readings
+
