@@ -1,0 +1,14 @@
+result: "G4. For Shiab in S (200-dim), d_nabla(Shiab F_nabla) = 0 for every Levi-Civita connection iff the Einstein ratio holds in both channels (codimension 2, dim 198, contains S_sa); on T = 0 the Noether identity is the contracted Bianchi identity of g_aleph"
+claim_id: [GU-047, GU-052]
+writeup: formalization/geometric-unity/G-full-el-fermions.md (Proposition G4)
+code: []
+formalization_status: "Formalized for K = Spin(7,7), g = u(64,64); uses D3.2 and the contracted Bianchi identity."
+internal_consistency: >
+  Fn. 10's "properties relative to the Bianchi identity" are reproduced exactly by the Einstein ratio and select
+  nothing beyond it (198 of 200 dimensions; R-S(c=1) and all of S_sa qualify).
+proof_status: "Proven (short derivation from Theorem D3.2 and Theorem C5 values); no new computation."
+novelty: "New."
+reproducibility: "n/a (derivation)."
+empirical_testability: "None."
+dependencies: ["D3.2", "D3.3", "C5"]
+confidence: "High."

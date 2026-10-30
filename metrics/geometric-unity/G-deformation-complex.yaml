@@ -1,0 +1,22 @@
+result: "G10-G11. The deformation complex (10.1)/(10.7)/(10.9): delta_2 o delta_1 = ad(Upsilon) (draft's (10.9) is the linearization of the printed Upsilon); quasi-isomorphic to Omega^1 -L-> Omega^13; never elliptic in (7,7) for any self-adjoint Shiab (null-cone obstruction), and exact at no covector, for any background, in (7,7) or (14,0) for every member of span(W_A, W'_A) (the draft's self-adjoint family (8.1)) and for R-S (exact symbol ranks + equivariance + block-rescaling lemma)"
+claim_id: [GU-057, GU-072]
+writeup: formalization/geometric-unity/G-full-el-fermions.md (Proposition G10, Theorem G11)
+code: [computation/geometric-unity/G_symbols.py, computation/geometric-unity/G_symbols.out]
+formalization_status: >
+  Formalized with Atiyah-Bott (uniform order 1) symbols; delta_2 is the full linearization in (varpi, epsilon).
+  Exact symbol ranks on Lambda^1 (x) u(64,64) (229376-dim) and on the so(64,64) sector.
+internal_consistency: >
+  delta_2 o delta_1 = ad(Upsilon) holds (the sequence is a complex exactly on-shell), confirming (9.22) in that
+  sense. The claimed Euclidean ellipticity (Sec. 12 (x)) FAILS for every operator of the draft's self-adjoint
+  family (8.1) and for R-S; in (7,7) the complex is never elliptic for any self-adjoint Shiab.
+proof_status: >
+  Null-cone obstruction proven for all of S_sa, all kappa and backgrounds. Ranks exact at orbit representatives (rank of Shiab(xi ^ .) <= 122877 of 212992 needed on u(64,64), 60580 of 105664 on so(64,64)) (monomial Clifford algebra,
+  connected blocks, integer elimination), cross-checked against explicit 128 x 128 matrices (products, operators,
+  assembled columns, and an independent matrix-route rank on a 210-column subspace).
+novelty: "New: the draft gives no symbol computation and flags the diagram as inconsistent."
+reproducibility: "Exact; fixed seed; 982 s measured, single process (scipy connected components)."
+empirical_testability: "None."
+dependencies: ["D2", "D3", "D5", "G2"]
+confidence: >
+  High for the listed operators. Open: Euclidean ellipticity for the remaining 46 dimensions of S_sa and for
+  non-self-adjoint Shiabs other than R-S.

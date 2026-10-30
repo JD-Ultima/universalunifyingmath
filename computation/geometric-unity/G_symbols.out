@@ -18,3 +18,54 @@ Y0b. (i) int_rank = sympy rank on 40 random low-rank integer matrices: True
   WpA     xi = e^0      (eta = +1)     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact: False  [49276 blocks, max size 13, 3993 distinct]
   WpA     xi = e^7      (eta = -1)     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact: False  [49276 blocks, max size 13, 4009 distinct]
   WpA     xi = e^0+e^1  (eta = +2)     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact: False  [16410 blocks, max size 28, 16369 distinct]
+  WpA     xi = e^0+e^7  (null)         : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 126960 (deficit 102416); exact: False  [16410 blocks, max size 28, 16369 distinct]
+  WpA     xi = e^0+e^1+e^7+e^8 (null)  : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 126960 (deficit 102416); exact: False  [4097 blocks, max size 82, 4097 distinct]
+  RS      xi = e^0      (eta = +1)     : rank Shiab(xi^.) = 122864 (= 229376 - 106512); rank sigma(delta_2), kappa=1: 131057 (deficit 98319); exact: False  [86078 blocks, max size 14, 4154 distinct]
+  RS      xi = e^7      (eta = -1)     : rank Shiab(xi^.) = 122864 (= 229376 - 106512); rank sigma(delta_2), kappa=1: 131057 (deficit 98319); exact: False  [86078 blocks, max size 14, 4149 distinct]
+  RS      xi = e^0+e^1  (eta = +2)     : rank Shiab(xi^.) = 122864 (= 229376 - 106512); rank sigma(delta_2), kappa=1: 131057 (deficit 98319); exact: False  [40985 blocks, max size 28, 9595 distinct]
+  RS      xi = e^0+e^7  (null)         : rank Shiab(xi^.) = 122864 (= 229376 - 106512); rank sigma(delta_2), kappa=1: 126974 (deficit 102402); exact: False  [40985 blocks, max size 28, 9845 distinct]
+  RS      xi = e^0+e^1+e^7+e^8 (null)  : rank Shiab(xi^.) = 122864 (= 229376 - 106512); rank sigma(delta_2), kappa=1: 126974 (deficit 102402); exact: False  [9226 blocks, max size 82, 4108 distinct]
+  WA+WpA  xi = e^0      (eta = +1)     : rank Shiab(xi^.) = 106496 (= 229376 - 122880); rank sigma(delta_2), kappa=1: 122880 (deficit 106496); exact: False  [32766 blocks, max size 26, 16372 distinct]
+  WA+WpA  xi = e^7      (eta = -1)     : rank Shiab(xi^.) = 106496 (= 229376 - 122880); rank sigma(delta_2), kappa=1: 122880 (deficit 106496); exact: False  [32766 blocks, max size 26, 16371 distinct]
+  WA+WpA  xi = e^0+e^1  (eta = +2)     : rank Shiab(xi^.) = 106496 (= 229376 - 122880); rank sigma(delta_2), kappa=1: 122880 (deficit 106496); exact: False  [8194 blocks, max size 50, 8193 distinct]
+  WA+WpA  xi = e^0+e^7  (null)         : rank Shiab(xi^.) =  86016 (= 229376 - 143360); rank sigma(delta_2), kappa=1:  95232 (deficit 134144); exact: False  [8194 blocks, max size 50, 8193 distinct]
+  WA+WpA  xi = e^0+e^1+e^7+e^8 (null)  : rank Shiab(xi^.) =  86016 (= 229376 - 143360); rank sigma(delta_2), kappa=1:  95232 (deficit 134144); exact: False  [2049 blocks, max size 160, 2049 distinct]
+  WA-WpA  xi = e^0      (eta = +1)     : rank Shiab(xi^.) = 106496 (= 229376 - 122880); rank sigma(delta_2), kappa=1: 122880 (deficit 106496); exact: False  [32766 blocks, max size 26, 16372 distinct]
+  WA-WpA  xi = e^7      (eta = -1)     : rank Shiab(xi^.) = 106496 (= 229376 - 122880); rank sigma(delta_2), kappa=1: 122880 (deficit 106496); exact: False  [32766 blocks, max size 26, 16371 distinct]
+  WA-WpA  xi = e^0+e^1  (eta = +2)     : rank Shiab(xi^.) = 106496 (= 229376 - 122880); rank sigma(delta_2), kappa=1: 122880 (deficit 106496); exact: False  [8194 blocks, max size 50, 8193 distinct]
+  WA-WpA  xi = e^0+e^7  (null)         : rank Shiab(xi^.) =  86016 (= 229376 - 143360); rank sigma(delta_2), kappa=1:  95232 (deficit 134144); exact: False  [8194 blocks, max size 50, 8193 distinct]
+  WA-WpA  xi = e^0+e^1+e^7+e^8 (null)  : rank Shiab(xi^.) =  86016 (= 229376 - 143360); rank sigma(delta_2), kappa=1:  95232 (deficit 134144); exact: False  [2049 blocks, max size 160, 2049 distinct]
+  WA+2WpA xi = e^0      (eta = +1)     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact: False  [32766 blocks, max size 26, 16372 distinct]
+  WA+2WpA xi = e^7      (eta = -1)     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact: False  [32766 blocks, max size 26, 16371 distinct]
+  WA+2WpA xi = e^0+e^1  (eta = +2)     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact: False  [8194 blocks, max size 50, 8193 distinct]
+  WA+2WpA xi = e^0+e^7  (null)         : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 126960 (deficit 102416); exact: False  [8194 blocks, max size 50, 8193 distinct]
+  WA+2WpA xi = e^0+e^1+e^7+e^8 (null)  : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 126960 (deficit 102416); exact: False  [2049 blocks, max size 160, 2049 distinct]
+
+=== Y2. signature (14,0) (draft's 'Euclidean' claim, GU-057/GU-072) ===
+  WA      xi = e^0     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact (kappa=1): False
+  WA      xi = e^0+e^1 : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact (kappa=1): False
+  WpA     xi = e^0     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact (kappa=1): False
+  WpA     xi = e^0+e^1 : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact (kappa=1): False
+  RS      xi = e^0     : rank Shiab(xi^.) = 122877 (= 229376 - 106499); rank sigma(delta_2), kappa=1: 131070 (deficit 98306); exact (kappa=1): False
+  RS      xi = e^0+e^1 : rank Shiab(xi^.) = 122877 (= 229376 - 106499); rank sigma(delta_2), kappa=1: 131070 (deficit 98306); exact (kappa=1): False
+  WA+WpA  xi = e^0     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact (kappa=1): False
+  WA+WpA  xi = e^0+e^1 : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact (kappa=1): False
+  WA+2WpA xi = e^0     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact (kappa=1): False
+  WA+2WpA xi = e^0+e^1 : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact (kappa=1): False
+
+=== Y3. gauge algebra so(64,64) (grades 1,2,5,6,9,10,13,14; preserved by W_A, W'_A) ===
+  (7,7)  WA      xi = e^0     : dim so(64,64) = 8128; rank Shiab(xi^.) =  60580 (= 113792 - 53212); rank sigma(delta_2), kappa=1:  68708 (deficit 45084)
+  (7,7)  WA      xi = e^0+e^7 : dim so(64,64) = 8128; rank Shiab(xi^.) =  60580 (= 113792 - 53212); rank sigma(delta_2), kappa=1:  62609 (deficit 51183)
+  (7,7)  WpA     xi = e^0     : dim so(64,64) = 8128; rank Shiab(xi^.) =  60580 (= 113792 - 53212); rank sigma(delta_2), kappa=1:  68708 (deficit 45084)
+  (7,7)  WpA     xi = e^0+e^7 : dim so(64,64) = 8128; rank Shiab(xi^.) =  60580 (= 113792 - 53212); rank sigma(delta_2), kappa=1:  62609 (deficit 51183)
+  (7,7)  WA+WpA  xi = e^0     : dim so(64,64) = 8128; rank Shiab(xi^.) =  52416 (= 113792 - 61376); rank sigma(delta_2), kappa=1:  60544 (deficit 53248)
+  (7,7)  WA+WpA  xi = e^0+e^7 : dim so(64,64) = 8128; rank Shiab(xi^.) =  42560 (= 113792 - 71232); rank sigma(delta_2), kappa=1:  47152 (deficit 66640)
+  (14,0) WA      xi = e^0     : dim so(64,64) = 8128; rank Shiab(xi^.) =  60580 (= 113792 - 53212); rank sigma(delta_2), kappa=1:  68708 (deficit 45084)
+  (14,0) WA      xi = e^0+e^7 : dim so(64,64) = 8128; rank Shiab(xi^.) =  60580 (= 113792 - 53212); rank sigma(delta_2), kappa=1:  68708 (deficit 45084)
+  (14,0) WpA     xi = e^0     : dim so(64,64) = 8128; rank Shiab(xi^.) =  60580 (= 113792 - 53212); rank sigma(delta_2), kappa=1:  68708 (deficit 45084)
+  (14,0) WpA     xi = e^0+e^7 : dim so(64,64) = 8128; rank Shiab(xi^.) =  60580 (= 113792 - 53212); rank sigma(delta_2), kappa=1:  68708 (deficit 45084)
+  (14,0) WA+WpA  xi = e^0     : dim so(64,64) = 8128; rank Shiab(xi^.) =  60580 (= 113792 - 53212); rank sigma(delta_2), kappa=1:  68708 (deficit 45084)
+  (14,0) WA+WpA  xi = e^0+e^7 : dim so(64,64) = 8128; rank Shiab(xi^.) =  60580 (= 113792 - 53212); rank sigma(delta_2), kappa=1:  68708 (deficit 45084)
+
+runtime 982 s
+EXIT 0

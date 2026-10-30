@@ -1,0 +1,24 @@
+result: "G1-G3. Under R-C1', the action (9.4) factors through the quotient pi': G -> G/tau'(H) = Omega^1(ad) (Stueckelberg); the complete EL system is Upsilon = 0, with the off-shell Noether identity Xi = d_{A_omega} Upsilon, so (9.5)-(9.6) hold with D_omega = d_{A_omega} for the true Upsilon, not for the printed (9.7)"
+claim_id: [GU-051, GU-052, GU-053]
+writeup: formalization/geometric-unity/G-full-el-fermions.md (Theorems G1, G2, Corollary G3)
+code: [computation/geometric-unity/G_el_noether.py, computation/geometric-unity/G_el_noether.out, proofs/lean/geometric-unity/GStueckelberg.lean, proofs/lean/geometric-unity/GStueckelberg.lean.out]
+formalization_status: >
+  Fully formalized for (epsilon, varpi) with arbitrary pointwise Shiab tilted by conjugation, any Ad-invariant
+  pairing, any coefficients. Group-theoretic core (free action, fibres = orbits, unitary-gauge decomposition,
+  factorisation of invariant functionals) machine-checked in Lean 4 core (24 theorems, no sorry). The variation
+  in the metric on X is formal only (fibre integral over GL(4)/O(1,3), no decay on solutions).
+internal_consistency: >
+  CONSISTENT for the true EL expression: Xi = d_A Upsilon identically, so the epsilon-equation is redundant
+  as (9.6) asserts; tau'(H) is a Stueckelberg symmetry (epsilon pure gauge; in the gauge epsilon = 1 the theory is
+  a single ad-valued 1-form on the fixed background). INCONSISTENT for the printed (9.7): Xi != d_A Upsilon^pr.
+  Source support for the repair: the draft's own (10.6) uses the tau' sign.
+proof_status: >
+  Proven (algebra + Stokes). Exact check in a non-abelian model (d = 3, SL(2), non-flat background, three Shiab
+  operators incl. non-self-adjoint and Chern-Simons control): density factorisation on 20 Taylor coefficients,
+  Euler operator over 66 jet directions gives Xi = d_A Upsilon exactly at a point, two random configurations;
+  D5 re-derived independently (plus the non-parallelism term absent in GU).
+novelty: "New: the draft states (9.5)-(9.6) without derivation and does not write Xi."
+reproducibility: "Exact (Python integers / sympy rationals); fixed seed; ~45 s."
+empirical_testability: "None."
+dependencies: ["C3'", "C4.4", "D2", "D5", L-C1]
+confidence: "High. Limits: the d = 14 statement is proved, not machine-checked at the PDE level; the metric (X) variation is not well-posed."

@@ -1,0 +1,25 @@
+result: "G5-G9. The fermion operator (9.16): every Spin(7,7)-equivariant spinor Shiab flips chirality (printed labels inconsistent); the natural contraction gives the Rarita-Schwinger operator; no Majorana(-Weyl) action in (7,7) carries a Shiab (RS) kinetic term (Lambda^3 lies in Sym^2 S, not Lambda^2 S); consistent real readings need two MW copies (= complex Weyl, doubled content) or the Hermitian U(64,64) form; the symbol is invertible exactly off the null cone (elliptic in (14,0))"
+claim_id: [GU-056, GU-063, GU-072]
+writeup: "formalization/geometric-unity/G-full-el-fermions.md (G.3 -- F0, Prop. G5, Lemma G6, Thm G7, Prop. G8, Thm G9)"
+code: [computation/geometric-unity/G_fermion.py, computation/geometric-unity/G_fermion.out]
+formalization_status: >
+  Formalized under R-F (reading of (9.16) with tilted spinor Shiab, adjoint lower-left block) with the three
+  equivariant spinor Shiabs (span of Hom_K is 2-dim per chirality); real (B, B') and Hermitian (H) pairings.
+internal_consistency: >
+  INCONSISTENT as printed: chirality labels of (9.16) cannot be realized by any equivariant Shiab.
+  INCONSISTENT with the Majorana-Weyl reading of B2-B4 if the zeta kinetic (Shiab) block is kept: its kernel has
+  the bosonic symmetry and drops out; the surviving MW operator has symbol rank 128 of 960 at every covector.
+  CONSISTENT in the complex Weyl / Dirac readings with the printed relative phases (u(64,64) elements i gamma_abc).
+proof_status: >
+  Proven (representation theory + exact integer computations in the explicit real Cl(7,7)): symmetry types of
+  C gamma_I on S^+- for all monomials of grades 1,3,5,7; Grassmann defect of full rank 2 on the equivariant
+  family; exact symbol ranks: 1920/1920 at non-null covectors, 1024/1920 at null covectors, 1920/1920 in (14,0).
+novelty: "New; consistent with the known d mod 8 pattern (cf. symplectic Majorana gravitini in d = 6)."
+reproducibility: "Exact; fixed seed; ~3 min."
+empirical_testability: >
+  None directly. Bears on the generation count (B4): with a Rarita-Schwinger kinetic term for zeta the content is
+  the complex-Weyl one, 6 x 16 (+) 2 x 144, not 3 x 16 (+) 144.
+dependencies: ["B1", "B4", "D1 (Lambda^2 (x) Lambda^1 decomposition)", "D2"]
+confidence: >
+  High for the stated reading. The chimeric (Spin(1,3) x Spin(6,4), eps_X-dependent) Majorana alternative is
+  counted (2-dim) by hand, not machine-checked, and its non-degeneracy is open.

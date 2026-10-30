@@ -97,3 +97,31 @@ Write-ups: `formalization/geometric-unity/D-selfadjoint-shiab.md` and `E-lean-ti
 - GU-053 F: for all of $\mathcal S$.
 
 Round-1 Prop. C6′'s criterion is superseded; see `reports/CORRECTIONS.md`.
+
+## Round 3 — full EL system, fermion operator, deformation complex (GU-G15, GU-G22, GU-G16)
+
+Write-up: `formalization/geometric-unity/G-full-el-fermions.md`. Code: `computation/geometric-unity/G_{el_noether,fermion,symbols}.py`, outputs committed. Lean: `proofs/lean/geometric-unity/GStueckelberg.lean` (24 theorems, no `sorry`). Records: `metrics/geometric-unity/G-*.yaml`. Everything is exact (integers, rationals, Gaussian integers).
+
+**Reconstruction.**
+- Bosons: R-C1′ and the D.1 hypotheses, with ⊛ arbitrary for G1–G3 and $W_A$ for the Einstein case.
+- Fermions: (9.16) is read as $\mathcal D=\begin{psmallmatrix}{*}\circledast^S d_A& d_A\\-d_A^*&0\end{psmallmatrix}$ on $(\zeta,\nu)$, tilted by $\rho(\varepsilon)$, with $\circledast^S=\Phi_{11}\wedge$ acting by Clifford multiplication. The alternatives are the other Spin(7,7)-equivariant maps.
+- Source observation: the draft's own (10.6) uses the repaired sign $\tau'$ (C3′), not the printed (6.4).
+
+| # | Statement | Status |
+|---|---|---|
+| G1 | **Stueckelberg factorisation.** $\tau'(\mathcal H)$ acts freely, with orbits equal to the fibres of $\pi'$. $I_1^B=J\circ\pi'$, where $J(S)$ is (9.4) at $\varepsilon=1$ with the untilted ⊛. This holds for every ⊛, every pairing and every set of coefficients. The "bought-back" gauge invariance makes ε pure gauge: the theory is one field $S\in\Omega^1(\mathrm{ad})$ on the fixed $(Y,g_\aleph,\nabla^0)$. | Proven; Lean core; exact density check |
+| G2–G3 | **Complete EL system.** The system is $\Upsilon=0$, with the off-shell Noether identity $\Xi\equiv d_{A_\omega}\Upsilon_\omega$. So (9.5)–(9.6) hold with $\mathfrak D=d_{A_\omega}$, and D5's equation is the full EL system. They fail for the printed (9.7), where $\Xi\ne d_A\Upsilon^{\rm pr}$. | Proven; exact Euler-operator check in a non-abelian $d=3$ model (incl. non-self-adjoint and Chern–Simons control) |
+| G4 | **Bianchi property** (fn. 10). $d_\nabla(\circledast F_\nabla)\equiv0$ for all metrics iff the Einstein ratio holds. This cuts out 198 of the 200 dimensions and contains $\mathcal S_{\rm sa}$. At $T=0$ the Noether identity is the contracted Bianchi identity of $g_\aleph$. | Proven |
+| G5 | Every equivariant spinor Shiab **flips chirality**. The natural one is the Rarita–Schwinger operator. The chirality labels of (9.16) are inconsistent, and a one-swap relabelling repairs them. | Proven; exact |
+| G6–G7 | **Fermionic symbol criterion** (D2 with the opposite spinor symmetry). In (7,7), $\Lambda^3\subset\mathrm{Sym}^2S^\pm$ and $\Lambda^3\not\subset\Lambda^2S$. So **no Majorana(–Weyl) action has a Shiab/RS kinetic term for ζ**. The MW reading of B4 ($3\times16\oplus144$) leaves ζ's transverse components non-propagating (symbol rank 128/960). The minimal real repair (two MW copies ≅ complex Weyl) doubles the content to $6\times16\oplus2\times144$. | Proven; exact |
+| G8 | The Hermitian $U(64,64)$ readings (complex Weyl, Dirac) are consistent with the printed phases. Only $\mathfrak u(64,64)_{\rm ev}\cong\mathfrak{gl}(64,\mathbb C)$ couples to Weyl fermions. | Proven; exact |
+| G9 | The fermion symbol is invertible iff $\eta(\xi,\xi)\ne0$: rank 1920/1920 off the null cone, 1024/1920 on it, and 1920/1920 in (14,0). So the fermion operator is **elliptic in Euclidean signature**. | Proven + exact ranks |
+| G10 | $\delta_2\circ\delta_1=\mathrm{ad}(\Upsilon)$, which confirms (9.22) in this sense. The draft's (10.9) is the linearisation of the printed Υ. The complex reduces to $\Omega^1\xrightarrow{\mathcal L}\Omega^{13}$. | Proven |
+| G11 | **The bosonic deformation complex is not elliptic.** In (7,7) this holds for every self-adjoint Shiab, because of a null-cone obstruction. For the whole self-adjoint family of (8.1), $\mathrm{span}(W_A,W'_A)$ (via a block-rescaling lemma), and for R-S, the symbol sequence is exact at no covector, for any background, in (7,7) **and (14,0)**. The exact rank of $\sigma(\circledast\circ d)$ is at most 122877 of the 212992 needed on $\mathfrak u(64,64)$, and 60580 of the 105664 needed on $\mathfrak{so}(64,64)$. | Proven + exact ranks |
+
+**Verdicts.**
+- GU-G15 is closed for $(\varepsilon,\varpi)$: the ε-equation is redundant, as the draft says, but only for the true Υ. The ℷ-variation is formal, with no fibre decay, and stays open.
+- GU-G22 is closed under R-F. The printed chirality labels fail, and the B4 Majorana–Weyl reading is incompatible with the ζ kinetic term.
+- GU-G16 is closed in the negative. The "elliptic deformation complex in Euclidean signature" (§12 (x)) fails for every Shiab of the draft's self-adjoint family and for R-S. The fermion block alone is elliptic in (14,0).
+- Claims: GU-052 O→C; GU-056 O→C/F; GU-057 split (V for $\delta_2\delta_1=\mathrm{ad}\Upsilon$, F for ellipticity); GU-072 F (bosonic) / C (fermionic).
+- Earlier conclusions qualified: see `reports/CORRECTIONS.md` (B4/GU-G07; GU-052; GU-057/072).
