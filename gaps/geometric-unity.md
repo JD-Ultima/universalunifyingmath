@@ -55,3 +55,13 @@ Each gap is a point where [W21] is underspecified, circular or type-inconsistent
   - Result: $\Upsilon=0$ has no solution on any open subset of $Y$ for $\circledast_\sharp$, $W_A$ and its multiples, every elliptic member in (14,0), and every member with $xz-yw\neq0$, $x\neq\pm y$ in (7,7) (L8, L9). So the J5/J5d no-go is not an artefact of the radial ansatz.
   - Open: Z1; the other non-elliptic members; $x=\pm y$ in (7,7); other sectors.
 - **GU-G16.** The ellipticity factor appears squared in $R'$. The members left open are those with $xz\pm yw=0$ (other than multiples of $W_A$) and, in (7,7), $x=\pm y$.
+
+**Note (2026-10-30, round 9; `formalization/geometric-unity/M-z2-remaining-members.md`).** The rows above and the earlier notes are not edited. Hypotheses: those of round 8 ((H) of L.0); for $(x,y)=0$ the same without $(x,y)\neq0$.
+- **GU-G14.**
+  - The reduced system has a rotation (14,0) / boost (7,7) symmetry acting on $(x,y)$, $(z,w)$, $(t,u)$ together, and in (7,7) a swap combined with $g_\aleph\to-g_\aleph$ (M1). Up to these the members with $xz\pm yw=0$ are $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, the (7,7) null members and $(x,y)=0$ (M2).
+  - For $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ the γΓ-channel forces $u\equiv0$ (M3); one scalar remains, nonlinear for $c\neq0$ (M4). L7 extends to every $\mu$: at a point of $s(X)$ it forces $\mu'=0$ and $|R_g|^2=-2c_H^2/c_V^2$, and no Ricci-flat curvature passes (M5). Hence no solution on an open set meeting $s(X)$ (M6(a)); for $c=0$, all of $\mathrm{span}(W_A,W'_A)$, none on any open set (M6(b)).
+  - (7,7), $x=\pm y$: none on any open set (M7). For $xz-yw\neq0$ the channel forces the invariant line $\sigma=-\kappa/208$, where $\nabla^2r=-\tfrac5{12}r\,\mathrm{Ric}$.
+  - $(x,y)=0$: $\Upsilon=0$ forces $T=0$ and leaves the metric free (M8).
+  - Result: for every member with $(x,y)\neq0$, no solution near $s(X)$; none on any open set except possibly $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, away from $s(X)$, where a solution would need special base curvature (M9, computed; M10).
+  - Open: that exception; Z1; other sectors.
+- **GU-G16.** On $xz\pm yw=0$ the curvature-free row vanishes and the remaining equation is nonlinear unless $(z,w)=0$; the one remaining exception sits there. $x=\pm y$ is not exceptional (M7).

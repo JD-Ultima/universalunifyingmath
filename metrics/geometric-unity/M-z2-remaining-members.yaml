@@ -1,0 +1,59 @@
+result: "M. Upsilon = 0 on a neighbourhood in Z2 for the members round 8 left open: no solution on any open set meeting s(X) for every member with (x, y) != 0 (both real forms), and on every open set for span(W_A, W'_A), for x = +-y in (7,7) (including the null members with xz - yw = 0); for (x, y) = 0 the only solution is T = 0, for every metric; open only for the twisted members x (W_A + c W'_C Ad_Gamma), c != 0, with xz +- yw = 0 (up to symmetry), away from s(X), where a solution would need special base curvature (kappa != 0, slaved T_e in V, det M != 0)"
+claim_id: [GU-054]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/M-z2-remaining-members.md (Lemmas M1, M5; Propositions M2, M3, M4, M8, M9; Theorems M6, M7; Corollary M10); answers the open list of formalization/geometric-unity/L-nonradial-z2.md, section L.3 (as amended after REVIEW6-GU)
+code: [computation/geometric-unity/M_remaining.py, computation/geometric-unity/M_remaining.out]
+formalization_status: >
+  Formalized in the setting of J and L (unitary gauge of G1, true Upsilon of D5, family x W_A + y W'_A + z W_C Ad_Gamma
+  + w W'_C Ad_Gamma, real forms (14,0) and (7,7)) under the hypotheses (H) of L.0: Z2, n = 4, lambda != 1/4,
+  kappa != 0, T_o = t Phi^1 + u Phi^1 Gamma with arbitrary smooth t, u, T_e the slaved field Sigma (dt, du) in the vector
+  sector V with det M != 0, Upsilon = 0 on a connected open U; for the boundary (x, y) = 0 the same hypotheses except
+  (x, y) != 0. Steps: (1) the reduced system has a rotation (14,0) / boost (7,7) symmetry acting on (x, y), (z, w),
+  (t, u) together, and in (7,7) a swap p -> -K p, (t, u) -> (u, t) combined with g_aleph -> -g_aleph; so the cone
+  xz +- yw = 0 reduces to x (W_A + c W'_C Ad_Gamma), the (7,7) null members (x, +-x, +-cx, cx) and (x, y) = 0;
+  (2) for (x, 0, 0, w) the gamma Gamma channel is u (kappa + 208 x t) g + Q13_tt (dt dt - |dt|^2 g), which forces u = 0,
+  leaving one scalar with nonlinear mu (mu' = -7/18 only at c = 0); (3) the fibre obstruction of L7 extends to every mu:
+  mu'(w(p)) = 0 is forced, the order-1 condition (C1)_0 then gives |R|^2 = -2 c_H^2/c_V^2 (impossible for a definite
+  base), and (C1)_0 has no Ricci-flat solution (Groebner basis {1}); the points with H = 0 are excluded by the vertical
+  block and E t = 0; (4) for N = 0, ell = 0 the two channels differ by (c1 - c13) g only, so sigma is constant and T_e = 0;
+  (5) for N = 0, ell != 0 the residual R' and the trace coefficient both vanish along the kernel field, the channel forces
+  sigma (kappa + 208 sigma) = 0, the invariant line sigma = -kappa/208 carries mu = -(5/12) r, and L9's continuation
+  applies; (6) for (x, y) = 0 everything depends on theta = tw - uz, a derivative-free combination forces z t + eps w u
+  = 0, and the last equation, concircular after reparametrisation, admits only theta = 0; (7) off the section, the first
+  integrability condition of the fibre equation, relaxed in mu', is inconsistent at sample points, hence on a Zariski-open
+  set of (curvature, fibre point).
+internal_consistency: >
+  Inputs are L's own section L0 (J's j0/j1 and evaluator), run and asserted. The symmetries are exact identities of the
+  transcribed tables under a symbolic one-parameter group, and for the (7,7) swap identities of the full symbolic
+  reduced numerators. Every structural statement about the families is an exact polynomial identity in the member
+  parameters, kappa, t and u. The extended fibre obstruction is checked three ways: the L7 pairing constants in four base
+  signatures, a Groebner certificate for the Ricci-flat case in three indefinite signatures, and a brute-force Taylor
+  solution of the fibre equation (Christoffel symbols from G_lambda; inconsistent for a random Weyl tensor that satisfies
+  the pairing condition, consistent in the control that (C1)_0 predicts solvable). The off-section computation is
+  controlled by consistency at the section point and by an exact structural kernel (the Taylor coefficients of s).
+proof_status: >
+  Proven: M1 (symmetries of the reduced system), M2 (orbits on the cone; Lambda^2 coefficients), M3 (u = 0 for
+  (x, 0, 0, w)), M5 (fibre obstruction for any mu; Ricci-flat certificate), M6 (ell = 0, N != 0: no solution on U meeting
+  s(X); span(W_A, W'_A) on any open U), M7 (N = 0 in (7,7): no solution on any open U, both ell = 0 and ell != 0),
+  M8 ((x, y) = 0: Upsilon = 0 iff T = 0), M10 (summary). Computed: M4 (mu', its zeros), M9 (relaxed first integrability
+  off the section at sample points; the genericity consequence follows from the exact ranks and the structural kernel).
+  Open: the members ell = 0, N != 0, (z, w) != 0 on open sets not meeting s(X) (reduced to base curvature in a proper
+  algebraic set). Imported: L1-L9, J1-J2, J5d L0-L1, L-F1, F1, F3.
+novelty: >
+  New within this audit: with round 8 the non-radial Z2 neighbourhood question is now decided for every member of the
+  family with (x, y) != 0 near s(X), and on every open set except one twisted family with xz +- yw = 0 away from s(X). Side results: a
+  rotation/boost symmetry of the reduced system and a (7,7) swap that exchanges N > 0 and N < 0 at the cost of the
+  metric's sign; the (7,7) null members are not exceptional (an invariant line with a linear equation, mu = -(5/12) r);
+  the members with (x, y) = 0 carry no condition on the metric in this sector. Not in the source.
+reproducibility: "Exact (Fractions, sympy rationals and Gaussian rationals); fixed seeds (random.Random(5), 74, 80.., 90..95 for curvature tensors, Weyl tensors and fibre points); one core: 270 s, a second run 260 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 M_remaining.py > M_remaining.out 2>&1 (35 checks, 35 True, each asserted). Imports L_nonradial.py unmodified (and through it J_slaved_sector.py, F_jets.py)."
+empirical_testability: >
+  None new. The result removes nearly all remaining candidate neighbourhood solutions of the slaved vector sector in Z2;
+  the physically relevant reduction still depends on the undeclared rule for T off s(X), on Z1 versus Z2, and on sectors
+  not treated (T_e outside V, T_o outside the invariant sector).
+dependencies: ["L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8", "L9", "J1", "J2", "J5d-L0", "J5d-L1", "F1", "F3", "L-F1", "H7"]
+confidence: >
+  High for M1-M8 and M10 under (H): each step is a hand proof whose algebraic content is an exact identity or an exact
+  certificate, and the one new analytic input (the extended fibre obstruction) is cross-checked by brute force. M9 is a
+  computation at sample points plus a genericity argument and is stated as such. Not covered: the twisted members with
+  xz +- yw = 0, c != 0, away from s(X); Z1; the Z2 signatures (8,6), (10,4), ...; T_e outside V or crossing det M = 0; T_o outside the
+  invariant sector.

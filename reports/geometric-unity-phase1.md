@@ -218,7 +218,7 @@ Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $
   - Not covered:
     - $T_o$ outside the invariant sector;
     - $T_e$ outside the vector sector for large $|T_o|$;
-    - neighbourhood solutions in Z1; in Z2 beyond the radial ansatz, the members not covered by Round 8 (non-elliptic members other than the multiples of $W_A$, and $x=\pm y$ in (7,7));
+    - neighbourhood solutions in Z1; in Z2 beyond the radial ansatz, only $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, with $xz\pm yw=0$, away from $s(X)$ (Rounds 8, 9);
     - reading (A).
 
 ## Round 8 — $\Upsilon=0$ beyond the radial Z2 ansatz (GU-054, GU-G14, GU-G16)
@@ -234,6 +234,18 @@ Hypotheses of J5 without the radial ansatz: Z2, $n=4$, $\lambda\neq\tfrac14$, th
 - **Result.** No solution on any open subset of $Y$ for $\circledast_\sharp$, $W_A$ and its multiples, every elliptic member in (14,0), and every member with $xz-yw\neq0$, $x\neq\pm y$ in (7,7) (L8, L9).
 - **Open.** Z1; the other non-elliptic members; $x=\pm y$ in (7,7); the other sectors.
 - No statement made before round 8 is contradicted.
+
+## Round 9 — the members round 8 left open (GU-054, GU-G14, GU-G16)
+
+Write-up: `formalization/geometric-unity/M-z2-remaining-members.md`. Code: `computation/geometric-unity/M_remaining.py`, output committed, exact, 35 asserted checks, ~4.5 min (270 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/M-z2-remaining-members.yaml`. Not yet internally reviewed.
+
+Hypotheses of round 8; for $(x,y)=0$ the same without $(x,y)\neq0$.
+
+- Symmetries of the reduced system: a rotation (14,0) / boost (7,7) of $(x,y)$, $(z,w)$, $(t,u)$, and in (7,7) a swap with $g_\aleph\to-g_\aleph$ (M1). Up to them the cone $xz\pm yw=0$ is $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, the (7,7) null members and $(x,y)=0$ (M2).
+- For $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ the γΓ-channel forces $u\equiv0$; one scalar equation remains, nonlinear after reparametrisation for $c\neq0$ (M3, M4). L7 extends to every $\mu$, with a Gröbner certificate for Ricci-flat curvature (M5).
+- **Results.** No solution near $s(X)$ for any member with $xz\pm yw=0$, $(x,y)\neq0$ (M6(a)); none on any open set for $\mathrm{span}(W_A,W'_A)$, including $W'_A$ (M6(b)), and for $x=\pm y$ in (7,7) (M7; invariant line $\sigma=-\kappa/208$ with $\nabla^2r=-\tfrac5{12}r\,\mathrm{Ric}$). For $(x,y)=0$, $\Upsilon=0$ iff $T=0$, for every metric (M8). With round 8: no solution near $s(X)$ for any member with $(x,y)\neq0$, and none on any open set except possibly $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, away from $s(X)$ (M10).
+- **Open.** That exception (off the section the first integrability condition fails at every sampled point, so a solution would need special base curvature, M9, computed); Z1; other sectors.
+- No statement made before round 9 is contradicted.
 
 ## F4(c) for every $n$ (round 2 F, completed)
 
