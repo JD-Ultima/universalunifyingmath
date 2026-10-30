@@ -13,3 +13,7 @@ $UPSTREAM/papers/alpha/lean/ChainAlpha.lean: OK
 'ConventionCheck.uniqueness_fails_under_conjugate_convention' depends on axioms: [propext, Quot.sound]
 'ConventionCheck.actA_ne_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
 'ConventionCheck.weight_is_class_function' depends on axioms: [propext, Classical.choice, Quot.sound]
+([(1, 24), (2, 30), (4, 3)], 2304)
+57
+([(1, 184), (3, 200)], 419904)
+'ReviewCheck.third_config_under_conjugate_convention' depends on axioms: [propext, Quot.sound]
