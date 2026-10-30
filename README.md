@@ -19,6 +19,14 @@ The investigation is hypothesis-neutral. For each framework we reconstruct the s
 | Geometric Unity | [`reports/geometric-unity-phase1.md`](reports/geometric-unity-phase1.md) | `formalization/geometric-unity/` |
 | Howard | [`reports/howard-phase1.md`](reports/howard-phase1.md) | `formalization/howard/` |
 
+## Manuscript drafts (LaTeX, uncompiled in this environment)
+
+| Draft | Path |
+|---|---|
+| Comment on the α(0) Letter: selection conventions and trial factor | `proofs/latex/ct-alpha-comment/comment.tex` |
+| The algebraic core of Geometric Unity | `proofs/latex/gu-note/note.tex` |
+| Which arithmetics satisfy "1×1=2"? | `proofs/latex/howard-note/note.tex` |
+
 ## Layout
 
 ```
