@@ -23,7 +23,7 @@ internal_consistency: >
 proof_status: >
   Proven: I2, I3, I4 (proofs, with exact checks on random exact fields); I1, I5, I6 (exact computation plus Schur;
   the I5(a) fit is complete by the SO(14) multiplicities of Sym^2(Sym^2 V)); Cor. I2.1 for kappa != 0 and
-  (x_1, x_13) != 0, in Z1 with the status of F4(c) (exact verification at n = 4, general-n sketch);
+  (x_1, x_13) != 0, in Z1 and Z2 (F4(c) proven for every n in K-z1-ricci-general-n.md);
   I7(a), I7(b) (exact sympy identities from the F3-F6 closed forms); I7(c) (substitution); I7(d) (inverse function
   theorem, equivariance and Gauss formula; 4D condition stated at leading order in 1/kappa, HHH components only).
 novelty: >

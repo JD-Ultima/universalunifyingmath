@@ -1,0 +1,154 @@
+K_z1_ricci.py  (exact: Fractions and sympy rational-function fields; seed random.Random(20261030))
+
+K0  controls of the curvature routine: 4|dx|^2/(1 +- |x|^2)^2 has Ric = +-(m-1) g at 0
+  [True] m=2, sphere: Ric == 1*(m-1)*g
+  [True] m=2, hyperbolic space: Ric == -1*(m-1)*g
+  [True] m=3, sphere: Ric == 1*(m-1)*g
+  [True] m=3, hyperbolic space: Ric == -1*(m-1)*g
+  [True] m=4, sphere: Ric == 1*(m-1)*g
+  [True] m=4, hyperbolic space: Ric == -1*(m-1)*g
+
+K1  variation formula (Lemma K1): at a point where delta = 0, with nabla = nabla^h,
+    Ric(h+delta) - Ric(h) = (1/2) h^ad (nabla_a nabla_b delta_dc + nabla_a nabla_c delta_bd - nabla_a nabla_d delta_bc
+      - nabla_b nabla_c delta_ad) - (1/2) h^ap h^dq nabla_a delta_pq T_dbc + (1/2) h^ap h^dq nabla_b delta_pq nabla_c delta_ad
+      + (1/4) h^ap h^dq T_pad T_qbc - (1/4) h^ap h^dq T_pbd T_qac,   T_dbc = nabla_b delta_dc + nabla_c delta_db - nabla_d delta_bc.
+    Test: random exact 2-jets of h and delta (delta(0) = 0), both Riccis by the independent routine.
+  [True] m=2 sig=(2, 0): Ric(h+delta)-Ric(h) == formula (nabla^2 delta symmetric in its derivative slots: True; quadratic part != 0: True)
+  [True] m=2 sig=(1, 1): Ric(h+delta)-Ric(h) == formula (nabla^2 delta symmetric in its derivative slots: True; quadratic part != 0: True)
+  [True] m=3 sig=(3, 0): Ric(h+delta)-Ric(h) == formula (nabla^2 delta symmetric in its derivative slots: True; quadratic part != 0: True)
+  [True] m=3 sig=(1, 2): Ric(h+delta)-Ric(h) == formula (nabla^2 delta symmetric in its derivative slots: True; quadratic part != 0: True)
+  [True] m=4 sig=(2, 2): Ric(h+delta)-Ric(h) == formula (nabla^2 delta symmetric in its derivative slots: True; quadratic part != 0: True)
+  [True] m=5 sig=(3, 2): Ric(h+delta)-Ric(h) == formula (nabla^2 delta symmetric in its derivative slots: True; quadratic part != 0: True)
+
+K2  Lemma K2 on curved bases (random 3-jets, non-normal coordinates), Z2 at p = (0, g(0)) in s(X):
+    (a) s_* = horizontal lift; (b) nabla pi_* = 0 at p, i.e. Gamma^{Z2,rho}_{ab}(p) = Gamma^{g,rho}_{ab}(0) for
+    base directions a, b and 0 if a or b is vertical (A = 0 on s(X), T = 0); (c) nabla K at p has only the VV part
+    (1/2)(U g^-1 W + W g^-1 U); (d) nabla delta, nabla^2 delta at p (adapted frame) are exactly those of K2;
+    (e) fibre Christoffel symbols Gamma^F(U,W) = -(1/2)(U y^-1 W + W y^-1 U), independent of lambda.
+  n=2 sig=(1, 1), g0 non-diagonal, Gamma_g(0) != 0: True, Ric_g(0) != 0: True; coefficients in Q(lam, cH, cV)   [0.5s]
+  [True] n=2: (a) s_* = lift True; (b) nabla pi_* = 0 at p True; (c) nabla K at p True; (d) nabla delta, nabla^2 delta at p True; (e) fibre Christoffels True
+  n=3 sig=(2, 1), g0 non-diagonal, Gamma_g(0) != 0: True, Ric_g(0) != 0: True; coefficients in Q(lam, cH, cV)   [7.7s]
+  [True] n=3: (a) s_* = lift True; (b) nabla pi_* = 0 at p True; (c) nabla K at p True; (d) nabla delta, nabla^2 delta at p True; (e) fibre Christoffels True
+  n=4 sig=(1, 3), g0 non-diagonal, Gamma_g(0) != 0: True, Ric_g(0) != 0: True; coefficients in Q(lam, cH, cV)   [35.5s]
+  [True] n=4: (a) s_* = lift True; (b) nabla pi_* = 0 at p True; (c) nabla K at p True; (d) nabla delta, nabla^2 delta at p True; (e) fibre Christoffels True
+
+K3  Lemma K3 (general n): the variation formula of K1 on the data of K2, by O(g)-invariant strand diagrams
+    with symbolic loop weight n; coefficients in Q(n, lam, cH, cV), mu = lam/(1 - n lam).
+  dRic_HH = (cH/(4*n*lam*cV - 4*cV)) g
+  dRic_VV = (-1/4) G_0 + (0) tr(g^-1 .) tr(g^-1 .)
+  dRic_HV: 0 diagrams (an H-V bilinear form has 3 endpoints, so no perfect matching exists)
+  [True] dRic_HH == cH/(4 cV (n lam - 1)) g for every n
+  [True] dRic_VV == -(1/4) G_0 for every n
+  [True] dRic_HV == 0 for every n
+  term-by-term (HH coefficient of g; VV coefficient of G_0, of tr tr):
+    term 1: HH 0;  VV 0, 0
+    term 2: HH 0;  VV 0, 0
+    term 3: HH (-n**2*lam*cH - n*lam*cH + n*cH + 2*lam*cH + cH)/(4*n*lam*cV - 4*cV);  VV 0, 0
+    term 4: HH 0;  VV -1/2, 0
+    term 5: HH 0;  VV 0, 0
+    term 6: HH 0;  VV 1/2, 0
+    term 7: HH cH/(4*n*lam*cV - 4*cV);  VV 0, 0
+    term 8: HH (n**2*lam*cH + n*lam*cH - n*cH - 2*lam*cH - cH)/(4*n*lam*cV - 4*cV);  VV -1/4, 0
+  [True] C^V(X,Y) = -(cH/(2 cV)) [X^flat . Y^flat + mu g(X,Y) g]  (= II of F4(a))
+  [True] fibre trace h^-1 . Ric_F = s_F = -n(n-1)(n+2)/(8 cV)
+  [True] s_Y - R/cH = h^-1 . (Ric_F + dRic) == sigma_1/cV of F4(b)
+  [True] -(n/4) G_{1/n} - (1/4) G_0 == -((n+1)/4) G_{1/(n+1)} (coefficients of G_0 and tr tr)
+  engine cross-check: explicit h_p, nabla delta, nabla^2 delta in the adapted frame, n = 1..4:
+  [True] n=1 sig=(0, 1): explicit evaluation == diagram evaluation at loop weight 1   [0.1s]
+  [True] n=2 sig=(1, 1): explicit evaluation == diagram evaluation at loop weight 2   [0.3s]
+  [True] n=3 sig=(3, 0): explicit evaluation == diagram evaluation at loop weight 3   [3.2s]
+  [True] n=4 sig=(1, 3): explicit evaluation == diagram evaluation at loop weight 4   [13.0s]
+  [True] VV block proportional to cV G_lam iff (kappa, lam) = [{kappa: -(n + 1)/(4*cV), lam: 1/(n + 1)}]; then Ric_g = (0) g  (F6, Z1 half)
+
+K4  independent brute force: Ricci tensor of Z1 and Z2 at p = (0, g(0)) from the exact coordinate 2-jet of the
+    metric on Y^(n(n+3)/2); random curved base 3-jets, g0 non-diagonal, non-normal coordinates. Blocks in the adapted
+    frame vs F4(c) (Z1) and F3 (Z2); 'chain': Ric(Z1) - Ric(Z2) == formula K1 evaluated on the brute-force
+    nabla^{Z2} delta, nabla^{Z2} nabla^{Z2} delta (coordinates).  n = 2, 3: coefficients in Q(lam, cH, cV);
+    n = 4, 5, 6: exact rationals at the listed (lam, cH, cV).
+  n=2 sig=(2, 0) (dim Y = 5): Gamma_g(0) != 0 True, Ric_g(0) not prop. to g False (n = 2: always prop.), nabla Ric_g(0) != 0 True, Ric routes agree True   [jets 0.5s]
+  [True] n=2: test base is generic (non-normal coordinates, nabla Ric != 0)
+  [True] n=2 sig=(2, 0) Z2 (lam, cH, cV) = symbolic: Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=2 sig=(2, 0) Z1 (lam, cH, cV) = symbolic: Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [3.1s]
+  n=2 sig=(1, 1) (dim Y = 5): Gamma_g(0) != 0 True, Ric_g(0) not prop. to g False (n = 2: always prop.), nabla Ric_g(0) != 0 True, Ric routes agree True   [jets 0.6s]
+  [True] n=2: test base is generic (non-normal coordinates, nabla Ric != 0)
+  [True] n=2 sig=(1, 1) Z2 (lam, cH, cV) = symbolic: Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=2 sig=(1, 1) Z1 (lam, cH, cV) = symbolic: Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [2.6s]
+  n=3 sig=(3, 0) (dim Y = 9): Gamma_g(0) != 0 True, Ric_g(0) not prop. to g True, nabla Ric_g(0) != 0 True, Ric routes agree True   [jets 11.1s]
+  [True] n=3: test base is generic (non-normal coordinates, nabla Ric != 0, Ric not Einstein)
+  [True] n=3 sig=(3, 0) Z2 (lam, cH, cV) = symbolic: Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=3 sig=(3, 0) Z1 (lam, cH, cV) = symbolic: Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [51.0s]
+  n=3 sig=(2, 1) (dim Y = 9): Gamma_g(0) != 0 True, Ric_g(0) not prop. to g True, nabla Ric_g(0) != 0 True, Ric routes agree True   [jets 3.8s]
+  [True] n=3: test base is generic (non-normal coordinates, nabla Ric != 0, Ric not Einstein)
+  [True] n=3 sig=(2, 1) Z2 (lam, cH, cV) = symbolic: Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=3 sig=(2, 1) Z1 (lam, cH, cV) = symbolic: Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [19.1s]
+  n=4 sig=(1, 3) (dim Y = 14): Gamma_g(0) != 0 True, Ric_g(0) not prop. to g True, nabla Ric_g(0) != 0 True, Ric routes agree True   [jets 2.1s]
+  [True] n=4: test base is generic (non-normal coordinates, nabla Ric != 0, Ric not Einstein)
+  [True] n=4 sig=(1, 3) Z2 (lam, cH, cV) = ('1/2', '1', '1'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=4 sig=(1, 3) Z1 (lam, cH, cV) = ('1/2', '1', '1'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [3.6s]
+  [True] n=4 sig=(1, 3) Z2 (lam, cH, cV) = ('2/7', '-5/3', '3/4'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=4 sig=(1, 3) Z1 (lam, cH, cV) = ('2/7', '-5/3', '3/4'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [3.0s]
+  n=4 sig=(2, 2) (dim Y = 14): Gamma_g(0) != 0 True, Ric_g(0) not prop. to g True, nabla Ric_g(0) != 0 True, Ric routes agree True   [jets 2.2s]
+  [True] n=4: test base is generic (non-normal coordinates, nabla Ric != 0, Ric not Einstein)
+  [True] n=4 sig=(2, 2) Z2 (lam, cH, cV) = ('1', '3/2', '-2/3'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=4 sig=(2, 2) Z1 (lam, cH, cV) = ('1', '3/2', '-2/3'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [3.1s]
+  [True] n=4 sig=(2, 2) Z2 (lam, cH, cV) = ('-3/5', '2', '5/2'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=4 sig=(2, 2) Z1 (lam, cH, cV) = ('-3/5', '2', '5/2'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [2.7s]
+  n=4 sig=(4, 0) (dim Y = 14): Gamma_g(0) != 0 True, Ric_g(0) not prop. to g True, nabla Ric_g(0) != 0 True, Ric routes agree True   [jets 2.7s]
+  [True] n=4: test base is generic (non-normal coordinates, nabla Ric != 0, Ric not Einstein)
+  [True] n=4 sig=(4, 0) Z2 (lam, cH, cV) = ('1/5', '7/4', '-1/3'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=4 sig=(4, 0) Z1 (lam, cH, cV) = ('1/5', '7/4', '-1/3'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [3.1s]
+  [True] n=4 sig=(4, 0) Z2 (lam, cH, cV) = ('3/8', '-1/2', '-4/5'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=4 sig=(4, 0) Z1 (lam, cH, cV) = ('3/8', '-1/2', '-4/5'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [3.2s]
+  n=5 sig=(5, 0) (dim Y = 20): Gamma_g(0) != 0 True, Ric_g(0) not prop. to g True, nabla Ric_g(0) != 0 True, Ric routes agree True   [jets 11.6s]
+  [True] n=5: test base is generic (non-normal coordinates, nabla Ric != 0, Ric not Einstein)
+  [True] n=5 sig=(5, 0) Z2 (lam, cH, cV) = ('1/2', '1', '1'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=5 sig=(5, 0) Z1 (lam, cH, cV) = ('1/2', '1', '1'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [11.7s]
+  [True] n=5 sig=(5, 0) Z2 (lam, cH, cV) = ('2/7', '-5/3', '3/4'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=5 sig=(5, 0) Z1 (lam, cH, cV) = ('2/7', '-5/3', '3/4'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [13.1s]
+  n=5 sig=(3, 2) (dim Y = 20): Gamma_g(0) != 0 True, Ric_g(0) not prop. to g True, nabla Ric_g(0) != 0 True, Ric routes agree True   [jets 11.4s]
+  [True] n=5: test base is generic (non-normal coordinates, nabla Ric != 0, Ric not Einstein)
+  [True] n=5 sig=(3, 2) Z2 (lam, cH, cV) = ('1', '3/2', '-2/3'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=5 sig=(3, 2) Z1 (lam, cH, cV) = ('1', '3/2', '-2/3'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [10.2s]
+  [True] n=5 sig=(3, 2) Z2 (lam, cH, cV) = ('-3/5', '2', '5/2'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=5 sig=(3, 2) Z1 (lam, cH, cV) = ('-3/5', '2', '5/2'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [10.3s]
+  n=6 sig=(5, 1) (dim Y = 27): Gamma_g(0) != 0 True, Ric_g(0) not prop. to g True, nabla Ric_g(0) != 0 True, Ric routes agree True   [jets 44.4s]
+  [True] n=6: test base is generic (non-normal coordinates, nabla Ric != 0, Ric not Einstein)
+  [True] n=6 sig=(5, 1) Z2 (lam, cH, cV) = ('1/5', '7/4', '-1/3'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=6 sig=(5, 1) Z1 (lam, cH, cV) = ('1/5', '7/4', '-1/3'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [33.1s]
+  [True] n=6 sig=(5, 1) Z2 (lam, cH, cV) = ('3/8', '-1/2', '-4/5'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=6 sig=(5, 1) Z1 (lam, cH, cV) = ('3/8', '-1/2', '-4/5'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [32.0s]
+  n=6 sig=(3, 3) (dim Y = 27): Gamma_g(0) != 0 True, Ric_g(0) not prop. to g True, nabla Ric_g(0) != 0 True, Ric routes agree True   [jets 45.4s]
+  [True] n=6: test base is generic (non-normal coordinates, nabla Ric != 0, Ric not Einstein)
+  [True] n=6 sig=(3, 3) Z2 (lam, cH, cV) = ('1/2', '1', '1'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=6 sig=(3, 3) Z1 (lam, cH, cV) = ('1/2', '1', '1'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [33.0s]
+  [True] n=6 sig=(3, 3) Z2 (lam, cH, cV) = ('2/7', '-5/3', '3/4'): Ric_HH == Ric_g True; Ric_HV == 0 True; Ric_VV == -(n/4) G_1/n True
+  [True] n=6 sig=(3, 3) Z1 (lam, cH, cV) = ('2/7', '-5/3', '3/4'): Ric_HH - Ric_g == cH/(4cV(n lam-1)) g True; Ric_HV == 0 True; Ric_VV == -((n+1)/4) G_1/(n+1) True
+  [True]       chain: Ric(Z1) - Ric(Z2) == K1 formula on brute-force nabla delta, nabla^2 delta   [35.1s]
+
+K5  the flat model of the F4(c) sketch, cH y dx^2 + cV G_lam(dy, dy), at a point y0 off the section of eta:
+    Ric_{mu nu} = cH/(4 cV (n lam - 1)) y0, Ric_{mu A} = 0, Ric_AB = -(n/4) G_1/n|y0 - (1/4) G_0|y0 (coordinates).
+  [True] n=3 sig(y0)=(2, 1), y0 != eta: HH True, HV True, VV True   [7.3s]
+  [True] n=4 sig(y0)=(1, 3), y0 != eta: HH True, HV True, VV True   [2.3s]
+
+Summary
+  K4 brute force: 36 of 36 (n, signature, variant, parameters) cases pass; n covered: [2, 3, 4, 5, 6]
+  all 94 checks pass: True
+
+Total time 479.5s

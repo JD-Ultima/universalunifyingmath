@@ -1,0 +1,45 @@
+result: "K. Ricci blocks of the Zorro metric Z1 along the section for every n: a complete proof of Theorem F4(c)"
+claim_id: [GU-054, GU-006, GU-021]
+gaps: [GU-G14]
+writeup: formalization/geometric-unity/K-z1-ricci-general-n.md (Lemmas K1, K2, K3, Theorem K, Corollary K4)
+code: [computation/geometric-unity/K_z1_ricci.py, computation/geometric-unity/K_z1_ricci.out]
+formalization_status: >
+  Formalized under reconstruction R-Z of F (Levi-Civita splitting of Y = Met(X) -> X, DeWitt fibre metric
+  cV G_lambda, Z1 = cH y(pi_*, pi_*) + cV G_lambda(Dy, Dy) and Z2 = cH g(pi_*, pi_*) + cV G_lambda(Dy, Dy)), for every
+  n >= 1, every signature of g, every lambda != 1/n and every cH, cV != 0. Write Z1 = Z2 + delta,
+  delta = cH (y - g)(pi_*, pi_*), which vanishes on s(X). The proof has three steps. (K1) At a zero of delta,
+  Ric(h + delta) - Ric(h) is an exact universal expression: linear in nabla^2 delta, plus quadratic in nabla delta
+  (eight terms, signs stated). (K2) Along s(X), for nabla = nabla^{Z2} and any curved base, the only non-zero
+  components are (nabla_U delta)(X,Y) = cH U(X,Y) and (nabla^2_{U,W} delta)(X,Y) = (cH/2)(U g^-1 W + W g^-1 U)(X,Y).
+  This uses T = 0 and A|s(X) = 0 of F3, through nabla pi_* = 0 and nabla K at s(X). (K3) The algebra, for every n.
+internal_consistency: >
+  The script imports no repository code. Its curvature routine (controls: spheres and hyperbolic spaces; two
+  independent routes to Ric_g(0)), its jets of Z1/Z2 and its diagram calculus are written from the definitions.
+  The general-n diagram evaluation agrees with explicit tensor evaluation at n = 1..4. The trace of the proven blocks
+  reproduces F4(b) for symbolic n, and the Christoffel difference reproduces II of F4(a). Theorem F6's Z1 condition
+  (lambda = 1/(n+1), Ric(g) = 0, kappa = -(n+1)/(4 cV)) follows symbolically. Brute force: the Ricci tensors of Z1 and
+  Z2 at a point of s(X), from the exact 2-jet of the metric on Y (dim 5 to 27), equal the F4(c) and F3 closed forms
+  for n = 2..6. The brute-force difference Ric(Z1) - Ric(Z2) equals the K1 formula on the brute-force jets of delta.
+  No discrepancy with F4 as stated.
+proof_status: >
+  Proven: Lemma K1 (difference-tensor computation; exact check on random 2-jets, m = 2..5). Lemma K2 (O'Neill
+  identities plus F3's T = 0 and A|s(X) = 0; exact check on curved bases n = 2, 3, 4 with symbolic lambda, cH, cV).
+  Lemma K3 (Sherman-Morrison identities and a term-by-term table; exact symbolic-n strand-diagram evaluation; HV
+  block by the isotropy element -1 in O(g)). Theorem K = F4(c) for every n. Corollary K4: Lambda_P (Z1) of Cor. F5
+  and the Z1 half of Theorem F6, for every n. The Z1 statements downstream that inherited the status of F4(c)
+  (I2.1 and I7 in Z1, J3-J4 in Z1) now have that input proven.
+novelty: >
+  Within this audit, this closes the general-n gap of F4(c). The sketch is completed in three places: the curved-base
+  jets of delta, including the vanishing mixed components; why the flat model gives the general answer (the jets
+  of delta at s(X) depend on g only through g_x, since A = 0 there); and the HV block (Phi is not a Z1-isometry; the
+  argument is parity of the data). The method (difference tensor at a zero of delta plus the Brauer calculus) is
+  standard. The result is not in the source.
+reproducibility: "Exact; fixed seed random.Random(20261030); 480 s (8 min) on one core, re-run identical apart from timing annotations (433 s); imports no repository code."
+empirical_testability: >
+  None new. The 4D cosmological terms of F5 (Z1) are unchanged; they are now proven for every n rather than
+  verified for n <= 5.
+dependencies: ["F2", "F3", "F4(a)", "F4(b) (consistency only)", "L-F1 (O'Neill)", "Prop. F1 (fibre Ricci, via F3)"]
+confidence: >
+  High: a complete proof whose steps are each checked exactly, plus an independent brute-force check for n = 2..6 in
+  two or three signatures each. Not covered: Ric(Z1) off s(X) (the argument needs A = 0, true only on s(X)) and
+  derivatives of Ric along s(X).

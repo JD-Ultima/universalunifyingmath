@@ -17,7 +17,7 @@ internal_consistency: >
 proof_status: >
   Proven: Lemma F0, Props F1-F2, Theorem F3 (Z2, O'Neill), Theorem F4(a)(b) (Z1; Gauss + Walczak), Cor F5,
   Theorem F6, Prop F7 (explicit Kaluza-Klein isometry with SL(n+1)/SO). Theorem F4(c) (Z1 Ricci blocks): proven
-  for n = 1, 2; exact verification for n = 3, 4, 5 on random metrics; general-n proof sketch.
+  for every n (K-z1-ricci-general-n.md, Theorem K, 2026-10-30); exact checks for n = 1, ..., 6.
   Prop F8 (link to the draft's Upsilon): conditional on reconstruction R-S / Theorem C5; constants open.
 novelty: >
   Z2 results are an application of O'Neill's formulas. The Z1 results (lambda-dependent cosmological terms,

@@ -158,13 +158,13 @@ $$\mathrm{Ric}^Y_{HH}=\mathrm{Ric}_g+\frac{c_H}{4c_V(n\lambda-1)}\,g,\qquad \mat
   - $s_{HV}=\mathrm{div}\,H_H-|\mathrm{II}|^2+|H_H|^2$ (L-F3, with $h_V=H_V=T_V=0$ and $T_H=A=0$ on $s(X)$).
   - The horizontal mean-curvature field is $H_H=-E/(2c_V(1-n\lambda))$ everywhere on $Y$, where $E=y\,\partial_y$ is the Euler field. Then $\mathrm{div}\,E=n/2$, because the volume density is homogeneous of degree $n/2-N$ in $y$.
   - Finally $|H|^2=n/(4c_V(1-n\lambda))$ and $|\mathrm{II}|^2=(N+n\mu)/(4c_V)$.
-- (c), sketch:
+- (c), sketch (completed to a proof for every $n$ in `K-z1-ricci-general-n.md`, Theorem K, 2026-10-30):
   - Write $\mathrm{Z1}=\mathrm{Z2}+\delta$, $\delta=c_H(y-g)(\pi_*,\pi_*)$, which vanishes on $s(X)$.
   - On $s(X)$ the only non-zero parts of $\nabla\delta$ and $\nabla^2\delta$ are $(\nabla_U\delta)=c_HU$ and $\nabla^2_{U,V}\delta=\tfrac{c_H}2(Ug^{-1}V+Vg^{-1}U)$. These use the fiber Levi-Civita connection, which is $\lambda$-independent by Prop. F1(2).
   - So the corrections to Theorem F3 are algebraic in $g$. They can be computed in the flat model $c_Hy\,dx^2+c_VG_\lambda(dy,dy)$, where L-F1 applied to the submersion $(x,y)\mapsto y$ (flat fibers, $A=0$) gives $\mathrm{Ric}_{\mu\nu}=-\tfrac12\Delta h+\tfrac12(\partial h\,h^{-1}\partial h)-\tfrac14\partial\log|\det h|\cdot\partial h=\frac{c_H}{4c_V(n\lambda-1)}y$ and $\mathrm{Ric}_{AB}^{\rm mixed}=-\tfrac12\mathrm{tr}(h^{-1}\nabla^2_{AB}h)+\tfrac14\mathrm{tr}(h^{-1}\partial_Ah\,h^{-1}\partial_Bh)=-\tfrac14G_0$.
   - $\mathrm{Ric}_{HV}=0$ by parity under $\Phi$ ($\nabla\delta$ is odd). ∎
 
-Status: (a) and (b) are proven. (c) is proven for $n=2$ (R2: symbolic, for every metric) and $n=1$ (E1: the hyperbolic plane, $K=-1/(4c_V(1-\lambda))$). For $n=3,4,5$ it is verified exactly on random metrics in every tested signature (R3); the general-$n$ argument is the sketch above.
+Status: (a) and (b) are proven. (c) is proven for $n=2$ (R2: symbolic, for every metric) and $n=1$ (E1: the hyperbolic plane, $K=-1/(4c_V(1-\lambda))$). For $n=3,4,5$ it is verified exactly on random metrics in every tested signature (R3). (Updated 2026-10-30: (c) is now proven for every $n$, every signature and every $\lambda\neq1/n$ in K (Theorem K), which completes the sketch above; K4 adds independent exact checks for $n=2,\dots,6$.)
 
 **Corollary F5 (4D equations: $\lambda$- and route-dependence; R5).** Both (P) and (A) give the 4D vacuum Einstein equation with a cosmological term, $G(g)+\Lambda g=0$:
 
@@ -220,7 +220,7 @@ Status: steps 1 and 3 follow from F3–F6 together with C5. Step 2 is a derivati
 | Item | Status |
 |---|---|
 | Lemma F0, Prop. F1, Prop. F2, Theorem F3 (Z2), Theorem F4(a)(b), Cor. F5 for Z2 and for $\Lambda_A$ (Z1), Prop. F7 | **Proven** (with L-F1…L-F6), each also checked exactly |
-| Theorem F4(c) (Z1 Ricci blocks); hence $\Lambda_P$ (Z1) and the Z1 half of Theorem F6 | Proven for $n=1,2$; exact verification for $n=3,4,5$ (R3) and, for F6, on a Weyl base at $n=4$ (E2); general-$n$ sketch. The Z2 half of F6 (never Einstein) is proven. |
+| Theorem F4(c) (Z1 Ricci blocks); hence $\Lambda_P$ (Z1) and the Z1 half of Theorem F6 | **Proven** for every $n$ (K, Theorem K and Cor. K4; 2026-10-30). Exact checks: R2, E1, R3, K4 ($n=2,\dots,6$) and, for F6, a Weyl base at $n=4$ (E2). The Z2 half of F6 (never Einstein) is proven. |
 | Prop. F8 (link to (9.7)–(9.10)) | **Conditional** on R-S/C5; constants $\alpha,\beta$ open |
 | Conjecture F9 | Conjectured |
 | Which horizontal metric (Z1 vs Z2), $\lambda$, $c_V/c_H$, readout (P)/(A)/(E), domain of $\Upsilon=0$ | **Undefined in the draft**. The text favours Z1 (a3, a6, a8, a13, a17). |

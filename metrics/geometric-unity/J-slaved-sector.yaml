@@ -32,8 +32,8 @@ proof_status: >
   matrix, including the general-a closed form J4(c'); exact sample solutions; the (14,0) ranges of J4(d') for Shiab# by
   a completed square plus the real structure, with exact configurations at and below the a = 0 bound);
   J5 (proof: parallel ds in Z2, Schur, O'Neill; definite signature; constant-curvature leaf test for bases (4,0),
-  (1,3), (2,2)). Z1 statements inherit the status of F4(c)
-  (proven n = 1, 2; exact verification n = 3, 4, 5; general-n sketch).
+  (1,3), (2,2)). Z1 statements use F4(c), proven for every n
+  (K-z1-ricci-general-n.md).
 novelty: >
   New within this audit: once T_e != 0 the twist enters the reduced odd equation, through the principal (Hessian)
   coefficient matrix H = -l M^-1 S of the two scalars (rank 2 for Shiab#, rank 1 for W_A), the O(1/kappa^2) gradient

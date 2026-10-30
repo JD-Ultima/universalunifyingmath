@@ -10,7 +10,7 @@
 
 For each framework the repository reconstructs the strongest precise mathematics the sources support, proves or refutes what can be decided, and states plainly what remains open. Mathematical validity and physical validity are graded separately. Every number in the write-ups is printed by a committed script, or checked by Lean, or cited.
 
-> **Status (2026-10-30).** Working research repository. Most results have been through internal referee rounds ([`reports/reviews/`](reports/reviews/)) but **not external peer review**. Not yet refereed: compendium round 7 (Lean table rows) and the mechanical trial-factor space (F-CT-4 E). Corrections are logged in [`reports/CORRECTIONS.md`](reports/CORRECTIONS.md).
+> **Status (2026-10-30).** Working research repository. Most results have been through internal referee rounds ([`reports/reviews/`](reports/reviews/)) but **not external peer review**. Not yet refereed: compendium round 7 (Lean table rows), the mechanical trial-factor space (F-CT-4 E), and the general-$n$ proof of GU Theorem F4(c) (K). Corrections are logged in [`reports/CORRECTIONS.md`](reports/CORRECTIONS.md).
 
 ---
 

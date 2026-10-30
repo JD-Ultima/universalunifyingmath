@@ -71,7 +71,7 @@ Exact check (output §I2): $Q_t(T_e)_{\rm ev}=Q_t(T_o)_{\rm ev}=0$ and $2B_t(T_e
 *Corollary I2.1.* Let $\kappa\neq0$ and $(x_1,x_{13})\neq0$ (true for every elliptic member, H6.2). Let $\mathcal C:=\{(x,e^\sigma g(x)):x\in X,\ \sigma\in\mathbb R\}$ be the fibre-scaling cone through $s(X)$. It contains $s(X)$ and is unbounded in every fibre. Then, in Z1 or Z2, no solution has $T_o\equiv0$ on an open set $U$ meeting $\mathcal C$.
 
 *Proof.* With $T_o=0$ the even equation gives $\kappa{*}T_e=0$, so $T=0$. Then $\Upsilon=\circledast F_0={*}(x_1G\otimes\gamma+x_{13}G\otimes\gamma\Gamma)=0$ (D3.2, where $W_A$ has $x_1=-1$) forces $G(g_\aleph)=0$ on $U$. But $G(g_\aleph)\neq0$ on $\mathcal C$:
-- On $s(X)$ this is F6, which holds for every $g,\lambda,c$. In Z1, F6 rests on F4(c), which F.4 grades "proven for $n=1,2$; exact verification for $n=3,4,5$; general-$n$ sketch". I2.1 in Z1 inherits that status. The Z2 half of F6 is proven.
+- On $s(X)$ this is F6, which holds for every $g,\lambda,c$. In Z1, F6 rests on F4(c), now proven for every $n$ (K, Cor. K4(b); before 2026-10-30 graded "proven for $n=1,2$; exact verification for $n=3,4,5$; general-$n$ sketch"). The Z2 half of F6 is proven.
 - In Z2, $\varphi_\sigma(y)=e^\sigma y$ is an isometry, since $G_\lambda|_y(Dy,Dy)$ is scale invariant and the horizontal block is $c_Hg(x)$.
 - In Z1, $\varphi_\sigma(s(X))$ is the section of the base metric $e^\sigma g$. That metric has the same $\aleph$, hence the same $g_\aleph$ (F2.4), so F6 applies to it. ∎
 
@@ -222,9 +222,9 @@ This is the algebraic part of (P): 4D Einstein + $\Lambda_P$ plus a **displaceme
   - and a choice among (P), (A), (E).
   The draft supplies neither.
 - **Scope of G.2.5 (logged in `reports/CORRECTIONS.md`).** G.2.5 says $T$ "cannot vanish on any open set". The argument it cites (F6) gives $G(g_\aleph)\ne0$ only on $s(X)$, and nothing in the repo shows $G(g_\aleph)\neq0$ on all of $Y$.
-  - Corollary I2.1 proves the statement for open sets meeting the scaling cone $\mathcal C\supset s(X)$, with $T_o$ in place of $T$. In Z1 it carries the status of F4(c) (see its proof).
+  - Corollary I2.1 proves the statement for open sets meeting the scaling cone $\mathcal C\supset s(X)$, with $T_o$ in place of $T$. In Z1 it uses F4(c), proven for every $n$ in K.
   - That scope still excludes compact support along the fibres, so G.2.5's conclusion is unaffected.
-  - *Remark (2026-10-30, hypothesis: $X$ connected and $g$ real-analytic).* Then G.2.5's "any open set" holds as printed, with $T_o$ in place of $T$. In Z1 and in Z2, $g_\aleph$ is real-analytic on $Y$, since $y^{-1}$, $D$ and the Christoffel symbols of $g$ are. $Y=\mathrm{Met}_{(p,q)}(X)$ is connected, because $O(p,q)$ meets both components of $GL(4)$. So $G(g_\aleph)$ cannot vanish on an open set without vanishing on all of $Y$, including $s(X)$, which contradicts F6. The proof of I2.1 then gives $T_o\not\equiv0$ on every open set (under I2.1's hypotheses, and in Z1 with the status of F4(c)). For smooth non-analytic $g$ the scope remains that of I2.1.
+  - *Remark (2026-10-30, hypothesis: $X$ connected and $g$ real-analytic).* Then G.2.5's "any open set" holds as printed, with $T_o$ in place of $T$. In Z1 and in Z2, $g_\aleph$ is real-analytic on $Y$, since $y^{-1}$, $D$ and the Christoffel symbols of $g$ are. $Y=\mathrm{Met}_{(p,q)}(X)$ is connected, because $O(p,q)$ meets both components of $GL(4)$. So $G(g_\aleph)$ cannot vanish on an open set without vanishing on all of $Y$, including $s(X)$, which contradicts F6. The proof of I2.1 then gives $T_o\not\equiv0$ on every open set (under I2.1's hypotheses; in Z1 via F4(c), proven in K). For smooth non-analytic $g$ the scope remains that of I2.1.
 
 ## I.4 Consequences for gaps and claims
 

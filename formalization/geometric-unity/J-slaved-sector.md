@@ -240,7 +240,7 @@ The review left the full Z1 range open; it is settled here for $\circledast_\sha
   - The (14,0) range of J4(d′) for members other than $\circledast_\sharp$ (it uses $y=w=0$), and the J3(b), (c) conclusions for members with $xz\pm yw=0$ other than $W_A$.
   - A classification of the solutions of the 4D system of J3(a). For $\circledast_\sharp$ its γΓ-channel has no curvature term, and its traceless part makes a nonconstant scalar concircular after reparametrisation, unless its reduced Hessian coefficient vanishes. Not analysed further.
   - Reading (A); the signatures (8,6), (10,4) of the F6 case; the ℷ-variation.
-  - In Z1 every statement inherits the status of F4(c) (proven $n=1,2$; exact verification $n=3,4,5$; general-$n$ sketch).
+  - In Z1 every statement uses F4(c), which is now proven for every $n$ (`K-z1-ricci-general-n.md`, 2026-10-30).
 - **Precise statements replacing I.3's "not covered: slaved $T_e\neq0$".**
   1. The twist changes the reduced odd equation once $T_e\neq0$ (Cor. J2.1), but not its zeroth-order part.
   2. Reading (E) at the points of $s(X)$ no longer obstructs (7,7) and no longer fixes $\Lambda_4$ (J4). With free second normal derivatives it is as underdetermined as (P).

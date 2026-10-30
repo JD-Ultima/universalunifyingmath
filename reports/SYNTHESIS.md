@@ -1,6 +1,6 @@
 # Synthesis: three unification frameworks, graded
 
-Status as of 2026-10-30. Phase 1 is complete. Phase 2 has finished six rounds on GU, seven on the Chain Theory compendium, two on the α Letter's weight law (CT-G01) and a mechanical trial-factor space (F-CT-4 E). Each was followed by a referee pass (`reports/reviews/`), except compendium round 7 and F-CT-4 E, which are not yet refereed. The detailed reports, which this page only summarises, are:
+Status as of 2026-10-30. Phase 1 is complete. Phase 2 has finished six rounds on GU, seven on the Chain Theory compendium, two on the α Letter's weight law (CT-G01) and a mechanical trial-factor space (F-CT-4 E). Each was followed by a referee pass (`reports/reviews/`), except compendium round 7, F-CT-4 E and the general-$n$ proof of GU Theorem F4(c) (`K-z1-ricci-general-n.md`), which are not yet refereed. The detailed reports, which this page only summarises, are:
 
 - `reports/chain-theory-alpha.md`
 - `reports/chain-theory-compendium.md`
