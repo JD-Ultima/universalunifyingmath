@@ -11,18 +11,37 @@ by an exact LDL^T (Sylvester) elimination; the two must agree.
 """
 import itertools
 import random
+from fractions import Fraction
 import sympy as sp
 
 lam = sp.Symbol('lambda', real=True)
 
 
 # ---------------------------------------------------------------- linear algebra helpers
-def inertia_descartes(M):
-    """(n_plus, n_minus, n_zero) of a real symmetric matrix via Descartes on charpoly."""
-    x = sp.Symbol('x')
-    p = sp.Poly(M.charpoly(x).as_expr(), x)
-    coeffs = p.all_coeffs()            # highest degree first
-    # strip factors of x (zero eigenvalues)
+# Numeric (lambda given) matrices are lists of lists of fractions.Fraction: exact and fast.
+def to_frac(M):
+    return [[Fraction(int(sp.numer(x)), int(sp.denom(x))) for x in row] for row in M.tolist()]
+
+
+def charpoly_frac(A):
+    """Exact characteristic polynomial coefficients [1, c1, ..., cn] of det(xI - A)
+    by the Faddeev-LeVerrier recursion (exact over Q)."""
+    n = len(A)
+    I = [[Fraction(int(i == j)) for j in range(n)] for i in range(n)]
+    M = [row[:] for row in I]
+    coeffs = [Fraction(1)]
+    for k in range(1, n + 1):
+        AM = [[sum(A[i][l] * M[l][j] for l in range(n)) for j in range(n)] for i in range(n)]
+        c = -sum(AM[i][i] for i in range(n)) / k
+        coeffs.append(c)
+        M = [[AM[i][j] + (c if i == j else 0) for j in range(n)] for i in range(n)]
+    return coeffs
+
+
+def inertia_descartes(A):
+    """(n_plus, n_minus, n_zero) via Descartes' rule on the characteristic polynomial;
+    exact because a real symmetric matrix has only real eigenvalues (lemma L-A3)."""
+    coeffs = charpoly_frac(A)
     n0 = 0
     while coeffs and coeffs[-1] == 0:
         coeffs.pop()
@@ -31,44 +50,42 @@ def inertia_descartes(M):
     def sign_changes(cs):
         cs = [c for c in cs if c != 0]
         return sum(1 for a, b in zip(cs, cs[1:]) if (a > 0) != (b > 0))
-    npos = sign_changes(coeffs)
     deg = len(coeffs) - 1
-    neg_coeffs = [c * (-1) ** (deg - i) for i, c in enumerate(coeffs)]
-    nneg = sign_changes(neg_coeffs)
-    assert npos + nneg + n0 == M.shape[0]
+    npos = sign_changes(coeffs)
+    nneg = sign_changes([c * (-1) ** (deg - i) for i, c in enumerate(coeffs)])
+    assert npos + nneg + n0 == len(A)
     return npos, nneg, n0
 
 
-def inertia_ldl(M):
-    """Exact Sylvester inertia by symmetric elimination with 2x2 handling of zero pivots."""
-    A = sp.Matrix(M)
-    n = A.shape[0]
+def inertia_ldl(A):
+    """Exact Sylvester inertia by symmetric (congruence) elimination."""
+    A = [row[:] for row in A]
+    n = len(A)
     pos = neg = zero = 0
     idx = list(range(n))
     while idx:
-        # choose a nonzero diagonal pivot
-        piv = next((i for i in idx if A[i, i] != 0), None)
+        piv = next((i for i in idx if A[i][i] != 0), None)
         if piv is not None:
-            d = A[piv, piv]
-            pos += int(bool(d > 0))
-            neg += int(bool(d < 0))
+            d = A[piv][piv]
+            pos += d > 0
+            neg += d < 0
             rest = [j for j in idx if j != piv]
             for i in rest:
-                for j in rest:
-                    A[i, j] = A[i, j] - A[i, piv] * A[piv, j] / d
+                f = A[i][piv] / d
+                if f:
+                    for j in rest:
+                        A[i][j] -= f * A[piv][j]
             idx = rest
             continue
-        # all diagonal entries zero: find an off-diagonal nonzero; 2x2 block [[0,b],[b,0]] -> (+1,-1)
-        pair = next(((i, j) for i in idx for j in idx if i < j and A[i, j] != 0), None)
+        pair = next(((i, j) for i in idx for j in idx if i < j and A[i][j] != 0), None)
         if pair is None:
             zero += len(idx)
             break
-        i, j = pair
-        # change basis e_i -> e_i + e_j makes diagonal entry 2*A[i,j] != 0
+        i, j = pair      # congruence e_i -> e_i + e_j makes the (i,i) entry 2 A[i][j] != 0
         for k in range(n):
-            A[i, k] = A[i, k] + A[j, k]
+            A[i][k] += A[j][k]
         for k in range(n):
-            A[k, i] = A[k, i] + A[k, j]
+            A[k][i] += A[k][j]
     return pos, neg, zero
 
 
@@ -96,6 +113,48 @@ def dewitt_gram(g, lam_val):
             v = (gi * B[a] * gi * B[b]).trace() - lam_val * (gi * B[a]).trace() * (gi * B[b]).trace()
             G[a, b] = G[b, a] = sp.nsimplify(v) if not isinstance(lam_val, sp.Symbol) else sp.expand(v)
     return G
+
+
+def dewitt_gram_frac(g, lam_val):
+    """Exact Fraction Gram matrix of G_lam for a numeric (sympy-integer) metric g."""
+    gi = to_frac(g.inv())
+    n = len(gi)
+    lamf = Fraction(int(sp.numer(lam_val)), int(sp.denom(lam_val)))
+    pairs = [(i, j) for i in range(n) for j in range(i, n)]
+
+    def mat(i, j):
+        E = [[Fraction(0)] * n for _ in range(n)]
+        E[i][j] = Fraction(1)
+        E[j][i] = Fraction(1)
+        return E
+
+    def mul(X, Y):
+        return [[sum(X[a][c] * Y[c][b] for c in range(n)) for b in range(n)] for a in range(n)]
+    GE = [mul(gi, mat(i, j)) for (i, j) in pairs]
+    trs = [sum(X[a][a] for a in range(n)) for X in GE]
+    N = len(pairs)
+    G = [[Fraction(0)] * N for _ in range(N)]
+    for a in range(N):
+        for b in range(a, N):
+            v = sum(GE[a][r][s] * GE[b][s][r] for r in range(n) for s in range(n)) - lamf * trs[a] * trs[b]
+            G[a][b] = G[b][a] = v
+    return G
+
+
+def block_diag(*blocks):
+    N = sum(len(b) for b in blocks)
+    M = [[Fraction(0)] * N for _ in range(N)]
+    o = 0
+    for b in blocks:
+        for i in range(len(b)):
+            for j in range(len(b)):
+                M[o + i][o + j] = b[i][j]
+        o += len(b)
+    return M
+
+
+def scal(c, M):
+    return [[c * x for x in row] for row in M]
 
 
 def eta(p, q):
@@ -136,7 +195,7 @@ def main():
                         if A.det() != 0:
                             break
                     g = A.T * eta(p, q) * A
-                G = dewitt_gram(g, lv)
+                G = dewitt_gram_frac(g, lv)
                 i1 = inertia_descartes(G)
                 i2 = inertia_ldl(G)
                 assert i1 == i2, (p, q, lv, i1, i2)
@@ -185,7 +244,7 @@ def main():
     for (p, q, lv, sV, sH) in [(1, 3, sp.Rational(1), 1, 1), (3, 1, sp.Rational(1), 1, -1),
                                (1, 3, sp.Rational(0), 1, 1), (4, 0, sp.Rational(1), 1, -1)]:
         g = eta(p, q)
-        GC = sp.diag(sV * dewitt_gram(g, lv), sH * g.inv())
+        GC = block_diag(scal(sV, dewitt_gram_frac(g, lv)), scal(sH, to_frac(g.inv())))
         print(f"  base ({p},{q}) lambda={lv} sV={sV:+d} sH={sH:+d}: inertia {inertia_ldl(GC)}")
     sevens = [r for r in rows if r[6] == (7, 7)]
     print("\nall (7,7) cases for n=4 with base in {(1,3),(3,1),(4,0)}:")
@@ -212,7 +271,7 @@ def main():
         for p in range(n + 1):
             q = n - p
             for lv, regime in [(sp.Rational(0), '<'), (sp.Rational(1), '>')]:
-                G = dewitt_gram(eta(p, q), lv)
+                G = dewitt_gram_frac(eta(p, q), lv)
                 assert inertia_ldl(G) == closed_form_fiber(p, q, regime) + (0,), (p, q, lv)
         print(f"  n={n}: all {n+1} signatures OK")
 
@@ -220,7 +279,7 @@ def main():
     for (i, n) in [(1, 4), (0, 4), (2, 4)]:
         src = (i * n - i * i, (n * n + 2 * i * i - 2 * i * n + n - 2) // 2)
         p, q = i, n - i
-        G = dewitt_gram(eta(p, q), sp.Rational(0))
+        G = dewitt_gram_frac(eta(p, q), sp.Rational(0))
         # traceless subspace: orthogonal complement of g in Frobenius form; Frobenius(g,g)=n>0
         pos, neg, _ = inertia_ldl(G)
         ours_traceless = (pos - 1, neg)     # trace direction is Frobenius-positive

@@ -6,3 +6,99 @@ base (2,2): eigenvalues of Gram matrix in lambda = 1 - 4*lambda (x1), 1 (x3), 2 
 
 === A2. Exact inertia at sample lambda, diagonal and non-diagonal g, both methods ===
 base (1,3) lambda=   -3: inertia (+,-,0) = (7, 3, 0)  closed form (7, 3)  OK
+base (1,3) lambda=    0: inertia (+,-,0) = (7, 3, 0)  closed form (7, 3)  OK
+base (1,3) lambda=  1/8: inertia (+,-,0) = (7, 3, 0)  closed form (7, 3)  OK
+base (1,3) lambda=  1/4: inertia (+,-,0) = (6, 3, 1)  closed form degenerate  OK
+base (1,3) lambda= 3/10: inertia (+,-,0) = (6, 4, 0)  closed form (6, 4)  OK
+base (1,3) lambda=    1: inertia (+,-,0) = (6, 4, 0)  closed form (6, 4)  OK
+base (1,3) lambda=    7: inertia (+,-,0) = (6, 4, 0)  closed form (6, 4)  OK
+base (3,1) lambda=   -3: inertia (+,-,0) = (7, 3, 0)  closed form (7, 3)  OK
+base (3,1) lambda=    0: inertia (+,-,0) = (7, 3, 0)  closed form (7, 3)  OK
+base (3,1) lambda=  1/8: inertia (+,-,0) = (7, 3, 0)  closed form (7, 3)  OK
+base (3,1) lambda=  1/4: inertia (+,-,0) = (6, 3, 1)  closed form degenerate  OK
+base (3,1) lambda= 3/10: inertia (+,-,0) = (6, 4, 0)  closed form (6, 4)  OK
+base (3,1) lambda=    1: inertia (+,-,0) = (6, 4, 0)  closed form (6, 4)  OK
+base (3,1) lambda=    7: inertia (+,-,0) = (6, 4, 0)  closed form (6, 4)  OK
+base (4,0) lambda=   -3: inertia (+,-,0) = (10, 0, 0)  closed form (10, 0)  OK
+base (4,0) lambda=    0: inertia (+,-,0) = (10, 0, 0)  closed form (10, 0)  OK
+base (4,0) lambda=  1/8: inertia (+,-,0) = (10, 0, 0)  closed form (10, 0)  OK
+base (4,0) lambda=  1/4: inertia (+,-,0) = (9, 0, 1)  closed form degenerate  OK
+base (4,0) lambda= 3/10: inertia (+,-,0) = (9, 1, 0)  closed form (9, 1)  OK
+base (4,0) lambda=    1: inertia (+,-,0) = (9, 1, 0)  closed form (9, 1)  OK
+base (4,0) lambda=    7: inertia (+,-,0) = (9, 1, 0)  closed form (9, 1)  OK
+
+=== A3. GL(n)-invariance G_lam(A^T h A, A^T k A)|_{A^T g A} = G_lam(h,k)|_g (symbolic) ===
+difference simplifies to: 0
+invariance under g -> -g: 0
+
+=== A4. Chimeric signature on C = V (+) H*: g_C = sV*G_lam (+) sH*g^{-1}, n = 4 ===
+base (1,3) lambda<1/4 sV=+1 sH=+1: V (7, 3) + H (1, 3) = (8, 6)
+base (1,3) lambda<1/4 sV=+1 sH=-1: V (7, 3) + H (3, 1) = (10, 4)
+base (1,3) lambda<1/4 sV=-1 sH=+1: V (3, 7) + H (1, 3) = (4, 10)
+base (1,3) lambda<1/4 sV=-1 sH=-1: V (3, 7) + H (3, 1) = (6, 8)
+base (1,3) lambda>1/4 sV=+1 sH=+1: V (6, 4) + H (1, 3) = (7, 7)   <-- (7,7)
+base (1,3) lambda>1/4 sV=+1 sH=-1: V (6, 4) + H (3, 1) = (9, 5)
+base (1,3) lambda>1/4 sV=-1 sH=+1: V (4, 6) + H (1, 3) = (5, 9)
+base (1,3) lambda>1/4 sV=-1 sH=-1: V (4, 6) + H (3, 1) = (7, 7)   <-- (7,7)
+base (3,1) lambda<1/4 sV=+1 sH=+1: V (7, 3) + H (3, 1) = (10, 4)
+base (3,1) lambda<1/4 sV=+1 sH=-1: V (7, 3) + H (1, 3) = (8, 6)
+base (3,1) lambda<1/4 sV=-1 sH=+1: V (3, 7) + H (3, 1) = (6, 8)
+base (3,1) lambda<1/4 sV=-1 sH=-1: V (3, 7) + H (1, 3) = (4, 10)
+base (3,1) lambda>1/4 sV=+1 sH=+1: V (6, 4) + H (3, 1) = (9, 5)
+base (3,1) lambda>1/4 sV=+1 sH=-1: V (6, 4) + H (1, 3) = (7, 7)   <-- (7,7)
+base (3,1) lambda>1/4 sV=-1 sH=+1: V (4, 6) + H (3, 1) = (7, 7)   <-- (7,7)
+base (3,1) lambda>1/4 sV=-1 sH=-1: V (4, 6) + H (1, 3) = (5, 9)
+base (4,0) lambda<1/4 sV=+1 sH=+1: V (10, 0) + H (4, 0) = (14, 0)
+base (4,0) lambda<1/4 sV=+1 sH=-1: V (10, 0) + H (0, 4) = (10, 4)
+base (4,0) lambda<1/4 sV=-1 sH=+1: V (0, 10) + H (4, 0) = (4, 10)
+base (4,0) lambda<1/4 sV=-1 sH=-1: V (0, 10) + H (0, 4) = (0, 14)
+base (4,0) lambda>1/4 sV=+1 sH=+1: V (9, 1) + H (4, 0) = (13, 1)
+base (4,0) lambda>1/4 sV=+1 sH=-1: V (9, 1) + H (0, 4) = (9, 5)
+base (4,0) lambda>1/4 sV=-1 sH=+1: V (1, 9) + H (4, 0) = (5, 9)
+base (4,0) lambda>1/4 sV=-1 sH=-1: V (1, 9) + H (0, 4) = (1, 13)
+
+exact 14x14 cross-check:
+  base (1,3) lambda=1 sV=+1 sH=+1: inertia (7, 7, 0)
+  base (3,1) lambda=1 sV=+1 sH=-1: inertia (7, 7, 0)
+  base (1,3) lambda=0 sV=+1 sH=+1: inertia (8, 6, 0)
+  base (4,0) lambda=1 sV=+1 sH=-1: inertia (9, 5, 0)
+
+all (7,7) cases for n=4 with base in {(1,3),(3,1),(4,0)}:
+   ((1, 3), '>', 1, 1, (6, 4), (1, 3), (7, 7))
+   ((1, 3), '>', -1, -1, (4, 6), (3, 1), (7, 7))
+   ((3, 1), '>', 1, -1, (6, 4), (1, 3), (7, 7))
+   ((3, 1), '>', -1, 1, (4, 6), (3, 1), (7, 7))
+
+=== A5. Classification: all base signatures (p,q), n<=40, giving neutral chimeric signature ===
+  (p,q)=(0,1) lambda<1/n sV=+1 sH=+1 -> (1,1)
+  (p,q)=(0,1) lambda<1/n sV=-1 sH=-1 -> (1,1)
+  (p,q)=(0,1) lambda>1/n sV=+1 sH=-1 -> (1,1)
+  (p,q)=(0,1) lambda>1/n sV=-1 sH=+1 -> (1,1)
+  (p,q)=(1,0) lambda<1/n sV=+1 sH=-1 -> (1,1)
+  (p,q)=(1,0) lambda<1/n sV=-1 sH=+1 -> (1,1)
+  (p,q)=(1,0) lambda>1/n sV=+1 sH=+1 -> (1,1)
+  (p,q)=(1,0) lambda>1/n sV=-1 sH=-1 -> (1,1)
+  (p,q)=(1,3) lambda>1/n sV=+1 sH=+1 -> (7,7)
+  (p,q)=(1,3) lambda>1/n sV=-1 sH=-1 -> (7,7)
+  (p,q)=(2,2) lambda>1/n sV=+1 sH=+1 -> (7,7)
+  (p,q)=(2,2) lambda>1/n sV=+1 sH=-1 -> (7,7)
+  (p,q)=(2,2) lambda>1/n sV=-1 sH=+1 -> (7,7)
+  (p,q)=(2,2) lambda>1/n sV=-1 sH=-1 -> (7,7)
+  (p,q)=(3,1) lambda>1/n sV=+1 sH=-1 -> (7,7)
+  (p,q)=(3,1) lambda>1/n sV=-1 sH=+1 -> (7,7)
+  (p,q)=(2,3) lambda>1/n sV=+1 sH=+1 -> (10,10)
+  (p,q)=(2,3) lambda>1/n sV=-1 sH=-1 -> (10,10)
+  (p,q)=(3,2) lambda>1/n sV=+1 sH=-1 -> (10,10)
+  (p,q)=(3,2) lambda>1/n sV=-1 sH=+1 -> (10,10)
+
+exact check of closed form (Theorem A1) for all (p,q), 2<=n<=6, lambda in {0, 1}:
+  n=2: all 3 signatures OK
+  n=3: all 4 signatures OK
+  n=4: all 5 signatures OK
+  n=5: all 6 signatures OK
+  n=6: all 7 signatures OK
+
+=== A6. Source formula (3.9): traceless signature (i n - i^2, (n^2+2i^2-2in+n-2)/2) ===
+  i=1, n=4: source (first,second)=(3, 6); ours (+,-) traceless = (6, 3); source lists (minus, plus) -> match: True
+  i=0, n=4: source (first,second)=(0, 9); ours (+,-) traceless = (9, 0); source lists (minus, plus) -> match: True
+  i=2, n=4: source (first,second)=(4, 5); ours (+,-) traceless = (5, 4); source lists (minus, plus) -> match: True

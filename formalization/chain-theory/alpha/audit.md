@@ -87,6 +87,8 @@ Both conventions give a 4-dimensional stabilizer of the pair ket at $(2,3)$, so 
 | A* | the object and centre 2: 2R 2R 2U |
 | B | none |
 
+Under A*, the competing configuration's readout under the Letter's own weight law is $(30+30\sqrt2)/2304$, so $1/\text{value}=31.81$ (`algebraic.out`, row (2,2)). The numerator agrees with the Supplement's own value for 2R 2R at a shared qubit. Theorem 1 would then deliver two two-point functions, and the Photon Conjecture would need a further rule to choose between them.
+
 **Assessment.** Theorem 1 (Uniqueness) is correct under reading A. Reading A is an interpretive choice, not a consequence of the axiom. Its justification (S4, "sees no global phase of a pair" imposed over all $d_1+d_2$ directions of a direct sum) uses a space that the axiom does not supply. This is gap CT-G03/G04. The Supplement's own reported value for 2R 2R at a shared qubit, $1/\text{value}=3.535$, would then compete with the object.
 
 ## F-CT-4 Freedom (look-elsewhere) analysis
