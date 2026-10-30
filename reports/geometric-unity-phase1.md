@@ -40,3 +40,33 @@ The draft's finite-dimensional algebra is largely correct and checkable. Its ana
 5. **Optional Lean 4 formalization** of Props. C2/C3/C3′. They are pure group theory on a semidirect product with a 1-cocycle and need no analysis.
 
 Items 1–2 are well-posed now. Items 3–4 depend on 1.
+
+## Round 2 — reduction (GU-G06, GU-G14)
+
+Write-up: `formalization/geometric-unity/F-zorro-reduction.md`. Code: `computation/geometric-unity/F_{jets,fiber_curvature,zorro_reduction,zorro_einstein}.py`, outputs committed. Records: `metrics/geometric-unity/F-*.yaml`. All results are exact over $\mathbb Q(\lambda,c_H,c_V)$.
+
+**Reconstruction.** No natural horizontal distribution exists on $\mathrm{Met}(X)$ (Lemma F0), so a connection on $TX$ must be supplied, here the Levi-Civita connection $\aleph$ of $g=\gimel$. The metric on $Y$ is
+$$g_\aleph=c_H\,h_H(dx,dx)+c_V\,G_\lambda(Dy,Dy),\qquad Dy=dy-(\Gamma^Ty+y\Gamma)dx .$$
+The draft supports two horizontal metrics:
+- **Z1:** $h_H=y$, the point itself. This equals $\Theta_\aleph^*g_C$, the chimeric metric transported by the LC splitting. It is supported by (3.7), (3.15), p. 36 and p. 56.
+- **Z2:** $h_H=g$, the base metric. This is a Riemannian submersion, supported by p. 22 "pulled up from the base".
+
+**Results.**
+
+| # | Statement | Status |
+|---|---|---|
+| F1 | The fiber $(GL(n)/O(p,q),G_\lambda)$ is the symmetric space $\mathbb R\times SL(n)/SO(p,q)$. Its curvature is independent of $\lambda$: $\mathrm{Ric}_F=-\tfrac n4G_{1/n}$ and $s_F=-n(n-1)(n+2)/(8c_V)$ ($=-9/c_V$ for $n=4$). | Proven |
+| F2 | $s^*g_\aleph=c_Hg$; $s(X)$ is horizontal; $N_s=V$ isometrically. In Z1, $g_\aleph$ depends on $g$ only through $\aleph$, as the draft claims (p. 22). | Proven |
+| F3 | **Z2** along $s(X)$: $s(X)$ is totally geodesic; $\mathrm{Ric}_{HH}=\mathrm{Ric}_g$, $\mathrm{Ric}_{HV}=0$, $\mathrm{Ric}_{VV}=\mathrm{Ric}_F$; $s_Y=R/c_H+s_F$. Hence $s^*G^Y=G(g)+\Lambda g$ with $\Lambda=9c_H/(2c_V)$ ($n=4$). The reduced action gives the same $\Lambda$, independent of $\lambda$. Under $(7,7)$ this has the anti-de Sitter sign. | Proven (O'Neill) |
+| F4 | **Z1** along $s(X)$: $\mathrm{II}\neq0$ and $\propto c_H/c_V$; $\mathrm{Ric}_{HH}=\mathrm{Ric}_g+\frac{c_H}{4c_V(n\lambda-1)}g$; $\mathrm{Ric}_{VV}=-\frac{n+1}4G_{1/(n+1)}$; $s_Y=R/c_H+\sigma_1(\lambda)/c_V$. The cosmological term depends on $\lambda$ and also on the route. For $n=4$: projection gives $\Lambda_P=\frac{3c_H}{2c_V}\frac{4-15\lambda}{1-4\lambda}$ and the reduced action gives $\Lambda_A=\frac{5c_H}{4c_V}\frac{5-18\lambda}{1-4\lambda}$. | Proven ($\mathrm{II}$, $s_Y$); Ricci blocks proven for $n\le2$, exact for $n=3,4,5$ |
+| F6 | $g_\aleph$ is Einstein along $s(X)$ **iff** Z1, $\lambda=1/(n+1)$ and $\mathrm{Ric}(g)=0$. Then the 14D Einstein equation with $\Lambda_Y=-15/(2c_V)$ is exactly 4D vacuum GR. But $\lambda=\tfrac15<\tfrac14$ gives signature $(8,6)$ or $(10,4)$, not $(7,7)$. With the draft's $(7,7)$, and in Z2 for every $\lambda$, the condition never holds. It also fails off $s(X)$. For flat $\aleph$, Z1 at $\lambda=1/(n+1)$ is locally the symmetric space $SL(n+1)/SO$; for $n=4$ this is $SL(5)/SO(3,2)$ (Prop. F7). | Z2 half and F7 proven; Z1 half has the status of F4's Ricci blocks (exact for $n=4$, also on a Weyl base) |
+| F8 | Under R-S/C5, at $T_\omega=0$ the pulled-back $*\Upsilon$ is exactly $-(G+\Lambda_Pg)\otimes\gamma$, a precise version of (9.10). Still $\Upsilon\neq0$, because its vertical–vertical block is non-zero. $T_\omega=t\Phi^1$ adds a 14D cosmological term, so F6 decides solvability. | Conditional; constants open |
+
+**Verdict on GU-G14.** Under R-Z, 4D Einstein gravity with a cosmological term does arise from $Y$, in the projection and reduced-action senses. Its $\Lambda$ is fixed by the fiber geometry: $|\Lambda|\sim1/\ell_F^2$, with no small parameter. Matching the observed value needs $\ell_F\approx2\times10^{26}$ m.
+
+The answer depends on three choices the draft leaves open:
+- the horizontal metric (Z1 or Z2);
+- $\lambda$ (Z1 only);
+- the readout (projection, reduced action, or the field equation on $Y$).
+
+An exact 4D vacuum reduction exists only at $\lambda=1/(n+1)$, which is incompatible with the draft's $(7,7)$ choice. Claims: GU-006 C, GU-021 C, GU-024 V, GU-054 C (previously O).

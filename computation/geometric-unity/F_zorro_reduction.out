@@ -1,0 +1,82 @@
+F_zorro_reduction.py  (exact; coefficients in Q(lambda, cH, cV))
+
+R0  controls
+  sphere 4|dx|^2/(1 + |x|^2)^2, n=3: Ric == 1*(n-1)*g: True
+  hyperbolic 4|dx|^2/(1 - |x|^2)^2, n=3: Ric == -1*(n-1)*g: True
+
+R2  n = 2: general metric g = e^{2 phi} eta near a point (isothermal / null coordinates), phi(0) = 0,
+    phi = p_i x^i + p_ij x^i x^j / 2 + p_ijk x^i x^j x^k / 6 with all p symbolic. Full Riemann of Y^5 on s(X).
+  eta = diag(1, 1):  R(g)(0) = -2*p00 - 2*p11   (== -2 eta^ij p_ij: True)
+   Z2: s_*=horizontal lift True; s*g_aleph = cH g True; V perp H True; II == closed form True; Gauss eq. True; vertical block = fiber curvature True
+        mixed scalar sum = 0 (pred 0: True); #nonzero frame components with odd # vertical indices = 0
+        Ric_HH True, Ric_HV = 0 True, Ric_VV True, s_Y = R/cH + sigma/cV True:  s_Y = (-cH - 2*cV*p00 - 2*cV*p11)/(cH*cV)   [2.1s]
+   Z1: s_*=horizontal lift True; s*g_aleph = cH g True; V perp H True; II == closed form True; Gauss eq. True; vertical block = fiber curvature True
+        mixed scalar sum = (-4*lam + 3)/(8*lam*cV - 4*cV) (pred (-4*lam + 3)/(8*lam*cV - 4*cV): True); #nonzero frame components with odd # vertical indices = 0
+        Ric_HH True, Ric_HV = 0 True, Ric_VV True, s_Y = R/cH + sigma/cV True:  s_Y = (-12*lam*cH - 16*lam*cV*p00 - 16*lam*cV*p11 + 9*cH + 8*cV*p00 + 8*cV*p11)/(8*lam*cH*cV - 4*cH*cV)   [2.7s]
+  eta = diag(1, -1):  R(g)(0) = -2*p00 + 2*p11   (== -2 eta^ij p_ij: True)
+   Z2: s_*=horizontal lift True; s*g_aleph = cH g True; V perp H True; II == closed form True; Gauss eq. True; vertical block = fiber curvature True
+        mixed scalar sum = 0 (pred 0: True); #nonzero frame components with odd # vertical indices = 0
+        Ric_HH True, Ric_HV = 0 True, Ric_VV True, s_Y = R/cH + sigma/cV True:  s_Y = (-cH - 2*cV*p00 + 2*cV*p11)/(cH*cV)   [2.1s]
+   Z1: s_*=horizontal lift True; s*g_aleph = cH g True; V perp H True; II == closed form True; Gauss eq. True; vertical block = fiber curvature True
+        mixed scalar sum = (-4*lam + 3)/(8*lam*cV - 4*cV) (pred (-4*lam + 3)/(8*lam*cV - 4*cV): True); #nonzero frame components with odd # vertical indices = 0
+        Ric_HH True, Ric_HV = 0 True, Ric_VV True, s_Y = R/cH + sigma/cV True:  s_Y = (-12*lam*cH - 16*lam*cV*p00 + 16*lam*cV*p11 + 9*cH + 8*cV*p00 - 8*cV*p11)/(8*lam*cH*cV - 4*cH*cV)   [2.8s]
+
+R3  n = 3, 4, 5: random rational polynomial metrics (3-jets) in general coordinates; Ricci blocks on s(X)
+  n=3 sig=(3, 0) g0 non-diag Z2: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = 0*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = -15/(4*cV) True   [20.2s]
+  n=3 sig=(3, 0) g0 non-diag Z1: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = cH/(12*lam*cV - 4*cV)*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = (-15*lam + 6)/(3*lam*cV - cV) True   [20.2s]
+  n=3 sig=(2, 1) g0 non-diag Z2: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = 0*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = -15/(4*cV) True   [22.4s]
+  n=3 sig=(2, 1) g0 non-diag Z1: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = cH/(12*lam*cV - 4*cV)*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = (-15*lam + 6)/(3*lam*cV - cV) True   [22.8s]
+  n=4 sig=(1, 3) g0 non-diag Z2: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = 0*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = -9/cV True   [137.9s]
+  n=4 sig=(1, 3) g0 non-diag Z1: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = cH/(16*lam*cV - 4*cV)*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = (-90*lam + 25)/(8*lam*cV - 2*cV) True   [140.9s]
+  n=4 sig=(3, 1) g0 diag Z2: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = 0*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = -9/cV True   [53.6s]
+  n=4 sig=(3, 1) g0 diag Z1: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = cH/(16*lam*cV - 4*cV)*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = (-90*lam + 25)/(8*lam*cV - 2*cV) True   [52.9s]
+  n=4 sig=(4, 0) g0 non-diag Z2: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = 0*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = -9/cV True   [139.9s]
+  n=4 sig=(4, 0) g0 non-diag Z1: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = cH/(16*lam*cV - 4*cV)*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = (-90*lam + 25)/(8*lam*cV - 2*cV) True   [146.2s]
+  n=4 sig=(2, 2) g0 diag Z2: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = 0*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = -9/cV True   [46.1s]
+  n=4 sig=(2, 2) g0 diag Z1: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = cH/(16*lam*cV - 4*cV)*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = (-90*lam + 25)/(8*lam*cV - 2*cV) True   [47.6s]
+  n=5 sig=(5, 0) g0 diag Z2: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = 0*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = -35/(2*cV) True   [334.7s]
+  n=5 sig=(5, 0) g0 diag Z1: s_*=lift True, s*g=cH g True, V perp H True, II True; Ric_HH - Ric_g = cH/(20*lam*cV - 4*cV)*g True; Ric_HV = 0 True (nabla Ric != 0: True); Ric_VV True; s_Y - R/cH = (-210*lam + 45)/(10*lam*cV - 2*cV) True   [336.1s]
+  R3 all checks pass: True
+
+R4  control (Z2) at a point y0 != g(x0) of the fiber: s_Y = R/cH + s_F - |A|^2 (O'Neill; Besse 9.37),
+    |A|^2 = sum_{ijkl} (cH g)^{ik} (cH g)^{jl} cV G_lambda(A_ij, A_kl),  A_ij = (1/2) R^{Sym2}(d_i,d_j) y0
+  n=2: s_Y(y0) == R/cH + s_F - |A|^2: True;  |A|^2 = 20025625*cV/(396595249596*cH**2)
+  n=3: s_Y(y0) == R/cH + s_F - |A|^2: True;  |A|^2 = -377954035005211*cV/(33407857852416000000*cH**2)
+
+R5  4D equations on s(X) (n general, then n = 4).  sigma := cV * (s_Y - R/cH) on s(X).
+    (P) projection: s*(G^Y) = G(g) + Lambda_P g      (horizontal block of the Einstein tensor of g_aleph)
+    (A) reduced action  S[g] = int_X s*(s_Y) dvol(s* g_aleph) = cH^(n/2) int (R/cH + sigma/cV) dvol_g
+        => Euler-Lagrange: G(g) + Lambda_A g = 0,   Lambda_A = -cH sigma / (2 cV).
+  Z2, n=4: sigma = -9
+         Lambda_A = 9*cH/(2*cV)
+         Lambda_P = 9*cH/(2*cV)
+         Lambda_P - Lambda_A = 0
+           lambda = 0    : Lambda_A = 9*cH/(2*cV),  Lambda_P = 9*cH/(2*cV)
+           lambda = 1/2  : Lambda_A = 9*cH/(2*cV),  Lambda_P = 9*cH/(2*cV)
+           lambda = 1    : Lambda_A = 9*cH/(2*cV),  Lambda_P = 9*cH/(2*cV)
+           lambda = 5/18 : Lambda_A = 9*cH/(2*cV),  Lambda_P = 9*cH/(2*cV)
+           lambda = 4/15 : Lambda_A = 9*cH/(2*cV),  Lambda_P = 9*cH/(2*cV)
+  Z1, n=4: sigma = (-90*lam + 25)/(8*lam - 2)
+         Lambda_A = (90*lam*cH - 25*cH)/(16*lam*cV - 4*cV)
+         Lambda_P = (45*lam*cH - 12*cH)/(8*lam*cV - 2*cV)
+         Lambda_P - Lambda_A = cH/(16*lam*cV - 4*cV)
+           lambda = 0    : Lambda_A = 25*cH/(4*cV),  Lambda_P = 6*cH/cV
+           lambda = 1/2  : Lambda_A = 5*cH/cV,  Lambda_P = 21*cH/(4*cV)
+           lambda = 1    : Lambda_A = 65*cH/(12*cV),  Lambda_P = 11*cH/(2*cV)
+           lambda = 5/18 : Lambda_A = 0,  Lambda_P = 9*cH/(4*cV)
+           lambda = 4/15 : Lambda_A = -15*cH/(4*cV),  Lambda_P = 0
+  Z1 n=4 Lambda_A == 5*cH*(5 - 18*lam)/(4*cV*(1 - 4*lam)): True;  zero at lambda = [5/18]
+  Z1 n=4 Lambda_P == 3*cH*(4 - 15*lam)/(2*cV*(1 - 4*lam)): True;  zero at lambda = [4/15]
+  General n (Z1):  Lambda_A = cH n/(16 cV) [n^2+2n-1 + 2(1+lam)/(1-n lam)],
+                   Lambda_P = cH/(16 cV) [n(n^2+2n-1) + (2n(1+lam)-4)/(1-n lam)];  Z2: Lambda_A = Lambda_P = cH n(n-1)(n+2)/(16 cV).
+  general-n Lambda formulas consistent with the closed forms (n = 2..6): True
+  Sign under the (7,7) choice (Theorem A4: lambda > 1/4, sign(cV cH) = +1 for base (1,3), -1 for (3,1)):
+    vacuum equation G + Lambda g = 0; physical cosmological constant Lambda_phys = -Lambda in (+---), +Lambda in (-+++).
+    Z2: Lambda_phys = -9|cH/cV|/2 < 0 (anti-de Sitter sign) in both conventions, for every lambda.
+    Z1, lambda = 13/50 : Lambda_A*(cV/cH) = -10, Lambda_P*(cV/cH) = -15/4  -> Lambda_phys sign in (+---) with cH = cV = 1 (A, P) = (+, +)
+    Z1, lambda = 27/100: Lambda_A*(cV/cH) = -35/16, Lambda_P*(cV/cH) = 15/16  -> Lambda_phys sign in (+---) with cH = cV = 1 (A, P) = (+, -)
+    Z1, lambda = 1/2   : Lambda_A*(cV/cH) = 5, Lambda_P*(cV/cH) = 21/4  -> Lambda_phys sign in (+---) with cH = cV = 1 (A, P) = (-, -)
+    Z1, lambda = 1     : Lambda_A*(cV/cH) = 65/12, Lambda_P*(cV/cH) = 11/2  -> Lambda_phys sign in (+---) with cH = cV = 1 (A, P) = (-, -)
+    Z1, lambda = 10    : Lambda_A*(cV/cH) = 875/156, Lambda_P*(cV/cH) = 73/13  -> Lambda_phys sign in (+---) with cH = cV = 1 (A, P) = (-, -)
+
+Total time 1590.5s

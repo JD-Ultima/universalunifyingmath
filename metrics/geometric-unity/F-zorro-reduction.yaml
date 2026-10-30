@@ -1,0 +1,34 @@
+result: "F2. Zorro metric g_aleph on Y = Met(X) and the 14 -> 4 reduction along a section"
+claim_id: [GU-006, GU-021, GU-024, GU-054]
+gaps: [GU-G02, GU-G06, GU-G14]
+writeup: formalization/geometric-unity/F-zorro-reduction.md (Prop F2, Theorems F3, F4, F6, Cor F5, Props F7, F8)
+code: [computation/geometric-unity/F_jets.py, computation/geometric-unity/F_zorro_reduction.py,
+       computation/geometric-unity/F_zorro_reduction.out, computation/geometric-unity/F_zorro_einstein.py,
+       computation/geometric-unity/F_zorro_einstein.out]
+formalization_status: >
+  Formalized under reconstruction R-Z: Levi-Civita horizontal distribution plus DeWitt fiber metric, with two
+  readings of the horizontal metric. Z1 (tautological, = Theta_aleph^* g_C) matches (3.7), (3.15), p.22, p.36, p.56;
+  Z2 (pi^* g) matches p.22 "metrics pulled up from the base". Readouts: (P) projection of G^Y, (A) reduced action,
+  (E) Y-Einstein equation along s(X).
+internal_consistency: >
+  Def 3.1 (s^* g_aleph = g with cH = 1) and V = N (3.42) hold in both readings. (9.10) holds in the (P)/(A) sense
+  with a fiber-induced Lambda. In Z1, Lambda_P != Lambda_A (route-dependent). 14D Einstein along s(X) <=> 4D vacuum
+  GR only for Z1 with lambda = 1/(n+1) = 1/5, whose chimeric signature is (8,6)/(10,4), not the draft's (7,7).
+proof_status: >
+  Proven: Lemma F0, Props F1-F2, Theorem F3 (Z2, O'Neill), Theorem F4(a)(b) (Z1; Gauss + Walczak), Cor F5,
+  Theorem F6, Prop F7 (explicit Kaluza-Klein isometry with SL(n+1)/SO). Theorem F4(c) (Z1 Ricci blocks): proven
+  for n = 1, 2; exact verification for n = 3, 4, 5 on random metrics; general-n proof sketch.
+  Prop F8 (link to the draft's Upsilon): conditional on reconstruction R-S / Theorem C5; constants open.
+novelty: >
+  Z2 results are an application of O'Neill's formulas. The Z1 results (lambda-dependent cosmological terms,
+  route dependence, Einstein condition iff lambda = 1/(n+1) and Ric(g) = 0, flat model = SL(n+1)/SO) are, to our
+  knowledge, not in the source or in the literature we checked (not searched exhaustively).
+reproducibility: "Exact, fixed seed 20210401; F_zorro_reduction.py ~27 min, F_zorro_einstein.py ~40 s."
+empirical_testability: >
+  Weak, structural only: the induced 4D cosmological term is |Lambda| ~ 1/l_F^2 (Z2: 9/(2 l_F^2), AdS sign under
+  (7,7)) with l_F the fiber scale; matching the observed Lambda requires l_F ~ 2e26 m. No small parameter.
+dependencies: [L-F1, L-F2, L-F3, L-F5, L-F6, "A (R-A3, Theorem A4)", "C (Theorem C5, for Prop F8 only)"]
+confidence: >
+  High for the stated reconstruction (closed forms proven and/or verified exactly). Medium that Z1 is the
+  author's intent (strong textual support, but the draft also says "pulled up from the base").
+  Low-to-medium for the physical reading (P/A/E), which the draft does not fix.

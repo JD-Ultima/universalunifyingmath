@@ -1,0 +1,20 @@
+result: "F1. Fiber of Y = Met(X^n) with the DeWitt metric cV G_lambda: symmetric space R x SL(n)/SO(p,q); lambda-independent curvature"
+claim_id: [GU-010, GU-011, GU-012, GU-013]
+writeup: formalization/geometric-unity/F-zorro-reduction.md (Lemma F0, Prop F1)
+code: [computation/geometric-unity/F_jets.py, computation/geometric-unity/F_fiber_curvature.py, computation/geometric-unity/F_fiber_curvature.out]
+formalization_status: >
+  Fully formalized. Lemma F0 (no Diff-natural horizontal distribution on Met(X)) shows a connection on TX
+  must be supplied, as the draft's Zorro diagram (3.17) does with the Levi-Civita connection.
+internal_consistency: >
+  Consistent with A (Theorem A1): the R-factor n(1 - n lambda) ds^2 changes sign at lambda = 1/n.
+proof_status: >
+  Proven: geodesic symmetry y0 z^-1 y0 (exact), splitting identity (exact), curvature from Helgason IV.4;
+  Ric_F = -(n/4) G_{1/n}, s_F = -n(n-1)(n+2)/(8 cV), full curvature -cV/4 tr([[H,K],L]M) checked exactly for
+  all signatures n <= 4 (Ricci) and n <= 3 (all components), lambda symbolic.
+novelty: >
+  Classical for positive-definite metrics (DeWitt 1967; Freed-Groisser 1989; Gil-Medrano-Michor 1991).
+  The all-signature, all-lambda statement is routine; included because GU needs the indefinite case.
+reproducibility: "Exact, fixed seed 20210401, ~60 s: python3 F_fiber_curvature.py"
+empirical_testability: "None (geometry of the construction)."
+dependencies: [L-F4, "A (Theorem A1)"]
+confidence: "High."
