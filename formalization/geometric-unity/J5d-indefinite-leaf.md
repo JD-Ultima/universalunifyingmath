@@ -1,6 +1,6 @@
 # J5d. The leaf condition of Theorem J5 in indefinite signature: no radial Z2 solution in any signature
 
-Claims: GU-054 (context). Gaps: GU-G14. Code: `computation/geometric-unity/J5d_leaf.py` → `.out` (sections L0–L4; exact, sympy rationals; fixed seed; about 110 s on one core). It imports no repository code. Record: `metrics/geometric-unity/J5d-indefinite-leaf.yaml`. Builds on J (Theorem J5 and its proof), F (Theorem F3, L-F1, L-F5) and A (A4, A5). Layers: (b) reconstruction, (c) proven.
+Claims: GU-054 (context). Gaps: GU-G14. Code: `computation/geometric-unity/J5d_leaf.py` → `.out` (sections L0–L4; exact, sympy rationals; fixed seed; 102 s on one core, a second run 104 s, identical apart from the timing annotations). It imports no repository code. Record: `metrics/geometric-unity/J5d-indefinite-leaf.yaml`. Builds on J (Theorem J5 and its proof), F (Theorem F3, L-F1, L-F5) and A (A4, A5). Layers: (b) reconstruction, (c) proven.
 
 ## J5d.0 Question and setting (layer b)
 
@@ -150,7 +150,7 @@ These (2,2) tensors also satisfy the full condition: $\det(y)^2\Phi_y(X,Y)=0$ id
 | L3 | the identity for generic $R$ (20 components); rank 20 of $R\mapsto R(T,X,T,Y)$ | (4,0), (1,3), (3,1); (2,2) shown indefinite |
 | L4 | proof ("if"); exact span certificates ("only if"): rank 47 of 66 and $\Lambda^2$ in the span (three signatures); the 81 block products in the span, the restricted spans equal those of the entries of $(W^\mp)^2$; the null example, including the full condition symbolically in $y$ | $n=4$; (2,2) for the certificates |
 
-Run: `cd computation/geometric-unity && python3 J5d_leaf.py > J5d_leaf.out 2>&1`. Result: 44 checks, 44 True, each asserted; about 110 s on one core.
+Run: `cd computation/geometric-unity && python3 J5d_leaf.py > J5d_leaf.out 2>&1`. Result: 44 checks, 44 True, each asserted; 102 s on one core.
 
 ## J5d.3 Limits (layers b, d)
 

@@ -1,0 +1,48 @@
+result: "J5d. The leaf condition of Theorem J5 in indefinite signature: the order-eps^2 condition forces Lambda_g = 0, so the radial Z2 ansatz has no neighbourhood solution in any signature, (7,7) included"
+claim_id: [GU-054]
+gaps: [GU-G14]
+writeup: formalization/geometric-unity/J5d-indefinite-leaf.md (Lemma L0, Theorem L1, Corollary L2, Propositions L3, L4); settles the open case of Theorem J5(d) in formalization/geometric-unity/J-slaved-sector.md
+code: [computation/geometric-unity/J5d_leaf.py, computation/geometric-unity/J5d_leaf.out]
+formalization_status: >
+  Formalized at the level of the algebraic curvature tensor R = R_g(x0) at the base point of Theorem J5 (Z2, radial
+  ansatz t = f(s), u = h(s), slaved T_e in V, det M != 0, kappa != 0, (x, y) != 0, lambda != 1/4). The O'Neill sum of
+  J5 is re-derived as (A_X, A_Y) = c_V/(4 c_H) Phi_y(X, Y) with Phi_y = sum g^ij tr(y^-1 (R(X,e_i).y) y^-1 (R(Y,e_j).y))
+  (the lambda-term of G_lambda drops at every y), with the closed form 2 sum g^ij [tr(B_i C_j) - tr(M^-1 B_i M C_j)],
+  M = g^-1 y; its order-eps^2 part at y = g + eps h is J5(d)'s quadratic form F(X, Y; h), and the restriction to
+  g-traceless h is immaterial (R.g = 0). Two contractions of F, C1 (both traces) and C2 (the X-slot against an index
+  of h), are evaluated in closed form for every algebraic curvature tensor.
+internal_consistency: >
+  The reduction is checked exactly at random rational data in bases (4,0), (1,3), (3,1), (2,2) (trace identity,
+  closed form and scale invariance of Phi_y, Taylor coefficients eps^0, eps^1, eps^2 of det(y)^2 Phi_y). The three
+  constant-curvature polynomials F(e0, e0; h) printed in J_slaved_sector.out section J5 are reproduced exactly in the
+  same parametrisation, so the conventions agree with J5(d). The contraction identities are checked as exact polynomial
+  identities for the generic algebraic curvature tensor in n = 3, 4, 5 (9 signatures). Constant curvature gives
+  C1 = C2 = 144 != 0, consistent with J5(d)'s constant-curvature failures. The span of all 532 coefficients of F
+  (rank 47 of 66, the same in every signature) independently contains Lambda^2. Three independent arguments agree:
+  the trace identity (every signature), the Lorentzian/definite positivity, and the (2,2) block certificates.
+proof_status: >
+  Proven. Lemma L0 (the reduction, from L-F5, F3, O'Neill with T = 0, J5(b)). Theorem L1: C1 = (n+2)|R|^2 and
+  C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2 for every algebraic curvature tensor, every n >= 2 and every signature (hand proof:
+  the Sym_g trace of ad_B ad_C is (n+2) tr(BC); C2 is the norm of an explicit 4-tensor built from R and Ric; the first
+  Bianchi identity), hence 8 C2 - C1 = 28 |Ric|^2 (n = 4) and 8 C2 - C1 = 112 Lambda^2 for Ric = Lambda g; checked
+  exactly. Corollary L2: no radial Z2 solution in any signature, since J5(b) forces Lambda_g = -c_H/c_V != 0.
+  Proposition L3: F(T, T; T^b (x) T^b) = 2 g(T,T) sum eta_i eta_j R(T,e_i,T,e_j)^2, definite for a Lorentzian or
+  definite base, so there F = 0 forces R = 0 for every algebraic curvature tensor. Proposition L4 (Einstein, n = 4):
+  F = 0 iff R = 0 in (4,0), (1,3), (3,1); iff R = c n (x) n with n a null (anti-)self-dual 2-form in (2,2) ("if" by
+  hand, "only if" by exact linear-algebra certificates); these Ricci-flat (2,2) tensors also satisfy the full condition.
+novelty: >
+  New within this audit: Theorem J5(c) holds in every signature. The open indefinite case of J5(d), including (7,7)
+  from a Lorentzian base (A4) or a (2,2) base (A5), has a negative answer: for the radial ansatz in Z2 (kappa != 0,
+  T_e the slaved field in V, det M != 0), Upsilon = 0 has no solution on a neighbourhood of a point of s(X), for every
+  member with (x, y) != 0 and every (z, w). Already the order-eps^2 leaf condition at a single point forces the base
+  Einstein constant to vanish, against Lambda_g = -c_H/c_V. Not in the source.
+reproducibility: "Exact (sympy rationals); fixed seed random.Random(20261030); 102 s on one core, a second run 104 s, identical apart from timing annotations; imports no repository code. Run from computation/geometric-unity: python3 J5d_leaf.py > J5d_leaf.out 2>&1 (44 checks, 44 True, each asserted)."
+empirical_testability: >
+  None new. The result removes one candidate class of neighbourhood solutions (radial, Z2) in (7,7); the physically
+  relevant reduction still depends on the undeclared rule for T off s(X).
+dependencies: ["J5", "J1", "F3", "L-F1", "L-F5", "A4", "A5"]
+confidence: >
+  High: closed-form identities with hand proofs, verified exactly for generic tensors in several dimensions and all
+  signatures, plus two independent arguments (positivity for Lorentzian bases; block certificates for (2,2)). Scope
+  unchanged apart from the signature: Z2 and the radial ansatz only. Not covered: Upsilon = 0 on a neighbourhood
+  beyond the radial Z2 ansatz (Z1; non-radial t, u), T_e outside V for large |T_o|, T_o outside the invariant sector.
