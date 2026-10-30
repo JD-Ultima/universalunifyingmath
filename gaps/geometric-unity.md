@@ -71,8 +71,8 @@ Each gap is a point where [W21] is underspecified, circular or type-inconsistent
   - In Z1, $E$ is a gradient with $\nabla E=\tfrac12P_H$ and a Ricci eigenvector, with $\mathrm{Ric}(E,\cdot)=-E^\flat/c$ (N1).
   - The metric-free steps of L and a Z1 concircular lemma reduce neighbourhood solutions to Einstein pieces or the line equation (N3, N4).
   - The 3-jet conditions along $\Sigma=\{e^\theta g\}$ force a Ricci-flat base and $\lambda\in\{\tfrac15,\tfrac{13}{56}\}$ (N7). The trace equation removes $\tfrac{13}{56}$ (N8), and at $\lambda=\tfrac15$ the order-$\varepsilon^2$ fibre pairing gives $\alpha|W|^2=0$ (N9).
-  - Result, for $\circledast_\sharp$, $W_A$ and classes (A), (B): no solution near $s(X)$ in (7,7). In (14,0), $\lambda=\tfrac15$ and $g$ Ricci-flat; for analytic fields, exactly the flat-base, $T_e\equiv0$ solutions of I7(b), which exist on all of $Y$ iff $c_V\kappa^2\ge9360$ (N12). Rests on one computed block, N6(f).
-  - F9 for Z1: proven over flat bases and near $s(X)$ over definite bases (N2, N10).
+  - Result, for $\circledast_\sharp$, $W_A$ and classes (A), (B): no solution near $s(X)$ in (7,7). In (14,0), $\lambda=\tfrac15$ and $g$ Ricci-flat; for analytic fields (and for class (A)), exactly flat-base solutions with constant $(t,u)$ and $T_e\equiv0$, which then hold on all of $Y$; for $\circledast_\sharp$ and $W_A$ these are the solutions of I7(b), which exist iff $c_V\kappa^2\ge9360$ (N12). One step is computer-assisted (N6(f)).
+  - F9 for Z1 ($n=4$): proven near $s(X)$ over definite bases (N10); over flat bases its exception occurs exactly at $\lambda=\tfrac15$ (N2).
   - Open: limit points of Einstein pieces without analyticity, indefinite bases in F9, the members left open by L.3.
 
 **Note (2026-10-30, round 11; `formalization/geometric-unity/O-gimel-variation.md`).** The rows above and the earlier notes are not edited. Setting: unitary gauge (G1), the family of I.0, Z1 and Z2; the ℷ-variation at fixed $S$, on the invariant sector at fixed $(t,u)$.

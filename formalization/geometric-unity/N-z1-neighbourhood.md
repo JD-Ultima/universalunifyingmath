@@ -46,7 +46,7 @@ Output §N1 checks (a)–(d) at points **off** the section ($y_0\neq g(x_0)$, $\
 
 So what replaces the parallel Killing field of Z2 is a gradient field with $\nabla E=\tfrac12P_H$ that is still a Ricci eigenvector everywhere, now with eigenvalue $-1/c\neq0$ (in Z2: 0).
 
-**Lemma N2 (flat model; F9 for flat ℵ).** *[proven]* If ℵ is flat near $\pi(q)$, then near $q$
+**Lemma N2 (flat model; the exception in F9).** *[proven]* If ℵ is flat near $\pi(q)$, then near $q$
 $$\mathrm{Ric}(\mathrm{Z1})=\beta_S\,g_\aleph+b\,\big(g_\aleph|_H+c\,ds\otimes ds\big)=\beta_S\,g_\aleph+4bc\,e^{-s/2}\nabla^2e^{s/2}.$$
 Hence Z1 over a flat base is Einstein on some open set iff it is Einstein everywhere iff $\lambda=\tfrac15$; then $\mathrm{Ric}=-\tfrac54c_V^{-1}g_\aleph$ and $G=\tfrac{15}{2c_V}g_\aleph$ (F7).
 
@@ -65,7 +65,7 @@ Hence Z1 over a flat base is Einstein on some open set iff it is Einstein everyw
 (c) *Consequences for (H1)* (as in L8 steps 1–5, with (b) for L4).
 - Class (A): $U^*=\emptyset$, so $(t,u)$ is constant on $U$.
 - Class (B), including $\circledast_\sharp$: on $U^*$, $(t,u)=\sigma\,(x,y)$.
-- $xW_A$ ($x\neq0$): on $U^*$, $u=0$. (L5(c) gives $u\,dt=0$. On $\{u\neq0\}\cap U^*$, $dt=0$ and $T_e=0$, so $\mathrm{Ric}=-\tfrac{c_1}{6x}g_\aleph$, hence $c_1=6x/c$ by N1(d) and Schur, $c_{13}=0$ gives $t=-\kappa/(208x)$, so $u^2$ and then $u$ are locally constant, against $(dt,du)\neq0$.) The line $u=0$ carries the same coefficients as for $\circledast_\sharp$ (L5, output §L5).
+- $xW_A$ ($x\neq0$): on $U^*$, $u=0$. (L5(c) gives $u\,dt=0$. On $\{u\neq0\}\cap U^*$, $dt=0$ and $T_e=0$, so $\mathrm{Ric}=-\tfrac{c_1}{6x}g_\aleph$, hence $c_1=6x/c$ by N1(d), $c_{13}=0$ gives $t=-\kappa/(208x)$, so $u^2$ and then $u$ are locally constant, against $(dt,du)\neq0$.) The line $u=0$ carries the same coefficients as for $\circledast_\sharp$ (L5, output §L5).
 
 (d) *The line equation.* On the line, with $r:=-1/(224N(\kappa+224N\sigma))$ (smooth and nonzero where $\det M\neq0$), $\Upsilon=0$ is equivalent to
 $$(\star)\quad \nabla^2r=\mu_1\,r\,\mathrm{Ric}+\nu\,g_\aleph,\qquad (\mathrm{Tr})\quad \nu=\tfrac7{468}\,r\,s_Y-\tfrac1{13}\Phi(r)+\tfrac3{28}\,\frac{|dr|^2}r ,$$
@@ -88,7 +88,7 @@ So, to second order in the fibre, the curvature corrections of Z1 off the sectio
 
 *Status: computed* (output §N3: random $R$ and cubic terms, so $\nabla R\neq0$, in base signatures (4,0), (1,3), (2,2); exact to order 3 for (4,0) and order 2 for the others). No hand proof. N5 is not used below.
 
-**Lemma N6 (data at $p\in s(X)$).** *[(a)–(e) proven; (f) computed]* At $p$, for $X,Y,Z\in H$, $U,W\in V$:
+**Lemma N6 (data at $p\in s(X)$).** *[proven; (f) computer-assisted]* At $p$, for $X,Y,Z\in H$, $U,W\in V$:
 
 (a) $\mathrm{Ric}=\big(\mathrm{Ric}_g-\tfrac{c_H}cg\big)\oplus(-\tfrac1c\text{ on }E)\oplus(\beta_S\text{ on }V_0)$, $\mathrm{Ric}_{HV}=0$ (F4(c)).
 
@@ -108,14 +108,12 @@ So, to second order in the fibre, the curvature corrections of Z1 off the sectio
 - (c) $\mathcal L_E\mathrm{Ric}=\partial_\theta\mathrm{Ric}(\mathrm{Z1}(e^\theta c_H))$ by N1(b) and naturality. At $p$ it equals $c_H\partial_{c_H}$ of F4(c): $-\tfrac1cg$ on HH, 0 on HV and VV. Then subtract $\mathrm{Ric}(\nabla_\cdot E,\cdot)+\mathrm{Ric}(\cdot,\nabla_\cdot E)$ with $\nabla E=\tfrac12P_H$.
 - (d) Differentiate N1(d).
 - (e) The fibres are totally geodesic and $F=\mathbb R\times S$ (F1).
-- (f) *Computed* (output §N4: exact on random curved bases in signatures (4,0), (1,3), (2,2), with and without cubic terms; all other items (a)–(e) are also re-checked there). It is reduced to finitely many evaluations as follows.
-  - The isotropy element $-1\in O(g_x)$ acts as $-1$ on $H$ and $+1$ on $V$, and sends $\nabla R\mapsto-\nabla R$. So the components $(\nabla_U\mathrm{Ric})_{VV}$ and $(\nabla_U\mathrm{Ric})_{HH}$ (an even number of $H$-slots) are even in $\nabla R$.
-  - At $p$, $\nabla\mathrm{Ric}$ is affine in the base data. Ric(Z2) is affine by O'Neill, with $A=0$ at $p$; the K1-type exact formula for $\mathrm{Ric}(\mathrm{Z2}+\delta)$ contains at most one $\nabla^3\delta$ factor, $\nabla^3\delta_p$ is affine in $R$, and $\nabla\delta_p$, $\nabla^2\delta_p$ are $R$-free (K2).
-  - The $R$-free part is the flat value, which is 0 by N2.
-  - The $R$-linear part is an $SO(g)$-equivariant linear map on algebraic curvature tensors. Over ℂ its four constituents ($W^\pm$, traceless Ricci, scalar) are pairwise non-isomorphic. By Schur, its value at one $R$ with all four components nonzero determines it; §N4 checks this genericity.
-  - The affinity step is argued here, not written out in full; hence the status. ∎
+- (f) *Computer-assisted* (completed after review 2026-10-30, REVIEW8-GU R10-1). The HH and VV blocks of $(\nabla_U\mathrm{Ric})_p$ are affine in $R_g(x_0)$ and independent of $\nabla R_g(x_0)$. By the proof of K1, $\mathrm{Ric}(\mathrm{Z1})-\mathrm{Ric}(\mathrm{Z2})=\nabla C-\nabla C+CC-CC$ with $C=\tfrac12\hat h^{-1}T(\nabla\delta)$ everywhere, so $\nabla_U$ of it at $p$ is a contraction of one of $\nabla^3\delta_p$, $\nabla^2\delta_p\otimes\nabla\delta_p$, $(\nabla\delta_p)^{\otimes3}$. The last two factors are $R$-free (K2). Because $\varphi_p=0$ and $(\nabla\pi_*)_p=0$, $\nabla^3\delta_p=c_H[\iota(\nabla^2K)_p+3\iota'((\nabla^2\pi_*)_p)(K_p)]$, which is $R$-free plus linear in $(\nabla_UA)_p$, hence affine in $R_g(x_0)$ ($(\nabla_XA)_p=0$ since $A$ vanishes on $s(X)$). For Z2, O'Neill with $T=0$ gives HH and VV blocks $\mathrm{Ric}_g-2(A,A)$ and $\mathrm{Ric}_F+\mathcal A$, quadratic in $A=O(|y-g|)$, so their $\nabla_U$ vanishes at $p$. (The HV block depends on $\nabla R_g$ and is not used.)
+  - The $R$-free part is the flat value, which is 0 by N2. The $R$-linear part is an $SO(g)$-equivariant linear map on algebraic curvature tensors. Over ℂ its four constituents ($W^\pm$, traceless Ricci, scalar) are pairwise non-isomorphic, so by Schur its value at one $R$ with all four components nonzero determines it.
+  - Parameters: $(1-4\lambda)g_\aleph^{-1}$ and $g_\aleph$ are affine in λ, so $(1-4\lambda)^3(\nabla_U\mathrm{Ric}-\text{RHS})$ is a polynomial of degree $\le6$ in λ; seven values of λ decide it. The homothety $(c_H,c_V)\mapsto(tc_H,tc_V)$ and the fibre scaling N1(b) (with the transfer to Σ) reach every $c_H/c_V>0$, and rationality in $(g_0,c_H,c_V)$ does the rest.
+  - Evaluated exactly on generic bases ($W^\pm$, traceless Ricci, scalar nonzero; $\nabla R\neq0$; general coordinates): output §N4 (one λ in each of (4,0), (1,3), (2,2)) and `xcheck_round10.out` §X3 (eight λ in (4,0), three in (1,3), $(c_H,c_V)=(-3,2)$, $(\tfrac12,5)$, a second base). ∎
 
-**Theorem N7 (degree-1 obstruction).** *[proven, given N6(f)]* Assume $(\star)$ on a neighbourhood of $p\in s(X)$ with $r(p)=r_0\neq0$ (ν arbitrary). Put $v=\nabla r(p)$, $n=\nabla\nu(p)$. Then:
+**Theorem N7 (degree-1 obstruction).** *[proven]* Assume $(\star)$ on a neighbourhood of $p\in s(X)$ with $r(p)=r_0\neq0$ (ν arbitrary). Put $v=\nabla r(p)$, $n=\nabla\nu(p)$. Then:
 
 (a) $v=v_E\,E$ and $n=n_E\,E$, with $v_E=\mu_1r_0\big(2b-\tfrac{\sigma_g}2\big)$ and $n_E=-\mu_1\beta_Sv_E$;
 
@@ -150,7 +148,7 @@ Output §N5 confirms Theorem N7 on the full linear system $(\ast)$ in $(v,n)$ (1
 
 So at a single point of $s(X)$ the first-order (3-jet) conditions **can** be met by special Einstein bases, also for $\lambda>\tfrac14$. It is their persistence along Σ that forces $\mathrm{Ric}_g=0$ and quantises λ.
 
-**Proposition N8 ($\lambda=\tfrac{13}{56}$ is excluded).** *[proven, given N6(f)]* Under (H1), $(\star)$ and (Tr) have no solution on a neighbourhood of a point of $s(X)$ when $\lambda=\tfrac{13}{56}$.
+**Proposition N8 ($\lambda=\tfrac{13}{56}$ is excluded).** *[proven]* Under (H1), $(\star)$ and (Tr) have no solution on a neighbourhood of a point of $s(X)$ when $\lambda=\tfrac{13}{56}$.
 
 *Proof.*
 - By N7(d), at the points $q_\theta=(x_0,e^\theta g(x_0))$ of Σ near $p$: $\mathrm{Ric}_g(x_0)=0$ and $\nabla r=\tfrac r{2c}E$ (here $4\mu_1bc=1$). So $Er=\tfrac r2$, $r(q_\theta)=r_0e^{\theta/2}$ and $|dr|^2=r^2/(4c)$.
@@ -158,7 +156,7 @@ So at a single point of $s(X)$ the first-order (3-jet) conditions **can** be met
 - F4(b) for $e^\theta g$ gives $s_Y=\sigma_1/c_V$ on Σ.
 - Inserted in (Tr), $r\,(\nu_{\rm Tr}-\nu)$ is a polynomial in $r$ with constant term $-A/13\neq0$ (output §N6). It cannot vanish for all $r$ in the interval $r_0e^{\theta/2}$. ∎
 
-**Proposition N9 ($\lambda=\tfrac15$, line type, definite base).** *[proven, given N6(f); α computed exactly]* Under (H1) in (14,0), let $(\star)$ hold on a neighbourhood of $p\in s(X)$ with $\lambda=\tfrac15$. Then the Weyl tensor of $g$ vanishes at $x_0$, so $R_g(x_0)=0$.
+**Proposition N9 ($\lambda=\tfrac15$, line type, definite base).** *[proven; α computed exactly]* Under (H1) in (14,0), let $(\star)$ hold on a neighbourhood of $p\in s(X)$ with $\lambda=\tfrac15$. Then the Weyl tensor of $g$ vanishes at $x_0$, so $R_g(x_0)=0$.
 
 *Proof.*
 1. By N7(d), $\mathrm{Ric}_g=0$ near $x_0$ and $\nabla r=0$ on Σ near $p$. So $Er\equiv0$ on the $E$-orbit through $p$, and $c\nu(p)=\mu_1r_0$ (as in N8). At $\lambda=\tfrac15$, Z1 is Einstein at $p$ with constant $\kappa_E=-\tfrac1c$ (F6), so $\nabla^2r(p)=0$.
@@ -167,8 +165,8 @@ So at a single point of $s(X)$ the first-order (3-jet) conditions **can** be met
 $$\mathrm{Hess}\,\psi(X,Y)Z-\mathrm{Hess}\,\psi(X,Z)Y+\mu_1r_0\,q(X,Y,Z)=0,\qquad q(X,Y,Z)=(\nabla^2_{X,Y}\hat{\mathcal A})Z-(\nabla^2_{X,Z}\hat{\mathcal A})Y,$$
    for $X,Y,Z\in T_pS$. $\mathrm{Hess}\,\psi(p)$ is an unknown symmetric form.
 4. Pair with $T':=c_0-\tfrac{\langle c_0,c_1\rangle}{\langle c_1,c_1\rangle}c_1$ (L7's $c_0,c_1$ and pairing, now with the metric $g_\aleph$). By invariance, $\langle N\wedge,T'\rangle=0$ for every symmetric $N$: the trace part is a multiple of $c_1$, and an invariant functional on traceless symmetric forms on the irreducible $T_pS$ vanishes.
-5. Hence $\langle q,T'\rangle=0$. Now $\langle q,T'\rangle$ is a quadratic form in the Weyl tensor $W=R_g(x_0)$; $\mathrm{Ric}_{VV}$ over $x_0$ is a polynomial of degree ≤2 in $R_g(x_0)$. It is $O(4)$-invariant, by the naturality of Z1 under base isometries, including orientation-reversing ones. So it equals $\alpha|W|^2$.
-6. Output §N7 computes $\alpha$ exactly: $\alpha=\dfrac{45}{8c_H^2c_V}$ for $(c_H,c_V)=(2,3),(1,1),(3,\tfrac12)$, with the same value for two random Weyl tensors at $(2,3)$. (By the scaling of Z1 under $(c_H,c_V)\mapsto(tc_H,tc_V)$ and the base dilation of F7, α is a monomial in $c_H,c_V$, so this formula holds for all $c_H,c_V$; only $\alpha\neq0$ is used.) For the definite base $|W|^2=0$ gives $W=0$. ∎
+5. Hence $\langle q,T'\rangle=0$. Now $\langle q,T'\rangle$ is a quadratic form in the Weyl tensor $W=R_g(x_0)$. In normal coordinates at $x_0$ the 3-jet of $g$ is linear in $(R_g,\nabla R_g)(x_0)$, so along the fibre over $x_0$ (where $g_\aleph^{-1}$ is $R$-free) $\mathrm{Ric}$ has degree ≤2 in $R_g(x_0)$ and is at most linear in $\nabla R_g(x_0)$; the isometry induced by $x\mapsto-x$ fixes that fibre, acts by $+1$ on $V$ and reverses $\nabla R_g$, so $\mathrm{Ric}_{VV}$ there does not depend on $\nabla R_g(x_0)$ (R10-2; checked: `xcheck_round10.out` §X7). It is $O(4)$-invariant, by the naturality of Z1 under base isometries, including orientation-reversing ones. So it equals $\alpha|W|^2$.
+6. Output §N7 computes $\alpha$ exactly: $\alpha=\dfrac{45}{8c_H^2c_V}$ for $(c_H,c_V)=(2,3),(1,1),(3,\tfrac12)$, with the same value for two random Weyl tensors at $(2,3)$. (By the scaling of Z1 under $(c_H,c_V)\mapsto(tc_H,tc_V)$ and the fibre scaling of N1(b) (transfer to Σ; $|W|^2_{e^\theta g}=e^{-2\theta}|W|^2_g$), α is a monomial in $c_H,c_V$, so this formula holds for all $c_H,c_V$; only $\alpha\neq0$ is used.) For the definite base $|W|^2=0$ gives $W=0$. ∎
 
 So the Weyl tensor first enters at order $\varepsilon^2$ in the fibre (degree 2 of the equation), as in Z2 (L7). The pairing differs from L7's: there $T=4c_0-3c_1$ killed the A-terms, here $T'$ kills the concircular part.
 
@@ -180,13 +178,13 @@ So the Weyl tensor first enters at order $\varepsilon^2$ in the fibre (degree 2 
 
 *Proof.*
 - By N2, $\mathrm{Ric}|_{TS}=\beta_Sg_S$, so on each slice $S$ the restriction $r|_S$ is concircular. A concircular function on $S=SL(4)/SO(p,q)$ is constant: $\mathrm{Ric}_S=\rho_Sg_S$ with $\rho_S\neq0$ gives $d\psi\propto dr$; then $R^S(X,Y)\nabla r\propto\langle\nabla r,X\rangle Y-\langle\nabla r,Y\rangle X$, and commuting $X,Y$ give $\nabla r|_S=0$.
-- In affine coordinates the HV part of $(\star)$ is $-\tfrac12(\tilde U)^\nu{}_\mu\partial_\nu r=0$ for all $U\in V_0$, so $\partial_xr=0$ and $r=f(s)$.
+- In affine coordinates, with $U$ an $x$-independent vertical field tangent to the slices (so $Ur=0$ by the first bullet), the HV part of $(\star)$ is $-\tfrac12(\tilde U)^\nu{}_\mu\partial_\nu r=0$ for all $U\in V_0$, so $\partial_xr=0$ and $r=f(s)$.
 - Then $\nabla^2r=f''ds^2+\tfrac{f'}{2c}g_\aleph|_H$, and $(\star)$ requires $f'=2c\mu_1bf$ and $f''=\mu_1bcf$. So either $b=0$ and $f$ is constant ($dr=0$), or $4\mu_1bc=1$, i.e. $\lambda=\tfrac{13}{56}$, and $f=Ce^{s/2}$.
 - For the latter, (Tr) multiplied by $r$ is a polynomial in $r$ with constant term $14A\neq0$, and $r$ ranges over an interval (output §N8). ∎
 
 *Remark (the radial ansatz in Z1).* $t=f(s)$, $u=h(s)$ is a special case of the above. On a flat base, the traceless part of the equation has the exact radial solution $r=Ce^{s/2}$ at $\lambda=\tfrac{13}{56}$. It is Z1's analogue of the Z2 leaf structure, and the trace equation removes it. N7(a) also shows that the isotropy-invariant form of the normal gradient (J4's (J)) is **forced** at degree 1: $\nabla r(p)\in\mathbb RE$.
 
-**Theorem N12 (Z1 neighbourhood solutions).** *[(a), (b) proven, given N6(f); (c) proven]* Assume (H1) with member $\circledast_\sharp$, $xW_A$ ($x\neq0$), or in class (A) or (B) of L8.
+**Theorem N12 (Z1 neighbourhood solutions).** *[proven]* Assume (H1) with member $\circledast_\sharp$, $xW_A$ ($x\neq0$), or in class (A) or (B) of L8.
 
 (a) **(7,7): no solution.** $\Upsilon=0$ has no solution on any connected open $U$ meeting $s(X)$.
 
@@ -246,7 +244,7 @@ Run: `cd computation/geometric-unity && python3 N_z1_neighbourhood.py > N_z1_nei
 
 ## N.3 Limits (layers b, d)
 
-- **One computed input.** N6(f), the vertical derivative of Ric at $p$ in the $V_0$-directions, is computed exactly on generic bases. It is reduced to those evaluations by Schur, but the affine dependence on the base data that this needs is argued, not written out. Theorem N7 and everything resting on it (N8, N9, N12(a), (b)) depend on it. N1–N4, N10, N11 and N12(c) do not.
+- **One computer-assisted input.** N6(f), the vertical derivative of Ric at $p$ in the $V_0$-directions, is reduced by the affinity argument, Schur and a degree bound in λ to eight exact evaluations on one generic base (REVIEW8-GU R10-1; `xcheck_round10.out` §X3), and is also evaluated in output §N4.
 - **N5** (agreement with Z2's A-terms to second order in the fibre) is computed only. It is a side result, used nowhere.
 - **Type-(iii) points.** In (14,0), without analyticity, $U\cap s(X)$ could consist of limits of Einstein pieces that do not reach it. Only $\mathrm{Ric}_g=0$ is proven there, not flatness.
 - **Indefinite bases in F9.** N10 uses $|W|^2$, which is definite only for a definite base. For a Lorentzian or (2,2) base at $\lambda=\tfrac15$ (signatures (8,6), (10,4), …, outside the setting) it gives $|W|^2=0$ only. F9 for those bases, and F9 on open sets away from $s(X)$, remain open.
@@ -260,11 +258,11 @@ Run: `cd computation/geometric-unity && python3 N_z1_neighbourhood.py > N_z1_nei
   - Under the hypotheses of J5/L8 with Z1, for $\circledast_\sharp$, $W_A$ and classes (A), (B):
     - no neighbourhood solution exists in (7,7);
     - in (14,0) a neighbourhood solution forces $\lambda=\tfrac15$ and a Ricci-flat base, and (for analytic $t,u$, or for class (A)) it is exactly a flat-base solution with $T_e\equiv0$ (N12).
-  - These solutions exist (F7 with I7(b), $c_V\kappa^2\ge9360$). They reproduce 4D vacuum GR with $\Lambda_4=0$ only in the trivial sense of a flat base.
-  - So in Z1 as in Z2, the neighbourhood equations do not reduce to a 4D theory with curved solutions in this sector. The obstruction now sits at the 3-jet (Ricci, along the radial set Σ) and at the 4-jet (Weyl, along the fibre slice).
-- **GU-054.** Status unchanged (C). Round 5's (E) solutions (I7(b)) extend to all of $Y$ when the base is flat (N12(c)). Over a curved definite base, (E) holds on no neighbourhood of a point of $s(X)$ (N10).
+  - For $\circledast_\sharp$ and $W_A$ these solutions exist (F7 with I7(b)) iff $c_V\kappa^2\ge9360$; for $x'W_A$ the condition is $c_V\kappa^2\ge9360x'^2$, and for the other members of (A), (B) existence was not examined (R10-3). They reproduce 4D vacuum GR with $\Lambda_4=0$ only in the trivial sense of a flat base.
+  - So in Z1 as in Z2, for analytic fields and for class (A), the neighbourhood equations do not reduce to a 4D theory with curved solutions in this sector; for smooth fields a curved Ricci-flat base is not excluded at type-(iii) points (N.3). The obstruction now sits at the 3-jet (Ricci, along the radial set Σ) and at the 4-jet (Weyl, along the fibre slice).
+- **GU-054.** Status unchanged (C). Round 5's (E) solutions (I7(b)) extend to all of $Y$ when the base is flat (N12(c)). Over a definite base, (E) holds on no neighbourhood of a point $p\in s(X)$ with $R_g(\pi(p))\neq0$ (N10; R10-4).
 - **F9.**
-  - For Z1: proven for flat ℵ (Einstein iff $\lambda=\tfrac15$, N2) and near $s(X)$ for definite bases (N10).
+  - For Z1 at $n=4$: proven near $s(X)$ over definite bases (N10); over flat bases its exception occurs exactly at $\lambda=\tfrac15$ (N2) (R10-6).
   - Open for indefinite bases and on open sets away from $s(X)$.
   - The statement in F after Theorem F6, "So (E) holds only along $s(X)$, not on a neighbourhood in $Y$", holds for the Weyl base tested there but not in general. For flat ℵ at $\lambda=\tfrac1{n+1}$, (E) holds on all of $Y$ (F7).
 - **J.3, L.3.** The item "Z1" is settled for the members of L8 except for type-(iii) points (N.3). No statement made before this note is contradicted, apart from the scope of the F sentence above.

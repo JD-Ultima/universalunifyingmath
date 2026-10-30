@@ -1,4 +1,4 @@
-result: "N. Upsilon = 0 on a neighbourhood of a point of s(X) in the Zorro metric Z1: for Shiab#, W_A (and its multiples) and the classes (A), (B) of L8, with kappa != 0 and the slaved T_e in V (det M != 0), there is no solution in (7,7); in (14,0) a solution forces lambda = 1/5 and a Ricci-flat base, and (for class (A), or for real-analytic t, u) it is exactly a flat-base solution with T_e = 0, constant (t, u) of I7(b), which exists on all of Y iff cV kappa^2 >= 9360"
+result: "N. Upsilon = 0 on a neighbourhood of a point of s(X) in the Zorro metric Z1: for Shiab#, W_A (and its multiples) and the classes (A), (B) of L8, with kappa != 0 and the slaved T_e in V (det M != 0), there is no solution in (7,7); in (14,0) a solution forces lambda = 1/5 and a Ricci-flat base, and (for class (A), or for real-analytic t, u) it is exactly a flat-base solution with T_e = 0 and constant (t, u), which then solves Upsilon = 0 on all of Y; for Shiab# and W_A these are the constant (t, u) of I7(b), which exist iff cV kappa^2 >= 9360"
 claim_id: [GU-054]
 gaps: [GU-G14]
 writeup: formalization/geometric-unity/N-z1-neighbourhood.md (Lemmas N1, N2, N3, N5, N6; Propositions N4, N8, N9, N10, N11; Theorems N7, N12); settles the Z1 item of J.3 (formalization/geometric-unity/J-slaved-sector.md) and L.3 (L-nonradial-z2.md) for the members of L8, and Conjecture F9 (F-zorro-reduction.md) for Z1 over flat bases and near s(X) over definite bases
@@ -34,12 +34,11 @@ internal_consistency: >
   Side result: to second order in the fibre the curvature corrections of Z1 equal the O'Neill A-terms of Z2; they differ
   at third order.
 proof_status: >
-  Proven: N1 (Euler field), N2 (flat model; F9 for flat aleph), N3 (transfer, concircular lemma, line equation), N4
-  (trichotomy), N6(a)-(e) (data at p), N10 (F9 for Z1 near s(X), definite base; alpha computed exactly, Schur), N11
-  (flat base), N12(c) (existence). Proven given N6(f): N7 (degree-1 obstruction), N8 (13/56 excluded), N9 (lambda =
-  1/5, line type, W = 0), N12(a), (b). Computed: N6(f) (vertical V_0-derivatives of Ric at p; exact on generic bases in
-  three signatures; reduced to finitely many evaluations by an equivariance (Schur) argument whose affinity input is
-  argued, not written out); N5 (fibre jets, side result, not used). Open: type-(iii) points in (14,0) without
+  Proven: N1 (Euler field), N2 (flat model), N3 (transfer, concircular lemma, line equation), N4 (trichotomy), N6(a)-(e)
+  (data at p), N7 (degree-1 obstruction), N8 (13/56 excluded), N9 (lambda = 1/5, line type, W = 0; alpha computed
+  exactly), N10 (F9 for Z1 near s(X), definite base, n = 4), N11 (flat base), N12. Computer-assisted: N6(f) (vertical
+  V_0-derivatives of Ric at p; affinity in the base data, Schur, and a degree bound in lambda reduce it to exact
+  evaluations, completed after review, REVIEW8-GU R10-1). Computed: N5 (fibre jets, side result, not used). Open: type-(iii) points in (14,0) without
   analyticity; F9 for indefinite bases and off s(X); the members left open by L.3. Imported: F4, F6, F7, Theorem K, J1-J2
   tables, L1, L3, L5, the steps of L8, I6, I7(b).
 novelty: >
@@ -48,18 +47,18 @@ novelty: >
   solutions with T_e = 0 (the first explicit solutions of Upsilon = 0 on a neighbourhood, in fact on all of Y, in this
   sector; they have Lambda_4 = 0 and a flat base). The first constraining order is the 3-jet (Ricci) along the radial
   set Sigma; the Weyl tensor enters at the 4-jet (order eps^2 in the fibre), as in Z2. Conjecture F9 is proven for Z1
-  over flat bases and near s(X) over definite bases. Not in the source.
+  (n = 4) near s(X) over definite bases; over flat bases its exception occurs exactly at lambda = 1/5. Not in the source.
 reproducibility: "Exact (Fractions, truncated series with Fraction coefficients, sympy rationals); fixed seeds (random.Random(11..13) for N1, 21 N2, 31 N3, 41 N4, 51-52 N5, 71-74 and 171-174 N7); one core: 450 s, a second run 473 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 N_z1_neighbourhood.py > N_z1_neighbourhood.out 2>&1 (44 checks, 44 True, each asserted). Imports F_jets.py and L_nonradial.py unmodified."
 empirical_testability: >
-  None new. In the slaved vector sector neither Z1 nor Z2 yields a curved 4D solution of Upsilon = 0 on a neighbourhood;
+  None new. In the slaved vector sector, for the members treated, neither Z1 nor Z2 yields a curved 4D solution of Upsilon = 0 on a neighbourhood of a point of s(X), except possibly at type-(iii) points for non-analytic fields in Z1 (where only Ric_g = 0 is shown);
   the only neighbourhood solutions (Z1, (14,0), lambda = 1/5, flat base, T_e = 0) are flat with Lambda_4 = 0, in a fibre
   signature that is not (7,7). The physically relevant reduction still depends on the undeclared rule for T off s(X), on
   Z1 versus Z2, and on sectors not treated.
 dependencies: ["F4", "F6", "F7", "K", "J1", "J2", "I6", "I7", "L1", "L3", "L5", "L8", "A4", "A5"]
 confidence: >
   High for N1-N4, N10, N11 and N12(c): hand proofs whose algebraic content is checked by independent brute force. High
-  but conditional for N7-N9 and N12(a), (b): the hand proof uses one block of nabla Ric at p (N6(f)) that is computed
-  exactly on generic bases and reduced by Schur, with the affinity of nabla Ric in the base data argued rather than
-  written out; its consequences are confirmed on the full linear system, including a nontrivial prediction. Not covered:
+  for N7-N9 and N12(a), (b): the hand proof uses one block of nabla Ric at p (N6(f)), computer-assisted (affinity,
+  Schur, degree bound in lambda; refereed in REVIEW8-GU); its consequences are confirmed on the full linear system,
+  including a nontrivial prediction. Not covered:
   type-(iii) accumulation points without analyticity; indefinite bases in F9; the members left open by L.3; T_e outside
   V or crossing det M = 0; T_o outside the invariant sector.
