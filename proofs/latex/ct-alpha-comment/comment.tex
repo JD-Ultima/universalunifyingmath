@@ -3,6 +3,10 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{booktabs}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{xurl}
+% Long identifiers and paths: typeset as breakable monospace (xurl allows a break after any character).
+\newcommand{\ident}[1]{\nolinkurl{#1}}
+\setlength{\emergencystretch}{3em}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
 \theoremstyle{remark}
@@ -41,7 +45,7 @@ We built the records as explicit $36\times36$ operators on $\mathbb C^3\otimes\m
 \item the $172$ records are Hilbert--Schmidt orthogonal;
 \item the sector sizes are $79/48/42/3$.
 \end{itemize}
-Exact summation gives the closed form. Its inverse agrees with all $51$ digits printed in \cite[Sec.~S7]{wg}, and with the $60$ digits printed by the ancillary script \texttt{enumerate\_records.py}. The author's Lean file builds under Lean~4.35.0 with axioms \texttt{propext}, \texttt{Quot.sound} and \texttt{Classical.choice} only.
+Exact summation gives the closed form. Its inverse agrees with all $51$ digits printed in \cite[Sec.~S7]{wg}, and with the $60$ digits printed by the ancillary script \ident{enumerate_records.py}. The author's Lean file builds under Lean~4.35.0 with axioms \texttt{propext}, \texttt{Quot.sound} and \ident{Classical.choice} only.
 
 \section{The two exchanges coincide}
 \begin{proposition}\label{prop:class}
@@ -51,7 +55,7 @@ k_r=\begin{cases}1,& e_r=-1 \text{ (product)},\\ 3,& e_r=+1,\ \text{both letters
 \]
 \end{proposition}
 \begin{proof}
-On slots, both exchanges are the permutation $Q_1\leftrightarrow Q_2$, $q_1\leftrightarrow q_2$. They differ only in the set of records each is declared to act on: same-end records for $X$, mixed records for $Y$, and commutator records for both \cite[Sec.~S7]{wg}. Substituting into $k_r=3^{[X_r=-1]}2^{[Y_r=-1]}$ gives the table. In Lean this is \texttt{weight\_is\_class\_function}, proved by kernel evaluation on the author's definitions.
+On slots, both exchanges are the permutation $Q_1\leftrightarrow Q_2$, $q_1\leftrightarrow q_2$. They differ only in the set of records each is declared to act on: same-end records for $X$, mixed records for $Y$, and commutator records for both \cite[Sec.~S7]{wg}. Substituting into $k_r=3^{[X_r=-1]}2^{[Y_r=-1]}$ gives the table. In Lean this is \ident{weight_is_class_function}, proved by kernel evaluation on the author's definitions.
 \end{proof}
 Proposition~\ref{prop:class} isolates the content of the weight law in two assignments, $\sqrt3$ to even same-end records and $\sqrt2$ to even mixed records. In \cite{wg} these follow from wording clauses (``a read is an act at the end at which it is taken''; ``the copies of a shared qudit are one qudit''). Rewording them gives $1/\text{value}\in[112.4,146.5]$ \cite[Table S5]{wg}.
 
@@ -77,7 +81,7 @@ The trace condition defining the $u(1)$ is not invariant under $\xi_2\mapsto\bar
 
 An independent enumeration reproduces the $76$ configurations of \cite[Sec.~S5]{wg}, of which $42$ are admitted by the read cap and $23$ are readable. Imposing the end rule, the two-point definition and the acting charge selects one configuration under A (the object), two under A$^*$, and none under B. Under A$^*$ the second configuration has readout $(30+30\sqrt2)/2304$, i.e.\ $1/\text{value}=31.81$. This uses the dimension-dependent form of the weight law ($\sqrt d$ per surviving exchange), which \cite[Sec.~S5, Table S5]{wg} itself uses for its $(2,2)$ entries. A further rule would be needed to choose between the two configurations.
 
-In Lean (appended to the unmodified file of \cite{wg}) we prove \texttt{uniqueness\_fails\_under\_conjugate\_convention}. With the acting-charge predicate replaced by its A$^*$ form, the configuration ``shared qubit, two read and one unread $(2,2)$ link'' satisfies all hypotheses of the upstream uniqueness theorem and differs from the object. Moreover, the upstream Lean predicate \texttt{readable} used by \texttt{configuration\_unique} is $d_1,d_2\le3$, not the read cap $d_1d_2\le6$. Under A$^*$ the configuration ``shared qutrit, two read and one unread $(3,3)$ link'' therefore also satisfies the Lean hypotheses (\texttt{third\_config\_under\_conjugate\_convention}), although the read cap excludes it. Theorem~1 of \cite{wg} is thus correct under A. Its scope depends on a convention whose justification in \cite[Secs.~S3--S4]{wg} uses the direct sum $\mathbb C^{d_1}\oplus\mathbb C^{d_2}$, a space the axiom does not supply.
+In Lean (appended to the unmodified file of \cite{wg}) we prove \ident{uniqueness_fails_under_conjugate_convention}. With the acting-charge predicate replaced by its A$^*$ form, the configuration ``shared qubit, two read and one unread $(2,2)$ link'' satisfies all hypotheses of the upstream uniqueness theorem and differs from the object. Moreover, the upstream Lean predicate \texttt{readable} used by \ident{configuration_unique} is $d_1,d_2\le3$, not the read cap $d_1d_2\le6$. Under A$^*$ the configuration ``shared qutrit, two read and one unread $(3,3)$ link'' therefore also satisfies the Lean hypotheses (\ident{third_config_under_conjugate_convention}), although the read cap excludes it. Theorem~1 of \cite{wg} is thus correct under A. Its scope depends on a convention whose justification in \cite[Secs.~S3--S4]{wg} uses the direct sum $\mathbb C^{d_1}\oplus\mathbb C^{d_2}$, a space the axiom does not supply.
 
 \section{Covariance of the record set}
 Let $G_\Omega$ be the symmetry group of the joint read state $\lvert\omega_3\rangle_{Q_1Q_2}\otimes\lvert\omega_2\rangle_{q_1q_2}$: $U\otimes\bar U$ on $(Q_1,Q_2)$ and $V\otimes\bar V$ on $(q_1,q_2)$. The plain slot swap $E$ of \cite{wg} does not commute with $G_\Omega$, because it identifies the two read links' bases by the identity rather than by the transpose. As a result, neither the $E$-even/odd splitting nor the span of the commutator records is $G_\Omega$-invariant. Replacing $E$ with $E'=E\circ T$ (transposition at each slot) restores covariance. $E'$ is a linear anti-automorphism, $E'(AB)=E'(B)E'(A)$. On Hermitian operators it agrees with the antiunitary swap $\Theta:A\mapsto S\bar AS^{\mathsf T}$, which also commutes with $G_\Omega$. Write $D_\mu=\sigma_\mu^{(q_1)}-\sigma_\mu^{(q_2)}$ and $S_\mu=\sigma_\mu^{(q_1)}+\sigma_\mu^{(q_2)}$. Because $\sigma_y^{\mathsf T}=-\sigma_y$, the $E'$-odd commutator-type records are $D_x$, $D_z$ and $S_y$. $\Theta$ gives the same span on the Hermitian normalisation, but on the anti-Hermitian commutators of \S1 it gives a different span with the same count. With $E'$ the sector sizes, hence the value, are unchanged. Whether an exchange may act on records as an anti-automorphism is not settled by \cite{wg}, which defines the exchanges on reads and links rather than on operators. Using $E'$ in the order-sign survival rule is therefore our reconstruction choice. Two features of \cite{wg} support it: a read carries a letter to the far end by the transpose identity $(A\otimes\mathbf 1)\lvert\omega\rangle=(\mathbf 1\otimes A^{\mathsf T})\lvert\omega\rangle$ \cite[Sec.~S2]{wg}, and $A\mapsto A^{\mathsf T}$ is an anti-automorphism; and $X$ acts on a commutator record by reordering its two letters \cite[Sec.~S7]{wg}, which is what an anti-automorphism does, $E'([A,B])=[E'(B),E'(A)]$.
@@ -116,10 +120,10 @@ These computations establish how the value changes within declared bounded famil
 The candidate deviates from the measurements as follows: $+0.60\sigma$ (CODATA 2022), $+1.57\sigma$ (electron $g-2$), $-1.49\sigma$ (Rb), $+5.32\sigma$ (Cs). These figures use CODATA 2022 \cite{codata}, the electron $g-2$ \cite{fan}, Rb recoil \cite{morel} and Cs recoil \cite{parker}. Consistent determinations with absolute uncertainty $u\lesssim2.5\times10^{-9}$ in $\alpha^{-1}$ (relative $1.8\times10^{-11}$) would test it at $5\sigma$, if centred near the present CODATA value. The identification also requires a map from the hypercharge readout to $\alpha_{\rm em}=\alpha_Y\cos^2\theta_W$, which \cite{wg} defers.
 
 \section*{Reproducibility}
-Code, outputs and Lean files are in the project repository, under \texttt{computation/chain-theory/alpha/} and \texttt{proofs/lean/chain-theory/}. Upstream sources are pinned to commit \texttt{a28db89} of \texttt{github.com/alexwg/chain-theory}.
+Code, outputs and Lean files are in the project repository, under \ident{computation/chain-theory/alpha/} and \ident{proofs/lean/chain-theory/}. Upstream sources are pinned to commit \texttt{a28db89} of \ident{github.com/alexwg/chain-theory}.
 
 \begin{thebibliography}{9}
-\bibitem{wg} A.~D.~Wissner-Gross, \emph{A Parameter-Free Candidate for the Fine-Structure Constant from Entangled Qudits}, preprint v1.0.0 (2026), with Supplemental Material, \texttt{ChainAlpha.lean} and ancillary files (\texttt{records.csv}, \texttt{enumerate\_records.py}, \texttt{mutations.py}); \texttt{github.com/alexwg/chain-theory}, commit \texttt{a28db89}.
+\bibitem{wg} A.~D.~Wissner-Gross, \emph{A Parameter-Free Candidate for the Fine-Structure Constant from Entangled Qudits}, preprint v1.0.0 (2026), with Supplemental Material, \ident{ChainAlpha.lean} and ancillary files (\texttt{records.csv}, \ident{enumerate_records.py}, \ident{mutations.py}); \ident{github.com/alexwg/chain-theory}, commit \texttt{a28db89}.
 \bibitem{codata} P.~J.~Mohr, D.~B.~Newell, B.~N.~Taylor, E.~Tiesinga, Rev.\ Mod.\ Phys.\ \textbf{97}, 025002 (2025).
 \bibitem{fan} X.~Fan, T.~G.~Myers, B.~A.~D.~Sukra, G.~Gabrielse, Phys.\ Rev.\ Lett.\ \textbf{130}, 071801 (2023).
 \bibitem{morel} L.~Morel, Z.~Yao, P.~Clad\'e, S.~Guellati-Kh\'elifa, Nature \textbf{588}, 61 (2020).

@@ -142,8 +142,9 @@ source prints without selecting one.
   and (3969/201)² = 389.9, both a factor 9 low. It calls 2871 "the candidate cell" (20.1, 175.4) and reports it
   "refuted at the bounded closures" (175.3).
 
-  The agreement needs the electron undressed and the muon and tau dressed. That violates the source's own face
-  dissolution theorem 155.1 by the factor 3² = 9.
+  The lepton agreements need the electron undressed and the muon and tau dressed. That violates the source's own face
+  dissolution theorem 155.1 by the factor 3² = 9. The proton ratio needs no face mixing (2871/67 = 8613/201); it
+  needs the capped-entry typing and the strike exemption at a capped entry instead (round 3).
 
   Declared-space sensitivity: density-window reference counts 0.007 (μ), 0.07 (τ)
   and 0.0025 (p); one lepton combination in 504 puts both ratios within 1%; one of the 9 printed proton cells lies

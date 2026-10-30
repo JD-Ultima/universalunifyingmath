@@ -41,6 +41,8 @@ $$R^\epsilon(14)|=\bigoplus_{\sigma=\pm}\Bigl[(6_\sigma\otimes16_{\sigma\epsilon
 | Dirac ($S^+\oplus S^-$) | $6\times16_+\oplus6\times16_-\oplus2\times144_+\oplus2\times144_-$ | $0$ |
 | MW with $\zeta\in T^*\otimes S^+$ (same chirality) | $16_+\oplus2\times16_-\oplus144_+$ | $-1$ |
 
+*Note (2026-10-30, round 3, `G-full-el-fermions.md` Theorem G7).* The table is representation theory and is unchanged. The Majorana–Weyl rows are not dynamically consistent with the fermion operator (9.16) once its ζζ (Shiab) block is kept: in (7,7) a single Majorana–Weyl ζ has no Rarita–Schwinger kinetic term, and a single Majorana–Weyl spinor no Dirac kinetic term. The minimal consistent real reading is two MW copies, equivalent to complex Weyl (second row). Statements that use the MW row (e.g. "one generation from ν", GU-027, 063, 064) are conditional on dropping the ζζ block or adding non-Spin(7,7)-covariant structure.
+
 In the MW reading the spin-3/2 content is $(3,2)\otimes16_-$, which is the draft's $\mathcal Q^+_{3/2}$. Its SM content equals the draft's second p. 52 table (B5: `True`).
 1. **The p. 53 table is exactly the SM content of $144_-$** (B5: `True`, with SU(3) conjugations transcribed from a 220-dpi render), including all electric charges, e.g. $Q\in\{\pm\tfrac43,\pm\tfrac53,\pm2\}$ in exotic multiplets.
 2. Pati–Salam: $144_-=(20,1,2)\oplus(\overline{20},2,1)\oplus(4,2,1)\oplus(4,2,3)\oplus(\bar4,1,2)\oplus(\bar4,3,2)$ (B3). It contains the Pati–Salam content of one generation, $(4,2,1)\oplus(\bar4,1,2)$.

@@ -140,7 +140,7 @@ The full per-face table, with n_σ, relative deviation and factor for all 124 fa
 | SC-35 | 176.2 O, 186.1 T | m_μ/m_e | 4 | **E** | T | (963/67)² = 206.587 (derived cells); printed (963/201)² = 22.95 | 206.7682827(46) | **≤1% (−0.088%)**; printed face ×9.0 low | "this compendium displays them nowhere" (176.1) |
 | SC-36 | 176.2 O, 186.1 T | m_τ/m_e | 3 | **E** | T | (3969/67)² = 3509.24; printed (3969/201)² = 389.9 | 3477.23(23) | **≤1% (+0.92%)**; printed ×8.9 low | same |
 | SC-37 | 157.1 O, 154.1 T | Koide Q | 4 | N | A | dock 16684819/24990001 = 0.667660; hub 0.634619 | 0.6666645(51) | **≤1% (+0.15%, +196σ)** | "equals two thirds in the field at no reading" |
-| SC-38 | 186.1 T; 175.1/175.3/175.4/180.1/214.6 O | m_p/m_e | 9 | **E** | T | (2871/67)² = 1836.18646 (2871 = 319·9) | 1836.152673426(32) | **≤1% (+1.84e-5, 1.1e6σ)**; 1 of 9 faces | "the candidate is refuted at the bounded closures" (175.3); "stands outside the comparison by orders" (176.1) |
+| SC-38 | 186.1 T; 175.1/175.3/175.4/180.1/214.6 O | m_p/m_e | 9 | **E** | T | (2871/67)² = 1836.18646 (2871 = 319·9) | 1836.152673426(32) | **≤1%**: +1.84e-5 (1.1e6σ) under m = S²; the source's printed mass laws give +1.84e-5 to −1.0e-4, a 1.2e-4 band containing CODATA, so the precision is not a prediction; 1 of 15 distinct printed proton cells (round 3; the round-2 scorecard tabulated 9) | "the candidate is refuted at the bounded closures" (175.3); "stands outside the comparison by orders" (176.1) |
 | SC-39 | 186.1 T, O.1 O, 171.1 C | m_n/m_p | 3 | N | A | 1 (adopted: neutron through the deuteron 2871 = proton) | 1.00137842 | ≤1% (−0.14%; isospin value) | — |
 | SC-40 | O.1 O | (m_n − m_p)/m_p | 3 | N | A | 5.4e-8 (mass-row closure); adopted 0 | 1.378e-3 | disagree (×2.6e4); sign + agrees | — |
 | SC-41 | 181.5 T | m_u/m_d | 1 | N | A | 1 | 0.46(2) | ≤×10 (×2.2) | "no quark mass and no mass ratio is displayed here" |
@@ -248,7 +248,7 @@ with the outputs fixed. It does not provide a calibrated significance comparison
   4. The roster webs themselves.
 
 **P. m_p/m_e = (2871/67)² = 1836.18646 (SC-38).**
-- *Deviation.* +1.84×10⁻⁵, which is the most precise agreement after α(0). In σ it is 1.1×10⁶.
+- *Deviation.* +1.84×10⁻⁵ under the mass law m = S² (1.1×10⁶σ). The source's own printed mass laws spread the prediction over a relative width of 1.2×10⁻⁴: +1.84×10⁻⁵ (m = S²), +6.2×10⁻⁶ (195.1 offices) and −1.0×10⁻⁴ (176.2). CODATA lies inside that band, so the quoted precision is not a prediction of the source (round 3, `06-mass-cells.md`).
 - *The cell.* 2871 = 319·9: the (2,3) Born count times dressing 9. It is also the integer nearest
   67√(m_p/m_e) = 2870.974, off by 0.026.
 - *What the source says about 2871.* The source calls 2871 "the candidate cell" (20.1, 175.4). It
@@ -256,8 +256,9 @@ with the outputs fixed. It does not provide a calibrated significance comparison
   proton in the electron unit "stands outside the comparison by orders at every reading the construction
   has produced" (176.1). That last statement holds only under mass = S, which gives 42.85, 1.6 orders
   low. Under the source's own mass law 185.9 it fails.
-- *(A) printed proton cells.* Over the electron unit, 1 of 9 printed proton cells lies within 1%. The
-  others include the seed (2727/201)² = 184.1, the first catalogued sink (2187/201)² = 118.4, the capped
+- *(A) printed proton cells.* Over the electron unit, 1 of the 15 distinct printed proton cells lies within 1%
+  (2871/67 and 8613/201 are the same ratio; round 3 added 3108, 747, 1701, 255, 85 and 201 to the round-2
+  list of 9). The others include the seed (2727/201)² = 184.1, the first catalogued sink (2187/201)² = 118.4, the capped
   strike (2709/67)² = 1634.8 at −11%, and (25839/201)² = 16526.
 - *(B) declared space.* The space has 330 cells and 1320 variants. Records come from the six genre Born
   counts or the printed proton measures, the strike is 0 or 18, dressings are 3ᵃ4ᵇ, e ∈ {67, 201}, and

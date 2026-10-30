@@ -53,10 +53,10 @@ agreements:
   - id: SC-38
     quantity: "m_p/m_e"
     value: "(2871/67)^2 = 1836.18646, 2871 = 319*9"
-    deviation: "+1.84e-5 (1.1e6 sigma)"
+    deviation: "+1.84e-5 (1.1e6 sigma) under m = S^2; the printed mass laws give +1.84e-5, +6.2e-6 (195.1) or -1.0e-4 (176.2), a 1.2e-4 band containing CODATA (round 3)"
     source_position: "2871 is 'the candidate cell' (20.1, 175.4); 'the candidate is refuted at the bounded closures' (175.3); 'stands outside the comparison by orders' (176.1)"
     discrete_choices: ">= 5"
-    freedom: "1 of 9 round-2 printed proton cells within 1%; declared 1320-variant space: density-window reference count 0.0025; uniform-target-phase reference coverage 0.053 (spacing 1) / 0.006 (spacing 9); illustrative models, not calibrated p-values"
+    freedom: "1 of 15 distinct printed proton cells within 1% (round 3; the round-2 list had 9); declared 1320-variant space: density-window reference count 0.0025; uniform-target-phase reference coverage 0.053 (spacing 1) / 0.006 (spacing 9); illustrative models, not calibrated p-values"
   - id: SC-39
     quantity: "m_n/m_p"
     value: "1 (isospin value)"
