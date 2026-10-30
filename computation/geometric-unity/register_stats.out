@@ -1,5 +1,5 @@
 claims: 72
-primary type (first type listed): {'Theorem-claim': 40, 'Definition': 17, 'Analogy': 6, 'Physical': 6, 'Numerological': 1, 'Source': 1, 'Conjecture': 1}
+primary type (first type listed): {'Theorem-claim': 40, 'Definition': 17, 'Analogy': 6, 'Physical': 6, 'Numerical': 1, 'Source': 1, 'Conjecture': 1}
 status: {'verified': 34, 'conditional/repaired': 13, 'open/not well-posed': 13, 'not mathematical': 5, 'false as stated': 5, 'trivially true': 2}
 false as stated: ['GU-018', 'GU-042', 'GU-044', 'GU-046', 'GU-053']
 gaps: 22

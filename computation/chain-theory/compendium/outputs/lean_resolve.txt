@@ -264,12 +264,12 @@ Round 6: restated AlphaDerivation theorems and kernel modules tied to compendium
      - "The one-act clause is a theorem of the derived act"
      - "every entry of the census of moves then carries at most one act"
      - "a subdivision being a path of four one-pair acts"
-     numbers >= 5 printed in the box: [5]; in the tied statements: []; nowhere in the Lean tree: []
+     numbers >= 5 printed in the box: []; in the tied statements: []; nowhere in the Lean tree: []
 
   2.6 [THEOREM] The restated text at both faces at every cell  --  NONE (0 of 2 clauses)   tied: row_524038_ORKC  (named for box 2.2)
      - "all thirty-two derived cells with a phase input read the same at both of its faces"
      - "the re-spelling of the tenth from the ninth is an instrument"
-     numbers >= 5 printed in the box: [32]; in the tied statements: []; nowhere in the Lean tree: []
+     numbers >= 5 printed in the box: [9, 10, 32]; in the tied statements: []; nowhere in the Lean tree: []
 
   2.9 [THEOREM] The one-dimensional end excluded at the axiom  --  NONE (0 of 2 clauses)   tied: row_524038_ORKC  (named for box 2.2)
      - "A pair with an end of dimension one is a product state"

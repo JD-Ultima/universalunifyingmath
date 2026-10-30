@@ -8,7 +8,7 @@
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
 
-\title{Selection conventions and trial factor in a proposed closed form\\ for the fine-structure constant}
+\title{Selection conventions and rule-space sensitivity in a proposed closed form\\ for the fine-structure constant}
 \author{universalunifyingmath project}
 \date{Draft, 30 October 2026}
 
@@ -22,7 +22,7 @@ $\alpha_{\rm cand}=(79+48\sqrt2+42\sqrt3+3\sqrt6)/31104$, with $\alpha_{\rm cand
 (ii) The two ``commuting exchanges'' that sort the records are a single involution on all product records. The weight law is therefore a function of exchange parity and slot class alone.
 (iii) The selection of the qutrit--qubit link by an ``acting central charge'' depends on a conjugation convention for the far end of a link, which the axiom does not fix. Under the conjugate convention a second configuration satisfies every hypothesis of the uniqueness theorem. We verify this in Lean~4 against the author's own definitions.
 (iv) The records as defined are not covariant under the symmetry group of their own joint state. A covariant repair leaves the value unchanged, and invariance alone leaves a nine-parameter (real) family of readouts. The weights have an exact operator form in the model's primitives, but its qutrit projector is the end rule itself; no local or short multiplicative construction reproduces them.
-(v) In a declared space of $46\,080$ rule variants that contains all twelve weight-law alternatives of \cite[Table S5]{wg}, the expected number of chance values within $1\sigma$ of CODATA~2022 is $4.4\times10^{-6}$. This already includes the trial factor of the declared space. We discuss what this does and does not imply.
+(v) In a declared space of $46\,080$ rule variants that contains all twelve weight-law alternatives of \cite[Table S5]{wg}, the candidate is the unique value within $1\sigma$ of CODATA~2022. We report density reference calculations with explicit assumptions; these are not calibrated $p$-values.
 \end{abstract}
 
 \section{Setting}
@@ -88,7 +88,7 @@ Under $SU(3)\times SU(2)\times\langle E'\rangle$ the covariant record space has 
 \[ M=\bigl(1+(\sqrt3-1)S\Pi_X\bigr)\bigl(1+(\sqrt2-1)S\Pi_Y\bigr). \]
 This does not derive the weights. $S\Pi_X$ gives the qutrit factor $\sqrt3$ to nine records that carry no qutrit letter (the six even qubit--qubit records and the three commutator records): it is the end-rule clause written as a projector. A rule that credits an end's dimension only to records with a letter at that end gives these records $k\in\{1,2,4,\dots\}$, so it cannot give $3$ and $6$; the alternative ``$X$ where the letters sit'' of \cite[Table S5]{wg} ($1/\text{value}=139.030$) is such a rule. In declared families (all $56\,355$ words of length $\le3$ in $38$ primitives of the model, and $321\,489$ survival--attribution dressings) no word and no such local dressing reproduces the weights. Every primitive is $\mathbb Q(i)$-rational, so no $\mathbb Q(i)$-linear combination of products of primitives, of any length, has diagonal proportional to $\sqrt{k_r}$. Transporting qubit letters to the qutrit copies through the read links reproduces the weights only if the two exchanges are assessed in different frames and the transported letters, which are supported on a rank-$2$ subspace of $\mathbb C^3$, receive the rank-$3$ join credit $\sqrt3$; the transport's own symmetry gives $2/\sqrt3$ or $\sqrt2$ ($1/\text{value}=140.702$ or $139.030$).
 
-\section{Trial factor}
+\section{Declared rule-space sensitivity}
 Table S5 of \cite{wg} lists the computed value and fifteen closed-form alternatives. The computed row and the twelve weight-law alternatives are reproduced from the record classes. The other three are read-end counting ($70.19$), normalisation by the $172$ records ($0.758$), and the smallest readable configuration ($3.535$). They change the counting unit, the normalisation or the configuration, and all lie far from $137$. We then declared a rule space that contains the twelve:
 \begin{itemize}
 \item an independent squared factor $k\in\{1,2,3,6\}$ for each of the four product classes;
@@ -96,13 +96,19 @@ Table S5 of \cite{wg} lists the computed value and fifteen closed-form alternati
 \item amplitude or Born weighting;
 \item five normalizations $N\in\{24\cdot36^2,36^3,24^3,24\cdot35^2,35^3\}$.
 \end{itemize}
-This gives $46\,080$ rules and $15\,639$ distinct values. The rule of \cite{wg} is the closest to CODATA~2022, at $0.598\sigma$. The next closest is at $1.3\times10^5\sigma$. Near $1/\alpha$ the distinct values have density $103.9$ per unit, so the expected number in the $\pm1\sigma$ window ($4.2\times10^{-8}$) is $4.4\times10^{-6}$.
+This gives $46\,080$ rules and $15\,639$ distinct values. The rule of \cite{wg} is the closest to CODATA~2022, at $0.598\sigma$. The next closest is at $1.3\times10^5\sigma$. In $(120,155)$ the distinct values have density $103.9$ per unit. For an illustrative random-target model, let $U$ be uniform on $(120,155)$ while the outputs $v_j$ stay fixed. The reference expected match count is
+\[
+ \mathbb E\!\left[\#\{j:|v_j-U|\le\sigma\}\right]
+ =\frac1{35}\sum_j\bigl|[v_j-\sigma,v_j+\sigma]\cap(120,155)\bigr|
+ =4.4\times10^{-6},
+\]
+where $\sigma=2.1\times10^{-8}$. This expectation belongs to the stated artificial target model. It is not a calibrated $p$-value for the measured value of $\alpha$.
 
-Separately, among the $1.63\times10^9$ elements $(a+b\sqrt2+c\sqrt3+d\sqrt6)/31104$ with $0\le a,b,c,d\le200$, exactly one lies within $1\sigma$: $(79,48,42,3)$. The expected number is $0.024$.
+Separately, among the $1.63\times10^9$ elements $(a+b\sqrt2+c\sqrt3+d\sqrt6)/31104$ with $0\le a,b,c,d\le200$, exactly one lies within $1\sigma$: $(79,48,42,3)$. Multiplying the number of admissible $(b,c,d)$ triples by the numerator-window width gives the uniform-fractional-part reference count $0.024$. The actual fractional parts are deterministic, so this is a density heuristic rather than a calibrated expectation for the construction.
 
 As a Lean-side check we ran the author's mutation harness, which applies $19$ single-definition rewordings and has Lean~4.35.0 evaluate each readout. Of the $19$, thirteen lie in the declared space, and Lean reproduces our numerator exactly for each. Ten of these are Table S5 rows reproduced above. Three more are in the declared space only: $205.55$ (normalisation $36^3$), $150.79$ and $138.94$. Four are outside it, at $133.97$, $254.54$, $149.59$ and $295.10$. Two leave the value unchanged by construction. Apart from those two, none is within $10^{-3}$ of $\alpha^{-1}$.
 
-These numbers bound coincidence only relative to a stated search space. Even allowing selection of the best rule within the declared space, a chance hit has probability $\approx4\times10^{-6}$; for a single rule fixed in advance the corresponding figure is of order $10^{-10}$. If the rules were instead selected from an effective space of $10^{9}$--$10^{10}$ variants, the agreement is unremarkable. Variants of this kind include wording clauses, configurations, normalizations, and conventions such as that of Proposition~\ref{prop:conv}. \cite{wg} does not document the order in which rules and value were fixed, so the material cannot decide between the two.
+These computations establish how the value changes within declared bounded families. A calibrated probability of agreement would additionally require a justified null distribution for constructions or targets and a specified selection procedure. A finite rule count, or fixing one rule before evaluation, does not supply that distribution. The choice of family and of a uniform-target band also affects the reference count. We therefore infer no single-rule probability or threshold number of additional rules from it. Reference~\cite{wg} does not document the order of rule choices and evaluation; that omission establishes neither a search nor its size, and we infer no author intent. Further measurements test the fixed numerical conjecture directly.
 
 \section{Testability}
 The candidate deviates from the measurements as follows: $+0.60\sigma$ (CODATA 2022), $+1.57\sigma$ (electron $g-2$), $-1.49\sigma$ (Rb), $+5.32\sigma$ (Cs). These figures use CODATA 2022 \cite{codata}, the electron $g-2$ \cite{fan}, Rb recoil \cite{morel} and Cs recoil \cite{parker}. Consistent determinations with absolute uncertainty $u\lesssim2.5\times10^{-9}$ in $\alpha^{-1}$ (relative $1.8\times10^{-11}$) would test it at $5\sigma$, if centred near the present CODATA value. The identification also requires a map from the hypercharge readout to $\alpha_{\rm em}=\alpha_Y\cos^2\theta_W$, which \cite{wg} defers.

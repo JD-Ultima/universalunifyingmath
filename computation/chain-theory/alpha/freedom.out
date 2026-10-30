@@ -32,14 +32,16 @@ Part B: rule space of 46080 rules, 15639 distinct values
   distinct values within relative 0.0001 of 1/alpha: 4
   distinct values within relative 1.0e-6 of 1/alpha: 1
   density of distinct values in 1/alpha in (120,155): 103.94285714285714 per unit
-  expected number of chance values within +-1 sigma: 4.366e-6
+  illustrative model: target U uniform on (120,155); rule outputs fixed
+  expected match count in that model within +-1 sigma: 4.366e-6
+  this reference count is not a calibrated p-value for the observed alpha or a search-history estimate
   median gap between adjacent distinct values in (120,155): 0.007026
   1-sigma window (absolute, 1/alpha): 4.2e-8
-  rules needed for O(1) chance hit at this density: ~1.06e+10
 
 Part C: numerator window half-width = 3.478e-8 around 226.976854160965
   coefficients in [0,50]: 6.765e+06 tuples, hits within 1 sigma: 0 []
   coefficients in [0,100]: 1.041e+08 tuples, hits within 1 sigma: 1 [(79, 48, 42, 3)]
   coefficients in [0,200]: 1.632e+09 tuples, hits within 1 sigma: 1 [(79, 48, 42, 3)]
-  M=100: (b,c,d) triples with admissible a: 255899; expected chance hits = 0.0178
-  M=200: (b,c,d) triples with admissible a: 338472; expected chance hits = 0.0235
+  M=100: (b,c,d) triples with admissible a: 255899; uniform-fractional-part reference count = 0.0178
+  M=200: (b,c,d) triples with admissible a: 338472; uniform-fractional-part reference count = 0.0235
+  fractional-part reference counts are heuristic; the enumerated lattice and target are deterministic

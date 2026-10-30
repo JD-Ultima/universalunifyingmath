@@ -288,7 +288,7 @@ local dressings closest in value to 1/alpha(CODATA 2022):
     1/value   137.19043  numerator 88+54r2+36r3+0r6       diagonal on records: False  X: ("Pi+(E'_Q)", ('Q', 'q', None, None))  Y: ("Pi+(sigma E'_q)", (None, 'q', 'q', 'q'))
     1/value   136.87967  numerator 97+48r2+36r3+0r6       diagonal on records: False  X: ('1', (None, 'q', None, None))  Y: ("Pi+(E'_Q)", ('Q', 'q', 'q', None))
 all F2 dressings: distinct values 11570 ; within 1e-3 relative of 1/alpha: 49 ; of these local: 0
-local distinct values with 1/value in (120,155): 241 -> density 6.89 per unit; expected in the +-1e-3 relative window: 1.89
+local distinct values with 1/value in (120,155): 241 -> density 6.89 per unit; density-window reference count in the +-1e-3 relative window: 1.89
 
 SUMMARY
   F1 ( 56355 words; 29679 formed explicitly, the rest are left extensions of duplicate images; 11973 distinct nonzero compressions): no word, twirled word, |word| or sqrt(word) reproduces sqrt(k_r) or k_r as an operator, its diagonal, or its per-isotypic traces.

@@ -60,7 +60,13 @@ Notation:
 - "Variant": one choice of (numerator cell, electron cell, exponent p ∈ {1, 2}).
 - δ: the achieved |ln(pred/meas)|. It is 1.84×10⁻⁵ for p, 8.77×10⁻⁴ for μ and 9.12×10⁻³ for τ.
 - ρ: distinct predicted values per unit ln within |ln(v/meas)| < w, for windows w = 0.5 and w = 1.0.
-- λ = 2δρ, the expected number of chance values that close. P = 1 − e^(−λ). This is the F-CT-4 / round-2 method.
+- λ = 2δρ, a density-times-window reference count under illustrative local uniformity in log-value.
+- P = 1 − e^(−λ) is the probability of at least one point **only in an illustrative homogeneous Poisson process** with intensity ρ in log-value. The deterministic output set is not shown to follow this process.
+
+Integer and power-lattice references below assume a target phase uniform modulo the stated spacing;
+combining electron-unit choices by a product of complements additionally assumes independent phases.
+The actual target and outputs are fixed. These reference calculations are not calibrated p-values,
+do not determine an effective trial factor, and establish no construction search history or author intent.
 
 The spaces:
 1. **Printed.** The 15 proton first powers the text prints for the proton's own webs: 2871, 8613, 2709, 2727, 101,
@@ -86,7 +92,7 @@ The spaces:
 
 **m_p/m_e.** (2871/67)² ranks first in every space.
 
-| space | variants (distinct) | next closest, \|ln dev\| | λ at δ = 1.84e-5 (w = 0.5 / 1.0) | λ at the convention spread 1.2e-4 |
+| space | variants (distinct) | next closest, \|ln dev\| | reference λ / phase coverage at δ = 1.84e-5 (w = 0.5 / 1.0) | reference at convention spread 1.2e-4 |
 |---|---|---|---|---|
 | printed | 120 (103) | 0.103 ((2727/67)², −9.8%) | 2.9e-4 / 1.8e-4 | 1.9e-3 / 1.2e-3 |
 | reading grid, cell chosen per body | 144 (120) | 0.103 | 2.6e-4 / 1.8e-4 | — |
@@ -98,14 +104,15 @@ The spaces:
 
 In the printed space only 2 of 120 variants lie within 10% of the measured ratio, and both are the same ratio
 (2871/67 = 8613/201). The median variant lies a factor e^4.91 ≈ 136 away. With the electron cell free in the printed
-set, the any-integer chance at δ = 1.84×10⁻⁵ rises to 0.39. The scorecard compares 34 quantities numerically, so a
-trials factor of up to 34 applies across quantities.
+set, the independent-uniform-phase reference coverage at δ = 1.84×10⁻⁵ is 0.39. The scorecard compares 34 quantities
+numerically. This multiplicity would need to be included in a justified joint null model; multiplying these
+uncalibrated reference figures by 34 does not produce a calibrated significance result.
 
 **Leptons.**
 
 | ratio | printed (λ, w = 0.5 / 1.0) | per body over the grid | census | integer level |
 |---|---|---|---|---|
-| m_μ/m_e | 3.5e-3 / 2.6e-3 (24 variants) | 7.0e-3 / 6.1e-3 | 0.023 | 963 is the integer nearest 67√(m_μ/m_e) = 963.42; for any integer P = 0.84, for a multiple of 9 P = 0.094 |
+| m_μ/m_e | 3.5e-3 / 2.6e-3 (24 variants) | 7.0e-3 / 6.1e-3 | 0.023 | 963 is the integer nearest 67√(m_μ/m_e) = 963.42; uniform-phase coverage 0.84 for spacing 1, 0.094 for spacing 9 |
 | m_τ/m_e | 0.15 / 0.073 (40 variants) | 0.073 / 0.037 | 0.23 | 3969 lies 18.1 above the target cell 3950.9; the nearest multiple of 27 is 3942 |
 
 In the printed space both lepton ratios fall within 1% for 1 of the 60 (e, μ, τ) combinations: (67, 963, 3969).
@@ -172,20 +179,22 @@ dock unit").
 ## 4. Grade and falsifiable content (task 4)
 
 - **m_p/m_e: selection** of the reading.
-  - The readings that produce 2871 were adopted because they meet it: 20.1 says "the proton is met at six readings",
-    and 186.1 says "every meeting reading at the strike and the beyond records adopted here".
+  - The stated test selects readings that meet 2871: 20.1 says "the proton is met at six readings",
+    and 186.1 says "every meeting reading at the strike and the beyond records adopted here". This records
+    a selection criterion in the text, without inferring how the candidate was originally obtained.
   - The cell was introduced as "the candidate" and "the proton figure of the comparison table". The order in which the
     cell and the target were fixed is not documented, as with CT-G10 for α.
   - The 1.84×10⁻⁵ is smaller than the source's own spread of mass laws (1.2×10⁻⁴).
-  - One coincidence remains. The integer nearest 67√(m_p/m_e) equals 9 × 319, where 319 is fixed upstream by the α
-    weight law. Its chance is about 2.5×10⁻³ in the round-2 ingredient space and about 2×10⁻⁴ in the printed space,
-    before the trials factor across quantities. It would be notable if the cell had been fixed before the comparison;
-    the text gives no evidence either way.
+  - One numerical relation remains: the integer nearest 67√(m_p/m_e) equals 9 × 319, where 319 is fixed upstream
+    by the α weight law. The density-window reference counts are about 2.5×10⁻³ in the round-2 ingredient space
+    and 2×10⁻⁴ in the printed space. They describe the declared families under illustrative assumptions;
+    they establish no calibrated chance probability or construction history.
 - **m_μ/m_e and m_τ/m_e: conditional on choices.** The integers are derived, but the agreement needs the mixed face,
   which 198.3 and 155.1 exclude. Under the definitional law both ratios are 9× low (8.9× for τ). The only
   reading-independent content is m_τ/m_μ = (441/107)² = 16.987. That is +1.0% from 16.81769(85), or +198σ. The muon cell
-  is the integer nearest the target at e = 67, so its 0.088% agreement is what an integer numerator gives typically
-  (P = 0.84). The chance that some power-of-3 rescaling brings a fixed prediction this close is 1.6×10⁻³ (8.0×10⁻⁴ for powers of 9).
+  is the integer nearest the target at e = 67. Its 0.088% agreement has uniform-phase reference coverage 0.84
+  on the integer lattice. Under a separate uniform log-phase model, the coverage of the power-of-3 rescaling
+  lattice at this tolerance is 1.6×10⁻³ (8.0×10⁻⁴ for powers of 9). Neither model is calibrated for these constructions.
 - **Joint:** no reading consistent with the compendium's definitions gives the lepton and the proton agreements
   together. Each agreement uses a different face.
 - **Falsifiable content.**
@@ -208,8 +217,9 @@ dock unit").
    in enough detail to be reproduced. Our grid is validated against 6 printed tuples and 2 printed counts.
 4. Membership of the printed space is curated, with verbatim anchors. The neutron, the deuteron, the 116.1
    insertion readings and the quark sinks are excluded, each with a stated reason.
-5. λ uses the local log-density, as in F-CT-4 and round 2. These values are chance-hit expectations under the
-   assumption that the cells were fixed without the target. They are not p-values for a derivation.
+5. λ uses the local log-density under an illustrative local-uniformity assumption. The displayed P uses an
+   additional Poisson-process model; lattice coverage uses uniform target phases. Fixing cells before comparison
+   alone does not establish any of these models. The reference counts and coverages are not calibrated p-values.
 6. The "convention spread" is the width of the printed second-order mass laws at the agreeing cells.
 
 ## 6. Effect on round 2

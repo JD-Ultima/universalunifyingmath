@@ -125,8 +125,9 @@ source prints without selecting one.
 - **sin²θ_W = (17/36)² = 289/1296.** This face is printed at 164.2 (OPEN). We re-derived it: 17 of the 36 Weyl
   pair letters are nonzero at the (3,2) pair ket. It lies −0.83σ from the on-shell value
   1 − (M_W/M_Z)² = 0.223209(259), but 3.6% from the MS-bar value. The source refuses this identification step,
-  and its adopted value, cos²θ_W = 1/2 (164.5), is 1070σ off. Expected chance hits: 0.019 among the source's 11
-  distinct printed values; 0.14 in a declared family of 192 variants. Five discrete choices lie behind it.
+  and its adopted value, cos²θ_W = 1/2 (164.5), is 1070σ off. Illustrative reference counts: 0.019 under a
+  uniform-value model for the 11 distinct printed values; 0.14 from local densities in a declared family
+  of 192 variants. These are not calibrated p-values. Five discrete choices lie behind the agreement.
 - **Lepton and proton mass ratios.** The "derived cells" of 186.1 (THEOREM) are e = 67, μ = 963, τ = 3969 and
   p = 2871. Combined with mass = (first power)² (185.9), they give:
   - m_μ/m_e = 206.587 (−0.088%);
@@ -141,15 +142,17 @@ source prints without selecting one.
   The agreement needs the electron undressed and the muon and tau dressed. That violates the source's own face
   dissolution theorem 155.1 by the factor 3² = 9.
 
-  Freedom in declared spaces built from the source's own alternatives: expected chance hits 0.007 (μ), 0.07 (τ)
+  Declared-space sensitivity: density-window reference counts 0.007 (μ), 0.07 (τ)
   and 0.0025 (p); one lepton combination in 504 puts both ratios within 1%; one of the 9 printed proton cells lies
   within 1%; at least 4 or 5 discrete choices each. As with α, the order in which cells and targets were fixed is
-  not documented. Here, unlike for α, the text itself marks the proton cell as a candidate.
+  not documented; this establishes no construction search history or author intent. The text itself
+  marks the proton cell as a candidate.
 - **m_n/m_p = 1 (−0.14%).** This is the isospin value. The printed splitting, 5.4×10⁻⁸, is too small by a
   factor 2.6×10⁴.
 
-None of these approaches the improbability of the α(0) agreement: F-CT-4 gives 4.4×10⁻⁶ expected chance hits
-within 1σ for α(0).
+The numerical agreements and declared-family hit counts can be compared directly. Their density references
+use different illustrative models and do not support a ranking of calibrated improbabilities. The α(0)
+audit's 4.4×10⁻⁶ is an expected count only in its stated uniform-random-target model.
 
 **F12. Internal inconsistencies exposed by scoring** (c).
 - The source uses two mass conventions:
@@ -192,10 +195,10 @@ m_μ,τ/m_e ≈ (963/67)², (3969/67)² are derivations or selections. All 102 q
   - The proton dressing: 9 or 27.
   - The mass law: S, S², S² + closure, or S²(1 + G₂²).
 
-**F14. Distribution and look-elsewhere** (c, e). (2871/67)² is the closest value in every space considered. The
-expected chance hits at 1.84×10⁻⁵ are:
+**F14. Distribution and declared-space sensitivity** (c, e). (2871/67)² is the closest value in every space considered.
+The following are density-window reference counts, or uniform-phase lattice coverage, at 1.84×10⁻⁵:
 
-| space | expected chance hits |
+| space | illustrative reference count / coverage |
 |---|---|
 | printed proton cells × printed electron cells × p (120 variants) | 2–3×10⁻⁴ |
 | 72-reading grid, cells chosen per body | 2–3×10⁻⁴ |
@@ -203,11 +206,15 @@ expected chance hits at 1.84×10⁻⁵ are:
 | narrow family (319·3^u/67·3^v)^p | 2–5×10⁻⁵ |
 | any integer over 67 | 0.053 |
 
-These assume the cell was fixed without the target, which the text does not document. The source's own mass laws
+The density references assume local uniformity in log-value; lattice coverage assumes a uniform target phase
+modulo the spacing. The corresponding Poisson probability in the output requires an additional illustrative
+homogeneous-process assumption. Fixing a cell before comparison alone does not establish these models, and
+the figures are not calibrated p-values. The source's own mass laws
 spread m_p/m_e over a relative width of 1.2×10⁻⁴: +1.84×10⁻⁵ at S², +6.2×10⁻⁶ at the 195.1 offices, and −1.0×10⁻⁴
 under 176.2's second-order law without G₂ at the proton. CODATA lies inside this band, so the quoted precision is not a
-prediction of the source. At that spread the any-integer chance is 0.34. For the muon the expected chance hits are 3–7×10⁻³;
-963 is also the integer nearest 67√(m_μ/m_e). For the tau they are 0.04–0.23.
+prediction with a stated error budget. At that spread the uniform-phase integer reference coverage is 0.34.
+For the muon the density reference counts are 3–7×10⁻³; 963 is also the integer nearest 67√(m_μ/m_e).
+For the tau the reference counts are 0.04–0.23.
 
 **F15. Consistency** (c). No face of the mass law gives all three agreements.
 - The proton ratio holds at both faces that 155.1 equates (2871/67 = 8613/201).
@@ -221,8 +228,9 @@ prediction of the source. At that spread the any-integer chance is 0.34. For the
   m_t/m_p = 184.
 
 **F16. Grade** (b, e).
-- m_p/m_e: selection of the reading. One coincidence remains, 2871 = 9 × 319, with an expected chance of about 2.5×10⁻³
-  in the declared space if the cell had been fixed beforehand.
+- m_p/m_e: selection of the reading by the source's stated equality test. The relation 2871 = 9 × 319 has a
+  density-window reference count about 2.5×10⁻³ in the declared space; this is not a calibrated probability
+  and establishes no history for the original candidate.
 - m_μ/m_e and m_τ/m_e: conditional on a face choice that the compendium's own definitions exclude.
 - The only content independent of the reading is m_τ/m_μ = (441/107)² = 16.987, +1.0% (198σ).
 - As exact statements all three are excluded: p at ≥3.6×10⁵σ, μ at 3.9×10⁴σ, τ at 181σ.

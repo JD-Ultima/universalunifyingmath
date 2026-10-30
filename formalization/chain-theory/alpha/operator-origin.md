@@ -189,7 +189,7 @@ That gives $(7\cdot81)^2=321\,489$ ordered choices. All ingredients commute and 
   | 0.0697 | $94+51\sqrt2+36\sqrt3$ | 136.135 | | |
 
   They agree with the Letter on the 64 QQ and 96 mixed records. They differ only on the 12 qubit-only records, where the local rule gives $\sqrt2$ or $2$ instead of $1$, $\sqrt3$ and $\sqrt6$: all three on the 6 E′-even qq and the 3 commutator records, and the third also gives $\sqrt2$ to the 3 E′-odd qq records, whose Letter weight is 1 ($51=48+3$).
-- **Values near $1/\alpha$.** 49 F2 dressings (the Letter's among them) lie within $10^{-3}$ relative of $1/\alpha$; none of them is local. The closest local value is 137.186 ($1.1\times10^{-3}$ relative). With 6.89 local values per unit near 137, about 1.89 would be expected in that window. Finding none is not significant either way, and the count is not used as evidence.
+- **Values near $1/\alpha$.** 49 F2 dressings (the Letter's among them) lie within $10^{-3}$ relative of $1/\alpha$; none of them is local. The closest local value is 137.186 ($1.1\times10^{-3}$ relative). Multiplying the local density 6.89 per unit by the window width gives the reference count 1.89 under an illustrative local-uniformity assumption. This is not a calibrated probability or significance test, and the reference count is not used as evidence.
 
 ## 5. Limits
 

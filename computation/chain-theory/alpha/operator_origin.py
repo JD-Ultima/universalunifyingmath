@@ -837,7 +837,7 @@ print("all F2 dressings: distinct values", len({r[1] for r in rows}),
 lv = sorted({r[1] for r in loc_rows})
 dens = sum(120 < N / num_float(c) < 155 for c in lv) / 35.0
 print(f"local distinct values with 1/value in (120,155): {sum(120 < N / num_float(c) < 155 for c in lv)}"
-      f" -> density {dens:.2f} per unit; expected in the +-1e-3 relative window: {dens * 2e-3 * AINV:.2f}")
+      f" -> density {dens:.2f} per unit; density-window reference count in the +-1e-3 relative window: {dens * 2e-3 * AINV:.2f}")
 print("\nSUMMARY")
 print("  F1 (", 1 + 38 + 38 ** 2 + 38 ** 3, "words;", sum(nwords.values()), "formed explicitly, the rest are left extensions of",
       "duplicate images;", len(good), "distinct nonzero compressions): no word, twirled word, |word| or sqrt(word)",

@@ -22,6 +22,8 @@ Install: `pip install sympy==1.14.0 mpmath==1.3.0 numpy==2.5.3 scipy==1.18.1`. R
 transcription against `mass_width_2024.mcd` from `pip download particle==0.25.2` (data file read as text; the package is not imported).
 All scripts run with `python3 -I` (isolated mode). No network access is needed.
 
+The commands below use Bash. The Lean build pipeline (`lean_audit.sh` and `lean_build.py`) requires Linux, including WSL: it uses `os.wait4` and Linux peak-memory units. On Windows, use Linux Python and a Linux Lean binary inside WSL for this pipeline. `lean_build.py` checks the platform before invoking Lean or copying sources. The static Python audits can run natively with `python -X utf8 -I script.py ...` so Unicode output uses UTF-8.
+
 ## Run
 
 ```bash
@@ -91,6 +93,7 @@ eigenvalues are reproducible to the printed 3 decimals.
 | `lean_audit/ResolveChecks.lean` | R6 | own theorems about the source's definitions: `generatorBlocksScalar` always true; abelian = conserved = (d1 != d2) on 1..12; the record-wise weight identity over {+-1}^2; `onShellCoupling` = (0,1) off the object of record; the correspondence conclusion without its opaque hypotheses; `identityAt` of the unit functional on every path; six literal parts by `rfl`; the entered zero transfer in 172 rows |
 | `lean_tables.py` | R7 | resolves the 37 table-check and 11 opaque-only THEOREM rows (imports `lean_classify.py`, `lean_resolve.py`, `lean_resolve_data.py`, `boxes.py` unchanged): per table-check declaration the verbatim theorem, its module's Row fields, entered rows and `checks` conjuncts by form (LEN / KV / CAT / REL), the opaque hypotheses and their use; per opaque Prop, alias and record the verbatim text and every library theorem mentioning it; clause-level verdicts (ENTERED counterparts, RECORDED labels as the label-inclusive bound, one stated sensitivity); printed numbers (digits, cardinal and ordinal words) in the tied checks, entered rows, other tied declarations and the raw tree; printed numbers against the entered rows; the 9 table checks of round 6's 16 rows; box labels naming a data module; axioms from round 6's file; the 64-row content table (`outputs/lean_tables.tsv`) and the clause table (`outputs/lean_tables_clauses.tsv`) |
 | `lean_tables_data.py` | R7 | curated data (module): 248 verbatim box clauses of the 48 rows with their counterpart checks (verbatim anchors, kind ENTERED or RECORDED) and notes; label matches for round 6's clauses (LABELS16); data modules whose content is a box's, by label or content |
+| `number_words.py` | R6/R7 | shared cardinal/ordinal parser for both Lean audits; separates number phrases at punctuation and adjacent unit words. The original round-6 parser is retained only for round 7's historical comparison. |
 | `lean_audit/TableChecks.lean` | R7 | own theorems about the source's entered rows that its `checks` do not state: WAMR sums 228 / 114 / 78 / 150; SLBC OPEN 78, WASHED 150, 114 links per orientation, W constant at all 228 reads, R consistency and 54 rises; NCRE order3 = 0 and 18 = 13 + 3 + 2; HTOR's open reads Z, X, XZ, XZ2; RLRO's 13 BODY webs |
 
 ## Interpretive choices in the dependency graph (`depgraph.py`)

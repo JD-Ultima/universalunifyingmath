@@ -162,12 +162,20 @@ The full per-face table, with n_σ, relative deviation and factor for all 124 fa
 The method follows F-CT-4:
 - (A) the alternatives the source itself prints;
 - (B) a declared rule space built only from choices the source prints or names. For this space we
-  report the number of variants, the hits at the achieved precision, and the expected number of chance
-  hits from the local density of values;
+  report the number of variants, the hits at the achieved precision, and density-times-window
+  reference counts;
 - (C) the list of discrete choices behind the agreement.
 
-For comparison, F-CT-4 for α(0) gives 4.4×10⁻⁶ expected chance hits within 1σ in a declared space of
-46 080 rules.
+The reference counts use illustrative uniform-value or locally uniform log-value assumptions.
+The integer references assume a target phase uniform modulo the allowed integer spacing. These
+assumptions are not calibrated for the deterministic constructions; they supply neither p-values
+nor construction search histories. The source's undocumented order of choices and evaluation does
+not establish a search or author intent. Counts summed over schemes count scheme-output matches,
+not the probability of at least one match, and the schemes share measurements.
+
+F-CT-4 for α(0) reports a unique 1σ match among the 15 639 distinct values of 46 080 rules. Its
+4.4×10⁻⁶ reference expected count uses a different illustrative model: a target uniform on $(120,155)$
+with the outputs fixed. It does not provide a calibrated significance comparison with this scorecard.
 
 **W. sin²θ_W = (17/36)² = 289/1296 (SC-18; 164.2, OPEN).**
 - *Re-derived (R).* Take the (3,2) pair ket on its two-dimensional common support. Of the 36 Weyl
@@ -184,12 +192,12 @@ For comparison, F-CT-4 for α(0) gives 4.4×10⁻⁶ expected chance hits within
 
 - *(A) printed faces.* The text prints 13 faces for the angle, 11 of them distinct (as sin²): 1/2 (the
   CONDITIONAL 164.5), 17/36, 7/18, 289/1296, 49/324, 3/8, 2/5, 2/3, 1/3, 0, and 0.612 (I.38.1). Only
-  289/1296 lands within 2.2×10⁻⁴ of any scheme. The expected chance count, with 11 values uniform on
-  [0, 1] and 4 schemes, is 0.019.
+  289/1296 lands within 2.2×10⁻⁴ of any scheme. In an illustrative model with 11 values uniform on
+  [0, 1], the expected number of scheme-output matches summed over the 4 fixed schemes is 0.019.
 - *(B) declared space.* The space covers the count-face family: six genres × {Weyl, Gell-Mann/Pauli} ×
   {whole, cut} numerator × {all, cut} denominator × {face, Born square} × {sin², cos²}. That gives 192
-  variants and 120 distinct values. The expected number of chance hits summed over the four schemes is
-  0.14.
+  variants and 120 distinct values. The density-window reference counts summed over the four schemes
+  total 0.14; the local densities are measured in ±0.1 windows around each scheme's value.
 - *(C) choices.*
   1. The source takes the Born square of the count face, which is the office-rule route, not the count
      face that the bridge names. The source itself refuses this step: "refused at its first step".
@@ -202,7 +210,8 @@ For comparison, F-CT-4 for α(0) gives 4.4×10⁻⁶ expected chance hits within
   which is 1070σ away. And its bridge for 164.5 names the office ratio, not the count face, as the
   angle.
 - *Verdict.* The agreement is real at the on-shell scheme and re-derivable. It sits at an OPEN box
-  whose identification step the source rejects, and chance odds of a few percent cannot be excluded.
+  whose identification step the source rejects. The declared-family comparisons establish its
+  dependence on the stated choices; their density reference counts do not assign a chance probability.
 
 **L. Lepton mass ratios from the "derived cells" (SC-35, SC-36, SC-37).**
 - *The cells.* 186.1 (THEOREM) "returns the derived cells" 67, 963, 3969 and 2871 for e, μ, τ and p.
@@ -225,7 +234,7 @@ For comparison, F-CT-4 for α(0) gives 4.4×10⁻⁶ expected chance hits within
 - *(B) declared space.* Each measure is struck or not, each hub in-leg is passed or not, the
   stop-clause cells are included, e ∈ {67, 79, 201, 237} and p ∈ {1, 2}. Results:
 
-  | ratio | variants | expected chance hits at the achieved precision |
+  | ratio | variants | density-window reference count at the achieved precision |
   |---|---|---|
   | m_μ/m_e | 56 | 0.007 |
   | m_τ/m_e | 72 | 0.07 |
@@ -252,13 +261,14 @@ For comparison, F-CT-4 for α(0) gives 4.4×10⁻⁶ expected chance hits within
   strike (2709/67)² = 1634.8 at −11%, and (25839/201)² = 16526.
 - *(B) declared space.* The space has 330 cells and 1320 variants. Records come from the six genre Born
   counts or the printed proton measures, the strike is 0 or 18, dressings are 3ᵃ4ᵇ, e ∈ {67, 201}, and
-  p ∈ {1, 2}. The expected number of chance hits at 1.84×10⁻⁵ is 0.0025. If any integer can be built,
-  the chance of landing within 0.026 of the target integer is 0.053; if only multiples of 9 can, it is
-  0.006.
-- *Interpretation.* The text calls 2871 a candidate and calls its use a refutation. 186.1 then fits a
-  segment rule that "meets every cell at 8 of its 36 readings". As with α (CT-G10), the order in which
-  the cell and the target were fixed is not documented. Unlike α, the source's own words mark the cell
-  as target-like.
+  p ∈ {1, 2}. The density-window reference count at 1.84×10⁻⁵ is 0.0025. A separate illustrative
+  uniform-target-phase model gives coverage 0.053 within 0.026 of an integer, or 0.006 for spacing 9.
+  These reference models do not supply calibrated probabilities for the actual construction.
+- *Interpretation.* The text calls 2871 a candidate and reports a refutation at bounded closures.
+  Statement 186.1 tests a segment rule that "meets every cell at 8 of its 36 readings". The order in
+  which the cell and the measured target were fixed is not documented. We infer no construction
+  history or author intent from that omission; the documented test criterion is equality with the
+  candidate cells.
 
 **Others within 1%.**
 - m_n/m_p = 1 (−0.14%) is the isospin value. The mass-row closure gives (m_n − m_p)/m_p = 5.4×10⁻⁸

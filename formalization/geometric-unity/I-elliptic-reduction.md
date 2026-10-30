@@ -145,12 +145,18 @@ $$(14,0):\ \ c_1=\kappa t+x(312t^2+104u^2)+208\,y\,tu,\qquad c_{13}=\kappa u+208
 $$(7,7):\ \ c_1=\kappa t+x(312t^2-104u^2)-208\,y\,tu,\qquad c_{13}=\kappa u+208\,x\,tu+y(104t^2-312u^2).$$
 - $(z,w)$ do not occur.
 - The derivative terms occupy grades 2 and 12. In a fixed pattern they are $[-2x,\mp2y]\cdot(dt,du)$ and $[2iw,-2iz]\cdot(dt,du)$, with determinant $4i(xz\pm yw)$ up to a constant (upper signs (14,0), lower (7,7)). Since $dt\wedge\Phi^1$ is the $\Lambda^1$ constituent with $v=dt$, this is the $\Lambda^1$ block of I5(b) again: I5(b) and I6 are one 2×2 block, not two confirmations.
-- So for $\circledast_\sharp$ the constraint forces $dt=du=0$. For $W_A$ alone it forces only $dt=0$; there $u$ is fixed by $c_{13}=u(\kappa+208t)=0$, or, on the branch $t=-\kappa/208$, by a contracted Bianchi identity, which requires $c_1$ constant. Under (E) on a neighbourhood this is the 14D identity. Under (P) it is the 4D identity for $G(g)+\Lambda_4(x)g=0$, which makes $\Lambda_4=\Lambda_P-c_Hc_1/x$ constant along $s(X)$. Either way $u^2$, hence $u$, is constant. **The two solution sets coincide.**
+- So for $\circledast_\sharp$ the constraint forces $dt=du=0$. For $W_A$ alone it forces only $dt=0$; there $u$ is fixed by $c_{13}=u(\kappa+208t)=0$, or, on the branch $t=-\kappa/208$, by a contracted Bianchi identity. For solutions of the full equation on an open set in $Y$, the 14D identity makes $c_1$, hence $u^2$ and $u$, constant there. **The two solution sets on such open sets coincide.** Under (P), the 4D identity for $G(g)+\Lambda_4(x)g=0$ makes $\Lambda_4=\Lambda_P-c_Hc_1/x$ constant only along $s(X)$. It fixes $u|_{s(X)}$, but leaves normal derivatives of $u$ free. The twist still requires those derivatives to vanish, so **the projected solution sets differ**, although their induced 4D algebraic equations and allowed cosmological constants agree (counterexample I6.1).
 - For $T=t\Phi^1$ one has $h_{W_A}(\Phi^1)=0$, so true and printed Υ agree. F8.2's $\Lambda_Y(t)=\alpha t^2+\beta\kappa t$ (with $G+\Lambda_Yg=0$) has $\alpha=-312$, $\beta=-1$ in this normalisation.
   - This also holds for F8's R-S operator with the printed Υ. Here $F_A=F_0+t^2\Phi^1\wedge\Phi^1$ is the spin curvature of the algebraic curvature tensor $R_0+R_{tg}$, and R-S $=W_A$ on such tensors (D3.4).
   - It also holds under reading (P). The pulled-back derivative terms still force $dt=0$, and $du=0$ for the twist: the component with form index $b$ involves every $\partial_ct$ ($c\ne b$) through distinct monomials, so two tangential indices suffice (output §I5).
 
 *Proof.* Exact computation, output §I5: every T-term was checked componentwise to be of the invariant form. The derivative pattern is the same for the directions $e^0,e^5,e^9$, and for all directions by equivariance. ∎
+
+**Counterexample I6.1 (normal derivatives under (P); added 2026-10-30).** Take a flat Lorentzian 4D base, Z2, $\lambda=\tfrac12$, $c_H=1$, $c_V=\tfrac3{52}$, $\kappa=208$, $t=-1$ and $u|_{s(X)}=\tfrac12$. The observerse signature is $(7,7)$. Extend $u$ smoothly off the section with a nonzero normal derivative and no tangential derivative; such an extension exists locally. Then
+$$c_1=208(-1)+312-104/4=78=\Lambda_P,\qquad c_{13}=u(208-208)=0.$$
+The projected algebraic equation for $W_A$ is $G(g)+(\Lambda_P-c_1)g=0$, which holds for the flat base. Its derivative term also vanishes: $dt=0$ and $W_A(du\wedge\Phi^1\Gamma)=0$. For $\circledast_\sharp$, the same algebraic equation holds but the projected grade-12 constraint is nonzero. Hodge dualising and pulling back keeps tangential **form** indices while retaining the Clifford indices, so a normal derivative is still detected. Thus the same field can satisfy (P) for $W_A$ and fail it for $\circledast_\sharp$.
+
+`computation/geometric-unity/projection_regression.py` → `.out` checks the rational coefficients and this normal-derivative term directly from the Clifford definitions, with integer arithmetic. It does not assert a solution of $\Upsilon=0$ on a neighbourhood in $Y$. The former equivalence claim used the 4D Bianchi identity to control normal derivatives, which it cannot do.
 
 **Theorem I7 (reduction along $s(X)$, $n=4$).** Use the F closed forms (output §I6 re-derives $\Lambda_P$):
 - $\Lambda_P(\mathrm{Z2})=\tfrac{9c_H}{2c_V}$ and $\Lambda_P(\mathrm{Z1})=\tfrac{3c_H}{2c_V}\tfrac{4-15\lambda}{1-4\lambda}$;
@@ -158,7 +164,7 @@ $$(7,7):\ \ c_1=\kappa t+x(312t^2-104u^2)-208\,y\,tu,\qquad c_{13}=\kappa u+208\
 
 (a) *Invariant sector, reading (P).* By I6, $t$ and $u$ are constant along $s(X)$ (for $\circledast_\sharp$ by the constraint; for $W_A$ with the 4D Bianchi identity, I6). The pull-back is 4D vacuum Einstein, $G(g)+\Lambda_4g=0$, with
 $$(7,7):\ \Lambda_4=\Lambda_P-\tfrac{c_H}{x}c_1(t,u),\qquad (14,0):\ \Lambda_4=\Lambda_P+\tfrac{c_H}{x'}\big(\kappa s+x'(312s^2+104r^2)+208y'sr\big),$$
-on the curve $yc_1=xc_{13}$ (resp. $y'e_1=x'e_{13}$, with $e_1,e_{13}$ the brackets of output §I6). For $\circledast_\sharp$ (equivalently $W_A$) this curve is $u(\kappa+208t)=0$, resp. $r(\kappa+208s)=0$.
+on the curve $yc_1=xc_{13}$ (resp. $y'e_1=x'e_{13}$, with $e_1,e_{13}$ the brackets of output §I6). For $\circledast_\sharp$ and $W_A$ the common algebraic curve is $u(\kappa+208t)=0$, resp. $r(\kappa+208s)=0$. Their projected constraints differ on normal derivatives (I6.1).
 - For $\circledast_\sharp$ and $c_H>0$, $\Lambda_4$ takes **every real value** in (7,7). In (14,0) it takes exactly the values in $[\Lambda_P-c_H\kappa^2/1248,\infty)$. For $x'W_A+z'W_C\mathrm{Ad}_\Gamma$ ($x'>0$) the bound is $\Lambda_P-c_H\kappa^2/(1248x'^2)$ (`xcheck_round5.out` X11).
 - This holds in Z1 and Z2 alike, since only $\Lambda_P$ differs.
 - So **reading (P) is underdetermined**. Besides $T=0$, with $\Lambda_4=\Lambda_P$ (F5, F8.1), it admits invariant-sector $T\neq0$ with any of these $\Lambda_4$, and the fibre geometry no longer fixes Λ under (P). Solutions of $\Upsilon=0$ near $s(X)$ are a different class, see (b).
@@ -182,13 +188,13 @@ This is the algebraic part of (P): 4D Einstein + $\Lambda_P$ plus a **displaceme
 - So the HHH constraint requires $s^*\theta$, the implicit function above, to be Codazzi. With $s^*\theta=\tfrac x\kappa(G(g)+\Lambda_Pg)+O(\kappa^{-3})$, this is **$G(g)$ Codazzi to leading order in $1/\kappa$**; that truncation is not itself a necessary condition. Contracting gives $dR=0$, so $G(g)$ Codazzi is equivalent to $\mathrm{Ric}(g)$ being Codazzi, i.e. to harmonic curvature $\delta\mathrm{Rm}=0$. Every Einstein metric satisfies it, but it is strictly weaker: products of Einstein metrics with different constants have parallel, non-Einstein Ricci tensor.
 - The HHV, HVV and VVV components involve normal derivatives of θ and were not computed.
 
-(e) In (a)–(d) the twisted coefficients $z,w$ appear nowhere. Their only effect in these sectors is the constraint on the Γ-partner: $du=0$, $d^\nabla\theta'=0$.
+(e) In the algebraic equations of (a)–(d) the twisted coefficients $z,w$ appear nowhere. Their effect in these sectors is the constraint on the Γ-partner: $du=0$, $d^\nabla\theta'=0$. Under (P), $du=0$ includes normal derivatives and changes the set of allowed fields off the section (I6.1), while leaving the induced 4D algebraic equation and the range of $\Lambda_4$ unchanged. Equality of full-neighbourhood solution sets in the invariant sector follows instead from the 14D Bianchi identity (I6).
 
 *Proof.* (a), (b): Proposition I6 together with F3–F6; the extrema are completed-square identities, and the discriminant is computed exactly in output §I6. (c): substitute I5(a), using $s^*g_\aleph=c_Hg$ and $s^*G^Y=G(g)+\Lambda_Pg$ (F5). (d): as stated. (e): I4–I6. ∎
 
 **Answers to the three questions.**
 1. The twisted part never acts on $F_0$. On the $\mathfrak{so}(14)$-valued part of $F_A$ it acts exactly on the non-curvature constituents ($\Lambda^4$, $\Lambda^2$, $[2,1,1]_0$); on the other grades it acts as listed in I1. In $\Upsilon$ its $T\wedge T$ contribution is cancelled by $-h/3$ on odd fields. What remains of it is $W_C\mathrm{Ad}_\Gamma(d_0T)$ and $\tfrac13\nabla[2\Psi_{W_C\mathrm{Ad}_\Gamma}(T_o\wedge T_e\wedge T_e)]$ (I3).
-2. Relative to F3/F4 the 4D equations do change once $T\neq0$. Under (P), which is underdetermined, Λ becomes a free constant (invariant sector), or a displacement stress appears (symmetric sector). Solutions of $\Upsilon=0$ near $s(X)$ satisfy (E) there. Under (E), with $(x,y)\neq0$, (7,7) has no solutions in the invariant sector and (14,0) has $\Lambda_4=0$; in the symmetric sector, for $|G^Y|\ll\kappa^2$, no pointwise 4D equation arises at all. **Relative to $W_A$, $\circledast_\sharp$ changes none of these 4D equations** (I7(e)).
+2. Relative to F3/F4 the 4D equations do change once $T\neq0$. Under (P), which is underdetermined, Λ becomes a free constant (invariant sector), or a displacement stress appears (symmetric sector). Solutions of $\Upsilon=0$ near $s(X)$ satisfy (E) there. Under (E), with $(x,y)\neq0$, (7,7) has no solutions in the invariant sector and (14,0) has $\Lambda_4=0$; in the symmetric sector, for $|G^Y|\ll\kappa^2$, no pointwise 4D algebraic equation arises at all. **Relative to $W_A$, $\circledast_\sharp$ preserves these 4D algebraic equations and cosmological ranges; under (P) its constraint excludes additional normal derivatives** (I7(e), I6.1).
 3. See I.3.
 
 ## I.2 What is verified, precisely
@@ -200,14 +206,14 @@ This is the algebraic part of (P): 4D Einstein + $\Lambda_P$ plus a **displaceme
 | I2, I3 | proof; exact checks on random exact fields; exact null space (29516 × 48 and 26864 × 48) | all of $\mathcal S_{\rm sa}$; both signatures |
 | I4 | proof from I2, I3 | all odd $T$ |
 | I5 | exact fits ($a_1,\dots,a_4$, 392 equations), complete by the $SO(14)$ multiplicities of $\mathrm{Sym}^2(\mathrm{Sym}^2V)$; exact per-constituent systems and minors | soldering sector; both signatures |
-| I6 | exact; invariant form checked componentwise; derivative pattern checked in 3 directions | invariant sector |
+| I6 | exact; invariant form checked componentwise; derivative pattern checked in 3 directions; I6.1 checks the projected normal-derivative counterexample directly from the Clifford definitions | invariant sector; full-neighbourhood equivalence and projected inequivalence distinguished |
 | I7 | sympy identities from F3–F6 closed forms; proof for (c), (d) | $n=4$; Z1, Z2; (P), (E) |
 
 ## I.3 Limits and ill-posedness (layers b, d)
 
 - **Not covered.**
   - Odd $T$ outside the soldering sector (grades 3–11): Theorem I4 still applies to the algebraic part, but the constraint was not analysed.
-  - The soldering sector with $\theta'\neq0$: $Q$ was fitted in closed form only for symmetric θ with $\theta'=0$; for $\theta'\neq0$ only its grades were computed. Whether $W_A$ and $\circledast_\sharp$ have the same solution set there is not determined: $W_A$ leaves the $\Lambda^1\oplus[2,1]_0$ part of $d^\nabla\theta'$ free, $\circledast_\sharp$ does not. In the invariant sector they coincide (I6).
+  - The soldering sector with $\theta'\neq0$: $Q$ was fitted in closed form only for symmetric θ with $\theta'=0$; for $\theta'\neq0$ only its grades were computed. Whether $W_A$ and $\circledast_\sharp$ have the same full-neighbourhood solution set there is not determined: $W_A$ leaves the $\Lambda^1\oplus[2,1]_0$ part of $d^\nabla\theta'$ free, $\circledast_\sharp$ does not. In the invariant sector the full-neighbourhood solution sets coincide (I6); the projected solution sets already differ because of normal derivatives (I6.1).
   - Solutions with slaved $T_e\neq0$ (I2.2). There the odd equation becomes second order in $T_o$, and $z,w$ do enter it, through $\circledast_\sharp(d_0T_e)$ and $\tfrac23W_C\mathrm{Ad}_\Gamma(T_e\wedge T_e)$ (I3), and through $L_{T_o}$ in the slaving map. $B_{W_C\mathrm{Ad}_\Gamma}(\cdot,T_o)$ is even (I2), so it enters only the even equation. Not reduced here.
   - In the symmetric sector, the (P)-projection of the constraint $\circledast(d_0T)=0$ (I7(c)). It cannot force $d^\nabla\theta=0$ (364 against 910 components); which 4D conditions on $(g,h,\tau_1,\tau_2)$ it imposes, for example whether it contains $d^{\nabla_g}h=0$, is open.
   - The reduced-action reading (A) with $T\neq0$.
@@ -231,7 +237,7 @@ This is the algebraic part of (P): 4D Einstein + $\Lambda_P$ plus a **displaceme
 - **GU-G14:** refined.
   - (P) is underdetermined. Besides $T=0$ ($\Lambda_4=\Lambda_P$) it admits invariant-sector $T\neq0$ with any $\Lambda_4$ (every real value in (7,7)), and in the symmetric sector a displacement stress (algebraic part; the projected constraint is open).
   - Solutions of $\Upsilon=0$ near $s(X)$, for which I2.1 gives $T_o\neq0$, satisfy (E) on $s(X)$. In the invariant sector none exists in (7,7), and in (14,0) they have $\Lambda_4=0$ (both for $(x,y)\neq0$). In the symmetric sector (E) yields no pointwise 4D equation for $|G^Y|\ll\kappa^2$, and its HHH constraint requires $s^*\theta$ Codazzi.
-  - The elliptic twist leaves all of these unchanged; it differs from $W_A$ only in the first-order constraint on the Γ-partner.
+  - The elliptic twist preserves these algebraic equations and cosmological ranges. Its first-order constraint on the Γ-partner changes the projected solution set through normal derivatives (I6.1).
 - **GU-G16:** H7's ellipticity factor $xz+yw$ is, up to a constant, the determinant of the reduced constraint system on the $\Lambda^1$ and $[2,1]_0$ parts of $(d^\nabla\theta,d^\nabla\theta')$ (I5(b)); the $(dt,du)$ system of I6 is the same $\Lambda^1$ block. This holds by construction: there the constraint is the principal symbol of $\circledast\circ d$, and the blocks are H4's $C_{\Lambda^0}$ and $C_{H_1}$.
 - **GU-G15 / G.2.5:** for $\kappa\neq0$ and $(x_1,x_{13})\neq0$, $T_o\not\equiv0$ on every open set meeting $\mathcal C$ (on every open set if $g$ is real-analytic, I.3), and $T_e$ is slaved to $T_o$ where $L_{T_o}$ is invertible (I2).
 - **GU-054:** status C unchanged; the constants are now explicit for $T\neq0$ (amended in `claims/geometric-unity.md`).

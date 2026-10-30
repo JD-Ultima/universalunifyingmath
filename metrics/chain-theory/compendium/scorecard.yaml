@@ -35,28 +35,28 @@ agreements:
     quantity: "1/alpha(0)"
     value: "31104/(79+48 sqrt2+42 sqrt3+3 sqrt6) = 137.035999190"
     deviation: "+0.60 sigma (CODATA 2022)"
-    freedom: "F-CT-4 (alpha audit): 4.4e-6 expected chance hits within 1 sigma in a declared 46 080-rule space"
+    freedom: "F-CT-4: unique 1-sigma match among 15 639 distinct outputs of 46 080 rules; illustrative uniform-target expected count 4.4e-6, not a calibrated p-value"
   - id: SC-18
     quantity: "sin^2 theta_W (on-shell)"
     value: "(17/36)^2 = 289/1296 = 0.222994 (164.2, OPEN); 17/36 re-derived (17 of 36 Weyl pair letters nonzero at the (3,2) pair ket)"
     deviation: "-0.83 sigma vs 0.223209(259) (PDG 2024 masses); -0.24 sigma vs CODATA 2022 0.22305(23); -3.6% vs MS-bar 0.2312"
     source_position: "the step to 'the square of the angle is refused at its first step'; adopted value cos^2 = 1/2 (164.5, C) is 1070 sigma off"
     discrete_choices: 5
-    freedom: "printed faces 11 distinct: 0.019 expected chance hits; declared count-face family (192 variants): 0.14"
+    freedom: "illustrative uniform-value reference count 0.019 for 11 distinct printed faces; local-density reference count 0.14 for the 192-variant declared count-face family; counts summed over four schemes, not calibrated p-values"
   - id: SC-35/36/37
     quantity: "m_mu/m_e, m_tau/m_e, Koide Q"
     value: "(963/67)^2 = 206.587; (3969/67)^2 = 3509.24; Q = 0.667660 (derived cells of 186.1, mass = S^2 of 185.9)"
     deviation: "-0.088%; +0.92%; +0.15% (all >100 sigma)"
     source_position: "'this compendium displays them nowhere' (176.1); printed hub face (963/201)^2 = 22.95, (3969/201)^2 = 389.9, both x9 low (176.2)"
     discrete_choices: ">= 4 (electron undressed while mu, tau dressed; mass = S^2; strikes 12, 10, 8; roster webs)"
-    freedom: "declared space: expected chance hits 0.007 (mu), 0.07 (tau); 1 of 504 lepton combinations puts both within 1%"
+    freedom: "declared space: density-window reference counts 0.007 (mu), 0.07 (tau), assuming local uniformity in log-value; not calibrated p-values; 1 of 504 lepton combinations puts both within 1%"
   - id: SC-38
     quantity: "m_p/m_e"
     value: "(2871/67)^2 = 1836.18646, 2871 = 319*9"
     deviation: "+1.84e-5 (1.1e6 sigma)"
     source_position: "2871 is 'the candidate cell' (20.1, 175.4); 'the candidate is refuted at the bounded closures' (175.3); 'stands outside the comparison by orders' (176.1)"
     discrete_choices: ">= 5"
-    freedom: "1 of 9 printed proton cells within 1%; declared 1320-variant space: 0.0025 expected chance hits; nearest-integer argument 0.053 (any integer) / 0.006 (multiples of 9)"
+    freedom: "1 of 9 round-2 printed proton cells within 1%; declared 1320-variant space: density-window reference count 0.0025; uniform-target-phase reference coverage 0.053 (spacing 1) / 0.006 (spacing 9); illustrative models, not calibrated p-values"
   - id: SC-39
     quantity: "m_n/m_p"
     value: "1 (isospin value)"
@@ -72,6 +72,7 @@ empirical_testability:
   detail: "18 of 34 numerical rows disagree by more than a factor 10 at their best face (11 of 16 at the adopted face): W, Z, H masses and v in the electron unit (1e3-1e6), G_F (1e10), alpha_s at the adopted face (1.8e6), CKM J (>1e3), PMNS |U_e3|^2 (x15), quark mass ordering, decay-board ratios (7-15 orders, as the source states), G (1e35)."
 confidence:
   value: medium_high
+  statistical_scope: "Density references use illustrative uniform-value or locally uniform log-value models; lattice coverage assumes uniform target phases. These assumptions are not calibrated for the deterministic constructions. The results establish no construction search history or author intent."
   justification: "Numbers and anchors are mechanical and verbatim; identification codes and the mass-exponent convention are documented choices; the exclusion codes for 114 screened units are judgment calls; some PDG 2024 values are transcribed (flagged). No agreement depends on a transcribed value: each is compared with CODATA 2022 or with PDG 2024 values checked against the MC file (M_W: summary value 80.3692(133), equal to the MC entry 80.369(13) at its rounding; with the MC entry SC-18 reads -0.87 sigma)."
 
 # Round 3 amendment (06-mass-cells.md): SC-38 precision is convention-dependent (band +1.84e-5 / +6.2e-6 / -1.0e-4 across the source's printed mass laws); 15 printed proton cells (not 9); 2871 is entered as a candidate; proton agreement = selection of reading; lepton agreements conditional on a face choice the source's own definitions exclude.
