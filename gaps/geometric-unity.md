@@ -59,12 +59,12 @@ Each gap is a point where [W21] is underspecified, circular or type-inconsistent
 **Note (2026-10-30, round 9; `formalization/geometric-unity/M-z2-remaining-members.md`).** The rows above and the earlier notes are not edited. Hypotheses: those of round 8 ((H) of L.0); for $(x,y)=0$ the same without $(x,y)\neq0$.
 - **GU-G14.**
   - The reduced system has a rotation (14,0) / boost (7,7) symmetry acting on $(x,y)$, $(z,w)$, $(t,u)$ together, and in (7,7) a swap combined with $g_\aleph\to-g_\aleph$ (M1). Up to these the members with $xz\pm yw=0$ are $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, the (7,7) null members and $(x,y)=0$ (M2).
-  - For $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ the γΓ-channel forces $u\equiv0$ (M3); one scalar remains, nonlinear for $c\neq0$ (M4). L7 extends to every $\mu$: at a point of $s(X)$ it forces $\mu'=0$ and $|R_g|^2=-2c_H^2/c_V^2$, and no Ricci-flat curvature passes (M5). Hence no solution on an open set meeting $s(X)$ (M6(a)); for $c=0$, all of $\mathrm{span}(W_A,W'_A)$, none on any open set (M6(b)).
+  - For $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ the γΓ-channel forces $u\equiv0$ (M3); one scalar remains, nonlinear for $c\neq0$ except $c^2=\tfrac{11}6$ in (14,0), where it is linear and no open set carries a solution (M4, M6(c)). L7's obstruction extends to every $\mu$ up to one case: at a point of $s(X)$ it forces $\mu'=0$ and $|R_g|^2=-2c_H^2/c_V^2$, and no Ricci-flat curvature passes (M5). Hence no solution on an open set meeting $s(X)$ (M6(a)); for $c=0$, all of $\mathrm{span}(W_A,W'_A)$, none on any open set (M6(b)).
   - (7,7), $x=\pm y$: none on any open set (M7). For $xz-yw\neq0$ the channel forces the invariant line $\sigma=-\kappa/208$, where $\nabla^2r=-\tfrac5{12}r\,\mathrm{Ric}$.
   - $(x,y)=0$: $\Upsilon=0$ forces $T=0$ and leaves the metric free (M8).
-  - Result: for every member with $(x,y)\neq0$, no solution near $s(X)$; none on any open set except possibly $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, away from $s(X)$, where a solution would need special base curvature (M9, computed; M10).
+  - Result: for every member with $(x,y)\neq0$, no solution near $s(X)$; none on any open set except possibly $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ up to M1, $c\neq0$, $c^2\neq\tfrac{11}6$ in (14,0), away from $s(X)$, where a solution would need special base curvature (M9, computed; M10).
   - Open: that exception; Z1; other sectors.
-- **GU-G16.** On $xz\pm yw=0$ the curvature-free row vanishes and the remaining equation is nonlinear unless $(z,w)=0$; the one remaining exception sits there. $x=\pm y$ is not exceptional (M7).
+- **GU-G16.** On $xz\pm yw=0$, $x^2\pm y^2\neq0$, the curvature-free row vanishes and the remaining equation is nonlinear unless $(z,w)=0$ or, in (14,0), $w'^2=\tfrac{11}6x'^2$; the one remaining exception sits there. $x=\pm y$ is not exceptional (M7).
 
 **Note (2026-10-30, round 10; `formalization/geometric-unity/N-z1-neighbourhood.md`).** The rows above and the earlier notes are not edited. Hypotheses of L8 with Z1 for Z2.
 - **GU-G14.**

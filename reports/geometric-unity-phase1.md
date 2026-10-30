@@ -218,7 +218,7 @@ Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $
   - Not covered:
     - $T_o$ outside the invariant sector;
     - $T_e$ outside the vector sector for large $|T_o|$;
-    - neighbourhood solutions in Z1 beyond Round 10 (limit points of Einstein pieces without analyticity; the members left open by L.3); in Z2 beyond the radial ansatz, only $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, with $xz\pm yw=0$, away from $s(X)$ (Rounds 8, 9);
+    - neighbourhood solutions in Z1 beyond Round 10 (limit points of Einstein pieces without analyticity; the members left open by L.3); in Z2 beyond the radial ansatz, only the members with $xz\pm yw=0$, $x^2\pm y^2\neq0$, $(z,w)\neq0$ (up to symmetry $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, $c^2\neq\tfrac{11}6$ in (14,0)), away from $s(X)$ (Rounds 8, 9);
     - reading (A).
 
 ## Round 8 — $\Upsilon=0$ beyond the radial Z2 ansatz (GU-054, GU-G14, GU-G16)
@@ -237,13 +237,13 @@ Hypotheses of J5 without the radial ansatz: Z2, $n=4$, $\lambda\neq\tfrac14$, th
 
 ## Round 9 — the members round 8 left open (GU-054, GU-G14, GU-G16)
 
-Write-up: `formalization/geometric-unity/M-z2-remaining-members.md`. Code: `computation/geometric-unity/M_remaining.py`, output committed, exact, 35 asserted checks, ~4.5 min (270 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/M-z2-remaining-members.yaml`. Not yet internally reviewed.
+Write-up: `formalization/geometric-unity/M-z2-remaining-members.md`. Code: `computation/geometric-unity/M_remaining.py`, output committed, exact, 35 asserted checks, ~4.5 min (270 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/M-z2-remaining-members.yaml`. Refereed in `reports/reviews/REVIEW7-GU-2026-10-30.md` (independent check `computation/geometric-unity/xcheck_round9.py`, 47/47; one side claim corrected, R9-1, which settles the member $c^2=\tfrac{11}6$ in (14,0) on every open set).
 
 Hypotheses of round 8; for $(x,y)=0$ the same without $(x,y)\neq0$.
 
 - Symmetries of the reduced system: a rotation (14,0) / boost (7,7) of $(x,y)$, $(z,w)$, $(t,u)$, and in (7,7) a swap with $g_\aleph\to-g_\aleph$ (M1). Up to them the cone $xz\pm yw=0$ is $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, the (7,7) null members and $(x,y)=0$ (M2).
-- For $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ the γΓ-channel forces $u\equiv0$; one scalar equation remains, nonlinear after reparametrisation for $c\neq0$ (M3, M4). L7 extends to every $\mu$, with a Gröbner certificate for Ricci-flat curvature (M5).
-- **Results.** No solution near $s(X)$ for any member with $xz\pm yw=0$, $(x,y)\neq0$ (M6(a)); none on any open set for $\mathrm{span}(W_A,W'_A)$, including $W'_A$ (M6(b)), and for $x=\pm y$ in (7,7) (M7; invariant line $\sigma=-\kappa/208$ with $\nabla^2r=-\tfrac5{12}r\,\mathrm{Ric}$). For $(x,y)=0$, $\Upsilon=0$ iff $T=0$, for every metric (M8). With round 8: no solution near $s(X)$ for any member with $(x,y)\neq0$, and none on any open set except possibly $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, away from $s(X)$ (M10).
+- For $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ the γΓ-channel forces $u\equiv0$; one scalar equation remains, nonlinear after reparametrisation for $c\neq0$ except $c^2=\tfrac{11}6$ in (14,0), which is then settled on every open set (M3, M4, M6(c)). At a point of $s(X)$ the fibre equation forces, for every $\mu$, $\mu'=0$ and the order-1 condition (C1)$_0$, which no Ricci-flat curvature satisfies (Gröbner certificate; M5). In Lorentzian bases non-Ricci-flat curvature does satisfy it (REVIEW7-GU R9-5), and M6 excludes that case by a separate step.
+- **Results.** No solution near $s(X)$ for any member with $xz\pm yw=0$, $(x,y)\neq0$ (M6(a), M7(a)); none on any open set for $\mathrm{span}(W_A,W'_A)$, including $W'_A$ (M6(b)), and for $x=\pm y$ in (7,7) (M7; invariant line $\sigma=-\kappa/208$ with $\nabla^2r=-\tfrac5{12}r\,\mathrm{Ric}$). For $(x,y)=0$, $\Upsilon=0$ iff $T=0$, for every metric (M8). With round 8: no solution near $s(X)$ for any member with $(x,y)\neq0$, and none on any open set except possibly the members with $xz\pm yw=0$, $x^2\pm y^2\neq0$, $(z,w)\neq0$ (up to M1 $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, $c^2\neq\tfrac{11}6$ in (14,0)), away from $s(X)$ (M10).
 - **Open.** That exception (off the section the first integrability condition fails at every sampled point, so a solution would need special base curvature, M9, computed); Z1; other sectors.
 - No statement made before round 9 is contradicted.
 

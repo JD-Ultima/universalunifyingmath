@@ -46,7 +46,7 @@ $$E^{(13)}=u\,(\kappa+208xt)\,g+\mathcal Q^{(13)}_{tt}\big(dt\otimes dt-|dt|^2g\
 Under (H), $\Upsilon=0$ on $U$ forces $u\equiv0$. Then $\Upsilon=0$ is the single equation
 $$E^{(1)}=-xG+(\kappa t+312xt^2)\,g+H(t)\big(\nabla^2t-\Box t\,g\big)+q(t)\,dt\otimes dt+q'(t)\,|dt|^2g=0,$$
 $$H(t)=\frac{576\big(\kappa(x^2+\epsilon w^2)+544\,tx(x^2-\epsilon w^2)\big)}{\kappa^2+768\kappa tx+121856x^2t^2-147456\epsilon w^2t^2},\qquad \det M|_{u=0}=\kappa^2\big(\kappa^2+768\kappa tx+121856x^2t^2-147456\epsilon w^2t^2\big),$$
-with $q,q'$ printed in §M4.
+with $q,q'$ computed in §M4.
 
 *Proof.*
 1. If $dt=0$ on an open $V\subset U$, then $T_e=\Sigma_t\,dt=0$ and $E^{(1)}=-xG+c_1g$ on $V$. So $\mathrm{Ric}^Y\propto g$ there, which L2(a) excludes. Hence $\{dt\neq0\}$ is dense.
@@ -59,10 +59,10 @@ For $w=0$ this is L8 step 3 ($xW_A$). The mirror statement for $(0,y,z,0)$ in (7
 **Proposition M4 (the remaining equation).** *Computed* (§M4). Where $H(t)\neq0$, the reparametrisation $r=F(t)$, $F''/F'=q/H$, turns $E^{(1)}=0$ into $(\star)$ $\nabla^2r=\mu(r)\mathrm{Ric}^Y+\nu g$ with $\mu=xF'/H$ (as in L8 step 5), and
 $$\mu'(r)=\frac{x\,(q-dH/dt)}{H^2}=-\frac{(7-3\epsilon c^2)+(7616-3008\epsilon c^2-768c^4)\,\tau+(2071552-3226624\epsilon c^2+1155072c^4)\,\tau^2}{18\,\big((1+\epsilon c^2)+544(1-\epsilon c^2)\,\tau\big)^2}.$$
 - $c=0$ (multiples of $W_A$): $\mu'=-\tfrac7{18}$, L8 step 5.
-- $c\neq0$: $\mu'$ is a nonconstant rational function of $\tau$ and never identically zero, so $\mu$ is not linear in $r$. The discriminant of the numerator in $\tau$ is $16384c^2(c^2+35\epsilon)(6c^2-11\epsilon)^2$. In (14,0) it is $\ge0$, so the numerator has real roots for every $c\neq0$. In (7,7) it is negative for $0<c^2<35$, and the leading coefficient $1024(c^2+1)(1128c^2+2023)$ is positive, so there $\mu'<0$ everywhere.
-- $H$ vanishes exactly at $\tau_H=(1+\epsilon c^2)/(544(\epsilon c^2-1))$, and nowhere if $\epsilon c^2=1$.
+- $c\neq0$: $\mu'$ is never identically zero. It is constant in $\tau$ only in (14,0) at $c^2=\tfrac{11}6$: there $\det M|_{u=0}=\kappa^2(\kappa-160tx)(\kappa+928tx)$, $H=1632x^2/(\kappa+928tx)$ and $\mu'\equiv-\tfrac3{289}$ (M6(c)). For every other $c\neq0$, $\mu'$ is a nonconstant rational function of $\tau$, so $\mu$ is not linear in $r$. (Corrected after review 2026-10-30, R9-1; the text had "nonconstant … for $c\neq0$"; see `reports/CORRECTIONS.md`.) The discriminant of the numerator in $\tau$ is $16384c^2(c^2+35\epsilon)(6c^2-11\epsilon)^2$. In (14,0) it is $\ge0$, so the numerator has real roots for every $c\neq0$. In (7,7) it is negative for $0<c^2<35$, and the leading coefficient $1024(c^2+1)(1128c^2+2023)$ is positive, so there $\mu'<0$ everywhere.
+- $H$ vanishes exactly at $\tau_H=(1+\epsilon c^2)/(544(\epsilon c^2-1))$, and nowhere if $\epsilon c^2=1$; for $\epsilon c^2=\tfrac{11}6$ (real only in (14,0)), $\tau_H$ is a zero of $\det M$, so $H$ has no zero where $\det M\neq0$.
 
-So for $c\neq0$ L9's continuation, which needs a linear $\mu$, is unavailable, and L7, which needs $\mu'(w(p))\neq0$, fails at the zeros of $\mu'$ and of $H$. M5 and M6 deal with both.
+So for $c\neq0$, except $c^2=\tfrac{11}6$ in (14,0), L9's continuation, which needs a linear $\mu$, is unavailable, and L7, which needs $\mu'(w(p))\neq0$, fails at the zeros of $\mu'$ and of $H$. M5 and M6 deal with both.
 
 **Lemma M5 (fibre obstruction at $s(X)$ for any $\mu$).** *Proven* ((c) by an exact certificate, §M5). Let $p=g(x_0)\in s(X)$, let $\Omega\subset F_{x_0}$ be a neighbourhood of $p$, let $\mu$ be smooth near $w(p)$, and let $w$ on $\Omega$ satisfy $\mathrm{Hess}^Fw=\mu(w)(\mathrm{Ric}_F+\mathcal A_{x_0})$ with $\mu(w(p))\neq0$. Then:
 
@@ -72,6 +72,8 @@ So for $c\neq0$ L9's continuation, which needs a linear $\mu$, is unavailable, a
 
 (c) (C1)$_0$ has no solution with $\mathrm{Ric}(R)=0$ in bases (1,3), (3,1), (2,2): its Gröbner basis over $\mathbb Q$ is $\{1\}$, so there is none even over $\mathbb C$. In base (4,0) this follows from (b).
 
+(d) (After review, R9-7.) (C1)$_0$ holds iff the curvature operator satisfies $\mathcal R^2=-\tfrac1{12}(c_H/c_V)^2\,\mathrm{Id}$ on $\Lambda^2$. This contains (b) and (c), excludes base (2,2) (where $\Lambda^2$ has signature (2,4)), and has real non-Ricci-flat solutions in bases (1,3), (3,1), e.g. $R_{01,12}=R_{02,23}=R_{03,31}=1$ at $(c_V/c_H)^2=\tfrac1{12}$ (REVIEW7-GU, `xcheck_round9.out` §Z6, §Z7).
+
 *Proof.*
 - *Order 0.* Use L7's Ricci identity at $p$, where $\mathcal A(p)=0$ and $\nabla\mathcal A(p)=0$. If $\mu'(w(p))\neq0$, L7 gives $\nabla w(p)=0$. If $\mu'(w(p))=0$, then $R^F(Y,Z)\nabla w(p)=0$ for all $Y,Z$, and L3's commutant argument gives $\nabla w(p)\in\mathbb R\partial_s$. In both cases $Xw(p)=0$ for $X\in T_pS$.
 - *Order 1.* Differentiate along $X\in T_pS$. The terms with $\mu''$ or $\mu'\nabla\mathcal A$ carry a factor $Xw(p)$, $Yw(p)$, $Zw(p)$ ($Y,Z\in T_pS$) or $\nabla\mathcal A(p)$, so they vanish. What remains is L7's (C1) with $\mu'=\mu'(w(p))$. Pairing it with $4c_0-3c_1$ gives $-360\mu'=0$ (L7). Hence $\mu'(w(p))=0$ and (C1)$_0$ holds.
@@ -79,7 +81,7 @@ So for $c\neq0$ L9's continuation, which needs a linear $\mu$, is unavailable, a
 - *(c).* For the generic Ricci-flat tensor (10 Weyl parameters), the 2796 scalar equations of (C1)$_0$ have rank 12. The Gröbner basis of 12 independent ones is $\{1\}$. The factor $(c_V/c_H)^2$ is absorbed by rescaling $R$.
 - *Independent check.* A brute-force Taylor solution, built as in L §L6 but with $\mu'=0$, is inconsistent for a random rational Weyl tensor with $|W|^2=-204$ and $(c_V/c_H)^2=1/102$, so that (b) holds. The control $R=R_1$ with the A-term multiplied by $-\tfrac1{12}$ is consistent. ∎
 
-So L7 extends to every $\mu$: a point of $s(X)$ escapes the obstruction only if $\mu'(w(p))=0$ and $R_g(x_0)$ is indefinite, not Ricci-flat, and has $|R|^2=-2c_H^2/c_V^2$.
+So L7's obstruction extends to every $\mu$ up to one case: a point of $s(X)$ escapes the obstruction only if $\mu'(w(p))=0$ the base is Lorentzian and $\mathcal R_g(x_0)^2=-\tfrac1{12}(c_H/c_V)^2\,\mathrm{Id}$; then $R_g(x_0)$ is not Ricci-flat and $|R|^2=-2c_H^2/c_V^2$ (M5(d)). Such curvature exists (REVIEW7-GU R9-5).
 
 **Theorem M6 (the cone with $N\neq0$).** *Proven.* Assume (H), $\ell=0$, $(x,y)\neq0$ and $N\neq0$ (automatic in (14,0)).
 
@@ -87,12 +89,14 @@ So L7 extends to every $\mu$: a point of $s(X)$ escapes the obstruction only if 
 
 (b) If $(z,w)=0$, i.e. on $\mathrm{span}(W_A,W'_A)$, there is **no solution on any nonempty open $U$**.
 
+(c) In (14,0) with $c^2=\tfrac{11}6$ there is **no solution on any nonempty open $U$**. (Added after review 2026-10-30, R9-1.)
+
 In (14,0), (a) covers every non-elliptic member with $(x,y)\neq0$, for example $W'_A$, $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ and $(1,0,0,1)$.
 
 *Proof.* By M2(a) and M1 it suffices to treat $p=(x,0,0,w)$, $x\neq0$, on $(U,\pm g_\aleph)$. The sign is needed only for $N<0$ in (7,7). Every ingredient used holds for all constants $c_H,c_V$ of the setting.
 1. By M3, $u\equiv0$ and one equation $E^{(1)}[t]=0$ remains, with $\{dt\neq0\}$ dense.
 2. $W:=\{dt\neq0,\ H(t)\neq0,\ \mu'(t)\neq0\}$ is open and dense ($H$ and $\mu'$ are nonzero rational functions of $t$, and $t$ is a submersion on $\{dt\neq0\}$). On each component of $W$, $r=F(t)$ satisfies $(\star)$ with $\mu'(r)\neq0$, so L6 gives $Er=0$ and $\nu=0$. Hence $Et=0$ on $U$.
-3. (b): $c=0$ gives $\mu=-\tfrac7{18}r$ (M4), which is L8(B) and L9 for $xW_A$.
+3. (b): $c=0$ gives $\mu=-\tfrac7{18}r$ (M4), which is L8(B) and L9 for $xW_A$. (c): with $u\equiv0$ (M3), $F'=|\kappa+928tx|^{-502/493}$ gives $r=F(t)\propto|\kappa+928tx|^{-9/493}$, defined and nonzero on $U$, with $\nabla^2r=-\tfrac3{289}r\,\mathrm{Ric}^Y+\nu g$ (REVIEW7-GU R9-1, `xcheck_round9.out` §Z3). L6 and L9's argument then apply as in M7(b) step 6.
 4. (a): let $p\in U\cap s(X)$, $x_0=\pi(p)$. Suppose first $H(t(p))=0$. Restrict $E^{(1)}(p)$ to $V_p\times V_p$, using $\mathrm{Ric}^Y|_{VV}(p)=\mathrm{Ric}_F(p)$ ($\mathcal A(p)=0$), $\mathrm{Ric}_F(E,\cdot)=0$ and $\mathrm{Ric}_F|_{V_0}=-c_V^{-1}g_\aleph$. This gives $-x\mathrm{Ric}_F+\alpha g_{VV}+q\,\vartheta\otimes\vartheta=0$, with $\vartheta=dt|_V$ and $\alpha=\tfrac x2\mathrm{scal}+c_1+q'|dt|^2$. The $V_0$ block (dimension 9) forces $\alpha=-x/c_V$. The $E$ component then gives $q\,\vartheta(E)^2=(x/c_V)|E|^2\neq0$, so $Et(p)\neq0$, against step 2.
 5. Suppose instead $H(t(p))\neq0$. Near $p$, $r=F(t)$ is defined and $\nu=0$ (by continuity from $W$). So $w=r|_{F_{x_0}}$ solves $\mathrm{Hess}^Fw=\mu(w)(\mathrm{Ric}_F+\mathcal A_{x_0})$, since the fibres are totally geodesic (O'Neill). M5 gives $\mu'(t(p))=0$ and (C1)$_0$ at $x_0$. In (14,0) this is impossible by M5(b).
 6. Hence every $p\in U\cap s(X)$ has $t(p)$ in the finite zero set of $\mu'$, and $t$ is constant on each component $O$ of $U\cap s(X)$. Then $dr=0$ on $O$:
@@ -117,7 +121,7 @@ In (14,0), (a) covers every non-elliptic member with $(x,y)\neq0$, for example $
 1. L1 ($\ell\neq0$) gives $dt\wedge du=0$, and $U^*$ is dense (L8 step 2).
 2. L8 step 3 (the concircular branch, L4) gives $\hat h=0$ on $U^*$. So $\gamma'\parallel v$, where $v$ is polynomial and nonzero wherever $\det M\neq0$ (L5(a)).
 3. Along $v$, $R'=0$ (L5(a) with $N=0$), and in addition $K_{\rm tr}=0$ identically. So $E'=(yc_1-xc_{13})g=\delta(\kappa+208\sigma)g$. Since $\delta=\mathrm{sgn}\,\sigma$, $\sigma\in\{0,-\kappa/208\}$ is constant on $U$.
-4. $v\cdot\nabla\delta=-\kappa\ell(\kappa+16\sigma)(\kappa+208\sigma)$. At $\sigma=0$ this is $-\kappa^3\ell\neq0$: an image curve tangent to $v$ and lying in that line would be constant. So $\sigma\equiv-\kappa/208$, and this line is $v$-invariant.
+4. $v\cdot\nabla\delta=-\mathrm{sgn}\,\kappa\ell(\kappa+16\sigma)(\kappa+208\sigma)$ ($v$ as in L5(a); R9-6). At $\sigma=0$ this is $-\mathrm{sgn}\,\kappa^3\ell\neq0$: an image curve tangent to $v$ and lying in that line would be constant. So $\sigma\equiv-\kappa/208$, and this line is $v$-invariant.
 5. On the line ($t=\mathrm{sgn}\,u-\kappa/(208x)$, $dt=\mathrm{sgn}\,du$): $\det M=576\kappa^2\zeta^2/(169x^2)$ with $\zeta:=\kappa w+208\ell u$. Also $E^{(13)}=\mathrm{sgn}\,E^{(1)}$, and
 $$E^{(1)}=-xG+c_1g+\frac{312x\ell}{\zeta}\big(\nabla^2u-\Box u\,g\big)-\frac{105456x\ell^2}{\zeta^2}du\otimes du+\frac{52728x\ell^2}{\zeta^2}|du|^2g .$$
    With $F'=|\zeta|^{-13/8}$ the function $r=F(u)\propto|\zeta|^{-5/8}$ is defined on all of $U$, is nonzero, and satisfies $\nabla^2r=-\tfrac5{12}r\,\mathrm{Ric}^Y+\nu g$.
@@ -141,7 +145,7 @@ $$\Xi_0=\frac{576\kappa^3}{D}\big(\nabla^2\theta-\Box\theta\,g\big)+\epsilon\fra
   - So $d\theta=0$ wherever $\theta\neq0$, and then the trace gives $\theta=0$. Hence $\theta\equiv0$.
 - $\theta\equiv0$ gives $T_e=0$, and then $E^{(1)}=\kappa t\,g$, $E^{(13)}=\kappa u\,g$ give $t=u=0$. ∎
 
-So for $(x,y)=0$, $\Upsilon=0$ imposes no condition on $g_\aleph$ and forces the trivial connection in the sector.
+So for $(x,y)=0$, $\Upsilon=0$ imposes no condition on $g_\aleph$ and forces $T=0$ in the sector ($A=\nabla^0$).
 
 **Proposition M9 (the first integrability condition off the section).** *Computed* (§M8); the consequence is proven from the computation.
 
@@ -158,19 +162,19 @@ Findings:
 
 Consequences:
 - Inconsistency holds on a nonempty Zariski-open set of $(R,P)$.
-- For every curvature tensor outside a proper real-algebraic subset $\mathcal Z$ (in each base signature; $\mathcal Z\not\ni$ the sampled tensors), the fibre equation has, for every $\mu$ with $\mu\neq0$, no solution on any open subset of the fibre. Here $R$ stands for $(c_V/c_H)R_g(x_0)$.
-- $0\in\mathcal Z$. The flat case is excluded separately: $\mathcal A\equiv0$, and the Ricci identity on the symmetric fibre then forces $\nabla w=0$ at every point (as in L7, order 0), so $\mu=0$.
+- For every curvature tensor outside a proper real-algebraic subset $\mathcal Z$ (in each base signature; $\mathcal Z\not\ni$ the sampled tensors), the fibre equation has, for every $\mu$, no solution with $\mu(w)\neq0$ on any open subset of the fibre. The coefficient matrix has rank $\le294$ identically (the $s$-kernel), so one nonzero 295-minor of the augmented matrix gives inconsistency on a Zariski-open set. The fibre equation does not depend on λ (Γ, $\mathrm{Ric}_F$ and the A-term are λ-free), so this holds for every λ (REVIEW7-GU R9-8). Here $R$ stands for $(c_V/c_H)R_g(x_0)$.
+- $0\in\mathcal Z$. The flat case is excluded separately: $\mathcal A\equiv0$, and the Ricci identity on the symmetric fibre then gives $\nabla w(q)\in\mathbb R\,\partial_s$ at every point $q$ (L7's order-0 step where $\mu'(w(q))\neq0$, L3's commutant argument where $\mu'(w(q))=0$, as in M5). Since $\partial_s$ is parallel, $\mathrm{Hess}^Fw(X,Y)=0$ for $X,Y\in TS$, while $\mu(w)\mathrm{Ric}_F(X,Y)=-\mu(w)\,g(X,Y)/c_V$. So $\mu(w)=0$. (Corrected after review, R9-2.)
 
 **Corollary M10 (the whole family under (H)).** *Proven.* Assume (H). For every member with $(x,y)\neq0$, in (14,0) and in (7,7):
 
 (a) $\Upsilon=0$ has no solution on any open $U$ that meets $s(X)$.
 
-(b) $\Upsilon=0$ has no solution on any nonempty open $U$ at all, with one possible exception. The exception is the members with $\ell=0$, $N\neq0$ and $(z,w)\neq0$, i.e. up to M1 the members $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ and, in (7,7) with $N<0$, $y(W'_A+cW_C\mathrm{Ad}_\Gamma)$, with $c\neq0$. For them a solution on a $U$ with $U\cap s(X)=\emptyset$ would need $(c_V/c_H)R_g(x)\in\mathcal Z\setminus\{0\}$ for every $x\in\pi(U)$ (M9).
+(b) $\Upsilon=0$ has no solution on any nonempty open $U$ at all, with one possible exception. The exception is the members with $\ell=0$, $N\neq0$ and $(z,w)\neq0$, i.e. up to M1 the members $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ and, in (7,7) with $N<0$, $y(W'_A+cW_C\mathrm{Ad}_\Gamma)$, with $c\neq0$ and, in (14,0), $c^2\neq\tfrac{11}6$ (M6(c)). For them a solution on a $U$ with $U\cap s(X)=\emptyset$ would need $(c_V/c_H)R_g(x)\in\mathcal Z\setminus\{0\}$ for every $x\in\pi(U)$ (M9). Indeed, M3 and M6 steps 1–2 do not use $s(X)$. On the dense open set $U'=U\cap\{H(t)\neq0\}$, $(\star)$ holds with $\nu=0$ and $\mu=xF'/H\neq0$, so M9 applies on $U'\cap F_x$ for $x\in\pi(U')$. Since $\pi(U')$ is dense in $\pi(U)$ and $\mathcal Z$ is closed, $(c_V/c_H)R_g(x)\in\mathcal Z$ on $\pi(U)$. At an $x$ with $R_g(x)=0$ and $U\cap F_x\subset\{H(t)=0\}$, M6 step 4 applies, since $\mathcal A_x\equiv0$. (Added after review, R9-3.)
 
 For $(x,y)=0$ the solutions are exactly $T=0$, for every metric (M8).
 
 *Proof.*
-- Each member with $(x,y)\neq0$ falls into one of five classes:
+- Each member with $(x,y)\neq0$ falls into one of four classes:
   - $\ell\neq0$, $N\neq0$, $xw\neq yz$: L8(A).
   - $\ell\neq0$, $N\neq0$, $xw=yz$: then $(z,w)=(\ell/N)(x,y)$, which is L8(B) and L9.
   - $\ell=0$, $N\neq0$: M6.
@@ -182,7 +186,7 @@ For $(x,y)=0$ the solutions are exactly $T=0$, for every metric (M8).
    - The cone $\ell=0$ consists, up to the rotation/boost of M1(a) and the (7,7) swap of M1(b), of the one-parameter family $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, the null members $(x,\pm x,\pm cx,cx)$ of (7,7), and the boundary $(x,y)=0$.
    - On it the curvature-free row vanishes, so the analysis runs through the first-order channel. That channel kills $u$ (M3), not $dt\wedge du$; L1 holds on the cone with $N\neq0$ but is not needed.
    - $\mathrm{span}(W_A,W'_A)$ and the null members: no solution on any open set (M6(b), M7(a)).
-   - $c\neq0$: no solution on any open set meeting $s(X)$ (M6(a)). Here the remaining scalar equation has a nonlinear $\mu$, and the fibre obstruction had to be extended to $\mu'=0$ (M5).
+   - $c\neq0$: no solution on any open set meeting $s(X)$ (M6(a)). Here the remaining scalar equation has a nonlinear $\mu$ (except $c^2=\tfrac{11}6$ in (14,0), where it is linear and M6(c) excludes every open set), and the fibre obstruction had to be extended to $\mu'=0$ (M5).
 2. *$N=0$ in (7,7) (task (b)).* The curvature-free channel degenerates further: both $R'$ and its trace coefficient vanish along $v$. It still forces $\sigma(\kappa+208\sigma)=0$. The only invariant line is $\sigma=-\kappa/208$, where the remaining equation is linear, $\mu=-\tfrac5{12}r$, so L9's continuation applies (M7(b)).
 3. *$(x,y)=0$ (task (c)).* $\Upsilon=0$ says nothing about the metric and forces $T=0$ (M8).
 4. *No solution was found* on any member with $(x,y)\neq0$; the only solutions found are the trivial ones $T=0$ of the members with $(x,y)=0$ (M8).
@@ -209,12 +213,12 @@ Run: `cd computation/geometric-unity && python3 M_remaining.py > M_remaining.out
 ## M.3 Limits (layers b, d)
 
 - **Open.**
-  - The members $\ell=0$, $N\neq0$, $(z,w)\neq0$ on open sets $U$ with $U\cap s(X)=\emptyset$. By M3 and L6 this is rigorously the scalar problem $\nabla^2r=\mu(r)\mathrm{Ric}^Y$, $Er=0$, with nonlinear $\mu$ (M4), and fibrewise $\mathrm{Hess}^Fw=\mu(w)(\mathrm{Ric}_F+\mathcal A)$.
+  - The members $\ell=0$, $N\neq0$, $(z,w)\neq0$ (except $c^2=\tfrac{11}6$ in (14,0)) on open sets $U$ with $U\cap s(X)=\emptyset$. By M3 and L6 this is rigorously the scalar problem $\nabla^2r=\mu(r)\mathrm{Ric}^Y$, $Er=0$, with nonlinear $\mu$ (M4), and fibrewise $\mathrm{Hess}^Fw=\mu(w)(\mathrm{Ric}_F+\mathcal A)$.
   - L9's continuation along the fibre uses linearity. For nonlinear $\mu$ the continued solution can reach the singular values of $\mu$ ($H=0$ or $\det M=0$).
   - M9 reduces the open case to base curvatures in the proper algebraic set $\mathcal Z$. $\mathcal Z$ is not determined: that would need the relaxed system with symbolic $R$.
 - **Hypotheses kept from (H).** Z2; the real forms (14,0), (7,7) of J1–J2; $\kappa\neq0$; $T_e$ the slaved field in $\mathcal V$ with $\det M\neq0$ on $U$; $T_o$ in the invariant sector. M8 uses L3, hence Z2.
 - **M1** is a symmetry of the reduced system of J1–J2. It is not claimed for the full $\Upsilon$.
-- **M5(c)** is a certificate for the Ricci-flat case only. Indefinite, non-Ricci-flat solutions of (C1)$_0$ are not classified; M6 does not need them.
+- **M5(c)** is a certificate for the Ricci-flat case only. By M5(d) the solutions of (C1)$_0$ are exactly the curvatures with $\mathcal R^2=-\tfrac1{12}(c_H/c_V)^2\,\mathrm{Id}$; real ones exist only in Lorentzian bases, where M6 step 6 is needed.
 - **M9** is a computation at sample points, together with a genericity argument. It is not a proof for every base metric.
 - **Untouched:** Z1; reading (A); the (P) system of J3(a); J3(b), (c) and J4(d′) for the members of this note.
 
@@ -222,12 +226,12 @@ Run: `cd computation/geometric-unity && python3 M_remaining.py > M_remaining.out
 
 - **GU-G14.**
   - Under (H), the non-radial Z2 question is now settled for every member with $(x,y)\neq0$ on every open set meeting $s(X)$ (M10(a)).
-  - It is settled on every open set except for the twisted members $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, with $\ell=0$ (up to M1), away from $s(X)$ (M10(b)). Even there M9 confines a solution to special base curvature.
+  - It is settled on every open set except for the twisted members $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$ ($c^2\neq\tfrac{11}6$ in (14,0)), with $\ell=0$ (up to M1), away from $s(X)$ (M10(b)). Even there M9 confines a solution to special base curvature.
   - This includes $W'_A$ and all of $\mathrm{span}(W_A,W'_A)$ (M6(b)), $(1,0,0,1)$ in (14,0) near $s(X)$ (M6(a)), and every member with $x=\pm y$ in (7,7) (M7).
   - For $(x,y)=0$, $\Upsilon=0$ forces $T=0$ and leaves the metric free (M8). These members carry no gravitational equation at all in this sector.
   - Open: the exception of M10(b); Z1; other sectors.
 - **GU-G16.**
-  - $\ell$ is again what separates the cases. For $\ell=0$ the curvature-free row vanishes, the first-order channel removes one scalar (M3), and the remaining equation is nonlinear ($\mu'$ is a nonconstant function of $c=w/x$ and $\tau$) unless $c=0$.
+  - $\ell$ is again what separates the cases. For $\ell=0$ the curvature-free row vanishes, the first-order channel removes one scalar (M3), and the remaining equation is nonlinear ($\mu'$ is a nonconstant function of $c=w/x$ and $\tau$) unless $c=0$ or, in (14,0), $c^2=\tfrac{11}6$.
   - The only weaker result in the family sits there.
   - $N=0$ is not special in the end: the line $\sigma=-\kappa/208$ carries a linear equation (M7(b)).
 - **GU-054.** Status unchanged (C). No statement made before this note is contradicted. L.3's list of open members and J.3's "Still open there" are answered as above.

@@ -1,4 +1,4 @@
-result: "M. Upsilon = 0 on a neighbourhood in Z2 for the members round 8 left open: no solution on any open set meeting s(X) for every member with (x, y) != 0 (both real forms), and on every open set for span(W_A, W'_A), for x = +-y in (7,7) (including the null members with xz - yw = 0); for (x, y) = 0 the only solution is T = 0, for every metric; open only for the twisted members x (W_A + c W'_C Ad_Gamma), c != 0, with xz +- yw = 0 (up to symmetry), away from s(X), where a solution would need special base curvature (kappa != 0, slaved T_e in V, det M != 0)"
+result: "M. Upsilon = 0 on a neighbourhood in Z2 for the members round 8 left open: no solution on any open set meeting s(X) for every member with (x, y) != 0 (both real forms), and on every open set for span(W_A, W'_A), for x = +-y in (7,7) (including the null members with xz - yw = 0); for (x, y) = 0 the only solution is T = 0, for every metric; open only for the twisted members x (W_A + c W'_C Ad_Gamma), c != 0 (c^2 != 11/6 in (14,0)), with xz +- yw = 0 (up to symmetry), away from s(X), where a solution would need special base curvature (kappa != 0, slaved T_e in V, det M != 0)"
 claim_id: [GU-054]
 gaps: [GU-G14, GU-G16]
 writeup: formalization/geometric-unity/M-z2-remaining-members.md (Lemmas M1, M5; Propositions M2, M3, M4, M8, M9; Theorems M6, M7; Corollary M10); answers the open list of formalization/geometric-unity/L-nonradial-z2.md, section L.3 (as amended after REVIEW6-GU)
@@ -12,7 +12,7 @@ formalization_status: >
   (t, u) together, and in (7,7) a swap p -> -K p, (t, u) -> (u, t) combined with g_aleph -> -g_aleph; so the cone
   xz +- yw = 0 reduces to x (W_A + c W'_C Ad_Gamma), the (7,7) null members (x, +-x, +-cx, cx) and (x, y) = 0;
   (2) for (x, 0, 0, w) the gamma Gamma channel is u (kappa + 208 x t) g + Q13_tt (dt dt - |dt|^2 g), which forces u = 0,
-  leaving one scalar with nonlinear mu (mu' = -7/18 only at c = 0); (3) the fibre obstruction of L7 extends to every mu:
+  leaving one scalar, with nonlinear mu except at c = 0 (mu' = -7/18) and, in (14,0), c^2 = 11/6 (mu' = -3/289, settled on every open set); (3) the fibre obstruction of L7 extends to every mu:
   mu'(w(p)) = 0 is forced, the order-1 condition (C1)_0 then gives |R|^2 = -2 c_H^2/c_V^2 (impossible for a definite
   base), and (C1)_0 has no Ricci-flat solution (Groebner basis {1}); the points with H = 0 are excluded by the vertical
   block and E t = 0; (4) for N = 0, ell = 0 the two channels differ by (c1 - c13) g only, so sigma is constant and T_e = 0;
@@ -55,5 +55,5 @@ confidence: >
   High for M1-M8 and M10 under (H): each step is a hand proof whose algebraic content is an exact identity or an exact
   certificate, and the one new analytic input (the extended fibre obstruction) is cross-checked by brute force. M9 is a
   computation at sample points plus a genericity argument and is stated as such. Not covered: the twisted members with
-  xz +- yw = 0, c != 0, away from s(X); Z1; the Z2 signatures (8,6), (10,4), ...; T_e outside V or crossing det M = 0; T_o outside the
+  xz +- yw = 0, c != 0 (c^2 != 11/6 in (14,0)), away from s(X); Z1; the Z2 signatures (8,6), (10,4), ...; T_e outside V or crossing det M = 0; T_o outside the
   invariant sector.
