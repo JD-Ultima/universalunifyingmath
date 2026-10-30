@@ -21,8 +21,8 @@ $\alpha_{\rm cand}=(79+48\sqrt2+42\sqrt3+3\sqrt6)/31104$, with $\alpha_{\rm cand
 (i) An independent operator-level reconstruction reproduces the $172$ records, the sector sizes, and the value exactly.
 (ii) The two ``commuting exchanges'' that sort the records are a single involution on all product records. The weight law is therefore a function of exchange parity and slot class alone.
 (iii) The selection of the qutrit--qubit link by an ``acting central charge'' depends on a conjugation convention for the far end of a link, which the axiom does not fix. Under the conjugate convention a second configuration satisfies every hypothesis of the uniqueness theorem. We verify this in Lean~4 against the author's own definitions.
-(iv) The records as defined are not covariant under the symmetry group of their own joint state. A covariant repair leaves the value unchanged, and invariance alone leaves a ten-parameter family of readouts.
-(v) In a declared space of $46\,080$ rule variants that contains every alternative listed in \cite{wg}, the expected number of chance values within $1\sigma$ of CODATA~2022 is $4.4\times10^{-6}$. We discuss what this does and does not imply.
+(iv) The records as defined are not covariant under the symmetry group of their own joint state. A covariant repair leaves the value unchanged, and invariance alone leaves a nine-parameter (real) family of readouts.
+(v) In a declared space of $46\,080$ rule variants that contains all twelve weight-law alternatives of \cite[Table S5]{wg}, the expected number of chance values within $1\sigma$ of CODATA~2022 is $4.4\times10^{-6}$. This already includes the trial factor of the declared space. We discuss what this does and does not imply.
 \end{abstract}
 
 \section{Setting}
@@ -41,7 +41,7 @@ We built the records as explicit $36\times36$ operators on $\mathbb C^3\otimes\m
 \item the $172$ records are Hilbert--Schmidt orthogonal;
 \item the sector sizes are $79/48/42/3$.
 \end{itemize}
-Exact summation gives the closed form, and its inverse agrees with \cite{wg} to $60$ digits. The author's Lean file builds under Lean~4.35.0 with axioms \texttt{propext}, \texttt{Quot.sound} and \texttt{Classical.choice} only.
+Exact summation gives the closed form. Its inverse agrees with all $51$ digits printed in \cite[Sec.~S7]{wg}, and with the $60$ digits printed by the ancillary script \texttt{enumerate\_records.py}. The author's Lean file builds under Lean~4.35.0 with axioms \texttt{propext}, \texttt{Quot.sound} and \texttt{Classical.choice} only.
 
 \section{The two exchanges coincide}
 \begin{proposition}\label{prop:class}
@@ -59,33 +59,33 @@ Proposition~\ref{prop:class} isolates the content of the weight law in two assig
 The identification algebra of a $(d_1,d_2)$ link in \cite{wg} is $s(u(d_1)\oplus u(d_2))$, traceless on $\mathbb C^{d_1}\oplus\mathbb C^{d_2}$. It acts on $\mathbb C^{d_1}\otimes\mathbb C^{d_2}$ by $\xi_1\otimes 1+1\otimes\xi_2$. The pair state, however, is invariant under $U\otimes\bar U$, so the far end transforms contragrediently.
 
 \begin{proposition}\label{prop:conv}
-Let $c=(ix\mathbb 1_{d_1},iy\mathbb 1_{d_2})$ be central with $d_1x+d_2y=0$, $x\neq0$.
+Let $c=(ix\mathbf 1_{d_1},iy\mathbf 1_{d_2})$ be central with $d_1x+d_2y=0$, $x\neq0$.
 \begin{enumerate}
 \item[(A)] If the far block acts by $\xi_2$, then $c$ acts on the link by $i(x+y)$. This is nonzero iff $d_1\neq d_2$.
 \item[(A$^*$)] If the far block acts by $\bar\xi_2$, then $c$ acts by $i(x-y)=ix(d_1+d_2)/d_2\neq0$ for every type.
 \item[(B)] If instead the phase constraint is imposed on the matched directions, $x+y=0$, the centre acts trivially for every type.
 \end{enumerate}
-Among readable types $\{(2,2),(2,3)\}$, reading A selects $(2,3)$ alone, A$^*$ selects both, and B selects neither. Under A the link has hypercharge $1/6$, the quantum numbers of $Q_L$. Under A$^*$ it has $5/6$, those of the $(3,2)$ block of the $SU(5)$ adjoint.
+Among readable types $\{(2,2),(2,3)\}$, reading A selects $(2,3)$ alone, A$^*$ selects both, and B selects neither. Under A the link has hypercharge $1/6$, the quantum numbers of $Q_L$. Under A$^*$ the link is $(\bar3,2)_{5/6}$, one of the two off-diagonal blocks of the $SU(5)$ adjoint.
 \end{proposition}
 \begin{proof}
 Direct substitution of $y=-d_1x/d_2$ in (A) and (A$^*$). In (B) the action is identically zero.
 \end{proof}
 
 \begin{remark}
-The trace condition defining the $u(1)$ is not invariant under $\xi_2\mapsto\bar\xi_2$: since $\operatorname{tr}\bar\xi_2=-\operatorname{tr}\xi_2$, it becomes $\operatorname{tr}\xi_1-\operatorname{tr}\xi_2=0$. The two readings therefore define different subgroups of $U(d_1)\times U(d_2)$. Both give a four-dimensional stabilizer of the $(2,3)$ pair state, so the stabilizer does not discriminate between them.
+The trace condition defining the $u(1)$ is not invariant under $\xi_2\mapsto\bar\xi_2$. Write $\eta_2=\bar\xi_2$ for the operator that actually acts at the far end under A$^*$. Since $\operatorname{tr}\eta_2=-\operatorname{tr}\xi_2$, the condition $\operatorname{tr}\xi_1+\operatorname{tr}\xi_2=0$ reads $\operatorname{tr}\xi_1-\operatorname{tr}\eta_2=0$ in terms of the acting operators. The two readings therefore define different subgroups of $U(d_1)\times U(d_2)$. Both give a four-dimensional stabilizer of the $(2,3)$ pair state, so the stabilizer does not discriminate between them.
 \end{remark}
 
-An independent enumeration reproduces the $76$ configurations of \cite[Sec.~S5]{wg}, of which $42$ are admitted by the read cap and $23$ are readable. Imposing the end rule, the two-point definition and the acting charge selects one configuration under A (the object), two under A$^*$, and none under B. Under A$^*$ the second configuration has readout $(30+30\sqrt2)/2304$ by the weight law of \cite{wg}, i.e.\ $1/\text{value}=31.81$, so a further rule would be needed to choose between the two.
+An independent enumeration reproduces the $76$ configurations of \cite[Sec.~S5]{wg}, of which $42$ are admitted by the read cap and $23$ are readable. Imposing the end rule, the two-point definition and the acting charge selects one configuration under A (the object), two under A$^*$, and none under B. Under A$^*$ the second configuration has readout $(30+30\sqrt2)/2304$, i.e.\ $1/\text{value}=31.81$. This uses the dimension-dependent form of the weight law ($\sqrt d$ per surviving exchange), which \cite[Sec.~S5, Table S5]{wg} itself uses for its $(2,2)$ entries. A further rule would be needed to choose between the two configurations.
 
-In Lean (appended to the unmodified file of \cite{wg}) we prove \texttt{uniqueness\_fails\_under\_conjugate\_convention}. With the acting-charge predicate replaced by its A$^*$ form, the configuration ``shared qubit, two read and one unread $(2,2)$ link'' satisfies all hypotheses of the upstream uniqueness theorem and differs from the object. Theorem~1 of \cite{wg} is thus correct under A. Its scope depends on a convention whose justification in \cite[Sec.~S4]{wg} uses the direct sum $\mathbb C^{d_1}\oplus\mathbb C^{d_2}$, a space the axiom does not supply.
+In Lean (appended to the unmodified file of \cite{wg}) we prove \texttt{uniqueness\_fails\_under\_conjugate\_convention}. With the acting-charge predicate replaced by its A$^*$ form, the configuration ``shared qubit, two read and one unread $(2,2)$ link'' satisfies all hypotheses of the upstream uniqueness theorem and differs from the object. Moreover, the upstream Lean predicate \texttt{readable} used by \texttt{configuration\_unique} is $d_1,d_2\le3$, not the read cap $d_1d_2\le6$. Under A$^*$ the configuration ``shared qutrit, two read and one unread $(3,3)$ link'' therefore also satisfies the Lean hypotheses (\texttt{third\_config\_under\_conjugate\_convention}), although the read cap excludes it. Theorem~1 of \cite{wg} is thus correct under A. Its scope depends on a convention whose justification in \cite[Secs.~S3--S4]{wg} uses the direct sum $\mathbb C^{d_1}\oplus\mathbb C^{d_2}$, a space the axiom does not supply.
 
 \section{Covariance of the record set}
-Let $G_\Omega$ be the symmetry group of the joint read state $\lvert\omega_3\rangle_{Q_1Q_2}\otimes\lvert\omega_2\rangle_{q_1q_2}$: $U\otimes\bar U$ on $(Q_1,Q_2)$ and $V\otimes\bar V$ on $(q_1,q_2)$. The plain slot swap $E$ of \cite{wg} does not commute with $G_\Omega$, because it identifies the two read links' bases by the identity rather than by the transpose. As a result, neither the $E$-even/odd splitting nor the span of the commutator records is $G_\Omega$-invariant. Replacing $E$ with $E'=E\circ T$ (transposition at each slot) restores covariance. The commutator-type records become $D_x$, $D_z$ and $S_y$, and the sector sizes, hence the value, are unchanged.
+Let $G_\Omega$ be the symmetry group of the joint read state $\lvert\omega_3\rangle_{Q_1Q_2}\otimes\lvert\omega_2\rangle_{q_1q_2}$: $U\otimes\bar U$ on $(Q_1,Q_2)$ and $V\otimes\bar V$ on $(q_1,q_2)$. The plain slot swap $E$ of \cite{wg} does not commute with $G_\Omega$, because it identifies the two read links' bases by the identity rather than by the transpose. As a result, neither the $E$-even/odd splitting nor the span of the commutator records is $G_\Omega$-invariant. Replacing $E$ with $E'=E\circ T$ (transposition at each slot) restores covariance. $E'$ is a linear anti-automorphism, $E'(AB)=E'(B)E'(A)$. On Hermitian operators it agrees with the antiunitary swap $A\mapsto S\bar AS^{\mathsf T}$, which commutes with $G_\Omega$. On anti-Hermitian commutators the two differ by a sign, and this is why $S_y$ appears below. The counts are the same for either map on the Hermitian record basis. The commutator-type records become $D_x$, $D_z$ and $S_y$, and the sector sizes, hence the value, are unchanged.
 
-Under $SU(3)\times SU(2)\times\langle E'\rangle$ the covariant record space has ten isotypic components and a commutant of dimension $22$. An invariant dressing therefore has a ten-parameter trace. The weights of \cite{wg} are one point in this family, and they distinguish two copies of the same isotypic component $(1,3)_-$, giving weight $1$ to antisymmetric qubit products and $\sqrt6$ to commutator records. Symmetry does not supply that distinction.
+Under $SU(3)\times SU(2)\times\langle E'\rangle$ the covariant record space has ten isotypic components and a commutant of dimension $22$. An invariant dressing therefore has a trace with ten complex parameters. A dressing that maps Hermitian records to Hermitian records must give $10$ and $\overline{10}$ equal weights, so there are nine real parameters. The weights of \cite{wg} are one point in this family. They distinguish two copies of the irreducible $(1,3)_-$, which together form one isotypic component, giving weight $1$ to antisymmetric qubit products and $\sqrt6$ to commutator records. Symmetry does not supply that distinction.
 
 \section{Trial factor}
-All $13$ closed-form alternatives in \cite[Table S5]{wg} are reproduced from the record classes. We then declared a rule space that contains them:
+Table S5 of \cite{wg} lists the computed value and fifteen closed-form alternatives. The computed row and the twelve weight-law alternatives are reproduced from the record classes. The other three are read-end counting ($70.19$), normalisation by the $172$ records ($0.758$), and the smallest readable configuration ($3.535$). They change the counting unit, the normalisation or the configuration, and all lie far from $137$. We then declared a rule space that contains the twelve:
 \begin{itemize}
 \item an independent squared factor $k\in\{1,2,3,6\}$ for each of the four product classes;
 \item a commutator factor in $\{1,2,3,4,6,9\}$ and count in $\{0,3,6\}$;
@@ -96,18 +96,18 @@ This gives $46\,080$ rules and $15\,639$ distinct values. The rule of \cite{wg} 
 
 Separately, among the $1.63\times10^9$ elements $(a+b\sqrt2+c\sqrt3+d\sqrt6)/31104$ with $0\le a,b,c,d\le200$, exactly one lies within $1\sigma$: $(79,48,42,3)$. The expected number is $0.024$.
 
-As a Lean-side check we ran the author's mutation harness, which applies $19$ single-definition rewordings and has Lean~4.35.0 evaluate each readout. Every rewording shared with our table reproduces our numerator exactly. Five further rewordings give $1/\text{value}=138.94$, $133.97$, $254.54$, $149.59$ and $295.10$. Two leave the value unchanged by construction. None of the rest is within $10^{-3}$ of $\alpha^{-1}$.
+As a Lean-side check we ran the author's mutation harness, which applies $19$ single-definition rewordings and has Lean~4.35.0 evaluate each readout. Of the $19$, thirteen lie in the declared space, and Lean reproduces our numerator exactly for each. Ten of these are Table S5 rows reproduced above. Three more are in the declared space only: $205.55$ (normalisation $36^3$), $150.79$ and $138.94$. Four are outside it, at $133.97$, $254.54$, $149.59$ and $295.10$. Two leave the value unchanged by construction. Apart from those two, none is within $10^{-3}$ of $\alpha^{-1}$.
 
-These numbers bound coincidence only relative to a stated search space. If the rules were fixed without reference to $\alpha$, the agreement is improbable at the $10^{-6}$ level. If they were selected from an effective space of $10^{9}$--$10^{10}$ variants, it is not. Variants of this kind include wording clauses, configurations, normalizations, and conventions such as that of Proposition~\ref{prop:conv}. \cite{wg} does not document the order in which rules and value were fixed, so the material cannot decide between the two.
+These numbers bound coincidence only relative to a stated search space. Even allowing selection of the best rule within the declared space, a chance hit has probability $\approx4\times10^{-6}$; for a single rule fixed in advance the corresponding figure is of order $10^{-10}$. If they were selected from an effective space of $10^{9}$--$10^{10}$ variants, it is not. Variants of this kind include wording clauses, configurations, normalizations, and conventions such as that of Proposition~\ref{prop:conv}. \cite{wg} does not document the order in which rules and value were fixed, so the material cannot decide between the two.
 
 \section{Testability}
-The candidate deviates from the measurements as follows: $+0.60\sigma$ (CODATA 2022), $+1.57\sigma$ (electron $g-2$), $-1.49\sigma$ (Rb), $+5.32\sigma$ (Cs). Consistent determinations with $u\lesssim2.5\times10^{-9}$ would test it at $5\sigma$, if centred near the present CODATA value. The identification also requires a map from the hypercharge readout to $\alpha_{\rm em}=\alpha_Y\cos^2\theta_W$, which \cite{wg} defers.
+The candidate deviates from the measurements as follows: $+0.60\sigma$ (CODATA 2022), $+1.57\sigma$ (electron $g-2$), $-1.49\sigma$ (Rb), $+5.32\sigma$ (Cs). These figures use CODATA 2022 \cite{codata}, the electron $g-2$ \cite{fan}, Rb recoil \cite{morel} and Cs recoil \cite{parker}. Consistent determinations with absolute uncertainty $u\lesssim2.5\times10^{-9}$ in $\alpha^{-1}$ (relative $1.8\times10^{-11}$) would test it at $5\sigma$, if centred near the present CODATA value. The identification also requires a map from the hypercharge readout to $\alpha_{\rm em}=\alpha_Y\cos^2\theta_W$, which \cite{wg} defers.
 
 \section*{Reproducibility}
 Code, outputs and Lean files are in the project repository, under \texttt{computation/chain-theory/alpha/} and \texttt{proofs/lean/chain-theory/}. Upstream sources are pinned to commit \texttt{a28db89} of \texttt{github.com/alexwg/chain-theory}.
 
 \begin{thebibliography}{9}
-\bibitem{wg} A.~D.~Wissner-Gross, \emph{A Parameter-Free Candidate for the Fine-Structure Constant from Entangled Qudits}, preprint v1.0.0 (2026), with Supplemental Material and \texttt{ChainAlpha.lean}.
+\bibitem{wg} A.~D.~Wissner-Gross, \emph{A Parameter-Free Candidate for the Fine-Structure Constant from Entangled Qudits}, preprint v1.0.0 (2026), with Supplemental Material, \texttt{ChainAlpha.lean} and ancillary files (\texttt{records.csv}, \texttt{enumerate\_records.py}, \texttt{mutations.py}); \texttt{github.com/alexwg/chain-theory}, commit \texttt{a28db89}.
 \bibitem{codata} P.~J.~Mohr, D.~B.~Newell, B.~N.~Taylor, E.~Tiesinga, Rev.\ Mod.\ Phys.\ \textbf{97}, 025002 (2025).
 \bibitem{fan} X.~Fan, T.~G.~Myers, B.~A.~D.~Sukra, G.~Gabrielse, Phys.\ Rev.\ Lett.\ \textbf{130}, 071801 (2023).
 \bibitem{morel} L.~Morel, Z.~Yao, P.~Clad\'e, S.~Guellati-Kh\'elifa, Nature \textbf{588}, 61 (2020).

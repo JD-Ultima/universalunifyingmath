@@ -13,7 +13,7 @@ Part A: alternatives of Table S-alternatives (recomputed)
   Born weights k                   1/value = 97.50470219435736
   no weights                       1/value = 180.837209302
   all 13 match the paper's printed inverses to 3 decimals
-  normalization alternatives (not in the paper's table), computed numerator:
+  further normalization alternatives (Table S5 lists only N -> 172), computed numerator:
     N = 36^3 (all whole)                     1/value = 205.5539988
     N = 24^3 (all traceless)                 1/value = 60.90488853
     N = 24*35^2 (traceless part at reads)    1/value = 129.5286258

@@ -1,6 +1,6 @@
 # Chain Theory α audit — computations
 
-Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip install numpy==2.5.3 sympy==1.14.0 mpmath==1.3.0`). No randomness is used.
+Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip install numpy==2.5.3 sympy==1.14.0 mpmath==1.3.0`). Randomness only with fixed seeds (`readcap_lemmas.py`: 20261030; `symmetry.py`: 7).
 
 | Script | Purpose | Runtime | Output |
 |---|---|---|---|

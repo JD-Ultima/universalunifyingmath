@@ -83,3 +83,53 @@ end ConventionCheck
 #print axioms ConventionCheck.uniqueness_fails_under_conjugate_convention
 #print axioms ConventionCheck.actA_ne_zero_iff
 #print axioms ConventionCheck.weight_is_class_function
+
+/-! ## Referee addition (review 2026-10-30, CT-4): the upstream `readable` predicate is d ≤ 3, not the
+read cap d1 d2 ≤ 6, so under the conjugate convention a third configuration (3R 3R 3U at a shared qutrit)
+also satisfies the hypotheses of `configuration_unique`. The #evals confirm the readouts of the (2,2) and (3,3) worlds. -/
+/-! Referee additions (not part of the manuscript). -/
+namespace ReviewCheck
+open ChainAlpha ConventionCheck
+
+/-- Shared qutrit, two read (3,3) links and one unread (3,3) link. -/
+def cfg33 : Config := ⟨3, [⟨3, true⟩, ⟨3, true⟩, ⟨3, false⟩]⟩
+
+theorem cfg33_ne_object : cfg33 ≠ objectConfig := by decide
+theorem cfg33_twoPoint : cfg33.twoPoint := by unfold Config.twoPoint cfg33; decide
+theorem cfg33_endRule : cfg33.endRule := by
+  unfold Config.endRule cfg33
+  intro a ha _
+  simp at ha
+  rcases ha with rfl | rfl | rfl <;> decide +kernel
+theorem cfg33_readable : ∀ a ∈ cfg33.arms, 2 ≤ a.far ∧ readable cfg33.center a.far := by
+  intro a ha
+  simp [cfg33] at ha
+  rcases ha with rfl | rfl | rfl <;>
+    exact ⟨by decide, by unfold readable readers spansEnd; decide⟩
+theorem cfg33_actingConj : ∀ a ∈ cfg33.arms, actingChargeConj cfg33.center a.far := by
+  intro a _
+  exact actConj_ne_zero _ _ (by decide)
+
+/-- A third configuration satisfying all hypotheses of `configuration_unique` under A*. -/
+theorem third_config_under_conjugate_convention :
+    ∃ c : Config, c ≠ objectConfig ∧ c ≠ qubitConfig ∧ 2 ≤ c.center ∧ c.twoPoint ∧ c.endRule ∧
+      (∀ a ∈ c.arms, 2 ≤ a.far ∧ readable c.center a.far) ∧
+      (∀ a ∈ c.arms, actingChargeConj c.center a.far) :=
+  ⟨cfg33, cfg33_ne_object, by decide, by decide, cfg33_twoPoint, cfg33_endRule,
+   cfg33_readable, cfg33_actingConj⟩
+
+def qubitWorld : World where
+  qudits := 4
+  dim := fun _ => 2
+  links := [(0, 1), (0, 2), (0, 3)]
+def qubitTP : TwoPoint := { center := 0, read1 := (0, 1), read2 := (0, 2), state := (0, 3) }
+def quditWorld : World where
+  qudits := 4
+  dim := fun _ => 3
+  links := [(0, 1), (0, 2), (0, 3)]
+
+#eval readout qubitWorld qubitTP
+#eval (recs 2 2).length
+#eval readout quditWorld qubitTP
+end ReviewCheck
+#print axioms ReviewCheck.third_config_under_conjugate_convention

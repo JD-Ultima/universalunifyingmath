@@ -8,10 +8,10 @@
 
 | ID | Finding | Status |
 |---|---|---|
-| F-CT-1 | The 172 records, sector sizes, closed form and 60-digit inverse are reproduced by an independent operator-level implementation. | Verified (exact) |
+| F-CT-1 | The 172 records, sector sizes, closed form and inverse are reproduced (all 51 printed digits of the Supplement; 60 digits of the ancillary `enumerate_records.py`) by an independent operator-level implementation. | Verified (exact) |
 | F-CT-2 | On the 169 product records, the two "commuting exchanges" $X$ and $Y$ are the same involution $E$. The weight law is a class function of (E-parity, slot class). | Proven |
 | F-CT-3 | Selecting $(2,3)$ by an "acting central charge" depends on a conjugation convention and on a direct-sum trace. Of four natural readings, only the Letter's selects $(2,3)$ alone. Lean confirms that uniqueness fails under the conjugate convention. | Proven (Python + Lean) |
-| F-CT-4 | Freedom analysis. All 13 published alternatives were reproduced. In a declared 46 080-rule space, the expected number of chance hits within 1σ is $4\times10^{-6}$. Among $1.6\times10^9$ small-coefficient elements of $\tfrac{1}{31104}\mathbb Z[\sqrt2,\sqrt3]$, the author's is the only one within 1σ (0.02 expected by chance). | Computed |
+| F-CT-4 | Freedom analysis. The 12 weight-law alternatives of Table S5 were reproduced; its 3 other rows (counting unit, normalisation by 172, other configuration) lie outside the declared space. In a declared 46 080-rule space, the expected number of chance hits within 1σ is $4\times10^{-6}$. Among $1.6\times10^9$ small-coefficient elements of $\tfrac{1}{31104}\mathbb Z[\sqrt2,\sqrt3]$, the author's is the only one within 1σ (0.02 expected by chance). | Computed |
 | F-CT-5 | `ChainAlpha.lean` builds under Lean 4.35.0 with standard axioms only. It certifies arithmetic of the definitions. The physically load-bearing choices (CT-G01–G05) enter as definitions. | Verified |
 | F-CT-6 | Deviations from the measurements are reproduced. The candidate is algebraic of degree 4; its minimal polynomial is given. | Verified |
 | F-CT-9 | The imported read-cap lemma is cross-checked numerically: Choi's map is positive and non-decomposable (SDP), also after embedding. | Computed |
@@ -79,7 +79,7 @@ Symbolic check: `charge_conventions.py`. ∎
 
 Both conventions give a 4-dimensional stabilizer of the pair ket at $(2,3)$, so CT-010 does not distinguish them. At $(2,2)$ the stabilizer has dim 4 under A and dim 3 under A*.
 
-**Lean.** `proofs/lean/chain-theory/ConventionCheck.lean` is appended unchanged to the pinned upstream file. It proves `uniqueness_fails_under_conjugate_convention`: with `actingCharge` replaced by the A* value, the configuration "shared qubit, two read (2,2) links, one unread (2,2) link" satisfies every hypothesis of the upstream `configuration_unique` and differs from the object. Under reading A it is excluded (`upstream_excludes_qubitConfig`). Build log: `proofs/lean/chain-theory/run.out`.
+**Lean.** `proofs/lean/chain-theory/ConventionCheck.lean` is appended unchanged to the pinned upstream file. It proves `uniqueness_fails_under_conjugate_convention`: with `actingCharge` replaced by the A* value, the configuration "shared qubit, two read (2,2) links, one unread (2,2) link" satisfies every hypothesis of the upstream `configuration_unique` and differs from the object. Under reading A it is excluded (`upstream_excludes_qubitConfig`). A referee addition (`third_config_under_conjugate_convention`) shows that, because the upstream Lean predicate `readable` is $d\le3$ rather than the read cap, the configuration 3R 3R 3U at a shared qutrit also passes the Lean hypotheses under A*. The read cap excludes it (`config_enumeration.py`). Build log: `proofs/lean/chain-theory/run.out`.
 
 **Full enumeration** (`config_enumeration.py`). The Supplement counts are reproduced independently: 76 configurations, 42 admitted by the read cap, 23 readable. Applying the end rule, the two-point definition and the acting-charge test, the selected configurations are:
 
@@ -91,11 +91,11 @@ Both conventions give a 4-dimensional stabilizer of the pair ket at $(2,3)$, so 
 
 Under A*, the competing configuration's readout under the Letter's own weight law is $(30+30\sqrt2)/2304$, so $1/\text{value}=31.81$ (`algebraic.out`, row (2,2)). The numerator agrees with the Supplement's own value for 2R 2R at a shared qubit. Theorem 1 would then deliver two two-point functions, and the Photon Conjecture would need a further rule to choose between them.
 
-**Assessment.** Theorem 1 (Uniqueness) is correct under reading A. Reading A is an interpretive choice, not a consequence of the axiom. Its justification (S4, "sees no global phase of a pair" imposed over all $d_1+d_2$ directions of a direct sum) uses a space that the axiom does not supply. This is gap CT-G03/G04. The Supplement's own reported value for 2R 2R at a shared qubit, $1/\text{value}=3.535$, would then compete with the object.
+**Assessment.** Theorem 1 (Uniqueness) is correct under reading A. Reading A is an interpretive choice, not a consequence of the axiom. Its justification (S4, "sees no global phase of a pair" imposed over all $d_1+d_2$ directions of a direct sum) uses a space that the axiom does not supply. This is gap CT-G03/G04. Under A* the competitor is 2R 2R 2U at a shared qubit, $1/\text{value}=31.81$, shown below. (The Supplement's 2R 2R value, 3.535, has no unread link and fails the two-point definition under every convention.)
 
 ## F-CT-4 Freedom (look-elsewhere) analysis
 
-**A. Published alternatives.** All 13 closed-form rows of Table S-alternatives were recomputed from the record classes $(79\text{ odd}, 48\text{ even mixed}, 36+6\text{ even same-end}, 3\text{ comm})$ and match the printed inverses to $<6\times10^{-4}$ (`freedom.py`, `freedom.out`). The table omits alternatives to $N$:
+**A. Published alternatives.** Table S5 has the computed row plus 15 closed-form alternatives. The computed row and the 12 weight-law alternatives were recomputed from the record classes $(79\text{ odd}, 48\text{ even mixed}, 36+6\text{ even same-end}, 3\text{ comm})$ and match the printed inverses to $<6\times10^{-4}$ (`freedom.py`, `freedom.out`). The other three rows are outside our declared space and far from 137: read-end counting (70.190), normalisation by the 172 records (0.758; an alternative to $N$) and the smallest readable configuration (3.535). The table omits these further alternatives to $N$:
 
 | $N$ | 1/value |
 |---|---|
@@ -128,12 +128,13 @@ The single hit is $(79,48,42,3)$ in both cases. At this denominator, 10-digit ag
 
 **D. Lean-side cross-check.** We ran the author's `mutations.py` with Lean 4.35.0 on the pinned file. It applies 19 single-definition rewordings and has Lean evaluate each readout (`upstream_mutations_lean.out`; values in `mutations_values.out`).
 
-- Every rewording that also appears in Part A reproduces our Python numerator exactly.
-- Five rewordings are new to our table: commutator records carrying no reads (138.94), keeping both commutator combinations (133.97), a shifted slot exchange (254.54), dropping the exchange-fixed records (149.59) and dropping the even records (295.10).
+- 13 of the 19 rewordings lie in the declared space B, and Lean reproduces our numerator exactly for each. 10 are Table S5 rows reproduced in Part A. Three are in B only: normalisation $36^3$ (205.55), reads at the qubit (150.79) and commutator records carrying no reads (138.94).
+- Four rewordings lie outside B: keeping both commutator combinations (133.97), a shifted slot exchange (254.54), dropping the exchange-fixed records (149.59) and dropping the even records (295.10).
+- (Corrected after review 2026-10-30, CT-2; see `reports/CORRECTIONS.md`.)
 - Two rewordings leave the value unchanged: `fixesFar_always_true` (which breaks the end-rule statement but not the readout) and an equivalent definition of `wX`.
 - No other rewording lands within $10^{-3}$ of $\alpha^{-1}$.
 
-**Interpretation.** These are statements about trial factors, not about physics. If the rules were fixed without reference to $\alpha$, a chance agreement this close is improbable: $p\sim10^{-6}$ for the rule space of B, which contains every alternative the author lists. If the construction was selected from a search of $\gtrsim10^{9}$–$10^{10}$ implicit variants (wording clauses × configurations × normalizations × conventions such as F-CT-3), the agreement is unremarkable. The paper does not record the order in which rules and value were fixed (CT-G10), so the data in hand cannot distinguish these cases. Further digits can (F-CT-6).
+**Interpretation.** These are statements about trial factors, not about physics. Even allowing selection of the best rule within the declared space B, which contains the 12 weight-law alternatives the author lists, a chance agreement this close has probability $\approx4\times10^{-6}$; a single rule fixed in advance would have about $10^{-10}$. If the construction was selected from a search of $\gtrsim10^{9}$–$10^{10}$ implicit variants (wording clauses × configurations × normalizations × conventions such as F-CT-3), the agreement is unremarkable. The paper does not record the order in which rules and value were fixed (CT-G10), so the data in hand cannot distinguish these cases. Further digits can (F-CT-6).
 
 **Limits.** The rule space B is ours. A different "natural" space would give a different density. The density estimate assumes local uniformity of rule outputs near 137, which holds approximately here (median gap 0.0070 between adjacent values).
 
@@ -196,7 +197,7 @@ $G_\Omega$ is the symmetry group of the joint read state $\lvert\Omega\rangle=\l
    | $+$ | $(1,1)^{\times2}$, $(1,5)$, $(8,1)$, $(8,3)^{\times2}$, $(27,1)$ |
    | $-$ | $(1,3)^{\times2}$, $(8,1)$, $(8,3)^{\times2}$, $(10,1)$, $(\overline{10},1)$ |
 
-   That is 10 isotypic components, and the commutant has dimension 22. Any invariant dressing $M$ therefore has $\operatorname{tr}M=\sum_{i=1}^{10}\dim\rho_i\,\operatorname{tr}A_i$, a **10-parameter** family of readouts. The Letter's rule is one point in it, fixed by the wording clauses of CT-G02. In particular, within the single isotypic component $(1,3)_-$ the Letter gives weight 1 to the three antisymmetric qubit–qubit products and $\sqrt6$ to the three commutator records. Symmetry does not distinguish these two copies of the same representation; only the "one letter vs two letters" construction rule does.
+   That is 10 isotypic components over $\mathbb C$, and the commutant has real dimension 22. Any invariant dressing $M$ has $\operatorname{tr}M=\sum_{i=1}^{10}\dim\rho_i\,\operatorname{tr}A_i$. A dressing that maps Hermitian records to Hermitian records commutes with $A\mapsto A^\dagger$, which exchanges the $10$ and $\overline{10}$ components, so those two weights are equal. The result is a **9-parameter (real)** family of readouts; the count was corrected after review CT-5. The Letter's rule is one point in it, fixed by the wording clauses of CT-G02. In particular, within the single isotypic component $(1,3)_-$ the Letter gives weight 1 to the three antisymmetric qubit–qubit products and $\sqrt6$ to the three commutator records. Symmetry does not distinguish these two copies of the same representation; only the "one letter vs two letters" construction rule does.
 
 ## F-CT-8 Exploration: do natural state functionals give the weights? (negative)
 

@@ -7,4 +7,4 @@ novelty: No known precedent
 reproducibility: freedom.py reproduces all 13 published alternatives
 empirical_testability: Only through CT-020
 dependencies: [three wording clauses of Table S-inputs, amplitude-vs-Born choice]
-confidence: "Medium-low that the rule is forced; alternatives in the author's own table span 1/value ∈ [97.5, 180.8]"
+confidence: "Medium-low that the rule is forced; the author's own weight-law alternatives span 1/value ∈ [97.5, 180.8] (Table S5 overall: [0.758, 180.8])"

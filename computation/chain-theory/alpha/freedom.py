@@ -1,7 +1,7 @@
 """Freedom (look-elsewhere) analysis for the Chain Theory alpha candidate.
 
-Part A recomputes, from the record classes alone, every alternative in the
-Letter's Table S-alternatives that has a closed form.
+Part A recomputes, from the record classes alone, the computed row and the 12 weight-law alternatives in the
+Letter's Table S-alternatives (its other three rows change the counting unit, N, or the configuration).
 
 Part B enumerates a declared rule space built from the same record classes
 and asks how many rules land near alpha(0) and how dense the outputs are
@@ -62,7 +62,7 @@ for k, v in A.items():
     assert abs(float(inv_of(v)) - paper[k]) < 6e-4, (k, inv_of(v), paper[k])
 print("  all 13 match the paper's printed inverses to 3 decimals")
 # extra normalization alternatives not listed in the paper
-print("  normalization alternatives (not in the paper's table), computed numerator:")
+print("  further normalization alternatives (Table S5 lists only N -> 172), computed numerator:")
 for name, N in [("36^3 (all whole)", 36**3), ("24^3 (all traceless)", 24**3),
                 ("24*35^2 (traceless part at reads)", 24*35*35), ("35^3", 35**3)]:
     print(f"    N = {name:36s} 1/value = {mp.nstr(inv_of(A['computed'], N), 10)}")
