@@ -84,3 +84,19 @@ LEAN=/path/to/lean-4.35.0-linux/bin/lean ./run_gauge.sh > GaugeSelection.out
 - **Inputs and physics.** The read cap itself (9.1, CONDITIONAL) is a parameter here; the file shows what each value selects. That the readability and acting-centre criteria are the right ones is not a mathematical statement. The physics identifications are not addressed (G5).
 
 `ChainAlpha.selection_under_read_cap` in the upstream alpha Lean already proves the core arithmetic: under the cap, as a hypothesis, $d_1,d_2\ge2$ with $d_1\ne d_2$ gives $(2,3)$ or $(3,2)$. This file adds the dependence on each input and the G1/G2 algebra.
+
+## `mutation_spotcheck.sh`: Lean check of the mechanical mutation space (F-CT-4 E)
+
+This script checks the transcription used by `computation/chain-theory/alpha/mechanical_mutations.py` against Lean itself (`formalization/chain-theory/alpha/mechanical-trial-factor.md`). For every single mutant, and for a seeded sample of 300 pairs (seed 20261030), it writes Parts 0–1 of the pinned `ChainAlpha.lean` with the mutation's text edits, followed by `#eval readout objectWorld objectTwoPoint`, into a temporary directory. The upstream file is not modified.
+
+Run:
+
+```bash
+LEAN=/path/to/lean-4.35.0-linux/bin/lean UPSTREAM=/path/to/chain-theory ./mutation_spotcheck.sh > mutation_spotcheck.out
+```
+
+- Wall time is about 11 minutes with 2 Lean processes; each file has a 120 s timeout.
+- The output is in `mutation_spotcheck.out`.
+  - Lean agrees with the Python prediction on all 1118 files: 770 + 266 identical readouts, 47 + 31 predicted elaboration failures, and 1 + 3 resource aborts ("deep recursion") on the list-doubling mutant `addRoot:CONS:2=dup0`, which the transcription does not evaluate.
+  - It also prints the Lean integer conventions (Euclidean division on `Int`, $x/0=0$, truncated `Nat` subtraction) that the transcription follows.
+- Pairs outside the sample are evaluated only by the transcription.

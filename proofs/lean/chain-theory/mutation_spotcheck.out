@@ -1,0 +1,15 @@
+$UPSTREAM/papers/alpha/lean/ChainAlpha.lean: OK
+Lean arithmetic the transcription follows: Int (-7)/2, 7/(-2), (-7)/(-2), 5/0, (-7)%2, 5%0; Nat 5/0, 5%0, 3-5:
+(-4, -3, 4, 0, 1, 5)
+(0, 5, 0)
+Lean 4.35.0 against the Python transcription (mechanical_mutations.py --emit-lean):
+  Lean result counted as: timeout (120 s) or resource abort (deep recursion, out of memory) -> infeasible; else an error message -> fails to elaborate; else the #eval output (compared without whitespace)
+  pair   Python: fails to elaborate     agree    31  disagree 0
+  pair   Python: infeasible             agree     3  disagree 0
+  pair   Python value                   agree   266  disagree 0
+  single Python: fails to elaborate     agree    47  disagree 0
+  single Python: infeasible             agree     1  disagree 0
+  single Python value                   agree   770  disagree 0
+  total: 1118 agree, 0 disagree
+  Lean resource failures by kind: 4 deep recursion
+  beyond the transcription's bound (Python: more than 4000 terms, not evaluated) but evaluated by Lean: 0

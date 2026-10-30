@@ -1,0 +1,209 @@
+Mechanical trial-factor space for the readout of ChainAlpha.lean (audit F-CT-4, next step 4)
+Source: ChainAlpha.lean, sha256 522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da (pinned upstream file; read as data, never run here).
+
+== 1. Inventory and declared space (fixed before any value is computed) ==
+Part 1 has 52 definitions and 5 structures/abbreviations.
+The readout `readout objectWorld objectTwoPoint` (the last conjunct of `main`) depends on 44 of them (identifier references, transitively, from readout, objectWorld, objectTwoPoint):
+  pairKet                LIT 2, REL 2, LOG 1, IF 1, AOR 1, VAR 5
+  steered                VAR 3
+  fixesFar               REL 1, VAR 4
+  readEnd                IF 1, VAR 4
+  farEnd                 IF 1, VAR 4
+  readoutDim             LIT 3, REL 2, LOG 1, IF 1, AOR 9, VAR 12
+  tracelessBasis         LIT 8, NEG 1, REL 14, LOG 7, IF 5, VAR 26, CAT 1
+  slotEnd                LIT 1, AOR 1
+  slotDim                LIT 1, REL 1, IF 1, VAR 2
+  slotBasis              VAR 2
+  exch                   LIT 2, AOR 2
+  letterAt               
+  letterSlots            LIT 1, REL 1
+  exchAssign             LIT 1
+  letterCode             LIT 2, MATCH 1, AOR 1
+  key                    LIT 3, AOR 2
+  products               LIT 3, REL 3, IF 2, VAR 12
+  coeffOf                LIT 1, REL 1, AOR 1, VAR 2
+  parity                 LIT 3, NEG 1, REL 2, QNT 2, IF 2, VAR 4
+  weylPhaseExp           LIT 5, AOR 9
+  weylIsSign             REL 1, QNT 1
+  coeffOn                AOR 1
+  commAt                 LIT 1, REL 2, IF 1, VAR 6
+  orderSign              LIT 2, IF 1
+  commutatorCandidates   LIT 2, NEG 1, VAR 14, LIST 1, CAT 2
+  sameEnd                BLIT 2, REL 1, MATCH 2, VAR 2
+  commutatorRecs         LIT 1, REL 2, IF 2, VAR 18
+  recs                   LIT 6, REL 2, IF 1, VAR 8, LIST 3, CAT 1
+  slotQudit              LIT 3, REL 2, IF 2, AOR 1, VAR 4
+  linkSwap               REL 4, IF 4, VAR 16
+  occupies               
+  sameSet                QNT 2, LOG 1, VAR 4
+  moved                  NEG 1, BLIT 1, MATCH 1
+  sameForm               REL 2, QNT 2, LOG 1, VAR 8
+  survives               BLIT 1, MATCH 1, AOR 1, VAR 2
+  sigX                   LIT 2, IF 1
+  sigY                   LIT 2, IF 2, VAR 2
+  wX                     VAR 3
+  wY                     LIT 4, REL 2, LOG 1, MATCH 1, AOR 1, VAR 1
+  kOf                    LIT 4, REL 2, IF 2, AOR 1
+  addRoot                LIT 3, REL 2, IF 2, MATCH 1, AOR 1, LIST 1, CONS 3
+  readout                VAR 12
+  objectWorld            LIT 10, REL 1, IF 1, LIST 1
+  objectTwoPoint         LIT 7
+  total: 425 sites = 83 LIT + 4 NEG + 4 BLIT + 50 REL + 7 QNT + 12 LOG + 33 IF + 7 MATCH + 32 AOR + 180 VAR + 6 LIST + 4 CAT + 3 CONS
+Held fixed: the Part 0 utilities the cone calls (exact arithmetic): Mat.mulZ, Mat.pairZ, Mat.subZ, Mat.tabulate, eqZ, neZ, rank; with what they call: Mat.get, Mat.traceZ, Mat.transposeZ, rankAux.
+In `main` but outside the readout (cannot change it): TwoPoint.valid, records, World.typeOf, World.wellFormed.
+Types not mutated: World, TwoPoint, Assign, Formal, Rec.
+
+Declared operators (each applied at every site the scanner finds in the 44 bodies):
+  LIT      integer literal -> value - 1, value + 1
+  NEG      delete a unary minus or Boolean not; sign of a negative literal
+  LSW      swap two literals of one type and different value within one definition
+  BLIT     Boolean literal true <-> false
+  REL      negate a test (= / ≠, == / !=, eqZ, neZ, isSome / isNone); < -> ≤, ≥ and ≤ -> <, >
+  QNT      list quantifier all <-> any
+  LOG      && <-> ||, ∧ <-> ∨; drop the left or the right operand
+  IF       swap the two branches of an if-then-else
+  MATCH    swap the right-hand sides of two match arms
+  AOR      binary + - * / % -> each of the other four; min <-> max
+  VAR      one occurrence of a declared label -> its partner (end/role pairs, .1 <-> .2, readEnd <-> farEnd)
+  ENDSWAP  every occurrence of one declared label pair in one definition exchanged
+  LIST     list literal: drop or duplicate an entry
+  CAT      ++ chain: drop or duplicate a summand
+  CONS     :: chain: drop or duplicate an element
+  label pairs (VAR, ENDSWAP): dA/dB, d1/d2, dc/df, i/j, a/b, s1/s2, i1/i2, c1/c3, f/g, xs/ys, odd/even, read1/read2, readEnd/farEnd, .1/.2 (a label is replaced only where its partner is in scope)
+  pairs of mutations: every unordered pair whose sites are disjoint (a site is the token it rewrites, or the whole if / match / list / chain / connective node it moves or drops)
+
+Single mutants: 818 = 166 LIT + 12 NEG + 93 LSW + 4 BLIT + 58 REL + 7 QNT + 36 LOG + 33 IF + 7 MATCH + 125 AOR + 180 VAR + 45 ENDSWAP + 22 LIST + 22 CAT + 8 CONS
+  predicted to fail to elaborate: 47 (7 match arm uses a variable of the other pattern, 14 negative Nat literal, 26 projection swap on Int x Assign); by operator: LIT 14, MATCH 7, VAR 19, ENDSWAP 7
+Pairs: 334153 unordered pairs, 331490 with disjoint sites; 37105 of these contain a mutant that fails to elaborate; 294385 are evaluated.
+Space: 818 + 331490 = 332308 mutants.
+
+== 2. Validation of the Python transcription (chainalpha_transcription.py) ==
+  hooks named in the transcription (with its tables INT_LITS, HETERO_PROJ) = sites of the generator other than MATCH: True (418 sites; the 7 MATCH sites need no hook: every match swap moves a pattern variable out of its arm and fails to elaborate)
+  unmutated readout: ([(1, 79), (2, 48), (3, 42), (6, 3)], 31104); the statement of `dressing_of_the_qutrit_qubit_link`: ([(1, 79), (2, 48), (3, 42), (6, 3)], 31104); equal: True
+  upstream_mutations_lean.out (Lean 4.35.0 on the author's 19 rewordings + BASE): 20 of 20 lines reproduced character for character (main / commutators verdicts and readout)
+  reads_at_qubit is the pair readEnd:IF:0=swap & farEnd:IF:0=swap
+  X_at_far_end is the single mutant wX:VAR:0=farEnd
+  exch_shift1 is the single mutant exch:LIT:0=1
+  drop_fixed is the single mutant recs:CAT:0=drop2
+  drop_even is the single mutant recs:CAT:0=drop1
+  The other 14 rewordings change several tokens or add code; they are not single or paired mutants.
+  Lean itself on the generated mutants: proofs/lean/chain-theory/mutation_spotcheck.sh -> mutation_spotcheck.out (all singles and a seeded sample of pairs).
+
+== 3. Evaluation ==
+  longest readout list of a feasible mutant: 2049 terms (infeasible: more than 4000)
+  infeasible pairs: 715, of which 715 contain addRoot:CONS:2=dup0 (it duplicates every list element it passes, so the list doubles at each record whose radicand exceeds the head's)
+  singles: 818 mutants: 47 fail to elaborate, 1 infeasible (readout list > 4000 terms), 24 readout dimension 0 (value undefined), 4 numerator 0 (1/value undefined), 742 well-defined
+  pairs: 331490 mutants: 37105 fail to elaborate, 715 infeasible (readout list > 4000 terms), 17924 readout dimension 0 (value undefined), 3500 numerator 0 (1/value undefined), 272246 well-defined
+
+== 4. Results ==
+Single mutants by operator (well-defined / distinct values / equal to the Letter's value):
+  LIT       166 mutants,  150 well-defined,   56 distinct,   52 unchanged
+  NEG        12 mutants,   12 well-defined,    8 distinct,    0 unchanged
+  LSW        93 mutants,   83 well-defined,   37 distinct,   19 unchanged
+  BLIT        4 mutants,    4 well-defined,    2 distinct,    3 unchanged
+  REL        58 mutants,   58 well-defined,   22 distinct,   26 unchanged
+  QNT         7 mutants,    7 well-defined,    1 distinct,    7 unchanged
+  LOG        36 mutants,   36 well-defined,   10 distinct,   14 unchanged
+  IF         33 mutants,   33 well-defined,   22 distinct,    6 unchanged
+  MATCH       7 mutants,    0 well-defined,    0 distinct,    0 unchanged
+  AOR       125 mutants,  110 well-defined,   41 distinct,    9 unchanged
+  VAR       180 mutants,  161 well-defined,   40 distinct,   68 unchanged
+  ENDSWAP    45 mutants,   38 well-defined,    5 distinct,   30 unchanged
+  LIST       22 mutants,   21 well-defined,   10 distinct,    6 unchanged
+  CAT        22 mutants,   22 well-defined,   13 distinct,    4 unchanged
+  CONS        8 mutants,    7 well-defined,    7 distinct,    0 unchanged
+
+F-CT-4 metrics (distinct exact values; CODATA 2022 1/alpha = 137.035999177, sigma = 2.1e-8):
+  singles: 818 mutants, 742 well-defined, 244 equal to the Letter's value, 163 distinct values (1 negative)
+    distinct values with 1/value in (120,155): 38; density 1.086 per unit; expected chance values within +-1 sigma: 4.56e-8
+    distinct values in (130,145): 23; density 1.533 per unit; expected within +-1 sigma at that density: 6.44e-8
+    distinct values in (136,138): 4; density 2.0 per unit; expected within +-1 sigma at that density: 8.4e-8
+    distinct values within relative 1e-2 of 1/alpha: 6
+    distinct values within relative 1e-3 of 1/alpha: 1
+    distinct values within relative 1e-4 of 1/alpha: 1
+    distinct values within relative 1e-6 of 1/alpha: 1
+    median gap between adjacent distinct values in (120,155): 0.6024
+    mutants needed for an O(1) chance hit at this density: ~1.79e+10
+  pairs: 331490 mutants, 272246 well-defined, 29048 equal to the Letter's value, 10340 distinct values (159 negative)
+    distinct values with 1/value in (120,155): 1105; density 31.57 per unit; expected chance values within +-1 sigma: 1.33e-6
+    distinct values in (130,145): 494; density 32.93 per unit; expected within +-1 sigma at that density: 1.38e-6
+    distinct values in (136,138): 70; density 35.0 per unit; expected within +-1 sigma at that density: 1.47e-6
+    distinct values within relative 1e-2 of 1/alpha: 91
+    distinct values within relative 1e-3 of 1/alpha: 9
+    distinct values within relative 1e-4 of 1/alpha: 1
+    distinct values within relative 1e-6 of 1/alpha: 1
+    median gap between adjacent distinct values in (120,155): 0.02192
+    mutants needed for an O(1) chance hit at this density: ~2.5e+11
+  singles + pairs: 332308 mutants, 272988 well-defined, 29292 equal to the Letter's value, 10340 distinct values (159 negative)
+    distinct values with 1/value in (120,155): 1105; density 31.57 per unit; expected chance values within +-1 sigma: 1.33e-6
+    distinct values in (130,145): 494; density 32.93 per unit; expected within +-1 sigma at that density: 1.38e-6
+    distinct values in (136,138): 70; density 35.0 per unit; expected within +-1 sigma at that density: 1.47e-6
+    distinct values within relative 1e-2 of 1/alpha: 91
+    distinct values within relative 1e-3 of 1/alpha: 9
+    distinct values within relative 1e-4 of 1/alpha: 1
+    distinct values within relative 1e-6 of 1/alpha: 1
+    median gap between adjacent distinct values in (120,155): 0.02192
+    mutants needed for an O(1) chance hit at this density: ~2.51e+11
+  closest distinct values to CODATA 2022 (singles + pairs):
+        0.598388 sigma  1/value   137.035999189566  (79 + 48√2 + 42√3 + 3√6)/31104           29292 mutant(s), e.g. pairKet:IF:0=swap
+        993967.0 sigma  1/value    137.05687248307  (149 + 45√3)/31104                       20 mutant(s), e.g. recs:REL:1=strict & linkSwap:VAR:0=read2
+      1.26051e+6 sigma  1/value   137.062469809062  (41 + 24√2 + 18√3 + 3√6)/15552           18 mutant(s), e.g. commutatorRecs:VAR:16=dA & slotQudit:AOR:0=+
+      2.94613e+6 sigma  1/value   137.097867892803  (79 + 47√2 + 47√3)/31104                 1 mutant(s), e.g. tracelessBasis:CAT:0=drop2 & addRoot:LIT:1=2
+      3.04396e+6 sigma  1/value   137.099922380516  (82 + 51√2 + 42√3)/31104                 3 mutant(s), e.g. parity:LIT:1=1 & orderSign:IF:0=swap
+      4.16678e+6 sigma  1/value   137.123501569346  (90 + 79√3)/31104                        5 mutant(s), e.g. sigX:IF:0=swap & kOf:AOR:0=/
+      4.55678e+6 sigma  1/value    137.13169148168  (101 + 51√2 + 31√3)/31104                1 mutant(s), e.g. coeffOf:AOR:0=- & recs:CAT:0=dup2
+      4.62378e+6 sigma  1/value   137.133098603097  (103 + 63√3 + 6√6)/31104                 3 mutant(s), e.g. linkSwap:VAR:2=read1 & wY:REL:1=neg
+      4.90939e+6 sigma  1/value   137.139096311969  (44 + 12√2 + 33√3)/16200                 1 mutant(s), e.g. readoutDim:AOR:4=+ & objectTwoPoint:LSW:0,2
+      9.31356e+6 sigma  1/value    136.84041437211  (184 + 25√3)/31104                       2 mutant(s), e.g. slotEnd:LIT:0=1 & products:IF:1=swap
+      9.38712e+6 sigma  1/value   137.233128784162  (56 + 102√2 + 11√3 + 3√6)/31104          45 mutant(s), e.g. recs:LIST:2=drop0 & sigY:IF:0=swap
+      1.01361e+7 sigma  1/value   136.823140094818  (78 + 46√2 + 43√3 + 4√6)/31104           8 mutant(s), e.g. letterCode:LIT:0=1 & addRoot:LIST:0=dup0
+
+Comparison with the hand-declared space B of F-CT-4 (freedom.py; rebuilt from mutations_classified.py):
+  B (one entry per distinct value): 15639 mutants, 15639 well-defined, 1 equal to the Letter's value, 15639 distinct values (0 negative)
+    distinct values with 1/value in (120,155): 3638; density 103.9 per unit; expected chance values within +-1 sigma: 4.37e-6
+    distinct values in (130,145): 1570; density 104.7 per unit; expected within +-1 sigma at that density: 4.4e-6
+    distinct values in (136,138): 211; density 105.5 per unit; expected within +-1 sigma at that density: 4.43e-6
+    distinct values within relative 1e-2 of 1/alpha: 288
+    distinct values within relative 1e-3 of 1/alpha: 28
+    distinct values within relative 1e-4 of 1/alpha: 4
+    distinct values within relative 1e-6 of 1/alpha: 1
+    median gap between adjacent distinct values in (120,155): 0.007026
+    mutants needed for an O(1) chance hit at this density: ~1.06e+10
+  distinct values in both spaces: 333; with 1/value in (120,155): 100 (mechanical 1105, B 3638)
+  union of the two spaces: density in (120,155) 132.7 per unit; expected within +-1 sigma 5.57e-6
+  the author's 19 rewordings (upstream_mutations_lean.out), by value:
+    fixesFar_always_true                 1/value  137.0359992  in B: yes  mechanical: single (e.g. pairKet:IF:0=swap)
+    reads_at_qubit                       1/value    150.78591  in B: yes  mechanical: single (e.g. pairKet:VAR:0=j)
+    X_at_far_end                         1/value  146.5239975  in B: yes  mechanical: single (e.g. wX:VAR:0=farEnd)
+    X_where_letters_sit                  1/value  139.0300855  in B: yes  mechanical: not reached
+    Y_at_center                          1/value  127.5357422  in B: yes  mechanical: single (e.g. wY:AOR:0=+)
+    X_Y_factors_swapped                  1/value  135.8942374  in B: yes  mechanical: pair (e.g. wX:VAR:0=farEnd & wY:AOR:0=+)
+    moved_per_letter                     1/value  134.4854718  in B: yes  mechanical: single (e.g. slotQudit:AOR:0=+)
+    copies_separate                      1/value  112.4226969  in B: yes  mechanical: single (e.g. sameEnd:VAR:0=s2)
+    survival_ignores_own_sign            1/value  139.7126427  in B: yes  mechanical: single (e.g. commutatorRecs:VAR:16=dA)
+    commutator_records_carry_no_reads    1/value  138.9371399  in B: yes  mechanical: single (e.g. coeffOn:AOR:0=+)
+    register_full_unread                 1/value  205.5539988  in B: yes  mechanical: single (e.g. objectWorld:LIT:9=2)
+    no_commutator_records                1/value  141.6210387  in B: yes  mechanical: single (e.g. tracelessBasis:VAR:2=j)
+    commutators_keep_sums                1/value  138.3478884  in B: yes  mechanical: single (e.g. commutatorRecs:IF:1=swap)
+    commutators_keep_both                1/value  133.9690624  in B: no   mechanical: pair (e.g. parity:IF:0=swap & commutatorRecs:IF:1=swap)
+    exch_shift1                          1/value   254.541566  in B: no   mechanical: single (e.g. exch:LIT:0=1)
+    drop_fixed                           1/value  149.5929081  in B: no   mechanical: single (e.g. recs:CAT:0=drop2)
+    drop_even                            1/value  295.1014858  in B: no   mechanical: single (e.g. recs:CAT:0=drop1)
+    born_weights                         1/value  97.50470219  in B: yes  mechanical: pair (e.g. recs:REL:0=neg & sameForm:REL:0=neg)
+    wX_dA_equiv                          1/value  137.0359992  in B: yes  mechanical: single (e.g. pairKet:IF:0=swap)
+  the 15 closed-form alternatives of Table S5 (mutations_classified.S5), by value:
+    the two ends swapped                       1/value  135.894  in B: yes  mechanical: pair (e.g. wX:VAR:0=farEnd & wY:AOR:0=+)
+    both exchanges at the qubit end            1/value  146.524  in B: yes  mechanical: single (e.g. wX:VAR:0=farEnd)
+    both exchanges at the qutrit end           1/value  127.536  in B: yes  mechanical: single (e.g. wY:AOR:0=+)
+    exchange of reads where the letters sit    1/value  139.030  in B: yes  mechanical: not reached
+    qubit-qubit records moved by Y             1/value  134.485  in B: yes  mechanical: single (e.g. slotQudit:AOR:0=+)
+    copies of the qutrit as separate qudits    1/value  112.423  in B: yes  mechanical: single (e.g. sameEnd:VAR:0=s2)
+    survival without the record's own sign     1/value  139.713  in B: yes  mechanical: single (e.g. commutatorRecs:VAR:16=dA)
+    commutator records survive X only          1/value  138.348  in B: yes  mechanical: single (e.g. commutatorRecs:IF:1=swap)
+    sums and differences of commutators kept   1/value  132.739  in B: yes  mechanical: single (e.g. commutatorCandidates:LIST:0=dup1)
+    no commutator records                      1/value  141.621  in B: yes  mechanical: single (e.g. tracelessBasis:VAR:2=j)
+    Born weights k_r                           1/value   97.505  in B: yes  mechanical: pair (e.g. recs:REL:0=neg & sameForm:REL:0=neg)
+    count of read ends                         1/value   70.190  in B: no   mechanical: not reached
+    normalised by the 172 records              1/value    0.758  in B: no   mechanical: not reached
+    no weights                                 1/value  180.837  in B: yes  mechanical: single (e.g. sameForm:REL:0=neg)
+    smallest readable configuration            1/value    3.535  in B: no   mechanical: pair (e.g. readoutDim:AOR:5=/ & objectWorld:LIT:2=2)
