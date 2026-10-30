@@ -49,10 +49,15 @@ python3 -I hydrogen_registers.py $SRC > outputs/hydrogen_registers.txt
 # round 6: Lean at scale (build with Lean 4.35.0 in WORK, #print axioms, own checks, resolution; see below for time)
 LEAN=/path/to/lean-4.35.0/bin/lean SRC=$SRC WORK=/fresh/scratch/dir ./lean_audit.sh
 python3 -I lean_resolve.py $SRC          # static part alone (about 5 s), without build, axioms or checks
+# round 7: the 37 table-check and 11 opaque-only rows (needs Build B in $WORK/B/out for the Lean part; about 2 s + 11 s)
+LEAN_PATH="$WORK/B/out" $LEAN lean_audit/TableChecks.lean > outputs/lean_table_checks.txt
+python3 -I lean_tables.py $SRC --axioms outputs/lean_axioms.txt --checks outputs/lean_table_checks.txt \
+    --round6-tsv outputs/lean_resolve.tsv --tsv outputs/lean_tables.tsv --clauses-tsv outputs/lean_tables_clauses.tsv \
+    > outputs/lean_tables.txt
 # MCD=.../particle/data/mass_width_2024.mcd (optional; without it the PDG transcription is not re-checked)
 ```
 
-Wall time: each script < 10 s (round 6: `lean_resolve.py` about 3 s; `lean_audit.sh` about 45 min, almost all of it
+Wall time: each script < 10 s except `lean_tables.py` (round 7, about 11 s; `TableChecks.lean` about 2 s) (round 6: `lean_resolve.py` about 3 s; `lean_audit.sh` about 45 min, almost all of it
 Build B: 2494 s wall at 3 jobs on 4 shared cores, 5398 s summed over modules, peak 7677 MB; the axioms file 5 s). Outputs are identical across runs and across `PYTHONHASHSEED` values
 (checked). `hydrogen_audit.py` uses a fixed seed (20261030); its Monte Carlo
 eigenvalues are reproducible to the printed 3 decimals.
@@ -84,6 +89,9 @@ eigenvalues are reproducible to the printed 3 decimals.
 | `lean_audit.sh` | R6 | the round-6 pipeline: Build A (published sources, AxiomDeclaration library), Build B (all 493 modules, patched), `Diagnose.lean`, our `#print axioms` file, `ResolveChecks.lean`, `lean_resolve.py` |
 | `lean_audit/Diagnose.lean` | R6 | why the five proofs fail under 4.35.0: `fail_if_success decide` then `rfl` on the five statements verbatim; `#synth` of the instance at the stated type |
 | `lean_audit/ResolveChecks.lean` | R6 | own theorems about the source's definitions: `generatorBlocksScalar` always true; abelian = conserved = (d1 != d2) on 1..12; the record-wise weight identity over {+-1}^2; `onShellCoupling` = (0,1) off the object of record; the correspondence conclusion without its opaque hypotheses; `identityAt` of the unit functional on every path; six literal parts by `rfl`; the entered zero transfer in 172 rows |
+| `lean_tables.py` | R7 | resolves the 37 table-check and 11 opaque-only THEOREM rows (imports `lean_classify.py`, `lean_resolve.py`, `lean_resolve_data.py`, `boxes.py` unchanged): per table-check declaration the verbatim theorem, its module's Row fields, entered rows and `checks` conjuncts by form (LEN / KV / CAT / REL), the opaque hypotheses and their use; per opaque Prop, alias and record the verbatim text and every library theorem mentioning it; clause-level verdicts (ENTERED counterparts, RECORDED labels as the label-inclusive bound, one stated sensitivity); printed numbers (digits, cardinal and ordinal words) in the tied checks, entered rows, other tied declarations and the raw tree; printed numbers against the entered rows; the 9 table checks of round 6's 16 rows; box labels naming a data module; axioms from round 6's file; the 64-row content table (`outputs/lean_tables.tsv`) and the clause table (`outputs/lean_tables_clauses.tsv`) |
+| `lean_tables_data.py` | R7 | curated data (module): 248 verbatim box clauses of the 48 rows with their counterpart checks (verbatim anchors, kind ENTERED or RECORDED) and notes; label matches for round 6's clauses (LABELS16); data modules whose content is a box's, by label or content |
+| `lean_audit/TableChecks.lean` | R7 | own theorems about the source's entered rows that its `checks` do not state: WAMR sums 228 / 114 / 78 / 150; SLBC OPEN 78, WASHED 150, 114 links per orientation, W constant at all 228 reads, R consistency and 54 rises; NCRE order3 = 0 and 18 = 13 + 3 + 2; HTOR's open reads Z, X, XZ, XZ2; RLRO's 13 BODY webs |
 
 ## Interpretive choices in the dependency graph (`depgraph.py`)
 
@@ -169,6 +177,17 @@ lean (round 6):
           #print axioms (6662 = source's list): sorryAx 0; none 5965, propext 290, propext+Quot.sound 4, +Classical.choice 403
           vs source 4.32.1 report: 6259 equal, 403 gain Classical.choice (via core Int/Fin.instLinearOrderPackage)
           coverage by content: 6 / 46 / 12 (by kind unchanged 16 / 37 / 11)
+lean (round 7):
+          48 rows -> 131 names: 53 open records, 38 opaque Props, 37 table checks (13 under an unused opaque hypothesis), 3 aliases
+          37 modules, all rows entered; 618 check lemmas, all `by decide`: LEN 37, KV 560, CAT 13, REL 8 (WAMR, SLBC, NCRE only)
+          94 opaque/alias/record names: no theorem, none mentioned by a library theorem -> the 11 opaque rows assert nothing
+          verdicts: PARTIAL 2 (217.1 SLBC 4/8, 234.1 NCRE 1/7), NONE 46; clauses 248: stated 5, recorded only 44, none 199
+          label-inclusive: MATCH 1 (28.2), PARTIAL 22, NONE 25; REL-as-ENTERED sensitivity: 28.1 -> PARTIAL
+          223.2: box 43 Onsager pairs, ENT2 enters "24"; 145.1 / 225.1 tables stop at 60 entries (one chain at 6 separations vs 44 chains; 18 of 20 rings)
+          181.5, 200.6: own modules QARM, HCOS exist, untied; 3.1's Z/X/XZ/XZ2 sentence is in HTOR (tied to 57.1)
+          printed numbers >= 5: 135 pairs, 23 in tied checks, 15 nowhere in the tree
+          round 6's 16 rows: their 9 table checks have no REL conjunct -> verdicts unchanged; label-inclusive 1 / 10 / 5
+          64 rows by content: MATCH 1, PARTIAL 7, NONE 56 (8 rows state a clause); label-inclusive 2 / 32 / 30
 ```
 
 ## External values used (with sources)

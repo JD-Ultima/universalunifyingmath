@@ -1,0 +1,1771 @@
+Round 7: the table-check and opaque-only rows of the 64 Lean-tied THEOREMs
+====================================================================================================
+
+[1] Population (lean_classify.py, unchanged): THEOREM rows tied to Lean 64; round-1 tiers restated/kernel 16, table 37, opaque 11
+    table rows (37): 3.1, 11.1, 13.1, 28.1, 28.2, 28.5, 57.1, 65.1, 65.2, 145.1, 181.5, 186.1, 200.6, 203.5, 217.1, 217.2, 219.1, 220.2, 220.3, 221.1, 223.2, 224.1, 224.2, 224.3, 225.1, 226.1, 230.1, 234.1, 234.3, 235.1, 235.2, 235.3, 235.4, D.3, D.4, H.3, I.7.1
+    opaque rows (11): 62.1, 64.1, 64.2, 73.1, 170.1, 229.1, 232.2, 233.1, 233.2, 233.4, I.16.2
+    distinct names cited by the 48 rows: 131 -> {'open_record': 53, 'opaque_prop': 38, 'table_check[strings]': 20, 'cond_table_check[strings]': 13, 'table_check': 4, 'alias_prop': 3}
+    names cited with multiplicity: 208; sections: 33
+
+[2] The table-check declarations: verbatim theorem, its module's Row fields, entered rows, the `checks` statement (verbatim, one conjunct per line) and the kind of each conjunct
+
+  ChainTheory.Plan.P01.Ch1.row_535360_NDFE  (ChainTheory/ChainTheory/Plan/P01/Ch1.lean:38)  cited by 3.1
+    theorem row_535360_NDFE : type_of% ChainTheory.Data.D535360_NDFE.checks := ChainTheory.Data.D535360_NDFE.checks
+    module D535360_NDFE (ChainTheory/ChainTheory/Data/D535360_NDFE.lean): Row fields {'String': 2}; entered rows 7; check_i proofs {'by decide': 8}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (8 conjuncts; kinds {'LEN': 1, 'KV': 7}):
+      [LEN] rows.length = 7
+      [KV] (rows.filter (fun r => r.key == "eqfi.record.moves.covariance" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqfi.lean.remet" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqfi.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqfi.letter" && r.value == "DEFINED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqfi.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqfi.axis.first.mover" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQFI" && r.value == "YES")).length = 1
+
+  ChainTheory.Plan.P01.Ch2.row_535412_OLUS  (ChainTheory/ChainTheory/Plan/P01/Ch2.lean:41)  cited by 11.1
+    theorem row_535412_OLUS : type_of% ChainTheory.Data.D535412_OLUS.checks := ChainTheory.Data.D535412_OLUS.checks
+    module D535412_OLUS (ChainTheory/ChainTheory/Data/D535412_OLUS.lean): Row fields {'String': 2}; entered rows 15; check_i proofs {'by decide': 16}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (16 conjuncts; kinds {'LEN': 1, 'KV': 15}):
+      [LEN] rows.length = 15
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQUS" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "equs.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "equs.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-UNIT" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-POLE" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-NORM" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "lean.ward.no.hypothesis" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "lean.union.names.binder" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "lean.exp.eq.computed" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "census.L3.ward.type" && r.value == "PACKAGE-THEOREM")).length = 1
+      [KV] (rows.filter (fun r => r.key == "census.L3.ward.borne" && r.value == "BORNE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "census.L3.scheme.type" && r.value == "LIVE-LANE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "census.L3.typing" && r.value == "PARTIAL")).length = 1
+      [KV] (rows.filter (fun r => r.key == "census.L3.lemma.names.def" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "gate.refused" && r.value == "NO")).length = 1
+
+  ChainTheory.Plan.P01.Ch2.row_535680_RPHG  (ChainTheory/ChainTheory/Plan/P01/Ch2.lean:48)  cited by 13.1
+    theorem row_535680_RPHG : type_of% ChainTheory.Data.D535680_RPHG.checks := ChainTheory.Data.D535680_RPHG.checks
+    module D535680_RPHG (ChainTheory/ChainTheory/Data/D535680_RPHG.lean): Row fields {'String': 2}; entered rows 4; check_i proofs {'by decide': 5}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (5 conjuncts; kinds {'LEN': 1, 'KV': 4}):
+      [LEN] rows.length = 4
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQPQ" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqpq.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqpq.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqpq.letter" && r.value == "FINITE")).length = 1
+
+  ChainTheory.Foundations.Measurement.row_526019_WAMR  (ChainTheory/ChainTheory/Foundations/Measurement.lean:10)  cited by 28.1, 28.2, 28.5
+    theorem row_526019_WAMR : type_of% ChainTheory.Data.D526019_WAMR.checks :=
+      ChainTheory.Data.D526019_WAMR.checks
+    module D526019_WAMR (ChainTheory/ChainTheory/Data/D526019_WAMR.lean): Row fields {'String': 5, 'Int': 12}; entered rows 14; check_i proofs {'by decide': 6}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (6 conjuncts; kinds {'LEN': 1, 'REL': 3, 'CAT': 2}):
+      [LEN] rows.length = 14
+      [REL] rows.all (fun r => r.wash_moved_acts == 0) = true
+      [REL] rows.all (fun r => r.acts == r.kit_arrows) = true
+      [REL] rows.all (fun r => r.kit_arrows == r.kit_ends) = true
+      [CAT] (rows.filter (fun r => r.both_engines == "SAME")).length = 14
+      [CAT] (rows.filter (fun r => r.bodies_slbc_remet == "YES")).length = 14
+
+  ChainTheory.Foundations.Measurement.row_527964_MWSP  (ChainTheory/ChainTheory/Foundations/Measurement.lean:23)  cited by 28.1, 28.2, 28.5
+    theorem row_527964_MWSP : type_of% ChainTheory.Data.D527964_MWSP.checks :=
+      ChainTheory.Data.D527964_MWSP.checks
+    module D527964_MWSP (ChainTheory/ChainTheory/Data/D527964_MWSP.lean): Row fields {'String': 2}; entered rows 11; check_i proofs {'by decide': 7}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (7 conjuncts; kinds {'LEN': 1, 'KV': 6}):
+      [LEN] rows.length = 11
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQSP" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqsp.built" && r.value == "5 of 5")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqsp.readings.built" && r.value == "10 of 10")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqsp.letter" && r.value == "BUILT")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqsp.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqsp.first.failure" && r.value == "NONE")).length = 1
+
+  ChainTheory.Foundations.Ch05.row_525257_HTOR  (ChainTheory/ChainTheory/Foundations/Ch05.lean:76)  cited by 57.1
+    theorem row_525257_HTOR : type_of% ChainTheory.Data.D525257_HTOR.checks :=
+      ChainTheory.Data.D525257_HTOR.checks
+    module D525257_HTOR (ChainTheory/ChainTheory/Data/D525257_HTOR.lean): Row fields {'String': 8, 'Int': 5}; entered rows 10; check_i proofs {'by decide': 4}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (che...
+    checks (4 conjuncts; kinds {'LEN': 1, 'CAT': 3}):
+      [LEN] rows.length = 10
+      [CAT] (rows.filter (fun r => r.reading == "OPEN-READ-OF-RECORD" && r.cap_read == "Z" && r.transverse_dim == "2")).length = 1
+      [CAT] (rows.filter (fun r => r.reading == "OPEN-READ-OF-RECORD" && r.far_washed == "YES")).length = 1
+      [CAT] (rows.filter (fun r => r.reading == "OPEN-READ-OF-RECORD" && r.far_washed == "NO")).length = 3
+
+  ChainTheory.Foundations.Ch05.row_528073_PQCD  (ChainTheory/ChainTheory/Foundations/Ch05.lean:102)  cited by 57.1
+    theorem row_528073_PQCD : type_of% ChainTheory.Data.D528073_PQCD.checks :=
+      ChainTheory.Data.D528073_PQCD.checks
+    module D528073_PQCD (ChainTheory/ChainTheory/Data/D528073_PQCD.lean): Row fields {'String': 2}; entered rows 12; check_i proofs {'by decide': 8}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (8 conjuncts; kinds {'LEN': 1, 'KV': 7}):
+      [LEN] rows.length = 12
+      [KV] (rows.filter (fun r => r.key == "equs.record.defined.of" && r.value == "8 of 8")).length = 1
+      [KV] (rows.filter (fun r => r.key == "equs.record.equal.of" && r.value == "8 of 8")).length = 1
+      [KV] (rows.filter (fun r => r.key == "equs.record.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "equs.record.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "equs.record.typing" && r.value == "ATTACH")).length = 1
+      [KV] (rows.filter (fun r => r.key == "equs.KIT.DOCK.defined.of" && r.value == "5 of 8")).length = 1
+      [KV] (rows.filter (fun r => r.key == "equs.KIT.DOCK.face" && r.value == "B")).length = 1
+
+  ChainTheory.Foundations.Ch05.row_530016_GSTB  (ChainTheory/ChainTheory/Foundations/Ch05.lean:114)  cited by 65.1, 65.2
+    theorem row_530016_GSTB : type_of% ChainTheory.Data.D530016_GSTB.checks :=
+      ChainTheory.Data.D530016_GSTB.checks
+    module D530016_GSTB (ChainTheory/ChainTheory/Data/D530016_GSTB.lean): Row fields {'String': 2}; entered rows 8; check_i proofs {'by decide': 9}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (9 conjuncts; kinds {'LEN': 1, 'KV': 8}):
+      [LEN] rows.length = 8
+      [KV] (rows.filter (fun r => r.key == "cell.C-CONS" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-CT" && r.value == "NO")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-ENDS" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQGS" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-GRPS" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-MTCH" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqgs.faceB.readingA" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqgs.letter" && r.value == "EQUAL")).length = 1
+
+  ChainTheory.Foundations.Ch05.row_530426_UB4H  (ChainTheory/ChainTheory/Foundations/Ch05.lean:124)  cited by 65.1, 65.2
+    theorem row_530426_UB4H : cond_530426_UB4H -> type_of% ChainTheory.Data.D530426_UB4H.checks :=
+      fun _ => ChainTheory.Data.D530426_UB4H.checks
+    hypothesis: opaque cond_530426_UB4H : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D530426_UB4H (ChainTheory/ChainTheory/Data/D530426_UB4H.lean): Row fields {'String': 2}; entered rows 8; check_i proofs {'by decide': 9}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (9 conjuncts; kinds {'LEN': 1, 'KV': 8}):
+      [LEN] rows.length = 8
+      [KV] (rows.filter (fun r => r.key == "cell.C-ALGB" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-CT" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-DATM" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQH4" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-HIGG" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-HUBE" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqh4.faceB.record" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqh4.letter" && r.value == "EQUAL")).length = 1
+
+  ChainTheory.Fields.Ch08.row_531942_CASM  (ChainTheory/ChainTheory/Fields/Ch08.lean:50)  cited by 145.1
+    theorem row_531942_CASM : type_of% ChainTheory.Data.D531942_CASM.checks :=
+      ChainTheory.Data.D531942_CASM.checks
+    module D531942_CASM (ChainTheory/ChainTheory/Data/D531942_CASM.lean): Row fields {'String': 2}; entered rows 60; check_i proofs {'by decide': 61}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (61 conjuncts; kinds {'LEN': 1, 'KV': 60}):
+      [LEN] rows.length = 60
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N10.cell" && r.value == "2")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N10.definite" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N10.dependence" && r.value == "CONTACT")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N10.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N10.one.sign" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N10.reference" && r.value == "5")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N10.status" && r.value == "COMPUTED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N11.cell" && r.value == "2")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N11.definite" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N11.dependence" && r.value == "CONTACT")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N11.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N11.one.sign" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N11.reference" && r.value == "5")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N11.status" && r.value == "COMPUTED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N12.cell" && r.value == "2")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N12.definite" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N12.dependence" && r.value == "CONTACT")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N12.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N12.one.sign" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N12.reference" && r.value == "6")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N12.status" && r.value == "COMPUTED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.cell" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.cell.per.cut" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.cell.per.regsum" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.cell.per.whole" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.definite" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.dependence" && r.value == "ONE-SEPARATION")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.one.sign" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.ratios" && r.value == "UNDEFINED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.reference" && r.value == "1")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.separations" && r.value == "1")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.sign.set" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.status" && r.value == "COMPUTED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N2.successive" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.cell" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.cell.per.cut" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.cell.per.regsum" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.cell.per.whole" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.definite" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.dependence" && r.value == "ONE-SEPARATION")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.one.sign" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.ratios" && r.value == "UNDEFINED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.reference" && r.value == "1")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.separations" && r.value == "1")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.sign.set" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.status" && r.value == "COMPUTED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N3.successive" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N4.cell" && r.value == "2")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N4.definite" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N4.dependence" && r.value == "CONTACT")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N4.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N4.one.sign" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N4.ratios" && r.value == "UNDEFINED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqca.cells.at.face.B" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqca.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqca.first.sign.change" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqca.first.undefined" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqca.reading.of.record" && r.value == "RING.ARC.COUNT")).length = 1
+
+  ChainTheory.StandardModel.Ch12.row_525911_QLHL  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:91)  cited by 181.5
+    theorem row_525911_QLHL : type_of% ChainTheory.Data.D525911_QLHL.checks :=
+      ChainTheory.Data.D525911_QLHL.checks
+    module D525911_QLHL (ChainTheory/ChainTheory/Data/D525911_QLHL.lean): Row fields {'String': 2}; entered rows 61; check_i proofs {'by decide': 8}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (8 conjuncts; kinds {'LEN': 1, 'KV': 7}):
+      [LEN] rows.length = 61
+      [KV] (rows.filter (fun r => r.key == "up.faceA.deciding.count" && r.value == "9")).length = 1
+      [KV] (rows.filter (fun r => r.key == "down.faceA.deciding.count" && r.value == "124")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQQL" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "content.deciding.up.source_content_at_three.count" && r.value == "9 of 9")).length = 1
+      [KV] (rows.filter (fun r => r.key == "content.deciding.down.source_content_at_three.count" && r.value == "124 of 124")).length = 1
+      [KV] (rows.filter (fun r => r.key == "up.ladder.hub" && r.value == "0;1;2")).length = 1
+      [KV] (rows.filter (fun r => r.key == "down.ladder.hub" && r.value == "1;2;3")).length = 1
+
+  ChainTheory.Plan.P07.Ch1.row_536716_SSFP  (ChainTheory/ChainTheory/Plan/P07/Ch1.lean:81)  cited by 186.1
+    theorem row_536716_SSFP : type_of% ChainTheory.Data.D536716_SSFP.checks := ChainTheory.Data.D536716_SSFP.checks
+    module D536716_SSFP (ChainTheory/ChainTheory/Data/D536716_SSFP.lean): Row fields {'String': 2}; entered rows 1; check_i proofs {'by decide': 2}; checks := And.intro check_1 (check_2)...
+    checks (2 conjuncts; kinds {'LEN': 1, 'KV': 1}):
+      [LEN] rows.length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQFP" && r.value == "THEOREM-OF-THE-SEGMENTS")).length = 1
+
+  ChainTheory.StandardModel.Ch12.row_529072_HGHL  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:167)  cited by 200.6
+    theorem row_529072_HGHL : cond_529072_HGHL -> type_of% ChainTheory.Data.D529072_HGHL.checks :=
+      fun _ => ChainTheory.Data.D529072_HGHL.checks
+    hypothesis: opaque cond_529072_HGHL : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D529072_HGHL (ChainTheory/ChainTheory/Data/D529072_HGHL.lean): Row fields {'String': 2}; entered rows 20; check_i proofs {'by decide': 21}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (21 conjuncts; kinds {'LEN': 1, 'KV': 20}):
+      [LEN] rows.length = 20
+      [KV] (rows.filter (fun r => r.key == "eqhg.set.of.record" && r.value == "L")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.legs.count" && r.value == "7")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.rows.count" && r.value == "4")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.keys.count" && r.value == "28")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.keyed" && r.value == "28 of 28")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.rows.keyed" && r.value == "4 of 4")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.attach.site.output" && r.value == "28 of 28")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.unit.output" && r.value == "28 of 28")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.register.output" && r.value == "28 of 28")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.order.carried" && r.value == "4 of 4")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.scheme.carried" && r.value == "4 of 4")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.first.unkeyed.row" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.first.unkeyed.reason" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.kit.reading.keys" && r.value == "48")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.kit.reading.keyed" && r.value == "48 of 48")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.kit.reading.first.unkeyed.row" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.control.attachment.keyed" && r.value == "0 of 4")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhg.keyed.VALENCE" && r.value == "8 of 28")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQHG" && r.value == "YES")).length = 1
+
+  ChainTheory.CompositeMatter.Ch16.row_527294_ENPC  (ChainTheory/ChainTheory/CompositeMatter/Ch16.lean:27)  cited by 203.5
+    theorem row_527294_ENPC : type_of% ChainTheory.Data.D527294_ENPC.checks :=
+      ChainTheory.Data.D527294_ENPC.checks
+    module D527294_ENPC (ChainTheory/ChainTheory/Data/D527294_ENPC.lean): Row fields {'String': 2}; entered rows 8; check_i proofs {'by decide': 6}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (6 conjuncts; kinds {'LEN': 1, 'KV': 5}):
+      [LEN] rows.length = 8
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQPM" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "census.record.spelled" && r.value == "3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "census.record.readout" && r.value == "8")).length = 1
+      [KV] (rows.filter (fun r => r.key == "census.record.unspelled" && r.value == "35")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqpm.first.untyped" && r.value == "NONE")).length = 1
+
+  ChainTheory.Thermodynamics.Landed93.row_525335_SLBC  (ChainTheory/ChainTheory/Thermodynamics/Landed93.lean:12)  cited by 217.1, 217.2
+    theorem row_525335_SLBC : type_of% ChainTheory.Data.D525335_SLBC.checks :=
+      ChainTheory.Data.D525335_SLBC.checks
+    module D525335_SLBC (ChainTheory/ChainTheory/Data/D525335_SLBC.lean): Row fields {'String': 14, 'Int': 18}; entered rows 228; check_i proofs {'by decide': 5}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (5 conjuncts; kinds {'LEN': 1, 'REL': 3, 'CAT': 1}):
+      [LEN] rows.length = 228
+      [REL] rows.all (fun r => decide (0 <= r.W_diff_site)) = true
+      [REL] rows.all (fun r => decide (0 <= r.R_diff_site)) = true
+      [REL] rows.all (fun r => r.W_target_site - r.W_source_site == r.W_diff_site) = true
+      [CAT] (rows.filter (fun r => r.both_engines == "SAME")).length = 228
+
+  ChainTheory.Thermodynamics.Landed93.row_527268_ENSB  (ChainTheory/ChainTheory/Thermodynamics/Landed93.lean:33)  cited by 219.1
+    theorem row_527268_ENSB : type_of% ChainTheory.Data.D527268_ENSB.checks :=
+      ChainTheory.Data.D527268_ENSB.checks
+    module D527268_ENSB (ChainTheory/ChainTheory/Data/D527268_ENSB.lean): Row fields {'String': 2}; entered rows 16; check_i proofs {'by decide': 7}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (7 conjuncts; kinds {'LEN': 1, 'KV': 6}):
+      [LEN] rows.length = 16
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQEN" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqen.entries" && r.value == "16")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqen.derived" && r.value == "13")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqen.open" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqen.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqen.first.open" && r.value == "NONE")).length = 1
+
+  ChainTheory.Foundations.Ch01.row_532023_DST2  (ChainTheory/ChainTheory/Foundations/Ch01.lean:42)  cited by 220.2, 220.3
+    theorem row_532023_DST2 : cond_532023_DST2 -> type_of% ChainTheory.Data.D532023_DST2.checks :=
+      fun _ => ChainTheory.Data.D532023_DST2.checks
+    hypothesis: opaque cond_532023_DST2 : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D532023_DST2 (ChainTheory/ChainTheory/Data/D532023_DST2.lean): Row fields {'String': 2}; entered rows 60; check_i proofs {'by decide': 61}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (61 conjuncts; kinds {'LEN': 1, 'KV': 60}):
+      [LEN] rows.length = 60
+      [KV] (rows.filter (fun r => r.key == "eqdj.CGB2.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.CGB2.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.CGB2.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.CGB2.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.CGB2.eqds.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.KSAT.W.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.KSAT.W.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.KSAT.W.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.KSAT.W.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.KSAT.W.eqds.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.KSAT.X.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.KSAT.X.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.KSAT.X.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.KSAT.X.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.KSAT.X.eqds.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.E.ALL.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.E.ALL.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.E.ALL.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.E.ALL.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.E.ALL.eqds.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.E.PM.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.E.PM.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.E.PM.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.E.PM.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.E.PM.eqds.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.N.ALL.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.N.ALL.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.N.ALL.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.N.ALL.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.N.ALL.eqds.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.N.PM.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.N.PM.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.N.PM.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.N.PM.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.N.PM.eqds.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.P.ALL.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.P.ALL.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.P.ALL.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.P.ALL.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.P.ALL.eqds.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.P.PM.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.P.PM.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.P.PM.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.P.PM.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.P.PM.eqds.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.R.ALL.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.R.ALL.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.R.ALL.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.R.ALL.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.R.ALL.eqds.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.S.ALL.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.S.ALL.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.S.ALL.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.S.ALL.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.S.ALL.eqds.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.S.PM.mono.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.S.PM.sink.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.S.PM.eqds.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.S.PM.eqds.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqdj.SSPW.S.PM.eqds.missing" && r.value == "NONE")).length = 1
+
+  ChainTheory.Thermodynamics.Landed93.row_530247_TOP2  (ChainTheory/ChainTheory/Thermodynamics/Landed93.lean:52)  cited by 220.2, 220.3
+    theorem row_530247_TOP2 : cond_530247_TOP2 -> type_of% ChainTheory.Data.D530247_TOP2.checks :=
+      fun _ => ChainTheory.Data.D530247_TOP2.checks
+    hypothesis: opaque cond_530247_TOP2 : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D530247_TOP2 (ChainTheory/ChainTheory/Data/D530247_TOP2.lean): Row fields {'String': 2}; entered rows 34; check_i proofs {'by decide': 35}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (35 conjuncts; kinds {'LEN': 1, 'KV': 34}):
+      [LEN] rows.length = 34
+      [KV] (rows.filter (fun r => r.key == "eqtf.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqtf.mono" && r.value == "MONOTONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqtf.first.fall" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqtf.strict" && r.value == "STRICTLY-INCREASING")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqtf.transition" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqtf.clss" && r.value == "FIXED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqtf.first.change" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqtf.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqtf.twin.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqtf.twin.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqtf.twin.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQTF" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "CGB2.eqtf.mono" && r.value == "MONOTONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "CGB2.eqtf.first.fall" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "CGB2.eqtf.strict" && r.value == "STRICTLY-INCREASING")).length = 1
+      [KV] (rows.filter (fun r => r.key == "CGB2.eqtf.first.equal" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "CGB2.eqtf.transition" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "CGB2.eqtf.transition.kinds.present" && r.value == "5 of 12")).length = 1
+      [KV] (rows.filter (fun r => r.key == "CGB2.eqtf.clss" && r.value == "FIXED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "CGB2.eqtf.first.change" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "CGB2.eqtf.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "CGB2.eqtf.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "CGB2.eqtf.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "LSRC.eqtf.mono" && r.value == "MONOTONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "LSRC.eqtf.first.fall" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "LSRC.eqtf.strict" && r.value == "STRICTLY-INCREASING")).length = 1
+      [KV] (rows.filter (fun r => r.key == "LSRC.eqtf.first.equal" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "LSRC.eqtf.transition" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "LSRC.eqtf.transition.kinds.present" && r.value == "8 of 12")).length = 1
+      [KV] (rows.filter (fun r => r.key == "LSRC.eqtf.clss" && r.value == "FIXED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "LSRC.eqtf.first.change" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "LSRC.eqtf.cell" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "LSRC.eqtf.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "LSRC.eqtf.missing" && r.value == "NONE")).length = 1
+
+  ChainTheory.Thermodynamics.Landed93.row_531680_PHTR  (ChainTheory/ChainTheory/Thermodynamics/Landed93.lean:66)  cited by 221.1
+    theorem row_531680_PHTR : cond_531680_PHTR -> type_of% ChainTheory.Data.D531680_PHTR.checks :=
+      fun _ => ChainTheory.Data.D531680_PHTR.checks
+    hypothesis: opaque cond_531680_PHTR : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D531680_PHTR (ChainTheory/ChainTheory/Data/D531680_PHTR.lean): Row fields {'String': 2}; entered rows 10; check_i proofs {'by decide': 11}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (11 conjuncts; kinds {'LEN': 1, 'KV': 10}):
+      [LEN] rows.length = 10
+      [KV] (rows.filter (fun r => r.key == "eqpt.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqpt.transition" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqpt.changes" && r.value == "9377")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqpt.only.at.cap" && r.value == "NO")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqpt.crit.classes" && r.value == "CHARGED>DARK")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqpt.missing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "ordp.strict.CGB2" && r.value == "STRICTLY-INCREASING")).length = 1
+      [KV] (rows.filter (fun r => r.key == "phtr.cm11" && r.value == "GATED-AT-TH-25-BY-AN-UNKEYED-TABLE-ENTRY")).length = 1
+      [KV] (rows.filter (fun r => r.key == "phtr.th17" && r.value == "THE-ENTROPY-READING-OF-530584-BESIDE-W-THE-ENTROPY-AT-STRICT-TH-17")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQPT" && r.value == "YES")).length = 1
+
+  ChainTheory.Thermodynamics.Landed93.row_530584_ENT2  (ChainTheory/ChainTheory/Thermodynamics/Landed93.lean:59)  cited by 223.2
+    theorem row_530584_ENT2 : cond_530584_ENT2 -> type_of% ChainTheory.Data.D530584_ENT2.checks :=
+      fun _ => ChainTheory.Data.D530584_ENT2.checks
+    hypothesis: opaque cond_530584_ENT2 : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D530584_ENT2 (ChainTheory/ChainTheory/Data/D530584_ENT2.lean): Row fields {'String': 2}; entered rows 20; check_i proofs {'by decide': 21}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (21 conjuncts; kinds {'LEN': 1, 'KV': 20}):
+      [LEN] rows.length = 20
+      [KV] (rows.filter (fun r => r.key == "eqte.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqte.first.notkeyed" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqte.face.STRICT" && r.value == "B")).length = 1
+      [KV] (rows.filter (fun r => r.key == "entw.strict" && r.value == "STRICTLY-INCREASING")).length = 1
+      [KV] (rows.filter (fun r => r.key == "entw.first.nonpositive" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "entw.sample" && r.value == "MET")).length = 1
+      [KV] (rows.filter (fun r => r.key == "entw.sample.count" && r.value == "182940")).length = 1
+      [KV] (rows.filter (fun r => r.key == "entw.sample.rule.count" && r.value == "20331")).length = 1
+      [KV] (rows.filter (fun r => r.key == "entw.path" && r.value == "STRICTLY-INCREASING")).length = 1
+      [KV] (rows.filter (fun r => r.key == "entw.slaw" && r.value == "PARTING")).length = 1
+      [KV] (rows.filter (fun r => r.key == "entw.slaw.typing" && r.value == "TWO-OBJECTS")).length = 1
+      [KV] (rows.filter (fun r => r.key == "fluc.key.reading" && r.value == "CHARTER")).length = 1
+      [KV] (rows.filter (fun r => r.key == "fluc.function" && r.value == "NO")).length = 1
+      [KV] (rows.filter (fun r => r.key == "fluc.function.name" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "onsg.setequal" && r.value == "EQUAL")).length = 1
+      [KV] (rows.filter (fun r => r.key == "onsg.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "onsg.asym.pairs" && r.value == "24")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqte.twin.cell" && r.value == "NO")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqte.twin.face" && r.value == "B")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQTE" && r.value == "YES")).length = 1
+
+  ChainTheory.CompositeMatter.Ch17.row_527373_LATW  (ChainTheory/ChainTheory/CompositeMatter/Ch17.lean:40)  cited by 224.1, 224.2, 224.3
+    theorem row_527373_LATW : type_of% ChainTheory.Data.D527373_LATW.checks :=
+      ChainTheory.Data.D527373_LATW.checks
+    module D527373_LATW (ChainTheory/ChainTheory/Data/D527373_LATW.lean): Row fields {'String': 2}; entered rows 12; check_i proofs {'by decide': 7}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (7 conjuncts; kinds {'LEN': 1, 'KV': 6}):
+      [LEN] rows.length = 12
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQLW" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.arrays.built" && r.value == "5 of 5")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.letter" && r.value == "PERIODIC")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.first.failure" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.cycles.periodic" && r.value == "2 of 2")).length = 1
+
+  ChainTheory.CompositeMatter.Ch17.row_530477_LWE3  (ChainTheory/ChainTheory/CompositeMatter/Ch17.lean:69)  cited by 224.1, 224.2, 224.3
+    theorem row_530477_LWE3 : cond_530477_LWE3 -> type_of% ChainTheory.Data.D530477_LWE3.checks :=
+      fun _ => ChainTheory.Data.D530477_LWE3.checks
+    hypothesis: opaque cond_530477_LWE3 : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D530477_LWE3 (ChainTheory/ChainTheory/Data/D530477_LWE3.lean): Row fields {'String': 2}; entered rows 11; check_i proofs {'by decide': 12}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (12 conjuncts; kinds {'LEN': 1, 'KV': 11}):
+      [LEN] rows.length = 11
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQLW" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.QUTRIT.N3.of.record" && r.value == "s0-s1.RING")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.QUTRIT.N4.of.record" && r.value == "s0-s1.RING")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.QUTRIT.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.QUTRIT.first.refused" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.STAR.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.STAR.first.refused" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.cells.at.face.B" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqlw.reading.of.record" && r.value == "DOCK")).length = 1
+      [KV] (rows.filter (fun r => r.key == "lattice.object.first.charged" && r.value == "NONE")).length = 1
+
+  ChainTheory.CompositeMatter.Ch17.row_531390_LATD  (ChainTheory/ChainTheory/CompositeMatter/Ch17.lean:94)  cited by 224.1, 224.2, 224.3
+    theorem row_531390_LATD : type_of% ChainTheory.Data.D531390_LATD.checks :=
+      ChainTheory.Data.D531390_LATD.checks
+    module D531390_LATD (ChainTheory/ChainTheory/Data/D531390_LATD.lean): Row fields {'String': 2}; entered rows 8; check_i proofs {'by decide': 9}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (9 conjuncts; kinds {'LEN': 1, 'KV': 8}):
+      [LEN] rows.length = 8
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQLD" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqld.cells.at.face.B" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqld.each.cell.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqld.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqld.reading.INTER.each.cell.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqld.reading.INTER.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqld.reading.INTRA.each.cell.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqld.reading.INTRA.face" && r.value == "A")).length = 1
+
+  ChainTheory.CompositeMatter.Ch17.row_530533_ANDB  (ChainTheory/ChainTheory/CompositeMatter/Ch17.lean:74)  cited by 225.1
+    theorem row_530533_ANDB : type_of% ChainTheory.Data.D530533_ANDB.checks :=
+      ChainTheory.Data.D530533_ANDB.checks
+    module D530533_ANDB (ChainTheory/ChainTheory/Data/D530533_ANDB.lean): Row fields {'String': 2}; entered rows 60; check_i proofs {'by decide': 61}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (61 conjuncts; kinds {'LEN': 1, 'KV': 60}):
+      [LEN] rows.length = 60
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQBN" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqbn.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqbn.cells.at.face.B" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqbn.STAR.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqbn.STAR.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqbn.QUTRIT.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqbn.QUTRIT.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.2.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.2.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.2.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.3.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.3.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.3.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.4.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.4.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.4.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.5.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.5.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.5.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.6.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.6.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.6.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.2.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.2.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.2.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.3.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.3.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.3.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.4.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.4.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.4.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.5.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.5.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.5.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.6.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.6.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.6.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.2.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.2.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.2.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.3.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.3.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.3.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.4.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.4.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.4.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.5.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.5.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.5.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.6.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.6.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.6.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.2.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.2.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.2.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.3.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.3.tiled.spectrum.eq" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.3.spectrum.translation.equal" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.4.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.4.tiled.spectrum.eq" && r.value == "YES")).length = 1
+
+  ChainTheory.CompositeMatter.Ch17.row_530610_PCHS  (ChainTheory/ChainTheory/CompositeMatter/Ch17.lean:79)  cited by 226.1
+    theorem row_530610_PCHS : cond_530610_PCHS -> type_of% ChainTheory.Data.D530610_PCHS.checks :=
+      fun _ => ChainTheory.Data.D530610_PCHS.checks
+    hypothesis: opaque cond_530610_PCHS : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D530610_PCHS (ChainTheory/ChainTheory/Data/D530610_PCHS.lean): Row fields {'String': 2}; entered rows 33; check_i proofs {'by decide': 34}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (34 conjuncts; kinds {'LEN': 1, 'KV': 33}):
+      [LEN] rows.length = 33
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQSC" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "rings.face.A" && r.value == "28 of 28")).length = 1
+      [KV] (rows.filter (fun r => r.key == "rings.face.B.first" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "C-EQSC.rings.B" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "chains.beside.face.A" && r.value == "5 of 5")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.N2.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.N3.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.N4.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.N5.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.N6.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.N7.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n2.RING.N8.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.N2.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.N3.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.N4.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.N5.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.N6.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.N7.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n1-n3.RING.N8.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.N2.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.N3.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.N4.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.N5.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.N6.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.N7.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.STAR.n2-n3.RING.N8.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.N2.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.N3.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.N4.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.N5.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.N6.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.N7.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "web.QUTRIT.s0-s1.RING.N8.face.A" && r.value == "YES")).length = 1
+
+  ChainTheory.InformationComputation.Landed93.row_527242_PRCM  (ChainTheory/ChainTheory/InformationComputation/Landed93.lean:23)  cited by 230.1
+    theorem row_527242_PRCM : type_of% ChainTheory.Data.D527242_PRCM.checks :=
+      ChainTheory.Data.D527242_PRCM.checks
+    module D527242_PRCM (ChainTheory/ChainTheory/Data/D527242_PRCM.lean): Row fields {'String': 2}; entered rows 14; check_i proofs {'by decide': 6}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (6 conjuncts; kinds {'LEN': 1, 'KV': 5}):
+      [LEN] rows.length = 14
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQCC" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "typing.rows" && r.value == "36 of 36")).length = 1
+      [KV] (rows.filter (fun r => r.key == "typing.total" && r.value == "36")).length = 1
+      [KV] (rows.filter (fun r => r.key == "typing.first.failing" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "gate.all" && r.value == "MET")).length = 1
+
+  ChainTheory.Foundations.Ch02.row_528475_DURA  (ChainTheory/ChainTheory/Foundations/Ch02.lean:120)  cited by 234.1, 234.3
+    theorem row_528475_DURA : cond_528475_DURA -> type_of% ChainTheory.Data.D528475_DURA.checks :=
+      fun _ => ChainTheory.Data.D528475_DURA.checks
+    hypothesis: opaque cond_528475_DURA : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D528475_DURA (ChainTheory/ChainTheory/Data/D528475_DURA.lean): Row fields {'String': 2}; entered rows 4; check_i proofs {'by decide': 5}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (5 conjuncts; kinds {'LEN': 1, 'KV': 4}):
+      [LEN] rows.length = 4
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQAU" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqau.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqau.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqau.reading" && r.value == "U")).length = 1
+
+  ChainTheory.InformationComputation.Landed93.row_525516_NCRE  (ChainTheory/ChainTheory/InformationComputation/Landed93.lean:9)  cited by 234.1, 234.3
+    theorem row_525516_NCRE : type_of% ChainTheory.Data.D525516_NCRE.checks :=
+      ChainTheory.Data.D525516_NCRE.checks
+    module D525516_NCRE (ChainTheory/ChainTheory/Data/D525516_NCRE.lean): Row fields {'String': 5, 'Int': 11}; entered rows 246; check_i proofs {'by decide': 5}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (5 conjuncts; kinds {'LEN': 1, 'REL': 2, 'CAT': 2}):
+      [LEN] rows.length = 246
+      [REL] rows.all (fun r => r.order0 + r.order1 + r.order2 + r.order3 == r.records) = true
+      [REL] rows.all (fun r => r.same_site + r.one_link + r.cross_link == r.records) = true
+      [CAT] (rows.filter (fun r => r.group == "KIT" && r.polarity == "SLOT" && r.defined == "YES")).length = 64
+      [CAT] (rows.filter (fun r => r.both_engines == "SAME")).length = 246
+
+  ChainTheory.Fields.Ch08.row_527645_YCLC  (ChainTheory/ChainTheory/Fields/Ch08.lean:31)  cited by 235.1, 235.2, 235.3, 235.4
+    theorem row_527645_YCLC : type_of% ChainTheory.Data.D527645_YCLC.checks :=
+      ChainTheory.Data.D527645_YCLC.checks
+    module D527645_YCLC (ChainTheory/ChainTheory/Data/D527645_YCLC.lean): Row fields {'String': 2}; entered rows 3; check_i proofs {'by decide': 4}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (che...
+    checks (4 conjuncts; kinds {'LEN': 1, 'KV': 3}):
+      [LEN] rows.length = 3
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQHL" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhl.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhl.first.fail" && r.value == "NONE")).length = 1
+
+  ChainTheory.Foundations.Ch04.row_529015_YOGC  (ChainTheory/ChainTheory/Foundations/Ch04.lean:179)  cited by 235.1, 235.2, 235.3, 235.4
+    theorem row_529015_YOGC : cond_529015_YOGC -> type_of% ChainTheory.Data.D529015_YOGC.checks :=
+      fun _ => ChainTheory.Data.D529015_YOGC.checks
+    hypothesis: opaque cond_529015_YOGC : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D529015_YOGC (ChainTheory/ChainTheory/Data/D529015_YOGC.lean): Row fields {'String': 2}; entered rows 13; check_i proofs {'by decide': 14}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (14 conjuncts; kinds {'LEN': 1, 'KV': 13}):
+      [LEN] rows.length = 13
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQYG" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "dict.levels.greatest" && r.value == "5")).length = 1
+      [KV] (rows.filter (fun r => r.key == "dict.number.operator" && r.value == "1692 of 1692")).length = 1
+      [KV] (rows.filter (fun r => r.key == "dict.spacing.equal" && r.value == "1692 of 1692")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqyg.cause" && r.value == "EVERY-REGISTER-EQUAL")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqyg.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqyg.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqyg.first.parting.objects" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqyg.genk" && r.value == "EQUAL")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqyg.identity.reading" && r.value == "PARTING")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqyg.identity.reading.equal" && r.value == "712 of 1692")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqyg.identity.reading.first.parting" && r.value == "L0001")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqyg.trnc" && r.value == "EQUAL")).length = 1
+
+  ChainTheory.StandardModel.Ch13.row_530067_HRCP  (ChainTheory/ChainTheory/StandardModel/Ch13.lean:84)  cited by 235.1, 235.2, 235.3, 235.4
+    theorem row_530067_HRCP : cond_530067_HRCP -> type_of% ChainTheory.Data.D530067_HRCP.checks :=
+      fun _ => ChainTheory.Data.D530067_HRCP.checks
+    hypothesis: opaque cond_530067_HRCP : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D530067_HRCP (ChainTheory/ChainTheory/Data/D530067_HRCP.lean): Row fields {'String': 2}; entered rows 53; check_i proofs {'by decide': 54}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (54 conjuncts; kinds {'LEN': 1, 'KV': 53}):
+      [LEN] rows.length = 53
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.COMPOSED.beside.r-HIG" && r.value == "NO-CYCLE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.COMPOSED.carriers.equal" && r.value == "0 of 2")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.COMPOSED.face.A" && r.value == "NO")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.COMPOSED.first.carrier.parting" && r.value == "r-Z0D")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.MEMBER.beside.r-HIG" && r.value == "NO-CYCLE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.MEMBER.carriers.equal" && r.value == "2 of 2")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.MEMBER.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.MEMBER.first.carrier.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.MEMBER.first.carrier.parting.objects" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.ORDER.beside.r-HIG" && r.value == "NO-CYCLE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.ORDER.carriers.equal" && r.value == "2 of 2")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.ORDER.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.ORDER.first.carrier.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.ORDER.first.carrier.parting.objects" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.PHASE-CONTENT.beside.r-HIG" && r.value == "NO-CYCLE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.PHASE-CONTENT.carriers.equal" && r.value == "0 of 2")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.PHASE-CONTENT.face.A" && r.value == "NO")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.PHASE-CONTENT.first.carrier.parting" && r.value == "r-Z0D")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.PRIMITIVE-ROOT.beside.r-HIG" && r.value == "NO-CYCLE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.PRIMITIVE-ROOT.carriers.equal" && r.value == "2 of 2")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.PRIMITIVE-ROOT.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.PRIMITIVE-ROOT.first.carrier.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.OBJECT.PRIMITIVE-ROOT.first.carrier.parting.objects" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.COMPOSED.beside.r-HIG" && r.value == "NO-CYCLE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.COMPOSED.carriers.equal" && r.value == "0 of 3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.COMPOSED.face.A" && r.value == "NO")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.COMPOSED.first.carrier.parting" && r.value == "r-WPM")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.MEMBER.beside.r-HIG" && r.value == "NO-CYCLE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.MEMBER.carriers.equal" && r.value == "3 of 3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.MEMBER.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.MEMBER.first.carrier.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.MEMBER.first.carrier.parting.objects" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.ORDER.beside.r-HIG" && r.value == "NO-CYCLE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.ORDER.carriers.equal" && r.value == "3 of 3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.ORDER.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.ORDER.first.carrier.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.ORDER.first.carrier.parting.objects" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.PHASE-CONTENT.beside.r-HIG" && r.value == "NO-CYCLE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.PHASE-CONTENT.carriers.equal" && r.value == "0 of 3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.PHASE-CONTENT.face.A" && r.value == "NO")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.PHASE-CONTENT.first.carrier.parting" && r.value == "r-WPM")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.PRIMITIVE-ROOT.beside.r-HIG" && r.value == "NO-CYCLE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.PRIMITIVE-ROOT.carriers.equal" && r.value == "3 of 3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.PRIMITIVE-ROOT.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.PRIMITIVE-ROOT.first.carrier.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.WORD.PRIMITIVE-ROOT.first.carrier.parting.objects" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.carriers.equal" && r.value == "3 of 3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.face.A" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.face.B" && r.value == "NO")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.face.record" && r.value == "WORD")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.first.carrier.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.first.carrier.parting.objects" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcr.reading.record" && r.value == "PRIMITIVE-ROOT")).length = 1
+
+  ChainTheory.Foundations.Ch04.row_528101_ATSR  (ChainTheory/ChainTheory/Foundations/Ch04.lean:170)  cited by D.3, D.4
+    theorem row_528101_ATSR : type_of% ChainTheory.Data.D528101_ATSR.checks :=
+      ChainTheory.Data.D528101_ATSR.checks
+    module D528101_ATSR (ChainTheory/ChainTheory/Data/D528101_ATSR.lean): Row fields {'String': 2}; entered rows 11; check_i proofs {'by decide': 6}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (6 conjuncts; kinds {'LEN': 1, 'KV': 5}):
+      [LEN] rows.length = 11
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQAR" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqar.letter" && r.value == "DEFINED-EQUAL-UNDER-ONE-READING")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqar.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqar.R2.sinks.uptoclass" && r.value == "14 of 14")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqar.R1.sinks.equal.all" && r.value == "0 of 14")).length = 1
+
+  ChainTheory.StandardModel.Ch11.row_526261_RLRO  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:76)  cited by D.3, D.4
+    theorem row_526261_RLRO : type_of% ChainTheory.Data.D526261_RLRO.checks :=
+      ChainTheory.Data.D526261_RLRO.checks
+    module D526261_RLRO (ChainTheory/ChainTheory/Data/D526261_RLRO.lean): Row fields {'String': 7}; entered rows 16; check_i proofs {'by decide': 6}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (6 conjuncts; kinds {'LEN': 1, 'CAT': 5}):
+      [LEN] rows.length = 16
+      [CAT] (rows.filter (fun r => r.equal == "YES")).length = 16
+      [CAT] (rows.filter (fun r => r.BODYWT_equal == "YES")).length = 16
+      [CAT] (rows.filter (fun r => r.standing == "BODY")).length = 13
+      [CAT] (rows.filter (fun r => r.standing == "BESIDE")).length = 3
+      [CAT] (rows.filter (fun r => r.c_exact == "YES")).length = 16
+
+  ChainTheory.StandardModel.Ch11.row_532499_HPK2  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:245)  cited by D.3, D.4
+    theorem row_532499_HPK2 : cond_532499_HPK2 -> type_of% ChainTheory.Data.D532499_HPK2.checks :=
+      fun _ => ChainTheory.Data.D532499_HPK2.checks
+    hypothesis: opaque cond_532499_HPK2 : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D532499_HPK2 (ChainTheory/ChainTheory/Data/D532499_HPK2.lean): Row fields {'String': 2}; entered rows 11; check_i proofs {'by decide': 12}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (12 conjuncts; kinds {'LEN': 1, 'KV': 11}):
+      [LEN] rows.length = 11
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQHP" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhp.all.equal" && r.value == "16 of 16")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhp.bodies.equal" && r.value == "13 of 13")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhp.crosscore.equal" && r.value == "3 of 3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhp.directsum.equal" && r.value == "16 of 16")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhp.dressing.equal" && r.value == "16 of 16")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhp.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhp.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhp.first.parting.web" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhp.grammar.equal" && r.value == "16 of 16")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqhp.webs" && r.value == "16")).length = 1
+
+  ChainTheory.StandardModel.Ch11.row_529099_LSRC  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:164)  cited by H.3
+    theorem row_529099_LSRC : cond_529099_LSRC -> type_of% ChainTheory.Data.D529099_LSRC.checks :=
+      fun _ => ChainTheory.Data.D529099_LSRC.checks
+    hypothesis: opaque cond_529099_LSRC : Prop  [opaque]; proof `fun _ => ...` (binder unused): True; other theorems mentioning it: 0
+    module D529099_LSRC (ChainTheory/ChainTheory/Data/D529099_LSRC.lean): Row fields {'String': 2}; entered rows 16; check_i proofs {'by decide': 17}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (17 conjuncts; kinds {'LEN': 1, 'KV': 16}):
+      [LEN] rows.length = 16
+      [KV] (rows.filter (fun r => r.key == "loops.webs" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "loops.links" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "loops.sinks" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "loops.by.wave" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "loops.first" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcl.loops.links.parent" && r.value == "2319")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcl.loops.links.this" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcl.loops.webs.parent" && r.value == "2251")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcl.loops.webs.this" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcl.loops.sinks.parent" && r.value == "1389")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcl.loops.sinks.this" && r.value == "0")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcl.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcl.faceA" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcl.faceB" && r.value == "NO")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqcl.faceB.first" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQCL" && r.value == "YES")).length = 1
+
+  ChainTheory.StandardModel.Ch11.row_530196_ERMT  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:191)  cited by H.3
+    theorem row_530196_ERMT : type_of% ChainTheory.Data.D530196_ERMT.checks :=
+      ChainTheory.Data.D530196_ERMT.checks
+    module D530196_ERMT (ChainTheory/ChainTheory/Data/D530196_ERMT.lean): Row fields {'String': 2}; entered rows 50; check_i proofs {'by decide': 51}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (51 conjuncts; kinds {'LEN': 1, 'KV': 50}):
+      [LEN] rows.length = 50
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQTM" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQTM.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQTM.faceB.first" && r.value == "J3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.A1.max.sites" && r.value == "3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.A1.result" && r.value == "STAYS-BOUNDED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.A1.seed" && r.value == "U")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.A2.max.sites" && r.value == "6")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.A2.result" && r.value == "STAYS-BOUNDED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.A2.seed" && r.value == "C")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.A3.max.sites" && r.value == "7")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.A3.result" && r.value == "STAYS-BOUNDED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.A3.seed" && r.value == "C")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.CUT.max.sites" && r.value == "41")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.CUT.result" && r.value == "GROWS-TO-THE-DEMONSTRATION-CAP")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.CUT.seed" && r.value == "C")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HF.max.sites" && r.value == "4")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HF.result" && r.value == "STAYS-BOUNDED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HF.seed" && r.value == "U")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HFB.max.sites" && r.value == "4")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HFB.result" && r.value == "STAYS-BOUNDED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HFB.seed" && r.value == "U_DOCKED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSD.max.sites" && r.value == "41")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSD.result" && r.value == "GROWS-TO-THE-DEMONSTRATION-CAP")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSD.seed" && r.value == "C")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSII.max.sites" && r.value == "5")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSII.result" && r.value == "STAYS-BOUNDED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSII.seed" && r.value == "U")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSP.max.sites" && r.value == "42")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSP.result" && r.value == "GROWS-TO-THE-DEMONSTRATION-CAP")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSP.seed" && r.value == "U")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSR.max.sites" && r.value == "41")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSR.result" && r.value == "GROWS-TO-THE-DEMONSTRATION-CAP")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.HSR.seed" && r.value == "C")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.J2.max.sites" && r.value == "18")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.J2.result" && r.value == "STAYS-BOUNDED")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.J3.max.sites" && r.value == "40")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.J3.result" && r.value == "GROWS-TO-THE-DEMONSTRATION-CAP")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.J3.seed" && r.value == "r-GLU")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.J4.max.sites" && r.value == "40")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.J4.result" && r.value == "GROWS-TO-THE-DEMONSTRATION-CAP")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.J4.seed" && r.value == "r-HIG")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.PM.max.sites" && r.value == "40")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.PM.result" && r.value == "GROWS-TO-THE-DEMONSTRATION-CAP")).length = 1
+      [KV] (rows.filter (fun r => r.key == "demo.PM.seed" && r.value == "r-GLU")).length = 1
+      [KV] (rows.filter (fun r => r.key == "faceB.R1.move" && r.value == "CUT")).length = 1
+      [KV] (rows.filter (fun r => r.key == "faceB.R1.seed" && r.value == "C")).length = 1
+      [KV] (rows.filter (fun r => r.key == "faceB.R2.move" && r.value == "J3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "faceB.R2.seed" && r.value == "r-GLU")).length = 1
+      [KV] (rows.filter (fun r => r.key == "faceB.first.in.table.order" && r.value == "J3")).length = 1
+      [KV] (rows.filter (fun r => r.key == "faceB.first.site.adding.move" && r.value == "A1")).length = 1
+
+  ChainTheory.Plan.P02.Ch10.row_536583_PSYO  (ChainTheory/ChainTheory/Plan/P02/Ch10.lean:9)  cited by I.7.1
+    theorem row_536583_PSYO : type_of% ChainTheory.Data.D536583_PSYO.checks := ChainTheory.Data.D536583_PSYO.checks
+    module D536583_PSYO (ChainTheory/ChainTheory/Data/D536583_PSYO.lean): Row fields {'String': 2}; entered rows 4; check_i proofs {'by decide': 5}; checks := And.intro check_1 (And.intro check_2 (And.intro check_3 (And...
+    checks (5 conjuncts; kinds {'LEN': 1, 'KV': 4}):
+      [LEN] rows.length = 4
+      [KV] (rows.filter (fun r => r.key == "cell.C-EQQB" && r.value == "YES")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqqb.face" && r.value == "A")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqqb.first.parting" && r.value == "NONE")).length = 1
+      [KV] (rows.filter (fun r => r.key == "eqqb.letter" && r.value == "RE-MET")).length = 1
+
+  37 declarations, 37 modules; conjuncts by kind: {'LEN': 37, 'KV': 560, 'REL': 8, 'CAT': 13}
+  modules with at least one REL conjunct: ['D525335_SLBC', 'D525516_NCRE', 'D526019_WAMR']
+  conditional declarations 13: hypotheses all opaque True, all unused True, mentioned by other theorems 0
+  proofs of the check_i lemmas: {'by decide': 618}; every `checks` is an And.intro of them: True
+  rows entered as a literal list: 37 of 37; Row fields all String: 33 (key/value tables 32); with Int fields: ['D526019_WAMR', 'D525257_HTOR', 'D525335_SLBC', 'D525516_NCRE']
+  modules with exactly 60 entered rows: ['D531942_CASM', 'D532023_DST2', 'D530533_ANDB']
+
+[3] Opaque Props, aliases and open-result records cited by the 48 rows: what the Lean asserts about them
+  open_record  ChainTheory.Foundations.Ch03.wall_531133_EQDU_open  (ChainTheory/ChainTheory/Foundations/Ch03.lean:121)  [28.1, 28.2, 28.5]
+      def wall_531133_EQDU_open : ChainTheory.OpenResult := { address := 531133, stem := "DIMC", decidingClass := "EQDU", firstParting := "-", chapter := "ch03", statement := wall_531133_EQDU }
+      -> statement := wall_531133_EQDU [opaque]
+  open_record  ChainTheory.StandardModel.Ch12.wall_529407_EQMF_open  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:174)  [28.1, 28.2, 28.5]
+      def wall_529407_EQMF_open : ChainTheory.OpenResult := { address := 529407, stem := "MUSP", decidingClass := "EQMF", firstParting := "parting", chapter := "ch12", statement := wall_529407_EQMF }
+      -> statement := wall_529407_EQMF [opaque]
+  open_record  ChainTheory.StandardModel.Ch12.wall_529937_EQMP_open  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:184)  [28.1, 28.2, 28.5]
+      def wall_529937_EQMP_open : ChainTheory.OpenResult := { address := 529937, stem := "MUPH", decidingClass := "EQMP", firstParting := "parting", chapter := "ch12", statement := wall_529937_EQMP }
+      -> statement := wall_529937_EQMP [opaque]
+  open_record  ChainTheory.StandardModel.Ch12.wall_531159_EQRH_open  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:201)  [28.1, 28.2, 28.5]
+      def wall_531159_EQRH_open : ChainTheory.OpenResult := { address := 531159, stem := "GPRR", decidingClass := "EQRH", firstParting := "arithmetic-alone", chapter := "ch12", statement := wall_531159_EQRH }
+      -> statement := wall_531159_EQRH [opaque]
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_519035_SPIP  (ChainTheory/ChainTheory/Discussion/Ch20.lean:107)  [57.1]
+      opaque wall_519035_SPIP : Prop
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_519912_AMPM  (ChainTheory/ChainTheory/Discussion/Ch20.lean:127)  [57.1]
+      opaque wall_519912_AMPM : Prop
+  opaque_prop  ChainTheory.Foundations.Ch05.row_515919_SQTN  (ChainTheory/ChainTheory/Foundations/Ch05.lean:17)  [57.1]
+      opaque row_515919_SQTN : Prop
+  opaque_prop  ChainTheory.Foundations.Ch05.row_517173_SPMV  (ChainTheory/ChainTheory/Foundations/Ch05.lean:27)  [57.1]
+      opaque row_517173_SPMV : Prop
+  opaque_prop  ChainTheory.Foundations.Ch05.row_521989_DCRS  (ChainTheory/ChainTheory/Foundations/Ch05.lean:51)  [57.1]
+      opaque row_521989_DCRS : Prop
+  open_record  ChainTheory.Foundations.Ch05.wall_527131_PQCS_open  (ChainTheory/ChainTheory/Foundations/Ch05.lean:96)  [57.1]
+      def wall_527131_PQCS_open : ChainTheory.OpenResult := { address := 527131, stem := "PQCS", decidingClass := "-", firstParting := "-", chapter := "ch05", statement := wall_527131_PQCS }
+      -> statement := wall_527131_PQCS [opaque]
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_518652_EXCU  (ChainTheory/ChainTheory/Discussion/Ch20.lean:95)  [62.1]
+      opaque wall_518652_EXCU : Prop
+  open_record  ChainTheory.Gravity.Ch18.wall_531838_EQDJ_open  (ChainTheory/ChainTheory/Gravity/Ch18.lean:75)  [62.1]
+      def wall_531838_EQDJ_open : ChainTheory.OpenResult := { address := 531838, stem := "DTR2", decidingClass := "EQDJ", firstParting := "-", chapter := "ch18", statement := wall_531838_EQDJ }
+      -> statement := wall_531838_EQDJ [opaque]
+  opaque_prop  ChainTheory.Foundations.Ch02.row_521259_GIKC  (ChainTheory/ChainTheory/Foundations/Ch02.lean:73)  [64.1, 64.2]
+      opaque row_521259_GIKC : Prop
+  opaque_prop  ChainTheory.StandardModel.Ch10.row_510060_GGRL  (ChainTheory/ChainTheory/StandardModel/Ch10.lean:12)  [64.1, 64.2]
+      opaque row_510060_GGRL : Prop
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_518677_CODF  (ChainTheory/ChainTheory/Discussion/Ch20.lean:97)  [73.1]
+      opaque wall_518677_CODF : Prop
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_520224_CORV  (ChainTheory/ChainTheory/Discussion/Ch20.lean:131)  [73.1]
+      opaque wall_520224_CORV : Prop
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_520925_SLOV  (ChainTheory/ChainTheory/Discussion/Ch20.lean:149)  [73.1]
+      opaque wall_520925_SLOV : Prop
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_521285_EIGN  (ChainTheory/ChainTheory/Discussion/Ch20.lean:159)  [73.1]
+      opaque wall_521285_EIGN : Prop
+  opaque_prop  ChainTheory.Fields.Ch07.wall_521682_FIXE  (ChainTheory/ChainTheory/Fields/Ch07.lean:22)  [73.1]
+      opaque wall_521682_FIXE : Prop
+  opaque_prop  ChainTheory.Fields.Ch07.wall_522140_EQKB  (ChainTheory/ChainTheory/Fields/Ch07.lean:28)  [73.1]
+      opaque wall_522140_EQKB : Prop
+  opaque_prop  ChainTheory.Fields.Ch07.wall_522397_WASN  (ChainTheory/ChainTheory/Fields/Ch07.lean:30)  [73.1]
+      opaque wall_522397_WASN : Prop
+  opaque_prop  ChainTheory.Fields.Ch07.wall_523229_EQSE  (ChainTheory/ChainTheory/Fields/Ch07.lean:32)  [73.1]
+      opaque wall_523229_EQSE : Prop
+  open_record  ChainTheory.Fields.Ch07.wall_529596_EQSY_open  (ChainTheory/ChainTheory/Fields/Ch07.lean:54)  [73.1]
+      def wall_529596_EQSY_open : ChainTheory.OpenResult := { address := 529596, stem := "LOTS", decidingClass := "EQSY", firstParting := "no-reading-equal", chapter := "ch07", statement := wall_529596_EQSY }
+      -> statement := wall_529596_EQSY [opaque]
+  open_record  ChainTheory.Fields.Ch07.wall_530300_EQSA_open  (ChainTheory/ChainTheory/Fields/Ch07.lean:59)  [73.1]
+      def wall_530300_EQSA_open : ChainTheory.OpenResult := { address := 530300, stem := "SRAO", decidingClass := "EQSA", firstParting := "parting", chapter := "ch07", statement := wall_530300_EQSA }
+      -> statement := wall_530300_EQSA [opaque]
+  open_record  ChainTheory.Fields.Ch07.wall_531448_EQOX_open  (ChainTheory/ChainTheory/Fields/Ch07.lean:71)  [73.1]
+      def wall_531448_EQOX_open : ChainTheory.OpenResult := { address := 531448, stem := "OSAD", decidingClass := "EQOX", firstParting := "face-b-named", chapter := "ch07", statement := wall_531448_EQOX }
+      -> statement := wall_531448_EQOX [opaque]
+  open_record  ChainTheory.Fields.Ch07.wall_532421_EQTV_open  (ChainTheory/ChainTheory/Fields/Ch07.lean:76)  [73.1]
+      def wall_532421_EQTV_open : ChainTheory.OpenResult := { address := 532421, stem := "SLT3", decidingClass := "EQTV", firstParting := "parting-at-the-invariant-part", chapter := "ch07", statement := wall_532421_EQTV }
+      -> statement := wall_532421_EQTV [opaque]
+  open_record  ChainTheory.Plan.P08.Ch1.wall_533599_BETD_open  (ChainTheory/ChainTheory/Plan/P08/Ch1.lean:17)  [170.1]
+      def wall_533599_BETD_open : ChainTheory.OpenResult := { address := 533599, stem := "BETD", decidingClass := "EQBH", firstParting := "PARTS-AT-THE-ARM", chapter := "8-1", statement := ChainTheory.Open.wall_533599_BETD }
+      -> statement := ChainTheory.Open.wall_533599_BETD [opaque]
+  open_record  ChainTheory.Plan.P08.Ch5.wall_533733_BOSW_open  (ChainTheory/ChainTheory/Plan/P08/Ch5.lean:8)  [170.1]
+      def wall_533733_BOSW_open : ChainTheory.OpenResult := { address := 533733, stem := "BOSW", decidingClass := "EQBW", firstParting := "PARTS-AT-A-CARRIER-SINK-OF-RECORD", chapter := "8-5", statement := ChainTheory.Open.wall_533733_BOSW }
+      -> statement := ChainTheory.Open.wall_533733_BOSW [opaque]
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_519009_REGI  (ChainTheory/ChainTheory/Discussion/Ch20.lean:105)  [181.5]
+      opaque wall_519009_REGI : Prop
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_520740_BOUN  (ChainTheory/ChainTheory/Discussion/Ch20.lean:143)  [181.5]
+      opaque wall_520740_BOUN : Prop
+  open_record  ChainTheory.StandardModel.Ch11.wall_525858_EQQC_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:70)  [181.5]
+      def wall_525858_EQQC_open : ChainTheory.OpenResult := { address := 525858, stem := "QCUF", decidingClass := "EQQC", firstParting := "parting", chapter := "ch11", statement := ChainTheory.Discussion.Landed93.wall_525858_EQQC }
+      -> statement := ChainTheory.Discussion.Landed93.wall_525858_EQQC [opaque]
+  opaque_prop  ChainTheory.StandardModel.Ch12.row_522243_QRSK  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:44)  [181.5]
+      opaque row_522243_QRSK : Prop
+  opaque_prop  ChainTheory.StandardModel.Ch12.row_522607_FRCF  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:46)  [181.5]
+      opaque row_522607_FRCF : Prop
+  opaque_prop  ChainTheory.StandardModel.Ch13.wall_522556_SELS  (ChainTheory/ChainTheory/StandardModel/Ch13.lean:27)  [181.5]
+      opaque wall_522556_SELS : Prop
+  opaque_prop  ChainTheory.StandardModel.Ch13.wall_523152_EQFS  (ChainTheory/ChainTheory/StandardModel/Ch13.lean:29)  [181.5]
+      opaque wall_523152_EQFS : Prop
+  open_record  ChainTheory.Foundations.Ch01.wall_528448_EQOG_open  (ChainTheory/ChainTheory/Foundations/Ch01.lean:32)  [200.6]
+      def wall_528448_EQOG_open : ChainTheory.OpenResult := { address := 528448, stem := "OFAU", decidingClass := "EQOG", firstParting := "-", chapter := "ch01", statement := wall_528448_EQOG }
+      -> statement := wall_528448_EQOG [opaque]
+  opaque_prop  ChainTheory.StandardModel.Ch10.row_519138_HGCH  (ChainTheory/ChainTheory/StandardModel/Ch10.lean:57)  [200.6]
+      opaque row_519138_HGCH : Prop
+  opaque_prop  ChainTheory.StandardModel.Ch10.row_520067_HPST  (ChainTheory/ChainTheory/StandardModel/Ch10.lean:61)  [200.6]
+      opaque row_520067_HPST : Prop
+  alias_prop   ChainTheory.StandardModel.Ch12.row_524905_HMOA  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:79)  [200.6]
+      abbrev row_524905_HMOA : Prop := ChainTheory.Discussion.Landed93.row_524905_HMOA
+      -> ChainTheory.Discussion.Landed93.row_524905_HMOA [opaque]
+  alias_prop   ChainTheory.StandardModel.Ch12.row_528690_VOFW  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:142)  [200.6]
+      abbrev row_528690_VOFW : Prop := cond_528690_VOFW -> claim_528690_VOFW
+      -> cond_528690_VOFW [opaque]; claim_528690_VOFW [opaque]
+  open_record  ChainTheory.StandardModel.Ch12.wall_530144_EQHO_open  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:189)  [200.6]
+      def wall_530144_EQHO_open : ChainTheory.OpenResult := { address := 530144, stem := "HGO2", decidingClass := "EQHO", firstParting := "-", chapter := "ch12", statement := wall_530144_EQHO }
+      -> statement := wall_530144_EQHO [opaque]
+  open_record  ChainTheory.StandardModel.Ch12.wall_532524_EQHK_open  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:235)  [200.6]
+      def wall_532524_EQHK_open : ChainTheory.OpenResult := { address := 532524, stem := "ATHG", decidingClass := "EQHK", firstParting := "first-parting-named", chapter := "ch12", statement := wall_532524_EQHK }
+      -> statement := wall_532524_EQHK [opaque]
+  alias_prop   ChainTheory.StandardModel.Ch12.row_525153_HXDS  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:83)  [200.6]
+      abbrev row_525153_HXDS : Prop := ChainTheory.Discussion.Landed93.row_525153_HXDS
+      -> ChainTheory.Discussion.Landed93.row_525153_HXDS [opaque]
+  opaque_prop  ChainTheory.CompositeMatter.Ch16.wall_523177_EQDG  (ChainTheory/ChainTheory/CompositeMatter/Ch16.lean:14)  [203.5]
+      opaque wall_523177_EQDG : Prop
+  open_record  ChainTheory.CompositeMatter.Ch16.wall_525807_EQMG_open  (ChainTheory/ChainTheory/CompositeMatter/Ch16.lean:20)  [203.5]
+      def wall_525807_EQMG_open : ChainTheory.OpenResult := { address := 525807, stem := "PMGH", decidingClass := "EQMG", firstParting := "-", chapter := "ch16", statement := ChainTheory.Discussion.Landed93.wall_525807_EQMG }
+      -> statement := ChainTheory.Discussion.Landed93.wall_525807_EQMG [opaque]
+  open_record  ChainTheory.CompositeMatter.Ch16.wall_532655_DGC4_open  (ChainTheory/ChainTheory/CompositeMatter/Ch16.lean:51)  [203.5]
+      def wall_532655_DGC4_open : ChainTheory.OpenResult := { address := 532655, stem := "DGC4", decidingClass := "-", firstParting := "-", chapter := "ch16", statement := wall_532655_DGC4 }
+      -> statement := wall_532655_DGC4 [opaque]
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_520950_BNDC  (ChainTheory/ChainTheory/Discussion/Ch20.lean:151)  [217.1, 217.2]
+      opaque wall_520950_BNDC : Prop
+  opaque_prop  ChainTheory.Foundations.Ch04.row_522371_BCCF  (ChainTheory/ChainTheory/Foundations/Ch04.lean:149)  [217.1, 217.2]
+      opaque row_522371_BCCF : Prop
+  open_record  ChainTheory.Thermodynamics.Landed93.wall_529726_EQTP_open  (ChainTheory/ChainTheory/Thermodynamics/Landed93.lean:42)  [220.2, 220.3]
+      def wall_529726_EQTP_open : ChainTheory.OpenResult := { address := 529726, stem := "TOPS", decidingClass := "EQTP", firstParting := "-", chapter := "thermo", statement := wall_529726_EQTP }
+      -> statement := wall_529726_EQTP [opaque]
+  open_record  ChainTheory.Thermodynamics.Landed93.wall_529990_EQTR_open  (ChainTheory/ChainTheory/Thermodynamics/Landed93.lean:47)  [223.2]
+      def wall_529990_EQTR_open : ChainTheory.OpenResult := { address := 529990, stem := "NTPE", decidingClass := "EQTR", firstParting := "-", chapter := "thermo", statement := wall_529990_EQTR }
+      -> statement := wall_529990_EQTR [opaque]
+  open_record  ChainTheory.CompositeMatter.Ch17.wall_529699_EQLV_open  (ChainTheory/ChainTheory/CompositeMatter/Ch17.lean:64)  [224.1, 224.2, 224.3]
+      def wall_529699_EQLV_open : ChainTheory.OpenResult := { address := 529699, stem := "LTPW", decidingClass := "EQLV", firstParting := "-", chapter := "ch17", statement := wall_529699_EQLV }
+      -> statement := wall_529699_EQLV [opaque]
+  open_record  ChainTheory.CompositeMatter.Ch15.wall_530661_EQSD_open  (ChainTheory/ChainTheory/CompositeMatter/Ch15.lean:44)  [226.1]
+      def wall_530661_EQSD_open : ChainTheory.OpenResult := { address := 530661, stem := "NDSC", decidingClass := "EQSD", firstParting := "first-refusal-named", chapter := "ch15", statement := wall_530661_EQSD }
+      -> statement := wall_530661_EQSD [opaque]
+  open_record  ChainTheory.CompositeMatter.Ch17.wall_530742_EQFM_open  (ChainTheory/ChainTheory/CompositeMatter/Ch17.lean:86)  [226.1]
+      def wall_530742_EQFM_open : ChainTheory.OpenResult := { address := 530742, stem := "ERMF", decidingClass := "EQFM", firstParting := "first-n-named", chapter := "ch17", statement := wall_530742_EQFM }
+      -> statement := wall_530742_EQFM [opaque]
+  open_record  ChainTheory.CompositeMatter.Ch15.wall_526096_EQPR_open  (ChainTheory/ChainTheory/CompositeMatter/Ch15.lean:35)  [229.1]
+      def wall_526096_EQPR_open : ChainTheory.OpenResult := { address := 526096, stem := "PRFB", decidingClass := "EQPR", firstParting := "parting", chapter := "ch15", statement := ChainTheory.Discussion.Landed93.wall_526096_EQPR }
+      -> statement := ChainTheory.Discussion.Landed93.wall_526096_EQPR [opaque]
+  open_record  ChainTheory.InformationComputation.Landed93.wall_531364_EQHJ_open  (ChainTheory/ChainTheory/InformationComputation/Landed93.lean:57)  [232.2]
+      def wall_531364_EQHJ_open : ChainTheory.OpenResult := { address := 531364, stem := "HADM", decidingClass := "EQHJ", firstParting := "-", chapter := "infocomp", statement := wall_531364_EQHJ }
+      -> statement := wall_531364_EQHJ [opaque]
+  opaque_prop  ChainTheory.Foundations.Ch02.row_516104_PFD2  (ChainTheory/ChainTheory/Foundations/Ch02.lean:42)  [233.1, 233.2, 233.4]
+      opaque row_516104_PFD2 : Prop
+  opaque_prop  ChainTheory.Foundations.Ch02.row_519471_DICL  (ChainTheory/ChainTheory/Foundations/Ch02.lean:48)  [233.1, 233.2, 233.4]
+      opaque row_519471_DICL : Prop
+  opaque_prop  ChainTheory.Foundations.Ch02.row_519625_RAMD  (ChainTheory/ChainTheory/Foundations/Ch02.lean:52)  [233.1, 233.2, 233.4]
+      opaque row_519625_RAMD : Prop
+  opaque_prop  ChainTheory.Foundations.Ch04.row_518752_SDLN  (ChainTheory/ChainTheory/Foundations/Ch04.lean:141)  [233.1, 233.2, 233.4]
+      opaque row_518752_SDLN : Prop
+  open_record  ChainTheory.Foundations.Ch02.wall_528125_EQAD_open  (ChainTheory/ChainTheory/Foundations/Ch02.lean:111)  [234.1, 234.3]
+      def wall_528125_EQAD_open : ChainTheory.OpenResult := { address := 528125, stem := "ADCL", decidingClass := "EQAD", firstParting := "-", chapter := "ch02", statement := wall_528125_EQAD }
+      -> statement := wall_528125_EQAD [opaque]
+  opaque_prop  ChainTheory.Fields.Ch07.wall_521784_EQFL  (ChainTheory/ChainTheory/Fields/Ch07.lean:24)  [235.1, 235.2, 235.3, 235.4]
+      opaque wall_521784_EQFL : Prop
+  opaque_prop  ChainTheory.Foundations.Ch02.row_519599_RTFP  (ChainTheory/ChainTheory/Foundations/Ch02.lean:50)  [235.1, 235.2, 235.3, 235.4]
+      opaque row_519599_RTFP : Prop
+  open_record  ChainTheory.Foundations.Ch05.wall_529186_EQRT_open  (ChainTheory/ChainTheory/Foundations/Ch05.lean:111)  [235.1, 235.2, 235.3, 235.4]
+      def wall_529186_EQRT_open : ChainTheory.OpenResult := { address := 529186, stem := "ROTD", decidingClass := "EQRT", firstParting := "-", chapter := "ch05", statement := wall_529186_EQRT }
+      -> statement := wall_529186_EQRT [opaque]
+  open_record  ChainTheory.Foundations.Measurement.wall_529830_EQHW_open  (ChainTheory/ChainTheory/Foundations/Measurement.lean:47)  [235.1, 235.2, 235.3, 235.4]
+      def wall_529830_EQHW_open : ChainTheory.OpenResult := { address := 529830, stem := "HWRT", decidingClass := "EQHW", firstParting := "-", chapter := "measurement", statement := wall_529830_EQHW }
+      -> statement := wall_529830_EQHW [opaque]
+  open_record  ChainTheory.StandardModel.Ch13.wall_529777_EQDR_open  (ChainTheory/ChainTheory/StandardModel/Ch13.lean:79)  [235.1, 235.2, 235.3, 235.4]
+      def wall_529777_EQDR_open : ChainTheory.OpenResult := { address := 529777, stem := "CPH2", decidingClass := "EQDR", firstParting := "-", chapter := "ch13", statement := wall_529777_EQDR }
+      -> statement := wall_529777_EQDR [opaque]
+  open_record  ChainTheory.CompositeMatter.Ch16.wall_529671_EQPG_open  (ChainTheory/ChainTheory/CompositeMatter/Ch16.lean:36)  [D.3, D.4]
+      def wall_529671_EQPG_open : ChainTheory.OpenResult := { address := 529671, stem := "GSKP", decidingClass := "EQPG", firstParting := "-", chapter := "ch16", statement := wall_529671_EQPG }
+      -> statement := wall_529671_EQPG [opaque]
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_516650_EXCM  (ChainTheory/ChainTheory/Discussion/Ch20.lean:9)  [D.3, D.4]
+      opaque wall_516650_EXCM : Prop
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_517276_BODB  (ChainTheory/ChainTheory/Discussion/Ch20.lean:29)  [D.3, D.4]
+      opaque wall_517276_BODB : Prop
+  open_record  ChainTheory.Foundations.Ch04.wall_527804_TSQA_open  (ChainTheory/ChainTheory/Foundations/Ch04.lean:162)  [D.3, D.4]
+      def wall_527804_TSQA_open : ChainTheory.OpenResult := { address := 527804, stem := "TSQA", decidingClass := "-", firstParting := "-", chapter := "ch04", statement := wall_527804_TSQA }
+      -> statement := wall_527804_TSQA [opaque]
+  open_record  ChainTheory.Foundations.Ch04.wall_532315_EQML_open  (ChainTheory/ChainTheory/Foundations/Ch04.lean:186)  [D.3, D.4]
+      def wall_532315_EQML_open : ChainTheory.OpenResult := { address := 532315, stem := "MDE2", decidingClass := "EQML", firstParting := "-", chapter := "ch04", statement := wall_532315_EQML }
+      -> statement := wall_532315_EQML [opaque]
+  open_record  ChainTheory.InformationComputation.Landed93.wall_529911_EQIR_open  (ChainTheory/ChainTheory/InformationComputation/Landed93.lean:47)  [D.3, D.4]
+      def wall_529911_EQIR_open : ChainTheory.OpenResult := { address := 529911, stem := "IRCC", decidingClass := "EQIR", firstParting := "-", chapter := "infocomp", statement := wall_529911_EQIR }
+      -> statement := wall_529911_EQIR [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_526414_ORAC_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:85)  [D.3, D.4]
+      def wall_526414_ORAC_open : ChainTheory.OpenResult := { address := 526414, stem := "ORAC", decidingClass := "-", firstParting := "-", chapter := "ch11", statement := ChainTheory.Discussion.Landed93.wall_526414_ORAC }
+      -> statement := ChainTheory.Discussion.Landed93.wall_526414_ORAC [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_527537_EQMV_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:121)  [D.3, D.4]
+      def wall_527537_EQMV_open : ChainTheory.OpenResult := { address := 527537, stem := "OVCM", decidingClass := "EQMV", firstParting := "-", chapter := "ch11", statement := wall_527537_EQMV }
+      -> statement := wall_527537_EQMV [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_528045_CT_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:131)  [D.3, D.4]
+      def wall_528045_CT_open : ChainTheory.OpenResult := { address := 528045, stem := "PMAF", decidingClass := "CT", firstParting := "-", chapter := "ch11", statement := wall_528045_CT }
+      -> statement := wall_528045_CT [opaque]
+  open_record  ChainTheory.CompositeMatter.Ch14.wall_529292_EQRD_open  (ChainTheory/ChainTheory/CompositeMatter/Ch14.lean:80)  [H.3]
+      def wall_529292_EQRD_open : ChainTheory.OpenResult := { address := 529292, stem := "RCHS", decidingClass := "EQRD", firstParting := "unreachable-named", chapter := "ch14", statement := wall_529292_EQRD }
+      -> statement := wall_529292_EQRD [opaque]
+  open_record  ChainTheory.CompositeMatter.Ch14.wall_530714_EQSZ_open  (ChainTheory/ChainTheory/CompositeMatter/Ch14.lean:95)  [H.3]
+      def wall_530714_EQSZ_open : ChainTheory.OpenResult := { address := 530714, stem := "SSP2", decidingClass := "EQSZ", firstParting := "undecided-at-depth-three", chapter := "ch14", statement := wall_530714_EQSZ }
+      -> statement := wall_530714_EQSZ [opaque]
+  opaque_prop  ChainTheory.CompositeMatter.Ch17.wall_523642_EQPW  (ChainTheory/ChainTheory/CompositeMatter/Ch17.lean:18)  [H.3]
+      opaque wall_523642_EQPW : Prop
+  open_record  ChainTheory.Fields.Ch08.wall_532473_EQGC_open  (ChainTheory/ChainTheory/Fields/Ch08.lean:55)  [H.3]
+      def wall_532473_EQGC_open : ChainTheory.OpenResult := { address := 532473, stem := "GNC2", decidingClass := "EQGC", firstParting := "outside-at", chapter := "ch08", statement := wall_532473_EQGC }
+      -> statement := wall_532473_EQGC [opaque]
+  open_record  ChainTheory.InformationComputation.Landed93.wall_528316_EQRZ_open  (ChainTheory/ChainTheory/InformationComputation/Landed93.lean:28)  [H.3]
+      def wall_528316_EQRZ_open : ChainTheory.OpenResult := { address := 528316, stem := "RWON", decidingClass := "EQRZ", firstParting := "-", chapter := "infocomp", statement := wall_528316_EQRZ }
+      -> statement := wall_528316_EQRZ [opaque]
+  open_record  ChainTheory.InformationComputation.Landed93.wall_528718_EQPX_open  (ChainTheory/ChainTheory/InformationComputation/Landed93.lean:37)  [H.3]
+      def wall_528718_EQPX_open : ChainTheory.OpenResult := { address := 528718, stem := "PRWF", decidingClass := "EQPX", firstParting := "-", chapter := "infocomp", statement := wall_528718_EQPX }
+      -> statement := wall_528718_EQPX [opaque]
+  open_record  ChainTheory.InformationComputation.Landed93.wall_528988_EQPY_open  (ChainTheory/ChainTheory/InformationComputation/Landed93.lean:42)  [H.3]
+      def wall_528988_EQPY_open : ChainTheory.OpenResult := { address := 528988, stem := "TPCK", decidingClass := "EQPY", firstParting := "-", chapter := "infocomp", statement := wall_528988_EQPY }
+      -> statement := wall_528988_EQPY [opaque]
+  opaque_prop  ChainTheory.StandardModel.Ch11.wall_524193_EQKC  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:32)  [H.3]
+      opaque wall_524193_EQKC : Prop
+  open_record  ChainTheory.StandardModel.Ch11.wall_526437_CFPK_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:88)  [H.3]
+      def wall_526437_CFPK_open : ChainTheory.OpenResult := { address := 526437, stem := "CFPK", decidingClass := "-", firstParting := "-", chapter := "ch11", statement := ChainTheory.Discussion.Landed93.wall_526437_CFPK }
+      -> statement := ChainTheory.Discussion.Landed93.wall_526437_CFPK [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_526717_LETU_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:102)  [H.3]
+      def wall_526717_LETU_open : ChainTheory.OpenResult := { address := 526717, stem := "EALW", decidingClass := "LETU", firstParting := "-", chapter := "ch11", statement := wall_526717_LETU }
+      -> statement := wall_526717_LETU [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_526741_TWJS_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:107)  [H.3]
+      def wall_526741_TWJS_open : ChainTheory.OpenResult := { address := 526741, stem := "TWJS", decidingClass := "-", firstParting := "-", chapter := "ch11", statement := wall_526741_TWJS }
+      -> statement := wall_526741_TWJS [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_526922_RIMP_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:112)  [H.3]
+      def wall_526922_RIMP_open : ChainTheory.OpenResult := { address := 526922, stem := "RIMP", decidingClass := "-", firstParting := "-", chapter := "ch11", statement := wall_526922_RIMP }
+      -> statement := wall_526922_RIMP [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_528258_EQCK_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:136)  [H.3]
+      def wall_528258_EQCK_open : ChainTheory.OpenResult := { address := 528258, stem := "GSKC", decidingClass := "EQCK", firstParting := "-", chapter := "ch11", statement := wall_528258_EQCK }
+      -> statement := wall_528258_EQCK [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_528934_EQFW_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:159)  [H.3]
+      def wall_528934_EQFW_open : ChainTheory.OpenResult := { address := 528934, stem := "CGFP", decidingClass := "EQFW", firstParting := "-", chapter := "ch11", statement := wall_528934_EQFW }
+      -> statement := wall_528934_EQFW [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_529319_EQCZ_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:171)  [H.3]
+      def wall_529319_EQCZ_open : ChainTheory.OpenResult := { address := 529319, stem := "CGB2", decidingClass := "EQCZ", firstParting := "-", chapter := "ch11", statement := wall_529319_EQCZ }
+      -> statement := wall_529319_EQCZ [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_530092_EQKU_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:188)  [H.3]
+      def wall_530092_EQKU_open : ChainTheory.OpenResult := { address := 530092, stem := "KSAT", decidingClass := "EQKU", firstParting := "unstopped-or-refused-named", chapter := "ch11", statement := wall_530092_EQKU }
+      -> statement := wall_530092_EQKU [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_530352_EQBD_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:196)  [H.3]
+      def wall_530352_EQBD_open : ChainTheory.OpenResult := { address := 530352, stem := "DCHB", decidingClass := "EQBD", firstParting := "-", chapter := "ch11", statement := wall_530352_EQBD }
+      -> statement := wall_530352_EQBD [opaque]
+  open_record  ChainTheory.StandardModel.Ch11.wall_530558_EQKW_open  (ChainTheory/ChainTheory/StandardModel/Ch11.lean:206)  [H.3]
+      def wall_530558_EQKW_open : ChainTheory.OpenResult := { address := 530558, stem := "SWVK", decidingClass := "EQKW", firstParting := "unstopped-named", chapter := "ch11", statement := wall_530558_EQKW }
+      -> statement := wall_530558_EQKW [opaque]
+  open_record  ChainTheory.StandardModel.Ch12.wall_532447_EQAV_open  (ChainTheory/ChainTheory/StandardModel/Ch12.lean:230)  [H.3]
+      def wall_532447_EQAV_open : ChainTheory.OpenResult := { address := 532447, stem := "ATSV", decidingClass := "EQAV", firstParting := "parting", chapter := "ch12", statement := wall_532447_EQAV }
+      -> statement := wall_532447_EQAV [opaque]
+  opaque_prop  ChainTheory.Discussion.Ch20.wall_517119_RULG  (ChainTheory/ChainTheory/Discussion/Ch20.lean:23)  [I.16.2]
+      opaque wall_517119_RULG : Prop
+  by (class, mentioned by a library theorem): {('open_record', False): 53, ('opaque_prop', False): 38, ('alias_prop', False): 3}
+  An `opaque X : Prop` has no definition and no proof; a record is a value of type OpenResult whose `statement` field is such a constant; an alias names one. None of these is a theorem.
+
+[4] Clause-level verdicts (round 6's rule; clauses quoted verbatim from the box; counterparts by check anchor)
+    rule: a clause has a counterpart when a tied declaration states its finite content under the library's own
+    definitions of its words (kind ENTERED: a relation evaluated over entered per-instance values). A check that an
+    entered string records the clause's verdict, count or letter is RECORDED: not a counterpart; it gives the
+    label-inclusive upper bound. MATCH = every clause has a counterpart, PARTIAL = some, NONE = none.
+
+  3.1 [THEOREM] The far end fixed direction by direction as the read  (01-framework.tex:197)  --  NONE (0 of 7 clauses stated); label-inclusive PARTIAL (1 of 7)
+     tied: {'table_check': 1}; table checks: row_535360_NDFE; whole-box verdict cells: ['cell.C-EQFI=YES']
+     - "every near basis direction whose transport is nonnull fixes exactly one far direction, the traceless part of its projector, and frees the two transverse to it, at all eleven nonnull directions"
+     - "while the one null direction frees the far end"
+     - "The washed read along $Z$ fixes the one far letter $Z$ and frees $X$ and $Y$"  [entered in D525257_HTOR (OPEN-READ-OF-RECORD, cap read Z: fixed set Z, 1 fixed, 2 unfixed), which is tied to 57.1, not to 3.1]
+     - "the three open reads $X$, $XZ$ and $XZ^{2}$ fix none and free three, their far directions a trine"  [HTOR rows X, XZ, XZ2: fixed NONE, 0 fixed, 3 unfixed; check_4 counts 3 with far_washed = NO; tied to 57.1]
+     ~ "the fixing is the same at every move of the identification group on the support"  <- NDFE:RECORDED  [label 'record.moves.covariance']
+     - "the far marginal is invariant on the state at every read"
+     - "On this reading the premise that the far end is fixed and freed direction by direction is a tautology of the definition of transport to the far end, drafted as Lean text with its Lean proof still to be written"  [the box itself says the Lean proof is not written; the table enters eqfi.lean.remet = YES]
+     numbers >= 5 printed: [11]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [11]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  11.1 [THEOREM] The readout unit as the scheme at the one link  (01-framework.tex:446)  --  NONE (0 of 5 clauses stated); label-inclusive PARTIAL (3 of 5)
+     tied: {'table_check': 1}; table checks: row_535412_OLUS; whole-box verdict cells: ['cell.C-EQUS=YES']
+     - "the on-shell condition of the literature, residue one at the physical pole and the vertex at zero momentum transfer, is the unit lemma of the compendium, met as an exact identity by the construction of the readout unit and of the read map"
+     ~ "the readout unit of the one link is an exact element at every derived cell, the trace form with the centre valued one, the identity reading one at the register dimension, the order step one tick at the pair state, the bare two-point function and the bare coupling both one"  <- OLUS:RECORDED  [cell named UNIT]
+     ~ "the read map product of the one-link record web is the identity on its labels with one pole at the unit, its residue the derived pole residue"  <- OLUS:RECORDED  [cell named POLE]
+     ~ "the residue is normalised at the readout unit at both registers with the vertex at zero displacement"  <- OLUS:RECORDED  [cell named NORM]
+     - "the dressed residue being the coupling the scheme defines and never the normalisation it fixes"
+     numbers >= 5 printed: []
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  13.1 [THEOREM] The record phase group at every genre  (01-framework.tex:497)  --  NONE (0 of 6 clauses stated); label-inclusive PARTIAL (1 of 6)
+     tied: {'table_check': 1}; table checks: row_535680_RPHG; whole-box verdict cells: ['cell.C-EQPQ=YES']
+     ~ "The record phase group is finite cyclic at every link type and every end"  <- RPHG:RECORDED  [letter FINITE; 'cyclic' not recorded]
+     - "the phases of the admitted matchings, the entries and eigenvalues of the admitted cap bases and the stabiliser of the unit are roots of unity of the ring of the twenty-fourth root at every end"
+     - "generating cyclic groups of order four at the qubit end, twelve at the qutrit end and eight at the ququart end, the (2,3) link at order twelve"  [no order is entered]
+     - "every derived holonomy, the Berry result, the classical-limit sequences and the Chern result, lies inside its group"
+     - "the per-vector phases act by conjugation on every holonomy, so that the characteristic polynomial is free of every phase variable and the phase entry of the definition census is typed a gauge"
+     - "The reading on which an antilinear holonomy is read as a linear matrix is printed beside it."
+     numbers >= 5 printed: [8, 12, 24] (ordinal words: [24])
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [8, 12, 24]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  28.1 [THEOREM] Measurement as the wash at one act  (01-framework.tex:909)  --  NONE (0 of 5 clauses stated); label-inclusive PARTIAL (1 of 5)
+     tied: {'open_record': 4, 'table_check': 2}; table checks: row_526019_WAMR, row_527964_MWSP; whole-box verdict cells: ['cell.C-EQSP=YES']
+     - "This chapter establishes that measurement is the wash (decoherence) at one act, and reads the probe at the register."
+     - "At every one of the two hundred twenty-eight one-act reads of the network list the readout at the open end, computed as exact arithmetic in the cyclotomic field, equals the reduced state of the pair at the far end at every direction"  [the 14 entered WAMR rows sum to 228 acts (own check), which no check of WAMR states; no readout or reduced state is entered]
+     - "with the Born square the unit at every read"
+     ~ "and is unmoved under every change confined to a washed end"  <- WAMR:RECORDED  [an entered per-body count of acts moved by the wash, 0 at the 14 bodies: the conclusion as entered]
+     - "so measurement is the wash at one act and the washed ends are the apparatus"
+     numbers >= 5 printed: [228]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [228]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  28.2 [THEOREM] The star-pair and one-link apparatus webs built  (01-framework.tex:914)  --  NONE (0 of 1 clauses stated); label-inclusive MATCH (1 of 1)
+     tied: {'open_record': 4, 'table_check': 2}; table checks: row_526019_WAMR, row_527964_MWSP; whole-box verdict cells: ['cell.C-EQSP=YES']
+     ~ "The star-pair and one-link apparatus webs are built at every admitted reading for every measurement of the item."  <- MWSP:RECORDED, MWSP:RECORDED, MWSP:RECORDED  [labels 'built']
+     numbers >= 5 printed: []
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  28.5 [THEOREM] The classical limit as the zero-density register  (01-framework.tex:929)  --  NONE (0 of 5 clauses stated); label-inclusive NONE (0 of 5)
+     tied: {'open_record': 4, 'table_check': 2}; table checks: row_526019_WAMR, row_527964_MWSP; whole-box verdict cells: ['cell.C-EQSP=YES']
+     - "The classical limit is the zero-density register"
+     - "at every admitted web the sign-record density counts the pairs of reads commuting only up to a sign against the register size"
+     - "the webs at zero density are listed at every reading, the gluon and the Higgs bodies among them"
+     - "the semiclassical expansion is the expansion in that density"
+     - "the first power of every sink re-met as the sum of its terms grouped by the sign-pair count"
+     numbers >= 5 printed: [] (ordinal words: [1])
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  57.1 [THEOREM] Spin at the differing body  (04-spacetime-and-symmetry.tex:385)  --  NONE (0 of 9 clauses stated); label-inclusive NONE (0 of 9)
+     tied: {'opaque_prop': 5, 'table_check': 2, 'open_record': 1}; table checks: row_525257_HTOR, row_528073_PQCD
+     - "At the first body at which the twice-spin read from the open qubit ends alone parted from the name, the docked up quark at the reading that keeps the nonzero labels"  [PQCD enters equs.record.reading = DOCK, but no check reads it]
+     - "a web of three sites and two links at the genre (2,3) with one open ket end and one open bra end of dimension two and no open qutrit or ququart end"
+     - "the label content re-built at a second route from its open ends alone, the weight route with no pairwise Clebsch-Gordan rule, reads zero and two at four states with the multiplicities one and one"
+     - "equal to the rule at that body at every one of its three readings, the low at zero against zero, the nonzero at two against two and the maximal at two against two"  [PQCD's checked counts are '8 of 8' and '5 of 8', not three readings]
+     - "the arrow spaces of its two links are printed at the dimension six each, the ket end tensor the bra end, with both weight faces as the catalogue carries them"
+     - "the body has no ququart end whose frame could part"
+     - "The construction of the open-end label therefore stands re-met at its first differing body by a second route"
+     - "the parting the previous open result named is a parting from the name alone, the body up at the twice-spin one by name, which differs from the second route at every reading and is an input to no cell"
+     - "the deciding table is re-derived in Lean"  [both tied tables are entered literal lists; none is derived]
+     numbers >= 5 printed: [6]
+       in the tied checks: []; in entered rows only: [6]; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  62.1 [THEOREM] The group moves preserve the order parameter and the transfers raise it  (04-spacetime-and-symmetry.tex:591)  --  NONE (0 of 5 clauses stated); label-inclusive NONE (0 of 5)
+     tied: {'opaque_prop': 1, 'open_record': 1}; table checks: none
+     - "the order parameter (the order parameter W), the product over the links of a web of the dimension of the common support, is preserved by the group moves, the step and the holonomy, at every gate edge by construction, a gate changing no dimension"
+     - "and raised by every transfer (the transfer), the attach, the cut, the hub-forming, the hub steps and the joins, at every read record edge with none non-rising, the increment per kind the ratio census"
+     - "the reverse-marked moves lower it at every read edge"
+     - "so every kind is partitioned into preserving, raising and lowering by the data alone, with no mixed kind"
+     - "every count is a count over the enumerated part carrying the caveat of its closure, and the theorem rests on the weakest of its parents, an open result among them"  [the box says it rests on an open result]
+     numbers >= 5 printed: []
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  64.1 [THEOREM] Gauge invariance as the known clause  (05-gauge-structure.tex:25)  --  NONE (0 of 6 clauses stated); label-inclusive NONE (0 of 6)
+     tied: {'opaque_prop': 2}; table checks: none
+     - "Every readout of the one qutrit-qubit link is invariant under every matching of the identification group as a corollary of that clause"
+     - "the group is re-met as exact objects, the fourth-root monomial groups at the orders four, thirty-two, three hundred eighty-four and six thousand one hundred forty-four"
+     - "the whole group at the Lie dimensions four and nine"
+     - "the identification algebra at the six link types with the one readable type carrying the acting centre"  [at (2,3) this is restated by AGUQ, tied to section 9, not to 64.1]
+     - "the one hundred seventy-two records are rebuilt and every readout is invariant on the state under every matching, every Lie generator, the Cayley unitaries, the chain unitaries and the Fourier elements"
+     - "The group is named as the gauge group of the Standard Model by correspondence."
+     numbers >= 5 printed: [6, 9, 32, 172, 384, 6144]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [6, 9, 32, 172, 384, 6144]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  64.2 [THEOREM] The gauge group as the face group of the tether  (05-gauge-structure.tex:30)  --  NONE (0 of 4 clauses stated); label-inclusive NONE (0 of 4)
+     tied: {'opaque_prop': 2}; table checks: none
+     - "the face group of the qutrit-qubit tether, the image of the local unitaries $U(2)$ x $U(3)$ on the link, is the connected determinant slice $S(U(2)$ x $U(3))$ with Lie algebra of dimension twelve, derived algebra of dimension eleven and a one-dimensional centre spanned by the generator of the identification-algebra result"
+     - "isomorphic to $(SU(2)$ x $SU(3)$ x $U(1))/\mathbb{Z}_6$ by an explicit covering whose kernel is the cyclic group of order six"
+     - "the uniqueness cell at the dimension twelve and the rank four picks the qutrit-qubit type at both"
+     - "the sixteen-row law of the dart holds at every row"
+     numbers >= 5 printed: [6, 11, 12, 16]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [6, 11, 12, 16]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  65.1 [THEOREM] The gauge group as a corollary of one construction  (05-gauge-structure.tex:54)  --  NONE (0 of 8 clauses stated); label-inclusive NONE (0 of 8)
+     tied: {'table_check': 1, 'cond_table_check': 1}; table checks: row_530016_GSTB, row_530426_UB4H; whole-box verdict cells: ['cell.C-EQGS=YES', 'cell.C-EQH4=YES']
+     - "This chapter establishes that the gauge group is a corollary of one construction."
+     - "The stabiliser of the Hermitian unit inside the isometries of the split, spanned by the adjoint matrices of the derived directions, applied at the three end kinds of the listed webs, yields the three factors as exact objects"  [GSTB enters cells C-CONS, C-ENDS, C-GRPS, C-MTCH = YES; no factor, dimension or rank]
+     - "at the hub-leg qubit copies the register of dimension two gives dimension three and rank one with the lift centre of order two, the weak factor"
+     - "at the qutrit ends open at the hub leg the register of dimension three gives dimension eight and rank two with the lift centre of order three, the colour factor"
+     - "at the dock qubit ends the $u(1)$ of the unit has the slice representative equal to the centre generator of the group result"
+     - "while the stabiliser at the dock register is the rotation group, spatial and compared with no factor"
+     - "the kernel of the covering is re-met from the three register centres"
+     - "The reading beside, the stabiliser inside the isometries whole, parts from its factor first at the hub-leg copy."
+     numbers >= 5 printed: [8]
+       in the tied checks: [8]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  65.2 [THEOREM] The hub pair as one qudit of dimension four  (05-gauge-structure.tex:59)  --  NONE (0 of 4 clauses stated); label-inclusive PARTIAL (3 of 4)
+     tied: {'table_check': 1, 'cond_table_check': 1}; table checks: row_530016_GSTB, row_530426_UB4H; whole-box verdict cells: ['cell.C-EQGS=YES', 'cell.C-EQH4=YES']
+     ~ "At the ququart hub ends, the hub pair read as one qudit of dimension four by the Axiom, the same construction yields the Lie algebra of dimension fifteen and rank three with the lift $SU(4)$ and the centre cyclic of order four"  <- UB4H:RECORDED, UB4H:RECORDED  [cells named ALGB and HUBE; dimension 15, rank 3 and order 4 are not entered]
+     ~ "the adopted carrier phase datum, the fourth root, is a generator of that centre, so the datum is derived at the hub centre"  <- UB4H:RECORDED  [cell named DATM]
+     ~ "the hub-pair weights at the two qubit copies with the $u(1)$ weight at the dock slice equal the doublet of the Higgs entry by entry, so the Higgs representation is an output of the hub-pair weights"  <- UB4H:RECORDED  [cell named HIGG]
+     - "the readings beside parting at the centre or at a weight"
+     numbers >= 5 printed: [15]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [15]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  73.1 [THEOREM] The sign from the side at the hub reached through its qutrit  (05-gauge-structure.tex:299)  --  NONE (0 of 5 clauses stated); label-inclusive NONE (0 of 5)
+     tied: {'opaque_prop': 8, 'open_record': 4}; table checks: none
+     - "This chapter establishes that the isospin sign is the side of the acting site (the acting site) at every hub reached through its qutrit"
+     - "and that the slot rule is not the sink orientation read at the cut end"
+     - "every hub the carry enters through its qutrit leg carries the far side at its odd-leg qubit copy, equal to the letter of the network list there, at all five hubs of the ladder so entered and at every hub of the three lepton-seeded sinks"
+     - "the tau's second hub is entered through its qubit leg, its odd-leg copy reading the near side as a corollary of its leaf attachment, the one hub outside the domain"
+     - "The open result that the sign is one function of the side at every hub was entered at that hub and dissolves at the re-wording."
+     numbers >= 5 printed: [5] (ordinal words: [2])
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [5]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  145.1 [THEOREM] The Casimir effect as the boundary count between two sinks  (07-cell-3-2-photon.tex:572)  --  NONE (0 of 4 clauses stated); label-inclusive PARTIAL (2 of 4)
+     tied: {'table_check': 1}; table checks: row_531942_CASM
+     ~ "The excluded count between two sinks of the saturation placed along a chain of the construction is a definite function of the separation at every separation the chain admits, with one sign"  <- CASM:RECORDED, CASM:RECORDED  [per-separation labels 'definite' and 'one.sign' at N = 2, 3, 4, 10, 11, 12 of one chain]
+     - "so the Casimir effect is a composed cell of the second-law and chain results"
+     - "at the standing readings, the chain, the web between and the count face, the excluded records are defined at all forty-four chains"  [the detail entries cover one chain (QUTRIT s0-s1) at six separations and stop at the 60th entry; 44 is not entered]
+     ~ "the nonzero differences carry one sign at every one"  <- CASM:RECORDED, CASM:RECORDED  [labels 'one.sign', 'first.sign.change']
+     numbers >= 5 printed: [44]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [44]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  170.1 [THEOREM] Beta decay as the release at the plus-two arm  (08-cell-4-2-weak.tex:685)  --  NONE (0 of 8 clauses stated); label-inclusive NONE (0 of 8)
+     tied: {'open_record': 2}; table checks: none
+     - "Beta decay is read as the release at the plus-two arm at the literal closure reading of the decay graph"
+     - "at that reading the catalogued neutron web is a non-sink carrying its dock edge at the plus-two arm"
+     - "the hub transfer at the dock of the arm, the hub unit of the released body attached at the dock by its in-leg together with the kept-leg hub at the same dock, adds with its end the cross-core object of the released body by an explicit isomorphism at dimensions and links"
+     - "read through the hub at the order two of its (2,4) in-leg with the dressing of that link at both dressing readings, the readout 2916 at the hub spelling and the cell 1296 over 17689 at both spellings"
+     - "so the beta rate cell is an output of the rate law at a non-sink"
+     - "at the stop condition of the pairing move the neutron carried no forward edge, and the object the dock move added, a dock of one site at one link of measure 6, parted from the released body and from the cross-core object"
+     - "at the literal closure reading the forward edge is present and the hub transfer adds the cross-core object, while the dock move of the previous reading remains the first admitted edge at the dock at which the release parts, its object a dock, printed beside"
+     - "the deciding table is re-derived in Lean"  [the two tied declarations are open-result records; no table is tied]
+     numbers >= 5 printed: [6, 1296, 2916, 17689]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [6, 1296, 2916, 17689]
+       nowhere in the Lean tree (raw text of all 915 files): [17689]
+
+  181.5 [THEOREM] The quark offices as the star arm reads  (09-cell-3-3-strong.tex:1248)  --  NONE (0 of 6 clauses stated); label-inclusive NONE (0 of 6)
+     tied: {'opaque_prop': 6, 'open_record': 1, 'table_check': 1}; table checks: row_525911_QLHL; whole-box verdict cells: ['cell.C-EQQL=YES']
+     - "every arm of the two catalogued stars and every heavy sink is an office by the body-alone rule"
+     - "the six arms at the first power 319 and the office 101761 each"
+     - "the up and the down equal with their ratio one"  [QLHL's checked up and down counts are 9 and 124 (another object)]
+     - "the heavy sink offices the cap squared at the powers of the dressing"
+     - "every ratio among them an exact rational cell"
+     - "each star re-met as the sum of its arms by the cross-term theorem"
+     numbers >= 5 printed: [6, 319, 101761]
+       in the tied checks: []; in entered rows only: [6]; in other tied declarations only: []; not in the tied declarations: [319, 101761]
+       nowhere in the Lean tree (raw text of all 915 files): [101761]
+
+  186.1 [THEOREM] The first power as the sum over the segments of the read  (10-cell-4-3-yukawa.tex:130)  --  NONE (0 of 4 clauses stated); label-inclusive NONE (0 of 4)
+     tied: {'table_check': 1}; table checks: row_536716_SSFP; whole-box verdict cells: ['cell.C-EQFP=THEOREM-OF-THE-SEGMENTS']
+     - "The measuring read of a body is cut into segments at every capped link and at every hub it meets"
+     - "every in-leg the read leaves unpassed dresses the entry segment, the dock set is struck at an uncapped entry alone, and a capped link beyond the first cap reads nothing"
+     - "Under that reading one formula, the sum over the segments of the records less the strike multiplied by the dressing, returns the derived cells at the five bodies and at the neutron through the deuteron"
+     - "restates the one rule of the strike-rule result at every read with no body-specific term"
+     numbers >= 5 printed: [5]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [5]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  200.6 [THEOREM] The Higgs and carrier offices at their sinks  (11-cell-4-4-higgs.tex:83)  --  NONE (0 of 6 clauses stated); label-inclusive NONE (0 of 6)
+     tied: {'open_record': 3, 'opaque_prop': 2, 'alias_prop': 3, 'cond_table_check': 1}; table checks: row_529072_HGHL; whole-box verdict cells: ['cell.C-EQHG=YES']
+     - "Every Higgs and carrier office of the compendium is an exact structure by the body-alone rule at the roster words"
+     - "the closed-genre objects and the free genres are read at their own sinks"
+     - "every office is an exact cell at every reading the results admit"
+     - "every ratio among them is an exact rational or ring cell, at all 52 ratios"
+     - "the Higgs faces close 2 of 2, the carriers 6 of 6"  [HGHL's counts are 28 of 28, 4 of 4, 48 of 48, 0 of 4, 8 of 28]
+     - "no sink the rule does not close and no ratio with no second read is found"
+     numbers >= 5 printed: [6, 52]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [6, 52]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  203.5 [THEOREM] Beta decay as the release at the plus-two arm  (12-decays-and-nuclei.tex:43)  --  NONE (0 of 2 clauses stated); label-inclusive NONE (0 of 2)
+     tied: {'table_check': 1, 'opaque_prop': 1, 'open_record': 2}; table checks: row_527294_ENPC; whole-box verdict cells: ['cell.C-EQPM=YES']
+     - "This theorem, closing the open result of the previous releases at the literal closure reading"
+     - "is stated once, as Theorem~170.1 of the chapter Beta decay and the boson widths, and this chapter cites it there without restating it"  [a pointer to 170.1, an opaque-only row; ENPC records census counts 3, 8, 35]
+     numbers >= 5 printed: []
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  217.1 [THEOREM] The second law at the counting face  (13-thermodynamics.tex:23)  --  PARTIAL (4 of 8 clauses stated); label-inclusive PARTIAL (4 of 8)
+     tied: {'opaque_prop': 2, 'table_check': 1}; table checks: row_525335_SLBC
+     - "The object of this chapter is the boundary count (the entanglement entropy across a cut) of an interface at its counting face."
+     + "The theorem states that this count is non-decreasing under every one-act read whose open end lies at the boundary, and under every one-act read beside, at each of the thirteen bodies and the neutral body"  <- SLBC:ENTERED, SLBC:ENTERED  [W_target_site >= W_source_site at every entered read; the 14 bodies are entered, not checked]
+     + "at all 228 one-act reads of the fourteen bodies (two per link at 114 links, 78 with an open far end, 150 washed)"  <- SLBC:ENTERED  [228 entered reads; 114 links, 78 OPEN, 150 WASHED and 14 bodies follow from the entered rows (own check) but are not checked]
+     + "the count rises or stays at the site bound, at the free-direction bound and at the directions read"  <- SLBC:ENTERED, SLBC:RECORDED  [site bound: W checked with its consistency (W is constant in all 228 rows, own check); R_diff_site >= 0 is an entered difference whose relation to the counts is not checked; the free-direction fields are not checked]
+     + "no decreasing act is found"  <- SLBC:ENTERED
+     - "the running count along the order coordinate is non-decreasing"  [run_site is entered, not checked]
+     - "The result is a corollary of the record clause (a read is a further record and no read removes one) and of the definition of an open end"
+     - "so the second law is a theorem at the counting face with the arrow of the order-coordinate theorem as its direction, the words entropy and arrow entering by name"
+     numbers >= 5 printed: [13, 14, 78, 114, 150, 228]
+       in the tied checks: [228]; in entered rows only: [13, 14]; in other tied declarations only: []; not in the tied declarations: [78, 114, 150]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  217.2 [THEOREM] The boundary count at the counting face  (13-thermodynamics.tex:29)  --  NONE (0 of 3 clauses stated); label-inclusive NONE (0 of 3)
+     tied: {'opaque_prop': 2, 'table_check': 1}; table checks: row_525335_SLBC
+     - "The parent theorem fixes the count: at every one of the 60 deciding cells of the horizon composite and the universe web the count at the counting face equals the site bound of the valence-law question at 60 of 60"  [SLBC's rows are the 228 reads of 14 bodies; no horizon composite or universe web is entered]
+     - "and the free-direction bound at 0 of 60"
+     - "so the first premise of the Einstein-shaped equation is a theorem of the count at the composite"
+     numbers >= 5 printed: [60]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [60]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  219.1 [THEOREM] The ensembles as cap readings at the joined web  (13-thermodynamics.tex:129)  --  NONE (0 of 7 clauses stated); label-inclusive PARTIAL (2 of 7)
+     tied: {'table_check': 1}; table checks: row_527268_ENSB; whole-box verdict cells: ['cell.C-EQEN=YES']
+     ~ "Sixteen thermal names of the literature"  <- ENSB:RECORDED  [count label]
+     - "are read as readings taken at the caps of the joined networks with a bath body"
+     - "the three ensembles, the partition sums, the bath readout and the zeroth and third laws are exact objects at the joined networks"
+     - "the three distributions follow the sign of the own-site rotation with every parting named, and no Gibbs ratio is asserted"
+     ~ "Thirteen names are derived and three are glossed, none open"  <- ENSB:RECORDED, ENSB:RECORDED  [eqen.gloss = 3 is entered but not checked]
+     - "a second reading at zero freedom, reading every derived name against the textbook object it stands for, typed five as proof sketches, where the textbook definition is instantiated at the established object, and eleven as namings"
+     - "both typings printed and the deciding letter the same at both"
+     numbers >= 5 printed: [5, 11, 13, 16] (ordinal words: [2])
+       in the tied checks: [13, 16]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [5, 11]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  220.2 [THEOREM] The order parameter at the forward saturation  (13-thermodynamics.tex:190)  --  NONE (0 of 8 clauses stated); label-inclusive PARTIAL (4 of 8)
+     tied: {'cond_table_check': 2, 'open_record': 1}; table checks: row_532023_DST2, row_530247_TOP2; whole-box verdict cells: ['cell.C-EQTF=YES']
+     - "Restricted to the forward moves (182940 forward edges of 185496 at the large truncated closure, the 2556 inverse edges excluded)"
+     ~ "W is monotone along every forward edge"  <- TOP2:RECORDED, TOP2:RECORDED
+     ~ "strictly increasing at the forward pairing edges"  <- TOP2:RECORDED
+     - "and falling at the inverse edges alone"
+     ~ "the class changes along the forward edges at 9377 edges at 5 of 12 kinds"  <- TOP2:RECORDED  [9377 is in PHTR (tied to 221.1), not here]
+     - "the first from the charged class to the dark class at the first wave by the attach move at the genre (2,3)"
+     ~ "and no web changes its determined class along a forward path"  <- TOP2:RECORDED, TOP2:RECORDED
+     - "so the order parameter is the pair of the class and W at every sink, a theorem at the forward saturation"
+     numbers >= 5 printed: [5, 12, 2556, 9377, 182940, 185496] (ordinal words: [1])
+       in the tied checks: [5, 12]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [2556, 9377, 182940, 185496]
+       nowhere in the Lean tree (raw text of all 915 files): [185496]
+
+  220.3 [THEOREM] The distillation theorem at the forward saturation  (13-thermodynamics.tex:195)  --  NONE (0 of 6 clauses stated); label-inclusive PARTIAL (2 of 6)
+     tied: {'cond_table_check': 2, 'open_record': 1}; table checks: row_532023_DST2, row_530247_TOP2; whole-box verdict cells: ['cell.C-EQTF=YES']
+     - "At every forward edge of the twelve readable saturations (322516 webs, 138129 sinks, 570349 forward edges)"  [DST2's keys name 12 saturations (own count); no count is entered]
+     - "the pair the move joins is, by the Axiom, a maximally entangled pair of its common support"
+     - "so its fidelity to the flat pair is one exactly at every link"
+     ~ "monotone along every forward path"  <- DST2:RECORDED  ['mono.cell = YES' at each of the 12]
+     ~ "every sink at full fidelity"  <- DST2:RECORDED  ['sink.cell = YES' at each of the 12]
+     - "the distillation protocols of the literature, each a rise of the fidelity from below full, are located as no path of the saturation"
+     numbers >= 5 printed: [12, 138129, 322516, 570349]
+       in the tied checks: [12]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [138129, 322516, 570349]
+       nowhere in the Lean tree (raw text of all 915 files): [138129, 322516, 570349]
+
+  221.1 [THEOREM] The phase transition as the sink-class change  (13-thermodynamics.tex:226)  --  NONE (0 of 9 clauses stated); label-inclusive PARTIAL (3 of 9)
+     tied: {'cond_table_check': 1}; table checks: row_531680_PHTR; whole-box verdict cells: ['cell.C-EQPT=YES']
+     - "The order parameter of the preceding chapter, the pair of the class of a sink and the register count W, is re-met along every forward edge of the large closure (101973 webs, 44341 sinks, 182940 forward edges) at the per-web and order tables of the forward saturation"
+     ~ "W strictly increasing along the forward edges"  <- PHTR:RECORDED
+     - "and tabulated beside at the proton seeded saturation (218340 webs), the bound-respecting seeded saturation (93481 webs, W unread at its table) and the library seeds (64 seeds at 1203 sink entries)"
+     ~ "at the large closure the class changes at 9377 forward edges (9270 at the fourth wave, 107 below it)"  <- PHTR:RECORDED  [9270 and 107 are not entered]
+     ~ "the critical edge running from a charged parent at W two to a dark child at W four at the first wave by the attach move at the genre (2,3), so the critical W is four with the charged and the dark classes on either side"  <- PHTR:RECORDED  [the classes only; W two and four are not entered]
+     - "at the proton seed the critical W is 93312 (from the class beyond two to the neutral class), at the library seeds 5184 (charged to dark), and at the bound-respecting seed the critical measure is 21, each closure its own"
+     - "fourteen bodies rebuilt from the caps stand eleven at a class boundary and none below the critical W of the large truncated closure"
+     - "the ratio two of the critical edge equals the twirl at the support at the dimension two alone"
+     - "The identification with the phase transition of the literature is a correspondence by name, and every count is a count of a truncated closure."
+     numbers >= 5 printed: [11, 14, 21, 64, 107, 1203, 5184, 9270, 9377, 44341, 93312, 93481, 101973, 182940, 218340] (ordinal words: [1])
+       in the tied checks: [11, 9377]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [14, 21, 64, 107, 1203, 5184, 9270, 44341, 93312, 93481, 101973, 182940, 218340]
+       nowhere in the Lean tree (raw text of all 915 files): [9270, 44341, 93312, 93481, 101973, 218340]
+
+  223.2 [THEOREM] The thermodynamic remainder at the forward saturation  (13-thermodynamics.tex:287)  --  NONE (0 of 7 clauses stated); label-inclusive PARTIAL (5 of 7)
+     tied: {'cond_table_check': 1, 'open_record': 1}; table checks: row_530584_ENT2; whole-box verdict cells: ['cell.C-EQTE=YES']
+     ~ "with W taken as the entropy, the entropy production is strictly increasing at every one of the 182940 forward edges of the large truncated closure"  <- ENT2:RECORDED, ENT2:RECORDED
+     ~ "the second law holds at the strict reading along every forward path and the name entropy is keyed"  <- ENT2:RECORDED
+     ~ "the boundary count of the second law, read beside at the same edges, is typed two objects and not the entropy"  <- ENT2:RECORDED
+     - "the fluctuation relation has 179 defined pairs of 2989 at the sinks graph, the two candidate functions meeting the ratio at 0 and at 6 of them"  [179 and 2989 are not entered]
+     ~ "so the fluctuation name stays silent, a count of a truncated closure with no ensemble"  <- ENT2:RECORDED
+     ~ "the asymmetric Onsager pairs are exactly the pairs at a non-zero production difference at every one of the 43"  <- ENT2:RECORDED  [the same table enters and checks onsg.asym.pairs = "24"; the box prints 43]
+     - "so the Onsager name is keyed"
+     numbers >= 5 printed: [6, 43, 179, 2989, 182940]
+       in the tied checks: [182940]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [6, 43, 179, 2989]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  224.1 [THEOREM] The chain of copies and the periodic readout  (14-condensed-matter-and-atoms.tex:25)  --  NONE (0 of 5 clauses stated); label-inclusive PARTIAL (2 of 5)
+     tied: {'table_check': 2, 'cond_table_check': 1, 'open_record': 1}; table checks: row_527373_LATW, row_530477_LWE3, row_531390_LATD; whole-box verdict cells: ['cell.C-EQLW=YES', 'cell.C-EQLW=YES', 'cell.C-EQLD=YES']
+     - "A chain of two, three or four copies of the electron body joined at the dock by the pairing move, the join graph a path or a cycle, is one network"
+     ~ "whose direct record sum is an exact element at every one of the 5 arrays"  <- LATW:RECORDED
+     - "every record graded five ways"  [eqlw.gradings.closed = "5 of 5" is entered but not checked]
+     ~ "the readout is periodic under the cycle shift at 2 of 2 cycles at four tests"  <- LATW:RECORDED, LATW:RECORDED  ['four tests' not entered]
+     - "so the lattice and the Bloch theorem are corollaries by name"
+     numbers >= 5 printed: [5]
+       in the tied checks: [5]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  224.2 [THEOREM] The periodic network admitted by the grammar  (14-condensed-matter-and-atoms.tex:30)  --  NONE (0 of 5 clauses stated); label-inclusive NONE (0 of 5)
+     tied: {'table_check': 2, 'cond_table_check': 1, 'open_record': 1}; table checks: row_527373_LATW, row_530477_LWE3, row_531390_LATD; whole-box verdict cells: ['cell.C-EQLW=YES', 'cell.C-EQLW=YES', 'cell.C-EQLD=YES']
+     - "The periodic network is admitted by the grammar at both cells of the item, the library star with its dock"
+     - "rings of N docked stars at three dock kinds, every join link a (2,2) pairing link between two docks, the translation an automorphism"
+     - "54 networks built, 17 periodic, 29 admitted"
+     - "the first link the dock pairing refuses is the like-kind link of the chain of three"  [LWE3 checks STAR.first.refused = NONE and QUTRIT.first.refused = NONE (keys not defined; not matched)]
+     - "the 17 periodic networks are absent from both truncated closures"
+     numbers >= 5 printed: [17, 29, 54] (ordinal words: [1])
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: [17]; not in the tied declarations: [29, 54]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  224.3 [THEOREM] The periodic sink at a named cell count  (14-condensed-matter-and-atoms.tex:35)  --  NONE (0 of 5 clauses stated); label-inclusive PARTIAL (1 of 5)
+     tied: {'table_check': 2, 'cond_table_check': 1, 'open_record': 1}; table checks: row_527373_LATW, row_530477_LWE3, row_531390_LATD; whole-box verdict cells: ['cell.C-EQLW=YES', 'cell.C-EQLW=YES', 'cell.C-EQLD=YES']
+     - "The periodic sink exists at a named N with its cell an output"
+     - "at the library star the sink of the ring of N docked stars under the pairing move at the docks is periodic at the even N two, four and six and refused at the odd N three and five (the charge carried at one open dock)"
+     - "its cell the lattice cell with its free dock paired at the half turn (sites 11, measure 91)"
+     ~ "at the two-dock qutrit the ring is its own sink at every N from two to six with the lattice limit cell exactly (sites 3, measure 16)"  <- LWE3:RECORDED, LWE3:RECORDED  [the ring recorded as the sink at N = 3 and 4 only]
+     - "40 saturations terminated at 82 sinks, the parity law at every one"
+     numbers >= 5 printed: [5, 6, 11, 16, 40, 82, 91]
+       in the tied checks: [5, 11]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [6, 16, 40, 82, 91]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  225.1 [THEOREM] The band at the periodic web  (14-condensed-matter-and-atoms.tex:70)  --  NONE (0 of 9 clauses stated); label-inclusive PARTIAL (3 of 9)
+     tied: {'table_check': 1}; table checks: row_530533_ANDB; whole-box verdict cells: ['cell.C-EQBN=YES']
+     - "At the periodic networks of the preceding chapter, the rings of N docked stars at the three dock kinds and of N docked qutrits, re-built by the same join at N two to six"
+     - "every link is a register of the step generator tiled by the translation"
+     ~ "the cycle-order spectrum of the ring is the spectrum of the cell repeated at every translation eigenvalue"  <- ANDB:RECORDED, ANDB:RECORDED  [per-ring labels]
+     ~ "20 networks built, 20 periodic, 20 tiled, the spectrum equal to the tiling and translation-equal at every register at every one"  <- ANDB:RECORDED  [per-ring labels at 18 rings; the list stops at the 60th entry inside QUTRIT RING.4; RING.5 and RING.6 of the qutrit are absent; 20 is not entered]
+     ~ "with no parting N or register at either cell"  <- ANDB:RECORDED, ANDB:RECORDED
+     - "The library star carries 11 registers and the two-dock qutrit 2, the join link the (2,2) register at every ring"
+     - "the band at the star is the set of orders one to five at every N with the multiplicity per cell constant across N, at the qutrit the set of orders one, two and four likewise"
+     - "the limit per cell equals the limit table of the lattice result"
+     - "and the dispersion reading is flat at 10 of 10 tables, with no value and no material constant"
+     numbers >= 5 printed: [5, 6, 10, 11, 20]
+       in the tied checks: [5, 6]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [10, 11, 20]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  226.1 [THEOREM] The chain of pairs at the periodic web  (14-condensed-matter-and-atoms.tex:99)  --  NONE (0 of 7 clauses stated); label-inclusive PARTIAL (1 of 7)
+     tied: {'open_record': 2, 'cond_table_check': 1}; table checks: row_530610_PCHS; whole-box verdict cells: ['cell.C-EQSC=YES']
+     - "At every ring of the lattice (the 12 rings of the lattice tables and 16 more built at N five to eight)"  [the entered per-ring keys are 4 cells x N 2..8 = 28 (own count), consistent with 12 + 16]
+     - "the N join links are N (2,2) pairing links between dock-labelled pendant qubits of consecutive copies, disjoint and carried to the next by the translation"
+     ~ "so the chain of N pairs is admitted at all 28 rings with no parting N or register"  <- PCHS:RECORDED, PCHS:RECORDED
+     - "every pair register is 4 with the pair ket a fixed point of the step"
+     - "the chain step is the product of the N pair steps at order two with the translation commuting with it"
+     - "the ring holonomy at the cycle is trivial at the letters Z and X everywhere and at the letter XZ trivial at every even N and nontrivial at every odd N"
+     - "the photon chain precedent is re-met at the same pairing move"
+     numbers >= 5 printed: [5, 8, 12, 16, 28]
+       in the tied checks: [5, 8, 28]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [12, 16]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  229.1 [THEOREM] The probe read at the four bodies joined to the measuring body  (14-condensed-matter-and-atoms.tex:192)  --  NONE (0 of 9 clauses stated); label-inclusive NONE (0 of 9)
+     tied: {'open_record': 1}; table checks: none
+     - "The four bodies joined to their measuring bodies at the attachment site, with the joined read opened at the dock or nowhere under the transport of reference, give the unit and the register as outputs of the readout"
+     - "every one of those readings is equal at two routes: the unit and the register at the three unit readings of the eleven joined webs and of the six body rows at the two ladders, fifty-one readings in all"
+     - "read equal at the two routes at 51 of 51, 33 of 33 at the web level and 18 of 18 at the body level"
+     - "At 2 of 4 bodies the outputs re-meet the established faces, the electron and the muon at the dock at the register 16 against the dock-struck readings 67 and 107 at 16"
+     - "and at 2 of 4 they part, the tau first, its joined read opening at neither the hub nor the dock"
+     - "the hub unit is reached by no joined read, so the hub-or-dock question of the previous releases resolves to the dock wherever the joined read opens at all"
+     - "The first parting of the previous open result, the tau at the library ladder, re-reads at the second route as the same output, neither at no register against the dock-struck reading 147 at the register 16, a parting of the inherited face and not of the construction, which is thereby closed"
+     - "at the derived ladder the tau carries the two (2,3) docks of the electron and re-meets the dock at 16, the ladder reading 3 of 4"
+     - "the deciding table is re-derived in Lean"  [the one tied declaration is an open-result record; no table is tied]
+     numbers >= 5 printed: [6, 11, 16, 18, 33, 51, 67, 107, 147]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [6, 11, 16, 18, 33, 51, 67, 107, 147]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  230.1 [THEOREM] The closure as the computation  (15-quantum-information.tex:25)  --  NONE (0 of 7 clauses stated); label-inclusive PARTIAL (2 of 7)
+     tied: {'table_check': 1}; table checks: row_527242_PRCM; whole-box verdict cells: ['cell.C-EQCC=YES']
+     ~ "Every ready name of the computation vocabulary is a corollary of the text or of a theorem, or a gloss named beside an object the construction has, and every gated one names its gate"  <- PRCM:RECORDED  [label 'gate.all']
+     - "The bit is the qubit pair ket of the Axiom; the gate is the act at one link; the channel is the wash at one act; the measurement is the wash at a cap; the classical register is the washed record; teleportation is the read passed along the pair together with its record; the Schmidt rank is the common support and the purification the Born face; the cost of a computation is the record count of a read"
+     - "the circuit is the closure of the act from a root, with the saturated networks its halting states and the stop condition of the nuclear roster its halting rule"
+     - "and the Turing machine stands open at the universality question"
+     ~ "Of the thirty-six names (fifteen ready, twenty-one gated) nine are derived, fourteen glossed and thirteen open at their named gates"  <- PRCM:RECORDED, PRCM:RECORDED  [9, 14, 13, '15 of 15', '21 of 21' are entered but not checked]
+     - "the cost of a read is printed at 18 of 18 networks with the sum equal to the orders and at twelve closures (six stopped, six at the web cap)"
+     - "The words bit, gate, circuit, channel, teleportation, Turing machine and complexity class enter by name."
+     numbers >= 5 printed: [6, 9, 12, 13, 14, 15, 18, 21, 36]
+       in the tied checks: [14, 36]; in entered rows only: [9, 13, 15, 21]; in other tied declarations only: []; not in the tied declarations: [6, 12, 18]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  232.2 [THEOREM] The Hadamard inside the finite gate group at the pair register  (15-quantum-information.tex:110)  --  NONE (0 of 4 clauses stated); label-inclusive NONE (0 of 4)
+     tied: {'open_record': 1}; table checks: none
+     - "The candidate read from the readings table of that result is the Hadamard reached at the invariant cut at order two"
+     - "the Hadamard tensor the identity is a member of the finite gate group at the pair register (the order 2304 unchanged)"
+     - "so no move beyond the twenty-eight is admitted, the gate set is closed under the candidate and is the limit of the move set, and the open result is a residue of the finite group"
+     - "the infinite order belongs to the invariant-cut rotations alone, beyond the register face at every seeded sink carrying a qubit-qubit link (46412 of 46563 sinks), candidates the saturation cannot admit under the termination theorem"
+     numbers >= 5 printed: [28, 2304, 46412, 46563]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [28, 2304, 46412, 46563]
+       nowhere in the Lean tree (raw text of all 915 files): [46412, 46563]
+
+  233.1 [THEOREM] The distilling line as a corollary of the Axiom  (15-quantum-information.tex:133)  --  NONE (0 of 5 clauses stated); label-inclusive NONE (0 of 5)
+     tied: {'opaque_prop': 4}; table checks: none
+     - "The distilling line of the text is a corollary of the Axiom and of the qudit line"
+     - "the output of an act exists only as a configuration of maximally entangled pairs"
+     - "the act on two qudits is a projection onto a pair on the common support (the rank identity at 69 of 69 operators)"
+     - "and the pair lives on the common support alone"
+     - "the four steps are derived with no posed step"
+     numbers >= 5 printed: [69]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [69]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  233.2 [THEOREM] The read as the maximal distillation  (15-quantum-information.tex:138)  --  NONE (0 of 4 clauses stated); label-inclusive NONE (0 of 4)
+     tied: {'opaque_prop': 4}; table checks: none
+     - "The first clause of the read line is a washed clause, a corollary at the level of the known"
+     - "the basis-matched restriction of the pair projections is the family of maximally entangled projections, characterised by the certainty the known clause names (a read at every basis if and only if the reduced state is flat, the Gram identity at 120 of 120)"
+     - "the basis of that clause is a label beyond the projection, washed at the matching group"
+     - "and the read cap, the dimension plus one, is the count of mutually unbiased bases"
+     numbers >= 5 printed: [120]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [120]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  233.4 [THEOREM] The subdivision as a path of four one-act moves  (15-quantum-information.tex:148)  --  NONE (0 of 3 clauses stated); label-inclusive NONE (0 of 3)
+     tied: {'opaque_prop': 4}; table checks: none
+     - "The re-typing of the 1653 subdivisions of the census as paths of four one-act moves is forced by the text at the pair-ket unit of the first reading, every subdivision decomposing into one read and three joins"
+     - "under that unit the one-act clause is a theorem at every instance"
+     - "at the unit of the projection with its common-support byproduct the subdivision is one inverse act at 1448 instances and the path alone at 205, both readings printed and neither chosen"  [1448 + 205 = 1653]
+     numbers >= 5 printed: [205, 1448, 1653]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [205, 1448, 1653]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  234.1 [THEOREM] The enumeration of the records as the cost of a read  (15-quantum-information.tex:203)  --  PARTIAL (1 of 7 clauses stated); label-inclusive PARTIAL (2 of 7)
+     tied: {'cond_table_check': 1, 'open_record': 1, 'table_check': 1}; table checks: row_528475_DURA, row_525516_NCRE; whole-box verdict cells: ['cell.C-EQAU=YES']
+     - "At the sixteen networks of the item and at the sixty-four library networks the records of every link are counted by the closed count law at the slot polarity by order zero to three and by kind"  [the counts are entered per network and polarity; no count law is in Lean]
+     + "the orders and the kinds summing to the records at every link and network"  <- NCRE:ENTERED, NCRE:ENTERED  [at every entered network-polarity row (246); no per-link row is entered]
+     ~ "(64 of 64 and 18 of 18 defined)"  <- NCRE:RECORDED  [a count of per-row 'defined = YES' flags; 18 follows from the entered rows (13 BODY + 3 NEUTRAL + 2 STAR, own check) but is not checked]
+     - "the record sums under the lowering at the depths zero, one and two grow with the ratio of successive sums non-increasing"
+     - "the finiteness beyond the second depth open"
+     - "and the growth with the order terminates at the third order at every depth"  [order3 = 0 in all 246 entered rows (own check), not checked]
+     - "so the cost of a read at a network at an order is the record count at that order"
+     numbers >= 5 printed: [16, 18, 64]
+       in the tied checks: [64]; in entered rows only: [16, 18]; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  234.3 [THEOREM] The adiabatic theorem at the untouched records  (15-quantum-information.tex:213)  --  NONE (0 of 4 clauses stated); label-inclusive PARTIAL (1 of 4)
+     tied: {'cond_table_check': 1, 'open_record': 1, 'table_check': 1}; table checks: row_528475_DURA, row_525516_NCRE; whole-box verdict cells: ['cell.C-EQAU=YES']
+     - "At every one of the 5707 applications every class of the records at the links touching no move site lands whole in the class of the same name at the result"
+     ~ "the kind of every one of the 270584 untouched links unmoved, with no parting"  <- DURA:RECORDED  [label 'first.parting']
+     - "so the adiabatic theorem is derived at the untouched records by a sketch of five lines from the locality of the kind rule, the move action on the grade and the placement classes"
+     - "the slow-change clause fenced from the sketch"
+     numbers >= 5 printed: [5, 5707, 270584]
+       in the tied checks: []; in entered rows only: [5]; in other tied declarations only: []; not in the tied declarations: [5707, 270584]
+       nowhere in the Lean tree (raw text of all 915 files): [270584]
+
+  235.1 [THEOREM] The read transport from the pair  (15-quantum-information.tex:246)  --  NONE (0 of 3 clauses stated); label-inclusive NONE (0 of 3)
+     tied: {'opaque_prop': 2, 'table_check': 1, 'cond_table_check': 2, 'open_record': 3}; table checks: row_527645_YCLC, row_529015_YOGC, row_530067_HRCP; whole-box verdict cells: ['cell.C-EQHL=YES', 'cell.C-EQYG=YES']
+     - "The third clause of the read line is a corollary of the Axiom word maximally entangled with the first two clauses"
+     - "the far set is an orthogonal basis of the far support at every genre and orientation"
+     - "and the orientation sign is needed at no read"
+     numbers >= 5 printed: [] (ordinal words: [1, 3])
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  235.2 [THEOREM] The holonomy of the basis transport around a closed path  (15-quantum-information.tex:251)  --  NONE (0 of 4 clauses stated); label-inclusive NONE (0 of 4)
+     tied: {'opaque_prop': 2, 'table_check': 1, 'cond_table_check': 2, 'open_record': 3}; table checks: row_527645_YCLC, row_529015_YOGC, row_530067_HRCP; whole-box verdict cells: ['cell.C-EQHL=YES', 'cell.C-EQYG=YES']
+     - "At the 341 closed paths of the deciding set of the library the transport composed around the path at the identity matching is an exact unitary on the register of the starting end"
+     - "defined in the ring of the twenty-fourth root of unity"
+     - "nontrivial at the 333 odd paths and trivial at the 8 even ones"
+     - "the Berry phase by name is the eigenphases at the identity matching, a gloss"
+     numbers >= 5 printed: [8, 24, 333, 341] (ordinal words: [24])
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [8, 24, 333, 341]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  235.3 [THEOREM] The step generator as a number operator  (15-quantum-information.tex:256)  --  NONE (0 of 3 clauses stated); label-inclusive PARTIAL (2 of 3)
+     tied: {'opaque_prop': 2, 'table_check': 1, 'cond_table_check': 2, 'open_record': 3}; table checks: row_527645_YCLC, row_529015_YOGC, row_530067_HRCP; whole-box verdict cells: ['cell.C-EQHL=YES', 'cell.C-EQYG=YES']
+     ~ "At every one of the 1692 registers of the step-generator result the step generator equals the ring quotient multiplied by the cycle-index operator"  <- YOGC:RECORDED
+     ~ "a number operator with an equally spaced spectrum whose spacing is the quotient of that register"  <- YOGC:RECORDED
+     - "and whose level count is the cycle order"  [dict.levels.greatest = 5 is checked; no cycle order is entered]
+     numbers >= 5 printed: [1692]
+       in the tied checks: [1692]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  235.4 [THEOREM] The carrier phase datum at the four-cycle  (15-quantum-information.tex:261)  --  NONE (0 of 2 clauses stated); label-inclusive PARTIAL (1 of 2)
+     tied: {'opaque_prop': 2, 'table_check': 1, 'cond_table_check': 2, 'open_record': 3}; table checks: row_527645_YCLC, row_529015_YOGC, row_530067_HRCP; whole-box verdict cells: ['cell.C-EQHL=YES', 'cell.C-EQYG=YES']
+     ~ "At every carrier carrying a qutrit-qubit register the carrier phase datum equals the primitive fourth roots of unity in the holonomy spectrum of the transport-generator four-cycle of that register"  <- HRCP:RECORDED, HRCP:RECORDED  [the same table checks COMPOSED and PHASE-CONTENT readings at 0 of 2 and 0 of 3, not printed in the box]
+     - "the four-cycle present at the W, the Z and the photon words and absent at the gluon"  [the table's 'NO-CYCLE' entries are at r-HIG (the Higgs word), not at the gluon]
+     numbers >= 5 printed: []
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  D.3 [THEOREM] The hub step as the pair ket move  (back.tex:93)  --  NONE (0 of 3 clauses stated); label-inclusive PARTIAL (2 of 3)
+     tied: {'open_record': 7, 'opaque_prop': 2, 'table_check': 2, 'cond_table_check': 1}; table checks: row_528101_ATSR, row_526261_RLRO, row_532499_HPK2; whole-box verdict cells: ['cell.C-EQAR=YES', 'cell.C-EQHP=YES']
+     - "The hub step is one move on the pair state"
+     ~ "the unit of the hub, attached as one body at the site of the step by its leg and its odd leg with the far ends open, re-makes every derived hub step"  <- HPK2:RECORDED
+     ~ "the sixteen deciding webs standing at their grammar, dressing and direct sum"  <- HPK2:RECORDED, HPK2:RECORDED, HPK2:RECORDED, HPK2:RECORDED, RLRO:RECORDED  [RLRO: 16 entered webs (13 BODY, 3 BESIDE), each flagged equal = YES]
+     numbers >= 5 printed: [16]
+       in the tied checks: [16]; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  D.4 [THEOREM] The orientation law at the root  (back.tex:98)  --  NONE (0 of 3 clauses stated); label-inclusive NONE (0 of 3)
+     tied: {'open_record': 7, 'opaque_prop': 2, 'table_check': 2, 'cond_table_check': 1}; table checks: row_528101_ATSR, row_526261_RLRO, row_532499_HPK2; whole-box verdict cells: ['cell.C-EQAR=YES', 'cell.C-EQHP=YES']
+     - "The pair state of the one qutrit-qubit link is closed at both orientations"
+     - "opened by the first act at the qutrit end with the far qubit end open and at the qubit end with the far qutrit end closed"
+     - "every listed body with its conjugate at every end and every arrow reversed is a web of the same grammar and the same direct sum, the law of the root"  [RLRO's per-web flags do not name the conjugate; ATSR records readings R1-R3 at sinks (14), not the root]
+     numbers >= 5 printed: []
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  H.3 [THEOREM] The termination of seeded saturation  (back.tex:518)  --  NONE (0 of 2 clauses stated); label-inclusive NONE (0 of 2)
+     tied: {'open_record': 17, 'opaque_prop': 2, 'cond_table_check': 1, 'table_check': 1}; table checks: row_529099_LSRC, row_530196_ERMT; whole-box verdict cells: ['cell.C-EQCL=YES', 'cell.C-EQTM=YES']
+     - "Every seeded saturation terminates under the valence bound and the site bound"  [ERMT records 14 demonstration runs, 7 'STAYS-BOUNDED' and 7 'GROWS-TO-THE-DEMONSTRATION-CAP' (max sites 40 to 42); LSRC records loop counts 0]
+     - "since the moves map the webs of at most $S$ sites into themselves and such webs are finitely many"  [a finiteness argument; no Lean statement of it]
+     numbers >= 5 printed: []
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: []
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  I.7.1 [THEOREM] The open system as the wash at a sub-web  (instruments.tex:307)  --  NONE (0 of 5 clauses stated); label-inclusive NONE (0 of 5)
+     tied: {'table_check': 1}; table checks: row_536583_PSYO; whole-box verdict cells: ['cell.C-EQQB=YES']
+     - "Decoherence is the wash at a sub-web"
+     - "at every tabulated sub-web carrying a shared record, 1753 of the 1755 sub-webs in 85 equivalence classes, the wash of every shared record at the complement, the act of the no-signalling result summed over its outcomes with the complement copy discarded and read as a channel on the state of the sub-web, is a twirl of the shared end"
+     - "a completely positive, unital, trace-preserving and idempotent map at every combination of the site dimension and the complement support"
+     - "the off-diagonal cells of the reduced state in the standing cap basis reach zero at the first record at every equivalence class, exact at a finite count and never asymptotic"
+     - "the record basis of the act is the pointer basis the wash leaves fixed at every dimension"
+     numbers >= 5 printed: [85, 1753, 1755] (ordinal words: [1])
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [85, 1753, 1755]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  I.16.2 [THEOREM]   (instruments.tex:538)  --  NONE (0 of 1 clauses stated); label-inclusive NONE (0 of 1)
+     tied: {'opaque_prop': 1}; table checks: none
+     - "The seventy-five standard-model entries of the textbook corpus stand at the grades listed in the table that follows."
+     numbers >= 5 printed: [75]
+       in the tied checks: []; in entered rows only: []; in other tied declarations only: []; not in the tied declarations: [75]
+       nowhere in the Lean tree (raw text of all 915 files): []
+
+  verdicts (48 rows): {'NONE': 46, 'PARTIAL': 2}; label-inclusive: {'PARTIAL': 22, 'MATCH': 1, 'NONE': 25}
+    table rows (37): {'NONE': 35, 'PARTIAL': 2}; label-inclusive {'PARTIAL': 22, 'MATCH': 1, 'NONE': 14}
+    opaque rows (11): {'NONE': 11}; label-inclusive {'NONE': 11}
+  clauses 248: stated 5, recorded only 44, none 199
+  rows with a whole-box verdict cell (cell.C-EQ.. in a checked pair): 33
+  printed numbers >= 5 (row, number): 135; in tied checks 23, entered rows only 11, other tied only 1, not in tied 100; nowhere in the tree 15
+  REL-form checks graded RECORDED (an entered per-instance value that is the clause's conclusion): [('28.1', 4, 'row_526019_WAMR', 'rows.all (fun r => r.wash_moved_acts == 0) = true'), ('217.1', 4, 'row_525335_SLBC', 'rows.all (fun r => decide (0 <= r.R_diff_site)) = true')]
+  sensitivity, counting them as ENTERED (round 6 counted the entered zero transfer of 9.4): verdicts {'NONE': 45, 'PARTIAL': 3}; rows that change: ['28.1']
+  number extraction, round 6's numbers_in -> this round's parser (numbers >= 5), boxes where they differ:
+    13.1   [8, 12, 20] -> [8, 12, 24]
+    28.1   [229] -> [228]
+    64.1   [6, 9, 172, 3990144] -> [6, 9, 32, 172, 384, 6144]
+    233.4  [5, 205, 1448, 1653] -> [205, 1448, 1653]
+    235.2  [8, 20, 333, 341] -> [8, 24, 333, 341]
+    2.3    [5] -> []
+    2.6    [32] -> [9, 10, 32]
+  quote checks: 248 clauses; failures: []
+
+[5] Printed numbers against the entered rows (our computation from the rows' text; the source's checks do not state these)
+  28.1   WAMR                 sum of acts over the 14 entered bodies: 228  = printed
+  217.1  WAMR (tied to 28)    sum of links: 114  = printed
+  217.1  WAMR (tied to 28)    sum of c_open: 78  = printed
+  217.1  WAMR (tied to 28)    sum of washed: 150  = printed
+  217.1  SLBC                 entered reads (rows.length, checked): 228  = printed
+  217.1  SLBC                 distinct (body, link): 114  = printed
+  217.1  SLBC                 reads with c_open = OPEN: 78  = printed
+  217.1  SLBC                 reads with c_open = WASHED: 150  = printed
+  217.1  SLBC                 distinct bodies (13 + U0:NEUTRAL:U): 14  = printed
+  217.1  SLBC                 reads with W unchanged (W_diff_site = W_diff_free = 0): 228
+  217.1  SLBC                 reads with R_diff_site > 0: 54
+  217.1  SLBC                 reads with R_target_site - W_source_site = R_diff_site: 228
+  234.1  NCRE                 KIT SLOT rows defined YES (checked): 64  = printed
+  234.1  NCRE                 SLOT rows outside KIT (BODY 13, NEUTRAL 3, STAR 2): 18  = printed
+  234.1  NCRE                 SLOT rows in BODY and NEUTRAL: 16  = printed
+  234.1  NCRE                 rows with order3 = 0: 246
+  145.1  CASM                 (chain, separation) pairs in the detail keys: QUTRIT.s0-s1.N2 QUTRIT.s0-s1.N3 QUTRIT.s0-s1.N4 QUTRIT.s0-s1.N10 QUTRIT.s0-s1.N11 QUTRIT.s0-s1.N12: 6  != printed 44
+  225.1  ANDB                 rings in the per-ring keys: 18  != printed 20
+  226.1  PCHS                 rings in the per-ring keys: 28  = printed
+  220.3  DST2                 saturations in the keys: CGB2 KSAT.W KSAT.X SSPW.E.ALL SSPW.E.PM SSPW.N.ALL SSPW.N.PM SSPW.P.ALL SSPW.P.PM SSPW.R.ALL SSPW.S.ALL SSPW.S.PM: 12  = printed
+  D.3    RLRO                 entered webs (BODY 13, BESIDE 3; checked): 16  = printed
+  223.2  ENT2                 value entered and checked under onsg.asym.pairs: 24  != printed 43
+  H.3    ERMT                 demonstration results (unchecked meaning): {'STAYS-BOUNDED': 7, 'GROWS-TO-THE-DEMONSTRATION-CAP': 7}
+  3.1    HTOR (tied to 57.1)  OPEN-READ-OF-RECORD rows (cap read, fixed set, fixed, unfixed): [('Z', 'Z', 1, 2), ('X', 'NONE', 0, 3), ('XZ', 'NONE', 0, 3), ('XZ2', 'NONE', 0, 3)]
+  last entered key of ANDB: web.QUTRIT.s0-s1.RING.4.tiled.spectrum.eq; of CASM detail: cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N4.ratios
+
+[6] The 16 restated/kernel rows of round 6: their table-check declarations (round 6 graded the restated/kernel ones only)
+  2.1    round 6 PARTIAL  table checks ['row_525542_TTCF', 'row_532049_DIM1'] kinds {'LEN': 2, 'CAT': 2}; label-inclusive PARTIAL (2 of 3)
+  2.3    round 6 NONE     table checks ['row_525542_TTCF', 'row_532049_DIM1'] kinds {'LEN': 2, 'CAT': 2}; label-inclusive NONE (0 of 3)
+  2.6    round 6 NONE     table checks ['row_525542_TTCF', 'row_532049_DIM1'] kinds {'LEN': 2, 'CAT': 2}; label-inclusive PARTIAL (1 of 2); recorded: clause 1 <- TTCF
+  2.9    round 6 NONE     table checks ['row_525542_TTCF', 'row_532049_DIM1'] kinds {'LEN': 2, 'CAT': 2}; label-inclusive PARTIAL (1 of 2); recorded: clause 2 <- DIM1
+  2.10   round 6 NONE     table checks ['row_525542_TTCF', 'row_532049_DIM1'] kinds {'LEN': 2, 'CAT': 2}; label-inclusive NONE (0 of 3)
+  9.2    round 6 PARTIAL  table checks ['row_528882_LTGO'] kinds {'LEN': 1, 'CAT': 1}; label-inclusive PARTIAL (4 of 5)
+  9.3    round 6 PARTIAL  table checks ['row_528882_LTGO'] kinds {'LEN': 1, 'CAT': 1}; label-inclusive PARTIAL (2 of 3); recorded: clause 3 <- LTGO
+  9.4    round 6 MATCH    table checks ['row_528882_LTGO'] kinds {'LEN': 1, 'CAT': 1}; label-inclusive MATCH (3 of 3)
+  9.5    round 6 NONE     table checks ['row_528882_LTGO'] kinds {'LEN': 1, 'CAT': 1}; label-inclusive NONE (0 of 2)
+  9.6    round 6 NONE     table checks ['row_528882_LTGO'] kinds {'LEN': 1, 'CAT': 1}; label-inclusive NONE (0 of 2)
+  18.2   round 6 PARTIAL  table checks ['row_525646_RTSE', 'row_531081_GPOE'] kinds {'LEN': 2, 'CAT': 4}; label-inclusive PARTIAL (3 of 4); recorded: clause 4 <- GPOE
+  56.1   round 6 NONE     table checks [] kinds {}; label-inclusive NONE (0 of 5)
+  74.1   round 6 NONE     table checks ['row_526972_NRGE', 'row_527909_NVCI'] kinds {'LEN': 2, 'KV': 11}; label-inclusive PARTIAL (2 of 3); recorded: clause 1 <- NVCI; clause 3 <- NVCI
+  74.4   round 6 NONE     table checks ['row_526972_NRGE', 'row_527909_NVCI'] kinds {'LEN': 2, 'KV': 11}; label-inclusive PARTIAL (1 of 4); recorded: clause 1 <- NRGE
+  78.3   round 6 NONE     table checks ['row_527777_AJBP'] kinds {'LEN': 1, 'KV': 6}; label-inclusive PARTIAL (2 of 4); recorded: clause 3 <- AJBP; clause 4 <- AJBP
+  196.2  round 6 PARTIAL  table checks ['row_526564_TLWN'] kinds {'LEN': 1, 'KV': 5}; label-inclusive PARTIAL (2 of 4)
+  conjunct kinds over these distinct declarations: {'CAT': 7, 'LEN': 9, 'KV': 22}
+  distinct table declarations of the 16 rows: 9; with a REL conjunct: []
+  -> no check of these can be a counterpart under the rule: the round-6 verdicts hold over all tied declarations
+  recomputed round-6 verdicts against lean_resolve.tsv: 16 equal, differing []
+  label-inclusive for the 16: {'PARTIAL': 10, 'NONE': 5, 'MATCH': 1} (round 6: {'PARTIAL': 5, 'NONE': 10, 'MATCH': 1})
+
+[7] Boxes whose \label names a data module (box:...-D<address>-<code>-...): is that module's declaration tied?
+  3.1    label D535360-ndfe: module present; declarations citing its checks: ['Plan.P01.Ch1.row_535360_NDFE']; tied to the row: True
+  11.1   label D535412-olus: module present; declarations citing its checks: ['Plan.P01.Ch2.row_535412_OLUS']; tied to the row: True
+  13.1   label D535680-rphg: module present; declarations citing its checks: ['Plan.P01.Ch2.row_535680_RPHG']; tied to the row: True
+  181.5  label D538212-qarm: module present; declarations citing its checks: ['Frame.P07.Ch7.row_538212_QARM']; tied to the row: False
+         its checks: ['rows.length = 1', '(rows.filter (fun r => r.key == "cell.C-EQQA" && r.value == "ARMS-AND-SINKS-BY-THE-RULE")).length = 1']
+  186.1  label D536716-ssfp: module present; declarations citing its checks: ['Plan.P07.Ch1.row_536716_SSFP']; tied to the row: True
+  200.6  label D538733-hcos: module present; declarations citing its checks: ['Frame.P06.Ch10.row_538733_HCOS']; tied to the row: False
+         its checks: ['rows.length = 1', '(rows.filter (fun r => r.key == "cell.C-EQHC" && r.value == "OFFICES-AND-RATIOS-BY-THE-RULE")).length = 1']
+  own box of D535360_NDFE: 3.1 by label (box label 'box:I-1-D535360-ndfe-t1:1'); the module is tied to ['3.1']
+  own box of D535412_OLUS: 11.1 by label (box label 'box:I-2-D535412-olus-t1:1'); the module is tied to ['11.1']
+  own box of D535680_RPHG: 13.1 by label (box label 'box:I-2-D535680-rphg-t1:1'); the module is tied to ['13.1']
+  own box of D536716_SSFP: 186.1 by label (box label 'box:VIII-1-D536716-ssfp-t1:1'); the module is tied to ['186.1']
+  own box of D536583_PSYO: I.7.1 by label (section label 'mod:II-10-D536583-psyo-t1'); the module is tied to ['I.7.1']
+  own box of D525257_HTOR: 3.1 by content (the OPEN-READ-OF-RECORD rows enter 3.1's sentence on the reads Z, X, XZ, XZ2); the module is tied to ['57.1']
+  own box of D532499_HPK2: D.3 by content (16 webs equal at grammar, dressing and direct sum; the code letters H, P, K occur in order in D.3's title); the module is tied to ['D.3', 'D.4']
+
+[8] #print axioms (round 6's file against Build B): the 131 names of the 48 rows
+    alias_prop         none                                       3
+    cond_table_check   none                                       13
+    opaque_prop        none                                       38
+    open_record        none                                       53
+    table_check        [Classical.choice, Quot.sound, propext]    3
+    table_check        none                                       21
+  sorryAx among them: 0
+
+[9] Own checks (lean_audit/TableChecks.lean): 7 theorems reported; error lines: 0
+    Round7.wamr_sums             axioms []
+    Round7.slbc_counts           axioms []
+    Round7.slbc_W_constant       axioms ['Classical.choice', 'Quot.sound', 'propext']
+    Round7.slbc_R                axioms ['Classical.choice', 'Quot.sound', 'propext']
+    Round7.ncre_rows             axioms ['Classical.choice', 'Quot.sound', 'propext']
+    Round7.htor_open_reads       axioms ['Classical.choice', 'Quot.sound', 'propext']
+    Round7.rlro_webs             axioms []
+
+[10] The 64 Lean-tied THEOREMs by content (verdicts: round 6 for the 16, this round for the 48)
+  opaque           states no clause (opaque/records only)               11
+  restated/kernel  states every clause                                  1
+  restated/kernel  states no clause (computation of another box)        10
+  restated/kernel  states some clause                                   5
+  table            states no clause (table checks record labels)        21
+  table            states no clause (table checks unrelated)            14
+  table            states some clause                                   2
+  all 64: {'PARTIAL': 7, 'NONE': 56, 'MATCH': 1}; label-inclusive: {'PARTIAL': 32, 'NONE': 30, 'MATCH': 2}
+  rows stating at least one clause: 8 of 64 (round 6: 6 of the 16, the 48 not resolved)
+
+  quote and anchor failures (all sections): []

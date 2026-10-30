@@ -458,3 +458,73 @@ quotes and all 52 box quotes are checked verbatim.
 - G6 in `gaps/chain-theory-compendium.md` gets a dated note.
 - Item 6 is done as far as core Lean 4.35.0 allows. Still open: a build on 4.32.1, and the content of the 37 table-check
   rows.
+
+## Round 7 — the table-check and opaque-only rows
+
+Note: `formalization/chain-theory/compendium/10-lean-table-rows.md`. Code, in `computation/chain-theory/compendium/`:
+`lean_tables.py` and `lean_tables_data.py`, and `lean_audit/TableChecks.lean`. `lean_classify.py`, `lean_resolve.py`,
+`lean_resolve_data.py` and `boxes.py` are imported unchanged. Outputs: `outputs/lean_tables.{txt,tsv}`,
+`outputs/lean_tables_clauses.tsv` and `outputs/lean_table_checks.txt`. Metrics:
+`metrics/chain-theory/compendium/lean-table-rows.yaml`. The task is the rest of item 6: the 48 rows that round 6 left.
+All 248 box quotes and every check anchor are checked verbatim.
+
+**F27. What the 37 table checks and the 94 other names prove** (c).
+- The 48 rows cite 131 distinct names: 37 table checks (13 under an opaque hypothesis), 38 opaque Props, 53
+  open-result records and 3 aliases.
+- **Table checks.** Each restates a data module's `checks`. All 37 modules enter their rows as literal lists, and all
+  618 check lemmas are `by decide`.
+  - By form: 560 say that a key/value string pair occurs, 13 count rows with string fields equal to literals, and 37
+    give the row count.
+  - Only 8 test `Int` fields, in three modules: WAMR (28.x), SLBC (217.x) and NCRE (234.x).
+- **Hypotheses.** The 13 hypotheses are opaque and never used (`fun _ =>`). No other theorem mentions them.
+- **The other 94 names** (opaque Props, records whose `statement` is an opaque constant, and aliases) are not
+  theorems, and no library theorem mentions them. **For the 11 opaque-only rows the Lean asserts nothing.** 170.1 and
+  229.1 say "the deciding table is re-derived in Lean", and their tied declarations are records.
+
+**F28. Of the 48 rows, 2 state a clause of their box** (c).
+- Round 6's rule is used. A check that an entered string records the clause's verdict, count or letter is not a
+  counterpart; it gives a label-inclusive bound.
+- **PARTIAL: 2.**
+  - 217.1, 4 of 8 clauses: SLBC checks `W_target - W_source = W_diff >= 0` at the 228 entered reads.
+  - 234.1, 1 of 7: NCRE checks that orders and kinds sum to the records at the 246 entered rows.
+- **NONE: 46.**
+- **Clauses:** 248 in all; 5 stated, 44 recorded only, 199 with nothing.
+- **Label-inclusive:** MATCH 1 (28.2: `"5 of 5"`, `"10 of 10"`, `BUILT`), PARTIAL 22, NONE 25.
+- **Sensitivity.** Counting WAMR's `wash_moved_acts == 0` as a counterpart, as round 6 counted the entered zero
+  transfer, makes 28.1 PARTIAL. Nothing else changes.
+- **Notable.**
+  - 223.2 says the asymmetric Onsager pairs "are exactly the pairs at a non-zero production difference at every one of
+    the 43". Its table enters and checks `onsg.asym.pairs = "24"`. The key is not defined, so the two may count
+    different things.
+  - 145.1's table stops at 60 entries and covers one chain at six separations, against "all forty-four chains". 225.1's
+    table covers 18 of the 20 networks.
+  - The box labels of 181.5 and 200.6 name data modules (QARM, HCOS) that exist; the index does not tie them.
+  - 3.1's sentence on the reads Z, X, XZ, XZ² is entered in a table tied to 57.1. 3.1 itself says its "Lean proof
+    [is] still to be written".
+  - In 217.1's table the checked W count never changes (0 at all 228 reads). Its printed 114, 78, 150 and 14 follow
+    from the entered rows but are not checked (`Round7.slbc_*`). 28.1's 228 is likewise the unchecked sum of WAMR's
+    entered acts.
+  - Printed numbers of 5 or more: 135 (row, number) pairs, 23 in a tied `checks`. 15 occur nowhere in the tree, among
+    them 101761, 17689, 270584, 322516 and 46563.
+
+**F29. The 64-row table by content** (c).
+- Round 6's 16 rows also cite 9 table checks. None has an `Int` relation, so they add no counterpart and round 6's
+  verdicts hold over all tied declarations. Recomputed, they agree with round 6 at 16 of 16.
+- **All 64:** MATCH 1, PARTIAL 7, NONE 56. **8 rows** have a tied declaration that states part or all of their box:
+  6 by computation (round 6) and 2 by relations over entered tables.
+- **NONE: 56.**
+  - 10: the computation belongs to another box.
+  - 35: table checks. In 21 of these the labels record some clause; in 14 they record nothing of the box.
+  - 11: opaque/records only.
+- **Label-inclusive:** 2 / 32 / 30.
+
+**Changes to rounds 1–6.**
+- The tiers 16 / 37 / 11 by kind stand.
+- 09's open table tier is resolved. "37 (+9 = 46)" becomes 2 PARTIAL and 44 NONE, and the opaque tier becomes 12 NONE.
+  The README's "coverage by content: 6 / 46 / 12" becomes 8 rows stating a clause and 56 stating none.
+- Two earlier statements are wrong in detail (`reports/CORRECTIONS.md`, 2026-10-30, round 7):
+  - Round 6's printed-number list for 2.3 (`[5]`, a parser artefact; no verdict depends on it).
+  - CT-C003's "37 at best string-label table checks". 7 of the 37 rows cite relation checks over entered `Int` fields.
+- G6 gets a dated note. Item 6 is done as far as the tied declarations go. Still open:
+  - a build on 4.32.1;
+  - Lean statements about the mathematical objects rather than entered tables.

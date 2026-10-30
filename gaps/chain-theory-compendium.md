@@ -140,3 +140,26 @@ consistent with all observed fields but is not experimentally established (CT-C0
     - a build on the pinned 4.32.1 (the download was refused in this session);
     - Lean statements whose types mention the mathematical objects of the 10 unmatched rows and of the 37 table-check
       rows.
+
+*2026-10-30 note on G6, from round 7 (`formalization/chain-theory/compendium/10-lean-table-rows.md`, `computation/chain-theory/compendium/lean_tables.py`):*
+
+- **G6, the table-check and opaque-only rows.**
+  - The 37 table-check rows cite 37 data modules. All of them enter their rows as literal lists, and all 618 check
+    lemmas are `decide`. 560 conjuncts confirm a key/value string pair. Only 8 test `Int` fields, in WAMR, SLBC and
+    NCRE. The 13 conditional checks have opaque hypotheses that are never used.
+  - Clause by clause, under round 6's rule, 2 rows state part of their box:
+    - 217.1: the W count is non-decreasing at 228 entered reads. In the entered rows it never changes.
+    - 234.1: the orders and kinds sum to the records at 246 entered rows.
+  - The other 35 table rows state no clause. In 21 of them an entered label records some clause.
+  - The 11 opaque-only rows cite 94 names that are not theorems and that no library theorem mentions, so their Lean
+    asserts nothing. 170.1 and 229.1 say their deciding table is "re-derived in Lean".
+  - Over all 64 rows: MATCH 1, PARTIAL 7, NONE 56.
+  - Further findings:
+    - 223.2 prints "every one of the 43" for its asymmetric Onsager pairs; its table enters `onsg.asym.pairs = "24"`.
+    - 145.1's and 225.1's tables stop at 60 entries, short of the 44 chains and 20 networks printed.
+    - The own modules of 181.5 and 200.6 exist but are not tied.
+    - 15 printed numbers of 5 or more occur nowhere in the tree.
+  - Still open:
+    - a build on the pinned 4.32.1;
+    - Lean statements whose types mention the mathematical objects (not entered tables) of the 56 rows that state no
+      clause, and of the unstated clauses of the other 8.

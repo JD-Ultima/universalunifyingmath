@@ -1,0 +1,65 @@
+number	title	round1_tier	verdict	verdict_label_inclusive	clauses	clauses_stated	clauses_recorded_only	content	round	numbers_ge5	numbers_in_tied	numbers_nowhere_in_tree	lean_names	table_checks	conditional	opaque_props	aliases	open_records	check_kinds	axioms_union_4.35.0
+2.1	The fourth definition from the axiom	restated/kernel	PARTIAL	PARTIAL	3	2	0	states some clause	6				11	2	1	5	0	3	LEN:2 CAT:2	Classical.choice,Quot.sound,propext
+2.3	One act from the derived act	restated/kernel	NONE	NONE	3	0	0	states no clause (computation of another box)	6				11	2	1	5	0	3	LEN:2 CAT:2	Classical.choice,Quot.sound,propext
+2.6	The restated text at both faces at every cell	restated/kernel	NONE	PARTIAL	2	0	1	states no clause (computation of another box)	6				11	2	1	5	0	3	LEN:2 CAT:2	Classical.choice,Quot.sound,propext
+2.9	The one-dimensional end excluded at the axiom	restated/kernel	NONE	PARTIAL	2	0	1	states no clause (computation of another box)	6				11	2	1	5	0	3	LEN:2 CAT:2	Classical.choice,Quot.sound,propext
+2.10	The single read, a corollary of the definitions	restated/kernel	NONE	NONE	3	0	0	states no clause (computation of another box)	6				11	2	1	5	0	3	LEN:2 CAT:2	Classical.choice,Quot.sound,propext
+3.1	The far end fixed direction by direction as the read	table	NONE	PARTIAL	7	0	1	states no clause (table checks record labels)	7	11			1	1	0	0	0	0	LEN:1 KV:7	
+9.2	Abelian genre uniqueness	restated/kernel	PARTIAL	PARTIAL	5	4	0	states some clause	6				11	1	1	7	0	2	LEN:1 CAT:1	Classical.choice,Quot.sound,propext
+9.3	Coupling genre	restated/kernel	PARTIAL	PARTIAL	3	1	1	states some clause	6				11	1	1	7	0	2	LEN:1 CAT:1	Classical.choice,Quot.sound,propext
+9.4	Link lemmas	restated/kernel	MATCH	MATCH	3	3	0	states every clause	6				11	1	1	7	0	2	LEN:1 CAT:1	Classical.choice,Quot.sound,propext
+9.5	Ordering theorem	restated/kernel	NONE	NONE	2	0	0	states no clause (computation of another box)	6				11	1	1	7	0	2	LEN:1 CAT:1	Classical.choice,Quot.sound,propext
+9.6	The one link tables at every genre	restated/kernel	NONE	NONE	2	0	0	states no clause (computation of another box)	6				11	1	1	7	0	2	LEN:1 CAT:1	Classical.choice,Quot.sound,propext
+11.1	The readout unit as the scheme at the one link	table	NONE	PARTIAL	5	0	3	states no clause (table checks record labels)	7				1	1	0	0	0	0	LEN:1 KV:15	
+13.1	The record phase group at every genre	table	NONE	PARTIAL	6	0	1	states no clause (table checks record labels)	7	8,12,24			1	1	0	0	0	0	LEN:1 KV:4	
+18.2	The gain lemma at the spectrum of records	restated/kernel	PARTIAL	PARTIAL	4	2	1	states some clause	6				11	2	1	6	0	2	LEN:2 CAT:4	Classical.choice,Quot.sound,propext
+28.1	Measurement as the wash at one act	table	NONE	PARTIAL	5	0	1	states no clause (table checks record labels)	7	228			6	2	0	0	0	4	LEN:2 KV:6 CAT:2 REL:3	Classical.choice,Quot.sound,propext
+28.2	The star-pair and one-link apparatus webs built	table	NONE	MATCH	1	0	1	states no clause (table checks record labels)	7				6	2	0	0	0	4	LEN:2 KV:6 CAT:2 REL:3	Classical.choice,Quot.sound,propext
+28.5	The classical limit as the zero-density register	table	NONE	NONE	5	0	0	states no clause (table checks unrelated)	7				6	2	0	0	0	4	LEN:2 KV:6 CAT:2 REL:3	Classical.choice,Quot.sound,propext
+56.1	The order register at the three directions	restated/kernel	NONE	NONE	5	0	0	states no clause (computation of another box)	6				6	0	0	5	0	0		Classical.choice,Quot.sound,propext
+57.1	Spin at the differing body	table	NONE	NONE	9	0	0	states no clause (table checks unrelated)	7	6	6		8	2	0	5	0	1	LEN:2 KV:7 CAT:3	
+62.1	The group moves preserve the order parameter and the transfers raise it	opaque	NONE	NONE	5	0	0	states no clause (opaque/records only)	7				2	0	0	1	0	1		
+64.1	Gauge invariance as the known clause	opaque	NONE	NONE	6	0	0	states no clause (opaque/records only)	7	6,9,32,172,384,6144			2	0	0	2	0	0		
+64.2	The gauge group as the face group of the tether	opaque	NONE	NONE	4	0	0	states no clause (opaque/records only)	7	6,11,12,16			2	0	0	2	0	0		
+65.1	The gauge group as a corollary of one construction	table	NONE	NONE	8	0	0	states no clause (table checks unrelated)	7	8	8		2	2	1	0	0	0	LEN:2 KV:16	
+65.2	The hub pair as one qudit of dimension four	table	NONE	PARTIAL	4	0	3	states no clause (table checks record labels)	7	15			2	2	1	0	0	0	LEN:2 KV:16	
+73.1	The sign from the side at the hub reached through its qutrit	opaque	NONE	NONE	5	0	0	states no clause (opaque/records only)	7	5			12	0	0	8	0	4		
+74.1	The conserved functionals of the full move set	restated/kernel	NONE	PARTIAL	3	0	2	states no clause (computation of another box)	6				19	2	0	8	0	8	LEN:2 KV:11	Classical.choice,Quot.sound,propext
+74.4	The junction count at the moves, restated	restated/kernel	NONE	PARTIAL	4	0	1	states no clause (computation of another box)	6				19	2	0	8	0	8	LEN:2 KV:11	Classical.choice,Quot.sound,propext
+78.3	The anomaly read at the body part	restated/kernel	NONE	PARTIAL	4	0	2	states no clause (computation of another box)	6				3	1	0	0	0	0	LEN:1 KV:6	Classical.choice,Quot.sound,propext
+145.1	The Casimir effect as the boundary count between two sinks	table	NONE	PARTIAL	4	0	2	states no clause (table checks record labels)	7	44			1	1	0	0	0	0	LEN:1 KV:60	
+170.1	Beta decay as the release at the plus-two arm	opaque	NONE	NONE	8	0	0	states no clause (opaque/records only)	7	6,1296,2916,17689		17689	2	0	0	0	0	2		
+181.5	The quark offices as the star arm reads	table	NONE	NONE	6	0	0	states no clause (table checks unrelated)	7	6,319,101761	6	101761	8	1	0	6	0	1	LEN:1 KV:7	
+186.1	The first power as the sum over the segments of the read	table	NONE	NONE	4	0	0	states no clause (table checks unrelated)	7	5			1	1	0	0	0	0	LEN:1 KV:1	
+196.2	The lepton joined face at the open attach site	restated/kernel	PARTIAL	PARTIAL	4	2	0	states some clause	6				3	1	0	0	0	1	LEN:1 KV:5	Classical.choice,Quot.sound,propext
+200.6	The Higgs and carrier offices at their sinks	table	NONE	NONE	6	0	0	states no clause (table checks unrelated)	7	6,52			9	1	1	2	3	3	LEN:1 KV:20	
+203.5	Beta decay as the release at the plus-two arm	table	NONE	NONE	2	0	0	states no clause (table checks unrelated)	7				4	1	0	1	0	2	LEN:1 KV:5	
+217.1	The second law at the counting face	table	PARTIAL	PARTIAL	8	4	0	states some clause	7	13,14,78,114,150,228	13,14,228		3	1	0	2	0	0	LEN:1 CAT:1 REL:3	Classical.choice,Quot.sound,propext
+217.2	The boundary count at the counting face	table	NONE	NONE	3	0	0	states no clause (table checks unrelated)	7	60			3	1	0	2	0	0	LEN:1 CAT:1 REL:3	Classical.choice,Quot.sound,propext
+219.1	The ensembles as cap readings at the joined web	table	NONE	PARTIAL	7	0	2	states no clause (table checks record labels)	7	5,11,13,16	13,16		1	1	0	0	0	0	LEN:1 KV:6	
+220.2	The order parameter at the forward saturation	table	NONE	PARTIAL	8	0	4	states no clause (table checks record labels)	7	5,12,2556,9377,182940,185496	5,12	185496	3	2	2	0	0	1	LEN:2 KV:94	
+220.3	The distillation theorem at the forward saturation	table	NONE	PARTIAL	6	0	2	states no clause (table checks record labels)	7	12,138129,322516,570349	12	138129,322516,570349	3	2	2	0	0	1	LEN:2 KV:94	
+221.1	The phase transition as the sink-class change	table	NONE	PARTIAL	9	0	3	states no clause (table checks record labels)	7	11,14,21,64,107,1203,5184,9270,9377,44341,93312,93481,101973,182940,218340	11,9377	9270,44341,93312,93481,101973,218340	1	1	1	0	0	0	LEN:1 KV:10	
+223.2	The thermodynamic remainder at the forward saturation	table	NONE	PARTIAL	7	0	5	states no clause (table checks record labels)	7	6,43,179,2989,182940	182940		2	1	1	0	0	1	LEN:1 KV:20	
+224.1	The chain of copies and the periodic readout	table	NONE	PARTIAL	5	0	2	states no clause (table checks record labels)	7	5	5		4	3	1	0	0	1	LEN:3 KV:25	
+224.2	The periodic network admitted by the grammar	table	NONE	NONE	5	0	0	states no clause (table checks unrelated)	7	17,29,54	17		4	3	1	0	0	1	LEN:3 KV:25	
+224.3	The periodic sink at a named cell count	table	NONE	PARTIAL	5	0	1	states no clause (table checks record labels)	7	5,6,11,16,40,82,91	5,11		4	3	1	0	0	1	LEN:3 KV:25	
+225.1	The band at the periodic web	table	NONE	PARTIAL	9	0	3	states no clause (table checks record labels)	7	5,6,10,11,20	5,6		1	1	0	0	0	0	LEN:1 KV:60	
+226.1	The chain of pairs at the periodic web	table	NONE	PARTIAL	7	0	1	states no clause (table checks record labels)	7	5,8,12,16,28	5,8,28		3	1	1	0	0	2	LEN:1 KV:33	
+229.1	The probe read at the four bodies joined to the measuring body	opaque	NONE	NONE	9	0	0	states no clause (opaque/records only)	7	6,11,16,18,33,51,67,107,147			1	0	0	0	0	1		
+230.1	The closure as the computation	table	NONE	PARTIAL	7	0	2	states no clause (table checks record labels)	7	6,9,12,13,14,15,18,21,36	9,13,14,15,21,36		1	1	0	0	0	0	LEN:1 KV:5	
+232.2	The Hadamard inside the finite gate group at the pair register	opaque	NONE	NONE	4	0	0	states no clause (opaque/records only)	7	28,2304,46412,46563		46412,46563	1	0	0	0	0	1		
+233.1	The distilling line as a corollary of the Axiom	opaque	NONE	NONE	5	0	0	states no clause (opaque/records only)	7	69			4	0	0	4	0	0		
+233.2	The read as the maximal distillation	opaque	NONE	NONE	4	0	0	states no clause (opaque/records only)	7	120			4	0	0	4	0	0		
+233.4	The subdivision as a path of four one-act moves	opaque	NONE	NONE	3	0	0	states no clause (opaque/records only)	7	205,1448,1653			4	0	0	4	0	0		
+234.1	The enumeration of the records as the cost of a read	table	PARTIAL	PARTIAL	7	1	1	states some clause	7	16,18,64	16,18,64		3	2	1	0	0	1	LEN:2 KV:4 CAT:2 REL:2	Classical.choice,Quot.sound,propext
+234.3	The adiabatic theorem at the untouched records	table	NONE	PARTIAL	4	0	1	states no clause (table checks record labels)	7	5,5707,270584	5	270584	3	2	1	0	0	1	LEN:2 KV:4 CAT:2 REL:2	Classical.choice,Quot.sound,propext
+235.1	The read transport from the pair	table	NONE	NONE	3	0	0	states no clause (table checks unrelated)	7				8	3	2	2	0	3	LEN:3 KV:69	
+235.2	The holonomy of the basis transport around a closed path	table	NONE	NONE	4	0	0	states no clause (table checks unrelated)	7	8,24,333,341			8	3	2	2	0	3	LEN:3 KV:69	
+235.3	The step generator as a number operator	table	NONE	PARTIAL	3	0	2	states no clause (table checks record labels)	7	1692	1692		8	3	2	2	0	3	LEN:3 KV:69	
+235.4	The carrier phase datum at the four-cycle	table	NONE	PARTIAL	2	0	1	states no clause (table checks record labels)	7				8	3	2	2	0	3	LEN:3 KV:69	
+D.3	The hub step as the pair ket move	table	NONE	PARTIAL	3	0	2	states no clause (table checks record labels)	7	16	16		12	3	1	2	0	7	LEN:3 KV:16 CAT:5	
+D.4	The orientation law at the root	table	NONE	NONE	3	0	0	states no clause (table checks unrelated)	7				12	3	1	2	0	7	LEN:3 KV:16 CAT:5	
+H.3	The termination of seeded saturation	table	NONE	NONE	2	0	0	states no clause (table checks unrelated)	7				21	2	1	2	0	17	LEN:2 KV:66	
+I.7.1	The open system as the wash at a sub-web	table	NONE	NONE	5	0	0	states no clause (table checks unrelated)	7	85,1753,1755			1	1	0	0	0	0	LEN:1 KV:4	
+I.16.2		opaque	NONE	NONE	1	0	0	states no clause (opaque/records only)	7	75			1	0	0	1	0	0		

@@ -98,3 +98,17 @@ Entries are appended, never edited. Format: date — file — what changed — w
   6. Wording, no mathematical change: R3-CT-3 ($S\Pi_X$ credits 9 of the 12 qubit-only records; the third local miss also changes the 3 E′-odd qq records), R3-CT-4 (the 30 products: 22 covariant letters and 8 non-covariant), R3-CT-5 (the transported exchange is the one crediting the qubit–qubit records; "exchange of reads" names it by role), R3-CT-6 (the transport negative covers $T^\dagger DT$ and Rayleigh quotients, not sums; J2 gives 140.702, J3 139.030), R3-CT-7 (Lemma 3 uses basis-free quantities only), R3-CT-11 (09 §7 and the Round-6 report now cite the round-6 CORRECTIONS entry), R3-CT-13 (the 4.32.1 pin), R3-CT-14 (§4 items 2 and 4; the compendium ledger's Open entry).
 
   No script or output in `computation/chain-theory/alpha/` changed. The message of commit `dd0eb0c` keeps the old wording of R3-CT-5 and R3-CT-6(b); the files now carry the corrected statements.
+- 2026-10-30 — `computation/chain-theory/compendium/outputs/lean_resolve.txt` [4] (row 2.3) and `claims/chain-theory-compendium.md` CT-C003, via round 7 (`formalization/chain-theory/compendium/10-lean-table-rows.md` §6; `computation/chain-theory/compendium/lean_tables.py`, output sections [2] and [4]).
+  1. **Round 6's printed-number list for 2.3.** Round 6's output lists "numbers >= 5 printed in the box: [5]" for 2.3, but the box prints no 5. `lean_resolve.numbers_in` reads "four one-pair acts" as 4 + 1.
+     - The same parser makes three more errors:
+       - it adds a unit word to the unit before it ("two hundred twenty-eight one-act" gives 229);
+       - it joins numbers across commas;
+       - it reads "twenty-fourth" as 20.
+     - Among round 6's 16 boxes, only 2.3 is affected. 2.6's "tenth" and "ninth" are ordinals, which round 6's parser does not read by convention.
+     - No verdict or count of round 6 depends on the list: 2.3 is NONE, and 5 is not among its tied statements.
+     - `lean_tables.py` ends a number phrase at punctuation and at a unit word that follows a unit word, and it reads ordinals. Its [4] lists the 7 boxes where the two parsers differ.
+     - `lean_resolve.py` and its outputs are not edited.
+  2. **CT-C003 "37 at best string-label table checks".** For 7 of the 37 rows the wording is too narrow: 28.1, 28.2, 28.5, 217.1, 217.2, 234.1 and 234.3 cite a table (WAMR, SLBC or NCRE) whose checks include relations over entered `Int` fields. The wording holds for the other 30.
+     - 04 §1 ("at best data-table checks") and report F2 ("`decide` proofs over hand-entered tables") are right for all 37.
+     - The tiers 16 / 37 / 11 are unchanged.
+     - The register is not edited.

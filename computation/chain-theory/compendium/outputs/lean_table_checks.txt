@@ -1,0 +1,7 @@
+'Round7.wamr_sums' does not depend on any axioms
+'Round7.slbc_counts' does not depend on any axioms
+'Round7.slbc_W_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round7.slbc_R' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round7.ncre_rows' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round7.htor_open_reads' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Round7.rlro_webs' does not depend on any axioms

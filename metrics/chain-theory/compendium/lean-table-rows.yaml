@@ -1,0 +1,100 @@
+claim_id: CT-LT (round 7 Lean table-check and opaque-only rows; covers CT-C003 and report findings F2, F25, gap G6)
+source_statement: "Front matter: 'in this release 64 of the 100 theorems are tied to named Lean declarations, which check the finite computations their derivations use'; compendium/README.md: 'A chapter's named theorem therefore usually certifies the arithmetic of that chapter's tables.'"
+source_location: "compendium/tex/front.tex:34; compendium/README.md 'What the Lean checks'; compendium/index/statements.tsv (lean column); compendium/lean/ChainTheory/ChainTheory/Data/*.lean"
+source_commit: a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+note: formalization/chain-theory/compendium/10-lean-table-rows.md
+code: [computation/chain-theory/compendium/lean_tables.py, computation/chain-theory/compendium/lean_tables_data.py, computation/chain-theory/compendium/lean_audit/TableChecks.lean]
+reuses_unchanged: [computation/chain-theory/compendium/lean_classify.py, computation/chain-theory/compendium/lean_resolve.py, computation/chain-theory/compendium/lean_resolve_data.py, computation/chain-theory/compendium/boxes.py, computation/chain-theory/compendium/outputs/lean_axioms.txt]
+outputs: [computation/chain-theory/compendium/outputs/lean_tables.txt, computation/chain-theory/compendium/outputs/lean_tables.tsv, computation/chain-theory/compendium/outputs/lean_tables_clauses.tsv, computation/chain-theory/compendium/outputs/lean_table_checks.txt]
+formalization_status:
+  value: resolved_clause_level
+  detail: "The 48 rows that round 6 left (37 table-check, 11 opaque-only) resolved declaration by declaration and clause by clause: 131 distinct names, 37 data modules, 618 check conjuncts classified by form, 248 verbatim box clauses with counterpart checks by verbatim anchor."
+population:
+  rows: 48
+  table_rows: 37
+  opaque_rows: 11
+  sections: 33
+  names_with_multiplicity: 208
+  distinct_names: {open_record: 53, opaque_prop: 38, table_check: 24, cond_table_check: 13, alias_prop: 3}
+table_checks:
+  declarations: 37
+  modules: 37
+  rows_entered_as_literal_list: "37 of 37"
+  modules_string_fields_only: 33
+  key_value_modules: 32
+  modules_with_int_fields: [D526019_WAMR, D525257_HTOR, D525335_SLBC, D525516_NCRE]
+  check_lemmas: {total: 618, by_decide: 618}
+  conjunct_forms: {LEN: 37, KV: 560, CAT: 13, REL: 8}
+  modules_with_REL_conjuncts: [D526019_WAMR, D525335_SLBC, D525516_NCRE]
+  conditional: {declarations: 13, hypotheses_opaque: 13, hypotheses_unused: 13, mentioned_by_other_theorems: 0}
+  modules_with_60_rows: [D531942_CASM, D532023_DST2, D530533_ANDB]
+  stop_inside_a_record: {D531942_CASM: "cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N4.ratios", D530533_ANDB: "web.QUTRIT.s0-s1.RING.4.tiled.spectrum.eq"}
+  axioms_4_35_0: {three_core: [WAMR, SLBC, NCRE], none: 34, sorryAx: 0}
+opaque_alias_record_names:
+  total: 94
+  theorems_among_them: 0
+  mentioned_by_a_library_theorem: 0
+  records_statement_field: "opaque constant (53 of 53)"
+  aliases: {of_an_opaque: 2, implication_of_two_opaques: 1}
+  opaque_only_rows_assert: nothing
+verdicts_48:
+  rule: "round 6's: a clause has a counterpart when a tied declaration states its finite content under the library's own definitions of its words (ENTERED: a relation evaluated over entered per-instance values). RECORDED (an entered string recording the clause's verdict, count or letter) is not a counterpart; it gives the label-inclusive bound. MATCH every clause, PARTIAL some, NONE none."
+  box_quotes_verbatim: "248 of 248"
+  clauses: {stated: 5, recorded_only: 44, none: 199}
+  MATCH: []
+  PARTIAL: {"217.1": "4 of 8 (SLBC: W_target_site - W_source_site = W_diff_site >= 0 at 228 entered reads)", "234.1": "1 of 7 (NCRE: orders and kinds sum to the records at 246 entered rows)"}
+  NONE: 46
+  label_inclusive: {MATCH: 1, PARTIAL: 22, NONE: 25}
+  sensitivity_REL_graded_RECORDED: {checks: ["WAMR wash_moved_acts == 0 (28.1)", "SLBC 0 <= R_diff_site (217.1)"], if_ENTERED: "28.1 becomes PARTIAL 1 of 5; nothing else changes"}
+  whole_box_verdict_cell_rows: 33
+printed_numbers:
+  rule: "numbers >= 5 printed in the box (digits, cardinal and ordinal words); literal lookup, coincidences included"
+  pairs: 135
+  in_tied_checks: 23
+  in_entered_rows_only: 11
+  in_other_tied_declarations_only: 1
+  not_in_tied_declarations: 100
+  nowhere_in_lean_tree: {"170.1": [17689], "181.5": [101761], "220.2": [185496], "220.3": [138129, 322516, 570349], "221.1": [9270, 44341, 93312, 93481, 101973, 218340], "232.2": [46412, 46563], "234.3": [270584]}
+findings:
+  onsager_count: "223.2 prints 'every one of the 43'; the tied ENT2 table enters and checks onsg.asym.pairs = \"24\""
+  content_of_3_1_tied_to_57_1: "3.1's reads Z, X, XZ, XZ2 are entered in HTOR, tied to 57.1; 3.1's own module NDFE holds 7 labels; 3.1 says its Lean proof is 'still to be written'"
+  own_modules_untied: {"181.5": "D538212_QARM (Frame.P07.Ch7.row_538212_QARM), 1-row label", "200.6": "D538733_HCOS (Frame.P06.Ch10.row_538733_HCOS), 1-row label"}
+  truncated_tables: {"145.1": "44 chains printed; detail keys cover one chain at 6 separations", "225.1": "20 networks printed; per-ring keys cover 18"}
+  slbc_W_constant: "W_diff_site = W_diff_free = 0 at all 228 entered reads; R rises at 54; R_target_site - W_source_site = R_diff_site holds at 228, unchecked"
+  derivable_not_checked: {"28.1": "228 = sum of WAMR acts", "217.1": "114, 78, 150, 14 from SLBC rows (also WAMR sums)", "234.1": "18 = 13 + 3 + 2 non-KIT SLOT rows; order3 = 0 in 246 rows"}
+  deciding_table_in_lean_but_only_records: ["170.1", "229.1"]
+round6_rows_all_declarations:
+  table_checks_of_the_16: 9
+  conjunct_forms: {LEN: 9, KV: 22, CAT: 7, REL: 0}
+  verdicts_unchanged: true
+  recomputed_equal_to_lean_resolve_tsv: "16 of 16"
+  label_inclusive_16: {MATCH: 1, PARTIAL: 10, NONE: 5}
+coverage_64:
+  by_kind_unchanged: {restated_or_kernel: 16, table_checks: 37, opaque_or_records_only: 11}
+  by_content: {MATCH: 1, PARTIAL: 7, NONE: 56}
+  rows_stating_a_clause: 8
+  none_split: {computation_of_another_box: 10, table_labels_only: 21, table_nothing: 14, opaque_records: 11}
+  label_inclusive: {MATCH: 2, PARTIAL: 32, NONE: 30}
+  changes_to_09: "table tier resolved (37 -> 2 PARTIAL, 35 NONE; with the 9 re-tiered 46 -> 2 / 44); opaque tier 12 NONE; README 'coverage by content 6 / 46 / 12' -> 8 stating a clause / 56 none"
+  changes_to_04: "tiers unchanged; CT-C003 'string-label' wording fails for 7 of 37 table rows (WAMR, SLBC, NCRE relation checks)"
+own_checks:
+  file: lean_audit/TableChecks.lean
+  theorems: 7
+  compile: true
+  axiom_free: 3
+  three_core_axioms: 4
+corrections: "reports/CORRECTIONS.md 2026-10-30 round 7: round 6's printed-number list for 2.3 ([5], a parser artefact); CT-C003 'string-label' for 7 rows"
+internal_consistency:
+  value: kind_count_consistent; content_resolved
+  detail: "All 37 table checks are decide proofs over entered literal lists; 2 of the 37 rows state a clause through relation checks over entered Int tables; the 11 opaque rows assert nothing."
+proof_status:
+  value: machine_checked_at_4_35_0_with_patch
+  detail: "Verdicts are clause-level judgments over the source text; the tied declarations' axiom sets are round 6's Build B (Lean 4.35.0); our 7 theorems compile against Build B."
+reproducibility: {value: reproduced, detail: "python3 -I lean_tables.py $SRC --axioms outputs/lean_axioms.txt --checks outputs/lean_table_checks.txt --round6-tsv outputs/lean_resolve.tsv --tsv ... --clauses-tsv ...; about 11 s; identical across two runs with hash randomisation"}
+confidence:
+  value: high
+  justification: "Every clause and check anchor is verified verbatim by the script; the classification of conjunct forms is mechanical; the counterpart judgments are recorded clause by clause with a stated rule and one sensitivity."
+limits:
+  - "Clause boundaries and RECORDED lexical matches are judgments; the keys of key/value tables are not interpreted."
+  - "Only declarations tied by the index are graded; the untied own modules of 181.5 and 200.6 are reported, not graded."
+  - "Axiom sets are those of Lean 4.35.0 (round 6's Build B); the pinned 4.32.1 was not used."
