@@ -38,6 +38,8 @@ python3 -I scorecard.py --src $SRC --pdg-mcd $MCD --tsv outputs/scorecard.tsv > 
 python3 -I scorecard_freedom.py                                       > outputs/scorecard_freedom.txt
 # round 3: mass cells
 python3 -I masscells.py $SRC --pdg-mcd $MCD --tsv outputs/masscells_readings.tsv  > outputs/masscells.txt
+# round 4: statement-level premises (about 6 s)
+python3 -I premises.py $SRC --tsv outputs/premises_items.tsv > outputs/premises.txt
 # MCD=.../particle/data/mass_width_2024.mcd (optional; without it the PDG transcription is not re-checked)
 ```
 
@@ -63,6 +65,7 @@ eigenvalues are reproducible to the printed 3 decimals.
 | `scorecard_freedom.py` | R2-3 | F-CT-4-style freedom tests for the agreements besides alpha(0): weak angle (count-face family), lepton cells, proton cell |
 | `masscells_data.py` | R3 | curated data (module): 102 verbatim anchors for the trace, the printed closures and G2, the printed proton/electron/muon/tau cells, exclusions with reasons, web descriptions |
 | `masscells.py` | R3-1..4 | mass cells: (2,3) record census (319, 79 = 48+28+3); electron web parsed from the 152.1 figure, muon/tau/proton webs built and checked; measuring-read paths; 72-reading grid validated against 6 printed tuples; 155.1 faces; printed mass-law variants; look-elsewhere in printed / grid / declared / narrow / census / integer spaces; tau/mu; 181.5 cross-check; sweep audit |
+| `premises.py` | R4 | statement-level premises from the derivations' premise sentences: segmentation into derivation groups, 1069 premise items with verbatim quotes, candidates by grade word under two designator readings (module numbering / `designators.tsv`), a separate judgment layer (21 groups), chain-rule re-grade, cycles (any-of, strict, forced under every resolution), F4 upper/lower bounds; writes `outputs/premises_items.tsv` |
 
 ## Interpretive choices in the dependency graph (`depgraph.py`)
 
@@ -127,6 +130,15 @@ masscells (round 3):
           m_p/m_e by mass law: S^2 +1.84e-5, 195.1 office +6.20e-6, 176.2 G2 at e,mu only -1.01e-4 (spread 1.2e-4)
           lambda(p): printed 2.9e-4, grid 2.6e-4, declared 2.5e-3, narrow 1.7e-5..5e-5, any integer 0.053 (0.34 at the spread)
           tau/mu = (441/107)^2 = 16.987, +1.0% (198 sigma); 181.5 top sink 2871 = proton cell
+premises (round 4):
+          297 derivations, 294 groups (61 shared by several boxes), 261 with a premise sentence; 1069 items, 1069 quotes verbatim;
+          0 statement-number citations inside derivations; designator readings differ at 171 of 397 items (title overlap MOD 129, FIF 3)
+          index two-cycles 124.1<->16.1, 124.1<->58.1: no edge cited in any derivation
+          forced cycle (every resolution of any-of items, MOD): {35.1, 40.1, 124.1} via "the theorem of chapter 18" and
+          "the explicit two-point function with its records (chapter 5-1)"; strict graph with judgment: one SCC {124.1, 18.2, 18.3}
+          14 requested THEOREMs: index OPEN 10, OPEN/COND 12; derivations (J) declared OPEN 8, violate 10, undetermined 4, consistent 0
+          all 100 THEOREMs: declared OPEN 38, other violations 35, undetermined 22, consistent 3, no premise sentence 2
+          F4 lower bounds (T+C): 2.2 -> 1; 2.4/2.5/2.7/2.8 -> 153; 9.1/9.7 -> 151 (J); 9.8 -> 0; 18.x -> 0; 124.1 -> 152 (313 all grades)
 ```
 
 ## External values used (with sources)

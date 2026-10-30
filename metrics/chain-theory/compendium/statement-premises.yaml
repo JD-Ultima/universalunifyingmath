@@ -1,0 +1,73 @@
+claim_id: CT-SP (round 4 statement-level premises; covers CT-C033, CT-C034, CT-C035 and report findings F3, F4)
+source_statement: "Front matter: 'A theorem is a statement derived from the axiom, the definitions and the results proved ahead of it; ... under the chain rule of this compendium every theorem prints at its statement the union of the conditions of the results it rests on, a composed claim carrying the lowest status in its chain'"
+source_location: "compendium/tex/front.tex:34 ('The status words'); premise line described at tex/parts/01-framework.tex:109 ('generated mechanically from the ancestry of the chapters'); premise sentences of the 297 chproof derivations"
+source_commit: a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+note: formalization/chain-theory/compendium/07-statement-premises.md
+code: [computation/chain-theory/compendium/premises.py]
+outputs: [computation/chain-theory/compendium/outputs/premises.txt, computation/chain-theory/compendium/outputs/premises_items.tsv]
+formalization_status:
+  value: checked_by_script
+  detail: "Layer M (mechanical extraction rules M1-M5, all derivations) and layer J (judgment, 21 derivation groups, 101 items, evidence quoted and checked verbatim) kept separate; designator readings MOD (module numbering) and FIF (designators.tsv) both run."
+extraction:
+  derivations: 297
+  derivation_groups: 294
+  groups_shared_by_several_boxes: 61
+  groups_with_premise_sentence: 261
+  items: 1069
+  items_quoted_verbatim: 1069
+  statement_number_citations_in_derivations: 0
+  candidates_per_item: {none: 83, one: 236, several: 750}
+  designator_items: 397
+  designator_readings_differ: 171
+  title_overlap_favours: {MOD: 129, FIF: 3, tie: 39}
+  judged: {groups: 21, boxes: 55, items: 101, narrowed: 30, same_as_M: 37, unresolved: 33, dropped_as_no_input: 1}
+shared_derivations:
+  "2.1-2.9": {procedure_concludes: "2.7", quote: "so the hub step is a third letter, which is the open result"}
+  "9.1-9.8": {procedure_concludes: "9.1", quote: "so the readability order is a typing of the type, which is the theorem"}
+  "18.1-18.6": {procedure_concludes: "18.1", quote: "So the Born count is a measure and the readout its root, which is the theorem"}
+regrade_requested_theorems:   # 2.3, 2.6, 18.2, 16.1, 58.1, 200.6, 8.1, 27.1, 39.1, 69.1, 70.1, 74.1, 74.4, 78.3
+  count: 14
+  index: {open_premise: 10, open_or_conditional: 12}
+  derivation_M: {declared_open: 8, violates: 9, undetermined: 5, consistent: 0}
+  derivation_J: {declared_open: 8, violates: 10, undetermined: 4, consistent: 0}
+  undetermined_J: ["2.3", "2.6", "74.1", "74.4"]
+regrade_reconstructed_theorems: {count: 23, index_open: 17, index_open_or_conditional: 19, J_violates: 17, J_declared_open: 8, J_undetermined: 6}
+conditionals_resting_on_open: {reconstructed: 17, derivation_J: 6, index: 10, list_J: ["18.1", "18.3", "18.4", "124.1", "146.1", "66.4"]}
+all_theorems_derivation_level:
+  J: {declared_open: 38, other_violations: 35, undetermined: 22, consistent: 3, no_premise_sentence: 2}
+  M_any_reading: {declared_open: 38, other_violations: 29, undetermined: 28, consistent: 3, no_premise_sentence: 2}
+  index_open: 66
+  overlap: {declared_and_index_open: 31, index_open_only: 35, declared_only: 7}
+cycles:
+  index: {scc: 22, two_cycles_through_124_1: ["124.1<->16.1", "124.1<->58.1"], edges_cited_in_derivations: 0}
+  index_sensitivity: {"4-5 module reading": {edges: 8366, scc: 22, two_cycles: ["124.1<->16.1"]}, "all chapter-form designators module reading": {edges: 8263, scc: 13, two_cycles: ["124.1<->16.1"]}}
+  any_of_graph_scc_of_124_1: {MOD: 261, FIF: 208, UNION: 290, J: 258}
+  strict_graph: {without_J: "acyclic", with_J: ["124.1", "18.2", "18.3"]}
+  forced_under_every_resolution:
+    MOD: [["35.1", "40.1", "124.1"], ["73.1"], ["98.1"], ["121.1"]]
+    FIF: [["35.1", "40.1", "44.1"], ["98.1"], ["121.1"]]
+    J: [["2.3"], ["9.1", "35.1", "40.1", "66.4", "72.1", "73.1", "124.1"], ["98.1"], ["121.1"]]
+  witness: "124.1 rests on one of 18.1-18.4 (07-cell-3-2-photon.tex:44); 18.1-18.6 share a derivation resting on one of 124.1, 134.1, 135.1 (01-framework.tex:691); 134.1 and 135.1 each cite 124.1 alone"
+  16_1_on_a_cycle_with_124_1: "only through any-of chapter citations (shortest: 16.1 -> 3.1 -> 28.1 -> 124.1); none in the strict graph"
+  58_1_transitive_premise_of_124_1: {MOD: false, FIF: false, UNION: true, J: false}
+load_bearing_T_plus_C:   # of 209; lower = holds whatever box each any-of citation means
+  "2.2": {index: 183, upper: 184, lower_M: 1, lower_J: 1, direct_index: 62, direct_J: 1}
+  "2.4,2.5,2.7,2.8": {index: 183, upper: 185, lower_M: 153, lower_J: 153, direct_index: 58, direct_J: 14}
+  "9.1,9.7": {index: 175, upper: 183, lower_M: 0, lower_J: 151, direct_index: 120, direct_J: 8}
+  "9.8": {index: 175, upper: 185, lower_M: 0, lower_J: 0, direct_index: 97, direct_J: 0}
+  "18.1,18.3,18.4": {index: 152, upper: 182, lower_M: 0, lower_J: 0, direct_index: 105, direct_J: 0}
+  "18.5,18.6": {index: 152, upper: 185, lower_M: 0, lower_J: 0, direct_index: 89, direct_J: 0}
+  "124.1": {index: 42, upper: 184, lower_M: 152, lower_J: 152, direct_index: 22, direct_M: 14, direct_J: 25, all_grades: {index: 70, lower: 313, upper_J: 391}}
+internal_consistency:
+  value: violated
+  detail: "At statement level 38 of 100 THEOREMs declare an OPEN premise in their own derivation and at least 73 rest on a premise all of whose candidate boxes are CONDITIONAL or OPEN. The index cycles of 124.1 with 16.1 and 58.1 are absent from the derivations, but 124.1 rests on itself under every resolution of the any-of citations (via chapter 18), with 35.1 and 40.1 in the same forced component."
+proof_status: {value: not_applicable}
+novelty: {value: not_applicable}
+reproducibility:
+  value: reproduced
+  detail: "Index counts of round 1 (8367 edges, SCC 22) reproduced; outputs identical across runs and hash seeds; wall time about 6 s."
+empirical_testability: {value: not_applicable}
+dependencies: ["forced 124.1 cycle requires the module-numbering reading of 'chapter 5-1' in the derivation of 18.1-18.6 (under FIF 124.1 is on no forced cycle)", "per-box premises of 2.2-2.8, 9.7, 9.8, 18.1-18.6 not separable: shared derivations"]
+confidence:
+  value: medium_high
+  justification: "The declared-OPEN count (38) and the absence of the index 124.1 edges are mechanical and reading-independent. Lower bounds are exact under the stated rule; upper bounds are loose by construction. Judgment enters the J columns only, and every judged choice cites a verbatim title or text."

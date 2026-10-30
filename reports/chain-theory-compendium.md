@@ -233,3 +233,83 @@ prediction of the source. At that spread the any-integer chance is 0.34. For the
 - There are 15 printed proton cells, not 9.
 - The face remark of F11 applies to the leptons only.
 - The τ reference is now PDG 2024: +0.917%.
+
+## Round 4 — statement-level premises
+
+Note: `formalization/chain-theory/compendium/07-statement-premises.md`. Code: `computation/chain-theory/compendium/premises.py`.
+Outputs: `outputs/premises.txt`, `outputs/premises_items.tsv` (1069 premise items, each with its verbatim quote and location).
+Metrics: `metrics/chain-theory/compendium/statement-premises.yaml`. The task is proposed further work item 1: re-derive
+F3 and F4 from what each derivation says it rests on.
+
+**F17. Where the premises are** (a, c).
+- The index premise line is chapter-level by the source's own description: it is "generated mechanically from the
+  ancestry of the chapters" (`01-framework.tex:109`).
+- Statement-level premises appear only in the opening sentence of each derivation. That sentence cites a chapter, a
+  description and a grade word, e.g. "the stabiliser of the pair ket (chapter 5-1, an open result)".
+- The 297 derivations contain 0 citations by statement number.
+- 2.1–2.9, 9.1–9.8 and 18.1–18.6 each share one derivation, so the source gives no per-box premises for 2.2–2.8, 9.7,
+  9.8 or 18.1–18.6. The three procedures conclude 2.7, 9.1 and 18.1.
+- The mechanical rule (layer M) gives 1069 items, with candidates filtered by grade word: 236 items have one
+  candidate, 750 have several. A separate judgment layer (J) covers 21 derivation groups: 101 items, 30 narrowed by a
+  verbatim title or text.
+- In derivation text, chapter designators follow the module numbering. Where the two readings differ (171 items),
+  description–title overlap favours that reading 129 to 3.
+
+**F18. Chain rule at statement level** (c). The rule is at `front.tex:34`: "A theorem is a statement derived from the
+axiom, the definitions and the results proved ahead of it; ... a composed claim carrying the lowest status in its
+chain."
+- **The 14 requested THEOREMs.** Index: 10 list an OPEN premise and 12 an OPEN or CONDITIONAL one. Derivations (J): 8
+  declare an OPEN premise in their own text (16.1, 18.2, 58.1, 8.1, 27.1, 39.1, 69.1, 70.1), 10 violate, 4 are
+  undetermined (2.3, 2.6, 74.1, 74.4) and 0 are consistent.
+- **Verdicts that move.** 74.1 and 74.4 (index: 14 CONDITIONAL premises) become undetermined. 9.2–9.6 have no OPEN
+  premise in their derivation (index: 4); under J they violate through 66.4 (CONDITIONAL).
+- **All 100 THEOREMs.** 38 declare an OPEN premise, the same under every reading. With J: 35 more violate definitely,
+  22 are undetermined, 3 are consistent (2.10, I.7.1, I.52.1) and 2 have no premise sentence.
+- **Against the index's 66.** Of the 66 THEOREMs the index gives an OPEN premise, 31 declare one in their derivation;
+  7 more declare one that the index does not list.
+- **124.1 (CONDITIONAL).** Its derivation names two OPEN premises (an open result of section 2, and 57.2). The
+  "lowest status" clause would grade it OPEN; its box treats these premises as conditions "each at its own standing".
+
+**F19. The 124.1 cycles** (c).
+- **The index cycles do not survive.** None of the four index edges 124.1↔16.1 and 124.1↔58.1 is cited in a
+  derivation. 124.1's derivation cites sections 1, 2, 9, 18, 28, 35, 40, 50, 53 and 57. 16.1 and 58.1 cite "an open
+  result" of chapter 5-1: the grade word excludes 124.1 (CONDITIONAL), and the description names 131.1.
+- **A different cycle does survive.** 124.1 rests on "the theorem of chapter 18" (one of 18.1–18.4). The shared
+  derivation of 18.1–18.6 rests on "the explicit two-point function with its records (chapter 5-1, a theorem)" (one of
+  124.1, 134.1, 135.1), and 134.1 and 135.1 each cite 124.1 alone. So 124.1 rests on itself whichever box each
+  citation means.
+- The cycle passes through 35.1 (state space) and 40.1 (Born rule): the component forced under every resolution is
+  {35.1, 40.1, 124.1}. With J, the strict graph has one cycle component, {124.1, 18.2, 18.3}.
+- The cycle needs the module-numbering reading of "chapter 5-1". Under the `designators.tsv` reading, 124.1 is on no
+  forced cycle.
+- 16.1 and 58.1 lie on no cycle in the strict graph.
+
+**F20. Load-bearing premises at statement level** (c). Transitive THEOREM+CONDITIONAL dependents, of 209, index against
+statement level. The lower bound holds whatever box each chapter citation means; the upper bound is reachability in the
+any-of graph.
+
+| premises | index | statement level |
+|---|---|---|
+| 2.4, 2.5, 2.7, 2.8 (as a set) | 183 | ≥ 153 |
+| 9.1, 9.7 | 175 | ≥ 151 (with J) |
+| 2.2 | 183 | ≥ 1 (only 13.1 names it) |
+| 9.8 | 175 | ≥ 0 |
+| 18.1/18.3/18.4 | 152 | ≥ 0 |
+| 18.5/18.6 | 152 | ≥ 0 |
+| 124.1 | 42 (70 of all grades) | ≥ 152 (313 of all grades) |
+
+For 124.1 the direct users are 25 with J and 14 without, against 22 in the index. The upper bounds are 182–185 for
+every row.
+
+**Changes to rounds 1–3.**
+- Unchanged:
+  - All index numbers, recomputed: 8367 edges, an SCC of 22, 66 / 84 THEOREMs, and 183 / 175 / 152.
+  - The conclusion that most THEOREMs violate the chain rule: ≥ 73 at statement level.
+- Changed:
+  - The 66 is an index count; at statement level the count is 38.
+  - The F4 loads of 2.2, 9.8 and 18.x are not supported box by box.
+  - 124.1's load is larger than F4 states.
+  - The F3/F4 cycle statement holds for the index only. At statement level the cycle runs through chapter 18, not
+    through 16.1 or 58.1.
+- Corrected in `reports/CORRECTIONS.md`: `00-dependency-structure.md` §2 says that `designators.tsv` resolves 4-5
+  uniquely. It does not, and the index two-cycle 124.1↔58.1 depends on reading 4-5 as III-5.

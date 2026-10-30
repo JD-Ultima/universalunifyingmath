@@ -1,0 +1,381 @@
+Statement-level premises of the Chain Theory compendium 0.1 (round 4)
+========================================================================
+segmentation: 316 sections, 468 boxes (468 index rows; numbering/grade mismatches: 0)
+derivation groups: 294 (box counts {1: 233, 2: 23, 3: 14, 4: 7, 5: 7, 6: 5, 7: 1, 8: 1, 9: 2, 12: 1}); continuation parts merged: 3
+boxes with no derivation in their section: 9 ['1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.9']
+
+[0] The rule and the premise line, verbatim
+  front.tex:34  "under the chain rule of this compendium every theorem prints at its statement the union of the conditions of the results it rests on, a composed claim carrying the lowest status in its chain"
+  front.tex:34  "A theorem is a statement derived from the axiom, the definitions and the results proved ahead of it"
+  01-framework.tex:109  "one line names the chapters it rests on and the chapters that rest on it, generated mechanically from the ancestry of the chapters"
+
+[1] Layer M coverage (all derivations)
+  groups with a premise sentence: 261 of 294; without: 33 (boxes 37, grades {'CONDITIONAL': 3, 'OPEN': 1, 'TABLE': 31, 'THEOREM': 2})
+  items: 1069; by kind {'DES': 397, 'FRAME': 7, 'NOWHERE': 9, 'REF': 618, 'SELF': 38}
+  by grade word {'C': 4, 'D': 213, 'DT': 1, 'None': 30, 'O': 189, 'T': 579, 'TO': 2, 'Tab': 51}
+  candidates per item (MOD): none 83, one 236, several 750
+  item quotes found verbatim in the source: 1069 of 1069
+  statement-number citations inside derivations ('Theorem 9.1', 'Open result 2.4', ...): 0; \ref{box:...} inside derivations: 0
+  designator items (chapter P-c): 397; with a grade-compatible box under MOD 359, under FIF 303; readings differ at 171
+  where they differ, description-title word overlap is larger under MOD at 129, under FIF at 3, tie 39
+
+[2] Index graph (premises column, C3 as depgraph.py): 8367 edges; SCCs > 1: [22]
+  sensitivity, 4-5 read by module numbering: 8366 edges; SCCs > 1: [22]; two-cycles through 124.1: [('124.1', '16.1')]
+  sensitivity, every chapter-form designator read by module numbering: 8263 edges; SCCs > 1: [13]; two-cycles through 124.1: [('124.1', '16.1')]
+  designators.tsv row 4-5: first_section III-5-spin-and-helicity, mapped_by fifteen, module_numbering_first IV-5-sign-from-the-side-of-the-acting-site (two readings)
+
+[3] Layer J: 21 derivation groups judged; consistency problems: 0 []
+  items in judged groups: 101; {'narrowed': 30, 'no box': 1, 'same as M': 37, 'unresolved (M kept)': 33}
+  reconstructed statements R (all boxes of judged groups): 55; requested (targets + index SCC): 40; requested not in R: []
+
+[4] Statement-level premises of the reconstructed statements
+
+  derivation of 2.1 T, 2.2 C, 2.3 T, 2.4 O, 2.5 O, 2.6 T, 2.7 O, 2.8 O, 2.9 T   (01-framework.tex:169)
+        g0.0 [DES 1-1; the text] "the axiom and its six definitions (chapter 1-1, the text)"
+             M: 1.1 D, 1.2 D, 1.3 D, 1.4 D, 1.5 D, 1.6 D  |  J: = M  (the text = the axiom and Definitions 1.1-1.6)
+        g0.1 [DES 1-1; a theorem] "the one-act clause as a theorem of the derived act (chapter 1-1, a theorem)"
+             M: 2.1 T, 2.2 C, 2.3 T, 2.6 T, 2.9 T, 2.10 T, 3.1 T, 8.1 T  |  J: 2.3 T  (2.3: "The one-act clause is a theorem of the derived act")
+        g0.2 [DES 1-5; a theorem] "the listed webs with their end lines (chapter 1-5, a theorem)"
+             M: H.3 T, H.9 C, P.1 T, Q.1 C, R.1 T, U.1 T  |  J: unresolved, M kept  (no THEOREM/CONDITIONAL box of chapter 1-5 names the listed webs; the one box of 1-5 whose title names the list is H.2 (OPEN))
+
+  derivation of 9.1 C, 9.2 T, 9.3 T, 9.4 T, 9.5 T, 9.6 T, 9.7 C, 9.8 O   (01-framework.tex:392)
+        g7.0 [DES 1-1; the text] "the axiom with its definition of a read (chapter 1-1, the text)"
+             M: 1.1 D, 1.2 D, 1.3 D, 1.4 D, 1.5 D, 1.6 D  |  J: = M  (the text)
+        g7.1 [DES 4-3; a theorem] "the carrier as the closed read of its type (chapter 4-3, a theorem)"
+             M: 66.4 C, 69.1 T, 70.1 T  |  J: 66.4 C  (66.4: "The carriers as the closed reads of their type faces")
+        g7.2 [NOWHERE ; an instrument] "the read engine with its catalog of the one-link reads at order one (an instrument outside the chapters of this compendium)"
+             M: -  |  J: = M  (an instrument outside the chapters (no box))
+
+  derivation of 18.1 C, 18.2 T, 18.3 C, 18.4 C, 18.5 O, 18.6 O   (01-framework.tex:691)
+       g15.0 [DES 1-1; the text] "the axiom with its six definitions (chapter 1-1, the text)"
+             M: 1.1 D, 1.2 D, 1.3 D, 1.4 D, 1.5 D, 1.6 D  |  J: = M  (the text)
+       g15.1 [DES 1-2; a conditional theorem] "the link with its six types and the readability order (chapter 1-2, a conditional theorem)"
+             M: 9.1 C, 9.7 C, 12.1 C  |  J: 9.1 C  (9.1: "Readability order at the six genres")
+       g15.2 [DES 5-1; a theorem] "the explicit two-point function with its records (chapter 5-1, a theorem)"
+             M: 124.1 C, 134.1 T, 135.1 T  |  J: 124.1 C  (124.1: "the records of its two reads are 172")
+       g15.3 [DES 1-5; an open result] "the sector-to-ends map at the six types (chapter 1-5, an open result read at its standing)"
+             M: H.1 O, H.2 O, H.4 O, H.5 O, H.6 O, H.7 O, H.8 O, I.1 O, J.1 O, K.1 O, O.1 O, S.1 O, ... (+3)  |  J: I.1 O  (I.1: "The sector-to-ends map at the parting web")
+
+  derivation of 124.1 C   (07-cell-3-2-photon.tex:44)
+      g116.0 [REF FRAMEWORK; (the axiom and the definitions)] "the axiom and the six definitions of chapter~\ref{mod:FRAMEWORK}"
+             M: 1.1 D, 1.2 D, 1.3 D, 1.4 D, 1.5 D, 1.6 D  |  J: = M  (Definitions 1.1-1.6)
+      g116.1 [REF I-1-axiom-and-the-six-defini; the open result] "the open result of chapter~\ref{mod:I-1-axiom-and-the-six-definitions}"
+             M: 2.4 O, 2.5 O, 2.7 O, 2.8 O  |  J: unresolved, M kept  (section 2 holds four OPEN boxes (2.4, 2.5, 2.7, 2.8); the derivation does not say which)
+      g116.2 [REF I-2-link-and-its-six-genres; the theorem] "the theorem of chapter~\ref{mod:I-2-link-and-its-six-genres}"
+             M: 9.1 C, 9.2 T, 9.3 T, 9.4 T, 9.5 T, 9.6 T, 9.7 C  |  J: 9.1 C, 9.2 T, 9.4 T  (124.1: "the $(2,3)$ link alone carries a central generator acting on its pair, abelian, conserved and massless")
+      g116.3 [REF I-3-records-reads-and-the-bo; the theorem] "the theorem of chapter~\ref{mod:I-3-records-reads-and-the-born-count-the-gain-lemma}"
+             M: 18.1 C, 18.2 T, 18.3 C, 18.4 C  |  J: 18.2 T, 18.3 C  (124.1: "with the weights one, root two, root three and root six by the gain law")
+      g116.4 [REF I-6-read-at-a-register-the-p; the theorem] "the theorem of chapter~\ref{mod:I-6-read-at-a-register-the-probe-and-the-measurement}"
+             M: 28.1 T, 28.2 T, 28.5 T  |  J: unresolved, M kept  (any of 28.1, 28.2, 28.5 (all THEOREM); the derivation does not say which)
+      g116.5 [REF II-1-state-space-from-the-ac; the theorem] "the theorem of chapter~\ref{mod:II-1-state-space-from-the-act-outputs}"
+             M: 35.1 C  |  J: = M  (unique)
+      g116.6 [REF II-2-born-rule-and-unitarity; the theorem] "the theorem of chapter~\ref{mod:II-2-born-rule-and-unitarity}"
+             M: 40.1 C  |  J: = M  (unique)
+      g116.7 [REF III-1-order-coordinate-and-i; the theorem] "the theorem of chapter~\ref{mod:III-1-order-coordinate-and-its-theorem}"
+             M: 50.1 C  |  J: = M  (unique)
+      g116.8 [REF III-2-rotation-group; the theorem] "the theorem of chapter~\ref{mod:III-2-rotation-group}"
+             M: 53.1 C  |  J: = M  (unique)
+      g116.9 [REF III-5-spin-and-helicity; the open result] "the open result of chapter~\ref{mod:III-5-spin-and-helicity}"
+             M: 57.2 O  |  J: = M  (unique)
+
+  derivation of 16.1 T   (01-framework.tex:582)
+       g13.0 [DES 1-2; a theorem] "the readability order at the six genres (chapter 1-2, a theorem)"
+             M: 9.1 C, 9.2 T, 9.3 T, 9.4 T, 9.5 T, 9.6 T, 9.7 C, 11.1 T, 12.1 C, 13.1 T, 16.1 T  |  J: 9.1 C  (9.1: "Readability order at the six genres")
+       g13.1 [DES 8-1; a theorem] "the count law at the six genres (chapter 8-1, a theorem)"
+             M: 185.1 C, 185.2 C, 185.3 C, 185.4 C, 185.5 C, 185.6 C, 185.7 C, 185.8 C, 185.9 C, 185.10 C, 185.11 C, 185.12 C, ... (+2)  |  J: unresolved, M kept  (no THEOREM/CONDITIONAL box of chapter 8-1 names the count law (193.1, OPEN, mentions it))
+       g13.2 [DES 6-10; a theorem] "the Higgs and carrier offices with the body-alone rule (chapter 6-10, a theorem)"
+             M: 200.1 C, 200.2 C, 200.3 C, 200.6 T, 202.1 T  |  J: 200.6 T  (200.6: "The Higgs and carrier offices at their sinks")
+       g13.3 [DES 5-1; an open result] "the stabiliser of the pair ket (chapter 5-1, an open result)"
+             M: 125.1 O, 128.1 O, 130.1 O, 131.1 O, 132.1 O, 140.1 O  |  J: 131.1 O  (131.1: "The stabilizer of the pair ket and the unbroken charge")
+
+  derivation of 58.1 T   (04-spacetime-and-symmetry.tex:464)
+       g52.0 [DES 5-1; an open result] "the stabiliser of the pair ket with its identification algebra (chapter 5-1, an open result)"
+             M: 125.1 O, 128.1 O, 130.1 O, 131.1 O, 132.1 O, 140.1 O  |  J: 131.1 O  (131.1: "The stabilizer of the pair ket and the unbroken charge")
+       g52.1 [DES 3-3; a theorem] "the Lorentz group at the qubit pair with its brackets table (chapter 3-3, a theorem)"
+             M: 54.1 C, 55.1 T  |  J: 54.1 C  (54.1: "The Lorentz group as the isometries of the Hermitian split")
+       g52.2 [DES 3-3; an open result] "the boost open result (chapter 3-3, an open result)"
+             M: -  |  J: = M  (declared OPEN; chapter 3-3 holds no OPEN box (56.2 'The boost at the one unit' is in chapter 3-4))
+       g52.3 [DES 3-5; open results] "the dock open result and the dock-register open result at the Clifford pair (chapter 3-5, open results)"
+             M: 57.2 O  |  J: unresolved, M kept  (declared OPEN; 57.2 is the only OPEN box of chapter 3-5 and its title does not name the dock)
+       g52.4 [DES 6-7; an open result] "the photon row at the centre (chapter 6-7, an open result)"
+             M: 166.2 O, 166.3 O, 166.4 O, 166.5 O, 166.6 O, 168.1 O, 169.1 O  |  J: unresolved, M kept  (declared OPEN; no OPEN box of chapter 6-7 names a photon row)
+
+  derivation of 200.1 C, 200.2 C, 200.3 C, 200.4 O   (11-cell-4-4-higgs.tex:37)
+      g188.0 [DES 1-2; definitions (shared)] "the link and its six genres of chapter 1-2"
+             M: -  |  J: = M  (chapters 1-2, 1-3, 1-4 cited as 'definitions'; they hold no DEFINITION box)
+      g188.1 [DES 1-3; definitions (shared)] "the reads and the Born count of chapter 1-3"
+             M: -  |  J: = M  (as above)
+      g188.2 [DES 1-4; definitions] "the moves of chapter 1-4, definitions"
+             M: -  |  J: = M  (as above)
+      g188.3 [DES 1-6; None] "the read at a register of chapter 1-6"
+             M: 28.1 T, 28.2 T, 28.3 O, 28.4 O, 28.5 T, 29.1 O, 30.1 O, 31.1 O, 32.1 O  |  J: unresolved, M kept  (chapter-level citation without a grade word)
+      g188.4 [DES 4-2,4-3; None] "the gauge chapters 4-2 and 4-3"
+             M: 65.1 T, 65.2 T, 66.1 O, 66.2 O, 66.3 O, 66.4 C, 66.5 O, 67.1 O, 68.1 O, 69.1 T, 70.1 T, 71.1 Tab  |  J: unresolved, M kept  (chapter-level citation without a grade word)
+      g188.5 [DES 6-3; None] "the doublets of chapter 6-3"
+             M: 163.1 C, 163.2 O, 163.3 C, 163.4 O  |  J: unresolved, M kept  (chapter-level citation without a grade word)
+      g188.6 [DES 8-1; None] "the mass unit of chapter 8-1"
+             M: 185.1 C, 185.2 C, 185.3 C, 185.4 C, 185.5 C, 185.6 C, 185.7 C, 185.8 C, 185.9 C, 185.10 C, 185.11 C, 185.12 C, ... (+8)  |  J: 185.1 C  (185.1: "The mass unit and the first power")
+
+  derivation of 200.5 O   (11-cell-4-4-higgs.tex:69)
+      g189.0 [SELF ; None] "the Higgs chapter above"
+             M: 200.1 C, 200.2 C, 200.3 C, 200.4 O  |  J: unresolved, M kept  (the boxes above in the chapter: 200.1-200.4)
+      g189.1 [FRAME FRAMEWORK; (the framework)] "the framework"
+             M: 1.1 D, 1.2 D, 1.3 D, 1.4 D, 1.5 D, 1.6 D  |  J: = M  (the framework chapter)
+
+  derivation of 200.6 T   (11-cell-4-4-higgs.tex:93)
+      g190.0 [SELF ; None] "the Higgs chapter above"
+             M: 200.1 C, 200.2 C, 200.3 C, 200.4 O, 200.5 O  |  J: unresolved, M kept  (the boxes above in the chapter: 200.1-200.5)
+      g190.1 [DES 8-2; a theorem] "the body-alone office rule of chapter 8-2, a theorem"
+             M: 195.1 T  |  J: = M  (195.1: "The body-alone office rule")
+
+  derivation of 8.1 T   (01-framework.tex:317)
+        g6.0 [DES 1-3; a theorem] "the three readout rules at the three levels of the wash (chapter 1-3, a theorem)"
+             M: 18.1 C, 18.2 T, 18.3 C, 18.4 C, 24.1 C, 27.1 T  |  J: 24.1 C  (24.1: "The three readout rules as one read at three levels")
+        g6.1 [DES 11-6; a theorem] "the wash move at the cap (chapter 11-6, a theorem)"
+             M: -  |  J: = M  (chapter 11-6 holds no THEOREM/CONDITIONAL box)
+        g6.2 [DES 6-10; a theorem] "the body-alone office of every word by the one rule (chapter 6-10, a theorem)"
+             M: 200.1 C, 200.2 C, 200.3 C, 200.6 T, 202.1 T  |  J: unresolved, M kept  (no box title of chapter 6-10 names it)
+        g6.3 [DES 8-2; a theorem] "the body-alone square at the five bodies (chapter 8-2, a theorem)"
+             M: 195.1 T  |  J: = M  (195.1: "The body-alone office rule")
+        g6.4 [DES 1-1; an open result] "the two definitions of open at every end (chapter 1-1, an open result)"
+             M: 2.4 O, 2.5 O, 2.7 O, 2.8 O, 4.1 O  |  J: unresolved, M kept  (declared OPEN; any of 2.4, 2.5, 2.7, 2.8, 4.1)
+
+  derivation of 27.1 T   (01-framework.tex:892)
+       g22.0 [DES 7-1; a theorem] "the confinement as the readability of the dark genre (chapter 7-1, a theorem)"
+             M: 171.1 C  |  J: = M  (171.1: "Confinement as the dark-genre readability")
+       g22.1 [DES 5-7; a theorem] "the gluon pair ket through the scale body (chapter 5-7, a theorem)"
+             M: 147.1 C, 148.1 C, 149.1 C  |  J: 149.1 C  (149.1: "The strong coupling as the gluon pair-ket office through the scale body")
+       g22.2 [DES 6-7; an open result] "the quark mixing block (chapter 6-7, an open result)"
+             M: 166.2 O, 166.3 O, 166.4 O, 166.5 O, 166.6 O, 168.1 O, 169.1 O  |  J: 166.6 O  (166.6: "The quark mixing block at the read sites")
+       g22.3 [DES 1-3; a theorem] "the gain lemma (chapter 1-3, a theorem)"
+             M: 18.1 C, 18.2 T, 18.3 C, 18.4 C, 24.1 C, 27.1 T  |  J: 18.2 T  (18.2: "The gain lemma at the spectrum of records")
+       g22.4 [DES 7-7; a theorem] "the conjugate-letter sorting (chapter 7-7, a theorem)"
+             M: 181.1 C, 181.2 C, 181.4 C, 181.5 T  |  J: unresolved, M kept  (no box title of chapter 7-7 names it)
+       g22.5 [DES 8-2; a theorem] "the body-alone office of every body (chapter 8-2, a theorem)"
+             M: 195.1 T  |  J: = M  (195.1: "The body-alone office rule")
+
+  derivation of 39.1 T   (03-quantum-mechanics.tex:141)
+       g34.0 [DES 6-10; a theorem] "the Higgs and carrier offices with the body-alone rule (chapter 6-10, a theorem)"
+             M: 200.1 C, 200.2 C, 200.3 C, 200.6 T, 202.1 T  |  J: 200.6 T  (200.6: "The Higgs and carrier offices at their sinks")
+       g34.1 [DES 8-1; a theorem] "the unpassed in-legs at the five bodies (chapter 8-1, a theorem)"
+             M: 185.1 C, 185.2 C, 185.3 C, 185.4 C, 185.5 C, 185.6 C, 185.7 C, 185.8 C, 185.9 C, 185.10 C, 185.11 C, 185.12 C, ... (+2)  |  J: 191.1 T  (191.1: "The dressing as the unpassed (3,4) in-legs")
+       g34.2 [DES 6-10; an open result] "the Higgs leg unit (chapter 6-10, an open result)"
+             M: 200.4 O, 200.5 O  |  J: unresolved, M kept  (declared OPEN; 200.4 or 200.5)
+       g34.3 [DES 1-2; a theorem] "the readability order at the six genres (chapter 1-2, a theorem)"
+             M: 9.1 C, 9.2 T, 9.3 T, 9.4 T, 9.5 T, 9.6 T, 9.7 C, 11.1 T, 12.1 C, 13.1 T, 16.1 T  |  J: 9.1 C  (9.1: "Readability order at the six genres")
+       g34.4 [DES 1-4; an open result] "the forces as the move classes (chapter 1-4, an open result)"
+             M: D.1 O, D.2 O, D.5 O, D.6 O, D.7 O, E.1 O, F.1 O, G.1 O  |  J: E.1 O  (E.1: "The forces as the move classes at the genres")
+       g34.5 [DES 4-8b; an instrument] "the twelve-slot table (chapter 4-8b, an instrument)"
+             M: I.9.1 Tab, I.10.1 Tab  |  J: unresolved, M kept  (instrument tables I.9.1, I.10.1)
+
+  derivation of 69.1 T   (05-gauge-structure.tex:180)
+       g63.0 [DES 1-5; a theorem] "the terminated saturation at the census (chapter 1-5, a theorem)"
+             M: H.3 T, H.9 C, P.1 T, Q.1 C, R.1 T, U.1 T  |  J: H.3 T, U.1 T  (H.3: "The termination of seeded saturation")
+       g63.1 [DES 8-2; a theorem] "the body-alone office rule at the measure-struck reading (chapter 8-2, a theorem)"
+             M: 195.1 T  |  J: = M  (195.1: "The body-alone office rule")
+       g63.2 [DES 6-10; a theorem] "the Higgs and carrier offices with the word faces (chapter 6-10, a theorem)"
+             M: 200.1 C, 200.2 C, 200.3 C, 200.6 T, 202.1 T  |  J: 200.6 T  (200.6: "The Higgs and carrier offices at their sinks")
+       g63.3 [DES 6-10; an open result] "the Higgs attachment at the (4,4) count (chapter 6-10, an open result)"
+             M: 200.4 O, 200.5 O  |  J: 200.5 O  (200.5: "The Higgs attachment at the saturated web")
+       g63.4 [DES 8-1; a theorem] "the count law at the six genres (chapter 8-1, a theorem)"
+             M: 185.1 C, 185.2 C, 185.3 C, 185.4 C, 185.5 C, 185.6 C, 185.7 C, 185.8 C, 185.9 C, 185.10 C, 185.11 C, 185.12 C, ... (+2)  |  J: unresolved, M kept  (as for 16.1)
+
+  derivation of 70.1 T   (05-gauge-structure.tex:211)
+       g64.0 [DES 10-2; an open result] "the Green-function row at its two-point table and its charge table (chapter 10-2, an open result)"
+             M: 92.1 O, 94.1 O, 95.1 O, 96.1 O, 97.1 O  |  J: unresolved, M kept  (declared OPEN; no box title of chapter 10-2 names it)
+       g64.1 [DES 10-2; an open result] "the two-two two-point function at its register (chapter 10-2, an open result)"
+             M: 92.1 O, 94.1 O, 95.1 O, 96.1 O, 97.1 O  |  J: unresolved, M kept  (declared OPEN; no box title of chapter 10-2 names it)
+       g64.2 [DES 4-8; an open result] "the Ward-functional row at the (2,3) register (chapter 4-8, an open result)"
+             M: -  |  J: = M  (declared OPEN; chapter 4-8 holds no OPEN box)
+       g64.3 [DES 10-6; an open result] "the serial insertion row at the chains (chapter 10-6, an open result)"
+             M: 116.1 O, 117.1 O, 119.1 O  |  J: unresolved, M kept  (declared OPEN; 116.1, 117.1 or 119.1)
+
+  derivation of 74.1 T, 74.2 C, 74.3 C, 74.4 T, 74.5 O   (05-gauge-structure.tex:381)
+       g68.0 [DES 1-4; a theorem] "the moves in one table (chapter 1-4, a theorem)"
+             M: D.3 T, D.4 T  |  J: unresolved, M kept  (D.3 or D.4 (both THEOREM))
+       g68.1 [DES 1-5; a theorem] "the content exponents of every web (chapter 1-5, a theorem)"
+             M: H.3 T, H.9 C, P.1 T, Q.1 C, R.1 T, U.1 T  |  J: unresolved, M kept  (no box of chapter 1-5 names content exponents)
+       g68.2 [DES 1-4; a theorem] "the move matrix of the parent result at the grade vector (chapter 1-4, a theorem)"
+             M: D.3 T, D.4 T  |  J: unresolved, M kept  (D.3 or D.4 (both THEOREM))
+
+  derivation of 78.1 C, 78.2 C, 78.3 T   (05-gauge-structure.tex:514)
+       g71.0 [DES 1-1; a theorem] "the one-act clause as a theorem of the derived act (chapter 1-1, a theorem)"
+             M: 2.1 T, 2.2 C, 2.3 T, 2.6 T, 2.9 T, 2.10 T, 3.1 T, 8.1 T  |  J: 2.3 T  (2.3: "The one-act clause is a theorem of the derived act")
+       g71.1 [DES 4-6; a theorem] "conservation as one theorem of one link (chapter 4-6, a theorem)"
+             M: 74.1 T, 74.2 C, 74.3 C, 74.4 T  |  J: 74.3 C  (74.3: "conservation is one theorem of one link")
+       g71.2 [DES 5-1; a theorem] "the explicit two-point function with its one hundred seventy-two records (chapter 5-1, a theorem)"
+             M: 124.1 C, 134.1 T, 135.1 T  |  J: 124.1 C  (124.1: "the records of its two reads are 172")
+       g71.3 [DES 1-3; a theorem] "the dressing at the listed face with its two thousand six hundred thirty-three dressed links (chapter 1-3, a theorem)"
+             M: 18.1 C, 18.2 T, 18.3 C, 18.4 C, 24.1 C, 27.1 T  |  J: unresolved, M kept  (no box title of chapter 1-3 names it)
+
+  derivation of 146.1 C   (07-cell-3-2-photon.tex:635)
+      g132.0 [REF FRAMEWORK; (the axiom and the definitions)] "the axiom and the six definitions of chapter~\ref{mod:FRAMEWORK}"
+             M: 1.1 D, 1.2 D, 1.3 D, 1.4 D, 1.5 D, 1.6 D  |  J: = M  (Definitions 1.1-1.6)
+      g132.1 [REF I-3-records-reads-and-the-bo; the theorem] "the theorem of chapter~\ref{mod:I-3-records-reads-and-the-born-count-the-gain-lemma}"
+             M: 18.1 C, 18.2 T, 18.3 C, 18.4 C  |  J: unresolved, M kept  (any of 18.1-18.4)
+      g132.2 [REF I-6-read-at-a-register-the-p; the theorem] "the theorem of chapter~\ref{mod:I-6-read-at-a-register-the-probe-and-the-measurement}"
+             M: 28.1 T, 28.2 T, 28.5 T  |  J: unresolved, M kept  (any of 28.1, 28.2, 28.5)
+      g132.3 [REF II-6-energy-and-the-hamilton; the theorem] "the theorem of chapter~\ref{mod:II-6-energy-and-the-hamiltonian-the-first-power-operator-and-the-step}"
+             M: 44.1 C  |  J: = M  (unique)
+      g132.4 [REF II-7-path-integral-as-the-fi; the open result] "the open result of chapter~\ref{mod:II-7-path-integral-as-the-finite-record-sum}"
+             M: 45.1 O  |  J: = M  (unique)
+      g132.5 [REF V-1-fine-structure-constant-; the theorem] "the theorem of chapter~\ref{mod:V-1-fine-structure-constant-at-the-one-link}"
+             M: 124.1 C  |  J: = M  (unique)
+
+  derivation of 147.1 C   (07-cell-3-2-photon.tex:661)
+      g133.0 [REF FRAMEWORK; (the axiom and the definitions)] "the axiom and the six definitions of chapter~\ref{mod:FRAMEWORK}"
+             M: 1.1 D, 1.2 D, 1.3 D, 1.4 D, 1.5 D, 1.6 D  |  J: = M  (Definitions 1.1-1.6)
+      g133.1 [REF I-2-link-and-its-six-genres; the theorem] "the theorem of chapter~\ref{mod:I-2-link-and-its-six-genres}"
+             M: 9.1 C, 9.2 T, 9.3 T, 9.4 T, 9.5 T, 9.6 T, 9.7 C  |  J: unresolved, M kept  (any of 9.1-9.7)
+      g133.2 [REF I-3-records-reads-and-the-bo; the theorem] "the theorem of chapter~\ref{mod:I-3-records-reads-and-the-born-count-the-gain-lemma}"
+             M: 18.1 C, 18.2 T, 18.3 C, 18.4 C  |  J: unresolved, M kept  (any of 18.1-18.4)
+      g133.3 [REF I-6-read-at-a-register-the-p; the theorem] "the theorem of chapter~\ref{mod:I-6-read-at-a-register-the-probe-and-the-measurement}"
+             M: 28.1 T, 28.2 T, 28.5 T  |  J: unresolved, M kept  (any of 28.1, 28.2, 28.5)
+      g133.4 [REF III-1-order-coordinate-and-i; the theorem] "the theorem of chapter~\ref{mod:III-1-order-coordinate-and-its-theorem}"
+             M: 50.1 C  |  J: = M  (unique)
+      g133.5 [REF III-7-order-theorem-group-mo; the theorem] "the theorem of chapter~\ref{mod:III-7-order-theorem-group-moves-and-transfers}"
+             M: 62.1 T  |  J: = M  (unique)
+      g133.6 [REF V-1-fine-structure-constant-; the theorem] "the theorem of chapter~\ref{mod:V-1-fine-structure-constant-at-the-one-link}"
+             M: 124.1 C  |  J: = M  (unique)
+      g133.7 [REF V-6-finiteness-without-renor; the theorem] "the theorem of chapter~\ref{mod:V-6-finiteness-without-renormalization-the-finite-record-sum-and-the-order-grading}"
+             M: 146.1 C  |  J: = M  (unique)
+
+  derivation of 64.1 T, 64.2 T   (05-gauge-structure.tex:41)
+       g58.0 [DES 1-1; the text] "the axiom with the definition \emph{known} (chapter 1-1, the text)"
+             M: 1.1 D, 1.2 D, 1.3 D, 1.4 D, 1.5 D, 1.6 D  |  J: = M  (the text)
+       g58.1 [DES 3-6; a theorem] "the admissible matchings as the whole unitary group at each end (chapter 3-6, a theorem)"
+             M: 59.1 C, 61.1 T  |  J: unresolved, M kept  (59.1 or 61.1)
+       g58.2 [NOWHERE ; a theorem] "the identification algebra at the (2,3) tether (a theorem placed at no chapter of this compendium)"
+             M: -  |  J: = M  (a theorem placed at no chapter (no box))
+       g58.3 [DES 5-1; a theorem] "the explicit two-point function with its records (chapter 5-1, a theorem)"
+             M: 124.1 C, 134.1 T, 135.1 T  |  J: 124.1 C  (124.1: "the records of its two reads are 172")
+       g58.4 [DES 2-2; a theorem] "the Born count as the readout of a record (chapter 2-2, a theorem)"
+             M: 40.1 C  |  J: = M  (unique)
+
+  derivation of 66.1 O, 66.2 O, 66.3 O, 66.4 C, 66.5 O   (05-gauge-structure.tex:119)
+       g60.0 [DES 1-5; a theorem] "the listed webs with their end lines and the four bodies (chapter 1-5, a theorem)"
+             M: H.3 T, H.9 C, P.1 T, Q.1 C, R.1 T, U.1 T  |  J: unresolved, M kept  (as for 2.1-2.9)
+       g60.1 [DES 4-4; an open result] "the Cartan weights at the open ends (chapter 4-4, an open result read at its standing)"
+             M: 72.1 O, 72.2 O, 72.3 O, 72.5 O  |  J: 72.1 O  (72.1: "The Cartan weights and the charge")
+       g60.2 [DES 4-1; a theorem] "the gauge group with its sixteen rows as a comparison target and no input (chapter 4-1, a theorem)"
+             M: 64.1 T, 64.2 T  |  J: no box  (the derivation states 'as a comparison target and no input')
+       g60.3 [NOWHERE ; an open result] "the dart charge at the dock face (an open result placed at no chapter of this compendium, read at its standing)"
+             M: -  |  J: = M  (declared OPEN, placed at no chapter (no box))
+
+  derivation of 131.1 O   (07-cell-3-2-photon.tex:232)
+      g122.0 [REF FRAMEWORK; (the axiom and the definitions)] "the axiom and the six definitions of chapter~\ref{mod:FRAMEWORK}"
+             M: 1.1 D, 1.2 D, 1.3 D, 1.4 D, 1.5 D, 1.6 D  |  J: = M  (Definitions 1.1-1.6)
+      g122.1 [REF I-2-link-and-its-six-genres; a theorem] "the link and its six genres of chapter~\ref{mod:I-2-link-and-its-six-genres}, a theorem"
+             M: 9.1 C, 9.2 T, 9.3 T, 9.4 T, 9.5 T, 9.6 T, 9.7 C  |  J: unresolved, M kept  (any of 9.1-9.7)
+      g122.2 [REF I-3-records-reads-and-the-bo; a theorem] "the records, reads and the Born count of chapter~\ref{mod:I-3-records-reads-and-the-born-count-the-gain-lemma}, a theorem"
+             M: 18.1 C, 18.2 T, 18.3 C, 18.4 C  |  J: unresolved, M kept  (any of 18.1-18.4)
+      g122.3 [REF IV-1-gauge-invariance-as-the; a theorem] "the gauge group of chapter~\ref{mod:IV-1-gauge-invariance-as-the-known-clause}, a theorem"
+             M: 64.1 T, 64.2 T  |  J: 64.2 T  (64.2: "The gauge group as the face group of the tether")
+      g122.4 [REF V-1-fine-structure-constant-; a theorem] "the fine-structure constant at the one link of chapter~\ref{mod:V-1-fine-structure-constant-at-the-one-link}, a theorem"
+             M: 124.1 C  |  J: = M  (124.1: "The fine-structure constant at the one link")
+
+[5] Re-grade under the chain rule (front.tex:34): a THEOREM rests only on the axiom, definitions and THEOREMs
+  shared derivation of 2.1-2.9 (begins 01-framework.tex:168) concludes at 01-framework.tex:173: "so the hub step is a third letter, which is the open result" -> 2.7; verbatim: True
+  shared derivation of 9.1-9.8 (begins 01-framework.tex:391) concludes at 01-framework.tex:396: "so the readability order is a typing of the type, which is the theorem" -> 9.1; verbatim: True
+  shared derivation of 18.1-18.6 (begins 01-framework.tex:690) concludes at 01-framework.tex:695: "So the Born count is a measure and the readout its root, which is the theorem" -> 18.1; verbatim: True
+  | box | grade | index: O / C premises | M verdict (MOD) | M verdict (FIF) | J verdict | unproven premises (J) |
+  |---|---|---|---|---|---|---|
+  | 2.1 | T | 0 / 0 | undetermined | undetermined | undetermined | - |
+  | 2.3 | T | 0 / 0 | undetermined | undetermined | undetermined | - |
+  | 2.6 | T | 0 / 0 | undetermined | undetermined | undetermined | - |
+  | 2.9 | T | 0 / 0 | undetermined | undetermined | undetermined | - |
+  | 9.2 | T | 4 / 1 | undetermined | undetermined | violates (CONDITIONAL/OPEN premise) | g7.1: 66.4 C |
+  | 9.3 | T | 4 / 1 | undetermined | undetermined | violates (CONDITIONAL/OPEN premise) | g7.1: 66.4 C |
+  | 9.4 | T | 4 / 1 | undetermined | undetermined | violates (CONDITIONAL/OPEN premise) | g7.1: 66.4 C |
+  | 9.5 | T | 4 / 1 | undetermined | undetermined | violates (CONDITIONAL/OPEN premise) | g7.1: 66.4 C |
+  | 9.6 | T | 4 / 1 | undetermined | undetermined | violates (CONDITIONAL/OPEN premise) | g7.1: 66.4 C |
+  | 18.2 | T | 5 / 3 | violates (declared OPEN premise) | violates (declared OPEN premise) | violates (declared OPEN premise) | g15.1: 9.1 C; g15.2: 124.1 C; g15.3: I.1 O [declared O] |
+  | 16.1 | T | 2 / 18 | violates (declared OPEN premise) | violates (declared OPEN premise) | violates (declared OPEN premise) | g13.0: 9.1 C; g13.3: 131.1 O [declared O] |
+  | 58.1 | T | 1 / 3 | violates (declared OPEN premise) | violates (declared OPEN premise) | violates (declared OPEN premise) | g52.0: 131.1 O [declared O]; g52.1: 54.1 C; g52.2: unboxed [declared O]; g52.3: 57.2 O [declared O]; g52.4: 166.2 O, 166.3 O, 166.4 O, 166.5 O, ... (+3) [declared O] |
+  | 200.6 | T | 1 / 3 | violates (CONDITIONAL/OPEN premise) | violates (CONDITIONAL/OPEN premise) | violates (CONDITIONAL/OPEN premise) | g190.0: 200.1 C, 200.2 C, 200.3 C, 200.4 O, ... (+1) |
+  | 8.1 | T | 7 / 7 | violates (declared OPEN premise) | violates (declared OPEN premise) | violates (declared OPEN premise) | g6.0: 24.1 C; g6.4: 2.4 O, 2.5 O, 2.7 O, 2.8 O, ... (+1) [declared O] |
+  | 27.1 | T | 6 / 8 | violates (declared OPEN premise) | violates (declared OPEN premise) | violates (declared OPEN premise) | g22.0: 171.1 C; g22.1: 149.1 C; g22.2: 166.6 O [declared O] |
+  | 39.1 | T | 7 / 18 | violates (declared OPEN premise) | violates (declared OPEN premise) | violates (declared OPEN premise) | g34.2: 200.4 O, 200.5 O [declared O]; g34.3: 9.1 C; g34.4: E.1 O [declared O] |
+  | 69.1 | T | 12 / 17 | violates (declared OPEN premise) | violates (declared OPEN premise) | violates (declared OPEN premise) | g63.3: 200.5 O [declared O] |
+  | 70.1 | T | 5 / 5 | violates (declared OPEN premise) | violates (declared OPEN premise) | violates (declared OPEN premise) | g64.0: 92.1 O, 94.1 O, 95.1 O, 96.1 O, ... (+1) [declared O]; g64.1: 92.1 O, 94.1 O, 95.1 O, 96.1 O, ... (+1) [declared O]; g64.2: unboxed [declared O]; g64.3: 116.1 O, 117.1 O, 119.1 O [declared O] |
+  | 74.1 | T | 0 / 14 | undetermined | undetermined | undetermined | - |
+  | 74.4 | T | 0 / 14 | undetermined | undetermined | undetermined | - |
+  | 78.3 | T | 19 / 9 | undetermined | undetermined | violates (CONDITIONAL/OPEN premise) | g71.1: 74.3 C; g71.2: 124.1 C |
+  | 64.1 | T | 7 / 6 | violates (CONDITIONAL/OPEN premise) | violates (CONDITIONAL/OPEN premise) | violates (CONDITIONAL/OPEN premise) | g58.3: 124.1 C; g58.4: 40.1 C |
+  | 64.2 | T | 7 / 6 | violates (CONDITIONAL/OPEN premise) | violates (CONDITIONAL/OPEN premise) | violates (CONDITIONAL/OPEN premise) | g58.3: 124.1 C; g58.4: 40.1 C |
+  THEOREMs in requested: 14 ['2.3', '2.6', '18.2', '16.1', '58.1', '200.6', '8.1', '27.1', '39.1', '69.1', '70.1', '74.1', '74.4', '78.3']
+    index (F3 basis): list an OPEN premise 10; OPEN or CONDITIONAL 12
+    layer M: declared OPEN 8; violates 9; undetermined 5; consistent 0
+    layer J: declared OPEN 8; violates 10; undetermined 4; consistent 0
+  THEOREMs in R: 23 ['2.1', '2.3', '2.6', '2.9', '9.2', '9.3', '9.4', '9.5', '9.6', '18.2', '16.1', '58.1', '200.6', '8.1', '27.1', '39.1', '69.1', '70.1', '74.1', '74.4', '78.3', '64.1', '64.2']
+    index (F3 basis): list an OPEN premise 17; OPEN or CONDITIONAL 19
+    layer M: declared OPEN 8; violates 11; undetermined 12; consistent 0
+    layer J: declared OPEN 8; violates 17; undetermined 6; consistent 0
+  CONDITIONALs in R: 17; whose derivation rests on an OPEN result (J): 6 ['18.1', '18.3', '18.4', '124.1', '146.1', '66.4']; index: 10
+
+[6] Cycles
+  index SCC containing 124.1: 22 statements
+    index edge 124.1 -> 16.1: derivation of 16.1 cites 124.1? M: no; J: no
+    index edge 16.1 -> 124.1: derivation of 124.1 cites 16.1? M: no; J: no
+    index edge 124.1 -> 58.1: derivation of 58.1 cites 124.1? M: no; J: no
+    index edge 58.1 -> 124.1: derivation of 124.1 cites 58.1? M: no; J: no
+  layer M (MOD): 6304 edges; SCCs > 1: [261, 2]; SCC of 124.1: 261; shortest cycle through 124.1: ['124.1', '18.1']
+  layer M (FIF): 5668 edges; SCCs > 1: [208, 2, 2]; SCC of 124.1: 208; shortest cycle through 124.1: ['124.1', '172.1', 'Q.1', '2.4']
+  layer M (UNION): 6703 edges; SCCs > 1: [290, 2]; SCC of 124.1: 290; shortest cycle through 124.1: ['124.1', '18.1']
+  layer J (J where judged, M elsewhere): 5889 edges; SCC of 124.1: 258
+  transitive premises of 124.1 (M MOD): 293; 16.1 among them: True; 58.1 among them: False
+  transitive premises of 124.1 (M FIF): 231; 16.1 among them: True; 58.1 among them: False
+  transitive premises of 124.1 (M UNION): 317; 16.1 among them: True; 58.1 among them: True
+  transitive premises of 124.1 (J): 290; 16.1 among them: True; 58.1 among them: False
+  shortest J path 16.1 => 124.1: ['16.1', '3.1', '28.1', '124.1']
+     16.1 -> 3.1: item g2.1 (any-of, 11 candidates) "the link with its six types (chapter 1-2, a theorem)"
+     3.1 -> 28.1: item g23.1 (any-of, 8 candidates) "the one-act clause as a theorem of the derived act (chapter 1-1, a theorem)"
+     28.1 -> 124.1: item g116.4 (any-of, 3 candidates) "the theorem of chapter~\ref{mod:I-6-read-at-a-register-the-probe-and-the-measurement}"
+  strict graph without J (single-candidate items only): 279 edges; SCCs > 1: []
+  strict graph (J choices where judged, single-candidate items elsewhere): 536 edges; SCCs > 1: [3]; SCC of 124.1: ['124.1', '18.2', '18.3']
+  boxes on a cycle under every resolution of the any-of items (M MOD): 6 ['35.1', '40.1', '73.1', '98.1', '121.1', '124.1']
+  boxes on a cycle under every resolution of the any-of items (M FIF): 5 ['35.1', '40.1', '44.1', '98.1', '121.1']
+  boxes on a cycle under every resolution of the any-of items (J): 10 ['2.3', '9.1', '35.1', '40.1', '66.4', '72.1', '73.1', '98.1', '121.1', '124.1']
+  witness (M MOD): 124.1 rests on one of ['18.1', '18.2', '18.3', '18.4'] (g116.3, 07-cell-3-2-photon.tex:44); all of them share the derivation of 18.1-18.6, which rests on one of ['124.1', '134.1', '135.1'] (g15.2, 01-framework.tex:691); 124.1 rests on 124.1: True, 134.1 rests on 124.1: True, 135.1 rests on 124.1: True
+  forced cycle components (M MOD): [['35.1', '40.1', '124.1'], ['73.1'], ['98.1'], ['121.1']]
+  forced cycle components (M FIF): [['35.1', '40.1', '44.1'], ['98.1'], ['121.1']]
+  forced cycle components (J): [['2.3'], ['9.1', '35.1', '40.1', '66.4', '72.1', '73.1', '124.1'], ['98.1'], ['121.1']]
+  shortest strict cycle through 124.1: ['124.1', '18.2']
+     124.1 -> 18.2: item g15.2 (01-framework.tex:691) "the explicit two-point function with its records (chapter 5-1, a theorem)"  [124.1: "the records of its two reads are 172"]
+     18.2 -> 124.1: item g116.3 (07-cell-3-2-photon.tex:44) "the theorem of chapter~\ref{mod:I-3-records-reads-and-the-born-count-the-gain-lemma}"  [124.1: "with the weights one, root two, root three and root six by the gain law"]
+     shortest strict cycle through 16.1: None
+     shortest strict cycle through 58.1: None
+     shortest strict cycle through 18.2: ['18.2', '124.1']
+     shortest strict cycle through 9.1: None
+     shortest strict cycle through 64.1: None
+     shortest strict cycle through 66.4: None
+     shortest strict cycle through 200.6: None
+     shortest strict cycle through 69.1: None
+
+[7] Load-bearing premises (F4) at statement level; T+C = THEOREM and CONDITIONAL boxes (209)
+  | premise set | index transitive T+C | derivation M (upper) | derivation J (upper) | definite M (lower) | definite J (lower) | direct users index / J-definite |
+  |---|---|---|---|---|---|---|---|
+  | 2.2 | 183 | 184 | 184 | 1 | 1 | 62 / 1 |
+  | 2.4,2.5,2.7,2.8 | 183 | 185 | 185 | 153 | 153 | 58 / 14 |
+  | 9.1,9.7 | 175 | 183 | 183 | 0 | 151 | 120 / 8 |
+  | 9.8 | 175 | 185 | 185 | 0 | 0 | 97 / 0 |
+  | 18.1,18.3,18.4 | 152 | 182 | 182 | 0 | 0 | 105 / 0 |
+  | 18.5,18.6 | 152 | 185 | 185 | 0 | 0 | 89 / 0 |
+  | 124.1 | 42 | 184 | 184 | 152 | 152 | 22 / 25 |
+  124.1, all grades: index direct 22, transitive 70; M-definite direct 14, J-definite direct 25, definite transitive J 313, M 313; upper J 391
+  boxes whose derivation cites 124.1 (J, incl. any-of): 28 ['11.1', '12.1', '18.1', '18.2', '18.3', '18.4', '18.5', '18.6', '19.1', '64.1', '64.2', '78.1', '78.2', '78.3', '125.1', '128.1', '130.1', '131.1', '132.1', '134.1', '135.1', '141.1', '143.1', '146.1', '147.1', '148.1', '150.1', '193.1']
+
+[8] All 100 THEOREMs, derivation level (J where judged, M elsewhere)
+  consistent: 3
+  no premise sentence: 2
+  undetermined: 22
+  violates (CONDITIONAL/OPEN premise): 35
+  violates (declared OPEN premise): 38
+  (index: 66 of 100 list an OPEN premise)
+  sensitivity, layer M with reading FIF (no J): {'consistent': 3, 'no premise sentence': 2, 'undetermined': 28, 'violates (CONDITIONAL/OPEN premise)': 29, 'violates (declared OPEN premise)': 38}
+  sensitivity, layer M with reading UNION (no J): {'consistent': 3, 'no premise sentence': 2, 'undetermined': 28, 'violates (CONDITIONAL/OPEN premise)': 29, 'violates (declared OPEN premise)': 38}
+  layer M with reading MOD (no J): {'consistent': 3, 'no premise sentence': 2, 'undetermined': 28, 'violates (CONDITIONAL/OPEN premise)': 29, 'violates (declared OPEN premise)': 38}
+  consistent: ['2.10', 'I.7.1', 'I.52.1']
+  no premise sentence: ['I.1.2', 'I.16.2']
+  violates (declared OPEN premise): ['8.1', '16.1', '18.2', '27.1', '39.1', '55.1', '58.1', '61.1', '69.1', '70.1', '73.1', '79.1', '80.1', '83.1', '86.1', '104.1', '154.1', '170.1', '219.1', '220.2', '220.3', '221.1', '229.1', '230.1', '232.2', '233.1', '233.2', '233.4', '235.1', '235.2', '235.3', '235.4', 'P.1', 'R.1', 'U.1', 'I.12.1', 'I.13.1', 'I.40.1']
+  declared OPEN in the derivation and OPEN in the index list: 31; declared only: 7; index only: 35
