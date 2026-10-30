@@ -215,4 +215,7 @@ Final source-validation review: the optional upstream check now requires a prist
   3. R8-3 to R8-6, presentation: "elliptic" restricted to (14,0); the L note's F9 remark aligned with F; five proof-wording points; the κ³ form of $R'$ in the computation README; status lines.
 
   Coordinator rerun of `xcheck_round8.py`: 70/70, identical apart from timing.
+- 2026-10-30 — GU, Z1 neighbourhood (`formalization/geometric-unity/N-z1-neighbourhood.md`, round 10).
+  1. **Overbroad (F).** `F-zorro-reduction.md`, after Theorem F6: "So (E) holds only along $s(X)$, not on a neighbourhood in $Y$." This holds for the Weyl base tested there (E2(v)) but not in general: for flat ℵ at $\lambda=1/(n+1)$, Z1 is Einstein on all of $Y$ (F7), and (E) holds everywhere. Qualified in place.
+  2. **Incomplete (I).** `I-elliptic-reduction.md`, I7(b): "(E) on a neighbourhood is not established in this sector." For a flat base the constant $(t,u)$ of I7(b) solve $\Upsilon=0$ on all of $Y$ (F7, N12(c)); over a curved definite base (E) holds on no neighbourhood of a point of $s(X)$ (N10). Note added in place.
 

@@ -1,0 +1,65 @@
+result: "N. Upsilon = 0 on a neighbourhood of a point of s(X) in the Zorro metric Z1: for Shiab#, W_A (and its multiples) and the classes (A), (B) of L8, with kappa != 0 and the slaved T_e in V (det M != 0), there is no solution in (7,7); in (14,0) a solution forces lambda = 1/5 and a Ricci-flat base, and (for class (A), or for real-analytic t, u) it is exactly a flat-base solution with T_e = 0, constant (t, u) of I7(b), which exists on all of Y iff cV kappa^2 >= 9360"
+claim_id: [GU-054]
+gaps: [GU-G14]
+writeup: formalization/geometric-unity/N-z1-neighbourhood.md (Lemmas N1, N2, N3, N5, N6; Propositions N4, N8, N9, N10, N11; Theorems N7, N12); settles the Z1 item of J.3 (formalization/geometric-unity/J-slaved-sector.md) and L.3 (L-nonradial-z2.md) for the members of L8, and Conjecture F9 (F-zorro-reduction.md) for Z1 over flat bases and near s(X) over definite bases
+code: [computation/geometric-unity/N_z1_neighbourhood.py, computation/geometric-unity/N_z1_neighbourhood.out]
+formalization_status: >
+  Formalized in the setting of J and L (unitary gauge of G1, true Upsilon of D5, family x W_A + y W'_A + z W_C Ad_Gamma +
+  w W'_C Ad_Gamma, real forms (14,0) and (7,7)) with the hypotheses of L8 and the metric Z1 instead of Z2: n = 4,
+  lambda != 1/4, kappa != 0, T_o = t Phi^1 + u Phi^1 Gamma with arbitrary smooth t, u, T_e the slaved field Sigma (dt, du)
+  in V with det M != 0, Upsilon = 0 on a connected open U meeting s(X). Steps: (1) Z1 geometry: fibres totally geodesic,
+  the Euler field E is a gradient with nabla E = (1/2) P_H (not Killing, not homothetic, no conformal Killing field
+  tangent to the fibres) and a Ricci eigenvector everywhere, Ric(E, .) = -(1/c) E^flat, c = 4 cV (1 - 4 lambda); over a
+  flat base Ric = beta_S g + b (g_H + c ds (x) ds), Einstein iff lambda = 1/5; (2) the metric-free steps of L (L1, L5, the
+  line reduction) and a Z1 concircular lemma reduce every solution near s(X) to Einstein pieces (T_e = 0) or the line
+  equation Hess r = -(7/18) r Ric + nu g with nu fixed by the trace equation; (3) the degree-1 (3-jet) integrability
+  condition at a point of s(X), solved by hand from closed forms of R(., .)E and nabla Ric at the point, forces
+  nabla r in R E, an Einstein base and (scal_g / cH)^2 = 10 (1 - 5 lambda)(13 - 56 lambda)/(7 cV^2 (1 - 4 lambda)^2);
+  applied along the radial set Sigma = {e^theta g} (points on sections of the parallel metrics e^theta g) it forces
+  Ric_g = 0 and lambda in {1/5, 13/56}; (4) the trace equation along Sigma excludes 13/56 (a 1/r term with nonzero
+  residue); (5) at lambda = 1/5 the order-eps^2 fibre condition paired with T' = c0 - (<c0,c1>/<c1,c1>) c1 gives
+  alpha |W|^2 = 0 with alpha != 0, so W = 0 for a definite base; the same pairing proves F9 for Z1 near s(X) (definite
+  base); (6) over a flat base the line equation has no solution on any open set (radial reduction; trace equation).
+internal_consistency: >
+  The line coefficients are recomputed with L's own `reduced` (Shiab#, W_A, both real forms) before the reparametrisation
+  and the trace equation are derived symbolically. Ricci tensors of Z1 (and Z2) are brute force from F_jets (unmodified)
+  with a truncated-power-series coefficient ring (Fractions), so Taylor coefficients along the fibre and the full 1-jet at
+  a point of s(X) (via a shifted polynomial base) are exact. The Euler-field identities are checked off the section on
+  cubic random bases in general coordinates in three base signatures. All closed forms used in the hand proof of the
+  degree-1 theorem (R(., .)E, the blocks of nabla Ric at p) are checked against the brute force on random curved bases
+  with and without nabla R. The hand solution of the 1274 x 28 system (*) is confirmed by exact ranks and by the unique
+  solution vector; its nontrivial prediction (constant-curvature bases with scal/cH = +-10/9 at lambda = 1/7, and an
+  analogue at lambda = 13/30 on the (7,7) side, pass at one point; 2 sigma fails; the point (x0, 2 g(x0)) of Sigma fails)
+  is confirmed. The pairing alpha is the same for two random Weyl tensors (Schur) and nonzero for three (cH, cV).
+  Side result: to second order in the fibre the curvature corrections of Z1 equal the O'Neill A-terms of Z2; they differ
+  at third order.
+proof_status: >
+  Proven: N1 (Euler field), N2 (flat model; F9 for flat aleph), N3 (transfer, concircular lemma, line equation), N4
+  (trichotomy), N6(a)-(e) (data at p), N10 (F9 for Z1 near s(X), definite base; alpha computed exactly, Schur), N11
+  (flat base), N12(c) (existence). Proven given N6(f): N7 (degree-1 obstruction), N8 (13/56 excluded), N9 (lambda =
+  1/5, line type, W = 0), N12(a), (b). Computed: N6(f) (vertical V_0-derivatives of Ric at p; exact on generic bases in
+  three signatures; reduced to finitely many evaluations by an equivariance (Schur) argument whose affinity input is
+  argued, not written out); N5 (fibre jets, side result, not used). Open: type-(iii) points in (14,0) without
+  analyticity; F9 for indefinite bases and off s(X); the members left open by L.3. Imported: F4, F6, F7, Theorem K, J1-J2
+  tables, L1, L3, L5, the steps of L8, I6, I7(b).
+novelty: >
+  New within this audit: the Z1 item of J.3/L.3 is settled for Shiab#, W_A and the classes (A), (B): no neighbourhood
+  solution in (7,7); in (14,0) only lambda = 1/5 over a Ricci-flat base, and for analytic fields exactly the flat-base
+  solutions with T_e = 0 (the first explicit solutions of Upsilon = 0 on a neighbourhood, in fact on all of Y, in this
+  sector; they have Lambda_4 = 0 and a flat base). The first constraining order is the 3-jet (Ricci) along the radial
+  set Sigma; the Weyl tensor enters at the 4-jet (order eps^2 in the fibre), as in Z2. Conjecture F9 is proven for Z1
+  over flat bases and near s(X) over definite bases. Not in the source.
+reproducibility: "Exact (Fractions, truncated series with Fraction coefficients, sympy rationals); fixed seeds (random.Random(11..13) for N1, 21 N2, 31 N3, 41 N4, 51-52 N5, 71-74 and 171-174 N7); one core: 450 s, a second run 473 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 N_z1_neighbourhood.py > N_z1_neighbourhood.out 2>&1 (44 checks, 44 True, each asserted). Imports F_jets.py and L_nonradial.py unmodified."
+empirical_testability: >
+  None new. In the slaved vector sector neither Z1 nor Z2 yields a curved 4D solution of Upsilon = 0 on a neighbourhood;
+  the only neighbourhood solutions (Z1, (14,0), lambda = 1/5, flat base, T_e = 0) are flat with Lambda_4 = 0, in a fibre
+  signature that is not (7,7). The physically relevant reduction still depends on the undeclared rule for T off s(X), on
+  Z1 versus Z2, and on sectors not treated.
+dependencies: ["F4", "F6", "F7", "K", "J1", "J2", "I6", "I7", "L1", "L3", "L5", "L8", "A4", "A5"]
+confidence: >
+  High for N1-N4, N10, N11 and N12(c): hand proofs whose algebraic content is checked by independent brute force. High
+  but conditional for N7-N9 and N12(a), (b): the hand proof uses one block of nabla Ric at p (N6(f)) that is computed
+  exactly on generic bases and reduced by Schur, with the affinity of nabla Ric in the base data argued rather than
+  written out; its consequences are confirmed on the full linear system, including a nontrivial prediction. Not covered:
+  type-(iii) accumulation points without analyticity; indefinite bases in F9; the members left open by L.3; T_e outside
+  V or crossing det M = 0; T_o outside the invariant sector.

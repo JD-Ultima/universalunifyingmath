@@ -218,7 +218,7 @@ Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $
   - Not covered:
     - $T_o$ outside the invariant sector;
     - $T_e$ outside the vector sector for large $|T_o|$;
-    - neighbourhood solutions in Z1; in Z2 beyond the radial ansatz, only $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, with $xz\pm yw=0$, away from $s(X)$ (Rounds 8, 9);
+    - neighbourhood solutions in Z1 beyond Round 10 (limit points of Einstein pieces without analyticity; the members left open by L.3); in Z2 beyond the radial ansatz, only $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, with $xz\pm yw=0$, away from $s(X)$ (Rounds 8, 9);
     - reading (A).
 
 ## Round 8 — $\Upsilon=0$ beyond the radial Z2 ansatz (GU-054, GU-G14, GU-G16)
@@ -246,6 +246,16 @@ Hypotheses of round 8; for $(x,y)=0$ the same without $(x,y)\neq0$.
 - **Results.** No solution near $s(X)$ for any member with $xz\pm yw=0$, $(x,y)\neq0$ (M6(a)); none on any open set for $\mathrm{span}(W_A,W'_A)$, including $W'_A$ (M6(b)), and for $x=\pm y$ in (7,7) (M7; invariant line $\sigma=-\kappa/208$ with $\nabla^2r=-\tfrac5{12}r\,\mathrm{Ric}$). For $(x,y)=0$, $\Upsilon=0$ iff $T=0$, for every metric (M8). With round 8: no solution near $s(X)$ for any member with $(x,y)\neq0$, and none on any open set except possibly $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, away from $s(X)$ (M10).
 - **Open.** That exception (off the section the first integrability condition fails at every sampled point, so a solution would need special base curvature, M9, computed); Z1; other sectors.
 - No statement made before round 9 is contradicted.
+
+## Round 10 — $\Upsilon=0$ on a neighbourhood in Z1 (GU-054, GU-G14)
+
+Write-up: `formalization/geometric-unity/N-z1-neighbourhood.md`. Code: `computation/geometric-unity/N_z1_neighbourhood.py`, output committed, exact, 44 asserted checks, ~7.5 min (450 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/N-z1-neighbourhood.yaml`. Not yet internally reviewed.
+
+- Z1 geometry: the Euler field is a gradient with $\nabla E=\tfrac12P_H$, not Killing, and a Ricci eigenvector ($-1/c$). The flat model is $\mathrm{Ric}=\beta_Sg+4bc\,e^{-s/2}\nabla^2e^{s/2}$, Einstein iff $\lambda=\tfrac15$.
+- Neighbourhood solutions reduce to Einstein pieces or the line equation $\nabla^2r=-\tfrac7{18}r\,\mathrm{Ric}+\nu g$. Its 3-jet conditions along the radial set force a Ricci-flat base and $\lambda\in\{\tfrac15,\tfrac{13}{56}\}$; the trace equation removes $\tfrac{13}{56}$; at $\tfrac15$ an order-$\varepsilon^2$ pairing gives $\tfrac{45}{8c_H^2c_V}|W|^2=0$.
+- **Result.** For $\circledast_\sharp$, $W_A$ and L8's classes (A), (B): none in (7,7). In (14,0), only $\lambda=\tfrac15$ over a Ricci-flat base; for analytic fields exactly the flat-base, $T_e\equiv0$ solutions (F7 + I7(b), $c_V\kappa^2\ge9360$), which hold on all of $Y$. F9 for Z1 is proven over flat bases and near $s(X)$ over definite bases.
+- One input ($\nabla_U\mathrm{Ric}$ at $s(X)$, N6(f)) is computed, with a Schur reduction. Open: limit points without analyticity, indefinite bases in F9, the members left open by L.3.
+- F's sentence after F6 ("(E) holds only along $s(X)$") was too broad for flat ℵ, and I7(b)'s "(E) on a neighbourhood is not established in this sector" did not cover the flat base; both are qualified (`reports/CORRECTIONS.md`). Otherwise no earlier statement is contradicted.
 
 ## F4(c) for every $n$ (round 2 F, completed)
 

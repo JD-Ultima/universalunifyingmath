@@ -1,0 +1,67 @@
+
+=== N0. The line equation in r (L5): coefficients, reparametrisation, mu_1, trace equation, Phi   [0 s]
+  [  1] L's `reduced` (Shiab# and W_A, (14,0) and (7,7)) at u = 0: Hessian 576/(kappa + 224 t), gradient coefficients -258048/(..)^2, 78336/(..)^2, c1 = kappa t + 312 t^2: the line formulas of L5 at N = 1: True
+  [  2] with r = -1/(224 N (kappa + 224 N sigma)): H~ dsigma/dr = -18/(7*r), the dr (x) dr coefficient H~ sigma'' + Q~ sigma'^2 = 0, and the |dr|^2 g coefficient -H~ sigma'' + Q~' sigma'^2 = -351/(98*r**2): True
+  [  3] traceless part: (Hess r)_0 = mu_1 r (Ric)_0 with mu_1 = -7/18 (L8 step 5): True
+  [  4] trace part: nu = (7/468) r s_Y - Phi(r)/13 + (3/28)|dr|^2/r with Phi(r) = (7/18) r c~(sigma(r)): True
+  [  5] r Phi(r) is a polynomial in r with constant term A = 13/(269746176*N**3) != 0 (N != 0): True
+
+=== N1. Lemma N1 (Euler field of Z1) at points OFF the section, curved bases in general coordinates   [2 s]
+  [  6] base (4, 0), lambda = 0, cH = 2, cV = 3, y0 != g(x0), Gamma(x0) != 0: fibres totally geodesic (True); E^flat = c ds (True); nabla E = (1/2) P_H (True); |E|^2 = c = 4 cV (1 - 4 lambda) = 12 (True); Ric(E, .) = -(1/c) E^flat (True)  [1 s]: True
+  [  7] base (1, 3), lambda = 1/2, cH = 2, cV = 3, y0 != g(x0), Gamma(x0) != 0: fibres totally geodesic (True); E^flat = c ds (True); nabla E = (1/2) P_H (True); |E|^2 = c = 4 cV (1 - 4 lambda) = -12 (True); Ric(E, .) = -(1/c) E^flat (True)  [2 s]: True
+  [  8] base (2, 2), lambda = 2/3, cH = 2, cV = 3, y0 != g(x0), Gamma(x0) != 0: fibres totally geodesic (True); E^flat = c ds (True); nabla E = (1/2) P_H (True); |E|^2 = c = 4 cV (1 - 4 lambda) = -20 (True); Ric(E, .) = -(1/c) E^flat (True)  [2 s]: True
+
+=== N2. Lemma N2 (flat model): Ric = a g + b (g_H + c ds (x) ds) off the section; b = 0 iff lambda = 1/5   [6 s]
+  [  9] flat base (4,0), y0 != eta, lambda = 0: Ric(Z1) = a g + b (g_H + c ds (x) ds), a = -5/(4 cV), b = (1 - 5 lambda)/(cV (1 - 4 lambda)) = 1/3: True
+  [ 10] flat base (4,0), y0 != eta, lambda = 1/5: Ric(Z1) = a g + b (g_H + c ds (x) ds), a = -5/(4 cV), b = (1 - 5 lambda)/(cV (1 - 4 lambda)) = 0; Einstein, Ric = -(5/(4 cV)) g and G = (15/(2 cV)) g (True): True
+  [ 11] flat base (4,0), y0 != eta, lambda = 13/56: Ric(Z1) = a g + b (g_H + c ds (x) ds), a = -5/(4 cV), b = (1 - 5 lambda)/(cV (1 - 4 lambda)) = -3/4: True
+  [ 12] flat base (4,0), y0 != eta, lambda = 1/2: Ric(Z1) = a g + b (g_H + c ds (x) ds), a = -5/(4 cV), b = (1 - 5 lambda)/(cV (1 - 4 lambda)) = 1/2: True
+  [ 13] flat base (4,0), y0 != eta, lambda = 1: Ric(Z1) = a g + b (g_H + c ds (x) ds), a = -5/(4 cV), b = (1 - 5 lambda)/(cV (1 - 4 lambda)) = 4/9: True
+
+=== N3. Lemma N5 (fibre jets): Ric(Z1) - Ric(Z2) - [flat difference] along the fibre over x0, in powers of h = y - g(x0)   [13 s]
+  [ 14] base (4, 0), lambda = 1/7, random R and cubic terms (nabla R != 0): agreement order by order {'HH': [True, True, True, False], 'HV': [True, True, False, False], 'VV': [True, True, True, False]} (orders 0..3); the order-2 A-terms are nonzero (3119 coefficients)  [54 s]: True
+  [ 15] base (1, 3), lambda = 1/2, random R and cubic terms (nabla R != 0): agreement order by order {'HH': [True, True, True], 'HV': [True, True, False], 'VV': [True, True, True]} (orders 0..2); the order-2 A-terms are nonzero (3122 coefficients)  [11 s]: True
+  [ 16] base (2, 2), lambda = 2/3, random R and cubic terms (nabla R != 0): agreement order by order {'HH': [True, True, True], 'HV': [True, True, False], 'VV': [True, True, True]} (orders 0..2); the order-2 A-terms are nonzero (3114 coefficients)  [11 s]: True
+
+=== N4. Lemma N6 (data at p in closed form): R(.,.)E, Ric and nabla Ric of Z1 at a point p of s(X)   [89 s]
+  [ 17] base (4, 0): the random curvature tensor is generic for Schur (W^+, W^- (or W in (1,3)), traceless Ricci and scalar parts all nonzero): True
+  [ 18] base (4, 0), lambda = 1/7, without cubic terms: base curvature = R (True); R(X,Y)E = 0, R(X,U)E = -(1/4) U~X, R(U,W)E = 0, R(E,X)E = X/4 (True); (nabla_X Ric)_HH = nabla Ric_g (True); (nabla_X Ric)(Y,U) = -Ric(II(X,Y),U) - Ric(Y, U~X/2) (True); (nabla_X Ric)_VV = 0 (True); U in V_0: (nabla_U Ric)_VV = 0, (nabla_U Ric)(X,Z) = -sym Ric_g(X, U~Z) (True); nabla_E Ric = -Ric_g on HH, 0 on HV, VV (True)  [7 s]: True
+  [ 19] base (4, 0), lambda = 1/7, with cubic terms: base curvature = R (True); R(X,Y)E = 0, R(X,U)E = -(1/4) U~X, R(U,W)E = 0, R(E,X)E = X/4 (True); (nabla_X Ric)_HH = nabla Ric_g (True); (nabla_X Ric)(Y,U) = -Ric(II(X,Y),U) - Ric(Y, U~X/2) (True); (nabla_X Ric)_VV = 0 (True); U in V_0: (nabla_U Ric)_VV = 0, (nabla_U Ric)(X,Z) = -sym Ric_g(X, U~Z) (True); nabla_E Ric = -Ric_g on HH, 0 on HV, VV (True)  [9 s]: True
+  [ 20] base (1, 3): the random curvature tensor is generic for Schur (W^+, W^- (or W in (1,3)), traceless Ricci and scalar parts all nonzero): True
+  [ 21] base (1, 3), lambda = 1/2, without cubic terms: base curvature = R (True); R(X,Y)E = 0, R(X,U)E = -(1/4) U~X, R(U,W)E = 0, R(E,X)E = X/4 (True); (nabla_X Ric)_HH = nabla Ric_g (True); (nabla_X Ric)(Y,U) = -Ric(II(X,Y),U) - Ric(Y, U~X/2) (True); (nabla_X Ric)_VV = 0 (True); U in V_0: (nabla_U Ric)_VV = 0, (nabla_U Ric)(X,Z) = -sym Ric_g(X, U~Z) (True); nabla_E Ric = -Ric_g on HH, 0 on HV, VV (True)  [8 s]: True
+  [ 22] base (1, 3), lambda = 1/2, with cubic terms: base curvature = R (True); R(X,Y)E = 0, R(X,U)E = -(1/4) U~X, R(U,W)E = 0, R(E,X)E = X/4 (True); (nabla_X Ric)_HH = nabla Ric_g (True); (nabla_X Ric)(Y,U) = -Ric(II(X,Y),U) - Ric(Y, U~X/2) (True); (nabla_X Ric)_VV = 0 (True); U in V_0: (nabla_U Ric)_VV = 0, (nabla_U Ric)(X,Z) = -sym Ric_g(X, U~Z) (True); nabla_E Ric = -Ric_g on HH, 0 on HV, VV (True)  [9 s]: True
+  [ 23] base (2, 2): the random curvature tensor is generic for Schur (W^+, W^- (or W in (1,3)), traceless Ricci and scalar parts all nonzero): True
+  [ 24] base (2, 2), lambda = 2/3, without cubic terms: base curvature = R (True); R(X,Y)E = 0, R(X,U)E = -(1/4) U~X, R(U,W)E = 0, R(E,X)E = X/4 (True); (nabla_X Ric)_HH = nabla Ric_g (True); (nabla_X Ric)(Y,U) = -Ric(II(X,Y),U) - Ric(Y, U~X/2) (True); (nabla_X Ric)_VV = 0 (True); U in V_0: (nabla_U Ric)_VV = 0, (nabla_U Ric)(X,Z) = -sym Ric_g(X, U~Z) (True); nabla_E Ric = -Ric_g on HH, 0 on HV, VV (True)  [8 s]: True
+  [ 25] base (2, 2), lambda = 2/3, with cubic terms: base curvature = R (True); R(X,Y)E = 0, R(X,U)E = -(1/4) U~X, R(U,W)E = 0, R(E,X)E = X/4 (True); (nabla_X Ric)_HH = nabla Ric_g (True); (nabla_X Ric)(Y,U) = -Ric(II(X,Y),U) - Ric(Y, U~X/2) (True); (nabla_X Ric)_VV = 0 (True); U in V_0: (nabla_U Ric)_VV = 0, (nabla_U Ric)(X,Z) = -sym Ric_g(X, U~Z) (True); nabla_E Ric = -Ric_g on HH, 0 on HV, VV (True)  [9 s]: True
+
+=== N5. Theorem N7: the degree-1 integrability condition (*) of the line equation at a point p of s(X)   [139 s]
+  [ 26] flat base: rank (L, [L | Omega]) = {'13/56': (28, 28), '1/5': (28, 28), '0': (28, 29), '1/7': (28, 29), '1/2': (28, 29), '2/3': (28, 29), '1': (28, 29)}; solvable exactly at lambda = 13/56 and 1/5: True
+  [ 27] Ricci-flat base (4, 0) (random Weyl tensor, nabla R(x0) = 0): rank (L, [L|Omega]) = {'13/56': (28, 28), '1/5': (28, 28), '1/7': (28, 29), '1/2': (28, 29)}; at 13/56 and 1/5 the unique solution is v' = 2b E, n' = -mu_1 beta_S v' (True)  [30 s]: True
+  [ 28] Ricci-flat base (1, 3) (random Weyl tensor, nabla R(x0) = 0): rank (L, [L|Omega]) = {'13/56': (28, 28), '1/5': (28, 28), '1/7': (28, 29), '1/2': (28, 29)}; at 13/56 and 1/5 the unique solution is v' = 2b E, n' = -mu_1 beta_S v' (True)  [32 s]: True
+  [ 29] Ricci-flat base (2, 2) (random Weyl tensor, nabla R(x0) = 0): rank (L, [L|Omega]) = {'13/56': (28, 28), '1/5': (28, 28), '1/7': (28, 29), '1/2': (28, 29)}; at 13/56 and 1/5 the unique solution is v' = 2b E, n' = -mu_1 beta_S v' (True)  [31 s]: True
+  [ 30] hand solution of (*) for an Einstein base (v = v_E E, v_0 = 0, n_E = -mu_1 beta_S v_E, v'_E = 2b - sigma/2): sigma^2 = 4b(4 mu_1 b c - 1)/(mu_1 c) = 10*(5*lambda - 1)*(56*lambda - 13)/(7*c_V**2*(4*lambda - 1)**2): True
+  [ 31] constant curvature bases, lambda = 1/7 ((14,0) side), cH = 2, cV = 3, sigma = scal/cH = +-10/9: ranks {'sigma': (28, 28), '-sigma': (28, 28), '2 sigma': (28, 29), 'sigma at (x0, 2g)': (28, 29)}; solvable at +-sigma with v'_E = 2b - sigma/2 (True), not at 2 sigma, and not at the point (x0, 2 g(x0)) of Sigma, where sigma halves: True
+  [ 32] constant curvature bases, lambda = 13/30 ((7,7) side), cH = 2, cV = 3, sigma = scal/cH = +-65/33: ranks {'sigma': (28, 28), '-sigma': (28, 28), '2 sigma': (28, 29), 'sigma at (x0, 2g)': (28, 29)}; solvable at +-sigma with v'_E = 2b - sigma/2 (True), not at 2 sigma, and not at the point (x0, 2 g(x0)) of Sigma, where sigma halves: True
+  [ 33] base (4,0), lambda = 13/56 and 1/5: not solvable for ['random R', 'Einstein W + R_1', 'traceless Ricci only', 'Weyl + random cubic (nabla Ric not Codazzi)']: ranks [((28, 29), (28, 29)), ((28, 29), (28, 29)), ((28, 29), (28, 29)), ((28, 29), (28, 29))]: True
+
+=== N6. Proposition N8: lambda = 13/56 is excluded by the trace equation along Sigma = {(x, e^s g(x))}   [379 s]
+  [ 34] lambda = 13/56: c = 2*c_V/7, 4 mu_1 b c = 1; along Sigma (Ricci-flat base) E r = r/2, |dr|^2 = r^2/(4c), s_Y = sigma_1/cV: True
+  [ 35] r (nu_trace - nu_E) is a polynomial in r = r(x0, e^s g(x0)) (which varies, = r0 e^(s/2)) with constant term -1/(269746176*N**3) != 0: no solution on any interval of s: True
+
+=== N7. Propositions N9, N10: lambda = 1/5, order eps^2 on the slice S through p: <q, T'> = alpha |W|^2   [379 s]
+  [ 36] (cH, cV) = (2, 3), random Weyl W (seed 71): hatA = P(G_F^-1 Ric_VV - kappa)P vanishes to orders 0, 1 (True, True); <c0,c0>, <c0,c1>, <c1,c1> = 3/2, 6, 144; T' = c0 - (<c0,c1>/<c1,c1>) c1 kills c1 (0) and N^ for a random g_S-traceless N (0); <q, T'> = 133895/32 = alpha |W|^2 with alpha = 15/32  [18 s]: True
+  [ 37] (cH, cV) = (2, 3), random Weyl W (seed 72): hatA = P(G_F^-1 Ric_VV - kappa)P vanishes to orders 0, 1 (True, True); <c0,c0>, <c0,c1>, <c1,c1> = 3/2, 6, 144; T' = c0 - (<c0,c1>/<c1,c1>) c1 kills c1 (0) and N^ for a random g_S-traceless N (0); <q, T'> = 249545/32 = alpha |W|^2 with alpha = 15/32  [18 s]: True
+  [ 38] (cH, cV) = (1, 1), random Weyl W (seed 73): hatA = P(G_F^-1 Ric_VV - kappa)P vanishes to orders 0, 1 (True, True); <c0,c0>, <c0,c1>, <c1,c1> = 27/2, 18, 144; T' = c0 - (<c0,c1>/<c1,c1>) c1 kills c1 (0) and N^ for a random g_S-traceless N (0); <q, T'> = 43230 = alpha |W|^2 with alpha = 45/8  [18 s]: True
+  [ 39] (cH, cV) = (3, 1/2), random Weyl W (seed 74): hatA = P(G_F^-1 Ric_VV - kappa)P vanishes to orders 0, 1 (True, True); <c0,c0>, <c0,c1>, <c1,c1> = 54, 36, 144; T' = c0 - (<c0,c1>/<c1,c1>) c1 kills c1 (0) and N^ for a random g_S-traceless N (0); <q, T'> = 110155/6 = alpha |W|^2 with alpha = 5/4  [17 s]: True
+  [ 40] alpha is the same for the two Weyl tensors at (cH, cV) = (2, 3) (Schur: an O(4)-invariant quadratic form on Weyl tensors is a multiple of |W|^2): ['15/32', '15/32']; alpha = 45/(8 cH^2 cV) for all three parameter sets (True), never 0: True
+
+=== N8. Proposition N11 (flat model): radial reduction r = r(s) and the trace equation   [450 s]
+  [ 41] radial r = f(s) on the flat model: f' = 2 c mu_1 b f and f'' = mu_1 b c f are compatible iff (2 c mu_1 b)^2 = mu_1 b c, i.e. lambda in [1/5, 13/56]; at lambda = 1/5 (b = 0) f' = 0, so f is constant; at 13/56, f = C e^(s/2): True
+  [ 42] lambda = 13/56, r = C e^(s/2): r (trace equation) is a polynomial in r with constant term 14 A = 13/(19267584*N**3) != 0, so the trace equation fails on every interval of s: True
+
+=== N9. Theorem N12(c): existence for a flat base, lambda = 1/5, (14,0), T_e = 0 (F7 + I7(b))   [450 s]
+  [ 43] I7(b) with r = 0: 312 s^2 + kappa s + 15/(2 cV) = 0 has a real root iff its discriminant (c_V*kappa**2 - 9360)/c_V >= 0, i.e. cV kappa^2 >= 9360: True
+  [ 44] det M = kappa^2 (kappa + 224 s)(kappa + 544 s) on r = 0: s = -kappa/224 is never a root (value (11*c_V*kappa**2 + 47040)/(6272*c_V) > 0); s = -kappa/544 is a root only for cV = [277440/(29*kappa**2)], i.e. cV kappa^2 = 277440/29, where the other root has det M != 0: True
+
+44 checks, all True (each asserted).
+runtime 450 s

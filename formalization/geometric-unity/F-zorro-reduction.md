@@ -197,7 +197,7 @@ At $\lambda=1/5$ ($n=4$) the fiber is $(7,3)$, so $g_\aleph$ has signature $(8,6
 
 *Proof.* Use Theorems F3/F4, together with the fact that $G_\alpha\propto G_\lambda$ iff $\alpha=\lambda$ (compare the trace and traceless parts). ∎
 
-E2 checks this on a Ricci-flat-at-the-point base ($\eta-\tfrac13Wxx$, with $W$ an exact random Weyl tensor). The condition holds for Z1 at $\lambda=1/5$. It fails at $\lambda=\tfrac12$ and at $\lambda=1$, fails for Z2, and fails for a non-Ricci-flat base. **Off the section** it fails for the same Weyl base (E2(v): 116 of 196 components non-zero). So (E) holds only along $s(X)$, not on a neighbourhood in $Y$.
+E2 checks this on a Ricci-flat-at-the-point base ($\eta-\tfrac13Wxx$, with $W$ an exact random Weyl tensor). The condition holds for Z1 at $\lambda=1/5$. It fails at $\lambda=\tfrac12$ and at $\lambda=1$, fails for Z2, and fails for a non-Ricci-flat base. **Off the section** it fails for the same Weyl base (E2(v): 116 of 196 components non-zero). So for this base (E) holds only along $s(X)$, not on a neighbourhood in $Y$. For flat ℵ at $\lambda=1/(n+1)$ it holds on all of $Y$ (F7), and over a definite base it holds on a neighbourhood of a point of $s(X)$ only if ℵ is flat there (`N-z1-neighbourhood.md`, N10). (Corrected 2026-10-30, round 10; the text had "So (E) holds only along $s(X)$" without the qualification; see `reports/CORRECTIONS.md`.)
 
 **Proposition F7 (flat model = $SL(n+1)/SO$; E4).** For flat $\aleph$ and $\lambda=1/(n+1)$, Z1 with $c_H=2c_V$ is locally isometric to $SL(n+1,\mathbb R)/SO(p',q')$ with metric $c_V\,\mathrm{tr}((M^{-1}dM)^2)$. The map is $M=L^T\mathrm{diag}(u,1/\det u)L$, $L=\begin{psmallmatrix}1&x\\0&1\end{psmallmatrix}$, $y=\det(u)\,u$; other values of $c_H$ follow by rescaling $x$. For base $(1,3)$ this is $SL(5)/SO(3,2)$, of dimension 14 and signature $(8,6)$, and its Einstein constant $-(n+1)/(4c_V)$ (Prop. F1 at $n+1$) is $\kappa$. Theorem F6 says that a curved $\aleph$ preserves the Einstein condition along $s(X)$ exactly when $g$ is Ricci-flat.
 
@@ -217,6 +217,8 @@ Status: steps 1 and 3 follow from F3–F6 together with C5. Step 2 is a derivati
 
 *Remark (2026-10-30, round 8).* In Z2 with $n=4$, $g_\aleph$ is Einstein on no open subset of $Y$, for every $\lambda\neq\tfrac14$ and every base metric, flat or curved (`L-nonradial-z2.md`, L2(a) and the remark after it). So F9 holds for Z2 at $n=4$; its open content is Z1, where the flat model F7 is Einstein.
 
+*Remark (2026-10-30, round 10).* For Z1 at $n=4$: over a flat base, $\mathrm{Ric}=\beta_Sg_\aleph+b(g_\aleph|_H+c\,ds^2)$, so $g_\aleph$ is Einstein on an open set iff $\lambda=\tfrac15$ (`N-z1-neighbourhood.md`, N2). Over a definite base, Einstein on a neighbourhood of a point of $s(X)$ forces $\lambda=\tfrac15$ and $R_g=0$ there (N10: the order-$\varepsilon^2$ fibre pairing $\alpha|W|^2$, $\alpha=45/(8c_H^2c_V)$). Open: indefinite bases, and open sets away from $s(X)$.
+
 ## F.4 Grading (layers c–e)
 
 | Item | Status |
@@ -224,7 +226,7 @@ Status: steps 1 and 3 follow from F3–F6 together with C5. Step 2 is a derivati
 | Lemma F0, Prop. F1, Prop. F2, Theorem F3 (Z2), Theorem F4(a)(b), Cor. F5 for Z2 and for $\Lambda_A$ (Z1), Prop. F7 | **Proven** (with L-F1…L-F6), each also checked exactly |
 | Theorem F4(c) (Z1 Ricci blocks); hence $\Lambda_P$ (Z1) and the Z1 half of Theorem F6 | **Proven** for every $n$ (K, Theorem K and Cor. K4; 2026-10-30). Exact checks: R2, E1, R3, K4 ($n=2,\dots,6$) and, for F6, a Weyl base at $n=4$ (E2). The Z2 half of F6 (never Einstein) is proven. |
 | Prop. F8 (link to (9.7)–(9.10)) | **Conditional** on R-S/C5; constants $\alpha,\beta$ open |
-| Conjecture F9 | Conjectured; for Z2 at $n=4$ proven in a stronger form (no Einstein open set for any base; `L-nonradial-z2.md` L2) |
+| Conjecture F9 | Conjectured; for Z2 at $n=4$ proven in a stronger form (no Einstein open set for any base; `L-nonradial-z2.md` L2); for Z1 at $n=4$ proven over flat bases and near $s(X)$ over definite bases (`N-z1-neighbourhood.md` N2, N10) |
 | Which horizontal metric (Z1 vs Z2), $\lambda$, $c_V/c_H$, readout (P)/(A)/(E), domain of $\Upsilon=0$ | **Undefined in the draft**. The text favours Z1 (a3, a6, a8, a13, a17). |
 
 Claims:

@@ -210,7 +210,7 @@ Run: `cd computation/geometric-unity && python3 L_nonradial.py > L_nonradial.out
   - $(x,y)=0$ (no curvature in either channel; outside J5's hypotheses as well).
   - (Round 9, `M-z2-remaining-members.md`.) All three classes are now treated. Up to a rotation/boost symmetry of the reduced system and a (7,7) swap with $g_\aleph\to-g_\aleph$ (M1, M2), the members with $\ell=0$ are $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, the (7,7) null members and $(x,y)=0$. There is no solution on an open set meeting $s(X)$ for any member with $(x,y)\neq0$ (M6(a), M7), and none on any open set for $\mathrm{span}(W_A,W'_A)$ (M6(b)) and for $x=\pm y$ in (7,7) (M7); for $(x,y)=0$ only $T=0$ (M8). The members above where L1 does not apply are settled without it (M7(a), M8). Still open: $c\neq0$ away from $s(X)$ (M10(b)).
 - **Hypotheses kept from J5.**
-  - Z2: in Z1 the Euler field is not Killing, so L6 and the radial structure are unavailable.
+  - Z2: in Z1 the Euler field is not Killing, so L6 and the radial structure are unavailable. Z1 is treated in `N-z1-neighbourhood.md` (round 10): there $E$ is a gradient with $\nabla E=\tfrac12P_H$ and $\mathrm{Ric}(E,\cdot)=-E^\flat/c$; for the members of L8 there is no solution near $s(X)$ in (7,7), and in (14,0) only $\lambda=\tfrac15$ over a Ricci-flat base, flat with $T_e\equiv0$ for analytic fields (N12).
   - The real forms (14,0) and (7,7) of J1–J2; the signatures (8,6), (10,4), … are not set up.
   - $\kappa\neq0$; $T_e$ the slaved field in $\mathcal V$ with $\det M\neq0$ on $U$. Solutions crossing $\{\det M=0\}$, and $T_e$ outside $\mathcal V$ for large $|T_o|$, are not covered.
   - $T_o$ in the invariant sector.
@@ -223,8 +223,8 @@ Run: `cd computation/geometric-unity && python3 L_nonradial.py > L_nonradial.out
 - **GU-G14.**
   - Under the hypotheses of J5 without the radial ansatz (Z2, $\kappa\neq0$, slaved $T_e\in\mathcal V$, $\det M\neq0$), $\Upsilon=0$ has no solution on any open subset of $Y$ for $\circledast_\sharp$ and $W_A$. The same holds in (14,0) for every elliptic member and in (7,7) for every member with $xz-yw\neq0$, $x\neq\pm y$, and for the multiples of $W_A$ (L8, L9).
   - So the J5/J5d no-go is not an artefact of the radial ansatz. Within this sector Z2 admits no neighbourhood solution at all. Solutions at the points of $s(X)$ (J4) remain pointwise statements with free second normal derivatives.
-  - Open: Z1 and other sectors; of the remaining members only $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, away from $s(X)$ (round 9, M10).
+  - Open: Z1 beyond N12 (limit points of Einstein pieces; the members left open here) and other sectors; of the remaining members only $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, away from $s(X)$ (round 9, M10).
 - **GU-G16.** The factor $\ell^2=(xz\pm yw)^2$ reappears in the residual $R'=-1916928\kappa^3(x^2\pm y^2)\ell^2(ty-ux)$. The cases left open are exactly those with $\ell=0$ (apart from $W_A$) or $N=0$.
 - **J5.** J5(c) is recovered as the case $Z=0$ of L4 and holds without "$U$ meets $s(X)$" (L2(a)).
-- **F.** Side result: Z2 is Einstein on no open subset of $Y$ ($n=4$, every $\lambda\neq\tfrac14$; L2). F6 had this on $s(X)$; Conjecture F9 holds for Z2 at $n=4$ (in the stronger form: for no base metric); it remains open for Z1 (R8-4).
+- **F.** Side result: Z2 is Einstein on no open subset of $Y$ ($n=4$, every $\lambda\neq\tfrac14$; L2). F6 had this on $s(X)$; Conjecture F9 holds for Z2 at $n=4$ (in the stronger form: for no base metric); for Z1 it is proven over flat bases and near $s(X)$ over definite bases (`N-z1-neighbourhood.md`, N2, N10).
 - **GU-054.** Status unchanged (C). No statement made before this note is contradicted. J.3 and J5d.3 listed the non-radial case as open; it is now settled in the classes above.
