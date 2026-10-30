@@ -19,18 +19,18 @@ We formalise arithmetic rules stated informally by T.~Howard in public interview
 \begin{itemize}
 \item H1: $1\otimes1=2$;
 \item H2: $2\otimes2=4$, read from ``the square root of four is two'';
-\item INC, ``multiplication makes more'': $a\otimes b>\max(a,b)$ for positive $a,b$;
-\item EFF, ``one times itself must have an effect'', and BAL, a ``balance'' rule (\S\ref{sec:sources}).
+\item INC, our reading of ``multiplication, if it means to make more and increase in number'': $a\otimes b>\max(a,b)$ for positive $a,b$;
+\item EFF, our reading of ``one times itself has no effect'' (said of $1\times1=1$), and BAL, a ``balance'' rule (\S\ref{sec:sources}).
 \end{itemize}
 We decide all $2^7=128$ subsets of the seven rules H1, H2, LD, RD, AS, CM, INC over $\mathbb R$, where LD and RD are left and right distributivity over ordinary $+$ and AS and CM are associativity and commutativity. 58 subsets are inconsistent and 70 consistent. Every consistent subset has an explicit witness. 46 inconsistent subsets have a z3 certificate (unsatisfiability of finitely many of their own ground instances). The other 12 rest on the Archimedean Theorem~\ref{thm:arch}, which is proved in Lean in a generic form and instantiated there for $\mathbb Q$, in both cases with $\otimes$ valued in the carrier; the $\mathbb R$ instance that these 12 verdicts use is on paper. EFF and BAL are not among the seven: the weak form of EFF follows from H1; adding BAL as an eighth rule changes no verdict; the strong form of EFF (no identity element) is not decided here.
 
-On $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R$, and more generally in every ring whose characteristic does not divide $4$, no operation satisfying H1 and H2 is distributive on both sides, or on one side together with AS or CM. So no ring or semiring structure on these carriers with ordinary addition, and no left or right near-ring structure on $\mathbb Z$, $\mathbb Q$ or $\mathbb R$, realises H1 and H2. The characteristic condition is needed: $\mathbb Z/4$ with $a\otimes b=2ab$ is a ring that satisfies H1 and H2. With H2 dropped, the only bi-additive operation with H1 on $\mathbb Z$ or $\mathbb Q$ is $a\otimes b=2ab$; on $\mathbb R$ this holds under a regularity condition such as continuity. The map $x\mapsto 2x$ carries $(\mathbb Z,+,\otimes)$ isomorphically onto $(2\mathbb Z,+,\cdot)$, and $(\mathbb Q,+,\otimes)$, $(\mathbb R,+,\otimes)$ onto ordinary multiplication. ``Multiplication always makes more'' is inconsistent with either distributive law on $\mathbb Q$, $\mathbb R$, $\mathbb Q_{>0}$ and $\mathbb R_{>0}$, with no regularity assumption. Only two classes of consistent readings are classified here. The bi-additive ones with H1 or H2 (on $\mathbb R$, under regularity) are relabellings of ordinary multiplication. The continuous, associative ones that are strictly increasing in each argument are conjugate to addition (an imported theorem). Other consistent subsets have witnesses that are relabellings of neither, for example $a\otimes b=2b$.
+On $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R$, and more generally in every ring whose characteristic does not divide $4$, no operation satisfying H1 and H2 is distributive on both sides, or on one side together with AS or CM. So no ring or semiring structure on these carriers with ordinary addition, and no left or right near-ring structure on $\mathbb Z$, $\mathbb Q$ or $\mathbb R$, realises H1 and H2. The characteristic condition is needed: $\mathbb Z/4$ with $a\otimes b=2ab$ is a ring, without identity element, that satisfies H1 and H2. With H2 dropped, the only bi-additive operation with H1 on $\mathbb Z$ or $\mathbb Q$ is $a\otimes b=2ab$; on $\mathbb R$ this holds under a regularity condition such as continuity. The map $x\mapsto 2x$ carries $(\mathbb Z,+,\otimes)$ isomorphically onto $(2\mathbb Z,+,\cdot)$, and $(\mathbb Q,+,\otimes)$, $(\mathbb R,+,\otimes)$ onto ordinary multiplication. INC is inconsistent with either distributive law on $\mathbb Q$, $\mathbb R$, $\mathbb Q_{>0}$ and $\mathbb R_{>0}$, with no regularity assumption. Only two classes of consistent readings are classified here. The bi-additive ones with H1 or H2 (on $\mathbb R$, under regularity) are relabellings of ordinary multiplication. The continuous, associative ones that are strictly increasing in each argument are conjugate to addition (an imported theorem). Other consistent subsets have witnesses that are relabellings of neither, for example $a\otimes b=2b$.
 
-The mathematics is elementary. The contribution is completeness for these seven rules and certification, not depth.
+We make no claim of mathematical novelty. The note provides a complete consistency analysis of the seven specified rules, with certificates.
 \end{abstract}
 
 \section{Sources and readings}\label{sec:sources}
-The sources are informal. H1, H2 and EFF come from a 2015 magazine profile \cite{RS15}, which we read only as reprinted verbatim by CBS News \cite{CBS15}. INC and BAL come only from JRE \#2152 \cite{JRE2152}, which we read in a third-party machine transcript with speaker labels. That transcript was not checked against the audio, so attributions and figures in it may be wrong. The primary book \emph{One Times One Equals Two} \cite{OTOET} was not obtainable. A secondary report says Howard later called $1\times1=2$ ``a metaphor'' \cite{JRE2171}; we evaluate the mathematical readings regardless.
+The sources used here are interviews and transcript material; acquisition status is given per item, and several primary texts were unavailable. H1, H2 and EFF come from a 2015 magazine profile \cite{RS15}, which we read only as reprinted verbatim by CBS News \cite{CBS15}. INC and BAL come only from JRE \#2152 \cite{JRE2152}, which we read in a third-party machine transcript with speaker labels. That transcript was not checked against the audio, so attributions and figures in it may be wrong. The primary book \emph{One Times One Equals Two} \cite{OTOET} was not obtainable. A secondary report says Howard later called $1\times1=2$ ``a metaphor'' \cite{JRE2171}; we evaluate the mathematical readings regardless.
 
 H2 rests on one sentence, and the conclusions are stated separately with and without it. Our readings are as follows.
 \begin{itemize}
@@ -43,7 +43,7 @@ H2 rests on one sentence, and the conclusions are stated separately with and wit
 The lattice of Corollary~\ref{cor:lattice} is over the seven rules H1, H2, LD, RD, AS, CM, INC. It does not contain EFF or BAL.
 
 \section{Results}
-Throughout, in an additive magma $(S,+)$ containing $1$ we write $\bar2=1+1$, $\bar4=\bar2+\bar2$ and $\bar8=\bar4+\bar4$.
+Throughout, in an additive magma $(S,+)$ containing $1$ we write $\bar2=1+1$, $\bar4=\bar2+\bar2$ and $\bar8=\bar4+\bar4$. Rings are not assumed to have an identity element; $(\mathbb Z/4,+,\otimes)$ with $a\otimes b=2ab$ and $(2\mathbb Z,+,\cdot)$ have none. When a ring whose characteristic does not divide $4$ serves as the carrier, $1$ is its identity and $\otimes$ is a further operation on its additive group.
 
 \begin{theorem}[two-sided distributivity]\label{thm:two}
 Let $(S,+)$ be any magma containing $1$. If $\otimes$ satisfies LD and RD, then H1 ($1\otimes1=\bar2$) implies $\bar2\otimes\bar2=\bar8$, so H2 ($\bar2\otimes\bar2=\bar4$) would give $\bar8=\bar4$. Hence H1, H2, LD and RD are jointly inconsistent wherever $\bar4+\bar4\neq\bar4$: in $\mathbb N$, $\mathbb Z$, $\mathbb Q$, $\mathbb R$, and in every ring whose characteristic does not divide $4$. The condition is sharp: $\mathbb Z/4$ with $a\otimes b=2ab$ satisfies all four.
@@ -67,7 +67,7 @@ Every bi-additive $\otimes$ on $\mathbb Z$ or $\mathbb Q$ satisfies $a\otimes b=
 Let $S\subseteq\mathbb R$ contain a positive element, and let its positive elements be closed under $+$ and under division by positive integers; for example $S=\mathbb Q,\mathbb R,\mathbb Q_{>0},\mathbb R_{>0}$. Then no $\otimes:S\times S\to\mathbb R$ satisfies LD together with $a\otimes b\ge a$ for all positive $a,b\in S$. Likewise, none satisfies RD together with $a\otimes b\ge b$ for all positive $a,b\in S$. In particular $\{\mathrm{LD},\mathrm{INC}\}$ and $\{\mathrm{RD},\mathrm{INC}\}$ are inconsistent on these carriers, with no regularity assumption.
 \end{theorem}
 \begin{proof}
-Fix positive $a,b\in S$. LD, used only at positive arguments, gives $a\otimes b=n\,(a\otimes b/n)\ge na$ for every integer $n\ge1$. This contradicts the Archimedean property of $\mathbb R$. The RD case is the mirror image.
+Fix positive $a,b\in S$. LD, used only at positive arguments, gives $a\otimes b=n\,\bigl(a\otimes(b/n)\bigr)\ge na$ for every integer $n\ge1$. This contradicts the Archimedean property of $\mathbb R$. The RD case is the mirror image.
 \end{proof}
 The positivity hypothesis is needed: $S=\{0\}$, or $S=\mathbb R_{\le0}$ with $\otimes\equiv0$, satisfies LD and $a\otimes b\ge a$ for all $a,b$. Arbitrarily small elements are also needed: on $\mathbb Z_{\ge1}$ the operation $2ab$ satisfies LD, RD and INC.
 
@@ -83,7 +83,7 @@ Over $\mathbb R$, the minimal inconsistent subsets of $\{$H1, H2, LD, RD, AS, CM
 Adding BAL as an eighth rule changes no verdict. BAL implies INC on positive arguments, and the only witness with INC, $a+b$, satisfies BAL. So a subset containing BAL is consistent exactly when the subset with BAL replaced by INC is.
 \end{corollary}
 
-\begin{remark}[the idea inside the claim]
+\begin{remark}[four reconstructions examined]
 The following four readings are each isomorphic to a standard structure:
 \begin{itemize}
 \item pairs: $(2\mathbb Z,+,\cdot)$;

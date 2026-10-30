@@ -184,3 +184,24 @@ Final source-validation review: the optional upstream check now requires a prist
   3. R7-5, presentation: output section labels now match the result labels; $\mathcal W$ is a connected neighbourhood; the rank-47 span was computed in three signatures, and the others follow by $g\to-g$.
 
   Coordinator rerun of `J5d_leaf.py`: 57/57, identical to the committed output apart from timings.
+- 2026-10-30 — Manuscript drafts (`proofs/latex/ct-alpha-comment/comment.tex`, `proofs/latex/gu-note/note.tex`, `proofs/latex/howard-note/note.tex`), after a read-only pre-submission audit against the current write-ups and outputs. No number disagreed with the committed outputs. The drafts lagged later corrections in scope and wording; 28 items were applied, each checked against its source first:
+  - **α comment.**
+    - The transport "only if" is scoped to frame-local product-of-credits dressings (Theorem 6 of `transport.md`).
+    - The mechanical family is stated at mutation depth ≤ 2, with the depth figures (R4-CT-1). Its density is over $1/\text{value}\in(120,155)$, and the uniform-target sum runs over the 15 639 distinct values.
+    - "321 489 dressings" now reads 321 489 ordered choices giving 19 926 distinct dressings.
+    - The notation clash of $S$ and $\sigma$ is resolved, and $k_r$ is defined before use.
+    - Per-result source pointers are added, with the dimension labels and the 14 populated operators.
+  - **GU note.**
+    - The 9360 bound and the "any value in (7,7)" are scoped to $W_A$ and $W_A+W_C\circ\mathrm{Ad}_\Gamma$.
+    - "The 14-dimensional equations do not hold on the section" is stated at zero displacement.
+    - Ellipticity is stated in (14,0) with $\mathfrak u(128)$ and $\kappa\neq0$.
+    - The abstract now carries rounds 6–7 with their hypotheses, and the invariant-sector (7,7) clause is scoped to the four-parameter family with $(x,y)\neq0$.
+    - The Summary lists the rule for $T$ off the section and the choice of reading. "Einstein reading" now reads "$\Upsilon=0$ at the points of $s(X)$". $\Lambda$ is given for general $n$.
+    - $g_\aleph$, $L_{T_o}$, the fiber-scaling cone, $\ell_E$, $M$ and $S$ are defined.
+    - Source pointers are added, and "--" in a path is removed.
+  - **Howard note.**
+    - The novelty, sources and remark wording follow REV4-DOC-1.
+    - Paraphrases are no longer shown as quotations.
+    - An ambiguous expression is bracketed.
+    - The rings-without-identity convention is stated, together with the fact that in the characteristic statement $1$ is the identity of the carrier ring.
+  - Not compiled here (no TeX engine); braces, environments and `$` balance were checked by script.
