@@ -1,0 +1,5 @@
+configurations: 76  by centre: {2: 23, 3: 53}
+admitted by read cap: 42   readable: 23
+reading A  (Letter): 1 configuration(s) satisfy (a)+(b)+(c): ['centre 3: 2R 2R 2U']
+reading A* (conjugate): 2 configuration(s) satisfy (a)+(b)+(c): ['centre 2: 2R 2R 2U', 'centre 3: 2R 2R 2U']
+reading B  (matched phase): 0 configuration(s) satisfy (a)+(b)+(c): []

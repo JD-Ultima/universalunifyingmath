@@ -79,6 +79,14 @@ Both conventions give a 4-dimensional stabilizer of the pair ket at $(2,3)$, so 
 
 **Lean.** `proofs/lean/chain-theory/ConventionCheck.lean` is appended unchanged to the pinned upstream file. It proves `uniqueness_fails_under_conjugate_convention`: with `actingCharge` replaced by the A* value, the configuration "shared qubit, two read (2,2) links, one unread (2,2) link" satisfies every hypothesis of the upstream `configuration_unique` and differs from the object. Under reading A it is excluded (`upstream_excludes_qubitConfig`). Build log: `proofs/lean/chain-theory/run.out`.
 
+**Full enumeration** (`config_enumeration.py`). The Supplement counts are reproduced independently: 76 configurations, 42 admitted by the read cap, 23 readable. Applying the end rule, the two-point definition and the acting-charge test, the selected configurations are:
+
+| Reading | Selected configurations |
+|---|---|
+| A | the object only |
+| A* | the object and centre 2: 2R 2R 2U |
+| B | none |
+
 **Assessment.** Theorem 1 (Uniqueness) is correct under reading A. Reading A is an interpretive choice, not a consequence of the axiom. Its justification (S4, "sees no global phase of a pair" imposed over all $d_1+d_2$ directions of a direct sum) uses a space that the axiom does not supply. This is gap CT-G03/G04. The Supplement's own reported value for 2R 2R at a shared qubit, $1/\text{value}=3.535$, would then compete with the object.
 
 ## F-CT-4 Freedom (look-elsewhere) analysis
