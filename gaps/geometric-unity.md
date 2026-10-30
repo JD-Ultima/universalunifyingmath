@@ -75,3 +75,14 @@ Each gap is a point where [W21] is underspecified, circular or type-inconsistent
   - F9 for Z1: proven over flat bases and near $s(X)$ over definite bases (N2, N10).
   - Open: limit points of Einstein pieces without analyticity, indefinite bases in F9, the members left open by L.3.
 
+**Note (2026-10-30, round 11; `formalization/geometric-unity/O-gimel-variation.md`).** The rows above and the earlier notes are not edited. Setting: unitary gauge (G1), the family of I.0, Z1 and Z2; the ℷ-variation at fixed $S$, on the invariant sector at fixed $(t,u)$.
+- **GU-G15 (ℷ-part).**
+  - A compactly supported variation of ℷ is not compactly supported on $Y$, so $\delta_ℷI$ needs a fibre weight; Υ does not. Z1 depends on ℷ only through ℵ, and its volume form $C|\det y|^{-n/2}d^nx\,d^Ny$ is ℷ-independent; Z2 depends on $ℷ_x$ and ℵ (O1, O2).
+  - With the fibre-invariant measure every nonzero fibre integrand of the invariant sector diverges (O5). Over every indefinite base, i.e. every (7,7) case, a finite $SO_0(g_x)$-invariant measure lives on $\mathbb R^\times g_x$: no natural weight function converges, and the convergent natural weights are measures on the scaling ray through $s(X)$ (O6, O7(a)). Over (4,0) an explicit class converges (O7(b)).
+  - $L\vert_{T=0}\equiv0$, so the ℷ-equation is empty at $T=0$; at first order in $T$ it is the weighted Einstein–Hilbert equation of $g_\aleph$ (O3, O11).
+  - Invariant sector, constant $t,u$, $T_e=0$, with $\Upsilon=0$ kept unweighted (system (S2)): for ray weights the ℷ-equation is exactly $G(ℷ)+\Lambdaℷ=0$, $\Lambda=\Lambda_A-\tfrac{7c_H}6\tilde P/a$ (Z2, weight-independent) or a moment ratio of the weight times it (Z1). Here $\tilde P=(t^2\pm u^2)(\kappa/2+104a)$ and $a=xt\pm yu$. Over (4,0) a smooth Z2 weight adds $\kappa_wE_{|\mathrm{Ric}_0|^2}$ with $\kappa_w>0$ (O10). This is the ℷ-equation alone: in this sector $\Upsilon=0$ itself fails pointwise except for the flat-base solutions of round 10 (O14, O15).
+  - If the weight is also used for ϖ (system (S1)), the ϖ-equation becomes $w\Upsilon+\tfrac12\circledast(dw\wedge T)=0$. For ray weights it forces $a=0$ on the support, which removes the Einstein term (O13).
+  - On-shell: among the round-10 flat-base solutions (Z1, (14,0), $\lambda=\tfrac15$) exactly those with $c_V\kappa^2=12480x'^2$ solve (S2) (O15). In (7,7) no joint solution is known.
+  - Open: other sectors (nonconstant $t,u$, slaved $T_e$, symmetric sector); the weight and the system, which the draft does not specify.
+- **GU-G14.** At first order in $T$, localised at $s(X)$, the ℷ-equation is reading (A) with $\Lambda_A$ of Cor. F5, in Z1 and Z2. In Z1 $\Lambda_A\neq\Lambda_P$, so the ℷ-variation selects (A), not (P) (O11). Beyond first order it differs from I7(a)'s (P) value; in Z2 the off-shell result beyond leading order also depends on the identification of configuration spaces for different ℷ (O12).
+

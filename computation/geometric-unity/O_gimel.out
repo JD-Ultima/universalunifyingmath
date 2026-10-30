@@ -1,0 +1,82 @@
+
+=== O0. Inputs: c1, c13 of I6 (recomputed by I's i5_invariant); potential P~ and the reduced density l   [0 s]
+  [  1] (14,0): I's i5_invariant reproduces the transcription c1 = kappa*t + 312*t**2*x + 208*t*u*y + 104*u**2*x, c13 = kappa*u + 104*t**2*y + 208*t*u*x + 312*u**2*y: True
+  [  2] (14,0): d_u c1 = chi d_t c13 (0 = 0), so (c1, chi c13) is a gradient; P~ = kappa*t**2/2 + kappa*u**2/2 + 104*(t**2 + u**2)*(t*x + u*y) = (t^2 + chi u^2)(kappa/2 + 104 a), a = t*x + u*y; Euler: D := t c1 + chi u c13 = 2 P~_2 + 3 P~_3 = (t^2 + chi u^2)(kappa + 312 a): True
+  [  3] (7,7): I's i5_invariant reproduces the transcription c1 = kappa*t + 312*t**2*x - 208*t*u*y - 104*u**2*x, c13 = kappa*u + 104*t**2*y + 208*t*u*x - 312*u**2*y: True
+  [  4] (7,7): d_u c1 = chi d_t c13 (0 = 0), so (c1, chi c13) is a gradient; P~ = kappa*t**2/2 - kappa*u**2/2 + 104*(t - u)*(t + u)*(t*x - u*y) = (t^2 + chi u^2)(kappa/2 + 104 a), a = t*x - u*y; Euler: D := t c1 + chi u c13 = 2 P~_2 + 3 P~_3 = (t^2 + chi u^2)(kappa + 312 a): True
+
+=== O1. The action density on the invariant sector, evaluated directly in the Clifford model (I's evaluator)   [1 s]
+  [  5] (14,0): (1/3) Psi(T^T^T) = 14 P~_3 for T = t Phi^1 + u Phi^1 Gamma at 6 points, per operator (W_A: x-part, W'_A: y-part, twisted: 0): True
+  [  6] (14,0): <T, T> = 14 (t^2 + chi u^2), so (kappa/2) <T,T> = 14 P~_2: True
+  [  7] (14,0): Psi(T ^ F_R) = 6 (x t + chi y u) s for the Levi-Civita spin curvature of a random algebraic R (s = 204); twisted operators 0: True
+  [  8] (14,0): the derivative term Psi(T ^ d_0 T), d_0 T = dt ^ Phi^1 + du ^ Phi^1 Gamma, vanishes pointwise for all 48 types (random dt, du): True
+  [  9] (7,7): (1/3) Psi(T^T^T) = 14 P~_3 for T = t Phi^1 + u Phi^1 Gamma at 6 points, per operator (W_A: x-part, W'_A: y-part, twisted: 0): True
+  [ 10] (7,7): <T, T> = 14 (t^2 + chi u^2), so (kappa/2) <T,T> = 14 P~_2: True
+  [ 11] (7,7): Psi(T ^ F_R) = 6 (x t + chi y u) s for the Levi-Civita spin curvature of a random algebraic R (s = -132); twisted operators 0: True
+  [ 12] (7,7): the derivative term Psi(T ^ d_0 T), d_0 T = dt ^ Phi^1 + du ^ Phi^1 Gamma, vanishes pointwise for all 48 types (random dt, du): True
+
+=== O2. Ingredients and measures: Sym^2 Jacobian, det G_lambda, det of the Zorro metric (Gamma-free; Z1 gimel-free), the scaling y -> c y   [9 s]
+  [ 13] Jacobian of y -> P^T y P on Sym^2(R^n) is det(P)^(n+1) (n = 2 symbolic; n = 3, 4 random rational P); hence |det y|^(-n/2) d^n x d^N y is invariant under linear changes of x (exponent -(n+1) + 1 + n = 0): True
+  [ 14] det G_lambda|_y (basis E_ii, E_ij + E_ji) = (1 - n lambda) 2^(N - n) det(y)^-(n+1) (n = 2, 3, 4, lambda symbolic): the fibre-invariant measure is |det y|^-(n+1)/2 d^N y: True
+  [ 15] det g_aleph at (x0, y0) with Gamma(x0) != 0 equals c_H^n det(h_H) det(c_V G_lambda): Z1 (h_H = y0) and Z2 (h_H = g(x0)); for Z1 it is the same for two different random base metrics (n = 2, 3; three signatures): True
+  [ 16] brute-force scalar curvature (n = 3, (3,0) and (2,1), y0 off the section): s_Y^Z1(c_H = 2) at 2 y0 equals s_Y^Z1(c_H = 4) at y0; s_Y^Z2 at 2 y0 equals s_Y^Z2 at y0: True
+
+=== O3. Lemma O8: Z1 scalar curvature off the section = sigma_1/c_V + tr(y^-1 Ric)/c_H + q_y(Rm/c_H)   [59 s]
+  [ 17] n = 3, base (3, 0), lambda = 0, c_H = 2, c_V = 3, g = g0 + eps (quad + cub), y0 off the section: s_Y^Z1 = -2 + (-459/364) eps + (-9453/18928) eps^2 with c0 = sigma_1/c_V, c1 = tr(y0^-1 Ric_1)/c_H, c2 != 0; the same with the cubic terms of g removed (3-jet irrelevant): True; at c_H = 4: linear coefficient halves, quadratic quarters: True  [8 s]: True
+  [ 18] n = 3, base (3, 0): on the scaling ray y0 = 2 g(x0) the quadratic term vanishes: s_Y^Z1 = sigma_1/c_V + R/(2 c_H) eps exactly (F4(b) for the section 2g): True
+  [ 19] n = 3, base (2, 1), lambda = 1/2, c_H = 2, c_V = 3, g = g0 + eps (quad + cub), y0 off the section: s_Y^Z1 = -1 + (-37/28) eps + (241449/78400) eps^2 with c0 = sigma_1/c_V, c1 = tr(y0^-1 Ric_1)/c_H, c2 != 0; the same with the cubic terms of g removed (3-jet irrelevant): True; at c_H = 4: linear coefficient halves, quadratic quarters: True  [6 s]: True
+  [ 20] n = 3, base (2, 1): on the scaling ray y0 = 2 g(x0) the quadratic term vanishes: s_Y^Z1 = sigma_1/c_V + R/(2 c_H) eps exactly (F4(b) for the section 2g): True
+  [ 21] n = 3, base (1, 2), lambda = 1/2, c_H = 2, c_V = 3, g = g0 + eps (quad + cub), y0 off the section: s_Y^Z1 = -1 + (145/104) eps + (-55881/10816) eps^2 with c0 = sigma_1/c_V, c1 = tr(y0^-1 Ric_1)/c_H, c2 != 0; the same with the cubic terms of g removed (3-jet irrelevant): True; at c_H = 4: linear coefficient halves, quadratic quarters: True  [8 s]: True
+  [ 22] n = 3, base (1, 2): on the scaling ray y0 = 2 g(x0) the quadratic term vanishes: s_Y^Z1 = sigma_1/c_V + R/(2 c_H) eps exactly (F4(b) for the section 2g): True
+  [ 23] n = 4, base (1, 3), lambda = 1/2, c_H = 2, c_V = 3, g = g0 + eps (quad + cub), y0 off the section: s_Y^Z1 = -10/3 + (-141/92) eps + (112869/42320) eps^2 with c0 = sigma_1/c_V, c1 = tr(y0^-1 Ric_1)/c_H, c2 != 0  [20 s]: True
+  [ 24] n = 4, base (1, 3): on the scaling ray y0 = 2 g(x0) the quadratic term vanishes: s_Y^Z1 = sigma_1/c_V + R/(2 c_H) eps exactly (F4(b) for the section 2g): True
+
+=== O4. The scaling ray y = c g(x0) (n = 4, general coordinates): s_Y and Ricci blocks of Z1 and Z2   [101 s]
+  [ 25] base (1, 3), Z1, lambda = 1/2, c_H = 2, c_V = 3, y = 2 g(x0), random cubic base metric in general coordinates (Gamma(x0) != 0): s_Y = R/(c c_H) + sigma_1/c_V; Ric_HV = 0; Ric_HH = Ric_g + c c_H g/(4 c_V (4 lambda - 1))  [13 s]: True
+  [ 26] base (1, 3), Z2, lambda = 1/2, c_H = 2, c_V = 3, y = 2 g(x0), random cubic base metric in general coordinates (Gamma(x0) != 0): s_Y = R/c_H + s_F; Ric_HV = 0; Ric_HH = Ric_g  [14 s]: True
+  [ 27] base (2, 2), Z1, lambda = 1/2, c_H = 2, c_V = 3, y = -2 g(x0), random cubic base metric in general coordinates (Gamma(x0) != 0): s_Y = R/(c c_H) + sigma_1/c_V; Ric_HV = 0; Ric_HH = Ric_g + c c_H g/(4 c_V (4 lambda - 1))  [13 s]: True
+
+=== O5. Lemma O9 (Euclidean Z2): |A|^2 in eigen-coordinates; its O(4)-average is proportional to |Rm|^2   [150 s]
+  [ 28] n = 3, base (3,0), Z2, lambda = 0, c_H = 2, c_V = 3, y0 = diag(1/2, 2, 3): brute-force s_Y = R/c_H + s_F - |A|^2 with |A|^2 = c_V/(4 c_H^2) sum_{ijkl} R_klij^2 (u_k/u_l + u_l/u_k - 2): True
+  [ 29] n = 4, Euclidean: the space of algebraic curvature tensors has dim 20 = 10 (Weyl) + 9 (Ric_0) + 1 (True); for Q_u(R) = sum R_klij^2 f_kl at three random diagonal u, tr(Q|_V)/dim V is the same on all three components (= sum_(k!=l) f_kl / 12 = 2633/1080, 583/72, 317/288), so avg_O(4) Q_u = (sum f/12) |Rm|^2, and sum_(k!=l) f_kl = 2 (tr u tr u^-1 - n^2): True
+
+=== O6. Theorem O6 inputs: boosts on Sym^2, joint kernel R g, regular orbits, definite case, n = 2 Weyl Jacobian   [151 s]
+  [ 30] base (1, 1): 1 boosts act on Sym^2 diagonalisably with real eigenvalues in {0, +-1, +-2}; their joint kernel is R g (True); the so(g)-orbit map at a regular y has rank dim so = 1 (finite stabiliser): True: True
+  [ 31] base (2, 1): 2 boosts act on Sym^2 diagonalisably with real eigenvalues in {0, +-1, +-2}; their joint kernel is R g (True); the so(g)-orbit map at a regular y has rank dim so = 3 (finite stabiliser): True: True
+  [ 32] base (1, 2): 2 boosts act on Sym^2 diagonalisably with real eigenvalues in {0, +-1, +-2}; their joint kernel is R g (True); the so(g)-orbit map at a regular y has rank dim so = 3 (finite stabiliser): True: True
+  [ 33] base (1, 3): 3 boosts act on Sym^2 diagonalisably with real eigenvalues in {0, +-1, +-2}; their joint kernel is R g (True); the so(g)-orbit map at a regular y has rank dim so = 6 (finite stabiliser): True: True
+  [ 34] base (3, 1): 3 boosts act on Sym^2 diagonalisably with real eigenvalues in {0, +-1, +-2}; their joint kernel is R g (True); the so(g)-orbit map at a regular y has rank dim so = 6 (finite stabiliser): True: True
+  [ 35] base (2, 2): 4 boosts act on Sym^2 diagonalisably with real eigenvalues in {0, +-1, +-2}; their joint kernel is R g (True); the so(g)-orbit map at a regular y has rank dim so = 6 (finite stabiliser): True: True
+  [ 36] base (2, 3): 6 boosts act on Sym^2 diagonalisably with real eigenvalues in {0, +-1, +-2}; their joint kernel is R g (True); the so(g)-orbit map at a regular y has rank dim so = 10 (finite stabiliser): True: True
+  [ 37] base (4,0): every generator of so(4) acts on Sym^2 with purely imaginary or zero eigenvalues (no boost; K compact): True
+  [ 38] base (1,3): y = [[-10, 11], [11, 10]] + (-I_2) has signature (1, 3), tr(g^-1 y) = -18 and g^-1 y has the complex eigenvalues [-10 + 11*I, -10 - 11*I]: tr(g^-1 (c y)) -> -oo, so e^(-beta tr u) is not integrable on F_x: True
+  [ 39] n = 2 polar coordinates y = R(theta) diag(l1, l2) R(theta)^T: |Jacobian| = |-l1 + l2|, so the invariant measure |det y|^(-3/2) dy = |l1 - l2| (l1 l2)^(-3/2) dl dtheta = 2 |sinh((a1 - a2)/2)| da dtheta (l = e^a): True
+
+=== O7. The gimel-Euler-Lagrange equation on the invariant sector (constant t, u): Lambda for ray weights   [152 s]
+  [ 40] F5: Lambda_A(Z2) = 9*c_H/(2*c_V); Lambda_A(Z1) = 5*c_H*(18*lambda - 5)/(4*c_V*(4*lambda - 1)); Lambda_P(Z1) = 3*c_H*(15*lambda - 4)/(2*c_V*(4*lambda - 1)); values at lambda = 0, 1/2, 1 (units c_H/c_V): A [25/4, 5, 65/12], P [6, 21/4, 11/2]: True
+  [ 41] (14,0), ray weight nu = phi(s) ds on y = e^s g: Z2: G + Lambda g = 0 with Lambda = Lambda_A(Z2) - (7 c_H/6) P~/a, independent of phi; Z1: Lambda = (M_2/M_1) (Lambda_A(Z1) - (7 c_H/6) P~/a), M_k = int phi e^(ks) ds; as T -> 0: Lambda -> Lambda_A (Z2), (M_2/M_1) Lambda_A (Z1); first-order correction (Z2) = (-7*c_H*kappa*(t**2 + u**2)/(12*(t*x + u*y))) |T|: True
+  [ 42] (14,0), Z2 with the Bourguignon-Gauduchon identification (varpi fixed): Lambda' = Lambda_A(Z2) - c_H (14 P~ - D)/(11 a), D = t c1 + chi u c13; equal to Lambda at leading order (Lambda_A), first-order correction (-6*c_H*kappa*(t**2 + u**2)/(11*(t*x + u*y))) |T|; closed forms Lambda = Lambda_A - c_H (t^2 + chi u^2)(7 kappa/(12 a) + 364/3), Lambda' = Lambda_A - c_H (t^2 + chi u^2)(6 kappa/(11 a) + 104): True
+  [ 43] (14,0), y = 0 (Shiab#, W_A): (P) of I7(a) gives Lambda_4 = Lambda_P - c_H c1/x (first order -c_H*kappa*t/x); the gimel-equation gives Lambda_A + (-7*c_H*kappa*(t**2 + u**2)/(12*t*x)) at first order: True
+  [ 44] (14,0), y = 0: on the W_A branch t = -kappa/(208 x) of I6, P~ = 0, so the gimel-equation (ray weight) has Lambda = Lambda_A exactly (Z2), (M_2/M_1) Lambda_A (Z1), for every u: True
+  [ 45] (7,7), ray weight nu = phi(s) ds on y = e^s g: Z2: G + Lambda g = 0 with Lambda = Lambda_A(Z2) - (7 c_H/6) P~/a, independent of phi; Z1: Lambda = (M_2/M_1) (Lambda_A(Z1) - (7 c_H/6) P~/a), M_k = int phi e^(ks) ds; as T -> 0: Lambda -> Lambda_A (Z2), (M_2/M_1) Lambda_A (Z1); first-order correction (Z2) = (-7*c_H*kappa*(t - u)*(t + u)/(12*(t*x - u*y))) |T|: True
+  [ 46] (7,7), Z2 with the Bourguignon-Gauduchon identification (varpi fixed): Lambda' = Lambda_A(Z2) - c_H (14 P~ - D)/(11 a), D = t c1 + chi u c13; equal to Lambda at leading order (Lambda_A), first-order correction (-6*c_H*kappa*(t - u)*(t + u)/(11*(t*x - u*y))) |T|; closed forms Lambda = Lambda_A - c_H (t^2 + chi u^2)(7 kappa/(12 a) + 364/3), Lambda' = Lambda_A - c_H (t^2 + chi u^2)(6 kappa/(11 a) + 104): True
+  [ 47] (7,7), y = 0 (Shiab#, W_A): (P) of I7(a) gives Lambda_4 = Lambda_P - c_H c1/x (first order -c_H*kappa*t/x); the gimel-equation gives Lambda_A + (-7*c_H*kappa*(t - u)*(t + u)/(12*t*x)) at first order: True
+  [ 48] (7,7), y = 0: on the W_A branch t = -kappa/(208 x) of I6, P~ = 0, so the gimel-equation (ray weight) has Lambda = Lambda_A exactly (Z2), (M_2/M_1) Lambda_A (Z1), for every u: True
+  [ 49] (14,0), constant-mode system (Z2, ray weight, y = 0): u-equation 14*u*(kappa + 208*t*x) = 0; branch t = -kappa/(208 x): u^2 = -kappa**2/(43264*x**2) - 27/(728*c_V), Lambda = Lambda_A(Z2); branch u = 0: t^2 = -27/(728*c_V), Lambda = -c_H*(7*c_V*kappa*t + 1456*c_V*t**2*x - 54*x)/(12*c_V*x): True
+  [ 50] (7,7), constant-mode system (Z2, ray weight, y = 0): u-equation 14*u*(kappa + 208*t*x) = 0; branch t = -kappa/(208 x): u^2 = kappa**2/(43264*x**2) + 27/(728*c_V), Lambda = Lambda_A(Z2); branch u = 0: t^2 = -27/(728*c_V), Lambda = -c_H*(7*c_V*kappa*t + 1456*c_V*t**2*x - 54*x)/(12*c_V*x): True
+  [ 51] (14,0) real form (x = -i x', y = -i y', t = i s, u = i r): Lambda - Lambda_A(Z2) = 7*c_H*(r**2 + s**2)*(kappa + 208*r*y' + 208*s*x')/(12*(r*y' + s*x')) is real: True
+  [ 52] (14,0), Z1, lambda = 1/5, flat base (N12(c)): Lambda_A(Z1) = 35*c_H/(4*c_V); the Upsilon = 0 condition x G = c1 g (G = 15/(2 c_V) g, u = 0) together with Lambda_O(Z1) = 0 (the gimel-equation at a flat base, every admissible weight) has the solutions c_V kappa^2 = 12480 x'^2, s = -kappa/(416 x') (t = i s, x = -i x'); det M = -24*kappa**4/169 != 0: True
+  [ 53] (14,0), Z2, smooth natural weight w (m_0 = int w, F' = int (tr u tr u^-1 - 16) w): reduced Lagrangian alpha R + beta + gamma |Ric_0|^2 + (Gauss-Bonnet); EL: G + Lambda g + kappa_w E_|Ric_0|^2 = 0 with Lambda = Lambda_A(Z2) - (7 c_H/6) P~/a (as for ray weights) and kappa_w = F'*c_V/(6*c_H*m_0): True
+
+=== O8. Proposition O13: a weight in the action changes the varpi-equation   [156 s]
+  [ 54] toy (R^3, two components, symmetric b): the Euler-Lagrange operator of (1/2) w b(T ^ dT) is w b(*dT) + (1/2) b(*(dw ^ T)), i.e. w Upsilon + (1/2) Shiab(dw ^ T) in the GU notation: True
+  [ 55] (14,0): Psi_t(T ^ (xi ^ T)) = 0 for all 48 basis types of S_sa (two random dense T, random xi), while Psi_t(alpha ^ (xi ^ T)) != 0 for 12 (type, sample) pairs: the symbol is antisymmetric, so (1/2) w Psi(T ^ d_0 T) = (1/2) Psi(T~ ^ d_0 T~), T~ = w^(1/2) T: True
+  [ 56] (14,0): the grade-2 part of Shiab(xi ^ (t Phi^1 + u Phi^1 Gamma)) equals a(t, u) W_A(xi ^ Phi^1)_2, a = x t + chi y u (members (1,0,1,0), (2,-1,3,1), (0,1,0,2); xi = e^0, e^5, e^9); W_A(xi ^ Phi^1)_2 != 0: True
+  [ 57] (7,7): Psi_t(T ^ (xi ^ T)) = 0 for all 48 basis types of S_sa (two random dense T, random xi), while Psi_t(alpha ^ (xi ^ T)) != 0 for 23 (type, sample) pairs: the symbol is antisymmetric, so (1/2) w Psi(T ^ d_0 T) = (1/2) Psi(T~ ^ d_0 T~), T~ = w^(1/2) T: True
+  [ 58] (7,7): the grade-2 part of Shiab(xi ^ (t Phi^1 + u Phi^1 Gamma)) equals a(t, u) W_A(xi ^ Phi^1)_2, a = x t + chi y u (members (1,0,1,0), (2,-1,3,1), (0,1,0,2); xi = e^0, e^5, e^9); W_A(xi ^ Phi^1)_2 != 0: True
+
+=== O9. Proposition O3(b): the gimel-derivative of pi' at fixed (epsilon, varpi)   [157 s]
+  [ 59] pi'(eps, varpi) = eps varpi eps^-1 - (d_0 eps) eps^-1 with d_0 eps = d eps + A_0 eps - eps A_0: d/ds pi' along A_0 + s dA_0 is -(1 - Ad_eps) dA_0 (2x2 symbolic), which vanishes at eps = 1: True
+
+TOTAL: 59 checks, 59 True
+runtime 158 s

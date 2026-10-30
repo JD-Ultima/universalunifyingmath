@@ -1,0 +1,68 @@
+result: "O. The gimel-variation of (9.4): it needs a fibre weight; in every (7,7) case (base (1,3), (3,1), (2,2)) no natural weight function converges and the natural convergent weights are measures on the scaling ray through s(X); the gimel-equation is empty at T = 0, is the weighted Einstein-Hilbert equation of g_aleph at first order in T, and on the invariant sector T = t Phi^1 + u Phi^1 Gamma (constant t, u) is exactly 4D vacuum GR with Lambda = Lambda_A - (7 c_H/6) P~/a (Z2, weight-independent; Z1 times a moment ratio r_mu), i.e. reading (A) of F at leading order, if Upsilon = 0 is kept unweighted; if the weight is also used for varpi it forces a = 0 and the Einstein term disappears; on-shell, the round-10 flat-base solutions (Z1, (14,0), lambda = 1/5) solve the joint system iff c_V kappa^2 = 12480 x'^2"
+claim_id: [GU-054, GU-052]
+gaps: [GU-G15, GU-G14]
+writeup: formalization/geometric-unity/O-gimel-variation.md (Propositions O1-O5, O12, O13; Theorem O6; Corollary O7; Lemmas O8, O9; Theorem O10; Corollary O11; Remark O14); makes precise G.2.5 of formalization/geometric-unity/G-full-el-fermions.md and the remark on int_Y s_Y dvol in F.1 of formalization/geometric-unity/F-zorro-reduction.md
+code: [computation/geometric-unity/O_gimel.py, computation/geometric-unity/O_gimel.out]
+formalization_status: >
+  Formalized in the setting of I (unitary gauge of G1, true Upsilon of D5, normalisation b = Tr/128, family x W_A + y W'_A
+  + z W_C Ad_Gamma + w W'_C Ad_Gamma, real forms (14,0) and (7,7) with chi = -Gamma^2) and of F (readings Z1, Z2; fibre
+  R x SL(4)/SO(p,q)). A fibre weight is a family of measures nu_x on the fibres F_x; natural = determined by g_x (hence
+  O(g_x)-invariant); the weighted action is I_nu = int_X (int_F l rho d nu_x) dvol_g. The gimel-variation is taken at
+  fixed S (unitary gauge), on the invariant sector at fixed (t, u). Two systems: (S1) all field equations from I_nu; (S2)
+  Upsilon = 0 from local unweighted variations (the draft's dI|_Y) plus the weighted gimel-equation. Steps: (1) how gimel
+  enters each ingredient (Z1 through aleph only, with gimel-independent volume form |det y|^(-n/2) d^n x d^N y; Z2 through
+  gimel_x and aleph); (2) L = 0 at T = 0, so the gimel-equation is empty there; off-shell it is gauge-orbit dependent;
+  (3) on the invariant sector the density is 6 a s_Y + 14 P~, P~ = (t^2 + chi u^2)(kappa/2 + 104 a), a = x t + chi y u;
+  (4) with the fibre-invariant measure every nonzero fibre integrand diverges (scaling line, Fubini); (5) in indefinite
+  signature every finite O(g_x)-invariant measure lives on the ray R g_x (Poincare recurrence for each boost on Sym^2;
+  joint kernel R g), so natural weight functions never converge and the convergent natural weights are ray measures; in
+  definite signature the convergent class is explicit (Z2: int (1 + tr u tr u^-1) d|nu| < oo); (6) Z1 scalar curvature
+  off the section = sigma_1/c_V + tr(y^-1 Ric)/c_H + quadratic (zero on the ray); Z2 Euclidean O(4)-average of |A|^2 =
+  (c_V/(24 c_H^2))(tr u tr u^-1 - 16) |Rm|^2; (7) the 4D Euler-Lagrange equations: exactly Einstein for ray weights,
+  Einstein + kappa_w E_|Ric_0|^2 for smooth Euclidean Z2 weights; (8) identification dependence (Bourguignon-Gauduchon
+  in Z2) and the weighted varpi-equation Upsilon_w = w Upsilon + (1/2) Shiab(dw ^ T), whose grade-2 part on the
+  invariant sector is d(w^(1/2) a) = 0, and for ray weights forces a = 0 on the cone.
+internal_consistency: >
+  c1, c13 of I6 are recomputed by I's own i5_invariant (imported unmodified); the potential P~ is checked against a direct
+  Clifford evaluation of (1/3) Psi(T^T^T), (kappa/2) <T,T> and Psi(T ^ F_R) for a random algebraic curvature tensor, per
+  operator and in both real forms, and the kinetic term is checked to vanish pointwise for all 48 types. The volume-form
+  claims are exact determinant identities at points with Gamma != 0. The Z1 off-section structure is checked by
+  brute-force scalar curvature (F_jets) with a symbolic curvature scale eps in n = 3 (three signatures) and n = 4 (1,3),
+  including independence of the 3-jet and the c_H-scaling; the ray values and Ricci blocks by brute force at y = +-2 g
+  in general coordinates (Z1, Z2 in (1,3); Z1 in (2,2)). The A-tensor formula is checked against brute force (n = 3) and
+  the O(4)-average by exact Schur traces on the 20-dimensional space of curvature tensors. The no-go inputs (boost
+  spectra, joint kernel, orbit rank) are exact for seven indefinite signatures. All Lambda formulas, limits, first-order
+  terms, the Bourguignon-Gauduchon variant, the comparison with I7(a), the constant-mode solutions and the on-shell
+  elimination at the round-10 solutions are sympy identities. Psi(T ^ xi ^ T) = 0 is checked for all 48 types on random dense T, and the grade-2 identity for three
+  members and three covectors.
+proof_status: >
+  Proven: O1 (dependence table), O2 (volume forms), O3 (T = 0; gauge-orbit dependence off-shell), O4 (density on the
+  invariant sector), O5 (divergence for the fibre-invariant measure), Theorem O6 (indefinite no-go; Poincare recurrence),
+  Corollary O7 (classification: ray measures in indefinite signature; explicit class in definite signature, iff for Z2),
+  Lemma O8 (Z1 scalar curvature off the section), Lemma O9 (Z2 Euclidean A-tensor average, n = 4), Theorem O10 (the
+  gimel-equation on the invariant sector, constant t, u, T_e = 0, system (S2)), Corollary O11 (leading order = weighted EH
+  equation; localisation at s(X) gives reading (A) of F, not (P)), Proposition O12 (identifications), Proposition O13
+  (system (S1): the weight changes the varpi-equation; ray weights force a = 0), Corollary O15 (on-shell (S2) at the
+  round-10 flat-base solutions: iff c_V kappa^2 = 12480 x'^2, s = -kappa/(416 x')). Computed: Remark O14 (constant-mode
+  system). Imported: F1-F5, L-F1, L-F5, L-F6, D2, D3.4, D5, G1, G2, I1, I2, I5, I6, K; standard facts on 4D quadratic
+  curvature functionals (Gauss-Bonnet; Bach tensor; Besse 4.H).
+novelty: >
+  New within this audit. The gimel-variation, left formal in G.2.5, is made precise: in every signature that gives (7,7)
+  there is no natural convergent weight function at all, and naturality plus convergence force localisation on the
+  scaling ray through s(X); the Z1 volume form is the canonical natural measure on Met(X) and does not depend on gimel
+  (contrary to the list in G.2.5); the first-order gimel-equation is the Einstein-Hilbert equation of g_aleph, and its
+  localisation at s(X) is reading (A) of F, so in Z1 the gimel-variation picks Lambda_A rather than Lambda_P. A single
+  weighted functional for all fields is inconsistent with an Einstein term on the invariant sector. Not in the source.
+reproducibility: "Exact (sympy rationals and rational-function fields, Fractions, Gaussian rationals); fixed seeds (random.Random(7..10, 21..24, 41, 42, 51, 52); random.seed(31 +- 1, 81 +- 1); numpy default_rng(1)); one core: 158 s, a second run 157 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 O_gimel.py > O_gimel.out 2>&1 (59 checks, 59 True, each asserted). Imports F_jets.py and I_elliptic_reduction.py unmodified."
+empirical_testability: >
+  None new. In Z2 the leading-order 4D cosmological constant from the gimel-variation is Lambda_A = 9 c_H/(2 c_V) (anti-de
+  Sitter sign under the (7,7) sign rule) for every admissible weight, the value already discussed in F (layer e); in Z1
+  it is Lambda_A up to the free fibre scale.
+dependencies: ["F1", "F2", "F3", "F4", "F5", "F7", "L-F1", "L-F5", "L-F6", "D2", "D3.4", "D5", "G1", "G2", "I1", "I2", "I5", "I6", "I7", "K", "N12", "A4"]
+confidence: >
+  High for O1-O13 as stated: the no-go is a short measure-theoretic argument whose algebraic input is exact; the
+  reduced 4D functionals are exact consequences of closed forms that are themselves re-checked by brute force on and off
+  the section. The explicit gimel-equation covers only the invariant sector with constant t, u and T_e = 0; the slaved
+  sector, nonconstant t, u and the symmetric sector are not treated; q_y (Z1 off the ray) is not computed; the draft
+  specifies neither the weight, nor the system (S1)/(S2), nor the identification of configuration spaces, and off-shell
+  the Z2 result beyond leading order depends on the last.

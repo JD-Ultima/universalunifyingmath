@@ -73,7 +73,7 @@ Z1 and Z2 agree on $s(X)$ to zeroth order. They differ in their first vertical d
 - **(A) Reduced action:** $S[g]=\int_X s^*(s_Y)\,dvol_{s^*g_\aleph}$.
 - **(E) Field equation on $Y$ along $s(X)$:** $G(g_\aleph)+\Lambda_Yg_\aleph=0$ on $s(X)$.
 
-The full Einstein–Hilbert action $\int_Y s_Y\,dvol$ is not defined. The fiber has infinite volume (Prop. F1: it contains a line). In Z2, $s_Y$ is invariant under fiber scaling $y\mapsto e^ty$, and in Z1 that scaling only rescales $c_H$. So the integrand does not decay along the fibers.
+The full Einstein–Hilbert action $\int_Y s_Y\,dvol$ is not defined. The fiber has infinite volume (Prop. F1: it contains a line). In Z2, $s_Y$ is invariant under fiber scaling $y\mapsto e^ty$, and in Z1 that scaling only rescales $c_H$. So the integrand does not decay along the fibers. (Made precise 2026-10-30, round 11, `O-gimel-variation.md`: with the fibre-invariant measure every nonzero fibre integrand of the invariant sector diverges (O5); over an indefinite base no natural weight function converges, and the convergent natural weights are measures on the scaling ray through $s(X)$ (O6, O7).)
 
 ## F.2 Results (layer c)
 
@@ -190,6 +190,8 @@ The zeros are at $\lambda=5/18$ for (A) and $\lambda=4/15$ for (P), both on the 
 - Z1: de Sitter sign only for $\tfrac14<\lambda<4/15$ (P) or $<5/18$ (A).
 
 In 2D, $G\equiv0$, so (P)/(A) have no solutions unless $\Lambda=0$.
+
+*Remark (2026-10-30, round 11).* Reading (A) is what the ℷ-variation of (9.4) gives at first order in $T$ on the invariant sector, for the weight localised at $s(X)$ (`O-gimel-variation.md`, Cor. O11). For a ray weight μ, Z2 gives $\Lambda_A$ for every μ and Z1 gives $(m_2/m_1)\Lambda_A$. So where Z1 separates (A) from (P), the ℷ-variation selects (A).
 
 **Theorem F6 (Einstein condition along the section; E2).** Let $n\ge2$. On $s(X)$, $\mathrm{Ric}(g_\aleph)=\kappa\,g_\aleph$ holds iff the reading is Z1, $\lambda=1/(n+1)$ and $\mathrm{Ric}(g)=0$. Then $\kappa=-(n+1)/(4c_V)$. Equivalently, (E) holds on $s(X)$ with $\Lambda_Y=-(d-2)(n+1)/(8c_V)$, which is $-15/(2c_V)$ for $n=4$.
 

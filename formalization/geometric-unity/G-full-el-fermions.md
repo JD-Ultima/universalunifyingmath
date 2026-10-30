@@ -123,10 +123,13 @@ A "property relative to the Bianchi identity" thus selects the Einstein ratio an
 
 *Proof.* By D3.2, $\circledast F_\nabla={*}(K_{ab}e^a\otimes\gamma^b+K'_{ab}e^a\otimes\gamma^b\Gamma)$ with $K=x_1\mathrm{Ric}+y_1\mathrm{Scal}\,g$, and similarly $K'$. The soldering forms are parallel, so $d_\nabla$ acts as the divergence. The contracted Bianchi identity $\nabla^a\mathrm{Ric}_{ab}=\tfrac12\partial_b\mathrm{Scal}$ finishes the computation, and metrics with $d\,\mathrm{Scal}\neq0$ exist. The $(x,y)$ values are those of C5 and D3. ∎
 
-**G.2.5 The ℷ-variation (layers b, d).** The draft records only $dI\vert_{Y}$ (g2).
-- Under Z1, $g_\aleph$ depends on ℷ only through $\aleph$ (F2.4). It enters $\pi'$ (via $d_0$), $F_0$, $*$, $\Phi$ and vol. So $\delta_ℷI$ is a pairing of $\partial_\Gamma g_\aleph$ with a fibre integral over $GL(4)/O(1,3)\cong\mathbb R\times SL(4)/SO(1,3)$, which is non-compact (F1).
-- On solutions of $\Upsilon=0$, $T$ cannot vanish on any open set, because $\Upsilon\vert_{T=0}=-{*}G(g_\aleph)\otimes\gamma\neq0$ (F6/F8). So no compact support or decay along the fibres is available, and the X-equation is formal.
-- **Open**, and not well-posed without a fibre weight.
+**G.2.5 The ℷ-variation (layers b, c, d).** The draft records only $dI\vert_{Y}$ (g2). Made precise in `O-gimel-variation.md` (round 11).
+- Under Z1, $g_\aleph$ depends on ℷ only through $\aleph$ (F2.4); ℷ enters $\pi'$ (via $d_0$), $F_0$, $*$ and $\Phi$. The volume form of $g_\aleph$ is ℷ-independent in Z1 ($C|\det y|^{-n/2}d^nx\,d^Ny$, O2(c)); in Z2 it enters through $|\det ℷ|^{1/2}$. A compactly supported variation of ℷ is not compactly supported on $Y$, so $\delta_ℷI$ needs a fibre weight over $GL(4)/O(1,3)\cong\mathbb R\times SL(4)/SO(1,3)$ (F1).
+- With the fibre-invariant measure the integrals diverge (O5). In every (7,7) case no natural weight function converges; the convergent natural weights are measures on the scaling ray through $s(X)$ (O6, O7).
+- $L\vert_{T=0}\equiv0$, so the ℷ-equation is empty at $T=0$; at first order in $T$ it is the weighted Einstein–Hilbert equation of $g_\aleph$ (O3, O11). On the invariant sector with constant $t,u$, keeping $\Upsilon=0$ unweighted, it is exactly $G(ℷ)+\Lambdaℷ=0$ with $\Lambda\to\Lambda_A$ (reading (A) of F5) as $T\to0$ (O10, O11). If the weight is also used for ϖ, the ϖ-equation forces $a=0$ and the Einstein term disappears (O13).
+- **Partly closed** (O). Open: other sectors, and the draft's choice of weight and system.
+
+(Corrected 2026-10-30, round 11: the list of ℷ-dependent ingredients had "vol", which is ℷ-independent in Z1; and "no compact support or decay along the fibres is available" did not identify the obstruction, which is that ℷ-variations are never compactly supported on $Y$; see `reports/CORRECTIONS.md`.)
 
 ## G.3 The fermionic operator (layers b, c)
 
@@ -275,7 +278,7 @@ So the claim of g11, "an elliptic deformation complex in Euclidean signature", *
 | G1, G2, G3, G4, G5, G6, G7, G8, G9 (non-null part by proof, null deficit computed), G10, G11 (1) | **Proven** |
 | G11 (2)–(3) | **Proven** (exact computation, equivariance, rescaling lemma) for all of $\mathrm{span}(W_A,W'_A)$ and for R-S, at every covector and background |
 | Chimeric Majorana remark | Proven count, not machine-checked; non-degeneracy open |
-| ℷ-equation | Open; formal only (G.2.5) |
+| ℷ-equation | Made precise in O (round 11): needs a fibre weight; in (7,7) only ray weights converge; empty at $T=0$; on the invariant sector 4D Einstein with $\Lambda\to\Lambda_A$ under (S2), no Einstein term under (S1) (proven); other sectors open |
 | Euclidean ellipticity for the other 46 dimensions of $\mathcal S_{\rm sa}$ | Open |
 
 Claims:
@@ -288,7 +291,7 @@ Claims:
 - **GU-072** bosonic part F as for GU-057. The fermionic part is V in Euclidean signature, conditional on the Hermitian reading (G9).
 
 Gaps:
-- **G15** closed for $(\varepsilon,\varpi)$; the ℷ-part stays open.
+- **G15** closed for $(\varepsilon,\varpi)$; the ℷ-part is made precise and solved on the invariant sector with constant $t,u$ (`O-gimel-variation.md`, round 11); other sectors open.
 - **G16** closed: negative for the specified operators, and in (7,7) for all of $\mathcal S_{\rm sa}$. *Amended by round 4 (`H-ellipticity.md`, Thm H5):* in $(14,0)$ with $\mathfrak u(128)$ the complex **is** elliptic for an open dense set of self-adjoint Shiab operators. None of these is of the draft's form (8.1). So the negative verdict here is restricted to (8.1), R-S, $\mathfrak{so}(64,64)$ and (7,7).
 - **G22** closed under R-F, with the inconsistencies above.
 - **G07** refined: the MW reading is incompatible with the ζ kinetic term (G7). See `reports/CORRECTIONS.md`.
