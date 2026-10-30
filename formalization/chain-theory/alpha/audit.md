@@ -220,6 +220,8 @@ Full statement: `formalization/chain-theory/alpha/operator-origin.md` (`operator
 
 CT-G01 therefore reduces to CT-G02 (which end each exchange is credited to) and CT-G08 (amplitude level). The value and F-CT-1–F-CT-10 are unchanged.
 
+4. **Transport** (`transport.md`, `transport.py`). Carrying qubit letters to the qutrit copies through the read links is unique ($t(B)=\iota B^{\mathsf T}\iota^\dagger$) but only $SU(2)\times U(1)$-equivariant. Transporting every record is many-to-one, so no operator applied afterwards gives the weights (Theorem 4 there). Among 338 688 frame-local dressings, the weights are reproduced exactly by 6, and every one needs (a) the exchange of reads assessed after transport, (b) the exchange of links before it, and (c) the full-join credit $\sqrt3$ for letters supported on a rank-2 subspace, where the transport's own symmetry gives $2/\sqrt3$ or $\sqrt2$ (139.030, Table S5's "X where letters sit"). The end rule thus has an operator-level reading, but (a)–(c) are inputs.
+
 ## Graded ledger (α Letter)
 
 | Claim | Mathematical validity | Physical validity |
