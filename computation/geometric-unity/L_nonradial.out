@@ -1,0 +1,96 @@
+
+=== L0. Inputs: J1 recomputed with J's j0/j1; J2 tables transcribed and spot-checked against J's evaluator   [0 s]
+  [  1] (14,0) J1: S and M of J's j1 equal the transcription: True
+  [  2] (14,0) I6/J0: c1, c13 of J's j0: True
+  [  3] (14,0) J2 derivative table l: J's evaluator on basis tensors (0,1), (2,2), (3,9), k = 0, 2, 12, 14, four operators, equals the transcription (and the pattern l (N^T - tr N g)): True
+  [  4] (14,0) J2 quadratic table b: J's evaluator on the pairs (e^0, e^1), (e^0, e^0) for all ten (k, l), four operators, equals the transcription: True
+  [  5] (7,7) J1: S and M of J's j1 equal the transcription: True
+  [  6] (7,7) I6/J0: c1, c13 of J's j0: True
+  [  7] (7,7) J2 derivative table l: J's evaluator on basis tensors (0,1), (2,2), (3,9), k = 0, 2, 12, 14, four operators, equals the transcription (and the pattern l (N^T - tr N g)): True
+  [  8] (7,7) J2 quadratic table b: J's evaluator on the pairs (e^0, e^1), (e^0, e^0) for all ten (k, l), four operators, equals the transcription: True
+
+=== L1. Lemma L1 (Lambda^2 step): some varpi is a nonzero rational function of (t, u), so dt ^ du = 0 on every open solution set   [48 s]
+  (14,0) Shiab#: varpi(E1, E13, w3, w11) = [147456*kappa*u*(13*kappa**4 + 144704*kappa**3*t + 3847168*kappa**2*t**2 + 1830400*kappa**2*u**2 - 47071232*kappa*t*u**2 + 143982592*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)**2, -9216*kappa**2*(-5*kappa**4 + 1600*kappa**3*t + 609280*kappa**2*t**2 + 930304*kappa**2*u**2 + 56016896*kappa*t*u**2 - 587005952*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)**2, -24576*I*kappa*u*(117*kappa**4 + 866176*kappa**3*t + 34624512*kappa**2*t**2 + 4093440*kappa**2*u**2 - 94142464*kappa*t*u**2 - 2159738880*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)**2, -768*I*kappa*(-115*kappa**5 - 24944*kappa**4*t + 2106368*kappa**3*t**2 + 19480064*kappa**3*u**2 + 430882816*kappa**2*t**3 + 672948224*kappa**2*t*u**2 - 1506279424*kappa*t**2*u**2 + 5637472256*kappa*u**4 - 6911164416*t*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)**2]
+  (14,0) W_A: varpi(E1, E13, w3, w11) = [1916928*kappa*u/(kappa**2 + 224*kappa*t - 3328*u**2)**2, 0, 0, 0]
+  (14,0) x W_A + z W_C AdG: varpi(E13) = [9216*kappa**2*x*z**2*(5*kappa**4 - 1600*kappa**3*t*x - 609280*kappa**2*t**2*x**2 - 193024*kappa**2*u**2*x**2 - 737280*kappa**2*u**2*z**2 - 56016896*kappa*t*u**2*x**3 + 587005952*u**4*x**4)/(kappa**4 + 768*kappa**3*t*x + 121856*kappa**2*t**2*x**2 - 6656*kappa**2*u**2*x**2 - 147456*kappa**2*u**2*z**2 - 2555904*kappa*t*u**2*x**3 + 11075584*u**4*x**4)**2]
+  [  9] (14,0) Shiab#: exact varpi(E13) equals J's Cor. J2.1(e) formula, a nonzero rational function: True
+  [ 10] (14,0) W_A: exact varpi(E1) = +1916928 kappa u/(...)^2 (J), the other three 0: True
+  [ 11] (14,0) family x W_A + z W_C AdG: varpi(E13) = x z^2 (nonzero polynomial)/(det M)^2, so nonzero for xz != 0: True
+  [ 12] (14,0) members x W_A: varpi(E1) = 1916928*kappa*u*x**4/(-kappa**2 - 224*kappa*t*x + 3328*u**2*x**2)**2 (nonzero multiple of u), the other three 0: True
+  [ 13] (14,0) every member, leading order: varpi(w3) = -88320 i y (xz + yw)/kappa^2, varpi(w11) = +88320 i x (...)/kappa^2 (J, Cor. J2.1(e)): some varpi is nonzero whenever (x,y) != 0 and xz +- yw != 0: True
+  (7,7) Shiab#: varpi(E1, E13, w3, w11) = [-147456*kappa*u*(13*kappa**4 + 144704*kappa**3*t + 3847168*kappa**2*t**2 - 1830400*kappa**2*u**2 + 47071232*kappa*t*u**2 + 143982592*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)**2, -9216*kappa**2*(-5*kappa**4 + 1600*kappa**3*t + 609280*kappa**2*t**2 - 930304*kappa**2*u**2 - 56016896*kappa*t*u**2 - 587005952*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)**2, 24576*I*kappa*u*(117*kappa**4 + 866176*kappa**3*t + 34624512*kappa**2*t**2 - 4093440*kappa**2*u**2 + 94142464*kappa*t*u**2 - 2159738880*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)**2, -768*I*kappa*(-115*kappa**5 - 24944*kappa**4*t + 2106368*kappa**3*t**2 - 19480064*kappa**3*u**2 + 430882816*kappa**2*t**3 - 672948224*kappa**2*t*u**2 + 1506279424*kappa*t**2*u**2 + 5637472256*kappa*u**4 - 6911164416*t*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)**2]
+  (7,7) W_A: varpi(E1, E13, w3, w11) = [-1916928*kappa*u/(kappa**2 + 224*kappa*t + 3328*u**2)**2, 0, 0, 0]
+  (7,7) x W_A + z W_C AdG: varpi(E13) = [9216*kappa**2*x*z**2*(5*kappa**4 - 1600*kappa**3*t*x - 609280*kappa**2*t**2*x**2 + 193024*kappa**2*u**2*x**2 + 737280*kappa**2*u**2*z**2 + 56016896*kappa*t*u**2*x**3 + 587005952*u**4*x**4)/(kappa**4 + 768*kappa**3*t*x + 121856*kappa**2*t**2*x**2 + 6656*kappa**2*u**2*x**2 + 147456*kappa**2*u**2*z**2 + 2555904*kappa*t*u**2*x**3 + 11075584*u**4*x**4)**2]
+  [ 14] (7,7) Shiab#: exact varpi(E13) equals J's Cor. J2.1(e) formula, a nonzero rational function: True
+  [ 15] (7,7) W_A: exact varpi(E1) = -1916928 kappa u/(...)^2 (J), the other three 0: True
+  [ 16] (7,7) family x W_A + z W_C AdG: varpi(E13) = x z^2 (nonzero polynomial)/(det M)^2, so nonzero for xz != 0: True
+  [ 17] (7,7) members x W_A: varpi(E1) = -1916928*kappa*u*x**4/(kappa**2 + 224*kappa*t*x + 3328*u**2*x**2)**2 (nonzero multiple of u), the other three 0: True
+  [ 18] (7,7) every member, leading order: varpi(w3) = +88320 i y (xz - yw)/kappa^2, varpi(w11) = +88320 i x (...)/kappa^2 (J, Cor. J2.1(e)): some varpi is nonzero whenever (x,y) != 0 and xz +- yw != 0: True
+
+=== L2. Lemma L2, inputs off the section: brute-force Ricci of Z2 (F_jets) at (x0, y0), y0 != g(x0), polynomial base metric in general coordinates, against the O'Neill blocks   [54 s]
+  [ 19] base (4, 0), lambda = 0, c_H = 2, c_V = 3, y0 off the section: VV block of Ric(Z2) = Ric_F + (AU, AW), (AU,AW) = c_V^2/(4 c_H^2) sum_ij eps_i eps_j G(U, R_ij.y) G(W, R_ij.y): True
+  [ 20] base (4, 0): HH block = Ric_g - 2(A_X, A_Y), (A_X, A_Y) = c_V/(4 c_H) Phi_y(X, Y) (J5d L0(a)): True
+  [ 21] base (4, 0): Euler field E = y d_y: Ric(E, .) = 0 and g(E, E) = 4 c_V (1 - 4 lambda) = 12; HV block nonzero off the section (as expected): True  [48 s]: True
+  [ 22] base (1, 3), lambda = 1/2, c_H = 2, c_V = 3, y0 off the section: VV block of Ric(Z2) = Ric_F + (AU, AW), (AU,AW) = c_V^2/(4 c_H^2) sum_ij eps_i eps_j G(U, R_ij.y) G(W, R_ij.y): True
+  [ 23] base (1, 3): HH block = Ric_g - 2(A_X, A_Y), (A_X, A_Y) = c_V/(4 c_H) Phi_y(X, Y) (J5d L0(a)): True
+  [ 24] base (1, 3): Euler field E = y d_y: Ric(E, .) = 0 and g(E, E) = 4 c_V (1 - 4 lambda) = -12; HV block nonzero off the section (as expected): True  [47 s]: True
+  [ 25] base (2, 2), lambda = 1/2, c_H = 2, c_V = 3, y0 off the section: VV block of Ric(Z2) = Ric_F + (AU, AW), (AU,AW) = c_V^2/(4 c_H^2) sum_ij eps_i eps_j G(U, R_ij.y) G(W, R_ij.y): True
+  [ 26] base (2, 2): HH block = Ric_g - 2(A_X, A_Y), (A_X, A_Y) = c_V/(4 c_H) Phi_y(X, Y) (J5d L0(a)): True
+  [ 27] base (2, 2): Euler field E = y d_y: Ric(E, .) = 0 and g(E, E) = 4 c_V (1 - 4 lambda) = -12; HV block nonzero off the section (as expected): True  [48 s]: True
+
+=== L3. Lemma L3 (fibre lemma): concircular functions on the fibre R x SL(4)/SO(p,q) are affine in s, psi = 0   [196 s]
+  [ 28] base (4, 0): [p, p] spans so(eta) (rank 6 = 6; so(eta) checked), and {v in p : [[X, Y], v] = 0 for all X, Y in p} = 0, i.e. R^S(X, Y) v = 0 for all X, Y forces v = 0: True
+  [ 29] base (1, 3): [p, p] spans so(eta) (rank 6 = 6; so(eta) checked), and {v in p : [[X, Y], v] = 0 for all X, Y in p} = 0, i.e. R^S(X, Y) v = 0 for all X, Y forces v = 0: True
+  [ 30] base (2, 2): [p, p] spans so(eta) (rank 6 = 6; so(eta) checked), and {v in p : [[X, Y], v] = 0 for all X, Y in p} = 0, i.e. R^S(X, Y) v = 0 for all X, Y forces v = 0: True
+  [ 31] base (4, 0): jets at y = eta of solutions of Hess_F w = psi G_lambda (to order 2, 1066 unknowns): psi(eta) = 0, d psi(eta) = 0 and dw(eta) is a multiple of ds (solution space dim 1)  [3 s]: True
+  [ 32] base (1, 3): jets at y = eta of solutions of Hess_F w = psi G_lambda (to order 2, 1066 unknowns): psi(eta) = 0, d psi(eta) = 0 and dw(eta) is a multiple of ds (solution space dim 1)  [3 s]: True
+
+=== L4. Proposition L5: the curvature-free channel y E1 - x E13; residual R'; invariant line; the family; W_A   [203 s]
+  [ 33] (14,0) every member (kappa = 1): curvature-free row h = (y, -x) H, kernel field v = (h_u, -h_t) det M / (576 (xz + yw)) is polynomial (True); the residual R' := h.(Dv)v + v^T Q'_sym v = -1916928 (x^2 + y^2)(xz + yw)^2 (ty - ux) exactly  [4 s]: True
+  [ 34] (14,0) on the line (t, u) = sigma (x, y): v.grad(ty - ux) = -(xw - yz)(160 sigma (x^2 + y^2) - 1): the line is v-invariant iff xw = yz: True
+  [ 35] (14,0) family x W_A + z W_C AdG (kappa symbolic): H13 = z^2 (..)/det M, kernel field v = (kappa^2 + 224 kappa t x - 3328 u^2 x^2, 384 kappa u x), R = -1916928*kappa*u*x**4; v is tangent to u = 0: True
+  [ 36] (14,0) family, z != 0: H13 = 0 only at u = 0, kappa + 224 t x = 0, where det M = 0: True
+  [ 37] (14,0) members x W_A: H13 = 0, Sigma = (0, Sigma_C, 0, Sigma_B) dt with Sigma_C = -24*kappa*x/(-kappa**2 - 224*kappa*t*x + 3328*u**2*x**2), Sigma_B = -4992*u*x**2/(-kappa**2 - 224*kappa*t*x + 3328*u**2*x**2); E13 = c13 g - 16 x Sigma_C Sigma_B (dt (x) dt - |dt|^2 g): True
+  [ 38] (14,0) member (2, -1, 3, 1), three random exact points and curve jets gamma' = mu v, gamma'' = mu' v + mu^2 (Dv) v: h.gamma' = 0 and the traceless dr (x) dr coefficient of y E1 - x E13 equals mu^2 R': True
+  [ 39] (7,7) every member (kappa = 1): curvature-free row h = (y, -x) H, kernel field v = (h_u, -h_t) det M / (576 (xz - yw)) is polynomial (True); the residual R' := h.(Dv)v + v^T Q'_sym v = -1916928 (x^2 - y^2)(xz - yw)^2 (ty - ux) exactly  [4 s]: True
+  [ 40] (7,7) on the line (t, u) = sigma (x, y): v.grad(ty - ux) = -(xw - yz)(160 sigma (x^2 - y^2) - 1): the line is v-invariant iff xw = yz: True
+  [ 41] (7,7) family x W_A + z W_C AdG (kappa symbolic): H13 = z^2 (..)/det M, kernel field v = (kappa^2 + 224 kappa t x + 3328 u^2 x^2, 384 kappa u x), R = -1916928*kappa*u*x**4; v is tangent to u = 0: True
+  [ 42] (7,7) family, z != 0: H13 = 0 only at u = 0, kappa + 224 t x = 0, where det M = 0: True
+  [ 43] (7,7) members x W_A: H13 = 0, Sigma = (0, Sigma_C, 0, Sigma_B) dt with Sigma_C = 24*kappa*x/(kappa**2 + 224*kappa*t*x + 3328*u**2*x**2), Sigma_B = 4992*u*x**2/(kappa**2 + 224*kappa*t*x + 3328*u**2*x**2); E13 = c13 g - 16 x Sigma_C Sigma_B (dt (x) dt - |dt|^2 g): True
+  [ 44] (7,7) member (2, -1, 3, 1), three random exact points and curve jets gamma' = mu v, gamma'' = mu' v + mu^2 (Dv) v: h.gamma' = 0 and the traceless dr (x) dr coefficient of y E1 - x E13 equals mu^2 R': True
+
+=== L5. Theorem L8, step 5: the residual line (t, u) = sigma (x, y) for (z, w) = c (x, y): one equation, mu' = -7/18   [217 s]
+  [ 45] (14,0) E1 on the line: Hessian coefficient 576 x_i N/(kappa + 224 sigma N), gradient coefficients -258048 x_i N^2/(..)^2 and 78336 x_i N^2/(..)^2, N = x^2 + y^2 (independent of c): True
+  [ 46] (14,0) E13 on the line: Hessian coefficient 576 x_i N/(kappa + 224 sigma N), gradient coefficients -258048 x_i N^2/(..)^2 and 78336 x_i N^2/(..)^2, N = x^2 + y^2 (independent of c): True
+  [ 47] (14,0) zeroth order on the line: c_i = x_i (kappa sigma + 312 N sigma^2); so E_i = x_i E~ with ONE tensor equation E~, and the curvature-free combination vanishes identically on the line: True
+  [ 48] (14,0) det M on the line = kappa**2*(kappa + 224*sigma*x**2 + 224*sigma*y**2)*(kappa + 544*sigma*x**2 + 544*sigma*y**2): nonzero there iff (kappa + 224 N sigma)(kappa + 544 N sigma) != 0, so r below is smooth wherever det M != 0: True
+  [ 49] (14,0) reparametrisation r = F(sigma) = -1/(224 N (kappa + 224 N sigma)) (F''/F' = Q~/H~): traceless part (Hess r)_0 = mu (Ric)_0 with mu = x F'/H~ = -(7/18) r exactly; mu' = -7/18  [2 s]: True
+  [ 50] (7,7) E1 on the line: Hessian coefficient 576 x_i N/(kappa + 224 sigma N), gradient coefficients -258048 x_i N^2/(..)^2 and 78336 x_i N^2/(..)^2, N = x^2 - y^2 (independent of c): True
+  [ 51] (7,7) E13 on the line: Hessian coefficient 576 x_i N/(kappa + 224 sigma N), gradient coefficients -258048 x_i N^2/(..)^2 and 78336 x_i N^2/(..)^2, N = x^2 - y^2 (independent of c): True
+  [ 52] (7,7) zeroth order on the line: c_i = x_i (kappa sigma + 312 N sigma^2); so E_i = x_i E~ with ONE tensor equation E~, and the curvature-free combination vanishes identically on the line: True
+  [ 53] (7,7) det M on the line = kappa**2*(kappa + 224*sigma*x**2 - 224*sigma*y**2)*(kappa + 544*sigma*x**2 - 544*sigma*y**2): nonzero there iff (kappa + 224 N sigma)(kappa + 544 N sigma) != 0, so r below is smooth wherever det M != 0: True
+  [ 54] (7,7) reparametrisation r = F(sigma) = -1/(224 N (kappa + 224 N sigma)) (F''/F' = Q~/H~): traceless part (Hess r)_0 = mu (Ric)_0 with mu = x F'/H~ = -(7/18) r exactly; mu' = -7/18  [3 s]: True
+  [ 55] (14,0) at u = 0 (du = 0): Shiab# and W_A have the same coefficients (H1t, H13t, Q1tt, Q'1tt, Q13tt, Q'13tt, Sigma_Ct) = [576/(kappa + 224*t), 0, -258048/(kappa + 224*t)**2, 78336/(kappa + 224*t)**2, 0, 0, 24/(kappa + 224*t)]: True
+  [ 56] (7,7) at u = 0 (du = 0): Shiab# and W_A have the same coefficients (H1t, H13t, Q1tt, Q'1tt, Q13tt, Q'13tt, Sigma_Ct) = [576/(kappa + 224*t), 0, -258048/(kappa + 224*t)**2, 78336/(kappa + 224*t)**2, 0, 0, 24/(kappa + 224*t)]: True
+
+=== L6. Lemma L7: the fibre obstruction at a point of s(X) (order eps^2 of Hess_F w = mu(w)(Ric_F + (A.,A.)))   [223 s]
+  [ 57] base (4, 0): orthogonal basis of p (True); <c0, c0> = 27/2, <c0, c1> = 18, <c1, c1> = 144; for all 36 basis elements K (x) K' of so (x) so: <q, c1> = -9 tr(K K'), <q, c0> = -(27/4) tr(K K'); hence <q(B), 4 c0 - 3 c1> = 0 for every B in so (x) so and <(C1), 4 c0 - 3 c1> = -360 mu'  [5 s]: True
+  [ 58] base (4, 0): B_ij = R(e_i, e_j) lie in so(eta) (True); sum_ij eps_i eps_j tr(B_ij^2) = -|R|^2 (random R: -408 = -(408)), so <q, c1> = 9 |R|^2 and <q, c0> = (27/4) |R|^2 for every curvature tensor: True
+  [ 59] base (1, 3): orthogonal basis of p (True); <c0, c0> = 27/2, <c0, c1> = 18, <c1, c1> = 144; for all 36 basis elements K (x) K' of so (x) so: <q, c1> = -9 tr(K K'), <q, c0> = -(27/4) tr(K K'); hence <q(B), 4 c0 - 3 c1> = 0 for every B in so (x) so and <(C1), 4 c0 - 3 c1> = -360 mu'  [5 s]: True
+  [ 60] base (1, 3): B_ij = R(e_i, e_j) lie in so(eta) (True); sum_ij eps_i eps_j tr(B_ij^2) = -|R|^2 (random R: 84 = -(-84)), so <q, c1> = 9 |R|^2 and <q, c0> = (27/4) |R|^2 for every curvature tensor: True
+  [ 61] base (3, 1): orthogonal basis of p (True); <c0, c0> = 27/2, <c0, c1> = 18, <c1, c1> = 144; for all 36 basis elements K (x) K' of so (x) so: <q, c1> = -9 tr(K K'), <q, c0> = -(27/4) tr(K K'); hence <q(B), 4 c0 - 3 c1> = 0 for every B in so (x) so and <(C1), 4 c0 - 3 c1> = -360 mu'  [6 s]: True
+  [ 62] base (3, 1): B_ij = R(e_i, e_j) lie in so(eta) (True); sum_ij eps_i eps_j tr(B_ij^2) = -|R|^2 (random R: -18 = -(18)), so <q, c1> = 9 |R|^2 and <q, c0> = (27/4) |R|^2 for every curvature tensor: True
+  [ 63] base (2, 2): orthogonal basis of p (True); <c0, c0> = 27/2, <c0, c1> = 18, <c1, c1> = 144; for all 36 basis elements K (x) K' of so (x) so: <q, c1> = -9 tr(K K'), <q, c0> = -(27/4) tr(K K'); hence <q(B), 4 c0 - 3 c1> = 0 for every B in so (x) so and <(C1), 4 c0 - 3 c1> = -360 mu'  [6 s]: True
+  [ 64] base (2, 2): B_ij = R(e_i, e_j) lie in so(eta) (True); sum_ij eps_i eps_j tr(B_ij^2) = -|R|^2 (random R: -372 = -(372)), so <q, c1> = 9 |R|^2 and <q, c0> = (27/4) |R|^2 for every curvature tensor: True
+  [ 65] base (4, 0): (C1) for the generic curvature tensor (20 components, 2988 scalar equations): rank of the quadratic parts 21; with c0 added 21; with c1 added 22: c0 lies in the span and c1 does not, so (C1) has a solution R only if mu' = 0  [33 s]: True
+  [ 66] base (1, 3): (C1) for the generic curvature tensor (20 components, 2988 scalar equations): rank of the quadratic parts 21; with c0 added 21; with c1 added 22: c0 lies in the span and c1 does not, so (C1) has a solution R only if mu' = 0  [37 s]: True
+  [ 67] base (2, 2): (C1) for the generic curvature tensor (20 components, 2988 scalar equations): rank of the quadratic parts 21; with c0 added 21; with c1 added 22: c0 lies in the span and c1 does not, so (C1) has a solution R only if mu' = 0  [36 s]: True
+  [ 68] brute force, base (1, 3), random R, mu(w) = 1 + mu' (w - 1), w(eta) = 1: the Taylor system for w to order eps^2 (1000 unknowns) is inconsistent (ranks 1000, 1001), as (C1) predicts  [6 s]: True
+  [ 69] brute force, base (4, 0), random R, mu(w) = 1 + mu' (w - 1), w(eta) = 1: the Taylor system for w to order eps^2 (1000 unknowns) is inconsistent (ranks 1000, 1001), as (C1) predicts  [6 s]: True
+  [ 70] brute force, base (2, 2), random R, mu(w) = 1 + mu' (w - 1), w(eta) = 1: the Taylor system for w to order eps^2 (1000 unknowns) is inconsistent (ranks 1000, 1001), as (C1) predicts  [5 s]: True
+  [ 71] brute force, base (1, 3), control: R = R_1, A-term times -1/12, mu' = 0, mu(w) = 1 + mu' (w - 1), w(eta) = 1: the Taylor system for w to order eps^2 (1000 unknowns) is consistent (ranks 999, 999), as (C1) predicts  [5 s]: True
+  [ 72] brute force, base (1, 3), control: R = R_1, A-term times -1/12, mu' = -7/18, mu(w) = 1 + mu' (w - 1), w(eta) = 1: the Taylor system for w to order eps^2 (1000 unknowns) is inconsistent (ranks 1000, 1001), as (C1) predicts  [5 s]: True
+  [ 73] brute force, base (1, 3), random R, mu' = -7/18: the order-eps system is consistent, and adding dw(eta) = 0 changes no rank, i.e. every solution has vanishing vertical gradient at p  [1 s]: True
+
+73 checks, all True (each asserted).
+runtime 380 s

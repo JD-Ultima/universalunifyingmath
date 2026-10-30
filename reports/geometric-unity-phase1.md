@@ -213,13 +213,27 @@ Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $
     - with $\kappa\neq0$ and $T_e$ the slaved field in the vector sector ($\det M\neq0$), $\Upsilon=0$ on a neighbourhood of a point of $s(X)$ has **no solution in either signature of the setting, (14,0) or (7,7)**, for every member with $(x,y)\neq0$ and every $(z,w)$. The proof uses a parallel $ds$, Einstein leaves and O'Neill's A-tensor; in indefinite signature two traces of the order-$\varepsilon^2$ leaf condition (the second symmetrised in $h$) give $4C_2^{\rm sym}-C_1=32\Lambda_g^2$, so $\Lambda_g=0$, a contradiction (`J5d-indefinite-leaf.md`). (Extended 2026-10-30 by J5d from definite signature to (7,7); its trace step corrected after review, R7-1, R7-2; see `reports/CORRECTIONS.md`.) (Corrected after review 2026-10-30, R6-10; the hypotheses had been omitted; see `reports/CORRECTIONS.md`.)
     - In particular there is none in (7,7), from a base (1,3), (3,1) or (2,2) (J5d; this settles J5(d), which had left it open). The signatures (8,6), (10,4) of Z2 are outside the setting of J1–J2 and not covered.
 - **Verdict.** The twist does change the reduced equations once $T_e\neq0$. It acts on the derivative structure and never on the zeroth-order term $c_i(t,u)\,g$; the effective $\Lambda_4$ of the 2-jet reduction depends on $(z,w)$ once $a\neq0$. (Corrected after review 2026-10-30, R6-3; the text had "never on the cosmological term"; see `reports/CORRECTIONS.md`.)
-  - The physically relevant output still depends on the undeclared rule for $T$ off $s(X)$. With free second normal derivatives, (E) at $s(X)$ becomes as underdetermined as (P). A genuine neighbourhood condition can exclude solutions altogether (radial Z2, (14,0) and (7,7)).
+  - The physically relevant output still depends on the undeclared rule for $T$ off $s(X)$. With free second normal derivatives, (E) at $s(X)$ becomes as underdetermined as (P). A genuine neighbourhood condition can exclude solutions altogether (radial Z2, (14,0) and (7,7); in Z2 also without the radial ansatz for $\circledast_\sharp$, $W_A$ and every elliptic member ($x\neq\pm y$ in (7,7)), round 8).
   - No statement made before round 6 is contradicted: round 5's (E) statements are all scoped to the invariant sector, which has $T_e\equiv0$ by definition (confirmed by REVIEW4-GU, R6-11). This round's own J4(d) range was too broad and is corrected (R6-1, `reports/CORRECTIONS.md`).
   - Not covered:
     - $T_o$ outside the invariant sector;
     - $T_e$ outside the vector sector for large $|T_o|$;
-    - neighbourhood solutions beyond the radial Z2 ansatz (in particular Z1);
+    - neighbourhood solutions in Z1 (Z2 beyond the radial ansatz: Round 8);
     - reading (A).
+
+## Round 8 — $\Upsilon=0$ beyond the radial Z2 ansatz (GU-054, GU-G14, GU-G16)
+
+Write-up: `formalization/geometric-unity/L-nonradial-z2.md`. Code: `computation/geometric-unity/L_nonradial.py`, output committed, exact, 73 asserted checks, ~6.5 min (380 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/L-nonradial-z2.yaml`.
+
+Hypotheses of J5 without the radial ansatz: Z2, $n=4$, $\lambda\neq\tfrac14$, the real forms (14,0) and (7,7), $\kappa\neq0$, $t,u$ arbitrary, $T_e$ the slaved field in $\mathcal V$ with $\det M\neq0$, $U$ connected and open.
+
+- $dt\wedge du=0$ on every open solution set (L1).
+- Z2 has no open set with $\mathrm{Ric}\in\mathrm{span}(g,ds\otimes ds)$; in particular it is Einstein on no open set (L2). A concircular function on Z2 has parallel gradient (L3), so the concircular branch reduces to excluded cases (L4).
+- Where the curvature-free channel $yE^{(1)}-xE^{(13)}$ has no Hessian term, its residual $R'=-1916928\kappa^3(x^2\pm y^2)(xz\pm yw)^2(ty-ux)$ forces $(t,u)\parallel(x,y)$; this line is invariant iff $xw=yz$ (L5).
+- On the line one equation remains, $\nabla^2r=-\tfrac7{18}r\,\mathrm{Ric}$, with $Er=0$ (L6). It fails at order $\varepsilon^2$ in the fibre at a point of $s(X)$ (L7).
+- **Result.** No solution on any open subset of $Y$ for $\circledast_\sharp$, $W_A$ and its multiples, every elliptic member in (14,0), and every member with $xz-yw\neq0$, $x\neq\pm y$ in (7,7) (L8, L9).
+- **Open.** Z1; the other non-elliptic members; $x=\pm y$ in (7,7); the other sectors.
+- No statement made before round 8 is contradicted.
 
 ## F4(c) for every $n$ (round 2 F, completed)
 

@@ -58,5 +58,5 @@ confidence: >
   signatures, plus two independent arguments (positivity for Lorentzian bases; span and block certificates on the
   quadratic form). The referee found one invalid step (R7-1, the unsymmetrised trace), now repaired and tested
   explicitly; the conclusion was unaffected. Scope: Z2, the radial ansatz, the two real forms (14,0) and (7,7). Not
-  covered: other Z2 signatures; Upsilon = 0 on a neighbourhood beyond the radial Z2 ansatz (Z1; non-radial t, u); T_e
+  covered: other Z2 signatures; Upsilon = 0 on a neighbourhood beyond the radial Z2 ansatz (Z1; non-radial t, u, settled for the members of L8 in L-nonradial-z2.md); T_e
   outside V for large |T_o|; T_o outside the invariant sector.

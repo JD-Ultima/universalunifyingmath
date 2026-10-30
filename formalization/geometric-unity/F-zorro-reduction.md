@@ -215,6 +215,8 @@ Status: steps 1 and 3 follow from F3–F6 together with C5. Step 2 is a derivati
 
 **Conjecture F9.** For curved $\aleph$, no $\lambda$ makes $g_\aleph$ Einstein on an open set of $Y$ unless $\aleph$ is flat. Evidence: E2(v) and the non-vanishing of $A$ off $s(X)$. Not proven.
 
+*Remark (2026-10-30, round 8).* In Z2 with $n=4$, $g_\aleph$ is Einstein on no open subset of $Y$, for every $\lambda\neq\tfrac14$ and every base metric, flat or curved (`L-nonradial-z2.md`, L2(a) and the remark after it). So F9 holds for Z2 at $n=4$; its open content is Z1, where the flat model F7 is Einstein.
+
 ## F.4 Grading (layers c–e)
 
 | Item | Status |
@@ -222,7 +224,7 @@ Status: steps 1 and 3 follow from F3–F6 together with C5. Step 2 is a derivati
 | Lemma F0, Prop. F1, Prop. F2, Theorem F3 (Z2), Theorem F4(a)(b), Cor. F5 for Z2 and for $\Lambda_A$ (Z1), Prop. F7 | **Proven** (with L-F1…L-F6), each also checked exactly |
 | Theorem F4(c) (Z1 Ricci blocks); hence $\Lambda_P$ (Z1) and the Z1 half of Theorem F6 | **Proven** for every $n$ (K, Theorem K and Cor. K4; 2026-10-30). Exact checks: R2, E1, R3, K4 ($n=2,\dots,6$) and, for F6, a Weyl base at $n=4$ (E2). The Z2 half of F6 (never Einstein) is proven. |
 | Prop. F8 (link to (9.7)–(9.10)) | **Conditional** on R-S/C5; constants $\alpha,\beta$ open |
-| Conjecture F9 | Conjectured |
+| Conjecture F9 | Conjectured; for Z2 at $n=4$ proven in a stronger form (no Einstein open set for any base; `L-nonradial-z2.md` L2) |
 | Which horizontal metric (Z1 vs Z2), $\lambda$, $c_V/c_H$, readout (P)/(A)/(E), domain of $\Upsilon=0$ | **Undefined in the draft**. The text favours Z1 (a3, a6, a8, a13, a17). |
 
 Claims:

@@ -202,7 +202,7 @@ Run: `cd computation/geometric-unity && python3 J5d_leaf.py > J5d_leaf.out 2>&1`
 - **Scope.** Corollary L2 removes the hypothesis "$g_\aleph$ definite" from J5(c) within the setting of J1–J2, i.e. it adds (7,7) to (14,0). All other hypotheses of J5 stay: Z2, the radial ansatz, the slaved $T_e\in\mathcal V$ with $\det M\neq0$, $\kappa\neq0$, $(x,y)\neq0$ and $\lambda\neq\tfrac14$.
 - **Other signatures.** The Z2 signatures (8,6), (10,4), (9,5), (13,1) and their mirrors are not covered. The leaf argument would apply there, but J5(b) is not established, since J1–J2 are not set up. (Added after review 2026-10-30, R7-2.)
 - **Still not covered** (unchanged from J.3):
-  - $\Upsilon=0$ on a neighbourhood beyond the radial Z2 ansatz: Z1, where the Euler field is not Killing and $s$ is not parallel; non-radial $t,u$;
+  - $\Upsilon=0$ on a neighbourhood beyond the radial Z2 ansatz: Z1, where the Euler field is not Killing and $s$ is not parallel; non-radial $t,u$ (settled for the members of L8 in `L-nonradial-z2.md`);
   - components of $T_e$ outside $\mathcal V$ for large $|T_o|$;
   - $T_o$ outside the invariant sector.
 - O'Neill's formulas are used in indefinite signature, as in J5. They are algebraic identities for nondegenerate fibres (L-F1; O'Neill 1983). Here the fibres of $Y'\to X$ carry $c_VG_0$ on traceless forms, which is nondegenerate, and the horizontal block $c_Hg$ is nondegenerate.
@@ -214,5 +214,5 @@ Run: `cd computation/geometric-unity && python3 J5d_leaf.py > J5d_leaf.out 2>&1`
   - J5(d)'s sentence "a radial solution near $s(X)$ needs a non-constant-curvature Einstein base with $\Lambda_g=-c_H/c_V$ satisfying this quadratic condition" is true but vacuous. J5(d) asserted openness, not existence, so no statement made before J5d is false.
   - The proof step of Corollary L2 as first committed was invalid (R7-1); its conclusion stands. That correction has its own `reports/CORRECTIONS.md` entry.
   - The summaries that call the (7,7) case open are now outdated.
-- **GU-G14.** For the radial Z2 ansatz ($\kappa\neq0$, slaved $T_e\in\mathcal V$, $\det M\neq0$, $(x,y)\neq0$), $\Upsilon=0$ has no solution on a neighbourhood of a point of $s(X)$ in (14,0) or in (7,7), the latter from a base (1,3), (3,1) or (2,2). The open neighbourhood questions are those beyond the radial Z2 ansatz (Z1; non-radial $t,u$).
+- **GU-G14.** For the radial Z2 ansatz ($\kappa\neq0$, slaved $T_e\in\mathcal V$, $\det M\neq0$, $(x,y)\neq0$), $\Upsilon=0$ has no solution on a neighbourhood of a point of $s(X)$ in (14,0) or in (7,7), the latter from a base (1,3), (3,1) or (2,2). The open neighbourhood questions are those beyond the radial Z2 ansatz (Z1; non-radial $t,u$, settled for the members of L8 in `L-nonradial-z2.md`).
 - **GU-054.** Status unchanged (C).

@@ -33,6 +33,32 @@ These are the initial case studies; the research scope can expand as suitable so
 | **Geometric Unity** | E. Weinstein's 2021 working draft, obtained from a recorded mirror | Reconstructs signatures, spinor representations, gauge identities, field equations, ellipticity, and dimensional reduction under stated hypotheses. The projected and full field equations have different constraints; matching reduced algebraic equations does not establish identical solution sets. [Report](reports/geometric-unity-phase1.md) · [Analysis](formalization/geometric-unity/) |
 | **Arithmetic and geometry associated with Terrence Howard** | Identified interview material, a third-party transcript, and available patent metadata or summaries | Tests explicit arithmetic reconstructions, numerical statements, and geometric models. Results depend on the chosen operations and carrier. The primary book and full patent texts were unavailable in the recorded investigation. [Report](reports/howard-phase1.md) · [Analysis](formalization/howard/) |
 
+### Main results for review
+
+Each result is stated under the hypotheses given in the linked note, with code or Lean in the repository. Internal reviews are AI-assisted referee reports in [reports/reviews/](reports/reviews/); none of these results has had external peer review.
+
+- **Chain Theory, α Letter.**
+  - The 172-record construction and its value $1/\alpha=137.035\,999\,189\,566\ldots$ are reproduced independently (F-CT-1).
+  - The uniqueness theorem holds only under one far-end conjugation convention. Under the conjugate convention a second configuration qualifies, with $1/\text{value}=31.81$ (F-CT-3, Lean).
+  - The record set is not covariant under the symmetry group of the joint state. A covariant repair gives the same value (F-CT-10).
+  - The weights have an exact operator form, but its qutrit projector restates the end-attribution rule. No construction found in the declared search families avoids that rule (F-CT-11).
+  - In a declared family of 46 080 rules and a mechanically generated family of 332 308 mutants of the author's Lean definitions, the Letter's value is the only one within relative $10^{-4}$. The accompanying reference counts are not calibrated significance (F-CT-4).
+  - Details: [audit](formalization/chain-theory/alpha/audit.md).
+- **Chain Theory, compendium.** Of 64 Lean-tied theorem rows, 1 is matched clause by clause, 7 partly and 56 not at all (1/8/55 and 0/7/57 under the alternative counting rules). 560 of the 618 table-check lemmas only confirm that an entered string occurs. Details: [report](reports/chain-theory-compendium.md).
+- **Geometric Unity, algebra.**
+  - The observerse signature is (7,7) exactly under the conditions of A4 and A5.
+  - The spinor content matches one Standard Model generation with $\nu_R$, plus a further generation in the 144.
+  - Lemmas 6.5 and 7.2 are false as printed, and repairable by one global sign choice.
+  - The field equation (9.7) is the variational equation of no functional, for every admissible Shiab operator (D4).
+  - A generic self-adjoint Shiab operator gives an elliptic complex in (14,0) for $\mathfrak u(128)$ with $\kappa\neq0$; the draft's own form (8.1) does not (H5).
+  - Details: [report](reports/geometric-unity-phase1.md).
+- **Geometric Unity, 14→4 reduction.**
+  - Theorem F4(c), the Ricci blocks of the Z1 metric along a section, holds for every $n$ (K).
+  - In the invariant odd sector, with the even displacement slaved to it in the vector sector ($\kappa\neq0$, $\det M\neq0$), $\Upsilon=0$ in Z2 has no solution on any open subset of $Y$ for $W_A+W_C\circ\mathrm{Ad}_\Gamma$, for $W_A$, for every elliptic member in (14,0), and in (7,7) for every member with $xz-yw\neq0$ and $x\neq\pm y$ (round 6: J5; J5d; round 8: [L](formalization/geometric-unity/L-nonradial-z2.md)). The round-8 extension beyond the radial ansatz has not yet been internally reviewed.
+- **Howard arithmetic.** No ring, semiring or near-ring on ℕ, ℤ, ℚ or ℝ realises $1\otimes1=2$ together with $2\otimes2=4$ (Lean). The lattice of the seven axioms is fully decided. Details: [report](reports/howard-phase1.md).
+
+The open, well-posed problems are listed in order of priority in [SYNTHESIS §4](reports/SYNTHESIS.md#4-next-steps-in-priority-order) and, item by item, in [gaps/](gaps/).
+
 See the [research synthesis](reports/SYNTHESIS.md) for the result ledger, [claim registers](claims/) for individual statements, [source records](sources/) for provenance, and [specification gaps](gaps/) for unresolved inputs.
 
 ## Reproduce selected checks
@@ -97,7 +123,7 @@ lean proofs/lean/geometric-unity/GUTilt.lean
 lean proofs/lean/geometric-unity/GStueckelberg.lean
 ~~~
 
-Use Lean **4.35.0** for the recorded checks. The upstream compendium pins **4.32.1**; the documented 4.35.0 compatibility build applies five recorded proof edits to scratch copies. Its build result applies to that configuration. The selected Python suite does not certify a fresh Lean build or reproduce every manuscript result. All three manuscript sources compiled successfully with the desktop editor's compiler on October 30, 2026; compilation is separate from mathematical verification.
+Use Lean **4.35.0** for the recorded checks. The upstream compendium pins **4.32.1**; the documented 4.35.0 compatibility build applies five recorded proof edits to scratch copies. Its build result applies to that configuration. The selected Python suite does not certify a fresh Lean build or reproduce every manuscript result. All three manuscript sources compiled with the desktop editor's compiler on October 30, 2026, before the pre-submission audit edits of the same day; the edited sources have not been recompiled. Compilation is separate from mathematical verification.
 
 ## Evidence labels
 

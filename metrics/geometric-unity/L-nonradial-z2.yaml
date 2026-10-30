@@ -1,0 +1,59 @@
+result: "L. Upsilon = 0 on a neighbourhood beyond the radial Z2 ansatz: for Shiab#, W_A, every elliptic member in (14,0) and every member with xz - yw != 0, x != +-y in (7,7), and the multiples of W_A, there is no solution with non-radial (or any) t, u on any open subset of Y (kappa != 0, slaved T_e in V, det M != 0)"
+claim_id: [GU-054]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/L-nonradial-z2.md (Lemmas L1, L2, L3, L6, L7; Propositions L4, L5; Theorem L8; Corollary L9); removes the radial ansatz from Theorem J5 of formalization/geometric-unity/J-slaved-sector.md and its indefinite case J5d-indefinite-leaf.md
+code: [computation/geometric-unity/L_nonradial.py, computation/geometric-unity/L_nonradial.out]
+formalization_status: >
+  Formalized in the setting of J (unitary gauge of G1, true Upsilon of D5, family x W_A + y W'_A + z W_C Ad_Gamma +
+  w W'_C Ad_Gamma, real forms (14,0) and (7,7)), with the hypotheses of J5 except the radial ansatz: Z2, n = 4,
+  lambda != 1/4, kappa != 0, T_o = t Phi^1 + u Phi^1 Gamma with arbitrary smooth t, u, T_e the slaved field
+  Sigma (dt, du) in the vector sector V with det M != 0, Upsilon = 0 on a connected open U. Steps: (1) the Lambda^2
+  equations hold everywhere on open solution sets (dt ^ du = 0); (2) Z2 has no open set on which Ric lies in
+  span(g, ds (x) ds) (Einstein, Ricci-flat, radial) or equals beta theta (x) theta with theta horizontal null (O'Neill
+  blocks off the section, polynomial continuation in the fibre variable to y = g, J5d L1); (3) concircular functions on
+  Z2 have parallel gradient (the fibre R x SL(4)/SO(p,q) admits no warped factor); (4) the curvature-free channel
+  y E1 - x E13: if its reduced Hessian coefficient is nonzero the scalar is concircular, otherwise the image curve of
+  (t, u) is an integral curve of a polynomial kernel field v with residual R' = -1916928 kappa^3 (x^2 +- y^2)
+  (xz +- yw)^2 (ty - ux), so it lies on the line ty = ux, which is v-invariant iff xw = yz; (5) on that invariant line
+  (and on u = 0 for x W_A) one equation is left, Hess r = -(7/18) r Ric^Y + nu g after reparametrisation; the Killing,
+  parallel Euler field forces E r = 0, nu = 0; (6) at a point of s(X) the fibre equation fails at order eps^2: pairing
+  its integrability condition with 4 c0 - 3 c1 gives -360 mu' = 0.
+internal_consistency: >
+  The J1/J2 inputs are recomputed with J's own j0/j1 (S, M, c1, c13) and the transcribed derivative and quadratic
+  tables are spot-checked against J's evaluator; the exact varpi of Shiab# and W_A reproduce J's printed formulas.
+  The O'Neill blocks used off the section (VV = Ric_F + (AU,AW), HH = Ric_g - 2(A_X,A_Y)), Ric(E, .) = 0 and |E|^2 are
+  checked by brute-force Ricci of Z2 (F_jets, 2-jets in 14 variables, polynomial base metrics in general coordinates)
+  at points y0 != g(x0) in bases (4,0), (1,3), (2,2). The residual R' and the line invariance are exact polynomial
+  identities for the symbolic member; the reduction hat q = mu^2 R' is tested at random exact curve jets. The fibre
+  obstruction is established three ways: the pairing identities (on all 36 basis elements of so (x) so, four base
+  signatures), a span certificate for the generic curvature tensor (rank 21 / 21 / 22), and a brute-force Taylor
+  solution of the fibre equation at y = eta with Christoffel symbols computed from G_lambda (1000 unknowns;
+  inconsistent for mu' = -7/18 with random curvature in three signatures, consistent exactly in the control that
+  (C1) predicts solvable, order eps forcing dw = 0). The concircular fibre lemma is checked by the commutant
+  computation and a Taylor-jet solution space.
+proof_status: >
+  Proven: L1 (Lambda^2 step); L2 (no Ricci-special open sets in Z2, n = 4, both real forms); L3 (fibre lemma); L4
+  (concircular branch empty: Ricci-flat, radial, null-horizontal cases); L5 (curvature-free channel; exact identities);
+  L6 (residual equation, Euler field); L7 (fibre obstruction at s(X), exact pairing certificate); Theorem L8 (A: elliptic
+  members with x^2 +- y^2 != 0 and xw != yz, any open U; B: (x, y, c x, c y) with c (x^2 +- y^2) != 0, including
+  Shiab#, and x W_A, U meeting s(X)); Corollary L9 (case B on any open U, via analytic continuation along the fibre and
+  Kobayashi-Nomizu I, Thm II.10.8). Imported: L-F1 (O'Neill), F1, F3, J5(a), J5d L0 and L1, J1-J2 tables.
+novelty: >
+  New within this audit: the non-radial Z2 case of J.3 is settled for Shiab#, W_A and, in (14,0), every elliptic member
+  (in (7,7) every member with xz - yw != 0 and x != +-y): Upsilon = 0 has no solution on any open subset of Y in the
+  slaved vector sector. The referee's concircular structure exists only formally: on Z2 a concircular function has
+  parallel gradient. Side results: Z2 is Einstein on no open subset of Y (n = 4, every lambda != 1/4), and Theorem
+  J5(c) holds without the hypothesis that U meets s(X). The elliptic factor (xz +- yw)^2 reappears in the residual R'.
+  Not in the source.
+reproducibility: "Exact (Fractions, sympy rationals and Gaussian rationals); fixed seeds (random.Random(11..13) for the off-section points, 40..74 for curvature tensors and jets); one core: 380 s, a second run 380 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 L_nonradial.py > L_nonradial.out 2>&1 (73 checks, 73 True, each asserted). Imports J_slaved_sector.py and F_jets.py unmodified."
+empirical_testability: >
+  None new. The result removes the remaining candidate neighbourhood solutions of the slaved vector sector in Z2 for
+  the elliptic members; the physically relevant reduction still depends on the undeclared rule for T off s(X), on
+  Z1 versus Z2, and on sectors not treated (T_e outside V, T_o outside the invariant sector).
+dependencies: ["J1", "J2", "J5", "J5d-L0", "J5d-L1", "F1", "F3", "L-F1", "L-F5", "A4", "A5", "H7"]
+confidence: >
+  High for L1-L9 under (H): each step is a hand proof whose algebraic content is an exact identity, and the two
+  inputs that could hide a sign or normalisation error (the off-section O'Neill blocks and the order-eps^2 fibre
+  condition) are checked by independent brute force. Not covered: Z1; non-elliptic members other than the multiples
+  of W_A (e.g. W'_A, span(W_A, W'_A)); in (7,7) members with x = +-y; (x, y) = 0; the Z2 signatures (8,6), (10,4), ...;
+  T_e outside V or crossing det M = 0; T_o outside the invariant sector.
