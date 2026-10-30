@@ -233,3 +233,5 @@ Claims:
 - **GU-054:** C. In the (P) and (A) senses, (9.10) holds with a fiber-induced $\Lambda$ that is $\lambda$-independent in Z2 and $\lambda$- and route-dependent in Z1. As a $Y$-equation it is exact 4D vacuum GR only for Z1 with $\lambda=\tfrac15$, which is incompatible with the draft's $(7,7)$. GU-G14 is closed under R-Z, and conditional on R-S for the link to $\Upsilon$.
 
 **Testable (layer e).** No small parameter appears. In Z2 at $n=4$, $|\Lambda|=9/(2\ell_F^2)$ with $\ell_F^2=|c_V/c_H|$. Matching the observed $\Lambda=1.1056\times10^{-52}\,\mathrm m^{-2}$ needs $\ell_F\approx2.0\times10^{26}$ m (21 Gly; E3). A Planck-scale fiber overshoots by a factor $1.6\times10^{122}$, and the sign is anti-de Sitter. In Z1 only a tuning of $\lambda$ near $5/18$ (A) or $4/15$ (P) can make $\Lambda$ small.
+
+**Coordinator reproduction (2026-10-30).** All three F scripts were re-run. Outputs are identical to the committed `.out` files apart from timing annotations. `F_zorro_reduction.py` needs about 27 min on 4 shared cores.
