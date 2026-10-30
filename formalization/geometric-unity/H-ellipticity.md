@@ -162,3 +162,5 @@ These are logged in `reports/CORRECTIONS.md`. G11 itself is unchanged: every num
 - Ellipticity in any sense for non-self-adjoint ⊛ beyond R-S. Such operators are outside the variational class anyway.
 - Analytic consequences (Fredholm index on compact $Y^{14}$, moduli dimension), which need global data the draft does not give.
 - The equation (9.7) is still not variational for any ⊛ (D4). Ellipticity here refers to the complex of the true EL equation (D5/G10).
+
+**Coordinator reproduction (2026-10-30).** `H_ellipticity.py` was re-run and its output is identical to the committed `.out` apart from timing annotations.
