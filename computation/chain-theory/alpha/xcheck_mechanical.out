@@ -1,0 +1,121 @@
+Referee cross-check of mechanical_mutations.py (REVIEW4-CT)
+source sha256 pinned and checked by mechanical_mutations.setup: 522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da
+
+[1] Readout cone, independent regex closure over Part 1
+  Part 1 items: 57 (52 def, 5 structure/abbrev)
+  cone: 44 definitions; equal to the generator's 44: True
+  outside the cone (8): TwoPoint.valid, World.isPair, World.shared, World.typeOf, World.valence, World.wellFormed, commutatorRecords, records
+    named in `main` or reached from those names: TwoPoint.valid, World.typeOf, World.wellFormed, records
+    in neither: World.isPair, World.shared, World.valence, commutatorRecords
+  any cone body mentions an outside definition: False
+
+[2] Coarse site counts over the 44 cone bodies (regex), against the generator
+  IF                                       regex   33   generator   33   equal
+  MATCH                                    regex    7   generator    7   equal
+  LOG                                      regex   12   generator   12   equal
+  QNT                                      regex    7   generator    7   equal
+  BLIT                                     regex    4   generator    4   equal
+  LIT (integer literals not after '.')     regex   83   generator   83   equal
+  negative literals                        regex    8   generator    8   equal
+  REL                                      regex   50   generator   50   equal
+  AOR (+ * / % min max, binary -)          regex   32   generator   32   equal
+  NEG (unary -, ! on a non-literal)        regex    4   generator    4   equal
+  list literals                            regex    6   generator    6   equal
+  `++` tokens 7 in 4 chains; `::` tokens outside patterns 4 in 3 chains (generator)
+
+[3] Example mutants printed in out section 4, re-evaluated
+  ok  pairKet:IF:0=swap                                  (79 + 48√2 + 42√3 + 3√6)/31104         1/value 137.035999189566  0.598388 sigma
+  ok  recs:REL:1=strict & linkSwap:VAR:0=read2           (149 + 45√3)/31104                     1/value 137.05687248307  993967.0 sigma
+  ok  commutatorRecs:VAR:16=dA & slotQudit:AOR:0=+       (41 + 24√2 + 18√3 + 3√6)/15552         1/value 137.062469809062  1.26051e+6 sigma
+  ok  tracelessBasis:CAT:0=drop2 & addRoot:LIT:1=2       (79 + 47√2 + 47√3)/31104               1/value 137.097867892803  2.94613e+6 sigma
+  ok  parity:LIT:1=1 & orderSign:IF:0=swap               (82 + 51√2 + 42√3)/31104               1/value 137.099922380516  3.04396e+6 sigma
+  ok  sigX:IF:0=swap & kOf:AOR:0=/                       (90 + 79√3)/31104                      1/value 137.123501569346  4.16678e+6 sigma
+  ok  coeffOf:AOR:0=- & recs:CAT:0=dup2                  (101 + 51√2 + 31√3)/31104              1/value 137.13169148168  4.55678e+6 sigma
+  ok  linkSwap:VAR:2=read1 & wY:REL:1=neg                (103 + 63√3 + 6√6)/31104               1/value 137.133098603097  4.62378e+6 sigma
+  ok  readoutDim:AOR:4=+ & objectTwoPoint:LSW:0,2        (44 + 12√2 + 33√3)/16200               1/value 137.139096311969  4.90939e+6 sigma
+  ok  slotEnd:LIT:0=1 & products:IF:1=swap               (184 + 25√3)/31104                     1/value 136.84041437211  9.31356e+6 sigma
+  ok  recs:LIST:2=drop0 & sigY:IF:0=swap                 (56 + 102√2 + 11√3 + 3√6)/31104        1/value 137.233128784162  9.38712e+6 sigma
+  ok  letterCode:LIT:0=1 & addRoot:LIST:0=dup0           (78 + 46√2 + 43√3 + 4√6)/31104         1/value 136.823140094818  1.01361e+7 sigma
+  ok  fixesFar_always_true                     pairKet:IF:0=swap                                1/value 137.03599919 (printed 137.0359992)
+  ok  reads_at_qubit                           pairKet:VAR:0=j                                  1/value 150.785910028 (printed 150.78591)
+  ok  X_at_far_end                             wX:VAR:0=farEnd                                  1/value 146.523997545 (printed 146.5239975)
+  ok  Y_at_center                              wY:AOR:0=+                                       1/value 127.535742249 (printed 127.5357422)
+  ok  X_Y_factors_swapped                      wX:VAR:0=farEnd & wY:AOR:0=+                     1/value 135.894237395 (printed 135.8942374)
+  ok  moved_per_letter                         slotQudit:AOR:0=+                                1/value 134.485471805 (printed 134.4854718)
+  ok  copies_separate                          sameEnd:VAR:0=s2                                 1/value 112.422696872 (printed 112.4226969)
+  ok  survival_ignores_own_sign                commutatorRecs:VAR:16=dA                         1/value 139.712642718 (printed 139.7126427)
+  ok  commutator_records_carry_no_reads        coeffOn:AOR:0=+                                  1/value 138.937139886 (printed 138.9371399)
+  ok  register_full_unread                     objectWorld:LIT:9=2                              1/value 205.553998784 (printed 205.5539988)
+  ok  no_commutator_records                    tracelessBasis:VAR:2=j                           1/value 141.621038704 (printed 141.6210387)
+  ok  commutators_keep_sums                    commutatorRecs:IF:1=swap                         1/value 138.347888397 (printed 138.3478884)
+  ok  commutators_keep_both                    parity:IF:0=swap & commutatorRecs:IF:1=swap      1/value 133.969062384 (printed 133.9690624)
+  ok  exch_shift1                              exch:LIT:0=1                                     1/value 254.541566026 (printed 254.541566)
+  ok  drop_fixed                               recs:CAT:0=drop2                                 1/value 149.592908138 (printed 149.5929081)
+  ok  drop_even                                recs:CAT:0=drop1                                 1/value 295.101485794 (printed 295.1014858)
+  ok  born_weights                             recs:REL:0=neg & sameForm:REL:0=neg              1/value 97.5047021944 (printed 97.50470219)
+  ok  wX_dA_equiv                              pairKet:IF:0=swap                                1/value 137.03599919 (printed 137.0359992)
+  ok  the two ends swapped                     wX:VAR:0=farEnd & wY:AOR:0=+                     1/value 135.894237395 (printed 135.894)
+  ok  both exchanges at the qubit end          wX:VAR:0=farEnd                                  1/value 146.523997545 (printed 146.524)
+  ok  both exchanges at the qutrit end         wY:AOR:0=+                                       1/value 127.535742249 (printed 127.536)
+  ok  qubit-qubit records moved by Y           slotQudit:AOR:0=+                                1/value 134.485471805 (printed 134.485)
+  ok  copies of the qutrit as separate qudits  sameEnd:VAR:0=s2                                 1/value 112.422696872 (printed 112.423)
+  ok  survival without the record's own sign   commutatorRecs:VAR:16=dA                         1/value 139.712642718 (printed 139.713)
+  ok  commutator records survive X only        commutatorRecs:IF:1=swap                         1/value 138.347888397 (printed 138.348)
+  ok  sums and differences of commutators kept commutatorCandidates:LIST:0=dup1                 1/value 132.738534414 (printed 132.739)
+  ok  no commutator records                    tracelessBasis:VAR:2=j                           1/value 141.621038704 (printed 141.621)
+  ok  Born weights k_r                         recs:REL:0=neg & sameForm:REL:0=neg              1/value 97.5047021944 (printed 97.505)
+  ok  no weights                               sameForm:REL:0=neg                               1/value 180.837209302 (printed 180.837)
+  ok  smallest readable configuration          readoutDim:AOR:5=/ & objectWorld:LIT:2=2         1/value 3.53462239892 (printed 3.535)
+  42 agree, 0 disagree
+
+[4] Seeded uniform sample of 2000 of the 332 308 mutants (seed 20261030)
+  fail to elaborate              sample   239   expected from the .out    223.6 +-  14.1   z = +1.09
+  infeasible                     sample     2   expected from the .out      4.3 +-   2.1   z = -1.11
+  dimension 0                    sample   110   expected from the .out    108.0 +-  10.1   z = +0.20
+  numerator 0                    sample    27   expected from the .out     21.1 +-   4.6   z = +1.29
+  well-defined                   sample  1622   expected from the .out   1643.0 +-  17.1   z = -1.23
+    of which the Letter's value  sample   149   expected from the .out    176.3 +-  12.7   z = -2.15
+
+[5] The Born-weight value 319/31104 (Table S5 'Born weights k_r')
+  pairs through either anchor that give 319/31104: 7
+    addRoot:IF:0=swap & recs:REL:0=neg
+    addRoot:REL:0=neg & recs:REL:0=neg
+    recs:REL:0=neg & sameForm:REL:0=neg
+    recs:REL:0=neg & sameForm:REL:1=neg
+    recs:REL:0=neg & survives:AOR:0=%
+    recs:REL:0=neg & survives:AOR:0=+
+    recs:REL:0=neg & survives:AOR:0=-
+  singles: recs:REL:0=neg -> (237 + 48√2 + 31√3 + 3√6)/31104; sameForm:REL:0=neg -> (43)/7776
+
+[6] Depth dependence: seeded samples of 12 000 pairs and 12 000 triples (pairwise-disjoint sites)
+  depth 2: 12000 sampled, 9787 well-defined, 1028 with the Letter's value, 1911 distinct values, 288 distinct with 1/value in (120,155) (seen once 162, twice 40); Chao1 estimate of the in-band values of the whole depth-2 space: 616 (density 17.6 per unit); closest other value 1.076e+7 sigma [70 s]
+  depth 3: 12000 sampled, 8998 well-defined, 324 with the Letter's value, 3191 distinct values, 389 distinct with 1/value in (120,155) (seen once 251, twice 42); Chao1 estimate of the in-band values of the whole depth-3 space: 1139 (density 32.5 per unit); closest other value 9.94e+5 sigma [70 s]
+  reference: the full depth-2 space has 1105 in-band values (out section 4). The Chao1 estimate from the pair sample above is to be read against that number.
+  space sizes: singles 818, pairs with disjoint sites 331490; C(818,3) = 90889616, C(818,4) = 18518759260, C(818,5) = 3014854007528 (before the disjointness rule)
+
+[7] Lean 4.35.0 on mutants outside the spot-check sample
+  agree  recs:REL:1=strict & linkSwap:VAR:0=read2                                    lean ([(1,149),(3,45)],31104)
+  agree  recs:REL:0=neg & sameForm:REL:0=neg                                         lean ([(1,319)],31104)
+  agree  readoutDim:AOR:5=/ & objectWorld:LIT:2=2                                    lean ([(1,24),(2,30),(4,3)],256)
+  agree  wX:VAR:0=farEnd & wY:AOR:0=+                                                lean ([(1,79),(2,42),(3,48),(6,3)],31104)
+  agree  commutatorRecs:VAR:16=dA & slotQudit:AOR:0=+                                lean ([(1,82),(2,48),(3,36),(6,6)],31104)
+  agree  recs:REL:0=neg & addRoot:IF:0=swap                                          lean ([(1,83),(1,1),(1,1),(1,1),(1,1),(1,1),(1,1),(1,...
+  agree  commutatorCandidates:CAT:0=dup0 & kOf:IF:1=swap & tracelessBasis:LSW:2,4    lean ([(1,78),(2,51),(3,37),(6,6)],31104)
+  agree  commutatorCandidates:VAR:11=c1 & slotDim:ENDSWAP:dA/dB & key:LSW:1,2        lean ([(1,76),(2,48),(3,39)],31104)
+  agree  weylPhaseExp:AOR:6=+ & orderSign:LIT:0=0 & wX:VAR:1=dB                      lean ([(1,79),(2,90)],31104) (1 linter warning)
+  agree  readoutDim:LIT:0=0 & commutatorRecs:REL:0=strict & slotQudit:LSW:0,1        lean ([(1,79),(4,48),(6,45)],34992)
+  10 of 10 agree (in the 300-pair sample: none of the 6 pairs)
+
+[8] Pairs excluded by the disjoint-site rule, by reason
+   1367  the two share a site
+    402  LIST x mutation inside it
+    366  IF swap x mutation in a branch
+    152  IF swap x mutation in its own condition
+    125  LOG drop x mutation in the operand it drops
+     88  CAT x mutation inside it
+     85  LOG drop x mutation in the operand it keeps
+     50  other overlap
+     28  CONS x mutation inside it
+  total 2663 = 334153 - 331490
+
+total time 174 s

@@ -1,0 +1,110 @@
+Referee cross-check of compendium round 7 (REVIEW4-CT)
+  .lean files in the tree: 915
+
+[1] The 48 rows and their tied names (index/statements.tsv, lean column)
+  THEOREM rows with a lean entry: 64
+  rows tying a theorem whose statement mentions AlphaDerivation / a kernel module: 16: 2.1, 2.3, 2.6, 2.9, 2.10, 9.2, 9.3, 9.4, 9.5, 9.6, 18.2, 56.1, 74.1, 74.4, 78.3, 196.2
+  the other rows: 48; sections 33; names with multiplicity 208; distinct 131
+  kinds of the distinct names: {'alias_prop': 3, 'cond_table_check': 13, 'opaque_prop': 38, 'open_record': 53, 'table_check': 24}
+
+[2] The 37 table checks: modules, fields, rows, proofs and conjuncts (independent classifier)
+  table-check declarations: 37 (Counter({'table_check': 24, 'cond_table_check': 13})); modules: 37
+  conjuncts by form: {'LEN': 37, 'KV': 560, 'CAT': 13, 'REL': 8}; total 618
+  check_i proofs: {'by decide': 618}
+  modules with String fields only: 33 (key/value tables: 32); with Int fields: ['D525257_HTOR', 'D525335_SLBC', 'D525516_NCRE', 'D526019_WAMR']
+  modules with a REL conjunct: ['D525335_SLBC', 'D525516_NCRE', 'D526019_WAMR']
+  CAT conjuncts that are key/value filters with a count other than 1: 0
+  modules with exactly 60 entered rows: [('D530533_ANDB', 'last key web.QUTRIT.s0-s1.RING.4.tiled.spectrum.eq', 'last cas./web. key web.QUTRIT.s0-s1.RING.4.tiled.spectrum.eq'), ('D531942_CASM', 'last key eqca.reading.of.record', 'last cas./web. key cas.SINK.ARC.COUNT.QUTRIT.s0-s1.N4.ratios'), ('D532023_DST2', 'last key eqdj.SSPW.S.PM.eqds.missing', 'last cas./web. key -')]
+
+[3] The 13 opaque hypotheses
+  row_530477_LWE3        hypothesis cond_530477_LWE3       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_530610_PCHS        hypothesis cond_530610_PCHS       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_532023_DST2        hypothesis cond_532023_DST2       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_528475_DURA        hypothesis cond_528475_DURA       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_529015_YOGC        hypothesis cond_529015_YOGC       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_530426_UB4H        hypothesis cond_530426_UB4H       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_529099_LSRC        hypothesis cond_529099_LSRC       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_532499_HPK2        hypothesis cond_532499_HPK2       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_529072_HGHL        hypothesis cond_529072_HGHL       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_530067_HRCP        hypothesis cond_530067_HRCP       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_530247_TOP2        hypothesis cond_530247_TOP2       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_530584_ENT2        hypothesis cond_530584_ENT2       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+  row_531680_PHTR        hypothesis cond_531680_PHTR       declared as ['abbrev', 'opaque'] binder unused True; other theorems mentioning it: 0
+
+[4] The 94 opaque Props, records and aliases: theorems of the library that mention them
+  names: 94 {'open_record': 53, 'opaque_prop': 38, 'alias_prop': 3}; mentioned by a theorem: 0
+
+[5] Printed numbers said to occur nowhere in the raw text of the Lean tree
+    17689: occurrences 0
+   101761: occurrences 0
+   185496: occurrences 0
+   322516: occurrences 0
+   138129: occurrences 0
+   570349: occurrences 0
+   101973: occurrences 0
+    44341: occurrences 0
+   218340: occurrences 0
+    93481: occurrences 0
+    93312: occurrences 0
+     9270: occurrences 0
+    46412: occurrences 0
+    46563: occurrences 0
+   270584: occurrences 0
+
+[6] Entered-table facts
+  SLBC: 228 rows; W_diff_site = 0 in 228; W_diff_free = 0 in 228; R_diff_site > 0 in 54; R_target_site - W_source_site = R_diff_site in 228; c_open {'WASHED': 150, 'OPEN': 78}
+  NCRE: 246 rows; order3 = 0 in 246; SLOT rows outside KIT by group {'BODY': 13, 'NEUTRAL': 3, 'STAR': 2}; networks 82; polarities {'SLOT': 82, 'L': 82, 'S': 82}
+  WAMR: 14 rows; wash_moved_acts = 0 in 14; sum of acts 228
+  ENT2 enters and checks onsg.asym.pairs = "24": True
+  13-thermodynamics.tex contains 'at every one of the 43': True
+  round 6, 9.4 (LemmaB.zeroTransfer over AlphaDerivation/Data/Records.lean steps): 172 entered step triples; third triple (0,0,0) in 172; first + second = 0 in 172; first triples {(0, 0, 0): 82, (1, -1, 0): 48, (-1, 1, 0): 42}
+
+[7] Boxes audited by hand in REVIEW4-CT (verbatim) and their tied names
+  9.4 [Link lemmas]  boxes with this title: 1
+    parts/01-framework.tex:360: The open (2,3) link carries no mass face, its two-read record at the qubit end carries spin one, and zero register displacement equals zero momentum transfer at the one-link star.
+    tied: row_503180_ULPR (opaque_prop); wall_517016_ZERQ (opaque_prop); row_528882_LTGO (cond_table_check); row_517042_CPLG (opaque_prop); row_517539_LKLM (opaque_prop); row_518160_AGUQ (theorem); row_517792_OGEN (opaque_prop); row_524640_RDSG (opaque_prop); row_527022_OOTR (opaque_prop); wall_526234_VKSD_open (open_record); wall_526387_FVAC_open (open_record)
+  2.1 [The fourth definition from the axiom]  boxes with this title: 1
+    parts/01-framework.tex:117: This chapter says which of the six definitions are corollaries of the Axiom, which clauses remain premises, and which words are presentations. The definition \emph{known} is a corollary of the Axiom at both clauses: what is known of a qudit is what all its reads (the read: the basis passed along each pair to its far end) fix jointly with certainty whichever way the basis directions are matched across its pairs, and two reads commuting only up to a sign are a further record with their order as the sign, by the holonomy sign at dimension two.
+    tied: wall_517590_DISD (opaque_prop); wall_518109_ACTU (opaque_prop); wall_526460_RACC_open (open_record); row_524038_ORKC (theorem); row_525542_TTCF (table_check); row_532049_DIM1 (cond_table_check); wall_531916_EQUN_open (open_record); row_519267_DFAX (opaque_prop); row_520405_OADA (opaque_prop); wall_523694_EQRC (opaque_prop); wall_526287_ACAL_open (open_record)
+  18.2 [The gain lemma at the spectrum of records]  boxes with this title: 1
+    parts/01-framework.tex:658: The multiplicity of every record is the product of the dimensions of the ends it passes, one at no end, two at the qubit end, three at the qutrit end and six at both, at all one hundred seventy-two records of the qutrit-qubit link, its four end-set sums agreeing with the support-rank result; the record web therefore carries a link-product measure equal to the Born count at every end set and every link type.
+    tied: wall_517250_CMPT (opaque_prop); wall_519574_GAIP (opaque_prop); wall_519857_GAIQ (opaque_prop); row_525646_RTSE (table_check); row_531081_GPOE (cond_table_check); wall_529127_EQSV_open (open_record); wall_530222_EQBM_open (open_record); row_504521_RSBD (opaque_prop); row_518778_GPTT (opaque_prop); row_520119_GWDC (theorem); row_515736_BCHR (opaque_prop)
+  217.1 [The second law at the counting face]  boxes with this title: 1
+    parts/13-thermodynamics.tex:23: The object of this chapter is the boundary count (the entanglement entropy across a cut) of an interface at its counting face. The theorem states that this count is non-decreasing under every one-act read whose open end lies at the boundary, and under every one-act read beside, at each of the thirteen bodies and the neutral body: at all 228 one-act reads of the fourteen bodies (two per link at 114 links, 78 with an open far end, 150 washed) the count rises or stays at the site bound, at the free-direction bound and at the directions read, no decreasing act is found, and the running count along the order coordinate is non-decreasing. The result is a corollary of the record clause (a read is a further record and no read removes one) and of the definition of an open end, so the second law is a theorem at the counting face with the arrow of the order-coordinate theorem as its direction, the words entropy and arrow entering by name.
+    tied: wall_520950_BNDC (opaque_prop); row_522371_BCCF (opaque_prop); row_525335_SLBC (table_check)
+  234.1 [The enumeration of the records as the cost of a read]  boxes with this title: 1
+    parts/15-quantum-information.tex:203: At the sixteen networks of the item and at the sixty-four library networks the records of every link are counted by the closed count law at the slot polarity by order zero to three and by kind, the orders and the kinds summing to the records at every link and network (64 of 64 and 18 of 18 defined); the record sums under the lowering at the depths zero, one and two grow with the ratio of successive sums non-increasing, the finiteness beyond the second depth open, and the growth with the order terminates at the third order at every depth; so the cost of a read at a network at an order is the record count at that order.
+    tied: row_528475_DURA (cond_table_check); wall_528125_EQAD_open (open_record); row_525516_NCRE (table_check)
+  28.1 [Measurement as the wash at one act]  boxes with this title: 1
+    parts/01-framework.tex:909: This chapter establishes that measurement is the wash (decoherence) at one act, and reads the probe at the register. At every one of the two hundred twenty-eight one-act reads of the network list the readout at the open end, computed as exact arithmetic in the cyclotomic field, equals the reduced state of the pair at the far end at every direction, with the Born square the unit at every read, and is unmoved under every change confined to a washed end; so measurement is the wash at one act and the washed ends are the apparatus.
+    tied: wall_531133_EQDU_open (open_record); row_526019_WAMR (table_check); row_527964_MWSP (table_check); wall_529407_EQMF_open (open_record); wall_529937_EQMP_open (open_record); wall_531159_EQRH_open (open_record)
+  28.2 [The star-pair and one-link apparatus webs built]  boxes with this title: 1
+    parts/01-framework.tex:914: The star-pair and one-link apparatus webs are built at every admitted reading for every measurement of the item.
+    tied: wall_531133_EQDU_open (open_record); row_526019_WAMR (table_check); row_527964_MWSP (table_check); wall_529407_EQMF_open (open_record); wall_529937_EQMP_open (open_record); wall_531159_EQRH_open (open_record)
+  223.2 [The thermodynamic remainder at the forward saturation]  boxes with this title: 1
+    parts/13-thermodynamics.tex:287: At the forward saturation, with W taken as the entropy, the entropy production is strictly increasing at every one of the 182940 forward edges of the large truncated closure, the second law holds at the strict reading along every forward path and the name entropy is keyed; the boundary count of the second law, read beside at the same edges, is typed two objects and not the entropy; the fluctuation relation has 179 defined pairs of 2989 at the sinks graph, the two candidate functions meeting the ratio at 0 and at 6 of them, so the fluctuation name stays silent, a count of a truncated closure with no ensemble; and the asymmetric Onsager pairs are exactly the pairs at a non-zero production difference at every one of the 43, so the Onsager name is keyed.
+    tied: row_530584_ENT2 (cond_table_check); wall_529990_EQTR_open (open_record)
+  145.1 [The Casimir effect as the boundary count between two sinks]  boxes with this title: 1
+    parts/07-cell-3-2-photon.tex:572: The excluded count between two sinks of the saturation placed along a chain of the construction is a definite function of the separation at every separation the chain admits, with one sign, so the Casimir effect is a composed cell of the second-law and chain results: at the standing readings, the chain, the web between and the count face, the excluded records are defined at all forty-four chains and the nonzero differences carry one sign at every one.
+    tied: row_531942_CASM (table_check)
+  3.1 [The far end fixed direction by direction as the read]  boxes with this title: 1
+    parts/01-framework.tex:197: At the adopted read on a qubit-qutrit link, where the near qutrit gives its only basis at a cap read and the basis is passed along the pair to the far qubit, the far end is fixed and freed direction by direction by the basis the read passes: every near basis direction whose transport is nonnull fixes exactly one far direction, the traceless part of its projector, and frees the two transverse to it, at all eleven nonnull directions, while the one null direction frees the far end. The washed read along $Z$ fixes the one far letter $Z$ and frees $X$ and $Y$, and the three open reads $X$, $XZ$ and $XZ^{2}$ fix none and free three, their far directions a trine; the fixing is the same at every move of the identification group on the support, and the far marginal is invariant on the state at every read. On this reading the premise that the far end is fixed and freed direction by direction is a tautology of the definition of transport to the far end, drafted as Lean text with its Lean proof still to be written.
+    tied: row_535360_NDFE (table_check)
+  57.1 [Spin at the differing body]  boxes with this title: 1
+    parts/04-spacetime-and-symmetry.tex:385: At the first body at which the twice-spin read from the open qubit ends alone parted from the name, the docked up quark at the reading that keeps the nonzero labels, a web of three sites and two links at the genre (2,3) with one open ket end and one open bra end of dimension two and no open qutrit or ququart end, the label content re-built at a second route from its open ends alone, the weight route with no pairwise Clebsch-Gordan rule, reads zero and two at four states with the multiplicities one and one, equal to the rule at that body at every one of its three readings, the low at zero against zero, the nonzero at two against two and the maximal at two against two; the arrow spaces of its two links are printed at the dimension six each, the ket end tensor the bra end, with both weight faces as the catalogue carries them, and the body has no ququart end whose frame could part. The construction of the open-end label therefore stands re-met at its first differing body by a second route, and the parting the previous open result named is a parting from the name alone, the body up at the twice-spin one by name, which differs from the second route at every reading and is an input to no cell; the deciding table is re-derived in Lean.
+    tied: wall_519035_SPIP (opaque_prop); wall_519912_AMPM (opaque_prop); row_515919_SQTN (opaque_prop); row_517173_SPMV (opaque_prop); row_521989_DCRS (opaque_prop); row_525257_HTOR (table_check); row_528073_PQCD (table_check); wall_527131_PQCS_open (open_record)
+  181.5 [The quark offices as the star arm reads]  boxes with this title: 1
+    parts/09-cell-3-3-strong.tex:1248: At the primary reading every arm of the two catalogued stars and every heavy sink is an office by the body-alone rule: the six arms at the first power 319 and the office 101761 each, the up and the down equal with their ratio one, the heavy sink offices the cap squared at the powers of the dressing, every ratio among them an exact rational cell, and each star re-met as the sum of its arms by the cross-term theorem.
+    tied: wall_519009_REGI (opaque_prop); wall_520740_BOUN (opaque_prop); wall_525858_EQQC_open (open_record); row_522243_QRSK (opaque_prop); row_522607_FRCF (opaque_prop); row_525911_QLHL (table_check); wall_522556_SELS (opaque_prop); wall_523152_EQFS (opaque_prop)
+  H.3 [The termination of seeded saturation]  boxes with this title: 1
+    back.tex:518: Every seeded saturation terminates under the valence bound and the site bound, since the moves map the webs of at most $S$ sites into themselves and such webs are finitely many.
+    tied: wall_529292_EQRD_open (open_record); wall_530714_EQSZ_open (open_record); wall_523642_EQPW (opaque_prop); wall_532473_EQGC_open (open_record); wall_528316_EQRZ_open (open_record); wall_528718_EQPX_open (open_record); wall_528988_EQPY_open (open_record); row_529099_LSRC (cond_table_check); row_530196_ERMT (table_check); wall_524193_EQKC (opaque_prop); wall_526437_CFPK_open (open_record); wall_526717_LETU_open (open_record); wall_526741_TWJS_open (open_record); wall_526922_RIMP_open (open_record); wall_528258_EQCK_open (open_record); wall_528934_EQFW_open (open_record); wall_529319_EQCZ_open (open_record); wall_530092_EQKU_open (open_record); wall_530352_EQBD_open (open_record); wall_530558_EQKW_open (open_record); wall_532447_EQAV_open (open_record)
+  235.4 [The carrier phase datum at the four-cycle]  boxes with this title: 1
+    parts/15-quantum-information.tex:261: At every carrier carrying a qutrit-qubit register the carrier phase datum equals the primitive fourth roots of unity in the holonomy spectrum of the transport-generator four-cycle of that register, the four-cycle present at the W, the Z and the photon words and absent at the gluon.
+    tied: wall_521784_EQFL (opaque_prop); row_527645_YCLC (table_check); row_519599_RTFP (opaque_prop); row_529015_YOGC (cond_table_check); wall_529186_EQRT_open (open_record); wall_529830_EQHW_open (open_record); row_530067_HRCP (cond_table_check); wall_529777_EQDR_open (open_record)
+  170.1 [Beta decay as the release at the plus-two arm]  boxes with this title: 2
+    parts/08-cell-4-2-weak.tex:685: Beta decay is read as the release at the plus-two arm at the literal closure reading of the decay graph: at that reading the catalogued neutron web is a non-sink carrying its dock edge at the plus-two arm, and the hub transfer at the dock of the arm, the hub unit of the released body attached at the dock by its in-leg together with the kept-leg hub at the same dock, adds with its end the cross-core object of the released body by an explicit isomorphism at dimensions and links, read through the hub at the order two of its (2,4) in-leg with the dressing of that link at both dressing readings, the readout 2916 at the hub spelling and the cell 1296 over 17689 at both spellings, so the beta rate cell is an output of the rate law at a non-sink. The two partings of the previous open result are closed at this reading: at the stop condition of the pairing move the neutron carried no forward edge, and the object the dock move added, a dock of one site at one link of measure 6, parted from the released body and from the cross-core object; at the literal closure reading the forward edge is present and the hub transfer adds the cross-core object, while the dock move of the previous reading remains the first admitted edge at the dock at which the release parts, its object a dock, printed beside; the deciding table is re-derived in Lean.
+    tied: wall_533599_BETD_open (open_record); wall_533733_BOSW_open (open_record)
+  64.1 [Gauge invariance as the known clause]  boxes with this title: 1
+    parts/05-gauge-structure.tex:25: This chapter establishes that gauge invariance is the known clause (the known clause: the matching of basis directions across pairs) read at the one link. Every readout of the one qutrit-qubit link is invariant under every matching of the identification group as a corollary of that clause: the group is re-met as exact objects, the fourth-root monomial groups at the orders four, thirty-two, three hundred eighty-four and six thousand one hundred forty-four, the whole group at the Lie dimensions four and nine, and the identification algebra at the six link types with the one readable type carrying the acting centre; the one hundred seventy-two records are rebuilt and every readout is invariant on the state under every matching, every Lie generator, the Cayley unitaries, the chain unitaries and the Fourier elements, the corollary standing with no posed step. The group is named as the gauge group of the Standard Model by correspondence.
+    tied: row_521259_GIKC (opaque_prop); row_510060_GGRL (opaque_prop)
