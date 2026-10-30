@@ -305,3 +305,5 @@ Gaps:
 - every Dirac kinetic block $C\gamma^\mu|_{S^+\times S^+}$ is exactly antisymmetric.
 
 For a Grassmann field, $\int\psi^TM\partial\psi$ only sees the symmetric part of $M$, so a single Majorana–Weyl spinor has no Dirac kinetic term in $(7,7)$. It also finds that the full Rarita–Schwinger kinetic matrix $(C\gamma^{\mu\nu\rho})$ on $(T^*\otimes S^-)^{\otimes2}$, including its vector-index antisymmetry, has exactly zero symmetric part for both $C_\pm$. So a single Majorana–Weyl $\zeta$ also has no Rarita–Schwinger kinetic term. This supports Theorem G7 and the doubling to complex Weyl.
+
+**Coordinator reproduction (2026-10-30).** `G_el_noether.py`, `G_fermion.py` and `G_symbols.py` were re-run. Outputs are identical apart from the trailing `EXIT 0` line added by the agent's run wrapper. `GStueckelberg.lean` was rebuilt with Lean 4.35.0 and its output is identical.
