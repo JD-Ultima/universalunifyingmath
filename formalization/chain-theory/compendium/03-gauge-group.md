@@ -89,3 +89,24 @@ su(3) + su(2) + u(1) and the Z6 centre, which are forced once (3,2) is chosen; n
 for another 8-row string table under an opaque hypothesis. No group, matrix, Lie algebra or kernel is
 represented in Lean. G1-G3 are, however, readily formalizable (Mathlib has `Matrix.unitaryGroup`,
 `Matrix.specialUnitaryGroup`, Kronecker products and `LieAlgebra`).
+
+## 7. Repo-side Lean for G1-G3 (2026-10-30)
+
+The proofs are in `proofs/lean/chain-theory/GaugeSelection.lean`. It is checked with Lean 4.35.0, core library only, by `run_gauge.sh`; the output is in `GaugeSelection.out`. There are 66 theorems. None uses `Classical.choice` or `sorryAx`. README.md lists what is and is not certified. Results beyond §3:
+
+- **The cap enters as an interval.** "Readable and acting centre" selects exactly $\{(3,2)\}$ iff the cap $c$ satisfies $6\le c\le7$ (`unique_iff_cap`). This holds over $\{2,3,4\}$ and over every alphabet of integers $\ge2$ (`unique_iff_cap_unbounded`). Caps $\le5$ select nothing, caps 8-11 select $(3,2),(4,2)$, and caps $\ge12$ add $(4,3)$ (`cap_profile`). G3's sensitivity values are special cases.
+- **The alphabet enters only through its lower end and through $2,3\in A$.** No upper end is needed (`selection_any_alphabet`). Admitting $d=1$ adds $(2,1),(3,1),(4,1)$, and with no upper end also $(5,1),(6,1)$.
+  - The alphabet input is 9.1's "admitted alphabet". The box 2.7 "The act alphabet" (OPEN) is a different object, the two move letters attach and join.
+- **The acting centre is the only input that separates $(3,2)$ from $(2,2)$.** Under the conjugate convention of F-CT-3 it holds at every genre, and the selection becomes $(2,2),(3,2)$ (`conj_selection`).
+- **"Dim 12 and rank 4": each condition alone suffices.** Each selects $(3,2)$ among the six genres. Dim 12 alone does so among all pairs of naturals, since $13=3^2+2^2$ is the only representation (`dim12_unbounded`). Rank 4 alone does so for $d_2\ge2$. The two targets are $\dim$ and rank of $su(3)\oplus su(2)\oplus u(1)$ (`targets_are_SM`). G3's "a match, not a derivation" is unchanged.
+- **Normalisation.** §2's generator $z=(i d_2 1,-i d_1 1)$ is the normalisation of the printed scalars $|d_2-d_1|$. It is not primitive when $\gcd(d_1,d_2)>1$: the primitive generator gives 1 at $(4,2)$, not 2 (`primitive_scalar`).
+
+  G2's $|\ker|=\mathrm{lcm}(d_1,d_2)$ holds for the primitive covering $(A,B,z)\mapsto(z^{d_2/g}A,z^{-d_1/g}B)$. Exponentiating §2's $z$ instead gives kernel order $d_1d_2$: 8 rather than 4 at $(4,2)$ (`cover_kernel_normalisation`, `cover_kernel_scalar`). At $(3,2)$ the two coincide (6).
+- **G1 algebra over any commutative ring:**
+  - kernel of $(X,Y)\mapsto X\otimes1+1\otimes Y$ equal to $\{(c1,-c1)\}$, and kernel of $\otimes$ equal to the scalar pairs with $\lambda\mu=1$, for every genre;
+  - trivial kernel on the $(2,3)$ slice;
+  - the rescaling $(cA,c^{-1}B)$;
+  - the covering kernel $\{z:z^6=1\}$, with $(A,B)=(z^31,z^21)$;
+  - the six triples $k\cdot(3,2,1)$ of 65.1 in the exponent model.
+
+**Not certified.** These remain paper steps or are outside core: ℂ, unitarity, the Lie groups, the Lie-group isomorphism with $(SU(2)\times SU(3)\times U(1))/\mathbb Z_6$, surjectivity of the covering, the mixed-product property, rank-nullity, the derived algebra and the centre dimension. §6's Mathlib route remains the way to state these.

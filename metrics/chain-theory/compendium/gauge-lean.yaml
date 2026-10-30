@@ -1,0 +1,70 @@
+claim_id: CT-C013 (Lean, G1-G3 of 03-gauge-group.md)
+source_statement: "64.2 The gauge group as the face group of the tether (THEOREM); 65.1 The gauge group as a corollary of one construction (THEOREM); 9.1 readability at the complete-read bound (CONDITIONAL); 9.2 abelian genre uniqueness (THEOREM)"
+source_location: "compendium/tex/parts/05-gauge-structure.tex:30-83; compendium/tex/parts/01-framework.tex:52-56, 344-350"
+source_commit: a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+note: formalization/chain-theory/compendium/03-gauge-group.md (section 7)
+code: [proofs/lean/chain-theory/GaugeSelection.lean, proofs/lean/chain-theory/run_gauge.sh]
+outputs: [proofs/lean/chain-theory/GaugeSelection.out]
+lean: {version: "4.35.0", library: core_only, imports: none, upstream_file: not_used, wall_time_s: 10}
+theorems: 66
+axioms: {none: 33, propext: 7, propext_quot_sound: 26, classical_choice: 0, sorryAx: 0}
+certified:
+  G3_selection:
+    alphabet_2_3_4_cap_6_acting: "[(3,2)]"
+    drop_acting_centre: "[(2,2),(3,2)]"
+    drop_cap: "[(3,2),(4,2),(4,3)]"
+    cap_profile: "(3,2) from cap 6, (4,2) from 8, (4,3) from 12 (all caps)"
+    unique_iff_cap: "6 <= cap <= 7 (alphabet {2,3,4}; also every alphabet of integers >= 2)"
+    alphabet_upper_end: "irrelevant: any alphabet of integers >= 2 containing 2 and 3 selects (3,2) only"
+    alphabet_lower_end: "d = 1 admitted: (2,1),(3,1),(4,1) added over {1..4}; (d,1), d <= 6, with no upper end"
+    conjugate_convention: "acting criterion holds at every genre; selection (2,2),(3,2)"
+    upstream_readable_ends_le_3: {readable: "[(2,2),(3,2),(3,3)]", with_acting: "[(3,2)]", with_conjugate: "[(2,2),(3,2),(3,3)]"}
+  G3_dim_rank_cell:
+    dim12_and_rank4: "[(3,2)]"
+    dim12_alone: "[(3,2)] among the six; among all pairs of naturals (13 = 3^2 + 2^2 only)"
+    rank4_alone: "[(3,2)] among the six; among all pairs with d2 >= 2 ((4,1) if d = 1 admitted)"
+    targets: "12 = 8 + 3 + 1, 4 = 2 + 1 + 1 (su(3)+su(2)+u(1))"
+  G2_genre_matrix: "(dimF; |d2 - d1|) = (7;0),(12;1),(19;2),(17;0),(24;1),(31;0); derived 6,11,18,16,23,30; rank 3,4,5,5,6,7"
+  G1_G2_matrix_level_any_commutative_ring:
+    - "face map kernel {(c 1, -c 1)} (every genre)"
+    - "central generator (a 1, -b 1) acts on the link as (a - b) 1; traceless"
+    - "A (x) B = 1 iff A = l 1, B = u 1, l u = 1 (every genre)"
+    - "(2,3): trivial tensor kernel on det A det B = 1 (Leibniz det2, det3)"
+    - "(2,3): (cA, c^-1 B), c = det A det B, lies in the slice with the same image"
+    - "(2,3): covering (A,B,z) -> (z^3 A, z^-2 B) maps into the slice; kernel iff z^6 = 1 and (A,B) = (z^3 1, z^2 1)"
+    - "every genre, scalar level: slice kernel l^(d1-d2) = 1; covering kernel z^L = 1 with e2 d1 = e1 d2 = L"
+    - "65.1 slice representative (3,3,-2,-2,-2) = centre generator at (2,3), traceless"
+  exponent_models:
+    six_triples: "kernel of the (2,3) covering in mu_6 = k*(3,2,1), k = 0..5 (65.1); still 6 elements in mu_12"
+    cover_kernel_orders_primitive: [2, 6, 4, 3, 12, 4]   # = lcm(d1,d2)
+    cover_kernel_unreduced_4_2: 8                       # = d1 d2
+    tensor_kernel_orders_mu12: [12, 1, 2, 12, 1, 12]    # |d1-d2|, whole mu_12 if d1 = d2
+not_certified:
+  - "complex numbers and unitarity (theorems are over an arbitrary commutative ring; instantiated at Int only)"
+  - "U(n), SU(n), S(U(2)xU(3)) as Lie groups; the isomorphism S(U(2)xU(3)) = (SU(2)xSU(3)xU(1))/Z6"
+  - "surjectivity of the covering (needs sixth roots in U(1)); |mu_N| = N in U(1)"
+  - "mixed-product property of (x) (trivial kernel -> injective)"
+  - "rank-nullity and dim_R u(d) = d^2 (face_kernel -> dim f = d1^2 + d2^2 - 1); derived algebra and centre dimension"
+  - "det(l 1_d) = l^d for d other than 2, 3"
+  - "the read cap value (9.1, CONDITIONAL) and the choice of criteria; physics identifications (G5)"
+findings:
+  cap_interval: "uniqueness of (3,2) holds exactly for caps 6 and 7"
+  alphabet: "enters only through min >= 2 and 2, 3 in A"
+  dim_rank_cell: "each of dim 12, rank 4 alone selects (3,2)"
+  normalisation: "printed central scalars use the unreduced generator (d2,-d1); the primitive one gives 1 at (4,2); lcm kernel order needs the primitive covering"
+corrections_logged: "ConventionCheck.lean comment calls (d2,-d1) primitive (true only for gcd 1); no theorem affected"
+formalization_status:
+  value: formalized_finite_and_algebraic_core
+  detail: "Selection content of G3 and genre-matrix formulas of G2 exactly; G1/G2 kernel algebra over any commutative ring; Lie-group statements not expressible in core."
+internal_consistency:
+  value: consistent
+  detail: "All values of 03-gauge-group.md G1-G3 and gauge_audit.txt reproduced; two wording imprecisions (normalisation of the central generator; lcm needs the primitive covering)."
+proof_status:
+  value: machine_checked
+  detail: "Lean 4.35.0 core, exit 0, no warnings; every theorem audited by #print axioms."
+reproducibility:
+  value: reproduced
+  detail: "LEAN=... ./run_gauge.sh > GaugeSelection.out (standalone)."
+confidence:
+  value: high
+  justification: "Kernel-checked; statements quantify over all caps, all alphabets of integers >= 2 and all commutative rings where stated; the uncertified steps are listed and standard."

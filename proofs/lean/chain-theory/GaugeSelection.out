@@ -1,0 +1,84 @@
+[(0, []),
+ (1, []),
+ (2, []),
+ (3, []),
+ (4, []),
+ (5, []),
+ (6, [(3, 2)]),
+ (7, [(3, 2)]),
+ (8, [(3, 2), (4, 2)]),
+ (9, [(3, 2), (4, 2)]),
+ (10, [(3, 2), (4, 2)]),
+ (11, [(3, 2), (4, 2)]),
+ (12, [(3, 2), (4, 2), (4, 3)]),
+ (13, [(3, 2), (4, 2), (4, 3)]),
+ (14, [(3, 2), (4, 2), (4, 3)]),
+ (15, [(3, 2), (4, 2), (4, 3)]),
+ (16, [(3, 2), (4, 2), (4, 3)])]
+[(0, 0, 0), (0, 2, 4), (0, 4, 2), (3, 0, 3), (3, 2, 1), (3, 4, 5)]
+'GaugeSelection.six_genres' does not depend on any axioms
+'GaugeSelection.readable_types' does not depend on any axioms
+'GaugeSelection.selection' does not depend on any axioms
+'GaugeSelection.drop_cap' does not depend on any axioms
+'GaugeSelection.cap_profile' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.unique_iff_cap' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.cap_4' does not depend on any axioms
+'GaugeSelection.cap_8' does not depend on any axioms
+'GaugeSelection.cap_9' does not depend on any axioms
+'GaugeSelection.cap_12' does not depend on any axioms
+'GaugeSelection.alphabet_2_to_8' does not depend on any axioms
+'GaugeSelection.cap6_acting_unbounded' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.readable_unbounded' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.selection_any_alphabet' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.unique_iff_cap_unbounded' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.alphabet_with_one' does not depend on any axioms
+'GaugeSelection.cap6_acting_with_one' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.drop_cap_unbounded' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.actingConj_always' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.conj_selection' does not depend on any axioms
+'GaugeSelection.upstream_readable' does not depend on any axioms
+'GaugeSelection.upstream_selection' does not depend on any axioms
+'GaugeSelection.upstream_conj_selection' does not depend on any axioms
+'GaugeSelection.sixGenres_eq' does not depend on any axioms
+'GaugeSelection.genre_matrix' does not depend on any axioms
+'GaugeSelection.derived_and_rank' does not depend on any axioms
+'GaugeSelection.primitive_scalar' does not depend on any axioms
+'GaugeSelection.acting_iff' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.dimF_split' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.targets_are_SM' does not depend on any axioms
+'GaugeSelection.dim12_rank4' does not depend on any axioms
+'GaugeSelection.dim12_alone' does not depend on any axioms
+'GaugeSelection.rank4_alone' does not depend on any axioms
+'GaugeSelection.dim12_unbounded' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.rank4_unbounded' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.rank4_with_one' does not depend on any axioms
+'GaugeSelection.eq_neg_of_add_eq_zero' does not depend on any axioms
+'GaugeSelection.mul_sub'' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.pow_mul'' depends on axioms: [propext]
+'GaugeSelection.pow3' does not depend on any axioms
+'GaugeSelection.face_kernel' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.centre_acts' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.centre_traceless' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.kron_kernel' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.det2_scal' depends on axioms: [propext]
+'GaugeSelection.det3_scal' depends on axioms: [propext]
+'GaugeSelection.det2_smul' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.det3_smul' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.slice_scalar_23' depends on axioms: [propext]
+'GaugeSelection.tensor_kernel_trivial_23' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.rescale_into_slice' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.cover_into_slice' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.smul_eq_one' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.cover_kernel_23' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.tensor_kernel_scalar' depends on axioms: [propext]
+'GaugeSelection.cover_kernel_scalar' depends on axioms: [propext]
+'GaugeSelection.cover_kernel_unique' does not depend on any axioms
+'GaugeSelection.kron_kernel_int_instance' depends on axioms: [propext, Quot.sound]
+'GaugeSelection.minus_one_not_in_slice' depends on axioms: [propext]
+'GaugeSelection.slice_representative' does not depend on any axioms
+'GaugeSelection.centreDiag_traceless_six' does not depend on any axioms
+'GaugeSelection.six_triples' does not depend on any axioms
+'GaugeSelection.six_triples_in_mu12' does not depend on any axioms
+'GaugeSelection.cover_kernel_orders' does not depend on any axioms
+'GaugeSelection.cover_kernel_normalisation' does not depend on any axioms
+'GaugeSelection.tensor_kernel_orders' does not depend on any axioms

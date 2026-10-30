@@ -78,3 +78,11 @@ mathematical objects (matrices, groups, rationals) and whose proofs compute them
 The theorems give the local-unitary group of one link. Gauge fields, spacetime locality of the
 symmetry, matter representations (66.x OPEN) and hypercharges are not derived. The Z6 global form is
 consistent with all observed fields but is not experimentally established (CT-C013).
+
+*2026-10-30 note on G6 and G7, from `proofs/lean/chain-theory/GaugeSelection.lean` (see `formalization/chain-theory/compendium/03-gauge-group.md` §7):*
+
+- **G6.** The source's Lean still has no Z6 kernel. The repo now has Lean statements about matrices over any commutative ring, with proofs that compute: the kernel of $\otimes$ and of the face map, the trivial kernel on the $(2,3)$ slice, and the covering kernel $z^6=1$. They are core-only, so ℂ and the Lie-group isomorphism are not certified.
+- **G7.**
+  - The read-cap entry is sharpened. The uniqueness of $(3,2)$ holds exactly for caps 6 and 7, and fails for every cap $\le5$ (none selected) and $\ge8$.
+  - The alphabet entry is sharpened. The upper end $\{\dots,4\}$ is not needed. The lower end matters: admitting $d=1$ adds $(2,1),(3,1),(4,1)$.
+  - Under the conjugate convention of the alpha audit, the acting-centre criterion holds at every genre, and the selection becomes $(2,2),(3,2)$.
