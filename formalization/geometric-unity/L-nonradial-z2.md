@@ -10,6 +10,7 @@ J5 and J5d exclude $\Upsilon=0$ on a neighbourhood of a point of $s(X)$ only for
 - Z2 with $n=4$, $\lambda\neq\tfrac14$, $c_Hc_V\neq0$; the two real forms of J.0: (14,0) (base (4,0), $\lambda<\tfrac14$) and (7,7) (base (1,3), (3,1) or (2,2), $\lambda>\tfrac14$; A4, A5).
 - $\kappa\neq0$; $T_o=t\Phi^1+u\Phi^1\Gamma$ with $t,u$ arbitrary smooth functions on $U$; $T_e=\Sigma\,(dt,du)^\top$ the slaved field of J1 in $\mathcal V$, with $\det M(t,u)\neq0$ on $U$.
 - $U\subset Y$ connected and open; $\Upsilon=0$ on $U$. Where stated, $U$ meets $s(X)$.
+- $(x,y)\neq0$ (as in J5); every member of L8 satisfies it.
 
 **Notation.** $E^{(1)},E^{(13)},\omega^{(3)},\omega^{(11)}$, $H$, $\mathcal Q,\mathcal Q'$, $\varpi$ are those of J2 ("Substituting the slaving"); $x_1=x$, $x_{13}=y$; $\epsilon=\pm1$ in (14,0)/(7,7). Put
 $$\ell:=xz+\epsilon yw\ (\text{the ellipticity factor of H7}),\qquad N:=x^2+\epsilon y^2,\qquad \delta:=ty-ux,\qquad U^*:=\{q\in U:(dt,du)(q)\neq0\}.$$
@@ -61,7 +62,7 @@ there is no such $W$; in (14,0) already (i)+(ii) are impossible. In particular t
 Inputs checked in output §L2 (brute-force Ricci of Z2 at points off $s(X)$, bases (4,0), (1,3), (2,2)).
 
 *Remark (side results).*
-- (a) with $\beta=0$: for $n=4$ and every $\lambda\neq\tfrac14$, **Z2 is Einstein on no open subset of $Y$**. F6 had this only on $s(X)$; F9 concerns Z1 and is untouched.
+- (a) with $\beta=0$: for $n=4$ and every $\lambda\neq\tfrac14$, **Z2 is Einstein on no open subset of $Y$**. F6 had this only on $s(X)$. This proves Conjecture F9 for Z2 at $n=4$, in a stronger form (flat bases included); its open content is Z1, where the flat model F7 is Einstein (R8-4).
 - (a) with $\beta\neq0$ is the conclusion J5(b) draws from the radial ansatz. So **J5(c) holds without the hypothesis that $U$ meets $s(X)$**: no radial solution exists on any open set.
 
 **Lemma L3 (fibre lemma: concircular functions on Z2 are parallel).**
@@ -70,7 +71,7 @@ Inputs checked in output §L2 (brute-force Ricci of Z2 at points off $s(X)$, bas
 
 *Proof.*
 - (a) For $\nabla V=\psi\,\mathrm{Id}$ ($V=\nabla f$) one has $R(X,Y)V=(X\psi)Y-(Y\psi)X$. Since $\partial_s$ is parallel, $R(\partial_s,Y)=0$. Taking $Y\perp\partial_s$ gives $d\psi=0$, so $R(X,Y)V=0$ for all $X,Y$.
-- With $V=V_s\partial_s+V_S$: $R^S(X,Y)V_S=-\tfrac14[[X,Y],V_S]=0$ for all $X,Y\in T S$. Since $[\mathfrak p,\mathfrak p]=\mathfrak{so}(\eta)$, $V_S$ commutes with $\mathfrak{so}(\eta)$, which acts irreducibly on $\mathbb R^4$. So $V_S$ is a multiple of $1$, and it is traceless, so $V_S=0$.
+- With $V=V_s\partial_s+V_S$: $R^S(X,Y)V_S=-\tfrac14[[X,Y],V_S]=0$ for all $X,Y\in T S$. Since $[\mathfrak p,\mathfrak p]=\mathfrak{so}(\eta)$, $V_S$ commutes with $\mathfrak{so}(\eta)$, whose commutant in $\mathfrak{gl}(4)$ is $\mathbb R1$ ($\mathbb R^4$ is absolutely irreducible: its complexification is the vector representation of $\mathfrak{so}(4,\mathbb C)$; output §L3). So $V_S$ is a multiple of $1$, and it is traceless, so $V_S=0$.
 - Then $\nabla_Y(V_s\partial_s)=(YV_s)\partial_s=\psi Y$; for $Y\in TS$ this forces $\psi=0$ and $V_s$ constant.
 - (b) The fibres are totally geodesic ($T=0$), so $\mathrm{Hess}^Yr|_{VV}=\mathrm{Hess}^F(r|_F)$ and (a) applies on every fibre piece: $\psi=0$, and the vertical part of $\nabla r$ is $a\nabla s$ ($\nabla s$ is vertical). $da=0$ because $\nabla dr=\nabla ds=0$. ∎
 
@@ -98,7 +99,7 @@ Since Σ is homogeneous of degree $-1$ in $(\kappa,t,u)$, $R'$ is homogeneous of
 
 (b) *Invariance of the line.* At $\kappa=1$, on $(t,u)=\sigma(x,y)$: $\;v\cdot\nabla\delta=-(xw-yz)(160N\sigma-1)$. So the line is $v$-invariant iff $xw=yz$, i.e. $(z,w)=c(x,y)$. Otherwise $v$ is tangent to it only at one point ($\sigma_*=\kappa/(160N)$ for general κ, by homogeneity).
 
-(c) *The family $xW_A+zW_C\mathrm{Ad}_\Gamma$* (κ symbolic). $H_{13}=z^2\cdot(\ldots)/\det M$. For $z\neq0$ the kernel field can be taken as $v=(\kappa^2+224\kappa tx\mp3328u^2x^2,\ 384\kappa ux)$ with $R=-1916928\,\kappa ux^4$; $v$ is tangent to $u=0$, and $H_{13}=0$ only where $\det M=0$. For $z=0$ (the members $xW_A$), $H_{13}\equiv0$, Σ has no $du$ column, and
+(c) *The family $xW_A+zW_C\mathrm{Ad}_\Gamma$* (κ symbolic). $H_{13}=z^2\cdot(\ldots)/\det M$. For $z\neq0$ the kernel field can be taken as $v=(\kappa^2+224\kappa tx\mp3328u^2x^2,\ 384\kappa ux)$ with residual $-1916928\,\kappa ux^4$ of the $E^{(13)}$ row (in the normalisation of (a), $v=-\kappa z\,v_c$ and $R'=-x(\kappa z)^2$ times it); $v$ is tangent to $u=0$, and $H_{13}=0$ only where $\det M=0$. For $z=0$ (the members $xW_A$), $H_{13}\equiv0$, Σ has no $du$ column, and
 $$E^{(13)}=c_{13}\,g-16x\,\Sigma_C\Sigma_B\,(dt\otimes dt-|dt|^2g),\qquad \Sigma_C=\frac{24\kappa x}{\kappa^2+224\kappa tx\mp3328u^2x^2},\quad \Sigma_B=\frac{4992\,ux^2}{\kappa^2+224\kappa tx\mp3328u^2x^2}.$$
 
 (d) *Meaning.* On $U^*$, by L1, $(t,u)=\gamma(\rho)$ locally with $\gamma'\neq0$, $d\rho\neq0$. Then the traceless part of $E'$ is $\hat h\,(\nabla^2\rho)_0+\hat q\,(d\rho\otimes d\rho)_0$, with $\hat h=h\cdot\gamma'$ and $\hat q=h\cdot\gamma''+\gamma'^\top\mathcal Q''\gamma'$. If $\hat h\equiv0$ along γ, then $\gamma'=\mu v$ with $\mu\neq0$ and $\hat q=\mu^2R'(\gamma)$. (Checked at random exact points and curve jets, member $(2,-1,3,1)$, both signatures, output §L4.)
@@ -144,7 +145,7 @@ Two independent confirmations (output §L6):
 
 **Theorem L8 (non-radial Z2).** Assume (H).
 
-(A) *Elliptic members with $xw\neq yz$.* If $\ell\neq0$, $N\neq0$ and $xw\neq yz$, then $\Upsilon=0$ has **no solution on $U$**, for every nonempty connected open $U$ (it need not meet $s(X)$).
+(A) *Members with $\ell\neq0$ (in (14,0): the elliptic members), $N\neq0$ and $xw\neq yz$.* If $\ell\neq0$, $N\neq0$ and $xw\neq yz$, then $\Upsilon=0$ has **no solution on $U$**, for every nonempty connected open $U$ (it need not meet $s(X)$).
 
 (B) *The members $x(W_A+cW_C\mathrm{Ad}_\Gamma)+y(W'_A+cW'_C\mathrm{Ad}_\Gamma)$ with $cN\neq0$, and $xW_A$ with $x\neq0$.* This includes $\circledast_\sharp$ ($x=c=1$, $y=0$) and $W_A$. If $U$ meets $s(X)$, $\Upsilon=0$ has **no solution on $U$**.
 
@@ -167,13 +168,13 @@ In (14,0), $N=-(x'^2+y'^2)\neq0$ for every member with $(x,y)\neq0$. So (A) and 
 
 *Proof.*
 - Steps 1–6 up to L6 do not use $s(X)$. Fix $x_0\in\pi(U)$. On the connected open set $\Omega\subset F_{x_0}$, $w=r|_F$ solves the **linear** equation $\mathrm{Hess}^Fw=-\tfrac7{18}w(\mathrm{Ric}_F+\mathcal A_{x_0})$.
-- Its coefficients are rational in $y$, with poles only on $\det y=0$, hence analytic on the connected fibre $\mathrm{Met}_{(p,q)}(T_{x_0}X)$. Solutions are the parallel sections of an analytic connection $D$ on $\mathbb R\oplus TF$.
+- Its coefficients are rational in $y$, with poles only on $\det y=0$, hence analytic on the connected fibre $\mathrm{Met}_{(p,q)}(T_{x_0}X)$ ($=GL^+(4)/SO(p,q)$, since $O(p,q)$ meets both components of $GL(4)$). Solutions are the parallel sections of an analytic connection $D$ on $\mathbb R\oplus TF$.
 - Transport $(w,\nabla w)$ along a polygonal path from Ω to $p=g(x_0)$. Each $(\nabla^kR^D)(\cdot)\,(w,\nabla w)$ is analytic along each segment and vanishes near its start, so it vanishes along the segment.
-- At each vertex the infinitesimal holonomy algebra annihilates $(w,\nabla w)$. For analytic connections it equals the local holonomy algebra (Kobayashi–Nomizu I, Thm II.10.8), so the transported section is a local solution near the next vertex, and finally near $p$.
+- At each vertex the infinitesimal holonomy algebra annihilates $(w,\nabla w)$. For analytic connections it equals the local holonomy algebra (Kobayashi–Nomizu I, Thm II.10.8: for an analytic connection the infinitesimal holonomy algebra equals the local, indeed the restricted, holonomy algebra), so the transported section is a local solution near the next vertex, and finally near $p$.
 - By L7 (linear case) it vanishes there. Transporting back, $w\equiv0$ on Ω, against $r\neq0$. ∎
 
 **Answers.**
-1. *Λ² equations.* On every open solution set $dt\wedge du=0$ holds everywhere, not only where some $\varpi\neq0$ (L1). Locally $(t,u)=\gamma(\rho)$ on the dense set $U^*$. The complement of $U^*$ has empty interior, because constant $(t,u)$ on an open set means round 5 with $T_e=0$, i.e. an Einstein open set, which Z2 does not have (L2).
+1. *Λ² equations.* For the members of L1 (in particular $\circledast_\sharp$, $xW_A$ and every member with $xz\pm yw\neq0$), $dt\wedge du=0$ holds on every open solution set, not only where some $\varpi\neq0$ (L1). (Corrected after review 2026-10-30, R8-1; the text had no condition on the member.) Locally $(t,u)=\gamma(\rho)$ on the dense set $U^*$. The complement of $U^*$ has empty interior, because constant $(t,u)$ on an open set means round 5 with $T_e=0$, i.e. an Einstein open set, which Z2 does not have (L2).
 2. *The two Einstein-type channels.*
    - The curvature-free channel ($E^{(13)}$ for $y=0$; $yE^{(1)}-xE^{(13)}$ in general) does make the scalar concircular after reparametrisation, as the referee noted, wherever its reduced Hessian coefficient $\hat h\neq0$.
    - But on Z2 a concircular function has parallel gradient (L3), because the fibre is $\mathbb R\times SL(4)/SO$ with no warped factor. With channel $E^{(1)}$, $\mathrm{Ric}\in\mathrm{span}(g,dr\otimes dr)$ then reduces to Ricci-flat, radial (J5) or null-horizontal cases, all excluded by L2 on every open set.
@@ -181,7 +182,7 @@ In (14,0), $N=-(x'^2+y'^2)\neq0$ for every member with $(x,y)\neq0$. So (A) and 
    - On the invariant line one equation is left, $\nabla^2r=-\tfrac7{18}r\,\mathrm{Ric}^Y$ after L6. L6 uses the Killing, parallel Euler field. The equation fails at order $\varepsilon^2$ in the fibre at any point of $s(X)$ (L7, using $A=0$ on $s(X)$ and the A-tensor formula L-F5).
    - Degenerate cases: a null gradient is covered (L3 and L2(b)); $\nabla t$ parallel is L4's case analysis (it contains J5); constant $(t,u)$ on an open set is excluded by L2(a).
 3. *Decided:* $\circledast_\sharp$, $W_A$, and every member in the classes (A), (B) of L8: no solution on a neighbourhood of a point of $s(X)$, and in fact on no open set (L8(A), L9). No further ansatz was needed. What remains open is listed in L.3.
-4. *Other members.* L8(A) needs no point of $s(X)$ and no fibre obstruction: for generic elliptic members the curvature-free channel alone already excludes non-constant scalars.
+4. *Other members.* L8(A) needs no point of $s(X)$ and no fibre obstruction: for generic elliptic members the curvature-free channel, together with L2–L4 for the concircular branch, already excludes non-constant scalars.
 
 ## L.2 What is verified, precisely
 
@@ -203,6 +204,7 @@ Run: `cd computation/geometric-unity && python3 L_nonradial.py > L_nonradial.out
 ## L.3 Limits (layers b, d)
 
 - **Members not covered.**
+  - For $W'_A$, $W_A+W'_C\mathrm{Ad}_\Gamma$, $W'_A+W_C\mathrm{Ad}_\Gamma$ (and $W_A+W'_A$ in (14,0)) some ϖ is a nonzero rational function, so L1 applies. For $W_C\mathrm{Ad}_\Gamma$, $W'_C\mathrm{Ad}_\Gamma$ and, in (7,7), $W_A+W'_A$ and $(1,1,1,1)$, all four ϖ vanish identically, and even $dt\wedge du=0$ is open (REVIEW6-GU R8-1, `xcheck_round8.out` §X1).
   - Non-elliptic members ($\ell=0$) other than the multiples of $W_A$: for instance $W'_A$, $\mathrm{span}(W_A,W'_A)$ with $y\neq0$, $(1,0,0,1)$ in (14,0). There the curvature-free row $h$ vanishes identically (exact image condition, Cor. J2.1(b′)), so that channel has no second-order term; its first-order constraints were analysed only for the multiples of $W_A$ (L5(c)).
   - In (7,7), elliptic members with $x=\pm y$ ($N=0$): $R'\equiv0$, and on the line the Hessian coefficient vanishes.
   - $(x,y)=0$ (no curvature in either channel; outside J5's hypotheses as well).
@@ -223,5 +225,5 @@ Run: `cd computation/geometric-unity && python3 L_nonradial.py > L_nonradial.out
   - Open: Z1, the remaining non-elliptic members, $x=\pm y$ in (7,7), and other sectors.
 - **GU-G16.** The factor $\ell^2=(xz\pm yw)^2$ reappears in the residual $R'=-1916928\kappa^3(x^2\pm y^2)\ell^2(ty-ux)$. The cases left open are exactly those with $\ell=0$ (apart from $W_A$) or $N=0$.
 - **J5.** J5(c) is recovered as the case $Z=0$ of L4 and holds without "$U$ meets $s(X)$" (L2(a)).
-- **F.** Side result: Z2 is Einstein on no open subset of $Y$ ($n=4$, every $\lambda\neq\tfrac14$; L2). F6 had this on $s(X)$; Conjecture F9 (Z1) is untouched.
+- **F.** Side result: Z2 is Einstein on no open subset of $Y$ ($n=4$, every $\lambda\neq\tfrac14$; L2). F6 had this on $s(X)$; Conjecture F9 holds for Z2 at $n=4$ (in the stronger form: for no base metric); it remains open for Z1 (R8-4).
 - **GU-054.** Status unchanged (C). No statement made before this note is contradicted. J.3 and J5d.3 listed the non-radial case as open; it is now settled in the classes above.

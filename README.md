@@ -54,7 +54,7 @@ Each result is stated under the hypotheses given in the linked note, with code o
   - Details: [report](reports/geometric-unity-phase1.md).
 - **Geometric Unity, 14→4 reduction.**
   - Theorem F4(c), the Ricci blocks of the Z1 metric along a section, holds for every $n$ (K).
-  - In the invariant odd sector, with the even displacement slaved to it in the vector sector ($\kappa\neq0$, $\det M\neq0$), $\Upsilon=0$ in Z2 has no solution on any open subset of $Y$ for $W_A+W_C\circ\mathrm{Ad}_\Gamma$, for $W_A$, for every elliptic member in (14,0), and in (7,7) for every member with $xz-yw\neq0$ and $x\neq\pm y$ (round 6: J5; J5d; round 8: [L](formalization/geometric-unity/L-nonradial-z2.md)). The round-8 extension beyond the radial ansatz has not yet been internally reviewed.
+  - In the invariant odd sector, with the even displacement slaved to it in the vector sector ($\kappa\neq0$, $\det M\neq0$), $\Upsilon=0$ in Z2 has no solution on any open subset of $Y$ for $W_A+W_C\circ\mathrm{Ad}_\Gamma$, for $W_A$, for every elliptic member in (14,0), and in (7,7) for every member with $xz-yw\neq0$ and $x\neq\pm y$ (round 6: J5; J5d; round 8: [L](formalization/geometric-unity/L-nonradial-z2.md)). Round 8 was refereed in [REVIEW6-GU](reports/reviews/REVIEW6-GU-2026-10-30.md): correct as stated, with two summary overstatements corrected.
 - **Howard arithmetic.** No ring, semiring or near-ring on ℕ, ℤ, ℚ or ℝ realises $1\otimes1=2$ together with $2\otimes2=4$ (Lean). The lattice of the seven axioms is fully decided. Details: [report](reports/howard-phase1.md).
 
 The open, well-posed problems are listed in order of priority in [SYNTHESIS §4](reports/SYNTHESIS.md#4-next-steps-in-priority-order) and, item by item, in [gaps/](gaps/).

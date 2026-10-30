@@ -49,7 +49,7 @@ Each gap is a point where [W21] is underspecified, circular or type-inconsistent
 
 **Note (2026-10-30, round 8; `formalization/geometric-unity/L-nonradial-z2.md`).** The rows above and the earlier notes are not edited. Hypotheses: those of J5 without the radial ansatz (Z2, $n=4$, (14,0) and (7,7), $\kappa\neq0$, $t,u$ arbitrary, slaved $T_e\in\mathcal V$ with $\det M\neq0$).
 - **GU-G14.**
-  - $dt\wedge du=0$ on every open solution set (L1).
+  - $dt\wedge du=0$ on every open solution set, for every member with some $\varpi\not\equiv0$ (L1; this includes $\circledast_\sharp$, $xW_A$ and every member with $xz\pm yw\neq0$).
   - Z2 has no open set with $\mathrm{Ric}\in\mathrm{span}(g,ds\otimes ds)$, so it is Einstein on no open set (L2). A concircular function on Z2 has parallel gradient (L3, L4).
   - Where the curvature-free channel $yE^{(1)}-xE^{(13)}$ has no Hessian term, its residual $R'=-1916928\kappa^3(x^2\pm y^2)(xz\pm yw)^2(ty-ux)$ forces $(t,u)\parallel(x,y)$. This line is invariant iff $xw=yz$ (L5). On it one equation remains, $\nabla^2r=-\tfrac7{18}r\,\mathrm{Ric}$, $Er=0$ (L6), which fails at order $\varepsilon^2$ in the fibre at a point of $s(X)$ (L7).
   - Result: $\Upsilon=0$ has no solution on any open subset of $Y$ for $\circledast_\sharp$, $W_A$ and its multiples, every elliptic member in (14,0), and every member with $xz-yw\neq0$, $x\neq\pm y$ in (7,7) (L8, L9). So the J5/J5d no-go is not an artefact of the radial ansatz.

@@ -7,8 +7,9 @@ formalization_status: >
   Formalized in the setting of J (unitary gauge of G1, true Upsilon of D5, family x W_A + y W'_A + z W_C Ad_Gamma +
   w W'_C Ad_Gamma, real forms (14,0) and (7,7)), with the hypotheses of J5 except the radial ansatz: Z2, n = 4,
   lambda != 1/4, kappa != 0, T_o = t Phi^1 + u Phi^1 Gamma with arbitrary smooth t, u, T_e the slaved field
-  Sigma (dt, du) in the vector sector V with det M != 0, Upsilon = 0 on a connected open U. Steps: (1) the Lambda^2
-  equations hold everywhere on open solution sets (dt ^ du = 0); (2) Z2 has no open set on which Ric lies in
+  Sigma (dt, du) in the vector sector V with det M != 0, Upsilon = 0 on a connected open U. Steps: (1) for every member with
+  some varpi not identically zero (Shiab#, x W_A, every member with xz +- yw != 0), the Lambda^2 equations hold
+  everywhere on open solution sets (dt ^ du = 0); (2) Z2 has no open set on which Ric lies in
   span(g, ds (x) ds) (Einstein, Ricci-flat, radial) or equals beta theta (x) theta with theta horizontal null (O'Neill
   blocks off the section, polynomial continuation in the fibre variable to y = g, J5d L1); (3) concircular functions on
   Z2 have parallel gradient (the fibre R x SL(4)/SO(p,q) admits no warped factor); (4) the curvature-free channel
@@ -34,8 +35,8 @@ internal_consistency: >
 proof_status: >
   Proven: L1 (Lambda^2 step); L2 (no Ricci-special open sets in Z2, n = 4, both real forms); L3 (fibre lemma); L4
   (concircular branch empty: Ricci-flat, radial, null-horizontal cases); L5 (curvature-free channel; exact identities);
-  L6 (residual equation, Euler field); L7 (fibre obstruction at s(X), exact pairing certificate); Theorem L8 (A: elliptic
-  members with x^2 +- y^2 != 0 and xw != yz, any open U; B: (x, y, c x, c y) with c (x^2 +- y^2) != 0, including
+  L6 (residual equation, Euler field); L7 (fibre obstruction at s(X), exact pairing certificate); Theorem L8 (A: members with
+  xz +- yw != 0, x^2 +- y^2 != 0 and xw != yz, any open U; B: (x, y, c x, c y) with c (x^2 +- y^2) != 0, including
   Shiab#, and x W_A, U meeting s(X)); Corollary L9 (case B on any open U, via analytic continuation along the fibre and
   Kobayashi-Nomizu I, Thm II.10.8). Imported: L-F1 (O'Neill), F1, F3, J5(a), J5d L0 and L1, J1-J2 tables.
 novelty: >
@@ -48,7 +49,7 @@ novelty: >
 reproducibility: "Exact (Fractions, sympy rationals and Gaussian rationals); fixed seeds (random.Random(11..13) for the off-section points, 40..74 for curvature tensors and jets); one core: 380 s, a second run 380 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 L_nonradial.py > L_nonradial.out 2>&1 (73 checks, 73 True, each asserted). Imports J_slaved_sector.py and F_jets.py unmodified."
 empirical_testability: >
   None new. The result removes the remaining candidate neighbourhood solutions of the slaved vector sector in Z2 for
-  the elliptic members; the physically relevant reduction still depends on the undeclared rule for T off s(X), on
+  the members of L8; the physically relevant reduction still depends on the undeclared rule for T off s(X), on
   Z1 versus Z2, and on sectors not treated (T_e outside V, T_o outside the invariant sector).
 dependencies: ["J1", "J2", "J5", "J5d-L0", "J5d-L1", "F1", "F3", "L-F1", "L-F5", "A4", "A5", "H7"]
 confidence: >
