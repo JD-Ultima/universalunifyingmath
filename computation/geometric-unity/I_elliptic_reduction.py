@@ -22,7 +22,8 @@ Sections
       W_A(F_R) = -*(G e(x)gamma), W'_A(F_R) = -*(G e(x)gamma Gamma), twisted operators kill F_R; (7,7): the four
       operators (code normalisation) preserve u(64,64) (explicit matrices of clifford77.py).
   I1  grade selection rules of the four operators; Spin(14)-constituent table on input grades 0,1,2,12,13,14.
-  I2  parity: Q_t(T_e) and Q_t(T_o) are odd for all 48 types (=> Upsilon_ev = Shiab(d_0 T_o) + kappa *T_e + 2B(T_e,T_o)_ev).
+  I2  parity: Q_t(T_e) and Q_t(T_o) are odd and B_t(T_e,T_o) is even for all 48 types (=> Upsilon_ev = Shiab(d_0 T_o)
+      + kappa *T_e + 2B(T_e,T_o)_ev; no cross term in Upsilon_odd).
   I3  twist identity C_CG(T) = 2 Psi_CG(T_o ^ T_e ^ T_e); Q_CG(T_o) = 0; Q_CG(T_e) = (2/3) W_CG(T_e^T_e);
       the subspace of S_sa with Q(T_o) = 0 for all odd T (exact null space).
   I4  soldering sector T = theta_ab e^a (x) gamma^b + theta'_ab e^a (x) gamma^b Gamma: exact Q for symmetric theta;
@@ -511,6 +512,7 @@ def i2_i3_parity_twist():
     P("\n=== I2. Parity split of Upsilon (exact, all 48 types) ===")
     P("  Lemma H2: every type pairs an even with an odd grade, so Shiab maps g_ev-valued forms to g_odd-valued ones and back:"
       f" {all((j + l) % 2 for _, j, l in TYPES)}")
+    b_odd0 = True
     for eta in (EUC, E77):
         Al = Alg(eta)
         Te = [rand_elt(EVEN, 7) for _ in range(N)]
@@ -520,6 +522,8 @@ def i2_i3_parity_twist():
         z = [dict() for _ in range(N)]
         ok = all(not any(parity_part(q.get(t, z), 0)) for q in (qe, qo) for t in range(NT))
         cross_ev = sum(1 for t in range(NT) if any(parity_part(qt.get(t, z), 0)))
+        b_odd0 = b_odd0 and all(not any(parity_part([add(add(qt.get(t, z)[a], qe.get(t, z)[a], -1), qo.get(t, z)[a], -1)
+                                                     for a in range(N)], 1)) for t in range(NT))
         P(f"  {SIG[eta[7]]}: Q_t(T_e) and Q_t(T_o) have zero g_ev-part for all 48 types (random T_e, T_o): {ok}; "
           f"types with nonzero g_ev-part of Q_t(T_e + T_o) (= 2 B_t(T_e,T_o)_ev): {cross_ev}")
         assert ok and cross_ev > 0
@@ -527,8 +531,10 @@ def i2_i3_parity_twist():
             I3data = (Al, Te, To, T, qe, qo)
         else:
             I3data77 = (Al, Te, To, T, qe, qo)
+    assert b_odd0
     P("  => Upsilon_ev = Shiab(d_0 T_o) + kappa *T_e + 2 B(T_e, T_o)_ev  (linear in T_e);"
-      " Upsilon_odd = Shiab F_0 + Shiab(d_0 T_e) + kappa *T_o + Q(T_o) + Q(T_e) + 2 B(T_e, T_o)_odd")
+      " Upsilon_odd = Shiab F_0 + Shiab(d_0 T_e) + kappa *T_o + Q(T_o) + Q(T_e), since 2 B_t(T_e, T_o) = Q_t(T_e + T_o)"
+      f" - Q_t(T_e) - Q_t(T_o) has zero g_odd-part for all 48 types, both signatures: {b_odd0}")
 
     P("\n=== I3. The twisted pair: cubic term on odd/even fields (exact) ===")
     for Al, Te, To, T, qe, qo in (I3data, I3data77):
@@ -797,11 +803,11 @@ def i6_reduction(res):
               f" <= c_H kappa^2/1248;  branch t = -kappa/208: c1 = {br2}, so Lambda_4 - Lambda_P takes every value >="
               f" -c_H kappa^2/416;  union (c_H > 0): every real Lambda_4")
             assert sp.expand(br1 - sq1) == 0 and sp.expand(br2 - (kap ** 2 / 416 - 104 * uu ** 2)) == 0
-            P("   (E) on s(X): impossible in (7,7) for every T in this sector and every (x,y,z,w): it needs g_aleph Einstein on"
-              " s(X), which by F6 forces Z1 with lambda = 1/5, signature (8,6)/(10,4), not (7,7)")
+            P("   (E) on s(X): impossible in (7,7) for every T in this sector and every (x,y,z,w) with (x,y) != 0: it needs"
+              " g_aleph Einstein on s(X), which by F6 forces Z1 with lambda = 1/5, signature (8,6)/(10,4), not (7,7)")
     P("  Symmetric displacement theta (I4) for Shiab = x W_A + ... (x != 0, y = 0): Upsilon = 0 <=> d^nabla theta = 0 and"
       " G(g_aleph) + G(R_theta) = (kappa/x) theta; (P)-pull-back: G(g) + Lambda_P g + s^*G(R_theta) - (kappa/x) s^*theta = 0"
-      " (write-up I.6.3); z, w absent.")
+      " (write-up I7(c)); z, w absent.")
 
 
 def main():

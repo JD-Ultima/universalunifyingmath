@@ -67,7 +67,7 @@
   Lemma H2: every type pairs an even with an odd grade, so Shiab maps g_ev-valued forms to g_odd-valued ones and back: True
   (14,0): Q_t(T_e) and Q_t(T_o) have zero g_ev-part for all 48 types (random T_e, T_o): True; types with nonzero g_ev-part of Q_t(T_e + T_o) (= 2 B_t(T_e,T_o)_ev): 48
   (7,7): Q_t(T_e) and Q_t(T_o) have zero g_ev-part for all 48 types (random T_e, T_o): True; types with nonzero g_ev-part of Q_t(T_e + T_o) (= 2 B_t(T_e,T_o)_ev): 48
-  => Upsilon_ev = Shiab(d_0 T_o) + kappa *T_e + 2 B(T_e, T_o)_ev  (linear in T_e); Upsilon_odd = Shiab F_0 + Shiab(d_0 T_e) + kappa *T_o + Q(T_o) + Q(T_e) + 2 B(T_e, T_o)_odd
+  => Upsilon_ev = Shiab(d_0 T_o) + kappa *T_e + 2 B(T_e, T_o)_ev  (linear in T_e); Upsilon_odd = Shiab F_0 + Shiab(d_0 T_e) + kappa *T_o + Q(T_o) + Q(T_e), since 2 B_t(T_e, T_o) = Q_t(T_e + T_o) - Q_t(T_e) - Q_t(T_o) has zero g_odd-part for all 48 types, both signatures: True
 
 === I3. The twisted pair: cubic term on odd/even fields (exact) ===
   (14,0) W_C.AdG  : C(T) = 2 Psi(T_o ^ T_e ^ T_e): True (value -60); Q(T_o) = 0: True; Q(T_e) = (2/3) Shiab(T_e ^ T_e): True; but Shiab(T_o ^ T_o) != 0: True (cancelled by -h/3)
@@ -122,7 +122,7 @@
   (7,7), u(64,64)-real (code normalisation, real x,y,z,w,t,u,kappa):  Upsilon = 0 <=> x G = c1 g and y G = c13 g
    Shiab# (x = z = 1, y = w = 0) [identical for W_A]:  G(g_aleph) = (kappa*t + 312*t**2 - 104*u**2) g_aleph,  0 = u*(kappa + 208*t)
    (P): Lambda_4 = Lambda_P - c_H*(kappa*t + 312*t**2 - 104*u**2) on {u*(kappa + 208*t) = 0}:  branch u = 0: c1 = kappa*t + 312*t**2 = 312 (t + kappa/624)^2 - kappa^2/1248 [True], so Lambda_4 - Lambda_P takes every value <= c_H kappa^2/1248;  branch t = -kappa/208: c1 = kappa**2/416 - 104*u**2, so Lambda_4 - Lambda_P takes every value >= -c_H kappa^2/416;  union (c_H > 0): every real Lambda_4
-   (E) on s(X): impossible in (7,7) for every T in this sector and every (x,y,z,w): it needs g_aleph Einstein on s(X), which by F6 forces Z1 with lambda = 1/5, signature (8,6)/(10,4), not (7,7)
-  Symmetric displacement theta (I4) for Shiab = x W_A + ... (x != 0, y = 0): Upsilon = 0 <=> d^nabla theta = 0 and G(g_aleph) + G(R_theta) = (kappa/x) theta; (P)-pull-back: G(g) + Lambda_P g + s^*G(R_theta) - (kappa/x) s^*theta = 0 (write-up I.6.3); z, w absent.
+   (E) on s(X): impossible in (7,7) for every T in this sector and every (x,y,z,w) with (x,y) != 0: it needs g_aleph Einstein on s(X), which by F6 forces Z1 with lambda = 1/5, signature (8,6)/(10,4), not (7,7)
+  Symmetric displacement theta (I4) for Shiab = x W_A + ... (x != 0, y = 0): Upsilon = 0 <=> d^nabla theta = 0 and G(g_aleph) + G(R_theta) = (kappa/x) theta; (P)-pull-back: G(g) + Lambda_P g + s^*G(R_theta) - (kappa/x) s^*theta = 0 (write-up I7(c)); z, w absent.
 
-runtime 107 s
+runtime 100 s
