@@ -40,7 +40,7 @@ Status as of 2026-10-30 (Phase 1 complete; Phase 2 under way). The detailed repo
 |---|---|---|
 | Comment on the α Letter | F-CT-1–4 and F-CT-10: reproduction, single involution, convention dependence (Lean), trial factor, covariance repair | `proofs/latex/ct-alpha-comment/comment.tex` |
 | Note on GU's algebraic core | Signature classification; Majorana–Weyl content and the fourth generation-equivalent; sign error with repair; non-variational field equation | `proofs/latex/gu-note/note.tex` (draft) |
-| Note on "$1\times1=2$" | Complete axiom lattice with Lean certificates. Low novelty; suitable as an expository note. | `formalization/howard/arithmetic.md` |
+| Note on "$1\times1=2$" | Complete axiom lattice with Lean certificates. Low novelty; suitable as an expository note. | `proofs/latex/howard-note/note.tex` (draft) |
 
 ## 4. Next steps, in priority order
 

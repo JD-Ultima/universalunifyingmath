@@ -1,0 +1,100 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\title{Which arithmetics satisfy ``$1\times1=2$''?\\ A complete consistency analysis with machine-checked certificates}
+\author{universalunifyingmath project}
+\date{Draft, 30 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We formalise the arithmetic rules stated informally by T.~Howard in public interviews:
+\begin{itemize}
+\item H1: $1\otimes1=2$;
+\item H2: $2\otimes2=4$, read from ``the square root of four is two'';
+\item ``multiplication makes more'';
+\item ``one times itself must have an effect''.
+\end{itemize}
+We decide every combination of these with distributivity, associativity and commutativity over $\mathbb R$. All $2^7$ subsets of seven rules are settled: 58 are inconsistent and 70 consistent, each with a certificate.
+
+No ring, semiring or near-ring over ordinary addition realises H1 and H2. With H2 dropped, the unique bi-additive operation with H1 is $a\otimes b=2ab$, which is isomorphic to ordinary multiplication via $x\mapsto 2x$. ``Multiplication always makes more'' is inconsistent with either distributive law on $\mathbb Q_{>0}$ or $\mathbb R_{>0}$, with no regularity assumption. Every consistent reading is a relabelling of standard arithmetic. The core lemmas are checked in Lean~4.
+
+The mathematics is elementary. The contribution is completeness and certification, not depth.
+\end{abstract}
+
+\section{Sources and readings}
+The sources are informal: a 2015 magazine interview, reprinted verbatim, and a timestamped transcript of a 2024 podcast (JRE \#2152). The primary book \emph{One Times One Equals Two} was not obtainable. A secondary report says Howard later called $1\times1=2$ ``a metaphor''; we evaluate the mathematical readings regardless.
+
+H2 rests on one sentence, and the conclusions are stated separately with and without it. Our readings are as follows.
+\begin{itemize}
+\item LD, RD: left and right distributivity over ordinary $+$.
+\item AS, CM: associativity and commutativity.
+\item INC: $a\otimes b>\max(a,b)$ for positive $a,b$.
+\item EFF, weak form: $1\otimes 1\neq 1$. Strong form: $\otimes$ has no identity element.
+\end{itemize}
+
+\section{Results}
+\begin{theorem}[two-sided distributivity]
+Let $(S,+)$ be any magma containing $1$, and write $\bar2=1+1$, $\bar4=\bar2+\bar2$, $\bar8=\bar4+\bar4$. If $\otimes$ satisfies LD and RD, then H1 implies $\bar2\otimes\bar2=\bar8$. In particular, H1, H2, LD and RD are jointly inconsistent in $\mathbb N$, $\mathbb Z$, $\mathbb Q$, $\mathbb R$, and in every ring whose characteristic does not divide $4$. The bound is sharp: $\mathbb Z/4$ with $a\otimes b=2ab$ satisfies all four.
+\end{theorem}
+\begin{proof}
+$(1+1)\otimes(1+1)$ expands by LD and RD into four copies of $1\otimes1$.
+\end{proof}
+
+\begin{theorem}[one distributive law]
+Over $\mathbb Z$, each of the four sets $\{\mathrm{LD},\mathrm{AS}\}$, $\{\mathrm{LD},\mathrm{CM}\}$, $\{\mathrm{RD},\mathrm{AS}\}$, $\{\mathrm{RD},\mathrm{CM}\}$, taken together with H1 and H2, is inconsistent. Each proof uses a single instance of AS or CM. Hence no left or right near-ring $(\mathbb Z,+,\otimes)$ satisfies H1 and H2.
+\end{theorem}
+
+\begin{theorem}[classification]
+Every bi-additive $\otimes$ on $\mathbb Z$ or $\mathbb Q$ satisfies $a\otimes b=ab\,(1\otimes1)$, so H1 forces $a\otimes b=2ab$. On $\mathbb R$ the same conclusion holds under any standard regularity condition (Cauchy). The map $\varphi(x)=2x$ is a ring isomorphism $(\mathbb R,+,\otimes)\to(\mathbb R,+,\cdot)$, and it embeds $(\mathbb Z,+,\otimes)$ onto $(2\mathbb Z,+,\cdot)$.
+\end{theorem}
+
+\begin{theorem}[Archimedean no-go]
+Let $S$ be closed under $+$ and under division by positive integers. Then no $\otimes$ on $S$ satisfies LD together with $a\otimes b\ge a$. Likewise, none satisfies RD together with $a\otimes b\ge b$.
+\end{theorem}
+\begin{proof}
+With LD, $a\otimes b=n\,(a\otimes b/n)\ge na$ for all $n$.
+\end{proof}
+
+\begin{corollary}[the lattice]
+Over $\mathbb R$, the minimal inconsistent cores among $\{$H1, H2, LD, RD, AS, CM, INC$\}$ are $\{$H1,H2,LD,RD$\}$, $\{$H1,H2,LD,AS$\}$, $\{$H1,H2,LD,CM$\}$, $\{$H1,H2,RD,AS$\}$, $\{$H1,H2,RD,CM$\}$, $\{$LD,INC$\}$ and $\{$RD,INC$\}$. The maximal consistent sets, each with a witness, are:
+\begin{itemize}
+\item $\{$H1,H2,LD$\}$, witness $2b$;
+\item $\{$H1,H2,RD$\}$, witness $2a$;
+\item $\{$H1,H2,AS,CM,INC$\}$, witness $a+b$;
+\item $\{$H1,LD,RD,AS,CM$\}$, witness $2ab$;
+\item $\{$H2,LD,RD,AS,CM$\}$, witness $ab$.
+\end{itemize}
+\end{corollary}
+
+\begin{remark}[the idea inside the claim]
+Each consistent reading is isomorphic to a standard structure:
+\begin{itemize}
+\item pairs: $(2\mathbb Z,+,\cdot)$;
+\item addition: $\otimes=+$;
+\item exponents: the $\log_2$ semiring, where $\oplus$ is $\log_2(2^a+2^b)$ and $1\otimes 1=2$ becomes $2\cdot2=4$;
+\item the tropical semiring.
+\end{itemize}
+Each has a cost:
+\begin{itemize}
+\item in the pairs reading, $2\otimes2=8$;
+\item in the addition reading, distributivity fails;
+\item in the exponent and tropical readings, numerals stop counting (for example $2\oplus2\neq4$).
+\end{itemize}
+No reading yields a new number system.
+\end{remark}
+
+\section{Formal verification}
+The theorems over $\mathbb Z$, the $\mathbb Z/4$ model and the isomorphism are proved in Lean~4 with the core library only, and no \texttt{sorry}. The axioms used are at most \texttt{propext} and \texttt{Quot.sound}. The file has been checked with Lean 4.24.0 and 4.35.0. The lattice is decided by z3 (negation UNSAT for each inconsistent subset) and by explicit witnesses for the consistent ones. Files: \texttt{proofs/lean/howard/HowardArith.lean} and \texttt{computation/howard/axiom\_lattice.py}.
+
+\section*{Prior remarks}
+The tension $2\otimes2=8$ versus $4$ was noted informally by Lipton and Regan (2018). The present derivation is independent of theirs.
+
+\end{document}

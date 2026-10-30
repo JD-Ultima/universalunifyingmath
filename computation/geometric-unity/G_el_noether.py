@@ -448,8 +448,9 @@ def main():
                 dUpr = {j: {p: sp.Matrix(2, 2, lambda r, s: sp.Integer(dcoef(Upr[p][r][s].a[0], UNIT[j])))
                             for p in FA} for j in range(3)}
                 Upr0 = {p: to_sym(Upr[p]) for p in FA}
-                mism = sp.simplify(Xi - dA_top(Upr0, dUpr)) != sp.zeros(2)
-                print(f"      Xi != d_A Upsilon^pr (the redundancy (9.6) fails for the printed Upsilon): {mism}")
+                eqpr = sp.simplify(Xi - dA_top(Upr0, dUpr)) == sp.zeros(2)
+                print(f"      Xi = d_A Upsilon^pr (redundancy (9.6) for the printed Upsilon): {eqpr}   "
+                      f"[predicted: False unless h = D = 0, i.e. True only for the Chern-Simons control]")
             # N4 covariance under tau'
         hpoly = [rand_poly(rng, 4) for _ in range(3)]
         U = lambda s: sp.Matrix([[1, s], [0, 1]])

@@ -11,3 +11,6 @@ Y0b. (i) int_rank = sympy rank on 40 random low-rank integer matrices: True
 
 === Y1. signature (7,7) ===
   WA      xi = e^0      (eta = +1)     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact: False  [49276 blocks, max size 13, 3634 distinct]
+  WA      xi = e^7      (eta = -1)     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact: False  [49276 blocks, max size 13, 6412 distinct]
+  WA      xi = e^0+e^1  (eta = +2)     : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 139234 (deficit 90142); exact: False  [16410 blocks, max size 28, 16367 distinct]
+  WA      xi = e^0+e^7  (null)         : rank Shiab(xi^.) = 122850 (= 229376 - 106526); rank sigma(delta_2), kappa=1: 126960 (deficit 102416); exact: False  [16410 blocks, max size 28, 16367 distinct]
