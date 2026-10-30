@@ -38,7 +38,7 @@ reproducibility: "Exact; fixed seed random.Random(20261030); 480 s (8 min) on on
 empirical_testability: >
   None new. The 4D cosmological terms of F5 (Z1) are unchanged; they are now proven for every n rather than
   verified for n <= 5.
-dependencies: ["F2", "F3", "F4(a)", "F4(b) (consistency only)", "L-F1 (O'Neill)", "Prop. F1 (fibre Ricci, via F3)"]
+dependencies: ["F2", "F3", "F4(a) (consistency only, Cor. K4(d))", "F4(b) (consistency only)", "L-F1 (O'Neill)", "Prop. F1 (fibre Ricci, via F3)"]
 confidence: >
   High: a complete proof whose steps are each checked exactly, plus an independent brute-force check for n = 2..6 in
   two or three signatures each. Not covered: Ric(Z1) off s(X) (the argument needs A = 0, true only on s(X)) and

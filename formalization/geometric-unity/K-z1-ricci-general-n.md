@@ -68,7 +68,7 @@ In particular all components with a horizontal derivative slot or a vertical δ-
    So at $p$ the only component of $\nabla K$ is $(\nabla_UK)(W)=\tfrac12(Ug^{-1}W+Wg^{-1}U)$.
 4. *Assembly.* By the Leibniz rule, $\nabla_Z(\iota\varphi)=\iota(\nabla^E_Z\varphi)+\iota'_Z(\varphi)$ with $\iota'_Z(\varphi)(W_1,W_2)=\varphi((\nabla_Z\pi_*)W_1,\pi_*W_2)+\varphi(\pi_*W_1,(\nabla_Z\pi_*)W_2)$. Differentiating once more, $\nabla^2(\iota\varphi)=\iota(\nabla^2\varphi)$ plus terms containing a factor $\nabla\pi_*$ or a factor $\varphi$. At $p$ both factors vanish (step 2, and $\varphi_p=0$). Hence $(\nabla\delta)_p=c_H\,\iota(K)$ and $(\nabla^2\delta)_p=c_H\,\iota((\nabla K)_p)$, with $\nabla^2\varphi=\nabla K$ by step 1. Since $\iota$ kills vertical arguments and $K$ kills horizontal ones, steps 1 and 3 give the statement. ∎
 
-Off $s(X)$ the argument breaks at step 2: $\nabla\pi_*\ne0$ and $(\nabla_XK)(Y)=-A_XY\neq0$ there. This is the only place where the restriction to the section enters.
+Off $s(X)$ the argument breaks at step 2: $\nabla\pi_*\ne0$ and $(\nabla_XK)(Y)=-A_XY\neq0$ there. Besides $\delta_p=0$ (K1) and $\varphi_p=0$ (step 4), this is the only place where the restriction to the section enters. (Corrected after review 2026-10-30, R7-4.)
 
 **Lemma K3 (the algebra, for every $n$).** Let $(H,g)$ be a nondegenerate quadratic space of dimension $n\ge1$ and $V=\mathrm{Sym}^2H^*$. Put $h=c_Hg\oplus c_VG_\lambda|_g$ on $H\oplus V$ ($\lambda\ne1/n$, $c_H,c_V\neq0$), and let $\nabla\delta,\nabla^2\delta$ be the tensors of Lemma K2. Then the right-hand side of Lemma K1 equals
 $$\Delta\mathrm{Ric}_{HH}=\frac{c_H}{4c_V(n\lambda-1)}\,g,\qquad \Delta\mathrm{Ric}_{HV}=0,\qquad \Delta\mathrm{Ric}_{VV}=-\tfrac14G_0 .$$
