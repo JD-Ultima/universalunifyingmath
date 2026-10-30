@@ -24,6 +24,7 @@ SELECTED = [
     "chain-theory/alpha/mutations_classified.py",
     "chain-theory/alpha/freedom.py",
     "chain-theory/alpha/xcheck_operator_form.py",
+    "chain-theory/alpha/conjugation.py",
     "geometric-unity/A_spin_obstruction.py",
     "geometric-unity/xcheck_round5.py",
     "geometric-unity/projection_regression.py",

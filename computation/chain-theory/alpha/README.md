@@ -20,6 +20,7 @@ The complete reproduction loop below uses Bash and was run on Linux. `transport.
 | `mutations_classified.py` | The 19 Lean mutation readouts of `upstream_mutations_lean.out`, row by row: exact numerator, 1/value, equal to a Table S5 row?, in the declared space B? (with a witness rule whose numerator equals Lean's exactly). Also checks all 16 closed-form rows of Table S5 against their printed inverses, with the relative change and B-membership of each (F-CT-4 A, D; referee CT-2, CT-022) | <1 s | `mutations_classified.out` |
 | `mechanical_mutations.py` | Rule family generated mechanically from `ChainAlpha.lean`, for rule-family sensitivity (F-CT-4 E, CT-G10; `formalization/chain-theory/alpha/mechanical-trial-factor.md`): readout cone (44 definitions), 15 declared operators at 425 sites, 818 single mutants and 331 490 pairs with disjoint sites (mutation depth ≤ 2); exact readout of each via `chainalpha_transcription.py`; validation against `upstream_mutations_lean.out` (20/20 lines); F-CT-4 metrics (distinct values, density, and the illustrative uniform-target reference count of `freedom.py`, not a calibrated p-value) and comparison with B, Table S5 and the author's 19 rewordings, with every mutant that has the Born-weight value. Reads the pinned upstream file (needs `UPSTREAM` or `--lean`); imports `mutations_classified.py`; 2 worker processes. `--emit-lean DIR` / `--compare DIR` are the halves of `proofs/lean/chain-theory/mutation_spotcheck.sh` | ~17 min | `mechanical_mutations.out` |
 | `chainalpha_transcription.py` | Python transcription of Parts 0–1 of `ChainAlpha.lean` with one hook per mutation site; module used by `mechanical_mutations.py`, checked against Lean on every single mutant (`proofs/lean/chain-theory/mutation_spotcheck.out`) | — | — |
+| `conjugation.py` | Far-end conjugation and the direct-sum trace (CT-G03, CT-G04; `formalization/chain-theory/alpha/conjugation.md`): off-diagonal blocks of $\Lambda^2W$, $\mathrm{Sym}^2W$, $\mathrm{End}\,W$ and their central charges; trace coefficients $(\alpha_F,\beta_F)$ of 17 natural spaces checked against representation matrices; the four relabellings $\varepsilon\in\{\pm1\}^2$; stabilizer, matching closure, Lie closure of $\mathfrak{su}\oplus\mathfrak{su}$ with the matchings; selection per reading through `config_enumeration.py`'s predicates (imported unmodified; its printout is compared with `config_enumeration.out`). Exact (sympy). `--upstream` (the pinned clone, read as text) adds the check of the quoted source lines (2365 checks; 2329 without) | ~30 s | `conjugation.out` |
 | `algebraic.py` | Minimal polynomial, Galois conjugates, $f(d_Q,d_q)$, deviations from measurements (F-CT-6, F-CT-7) | <1 s | `algebraic.out` |
 
 Run all of them from this directory in Linux/WSL Bash:
@@ -32,6 +33,12 @@ The mechanical mutation family needs the pinned upstream file (`UPSTREAM` is a c
 
 ```bash
 UPSTREAM=/path/to/chain-theory python3 mechanical_mutations.py > mechanical_mutations.out
+```
+
+`conjugation.out` was recorded with the source-line check, which reads the same pinned clone as text:
+
+```bash
+UPSTREAM=/path/to/chain-theory python3 -I conjugation.py --upstream "$UPSTREAM" > conjugation.out
 ```
 
 These scripts were written from the Letter's prose. They do not import or copy the author's code. The exceptions are `mechanical_mutations.py`, which reads the pinned `ChainAlpha.lean` as text in order to generate its mutants, and `chainalpha_transcription.py`, a line-by-line Python transcription of that file's Parts 0–1; neither runs the author's code. The cross-check against the author's `records.csv` is described in `formalization/chain-theory/alpha/audit.md` (F-CT-1).

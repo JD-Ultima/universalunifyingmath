@@ -20,6 +20,19 @@ Theorems added (see `formalization/chain-theory/alpha/audit.md`, F-CT-3):
 - `weight_is_class_function` — Prop. 2 of the audit (F-CT-2): on the object, the upstream `kOf` equals a function of (commutator?, `parity` under `exchAssign`, `sameEnd`) only. Proved by `decide +kernel` over all 172 records.
 - `ReviewCheck.third_config_under_conjugate_convention` (referee addition, review CT-4) — the upstream `readable` is $d_1,d_2\le3$, not the read cap. So under the conjugate convention the (3,3) configuration 3R 3R 3U also satisfies the hypotheses of `configuration_unique`. The `#eval`s give the readouts of the all-qubit and all-qutrit worlds: $(30+30\sqrt2)/2304$, and $(184+200\sqrt3)/419904$.
 
+## `Conjugation.lean`: far-end conjugation and matching closure (CT-G03, CT-G04)
+
+Standalone (no upstream file, no imports), Lean 4.35.0, core library only. See `formalization/chain-theory/alpha/conjugation.md`.
+
+```bash
+LEAN=/path/to/lean-4.35.0-linux/bin/lean ./run_conj.sh > Conjugation.out
+```
+
+- Wall time about 4 s; the script refuses a file containing `sorry`.
+- 20 theorems; 19 carry a `#print axioms` report (the helper `actScalar_Astar` is used by `actScalar_Astar_ne`). Axioms are at most `propext` and `Quot.sound`; the enumeration and table theorems use none.
+- Certified: the acting scalars under A, A*, B (`actScalar_*`); relabellings (`actEps_zero_iff`, `actEps_product`); matching closure as integer arithmetic (`mc_iff`, `mc_eps`); the 76/42/23 enumeration (`config_counts`); end rule and two-point definition (`endRule_twoPoint`); `select_general` for every acting predicate; `select_object_iff`, `select_fixed`, `select_mc`, `object_forces_mc`; the readings, relabellings and natural-space tables.
+- Not certified: the Lie algebras, ℂ and the trace calculus. The coefficients $(\alpha_F,\beta_F)$ are inputs from `conjugation.py`.
+
 ## `GaugeSelection.lean`: gauge-group selection (compendium 64.2, 65.1)
 
 This file formalizes G1-G3 of `formalization/chain-theory/compendium/03-gauge-group.md`. It is standalone: it does not read the upstream file and has no imports. It is checked with Lean 4.35.0, core library only.

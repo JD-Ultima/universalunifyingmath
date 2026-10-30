@@ -39,7 +39,7 @@ Each result is stated under the hypotheses given in the linked note, with code o
 
 - **Chain Theory, α Letter.**
   - The 172-record construction and its value $1/\alpha=137.035\,999\,189\,566\ldots$ are reproduced independently (F-CT-1).
-  - The uniqueness theorem holds only under one far-end conjugation convention. Under the conjugate convention a second configuration qualifies, with $1/\text{value}=31.81$ (F-CT-3, Lean).
+  - The uniqueness theorem holds only under one far-end conjugation convention. Under the conjugate convention a second configuration qualifies, with $1/\text{value}=31.81$ (F-CT-3, Lean). Requiring the identification algebra to contain the matchings $U\otimes\bar U$ forces the Letter's convention and its direct-sum trace; one further clause, at equal dimensions, remains an input ([conjugation](formalization/chain-theory/alpha/conjugation.md)).
   - The record set is not covariant under the symmetry group of the joint state. A covariant repair gives the same value (F-CT-10).
   - The weights have an exact operator form, but its qutrit projector restates the end-attribution rule. No construction found in the declared search families avoids that rule (F-CT-11).
   - In a declared family of 46 080 rules and a mechanically generated family of 332 308 mutants of the author's Lean definitions, the Letter's value is the only one within relative $10^{-4}$. The accompanying reference counts are not calibrated significance (F-CT-4).

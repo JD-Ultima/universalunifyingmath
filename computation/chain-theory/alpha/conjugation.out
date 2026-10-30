@@ -1,0 +1,202 @@
+
+0. Source anchors (alpha.tex, supplement.tex, ChainAlpha.lean at a28db89)
+-------------------------------------------------------------------------
+ChainAlpha.lean sha256 matches the pin 522844e9...c331da
+  alpha.tex:43: found  "a relative phase that neither end owns"
+  alpha.tex:60: found  "with the complex-conjugate basis at the far end"
+  alpha.tex:60: found  "acts on the pair as $U\otimes\bar{U}$ and leaves it unchanged"
+  alpha.tex:60: found  "nothing lines up the bases of a shared qudit's copies"
+  alpha.tex:81: found  "the block-diagonal traceless anti-Hermitian operators on $\mathbb{C..."
+  alpha.tex:81: found  "acts on the link as $\xi_{1}\otimes\openone+\openone\otimes\xi_{2}$"
+  alpha.tex:86: found  "as the scalar $i(d_{2}-d_{1})$. At $(2,2)$ it vanishes"
+  alpha.tex:88: found  "that every matching preserves and that sees no global phase is the ..."
+  alpha.tex:88: found  "The count sums to zero over all directions of the two ends, which i..."
+  supplement.tex:97: found  "By the transpose identity $U$ at the near end acts as $\bar{U}$ at ..."
+  supplement.tex:170: found  "under which the far end transforms by $\bar{U}$ where its partner t..."
+  supplement.tex:175: found  "An element $\xi=\xi_{1}\oplus\xi_{2}$ acts on the pair over the mat..."
+  supplement.tex:182: found  "tracelessness gives $d_{1}x+d_{2}y=0$"
+  supplement.tex:187: found  "the elements $\zeta\oplus\bar{\zeta}$ with $\zeta$ on the qubit and..."
+  supplement.tex:187: found  "at the unbroken generator $\mathcal{U}=i\,\mathrm{diag}(1,1;\,-1,-1..."
+  supplement.tex:200: found  "sees no global phase of a pair is, at $(2,3)$, a multiple of the co..."
+  supplement.tex:203: found  "A read sees no global phase of a pair, which gives $2x+3y=0$ at $(2..."
+  supplement.tex:203: found  "On the full space of the two ends the count sums over all $d_{1}+d_..."
+  supplement.tex:233: found  "the fourth, $2$R $2$R $2$U, satisfies (a) and (b) but carries no ac..."
+  supplement.tex:281: found  "with $\xi$ acting on the link as $\xi_{1}\otimes\openone+\openone\o..."
+  supplement.tex:284: found  "that is the space the identification algebra acts on, not the space..."
+  lean/ChainAlpha.lean:489: found  "the far end transforms by the complex conjugate of a matching"
+  lean/ChainAlpha.lean:515: found  "def actingCharge (d1 d2 : Nat) : Prop := d1 ≠ d2"
+  lean/ChainAlpha.lean:541: found  "as X1 (x) 1 + 1 (x) X2"
+  lean/ChainAlpha.lean:551: found  "def Q : Mat GI := tabulate 5 5"
+  lean/ChainAlpha.lean:561: found  "def onLink (x : Mat GI) : Mat GI := addG (kronG (block2 x) (idG 3))..."
+  lean/ChainAlpha.lean:594: found  "def U : Mat GI := tabulate 5 5"
+  lean/ChainAlpha.lean:619: found  "theorem acting_charge (d1 d2 : Nat) : ((d2 : Int) - d1 ≠ 0) ↔ d1 ≠ d2"
+  lean/ChainAlpha.lean:897: found  "(hq : ∀ a ∈ c.arms, actingCharge c.center a.far)"
+  supplement.tex:23-41 (Table S-inputs): none of 'identification algebra', 'direct sum', 'oplus', 'conjugat',
+  'traceless', 'acting' occurs (its only 'identification' is the Photon Conjecture's, with alpha(0))
+
+1. Off-diagonal blocks of Lambda^2 W, Sym^2 W and End W, W = H1 + H2 (Prop. 1, Prop. 2)
+---------------------------------------------------------------------------------------
+For every basis element X = (X1, X2) of g (checked on a basis; all maps are linear):
+  (2,2): 8 basis elements: Lambda^2 W and Sym^2 W restrict on H1(x)H2 to X1(x)1+1(x)X2 (reading A); ad on Hom(H2,H1) is X1(x)1+1(x)conj(X2) (reading A*), on Hom(H1,H2) X2(x)1+1(x)conj(X1); blocks invariant
+  (2,3): 13 basis elements: Lambda^2 W and Sym^2 W restrict on H1(x)H2 to X1(x)1+1(x)X2 (reading A); ad on Hom(H2,H1) is X1(x)1+1(x)conj(X2) (reading A*), on Hom(H1,H2) X2(x)1+1(x)conj(X1); blocks invariant
+  (3,3): 18 basis elements: Lambda^2 W and Sym^2 W restrict on H1(x)H2 to X1(x)1+1(x)X2 (reading A); ad on Hom(H2,H1) is X1(x)1+1(x)conj(X2) (reading A*), on Hom(H1,H2) X2(x)1+1(x)conj(X1); blocks invariant
+  (2,4): 20 basis elements: Lambda^2 W and Sym^2 W restrict on H1(x)H2 to X1(x)1+1(x)X2 (reading A); ad on Hom(H2,H1) is X1(x)1+1(x)conj(X2) (reading A*), on Hom(H1,H2) X2(x)1+1(x)conj(X1); blocks invariant
+  (3,4): 25 basis elements: Lambda^2 W and Sym^2 W restrict on H1(x)H2 to X1(x)1+1(x)X2 (reading A); ad on Hom(H2,H1) is X1(x)1+1(x)conj(X2) (reading A*), on Hom(H1,H2) X2(x)1+1(x)conj(X1); blocks invariant
+
+Central charge of Q = i diag(d2 1_d1; -d1 1_d2) on each summand (value c means Q acts as i c):
+  type   | L2(H1) | H1(x)H2 | L2(H2) | S2(H1) | S2(H2) | Hom(H2,H1) | Hom(H1,H2) | End H1, End H2
+  (2,2)  |      4 |       0 |     -4 |      4 |     -4 |          4 |         -4 | 0
+  (2,3)  |      6 |       1 |     -4 |      6 |     -4 |          5 |         -5 | 0
+  (3,3)  |      6 |       0 |     -6 |      6 |     -6 |          6 |         -6 | 0
+  (2,4)  |      8 |       2 |     -4 |      8 |     -4 |          6 |         -6 | 0
+  (3,4)  |      8 |       1 |     -6 |      8 |     -6 |          7 |         -7 | 0
+  closed forms (asserted): H1(x)H2: d2-d1; Hom(H2,H1): d1+d2; Hom(H1,H2): -(d1+d2); Lambda^2/Sym^2 of H1: 2 d2, of H2: -2 d1; End H1, End H2: 0
+  acting on the link: H1(x)H2 (reading A) iff d1 != d2; Hom(H2,H1) (reading A*) for every type
+
+Hypercharge Y = Q/(6i) at (d1,d2) = (2,3), the Letter's Y = diag(1/2,1/2;-1/3,-1/3,-1/3):
+  Lambda^2 W = 10 of SU(5): (1,1)_1 + (2,3)_1/6 + (1,3bar)_-2/3   [SU(2) x SU(3) labels; Lambda^2 C^3 = 3bar]
+  Sym^2 W   = 15 of SU(5): (3,1)_1 + (2,3)_1/6 + (1,6)_-2/3
+  End W = 24 + 1: off-diagonal (2,3bar)_5/6 + (2,3)_-5/6   [Hom(H2,H1) = H1 (x) H2*]
+
+Reading B (trace on L itself): h_B = {X : tr_L(X1(x)1+1(x)X2) = 0} = (d rho)^{-1}(su(L)).
+  for every type and every eps in {+1,-1}^2: tr_L of the centre (ix,iy) is d1 d2 times its link scalar,
+  so the centre of h_B acts on L as 0: no acting charge for any type under any conjugation (asserted).
+
+2. Invariant linear trace conditions tr_F(d sigma_F(X)) = alpha_F tr X1 + beta_F tr X2 (Lemma 7, Thm 8)
+-------------------------------------------------------------------------------------------------------
+  dim_R [g,g] = d1^2 + d2^2 - 2 at [(2, 2), (2, 3), (3, 3), (2, 4), (3, 4)] (so [g,g] = su(d1)+su(d2); an Ad-invariant
+  linear functional vanishes on it and is a real combination of the two traces)
+  F                      | dim F                | alpha_F (coefficient of tr X1) | beta_F (coefficient of tr X2)
+  W = H1+H2              | d1 + d2              | 1                              | 1
+  Lambda^2 W             | (d1 + d2)*(d1 + d2 - 1)/2 | d1 + d2 - 1                    | d1 + d2 - 1
+  Sym^2 W                | (d1 + d2)*(d1 + d2 + 1)/2 | d1 + d2 + 1                    | d1 + d2 + 1
+  W (x) W                | (d1 + d2)**2         | 2*(d1 + d2)                    | 2*(d1 + d2)
+  Lambda^3 W             | (d1 + d2)*(d1 + d2 - 2)*(d1 + d2 - 1)/6 | (d1 + d2 - 2)*(d1 + d2 - 1)/2  | (d1 + d2 - 2)*(d1 + d2 - 1)/2
+  W' = H1+conj(H2)       | d1 + d2              | 1                              | -1
+  Lambda^2 W'            | (d1 + d2)*(d1 + d2 - 1)/2 | d1 + d2 - 1                    | -d1 - d2 + 1
+  End W = W (x) conj W   | (d1 + d2)**2         | 0                              | 0
+  End H1 + End H2        | d1**2 + d2**2        | 0                              | 0
+  L = H1 (x) H2          | d1*d2                | d2                             | d1
+  Lambda^2 L             | d1*d2*(d1*d2 - 1)/2  | d2*(d1*d2 - 1)                 | d1*(d1*d2 - 1)
+  Sym^2 L                | d1*d2*(d1*d2 + 1)/2  | d2*(d1*d2 + 1)                 | d1*(d1*d2 + 1)
+  End L                  | d1**2*d2**2          | 0                              | 0
+  L' = H1 (x) conj(H2)   | d1*d2                | d2                             | -d1
+  H1 (centre end)        | d1                   | 1                              | 0
+  H2 (far end)           | d2                   | 0                              | 1
+  H1 + H1 + H2           | 2*d1 + d2            | 2                              | 1
+  explicit check (representation matrices on every basis element of g; skipped where dim F > 40):
+    (2,2): 17 spaces agree: W = H1+H2, Lambda^2 W, Sym^2 W, W (x) W, Lambda^3 W, W' = H1+conj(H2), Lambda^2 W', End W = W (x) conj W, End H1 + End H2, L = H1 (x) H2, Lambda^2 L, Sym^2 L, End L, L' = H1 (x) conj(H2), H1 (centre end), H2 (far end), H1 + H1 + H2
+    (2,3): 17 spaces agree: W = H1+H2, Lambda^2 W, Sym^2 W, W (x) W, Lambda^3 W, W' = H1+conj(H2), Lambda^2 W', End W = W (x) conj W, End H1 + End H2, L = H1 (x) H2, Lambda^2 L, Sym^2 L, End L, L' = H1 (x) conj(H2), H1 (centre end), H2 (far end), H1 + H1 + H2
+    (3,3): 15 spaces agree: W = H1+H2, Lambda^2 W, Sym^2 W, W (x) W, Lambda^3 W, W' = H1+conj(H2), Lambda^2 W', End W = W (x) conj W, End H1 + End H2, L = H1 (x) H2, Lambda^2 L, L' = H1 (x) conj(H2), H1 (centre end), H2 (far end), H1 + H1 + H2
+
+3. Relabellings theta_eps = (conj^e1, conj^e2), eps in {+1,-1}^2 (Thm 3)
+------------------------------------------------------------------------
+(a) the image of g, and of su+su, on L does not depend on eps:
+  (2,2): d rho_eps(g) = l (dim 7, contains i 1_L) and d rho_eps(su+su) = l_0 (dim 6) for all four eps
+  (2,3): d rho_eps(g) = l (dim 12, contains i 1_L) and d rho_eps(su+su) = l_0 (dim 11) for all four eps
+  (3,3): d rho_eps(g) = l (dim 17, contains i 1_L) and d rho_eps(su+su) = l_0 (dim 16) for all four eps
+(b) theta_eps maps the trace functional tr1 + tr2 to e1 tr1 + e2 tr2 (tr conj(X) = -tr X on u(d)):
+  checked on bases of u(2), u(3); so theta_eps^{-1}(h_W) = h_W iff e1 = e2
+(c) the Letter's h_W = s(u(d1)+u(d2)) under the link action rho_eps; its centre Q = i(d2 1, -d1 1):
+   eps     | type  | Q on L (/i) | i 1_L in d rho_eps(h_W)? | acting
+   (1, 1)  | (2,2) |           0 |                    False | False
+   (1, 1)  | (2,3) |           1 |                     True | True
+   (1, 1)  | (3,3) |           0 |                    False | False
+   (-1, -1)| (2,2) |           0 |                    False | False
+   (-1, -1)| (2,3) |          -1 |                     True | True
+   (-1, -1)| (3,3) |           0 |                    False | False
+   (1, -1) | (2,2) |           4 |                     True | True
+   (1, -1) | (2,3) |           5 |                     True | True
+   (1, -1) | (3,3) |           6 |                     True | True
+   (-1, 1) | (2,2) |          -4 |                     True | True
+   (-1, 1) | (2,3) |          -5 |                     True | True
+   (-1, 1) | (3,3) |          -6 |                     True | True
+  the acting predicate depends on eps only through e1 e2: e1 e2 = +1 gives reading A (acting iff d1 != d2),
+  e1 e2 = -1 gives reading A* (acting at every type).  (asserted)
+(d) the automorphism U -> conj(U):
+  SU(2): sigma_y conj(U) sigma_y = U for U = [[a,-conj b],[b,conj a]] (inner);
+  U(2):  sigma_y conj(e^{i phi} U) sigma_y = e^{-2 i phi} (e^{i phi} U): the central phase is inverted (not inner)
+  SU(3): U = diag(i, i, -1) has det 1, tr U = -1+2i, tr conj(U) = -1-2i; inner automorphisms keep the trace,
+         so conj is outer on SU(3).  By (a) it does not change the image of su+su on L; it relabels 3 <-> 3bar.
+(e) transposition at both ends (the covariant exchange E' = E o T of CT-G11 transposes every slot):
+  (X1(x)1+1(x)X2)^T = -(conj X1 (x) 1 + 1 (x) conj X2) on every basis element at (2,2),(2,3),(3,3):
+  it is the diagonal relabelling eps = (-1,-1), e1 e2 = +1, which keeps the selection and sends Y to -Y.
+
+4. The matching algebra: stabilizer, matching closure, generation (Thm 4, Thm 5, Prop. 6)
+-----------------------------------------------------------------------------------------
+(a) stabilizer of the pair ket in g (canonical action), and the matching algebra m_0:
+  (2,2): dim stab = 4 = d1^2 + (d2-d1)^2  (pairs (zeta, conj(zeta) + c), c in u(d2-d1)); m_0 = {(zeta, conj(zeta) + 0)} has dim 4 and fixes omega
+  (2,3): dim stab = 5 = d1^2 + (d2-d1)^2  (pairs (zeta, conj(zeta) + c), c in u(d2-d1)); m_0 = {(zeta, conj(zeta) + 0)} has dim 4 and fixes omega
+  (3,3): dim stab = 9 = d1^2 + (d2-d1)^2  (pairs (zeta, conj(zeta) + c), c in u(d2-d1)); m_0 = {(zeta, conj(zeta) + 0)} has dim 9 and fixes omega
+  (2,4): dim stab = 8 = d1^2 + (d2-d1)^2  (pairs (zeta, conj(zeta) + c), c in u(d2-d1)); m_0 = {(zeta, conj(zeta) + 0)} has dim 4 and fixes omega
+  (3,4): dim stab = 10 = d1^2 + (d2-d1)^2  (pairs (zeta, conj(zeta) + c), c in u(d2-d1)); m_0 = {(zeta, conj(zeta) + 0)} has dim 9 and fixes omega
+(b) generation: Lie algebra generated by su(H1) + su(H2) and m_0, and by su + su and the full stabilizer:
+  (2,2): <su+su, m_0> has dim 7 = d1^2+d2^2-1 and lies in ker(tr1+tr2) = s(u(d1)+u(d2)); <su+su, stab> has dim 7 (= s(u+u))
+  (2,3): <su+su, m_0> has dim 12 = d1^2+d2^2-1 and lies in ker(tr1+tr2) = s(u(d1)+u(d2)); <su+su, stab> has dim 13 (= g)
+  (3,3): <su+su, m_0> has dim 17 = d1^2+d2^2-1 and lies in ker(tr1+tr2) = s(u(d1)+u(d2)); <su+su, stab> has dim 17 (= s(u+u))
+  (2,4): <su+su, m_0> has dim 19 = d1^2+d2^2-1 and lies in ker(tr1+tr2) = s(u(d1)+u(d2)); <su+su, stab> has dim 20 (= g)
+  (3,4): <su+su, m_0> has dim 24 = d1^2+d2^2-1 and lies in ker(tr1+tr2) = s(u(d1)+u(d2)); <su+su, stab> has dim 25 (= g)
+(c) matching closure over the invariant hyperplanes h_[alpha:beta] = {alpha tr X1 + beta tr X2 = 0}:
+  (2,2): m_0 in h_[alpha:beta]  <=>  alpha = beta   (on the phase generator: 2*I*(alpha - beta) = 0)
+  (2,3): m_0 in h_[alpha:beta]  <=>  alpha = beta   (on the phase generator: 2*I*(alpha - beta) = 0)
+  (3,3): m_0 in h_[alpha:beta]  <=>  alpha = beta   (on the phase generator: 3*I*(alpha - beta) = 0)
+  (2,4): m_0 in h_[alpha:beta]  <=>  alpha = beta   (on the phase generator: 2*I*(alpha - beta) = 0)
+  (3,4): m_0 in h_[alpha:beta]  <=>  alpha = beta   (on the phase generator: 3*I*(alpha - beta) = 0)
+  in eps-labels the matchings are theta_eps^{-1}(m_0) = {(zeta^(e1), (conj zeta + 0)^(e2))}:
+  at (2,2),(2,3),(3,3) for all four eps: the labels act on L as the same operators, and lie in the Letter's
+  h_W iff e1 = e2, i.e. exactly when the selection is that of reading A  (asserted)
+(d) h cap stab at (2,3), as in Thm S-stabilizer; operator pairs, so reading A is h_+ = {tr1+tr2=0}, A* is h_- = {tr1-tr2=0}:
+  A  (h_+): dim 4; equal to m_0: True; centre, as operator pair i diag(1, 1, -1, -1, 0), in the Letter's labels i diag(1, 1, -1, -1, 0); on L it is proportional to 1 (x) diag(0,0,1)
+  A* (h_-): dim 4; equal to m_0: False; centre, as operator pair i diag(1, 1, -1, -1, 4), in the Letter's labels i diag(1, 1, 1, 1, -4); on L it is proportional to 1 (x) diag(0,0,1)
+(e) operator level: is the global phase i 1_L in d rho(su+su) + d rho(m_0)?
+  (2,2): False
+  (2,3): True
+  (3,3): False
+  (2,4): True
+  (3,4): True
+  (iff d1 != d2: the subgroup of U(H1)(x)U(H2) generated by SU(H1)(x)SU(H2) and the matchings is the image of
+  S(U(d1) x U(d2)) under reading A; it is a statement on L alone, with no labels)
+
+5. Readouts: acting types, Theorem 1's selection, hypercharge (Thm 8, Cor. 9)
+-----------------------------------------------------------------------------
+config_enumeration.py imported unmodified; its printout equals config_enumeration.out
+end rule + two-point, before the acting test: ['centre 2: 2R 2R 2U', 'centre 3: 2R 2R 2U']
+so Theorem 1's selection is {object} iff the acting test fails at (2,2) and holds at (3,2) (asserted)
+
+Readings (rows A, A*, B, C of F-CT-3 and every space F of Sec. 2):
+  reading / trace space          | acts (2,2) | acts (3,2) | MC (2,2),(3,2) | selected by Theorem 1             | (2,3) link
+  A   (h_+, trace on H1+H2)       | False      | True       | (True, True)   | c3: 2R 2R 2U                      | |Y| = 1/6
+  A*  (h_-, trace on H1+conj H2)  | True       | True       | (False, False) | c2: 2R 2R 2U, c3: 2R 2R 2U        | |Y| = 5/6
+  B   (trace on L)                | False      | False      | (True, False)  | none                              | generator (qutrit -1, qubit 1); link charge 0
+  C   (no condition)              | True       | True       | (True, True)   | c2: 2R 2R 2U, c3: 2R 2R 2U        | no u(1) singled out
+  F = W = H1+H2                   | False      | True       | (True, True)   | c3: 2R 2R 2U                      | |Y| = 1/6
+  F = Lambda^2 W                  | False      | True       | (True, True)   | c3: 2R 2R 2U                      | |Y| = 1/6
+  F = Sym^2 W                     | False      | True       | (True, True)   | c3: 2R 2R 2U                      | |Y| = 1/6
+  F = W (x) W                     | False      | True       | (True, True)   | c3: 2R 2R 2U                      | |Y| = 1/6
+  F = Lambda^3 W                  | False      | True       | (True, True)   | c3: 2R 2R 2U                      | |Y| = 1/6
+  F = W' = H1+conj(H2)            | True       | True       | (False, False) | c2: 2R 2R 2U, c3: 2R 2R 2U        | |Y| = 5/6
+  F = Lambda^2 W'                 | True       | True       | (False, False) | c2: 2R 2R 2U, c3: 2R 2R 2U        | |Y| = 5/6
+  F = End W = W (x) conj W        | True       | True       | (True, True)   | c2: 2R 2R 2U, c3: 2R 2R 2U        | no u(1) singled out
+  F = End H1 + End H2             | True       | True       | (True, True)   | c2: 2R 2R 2U, c3: 2R 2R 2U        | no u(1) singled out
+  F = L = H1 (x) H2               | False      | False      | (True, False)  | none                              | generator (qutrit -1, qubit 1); link charge 0
+  F = Lambda^2 L                  | False      | False      | (True, False)  | none                              | generator (qutrit -1, qubit 1); link charge 0
+  F = Sym^2 L                     | False      | False      | (True, False)  | none                              | generator (qutrit -1, qubit 1); link charge 0
+  F = End L                       | True       | True       | (True, True)   | c2: 2R 2R 2U, c3: 2R 2R 2U        | no u(1) singled out
+  F = L' = H1 (x) conj(H2)        | True       | True       | (False, False) | c2: 2R 2R 2U, c3: 2R 2R 2U        | generator (qutrit 1, qubit 1); link charge 2
+  F = H1 (centre end)             | True       | True       | (False, False) | c2: 2R 2R 2U, c3: 2R 2R 2U        | generator (qutrit 0, qubit 1); link charge 1
+  F = H2 (far end)                | True       | True       | (False, False) | c2: 2R 2R 2U, c3: 2R 2R 2U        | generator (qutrit 1, qubit 0); link charge 1
+  F = H1 + H1 + H2                | True       | True       | (False, False) | c2: 2R 2R 2U, c3: 2R 2R 2U        | generator (qutrit -1, qubit 3); link charge 2
+  asserted: every row that satisfies matching closure at (2,2) and (3,2) with a nonzero condition selects the
+  object alone; every row with no condition at (2,2) selects two configurations; no row that fails matching
+  closure at (2,2) selects the object alone.
+
+General [alpha:beta] fixed across types (alpha on the centre end, beta on the far end), canonical link:
+acting at (2,2) iff alpha != beta; at (3,2) iff 2 beta != 3 alpha
+  centre 3: 2R 2R 2U                           :  8 of the 80 nonzero (alpha,beta) in [-4,4]^2; projective classes include [(-1, -1), (1, 1)]
+  centre 2: 2R 2R 2U, centre 3: 2R 2R 2U       : 70 of the 80 nonzero (alpha,beta) in [-4,4]^2
+  centre 2: 2R 2R 2U                           :  2 of the 80 nonzero (alpha,beta) in [-4,4]^2; projective classes include [(-2, -3), (2, 3)]
+  asserted: the object alone iff alpha = beta; the qubit configuration alone iff [alpha:beta] = [2:3]
+  (the ratio of reading B at (3,2)); otherwise both.  'none' does not occur for a fixed nonzero [alpha:beta].
+
+2365 checks passed.
+runtime: 28.9 s

@@ -1,0 +1,20 @@
+'Conjugation.actScalar_A' depends on axioms: [propext, Quot.sound]
+'Conjugation.actScalar_Astar_ne' depends on axioms: [propext, Quot.sound]
+'Conjugation.actScalar_B' depends on axioms: [propext, Quot.sound]
+'Conjugation.actScalar_B_conj' depends on axioms: [propext, Quot.sound]
+'Conjugation.actEps_zero_iff' depends on axioms: [propext, Quot.sound]
+'Conjugation.actEps_product' depends on axioms: [propext, Quot.sound]
+'Conjugation.mc_iff' depends on axioms: [propext, Quot.sound]
+'Conjugation.mc_eps' depends on axioms: [propext, Quot.sound]
+'Conjugation.config_counts' does not depend on any axioms
+'Conjugation.endRule_twoPoint' does not depend on any axioms
+'Conjugation.select_general' depends on axioms: [propext]
+'Conjugation.select_object_iff' depends on axioms: [propext]
+'Conjugation.select_fixed' depends on axioms: [propext, Quot.sound]
+'Conjugation.select_mc' depends on axioms: [propext, Quot.sound]
+'Conjugation.object_forces_mc' depends on axioms: [propext, Quot.sound]
+'Conjugation.readings' does not depend on any axioms
+'Conjugation.relabellings' does not depend on any axioms
+'Conjugation.natural_spaces' does not depend on any axioms
+'Conjugation.natural_spaces_mc' does not depend on any axioms
+exit 0
