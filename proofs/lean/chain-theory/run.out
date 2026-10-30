@@ -12,4 +12,4 @@ $UPSTREAM/papers/alpha/lean/ChainAlpha.lean: OK
 'ChainAlpha.readers_reproduce_the_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
 'ConventionCheck.uniqueness_fails_under_conjugate_convention' depends on axioms: [propext, Quot.sound]
 'ConventionCheck.actA_ne_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
-
+'ConventionCheck.weight_is_class_function' depends on axioms: [propext, Classical.choice, Quot.sound]

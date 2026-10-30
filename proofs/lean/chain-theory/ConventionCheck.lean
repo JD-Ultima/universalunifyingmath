@@ -64,7 +64,22 @@ theorem upstream_excludes_qubitConfig : ¬ (∀ a ∈ qubitConfig.arms, actingCh
   have := h ⟨2, true⟩ (by simp [qubitConfig])
   exact this rfl
 
+/-! ## Proposition 2 (audit F-CT-2): the weight law is a class function
+
+On the object, the squared weight `kOf` that the upstream `readout` uses equals a function of
+three data only: whether the record is a commutator record (own sign -1), its parity under the
+single slot exchange `exchAssign`, and whether its two letters sit at one end. -/
+
+def classK (r : Rec) : Nat :=
+  if r.sign == -1 then 6
+  else if parity r.form == 1 then (if sameEnd r.form then 3 else 2) else 1
+
+theorem weight_is_class_function :
+    (recs 3 2).all (fun r => kOf (wX 3 2) objectWorld objectTwoPoint r == classK r) = true := by
+  decide +kernel
+
 end ConventionCheck
 
 #print axioms ConventionCheck.uniqueness_fails_under_conjugate_convention
 #print axioms ConventionCheck.actA_ne_zero_iff
+#print axioms ConventionCheck.weight_is_class_function

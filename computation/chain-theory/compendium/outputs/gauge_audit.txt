@@ -1,0 +1,61 @@
+sympy 1.14.0
+
+[1] Image of u(d1)+u(d2) acting on C^d1 (x) C^d2 by X(x)1 + 1(x)Y (the 'face group of the tether')
+| genre | dim image | d1^2+d2^2-1 | dim derived | rank (d1+d2-1) | central scalar of s(u+u) generator | kernel S(U x U)->U(d1 d2) | |ker SU x SU x U(1) -> S(U x U)| | readable d1*d2<=6 | acting centre |
+|---|---|---|---|---|---|---|---|---|---|
+| (2,2) | 7 | 7 | 6 | 3 | 0 (scalar: True) | U(1) | 2 | True | False |
+| (3,2) | 12 | 12 | 11 | 4 | -1 (scalar: True) | trivial | 6 | True | True |
+| (4,2) | 19 | 19 | 18 | 5 | -2 (scalar: True) | Z_2 | 4 | False | True |
+| (3,3) | 17 | 17 | 16 | 5 | 0 (scalar: True) | U(1) | 3 | False | False |
+| (4,3) | 24 | 24 | 23 | 6 | -1 (scalar: True) | trivial | 12 | False | True |
+| (4,4) | 31 | 31 | 30 | 7 | 0 (scalar: True) | U(1) | 4 | False | False |
+  genre matrix (01-framework.tex:52-56) prints (dimension, central scalar): {(2, 2): (7, 0), (3, 2): (12, 1), (4, 2): (19, 2), (3, 3): (17, 0), (4, 3): (24, 1), (4, 4): (31, 0)}
+  reproduced as (dim image, |central scalar|): True
+
+  dim 12 and rank 4 single out:  [(3, 2)]
+  readable AND acting centre:     [(3, 2)]
+  acting centre alone:            [(3, 2), (4, 2), (4, 3)]
+  readable alone:                 [(2, 2), (3, 2)]
+  sensitivity: read cap d1*d2 <=  4 with acting centre selects []
+  sensitivity: read cap d1*d2 <=  6 with acting centre selects [(3, 2)]
+  sensitivity: read cap d1*d2 <=  8 with acting centre selects [(3, 2), (4, 2)]
+  sensitivity: read cap d1*d2 <=  9 with acting centre selects [(3, 2), (4, 2)]
+  sensitivity: read cap d1*d2 <= 12 with acting centre selects [(3, 2), (4, 2), (4, 3)]
+  sensitivity: alphabet [2, 3] (cap 6, acting centre) -> 3 genres, selects [(3, 2)]
+  sensitivity: alphabet [2, 3, 4] (cap 6, acting centre) -> 6 genres, selects [(3, 2)]
+  sensitivity: alphabet [2, 3, 4, 5] (cap 6, acting centre) -> 10 genres, selects [(3, 2)]
+  sensitivity: alphabet [2, 3, 4, 5, 6, 7, 8] (cap 6, acting centre) -> 28 genres, selects [(3, 2)]
+
+[2] Z_6 covering for (3,2): SU(2) x SU(3) x U(1) -> S(U(2) x U(3)), (A,B,z) -> (z^3 A, z^-2 B)
+  z = exp(2 pi i k/6), k=0..5, with A = z^-3 I2 in SU(2), B = z^2 I3 in SU(3), maps to identity: [True, True, True, True, True, True]
+  necessary condition from det: z^6 = 1 -> 6 solutions; kernel = Z_6
+  det(z^3 A) det(z^-2 B) = z^6 * z^-6 = 1 for A in SU(2), B in SU(3): image lies in S(U(2) x U(3))
+
+[3] The u(1) 'slice representative' (3,3,-2,-2,-2) printed in 65.1
+  traceless: True; commutes with su(2)+su(3) block generators: True
+  equals 6 x Y on the 5 of SU(5) = (1,2)_(1/2) + (3,1)_(-1/3), Y = diag(1/2,1/2,-1/3,-1/3,-1/3): True
+
+[4] 'fourth-root monomial groups at the orders four, thirty-two, three hundred eighty-four and six thousand one hundred forty-four'
+  |mu_4 wr S_n| by enumeration, n=1..4: [4, 32, 384, 6144]; formula 4^n n!: [4, 32, 384, 6144]; printed (4, 32, 384, 6144): True
+
+[5] Z_6 compatibility of the Standard Model spectrum (Q = T3 + Y): phase exp(2 pi i (t/3 + d/2 + Y)) must be 1
+  Q_L    triality 1 duality 1 Y   1/6: t/3+d/2+Y = 1 -> trivial: True
+  u_R    triality 1 duality 0 Y   2/3: t/3+d/2+Y = 1 -> trivial: True
+  d_R    triality 1 duality 0 Y  -1/3: t/3+d/2+Y = 0 -> trivial: True
+  L_L    triality 0 duality 1 Y  -1/2: t/3+d/2+Y = 0 -> trivial: True
+  e_R    triality 0 duality 0 Y    -1: t/3+d/2+Y = -1 -> trivial: True
+  nu_R?  triality 0 duality 0 Y     0: t/3+d/2+Y = 0 -> trivial: True
+  H      triality 0 duality 1 Y   1/2: t/3+d/2+Y = 1 -> trivial: True
+  gluon  triality 0 duality 0 Y     0: t/3+d/2+Y = 0 -> trivial: True
+  W      triality 0 duality 0 Y     0: t/3+d/2+Y = 0 -> trivial: True
+  Every SM field is Z_6-neutral, so (SU3 x SU2 x U1)/Z_6 acts faithfully; the quotients by Z_1, Z_2, Z_3 are
+  equally consistent with the perturbative spectrum (Tong, JHEP 07 (2017) 104): the global form is not yet measured.
+
+[6] Discrete choices on which the identification depends (count):
+   - dimension alphabet {2,3,4} (inherited from the 64 listed webs; 9.1)
+   - read cap value d1*d2 <= 6 (9.1, CONDITIONAL)
+   - 'acting centre' criterion d1 != d2 (9.2)
+   - assignment of SU(2) to hub-leg qubit copies (65.1)
+   - assignment of SU(3) to qutrit ends open at the hub leg (65.1)
+   - assignment of U(1) to the dock qubit end slice (65.1)
+  6 discrete choices; the Lie-algebra output (dims 8,3,1; centre Z_6) is the standard structure of S(U(2)xU(3)).

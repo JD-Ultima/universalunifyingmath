@@ -1,0 +1,37 @@
+rows: 468
+by grade: {'CONDITIONAL': 109, 'DEFINITION': 7, 'OPEN': 198, 'TABLE': 54, 'THEOREM': 100}
+
+| Part | THEOREM | THEOREM_LEAN | CONDITIONAL | COND_LEAN | OPEN | TABLE | DEFINITION |
+|---|---|---|---|---|---|---|---|
+| I | 20 | 17 | 9 | 7 | 23 | 4 | 6 |
+| II | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
+| III | 1 | 0 | 8 | 8 | 4 | 1 | 0 |
+| IV | 6 | 3 | 5 | 4 | 4 | 1 | 0 |
+| V | 14 | 8 | 6 | 6 | 24 | 2 | 0 |
+| VI | 2 | 0 | 17 | 14 | 30 | 2 | 0 |
+| VII | 5 | 1 | 10 | 8 | 9 | 3 | 0 |
+| VIII | 1 | 1 | 8 | 8 | 17 | 1 | 0 |
+| IX | 1 | 1 | 12 | 11 | 12 | 1 | 0 |
+| X | 6 | 2 | 18 | 17 | 8 | 2 | 0 |
+| XI | 2 | 1 | 3 | 3 | 2 | 0 | 0 |
+| XII | 1 | 1 | 9 | 7 | 16 | 2 | 0 |
+| XIII | 7 | 7 | 0 | 0 | 5 | 1 | 0 |
+| XIV | 6 | 6 | 0 | 0 | 3 | 1 | 0 |
+| XV | 11 | 11 | 1 | 1 | 5 | 0 | 0 |
+| XVI | 0 | 0 | 0 | 0 | 0 | 4 | 0 |
+| App | 6 | 3 | 2 | 1 | 23 | 0 | 0 |
+| Instr | 11 | 2 | 1 | 0 | 13 | 28 | 1 |
+| all | 100 | 64 | 109 | 95 | 198 | 54 | 7 |
+
+Parts I-XVI only: {'THEOREM': 83, 'CONDITIONAL': 106, 'OPEN': 162}
+Parts VI-XI (the six cells): {'THEOREM': 17, 'CONDITIONAL': 68, 'OPEN': 78}
+
+headline check:
+  THEOREM: headline 100, computed 100, MATCH
+  CONDITIONAL: headline 109, computed 109, MATCH
+  OPEN: headline 198, computed 198, MATCH
+  THEOREM_LEAN: headline 64, computed 64, MATCH
+  TABLE: headline 56, computed 54, MISMATCH
+  DEFINITION: headline 7, computed 7, MATCH
+
+sections: 284; sections whose statements carry differing lean lists: 0 (the Lean tie is per section, inherited by every statement in it)

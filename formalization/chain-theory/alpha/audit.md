@@ -11,7 +11,7 @@
 | F-CT-1 | The 172 records, sector sizes, closed form and 60-digit inverse are reproduced by an independent operator-level implementation. | Verified (exact) |
 | F-CT-2 | On the 169 product records, the two "commuting exchanges" $X$ and $Y$ are the same involution $E$. The weight law is a class function of (E-parity, slot class). | Proven |
 | F-CT-3 | Selecting $(2,3)$ by an "acting central charge" depends on a conjugation convention and on a direct-sum trace. Of four natural readings, only the Letter's selects $(2,3)$ alone. Lean confirms that uniqueness fails under the conjugate convention. | Proven (Python + Lean) |
-| F-CT-4 | Freedom analysis. All 13 published alternatives were reproduced. In a declared 30 720-rule space, the expected number of chance hits within 1σ is $3\times10^{-6}$. Among $1.6\times10^9$ small-coefficient elements of $\tfrac{1}{31104}\mathbb Z[\sqrt2,\sqrt3]$, the author's is the only one within 1σ (0.02 expected by chance). | Computed |
+| F-CT-4 | Freedom analysis. All 13 published alternatives were reproduced. In a declared 46 080-rule space, the expected number of chance hits within 1σ is $4\times10^{-6}$. Among $1.6\times10^9$ small-coefficient elements of $\tfrac{1}{31104}\mathbb Z[\sqrt2,\sqrt3]$, the author's is the only one within 1σ (0.02 expected by chance). | Computed |
 | F-CT-5 | `ChainAlpha.lean` builds under Lean 4.35.0 with standard axioms only. It certifies arithmetic of the definitions. The physically load-bearing choices (CT-G01–G05) enter as definitions. | Verified |
 | F-CT-6 | Deviations from the measurements are reproduced. The candidate is algebraic of degree 4; its minimal polynomial is given. | Verified |
 | F-CT-7 | The construction's formula $f(d_Q,d_q)$ at other dimension pairs gives values far from $\alpha^{-1}$. $(3,2)$ is the only pair within 1% of $\alpha^{-1}$; the next closest, $(2,3)$, is 2.5% away. | Computed |
@@ -39,6 +39,8 @@ This confirms the counting and arithmetic. It does not test the rules that assig
 **Proposition 2.** Let $P$ be the span of the 169 product records. The "exchange of reads" $X$ and the "exchange of links" $Y$ act on $P$ through the same linear involution $E$. Write $\mathrm{cls}(r)\in\{\text{same-end},\text{mixed},\text{comm}\}$ and $e_r\in\{\pm1\}$ for the $E$-eigenvalue. The Letter's squared weight is the class function
 $$k_r=\begin{cases}1 & e_r=-1,\ \mathrm{cls}\ne\text{comm}\\ 3 & e_r=+1,\ \text{same-end}\\ 2 & e_r=+1,\ \text{mixed}\\ 6 & \text{comm}.\end{cases}$$
 In particular, the statement that $X$ and $Y$ "commute" (S7) holds trivially.
+
+Machine-checked against the author's definitions: `ConventionCheck.weight_is_class_function` (Lean 4.35.0, `proofs/lean/chain-theory/`).
 
 *Proof.* On slots, the read exchange is $Q_1\leftrightarrow Q_2,\ q_1\leftrightarrow q_2$. The link exchange carries each end of one read link to the same end of the other, which is the same permutation. The Supplement's own trace count writes $X=-E$ on same-end products and $Y=-E$ on mixed ones. In `ChainAlpha.lean`, `sigX` (via `Rec.reads`) and `sigY` both apply `exchAssign`. Substituting into $k_r=3^{[X_r=-1]}2^{[Y_r=-1]}$ gives the table. ∎
 
@@ -93,15 +95,15 @@ Both conventions give a 4-dimensional stabilizer of the pair ket at $(2,3)$, so 
 **B. A declared rule space.** We vary the following independently:
 
 - the squared factor $k\in\{1,2,3,6\}$ for each of the four product classes (odd; even mixed; even $QQ$; even $qq$);
-- the commutator factor ($\{1,2,3,6\}$) and count ($\{0,3,6\}$);
+- the commutator factor ($\{1,2,3,4,6,9\}$) and count ($\{0,3,6\}$);
 - amplitude vs Born weighting;
 - the five values of $N$ above.
 
-This gives $4^4\cdot4\cdot3\cdot2\cdot5=30\,720$ rules and 11 638 distinct values.
+This gives $4^4\cdot6\cdot3\cdot2\cdot5=46\,080$ rules and 15 639 distinct values.
 
-- Closest to CODATA 2022: the Letter's rule, at $0.598\sigma$. The next closest is $2.2\times10^5\sigma$ away.
-- Distinct values within relative $10^{-2},10^{-3},10^{-4},10^{-6}$ of $\alpha^{-1}$: 207, 21, 3, 1.
-- Density of distinct values with $1/\text{value}\in(120,155)$: 75.5 per unit. The expected number of chance values in the $\pm1\sigma$ window ($4.2\times10^{-8}$ wide) is therefore $3.2\times10^{-6}$.
+- Closest to CODATA 2022: the Letter's rule, at $0.598\sigma$. The next closest is $1.3\times10^5\sigma$ away.
+- Distinct values within relative $10^{-2},10^{-3},10^{-4},10^{-6}$ of $\alpha^{-1}$: 288, 28, 4, 1.
+- Density of distinct values with $1/\text{value}\in(120,155)$: 103.9 per unit. The expected number of chance values in the $\pm1\sigma$ window ($4.2\times10^{-8}$ wide) is therefore $4.4\times10^{-6}$.
 - An $O(1)$ chance hit at this density needs about $10^{10}$ rules.
 
 **C. Lattice density.** Consider $\{(a+b\sqrt2+c\sqrt3+d\sqrt6)/31104 : 0\le a,b,c,d\le M\}$.
@@ -113,7 +115,7 @@ The single hit is $(79,48,42,3)$ in both cases. At this denominator, 10-digit ag
 
 **Interpretation.** These are statements about trial factors, not about physics. If the rules were fixed without reference to $\alpha$, a chance agreement this close is improbable: $p\sim10^{-6}$ for the rule space of B, which contains every alternative the author lists. If the construction was selected from a search of $\gtrsim10^{9}$–$10^{10}$ implicit variants (wording clauses × configurations × normalizations × conventions such as F-CT-3), the agreement is unremarkable. The paper does not record the order in which rules and value were fixed (CT-G10), so the data in hand cannot distinguish these cases. Further digits can (F-CT-6).
 
-**Limits.** The rule space B is ours. A different "natural" space would give a different density. The density estimate assumes local uniformity of rule outputs near 137, which holds approximately here (median gap 0.0092 between adjacent values).
+**Limits.** The rule space B is ours. A different "natural" space would give a different density. The density estimate assumes local uniformity of rule outputs near 137, which holds approximately here (median gap 0.0070 between adjacent values).
 
 ## F-CT-5 Lean audit
 
@@ -148,6 +150,16 @@ $f(d_Q,d_q)$ is the Letter's construction with a center of dimension $d_Q$ and f
 | $1/f$ | 31.81 | 140.40 | 216.04 | **137.036** | 791.66 | 314.67 |
 
 (Full table in `algebraic.out`.) Most of these pairs are excluded by the read cap or the end rule. They are listed only to show that $1/f$ varies by orders of magnitude across neighbouring constructions, so the agreement is specific to $(3,2)$.
+
+## F-CT-8 Exploration: do natural state functionals give the weights? (negative)
+
+Labelled exploration, toward CT-G01. The joint read state is exactly $\lvert\Omega\rangle=\lvert\omega_3\rangle_{Q_1Q_2}\otimes\lvert\omega_2\rangle_{q_1q_2}$ (verified: the projected vector has squared norm $1/6$, matching S10). For HS-normalized record operators $O_r$ we computed $|\langle\Omega|O_r|\Omega\rangle|$ and $36\lVert O_r\Omega\rVert^2$ (`weight_functionals.py`).
+
+- Neither is constant on the weight classes. Odd records alone take 7 distinct values of $36\lVert O_r\Omega\rVert^2$, from 0 to 3.
+- The class means are $0.848$ (odd), $1.083$ (even mixed), $1.190$ (even same-end) and $0.667$ (comm). They are not in the ratio $1:\sqrt2:\sqrt3:\sqrt6$.
+- The vacuum expectation vanishes on every class except even same-end.
+
+So the weight law is not the vacuum amplitude or norm of the record operators. This does not exclude other operator constructions; CT-G01 remains open.
 
 ## Graded ledger (α Letter)
 

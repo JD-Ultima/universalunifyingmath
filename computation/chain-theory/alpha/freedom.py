@@ -19,7 +19,7 @@ from collections import Counter
 import mpmath as mp
 
 mp.mp.dps = 50
-r = {1: mp.mpf(1), 2: mp.sqrt(2), 3: mp.sqrt(3), 6: mp.sqrt(6)}
+r = {1: mp.mpf(1), 2: mp.sqrt(2), 3: mp.sqrt(3), 4: mp.mpf(2), 6: mp.sqrt(6), 9: mp.mpf(3)}
 
 # CODATA 2022 (Mohr et al., RMP 97, 025002 (2025)): 1/alpha = 137.035 999 177(21)
 INV_CODATA = mp.mpf('137.035999177')
@@ -72,7 +72,7 @@ classes = [O, Sm, SQ, Sq]
 Ns = {"24*36^2": N0, "36^3": 36**3, "24^3": 24**3, "24*35^2": 24*35*35, "35^3": 35**3}
 values = {}
 for ks in itertools.product([1, 2, 3, 6], repeat=4):          # factor per class
-    for kc in [1, 2, 3, 6]:                                     # commutator factor
+    for kc in [1, 2, 3, 4, 6, 9]:                               # commutator factor (4 = 2*2 and 9 = 3*3 occur in Table S5)
         for nc in [0, 3, 6]:                                    # commutator count
             for power in ["amp", "born"]:
                 w = (lambda k: r[k]) if power == "amp" else (lambda k: mp.mpf(k))
@@ -80,6 +80,11 @@ for ks in itertools.product([1, 2, 3, 6], repeat=4):          # factor per class
                 for nN, N in Ns.items():
                     v = N / num
                     values[(ks, kc, nc, power, nN)] = v
+# containment check: every Part A alternative (at N0) is a rule of this space
+for name, v in A.items():
+    target = mp.mpf(N0) / v
+    assert any(abs(val - target) < mp.mpf(10)**-30 for val in values.values()), name
+print("  containment: all 13 Part A alternatives are rules of the space")
 distinct = {}
 for key_, v in values.items():
     distinct.setdefault(mp.nstr(v, 30), key_)

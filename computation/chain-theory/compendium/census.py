@@ -49,17 +49,18 @@ def main(path):
     for p in ["VI","VII","VIII","IX","X","XI"]:
         cells.update(tab.get(p, collections.Counter()))
     print("Parts VI-XI (the six cells):", {k: cells[k] for k in ["THEOREM","CONDITIONAL","OPEN"]})
-    head = {"THEOREM":100, "CONDITIONAL":109, "OPEN":198, "THEOREM_LEAN":64}
+    # headline numbers: abstract (front.tex) and compendium/README.md "The count, as of this release"
+    head = {"THEOREM":100, "CONDITIONAL":109, "OPEN":198, "THEOREM_LEAN":64, "TABLE":56, "DEFINITION":7}
     print("\nheadline check:")
     for k, v in head.items():
         print(f"  {k}: headline {v}, computed {tot[k]}, {'MATCH' if v == tot[k] else 'MISMATCH'}")
     # Lean-tie granularity: lean column is shared by all statements of a section?
     sec = collections.defaultdict(set)
     for r in rows:
-        ch = r["number"].split(".")[0]
-        sec[(r["part"], ch)].add(r["lean"])
+        sec[r["number"].rsplit(".", 1)[0]].add(r["lean"])
     multi = sum(1 for v in sec.values() if len(v) > 1)
-    print(f"\nchapters: {len(sec)}; chapters whose statements carry differing lean lists: {multi}")
+    print(f"\nsections: {len(sec)}; sections whose statements carry differing lean lists: {multi}"
+          " (the Lean tie is per section, inherited by every statement in it)")
     return 0
 
 if __name__ == "__main__":

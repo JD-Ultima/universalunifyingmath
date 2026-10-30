@@ -1,0 +1,37 @@
+mpmath 1.3.0, sympy 1.14.0
+
+[1] QED mass-independent coefficients of (alpha/pi)^n
+  C1 = 0.5
+  C2 = -0.328478965579194   (target -0.328478965...)
+  C3 = 1.1812414565872   (target  1.181241456...)
+
+[2] Numbers printed by chapter 7-2 (07-cell-3-2-photon.tex:440-441)
+  link measures 9,12,8,4,6 equal d1*d2 for the five link types: True
+  T0 = 1;  T1 = 3*(67+30+6) = 309 (printed 309: True);  T1^2 = 95481 (printed 95481: True);  T3 = 0
+  unstruck links 8+5+1 = 14 (printed fourteen); 16 links - 2 struck = 14
+  '105 monomials of degree two': degree-2 monomials in 14 variables = 105; unordered pairs of 15 sites = 105 (both readings give 105)
+  multisets of 8 link measures from {4,6,8,9,12} summing to 67: 13 (the chapter does not list the body's link types; e.g. (4, 4, 6, 8, 9, 12, 12, 12))
+  G2(2,2) = 5/216 (1+sqrt2) = 0.0558845732031
+  The chapter prints no coefficient of (alpha/pi)^n and states 'no digit of any constant displayed here'.
+
+[3] Hypothesis L (literal): order-n record-sum term T_n is proportional to C_n (alpha/pi)^n
+    with one free normalisation lambda: T_n * lambda^n = C_n.
+  fit lambda from n=1: lambda = 1/(2*309) = 0.001618122977
+  n=2 then requires T2 = 309^2 + closure = -125454.00045, i.e. closure = -220935.00045; closure is not printed -> untestable
+  n=3 requires T3 = C3/lambda^3 = 278807277.557; printed T3 = 0 -> FAILS for every lambda (C3 != 0)
+
+[4] Size of the third-order QED term against experiment
+  alpha(Rb 2020): C3 (alpha/pi)^3 = 1.48042e-8; sigma(exp (+) alpha) = 1.6e-13; setting C3 = 0 shifts a_e by 9.259e+4 sigma
+     (alpha/pi) = 0.002322819464; C1 x = 0.001161409732; C2 x^2 = -1.77231e-6; relative weight of C3 term in a_e = 1.277e-5
+  alpha(Cs 2018): C3 (alpha/pi)^3 = 1.48042e-8; sigma(exp (+) alpha) = 2.63e-13; setting C3 = 0 shifts a_e by 5.632e+4 sigma
+  alpha(CODATA 2022): C3 (alpha/pi)^3 = 1.48042e-8; sigma(exp (+) alpha) = 2.2e-13; setting C3 = 0 shifts a_e by 6.724e+4 sigma
+
+[5] Exact numbers in D526870_PAET (a|b|c|d read as a + b*sqrt2 + c*sqrt3 + d*sqrt6)
+  W1 (the 'EQUAL' reading) self-term at link L1 = 0.000003429468718; denominators {2: 20, 3: 8}, {2: 18, 3: 8}
+  W2: 3.232603184E-8  ratio to W1 = 0.0094259591
+  W3: 0.000001451115569  ratio to W1 = 0.42313130
+  PWONCE: 2.618408579E-8  ratio to W1 = 0.0076350269
+  for scale only (no identification is made by the source): alpha/2pi = 0.001161409732
+  The Lean theorem row_526870_PAET proves only: the table has 8 rows; one row has test=ORDER-TWO-READOUT, reading=W1, of_record=YES, letter=EQUAL; one row has letter=ZERO; three rows have letter=PARTING; ...
+
+[6] Tally: QED coefficients reproduced = 0 of 3; C3 contradicted under hypothesis L; under the charitable reading (T_n not tied to alpha/pi) the statement makes no contact with a_e.

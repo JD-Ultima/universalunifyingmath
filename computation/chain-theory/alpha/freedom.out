@@ -18,23 +18,24 @@ Part A: alternatives of Table S-alternatives (recomputed)
     N = 24^3 (all traceless)                 1/value = 60.90488853
     N = 24*35^2 (traceless part at reads)    1/value = 129.5286258
     N = 35^3                                 1/value = 188.8959126
+  containment: all 13 Part A alternatives are rules of the space
 
-Part B: rule space of 30720 rules, 11638 distinct values
+Part B: rule space of 46080 rules, 15639 distinct values
   five closest rules to CODATA 2022 (deviation in sigma):
         0.598388 sigma   rule=((1, 2, 3, 3), 6, 3, 'amp', '24*36^2')   1/value=137.035999189566
+        134020.0 sigma   rule=((3, 6, 3, 6), 9, 3, 'amp', '36^3')   1/value=137.03881359353
         218428.0 sigma   rule=((6, 1, 3, 1), 1, 3, 'amp', '35^3')   1/value=137.040586166705
         347424.0 sigma   rule=((1, 3, 1, 1), 3, 6, 'amp', '24*35^2')   1/value=137.043295079527
         347424.0 sigma   rule=((1, 3, 1, 3), 1, 6, 'amp', '24*35^2')   1/value=137.043295079527
-      1.26051e+6 sigma   rule=((1, 2, 3, 6), 1, 3, 'amp', '24*36^2')   1/value=137.062469809062
-  distinct values within relative 0.01 of 1/alpha: 207
-  distinct values within relative 0.001 of 1/alpha: 21
-  distinct values within relative 0.0001 of 1/alpha: 3
+  distinct values within relative 0.01 of 1/alpha: 288
+  distinct values within relative 0.001 of 1/alpha: 28
+  distinct values within relative 0.0001 of 1/alpha: 4
   distinct values within relative 1.0e-6 of 1/alpha: 1
-  density of distinct values in 1/alpha in (120,155): 75.54285714285714 per unit
-  expected number of chance values within +-1 sigma: 3.173e-6
-  median gap between adjacent distinct values in (120,155): 0.009176
+  density of distinct values in 1/alpha in (120,155): 103.94285714285714 per unit
+  expected number of chance values within +-1 sigma: 4.366e-6
+  median gap between adjacent distinct values in (120,155): 0.007026
   1-sigma window (absolute, 1/alpha): 4.2e-8
-  rules needed for O(1) chance hit at this density: ~9.68e+9
+  rules needed for O(1) chance hit at this density: ~1.06e+10
 
 Part C: numerator window half-width = 3.478e-8 around 226.976854160965
   coefficients in [0,50]: 6.765e+06 tuples, hits within 1 sigma: 0 []

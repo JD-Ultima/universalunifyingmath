@@ -1,0 +1,10 @@
+'Howard.nogo_int' depends on axioms: [propext, Quot.sound]
+'Howard.nogo_generic' does not depend on any axioms
+'Howard.nogo_int_ld_assoc' depends on axioms: [propext, Quot.sound]
+'Howard.biadditive_classification' depends on axioms: [propext, Quot.sound]
+'Howard.forced_two_ab' depends on axioms: [propext, Quot.sound]
+'Howard.op2_assoc' depends on axioms: [propext]
+'Howard.op2_idempotent' depends on axioms: [propext, Quot.sound]
+'Howard.op2_ge_add' depends on axioms: [propext, Quot.sound]
+'Howard.char4_ld' depends on axioms: [propext]
+'Howard.no_six_pentagon_sphere' depends on axioms: [propext, Quot.sound]

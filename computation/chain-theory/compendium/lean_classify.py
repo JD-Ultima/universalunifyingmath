@@ -96,6 +96,24 @@ def main(cdir, focus):
         if r["grade"] == "THEOREM" and any(c.startswith(("other_theorem", "restated_theorem", "kernel_check")) for c in cs):
             th_any_substantive += 1
     print(f"THEOREM rows naming Lean declarations: {th_lean}")
+    tiers = collections.Counter()
+    for r in rows:
+        if r["grade"] != "THEOREM" or not r["lean"]: continue
+        cs = {classify(n, decls, dso)[0] for n in r["lean"].split()}
+        if any(c.startswith(("restated_theorem", "kernel_check", "other_theorem")) for c in cs):
+            tiers["cites a restated (AlphaDerivation) theorem or a kernel module"] += 1
+        elif any(c.startswith(("table_check", "cond_table_check")) for c in cs):
+            tiers["best evidence: data-table check(s)"] += 1
+        else:
+            tiers["only opaque Props / aliases / open-result records (no checkable content)"] += 1
+    print(f"  the 64 Lean-tied THEOREM rows by strongest declaration kind cited: {dict(tiers)}")
+    nosec = collections.Counter(r["grade"] for r in rows if not r["lean"])
+    print(f"  rows with no Lean name at all, by grade: {dict(nosec)}")
+    # does the Lean column vary within a section? (tie is per chapter, not per statement)
+    persec = collections.defaultdict(set)
+    for r in rows: persec[r["number"].rsplit(".", 1)[0]].add(r["lean"])
+    print(f"  sections whose statements carry different Lean lists: {sum(1 for v in persec.values() if len(v) > 1)} of {len(persec)}"
+          " (the tie is per section: every statement of a section inherits the section's names)")
     print(f"THEOREM rows naming at least one declaration that is not opaque/alias/open-record/table-check: {th_any_substantive}")
     for g in ("THEOREM", "CONDITIONAL", "OPEN"):
         print(f"  declaration kinds cited by {g} rows (with multiplicity): {dict(by_grade[g].most_common())}")

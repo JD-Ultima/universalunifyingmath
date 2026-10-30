@@ -1,0 +1,11 @@
+norm^2 of projected vector: 0.166666666667 (Supplement: 1/6)
+Omega == |w3>_{Q1Q2}|w2>_{q1q2}: True
+odd (k=1)              distinct (|vev|, 36*||O Omega||^2): [(np.float64(0.0), np.float64(0.0)), (np.float64(0.0), np.float64(0.25)), (np.float64(0.0), np.float64(0.75)), (np.float64(0.0), np.float64(1.0)), (np.float64(0.0), np.float64(2.0)), (np.float64(0.0), np.float64(2.25)), (np.float64(0.0), np.float64(3.0))] (7 distinct)
+even mixed (k=2)       distinct (|vev|, 36*||O Omega||^2): [(np.float64(0.0), np.float64(0.0)), (np.float64(0.0), np.float64(2.0))] (2 distinct)
+even same-end (k=3)    distinct (|vev|, 36*||O Omega||^2): [(np.float64(0.0), np.float64(0.0)), (np.float64(0.0), np.float64(0.25)), (np.float64(0.0), np.float64(0.75)), (np.float64(0.0), np.float64(1.0)), (np.float64(0.0), np.float64(2.0)), (np.float64(0.0), np.float64(2.25)), (np.float64(0.0), np.float64(3.0)), (np.float64(0.166667), np.float64(1.0))] ... (9 distinct)
+comm (k=6)             distinct (|vev|, 36*||O Omega||^2): [(np.float64(0.0), np.float64(0.0)), (np.float64(0.0), np.float64(2.0))] (2 distinct)
+class means:
+  odd (k=1)              n= 79  mean 36||O Omega||^2 = 0.848101   sum |vev| = 0.000000
+  even mixed (k=2)       n= 48  mean 36||O Omega||^2 = 1.083333   sum |vev| = 0.000000
+  even same-end (k=3)    n= 42  mean 36||O Omega||^2 = 1.190476   sum |vev| = 1.833333
+  comm (k=6)             n=  3  mean 36||O Omega||^2 = 0.666667   sum |vev| = 0.000000

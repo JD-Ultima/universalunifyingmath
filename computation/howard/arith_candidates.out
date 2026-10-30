@@ -1,0 +1,51 @@
+z3 5.3.3 sympy 1.14.0
+
+=== carrier R (INC/BAL over reals > 0) ===
+candidate                 H1   H2   LD   RD   AS   CM   ID   INC  BAL  
+ordinary a*b              N    Y    Y    Y    Y    Y    Y    N    N    
+a+b                       Y    Y    N    N    Y    Y    Y    Y    Y    
+2ab                       Y    N    Y    Y    Y    Y    Y    N    N    
+ab+1                      Y    N    N    N    N    Y    N    N    N    
+ab+a = a(b+1)             Y    N    N    Y    N    N    N    N    N    
+ab+min(a,b)               Y    N    N    N    N    Y    N    N    N    
+2b (left-only)            Y    Y    Y    N    N    N    N    N    N    
+patch: ab, but 1(x)1:=2   Y    Y    N    N    N    Y    N    N    N    
+counterexamples / witnesses:
+  ordinary a*b: ID:{'e': 1}; INC:{'a': 1/2, 'b': 1/2}; BAL:{'a': 1, 'b': 1}
+  a+b: LD:{'a': -1, 'b': 0, 'c': 0}; RD:{'a': 0, 'b': 0, 'c': -1}; ID:{'e': 0}
+  2ab: ID:{'e': 1/2}; INC:{'a': 1/4, 'b': 1/4}; BAL:{'a': 1, 'b': 1/2}
+  ab+1: LD:{'a': 0, 'b': 0, 'c': 0}; RD:{'a': 0, 'b': 0, 'c': 0}; AS:{'a': -1, 'b': 0, 'c': 0}; INC:{'a': 1/2, 'b': 3}; BAL:{'a': 1/2, 'b': 2}
+  ab+a = a(b+1): LD:{'a': -1, 'b': 0, 'c': 0}; AS:{'a': -1, 'b': 0, 'c': -1}; CM:{'a': 2, 'b': 3}; INC:{'a': 1/2, 'b': 2}; BAL:{'a': 1/2, 'b': 1}
+  ab+min(a,b): LD:{'a': 0, 'b': 2, 'c': -1}; RD:{'a': -2, 'b': 1, 'c': 0}; AS:{'a': 1, 'b': 0, 'c': -1}; INC:{'a': 1, 'b': 1/2}; BAL:{'a': 1, 'b': 1/2}
+  2b (left-only): RD:{'a': 0, 'b': 0, 'c': -1}; AS:{'a': 0, 'b': 0, 'c': -1}; CM:{'a': 1/4, 'b': 0}; INC:{'a': 1/2, 'b': 1/4}; BAL:{'a': 2, 'b': 1}
+  patch: ab, but 1(x)1:=2: LD:{'a': 1, 'b': -1, 'c': 2}; RD:{'a': -1, 'b': 2, 'c': 1}; AS:{'a': 1, 'b': 1, 'c': -1}; INC:{'a': 1, 'b': 1/2}; BAL:{'a': 1, 'b': 1/2}
+
+=== carrier Z (INC/BAL over integers >= 1) ===
+candidate                 H1   H2   LD   RD   AS   CM   ID   INC  BAL  
+ordinary a*b              N    Y    Y    Y    Y    Y    Y    N    N    
+a+b                       Y    Y    N    N    Y    Y    Y    Y    Y    
+2ab                       Y    N    Y    Y    Y    Y    N    Y    Y    
+ab+1                      Y    N    N    N    N    Y    N    Y    Y    
+ab+a = a(b+1)             Y    N    N    Y    N    N    N    Y    Y    
+ab+min(a,b)               Y    N    N    N    N    Y    N    Y    Y    
+2b (left-only)            Y    Y    Y    N    N    N    N    N    N    
+patch: ab, but 1(x)1:=2   Y    Y    N    N    N    Y    N    N    N    
+counterexamples / witnesses:
+  ordinary a*b: ID:{'e': 1}; INC:{'a': 1, 'b': 1}; BAL:{'a': 1, 'b': 8}
+  a+b: LD:{'a': 1, 'b': 0, 'c': 0}; RD:{'a': 0, 'b': 0, 'c': 1}; ID:{'e': 0}
+  2ab: 
+  ab+1: LD:{'a': 0, 'b': 0, 'c': 0}; RD:{'a': 0, 'b': 0, 'c': 0}; AS:{'a': -3, 'b': -3, 'c': -1}
+  ab+a = a(b+1): LD:{'a': 3, 'b': -6, 'c': 3}; AS:{'a': -1, 'b': -5, 'c': 4}; CM:{'a': 1, 'b': 0}
+  ab+min(a,b): LD:{'a': -8, 'b': -2, 'c': -6}; RD:{'a': -3, 'b': -1, 'c': -8}; AS:{'a': -1, 'b': -5, 'c': -6}
+  2b (left-only): RD:{'a': 0, 'b': 0, 'c': 1}; AS:{'a': 0, 'b': 0, 'c': 1}; CM:{'a': 0, 'b': 1}; INC:{'a': 2, 'b': 1}; BAL:{'a': 2, 'b': 1}
+  patch: ab, but 1(x)1:=2: LD:{'a': 1, 'b': 1, 'c': -1}; RD:{'a': 1, 'b': 1, 'c': 1}; AS:{'a': -1, 'b': -1, 'c': 1}; INC:{'a': 1, 'b': 14}; BAL:{'a': 3, 'b': 1}
+
+=== (x)-square roots: positive real solutions of x(x)x = y (exact) ===
+  ordinary a*b     sqrt(2) -> [sqrt(2)]   sqrt(4) -> [2]
+  a+b              sqrt(2) -> [1]   sqrt(4) -> [2]
+  2ab              sqrt(2) -> [1]   sqrt(4) -> [sqrt(2)]
+  ab+1             sqrt(2) -> [1]   sqrt(4) -> [sqrt(3)]
+  ab+a             sqrt(2) -> [1]   sqrt(4) -> [-1/2 + sqrt(17)/2]
+  ab+min(a,b)      sqrt(2) -> [1]   sqrt(4) -> [-1/2 + sqrt(17)/2]
+  2b (left-only)   sqrt(2) -> [1]   sqrt(4) -> [2]
+  Howard (RS 2015) requires sqrt(4) = 2 and sqrt(2) = 1.

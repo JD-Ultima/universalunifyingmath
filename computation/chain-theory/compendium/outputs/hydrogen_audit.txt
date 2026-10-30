@@ -1,0 +1,41 @@
+[1] Exact arithmetic of the printed level-one binding
+  E1_whole = 36*201/(2^30 3^18) = 67/3851755393646592  == 67/(2^28 3^15): True
+  E1_cut   = 36*67/(2^31 3^17)  = 67/7703510787293184  == 67/(2^29 3^15): True
+  E1_whole / E1_cut = 2   (two 'faces' differ by an exact factor 2; both printed, none selected)
+  side readings: 36*67/36 = 67, 36*67/24 = 201/2
+  float: E1_whole = 1.739467e-14, E1_cut = 8.697333e-15  (in 'the electron unit')
+
+[2] Comparison with hydrogen, reading 'electron unit' = m_e c^2 (the reading 176.1 uses for m_p/m_e)
+  E1_whole: model/Bohr(reduced mass) = 6.5366e-10; model/measured IE = 6.53653e-10; log10 gap = 9.1847
+     effective exponent k with 2*E1 = alpha^k: k = 6.29836 (Bohr: k = 2)
+  E1_cut: model/Bohr(reduced mass) = 3.2683e-10; model/measured IE = 3.26826e-10; log10 gap = 9.4857
+     effective exponent k with 2*E1 = alpha^k: k = 6.43924 (Bohr: k = 2)
+  Bohr reduced-mass value alpha^2 mu/(2 m_e) = 2.661118432e-5; measured IE/m_e c^2 = 2.661147265e-5
+  E1 is a pure 2-3-67 rational: it contains no factor of the model's alpha (124.1), so the physical
+  relation E1 = alpha^2 m_e/2 cannot hold for any value of the model's alpha other than
+     E1_whole: alpha_required = sqrt(2 E1/mu) = 1/5359925.097
+     E1_cut: alpha_required = sqrt(2 E1/mu) = 1/7580078.765
+
+[3] The 1/n^2 ladder: reconstruction and the choice that fixes the exponent
+  Source: 'the held pendant pair at rank n is the washed symmetric power of n less one passages
+  along the bond ... the register of the ladder equal to the dimension of the register of the pair';
+  'the two-vertex ladder equals one over the rank squared at all eight ranks'.
+  Reconstruction R: the washed (twirled) state on Sym^(n-1)(C^m) is I/dim; a two-vertex term reads it
+  twice, giving (1/dim)^2. With m = 2 (the common support of the (2,3) pair) dim = n.
+  m=2: dim Sym^(n-1)(C^2) = n; ladder (1/dim)^2 = n**(-2); equals 1/n^2 for n=1..8: True
+  m=3: dim Sym^(n-1)(C^3) = n*(n + 1)/2; ladder (1/dim)^2 = 4/(n**2*(n + 1)**2); equals 1/n^2 for n=1..8: False
+  m=4: dim Sym^(n-1)(C^4) = n*(n + 1)*(n + 2)/6; ladder (1/dim)^2 = 36/(n**2*(n + 1)**2*(n + 2)**2); equals 1/n^2 for n=1..8: False
+  check of R on Sym^(n-1)(C^2): spectrum of the Haar SU(2)-twirl of a pure state (Monte Carlo, 20000 draws):
+    n=1: eigenvalues [1.]  (1/n = 1.000); two-vertex read (1/n)^2 = 1.0000
+    n=2: eigenvalues [0.495 0.505]  (1/n = 0.500); two-vertex read (1/n)^2 = 0.2500
+    n=3: eigenvalues [0.329 0.332 0.338]  (1/n = 0.333); two-vertex read (1/n)^2 = 0.1111
+    n=4: eigenvalues [0.244 0.248 0.252 0.256]  (1/n = 0.250); two-vertex read (1/n)^2 = 0.0625
+
+[4] What a hydrogen spectrum requires vs what 143.1 prints
+  - E_n proportional to 1/n^2 | printed for n=1..8 (two-vertex ladder) | matches the n-dependence (one integer exponent)
+  - E_1 = alpha^2 m_e/2 (13.6 eV) | 67/(2^28 3^15) or 67/(2^29 3^15) m_e | off by ~9.2 orders; no alpha dependence
+  - fine structure ~ alpha^2 E_n/n, j-dependent | 'two-vertex term times the square of the cut gain'; no value; posed step | untestable as printed
+  - Lamb shift 2S1/2-2P1/2 = +1057.8 MHz | 'one exact element, positive and split'; value not printed | sign only (1 bit) matches
+  - hyperfine 1420.405751768 MHz | open result 144.1: interval = 0 at the standing transport | graded open; the computed reading is 0
+  - infinitely many bound levels | ranks 1..8 enumerated | range of the check, not a stated cap
+  (reference: Lamb shift 1057.845(9) MHz, Lundeen & Pipkin, PRL 46, 232 (1981); hyperfine 1420.405751768 MHz, Hellwig et al., IEEE Trans. Instrum. Meas. 19, 200 (1970))

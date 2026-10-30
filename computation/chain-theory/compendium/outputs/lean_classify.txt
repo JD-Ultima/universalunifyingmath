@@ -1,0 +1,37 @@
+Lean declarations indexed: 13894; data/kernel modules with a Row structure: 150, of which every Row field is a String: 137
+THEOREM rows naming Lean declarations: 64
+  the 64 Lean-tied THEOREM rows by strongest declaration kind cited: {'cites a restated (AlphaDerivation) theorem or a kernel module': 16, 'best evidence: data-table check(s)': 37, 'only opaque Props / aliases / open-result records (no checkable content)': 11}
+  rows with no Lean name at all, by grade: {'DEFINITION': 7, 'CONDITIONAL': 14, 'OPEN': 80, 'TABLE': 52, 'THEOREM': 36}
+  sections whose statements carry different Lean lists: 0 of 284 (the tie is per section: every statement of a section inherits the section's names)
+THEOREM rows naming at least one declaration that is not opaque/alias/open-record/table-check: 16
+  declaration kinds cited by THEOREM rows (with multiplicity): {'opaque_prop': 145, 'open_record': 125, 'table_check[strings]': 39, 'cond_table_check[strings]': 37, 'restated_theorem': 16, 'table_check': 13, 'alias_prop': 3, 'kernel_check[strings]': 1}
+  declaration kinds cited by CONDITIONAL rows (with multiplicity): {'opaque_prop': 558, 'open_record': 205, 'table_check[strings]': 62, 'table_check': 42, 'cond_table_check[strings]': 29, 'restated_theorem': 19, 'alias_prop': 12, 'other_theorem': 10, 'kernel_check[strings]': 2, 'cond_table_check': 1, 'missing': 1, 'kernel_check': 1}
+  declaration kinds cited by OPEN rows (with multiplicity): {'open_record': 403, 'opaque_prop': 289, 'table_check[strings]': 39, 'cond_table_check[strings]': 37, 'table_check': 12, 'restated_theorem': 9, 'alias_prop': 6, 'kernel_check': 1}
+  distinct declarations cited by THEOREM rows: 195 -> {'opaque_prop': 69, 'open_record': 69, 'table_check[strings]': 25, 'cond_table_check[strings]': 16, 'restated_theorem': 7, 'table_check': 5, 'alias_prop': 3, 'kernel_check[strings]': 1}
+
+141.1 [CONDITIONAL] The electron dipole factor at order three from the self-terms
+   opaque_prop              ChainTheory.Fields.Ch09.row_523203_AMSP   (ChainTheory/ChainTheory/Fields/Ch09.lean)
+   table_check[strings]     ChainTheory.Fields.Ch09.row_526870_PAET   (ChainTheory/ChainTheory/Fields/Ch09.lean)
+   open_record              ChainTheory.Fields.Ch09.wall_526122_EQAJ_open   (ChainTheory/ChainTheory/Fields/Ch09.lean)
+
+143.1 [CONDITIONAL] Hydrogen from the held carrier
+   opaque_prop              ChainTheory.CompositeMatter.Ch14.row_524296_HPMR   (ChainTheory/ChainTheory/CompositeMatter/Ch14.lean)
+   opaque_prop              ChainTheory.CompositeMatter.Ch15.row_519522_HYHC   (ChainTheory/ChainTheory/CompositeMatter/Ch15.lean)
+   opaque_prop              ChainTheory.CompositeMatter.Ch15.row_519828_RYHR   (ChainTheory/ChainTheory/CompositeMatter/Ch15.lean)
+   opaque_prop              ChainTheory.CompositeMatter.Ch15.row_519937_FSHL   (ChainTheory/ChainTheory/CompositeMatter/Ch15.lean)
+   opaque_prop              ChainTheory.CompositeMatter.Ch15.row_520015_RLRR   (ChainTheory/ChainTheory/CompositeMatter/Ch15.lean)
+   opaque_prop              ChainTheory.CompositeMatter.Ch15.row_520248_RLPQ   (ChainTheory/ChainTheory/CompositeMatter/Ch15.lean)
+   opaque_prop              ChainTheory.CompositeMatter.Ch15.row_520663_RLTV   (ChainTheory/ChainTheory/CompositeMatter/Ch15.lean)
+   cond_table_check[strings] ChainTheory.CompositeMatter.Ch15.row_531968_AMBL   (ChainTheory/ChainTheory/CompositeMatter/Ch15.lean)
+
+64.1 [THEOREM] Gauge invariance as the known clause
+   opaque_prop              ChainTheory.Foundations.Ch02.row_521259_GIKC   (ChainTheory/ChainTheory/Foundations/Ch02.lean)
+   opaque_prop              ChainTheory.StandardModel.Ch10.row_510060_GGRL   (ChainTheory/ChainTheory/StandardModel/Ch10.lean)
+
+64.2 [THEOREM] The gauge group as the face group of the tether
+   opaque_prop              ChainTheory.Foundations.Ch02.row_521259_GIKC   (ChainTheory/ChainTheory/Foundations/Ch02.lean)
+   opaque_prop              ChainTheory.StandardModel.Ch10.row_510060_GGRL   (ChainTheory/ChainTheory/StandardModel/Ch10.lean)
+
+65.1 [THEOREM] The gauge group as a corollary of one construction
+   table_check[strings]     ChainTheory.Foundations.Ch05.row_530016_GSTB   (ChainTheory/ChainTheory/Foundations/Ch05.lean)
+   cond_table_check[strings] ChainTheory.Foundations.Ch05.row_530426_UB4H   (ChainTheory/ChainTheory/Foundations/Ch05.lean)

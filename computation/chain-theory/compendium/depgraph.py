@@ -2,7 +2,10 @@
 """Premise / used_by dependency graph of the Chain Theory compendium (release 0.1).
 
 Usage:
-  python3 -I depgraph.py <compendium_dir> [--json out.json]
+  python3 -I depgraph.py <compendium_dir> [--json out.json] [--no-chapter-form]
+
+  --no-chapter-form  sensitivity run: drop the 23 premise strings (and the used_by strings)
+                     written as "the theorems of Chapters ..." (choice C3 not applied)
 
 <compendium_dir> is the `compendium/` directory of the source repository
 (commit a28db8998bce5bd5ef11195c05f13c86cd9dac5c). Everything is read as data.
@@ -110,7 +113,7 @@ def parse_refs(text, by_section, desig_sections):
                 refs.add(f"{sec}.{k}")
     return refs, unresolved, chap_form
 
-def main(cdir, json_out=None):
+def main(cdir, json_out=None, no_chapter_form=False):
     cdir = pathlib.Path(cdir)
     rows = load_tsv(cdir/"index"/"statements.tsv")
     by_num = {r["number"]: r for r in rows}
@@ -144,7 +147,10 @@ def main(cdir, json_out=None):
     chapform = 0
     for r in rows:
         p, u1, cf = parse_refs(r["premises"], by_section, desig)
-        q, u2, _ = parse_refs(r["used_by"], by_section, desig)
+        q, u2, cfu = parse_refs(r["used_by"], by_section, desig)
+        if no_chapter_form:
+            if cf: p = set()
+            if cfu: q = set()
         chapform += cf
         prem[r["number"]] = p; used[r["number"]] = q
         unres += [(r["number"], x) for x in u1 + u2]
@@ -203,7 +209,11 @@ def main(cdir, json_out=None):
     print(f"strongly connected components of size > 1 (circular premise chains): {len(sccs)}; "
           f"sizes {sorted((len(s) for s in sccs), reverse=True)[:10]}")
     for s in sorted(sccs, key=len, reverse=True)[:3]:
-        print("   e.g.", s[:12], "..." if len(s) > 12 else "")
+        print("   members:", s)
+    two = sorted({tuple(sorted((p, q))) for (p, q) in edges if (q, p) in edges})
+    print(f"2-cycles (a lists b as premise and b lists a): {len(two)}")
+    for a, b in two[:20]:
+        print(f"   {a} [{by_num[a]['grade']}] <-> {b} [{by_num[b]['grade']}]")
 
     G = lambda x: by_num[x]["grade"]
     # chain-rule audit
@@ -272,4 +282,4 @@ def main(cdir, json_out=None):
 if __name__ == "__main__":
     a = sys.argv[1:]
     j = a[a.index("--json")+1] if "--json" in a else None
-    sys.exit(main(a[0], j))
+    sys.exit(main(a[0], j, "--no-chapter-form" in a))

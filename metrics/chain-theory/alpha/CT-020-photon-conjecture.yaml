@@ -7,4 +7,4 @@ novelty: No known precedent
 reproducibility: "Numerical comparison reproduced (algebraic.out)"
 empirical_testability: "Observable: alpha(0). Candidate 1/alpha = 137.035999189566…; CODATA 2022 137.035999177(21) → +0.60σ; Rb −1.49σ; e g-2 +1.57σ; Cs +5.32σ. Decisive test: consistent determinations with u ≲ 2.5e-9 (8× better than CODATA 2022)."
 dependencies: [CT-017, CT-019 (on-shell identification, analogy), CT-G06, CT-G10]
-confidence: "Agreement is striking against the declared rule space (expected chance hits 3e-6 within 1σ, F-CT-4). The trial factor actually explored is unknown, so this is not evidence of a derivation. No physical mechanism links the hypercharge-link readout to alpha_em."
+confidence: "Agreement is striking against the declared rule space (expected chance hits 4e-6 within 1σ, F-CT-4). The trial factor actually explored is unknown, so this is not evidence of a derivation. No physical mechanism links the hypercharge-link readout to alpha_em."
