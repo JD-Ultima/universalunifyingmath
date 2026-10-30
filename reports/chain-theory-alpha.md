@@ -21,6 +21,10 @@
 | Hypercharge of the link | $Y=1/6$ ($Q_L$) under A; $Y=5/6$ (SU(5) leptoquark block) under A*. | **Proven** |
 | Alternatives | All 13 closed-form alternatives in the author's table are reproduced. Four normalization alternatives the table omits give $1/x \in\{205.6, 60.9, 129.5, 188.9\}$. | **Computed** |
 | Trial factor | In a declared 46 080-rule space containing every published alternative, the expected number of chance hits within $1\sigma$ is $4.4\times10^{-6}$; a chance hit needs ~$10^{10}$ rules. In $\tfrac1{31104}\mathbb Z_{\ge0}[\sqrt2,\sqrt3]$ with coefficients ≤200 there are $1.6\times10^9$ elements; exactly one is within $1\sigma$ (the author's), against 0.024 expected. | **Computed** |
+| Covariance | The Letter's plain exchange does not commute with the symmetry group of its own joint state, and its record span is not invariant. The covariant exchange (with transpose) restores invariance and gives identical counts and value. | **Proven** (F-CT-10) |
+| Freedom left by symmetry | Under $SU(3)\times SU(2)\times\langle E'\rangle$ the record space has 10 isotypic components (commutant 22). An invariant dressing has a 10-parameter trace, and the Letter's weights are one point of that family. | **Computed** (F-CT-10) |
+| Configurations | 76 / 42 / 23 reproduced. Selected: 1 configuration under A, 2 under A* (the competitor has $1/\text{value}=31.81$), none under B. | **Computed** |
+| Read-cap lemmas | Choi's map is positive and non-decomposable by SDP, including after embedding. | **Cross-checked** |
 | Algebraic data | $\alpha_\text{cand}$ has degree 4. The minimal polynomial and Galois conjugates are given. | **Proven** |
 
 ## Assessment, by layer

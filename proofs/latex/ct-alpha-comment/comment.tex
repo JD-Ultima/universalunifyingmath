@@ -76,6 +76,11 @@ The trace condition defining the $u(1)$ is not invariant under $\xi_2\mapsto\bar
 
 In Lean (appended to the unmodified file of [1]) we prove \texttt{uniqueness\_fails\_under\_conjugate\_convention}. With the acting-charge predicate replaced by its A$^*$ form, the configuration ``shared qubit, two read and one unread $(2,2)$ link'' satisfies all hypotheses of the upstream uniqueness theorem and differs from the object. Theorem~1 of [1] is thus correct under A. Its scope depends on a convention whose justification in [1, Sec.~S4] uses the direct sum $\mathbb C^{d_1}\oplus\mathbb C^{d_2}$, a space the axiom does not supply.
 
+\section{Covariance of the record set}
+Let $G_\Omega$ be the symmetry group of the joint read state $\lvert\omega_3\rangle_{Q_1Q_2}\otimes\lvert\omega_2\rangle_{q_1q_2}$: $U\otimes\bar U$ on $(Q_1,Q_2)$ and $V\otimes\bar V$ on $(q_1,q_2)$. The plain slot swap $E$ of [1] does not commute with $G_\Omega$, because it identifies the two read links' bases by the identity rather than by the transpose. As a result, neither the $E$-even/odd splitting nor the span of the commutator records is $G_\Omega$-invariant. Replacing $E$ with $E'=E\circ T$ (transposition at each slot) restores covariance. The commutator-type records become $D_x$, $D_z$ and $S_y$, and the sector sizes, hence the value, are unchanged.
+
+Under $SU(3)\times SU(2)\times\langle E'\rangle$ the covariant record space has ten isotypic components and a commutant of dimension $22$. An invariant dressing therefore has a ten-parameter trace. The weights of [1] are one point in this family, and they distinguish two copies of the same isotypic component $(1,3)_-$, giving weight $1$ to antisymmetric qubit products and $\sqrt6$ to commutator records. Symmetry does not supply that distinction.
+
 \section{Trial factor}
 All $13$ closed-form alternatives in [1, Table S5] are reproduced from the record classes. We then declared a rule space that contains them:
 \begin{itemize}
