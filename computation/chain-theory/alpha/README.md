@@ -8,6 +8,7 @@ Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip insta
 | `freedom.py` | Published alternatives; declared rule space; lattice density (F-CT-4) | ~10 s | `freedom.out` |
 | `charge_conventions.py` | Acting central charge under four readings; stabilizer dims (F-CT-3) | <1 s | `charge_conventions.out` |
 | `weight_functionals.py` | Exploration: vacuum functionals of records vs weight law (F-CT-8) | ~3 s | `weight_functionals.out` |
+| `readcap_lemmas.py` | SDP cross-check of imported read-cap lemmas: Choi map positive and non-decomposable, also after embedding (needs `cvxpy==1.6.0`) | ~4 s | `readcap_lemmas.out` |
 | `algebraic.py` | Minimal polynomial, Galois conjugates, $f(d_Q,d_q)$, deviations from measurements (F-CT-6, F-CT-7) | <1 s | `algebraic.out` |
 
 Run all of them:

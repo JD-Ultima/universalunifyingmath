@@ -152,6 +152,17 @@ $f(d_Q,d_q)$ is the Letter's construction with a center of dimension $d_Q$ and f
 
 (Full table in `algebraic.out`.) Most of these pairs are excluded by the read cap or the end rule. They are listed only to show that $1/f$ varies by orders of magnitude across neighbouring constructions, so the agreement is specific to $(3,2)$.
 
+## F-CT-9 Cross-check of the imported read-cap lemmas
+
+The read cap rests on published theorems (Størmer, Woronowicz, Choi), which are imported and not re-proved. As a numerical cross-check (`readcap_lemmas.py`) we take Choi's map, written as the generalized Choi map $\Phi[2,0,1]$.
+
+- **Positivity.** Its Choi matrix is block-positive on $2\times10^5$ random product vectors.
+- **Non-decomposability.** The SDP $\lambda^*=\max\{\lambda: C-\lambda\mathbb 1=P+Q^\Gamma,\ P,Q\succeq0\}$ gives $\lambda^*=-0.154701$; the value $2/\sqrt3-1=0.154701$ is observed numerically, not proven. So the map is not decomposable.
+- **Embedding.** The same $\lambda^*$ holds after embedding into $M_3\to M_4$ and $M_4\to M_4$, which is the embedding step behind "$d_1d_2\ge 8$ ⇒ dark" for those types.
+- **Control.** The transpose map gives $\lambda^*=0$ (decomposable), as it should.
+
+The "every positive map is decomposable at $(2,2),(2,3)$" direction is a universal statement and is not checkable this way; it remains imported.
+
 ## F-CT-8 Exploration: do natural state functionals give the weights? (negative)
 
 Labelled exploration, toward CT-G01. The joint read state is exactly $\lvert\Omega\rangle=\lvert\omega_3\rangle_{Q_1Q_2}\otimes\lvert\omega_2\rangle_{q_1q_2}$ (verified: the projected vector has squared norm $1/6$, matching S10). For HS-normalized record operators $O_r$ we computed $|\langle\Omega|O_r|\Omega\rangle|$ and $36\lVert O_r\Omega\rVert^2$ (`weight_functionals.py`).

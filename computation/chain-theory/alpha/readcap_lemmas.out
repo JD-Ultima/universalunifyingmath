@@ -1,0 +1,4 @@
+Choi map M3->M3              min sampled <xy|C|xy> = +0.014831   lambda* = -0.154701 (optimal)  -> positive / NOT decomposable
+transpose M3->M3             min sampled <xy|C|xy> = +0.000002   lambda* = -0.000000 (optimal)  -> positive / decomposable
+Choi map embedded M3->M4     min sampled <xy|C|xy> = +0.004251   lambda* = -0.154701 (optimal)  -> positive / NOT decomposable
+Choi map embedded M4->M4     min sampled <xy|C|xy> = +0.002684   lambda* = -0.154701 (optimal)  -> positive / NOT decomposable
