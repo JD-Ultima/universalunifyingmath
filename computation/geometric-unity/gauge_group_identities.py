@@ -116,6 +116,10 @@ def tau(h):
     return (h, neg(lmul(inv(h), dA0(h))))
 
 
+def tau_p(h):             # opposite-sign tilt tau'(h) = (h, +h^-1 d_A0 h) = (h, A0.h - A0)
+    return (h, lmul(inv(h), dA0(h)))
+
+
 def pi(g):
     e, w = g
     return add(conj_inv(e, w), rmul(dA0(e), inv(e)))
@@ -150,44 +154,57 @@ def diff(a, b):
 
 def check(name, lhs, rhs):
     ok = is_zero(diff(lhs, rhs))
-    print(f"{name:78s} {'holds' if ok else 'FAILS'}")
+    print(f"{name:84s} {'holds' if ok else 'FAILS'}")
     return ok
 
 
 def main():
     g1, g2, g3 = (e1, w1), (e2, w2), (e3, w3)
-    results = []
-    results.append(check("G1  (5.9) associativity (g1 g2) g3 = g1 (g2 g3)", mul(mul(g1, g2), g3), mul(g1, mul(g2, g3))))
-    results.append(check("G1' inverse: g g^-1 = (1, 0)", mul(g1, ginv(g1)), (sp.eye(2), (sp.zeros(2), sp.zeros(2)))))
-    results.append(check("G2  (5.10) right action: (A.g1).g2 = A.(g1 g2)", act_right(act_right(Aany, g1), g2),
-                         act_right(Aany, mul(g1, g2))))
-    results.append(check("G3  (5.11) left action: (g1 g2).A = g1.(g2.A)", act_left(mul(g1, g2), Aany),
-                         act_left(g1, act_left(g2, Aany))))
-    results.append(check("G4  (6.4) tau(h) = (h, A0 - A0.h) agrees with (h, -h^-1 d_A0 h)",
-                         tau(h1)[1], add(A0, neg(gauge(A0, h1)))))
-    results.append(check("G4' Lemma 6.1: tau(h1 h2) = tau(h1) tau(h2)", tau(h1 * h2), mul(tau(h1), tau(h2))))
-    results.append(check("G5  (6.6)-(6.9) A0 . tau(h) = A0 (tau(H) = Stab(A0))", act_right(A0, tau(h1)), A0))
-    results.append(check("G6  Lemma 6.3: pi(g tau(h)) = pi(g)", pi(mul(g1, tau(h1))), pi(g1)))
-    results.append(check("G6' pi(g) = A0 - A0.g^-1 = -(g.A0 - A0)  (pi is the orbit map of the left action)",
-                         pi(g1), add(A0, neg(act_right(A0, ginv(g1))))))
-    results.append(check("G7  Lemma 6.4: (g1 g2).gamma = g1.(g2.gamma) on N", act_N(mul(g1, g2), gam),
-                         act_N(g1, act_N(g2, gam))))
-    results.append(check("G7' pi is G-equivariant: pi(g1 g2) = g1 . pi(g2)", pi(mul(g1, g2)), act_N(g1, pi(g2))))
-    mg = mu(mul(g1, tau(h1)))
+    zero1 = (sp.zeros(2), sp.zeros(2))
+    print("-- group structure and actions")
+    check("G1  (5.9) associativity (g1 g2) g3 = g1 (g2 g3)", mul(mul(g1, g2), g3), mul(g1, mul(g2, g3)))
+    check("G1' inverse: g g^-1 = (1, 0)", mul(g1, ginv(g1)), (sp.eye(2), zero1))
+    check("G2  (5.10) right action: (A.g1).g2 = A.(g1 g2)", act_right(act_right(Aany, g1), g2),
+          act_right(Aany, mul(g1, g2)))
+    check("G3  (5.11) left action: (g1 g2).A = g1.(g2.A)", act_left(mul(g1, g2), Aany),
+          act_left(g1, act_left(g2, Aany)))
+    print("-- the printed tilt tau(h) = (h, -h^-1 d_A0 h)  (draft (6.4), (6.9), (6.13))")
+    check("G4  (6.4) tau(h) = (h, A0 - A0.h) agrees with (h, -h^-1 d_A0 h)", tau(h1)[1], add(A0, neg(gauge(A0, h1))))
+    check("G4' Lemma 6.1: tau(h1 h2) = tau(h1) tau(h2)", tau(h1 * h2), mul(tau(h1), tau(h2)))
+    check("G5  (6.6)-(6.9): A0 . tau(h) = A0  [tau(H) = stabiliser of A0, RIGHT action]", act_right(A0, tau(h1)), A0)
+    check("G6  Lemma 6.3: pi(g tau(h)) = pi(g)", pi(mul(g1, tau(h1))), pi(g1))
+    check("G6' pi(g) = A0 - A0.g^-1", pi(g1), add(A0, neg(act_right(A0, ginv(g1)))))
+    check("G7  Lemma 6.4: (g1 g2).gamma = g1.(g2.gamma) on N", act_N(mul(g1, g2), gam), act_N(g1, act_N(g2, gam)))
+    check("G7' pi(g1 g2) = g1 . pi(g2)", pi(mul(g1, g2)), act_N(g1, pi(g2)))
     m0 = mu(g1)
-    results.append(check("G8  Lemma 6.5: mu(g tau(h)) = mu(g) . h (both components)", mg,
-                         (gauge(m0[0], h1), gauge(m0[1], h1))))
-    results.append(check("G9  (7.2) T = delta(mu(g)) = (A0 + w) - A0.e", T(g1), add(m0[0], neg(m0[1]))))
-    results.append(check("G9' Lemma 7.2: T(g tau(h)) = h^-1 T(g) h", T(mul(g1, tau(h1))), conj(h1, T(g1))))
-    # negative control: untilted subgroup (h, 0) does NOT act covariantly on T
-    ok = is_zero(diff(T(mul(g1, (h1, (sp.zeros(2), sp.zeros(2))))), conj(h1, T(g1))))
-    print(f"{'N1  control: T(g (h,0)) = h^-1 T(g) h  (expected to FAIL: untilted H)':78s} {'holds' if ok else 'fails (as expected)'}")
-    assert not ok
-    # residual of the control equals -h^-1 d_{A0} h, i.e. the 'common disease' of (2.8)
-    res = diff(T(mul(g1, (h1, (sp.zeros(2), sp.zeros(2))))), conj(h1, T(g1)))
-    print(f"{'N1'' residual equals -h^-1 d_A0 h':78s} {'holds' if is_zero(diff(res, neg(lmul(inv(h1), dA0(h1))))) else 'FAILS'}")
-    print(f"\nall positive identities hold: {all(results)}")
-    assert all(results)
+    mg = mu(mul(g1, tau(h1)))
+    check("G8  Lemma 6.5 as printed: mu(g tau(h)) = mu(g).h", mg, (gauge(m0[0], h1), gauge(m0[1], h1)))
+    check("G8a   second component only: A0.(e h) = (A0.e).h", mg[1], gauge(m0[1], h1))
+    check("G8b   first component residual = -2 h^-1 d_A0 h", diff(mg[0], gauge(m0[0], h1)),
+          tuple(-2 * c for c in lmul(inv(h1), dA0(h1))))
+    check("G9  (7.3) T = delta(mu(g)) = (A0 + w) - A0.e = w - e^-1 d_A0 e", T(g1), add(m0[0], neg(m0[1])))
+    check("G9' Lemma 7.2 as printed: T(g tau(h)) = h^-1 T(g) h", T(mul(g1, tau(h1))), conj(h1, T(g1)))
+    check("G9a   residual = -2 h^-1 d_A0 h", diff(T(mul(g1, tau(h1))), conj(h1, T(g1))),
+          tuple(-2 * c for c in lmul(inv(h1), dA0(h1))))
+    print("-- the opposite-sign tilt tau'(h) = (h, +h^-1 d_A0 h)  (repair R-C1')")
+    check("P1  tau'(h1 h2) = tau'(h1) tau'(h2)", tau_p(h1 * h2), mul(tau_p(h1), tau_p(h2)))
+    check("P2  tau'(h) . A0 = A0  [tau'(H) = stabiliser of A0, LEFT action (5.11)]", act_left(tau_p(h1), A0), A0)
+    check("P3  A0 . tau'(h) = A0  (expected false)", act_right(A0, tau_p(h1)), A0)
+    check("P4  Lemma 6.5 for tau': mu(g tau'(h)) = mu(g).h", mu(mul(g1, tau_p(h1))), (gauge(m0[0], h1), gauge(m0[1], h1)))
+    check("P5  Lemma 7.2 for tau': T(g tau'(h)) = h^-1 T(g) h", T(mul(g1, tau_p(h1))), conj(h1, T(g1)))
+    check("P6  B-connection: A0.(e h) = (A0.e).h  (any tilt)", gauge(A0, e1 * h1), gauge(gauge(A0, e1), h1))
+    check("P7  Lemma 6.3 for tau': pi(g tau'(h)) = pi(g)  (expected false)", pi(mul(g1, tau_p(h1))), pi(g1))
+
+    def pi_p(g):
+        e, w = g
+        return add(conj_inv(e, w), neg(rmul(dA0(e), inv(e))))
+    check("P8  pi'(g) = e w e^-1 - (d_A0 e) e^-1 is tau'-invariant", pi_p(mul(g1, tau_p(h1))), pi_p(g1))
+    flip = lambda g: (g[0], neg(g[1]))
+    check("P9  (e,w) -> (e,-w) is an automorphism of G", flip(mul(g1, g2)), mul(flip(g1), flip(g2)))
+    check("P10 it maps tau to tau'", flip(tau(h1)), tau_p(h1))
+    print("-- control: untilted subgroup H x {0}")
+    check("N1  T(g (h,0)) = h^-1 T(g) h  (expected false)", T(mul(g1, (h1, zero1))), conj(h1, T(g1)))
+    check("N1' residual = -h^-1 d_A0 h", diff(T(mul(g1, (h1, zero1))), conj(h1, T(g1))), neg(lmul(inv(h1), dA0(h1))))
 
 
 if __name__ == '__main__':

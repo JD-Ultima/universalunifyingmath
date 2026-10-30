@@ -1,26 +1,4 @@
-G1  (5.9) associativity (g1 g2) g3 = g1 (g2 g3)                                holds
-G1' inverse: g g^-1 = (1, 0)                                                   holds
-G2  (5.10) right action: (A.g1).g2 = A.(g1 g2)                                 holds
-G3  (5.11) left action: (g1 g2).A = g1.(g2.A)                                  holds
-G4  (6.4) tau(h) = (h, A0 - A0.h) agrees with (h, -h^-1 d_A0 h)                holds
-G4' Lemma 6.1: tau(h1 h2) = tau(h1) tau(h2)                                    holds
-G5  (6.6)-(6.9) A0 . tau(h) = A0 (tau(H) = Stab(A0))                           holds
-G6  Lemma 6.3: pi(g tau(h)) = pi(g)                                            holds
-G6' pi(g) = A0 - A0.g^-1 = -(g.A0 - A0)  (pi is the orbit map of the left action) holds
-G7  Lemma 6.4: (g1 g2).gamma = g1.(g2.gamma) on N                              holds
-G7' pi is G-equivariant: pi(g1 g2) = g1 . pi(g2)                               holds
-G8  Lemma 6.5: mu(g tau(h)) = mu(g) . h (both components)                      FAILS
-G9  (7.2) T = delta(mu(g)) = (A0 + w) - A0.e                                   holds
-G9' Lemma 7.2: T(g tau(h)) = h^-1 T(g) h                                       FAILS
-N1  control: T(g (h,0)) = h^-1 T(g) h  (expected to FAIL: untilted H)          fails (as expected)
-N1 residual equals -h^-1 d_A0 h                                                holds
-
-all positive identities hold: False
-Traceback (most recent call last):
-  File "/home/user/universalunifyingmath/computation/geometric-unity/gauge_group_identities.py", line 194, in <module>
-    main()
-    ~~~~^^
-  File "/home/user/universalunifyingmath/computation/geometric-unity/gauge_group_identities.py", line 190, in main
-    assert all(results)
-           ~~~^^^^^^^^^
-AssertionError
+-- group structure and actions
+G1  (5.9) associativity (g1 g2) g3 = g1 (g2 g3)                                      holds
+G1' inverse: g g^-1 = (1, 0)                                                         holds
+G2  (5.10) right action: (A.g1).g2 = A.(g1 g2)                                       holds
