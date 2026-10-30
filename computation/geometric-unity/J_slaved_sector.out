@@ -47,11 +47,14 @@ J0 (14,0): c1 = kappa*t + 312*t**2*x + 208*t*u*y + 104*u**2*x;  c13 = kappa*u + 
     w3: varpi = -88320*I*y*(w*y + x*z)/kappa**2;  at Shiab#: 0;  at W_A: 0
     w11: varpi = 88320*I*x*(w*y + x*z)/kappa**2;  at Shiab#: 88320*I/kappa**2;  at W_A: 0
   Shiab#, exact: varpi(E13) = -9216*kappa**2*(-5*kappa**4 + 1600*kappa**3*t + 609280*kappa**2*t**2 + 930304*kappa**2*u**2 + 56016896*kappa*t*u**2 - 587005952*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)**2  (nonzero at T_o = 0, so dt ^ du = 0 wherever Upsilon = 0 holds on an open set and this does not vanish)
+  exact, every member: l_E = 0 on the A, B columns and S = 0 on the A, B rows: True; det adj(M)_CD = kappa^2 det M (Jacobi): True; det l_CD det S_CD = 331776*(w*y + x*z)**2;  hence det H = 576^2 (xz + yw)^2 kappa^2 / det M exactly: True
+  exact image condition: column C of l_E is proportional to (x, y): True; det[column D, (x, y)] = 24*I*(w*y + x*z); so im H(t, u) is contained in span(x, y) whenever xz + yw = 0, for every (t, u)
+  W_A, exact varpi: E1 = 1916928*kappa*u/(kappa**2 + 224*kappa*t - 3328*u**2)**2; E13 = 0; w3 = 0; w11 = 0  (O(kappa^-3), nonzero for u != 0: the antisymmetric part of E^(1) is varpi dt ^ du pointwise, so Upsilon = 0 at a point with u != 0 forces dt ^ du = 0 there): True
 
 === J3 (14,0). End-to-end check on a random 2-jet (exact; scaled Gaussian integers) ===
   numeric member (x, y, z, w, kappa, t, u) = (2, -1, 3, 1, 5, 1/7, -1/3), random dt, du, Hess t, Hess u (seed 20261031): T_e = Sigma (dt, du) solves Y_ev = Shiab(d_0 T_o) + kappa T_e + 2B(T_e, T_o) = 0 exactly: True  (392 monomials in T_e)
-  direct Y_odd[Shiab(d_0 T_e)] and Y_odd[Q(T_e)] are g_odd-valued: True; equal to the assembled formula (H and the derivative parts of Q, Q', varpi; the quadratic parts of Q, Q', varpi) exactly: [True, True]  (112 s)
-  [(14,0) done, 333 s]
+  direct Y_odd[Shiab(d_0 T_e)] and Y_odd[Q(T_e)] are g_odd-valued: True; equal to the assembled formula (H and the derivative parts of Q, Q', varpi; the quadratic parts of Q, Q', varpi) exactly: [True, True]  (92 s)
+  [(14,0) done, 276 s]
 J0 (7,7): c1 = kappa*t + 312*t**2*x - 208*t*u*y - 104*u**2*x;  c13 = kappa*u + 104*t**2*y + 208*t*u*x - 312*u**2*y  (= I6: True)
 
 === J1 (7,7). Closure of the even equation on the vector sector (exact, every basis covector e^c) ===
@@ -100,11 +103,14 @@ J0 (7,7): c1 = kappa*t + 312*t**2*x - 208*t*u*y - 104*u**2*x;  c13 = kappa*u + 1
     w3: varpi = 88320*I*y*(-w*y + x*z)/kappa**2;  at Shiab#: 0;  at W_A: 0
     w11: varpi = 88320*I*x*(-w*y + x*z)/kappa**2;  at Shiab#: 88320*I/kappa**2;  at W_A: 0
   Shiab#, exact: varpi(E13) = -9216*kappa**2*(-5*kappa**4 + 1600*kappa**3*t + 609280*kappa**2*t**2 - 930304*kappa**2*u**2 - 56016896*kappa*t*u**2 - 587005952*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)**2  (nonzero at T_o = 0, so dt ^ du = 0 wherever Upsilon = 0 holds on an open set and this does not vanish)
+  exact, every member: l_E = 0 on the A, B columns and S = 0 on the A, B rows: True; det adj(M)_CD = kappa^2 det M (Jacobi): True; det l_CD det S_CD = 331776*(-w*y + x*z)**2;  hence det H = 576^2 (xz - yw)^2 kappa^2 / det M exactly: True
+  exact image condition: column C of l_E is proportional to (x, y): True; det[column D, (x, y)] = 24*I*(-w*y + x*z); so im H(t, u) is contained in span(x, y) whenever xz - yw = 0, for every (t, u)
+  W_A, exact varpi: E1 = -1916928*kappa*u/(kappa**2 + 224*kappa*t + 3328*u**2)**2; E13 = 0; w3 = 0; w11 = 0  (O(kappa^-3), nonzero for u != 0: the antisymmetric part of E^(1) is varpi dt ^ du pointwise, so Upsilon = 0 at a point with u != 0 forces dt ^ du = 0 there): True
 
 === J3 (7,7). End-to-end check on a random 2-jet (exact; scaled Gaussian integers) ===
   numeric member (x, y, z, w, kappa, t, u) = (2, -1, 3, 1, 5, 1/7, -1/3), random dt, du, Hess t, Hess u (seed 20261029): T_e = Sigma (dt, du) solves Y_ev = Shiab(d_0 T_o) + kappa T_e + 2B(T_e, T_o) = 0 exactly: True  (336 monomials in T_e)
   direct Y_odd[Shiab(d_0 T_e)] and Y_odd[Q(T_e)] are g_odd-valued: True; equal to the assembled formula (H and the derivative parts of Q, Q', varpi; the quadratic parts of Q, Q', varpi) exactly: [True, True]  (77 s)
-  [(7,7) done, 630 s]
+  [(7,7) done, 543 s]
 
 === J4. Reduction along s(X), n = 4 (closed forms of F2-F6; exact sympy) ===
   Z1: on s(X), Ric(g) = Lambda_g g:  G^Y = ((-4*Lambda_g*c_V*(4*lambda - 1) + 5*c_H*(18*lambda - 5) + c_H)/(4*c_H*c_V*(4*lambda - 1))) h + ((-16*Lambda_g*c_V*lambda + 4*Lambda_g*c_V + 35*c_H*lambda - 10*c_H)/(2*c_H*(4*lambda - 1))) G_0 + ((c_H*(4*lambda - 1) + lambda*(8*Lambda_g*c_V*(4*lambda - 1) + 5*c_H*(5 - 18*lambda)))/(4*c_H*(4*lambda - 1))) tau(x)tau  (h = c_H g on H),  Lambda_P = 3*c_H*(15*lambda - 4)/(2*c_V*(4*lambda - 1));  Hess of a function with dt = a tau, t const on s(X): HH = (1/(2*c_V*(1 - 4*lambda))) a h
@@ -144,8 +150,23 @@ J0 (7,7): c1 = kappa*t + 312*t**2*x - 208*t*u*y - 104*u**2*x;  c13 = kappa*u + 1
    Z1: rho = (5*lambda - 1)/(c_V*(4*lambda - 1)); x_i (Lambda_g/c_H + rho) = beta sum_phi H_i,phi a_phi, beta = 1/(2*c_V*(1 - 4*lambda)): the normal gradient a shifts Lambda_g; at a = 0, Lambda_g = -c_H*(5*lambda - 1)/(c_V*(4*lambda - 1)) (= 0 at lambda = 1/5, the F6 value: True)
    Z2: rho = 1/c_V; beta = 0 and p = 0, so the balance identity gives x_i (Lambda_g/c_H + 1/c_V) = 0:  Lambda_g = -c_H/c_V for every member with (x, y) != 0 and every (z, w)
 
-=== J5. Radial ansatz on a neighbourhood, Z2: order-eps^2 leaf condition for constant-curvature bases ===
+=== J4b. Ansatz (J) with a != 0: closed form for every a, (14,0) bounds, exact Z1 configurations ===
+  (14,0) Z1: -9 e_h + tr G_0 e_G0 + |tau|^2 e_tt = c_i - x_i Theta - 13 beta (H a)_i + |tau|^2 B_i(alpha), B_i = sum_(k<=l) w_kl (b1+b2+b3)^(i)_kl alpha_k alpha_l, alpha_k = sum_phi Sigma_k,phi a_phi (identity for generic Sigma, dSigma; dSigma drops out); the other two equations fix (P_i, Q_i) through a scalar 2x2 matrix of determinant -9: True
+  (14,0) Z2: -9 e_h + tr G_0 e_G0 + |tau|^2 e_tt = c_i - x_i Theta - 13 beta (H a)_i + |tau|^2 B_i(alpha), B_i = sum_(k<=l) w_kl (b1+b2+b3)^(i)_kl alpha_k alpha_l, alpha_k = sum_phi Sigma_k,phi a_phi (identity for generic Sigma, dSigma; dSigma drops out); the other two equations fix (P_i, Q_i) through a scalar 2x2 matrix of determinant -9: True
+  (7,7) Z1: -9 e_h + tr G_0 e_G0 + |tau|^2 e_tt = c_i - x_i Theta - 13 beta (H a)_i + |tau|^2 B_i(alpha), B_i = sum_(k<=l) w_kl (b1+b2+b3)^(i)_kl alpha_k alpha_l, alpha_k = sum_phi Sigma_k,phi a_phi (identity for generic Sigma, dSigma; dSigma drops out); the other two equations fix (P_i, Q_i) through a scalar 2x2 matrix of determinant -9: True
+  (7,7) Z2: -9 e_h + tr G_0 e_G0 + |tau|^2 e_tt = c_i - x_i Theta - 13 beta (H a)_i + |tau|^2 B_i(alpha), B_i = sum_(k<=l) w_kl (b1+b2+b3)^(i)_kl alpha_k alpha_l, alpha_k = sum_phi Sigma_k,phi a_phi (identity for generic Sigma, dSigma; dSigma drops out); the other two equations fix (P_i, Q_i) through a scalar 2x2 matrix of determinant -9: True
+  (14,0) u(128) real form, Shiab#: alpha_A in iR, alpha_C in R, alpha_D in iR, alpha_B in R at 4 random exact points (T_e in u(128), as the slaving preserves the real form): True
+  Shiab# (y = w = 0, any z): B_1 = x(-312 alpha_C^2 + 104 alpha_D^2) and (H a)_1 = 24 x alpha_C: True;  e1 = kappa s + 312 s^2 + 104 r^2 >= -kappa^2/1248 for all real s, r: True
+  hence, with c1/x = -e1 and alpha_D = i delta:  Theta = -e1 - 312 beta alpha_C - 312 |tau|^2 alpha_C^2 - 104 |tau|^2 delta^2 = -e1 + 78 beta^2/|tau|^2 - 312|tau|^2 (alpha_C + beta/(2|tau|^2))^2 - 104|tau|^2 delta^2: True;  78 beta^2/|tau|^2 = 39/(8 c_V (1 - 4 lambda)) in Z1 (True), 0 in Z2
+  => for every a, every (t, u) and c_H > 0 (definite (14,0), lambda < 1/4):  Lambda_g = (c_H/11)(Theta_0 - Theta) >= (c_H/11)(Theta_0 - kappa^2/1248) in Z2 and >= (c_H/11)(Theta_0 - kappa^2/1248 - 39/(8 c_V (1 - 4 lambda))) in Z1
+  referee's configuration (R6-1): Z1, lambda = 0, c_H = c_V = kappa = 1, Shiab#, t = i/1000, u = 0, a_t = -51i/16000, a_u = 0, p_t = -24174663i/11000000000, q_t = 17i/4000, p_u = q_u = 0, Lambda_g = -984211/1375000 (det M = 29529/15625):  all six components vanish: True; real in the real form: True;  a = 0 lower bound -3745/13728 = -0.272800, Lambda_g = -0.715790 is below it: True
+  bound attained: t = i(-1/624), u = 0, a_t = i(-25/14976), a_u = 0:  unique (p_t, q_t, Lambda_g) = (-354875*I/308385792, 25*I/11232, -9829/13728) (det M = 125/1521); all six vanish: True; real: True; Lambda_g = (c_H/11)(Theta_0 - 1/1248 - 39/8) = -9829/13728: True
+  (14,0) range of Lambda_g for Shiab# under (J): exactly [(c_H/11)(Theta_0 - kappa^2/1248), oo) in Z2 (every a) and exactly [(c_H/11)(Theta_0 - kappa^2/1248 - 39/(8 c_V (1 - 4 lambda))), oo) in Z1 (the slice u = a_u = 0 is connected, has det M != 0 for s >= -kappa/624, attains the minimum and is unbounded above)
+  radial Z2 in (14,0) (J4(e): Lambda_g = -c_H/c_V) meets the Z2 bound iff kappa^2 >= 8112/c_V, i.e. c_V kappa^2 >= 8112
+
+=== J5. Radial ansatz on a neighbourhood, Z2: order-eps^2 leaf condition for constant-curvature bases (bases (4,0), (1,3) and (2,2); the last two give (7,7) for lambda > 1/4, A5) ===
   base signature (1, 1, 1, 1): F(e0,e0; h) = 4*(3*h1**2 + 3*h2**2 + 3*h3**2 + 3*h4**2 + 5*h4*h7 + 5*h4*h9 + h5**2 + h6**2 + 3*h7**2 + 5*h7*h9 + h8**2 + 3*h9**2);  nonzero for (e0,e0), (e0,e1), (e1,e1): [True, True, True]
   base signature (1, -1, -1, -1): F(e0,e0; h) = -4*(3*h1**2 + 3*h2**2 + 3*h3**2 - 3*h4**2 - 5*h4*h7 - 5*h4*h9 - h5**2 - h6**2 - 3*h7**2 - 5*h7*h9 - h8**2 - 3*h9**2);  nonzero for (e0,e0), (e0,e1), (e1,e1): [True, True, True]
+  base signature (1, 1, -1, -1): F(e0,e0; h) = 4*(3*h1**2 - 3*h2**2 - 3*h3**2 + 3*h4**2 - 5*h4*h7 - 5*h4*h9 - h5**2 - h6**2 + 3*h7**2 + 5*h7*h9 + h8**2 + 3*h9**2);  nonzero for (e0,e0), (e0,e1), (e1,e1): [True, True, True]
 
-runtime 651 s
+runtime 567 s

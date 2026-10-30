@@ -1,6 +1,6 @@
 # Geometric Unity: Phase 1 report, with Phase 2 results on three claims
 
-**Scope.** E. Weinstein, *Geometric Unity: Author's Working Draft v1.0* (1 Apr 2021). Hypothesis-neutral: critiques are treated as leads, and every verdict below comes from our own derivation or computation. Files: `sources/`, `claims/`, `gaps/`, `patterns/` (`geometric-unity.md` in each), `formalization/geometric-unity/{A,B,C}-*.md`, `computation/geometric-unity/` (5 scripts, outputs committed), and `metrics/geometric-unity/*.yaml`.
+**Scope.** E. Weinstein, *Geometric Unity: Author's Working Draft v1.0* (1 Apr 2021). Hypothesis-neutral: critiques are treated as leads, and every verdict below comes from our own derivation or computation. Files: `sources/`, `claims/`, `gaps/`, `patterns/` (`geometric-unity.md` in each), `formalization/geometric-unity/{A,…,J}-*.md`, `computation/geometric-unity/` (29 scripts, outputs committed; see its README), and `metrics/geometric-unity/*.yaml`.
 
 ## 1. Sources
 
@@ -10,7 +10,7 @@
 ## 2. Phase 1
 
 - **Claim Register.** 72 claims (GU-001…072). Primary types: 40 theorem-claims, 17 definitions, 6 physical predictions, 6 analogies, and 1 each numerological, conjecture and source statement.
-- **Status after Phase 2.** 34 verified; 13 conditional, i.e. holding under a stated reading or repair; 13 open or not well-posed; 5 false as stated (GU-018, 042, 044, 046, 053); 2 trivially true; 5 not mathematical. Counts come from `computation/geometric-unity/register_stats.py`.
+- **Status after Phase 2.** 34 verified; 19 conditional, i.e. holding under a stated reading or repair; 6 open or not well-posed; 6 false as stated (GU-018, 042, 044, 045, 046, 053); 2 trivially true; 5 not mathematical. A re-graded claim is counted by its current status; GU-057 (V/F/C) and GU-072 (F/C) are counted as C. (Corrected 2026-10-30: the counts had taken each claim's pre-Phase-2 status; see `reports/CORRECTIONS.md`.) Counts come from `computation/geometric-unity/register_stats.py`.
 - **Specification gaps.** 22 gaps (GU-G01…G22). Three are proved inconsistencies:
   - G11: tilt sign;
   - G13: the field equation is not variational;
@@ -32,6 +32,8 @@ The draft's finite-dimensional algebra is largely correct and checkable. Its ana
 **Empirical.** No claim is presently testable. The representation content predicts exotic spin-½ states (including charges $\pm\tfrac43,\pm\tfrac53,\pm2$, and colour sextets and octets) and spin-3/2 states, but no masses, couplings or breaking mechanism are given.
 
 ## 4. Proposed formalization order
+
+This is the plan as written after Phase 1. All five items have since been done: item 1 in round 2 (D), item 2 in round 2 (F), items 3 and 4 in rounds 3–4 (G, H), and item 5 in `proofs/lean/geometric-unity/GUTilt.lean` (E). What remains open is listed in `reports/SYNTHESIS.md` §4.
 
 1. **GU-P09: does a self-adjoint Shiab exist?** Decide by finite linear algebra over $\mathrm{Hom}_{\mathrm{Spin}(7,7)}(\Lambda^2\otimes\mathfrak u,\Lambda^{13}\otimes\mathfrak u)$, organised by Clifford grade. This settles whether any reading of (9.4)/(9.7) is consistent. It is the highest-value and lowest-cost item.
 2. **Zorro metric (G06), then the 14→4 reduction (G14, GU-P10).** Write $g_\aleph$ explicitly. Compute $\gimel^*G(g_\aleph)$ by O'Neill formulas with the DeWitt fiber, and determine whether 4D Einstein gravity appears, and with what $\lambda$-dependent corrections.
@@ -180,7 +182,7 @@ Round 4's elliptic operator $\circledast_\sharp=W_A+W_C\circ\mathrm{Ad}_\Gamma$ 
 
 ## Round 6 — the slaved even sector (GU-054, GU-G14, GU-G16)
 
-Write-up: `formalization/geometric-unity/J-slaved-sector.md`. Code: `computation/geometric-unity/J_slaved_sector.py`, output committed, exact, ~11 min (651 s) on one core. Record: `metrics/geometric-unity/J-slaved-sector.yaml`.
+Write-up: `formalization/geometric-unity/J-slaved-sector.md`. Code: `computation/geometric-unity/J_slaved_sector.py`, output committed, exact, ~10 min (567 s; a second run 560 s, identical apart from the timing lines) on one core. Record: `metrics/geometric-unity/J-slaved-sector.yaml`. Revised the same day after `reports/reviews/REVIEW4-GU-2026-10-30.md` (independent check `computation/geometric-unity/xcheck_round6.py`, 90/90).
 
 Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $z,w$ drop out (I7(e)). The question was whether they change the reduced equations once the even equation forces $T_e\neq0$ (Cor. I2.2).
 
@@ -191,27 +193,28 @@ Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $
 
   Every coefficient is exact. The linear maps were checked on full bases, the bilinear ones on all basis pairs, and the assembled formula end to end on a random 2-jet.
 - **Where the twist enters (Cor. J2.1).**
-  - It enters the kinetic matrix $H=-\ell M^{-1}S$, to leading order $\tfrac{576}{\kappa}$ times a Gram matrix. In the $\mathfrak u(128)$ real form this is $\mathrm{Gram}((x',w'),(y',-z'))$, definite iff $x'z'+y'w'\neq0$: H7's ellipticity factor, by construction.
+  - It enters the principal (Hessian) coefficient matrix $H=-\ell M^{-1}S$ ("kinetic matrix" in the note), to leading order $\tfrac{576}{\kappa}$ times a Gram matrix. In the $\mathfrak u(128)$ real form this is $\mathrm{Gram}((x',w'),(y',-z'))$, semidefinite of the sign of κ and definite iff $x'z'+y'w'\neq0$: H7's ellipticity factor, by construction. Exactly, for every member, $\det H=576^2(xz\pm yw)^2\kappa^2/\det M$ (block structure plus Jacobi's identity; added after review, R6-2).
   - It enters the $O(\kappa^{-2})$ gradient terms, and the $\Lambda^2$ coefficients, which are all $\propto xz\pm yw$ at leading order.
-  - It does not enter the zeroth-order (cosmological) part.
-  - For $\circledast_\sharp$, $\det H=576^2\kappa^2/\det M\neq0$ and $dt\wedge du=0$ is forced on open solution sets. For $W_A$, $H$ has rank 1 and only $t$ is kinetic.
-  - **So $\circledast_\sharp$ and $W_A$ give different reduced equations once $T_e\neq0$.**
+  - It does not enter the zeroth-order term $c_i(t,u)\,g$.
+  - For $\circledast_\sharp$, $\det H=576^2\kappa^2/\det M\neq0$; for $W_A$, $H$ has rank 1 and only $t$ carries second derivatives. Both have a Λ²-constraint: $dt\wedge du=0$ at every point where $\Upsilon=0$ and some $\varpi\neq0$ — for $\circledast_\sharp$ near $T_o=0$, for $W_A$ (exactly, at $O(\kappa^{-3})$) wherever $u\neq0$. (Corrected after review 2026-10-30, R6-5; the text had "$dt\wedge du=0$ is forced on open solution sets" for $\circledast_\sharp$ only; see `reports/CORRECTIONS.md`.)
+  - **So $\circledast_\sharp$ and $W_A$ give different reduced equations once $T_e\neq0$**: they differ in the rank of $H$; the Λ²-constraint distinguishes them only at leading order and at $u=0$.
 - **Reduction along $s(X)$.**
   - *Basic scalars* ($t,u$ pulled back from $X$):
-    - (P) in Z2 gives 4D Einstein gravity coupled to two scalars with Hessian couplings and a field-dependent cosmological term.
-    - (P) in Z1 contains $H(d\tau,d\upsilon)=0$, so the scalars are constant ($\det H\neq0$): round 5 again.
-    - (E) gives exactly round 5's solutions (J3).
+    - (P) in Z2 gives a 4D system in $(g,\tau,\upsilon)$: an Einstein-type equation with Hessian terms $H_{i\phi}(\nabla^2\tau_\phi-\Box\tau_\phi g)$ and a field-dependent cosmological term, for $y=0$ (including $\circledast_\sharp$) a curvature-free tensor constraint on the scalars, and $\varpi\,d\tau\wedge d\upsilon=0$. Its solutions are not classified. (Corrected after review 2026-10-30, R6-4; the text had "4D Einstein gravity coupled to two scalars"; see `reports/CORRECTIONS.md`.)
+    - (P) in Z1 contains $H(d\tau,d\upsilon)=0$, so the scalars are constant wherever $\det H\neq0$, i.e. for every member with $xz\pm yw\neq0$ ($\det M\neq0$), and also for $W_A$: round 5 again.
+    - (E) gives exactly round 5's solutions (J3) for every member with $xz\pm yw\neq0$ ($\det M\neq0$) and for $W_A$; for the other members with $xz\pm yw=0$ it is not shown. (Corrected after review 2026-10-30, R6-10; see `reports/CORRECTIONS.md`.)
   - *Isotropy-invariant 2-jet along $s(X)$:* (E) at the points of $s(X)$ reduces to six scalar equations and a balance identity.
-    - It has solutions in **(7,7) and (14,0), in Z1 and Z2, for every λ**, with $T_e=0$ on $s(X)$ but $\nabla T_e\neq0$. Exact samples exist for $\circledast_\sharp$ and $W_A$.
-    - The 4D cosmological constant $\Lambda_g=\tfrac{c_H}{11}(\Theta_0-c_1/x)$ is free: every real value in (7,7) for $\circledast_\sharp$, a half-line in (14,0) (J4).
+    - It has solutions in **(7,7) and (14,0), in Z1 and Z2, for every $\lambda\neq\tfrac14$ on the side the signature requires** ($\lambda<\tfrac14$ for definite (14,0), $\lambda>\tfrac14$ for (7,7)), with $T_e=0$ on $s(X)$ but $\nabla T_e\neq0$. Exact samples exist for $\circledast_\sharp$ and $W_A$.
+    - On that branch ($a=0$) the 4D cosmological constant $\Lambda_g=\tfrac{c_H}{11}(\Theta_0-c_1/x)$ is free: every real value in (7,7) for $\circledast_\sharp$, a half-line in (14,0) ($c_H>0$) (J4).
+    - With a normal gradient $a\neq0$ (still the invariant 2-jet) the six equations reduce to $c_i=x_i\Theta+13\beta(Ha)_i-|\tau|^2\mathfrak B_i(\alpha)$ (J4(c′)), so $\Lambda_g$ then depends on $(z,w)$. For $\circledast_\sharp$ in (14,0) the full range is the same half-line in Z2, but in Z1 it extends down to $\tfrac{c_H}{11}(\Theta_0-\tfrac{\kappa^2}{1248}-\tfrac{39}{8c_V(1-4\lambda)})$, attained exactly (J4(d′); after review, R6-1).
     - So round 5's "(E): none in (7,7), $\Lambda_4=0$ in (14,0)" is a property of $T_e\equiv0$.
-  - *Radial ansatz* $t=f(s)$, $u=h(s)$, with $s$ the fibre-scaling coordinate:
-    - in Z2, (E) at $s(X)$ forces $\Lambda_g=-c_H/c_V$;
-    - $\Upsilon=0$ on a neighbourhood of a point of $s(X)$ has **no solution in definite signature**, for every member with $(x,y)\neq0$ and every $(z,w)$. The proof uses a parallel $ds$, Einstein leaves and O'Neill's A-tensor.
-    - In (7,7) a solution would need a non-constant-curvature Einstein base with $\Lambda_g=-c_H/c_V$ and a quadratic curvature condition; existence is open (J5).
-- **Verdict.** The twist does change the reduced equations once $T_e\neq0$. It acts on the derivative (kinetic) structure, never on the cosmological term.
+  - *Radial ansatz* $t=f(s)$, $u=h(s)$, with $s$ the fibre-scaling coordinate, in Z2:
+    - (E) at $s(X)$ forces $\Lambda_g=-c_H/c_V$ (in (14,0) for $\circledast_\sharp$ this needs $c_V\kappa^2\ge8112$);
+    - with $\kappa\neq0$ and $T_e$ the slaved field in the vector sector ($\det M\neq0$), $\Upsilon=0$ on a neighbourhood of a point of $s(X)$ has **no solution in definite signature**, for every member with $(x,y)\neq0$ and every $(z,w)$. The proof uses a parallel $ds$, Einstein leaves and O'Neill's A-tensor. (Corrected after review 2026-10-30, R6-10; the hypotheses had been omitted; see `reports/CORRECTIONS.md`.)
+    - In (7,7) a solution would need a non-constant-curvature Einstein base (Lorentzian or (2,2)) with $\Lambda_g=-c_H/c_V$ and a quadratic curvature condition; existence is open (J5).
+- **Verdict.** The twist does change the reduced equations once $T_e\neq0$. It acts on the derivative structure and never on the zeroth-order term $c_i(t,u)\,g$; the effective $\Lambda_4$ of the 2-jet reduction depends on $(z,w)$ once $a\neq0$. (Corrected after review 2026-10-30, R6-3; the text had "never on the cosmological term"; see `reports/CORRECTIONS.md`.)
   - The physically relevant output still depends on the undeclared rule for $T$ off $s(X)$. With free second normal derivatives, (E) at $s(X)$ becomes as underdetermined as (P). A genuine neighbourhood condition can exclude solutions altogether (radial Z2, definite signature).
-  - No earlier statement is contradicted: round 5's (E) statements are all qualified by "invariant sector" ($T_e=0$). No `CORRECTIONS.md` entry.
+  - No statement made before round 6 is contradicted: round 5's (E) statements are all scoped to the invariant sector, which has $T_e\equiv0$ by definition (confirmed by REVIEW4-GU, R6-11). This round's own J4(d) range was too broad and is corrected (R6-1, `reports/CORRECTIONS.md`).
   - Not covered:
     - $T_o$ outside the invariant sector;
     - $T_e$ outside the vector sector for large $|T_o|$;

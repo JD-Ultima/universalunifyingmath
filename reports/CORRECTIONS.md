@@ -129,3 +129,19 @@ Entries are appended, never edited. Format: date — file — what changed — w
      - the scorecard's weak-angle figure is ≈1.07×10³σ (against the on-shell value; the register's 1067σ is against $(M_W/M_Z)^2$);
      - the GU note cites write-ups A–J;
      - the Lean README's `actA_ne_zero_iff` gloss now reads "primitive when gcd(d1,d2) = 1".
+- 2026-10-30 — GU round 6 (`formalization/geometric-unity/J-slaved-sector.md`, commit `3c4f6c4`), after the fourth-round review (`reports/reviews/REVIEW4-GU-2026-10-30.md`). Files: the J write-up, `computation/geometric-unity/J_slaved_sector.py` → `.out` (new §J4b and checks), `metrics/geometric-unity/J-slaved-sector.yaml`, the Round 6 section of `reports/geometric-unity-phase1.md`, and the round-6 note in `gaps/geometric-unity.md`.
+  1. **R6-1 (error).** J4(d) said that in (14,0) the 4D cosmological constant takes exactly the values in $[\tfrac{c_H}{11}(\Theta_0-\tfrac{\kappa^2}{1248}),\infty)$, and Answers 3 said "a half-line in (14,0)". This was derived only on the branch $a=0$, i.e. zero normal gradient of $(t,u)$ along $s(X)$.
+     - For every $a$ the six J4 equations reduce to $c_i=x_i\Theta+13\beta(Ha)_i-|\tau|^2\mathfrak B_i(\alpha)$ (new J4(c′)).
+     - For $\circledast_\sharp$, completing the square shows that in Z2 the half-line holds for every $a$.
+     - In Z1 the exact range is the larger half-line $[\tfrac{c_H}{11}(\Theta_0-\tfrac{\kappa^2}{1248}-\tfrac{39}{8c_V(1-4\lambda)}),\infty)$, attained at an exact real configuration (new J4(d′)).
+     - The referee's Z1 counterexample, $\Lambda_g=-984211/1375000$ below the $a=0$ bound, is confirmed by both the round-6 code and `xcheck_round6.py`.
+     - Consequence in (14,0) Z2: a radial 2-jet with $\circledast_\sharp$ needs $c_V\kappa^2\ge8112$.
+  2. **R6-3.** "The twist acts on the derivative structure, never on the cosmological term" (phase-1 verdict; gaps note; message of commit `3c4f6c4`). It never enters the zeroth-order term $c_i(t,u)g$. But the effective $\Lambda_4$ of the 2-jet reduction depends on $(z,w)$ once $a\neq0$, and under (P) the $\mathcal Q'\langle d\tau,d\tau\rangle g$ terms depend on them too.
+  3. **R6-4.** "(P), basic scalars, Z2: 4D Einstein gravity coupled to two scalars" (note, phase-1, gaps, yaml). It is now "a 4D system: an Einstein-type equation with Hessian terms and a field-dependent cosmological term; for $y=0$ (including $\circledast_\sharp$) a curvature-free tensor constraint on the scalars; and $\varpi\,d\tau\wedge d\upsilon=0$; solutions not classified". $H$ is called the principal (Hessian) coefficient matrix in the summaries.
+  4. **R6-5.** "For $\circledast_\sharp$ $dt\wedge du=0$ is forced on open solution sets; for $W_A$ only $t$ is kinetic." $W_A$ also has an exact $\Lambda^2$-constraint, $\varpi^{(1)}_{W_A}=\pm1916928\,\kappa u/(\kappa^2+224\kappa t\mp3328u^2)^2$. The constraint is pointwise. The two operators differ in the rank of $H$; the $\Lambda^2$-constraint separates them only at leading order and at $u=0$.
+  5. **R6-10.** The summaries now carry the hypotheses:
+     - "(E) with basic scalars gives exactly round 5's solutions" holds for every member with $xz\pm yw\neq0$ (and for $W_A$), by R6-2's exact $\det H=576^2(xz\pm yw)^2\kappa^2/\det M$;
+     - the J5 no-go assumes $\kappa\neq0$ and that $T_e$ is the slaved field in the vector sector, with $\det M\neq0$.
+  6. Presentation only (R6-6–R6-9): the isotropy argument of rule (J) ($-1\in O(g_x)$, not $SO_0(1,3)$); the J2 display sums over $b,c\neq a$; $K\succeq0$ for $\kappa>0$; the (7,7) forms of the $W_A$ formulas; "for every $\lambda\neq\tfrac14$ on the side the signature requires"; and J5(d) also for a (2,2) base.
+
+  No statement made before round 6 is affected (R6-11): the round-5 statements are about the invariant sector, where $T_e\equiv0$. `J_slaved_sector.py`: 567 s; the agent's three runs and the coordinator's rerun (656 s, shared machine) are identical apart from timing lines.

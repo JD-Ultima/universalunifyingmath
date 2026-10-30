@@ -26,6 +26,10 @@ Sections
       solves the even equation exactly, and the directly evaluated odd part equals the assembled formula.
   J4  reduction along s(X) (F3-F6 closed forms, n = 4): (P) and (E) for basic t, u; (E) for the isotropy-invariant 2-jet
       ansatz (including the radial sub-case); balance identity; exact sample solutions in (14,0) and (7,7).
+  J4b (after review REVIEW4-GU, R6-1) the 2-jet ansatz with a normal gradient a != 0: closed form for every a, the (14,0)
+      bounds for Shiab# in Z1 and Z2, the referee's Z1 configuration, an exact solution attaining the Z1 bound.
+  J5  the constant-curvature leaf test of Theorem J5(d), bases (4,0), (1,3), (2,2).
+  Also added after the review: exact det H for every member (Jacobi), the exact image condition, exact varpi for W_A (J2).
 Exact arithmetic throughout (integers, Fractions, Gaussian rationals, sympy).  Seeds fixed.  One core.
 """
 import itertools
@@ -527,6 +531,34 @@ def j2(C, d1):
     w13 = sp.factor(sp.simplify(Wsh['E13'].subs(sh)))
     P_(f"  Shiab#, exact: varpi(E13) = {w13}  (nonzero at T_o = 0, so dt ^ du = 0 wherever Upsilon = 0 holds on an open set"
        f" and this does not vanish)")
+    # exact det H for every member (review R6-2): l_E vanishes on the A, B columns and S on the A, B rows, so
+    # H = -l_CD (M^-1)_CD S_CD; Jacobi's complementary-minor identity det((M^-1)_CD) = det(M_AB)/det M = kappa^2/det M
+    sgn = eta[7]
+    detM = d1['detM']
+    CDi, ABi = [1, 2], [0, 3]
+    offb = all(lE[i, j] == 0 for i in range(2) for j in ABi) and all(S[j, k] == 0 for j in ABi for k in range(2))
+    jac = sp.expand(M.adjugate().extract(CDi, CDi).det() - kap ** 2 * detM) == 0
+    prodLS = sp.factor(lE.extract([0, 1], CDi).det() * S.extract(CDi, [0, 1]).det())
+    okp = sp.expand(prodLS - 576 ** 2 * (xs * zs + sgn * ys * ws) ** 2) == 0
+    P_(f"  exact, every member: l_E = 0 on the A, B columns and S = 0 on the A, B rows: {offb}; det adj(M)_CD = kappa^2 det M"
+       f" (Jacobi): {jac}; det l_CD det S_CD = {prodLS};  hence det H = 576^2 (xz {'+' if sgn == 1 else '-'} yw)^2 kappa^2 / det M"
+       f" exactly: {offb and jac and okp}")
+    assert offb and jac and okp
+    colC_ok = sp.expand(lE[0, 1] * ys - lE[1, 1] * xs) == 0
+    detD = sp.factor(sp.Matrix([[lE[0, 2], xs], [lE[1, 2], ys]]).det())
+    P_(f"  exact image condition: column C of l_E is proportional to (x, y): {colC_ok}; det[column D, (x, y)] = {detD};"
+       f" so im H(t, u) is contained in span(x, y) whenever xz {'+' if sgn == 1 else '-'} yw = 0, for every (t, u)")
+    assert colC_ok and sp.expand(detD / (xs * zs + sgn * ys * ws)).free_symbols <= set()
+    swa = {xs: 1, zs: 0, ys: 0, ws: 0}
+    Swa = sp.simplify(Sig.subs(swa))
+    _, _, Wwa = terms(Swa, {'t': sp.diff(Swa, t_), 'u': sp.diff(Swa, u_)}, L, B)
+    Wwa = {nm: sp.factor(sp.simplify(sp.sympify(v).subs(swa))) for nm, v in Wwa.items()}
+    ref = (1 if sgn == 1 else -1) * 1916928 * kap * u_ / (kap ** 2 + 224 * kap * t_ - sgn * 3328 * u_ ** 2) ** 2
+    okw = sp.simplify(Wwa['E1'] - ref) == 0 and all(Wwa[nm] == 0 for nm in ('E13', 'w3', 'w11'))
+    P_(f"  W_A, exact varpi: E1 = {Wwa['E1']}; E13 = {Wwa['E13']}; w3 = {Wwa['w3']}; w11 = {Wwa['w11']}  (O(kappa^-3), nonzero"
+       f" for u != 0: the antisymmetric part of E^(1) is varpi dt ^ du pointwise, so Upsilon = 0 at a point with u != 0"
+       f" forces dt ^ du = 0 there): {okw}")
+    assert okw
     return dict(L=L, B=B, H=H, H0=H0, lE=lE)
 
 
@@ -818,12 +850,154 @@ def j4_samples(res, out, geo):
                     assert ok and real
 
 
+def j4b(res, out, geo):
+    """ansatz (J) with a normal gradient a != 0 (review R6-1): general-a closed form J4(c'), the (14,0) bounds for
+    Shiab# in Z1 and Z2, the referee's Z1 configuration, and an exact solution attaining the Z1 bound"""
+    P_("\n=== J4b. Ansatz (J) with a != 0: closed form for every a, (14,0) bounds, exact Z1 configurations ===")
+    lam, cH, cV, Lg = sp.symbols('lambda c_H c_V Lambda_g')
+    at, au, pt, pu, qt, qu = sp.symbols('a_t a_u p_t p_u q_t q_u')
+    n, Nf = 4, 10
+    mu = lam / (1 - n * lam)
+    trG0 = (Nf + n * mu) / cV
+    trTT = n / (cV * (1 - n * lam))
+    for sgn, d in res.items():
+        Sg, dSg = out[(sgn, 'sym')]
+        L, B = d['L'], d['B']
+        c1, c13 = d['c']
+        H = d['lE'] * Sg
+        al = [Sg[ik, 0] * at + Sg[ik, 1] * au for ik in range(4)]
+        Ha = H * sp.Matrix([at, au])
+        for Z in ('Z1', 'Z2'):
+            G, beta = geo[Z]['G'], geo[Z]['beta']
+            Th = trG0 * G[1] + trTT * G[2] - 9 * G[0]
+            ok = True
+            for i, (nm, xi, ci) in enumerate((('E1', xs, c1), ('E13', ys, c13))):
+                e = out[(sgn, Z)][nm]
+                Bi = 0
+                for (ik, k), (il, l) in itertools.combinations_with_replacement(list(enumerate(KS)), 2):
+                    b1, b2, b3 = B[(nm, k, l)]
+                    Bi += (sp.Rational(1, 2) if k == l else 1) * (b1 + b2 + b3) * al[ik] * al[il]
+                lhs = ci - xi * Th - 13 * beta * Ha[i] + trTT * Bi
+                rhs = -9 * e[0] + trG0 * e[1] + trTT * e[2]
+                ok &= sp.expand(sp.together(lhs - rhs)) == 0
+                # (P_i, Q_i) enter e_G0, e_tt with the scalar matrix [[1 - c_V trG0, -c_V trTT], [lam c_V trG0, 1 + lam c_V trTT]]
+                for j, f in enumerate(('t', 'u')):
+                    pf, qf = sp.Symbol('p_' + f), sp.Symbol('q_' + f)
+                    ok &= sp.simplify(sp.diff(e[1], pf) - (1 - cV * trG0) * H[i, j]) == 0
+                    ok &= sp.simplify(sp.diff(e[1], qf) + cV * trTT * H[i, j]) == 0
+                    ok &= sp.simplify(sp.diff(e[2], pf) - lam * cV * trG0 * H[i, j]) == 0
+                    ok &= sp.simplify(sp.diff(e[2], qf) - (1 + lam * cV * trTT) * H[i, j]) == 0
+            dPQ = sp.simplify((1 - cV * trG0) * (1 + lam * cV * trTT) + lam * cV ** 2 * trG0 * trTT)
+            P_(f"  {SIG[sgn]} {Z}: -9 e_h + tr G_0 e_G0 + |tau|^2 e_tt = c_i - x_i Theta - 13 beta (H a)_i + |tau|^2 B_i(alpha),"
+               f" B_i = sum_(k<=l) w_kl (b1+b2+b3)^(i)_kl alpha_k alpha_l, alpha_k = sum_phi Sigma_k,phi a_phi (identity for generic"
+               f" Sigma, dSigma; dSigma drops out); the other two equations fix (P_i, Q_i) through a scalar 2x2 matrix of"
+               f" determinant {dPQ}: {ok}")
+            assert ok and dPQ == -9
+    # ---- (14,0) Shiab#: reality, completed square, bounds
+    d = res[1]
+    Sig, c1 = d['Sig'], d['c'][0]
+    s_, r_, as_, ar_ = sp.symbols('s r a_s a_r', real=True)
+    rf = {xs: -sp.I, zs: -sp.I, ys: 0, ws: 0}
+    rng = random.Random(20261030)
+    okr = True
+    for _ in range(4):
+        kv = rng.choice((1, 2, 3))
+        num = dict(rf)
+        num.update({kap: kv, t_: sp.I * sp.Rational(rng.randint(-9, 9) * kv, 1000),
+                    u_: sp.I * sp.Rational(rng.randint(-9, 9) * kv, 1000)})
+        SigN = Sig.subs(num).applyfunc(sp.expand_complex)
+        aN = [sp.I * sp.Rational(rng.randint(-9, 9), 100), sp.I * sp.Rational(rng.randint(-9, 9), 100)]
+        alN = [sp.expand_complex(SigN[ik, 0] * aN[0] + SigN[ik, 1] * aN[1]) for ik in range(4)]
+        okr &= sp.re(alN[0]) == 0 and sp.im(alN[1]) == 0 and sp.re(alN[2]) == 0 and sp.im(alN[3]) == 0
+    P_(f"  (14,0) u(128) real form, Shiab#: alpha_A in iR, alpha_C in R, alpha_D in iR, alpha_B in R at 4 random exact points"
+       f" (T_e in u(128), as the slaving preserves the real form): {okr}")
+    assert okr
+    aC, aD = sp.symbols('alpha_C alpha_D')
+    alg = {0: sp.Symbol('alpha_A'), 2: aC, 12: aD, 14: sp.Symbol('alpha_B')}
+    B1 = 0
+    for k, l in itertools.combinations_with_replacement(KS, 2):
+        b1, b2, b3 = d['B'][('E1', k, l)]
+        B1 += (sp.Rational(1, 2) if k == l else 1) * (b1 + b2 + b3) * alg[k] * alg[l]
+    B1s = sp.expand(B1.subs({ys: 0, ws: 0}))
+    Ha1 = sp.expand(sum(d['L'][('E1', k)] * alg[k] for k in KS).subs({ys: 0, ws: 0}))
+    okB = sp.expand(B1s - xs * (-312 * aC ** 2 + 104 * aD ** 2)) == 0 and sp.expand(Ha1 - 24 * xs * aC) == 0
+    e1 = sp.expand(-sp.I * c1.subs({xs: -sp.I, ys: 0, t_: sp.I * s_, u_: sp.I * r_}))
+    oke = sp.expand(e1 - (kap * s_ + 312 * s_ ** 2 + 104 * r_ ** 2)) == 0
+    bt, tt2, dlt = sp.symbols('beta tau2 delta', real=True)
+    Thx = -e1 - 13 * bt * 24 * aC + tt2 * (-312 * aC ** 2 - 104 * dlt ** 2)          # alpha_D = i delta
+    sq = -312 * tt2 * (aC + bt / (2 * tt2)) ** 2 + 78 * bt ** 2 / tt2 - 104 * tt2 * dlt ** 2 - e1
+    oksq = sp.simplify(Thx - sq) == 0
+    lam, cH, cV = sp.symbols('lambda c_H c_V')
+    b_Z1, tau2 = 1 / (2 * cV * (1 - 4 * lam)), 4 / (cV * (1 - 4 * lam))
+    oksh = sp.simplify(78 * b_Z1 ** 2 / tau2 - sp.Rational(39, 8) / (cV * (1 - 4 * lam))) == 0
+    P_(f"  Shiab# (y = w = 0, any z): B_1 = x(-312 alpha_C^2 + 104 alpha_D^2) and (H a)_1 = 24 x alpha_C: {okB};"
+       f"  e1 = kappa s + 312 s^2 + 104 r^2 >= -kappa^2/1248 for all real s, r: {oke}")
+    P_(f"  hence, with c1/x = -e1 and alpha_D = i delta:  Theta = -e1 - 312 beta alpha_C - 312 |tau|^2 alpha_C^2 - 104 |tau|^2"
+       f" delta^2 = -e1 + 78 beta^2/|tau|^2 - 312|tau|^2 (alpha_C + beta/(2|tau|^2))^2 - 104|tau|^2 delta^2: {oksq};"
+       f"  78 beta^2/|tau|^2 = 39/(8 c_V (1 - 4 lambda)) in Z1 ({oksh}), 0 in Z2")
+    assert okB and oke and oksq and oksh
+    P_("  => for every a, every (t, u) and c_H > 0 (definite (14,0), lambda < 1/4):  Lambda_g = (c_H/11)(Theta_0 - Theta) >="
+       " (c_H/11)(Theta_0 - kappa^2/1248) in Z2 and >= (c_H/11)(Theta_0 - kappa^2/1248 - 39/(8 c_V (1 - 4 lambda))) in Z1")
+    # ---- exact Z1 configurations (lambda = 0, c_H = c_V = kappa = 1, real form): the referee's one, and one at the bound
+    Lg = sp.symbols('Lambda_g')
+    Sg, dSg = out[(1, 'sym')]
+    base = dict(rf)
+    base.update({kap: 1, cH: 1, cV: 1, lam: 0, u_: 0})
+    Th0 = out[(1, 'Z1', 'Theta')][0].subs(base)
+    bound = sp.Rational(1, 11) * (Th0 - sp.Rational(1, 1248) - sp.Rational(39, 8))
+    a0bound = sp.Rational(1, 11) * (Th0 - sp.Rational(1, 1248))
+
+    def check(tv, atv, given=None):
+        num = dict(base)
+        num[t_] = tv
+        SigN = Sig.subs(num).applyfunc(sp.expand_complex)
+        dSN = {f: sp.diff(Sig, v).subs(num).applyfunc(sp.expand_complex) for f, v in (('t', t_), ('u', u_))}
+        rep = {Sg[i, j]: SigN[i, j] for i in range(4) for j in range(2)}
+        rep.update({dSg[f][i, j]: dSN[f][i, j] for f in ('t', 'u') for i in range(4) for j in range(2)})
+        rep.update({at: atv, au: 0, pu: 0, qu: 0})
+        eqs = [sp.expand_complex(sp.together(out[(1, 'Z1')][nm][j].subs(rep).subs(num))) for nm in ('E1', 'E13')
+               for j in range(3)]
+        if given is None:
+            sol = sp.solve(eqs, [pt, qt, Lg], dict=True)
+            assert len(sol) == 1
+            sol = {k_: sp.expand_complex(v) for k_, v in sol[0].items()}
+        else:
+            sol = given
+        res_ = [sp.simplify(e.subs(sol)) for e in eqs]
+        detMn = sp.expand_complex(res[1]['detM'].subs(num))
+        real = sp.im(sol[Lg]) == 0 and sp.re(sol[pt]) == 0 and sp.re(sol[qt]) == 0 and sp.re(atv) == 0 and sp.re(tv) == 0
+        return sol, all(r == 0 for r in res_) and detMn != 0, real, detMn
+    given = {pt: sp.Rational(-24174663, 11000000000) * sp.I, qt: sp.Rational(17, 4000) * sp.I,
+             Lg: sp.Rational(-984211, 1375000)}
+    sol, ok6, real, dMn = check(sp.I / 1000, sp.Rational(-51, 16000) * sp.I, given)
+    P_(f"  referee's configuration (R6-1): Z1, lambda = 0, c_H = c_V = kappa = 1, Shiab#, t = i/1000, u = 0, a_t = -51i/16000,"
+       f" a_u = 0, p_t = -24174663i/11000000000, q_t = 17i/4000, p_u = q_u = 0, Lambda_g = -984211/1375000 (det M = {dMn}):  all six"
+       f" components vanish: {ok6}; real in the real form: {real};  a = 0 lower bound {a0bound} = {float(a0bound):.6f},"
+       f" Lambda_g = {float(given[Lg]):.6f} is below it: {given[Lg] < a0bound}")
+    assert ok6 and real and given[Lg] < a0bound
+    # attaining the Z1 bound: s = -kappa/624, alpha_C = -beta/(2|tau|^2) = -1/16 (lambda = 0, c_V = 1), alpha_C = 24 a_s/(kappa + 224 s)
+    sv = sp.Rational(-1, 624)
+    asv = sp.Rational(-1, 16) * (1 + 224 * sv) / 24
+    sol, ok6, real, dMn2 = check(sp.I * sv, sp.I * asv)
+    P_(f"  bound attained: t = i(-1/624), u = 0, a_t = i({asv}), a_u = 0:  unique (p_t, q_t, Lambda_g) = ({sol[pt]}, {sol[qt]},"
+       f" {sol[Lg]}) (det M = {dMn2}); all six vanish: {ok6}; real: {real}; Lambda_g = (c_H/11)(Theta_0 - 1/1248 - 39/8) = {bound}:"
+       f" {sp.simplify(sol[Lg] - bound) == 0}")
+    assert ok6 and real and sp.simplify(sol[Lg] - bound) == 0
+    P_("  (14,0) range of Lambda_g for Shiab# under (J): exactly [(c_H/11)(Theta_0 - kappa^2/1248), oo) in Z2 (every a) and exactly"
+       " [(c_H/11)(Theta_0 - kappa^2/1248 - 39/(8 c_V (1 - 4 lambda))), oo) in Z1 (the slice u = a_u = 0 is connected,"
+       " has det M != 0 for s >= -kappa/624, attains the minimum and is unbounded above)")
+    rad = sp.solve(sp.Eq(-cH / cV, sp.Rational(1, 11) * cH * (-sp.Rational(9, 2) / cV - kap ** 2 / 1248)), kap ** 2)
+    P_(f"  radial Z2 in (14,0) (J4(e): Lambda_g = -c_H/c_V) meets the Z2 bound iff kappa^2 >= {rad[0]}, i.e. c_V kappa^2 >= 8112")
+    assert sp.simplify(rad[0] - 8112 / cV) == 0
+
+
 def j5_leaf_test():
     """indefinite case of Theorem J5: the order-eps^2 leaf condition sum_i eps_i G_0(R(X,E_i).h, R(Y,E_i).h) = 0 for a base
     of constant curvature k != 0 (exact, sympy)"""
-    P_("\n=== J5. Radial ansatz on a neighbourhood, Z2: order-eps^2 leaf condition for constant-curvature bases ===")
+    P_("\n=== J5. Radial ansatz on a neighbourhood, Z2: order-eps^2 leaf condition for constant-curvature bases"
+       " (bases (4,0), (1,3) and (2,2); the last two give (7,7) for lambda > 1/4, A5) ===")
     n = 4
-    for sig in ((1, 1, 1, 1), (1, -1, -1, -1)):
+    for sig in ((1, 1, 1, 1), (1, -1, -1, -1), (1, 1, -1, -1)):
         g = sp.diag(*sig)
         gi = g.inv()
 
@@ -874,11 +1048,12 @@ def main():
         d1 = j1(C)
         d2 = j2(C, d1)
         j3(C, d1, d2)
-        res[eta[7]] = dict(c=c, S=d1['S'], Sig=d1['Sig'], H=d2['H'], L=d2['L'], B=d2['B'], lE=d2['lE'])
+        res[eta[7]] = dict(c=c, S=d1['S'], Sig=d1['Sig'], H=d2['H'], L=d2['L'], B=d2['B'], lE=d2['lE'], detM=d1['detM'])
         P_(f"  [{SIG[eta[7]]} done, {time.time() - T0:.0f} s]")
     out, geo = j4(res)
     j4_samples(res, out, geo)
     j4_radial(res, out, geo)
+    j4b(res, out, geo)
     j5_leaf_test()
     P_(f"\nruntime {time.time() - T0:.0f} s")
 
