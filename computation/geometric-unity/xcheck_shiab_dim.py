@@ -89,3 +89,21 @@ def m_so(mu):
     return sum(c * gg.get(tuple(a - b for a, b in zip(mu, nu)), 0) for nu, c in L2V.items())
 dim_so = sum(e * m_so(mu) for e, mu in W if max(abs(x) for x in mu) <= 7)
 print("so(64,64): Clifford grades", grades, "; dim_C Hom_so(14)(Lambda^2 (x) g, Lambda^13 (x) g) =", dim_so, "(Theorem D1: 52)")
+
+# Self-adjoint part (D2): circledast = Psi ^ with Psi in (Lambda^3 (x) S^2 g)^{so(14)}  (assuming Psi -> Psi^ injective).
+# chi_{S^2 g}(x) = (chi_g(x)^2 + chi_g(x^2)) / 2.
+L3 = wedge(3)
+gsq_u = {-2: 1, 0: 2, 2: 1}                      # Lambda^* at x -> x^2, per coordinate
+m_a = mult_fn(L3, f2); m_b = mult_fn(L3, gsq_u)
+sa_u = sum(e * (m_a(mu) + m_b(mu)) for e, mu in W if max(abs(x) for x in mu) <= 5) // 2
+print("u(64,64): mult_0(Lambda^3 (x) S^2 g) =", sa_u, "(Theorem D1: dim S_sa = 48)")
+g2 = defaultdict(int)
+for wgt, c in g.items():
+    g2[tuple(2 * x for x in wgt)] += c
+L3 = dict(L3)
+def m_so_sa(mu):
+    a = sum(c * gg.get(tuple(p - q for p, q in zip(mu, nu)), 0) for nu, c in L3.items())
+    b = sum(c * g2.get(tuple(p - q for p, q in zip(mu, nu)), 0) for nu, c in L3.items())
+    return a + b
+sa_so = sum(e * m_so_sa(mu) for e, mu in W if max(abs(x) for x in mu) <= 7) // 2
+print("so(64,64): mult_0(Lambda^3 (x) S^2 g) =", sa_so, "(Theorem D1: dim S_sa = 12)")
