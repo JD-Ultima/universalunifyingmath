@@ -1,0 +1,28 @@
+result: "H1-H5, H8. Euclidean (14,0) ellipticity of the bosonic deformation complex over ALL self-adjoint Shiab operators: for g = u(128) (or any real form of gl(128,C), incl. u(64,64)) the complex is elliptic iff kappa != 0 and Delta(Psi) != 0, Delta = Q_0 Q_1...Q_6 D_2...D_6 (6+1 quadrics, 5 quartics; degree 34) on the 48-dim S_sa; the elliptic set is open dense, and excludes the draft's whole self-adjoint family span(W_A, W'_A). For so(64,64)/so(128) (12-dim S_sa) never elliptic: rank <= 60580 < 105664 for every member."
+claim_id: [GU-057, GU-072]
+writeup: formalization/geometric-unity/H-ellipticity.md (Lemmas H1-H2, Proposition H3, Theorems H4, H5, H8, Remark H9)
+code: [computation/geometric-unity/H_ellipticity.py, computation/geometric-unity/H_ellipticity.out]
+formalization_status: >
+  Fully formalized under E1-E3 (Euclidean real form, the round-3 complex G10, any b, kappa, background, true or
+  printed Upsilon). Exact basis of S_sa (24 O-type + 24 E-type Clifford trace invariants, block multiplicities equal
+  to the D_7 characters). Reduction to the Spin(13)-invariant antisymmetric form beta_xi on xi^perp (x) g, then by
+  Schur to 13 small matrices C_rho (2x2 for Lambda^0, H_1..H_6; 4x4 for Lambda^1..Lambda^6) with entries linear in
+  the 48 coordinates.
+internal_consistency: >
+  Parity lemma: every Psi pairs even with odd Clifford grades. u: all 13 determinants are not identically zero,
+  12 distinct factors, irreducible over Q(i), each real (up to a unit) and sign-changing on the u(128) form; all 48
+  coordinates enter. so: unequal odd/even Spin(13)-multiplicities (Lambda^0, H_1..H_6) force corank >= 45058, plus
+  26 from the uncoupled grade-14 copy; maximum rank 60580, attained by W_A and generically.
+proof_status: >
+  Proven (exact). Schur predictions equal exact full sparse ranks of the 212992 x 212992 matrix at 6 points in (14,0)
+  (W_A, W'_A, W_A+W'_A: 122850 = G_symbols; random point: 212992; points on det C[H_2] = 0 and det C[Lambda^3] = 0:
+  211562, 212420) and 1 point in (7,7); W_A, W'_A coordinates reproduce G_symbols' symbol matrix entrywise
+  (1277952 nonzeros, both signatures); so: exact ranks 60580 at a random point and at W_A.
+novelty: "New: decides the round-3 open question (46 + 10 dimensions); the draft gives no symbol computation."
+reproducibility: "Exact; fixed seeds; single process; 608 s measured (Q(i) factorisation of the five quartics ~470 s; H_SKIP_QI=1 skips it, ~140 s). Output deterministic apart from timing lines."
+empirical_testability: "None."
+dependencies: ["D1", "D2", "D3", "G10", "G11"]
+confidence: >
+  High. Interpretive dependence: the complex of round 3 (uniform order-1 symbols with the kappa*T term supplying the
+  gauge-direction symbol); the reading of "Euclidean signature" as a real form of gl(128,C) (answer independent of
+  which). Does not rescue (9.7), which remains non-variational (D4).

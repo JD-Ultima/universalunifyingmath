@@ -1,0 +1,152 @@
+=== H0. Basis of S_sa = Hom_Spin(14)(Lambda^3, S^2 g), g = gl(128) (real forms u(128), u(64,64)) ===
+  48 types (24 O-type, 24 E-type); D_7 characters: dim Hom(Lambda^3, Lambda^j (x) Lambda^l) summed = 48, diagonal S^2 Lambda^j blocks = 0; block-by-block agreement with the types: True
+  types: p0=O0,3, p1=O1,2, p2=O1,4, p3=O2,3, p4=O2,5, p5=O3,4, p6=O3,6, p7=O4,5, p8=O4,7, p9=O5,6, p10=O5,8, p11=O6,7, p12=O6,9, p13=O7,8, p14=O7,10, p15=O8,9, p16=O8,11, p17=O9,10, p18=O9,12, p19=O10,11, p20=O10,13, p21=O11,12, p22=O11,14, p23=O12,13, p24=E0,11, p25=E1,10, p26=E1,12, p27=E2,9, p28=E2,11, p29=E2,13, p30=E3,8, p31=E3,10, p32=E3,12, p33=E3,14, p34=E4,7, p35=E4,9, p36=E4,11, p37=E4,13, p38=E5,6, p39=E5,8, p40=E5,10, p41=E5,12, p42=E6,7, p43=E6,9, p44=E6,11, p45=E7,8, p46=E7,10, p47=E8,9
+  parity: every type pairs an even with an odd grade (j + l odd): True
+  (14,0): 4000 samples (3000 on witnesses of each type, 1000 random): symmetric in (X, Y): True; exact infinitesimal Spin(14)-invariance Psi([g,.],.,.) + Psi(.,[g,.],.) + Psi(.,.,[g,.]) = 0: True; each type nonzero on its witnesses (distinct supports => independent): True
+  (7,7): 4000 samples (3000 on witnesses of each type, 1000 random): symmetric in (X, Y): True; exact infinitesimal Spin(14)-invariance Psi([g,.],.,.) + Psi(.,[g,.],.) + Psi(.,.,[g,.]) = 0: True; each type nonzero on its witnesses (distinct supports => independent): True
+  real form u(128) (Euclidean gamma_a Hermitian, X_K = i^eps(|K|) gamma_K anti-Hermitian): Psi = sum p_t Psi_t is real on u(128) iff p_t = i^(eps_j+eps_l) r_t, r_t real; in the basis X_K the matrix of beta at r equals the gamma-basis matrix at the integer point p'_t = (-1)^(eps_j+eps_l) r_t.  Phases i^(eps_j+eps_l) = i on 24 types, -1 on 12, 1 on 12
+
+=== H1. Draft-family operators in the basis (exact; G_symbols operator code) ===
+  (14,0) WA            : 4000 exact equations, unique solution {O0,3: -2, O1,2: -2, O2,5: -2, O3,4: -2, O4,7: -2, O5,6: -2, O6,9: -2, O7,8: -2, O8,11: -2, O9,10: -2, O10,13: -2, O11,12: -2}
+  (14,0) WpA           : 4000 exact equations, unique solution {E0,11: 2, E1,10: 2, E2,9: 2, E2,13: 2, E3,8: 2, E3,12: 2, E4,7: 2, E4,11: 2, E5,6: 2, E5,10: 2, E6,9: 2, E7,8: 2}
+  (14,0) WC o Ad_Gamma : 4000 exact equations, unique solution {O1,4: -2*I, O2,3: 2*I, O3,6: -2*I, O4,5: 2*I, O5,8: -2*I, O6,7: 2*I, O7,10: -2*I, O8,9: 2*I, O9,12: -2*I, O10,11: 2*I, O11,14: -2*I, O12,13: 2*I}
+  (14,0) WpC o Ad_Gamma: 4000 exact equations, unique solution {E1,12: 2*I, E2,11: -2*I, E3,10: 2*I, E3,14: 2*I, E4,9: -2*I, E4,13: -2*I, E5,8: 2*I, E5,12: 2*I, E6,7: -2*I, E6,11: -2*I, E7,10: 2*I, E8,9: -2*I}
+  (14,0) WC            : no solution in S_sa (4000 exact equations) -> not self-adjoint
+  (14,0) WpC           : no solution in S_sa (4000 exact equations) -> not self-adjoint
+  (7,7) WA            : 4000 exact equations, unique solution {O0,3: -2, O1,2: -2, O2,5: -2, O3,4: -2, O4,7: -2, O5,6: -2, O6,9: -2, O7,8: -2, O8,11: -2, O9,10: -2, O10,13: -2, O11,12: -2}
+  (7,7) WpA           : 4000 exact equations, unique solution {E0,11: 2, E1,10: 2, E2,9: 2, E2,13: 2, E3,8: 2, E3,12: 2, E4,7: 2, E4,11: 2, E5,6: 2, E5,10: 2, E6,9: 2, E7,8: 2}
+  (7,7) WC o Ad_Gamma : 4000 exact equations, unique solution {O1,4: -2*I, O2,3: 2*I, O3,6: -2*I, O4,5: 2*I, O5,8: -2*I, O6,7: 2*I, O7,10: -2*I, O8,9: 2*I, O9,12: -2*I, O10,11: 2*I, O11,14: -2*I, O12,13: 2*I}
+  (7,7) WpC o Ad_Gamma: 4000 exact equations, unique solution {E1,12: 2*I, E2,11: -2*I, E3,10: 2*I, E3,14: 2*I, E4,9: -2*I, E4,13: -2*I, E5,8: 2*I, E5,12: 2*I, E6,7: -2*I, E6,11: -2*I, E7,10: 2*I, E8,9: -2*I}
+  (7,7) WC            : no solution in S_sa (4000 exact equations) -> not self-adjoint
+  (7,7) WpC           : no solution in S_sa (4000 exact equations) -> not self-adjoint
+  (14,0) WA: symbol of G_symbols' operator at xi = e^0 (rows rescaled by (-1)^c Tr(E_J E_J)/128) vanishes on xi (x) g and lands in Ann(xi (x) g): True; equals beta of the fitted Psi entrywise (1277952 nonzeros): True
+  (14,0) WpA: symbol of G_symbols' operator at xi = e^0 (rows rescaled by (-1)^c Tr(E_J E_J)/128) vanishes on xi (x) g and lands in Ann(xi (x) g): True; equals beta of the fitted Psi entrywise (1277952 nonzeros): True
+  (7,7) WA: symbol of G_symbols' operator at xi = e^0 (rows rescaled by (-1)^c Tr(E_J E_J)/128) vanishes on xi (x) g and lands in Ann(xi (x) g): True; equals beta of the fitted Psi entrywise (1277952 nonzeros): True
+  (7,7) WpA: symbol of G_symbols' operator at xi = e^0 (rows rescaled by (-1)^c Tr(E_J E_J)/128) vanishes on xi (x) g and lands in Ann(xi (x) g): True; equals beta of the fitted Psi entrywise (1277952 nonzeros): True
+
+=== H2. Spin(13) = Stab(e^0) reduction in (14,0): W (x) g = sum_rho m_rho rho; beta = sum_rho C_rho (x) <,>_rho ===
+  copies of rho in W (x) g: label[Clifford grade]; '+': w -> sum e^a (x) e^a ^ w, '-': w -> sum e^a (x) i_a w, '*': Hodge star on W, 'g0': times gamma^0; H_j: u = e^1(x)e^(1S) - e^2(x)e^(2S)
+  Lambda^0  dim     1, m = 4: odd copies ['+[1]', '*+g0[13]'], even copies ['+g0[2]', '*+[12]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['156*p1', '156*p26'], ['156*p29', '156*p23']]
+  Lambda^1  dim    13, m = 8: odd copies ['+g0[3]', '-g0[1]', '*+[11]', '*-[13]'], even copies ['+[2]', '-[0]', '*+g0[12]', '*-g0[14]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['-132*p3', '-12*p0', '132*p32', '12*p33'], ['12*p1', '0', '12*p26', '0'], ['-132*p28', '-12*p24', '-132*p21', '-12*p22'], ['-12*p29', '0', '-12*p23', '0']]
+  Lambda^2  dim    78, m = 8: odd copies ['+[3]', '-[1]', '*+g0[11]', '*-g0[13]'], even copies ['+g0[4]', '-g0[2]', '*+[10]', '*-[12]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['-110*p5', '-22*p3', '110*p31', '22*p32'], ['-22*p2', '2*p1', '22*p25', '2*p26'], ['110*p36', '22*p28', '-110*p19', '22*p21'], ['22*p37', '2*p29', '-22*p20', '2*p23']]
+  Lambda^3  dim   286, m = 8: odd copies ['+g0[5]', '-g0[3]', '*+[9]', '*-[11]'], even copies ['+[4]', '-[2]', '*+g0[10]', '*-g0[12]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['90*p7', '30*p4', '90*p40', '30*p41'], ['-30*p5', '-6*p3', '30*p31', '6*p32'], ['-90*p35', '-30*p27', '90*p17', '30*p18'], ['-30*p36', '-6*p28', '30*p19', '-6*p21']]
+  Lambda^4  dim   715, m = 8: odd copies ['+[5]', '-[3]', '*+g0[9]', '*-g0[11]'], even copies ['+g0[6]', '-g0[4]', '*+[8]', '*-[10]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['72*p9', '36*p7', '72*p39', '36*p40'], ['36*p6', '-12*p5', '36*p30', '12*p31'], ['72*p43', '36*p35', '72*p15', '-36*p17'], ['36*p44', '12*p36', '36*p16', '-12*p19']]
+  Lambda^5  dim  1287, m = 8: odd copies ['+g0[7]', '-g0[5]', '*+[7]', '*-[9]'], even copies ['+[6]', '-[4]', '*+g0[8]', '*-g0[10]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['-56*p11', '-40*p8', '56*p45', '40*p46'], ['40*p9', '20*p7', '40*p39', '20*p40'], ['-56*p42', '-40*p34', '-56*p13', '-40*p14'], ['-40*p43', '-20*p35', '-40*p15', '20*p17']]
+  Lambda^6  dim  1716, m = 8: odd copies ['+[7]', '-[5]', '*+g0[7]', '*-g0[9]'], even copies ['+g0[8]', '-g0[6]', '*+[6]', '*-[8]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['-42*p13', '-42*p11', '-42*p42', '42*p45'], ['-42*p10', '30*p9', '42*p38', '30*p39'], ['42*p45', '42*p42', '-42*p11', '42*p13'], ['42*p47', '30*p43', '-42*p12', '30*p15']]
+  H_1       dim    90, m = 4: odd copies ['u[1]', '*ug0[13]'], even copies ['ug0[2]', '*u[12]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['-p1', '-p26'], ['-p29', '-p23']]
+  H_2       dim   715, m = 4: odd copies ['ug0[3]', '*u[11]'], even copies ['u[2]', '*ug0[12]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['p3', '-p32'], ['p28', 'p21']]
+  H_3       dim  2925, m = 4: odd copies ['u[3]', '*ug0[11]'], even copies ['ug0[4]', '*u[10]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['p5', '-p31'], ['-p36', 'p19']]
+  H_4       dim  7722, m = 4: odd copies ['ug0[5]', '*u[9]'], even copies ['u[4]', '*ug0[10]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['-p7', '-p40'], ['p35', '-p17']]
+  H_5       dim 14300, m = 4: odd copies ['u[5]', '*ug0[9]'], even copies ['ug0[6]', '*u[8]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['-p9', '-p39'], ['-p43', '-p15']]
+  H_6       dim 19305, m = 4: odd copies ['ug0[7]', '*u[7]'], even copies ['u[6]', '*ug0[8]']; antisymmetric: True; parity-odd: True; Schur-consistent on 3 test vectors (+ orthogonality): True
+            C = [['p11', '-p45'], ['p42', 'p13']]
+  beta(copy of rho, copy of rho') = 0 for all rho != rho' (all copies, test vectors 0): True
+  sum_rho m_rho dim rho = 212992 (= 13 * 2^14 = 212992: True)
+
+=== H3. Exact determinants, discriminant, and exact full ranks of beta (need 212992) in (14,0) ===
+  det C[Lambda^0] = 24336*(p1*p23 - p26*p29)
+  det C[Lambda^1] = -20736*(p0*p22 + p24*p33)*(p1*p23 - p26*p29)
+  det C[Lambda^2] = 1936*(25*p1*p19*p23*p5 + 55*p1*p19*p32*p37 - 55*p1*p20*p21*p5 - 55*p1*p20*p32*p36 + 55*p1*p21*p31*p37 - 25*p1*p23*p31*p36 + 55*p19*p2*p23*p3 + 55*p19*p2*p29*p32 - 25*p19*p26*p29*p5 + 55*p19*p26*p3*p37 - 121*p2*p20*p21*p3 - 121*p2*p20*p28*p32 + 55*p2*p21*p29*p31 - 55*p2*p23*p28*p31 + 55*p20*p26*p28*p5 - 55*p20*p26*p3*p36 - 55*p21*p25*p29*p5 + 121*p21*p25*p3*p37 + 55*p23*p25*p28*p5 - 55*p23*p25*p3*p36 + 121*p25*p28*p32*p37 - 55*p25*p29*p32*p36 - 55*p26*p28*p31*p37 + 25*p26*p29*p31*p36)
+  det C[Lambda^3] = 32400*(9*p17*p21*p3*p7 - 15*p17*p21*p4*p5 + 9*p17*p28*p32*p7 + 15*p17*p28*p41*p5 - 15*p17*p3*p36*p41 - 15*p17*p32*p36*p4 + 15*p18*p19*p3*p7 - 25*p18*p19*p4*p5 - 15*p18*p28*p31*p7 - 15*p18*p28*p40*p5 + 15*p18*p3*p36*p40 + 25*p18*p31*p36*p4 - 15*p19*p27*p32*p7 - 25*p19*p27*p41*p5 + 15*p19*p3*p35*p41 + 15*p19*p32*p35*p4 - 15*p21*p27*p31*p7 - 15*p21*p27*p40*p5 + 9*p21*p3*p35*p40 + 15*p21*p31*p35*p4 + 25*p27*p31*p36*p41 - 15*p27*p32*p36*p40 - 15*p28*p31*p35*p41 + 9*p28*p32*p35*p40)
+  det C[Lambda^4] = 186624*(4*p15*p19*p5*p9 + 6*p15*p19*p6*p7 - 4*p15*p31*p36*p9 + 6*p15*p31*p44*p7 + 6*p15*p36*p40*p6 + 6*p15*p40*p44*p5 - 6*p16*p17*p5*p9 - 9*p16*p17*p6*p7 + 6*p16*p31*p35*p9 - 6*p16*p31*p43*p7 - 9*p16*p35*p40*p6 - 6*p16*p40*p43*p5 - 6*p17*p30*p36*p9 + 9*p17*p30*p44*p7 + 6*p17*p36*p39*p6 + 6*p17*p39*p44*p5 + 6*p19*p30*p35*p9 - 6*p19*p30*p43*p7 - 6*p19*p35*p39*p6 - 4*p19*p39*p43*p5 + 9*p30*p35*p40*p44 - 6*p30*p36*p40*p43 - 6*p31*p35*p39*p44 + 4*p31*p36*p39*p43)
+  det C[Lambda^5] = 25600*(49*p11*p13*p17*p7 + 49*p11*p13*p35*p40 + 70*p11*p14*p15*p7 - 70*p11*p14*p35*p39 - 70*p11*p15*p34*p40 - 70*p11*p17*p34*p39 - 70*p13*p17*p8*p9 + 70*p13*p35*p46*p9 - 70*p13*p40*p43*p8 - 70*p13*p43*p46*p7 - 100*p14*p15*p8*p9 - 70*p14*p35*p45*p9 + 100*p14*p39*p43*p8 + 70*p14*p43*p45*p7 - 100*p15*p34*p46*p9 + 70*p15*p40*p42*p8 + 70*p15*p42*p46*p7 - 70*p17*p34*p45*p9 + 70*p17*p39*p42*p8 + 49*p17*p42*p45*p7 + 100*p34*p39*p43*p46 - 70*p34*p40*p43*p45 - 70*p35*p39*p42*p46 + 49*p35*p40*p42*p45)
+  det C[Lambda^6] = 63504*(35*p10*p11**2*p15 - 49*p10*p11*p12*p13 + 35*p10*p11*p43*p45 - 49*p10*p12*p42*p45 - 35*p10*p13*p42*p43 + 35*p10*p15*p42**2 + 35*p11**2*p39*p47 - 35*p11*p12*p39*p45 + 25*p11*p13*p15*p9 + 49*p11*p13*p38*p47 - 25*p11*p13*p39*p43 - 35*p11*p15*p38*p45 + 35*p11*p45*p47*p9 - 35*p12*p13**2*p9 + 35*p12*p13*p39*p42 - 35*p12*p45**2*p9 - 35*p13**2*p38*p43 + 35*p13*p15*p38*p42 - 35*p13*p42*p47*p9 + 25*p15*p42*p45*p9 + 49*p38*p42*p45*p47 - 35*p38*p43*p45**2 + 35*p39*p42**2*p47 - 25*p39*p42*p43*p45)
+  det C[H_1] = p1*p23 - p26*p29
+  det C[H_2] = p21*p3 + p28*p32
+  det C[H_3] = p19*p5 - p31*p36
+  det C[H_4] = p17*p7 + p35*p40
+  det C[H_5] = p15*p9 - p39*p43
+  det C[H_6] = p11*p13 + p42*p45
+  distinct irreducible factors over Q: 12; Delta = their product has degree 34; none is identically zero: True
+  variables occurring in Delta: 48 of 48
+  factor from Lambda^0 : degree 2,  4 variables; irreducible over Q(i): True (0 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  factor from Lambda^1 : degree 2,  4 variables; irreducible over Q(i): True (0 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  factor from Lambda^2 : degree 4, 16 variables; irreducible over Q(i): True (98 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  factor from Lambda^3 : degree 4, 16 variables; irreducible over Q(i): True (99 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  factor from Lambda^4 : degree 4, 16 variables; irreducible over Q(i): True (102 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  factor from Lambda^5 : degree 4, 16 variables; irreducible over Q(i): True (110 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  factor from Lambda^6 : degree 4, 12 variables; irreducible over Q(i): True (62 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  factor from H_2      : degree 2,  4 variables; irreducible over Q(i): True (0 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  factor from H_3      : degree 2,  4 variables; irreducible over Q(i): True (0 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  factor from H_4      : degree 2,  4 variables; irreducible over Q(i): True (0 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  factor from H_5      : degree 2,  4 variables; irreducible over Q(i): True (0 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  factor from H_6      : degree 2,  4 variables; irreducible over Q(i): True (0 s); real polynomial on the u(128) form (after a unit): True; takes both signs at real integer points: True
+  W_A                             : vanishing det C_rho: ['Lambda^0', 'Lambda^1', 'H_1', 'H_2', 'H_3', 'H_4', 'H_5', 'H_6']; Schur-predicted rank 122850; exact sparse rank 122850; agree: True; nondegenerate: False
+  W'_A                            : vanishing det C_rho: ['Lambda^0', 'Lambda^1', 'H_1', 'H_2', 'H_3', 'H_4', 'H_5', 'H_6']; Schur-predicted rank 122850; exact sparse rank 122850; agree: True; nondegenerate: False
+  W_A + W'_A                      : vanishing det C_rho: ['Lambda^0', 'Lambda^1', 'H_1', 'H_2', 'H_3', 'H_4', 'H_5', 'H_6']; Schur-predicted rank 122850; exact sparse rank 122850; agree: True; nondegenerate: False
+  random integer p                : vanishing det C_rho: none; Schur-predicted rank 212992; exact sparse rank 212992; agree: True; nondegenerate: True
+  random, on det C[H_2] = 0       : vanishing det C_rho: ['H_2']; Schur-predicted rank 211562; exact sparse rank 211562; agree: True; nondegenerate: False
+  random, on det C[Lambda^3] = 0  : vanishing det C_rho: ['Lambda^3']; Schur-predicted rank 212420; exact sparse rank 212420; agree: True; nondegenerate: False
+  (G_symbols.out, (14,0): rank Shiab(xi^.) = 122850 for W_A, W'_A, W_A+W'_A; rank sigma(delta_2) = 139234 = 122850 + 16384, as Lemma H1 predicts)
+
+=== H4. Einstein output on Levi-Civita curvature (exact rationals; Y of grade 1, 13 and 3, 5, 9, 11) ===
+  output grade 1 : only type O1,2 contributes (1 type(s)); Y = gamma_n: K_mn = lambda (Ric - Scal/2 eta)_mn exactly: True, lambda = 1 per unit p_t
+  output grade 13: only type E2,13 contributes (1 type(s)); Y = gamma_n Gamma: K_mn = lambda (Ric - Scal/2 eta)_mn exactly: True, lambda = -1 per unit p_t
+  outputs of grade 3, 5, 9, 11 vanish for all 48 types (3 random monomials each, all m): True
+
+=== H5. The draft's self-adjoint family span(W_A, W'_A) and the twisted family ===
+  Lambda^0 : det on x W_A + y W'_A = 0;  on + z W_C Ad_G + w W'_C Ad_G = -97344*I*(w*y + x*z)
+  Lambda^1 : det on x W_A + y W'_A = 0;  on + z W_C Ad_G + w W'_C Ad_G = -331776*(w*y + x*z)**2
+  Lambda^2 : det on x W_A + y W'_A = -1703680*(x**2 + y**2)**2;  on + z W_C Ad_G + w W'_C Ad_G = -30976*(55*w**4 - 110*w**2*x**2 + 146*w**2*y**2 + 110*w**2*z**2 + 512*w*x*y*z + 55*x**4 + 110*x**2*y**2 + 146*x**2*z**2 + 55*y**4 - 110*y**2*z**2 + 55*z**4)
+             = -1703680 (x^2+y^2-z^2-w^2)^2 + -7929856 (xz+yw)^2 exactly: True
+  Lambda^3 : det on x W_A + y W'_A = -7776000*(x**2 + y**2)**2;  on + z W_C Ad_G + w W'_C Ad_G = -518400*(15*w**4 - 30*w**2*x**2 + 34*w**2*y**2 + 30*w**2*z**2 + 128*w*x*y*z + 15*x**4 + 30*x**2*y**2 + 34*x**2*z**2 + 15*y**4 - 30*y**2*z**2 + 15*z**4)
+             = -7776000 (x^2+y^2-z^2-w^2)^2 + -33177600 (xz+yw)^2 exactly: True
+  Lambda^4 : det on x W_A + y W'_A = -17915904*(x**2 + y**2)**2;  on + z W_C Ad_G + w W'_C Ad_G = -2985984*(6*w**4 - 12*w**2*x**2 + 13*w**2*y**2 + 12*w**2*z**2 + 50*w*x*y*z + 6*x**4 + 12*x**2*y**2 + 13*x**2*z**2 + 6*y**4 - 12*y**2*z**2 + 6*z**4)
+             = -17915904 (x^2+y^2-z^2-w^2)^2 + -74649600 (xz+yw)^2 exactly: True
+  Lambda^5 : det on x W_A + y W'_A = -28672000*(x**2 + y**2)**2;  on + z W_C Ad_G + w W'_C Ad_G = -409600*(70*w**4 - 140*w**2*x**2 + 149*w**2*y**2 + 140*w**2*z**2 + 578*w*x*y*z + 70*x**4 + 140*x**2*y**2 + 149*x**2*z**2 + 70*y**4 - 140*y**2*z**2 + 70*z**4)
+             = -28672000 (x^2+y^2-z^2-w^2)^2 + -118374400 (xz+yw)^2 exactly: True
+  Lambda^6 : det on x W_A + y W'_A = -35562240*(x**2 + y**2)**2;  on + z W_C Ad_G + w W'_C Ad_G = -1016064*(35*w**4 - 70*w**2*x**2 + 74*w**2*y**2 + 70*w**2*z**2 + 288*w*x*y*z + 35*x**4 + 70*x**2*y**2 + 74*x**2*z**2 + 35*y**4 - 70*y**2*z**2 + 35*z**4)
+             = -35562240 (x^2+y^2-z^2-w^2)^2 + -146313216 (xz+yw)^2 exactly: True
+  H_1      : det on x W_A + y W'_A = 0;  on + z W_C Ad_G + w W'_C Ad_G = -4*I*(w*y + x*z)
+  H_2      : det on x W_A + y W'_A = 0;  on + z W_C Ad_G + w W'_C Ad_G = -4*I*(w*y + x*z)
+  H_3      : det on x W_A + y W'_A = 0;  on + z W_C Ad_G + w W'_C Ad_G = -4*I*(w*y + x*z)
+  H_4      : det on x W_A + y W'_A = 0;  on + z W_C Ad_G + w W'_C Ad_G = -4*I*(w*y + x*z)
+  H_5      : det on x W_A + y W'_A = 0;  on + z W_C Ad_G + w W'_C Ad_G = -4*I*(w*y + x*z)
+  H_6      : det on x W_A + y W'_A = 0;  on + z W_C Ad_G + w W'_C Ad_G = -4*I*(w*y + x*z)
+  sum-of-squares identities hold with coefficients of one sign: True
+  with the u(128)-valued Phi^E = sum e^abc (x) gamma_abc (= -i Phi of G_symbols), the operators x' W_A + y' W'_A + z' W_C Ad_G + w' W'_C Ad_G (x',y',z',w' real) are u(128)-real: True; their determinants are, up to units, (x'z'+y'w') and a(x'^2+y'^2-z'^2-w'^2)^2 + b(x'z'+y'w')^2 with ab > 0
+  example  Shiab# = W_A^E + W_C^E o Ad_Gamma  (u(128)-real; Ad_Gamma X = Gamma X Gamma^-1 = grade involution):
+     det C_rho = {'Lambda^0': 97344*I, 'Lambda^1': -331776, 'Lambda^2': -7929856, 'Lambda^3': -33177600, 'Lambda^4': -74649600, 'Lambda^5': -118374400, 'Lambda^6': -146313216, 'H_1': 4*I, 'H_2': 4*I, 'H_3': 4*I, 'H_4': 4*I, 'H_5': 4*I, 'H_6': 4*I}
+     exact rank of beta in the u(128) basis = 212992 of 212992: nondegenerate True
+     rank sigma(delta_2)(e^0), kappa = 1 (true or printed Upsilon, T = 0) = 229376 of 229376: symbol sequence exact: True
+     Einstein output: p(O1,2) = 2*I, p(E2,13) = 0 (same as W_A^E: Shiab#(F_R) = W_A^E(F_R), the exact Einstein tensor up to the factor i of the real form)
+
+=== H6. so(64,64) / so(128): grades 1,2,5,6,9,10,13,14 (need 13 * 8128 = 105664) ===
+  types inside so: 12 (O1,2, O2,5, O5,6, O6,9, O9,10, O10,13, E1,10, E2,9, E2,13, E5,6, E5,10, E6,9) = dim S_sa(so(64,64)) = 12 (D1): True
+  Lambda^0 : odd ['+[1]', '*+g0[13]'] even ['+g0[2]']: C = [[156*p1], [156*p29]]; generic rank 1 (max possible 1)
+  Lambda^1 : odd ['-g0[1]', '*-[13]'] even ['+[2]', '*-g0[14]']: C = [[12*p1, 0], [-12*p29, 0]]; generic rank 1 (max possible 2)
+  Lambda^2 : odd ['-[1]', '*-g0[13]'] even ['-g0[2]', '*+[10]']: C = [[2*p1, 22*p25], [2*p29, -22*p20]]; generic rank 2 (max possible 2)
+  Lambda^3 : odd ['+g0[5]', '*+[9]'] even ['-[2]', '*+g0[10]']: C = [[30*p4, 90*p40], [-30*p27, 90*p17]]; generic rank 2 (max possible 2)
+  Lambda^4 : odd ['+[5]', '*+g0[9]'] even ['+g0[6]', '*-[10]']: C = [[72*p9, 36*p40], [72*p43, -36*p17]]; generic rank 2 (max possible 2)
+  Lambda^5 : odd ['-g0[5]', '*-[9]'] even ['+[6]', '*-g0[10]']: C = [[40*p9, 20*p40], [-40*p43, 20*p17]]; generic rank 2 (max possible 2)
+  Lambda^6 : odd ['-[5]', '*-g0[9]'] even ['-g0[6]', '*+[6]']: C = [[30*p9, 42*p38], [30*p43, -42*p12]]; generic rank 2 (max possible 2)
+  H_1      : odd ['u[1]', '*ug0[13]'] even ['ug0[2]']: C = [[-p1], [-p29]]; generic rank 1 (max possible 1)
+  H_2      : odd [] even ['u[2]']: C = []; generic rank 0 (max possible 0)
+  H_3      : odd [] even ['*u[10]']: C = []; generic rank 0 (max possible 0)
+  H_4      : odd ['ug0[5]', '*u[9]'] even ['*ug0[10]']: C = [[-p40], [-p17]]; generic rank 1 (max possible 1)
+  H_5      : odd ['u[5]', '*ug0[9]'] even ['ug0[6]']: C = [[-p9], [-p43]]; generic rank 1 (max possible 1)
+  H_6      : odd [] even ['u[6]']: C = []; generic rank 0 (max possible 0)
+  corank >= 45058 from unequal odd/even multiplicities alone; Schur generic rank 60580; exact sparse rank at a random point 60580, at W_A 60580 (Schur 60580); maximal rank over all 12 dimensions = 60580, i.e. deficit >= 45084 for every member
+
+=== H7. (7,7), non-null xi = e^0 (comparison with G11; the null cone is excluded by G11.1) ===
+  det C_rho on x W_A + y W'_A: Lambda^0: 0; Lambda^1: 0; Lambda^2: -1703680*(x - y)**2*(x + y)**2; Lambda^3: -7776000*(x - y)**2*(x + y)**2; Lambda^4: -17915904*(x - y)**2*(x + y)**2; Lambda^5: -28672000*(x - y)**2*(x + y)**2; Lambda^6: -35562240*(x - y)**2*(x + y)**2; H_1: 0; H_2: 0; H_3: 0; H_4: 0; H_5: 0; H_6: 0
+  W_A + W'_A        : Schur-predicted rank 106496
+  W_A - W'_A        : Schur-predicted rank 106496
+  W_A               : Schur-predicted rank 122850
+  random integer p  : Schur-predicted rank 212992; exact sparse rank 212992
+  (G_symbols.out (7,7) non-null: 106496 for W_A +- W'_A, 122850 for W_A)
+
+runtime 608 s
+EXIT 0

@@ -289,7 +289,7 @@ Claims:
 
 Gaps:
 - **G15** closed for $(\varepsilon,\varpi)$; the ℷ-part stays open.
-- **G16** closed: negative for the specified operators, and in (7,7) for all of $\mathcal S_{\rm sa}$.
+- **G16** closed: negative for the specified operators, and in (7,7) for all of $\mathcal S_{\rm sa}$. *Amended by round 4 (`H-ellipticity.md`, Thm H5):* in $(14,0)$ with $\mathfrak u(128)$ the complex **is** elliptic for an open dense set of self-adjoint Shiab operators. None of these is of the draft's form (8.1). So the negative verdict here is restricted to (8.1), R-S, $\mathfrak{so}(64,64)$ and (7,7).
 - **G22** closed under R-F, with the inconsistencies above.
 - **G07** refined: the MW reading is incompatible with the ζ kinetic term (G7). See `reports/CORRECTIONS.md`.
 

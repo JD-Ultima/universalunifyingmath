@@ -33,7 +33,8 @@ Tests
   H6  so(64,64) / so(128): 12-dim S_sa, Schur blocks, maximal rank.
   H7  (7,7) at a non-null covector, for comparison with G11: pencil determinants and a generic point.
 Exact arithmetic throughout: Python integers / sympy rationals and Gaussian rationals; sparse ranks by exact integer
-elimination (G_symbols.sparse_rank).  Fixed seeds.
+elimination (G_symbols.sparse_rank).  Fixed seeds.  Runtime is dominated by sympy's factorisation of the five quartics
+over Q(i) (H3); H_SKIP_QI=1 skips that step only (the committed .out is a full run).
 """
 import itertools
 import os
@@ -665,15 +666,19 @@ def main():
                         res[t] += sg * v * Fab[L]
         return res
     G = Ric - Fraction(1, 2) * s * np.eye(N, dtype=object)
-    for grade_lab, Yof in (("1", lambda n: 1 << n), ("13", lambda n: FULL ^ (1 << n))):
-        K = {t: [[out(Yof(n), m)[t] for n in range(N)] for m in range(N)] for t in range(NT)}
+    clE = Cliff(EUC)
+    # Y = gamma_n (grade 1) and Y = gamma_n Gamma = sign(n, full) E_(full - n) (grade 13)
+    for grade_lab, Yof, sY in (("1", lambda n: 1 << n, lambda n: 1),
+                               ("13", lambda n: FULL ^ (1 << n), lambda n: clE.sign(1 << n, FULL))):
+        K = {t: [[sY(n) * out(Yof(n), m)[t] for n in range(N)] for m in range(N)] for t in range(NT)}
         nz = [t for t in range(NT) if any(K[t][m][n] for m in range(N) for n in range(N))]
         for t in nz:
             m0, n0 = next((m, n) for m in range(N) for n in range(N) if G[m][n] != 0)
             lam = Fraction(K[t][m0][n0]) / G[m0][n0]
             exact = all(Fraction(K[t][m][n]) == lam * G[m][n] for m in range(N) for n in range(N))
             print(f"  output grade {grade_lab:2s}: only type {NAME[t]} contributes ({len(nz)} type(s)); "
-                  f"K = lambda (Ric - Scal/2 eta) exactly: {exact}, lambda = {lam} (per unit p_t)")
+                  f"Y = {'gamma_n' if grade_lab == '1' else 'gamma_n Gamma'}: K_mn = lambda (Ric - Scal/2 eta)_mn exactly: {exact}, "
+                  f"lambda = {lam} per unit p_t")
             assert exact
     zero_other = True
     for g in (3, 5, 9, 11):
@@ -712,7 +717,7 @@ def main():
         realok &= sp.im(r_) == 0
     print(f"  with the u(128)-valued Phi^E = sum e^abc (x) gamma_abc (= -i Phi of G_symbols), the operators "
           f"x' W_A + y' W'_A + z' W_C Ad_G + w' W'_C Ad_G (x',y',z',w' real) are u(128)-real: {realok}; "
-          f"their determinants are, up to units, (x'z'+y'w') and a(x'^2+y'^2-z'^2-w'^2)^2 + b(x'z'+y'w')^2, a, b > 0")
+          f"their determinants are, up to units, (x'z'+y'w') and a(x'^2+y'^2-z'^2-w'^2)^2 + b(x'z'+y'w')^2 with ab > 0")
     assert realok
     sharp = [sp.expand(f.subs({xr: 1, yr: 0, zr: 1, wr: 0})) for f in famr]   # W_A^E + W_C^E o Ad_Gamma
     p_sharp = [int(sp.expand(f / ph_t)) * int(sp.re(ph_t * ph_t)) for f, ph_t in zip(sharp, ph)]
@@ -753,7 +758,7 @@ def main():
     rso = full_rank(EUC, pso, GSO)
     rwa = full_rank(EUC, WA, GSO)
     print(f"  corank >= {lower} from unequal odd/even multiplicities alone; Schur generic rank {gen}; exact sparse rank at "
-          f"a random point {rso}, at W_A {rwa} (Schur {predWA}); deficit {13 * 8128 - gen} for every member")
+          f"a random point {rso}, at W_A {rwa} (Schur {predWA}); maximal rank over all 12 dimensions = {gen}, i.e. deficit >= {13 * 8128 - gen} for every member")
     assert gen == rso and predWA == rwa and gen < 13 * 8128
 
     print("\n=== H7. (7,7), non-null xi = e^0 (comparison with G11; the null cone is excluded by G11.1) ===")

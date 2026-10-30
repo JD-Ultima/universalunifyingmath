@@ -1,0 +1,20 @@
+result: "H6-H7. Every elliptic self-adjoint Shiab operator has nonzero Einstein output with the exact Einstein ratio (Q_1 != 0 forces the O(1,2) or E(2,13) coefficient); none is of the draft's form (8.1). The minimal extension x W_A + y W'_A + z W_C o Ad_Gamma + w W'_C o Ad_Gamma (Ad_Gamma = grade involution; u(128)-real coefficients) is elliptic in (14,0) iff kappa != 0 and xz + yw != 0; e.g. Shiab# = W_A + W_C o Ad_Gamma: rank sigma(delta_2) = 229376/229376, Shiab#(F_R) = W_A(F_R) (Einstein tensor of Y)."
+claim_id: [GU-047, GU-057, GU-072]
+writeup: formalization/geometric-unity/H-ellipticity.md (Propositions H6, H7)
+code: [computation/geometric-unity/H_ellipticity.py, computation/geometric-unity/H_ellipticity.out]
+formalization_status: >
+  Exact coordinates of W_A, W'_A, W_C o Ad_Gamma, W'_C o Ad_Gamma in the S_sa basis (unique solutions of 4000 exact
+  equations each, from the G_symbols operator code; W_C, W'_C alone have no solution: not self-adjoint).
+internal_consistency: >
+  On the 4-parameter family: det C_rho = unit * (xz+yw)^k for Lambda^0, Lambda^1, H_j; for Lambda^2..Lambda^6
+  det = a(x^2+y^2-z^2-w^2)^2 + b(xz+yw)^2 with ab > 0 (exact identities); on xz+yw = 0 (incl. span(W_A,W'_A)) not elliptic.
+  Einstein output: only O(1,2) (grade 1) and E(2,13) (grade 13) see Levi-Civita curvature, each with exactly
+  Ric - Scal/2 eta; grades 3,5,9,11 vanish.
+proof_status: "Proven (exact sympy identities, exact rational curvature contraction, exact sparse ranks)."
+novelty: "New: first explicit self-adjoint, Einstein, Weyl-annihilating Shiab operator with an elliptic Euclidean deformation complex."
+reproducibility: "Exact; fixed seeds; part of H_ellipticity.py."
+empirical_testability: "None."
+dependencies: ["D2", "D3", "G4", "G10", "H5"]
+confidence: >
+  High for the stated operators. Shiab# is not of the draft's form (8.1): it needs the grade involution Ad_Gamma (the
+  action of the lift of -1 in O(14)), which the draft does not use. Nothing in the draft selects it.

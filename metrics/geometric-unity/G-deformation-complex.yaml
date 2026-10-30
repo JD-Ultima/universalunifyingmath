@@ -20,3 +20,5 @@ dependencies: ["D2", "D3", "D5", "G2"]
 confidence: >
   High for the listed operators. Open: Euclidean ellipticity for the remaining 46 dimensions of S_sa and for
   non-self-adjoint Shiabs other than R-S.
+
+# Round 4 amendment (H-ellipticity.md, Theorem H5): in (14,0) with u(128) the complex is elliptic iff kappa != 0 and Delta(Psi) != 0, an open dense subset of S_sa (example W_A + W_C o Ad_Gamma). The negative verdict above holds for span(W_A, W'_A) (form 8.1), R-S, so(64,64), and (7,7) only.

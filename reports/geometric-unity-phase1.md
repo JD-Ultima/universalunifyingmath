@@ -125,3 +125,35 @@ Write-up: `formalization/geometric-unity/G-full-el-fermions.md`. Code: `computat
 - GU-G16 is closed in the negative. The "elliptic deformation complex in Euclidean signature" (§12 (x)) fails for every Shiab of the draft's self-adjoint family and for R-S. The fermion block alone is elliptic in (14,0).
 - Claims: GU-052 O→C; GU-056 O→C/F; GU-057 split (V for $\delta_2\delta_1=\mathrm{ad}\Upsilon$, F for ellipticity); GU-072 F (bosonic) / C (fermionic).
 - Earlier conclusions qualified: see `reports/CORRECTIONS.md` (B4/GU-G07; GU-052; GU-057/072).
+
+## Round 4 — Euclidean ellipticity over all self-adjoint Shiab operators (GU-072, GU-057, GU-G16)
+
+Write-up: `formalization/geometric-unity/H-ellipticity.md`. Code: `computation/geometric-unity/H_ellipticity.py`, output committed. It imports `G_symbols.py`, `D_rep_counts.py` and `shiab_checks.py` without modifying them. Records: `metrics/geometric-unity/H-{euclidean-ellipticity,twisted-shiab}.yaml`. Everything is exact (integers, rationals, Gaussian rationals; exact sparse ranks).
+
+**Question.** Round 3 (G11) left open whether *some* $\circledast\in\mathcal S_{\rm sa}$ (48-dimensional for $\mathfrak u$, 12 for $\mathfrak{so}$) has an elliptic deformation complex in (14,0). The round-3 negative covered only $\mathrm{span}(W_A,W'_A)$ and R-S.
+
+**Hypotheses.**
+- *Euclidean real form:* $\mathrm{Spin}(14)$ and $\mathfrak g=\mathfrak u(128)$ (the unitary algebra of the positive spinor Hermitian form). The answer is the same for $\mathfrak u(64,64)$ and for any real form of $\mathfrak{gl}(128,\mathbb C)$, since the conditions are polynomial and real forms are Zariski dense.
+- *Complex:* as in G10.
+- Any pairing, κ, background $(\varepsilon,T)$, true or printed Υ.
+
+| # | Statement | Status |
+|---|---|---|
+| H1 | **Reduction.** Exact at ξ iff $\kappa\ne0$ and $\beta_\xi(\alpha,\alpha')=\Psi(\xi\wedge\alpha\wedge\alpha')$ is nondegenerate on $\xi^\perp\otimes\mathfrak g$. This is independent of the background, of $b$ and of the Υ version. One ξ suffices. | Proven |
+| H2–H3 | **Exact basis.** The basis of $\mathcal S_{\rm sa}$ is the 48 Clifford trace invariants $O_{(j,l)}=\mathrm{Tr}(q(\omega)(X_jY_l+Y_jX_l))$ and $E_{(j,l)}$ (with Γ). They agree block by block with the $D_7$ characters, and every block pairs even with odd grades. Coordinates: $W_A$ is $-2$ on 12 $O$-blocks and $W'_A$ is $2$ on 12 $E$-blocks. $W_C\circ\mathrm{Ad}_\Gamma$ and $W'_C\circ\mathrm{Ad}_\Gamma$ fill the other 24 blocks. These reproduce G_symbols' symbol matrix entrywise. | Proven; exact |
+| H4 | **Spin(13) reduction.** $W\otimes\mathfrak g=4\Lambda^0+8(\Lambda^1..\Lambda^6)+4(H_1..H_6)$. β splits into 13 matrices $C_\rho$ ($2\times2$ or $4\times4$) with entries linear in the coordinates. The Schur-predicted rank equals the exact $212992^2$ sparse rank at 6 points. This includes $W_A$, $W'_A$ and $W_A+W'_A$ at 122850, the round-3 values. | Proven; exact |
+| H5 | **Main.** For $\mathfrak u(128)$ (any real form of $\mathfrak{gl}(128)$) the complex is elliptic in (14,0) **iff $\kappa\ne0$ and $\Delta(\Psi)\ne0$**. Here Δ is the product of 7 quadrics and 5 quartics (degree 34), all irreducible over $\mathbb Q(i)$ and sign-changing on the real form. So the elliptic set is **open and dense** in $\mathcal S_{\rm sa}$. $\mathrm{span}(W_A,W'_A)$ lies entirely in $\{\Delta=0\}$. | Proven; exact |
+| H6 | **Ellipticity forces Einstein.** $Q_1\ne0$ forces a nonzero $O_{(1,2)}$ or $E_{(2,13)}$ coefficient, which are the only coefficients curvature sees. So every elliptic member reproduces the Einstein tensor of $Y$ with the exact ratio (D3.3). **No elliptic member is of the draft's form (8.1).** | Proven |
+| H7 | **Minimal extension of (8.1).** $xW_A+yW'_A+zW_C\mathrm{Ad}_\Gamma+wW'_C\mathrm{Ad}_\Gamma$, with $\mathrm{Ad}_\Gamma$ the grade involution and real coefficients, is elliptic iff $\kappa\ne0$ and $xz+yw\ne0$. The quartic determinants are $a(x^2+y^2-z^2-w^2)^2+b(xz+yw)^2$ with $ab>0$. Example: $\circledast_\sharp=W_A+W_C\circ\mathrm{Ad}_\Gamma$ gives rank $\sigma\delta_2=229376/229376$ and $\circledast_\sharp(F_R)=W_A(F_R)$. | Proven; exact |
+| H8 | **$\mathfrak{so}(64,64)$ / $\mathfrak{so}(128)$: never elliptic.** $\mathrm{rank}\le60580<105664$ for all 12 dimensions, attained by $W_A$. The corank $45084=45058+26$ comes from unequal odd/even Spin(13)-multiplicities ($\mathfrak{gl}(64)$ vs $\Lambda^2S^+\oplus\Lambda^2S^-$) plus an uncoupled grade-14 copy. | Proven; exact |
+| H9 | **(7,7).** Generic Ψ is exact at non-null ξ, so the null cone (G11.1) is the only obstruction. The pencil determinants $\propto(x-y)^2(x+y)^2$ explain G11's degenerate lines $W_A\pm W'_A$. | Proven; exact |
+
+**Verdicts.**
+- §12 (x) "elliptic deformation complex in Euclidean signature" holds for a **generic** self-adjoint Shiab operator on $\mathfrak u$, with $\kappa\ne0$. It fails for every operator the draft actually writes: the self-adjoint (8.1) family, R-S, and anything on $\mathfrak{so}(64,64)$. In (7,7) it fails always.
+- Elliptic, self-adjoint and Einstein are compatible, but only outside (8.1), and nothing in the draft selects such a member.
+- Unchanged: (9.7) is still not variational (D4); ellipticity refers to the complex of the true EL equation (D5).
+- Claims:
+  - GU-072 bosonic: F → **C**;
+  - GU-057 ellipticity: F → **C**; $\delta_2\delta_1=\mathrm{ad}\Upsilon$ stays V;
+  - GU-G16: the negative verdict is restricted accordingly.
+- Changes are logged in `reports/CORRECTIONS.md`. G11's numbers are all reproduced and unchanged.
