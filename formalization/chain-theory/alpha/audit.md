@@ -126,6 +126,13 @@ This gives $4^4\cdot6\cdot3\cdot2\cdot5=46\,080$ rules and 15 639 distinct value
 
 The single hit is $(79,48,42,3)$ in both cases. At this denominator, 10-digit agreement is not a generic property of small-coefficient elements of the field.
 
+**D. Lean-side cross-check.** We ran the author's `mutations.py` with Lean 4.35.0 on the pinned file. It applies 19 single-definition rewordings and has Lean evaluate each readout (`upstream_mutations_lean.out`; values in `mutations_values.out`).
+
+- Every rewording that also appears in Part A reproduces our Python numerator exactly.
+- Five rewordings are new to our table: commutator records carrying no reads (138.94), keeping both commutator combinations (133.97), a shifted slot exchange (254.54), dropping the exchange-fixed records (149.59) and dropping the even records (295.10).
+- Two rewordings leave the value unchanged: `fixesFar_always_true` (which breaks the end-rule statement but not the readout) and an equivalent definition of `wX`.
+- No other rewording lands within $10^{-3}$ of $\alpha^{-1}$.
+
 **Interpretation.** These are statements about trial factors, not about physics. If the rules were fixed without reference to $\alpha$, a chance agreement this close is improbable: $p\sim10^{-6}$ for the rule space of B, which contains every alternative the author lists. If the construction was selected from a search of $\gtrsim10^{9}$–$10^{10}$ implicit variants (wording clauses × configurations × normalizations × conventions such as F-CT-3), the agreement is unremarkable. The paper does not record the order in which rules and value were fixed (CT-G10), so the data in hand cannot distinguish these cases. Further digits can (F-CT-6).
 
 **Limits.** The rule space B is ours. A different "natural" space would give a different density. The density estimate assumes local uniformity of rule outputs near 137, which holds approximately here (median gap 0.0070 between adjacent values).

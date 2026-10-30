@@ -11,6 +11,7 @@ Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip insta
 | `readcap_lemmas.py` | SDP cross-check of imported read-cap lemmas: Choi map positive and non-decomposable, also after embedding (needs `cvxpy==1.6.0`) | ~4 s | `readcap_lemmas.out` |
 | `config_enumeration.py` | Independent enumeration of Thm S-config (76/42/23) and of Theorem 1's selection under readings A, A*, B | <1 s | `config_enumeration.out` |
 | `symmetry.py` | Covariance of the records under the symmetry group of the joint state; isotypic decomposition; commutant (F-CT-10) | ~10 s | `symmetry.out` |
+| `mutations_values.py` | 1/value and σ for the readouts that the author's Lean `mutations.py` printed (log `upstream_mutations_lean.out`, Lean 4.35.0) | <1 s | `mutations_values.out` |
 | `algebraic.py` | Minimal polynomial, Galois conjugates, $f(d_Q,d_q)$, deviations from measurements (F-CT-6, F-CT-7) | <1 s | `algebraic.out` |
 
 Run all of them:
