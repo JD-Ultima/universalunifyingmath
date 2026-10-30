@@ -1,7 +1,8 @@
 result: "A. Fiber metric signature, chimeric (7,7) classification, fiber topology, spin structure on C"
 claim_id: [GU-010, GU-011, GU-012, GU-013, GU-014, GU-015, GU-022, GU-023]
 writeup: formalization/geometric-unity/A-chimeric-signature.md
-code: [computation/geometric-unity/fiber_signature.py, computation/geometric-unity/fiber_signature.out]
+code: [computation/geometric-unity/fiber_signature.py, computation/geometric-unity/fiber_signature.out,
+       computation/geometric-unity/A_spin_obstruction.py, computation/geometric-unity/A_spin_obstruction.out]
 formalization_status: >
   Fully formalized under reconstruction R-A1..R-A3 (natural = GL(n)-invariant fiber metrics,
   block-diagonal chimeric metric). Lemma A2 shows R-A2 is the most general natural choice (n>=3).
@@ -9,14 +10,21 @@ internal_consistency: >
   Source consistent with our results once its trace "assignment" is realised as DeWitt lambda>1/n.
   Minor inconsistencies: signature ordering differs between (3.9)/Sec.3.5 and (4.6); fiber written
   as GL~(4)/Spin(1,3) (double cover of Met(X) fiber) in (3.33) vs Met(X) in Def. 3.1 (GU-G03).
+  The Spin(7,7) bundle of (3.32) exists only over the time-oriented double cover Y' of (3.33): over
+  Met(X) the lifting obstruction w2(C+)+w2(C-) = pi^*w2(X) + w1(l)^2 is nonzero on every fiber
+  (Prop. A7 as corrected 2026-10-30; see reports/CORRECTIONS.md).
 proof_status: >
   Theorem A1, Lemmas A2-A3, Theorem A4, Corollary A5, Props A6-A7: proven (closed form + exact
-  computation). A6/A7 rely on imported topology (Leray-Hirsch, Gysin, splitting principle).
+  computation). A6/A7 rely on imported topology (Gysin, splitting principle). A7 was corrected on
+  2026-10-30 (referee GU-3): the round-1 version used w2(C), the obstruction for a definite metric.
+  The corrected A7 uses the Karoubi obstruction w2(C+)+w2(C-), re-proved via lifts of reflection pairs
+  (exact, A_spin_obstruction.py K1-K4).
 novelty: >
   Closed forms are elementary (DeWitt signature is classical). The classification of neutral chimeric
   signatures (Cor. A5: only (1,3),(3,1),(2,2) -> (7,7) and (2,3),(3,2) -> (10,10)) and the spin-structure
-  statement w2(C) = pi^* w2(X) are not in the source; we are not aware of them in the literature
-  (not searched exhaustively).
+  statement (no Spin(7,7) structure on C over Met(X); over Y' iff w2(X) = 0) are not in the source; we
+  are not aware of them in the literature (not searched exhaustively). The lifting criterion itself is
+  Karoubi's (Ann. Sci. ENS 1 (1968) 161).
 reproducibility: "Exact arithmetic (Fractions/sympy), deterministic, ~3 s: python3 fiber_signature.py"
 empirical_testability: "None (pure mathematics of the construction)."
 dependencies: [L-A1, L-A2, L-A3, L-A4]
@@ -24,4 +32,5 @@ confidence: >
   High. Closed form proven by hand and checked exactly by two independent inertia algorithms
   (Descartes on exact characteristic polynomial; LDL congruence) on diagonal and random non-diagonal
   metrics, for all (p,q) with n<=6; classification is a short Diophantine argument plus exhaustive
-  search to n=40.
+  search to n=40. A7: high after correction; the criterion is classical and re-derived exactly here, and the
+  fiber class w1(l)^2 is detected on an explicit RP^2 inside one fiber.

@@ -1,14 +1,19 @@
 result: "C1. Inhomogeneous gauge group G = H x| N, tilted homomorphism, stabiliser, bi-connection, augmented torsion"
 claim_id: [GU-034, GU-035, GU-038, GU-039, GU-040, GU-041, GU-042, GU-043, GU-044]
 writeup: formalization/geometric-unity/C-gauge-shiab.md (Props C1, C2, C3, C3')
-code: [computation/geometric-unity/gauge_group_identities.py, computation/geometric-unity/gauge_group_identities.out]
+code: [computation/geometric-unity/gauge_group_identities.py, computation/geometric-unity/gauge_group_identities.out,
+       computation/geometric-unity/C_tilt_repair.py, computation/geometric-unity/C_tilt_repair.out]
 formalization_status: >
   Fully formalized (local model; identities are pointwise-algebraic plus Leibniz, hence global).
   Reading of (5.9) is forced by associativity.
 internal_consistency: >
   INCONSISTENT as printed: Lemmas 6.1, 6.3, 6.4 and the stabiliser statement hold for tau(h) =
   (h, -h^-1 d h); Lemmas 6.5 and 7.2 fail for it (residual -2 h^-1 d_A0 h) and hold for the
-  opposite-sign tilt tau'. Consistent after one global sign repair (Prop C3').
+  opposite-sign tilt tau'. Consistent after one global sign choice (Prop C3'), which is not a one-formula
+  change (C_tilt_repair R4). Repair A changes tau (6.4) and pi (6.11), with pi(g tau'(h)) - pi(g) =
+  2 e (d_A0 h) h^-1 e^-1 otherwise; it also changes (6.15) if the left action is to stay the one induced
+  through pi (R5). Repair B keeps tau, pi, (6.15) and flips w in mu (6.18)-(6.19) and T (7.3).
+  (Wording corrected 2026-10-30, referee GU-4.)
 proof_status: "Proven (one-line cocycle proofs) and verified as exact polynomial identities in a generic GL(2) model."
 novelty: >
   The sign error in the proofs of Lemmas 6.5/7.2 and the identification tau(H) = Stab_right(A0),

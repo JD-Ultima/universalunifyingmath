@@ -1,7 +1,8 @@
 result: "C3. The printed first-order field equation (9.7)-(9.9) is not the Euler-Lagrange equation of (9.4)"
 claim_id: [GU-050, GU-053, GU-055]
 writeup: formalization/geometric-unity/C-gauge-shiab.md (Lemma C6a, Props C6, C6')
-code: [computation/geometric-unity/shiab_checks.py, computation/geometric-unity/shiab_checks.out]
+code: [computation/geometric-unity/shiab_checks.py, computation/geometric-unity/shiab_checks.out,
+       computation/geometric-unity/C_rs_all_members.py, computation/geometric-unity/C_rs_all_members.out]
 formalization_status: >
   Formalized for family R-S: criterion (Lemma C6a) reduces formal self-adjointness of Shiab o d_B to
   a pointwise antisymmetry condition; tested on all 6 bracket variants and the full operator for all c.
@@ -11,8 +12,10 @@ internal_consistency: >
   numerical O(1) defects for all variants); cubic term lacks the required symmetry.
   GU-055 (second-order equations automatically satisfied when Upsilon = 0) holds trivially.
 proof_status: >
-  Proven for the Einstein-reproducing member (exact hand computation, confirmed numerically);
-  numerical for the other members (max relative antisymmetry defects 1.56-1.92; 0.94 at least-squares optimal c).
+  Proven for the Einstein-reproducing member (exact hand computation, confirmed numerically).
+  Proven for all 8 bracket choices (s1;s2,s3) and every c by exact integer certificates
+  (C_rs_all_members.out: beta_0(T,a) = +-256 for all c, beta_0(a,T) = 0; added 2026-10-30, referee GU-5).
+  Numerical: relative defects 0.84-1.00 at the least-squares c for all 8 (round 1 tested only (C;A,A): 0.94).
 novelty: "New: the source asserts (9.7) without derivation."
 reproducibility: "complex128, fixed seeds; S3/S4 sample values vary with RNG stream, conclusions do not."
 empirical_testability: "None."

@@ -12,95 +12,135 @@
 
 \title{The algebraic core of Geometric Unity:\\ signatures, spinor content, gauge equivariance and the 14$\to$4 reduction}
 \author{universalunifyingmath project}
-\date{Draft, 30 October 2026}
+\date{Draft, 30 October 2026 (revised after referee report)}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We reconstruct, as precise mathematics, the finite-dimensional and first-order parts of E.~Weinstein's \emph{Geometric Unity: Author's Working Draft v1.0} (1 April 2021) [W21], and test them.
+We reconstruct, as precise mathematics, the finite-dimensional and first-order parts of E.~Weinstein's \emph{Geometric Unity: Author's Working Draft v1.0} (1 April 2021) \cite{W21}, and test them.
 
-\emph{Signature.} The natural fiber metrics on $Y=\Met(X^4)$ form the DeWitt family $G_\lambda$. The chimeric bundle has signature $(7,7)$ if and only if the base is Lorentzian, $\lambda>\tfrac14$, and a fixed relative block sign holds.
+\emph{Signature.} The natural fiber metrics on $Y=\Met(X^4)$ form the DeWitt family $G_\lambda$. Among bases of signature $(1,3)$, $(3,1)$ and $(4,0)$, the chimeric bundle has signature $(7,7)$ if and only if the base is Lorentzian, $\lambda>\tfrac14$, and a fixed relative block sign holds. A base of signature $(2,2)$ also gives $(7,7)$. Over $\Met(X)$ itself the chimeric bundle admits no $\mathrm{Spin}(7,7)$ structure, for any $X$. Over the time-oriented double cover that the draft writes in (3.33), it admits one if and only if $w_2(X)=0$.
 
 \emph{Spinors.} One Majorana--Weyl spinor of $\mathrm{Spin}(7,7)$, restricted to $\mathrm{Spin}(1,3)\times\mathrm{Spin}(6,4)$, is exactly one Standard Model generation with $\nu_R$. The draft's three tables of quantum numbers are reproduced exactly. In Standard Model quantum numbers, the Rarita--Schwinger $144$ carries a further full generation.
 
-\emph{Gauge equivariance.} Two equivariance lemmas of the inhomogeneous gauge group are false as printed, and a single sign repair restores consistency.
+\emph{Gauge equivariance.} Two equivariance lemmas of the inhomogeneous gauge group are false as printed. One global sign convention restores consistency, but it changes at least two printed formulas.
 
-\emph{Field equations.} For the natural reconstructed family of ``Shiab'' operators, the printed field equation is not the Euler--Lagrange equation of the printed action.
+\emph{Field equations.} For the natural reconstructed family of ``Shiab'' operators, the printed field equation is not the Euler--Lagrange equation of the printed action. Under stated hypotheses, the same holds for every nonzero admissible Shiab operator.
 
-\emph{Reduction.} Along a section, a natural observerse metric reproduces the 4D Einstein equation with a cosmological term set by the fiber geometry. That term depends on choices the draft does not make.
+\emph{Reduction.} Along a section, a natural observerse metric reproduces the 4D Einstein equation with a cosmological term in the projected sense: for the pulled-back Einstein tensor of $Y$, and for the reduced action. The 14-dimensional equations do not hold on the section. Under one of the two readings of the draft (Z2) the cosmological term has the anti-de Sitter sign. The term depends on choices the draft does not make.
 
 All computations are exact or have stated tolerances, and the code and outputs are public.
 \end{abstract}
 
-\section{Source and method}
-The source is the 69-page draft [W21], obtained from a third-party mirror (sha256 \texttt{3f28d742\ldots86d4}; PDF timestamps 2021-04-01). It has not been verified against the author's host. Every statement of the draft that we use is cited by equation or page. Where the draft is ambiguous, we fix an explicit reconstruction, labelled R-$\ast$, and test the alternatives. Critiques of the draft were treated as leads only; none is used as evidence.
+\section{Source, method and notation}
+The source is the 69-page draft \cite{W21}, obtained from a third-party mirror (sha256 \texttt{3f28d742\ldots86d4}; PDF timestamps 2021-04-01). It has not been verified against the author's host. Every statement of the draft that we use is cited by equation, section or page; page numbers are PDF pages, which equal the printed ones. Where the draft is ambiguous, we fix an explicit reconstruction, labelled R-$\ast$, and test the alternatives. Critiques of the draft were treated as leads only; none is used as evidence. Code and outputs are in \texttt{computation/geometric-unity/}, and the proofs in \texttt{formalization/geometric-unity/A--H}.
+
+\emph{Notation.} $\gamma_0,\dots,\gamma_{13}$ generate $\mathrm{Cl}(7,7)\cong\mathbb R(128)$, $\Gamma=\gamma_0\cdots\gamma_{13}$, and $\mathrm{Ad}_\Gamma X=\Gamma X\Gamma^{-1}$ is the grade involution. The gauge algebra is $\mathfrak u(64,64)\subset M_{128}(\mathbb C)$, and the pairing is $\langle T,X\rangle=\int\mathrm{Tr}(T\wedge X)$. For algebra-valued forms $a=\sum e^I\otimes a_I$ and $b$, set $[a\wedge b]_C=\sum e^I\wedge e^J\otimes(a_Ib_J-b_Ja_I)$ and $[a\wedge b]_A=i\sum e^I\wedge e^J\otimes(a_Ib_J+b_Ja_I)$. The soldering invariants are $\Phi^1=\sum_m e^m\otimes\gamma_m$, $\Phi^2=\sum_{m<n}e^{mn}\otimes\gamma_m\gamma_n$ and $\Phi^3=\sum_{a<b<c}e^{abc}\otimes i\gamma_a\gamma_b\gamma_c$, and $\Phi_{11}={*}\Phi^3$. They are tilted as $\Phi\mapsto\varepsilon^{-1}\Phi\varepsilon$. Set $W_s\xi=[\Phi_{11}\wedge\xi]_s$ and $W'_s\xi=[\Phi_{11}\Gamma\wedge\xi]_s$ for $s\in\{A,C\}$. The reconstruction \emph{R-S} is the family
+\[ \circledast^{(s_1;s_2,s_3)}_c\xi=[\Phi^1\wedge{*}\xi]_{s_1}-\tfrac c2\,{*}\bigl[\Phi^1\wedge{*}[\Phi^2\wedge{*}\xi]_{s_3}\bigr]_{s_2},\qquad s_i\in\{C,A\},\ c\in\mathbb R, \]
+which reads the draft's (8.1) and (9.2)--(9.3). For a group element $g=(\varepsilon,\varpi)$ (\S4), $A=A_0+\varpi$ and $B=A_0\cdot\varepsilon$ are the two connections, and $T=\varpi-\varepsilon^{-1}d_{A_0}\varepsilon$ is the augmented torsion \cite[(7.3)]{W21}. The projection of \cite[(6.11)]{W21} is $\pi(g)=\varepsilon\varpi\varepsilon^{-1}+(d_{A_0}\varepsilon)\varepsilon^{-1}$, and $\pi'(g)=\varepsilon\varpi\varepsilon^{-1}-(d_{A_0}\varepsilon)\varepsilon^{-1}$. $\kappa=\kappa_1$ is the coefficient of the torsion term in (9.4) and (9.7). $\Upsilon$ and $\Xi$ are the $\varpi$- and $\varepsilon$-gradients of the action (9.4), as in (9.5)--(9.6). $\Upsilon^{\rm pr}=\circledast F_A+\kappa{*}T$ is the expression printed in (9.7). $\delta_1$ (the infinitesimal gauge action) and $\delta_2$ (the linearisation of $\Upsilon$) are the maps of the deformation sequence (10.1).
 
 \section{Fiber metrics and the chimeric signature}
-Let $Y=\Met_{(p,q)}(X^n)$. Its vertical bundle is $V=\pi^*\mathrm{Sym}^2T^*X$. A $GL(n)$-natural fiber metric is, up to scale, one of
+Let $Y=\Met_{(p,q)}(X^n)$. Its vertical bundle is $V=\pi^*\mathrm{Sym}^2T^*X$. A $GL(n)$-natural fiber metric is, up to scale, one of the DeWitt family \cite{DW}
 \[ G_\lambda(h,k)=\operatorname{tr}(g^{-1}hg^{-1}k)-\lambda\operatorname{tr}(g^{-1}h)\operatorname{tr}(g^{-1}k). \]
-\begin{theorem}
-Set $P=\binom{p+1}2+\binom{q+1}2$. Then $\operatorname{sig}G_\lambda=(P,pq)$ for $\lambda<1/n$ and $(P-1,pq+1)$ for $\lambda>1/n$. Let $n=4$ and $g_C=c_VG_\lambda\oplus c_Hg^{-1}$ on $C=V\oplus\pi^*T^*X$. Then $\operatorname{sig}g_C=(7,7)$ if and only if the base is Lorentzian, $\lambda>\tfrac14$, and $c_Hg^{-1}$ has exactly one eigenvalue of the sign of $c_V$. A Riemannian base never gives $(7,7)$. Over all $n$, neutral chimeric signatures occur exactly for bases $(1,3)$, $(3,1)$, $(2,2)$ and $(2,3)$, $(3,2)$. Finally, $w_2(C)=\pi^*w_2(X)$, so the $\mathrm{Spin}(7,7)$ structure exists if and only if $X$ is spin.
+\begin{theorem}\label{thm:sig}
+Set $P=\binom{p+1}2+\binom{q+1}2$. Then $\operatorname{sig}G_\lambda=(P,pq)$ for $\lambda<1/n$ and $(P-1,pq+1)$ for $\lambda>1/n$. Let $n=4$, $\lambda\neq\tfrac14$ and $g_C=c_VG_\lambda\oplus c_Hg^{-1}$ on $C=V\oplus\pi^*T^*X$.
+\begin{enumerate}
+\item For a base of signature $(1,3)$, $(3,1)$ or $(4,0)$, $\operatorname{sig}g_C=(7,7)$ if and only if the base is Lorentzian, $\lambda>\tfrac14$, and $c_Hg^{-1}$ has exactly one eigenvalue of the sign of $c_V$. A Riemannian base never gives $(7,7)$. A base of signature $(2,2)$ gives $(7,7)$ for every $\lambda>\tfrac14$ and either block sign.
+\item For $n\ge2$ and $\lambda\neq1/n$, the chimeric signature is neutral exactly for bases $(1,3)$, $(3,1)$, $(2,2)$, giving $(7,7)$, and $(2,3)$, $(3,2)$, giving $(10,10)$; in every case $\lambda>1/n$. For $n=1$, the signature $(1,1)$ occurs on both sides of $\lambda=1$.
+\end{enumerate}
 \end{theorem}
-The $(7,7)$ choice of [W21, \S3.5] is therefore available, but not forced. It needs the DeWitt parameter on the supermetric side and a relative sign.
+The $(7,7)$ choice of \cite[\S3.5, p.~22]{W21} is therefore available, but not forced. It needs the DeWitt parameter on the supermetric side and a relative sign.
+
+\begin{proposition}\label{prop:spin}
+In the Lorentzian $(7,7)$ case of Theorem~\ref{thm:sig}, let $\ell\subset\pi^*TX$ be the time line of the tautological metric. Then $w_1(C)=0$ and $w_2(C)=\pi^*w_2(X)$. Moreover $C=C_+\oplus C_-$ with $w_1(C_+)=w_1(C_-)=w_1(\ell)$. The $SO(7,7)$ frame bundle of $C$ lifts to $\mathrm{Spin}(7,7)$ if and only if
+\[ w_2(C_+)+w_2(C_-)=\pi^*w_2(X)+w_1(\ell)^2=0 . \]
+Hence over $Y=\Met(X)$ no $\mathrm{Spin}(7,7)$ structure on $C$ exists, for any $X$. Over the time-oriented double cover $Y'$ of \cite[(3.33), p.~24]{W21} one exists if and only if $w_2(X)=0$, that is, if and only if $X$ is spin when $X$ is orientable.
+\end{proposition}
+\begin{proof}[Sketch]
+The criterion $w_2(E_+)+w_2(E_-)=0$ for an indefinite bundle is due to Karoubi \cite{K68}; see also \cite{B81}. It differs from $w_2(E)$ by $w_1(E_+)w_1(E_-)$. To verify it, reduce to the maximal compact subgroup $S(O(7)\times O(7))$, whose classifying space has $H^2(\,\cdot\,;\mathbb Z_2)$ spanned by $w_2(C_+)$, $w_2(C_-)$ and $w_1(C_\pm)^2$. A reflection in two orthonormal vectors lifts to $\pm\gamma_a\gamma_b$. Here $(\gamma_a\gamma_b)^2=-1$ when the two vectors have the same sign and $+1$ when their signs differ, which fixes the extension class.
+
+For $c_V,c_H>0$ and $\lambda>\tfrac14$, put $\Sigma=\ell^\perp$. Then $C_+\simeq\mathrm{Sym}^2_0\Sigma^*\oplus\mathbb R\oplus\ell^*$ and $C_-\simeq\mathbb Rg\oplus(\ell^*\otimes\Sigma^*)\oplus\Sigma^*$, and the splitting principle gives the classes. The fiber of $\Met(X)$ is homotopy equivalent to $\mathbb{RP}^3$, and $\ell$ restricts to the tautological line there, so $w_1(\ell)^2\neq0$ on every fiber. On $Y'$ the line $\ell$ is oriented, and $\pi^*$ is injective on $H^2$ by the Gysin sequence. Every step is checked exactly in \texttt{A\_spin\_obstruction.out}.
+\end{proof}
+The draft therefore must, not merely may, use the space $Y'$ of (3.33) rather than $\Met(X)$ of Def.~3.1 for the bundle $P_{\widetilde{\mathrm{Fr}}(C)}$ of (3.32).
 
 \section{Spinor content}
 \begin{theorem}
-$\mathrm{Cl}(7,7)\cong\mathbb R(128)$, and Majorana--Weyl spinors exist. A Majorana--Weyl spinor restricted to $\mathrm{Spin}(1,3)\times\mathrm{Spin}(6,4)$ is $((2,1)\otimes16)_{\mathbb R}$. Under $SU(3)\times SU(2)\times U(1)$, embedded via the Pati--Salam maximal compact $\mathrm{Spin}(6)\times\mathrm{Spin}(4)$, this is one generation with $\nu^c$.
+$\mathrm{Cl}(7,7)\cong\mathbb R(128)$, and Majorana--Weyl spinors exist. A Majorana--Weyl spinor restricted to $\mathrm{Spin}(1,3)\times\mathrm{Spin}(6,4)$ is $((2,1)\otimes16)_{\mathbb R}$. Under $SU(3)\times SU(2)\times U(1)$, embedded via the Pati--Salam maximal compact subgroup $\mathrm{Spin}(6)\times\mathrm{Spin}(4)$ \cite{BH}, this is one generation with $\nu^c$.
 
-Take the field content $\nu\in S^+$, $\zeta\in T^*Y\otimes S^-$. Its left-handed spin-$\tfrac12$ part is $3\times16_+\oplus144_-$. The module $144_-=\ker(V\otimes S^-\to S^+)$ contains the Standard Model content of one further generation, together with 128 exotic states carrying charges $\pm\tfrac43,\pm\tfrac53,\pm2$.
+Take the field content $\nu\in S^+$, $\zeta\in T^*Y\otimes S^-$ of \cite[(12.28)]{W21}. In the Majorana--Weyl reading, its left-handed spin-$\tfrac12$ part is $3\times16_+\oplus144_-$. In the complex Weyl reading it is $6\times16_+\oplus2\times144_-$, and in the Dirac reading it is vector-like. The module $144_-=\ker(V\otimes S^-\to S^+)$ contains the Standard Model content of one further generation, together with 128 exotic states, including states of charge $\pm\tfrac43$, $\pm\tfrac53$ and $\pm2$.
 \end{theorem}
-The $144_-$ content was verified by two independent methods: weight multisets, and an explicit $\mathrm{Cl}(10)$ realisation with Casimir and triality labels. The draft's ``$2+1$'' (two generations plus an ``imposter'') counts $\mathrm{Spin}(6,4)$-$16_+$ multiplets. At the level of Standard Model quantum numbers the count is four. With complex Dirac spinors the content is vector-like, and ``$\mathrm{Spin}(14,\mathbb C)\to U(128)$'' is ill-typed.
+The draft's three tables of quantum numbers \cite[pp.~52--53]{W21} are reproduced exactly. The $SU(3)$ conjugation bars of the p.~53 table were transcribed from a 220-dpi render of that page. The $144_-$ content was verified by two independent methods: weight multisets, and an explicit $\mathrm{Cl}(10)$ realisation with Casimir and triality labels. The draft's ``$2+1$'' (two generations plus an ``imposter'', \cite[(12.22), p.~62]{W21}) counts $\mathrm{Spin}(6,4)$-$16_+$ multiplets. At the level of Standard Model quantum numbers the count is four. With complex Dirac spinors the content is vector-like, and ``$\mathrm{Spin}(14,\mathbb C)\to U(128)$'' \cite[(3.20)]{W21} is ill-typed. Theorem~\ref{thm:full}(4) shows that the Majorana--Weyl reading leaves $\zeta$ without a kinetic term. The count $3\times16_+\oplus144_-$ therefore belongs to a reading that the dynamics excludes.
 
 \section{The inhomogeneous gauge group}
 Write $\mathcal G=\mathcal H\ltimes\Omega^1(\mathrm{ad})$ with $(\varepsilon_1,\varpi_1)(\varepsilon_2,\varpi_2)=(\varepsilon_1\varepsilon_2,\varepsilon_2^{-1}\varpi_1\varepsilon_2+\varpi_2)$, and let $c(h)=h^{-1}d_{A_0}h$.
 \begin{proposition}
-$\tau(h)=(h,-c(h))$ is an injective homomorphism onto the right stabiliser of $A_0$. Lemmas 6.5 and 7.2 of [W21] are false as printed:
+$\tau(h)=(h,-c(h))$ is an injective homomorphism onto the right stabiliser of $A_0$, and $\pi$ is $\tau$-invariant (Lemma~6.3 of \cite{W21}). Lemmas 6.5 and 7.2 of \cite{W21} are false as printed:
 \[ \mu(g\tau(h))-\mu(g)\cdot h=(-2c(h),0),\qquad T_{g\tau(h)}-h^{-1}T_gh=-2c(h). \]
-They hold for $\tau'(h)=(h,+c(h))$, the left stabiliser. The map $(\varepsilon,\varpi)\mapsto(\varepsilon,-\varpi)$ is an automorphism of $\mathcal G$ exchanging $\tau$ and $\tau'$, so one global sign choice makes Sections 6--7 of [W21] consistent.
+They hold for $\tau'(h)=(h,+c(h))$, the left stabiliser, but then Lemma~6.3 fails:
+\[ \pi(g\tau'(h))-\pi(g)=2\,\varepsilon\,(d_{A_0}h)h^{-1}\varepsilon^{-1}. \]
+The map $(\varepsilon,\varpi)\mapsto(\varepsilon,-\varpi)$ is an automorphism of $\mathcal G$ exchanging $\tau$ and $\tau'$. Sections 6--7 of \cite{W21} become consistent after one global sign choice, but no single printed formula can be changed alone. Either
+\begin{enumerate}
+\item[(A)] replace $\tau$ by $\tau'$ in (6.4) and $\pi$ by $\pi'$ in (6.11); if the left action of Lemma~6.4 is to remain the one induced through the projection, also flip the sign of $(d_{A_0}\varepsilon)\varepsilon^{-1}$ in (6.15); or
+\item[(B)] keep $\tau$, $\pi$ and (6.15), and flip the sign of $\varpi$ in $\mu$ (6.18)--(6.19) and in $T$ (7.3).
+\end{enumerate}
 \end{proposition}
+All identities are exact (\texttt{gauge\_group\_identities.out}, \texttt{C\_tilt\_repair.out}). The draft warns of ``2 or more conflicting conventions in this section'' \cite[fn.~7, p.~36]{W21}, and its own (10.6) uses the sign of $\tau'$. We use (A), and call it R-C1$'$.
 
 \section{Shiab operators and the field equation}
-For the reconstruction R-S, soldering invariants $\Phi^1,\Phi^2$ in $\mathfrak u(64,64)\subset\mathrm{Cl}(7,7)\otimes\mathbb C$ define a family of Shiab operators $\Omega^2(\mathrm{ad})\to\Omega^{13}(\mathrm{ad})$.
+For R-S, the soldering invariants $\Phi^1,\Phi^2$ define the family $\circledast^{(s_1;s_2,s_3)}_c:\Omega^2(\mathrm{ad})\to\Omega^{13}(\mathrm{ad})$ of \S1.
 \begin{proposition}
-One member of the family maps the Levi-Civita spin curvature to (a multiple of) the Einstein tensor of $Y^{14}$ and annihilates the Weyl part. For every member of R-S, $\circledast\circ d_B$ fails to be formally self-adjoint; there is an exact counterexample for the Einstein-reproducing member at every value of its parameter. Hence the printed equation (9.7) is not the Euler--Lagrange equation of the printed action (9.4) within R-S.
+The member $(C;A,A)$ at $c=1$ maps the Levi-Civita spin curvature to $-{*}G$, with $G$ the Einstein tensor of $Y^{14}$. Every member annihilates the Weyl part. For every member of R-S, that is for all eight bracket choices and every $c$, $\circledast\circ d_B$ fails to be formally self-adjoint: there are $T=Xe^0$ and $\alpha=Ye^1$ with $X,Y$ Clifford monomials (times $i$ where needed), for which the pointwise forms of the self-adjointness criterion satisfy $\beta_0(T,\alpha)=\pm256$ for every $c$ and $\beta_0(\alpha,T)=0$. Hence the printed equation (9.7) is not the Euler--Lagrange equation of the printed action (9.4) within R-S.
 \end{proposition}
-Over the whole equivariant space $\mathcal S=\mathrm{Hom}_{\mathrm{Spin}(7,7)}(\Lambda^2\otimes\mathfrak u(64,64),\Lambda^{13}\otimes\mathfrak u(64,64))$ the answer is sharper:
+The certificates for all eight choices are in \texttt{C\_rs\_all\_members.out}. A random-sample test gives relative defects of at least $0.84$ at the least-squares optimal $c$. Over the whole equivariant space $\mathcal S=\mathrm{Hom}_{\mathrm{Spin}(7,7)}(\Lambda^2\otimes\mathfrak u(64,64),\Lambda^{13}\otimes\mathfrak u(64,64))$ the answer is sharper:
 \begin{theorem}
-$\dim\mathcal S=200$. The subspace on which $\circledast\circ d_B$ is formally self-adjoint has dimension $48$. It is exactly the space of operators of the form $\Psi\wedge$ with $\Psi\in\Lambda^3\otimes S^2\mathfrak g^*$. Every $\circledast\in\mathcal S$ annihilates the Weyl part of a Levi-Civita curvature, while self-adjointness forces the exact Einstein ratio. The operator $W_A=[*\Phi^3\wedge\cdot]_A$, of the draft's form (8.1) with $r=11$, is self-adjoint and yields $-*G$. However, (9.7) is the gradient of some functional only if $\circledast=\Omega\wedge$ for an $11$-form $\Omega$ (generalised Chern--Simons). Such an operator never outputs the Einstein tensor, and it vanishes under $\mathrm{Spin}(7,7)$ or $\mathrm{Spin}(1,3)\times\mathrm{Spin}(6,4)$ symmetry. Hence (9.7) is not variational for any nonzero admissible Shiab operator. The true Euler--Lagrange equation of (9.4) with $W_A$ is $W_AF_A+\kappa_1*T-\tfrac13[T\wedge[T\wedge\Phi_{11}]_C]_A=0$.
+$\dim\mathcal S=200$. The subspace on which $\circledast\circ d_B$ is formally self-adjoint has dimension $48$. It is exactly the space of operators of the form $\Psi\wedge$ with $\Psi\in\Lambda^3\otimes S^2\mathfrak g^*$. Every $\circledast\in\mathcal S$ annihilates the Weyl part of a Levi-Civita curvature, while self-adjointness forces the exact Einstein ratio. The operator $W_A=[\Phi_{11}\wedge\cdot]_A$, of the draft's form (8.1) with $r=11$, is self-adjoint and yields $-{*}G$.
+
+Now vary $\varpi$ at fixed $\varepsilon$. Let $\circledast$ be any pointwise bundle map that does not depend on $\varpi$, and pair with a constant $\mathrm{Ad}$-invariant form $b$. Then $\Upsilon^{\rm pr}$ of (9.7) is a $\varpi$-gradient only if $b(\alpha\wedge\circledast\xi)=\sum_k\Omega_k\wedge I_k(\alpha\wedge\xi)$. Here the $\Omega_k$ are 11-forms and the $I_k$ are the invariant symmetric forms of the gauge algebra. For $\mathfrak u(64,64)$ and $b=\mathrm{Tr}$ this reads $\circledast\xi=\Omega_0\wedge\xi+\Omega_1\wedge\mathrm{Tr}(\xi)\mathbf 1$, a generalised Chern--Simons operator. Such an operator preserves Clifford grade, so it never outputs the Einstein tensor. It vanishes under $\mathrm{Spin}(7,7)$ or $\mathrm{Spin}(1,3)\times\mathrm{Spin}(6,4)$ symmetry. Hence, under these hypotheses, (9.7) is not variational for any nonzero admissible Shiab operator. The true Euler--Lagrange equation of (9.4) with $W_A$ is $W_AF_A+\kappa{*}T-\tfrac13[T\wedge[T\wedge\Phi_{11}]_C]_A=0$.
 \end{theorem}
+Field-dependent multipliers and $\varpi$-dependent Shiab operators are outside the hypotheses.
 
 \section{The complete variational system, fermions, and ellipticity}
-\begin{theorem}
-Under the repaired tilt $\tau'$ the following hold.
+\begin{theorem}\label{thm:full}
+Under the repaired tilt $\tau'$ (route (A) of \S4) the following hold.
 \begin{enumerate}
-\item The action factors through the projection $\pi'$ (a Stueckelberg form). Hence the $\varepsilon$-variation adds nothing, and the complete Euler--Lagrange system in $(\varepsilon,\varpi)$ is $\Upsilon=0$, with the off-shell Noether identity $\Xi\equiv d_A\Upsilon$ for the true $\Upsilon$. This identity fails for the printed $\Upsilon$ of (9.7).
+\item The action factors through the projection $\pi'$ (a Stueckelberg form). Hence the $\varepsilon$-variation adds nothing, and the complete Euler--Lagrange system in $(\varepsilon,\varpi)$ is $\Upsilon=0$, with the off-shell Noether identity $\Xi\equiv d_A\Upsilon$ for the true $\Upsilon$. This identity fails for $\Upsilon^{\rm pr}$.
 \item Requiring $d_\nabla(\circledast F_\nabla)=0$ for every metric selects the exact Einstein ratio.
 \item Every equivariant Shiab operator on spinor-valued forms flips chirality, and the natural Clifford contraction is the Rarita--Schwinger operator. The chirality labels of (9.16) are inconsistent, and swapping one pair of columns repairs them.
 \item In signature $(7,7)$ the Spin-invariant bilinears make both the Dirac and the Rarita--Schwinger kinetic terms of a single Majorana--Weyl field total derivatives. The minimal consistent real content is therefore two Majorana--Weyl copies, equivalent to complex Weyl, and the left-handed content doubles to $6\times16\oplus2\times144$.
-\item $\delta_2\circ\delta_1=\mathrm{ad}(\Upsilon)$, so the deformation sequence is a complex only on solutions. Its symbol is exact at no covector, for the draft's whole self-adjoint family and for the round-one family, in both $(14,0)$ and $(7,7)$. In $(7,7)$ a null-cone obstruction excludes every self-adjoint Shiab operator. The claimed elliptic deformation complex in Euclidean signature therefore fails for these operators. It does hold for a generic self-adjoint Shiab operator: in $(14,0)$ with $\mathfrak u(128)$ the complex is elliptic if and only if $\kappa\neq0$ and an explicit degree-$34$ polynomial $\Delta(\Psi)$ does not vanish. The self-adjoint part of the draft's form (8.1) lies inside $\{\Delta=0\}$. The operator $W_A+W_C\circ\mathrm{Ad}_\Gamma$ is an explicit elliptic example, and it agrees with $W_A$ on curvature.
+\item $\delta_2\circ\delta_1=\mathrm{ad}(\Upsilon)$, so the deformation sequence is a complex only on solutions. Its symbol is exact at no covector, for the draft's whole self-adjoint family $\mathrm{span}(W_A,W'_A)$ and for R-S, in both $(14,0)$ and $(7,7)$. In $(7,7)$ a null-cone obstruction excludes every self-adjoint Shiab operator. The elliptic deformation complex in Euclidean signature claimed in \cite[\S12, item (x), p.~65]{W21} therefore fails for these operators. It does hold for a generic self-adjoint Shiab operator: in $(14,0)$ with $\mathfrak u(128)$ the complex is elliptic if and only if $\kappa\neq0$ and an explicit degree-$34$ polynomial $\Delta(\Psi)$ does not vanish. The self-adjoint part of the draft's form (8.1) lies inside $\{\Delta=0\}$. The operator $W_A+W_C\circ\mathrm{Ad}_\Gamma$ is an explicit elliptic example, and it agrees with $W_A$ on curvature.
 \end{enumerate}
 \end{theorem}
 
 \section{The 14$\to$4 reduction}
-No $\mathrm{Diff}(X)$-natural connection exists on $\Met(X)$. We therefore use the Levi-Civita connection of the base metric. The draft supports two horizontal blocks: Z1, the point $y$ itself, and Z2, the pulled-back base metric. The fiber is the symmetric space $\mathbb R\times SL(n)/SO(p,q)$, whose curvature is independent of $\lambda$.
+No $\mathrm{Diff}(X)$-natural connection exists on $\Met(X)$. We therefore use the Levi-Civita connection of the base metric. The draft supports two horizontal blocks. In Z1 the horizontal metric is the point $y$ itself \cite[(3.7), (3.15), p.~36, p.~56]{W21}. In Z2 it is the pulled-back base metric \cite[\S3.5, p.~22]{W21}. The fiber is the symmetric space $\mathbb R\times SL(n)/SO(p,q)$, whose curvature is independent of $\lambda$. The draft's 4D claim is (9.10) \cite[p.~45]{W21}.
 \begin{theorem}
 Along a section $s=g$, $s^*g_\aleph=c_Hg$, and the normal bundle is the vertical bundle.
 \begin{itemize}
-\item Under Z2, the restricted Einstein tensor of $Y$ yields $G(g)+\Lambda g$ with $\Lambda=9c_H/(2c_V)$ for every $\lambda$; with the $(7,7)$ sign rule this is the anti-de Sitter sign.
+\item Under Z2, the restricted Einstein tensor of $Y$ yields $G(g)+\Lambda g$ with $\Lambda=9c_H/(2c_V)$ for every $\lambda$ (O'Neill's formulas \cite{ON}). With the $(7,7)$ sign rule this is the anti-de Sitter sign.
 \item Under Z1, $\Lambda$ depends on both $\lambda$ and the route (projection vs reduced action).
 \item $g_\aleph$ is Einstein along the section if and only if the reading is Z1, $\lambda=1/(n+1)$ and $\mathrm{Ric}(g)=0$. For $n=4$, that value $\lambda=\tfrac15$ forces a signature other than $(7,7)$.
 \end{itemize}
 \end{theorem}
-Matching the observed cosmological constant under Z2 requires a fiber length scale of about $2\times10^{26}$\,m, and in addition the sign is wrong.
+The first two items are statements about the projected tensor $s^*G(g_\aleph)$ and the reduced action. The 14-dimensional Einstein tensor $G(g_\aleph)$ is nonzero on $s(X)$ for every $g$, $\lambda$, $c_V$, $c_H$, and so is the draft's $\Upsilon$ there. Matching the observed cosmological constant under Z2 requires a fiber length scale of about $2\times10^{26}$\,m, and in addition the sign is wrong.
 
 \section{Summary}
-The finite-dimensional algebra of [W21] is largely correct and is reproducible exactly. The parts that carry physical content are each well-posed only after explicit choices the draft does not fix: the parameter $\lambda$ and the block sign, the tilt sign, the Shiab operator, and the observerse metric (Z1 or Z2). One sign error is established. The field equation is non-variational for every admissible Shiab operator. The single-Majorana--Weyl fermion reading is inconsistent, and the claimed elliptic deformation complex fails for the draft's own Shiab form, though it holds for generic self-adjoint Shiab operators. No prediction yet has a mass scale.
+The finite-dimensional algebra of \cite{W21} is largely correct and is reproducible exactly. The parts that carry physical content are each well-posed only after explicit choices the draft does not fix:
+\begin{itemize}
+\item the parameter $\lambda$ and the block sign;
+\item the space $Y$: the $\mathrm{Spin}(7,7)$ bundle exists only over the time-oriented double cover, and there only if $w_2(X)=0$;
+\item the tilt sign, which comes with a matching projection;
+\item the Shiab operator;
+\item the observerse metric, Z1 or Z2.
+\end{itemize}
+One sign error is established. The field equation is non-variational for every nonzero admissible Shiab operator, provided $\varpi$ is varied at fixed $\varepsilon$, the operator does not depend on $\varpi$, and the pairing is constant and invariant. The single-Majorana--Weyl fermion reading is inconsistent. The claimed elliptic deformation complex fails for the draft's own Shiab form, though it holds for generic self-adjoint Shiab operators. No prediction yet has a mass scale.
 
-\begin{thebibliography}{9}
-\bibitem{W21} E.~Weinstein, \emph{Geometric Unity: Author's Working Draft, v1.0}, self-published, 1 April 2021.
-\bibitem{BH} J.~Baez and J.~Huerta, The algebra of grand unified theories, Bull.\ AMS \textbf{47}, 483 (2010).
-\bibitem{ON} B.~O'Neill, The fundamental equations of a submersion, Michigan Math.\ J.\ \textbf{13}, 459 (1966).
-\bibitem{DW} B.~S.~DeWitt, Quantum theory of gravity I, Phys.\ Rev.\ \textbf{160}, 1113 (1967).
+\begin{thebibliography}{W21}
+\bibitem[W21]{W21} E.~Weinstein, \emph{Geometric Unity: Author's Working Draft, v1.0}, self-published, 1 April 2021.
+\bibitem[BH]{BH} J.~Baez and J.~Huerta, The algebra of grand unified theories, Bull.\ AMS \textbf{47}, 483 (2010).
+\bibitem[B81]{B81} H.~Baum, \emph{Spin-Strukturen und Dirac-Operatoren \"uber pseudoriemannschen Mannigfaltigkeiten}, Teubner-Texte zur Mathematik \textbf{41}, Teubner, Leipzig (1981).
+\bibitem[DW]{DW} B.~S.~DeWitt, Quantum theory of gravity I, Phys.\ Rev.\ \textbf{160}, 1113 (1967).
+\bibitem[K68]{K68} M.~Karoubi, Alg\`ebres de Clifford et $K$-th\'eorie, Ann.\ Sci.\ \'Ec.\ Norm.\ Sup.\ (4) \textbf{1}, 161 (1968).
+\bibitem[ON]{ON} B.~O'Neill, The fundamental equations of a submersion, Michigan Math.\ J.\ \textbf{13}, 459 (1966).
 \end{thebibliography}
 \end{document}

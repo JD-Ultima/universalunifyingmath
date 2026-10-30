@@ -1,0 +1,31 @@
+sanity: gamma_m in u(64,64): True
+=== Part 1. Random u(64,64) samples; least-squares c in C; relative defect at that c ===
+  trial 0 (C;C,C): |P| = 3.602e+03, |Q| = 1.119e+04, best c = -0.3158-0.0000j, relative defect at best c = 0.871
+  trial 0 (C;C,A): |P| = 3.602e+03, |Q| = 2.468e+04, best c = 0.0171+0.0000j, relative defect at best c = 0.998
+  trial 0 (C;A,C): |P| = 3.602e+03, |Q| = 1.398e+04, best c = -0.0815-0.0000j, relative defect at best c = 0.987
+  trial 0 (C;A,A): |P| = 3.602e+03, |Q| = 9.903e+03, best c = 0.1259+0.0000j, relative defect at best c = 0.985
+  trial 0 (A;C,C): |P| = 4.763e+03, |Q| = 1.119e+04, best c = 0.1931+0.0000j, relative defect at best c = 0.974
+  trial 0 (A;C,A): |P| = 4.763e+03, |Q| = 2.468e+04, best c = -0.1969+0.0000j, relative defect at best c = 0.860
+  trial 0 (A;A,C): |P| = 4.763e+03, |Q| = 1.398e+04, best c = -0.2946-0.0000j, relative defect at best c = 0.902
+  trial 0 (A;A,A): |P| = 4.763e+03, |Q| = 9.903e+03, best c = 0.0519-0.0000j, relative defect at best c = 0.999
+  trial 1 (C;C,C): |P| = 4.133e+03, |Q| = 1.110e+04, best c = -0.0701-0.0000j, relative defect at best c = 0.996
+  trial 1 (C;C,A): |P| = 4.133e+03, |Q| = 1.933e+04, best c = 0.0818-0.0000j, relative defect at best c = 0.982
+  trial 1 (C;A,C): |P| = 4.133e+03, |Q| = 2.074e+04, best c = -0.1045+0.0000j, relative defect at best c = 0.965
+  trial 1 (C;A,A): |P| = 4.133e+03, |Q| = 1.320e+04, best c = 0.3424-0.0000j, relative defect at best c = 0.837
+  trial 1 (A;C,C): |P| = 7.111e+03, |Q| = 1.110e+04, best c = -0.0572+0.0000j, relative defect at best c = 0.999
+  trial 1 (A;C,A): |P| = 7.111e+03, |Q| = 1.933e+04, best c = -0.1060+0.0000j, relative defect at best c = 0.990
+  trial 1 (A;A,C): |P| = 7.111e+03, |Q| = 2.074e+04, best c = -0.0685+0.0000j, relative defect at best c = 0.995
+  trial 1 (A;A,A): |P| = 7.111e+03, |Q| = 1.320e+04, best c = 0.0563-0.0000j, relative defect at best c = 0.999
+  smallest relative defect at the best c, over all 8 choices and trials: 0.837 (0 would mean some c works)
+
+=== Part 2. Exact certificates (T = X e^0, a = Y e^1, b = 0) ===
+  (C;C,C): X = g0, Y = g01: beta_0(T,a) = -256 - (c/2)*0 = -256 for every c; beta_0(a,T) = 0  => not self-adjoint for any c
+  (C;C,A): X = g0, Y = g01: beta_0(T,a) = -256 - (c/2)*0 = -256 for every c; beta_0(a,T) = 0  => not self-adjoint for any c
+  (C;A,C): X = g0, Y = g01: beta_0(T,a) = -256 - (c/2)*0 = -256 for every c; beta_0(a,T) = 0  => not self-adjoint for any c
+  (C;A,A): X = g2, Y = g12: beta_0(T,a) = 256 - (c/2)*0 = 256 for every c; beta_0(a,T) = 0  => not self-adjoint for any c
+  (A;C,C): X = i 1, Y = g1: beta_0(T,a) = -256 - (c/2)*0 = -256 for every c; beta_0(a,T) = 0  => not self-adjoint for any c
+  (A;C,A): X = i 1, Y = g1: beta_0(T,a) = -256 - (c/2)*0 = -256 for every c; beta_0(a,T) = 0  => not self-adjoint for any c
+  (A;A,C): X = g1, Y = i 1: beta_0(T,a) = -256 - (c/2)*0 = -256 for every c; beta_0(a,T) = 0  => not self-adjoint for any c
+  (A;A,A): X = i 1, Y = g1: beta_0(T,a) = -256 - (c/2)*0 = -256 for every c; beta_0(a,T) = 0  => not self-adjoint for any c
+
+all 8 bracket choices excluded exactly (Part 2): True; numerically (Part 1, every defect > 0.1): True

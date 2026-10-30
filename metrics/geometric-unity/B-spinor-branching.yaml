@@ -21,8 +21,8 @@ novelty: >
   p.53 'imposter' entries lie in 144_-, not in the S(TX)(x)S(N) summand of (12.22).
 reproducibility: "Deterministic; spinor_branching <1 s (exact), clifford77 ~25 s."
 empirical_testability: >
-  In principle: extra spin-1/2 states with SM content 144_- minus one generation (128 states, charges
-  +-4/3, +-5/3, +-2, colour sextets/octets) and spin-3/2 states with conjugate-generation quantum
+  In principle: extra spin-1/2 states with SM content 144_- minus one generation (128 states, including
+  charges +-4/3, +-5/3, +-2 and colour sextets/octets) and spin-3/2 states with conjugate-generation quantum
   numbers. Not currently falsifiable: no mass scale or couplings are specified (GU-G18).
 dependencies: [L-B1, L-B2, L-B3, L-B4, "A (signature (7,7) and block split (1,3)+(6,4))"]
 confidence: >

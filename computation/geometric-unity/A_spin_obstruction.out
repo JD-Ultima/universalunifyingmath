@@ -1,0 +1,33 @@
+=== K1. Lifts of reflection pairs in Spin(7,7) (real Cl(7,7), 128 x 128, exact integers) ===
+  (g_a g_b)^2 for a,b both positive (inside E+)   : [-1]
+  (g_a g_b)^2 for a,b both negative (inside E-)   : [-1]
+  (g_a g_b)^2 for a,b one positive, one negative  : [1]
+  => preimage of <r_ab> is Z4 for pp, nn and Z2 x Z2 for pn; restrictions of o: 1, 1, 0
+  => o = 1*w2(E+) + 1*w2(E-) + 0*w1^2   (Karoubi: o = w2(E+) + w2(E-))
+  => in terms of E = E+ (+) E-: o = w2(E) + w1(E+) w1(E-)   [w2(E) = w2(E+) + w2(E-) + w1(E+) w1(E-)]
+
+=== K2. Stiefel-Whitney classes of C+ and C- (splitting principle, mod 2) ===
+  w1(C+) = t;  w1(C-) = t;  w1(l) = t,  w1(X) = s1 + s2 + s3 + t
+  w1(C+) = w1(C-) = w1(l): True
+  o = w2(C+) + w2(C-) == w2(X) + w1(l)^2 (mod 2): True
+  w2(C) = w2(C+) + w2(C-) + w1(C+) w1(C-) == w2(X) (agrees with fiber_signature.out A7): True
+  Base (3,1) with c_V c_H < 0, and the overall sign flip (c_V, c_H) -> (-c_V, -c_H), swap or relabel C+ and C-;
+  o and w1(C+-) are symmetric under C+ <-> C-, so the result holds in every (7,7) case of Theorem A4.
+
+=== K3. Exact Gram check of the decomposition C+- at g = eta = diag(+1,-1,-1,-1), c_V = c_H = 1 ===
+  lambda = 3/10 : V-blocks {'Sym^2_0 Sigma*': (5, 0), 'l* (x) Sigma*': (0, 3), 'R g': (0, 1), 'R g^perp (trace plane)': (1, 0)}; mutually G-orthogonal: True; H*: l* (1, 0), Sigma* (0, 3); total (7, 7); matches C+ = Sym^2_0+R g^perp+l*, C- = R g+l*Sigma*+Sigma*: True
+  lambda = 1/2  : V-blocks {'Sym^2_0 Sigma*': (5, 0), 'l* (x) Sigma*': (0, 3), 'R g': (0, 1), 'R g^perp (trace plane)': (1, 0)}; mutually G-orthogonal: True; H*: l* (1, 0), Sigma* (0, 3); total (7, 7); matches C+ = Sym^2_0+R g^perp+l*, C- = R g+l*Sigma*+Sigma*: True
+  lambda = 1    : V-blocks {'Sym^2_0 Sigma*': (5, 0), 'l* (x) Sigma*': (0, 3), 'R g': (0, 1), 'R g^perp (trace plane)': (1, 0)}; mutually G-orthogonal: True; H*: l* (1, 0), Sigma* (0, 3); total (7, 7); matches C+ = Sym^2_0+R g^perp+l*, C- = R g+l*Sigma*+Sigma*: True
+  lambda = 3    : V-blocks {'Sym^2_0 Sigma*': (5, 0), 'l* (x) Sigma*': (0, 3), 'R g': (0, 1), 'R g^perp (trace plane)': (1, 0)}; mutually G-orthogonal: True; H*: l* (1, 0), Sigma* (0, 3); total (7, 7); matches C+ = Sym^2_0+R g^perp+l*, C- = R g+l*Sigma*+Sigma*: True
+
+=== K4. An RP^2 inside one fiber of Met_(1,3) on which the time line is tautological ===
+  g_u = -I + 2 u u^T, u a unit vector in span(e0,e1,e2); g_u = g_{-u}, so u -> g_u factors through RP^2.
+  u = (1, 0, 0): eigenvalues {1: 1, -1: 3} (Lorentzian (1,3): True); time line = R u: True
+  u = (3/5, 4/5, 0): eigenvalues {-1: 3, 1: 1} (Lorentzian (1,3): True); time line = R u: True
+  u = (2/3, 2/3, 1/3): eigenvalues {1: 1, -1: 3} (Lorentzian (1,3): True); time line = R u: True
+  u = (0, 5/13, 12/13): eigenvalues {-1: 3, 1: 1} (Lorentzian (1,3): True); time line = R u: True
+  So l restricted to this RP^2 is the tautological line gamma, and w1(l)^2 = w1(gamma)^2 != 0 in H^2(RP^2; Z2).
+  pi^* w2(X) restricts to 0 on a fiber. Hence o = pi^* w2(X) + w1(l)^2 != 0 on Met(X), for every X.
+  On the time-oriented Y' (draft (3.33)) l is oriented, w1(l) = 0, and o = pi^* w2(X).
+
+all checks pass: True
