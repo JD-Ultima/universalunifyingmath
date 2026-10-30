@@ -14,6 +14,8 @@
 | F-CT-4 | Freedom analysis. All 13 published alternatives were reproduced. In a declared 46 080-rule space, the expected number of chance hits within 1σ is $4\times10^{-6}$. Among $1.6\times10^9$ small-coefficient elements of $\tfrac{1}{31104}\mathbb Z[\sqrt2,\sqrt3]$, the author's is the only one within 1σ (0.02 expected by chance). | Computed |
 | F-CT-5 | `ChainAlpha.lean` builds under Lean 4.35.0 with standard axioms only. It certifies arithmetic of the definitions. The physically load-bearing choices (CT-G01–G05) enter as definitions. | Verified |
 | F-CT-6 | Deviations from the measurements are reproduced. The candidate is algebraic of degree 4; its minimal polynomial is given. | Verified |
+| F-CT-9 | The imported read-cap lemma is cross-checked numerically: Choi's map is positive and non-decomposable (SDP), also after embedding. | Computed |
+| F-CT-10 | The Letter's exchange $E$ does not commute with the symmetry group $G_\Omega$ of its own joint state, and its record span is not $G_\Omega$-invariant. The covariant version $E'$ gives identical counts and value. Symmetry leaves a 10-parameter family of readouts. | Proven (numerical, exact structure) |
 | F-CT-8 | Exploration: the record weights are not the vacuum amplitudes or norms of the record operators. | Computed (negative) |
 | F-CT-7 | The construction's formula $f(d_Q,d_q)$ at other dimension pairs gives values far from $\alpha^{-1}$. $(3,2)$ is the only pair within 1% of $\alpha^{-1}$; the next closest, $(2,3)$, is 2.5% away. | Computed |
 
@@ -172,6 +174,22 @@ The read cap rests on published theorems (Størmer, Woronowicz, Choi), which are
 - **Control.** The transpose map gives $\lambda^*=0$ (decomposable), as it should.
 
 The "every positive map is decomposable at $(2,2),(2,3)$" direction is a universal statement and is not checkable this way; it remains imported.
+
+## F-CT-10 Covariance and the freedom left by symmetry
+
+$G_\Omega$ is the symmetry group of the joint read state $\lvert\Omega\rangle=\lvert\omega_3\rangle_{Q_1Q_2}\lvert\omega_2\rangle_{q_1q_2}$: $U\otimes\bar U$ on $(Q_1,Q_2)$ and $V\otimes\bar V$ on $(q_1,q_2)$, with $U\in SU(3)$, $V\in SU(2)$. Results from `symmetry.py`:
+
+1. **The plain exchange is not covariant.** The plain slot swap $E$ used by the Letter (and its Lean file) does not commute with $G_\Omega$; the relative defect is $1.4$. The exchange composed with transposition at the slots, $E'$, does commute (defect $5\times10^{-16}$). The reason is that $E$ identifies $Q_1$ with $Q_2$ (and $q_1$ with $q_2$) by the identity map, whereas the join and the qubit pair identify them by the transpose (CT-002 transpose identity).
+2. **The Letter's records are not covariant.** The span of the 169 products is invariant. Its splitting into $E$-even and $E$-odd parts is not (leakage $0.89$), and neither is the span of the three commutator records (leakage $0.97$). So the Letter's record set depends on a choice of bases at the two read links, which the axiom says nothing lines up.
+3. **The covariant version gives the same number.** Records built with $E'$ span a $G_\Omega\times\langle E'\rangle$-invariant 172-dimensional space. The commutator-type records become $D_x$, $D_z$ and $S_y=\sigma_y^{(q_1)}+\sigma_y^{(q_2)}$. The sector sizes are again $79/48/42/3$, so the value is unchanged. The construction can be repaired with no change to the number.
+4. **Freedom left by symmetry.** Under $SU(3)\times SU(2)\times\langle E'\rangle$ the covariant record space decomposes into irreducible summands (SU(3), SU(2); $E'$-parity; multiplicity):
+
+   | Parity | Summands |
+   |---|---|
+   | $+$ | $(1,1)^{\times2}$, $(1,5)$, $(8,1)$, $(8,3)^{\times2}$, $(27,1)$ |
+   | $-$ | $(1,3)^{\times2}$, $(8,1)$, $(8,3)^{\times2}$, $(10,1)$, $(\overline{10},1)$ |
+
+   That is 10 isotypic components, and the commutant has dimension 22. Any invariant dressing $M$ therefore has $\operatorname{tr}M=\sum_{i=1}^{10}\dim\rho_i\,\operatorname{tr}A_i$, a **10-parameter** family of readouts. The Letter's rule is one point in it, fixed by the wording clauses of CT-G02. In particular, within the single isotypic component $(1,3)_-$ the Letter gives weight 1 to the three antisymmetric qubit–qubit products and $\sqrt6$ to the three commutator records. Symmetry does not distinguish these two copies of the same representation; only the "one letter vs two letters" construction rule does.
 
 ## F-CT-8 Exploration: do natural state functionals give the weights? (negative)
 
