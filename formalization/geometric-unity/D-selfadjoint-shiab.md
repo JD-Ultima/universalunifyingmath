@@ -122,3 +122,6 @@ The answer does not depend on the interpretive choices listed in D.1. Outside th
 - Whether some $\varpi$-dependent multiplier or $\circledast_\omega$ rescues (9.7).
 - Which Bianchi-identity property (fn. 10) singles out an operator. Weyl annihilation cannot be it: it is automatic (D3.1).
 - The 14→4 reduction of $G(g_\aleph)$ (G14).
+
+
+**Coordinator reproduction (2026-10-30).** `D_rep_counts.py` and `D_selfadjoint_shiab.py` were re-run and their outputs are byte-identical to the committed `.out` files. `GUTilt.lean` was rebuilt with Lean 4.35.0, with identical axiom report.
