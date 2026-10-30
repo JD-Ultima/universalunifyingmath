@@ -157,3 +157,23 @@ Write-up: `formalization/geometric-unity/H-ellipticity.md`. Code: `computation/g
   - GU-057 ellipticity: F → **C**; $\delta_2\delta_1=\mathrm{ad}\Upsilon$ stays V;
   - GU-G16: the negative verdict is restricted accordingly.
 - Changes are logged in `reports/CORRECTIONS.md`. G11's numbers are all reproduced and unchanged.
+
+## Round 5 — the elliptic twist and the 14→4 reduction (GU-054, GU-G14, GU-G16)
+
+Write-up: `formalization/geometric-unity/I-elliptic-reduction.md`. Code: `computation/geometric-unity/I_elliptic_reduction.py`, output committed, exact, ~110 s. Record: `metrics/geometric-unity/I-elliptic-reduction.yaml`.
+
+Round 4's elliptic operator $\circledast_\sharp=W_A+W_C\circ\mathrm{Ad}_\Gamma$ differs from $W_A$ off curvature. The question was whether this changes the reduced equations, since $T\neq0$ on solutions.
+
+- **Which parts it sees (I1).** The twisted pair never sees $F_0$, or any algebraic curvature tensor. On $\mathfrak{so}(14)$-valued 2-forms it sees exactly the first-Bianchi defect and the pair-antisymmetric parts.
+- **Parity (I2).** For every self-adjoint Shiab operator, $\Upsilon_{\rm ev}=\circledast(d_0T_o)+\kappa{*}T_e+2B(T_e,T_o)_{\rm ev}$. So $T_e$ is slaved to $T_o$, and the odd part $T_o$ cannot vanish on any open set meeting the fibre-scaling cone through $s(X)$; a pure contorsion is never a solution.
+- **Twist identity (I3).** The twisted cubic term is $2\Psi(T_o\wedge T_e\wedge T_e)$. On odd fields its quadratic contribution to Υ therefore vanishes; the $T_o\wedge T_o$ part of $F_A$ is cancelled exactly by $-h/3$. So for $T_e=0$ the algebraic ("Einstein") part of $\Upsilon=0$ is the same for the whole elliptic family as for $\mathrm{span}(W_A,W'_A)$ (I4). The twist enters only the first-order constraint $\circledast(d_0T)=0$.
+- **Constraint system (I5, I6).** In the soldering and invariant sectors this constraint has determinant $4i(xz+yw)$ in (14,0), which is H7's ellipticity factor. For $\circledast_\sharp$ it forces the Γ-partner to be closed ($du=0$, $d^\nabla\theta'=0$); for $W_A$ alone it does not. In the invariant sector the solution sets nevertheless coincide; with $\theta'\neq0$ this was not checked.
+- **Exact Υ in the two sectors.**
+  - Invariant sector: $\Upsilon=-{*}([xG-c_1g]\,e\otimes\gamma+[yG-c_{13}g]\,e\otimes\gamma\Gamma)$ with $c_1=\kappa t+x(312t^2\pm104u^2)\pm208\,ytu$; the upper signs hold in (14,0), the lower in (7,7). This also fixes F8's open constants.
+  - Symmetric displacement sector: $\Upsilon=0\iff G(g_\aleph)+G(R_\theta)=\kappa\theta/x$ and θ is Codazzi, where $R_\theta=4(\theta_{ac}\theta_{bd}-\theta_{ad}\theta_{bc})$.
+- **Reduction (I7), Z1 and Z2 alike.**
+  - (P), invariant sector: 4D Einstein with $\Lambda_4=\Lambda_P-c_Hc_1/x$, a **free constant**. It takes every real value in (7,7), and is bounded below by $\Lambda_P-c_H\kappa^2/1248$ in (14,0).
+  - (P), symmetric sector: Einstein plus a quadratic displacement stress.
+  - (E): no solution in (7,7) in the invariant sector. In (14,0) a solution needs Z1, $\lambda=\tfrac15$, $\mathrm{Ric}(g)=0$ and $c_V\kappa^2\ge9360$. In the symmetric sector (E) is solvable pointwise, so it imposes no 4D condition there; the leading-order necessary condition from the constraint is that $G(g)$ be Codazzi.
+  - **In none of these does $\circledast_\sharp$ differ from $W_A$.**
+- **Verdict.** Ellipticity is bought without changing the reduced 4D content in these sectors. What the reduction yields for $T\neq0$ is fixed less by the operator than by the unspecified rule for $T$ off $s(X)$ and by the choice of reading. G.2.5's "any open set" is narrowed to open sets meeting the fibre-scaling cone through $s(X)$. That still excludes compact support along the fibres (`reports/CORRECTIONS.md`).

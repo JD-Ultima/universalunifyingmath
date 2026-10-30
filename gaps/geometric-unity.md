@@ -26,3 +26,13 @@ Each gap is a point where [W21] is underspecified, circular or type-inconsistent
 | GU-G20 | (8.3) $\vartheta:\Lambda^*(T^*Y)\to\mathrm{Cl}(T^*X)=\mathbb R(128)$: $\mathrm{Cl}(T^*X)$ is 16-dimensional. | Typo / type error | GU-046 | Read $\mathrm{Cl}(T^*Y)$ (Thm B1). |
 | GU-G21 | Non-compact internal symmetry $\mathrm{Spin}(6,4)$ acting on the fermions: unitary representations are infinite-dimensional, finite-dimensional ones are non-unitary. The author acknowledges this (§4.2). | Physical | GU-027, GU-029 | Requires the breaking of GU-G18. |
 | GU-G22 | The fermionic operator (9.16) uses $\circledast$ on spinor-valued forms and $\bar\varpi$, $\rho(\varepsilon)$ placements that are not defined. "Other versions of the theory exist." | Underspecified | GU-056 | Specify $\circledast$ on $\Omega^\bullet(\$)$ (Clifford contraction is the natural candidate). Check that $\mathcal D_\omega$ is formally self-adjoint, the same issue as GU-G13. |
+
+**Note (2026-10-30, round 5; `formalization/geometric-unity/I-elliptic-reduction.md`).** The rows above are not edited.
+- **GU-G14.** Under the declared ansätze, the elliptic operator $\circledast_\sharp=W_A+W_C\circ\mathrm{Ad}_\Gamma$ gives the same reduced 4D equations as $W_A$ in Z1 and in Z2 (Thm I7(e)). The ansätze are the Spin(14)-invariant $T=t\Phi^1+u\Phi^1\Gamma$ and the symmetric displacement $\theta_{ab}e^a\otimes\gamma^b$, both with $T_e=0$. Once $T\neq0$, as Cor. I2.1 requires near $s(X)$:
+  - reading (P) no longer fixes Λ: $\Lambda_4=\Lambda_P-c_Hc_1(t,u)/x$ is a free constant, taking every real value in (7,7);
+  - in the symmetric sector (P) adds a quadratic displacement stress;
+  - reading (E) has no solution in (7,7) in the invariant sector, and in the symmetric sector it is solvable pointwise, so it imposes no pointwise 4D condition.
+
+  Still undefined in the draft: the rule fixing $T$ off $s(X)$ (ansatz, or fibre boundary conditions) and the choice of reading. Not covered: slaved $T_e\neq0$, where the twist does enter.
+- **GU-G16.** In (14,0), H7's ellipticity factor $xz+yw$ is exactly the determinant of the reduced constraint system $\circledast(d_0T)=0$ on the $\Lambda^1\oplus[2,1]_0$ parts of $(d^\nabla\theta,d^\nabla\theta')$, and on $(dt,du)$ (I5(b), I6). In (7,7) the factor is $xz-yw$.
+- **GU-G15.** For every self-adjoint Shiab operator the even part of $T$ is slaved, $T_e=-L_{T_o}^{-1}\circledast(d_0T_o)$, and $T_o\neq0$ on every open set meeting the fibre-scaling cone through $s(X)$ (I2). The ℷ-part is unchanged (open).

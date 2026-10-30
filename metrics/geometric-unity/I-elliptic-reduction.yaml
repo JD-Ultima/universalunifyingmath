@@ -1,0 +1,38 @@
+result: "I1-I7. The elliptic twist W_C o Ad_Gamma in Upsilon = 0 and in the 14 -> 4 reduction along a section"
+claim_id: [GU-054, GU-057, GU-072]
+gaps: [GU-G14, GU-G15, GU-G16]
+writeup: formalization/geometric-unity/I-elliptic-reduction.md (Propositions I1-I3, I5, I6; Theorems I4, I7; Corollaries I2.1, I2.2)
+code: [computation/geometric-unity/I_elliptic_reduction.py, computation/geometric-unity/I_elliptic_reduction.out]
+formalization_status: >
+  Formalized in the unitary gauge of G1 for the true Upsilon of D5 and all of S_sa (48 basis types, H3), in particular
+  the elliptic family x W_A + y W'_A + z W_C Ad_Gamma + w W'_C Ad_Gamma (H7); signatures (14,0) and (7,7), with the
+  real forms u(128) and u(64,64) stated. Two declared ansatze for the reduction: the Spin(14)-invariant sector
+  T = t Phi^1 + u Phi^1 Gamma (t, u functions) and the soldering sector T = theta e(x)gamma + theta' e(x)gamma Gamma
+  with T_e = 0. Readings (P) and (E) of F (R-Z3), horizontal metrics Z1 and Z2.
+internal_consistency: >
+  The per-type evaluator reproduces the existing operator code of G_symbols / H_ellipticity exactly, satisfies the
+  gradient identity of the cubic action term, and reproduces W_A F_R = -*(G e(x)gamma) (D3.4). Parity split:
+  Upsilon_ev = Shiab(d_0 T_o) + kappa *T_e + 2B(T_e,T_o)_ev for every Shiab in S_sa. Twist identity
+  Psi_CG(T^T^T) = 2 Psi_CG(T_o^T_e^T_e), so the twisted pair contributes nothing to the algebraic part of Upsilon on
+  odd fields (its T_o^T_o term is cancelled exactly by -h/3); the subspace of S_sa with this property is
+  span(O_{0,3}, E_{0,11}, W_C Ad_Gamma, W'_C Ad_Gamma) (exact null space). The constraint system in the soldering
+  and invariant sectors has determinant 4i(xz + yw) in (14,0), which is H7's ellipticity factor.
+proof_status: >
+  Proven: I2, I3, I4 (proofs, with exact checks on random exact fields); I1, I5, I6 (exact computation plus Schur);
+  I7(a), I7(b) (exact sympy identities from the F3-F6 closed forms); I7(c) (substitution); I7(d) (inverse function
+  theorem, equivariance and Gauss formula; 4D condition stated at leading order in 1/kappa, HHH components only).
+novelty: >
+  New within this audit: the parity/slaving structure of the true GU field equation; the vanishing of the twisted
+  cubic term on odd fields; the exact Upsilon on the invariant and symmetric-displacement sectors for the whole
+  elliptic family, including the open constants of F8 (alpha = -312, beta = -1, code normalisation); the free
+  cosmological constant under (P) once T != 0. Not in the source.
+reproducibility: "Exact; fixed seeds (random.seed(20210401); numpy default_rng(1) for the curvature sample, default_rng(20210401) for the (7,7) real-form check); ~110 s on one core; output re-run identical apart from the runtime line."
+empirical_testability: >
+  None new. The (P) cosmological constant is no longer a prediction of the fibre geometry once T != 0 (a free
+  constant in (7,7); bounded below by Lambda_P - c_H kappa^2/1248 in (14,0)).
+dependencies: ["D2", "D3", "D5", "G1", "G2", "G.2.5", "H2", "H3", "H6", "H7", "F2", "F3", "F4", "F5", "F6", "F8"]
+confidence: >
+  High for the algebraic statements (exact, both signatures, every type). High for the sector computations under the
+  declared ansatze. The reduction statements inherit F's readings (P)/(E), which the draft does not fix. Not covered:
+  slaved T_e != 0 (where z, w enter the odd equation), odd grades 3-11 beyond I4, reading (A) with T != 0,
+  the (8,6)/(10,4) signatures of the F6 case, and the remaining components of the (E) constraint.

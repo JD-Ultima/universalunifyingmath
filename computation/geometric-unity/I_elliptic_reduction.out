@@ -1,0 +1,128 @@
+=== I0. Validation of the per-type evaluator (exact) ===
+  (14,0) W_A      : Psi-basis operator = operator code on 25 random inputs e^b^e^a (x) E_K (13-form coefficient X_m = (-1)^m D_m): True
+  (14,0) W'_A     : Psi-basis operator = operator code on 25 random inputs e^b^e^a (x) E_K (13-form coefficient X_m = (-1)^m D_m): True
+  (14,0) W_C.AdG  : Psi-basis operator = operator code on 25 random inputs e^b^e^a (x) E_K (13-form coefficient X_m = (-1)^m D_m): True
+  (14,0) W'_C.AdG : Psi-basis operator = operator code on 25 random inputs e^b^e^a (x) E_K (13-form coefficient X_m = (-1)^m D_m): True
+  (14,0) dual of alpha -> Psi(T^[T^alpha]) = direct value (random dense T, alpha; all 48 types): True; gradient identity C(T+a) - C(T-a) = 2 dC_T(a) + 2 C(a), C = Psi(T^T^T): True (33 types nonzero)
+  (14,0) Levi-Civita spin curvature F_R (random algebraic R): W_A F_R = -*(G e^a (x) gamma^b): True; W'_A F_R = -*(G e^a (x) gamma^b Gamma): True; W_C.AdG F_R = 0: True; W'_C.AdG F_R = 0: True
+  (7,7) W_A      : Psi-basis operator = operator code on 25 random inputs e^b^e^a (x) E_K (13-form coefficient X_m = (-1)^m D_m): True
+  (7,7) W'_A     : Psi-basis operator = operator code on 25 random inputs e^b^e^a (x) E_K (13-form coefficient X_m = (-1)^m D_m): True
+  (7,7) W_C.AdG  : Psi-basis operator = operator code on 25 random inputs e^b^e^a (x) E_K (13-form coefficient X_m = (-1)^m D_m): True
+  (7,7) W'_C.AdG : Psi-basis operator = operator code on 25 random inputs e^b^e^a (x) E_K (13-form coefficient X_m = (-1)^m D_m): True
+  (7,7) dual of alpha -> Psi(T^[T^alpha]) = direct value (random dense T, alpha; all 48 types): True; gradient identity C(T+a) - C(T-a) = 2 dC_T(a) + 2 C(a), C = Psi(T^T^T): True (39 types nonzero)
+  (7,7) Levi-Civita spin curvature F_R (random algebraic R): W_A F_R = -*(G e^a (x) gamma^b): True; W'_A F_R = -*(G e^a (x) gamma^b Gamma): True; W_C.AdG F_R = 0: True; W'_C.AdG F_R = 0: True
+  (7,7) real form: gamma_a, gamma_a Gamma in u(64,64), and W_A, W'_A, W_C.AdG, W'_C.AdG (code normalisation) map random u(64,64)-valued 2-forms into u(64,64) (3 samples, exact): True
+
+=== I1. Which components of a g-valued 2-form each operator sees (exact) ===
+  (a) grade selection rules (from the H1 coordinates; a type (j,l) pairs input grade l with output grade j and vice versa):
+    W_A      : 0->[3]; 1->[2]; 2->[1, 5]; 3->[0, 4]; 4->[3, 7]; 5->[2, 6]; 6->[5, 9]; 7->[4, 8]; 8->[7, 11]; 9->[6, 10]; 10->[9, 13]; 11->[8, 12]; 12->[11]; 13->[10]; 14->-
+    W'_A     : 0->[11]; 1->[10]; 2->[9, 13]; 3->[8, 12]; 4->[7, 11]; 5->[6, 10]; 6->[5, 9]; 7->[4, 8]; 8->[3, 7]; 9->[2, 6]; 10->[1, 5]; 11->[0, 4]; 12->[3]; 13->[2]; 14->-
+    W_C.AdG  : 0->-; 1->[4]; 2->[3]; 3->[2, 6]; 4->[1, 5]; 5->[4, 8]; 6->[3, 7]; 7->[6, 10]; 8->[5, 9]; 9->[8, 12]; 10->[7, 11]; 11->[10, 14]; 12->[9, 13]; 13->[12]; 14->[11]
+    W'_C.AdG : 0->-; 1->[12]; 2->[11]; 3->[10, 14]; 4->[9, 13]; 5->[8, 12]; 6->[7, 11]; 7->[6, 10]; 8->[5, 9]; 9->[4, 8]; 10->[3, 7]; 11->[2, 6]; 12->[1, 5]; 13->[4]; 14->[3]
+  (b) Spin(14)-constituents of the input (grades 0,1,2 and their Gamma-partners 14,13,12); listed: output grades of the image of one test vector (each constituent has multiplicity 1, so 'nonzero' = injective on it, Schur):
+   (14,0)
+    input grade  0 Lambda^2    W_A: [3]   W'_A: [11]   W_C.AdG: 0   W'_C.AdG: 0
+    input grade  1 Lambda^3    W_A: [2]   W'_A: [10]   W_C.AdG: [4]   W'_C.AdG: [12]
+    input grade  1 Lambda^1    W_A: [2]   W'_A: 0   W_C.AdG: 0   W'_C.AdG: [12]
+    input grade  1 [2,1]_0     W_A: [2]   W'_A: 0   W_C.AdG: 0   W'_C.AdG: [12]
+    input grade  2 Weyl        W_A: 0   W'_A: 0   W_C.AdG: 0   W'_C.AdG: 0
+    input grade  2 S^2_0       W_A: [1]   W'_A: [13]   W_C.AdG: 0   W'_C.AdG: 0
+    input grade  2 trivial     W_A: [1]   W'_A: [13]   W_C.AdG: 0   W'_C.AdG: 0
+    input grade  2 Lambda^4    W_A: [5]   W'_A: [9]   W_C.AdG: [3]   W'_C.AdG: [11]
+    input grade  2 Lambda^2    W_A: [1]   W'_A: [13]   W_C.AdG: [3]   W'_C.AdG: [11]
+    input grade  2 [2,1,1]_0   W_A: 0   W'_A: 0   W_C.AdG: [3]   W'_C.AdG: [11]
+    input grade 12 Weyl        W_A: 0   W'_A: 0   W_C.AdG: 0   W'_C.AdG: 0
+    input grade 12 S^2_0       W_A: 0   W'_A: 0   W_C.AdG: [13]   W'_C.AdG: [1]
+    input grade 12 trivial     W_A: 0   W'_A: 0   W_C.AdG: [13]   W'_C.AdG: [1]
+    input grade 12 Lambda^4    W_A: [11]   W'_A: [3]   W_C.AdG: [9]   W'_C.AdG: [5]
+    input grade 12 Lambda^2    W_A: [11]   W'_A: [3]   W_C.AdG: [13]   W'_C.AdG: [1]
+    input grade 12 [2,1,1]_0   W_A: [11]   W'_A: [3]   W_C.AdG: 0   W'_C.AdG: 0
+    input grade 13 Lambda^3    W_A: [10]   W'_A: [2]   W_C.AdG: [12]   W'_C.AdG: [4]
+    input grade 13 Lambda^1    W_A: 0   W'_A: [2]   W_C.AdG: [12]   W'_C.AdG: 0
+    input grade 13 [2,1]_0     W_A: 0   W'_A: [2]   W_C.AdG: [12]   W'_C.AdG: 0
+    input grade 14 Lambda^2    W_A: 0   W'_A: 0   W_C.AdG: [11]   W'_C.AdG: [3]
+   (7,7)
+    input grade  0 Lambda^2    W_A: [3]   W'_A: [11]   W_C.AdG: 0   W'_C.AdG: 0
+    input grade  1 Lambda^3    W_A: [2]   W'_A: [10]   W_C.AdG: [4]   W'_C.AdG: [12]
+    input grade  1 Lambda^1    W_A: [2]   W'_A: 0   W_C.AdG: 0   W'_C.AdG: [12]
+    input grade  1 [2,1]_0     W_A: [2]   W'_A: 0   W_C.AdG: 0   W'_C.AdG: [12]
+    input grade  2 Weyl        W_A: 0   W'_A: 0   W_C.AdG: 0   W'_C.AdG: 0
+    input grade  2 S^2_0       W_A: [1]   W'_A: [13]   W_C.AdG: 0   W'_C.AdG: 0
+    input grade  2 trivial     W_A: [1]   W'_A: [13]   W_C.AdG: 0   W'_C.AdG: 0
+    input grade  2 Lambda^4    W_A: [5]   W'_A: [9]   W_C.AdG: [3]   W'_C.AdG: [11]
+    input grade  2 Lambda^2    W_A: [1]   W'_A: [13]   W_C.AdG: [3]   W'_C.AdG: [11]
+    input grade  2 [2,1,1]_0   W_A: 0   W'_A: 0   W_C.AdG: [3]   W'_C.AdG: [11]
+    input grade 12 Weyl        W_A: 0   W'_A: 0   W_C.AdG: 0   W'_C.AdG: 0
+    input grade 12 S^2_0       W_A: 0   W'_A: 0   W_C.AdG: [13]   W'_C.AdG: [1]
+    input grade 12 trivial     W_A: 0   W'_A: 0   W_C.AdG: [13]   W'_C.AdG: [1]
+    input grade 12 Lambda^4    W_A: [11]   W'_A: [3]   W_C.AdG: [9]   W'_C.AdG: [5]
+    input grade 12 Lambda^2    W_A: [11]   W'_A: [3]   W_C.AdG: [13]   W'_C.AdG: [1]
+    input grade 12 [2,1,1]_0   W_A: [11]   W'_A: [3]   W_C.AdG: 0   W'_C.AdG: 0
+    input grade 13 Lambda^3    W_A: [10]   W'_A: [2]   W_C.AdG: [12]   W'_C.AdG: [4]
+    input grade 13 Lambda^1    W_A: 0   W'_A: [2]   W_C.AdG: [12]   W'_C.AdG: 0
+    input grade 13 [2,1]_0     W_A: 0   W'_A: [2]   W_C.AdG: [12]   W'_C.AdG: 0
+    input grade 14 Lambda^2    W_A: 0   W'_A: 0   W_C.AdG: [11]   W'_C.AdG: [3]
+
+=== I2. Parity split of Upsilon (exact, all 48 types) ===
+  Lemma H2: every type pairs an even with an odd grade, so Shiab maps g_ev-valued forms to g_odd-valued ones and back: True
+  (14,0): Q_t(T_e) and Q_t(T_o) have zero g_ev-part for all 48 types (random T_e, T_o): True; types with nonzero g_ev-part of Q_t(T_e + T_o) (= 2 B_t(T_e,T_o)_ev): 48
+  (7,7): Q_t(T_e) and Q_t(T_o) have zero g_ev-part for all 48 types (random T_e, T_o): True; types with nonzero g_ev-part of Q_t(T_e + T_o) (= 2 B_t(T_e,T_o)_ev): 48
+  => Upsilon_ev = Shiab(d_0 T_o) + kappa *T_e + 2 B(T_e, T_o)_ev  (linear in T_e); Upsilon_odd = Shiab F_0 + Shiab(d_0 T_e) + kappa *T_o + Q(T_o) + Q(T_e) + 2 B(T_e, T_o)_odd
+
+=== I3. The twisted pair: cubic term on odd/even fields (exact) ===
+  (14,0) W_C.AdG  : C(T) = 2 Psi(T_o ^ T_e ^ T_e): True (value -60); Q(T_o) = 0: True; Q(T_e) = (2/3) Shiab(T_e ^ T_e): True; but Shiab(T_o ^ T_o) != 0: True (cancelled by -h/3)
+  (14,0) W'_C.AdG : C(T) = 2 Psi(T_o ^ T_e ^ T_e): True (value 4); Q(T_o) = 0: True; Q(T_e) = (2/3) Shiab(T_e ^ T_e): True; but Shiab(T_o ^ T_o) != 0: True (cancelled by -h/3)
+  (14,0): {Shiab in S_sa : Q(T) = 0 for the 3 random odd T} has exact dimension 4: ['O0,3', 'W_C.AdG', 'E0,11', "W'_C.AdG"]  (29516 x 48 exact system)
+  (7,7) W_C.AdG  : C(T) = 2 Psi(T_o ^ T_e ^ T_e): True (value 32); Q(T_o) = 0: True; Q(T_e) = (2/3) Shiab(T_e ^ T_e): True; but Shiab(T_o ^ T_o) != 0: True (cancelled by -h/3)
+  (7,7) W'_C.AdG : C(T) = 2 Psi(T_o ^ T_e ^ T_e): True (value 16); Q(T_o) = 0: True; Q(T_e) = (2/3) Shiab(T_e ^ T_e): True; but Shiab(T_o ^ T_o) != 0: True (cancelled by -h/3)
+  (7,7): {Shiab in S_sa : Q(T) = 0 for the 3 random odd T} has exact dimension 4: ['O0,3', 'W_C.AdG', 'E0,11', "W'_C.AdG"]  (26864 x 48 exact system)
+
+=== I4. Soldering sector T = theta_ab e^a(x)gamma^b + theta'_ab e^a(x)gamma^b Gamma, T_e = 0 (exact) ===
+  (14,0) output grades of Q(T), sym theta             : W_A: [1]  W'_A: [13]  W_C.AdG: []  W'_C.AdG: []
+  (14,0) output grades of Q(T), sym theta, sym theta' : W_A: [1, 13]  W'_A: [1, 13]  W_C.AdG: []  W'_C.AdG: []
+  (14,0) output grades of Q(T), theta + antisym beta  : W_A: [1, 5]  W'_A: [9, 13]  W_C.AdG: []  W'_C.AdG: []
+  (14,0) W_A, symmetric theta: Q(T) = *(M_ab e^a (x) gamma^b), M = a1 theta^2 + a2 tr(theta) theta + (a3 tr(theta^2) + a4 tr(theta)^2) g: {a1: 4, a2: -4, a3: -2, a4: 2} (392 exact equations, 2 samples)
+  (14,0) W'_A, symmetric theta: Q(T) = *(M_ab e^a (x) gamma Gamma^b), M = a1 theta^2 + a2 tr(theta) theta + (a3 tr(theta^2) + a4 tr(theta)^2) g: {a1: 4/3, a2: -4/3, a3: -2/3, a4: 2/3} (392 exact equations, 2 samples)
+    [-G(R_theta) with R_theta = 4(theta_ac theta_bd - theta_ad theta_bc) has (a1..a4) = (4, -4, -2, 2): so Q_{W_A}(theta) = W_A(T^T) (h vanishes) and Q_{W'_A}(theta) = W'_A(T^T)/3]
+  (7,7) output grades of Q(T), sym theta             : W_A: [1]  W'_A: [13]  W_C.AdG: []  W'_C.AdG: []
+  (7,7) output grades of Q(T), sym theta, sym theta' : W_A: [1, 13]  W'_A: [1, 13]  W_C.AdG: []  W'_C.AdG: []
+  (7,7) output grades of Q(T), theta + antisym beta  : W_A: [1, 5]  W'_A: [9, 13]  W_C.AdG: []  W'_C.AdG: []
+  (7,7) W_A, symmetric theta: Q(T) = *(M_ab e^a (x) gamma^b), M = a1 theta^2 + a2 tr(theta) theta + (a3 tr(theta^2) + a4 tr(theta)^2) g: {a1: 4, a2: -4, a3: -2, a4: 2} (392 exact equations, 2 samples)
+  (7,7) W'_A, symmetric theta: Q(T) = *(M_ab e^a (x) gamma Gamma^b), M = a1 theta^2 + a2 tr(theta) theta + (a3 tr(theta^2) + a4 tr(theta)^2) g: {a1: 4/3, a2: -4/3, a3: -2/3, a4: 2/3} (392 exact equations, 2 samples)
+    [-G(R_theta) with R_theta = 4(theta_ac theta_bd - theta_ad theta_bc) has (a1..a4) = (4, -4, -2, 2): so Q_{W_A}(theta) = W_A(T^T) (h vanishes) and Q_{W'_A}(theta) = W'_A(T^T)/3]
+  constraint (g_ev-part) equations Shiab(d_0 T) = 0 for T = theta e(x)gamma + theta' e(x)gamma Gamma: per Spin(14)-constituent rho of d^nabla theta, d^nabla theta' in Lambda^2(x)Lambda^1, input a v + b v Gamma (v in rho):
+   (14,0) Lambda^3 : output grades [2, 4, 10, 12]; rows [a, b] = [[-2*x, -2*y], [2*I*z, 2*I*w], [2*y, -2*x], [2*I*w, -2*I*z]]; nonzero 2x2 minors [-4*I*(w*x - y*z), -4*I*(w*y + x*z), 4*(w**2 + z**2), 4*(x**2 + y**2), 4*I*(w*x - y*z), 4*I*(w*y + x*z)]; rank at Shiab# (x=z=1): 2, at W_A: 2, at W'_A: 2
+   (14,0) Lambda^1 : output grades [2, 12]; rows [a, b] = [[-2*x, -2*y], [2*I*w, -2*I*z]]; nonzero 2x2 minors [4*I*(w*y + x*z)]; rank at Shiab# (x=z=1): 2, at W_A: 1, at W'_A: 1
+   (14,0) [2,1]_0  : output grades [2, 12]; rows [a, b] = [[-2*x, -2*y], [2*I*w, -2*I*z]]; nonzero 2x2 minors [4*I*(w*y + x*z)]; rank at Shiab# (x=z=1): 2, at W_A: 1, at W'_A: 1
+   (7,7) Lambda^3 : output grades [2, 4, 10, 12]; rows [a, b] = [[-2*x, 2*y], [2*I*z, -2*I*w], [2*y, -2*x], [2*I*w, -2*I*z]]; nonzero 2x2 minors [-4*I*(-w*y + x*z), 4*(-w + z)*(w + z), 4*(x - y)*(x + y), 4*I*(-w*y + x*z), 4*I*(w*x - y*z)]; rank at Shiab# (x=z=1): 2, at W_A: 2, at W'_A: 2
+   (7,7) Lambda^1 : output grades [2, 12]; rows [a, b] = [[-2*x, 2*y], [2*I*w, -2*I*z]]; nonzero 2x2 minors [4*I*(-w*y + x*z)]; rank at Shiab# (x=z=1): 2, at W_A: 1, at W'_A: 1
+   (7,7) [2,1]_0  : output grades [2, 12]; rows [a, b] = [[-2*x, 2*y], [2*I*w, -2*I*z]]; nonzero 2x2 minors [4*I*(-w*y + x*z)]; rank at Shiab# (x=z=1): 2, at W_A: 1, at W'_A: 1
+
+=== I5. Spin(14)-invariant sector T = t Phi^1 + u Phi^1 Gamma (t, u functions; exact) ===
+  (14,0): algebraic part (every T-term is Spin(14)-invariant, checked componentwise):  Upsilon = -*([x G - c1 g]_ab e^a(x)gamma^b + [y G - c13 g]_ab e^a(x)gamma^b Gamma) + derivative terms,
+           c1  = kappa*t + 312*t**2*x + 208*t*u*y + 104*u**2*x
+           c13 = kappa*u + 104*t**2*y + 208*t*u*x + 312*u**2*y
+           (z, w absent: True)
+  (14,0): derivative terms Shiab(dt ^ Phi^1 + du ^ Phi^1 Gamma) occupy output grades [2, 12]; rows [dt, du] (relative to a fixed pattern) = [[-2*x, -2*y], [2*I*w, -2*I*z]]; identical for directions e^0, e^5, e^9: True;  det = 4*I*(w*y + x*z)
+  (14,0): W_A(dt^Phi^1) and W_C.AdG(du^Phi^1 Gamma): the form-index-b component involves every d_c (c != b) through pairwise distinct monomials (b = 0, 1), so two tangential indices b already force dt = 0 (du = 0): True
+  (7,7): algebraic part (every T-term is Spin(14)-invariant, checked componentwise):  Upsilon = -*([x G - c1 g]_ab e^a(x)gamma^b + [y G - c13 g]_ab e^a(x)gamma^b Gamma) + derivative terms,
+           c1  = kappa*t + 312*t**2*x - 208*t*u*y - 104*u**2*x
+           c13 = kappa*u + 104*t**2*y + 208*t*u*x - 312*u**2*y
+           (z, w absent: True)
+  (7,7): derivative terms Shiab(dt ^ Phi^1 + du ^ Phi^1 Gamma) occupy output grades [2, 12]; rows [dt, du] (relative to a fixed pattern) = [[-2*x, 2*y], [2*I*w, -2*I*z]]; identical for directions e^0, e^5, e^9: True;  det = 4*I*(-w*y + x*z)
+  (7,7): W_A(dt^Phi^1) and W_C.AdG(du^Phi^1 Gamma): the form-index-b component involves every d_c (c != b) through pairwise distinct monomials (b = 0, 1), so two tangential indices b already force dt = 0 (du = 0): True
+
+=== I6. Reduction along s(X), n = 4, d = 14 (closed forms of F3-F6; exact sympy) ===
+  Lambda_P(Z1) = 3*c_H*(15*lambda - 4)/(2*c_V*(4*lambda - 1)) (= F5 table: True);  Lambda_P(Z2) = 9*c_H/(2*c_V);  Lambda_Y (F6: Z1, lambda = 1/5, Ric(g) = 0, G^Y = -Lambda_Y g_aleph on s(X)) = -15/(2*c_V)
+  (14,0), u(128)-real (x = -i x' etc., t = i s, u = i r, s, r, x', y', kappa real):  Upsilon = 0 <=>  x' G(g_aleph) + (kappa*s + 104*r**2*x' + 208*r*s*y' + 312*s**2*x') g_aleph = 0  and  y' G(g_aleph) + (kappa*r + 312*r**2*y' + 208*r*s*x' + 104*s**2*y') g_aleph = 0
+     (real polynomials: True)
+   Shiab# (x' = z' = 1, y' = w' = 0) [identical for W_A: z' absent]:  G(g_aleph) = -(kappa*s + 104*r**2 + 312*s**2) g_aleph,  0 = r*(kappa + 208*s)
+   (P): Lambda_4 = Lambda_P + c_H*(kappa*s + 104*r**2 + 312*s**2) on {r*(kappa + 208*s) = 0}:  branch r = 0: kappa*s + 312*s**2 = 312 (s + kappa/624)^2 - kappa^2/1248 [True];  branch s = -kappa/208: kappa**2/416 + 104*r**2;  so for c_H > 0 Lambda_4 takes exactly the values in [Lambda_P - c_H kappa^2/1248, oo): not fixed by (lambda, c_H, c_V)
+   (E) on s(X) [possible only for Z1, lambda = 1/5, Ric(g) = 0 (F6); base (4,0), fiber (10,0) for c_V > 0]:  kappa*s + 104*r**2 + 312*s**2 + 15/(2*c_V) = 0 and r*(kappa + 208*s) = 0.  Branch r = 0: discriminant (c_V*kappa**2 - 9360)/c_V >= 0 <=> c_V kappa^2 >= 9360 (c_V > 0).  Branch s = -kappa/208: kappa**2/416 + 104*r**2 + 15/(2*c_V) = 0, no real solution for c_V > 0.
+  (7,7), u(64,64)-real (code normalisation, real x,y,z,w,t,u,kappa):  Upsilon = 0 <=> x G = c1 g and y G = c13 g
+   Shiab# (x = z = 1, y = w = 0) [identical for W_A]:  G(g_aleph) = (kappa*t + 312*t**2 - 104*u**2) g_aleph,  0 = u*(kappa + 208*t)
+   (P): Lambda_4 = Lambda_P - c_H*(kappa*t + 312*t**2 - 104*u**2) on {u*(kappa + 208*t) = 0}:  branch u = 0: c1 = kappa*t + 312*t**2 = 312 (t + kappa/624)^2 - kappa^2/1248 [True], so Lambda_4 - Lambda_P takes every value <= c_H kappa^2/1248;  branch t = -kappa/208: c1 = kappa**2/416 - 104*u**2, so Lambda_4 - Lambda_P takes every value >= -c_H kappa^2/416;  union (c_H > 0): every real Lambda_4
+   (E) on s(X): impossible in (7,7) for every T in this sector and every (x,y,z,w): it needs g_aleph Einstein on s(X), which by F6 forces Z1 with lambda = 1/5, signature (8,6)/(10,4), not (7,7)
+  Symmetric displacement theta (I4) for Shiab = x W_A + ... (x != 0, y = 0): Upsilon = 0 <=> d^nabla theta = 0 and G(g_aleph) + G(R_theta) = (kappa/x) theta; (P)-pull-back: G(g) + Lambda_P g + s^*G(R_theta) - (kappa/x) s^*theta = 0 (write-up I.6.3); z, w absent.
+
+runtime 107 s
