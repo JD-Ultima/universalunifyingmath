@@ -1,60 +1,83 @@
 
-=== L0. The reduction of J5(d), re-derived (n = 4) ===
+=== L0. Lemma L0: the reduction of J5(d), re-derived (n = 4) ===
   base (4,0):
   [True] (4,0) tr(y^-1 (B.y)) = -2 tr B, = 0 for B in so(g), at 3 random rational y: the lambda-term of G_lambda drops at every y, and A_X Y is tangent to the unimodular slice
   [True] (4,0) Phi_y(X,Y) = 2 sum_ij g^ij [tr(B_i C_j) - tr(M^-1 B_i M C_j)], M = g^-1 y, B_i = R(X,e_i), C_j = R(Y,e_j); Phi_{cy} = Phi_y (3 random rational y, X, Y; random curvature tensor)
-  [True] (4,0) det(y)^2 Phi_y at y = g + eps h (h g-traceless) = det(g)^2 F(X,Y;h) eps^2 + O(eps^3): eps^0, eps^1 coefficients 0, eps^2 coefficient = F (random rational data; F = 1357728155/186624)
-  [True] (4,0) R.g = 0, so F(X,Y; h + c g) = F(X,Y; h) (the traceless restriction is immaterial), and F(X,Y;h) = F(Y,X;h) (symbolic h, X, Y, c)
+  [True] (4,0) det(y)^2 Phi_y at y = g + eps h (h g-traceless) = det(g)^2 F(X,Y;h) eps^2 + O(eps^3): eps^0, eps^1 coefficients 0, eps^2 coefficient = F(X,Y;h,h) (random rational data; value 1357728155/186624)
+  [True] (4,0) R.g = 0, so F(X,Y; h + c g, h + c g) = F(X,Y; h, h) (the traceless restriction is immaterial), and F(X,Y;h,h) = F(Y,X;h,h) (symbolic h, X, Y, c)
   base (1,3):
   [True] (1,3) tr(y^-1 (B.y)) = -2 tr B, = 0 for B in so(g), at 3 random rational y: the lambda-term of G_lambda drops at every y, and A_X Y is tangent to the unimodular slice
   [True] (1,3) Phi_y(X,Y) = 2 sum_ij g^ij [tr(B_i C_j) - tr(M^-1 B_i M C_j)], M = g^-1 y, B_i = R(X,e_i), C_j = R(Y,e_j); Phi_{cy} = Phi_y (3 random rational y, X, Y; random curvature tensor)
-  [True] (1,3) det(y)^2 Phi_y at y = g + eps h (h g-traceless) = det(g)^2 F(X,Y;h) eps^2 + O(eps^3): eps^0, eps^1 coefficients 0, eps^2 coefficient = F (random rational data; F = 65429971/20736)
-  [True] (1,3) R.g = 0, so F(X,Y; h + c g) = F(X,Y; h) (the traceless restriction is immaterial), and F(X,Y;h) = F(Y,X;h) (symbolic h, X, Y, c)
+  [True] (1,3) det(y)^2 Phi_y at y = g + eps h (h g-traceless) = det(g)^2 F(X,Y;h) eps^2 + O(eps^3): eps^0, eps^1 coefficients 0, eps^2 coefficient = F(X,Y;h,h) (random rational data; value 65429971/20736)
+  [True] (1,3) R.g = 0, so F(X,Y; h + c g, h + c g) = F(X,Y; h, h) (the traceless restriction is immaterial), and F(X,Y;h,h) = F(Y,X;h,h) (symbolic h, X, Y, c)
   base (3,1):
   [True] (3,1) tr(y^-1 (B.y)) = -2 tr B, = 0 for B in so(g), at 3 random rational y: the lambda-term of G_lambda drops at every y, and A_X Y is tangent to the unimodular slice
   [True] (3,1) Phi_y(X,Y) = 2 sum_ij g^ij [tr(B_i C_j) - tr(M^-1 B_i M C_j)], M = g^-1 y, B_i = R(X,e_i), C_j = R(Y,e_j); Phi_{cy} = Phi_y (3 random rational y, X, Y; random curvature tensor)
-  [True] (3,1) det(y)^2 Phi_y at y = g + eps h (h g-traceless) = det(g)^2 F(X,Y;h) eps^2 + O(eps^3): eps^0, eps^1 coefficients 0, eps^2 coefficient = F (random rational data; F = -206091109/62208)
-  [True] (3,1) R.g = 0, so F(X,Y; h + c g) = F(X,Y; h) (the traceless restriction is immaterial), and F(X,Y;h) = F(Y,X;h) (symbolic h, X, Y, c)
+  [True] (3,1) det(y)^2 Phi_y at y = g + eps h (h g-traceless) = det(g)^2 F(X,Y;h) eps^2 + O(eps^3): eps^0, eps^1 coefficients 0, eps^2 coefficient = F(X,Y;h,h) (random rational data; value -206091109/62208)
+  [True] (3,1) R.g = 0, so F(X,Y; h + c g, h + c g) = F(X,Y; h, h) (the traceless restriction is immaterial), and F(X,Y;h,h) = F(Y,X;h,h) (symbolic h, X, Y, c)
   base (2,2):
   [True] (2,2) tr(y^-1 (B.y)) = -2 tr B, = 0 for B in so(g), at 3 random rational y: the lambda-term of G_lambda drops at every y, and A_X Y is tangent to the unimodular slice
   [True] (2,2) Phi_y(X,Y) = 2 sum_ij g^ij [tr(B_i C_j) - tr(M^-1 B_i M C_j)], M = g^-1 y, B_i = R(X,e_i), C_j = R(Y,e_j); Phi_{cy} = Phi_y (3 random rational y, X, Y; random curvature tensor)
-  [True] (2,2) det(y)^2 Phi_y at y = g + eps h (h g-traceless) = det(g)^2 F(X,Y;h) eps^2 + O(eps^3): eps^0, eps^1 coefficients 0, eps^2 coefficient = F (random rational data; F = 59681665/31104)
-  [True] (2,2) R.g = 0, so F(X,Y; h + c g) = F(X,Y; h) (the traceless restriction is immaterial), and F(X,Y;h) = F(Y,X;h) (symbolic h, X, Y, c)
+  [True] (2,2) det(y)^2 Phi_y at y = g + eps h (h g-traceless) = det(g)^2 F(X,Y;h) eps^2 + O(eps^3): eps^0, eps^1 coefficients 0, eps^2 coefficient = F(X,Y;h,h) (random rational data; value 59681665/31104)
+  [True] (2,2) R.g = 0, so F(X,Y; h + c g, h + c g) = F(X,Y; h, h) (the traceless restriction is immaterial), and F(X,Y;h,h) = F(Y,X;h,h) (symbolic h, X, Y, c)
   [True] same conventions as J_slaved_sector.py section J5: F(e0,e0;h) for constant curvature +1 equals the three polynomials printed in J_slaved_sector.out (bases (4,0), (1,3), (2,2))
 
-=== L1. Contraction identities for generic algebraic curvature tensors ===
-  [True] n = 3, signature 3,0 (6 free components): C1 = (n+2)|R|^2, C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, hence 4(n+2) C2 - 3 C1 = 2(n+2)(n+3)|Ric|^2  [20 s]
-  [True] n = 3, signature 1,2 (6 free components): C1 = (n+2)|R|^2, C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, hence 4(n+2) C2 - 3 C1 = 2(n+2)(n+3)|Ric|^2  [20 s]
-  [True] n = 4, signature 4,0 (20 free components): C1 = (n+2)|R|^2, C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, hence 4(n+2) C2 - 3 C1 = 2(n+2)(n+3)|Ric|^2  [20 s]
-  [True] n = 4, signature 1,3 (20 free components): C1 = (n+2)|R|^2, C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, hence 4(n+2) C2 - 3 C1 = 2(n+2)(n+3)|Ric|^2  [21 s]
-  [True] n = 4, signature 3,1 (20 free components): C1 = (n+2)|R|^2, C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, hence 4(n+2) C2 - 3 C1 = 2(n+2)(n+3)|Ric|^2  [22 s]
-  [True] n = 4, signature 2,2 (20 free components): C1 = (n+2)|R|^2, C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, hence 4(n+2) C2 - 3 C1 = 2(n+2)(n+3)|Ric|^2  [22 s]
-  [True] n = 5, signature 5,0 (50 free components): C1 = (n+2)|R|^2, C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, hence 4(n+2) C2 - 3 C1 = 2(n+2)(n+3)|Ric|^2  [25 s]
-  [True] n = 5, signature 1,4 (50 free components): C1 = (n+2)|R|^2, C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, hence 4(n+2) C2 - 3 C1 = 2(n+2)(n+3)|Ric|^2  [29 s]
-  [True] n = 5, signature 2,3 (50 free components): C1 = (n+2)|R|^2, C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, hence 4(n+2) C2 - 3 C1 = 2(n+2)(n+3)|Ric|^2  [32 s]
-  n = 4: 8 C2 - C1 = 28 |Ric|^2 for every algebraic curvature tensor, every signature.
-  [True] (4,0) Einstein, R = W + (Lambda/3) R_1 with W an arbitrary Weyl tensor (10 parameters), |R_1|^2 = 24: C1 = 6|W|^2 + 16 Lambda^2, C2 = 3/4 |W|^2 + 16 Lambda^2, so 8 C2 - C1 = 112 Lambda^2
-  [True] (1,3) Einstein, R = W + (Lambda/3) R_1 with W an arbitrary Weyl tensor (10 parameters), |R_1|^2 = 24: C1 = 6|W|^2 + 16 Lambda^2, C2 = 3/4 |W|^2 + 16 Lambda^2, so 8 C2 - C1 = 112 Lambda^2
-     constant curvature +1 (Lambda = 3, W = 0): C1 = 144, C2 = 144  (nonzero, as in J5(d))
-  [True] (3,1) Einstein, R = W + (Lambda/3) R_1 with W an arbitrary Weyl tensor (10 parameters), |R_1|^2 = 24: C1 = 6|W|^2 + 16 Lambda^2, C2 = 3/4 |W|^2 + 16 Lambda^2, so 8 C2 - C1 = 112 Lambda^2
-  [True] (2,2) Einstein, R = W + (Lambda/3) R_1 with W an arbitrary Weyl tensor (10 parameters), |R_1|^2 = 24: C1 = 6|W|^2 + 16 Lambda^2, C2 = 3/4 |W|^2 + 16 Lambda^2, so 8 C2 - C1 = 112 Lambda^2
-     constant curvature +1 (Lambda = 3, W = 0): C1 = 144, C2 = 144  (nonzero, as in J5(d))
-  So F = 0 for all X, Y, h forces Lambda = 0 for every Einstein base, every signature; the scale of R is
-  irrelevant (F is homogeneous of degree 2 in R), and so is the sign of Lambda.
+=== L1. Theorem L1: traces of F for generic algebraic curvature tensors ===
+  C1 and C2sym are built from values Q_ab(h) = F(e_a, e_b; h, h) of the quadratic form only, which the leaf
+  condition forces to vanish; C2 and C2' use the bilinear form at h != h' and are side identities.
+  [True] n = 3, signature 3,0 (6 free components): C1 = (n+2)|R|^2, C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2, hence 8(n+2) C2sym - (n+8) C1 = 2(n+2)(n+4)|Ric|^2  [27 s]
+  [True]    side identities (bilinear form, NOT consequences of the leaf condition): C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, C2' = (n+5)/4 |R|^2 + 1/2 |Ric|^2, C2sym = (C2 + C2')/2, and the expected asymmetry C2 - C2' = (n+2)/2 |Ric|^2 - (n+2)/4 |R|^2, a nonzero polynomial: True
+  [True] n = 3, signature 1,2 (6 free components): C1 = (n+2)|R|^2, C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2, hence 8(n+2) C2sym - (n+8) C1 = 2(n+2)(n+4)|Ric|^2  [27 s]
+  [True]    side identities (bilinear form, NOT consequences of the leaf condition): C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, C2' = (n+5)/4 |R|^2 + 1/2 |Ric|^2, C2sym = (C2 + C2')/2, and the expected asymmetry C2 - C2' = (n+2)/2 |Ric|^2 - (n+2)/4 |R|^2, a nonzero polynomial: True
+  [True] n = 4, signature 4,0 (20 free components): C1 = (n+2)|R|^2, C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2, hence 8(n+2) C2sym - (n+8) C1 = 2(n+2)(n+4)|Ric|^2  [30 s]
+  [True]    side identities (bilinear form, NOT consequences of the leaf condition): C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, C2' = (n+5)/4 |R|^2 + 1/2 |Ric|^2, C2sym = (C2 + C2')/2, and the expected asymmetry C2 - C2' = (n+2)/2 |Ric|^2 - (n+2)/4 |R|^2, a nonzero polynomial: True
+  [True] n = 4, signature 1,3 (20 free components): C1 = (n+2)|R|^2, C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2, hence 8(n+2) C2sym - (n+8) C1 = 2(n+2)(n+4)|Ric|^2  [33 s]
+  [True]    side identities (bilinear form, NOT consequences of the leaf condition): C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, C2' = (n+5)/4 |R|^2 + 1/2 |Ric|^2, C2sym = (C2 + C2')/2, and the expected asymmetry C2 - C2' = (n+2)/2 |Ric|^2 - (n+2)/4 |R|^2, a nonzero polynomial: True
+  [True] n = 4, signature 3,1 (20 free components): C1 = (n+2)|R|^2, C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2, hence 8(n+2) C2sym - (n+8) C1 = 2(n+2)(n+4)|Ric|^2  [36 s]
+  [True]    side identities (bilinear form, NOT consequences of the leaf condition): C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, C2' = (n+5)/4 |R|^2 + 1/2 |Ric|^2, C2sym = (C2 + C2')/2, and the expected asymmetry C2 - C2' = (n+2)/2 |Ric|^2 - (n+2)/4 |R|^2, a nonzero polynomial: True
+  [True] n = 4, signature 2,2 (20 free components): C1 = (n+2)|R|^2, C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2, hence 8(n+2) C2sym - (n+8) C1 = 2(n+2)(n+4)|Ric|^2  [39 s]
+  [True]    side identities (bilinear form, NOT consequences of the leaf condition): C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, C2' = (n+5)/4 |R|^2 + 1/2 |Ric|^2, C2sym = (C2 + C2')/2, and the expected asymmetry C2 - C2' = (n+2)/2 |Ric|^2 - (n+2)/4 |R|^2, a nonzero polynomial: True
+  [True] n = 5, signature 5,0 (50 free components): C1 = (n+2)|R|^2, C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2, hence 8(n+2) C2sym - (n+8) C1 = 2(n+2)(n+4)|Ric|^2  [53 s]
+  [True]    side identities (bilinear form, NOT consequences of the leaf condition): C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, C2' = (n+5)/4 |R|^2 + 1/2 |Ric|^2, C2sym = (C2 + C2')/2, and the expected asymmetry C2 - C2' = (n+2)/2 |Ric|^2 - (n+2)/4 |R|^2, a nonzero polynomial: True
+  [True] n = 5, signature 1,4 (50 free components): C1 = (n+2)|R|^2, C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2, hence 8(n+2) C2sym - (n+8) C1 = 2(n+2)(n+4)|Ric|^2  [69 s]
+  [True]    side identities (bilinear form, NOT consequences of the leaf condition): C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, C2' = (n+5)/4 |R|^2 + 1/2 |Ric|^2, C2sym = (C2 + C2')/2, and the expected asymmetry C2 - C2' = (n+2)/2 |Ric|^2 - (n+2)/4 |R|^2, a nonzero polynomial: True
+  [True] n = 5, signature 2,3 (50 free components): C1 = (n+2)|R|^2, C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2, hence 8(n+2) C2sym - (n+8) C1 = 2(n+2)(n+4)|Ric|^2  [86 s]
+  [True]    side identities (bilinear form, NOT consequences of the leaf condition): C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, C2' = (n+5)/4 |R|^2 + 1/2 |Ric|^2, C2sym = (C2 + C2')/2, and the expected asymmetry C2 - C2' = (n+2)/2 |Ric|^2 - (n+2)/4 |R|^2, a nonzero polynomial: True
+  n = 4: 4 C2sym - C1 = 8 |Ric|^2 for every algebraic curvature tensor, every signature.
+  [True] (4,0) (random rational data): F(X,Y;h,h') - F(X,Y;h',h) = -sum_i eta_i tr([B_i,C_i][H',H]) = 186465997/82944 (nonzero, as expected: the bilinear form is not symmetric in h, h'), and F(X,Y;h',h) = F(Y,X;h,h')
+  [True] (1,3) (random rational data): F(X,Y;h,h') - F(X,Y;h',h) = -sum_i eta_i tr([B_i,C_i][H',H]) = 8860127/5184 (nonzero, as expected: the bilinear form is not symmetric in h, h'), and F(X,Y;h',h) = F(Y,X;h,h')
+  [True] (3,1) (random rational data): F(X,Y;h,h') - F(X,Y;h',h) = -sum_i eta_i tr([B_i,C_i][H',H]) = 531174985/248832 (nonzero, as expected: the bilinear form is not symmetric in h, h'), and F(X,Y;h',h) = F(Y,X;h,h')
+  [True] (2,2) (random rational data): F(X,Y;h,h') - F(X,Y;h',h) = -sum_i eta_i tr([B_i,C_i][H',H]) = -56246813/62208 (nonzero, as expected: the bilinear form is not symmetric in h, h'), and F(X,Y;h',h) = F(Y,X;h,h')
 
-=== L2. Positivity for a Lorentzian (or definite) base: one evaluation of F ===
+=== L2. Corollary L2: Einstein tensors (n = 4) and the contradiction with J5(b) ===
+  [True] (4,0) Einstein, R = W + (Lambda/3) R_1 with W an arbitrary Weyl tensor (10 parameters), |R_1|^2 = 24: C1 = 6|W|^2 + 16 Lambda^2, C2sym = 3/2 |W|^2 + 12 Lambda^2, so 4 C2sym - C1 = 32 Lambda^2 (side: C2 = 3/4 |W|^2 + 16 Lambda^2)
+  [True] (1,3) Einstein, R = W + (Lambda/3) R_1 with W an arbitrary Weyl tensor (10 parameters), |R_1|^2 = 24: C1 = 6|W|^2 + 16 Lambda^2, C2sym = 3/2 |W|^2 + 12 Lambda^2, so 4 C2sym - C1 = 32 Lambda^2 (side: C2 = 3/4 |W|^2 + 16 Lambda^2)
+     constant curvature +1 (Lambda = 3, W = 0): C1 = 144, C2sym = 108  (nonzero, as in J5(d))
+  [True] (3,1) Einstein, R = W + (Lambda/3) R_1 with W an arbitrary Weyl tensor (10 parameters), |R_1|^2 = 24: C1 = 6|W|^2 + 16 Lambda^2, C2sym = 3/2 |W|^2 + 12 Lambda^2, so 4 C2sym - C1 = 32 Lambda^2 (side: C2 = 3/4 |W|^2 + 16 Lambda^2)
+  [True] (2,2) Einstein, R = W + (Lambda/3) R_1 with W an arbitrary Weyl tensor (10 parameters), |R_1|^2 = 24: C1 = 6|W|^2 + 16 Lambda^2, C2sym = 3/2 |W|^2 + 12 Lambda^2, so 4 C2sym - C1 = 32 Lambda^2 (side: C2 = 3/4 |W|^2 + 16 Lambda^2)
+     constant curvature +1 (Lambda = 3, W = 0): C1 = 144, C2sym = 108  (nonzero, as in J5(d))
+  So F(X,Y;h,h) = 0 for all X, Y, h forces Lambda = 0 for every Einstein tensor, every signature; the scale
+  of R is irrelevant (F is homogeneous of degree 2 in R), and so is the sign of Lambda.
+  [True] J5(b): at x0 = pi(p), Ric(g) = Lambda_g g with Lambda_g = -c_H/c_V, so 4 C2sym - C1 = 8|Ric|^2 = 32 Lambda_g^2 = 32 c_H^2/c_V^2 > 0, whereas the order-eps^2 leaf condition gives C1 = C2sym = 0
+  Hence no radial Z2 solution of Upsilon = 0 on a neighbourhood of a point of s(X) in the two settings of J1-J2:
+  (14,0) (definite base) and (7,7) (base (1,3) or (3,1), A4; base (2,2), A5); lambda > 1/4 for (7,7).
+  The leaf argument itself does not depend on the signature; (8,6), (10,4) etc. lack J1-J2, hence J5(b).
+
+=== L3. Proposition L3: positivity for a Lorentzian (or definite) base, one value of F ===
   [True] (4,0), T = e_0 (g(T,T) = 1): F(T,T; T^b (x) T^b) = 2 g(T,T) sum_ij eta_i eta_j R(T,e_i,T,e_j)^2 over T^perp, generic R (20 components); T^perp definite: True
   [True] (1,3), T = e_0 (g(T,T) = 1): F(T,T; T^b (x) T^b) = 2 g(T,T) sum_ij eta_i eta_j R(T,e_i,T,e_j)^2 over T^perp, generic R (20 components); T^perp definite: True
   [True] (3,1), T = e_3 (g(T,T) = -1): F(T,T; T^b (x) T^b) = 2 g(T,T) sum_ij eta_i eta_j R(T,e_i,T,e_j)^2 over T^perp, generic R (20 components); T^perp definite: True
   [True] (2,2), T = e_0 (g(T,T) = 1): F(T,T; T^b (x) T^b) = 2 g(T,T) sum_ij eta_i eta_j R(T,e_i,T,e_j)^2 over T^perp, generic R (20 components); T^perp definite: False
   [True] R(T,X,T,Y) := g(R(T,X)T, Y) as a polynomial in (T, X, Y) determines R: the linear map from the 20 components has rank 20 (so its vanishing for T in the open timelike cone forces R = 0)
-  So for a base of signature (1,3), (3,1) or (4,0): F = 0 for all X, Y, h forces R = 0, for every algebraic
-  curvature tensor (Einstein or not).  For (2,2), T^perp is indefinite and no such evaluation is definite (L3).
+  So for a base of signature (1,3), (3,1) or (4,0): F(X,X;h,h) = 0 for all X, h forces R = 0, for every
+  algebraic curvature tensor (Einstein or not).  For (2,2), T^perp is indefinite and no such value is definite (L4).
 
-=== L3. All coefficients of F (n = 4, Einstein): the span, and the solution set in base (2,2) ===
-  [True] (1,3): the 532 coefficients of F(X,X;h) (X in R^4, h in Sym^2) span a space of quadratic forms in (W, Lambda) of dimension 47 (of 66), and Lambda^2 lies in it  [46 s]
-  [True] (2,2): the 532 coefficients of F(X,X;h) (X in R^4, h in Sym^2) span a space of quadratic forms in (W, Lambda) of dimension 47 (of 66), and Lambda^2 lies in it  [56 s]
-  [True] (4,0): the 532 coefficients of F(X,X;h) (X in R^4, h in Sym^2) span a space of quadratic forms in (W, Lambda) of dimension 47 (of 66), and Lambda^2 lies in it  [65 s]
+=== L4. Proposition L4: the coefficients of the quadratic form F(X,X;h,h) (n = 4, Einstein); base (2,2) ===
+  [True] (1,3): the 532 coefficients of F(X,X;h) (X in R^4, h in Sym^2) span a space of quadratic forms in (W, Lambda) of dimension 47 (of 66), and Lambda^2 lies in it  [110 s]
+  [True] (2,2): the 532 coefficients of F(X,X;h) (X in R^4, h in Sym^2) span a space of quadratic forms in (W, Lambda) of dimension 47 (of 66), and Lambda^2 lies in it  [123 s]
+  [True] (4,0): the 532 coefficients of F(X,X;h) (X in R^4, h in Sym^2) span a space of quadratic forms in (W, Lambda) of dimension 47 (of 66), and Lambda^2 lies in it  [135 s]
+  (3,1) and (0,4) follow from (1,3) and (4,0) by g -> -g, which leaves the endomorphisms R(X,Y) and G_0
+  unchanged and sends F -> -F (and Lambda -> -Lambda): same span, same rank.
   [True] (2,2): *^2 = 1, [R, *] = 0 for the Einstein curvature operator, R = R+ (+) R- on Lambda+ (+) Lambda-, induced forms [[-2, 0, 0], [0, -2, 0], [0, 0, 2]] and [[-2, 0, 0], [0, -2, 0], [0, 0, 2]] (signature (1,2) each), tr R+ = tr R- = Lambda (so R+- = W+- + Lambda/3)
   [True] (2,2): all 81 products (R+)_ij (R-)_ab lie in the span of the coefficients of F (they span 36 of its 47 dimensions); hence F = 0 forces R+ = 0 or R- = 0
   [True] (2,2), on R+ = 0: Lambda = 0 there, 5 parameters remain (the other half W); the span of the coefficients of F equals the span of the entries of (the other block)^2 (both of dimension 6)
@@ -66,11 +89,6 @@
    sum_ij g^ij n(X,e_i) n(Y,e_j) = (n o n)(X,Y) = 0.)  These Ricci-flat tensors pass the HH leaf condition to
    all orders; they are excluded in J5 only because there Lambda_g = -c_H/c_V != 0.
 
-=== L4. Consequence for Theorem J5 (radial ansatz, Z2) ===
-  [True] J5(b): at x0 = pi(p), Ric(g) = Lambda_g g with Lambda_g = -c_H/c_V, so 8 C2 - C1 = 28|Ric|^2 = 112 Lambda_g^2 = 112 c_H^2/c_V^2 != 0, whereas the order-eps^2 leaf condition (F = 0) gives 8 C2 - C1 = 0
-  Hence no radial Z2 solution of Upsilon = 0 on a neighbourhood of a point of s(X) in any signature: base (4,0)
-  ((14,0) etc.), (1,3) or (3,1) ((7,7) for lambda > 1/4 with the A4 sign), (2,2) ((7,7) for lambda > 1/4, A5).
+SUMMARY: 57 checks, 57 True, 0 False
 
-SUMMARY: 44 checks, 44 True, 0 False
-
-runtime 102 s
+runtime 181 s

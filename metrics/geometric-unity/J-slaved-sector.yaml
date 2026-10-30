@@ -32,7 +32,8 @@ proof_status: >
   matrix, including the general-a closed form J4(c'); exact sample solutions; the (14,0) ranges of J4(d') for Shiab# by
   a completed square plus the real structure, with exact configurations at and below the a = 0 bound);
   J5 (proof: parallel ds in Z2, Schur, O'Neill; definite signature; constant-curvature leaf test for bases (4,0),
-  (1,3), (2,2); every signature via J5d-indefinite-leaf.md). Z1 statements use F4(c), proven for every n
+  (1,3), (2,2); the indefinite case (7,7) via J5d-indefinite-leaf.md; corrected after review 2026-10-30, R7-2: this
+  had read "every signature"). Z1 statements use F4(c), proven for every n
   (K-z1-ricci-general-n.md).
 novelty: >
   New within this audit: once T_e != 0 the twist enters the reduced odd equation, through the principal (Hessian)
@@ -42,15 +43,16 @@ novelty: >
   once the normal gradient a != 0. Reading (E) at the points of s(X) becomes solvable in (7,7) and in (14,0), in Z1 and
   Z2, with the 4D cosmological constant free (for Shiab# in (14,0): a half-line, ending lower in Z1 than in Z2), so the
   (7,7) no-go and Lambda_4 = 0 of round 5 are properties of T_e = 0. For the radial ansatz in Z2 (kappa != 0, T_e the
-  slaved field in V, det M != 0), Upsilon = 0 on a neighbourhood of a point of s(X) has no solution in any
-  signature, for every member with (x, y) != 0. Not in the source.
+  slaved field in V, det M != 0), Upsilon = 0 on a neighbourhood of a point of s(X) has no solution in (14,0) or
+  (7,7) (J5, J5d; corrected after review 2026-10-30, R7-2: this had read "in any signature"), for every member with
+  (x, y) != 0. Not in the source.
 reproducibility: "Exact; fixed seeds (random.seed(20261030); random.Random(20261031) and (20261029) for the (14,0) and (7,7) 2-jets; random.Random(20261030) for the J4b reality points); 567 s (~10 min) on one core after the review additions (J4b, exact det H, varpi_W_A, (2,2) leaf test), a second run 560 s, identical apart from timing annotations; imports I_elliptic_reduction.py unchanged."
 empirical_testability: >
   None new. The reduced 4D content depends on the declared rule for T off s(X) and on the reading: under (P) with
   basic scalars in Z2 one gets a 4D system with an Einstein-type equation, Hessian terms in two scalars, a field-
   dependent cosmological term and (for y = 0) a curvature-free tensor constraint on the scalars, whose solutions are
   not classified; under (E) at s(X) the cosmological constant is free; in the radial Z2 sector no solution of
-  Upsilon = 0 exists near s(X) in any signature (J5d) (corrected after review 2026-10-30, R6-4: this had read "the 4D
+  Upsilon = 0 exists near s(X) in (14,0) or (7,7) (J5d; R7-2: this had read "in any signature") (corrected after review 2026-10-30, R6-4: this had read "the 4D
   theory is Einstein gravity coupled to two scalars").
 dependencies: ["D3", "D5", "G1", "G2", "H3", "H4", "H7", "I2", "I3", "I6", "I7", "F2", "F3", "F4", "F5", "F6"]
 confidence: >

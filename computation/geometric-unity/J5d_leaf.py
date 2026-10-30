@@ -10,27 +10,34 @@ With A_X Y = -1/2 (R(X,Y).y)^vert (L-F5) and the Z2 fibre metric c_V G_lambda, t
    (A_X, A_Y) = c_V/(4 c_H) * Phi_y(X, Y),   Phi_y(X, Y) = sum_ij g^ij tr( y^-1 (R(X,e_i).y) y^-1 (R(Y,e_j).y) ),
 and its order-eps^2 part at y = g + eps h is the quadratic form of J5(d),
    F(X, Y; h) = sum_ij g^ij G_0(R(X,e_i).h, R(Y,e_j).h),   G_0(h, k) = tr(g^-1 h g^-1 k).
-Contractions of the polarised form F(X, Y; h, h'):
-   C1 = sum_{a,p,q} eta_a eta_p eta_q F(e_a, e_a; theta^p.theta^q, theta^p.theta^q)        (both traces)
-   C2 = sum_{a,b,q} eta_q F(e_a, e_b; theta^a.theta^q, theta^b.theta^q)                    (X-slot against h-slot)
-with theta^p.theta^q = (theta^p (x) theta^q + theta^q (x) theta^p)/2.
-Sections
-  L0  the reduction of J5(d), re-derived: R.y is y-traceless (the lambda-term drops at every y); the closed form
-      Phi_y = 2 sum g^ij [tr(B_i C_j) - tr(M^-1 B_i M C_j)], M = g^-1 y; Phi_{g+eps h} = eps^2 F + O(eps^3);
-      F(h + c g) = F(h) and F symmetric in X, Y; the constant-curvature polynomials of J_slaved_sector.out section J5
-      reproduced in the same parametrisation.
-  L1  contraction identities for generic algebraic curvature tensors (n = 3, 4, 5; several signatures):
-      C1 = (n+2)|R|^2,  C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2; hence 8 C2 - C1 = 28 |Ric|^2 (n = 4), and for an Einstein
-      tensor R = W + (Lambda/3)(g_ac g_bd - g_ad g_bc): C1 = 6|W|^2 + 16 Lambda^2, C2 = 3/4 |W|^2 + 16 Lambda^2,
-      8 C2 - C1 = 112 Lambda^2.
-  L2  positivity for a Lorentzian (or definite) base: F(T, T; T^b (x) T^b) = 2 g(T,T) sum_{i,j} eta_i eta_j
-      R(T,e_i,T,e_j)^2 (i, j over an orthonormal frame of T^perp), generic R; R(T,X,T,Y) determines R (rank 20).
-  L3  the span of all coefficients of F (n = 4, Einstein, three signatures): rank 47 of 66, Lambda^2 in it.  Base
+The leaf condition gives F(X, Y; h, h) = 0 for all X, Y, h (Lemma L0).  Its polarisation in h only gives the part of
+the bilinear form F(X, Y; h, h') that is symmetric under h <-> h' (equivalently X <-> Y); F itself is not symmetric.
+Contractions (theta^p.theta^q = (theta^p (x) theta^q + theta^q (x) theta^p)/2, h_aq = theta^a.theta^q):
+   C1     = sum_{a,p,q} eta_a eta_p eta_q F(e_a, e_a; theta^p.theta^q, theta^p.theta^q)     (both traces; quadratic values)
+   C2sym  = sum_{a,b,q} eta_q (1/2)[Q_ab(h_aq + h_bq) - Q_ab(h_aq) - Q_ab(h_bq)],  Q_ab(h) = F(e_a, e_b; h, h)
+   C2, C2' = sum_{a,b,q} eta_q F(e_a, e_b; h_aq, h_bq), resp. F(e_a, e_b; h_bq, h_aq)   (bilinear; C2sym = (C2 + C2')/2)
+Only C1 and C2sym are forced to vanish by the leaf condition.  (Corrected after review 2026-10-30, R7-1: the first
+version used C2, which is not; see reports/CORRECTIONS.md.)
+Sections (labels as the results of the note)
+  L0  Lemma L0, the reduction of J5(d), re-derived: R.y is y-traceless (the lambda-term drops at every y); the closed
+      form Phi_y = 2 sum g^ij [tr(B_i C_j) - tr(M^-1 B_i M C_j)], M = g^-1 y; Phi_{g+eps h} = eps^2 F(X,Y;h,h) + O(eps^3);
+      F(h + c g) = F(h) and F(X,Y;h,h) symmetric in X, Y; the constant-curvature polynomials of J_slaved_sector.out
+      section J5 reproduced in the same parametrisation.
+  L1  Theorem L1, for generic algebraic curvature tensors (n = 3, 4, 5; nine signatures): C1 = (n+2)|R|^2 and
+      C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2, both from values of the quadratic form; hence
+      8(n+2) C2sym - (n+8) C1 = 2(n+2)(n+4)|Ric|^2, i.e. 4 C2sym - C1 = 8|Ric|^2 at n = 4.  Side identities (not
+      consequences of the leaf condition): C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, C2' = (n+5)/4 |R|^2 + 1/2 |Ric|^2,
+      C2 != C2' (expected), and the antisymmetric part F(X,Y;h,h') - F(X,Y;h',h) = -sum_i eta_i tr([B_i, C_i][H', H]).
+  L2  Corollary L2: Einstein R = W + (Lambda/3)(g_ac g_bd - g_ad g_bc), n = 4, four signatures: C1 = 6|W|^2 +
+      16 Lambda^2, C2sym = 3/2 |W|^2 + 12 Lambda^2, 4 C2sym - C1 = 32 Lambda^2; with J5(b), Lambda_g = -c_H/c_V.
+  L3  Proposition L3, positivity for a Lorentzian (or definite) base: F(T, T; T^b (x) T^b) = 2 g(T,T) sum_{i,j}
+      eta_i eta_j R(T,e_i,T,e_j)^2 (i, j over an orthonormal frame of T^perp), generic R; R(T,X,T,Y) determines R.
+  L4  Proposition L4, from the coefficients of the quadratic form F(X,X;h,h) (n = 4, Einstein): their span has rank 47
+      of 66 and contains Lambda^2 in (1,3), (2,2), (4,0) ((3,1), (0,4) follow by g -> -g, which sends F -> -F).  Base
       (2,2): the curvature operator commutes with *, the 81 products of the blocks R+ and R- lie in the span; on R+ = 0
       (resp. R- = 0) the span equals the span of the entries of (R-)^2 (resp. (R+)^2); the null example
       R = n (x) n (n an anti-self-dual null 2-form) has F = 0 and satisfies the full condition det(y)^2 Phi_y = 0
       identically in y.
-  L4  consequence for J5: the leaf condition at order eps^2 forces Lambda_g = 0, against Lambda_g = -c_H/c_V.
 Exact arithmetic (sympy rationals).  Fixed seed random.Random(20261030).  One core.  Every check is asserted.
 """
 import itertools
@@ -166,6 +173,7 @@ def Phi_value(Rm, n, gi, X, Y, y):
 
 
 def contractions(R, n, sig):
+    """C1 and C2sym from values of the quadratic form Q_ab(h) = F(e_a, e_b; h, h) only; C2, C2' from the bilinear form"""
     g = sp.diag(*sig)
     gi = g.inv()
     Rm = rend(R, n, gi)
@@ -173,12 +181,22 @@ def contractions(R, n, sig):
     A = {(a, i, p, q): gi * act(Rm[(a, i)], Sb[(p, q)]) for a in range(n) for i in range(n) for p in range(n)
          for q in range(n)}
 
-    def Fc(a, b, p, q, r, s):   # F(e_a, e_b; theta^p.theta^q, theta^r.theta^s), g diagonal
-        return sum(gi[i, i] * (A[(a, i, p, q)] * A[(b, i, r, s)]).trace() for i in range(n))
-    C1 = sp.expand(sum(gi[a, a] * g[p, p] * g[q, q] * Fc(a, a, p, q, p, q)
+    def Q(a, b, hs):
+        """Q_ab(h) = F(e_a, e_b; h, h) for h = sum of the basis forms theta^p.theta^q, (p, q) in hs (A is linear in h)"""
+        Aa = [sum((A[(a, i) + pq] for pq in hs), sp.zeros(n, n)) for i in range(n)]
+        Ab = [sum((A[(b, i) + pq] for pq in hs), sp.zeros(n, n)) for i in range(n)]
+        return sum(gi[i, i] * (Aa[i] * Ab[i]).trace() for i in range(n))
+
+    def Fb(a, b, pq, rs):   # bilinear F(e_a, e_b; theta^p.theta^q, theta^r.theta^s), g diagonal
+        return sum(gi[i, i] * (A[(a, i) + pq] * A[(b, i) + rs]).trace() for i in range(n))
+    trip = [(a, b, q) for a in range(n) for b in range(n) for q in range(n)]
+    C1 = sp.expand(sum(gi[a, a] * g[p, p] * g[q, q] * Q(a, a, [(p, q)])
                        for a in range(n) for p in range(n) for q in range(n)))
-    C2 = sp.expand(sum(g[q, q] * Fc(a, b, a, q, b, q) for a in range(n) for b in range(n) for q in range(n)))
-    return C1, C2
+    C2s = sp.expand(sum(g[q, q] * sp.Rational(1, 2) * (Q(a, b, [(a, q), (b, q)]) - Q(a, b, [(a, q)]) - Q(a, b, [(b, q)]))
+                        for a, b, q in trip))
+    C2 = sp.expand(sum(g[q, q] * Fb(a, b, (a, q), (b, q)) for a, b, q in trip))
+    C2p = sp.expand(sum(g[q, q] * Fb(a, b, (b, q), (a, q)) for a, b, q in trip))
+    return C1, C2s, C2, C2p
 
 
 def random_point(R, free):
@@ -197,7 +215,7 @@ def random_sym_invertible(n):
 
 # ================================================================================================ L0
 def L0():
-    say("\n=== L0. The reduction of J5(d), re-derived (n = 4) ===")
+    say("\n=== L0. Lemma L0: the reduction of J5(d), re-derived (n = 4) ===")
     n = 4
     for lab, sig in SIG4.items():
         g = sp.diag(*sig)
@@ -253,7 +271,7 @@ def L0():
         Fv = F_value(Rm, n, gi, X, Y, h, h)
         cs = [P.coeff_monomial(eps ** m) for m in range(3)]
         check(f"{lab} det(y)^2 Phi_y at y = g + eps h (h g-traceless) = det(g)^2 F(X,Y;h) eps^2 + O(eps^3): eps^0, eps^1"
-              f" coefficients 0, eps^2 coefficient = F (random rational data; F = {Fv})",
+              f" coefficients 0, eps^2 coefficient = F(X,Y;h,h) (random rational data; value {Fv})",
               cs[0] == 0 and cs[1] == 0 and cs[2] == g.det() ** 2 * Fv)
         # (d) F(h + c g) = F(h); F symmetric in X, Y
         cc = sp.Symbol('c')
@@ -263,8 +281,8 @@ def L0():
         Fa = F_value(Rm, n, gi, Xs, Ys, hh + cc * g, hh + cc * g)
         Fb = F_value(Rm, n, gi, Xs, Ys, hh, hh)
         Fc_ = F_value(Rm, n, gi, Ys, Xs, hh, hh)
-        check(f"{lab} R.g = 0, so F(X,Y; h + c g) = F(X,Y; h) (the traceless restriction is immaterial), and"
-              f" F(X,Y;h) = F(Y,X;h) (symbolic h, X, Y, c)", sp.expand(Fa - Fb) == 0 and sp.expand(Fb - Fc_) == 0)
+        check(f"{lab} R.g = 0, so F(X,Y; h + c g, h + c g) = F(X,Y; h, h) (the traceless restriction is immaterial), and"
+              f" F(X,Y;h,h) = F(Y,X;h,h) (symbolic h, X, Y, c)", sp.expand(Fa - Fb) == 0 and sp.expand(Fb - Fc_) == 0)
     # (e) reproduction of J_slaved_sector.out section J5 (constant curvature +1, h0 eliminated by the trace)
     printed = {
         (1, 1, 1, 1): "4*(3*h1**2 + 3*h2**2 + 3*h3**2 + 3*h4**2 + 5*h4*h7 + 5*h4*h9 + h5**2 + h6**2 + 3*h7**2 + 5*h7*h9"
@@ -288,22 +306,57 @@ def L0():
 
 # ================================================================================================ L1
 def L1():
-    say("\n=== L1. Contraction identities for generic algebraic curvature tensors ===")
+    say("\n=== L1. Theorem L1: traces of F for generic algebraic curvature tensors ===")
+    say("  C1 and C2sym are built from values Q_ab(h) = F(e_a, e_b; h, h) of the quadratic form only, which the leaf")
+    say("  condition forces to vanish; C2 and C2' use the bilinear form at h != h' and are side identities.")
     cases = ((3, ((1, 1, 1), (1, -1, -1))),
              (4, tuple(SIG4.values())),
              (5, ((1, 1, 1, 1, 1), (1, -1, -1, -1, -1), (1, 1, -1, -1, -1))))
     for n, sigs in cases:
         for sig in sigs:
             R, free = curvature_family(n, sig)
-            C1, C2 = contractions(R, n, sig)
+            C1, C2s, C2, C2p = contractions(R, n, sig)
             R2, Ric2 = norm2(R, n, sig), norm2_ric(R, n, sig)
             ok1 = sp.expand(C1 - (n + 2) * R2) == 0
-            ok2 = sp.expand(C2 - sp.Rational(3, 4) * R2 - sp.Rational(n + 3, 2) * Ric2) == 0
-            ok3 = sp.expand(4 * (n + 2) * C2 - 3 * C1 - 2 * (n + 2) * (n + 3) * Ric2) == 0
+            ok2 = sp.expand(C2s - sp.Rational(n + 8, 8) * R2 - sp.Rational(n + 4, 4) * Ric2) == 0
+            ok3 = sp.expand(8 * (n + 2) * C2s - (n + 8) * C1 - 2 * (n + 2) * (n + 4) * Ric2) == 0
             check(f"n = {n}, signature {sig.count(1)},{sig.count(-1)} ({len(free)} free components): C1 = (n+2)|R|^2,"
-                  f" C2 = 3/4 |R|^2 + (n+3)/2 |Ric|^2, hence 4(n+2) C2 - 3 C1 = 2(n+2)(n+3)|Ric|^2"
+                  f" C2sym = (n+8)/8 |R|^2 + (n+4)/4 |Ric|^2, hence 8(n+2) C2sym - (n+8) C1 = 2(n+2)(n+4)|Ric|^2"
                   f"  [{time.time() - T0:.0f} s]", ok1 and ok2 and ok3)
-    say("  n = 4: 8 C2 - C1 = 28 |Ric|^2 for every algebraic curvature tensor, every signature.")
+            side = (sp.expand(C2 - sp.Rational(3, 4) * R2 - sp.Rational(n + 3, 2) * Ric2) == 0
+                    and sp.expand(C2p - sp.Rational(n + 5, 4) * R2 - sp.Rational(1, 2) * Ric2) == 0
+                    and sp.expand(C2s - (C2 + C2p) / 2) == 0
+                    and sp.expand(C2 - C2p - sp.Rational(n + 2, 2) * Ric2 + sp.Rational(n + 2, 4) * R2) == 0)
+            check(f"   side identities (bilinear form, NOT consequences of the leaf condition): C2 = 3/4 |R|^2 +"
+                  f" (n+3)/2 |Ric|^2, C2' = (n+5)/4 |R|^2 + 1/2 |Ric|^2, C2sym = (C2 + C2')/2, and the expected asymmetry"
+                  f" C2 - C2' = (n+2)/2 |Ric|^2 - (n+2)/4 |R|^2, a nonzero polynomial: {sp.expand(C2 - C2p) != 0}",
+                  side and sp.expand(C2 - C2p) != 0)
+    say("  n = 4: 4 C2sym - C1 = 8 |Ric|^2 for every algebraic curvature tensor, every signature.")
+    # the antisymmetric part of the bilinear form (Jacobi), at random rational data
+    n = 4
+    for lab, sig in SIG4.items():
+        g = sp.diag(*sig)
+        gi = g.inv()
+        Rg, free = curvature_family(n, sig)
+        pt = random_point(Rg, free)
+        Rm = rend({k_: v.subs(pt) for k_, v in Rg.items()}, n, gi)
+        X = [rat() for _ in range(n)]
+        Y = [rat() for _ in range(n)]
+        h, hp = random_sym_invertible(n), random_sym_invertible(n)
+        BX = [sum((X[a] * Rm[(a, i)] for a in range(n)), sp.zeros(n, n)) for i in range(n)]
+        BY = [sum((Y[a] * Rm[(a, i)] for a in range(n)), sp.zeros(n, n)) for i in range(n)]
+        H, Hp = gi * h, gi * hp
+        d = F_value(Rm, n, gi, X, Y, h, hp) - F_value(Rm, n, gi, X, Y, hp, h)
+        jac = -sum(gi[i, i] * ((BX[i] * BY[i] - BY[i] * BX[i]) * (Hp * H - H * Hp)).trace() for i in range(n))
+        sym = F_value(Rm, n, gi, X, Y, hp, h) - F_value(Rm, n, gi, Y, X, h, hp)
+        check(f"{lab} (random rational data): F(X,Y;h,h') - F(X,Y;h',h) = -sum_i eta_i tr([B_i,C_i][H',H]) = {d}"
+              f" (nonzero, as expected: the bilinear form is not symmetric in h, h'), and F(X,Y;h',h) = F(Y,X;h,h')",
+              sp.expand(d - jac) == 0 and d != 0 and sym == 0)
+
+
+# ================================================================================================ L2
+def L2():
+    say("\n=== L2. Corollary L2: Einstein tensors (n = 4) and the contradiction with J5(b) ===")
     n = 4
     for lab, sig in SIG4.items():
         R, free = curvature_family(n, sig, einstein=True)
@@ -313,23 +366,34 @@ def L1():
         Wric = ricci(W, n, g.inv())
         weyl_ok = Wric == sp.zeros(n, n) and all(sp.expand(W[a, b, c, d] + W[a, c, d, b] + W[a, d, b, c]) == 0
                                                  for a, b, c, d in itertools.product(range(n), repeat=4))
-        C1, C2 = contractions(R, n, sig)
+        C1, C2s, C2, C2p = contractions(R, n, sig)
         W2 = norm2(W, n, sig)
         ok = (len(free) == 10 and weyl_ok and ricci(R, n, g.inv()) == Lam * g and norm2(R1, n, sig) == 24
-              and sp.expand(C1 - 6 * W2 - 16 * Lam ** 2) == 0 and sp.expand(C2 - sp.Rational(3, 4) * W2 - 16 * Lam ** 2) == 0
-              and sp.expand(8 * C2 - C1 - 112 * Lam ** 2) == 0)
+              and sp.expand(C1 - 6 * W2 - 16 * Lam ** 2) == 0
+              and sp.expand(C2s - sp.Rational(3, 2) * W2 - 12 * Lam ** 2) == 0
+              and sp.expand(4 * C2s - C1 - 32 * Lam ** 2) == 0
+              and sp.expand(C2 - sp.Rational(3, 4) * W2 - 16 * Lam ** 2) == 0)
         check(f"{lab} Einstein, R = W + (Lambda/3) R_1 with W an arbitrary Weyl tensor (10 parameters), |R_1|^2 = 24:"
-              f" C1 = 6|W|^2 + 16 Lambda^2, C2 = 3/4 |W|^2 + 16 Lambda^2, so 8 C2 - C1 = 112 Lambda^2", ok)
+              f" C1 = 6|W|^2 + 16 Lambda^2, C2sym = 3/2 |W|^2 + 12 Lambda^2, so 4 C2sym - C1 = 32 Lambda^2"
+              f" (side: C2 = 3/4 |W|^2 + 16 Lambda^2)", ok)
         if lab in ('(1,3)', '(2,2)'):
-            cc1, cc2 = contractions(const_curv(n, sig), n, sig)
-            say(f"     constant curvature +1 (Lambda = 3, W = 0): C1 = {cc1}, C2 = {cc2}  (nonzero, as in J5(d))")
-    say("  So F = 0 for all X, Y, h forces Lambda = 0 for every Einstein base, every signature; the scale of R is")
-    say("  irrelevant (F is homogeneous of degree 2 in R), and so is the sign of Lambda.")
+            cc1, cc2s, _, _ = contractions(const_curv(n, sig), n, sig)
+            say(f"     constant curvature +1 (Lambda = 3, W = 0): C1 = {cc1}, C2sym = {cc2s}  (nonzero, as in J5(d))")
+    say("  So F(X,Y;h,h) = 0 for all X, Y, h forces Lambda = 0 for every Einstein tensor, every signature; the scale")
+    say("  of R is irrelevant (F is homogeneous of degree 2 in R), and so is the sign of Lambda.")
+    cH, cV = sp.symbols('c_H c_V', real=True, nonzero=True)
+    Lg = -cH / cV
+    check("J5(b): at x0 = pi(p), Ric(g) = Lambda_g g with Lambda_g = -c_H/c_V, so 4 C2sym - C1 = 8|Ric|^2"
+          " = 32 Lambda_g^2 = 32 c_H^2/c_V^2 > 0, whereas the order-eps^2 leaf condition gives C1 = C2sym = 0",
+          sp.simplify(32 * Lg ** 2 - 32 * cH ** 2 / cV ** 2) == 0 and (32 * Lg ** 2).is_positive)
+    say("  Hence no radial Z2 solution of Upsilon = 0 on a neighbourhood of a point of s(X) in the two settings of J1-J2:")
+    say("  (14,0) (definite base) and (7,7) (base (1,3) or (3,1), A4; base (2,2), A5); lambda > 1/4 for (7,7).")
+    say("  The leaf argument itself does not depend on the signature; (8,6), (10,4) etc. lack J1-J2, hence J5(b).")
 
 
-# ================================================================================================ L2
-def L2():
-    say("\n=== L2. Positivity for a Lorentzian (or definite) base: one evaluation of F ===")
+# ================================================================================================ L3
+def L3():
+    say("\n=== L3. Proposition L3: positivity for a Lorentzian (or definite) base, one value of F ===")
     n = 4
     for lab, (sig, T) in {'(4,0)': (SIG4['(4,0)'], 0), '(1,3)': (SIG4['(1,3)'], 0), '(3,1)': (SIG4['(3,1)'], 3),
                           '(2,2)': (SIG4['(2,2)'], 0)}.items():
@@ -358,11 +422,11 @@ def L2():
     Mx = sp.Matrix([[sp.diff(cf, s) for s in free] for cf in cs])
     check("R(T,X,T,Y) := g(R(T,X)T, Y) as a polynomial in (T, X, Y) determines R: the linear map from the 20"
           " components has rank 20 (so its vanishing for T in the open timelike cone forces R = 0)", Mx.rank() == 20)
-    say("  So for a base of signature (1,3), (3,1) or (4,0): F = 0 for all X, Y, h forces R = 0, for every algebraic")
-    say("  curvature tensor (Einstein or not).  For (2,2), T^perp is indefinite and no such evaluation is definite (L3).")
+    say("  So for a base of signature (1,3), (3,1) or (4,0): F(X,X;h,h) = 0 for all X, h forces R = 0, for every")
+    say("  algebraic curvature tensor (Einstein or not).  For (2,2), T^perp is indefinite and no such value is definite (L4).")
 
 
-# ================================================================================================ L3
+# ================================================================================================ L4
 def coeff_matrix(F, outer, inner):
     """F polynomial in outer (X, h) variables; its coefficients are polynomials in inner; matrix of those"""
     cs = sp.Poly(F, *outer).coeffs()
@@ -403,8 +467,8 @@ def curvature_operator(R, sig):
     return Rop, star, ip
 
 
-def L3():
-    say("\n=== L3. All coefficients of F (n = 4, Einstein): the span, and the solution set in base (2,2) ===")
+def L4():
+    say("\n=== L4. Proposition L4: the coefficients of the quadratic form F(X,X;h,h) (n = 4, Einstein); base (2,2) ===")
     n = 4
     keep = {}
     for lab in ('(1,3)', '(2,2)', '(4,0)'):
@@ -417,6 +481,8 @@ def L3():
         check(f"{lab}: the {ncoef} coefficients of F(X,X;h) (X in R^4, h in Sym^2) span a space of quadratic forms in"
               f" (W, Lambda) of dimension {Mr.rows} (of {len(mons)}), and Lambda^2 lies in it"
               f"  [{time.time() - T0:.0f} s]", Mr.rows == 47 and len(mons) == 66 and in_span(Mr, mons, inner, Lam ** 2))
+    say("  (3,1) and (0,4) follow from (1,3) and (4,0) by g -> -g, which leaves the endomorphisms R(X,Y) and G_0")
+    say("  unchanged and sends F -> -F (and Lambda -> -Lambda): same span, same rank.")
     # base (2,2): self-dual / anti-self-dual blocks
     lab = '(2,2)'
     sig = SIG4[lab]
@@ -480,18 +546,6 @@ def L3():
     say("  (By hand: R(X,e_i) = n(X,e_i) N with N the endomorphism of n, so every term of Phi_y carries the factor")
     say("   sum_ij g^ij n(X,e_i) n(Y,e_j) = (n o n)(X,Y) = 0.)  These Ricci-flat tensors pass the HH leaf condition to")
     say("   all orders; they are excluded in J5 only because there Lambda_g = -c_H/c_V != 0.")
-
-
-# ================================================================================================ L4
-def L4():
-    say("\n=== L4. Consequence for Theorem J5 (radial ansatz, Z2) ===")
-    cH, cV = sp.symbols('c_H c_V', real=True, nonzero=True)
-    Lg = -cH / cV
-    check("J5(b): at x0 = pi(p), Ric(g) = Lambda_g g with Lambda_g = -c_H/c_V, so 8 C2 - C1 = 28|Ric|^2"
-          " = 112 Lambda_g^2 = 112 c_H^2/c_V^2 != 0, whereas the order-eps^2 leaf condition (F = 0) gives 8 C2 - C1 = 0",
-          sp.simplify(112 * Lg ** 2 - 112 * cH ** 2 / cV ** 2) == 0 and (112 * Lg ** 2).is_positive)
-    say("  Hence no radial Z2 solution of Upsilon = 0 on a neighbourhood of a point of s(X) in any signature: base (4,0)")
-    say("  ((14,0) etc.), (1,3) or (3,1) ((7,7) for lambda > 1/4 with the A4 sign), (2,2) ((7,7) for lambda > 1/4, A5).")
 
 
 def main():
