@@ -313,3 +313,69 @@ every row.
     through 16.1 or 58.1.
 - Corrected in `reports/CORRECTIONS.md`: `00-dependency-structure.md` §2 says that `designators.tsv` resolves 4-5
   uniquely. It does not, and the index two-cycle 124.1↔58.1 depends on reading 4-5 as III-5.
+
+## Round 5 — hydrogen body registers and the ladder beyond n = 8
+
+Note: `formalization/chain-theory/compendium/08-hydrogen-registers.md`. Code: `computation/chain-theory/compendium/hydrogen_registers.py`.
+Output: `outputs/hydrogen_registers.txt`. Metrics: `metrics/chain-theory/compendium/hydrogen-registers.yaml`. The task is
+proposed further work item 5. All 53 quoted strings are checked verbatim.
+
+**F21. The body registers are re-derived** (a, b, c).
+- The rules are stated in other chapters:
+  - the per-link whole face (fc)² and cut face (f²−1)(c²−1) (16.1 T, 103.1 C);
+  - "the register of a body at a face the product over its links of the per-link face" (103.1);
+  - the W word's product register (147.1).
+
+  They reproduce all 16 printed genre faces.
+- 2^30·3^18 is the product of (d_a d_b)² over the 10 links of the 152.1 electron web. Given the web (entered, round 3),
+  it follows from these rules, provided the struck dock links are counted. Without them the product is 2^26·3^14.
+- 2^31·3^17 is the same product with only the port B–w1 at its cut face 24. This is a reading:
+  - The 103.1 sentence applied at every link gives 2^27·3^11·5^4.
+  - Cutting both docks, or reading the port at its support face, gives 2^32·3^16.
+  - The port-only reading also produces the cut values the source prints for the Z body and the gluon word (3 of 3
+    numbers). The other readings produce none of them.
+  - The source states the port-only rule nowhere.
+- The units 67 and 201 come from the web. The text pairs the whole face with 201 and the cut face with 67 but gives no
+  reason; the cross pairings give 67/(2^28·3^16) and 67/(2^29·3^14).
+- The factor 2 between the faces is the hub dressing 3 times the (2,3) cut/whole ratio 2/3.
+- The mass face 36 has no formula:
+  - The displayed held chain (6 sites, 5 links) has measure 30. The text also gives it 8 links (measure 48), and the
+    glossary calls the bond "the link".
+  - 36 equals the measure of the docked carrier as the docking act describes it (6 links), and the whole face of one
+    (2,3) link.
+- Every input of E1 except the mass face is a cell of the electron body alone.
+
+**F22. Nothing beyond n = 8 to test** (a, b, c).
+- A mechanical scan covered every ladder sentence: 15 sentences, of which 6 state the range "eight" or "1, …, 8". None
+  names a larger rank. No value beyond 8 is printed, and the per-record ladder has no printed value at any rank.
+- Under R the two-vertex ladder is exactly 1/n² at every n: the sl2 commutant is scalar, checked for n ≤ 200. With
+  support dimension 3, 4 or 6 it equals 1/n² only at n = 1. R agrees with all 8 printed values.
+- Two sentences go beyond the values, and under some readings R parts from them:
+  - "a pure power of the rank at none" (the per-record ladder) fails for a single read (1/n, at every n) and for the
+    second moment ((n²−1)/12, at n = 2).
+  - The 45.1 prose, "the order-k term ... over n squared", holds under R only for terms that read the state twice.
+
+  The source defines neither "record" nor "order-k term" at the held pair, so neither sentence decides R.
+
+**F23. The comparison with experiment lacks the source's unit** (a, c, e).
+- E1 is identified by name, as "the Rydberg constant in the electron unit". The source itself leaves the mass unit open:
+  - 192.1: "the mass unit stays a question of which cell is meant".
+  - The appendix of conditions lists "Mass unit as the rung register (an open question)" among the premises of the
+    Rydberg-constant result.
+- 176.1 uses "in the electron unit" to mean a ratio to m_e. Under that reading E1 is 6.54×10⁻¹⁰ (whole) and 3.27×10⁻¹⁰
+  (cut) of the measured value, 9.18 and 9.49 orders low, as round 1 found.
+- We declared a family of 36 conversions built from the source's unit spellings. None lies within a factor 10; the
+  nearest is 62× off.
+- The ratio E_2/E_1 = 1/4 needs no unit. It differs from the measured B(2S)/B(1S) by 4.5×10⁻⁶ relative:
+  - α²/16 = 3.3×10⁻⁶ of this comes from the Dirac energies, and the rest from QED and recoil terms beyond them (not
+    evaluated here).
+  - This is the size of the fine-structure and Lamb terms that 143.1 states without values.
+
+**Changes to rounds 1–4.**
+- No earlier statement is wrong, and nothing is added to `reports/CORRECTIONS.md`.
+- `02-hydrogen-spectrum.md` §1 says the body registers are "not derived on the page". That holds for the page. The
+  registers follow from rules printed elsewhere, given the web and two readings. Its §4 choice (5) is now those two
+  readings.
+- F6's "none selected" holds for 143.1. 229.1 later resolves the unit to the dock, at a register (16) that matches
+  neither printed face.
+- G1 and G2 in `gaps/chain-theory-compendium.md` get dated notes.

@@ -1,0 +1,74 @@
+claim_id: CT-HR (round 5 hydrogen body registers and the ladder beyond n = 8; extends CT-C016)
+source_statement: "143.1: 'the whole face with the hub unit two hundred and one over the body register two to the thirtieth multiplied by three to the eighteenth, and the cut face with the dock unit sixty-seven over the body register two to the thirty-first multiplied by three to the seventeenth (the port at its cut twenty-four)'; 'E_{n} = E_{1}/n^{2}, n = 1, ..., 8'; 'The two body registers ... re-derived on the page not'"
+source_location: "compendium/tex/parts/07-cell-3-2-photon.tex:481-549 (143.1); rules at 01-framework.tex:582 (16.1), 06-cell-2-2-metric-and-horizon.tex:814-845 (103.1), 07-cell-3-2-photon.tex:664-668 (147.1), 776-785 (149.1); electron web 07-cell-3-2-photon.tex:897-986 (152.1 figure); mass unit 10-cell-4-3-yukawa.tex:264-278 (192.1), back.tex:63; 14-condensed-matter-and-atoms.tex:192-216 (229.1); 03-quantum-mechanics.tex:464 (45.1 prose)"
+source_commit: a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+note: formalization/chain-theory/compendium/08-hydrogen-registers.md
+code: [computation/chain-theory/compendium/hydrogen_registers.py]
+outputs: [computation/chain-theory/compendium/outputs/hydrogen_registers.txt]
+references:
+  codata: "CODATA 2022 via scipy.constants 1.18.1: alpha 7.2973525643e-3, R_inf hc 13.605693122990 eV, m_e c^2 0.51099895069 MeV"
+  hydrogen: "IE(H) 109678.77174307(10) cm^-1 = 13.598434599702 eV (NIST ASD, Kramida 2010); 1S-2S hyperfine centroid 2466061413187035(10) Hz (Parthey et al., PRL 107, 203001 (2011), arXiv:1107.3101)"
+anchors: {checked: 53, missing: 0}
+per_link_faces:
+  rule: "whole (fc)^2, cut (f^2-1)(c^2-1), rank fc, support min(f,c)^4 (16.1, 103.1, 122.1, 164.4, 214.6)"
+  printed_faces_reproduced: "16 of 16 (103.1)"
+  count_registers_reproduced: {"(2,2)": 2304, "(2,3)": 31104, "(4,4)": 14745600}
+registers:
+  whole:
+    printed: "2^30*3^18"
+    rederived: "prod over the 10 links of the 152.1 electron web of (d_a d_b)^2 = 81^3*144*64^3*16*36^2 = prod over sites of d^(2 deg)"
+    status: forced_given_web_and_one_reading
+    reading: {W0_struck_docks_counted: "2^30*3^18 (printed)", W1_unstruck_links_only: "2^26*3^14"}
+  cut:
+    printed: "2^31*3^17"
+    rederived: "whole register with the port B-w1 at its cut face 24 = (2^2-1)(3^2-1): 2^30*3^18*24/36"
+    status: reading
+    readings: {C1_port_only: "2^31*3^17 (printed)", C2_every_link_cut: "2^27*3^11*5^4", C3_both_docks_cut: "2^32*3^16", C4_port_support: "2^32*3^16", C5_port_rank: "2^29*3^17"}
+    port_only_convention_elsewhere: {bodies: 2, printed_numbers_reproduced: 3, by_C2_or_C3: 0, detail: "Z body R_cut 3538944 = 5308416*24/36 and 11/1769472 (149.1); gluon word 1/23328 = 18/(64*81*81) with S_cut = 27 - 9 (inferred from the 147.1 pattern 28 -> 22)"}
+steps:   # F follows from a stated rule; R reading; E entered
+  electron_web: {value: "9 sites, 10 links (152.1 figure)", status: E}
+  whole_face_per_link: {value: "(d_a d_b)^2", status: F}
+  whole_body_register: {value: "2^30*3^18", status: "F given the web; R: struck docks counted"}
+  cut_face_per_link: {value: "(f^2-1)(c^2-1) = 24 at (2,3)", status: F}
+  cut_body_register: {value: "2^31*3^17", status: "R: port only"}
+  units: {value: "67 = 79 - 12, 201 = 67*3", status: "F given the web"}
+  face_unit_pairing: {value: "whole-201, cut-67", status: R, cross_pairings: ["67/(2^28*3^16)", "67/(2^29*3^14)"]}
+  mass_face: {value: 36, status: E, detail: "no formula; displayed held chain (6 sites, 5 links) measure 30; 'eight links of the held chain' 48; docking act as described (6 links) 36; whole face of one (2,3) link 36. Link counts printed for the held chain or the bond: 5, 8, 1"}
+  binding: {value: "E1 = 36 u / R", status: F, printed_equalities_reproduced: "4 of 4"}
+E1:
+  whole: "67/(2^28*3^15) = 1.739467e-14"
+  cut: "67/(2^29*3^15) = 8.697333e-15"
+  factor_between_faces: "2 = (201/67)*(24/36) = hub dressing 3 times the (2,3) cut/whole ratio 2/3"
+  inputs_outside_the_electron_body: "M_L = 36 only"
+  face_selection_229_1: "dock unit at the register 16 (matches neither printed face): 603/4 as a port reading, 67/(2^30*3^14) in the body register"
+ladder:
+  printed_max_rank: 8
+  scan: {sentences: 15, with_range_8: 6, naming_a_rank_beyond_8: 0, values_beyond_8: 0, per_record_values: 0}
+  lean: "one record name (ConditionUnions.lean:119); no values"
+  R_exact: {support_dim_2: "two-vertex term 1/n^2 exactly at every n (sl2 commutant = C*I; checked n <= 200, brute force n <= 5)", support_dim_3_4_6: "equal to 1/n^2 at n = 1 only (n <= 200)"}
+  agrees: "R reproduces the 8 printed values and continues them with no cap"
+  parts_under_readings:
+    per_record_sentence: {P1_one_read_1_over_n: "pure power at every n (parts)", P2_second_moment_(n^2-1)/12: "pure power at n = 2 only (parts there)", P0_first_moment_0: "never (agrees trivially)"}
+    all_orders_sentence_45_1: "R gives n^(-r) for a term reading the state r times; agrees for every order only if every order-k term is a two-read term"
+  undecided_because: "the source defines neither 'record' nor 'order-k term' at the held pair"
+comparison:
+  identification:
+    value: missing
+    detail: "E1 named 'the Rydberg constant in the electron unit', correspondence 'by name'; 192.1: 'the mass unit stays a question of which cell is meant'; back.tex:63: the Rydberg-constant result rests on 'Mass unit as the rung register (an open question)'"
+  under_X_over_mec2:   # reading of 'in the electron unit' used by 176.1
+    whole: {over_IE: 6.5365e-10, over_alpha2_half: 6.5330e-10, log10_gap: 9.185}
+    cut: {over_IE: 3.2683e-10, over_alpha2_half: 3.2665e-10, log10_gap: 9.486}
+  declared_family: {definition: "{E1 whole, E1 cut, 67, 201/2} / u^p, u in {1,16,36,67,201}, p in {0,1,2}", variants: 36, within_x2: 0, within_x10: 0, within_x100: 2, nearest: "67/201^2, x62.3", log10_range: [-18.67, 2.00]}
+  ladder_ratio_n2: {quantity: "4 B(2S)/B(1S) - 1", measured: 4.537e-6, uncertainty: 2.7e-12, source: 0, dirac_alpha2_over_16: 3.328e-6, remainder_beyond_dirac_qed_recoil: 1.21e-6}
+formalization_status:
+  value: checked_by_script
+  detail: "Exact integer and rational arithmetic; webs parsed from the source figures; every quoted string verbatim-checked. The register steps are readings of printed rules, not theorems; the Lean has no register or ladder content."
+internal_consistency:
+  value: partial
+  detail: "Whole register forced by printed rules; the cut register follows the port-only convention used at the Z body and the gluon word, not the literal 103.1 sentence; the held chain is given 5, 8 or 1 links; the mass face 36 has no formula; 229.1 selects the dock unit at a register (16) matching neither printed face."
+empirical_testability:
+  value: identification_missing
+  detail: "The source leaves the mass unit open (192.1). Under X/m_e c^2: E1 9.18 / 9.49 orders low, no declared conversion within x10. Unit-free E_2/E_1 = 1/4 differs from the measured ratio by 4.5e-6, the size of the fine-structure and Lamb terms the source states without values."
+confidence:
+  value: high
+  justification: "All register arithmetic is exact and reproduces every printed register and factor tested (6 numbers); the readings are enumerated with their values. Lower for the port-only convention (inferred from 2 bodies) and for B3 (rests on reconstruction R and on our readings of 'record' and 'order')."

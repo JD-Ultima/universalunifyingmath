@@ -92,3 +92,26 @@ consistent with all observed fields but is not experimentally established (CT-C0
 - **G3, partly closed.** Statement-level premises were reconstructed from the derivations' premise sentences. Derivations cite chapters, not statements: 0 statement numbers, and 750 of 1069 items have several candidate boxes. 2.1–2.9, 9.1–9.8 and 18.1–18.6 each share one derivation, so the source states no premises per box for 2.2–2.8, 9.7, 9.8 or 18.1–18.6. Under the rule, at least 73 of 100 THEOREMs still violate it, and 38 declare an OPEN premise in their own derivation. 22 are undetermined. Still open: per-box premises of the shared derivations, and the referents of the 750 any-of items.
 - **G4, changed.** The index cycles 124.1↔16.1 and 124.1↔58.1 are not in the derivations. A different cycle is: 124.1 rests on the theorem of chapter 18, and the shared derivation of 18.1–18.6 rests on "the explicit two-point function with its records (chapter 5-1, a theorem)". This holds whichever box each of these two citations means. The forced component is {35.1, 40.1, 124.1}. It requires the module-numbering reading of "chapter 5-1". Would close it: a premise list for 18.1–18.6 that does not use 124.1, or a derivation of 124.1 that does not use chapter 18, 35.1 or 40.1.
 - **G5, quantified.** Derivation text reads designators in the module numbering. In 171 of 397 designator items that reading and the `designators.tsv` reading pick different chapters, and at those items description–title overlap favours the module numbering 129 to 3. In 16.1's case the index list also follows the module numbering, but takes the first box of the chapter: it has "Theorem 124.1" where the derivation cites "the stabiliser of the pair ket (chapter 5-1, an open result)", whose grade word and title point to 131.1 (OPEN).
+
+*2026-10-30 note on G1 and G2, from round 5 (`formalization/chain-theory/compendium/08-hydrogen-registers.md`, `computation/chain-theory/compendium/hydrogen_registers.py`):*
+
+- **G2, the 143.1 registers, closed up to two readings.**
+  - 2^30·3^18 = ∏ (d_a d_b)² over the 10 links of the 152.1 electron web. This uses the 16.1/103.1 per-link faces and
+    the 103.1/147.1 product rule, with the struck docks counted.
+  - 2^31·3^17 is the same product with only the port B–w1 at its cut face 24. The literal 103.1 rule gives
+    2^27·3^11·5^4 instead. The port-only reading reproduces the cut values the source prints for the Z body and the
+    gluon word, but the source does not state it.
+  - Still open:
+    - a formula for the mass face 36 (the held chain is given 5, 8 or 1 links);
+    - a reason for pairing the whole face with 201 and the cut face with 67;
+    - the cut gain and the Lamb value;
+    - any ladder statement beyond n = 8. None is printed, and the text does not say whether a ninth rank exists.
+  - Would close it: a stated port-only cut rule, a derived mass face, and a stated range of the ladder.
+- **G1, the electron unit, sharpened.**
+  - The source records the unit as open. 192.1 (TABLE) says "the mass unit stays a question of which cell is meant". In
+    the appendix of conditions, "The Rydberg constant as the two vertex term at the bond" rests on "Mass unit as the rung
+    register (an open question)".
+  - 229.1 (T) resolves the hub-or-dock question to the dock at the register 16. That matches neither printed E1 face.
+  - Under X/m_e c² nothing changes: E1 is 9.18 or 9.49 orders low. In a declared family of 36 conversions built from
+    the source's unit spellings, none is within a factor 10.
+  - The unit-free ratio E_2/E_1 = 1/4 differs from the measured ratio by 4.5×10⁻⁶.

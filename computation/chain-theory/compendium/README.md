@@ -40,6 +40,8 @@ python3 -I scorecard_freedom.py                                       > outputs/
 python3 -I masscells.py $SRC --pdg-mcd $MCD --tsv outputs/masscells_readings.tsv  > outputs/masscells.txt
 # round 4: statement-level premises (about 6 s)
 python3 -I premises.py $SRC --tsv outputs/premises_items.tsv > outputs/premises.txt
+# round 5: hydrogen body registers, the ladder beyond n = 8 (about 3 s; uses scipy.constants and masscells.parse_figure)
+python3 -I hydrogen_registers.py $SRC > outputs/hydrogen_registers.txt
 # MCD=.../particle/data/mass_width_2024.mcd (optional; without it the PDG transcription is not re-checked)
 ```
 
@@ -66,6 +68,7 @@ eigenvalues are reproducible to the printed 3 decimals.
 | `masscells_data.py` | R3 | curated data (module): 102 verbatim anchors for the trace, the printed closures and G2, the printed proton/electron/muon/tau cells, exclusions with reasons, web descriptions |
 | `masscells.py` | R3-1..4 | mass cells: (2,3) record census (319, 79 = 48+28+3); electron web parsed from the 152.1 figure, muon/tau/proton webs built and checked; measuring-read paths; 72-reading grid validated against 6 printed tuples; 155.1 faces; printed mass-law variants; look-elsewhere in printed / grid / declared / narrow / census / integer spaces; tau/mu; 181.5 cross-check; sweep audit |
 | `premises.py` | R4 | statement-level premises from the derivations' premise sentences: segmentation into derivation groups, 1069 premise items with verbatim quotes, candidates by grade word under two designator readings (module numbering / `designators.tsv`), a separate judgment layer (21 groups), chain-rule re-grade, cycles (any-of, strict, forced under every resolution), F4 upper/lower bounds; writes `outputs/premises_items.tsv` |
+| `hydrogen_registers.py` | R5 | 143.1 body registers: per-link faces (16.1, 103.1) against the 16 printed genre faces; the product rule at the W/Z body and gluon word (port-only cut against every-link cut); electron web parsed from the 152.1 figure, whole register 2^30 3^18 and cut register 2^31 3^17 under 9 register readings; mass face 36 against the printed link counts; E1 at every unit and register reading; mechanical scan of every ladder sentence (range n <= 8); reconstruction R exactly at n <= 200 (sl2 commutant), support dimension 2/3/4/6, order and per-record readings; E1 against R_inf hc / m_e c^2 and IE(H) (CODATA 2022, NIST), a 36-variant declared conversion family, and E_2/E_1 against the measured 1S-2S centroid (Parthey et al. 2011) |
 
 ## Interpretive choices in the dependency graph (`depgraph.py`)
 

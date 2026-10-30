@@ -1,0 +1,146 @@
+[ANCHORS] verbatim check (whitespace-normalised) of the quoted strings against their statement units / files
+  statement units: 50 strings, 0 missing
+  file level:      3 strings, 0 missing
+  back.tex: 'The Rydberg constant as the two vertex term at the bond' and 'Mass unit as the rung register (an open question)' on one item line: lines [63]
+  grades of the units cited: 9.4 T, 16.1 T, 45.1 O, 103.1 C, 122.1 O, 143.1 C, 147.1 C, 149.1 C, 152.1 C, 164.4 O, 176.1 C, 192.1 Tab, 200.4 O, 214.6 O, 229.1 T
+  locations: 143.1 07-cell-3-2-photon.tex:481, 16.1 01-framework.tex:556, 103.1 06-cell-2-2-metric-and-horizon.tex:814, 147.1 07-cell-3-2-photon.tex:647, 149.1 07-cell-3-2-photon.tex:764, 152.1 07-cell-3-2-photon.tex:897, 192.1 10-cell-4-3-yukawa.tex:264, 229.1 14-condensed-matter-and-atoms.tex:192, 45.1 03-quantum-mechanics.tex:457
+
+[FACES] per-link faces from the end dimensions (16.1, 103.1): whole (fc)^2, cut (f^2-1)(c^2-1), rank fc, support f^4 (f <= c)
+  (3, 3): whole   81 cut   64 rank   9 support   81   printed (103.1) (81, 64, 9, 81)  equal
+  (2, 3): whole   36 cut   24 rank   6 support   16   printed (103.1) (36, 24, 6, 16)  equal
+  (4, 4): whole  256 cut  225 rank  16 support  256   printed (103.1) (256, 225, 16, 256)  equal
+  (2, 4): whole   64 cut   45 rank   8 support   16   printed (103.1) (64, 45, 8, 16)  equal
+  16 of 16 printed faces reproduced; (2,3) whole 36 = 4*9, cut 24 = 3*8 (122.1), support 16 (164.4, 214.6: smaller end^4)
+  count register cut*whole^2 (16.1): (2,2) 2304, (2,3) 31104 (147.1 star 31104), (3,3) 419904, (4,4) 14745600 (16.1 prints 2304 and 14745600)
+
+[BODIES] the product rule at the bodies whose registers the source prints; which cut-face reading reproduces them
+  W word / Z body (147.1, 149.1): measure 28, per-link whole [64, 36, 36, 64], R_whole = 5308416 = 2^16*3^4; cut chain sum S1 - m(port) = 22
+    printed R_whole 5308416: equal
+    whole factor S1/R_whole = 7/1327104  printed 7/1327104: equal
+    C1 (the port at its cut, every other link whole): R_cut = 3538944 = 2^17*3^3; S_cut/R_cut = 11/1769472; R printed 3538944 EQUAL; factor printed 11/1769472 EQUAL
+    C2 (every link at its cut (the 103.1 rule read literally at the cut face)): R_cut = 1166400 = 2^6*3^6*5^2; S_cut/R_cut = 11/583200; R printed 3538944 differs; factor printed 11/1769472 differs
+    C3 (every (2,3) link at its cut (at the electron: both docks)): R_cut = 2359296 = 2^18*3^2; S_cut/R_cut = 11/1179648; R printed 3538944 differs; factor printed 11/1769472 differs
+  gluon word (149.1 counter-test): measure 27, per-link whole [81, 81, 81], R_whole = 531441 = 3^12; cut chain sum S1 - m(port) = 18
+    whole factor S1/R_whole = 1/19683  printed 1/19683: equal
+    C1 (the port at its cut, every other link whole): R_cut = 419904 = 2^6*3^8; S_cut/R_cut = 1/23328; factor printed 1/23328 EQUAL
+    C2 (every link at its cut (the 103.1 rule read literally at the cut face)): R_cut = 262144 = 2^18; S_cut/R_cut = 9/131072; factor printed 1/23328 differs
+    C3 (every (2,3) link at its cut (at the electron: both docks)): R_cut = 531441 = 3^12; S_cut/R_cut = 2/59049; factor printed 1/23328 differs
+  gluon word: (cut chain sum S, port factor c) with S/(81*81*c) = 1/23328, S <= 27, c <= 81: [(9, 32), (18, 64)]; c = 64 is the (3,3) cut face, 32 is no face of 103.1
+  the port-only cut reproduces the printed cut values at 2 of 2 bodies (the gluon word's cut factor with the cut chain sum 27 - 9 = 18, the 147.1 pattern); every-link and every-(2,3)-link cuts reproduce none
+
+[ELECTRON] the electron web parsed from the 152.1 figure; its body registers under each reading
+  sites 9 {'A': 3, 'B': 3, 'C': 3, 'H': 4, 'g1': 2, 'g2': 2, 'g3': 2, 'w1': 2, 'w2': 2}; links 10; genres [(3, 3), (3, 3), (3, 3), (3, 4), (2, 4), (2, 4), (2, 4), (2, 2), (2, 3), (2, 3)]
+  dock links (2,3) [('B', 'w1'), ('C', 'w2')]; port B-w1 = ('B', 'w1'), genre (2, 3); degrees {'A': 3, 'B': 3, 'C': 3, 'H': 4, 'g1': 2, 'g2': 2, 'g3': 1, 'w1': 1, 'w2': 1}
+  measure 79, dock strike 12, rank 67 (dock unit), hub product 3, hub unit 201  (152.1: 79, 12, 67; 201)
+  per-link whole faces [81, 81, 81, 144, 64, 64, 64, 16, 36, 36]
+  R_whole = prod over the 10 links of (d_a d_b)^2 = 415989582513831936 = 2^30*3^18  (= prod over sites of d^(2 deg) = 2^30*3^18); printed 2^30*3^18: EQUAL
+  register readings (printed: whole 2^30*3^18, cut 2^31*3^17):
+    W0 whole, all 10 links (the struck docks counted)                       2^30*3^18        = printed whole
+    W1 whole, the 8 unstruck links only                                     2^26*3^14        
+    C1 the port at its cut, every other link whole                          2^31*3^17        = printed cut
+    C2 every link at its cut (the 103.1 rule read literally at the cut face) 2^27*3^11*5^4    
+    C3 every (2,3) link at its cut (at the electron: both docks)            2^32*3^16        
+    C4 the port at its support face (16), every other link whole            2^32*3^16        
+    C5 the port at its rank face (6), every other link whole                2^29*3^17        
+    F1 every link at its rank face                                          2^15*3^9         
+    F2 every link at its support face                                       2^24*3^16        
+  readings that give the printed whole register: ['W0']; the printed cut register: ['C1']
+  coincidence: C3 and C4 give the same number 2^32*3^16, since (24/36)^2 = 16/36 = 4/9
+
+[CARRIER] the photon word parsed from the 143.1 figure; the mass face M_L = 36 (printed without a formula)
+  photon word: 6 sites [2, 3, 2, 3, 2, 3], 5 links, genres {(2, 3)}, measure 30
+    measure of the held chain as displayed (6 sites, 5 links)                                         30 
+    measure after the docking act: 5 chain + 2 made - 1 contracted = 6 links of (2,3)                 36 = 36
+    measure of 'the eight links of the held chain' (488, 511)                                         48 
+    whole register of one (2,3) link (16.1, 103.1; 192.1 'the whole rung register as thirty-six')     36 = 36
+  exchanged mass face 6 sqrt6: (6 sqrt6)^2 = 216 = 6^3, M_exch / M_L = 1/sqrt6; no formula printed for either
+  link counts the text gives the held chain or the bond: 5 (display), 8 (fine-structure bullet, census), 1 (glossary: 'the link that joins the electron body to the proton body')
+
+[E1] the level-one binding E1 = M_L * u / R ('the mass face multiplied by the unit over the register of the body at that face')
+  register reading               | u = 67 (dock unit)                 | u = 201 (hub unit)
+  W0 whole                       | 67/(2^28*3^16)                     | 67/(2^28*3^15)             PRINTED
+  C1 port cut                    | 67/(2^29*3^15)             PRINTED | 67/(2^29*3^14)                    
+  C2 every link cut              | 67/(2^25*3^9*5^4)                  | 67/(2^25*3^8*5^4)                 
+  C3/C4 docks cut / port support | 67/(2^30*3^14)                     | 67/(2^30*3^13)                    
+  C5 port rank                   | 67/(2^27*3^15)                     | 67/(2^27*3^14)                    
+  W1 unstruck whole              | 67/(2^24*3^12)                     | 67/(2^24*3^11)                    
+  port register 36               | 67                         PRINTED | 3*67                              
+  port register 24               | 3*67/2                     PRINTED | 3^2*67/2                          
+  port register 16 (229.1)       | 3^2*67/(2^2)                       | 3^3*67/(2^2)                      
+  printed equalities reproduced: 4 of 4 (two faces; two port-register readings)
+  whole / cut = 2 = (201/67) * (24/36) = 3 * 2/3: the hub dressing 3 times the (2,3) cut/whole ratio 2/3
+  pairing: the text pairs (whole register, hub unit 201) and (cut register, dock unit 67); the cross pairings give 67/(2^28*3^16) and 67/(2^29*3^14)
+  229.1 resolves the unit to the dock at the register 16: 36*67/16 = 603/4; with the port at its support face in the body register: 67/(2^30*3^14)
+
+[LADDER] (b) the source's ladder beyond n = 8, and reconstruction R
+  (1) every sentence of the tex that states the hydrogen ladder (mechanical scan, regex below), with the range it states
+      regex: held pendant pair|held pair|two-vertex ladder|per-record ladder|per record read|level-\$n\$|E_\{n\}|Rydberg ladder|over \$n\$ squared|rank squared|eight ranks
+      tex/back.tex:26                              range 'eight'/'1..8': no   other numerals: -  | \item Rydberg ladder from the per record read, a conditional theorem, treated at chapter 16-7 and 7-4, rests on Configuration from the two point defin
+      tex/back.tex:28                              range 'eight'/'1..8': no   other numerals: -  | \item Rydberg ladder as the two vertex wash, a conditional theorem, treated at chapter 16-7 and 7-4, rests on Dark link cut admissibility (an open res
+      tex/designators.tex:52                       range 'eight'/'1..8': no   other numerals: -  | 5-4 & The Cartan weights and the charge (\ref{mod:IV-4-cartan-weights-and-the-charge}, p.~\pageref{mod:IV-4-cartan-weights-and-the-charge}) & Hydrogen
+      tex/designators.tex:83                       range 'eight'/'1..8': no   other numerals: -  | 7-4 & Hydrogen: the Rydberg ladder and the fine structure (\ref{mod:V-4-hydrogen-the-rydberg-ladder-and-the-fine-structure}--\ref{mod:V-4-D538525-w-hy
+      tex/front.tex:227                            range 'eight'/'1..8': no   other numerals: -  | 7-4 Hydrogen: the Rydberg ladder and the fine structure;
+      tex/parts/03-quantum-mechanics.tex:464       range 'eight'/'1..8': yes  other numerals: -  | The read at every order is a finite series terminating at order two, the order-one read at the one link equal to the first-order record of the gain re
+      tex/parts/03-quantum-mechanics.tex:468       range 'eight'/'1..8': no   other numerals: -  | and the Rydberg ladder falls as the inverse square of the rank \cite{Dirac1958}.
+      tex/parts/07-cell-3-2-photon.tex:19          range 'eight'/'1..8': no   other numerals: -  | In the language of the literature, this Part names the fine-structure constant, the anomalous dipole factor, the Rydberg ladder, the fine and hyperfin
+      tex/parts/07-cell-3-2-photon.tex:478         range 'eight'/'1..8': no   other numerals: -  | \section{Hydrogen: the Rydberg ladder and the fine structure}\label{mod:V-4-hydrogen-the-rydberg-ladder-and-the-fine-structure}
+      tex/parts/07-cell-3-2-photon.tex:487         range 'eight'/'1..8': yes  other numerals: -  | The held pendant pair at rank $n$ is the washed symmetric power of $n$ less one passages along the bond, so the level-$n$ binding is the level-one bin
+      tex/parts/07-cell-3-2-photon.tex:489         range 'eight'/'1..8': yes  other numerals: -  | The ladder is re-derived from the register rule, the per-record ladder is exact at every rank and no pure power of the rank, and the two-vertex ladder
+      tex/parts/07-cell-3-2-photon.tex:498         range 'eight'/'1..8': no   other numerals: -  | the held pendant pair is built at every rank as a symmetric power;
+      tex/parts/07-cell-3-2-photon.tex:506         range 'eight'/'1..8': yes  other numerals: -  | From the held pendant pair at rank $n$, by the washed symmetric power of $n$ less one passages along the bond, we obtain the level-$n$ binding as the 
+      tex/parts/07-cell-3-2-photon.tex:508         range 'eight'/'1..8': yes  other numerals: -  | E_{n} = \frac{E_{1}}{n^{2}}, \qquad n = 1, \dots, 8 .
+      tex/parts/07-cell-3-2-photon.tex:511         range 'eight'/'1..8': yes  other numerals: -  | By exhaustive enumeration of the eight ranks of the held chain and of the eight links of the bond, the ladder is built at every rank as a symmetric po
+      15 sentences; 6 state the range eight / 1..8; 0 name any rank beyond eight; no ladder value or formula beyond n = 8 is printed; the per-record ladder has no printed value at any n
+      Lean tree: 1 lines name the Rydberg ladder or hydrogen (lean/ChainTheory/ChainTheory/ConditionUnions.lean:119), as record names only; index statements.tsv: 1 rows with 'Rydberg ladder' (section titles)
+  (2) R exactly: twirled state on Sym^(n-1)(C^2) = I/n, single read 1/n, two-vertex read (1/n)^2, at n = 1..200
+      commutant of the sl2 action is C*I at 200 of 200 ranks (H eigenvalues distinct, E support connected); brute-force commutant dimension over Q at n = 1..5: [1, 1, 1, 1, 1]
+      so twirl(rho) = tr(rho) I/n (Schur) and the two-vertex ladder is exactly 1/n^2 at every n <= 200; the argument holds at every n
+  (3) the support dimension m: dim Sym^(n-1)(C^m) = C(n+m-2, m-1); two-vertex ladder 1/dim^2 against 1/n^2 at n = 1..200
+      m = 2: dim = n; equal to 1/n^2 at 200 of 200 ranks; dim = n solved over positive integers: all n
+      m = 3: dim = n*(n + 1)/2; equal to 1/n^2 at 1 of 200 ranks; dim = n solved over positive integers: [1]
+      m = 4: dim = n*(n + 1)*(n + 2)/6; equal to 1/n^2 at 1 of 200 ranks; dim = n solved over positive integers: [1]
+      m = 6: dim = n*(n + 1)*(n + 2)*(n + 3)*(n + 4)/120; equal to 1/n^2 at 1 of 200 ranks; dim = n solved over positive integers: [1]
+  (4) order readings: under R a term that reads the twirled state r times is n^(-r) exactly (r reads of I/n at a unit vector)
+      r = 0: n = 1..8 -> ['1', '1', '1', '1', '1', '1', '1', '1']; equal to 1/n^2 at 1 of 8
+      r = 1: n = 1..8 -> ['1', '1/2', '1/3', '1/4', '1/5', '1/6', '1/7', '1/8']; equal to 1/n^2 at 1 of 8
+      r = 2: n = 1..8 -> ['1', '1/4', '1/9', '1/16', '1/25', '1/36', '1/49', '1/64']; equal to 1/n^2 at 8 of 8
+      45.1 (prose): 'the order-k term at rank n the term at rank one over n squared at all eight ranks' -- under R this holds for
+      every k only if every order-k term at the held pair reads the state twice; the source does not define these terms
+  (5) per-record readings under R (143.1: 'the per-record ladder is exact at every rank and no pure power of the rank')
+      P1, one read of the twirled state, 1/n: a pure power of n at 200 of 200 ranks (parts from 'at none' at every rank)
+      P2, the second moment <J_z^2> of one traceless letter at I/n, (n^2-1)/12 (checked exactly): a pure power of n at 1 of 200, n = [2] ((4-1)/12 = 1/4 = 2^-2), so it parts from 'at none' at that rank only
+      P0, the first moment of a traceless letter, is 0 at every n: never a power (agrees, trivially)
+      so the per-record sentence decides R only once 'record' is defined; it is not defined for the held pair
+
+[COMPARE] (c) the source's hydrogen numbers against experiment
+  identification as printed: E1 'in the electron unit' (box), 'the Rydberg constant in the electron unit the ladder cell of the
+  held carrier' (bullet), 'The correspondence is by name' (bridge); 192.1: 'the mass unit stays a question of which cell is
+  meant'; back.tex: 'The Rydberg constant as the two vertex term at the bond' rests on 'Mass unit as the rung register (an open
+  question)'. The electron unit is mapped to no physical quantity; 176.1 uses 'the proton in the electron unit' for m_p/m_e.
+  reading 'X in the electron unit' = X / m_e c^2 (as 176.1 uses it): targets R_inf hc/m_e c^2 = alpha^2/2 = 2.6625677e-05 (alpha^2/2 = 2.6625677e-05); measured IE(H)/m_e c^2 = 2.6611473e-05
+    E1 whole = 67/(2^28*3^15)     = 1.739467e-14: / (R_inf/m_e) = 6.5330e-10, / (IE/m_e) = 6.5365e-10, log10 gap 9.185
+    E1 cut   = 67/(2^29*3^15)     = 8.697333e-15: / (R_inf/m_e) = 3.2665e-10, / (IE/m_e) = 3.2683e-10, log10 gap 9.486
+  declared conversion family (the electron unit as a cell is open in the source): the four printed binding numbers
+  {E1 whole, E1 cut, 67, 201/2} divided by u^p, u in {1, 16, 36, 67, 201} (the five 192.1 spellings and the hub unit), p in {1, 2},
+  or undivided: 4 x 9 = 36 variants, compared with IE/m_e c^2
+    variants 36; within x2: 0, within x10: 0, within x100: 2
+    nearest: port36 / 201^2 = 1.6584e-03, ratio to IE/m_e c^2 = 62.3
+    nearest: port24 / 201^2 = 2.4876e-03, ratio to IE/m_e c^2 = 93.5
+    nearest: port36 / 67^2 = 1.4925e-02, ratio to IE/m_e c^2 = 561
+    log10 range of the family: -18.67 to 2.00
+  E_2/E_1 = 1/4 (143.1; the electron unit cancels) against the measured B(2S)/B(1S) = 1 - nu(1S-2S)/IE = 0.250001134294
+    4 B(2S)/B(1S) - 1 = +4.5372e-06; alpha^2 = 5.3251e-05; the Dirac energies alone give alpha^2/16 = 3.3282e-06, the remainder +1.21e-06 comes from the QED and recoil terms beyond them (not evaluated here)
+    measurement uncertainty of 4 B(2S)/B(1S) - 1: 2.7e-12 (IE 9.1e-13 relative, nu 4.1e-15 relative)
+  the residual is of the order of the fine structure and Lamb shift, which 143.1 states as further terms without values
+  (Lamb sign and hyperfine 0 vs 1420.405751768 MHz: see hydrogen_audit.py)
+
+[SUMMARY]
+  (a) 2^30*3^18 = prod over the 10 electron links of (d_a d_b)^2 (103.1 product rule, 16.1/103.1 whole face), given the 152.1
+      web and the struck docks counted; 2^31*3^17 = the same with the port B-w1 at its cut 24 = (2^2-1)(3^2-1), the convention
+      that also reproduces the printed Z-body and gluon-word cut values. Units 67, 201 from the web; mass face 36 entered.
+  (b) no ladder value or formula beyond n = 8 is printed; R reproduces the 8 printed values and gives 1/n^2 exactly at every n;
+      it parts from the per-record sentence at reading P1 (every n) and P2 (n = 2), and from the all-orders sentence of 45.1 for
+      terms that read the state other than twice; the source defines neither 'record' nor 'order' at the held pair.
+  (c) the unit map is open in the source (192.1); under X/m_e c^2 E1 is 9.18 / 9.49 orders low; 0 of 36 declared
+      conversions within x10 (nearest x62); E_2/E_1 = 1/4 agrees with the measured ratio to 4.5e-06, the size of the
+      terms the source does not evaluate.
