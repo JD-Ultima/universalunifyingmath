@@ -1,0 +1,296 @@
+
+==============================================================================
+0. Covariant record basis (from symmetry.py) and the Letter's weights
+==============================================================================
+records: 172  class sizes: {'odd': 79, 'evmix': 48, 'evsame': 42, 'comm': 3}  occupation types: {np.str_('mix'): 96, np.str_('QQ'): 64, np.str_('qq'): 9, np.str_('comm'): 3}
+
+==============================================================================
+1. Primitive set: covariance, Q|q factorization, rationality
+==============================================================================
+letter    G_Om-cov defect   E'-cov Schmidt(Q|q) denominator  group
+E'                4.6e-16  0.0e+00            1           1  cov
+E'_Q              4.5e-16  0.0e+00            1           1  cov
+E'_q              4.5e-16  0.0e+00            1           1  cov
+tau_Q1            5.5e-16  1.3e+00            1           3  cov
+tau_q1            4.8e-16  1.2e+00            1           2  cov
+tau_Q2            5.7e-16  1.3e+00            1           3  cov
+tau_q2            4.5e-16  1.2e+00            1           2  cov
+1-tau_Q1          4.1e-16  4.6e-01            1           3  cov
+1-tau_q1          4.3e-16  7.1e-01            1           2  cov
+1-tau_Q2          4.1e-16  4.6e-01            1           3  cov
+1-tau_q2          4.3e-16  7.2e-01            1           2  cov
+sigma             6.6e-16  1.0e-16            1           9  cov
+Pi+               4.5e-16  0.0e+00            2           2  cov
+Pi-               4.4e-16  0.0e+00            2           2  cov
+L_P3              5.8e-16  1.4e+00            1           3  cov
+R_P3              5.2e-16  1.3e+00            1           3  cov
+Ad_P3             6.9e-16  1.4e-16            1           9  cov
+L_P2              4.7e-16  1.2e+00            1           2  cov
+R_P2              4.5e-16  1.2e+00            1           2  cov
+Ad_P2             4.9e-16  8.8e-17            1           4  cov
+Ad_POm            8.4e-16  2.4e-16            1          36  cov
+Tw                6.7e-16  2.0e-16            1         144  cov
+Tw_Q              6.6e-16  1.7e-16            1          24  cov
+Tw_q              5.1e-16  1.1e-16            1           6  cov
+E                 1.4e+00  0.0e+00            1           1  non
+F_Q               1.4e+00  0.0e+00            1           1  non
+F_q               1.4e+00  0.0e+00            1           1  non
+T                 1.4e+00  0.0e+00            1           1  non
+T_Q1              1.3e+00  1.3e+00            1           1  non
+T_q1              1.2e+00  1.2e+00            1           1  non
+T_Q2              1.3e+00  1.3e+00            1           1  non
+T_q2              1.2e+00  1.2e+00            1           1  non
+L_PL1             1.3e+00  1.3e+00            4           2  non
+R_PL1             1.3e+00  1.3e+00            4           2  non
+Ad_PL1            1.4e+00  1.4e+00           16           4  non
+L_PL2             1.3e+00  1.3e+00            4           2  non
+R_PL2             1.3e+00  1.3e+00            4           2  non
+Ad_PL2            1.4e+00  1.4e+00           16           4  non
+all letters have entries in (1/(2^a 3^b)) Z[i]  (Galois lemma premise): True
+Q|q-factorizing letters: 30 of 38 ; non-factorizing: ['Pi+', 'Pi-', 'L_PL1', 'R_PL1', 'Ad_PL1', 'L_PL2', 'R_PL2', 'Ad_PL2']
+d=2: <Phi_d|omega_d> = 1.414213562373 = sqrt(d); Tr sqrt(rho_d) = 1.414213562373; |Phi_d><omega_d| = sqrt(d) P_d: True
+d=3: <Phi_d|omega_d> = 1.732050807569 = sqrt(d); Tr sqrt(rho_d) = 1.732050807569; |Phi_d><omega_d| = sqrt(d) P_d: True
+
+==============================================================================
+2. Isotypic decomposition of R (record basis), commutant, Letter's point
+==============================================================================
+isotypic components (SU3, SU2, E'): 10  commutant dim: 22
+component    mult  dim  class content (odd,evmix,evsame,comm)   tr(M_L) exact      tr(K_L)
+(1,1)+          2    2  (0, 0, 2, 0)                           2*sqrt(3)          6
+(1,3)-          2    6  (3, 0, 0, 3)                           3 + 3*sqrt(6)      21
+(1,5)+          1    5  (0, 0, 5, 0)                           5*sqrt(3)          15
+(8,1)-          1    8  (8, 0, 0, 0)                           8                  8
+(8,1)+          1    8  (0, 0, 8, 0)                           8*sqrt(3)          24
+(8,3)-          2   48  (48, 0, 0, 0)                          48                 48
+(8,3)+          2   48  (0, 48, 0, 0)                          48*sqrt(2)         96
+(10,1)-         1   10  (10, 0, 0, 0)                          10                 10
+(10b,1)-        1   10  (10, 0, 0, 0)                          10                 10
+(27,1)+         1   27  (0, 0, 27, 0)                          27*sqrt(3)         81
+M_L in the commutant of G_Omega x <E'>: defect 6.7e-14
+sum of per-isotypic traces of M_L: 3*sqrt(6) + 48*sqrt(2) + 42*sqrt(3) + 79
+(1,3)- component: Letter weight 1 on the q1q2-odd copy, sqrt6 on the commutator copy; the two copies are
+  separated by the slot-occupation number N (2 vs 1), which is built from partial traces.
+
+==============================================================================
+3. Exact identities: M_L from natural projectors; factorization obstruction
+==============================================================================
+S    : maps R into R (leakage 2.2e-16), diagonal on records: True
+Pi_X : maps R into R (leakage 1.9e-16), diagonal on records: True
+Pi_Y : maps R into R (leakage 2.6e-16), diagonal on records: True
+M_nat = (1+(sqrt3-1) S Pi_X)(1+(sqrt2-1) S Pi_Y) on R: leakage 2.4e-16, ||M_nat - M_L|| = 4.6e-15
+  S = (1 + (-1)^N E')/2 with N = sum_s (1 - tau_s);  Pi_X = [N_Q N_q = 0];  Pi_Y = [N_q = 1].
+  On R the projector Pi_X contains the 9 q1q2 records and the 3 commutator records (no qutrit letter).
+Schmidt rank (Q|q) of the mixed block of M_L     : 2
+Schmidt rank (Q|q) of the mixed block of K_L     : 2
+Schmidt rank (Q|q) of the mixed block of E'      : 1
+Schmidt rank (Q|q) of the mixed block of identity: 1
+  A Q|q-product superoperator has a product mixed block (rank 1); class-scalar products therefore have
+  |mu(E'-even mixed)| = |mu(E'-odd mixed)|, but M_L needs sqrt2 : 1 and K_L needs 2 : 1.
+
+==============================================================================
+4. Family F1: words of length <= 3 in the 38 letters, acting on R, compressed to R
+==============================================================================
+length 0:      1 words formed,      1 new distinct nonzero images of R (up to scale)
+length 1:     38 words formed,     38 new distinct nonzero images of R (up to scale)
+length 2:   1444 words formed,    742 new distinct nonzero images of R (up to scale)
+length 3:  28196 words formed,  11240 new distinct nonzero images of R (up to scale)
+distinct images in F1: 12021   (words of length <= 3 over 38 letters, with the empty word: 56355 )
+images with zero compression onto R (word leaves R entirely): 48
+analysed words (distinct, nonzero on R): 11973
+  all letters covariant: 1575 | compression G_Omega-invariant (defect<1e-9): 1629 | also E'-invariant: 295
+  maps R into R (leakage<1e-9): 950 | diagonal in the record basis: 148
+
+[raw C] class-scalar operators (C = sum_c v_c Pi_c on R): 19 words, 8 distinct patterns (v_odd, v_evmix, v_evsame, v_comm) up to scale:
+    (0, 0, 0, 1) x 12
+    (1, 1, 1, 1) x 1
+    (1, -1, -1, 1) x 1
+    (1, 1, 1, -1) x 1
+    (0, 1, 1, 0) x 1
+    (1, 0, 0, 1) x 1
+    (1, -1, -1, -1) x 1
+    (1, 0, 0, -1) x 1
+   pattern prop. to (1, sqrt2, sqrt3, sqrt6): 0   prop. to (1, 2, 3, 6): 0
+
+[twirled over G x <E'>] class-scalar operators (C = sum_c v_c Pi_c on R): 155 words, 9 distinct patterns (v_odd, v_evmix, v_evsame, v_comm) up to scale:
+    (0, 0, 0, 1) x 48
+    (0, 1, 1, 0) x 23
+    (1, 1, 1, 1) x 21
+    (1, 0, 0, -1) x 17
+    (1, 0, 0, 1) x 11
+    (1, -1, -1, 1) x 9
+    (1, 1, 1, -1) x 9
+    (1, -1, -1, -1) x 9
+    (0, 1, 0, 0) x 8
+   pattern prop. to (1, sqrt2, sqrt3, sqrt6): 0   prop. to (1, 2, 3, 6): 0
+
+[|C| = (C^dag C)^1/2] class-scalar operators (C = sum_c v_c Pi_c on R): 67 words, 2 distinct patterns (v_odd, v_evmix, v_evsame, v_comm) up to scale:
+    (1, 1, 1, 1) x 62
+    (0, 0, 0, 1) x 5
+   pattern prop. to (1, sqrt2, sqrt3, sqrt6): 0   prop. to (1, 2, 3, 6): 0
+
+[sqrt(C), C Hermitian PSD] 636 PSD words; class-scalar sqrt: 1; patterns: [('(1, 1, 1, 1)', 1)]
+
+(b') diagonal constant on each class (operator need not be diagonal): 138 words; patterns:
+    (0, 0, 0, 1) x 122
+    (0, 1, 0, 0) x 8
+    (1, 1, 1, 1) x 1
+    (1, -1, -1, 1) x 1
+    (1, 1, 1, -1) x 1
+    (0, 1, 1, 0) x 1
+    (1, 0, 0, 1) x 1
+    (1, -1, -1, -1) x 1
+    (0, 0, 1, 0) x 1
+    (1, 0, 0, -1) x 1
+
+factorization check: Q|q-factorizing words whose twirled mixed block is E'-scalar: 222; with |mu_even| != |mu_odd|: 0
+non-factorizing words with E'-scalar twirled mixed block: 1616; ratios mu_even/mu_odd: {'inf': 364, '0': 386, '1': 562, '-1': 232, '5/3': 9, '-5/3': 9, '3/5': 9, '-3/5': 9, '2': 9, '-2': 9, '1/2': 9, '-1/2': 9}
+  the 72 words with mu_even/mu_odd not in {0, 1, -1, inf}: every one uses a read link: False ; class-scalar after twirl: 0
+   e.g. [T_q1 . Pi- . tau_q1]  mu_e/mu_o = +0.5000; twirled class means (odd, evmix, evsame, comm) rel. to odd [ 1.      0.2992 -0.      0.5985]; class-scalar residual after twirl 0.502
+   e.g. [tau_q2 . Pi- . T_q1]  mu_e/mu_o = -0.5000; twirled class means (odd, evmix, evsame, comm) rel. to odd [ 1.     -0.2992 -0.      0.5985]; class-scalar residual after twirl 0.502
+   e.g. [T_Q1 . Pi- . tau_Q1]  mu_e/mu_o = +0.6000; twirled class means (odd, evmix, evsame, comm) rel. to odd [ 1.      0.8229 -0.      4.3889]; class-scalar residual after twirl 0.538
+   e.g. [tau_Q2 . Pi- . T_Q1]  mu_e/mu_o = -0.6000; twirled class means (odd, evmix, evsame, comm) rel. to odd [ 1.     -0.8229 -0.      4.3889]; class-scalar residual after twirl 0.538
+   e.g. [T_Q1 . Pi+ . tau_Q1]  mu_e/mu_o = +1.6667; twirled class means (odd, evmix, evsame, comm) rel. to odd [1.     2.7431 1.254  0.    ]; class-scalar residual after twirl 0.685
+   e.g. [tau_Q2 . Pi+ . T_Q1]  mu_e/mu_o = -1.6667; twirled class means (odd, evmix, evsame, comm) rel. to odd [ 1.     -2.7431 -1.254   0.    ]; class-scalar residual after twirl 0.685
+   e.g. [T_q1 . Pi+ . tau_q2]  mu_e/mu_o = -2.0000; twirled class means (odd, evmix, evsame, comm) rel. to odd [ 1.     -3.2917 -8.4643  1.6458]; class-scalar residual after twirl 0.364
+   e.g. [T_q2 . Pi+ . T_q1]  mu_e/mu_o = -2.0000; twirled class means (odd, evmix, evsame, comm) rel. to odd [ 1.     -2.9259 -4.1799  1.463 ]; class-scalar residual after twirl 0.221
+
+closest misses, (b) diagonal vs c*sqrt(k_r)  [Letter: (1, 1.4142, 1.7321, 2.4495)]   [identity: 0.2471]
+   resid 0.2471  word [1 (identity)]  G-inv defect 2e-17  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1. 1. 1. 1.]
+   resid 0.3016  word [L_PL1 . Pi+ . L_PL1]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.3016  word [R_PL1 . Pi+ . R_PL1]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.3016  word [L_PL2 . Pi+ . L_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.3016  word [R_PL2 . Pi+ . R_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.3074  word [L_PL1 . 1-tau_Q1 . L_PL1]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     0.9887 1.0142 0.953 ]
+
+closest misses, (b) diagonal vs c*k_r  [K-route: (1, 2, 3, 6)]   [identity: 0.4674]
+   resid 0.4572  word [L_PL1 . Pi+ . L_PL1]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.4572  word [R_PL1 . Pi+ . R_PL1]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.4572  word [L_PL2 . Pi+ . L_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.4572  word [R_PL2 . Pi+ . R_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.4674  word [1 (identity)]  G-inv defect 2e-17  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1. 1. 1. 1.]
+   resid 0.4964  word [R_PL2 . 1-tau_Q2 . R_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     0.9887 1.0142 0.953 ]
+
+closest misses, (c) per-isotypic traces vs the Letter's point   [identity: 0.2070]
+   resid 0.1008  word [L_PL2 . Pi+ . L_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.1008  word [R_PL1 . Pi+ . R_PL1]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.1008  word [R_PL2 . Pi+ . R_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.1008  word [L_PL1 . Pi+ . L_PL1]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   resid 0.1263  word [R_PL2 . L_PL1]  G-inv defect 8e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3745 1.2057 1.1575]
+   resid 0.1263  word [L_PL2 . R_PL1]  G-inv defect 8e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3745 1.2057 1.1575]
+
+closest misses, (c) via |C|: per-isotypic traces of |C| vs the Letter's point   [identity: 0.2070]
+   resid 0.0912  word [Pi+ . R_PL2 . T_q1]  G-inv defect 7e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3825 1.6648 0.9516]
+   resid 0.0912  word [Pi+ . L_PL2 . T_q2]  G-inv defect 7e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3825 1.6648 0.9516]
+   resid 0.0912  word [Pi+ . T_q2 . R_PL2]  G-inv defect 7e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3825 1.6648 0.9516]
+   resid 0.0912  word [Pi+ . R_PL2 . T_q2]  G-inv defect 7e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3825 1.6648 0.9516]
+   resid 0.0912  word [Pi+ . L_PL2 . T_q1]  G-inv defect 7e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3825 1.6648 0.9516]
+   resid 0.0912  word [Pi+ . L_PL1 . T_q2]  G-inv defect 7e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3825 1.6648 0.9516]
+
+closest misses, (b) diagonal of |C| vs c*sqrt(k_r)   [identity: 0.2471]
+   resid 0.2471  word [1 (identity)]  G-inv defect 2e-17  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1. 1. 1. 1.]
+   resid 0.2471  word [T]  G-inv defect 1e-01  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1. 1. 1. 1.]
+   resid 0.2471  word [F_Q . E'_Q]  G-inv defect 1e-01  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1. 1. 1. 1.]
+   resid 0.2471  word [F_q . E'_q]  G-inv defect 7e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1. 1. 1. 1.]
+   resid 0.2471  word [T_Q2 . E . sigma]  G-inv defect 1e-01  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1. 1. 1. 1.]
+   resid 0.2471  word [sigma]  G-inv defect 1e-17  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1. 1. 1. 1.]
+
+closest misses, (b) diagonal of sqrt(C) (C Hermitian PSD) vs c*sqrt(k_r)   [identity: 0.2471]
+   resid 0.2471  word [1 (identity)]  G-inv defect 2e-17  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1. 1. 1. 1.]
+   resid 0.2481  word [L_PL2 . Pi+ . L_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.1573 1.1856 0.9385]
+   resid 0.2481  word [L_PL1 . Pi+ . L_PL1]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.1573 1.1856 0.9385]
+   resid 0.2481  word [R_PL1 . Pi+ . R_PL1]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.1573 1.1856 0.9385]
+   resid 0.2481  word [R_PL2 . Pi+ . R_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.1573 1.1856 0.9385]
+   resid 0.2762  word [L_PL2 . 1-tau_Q2 . L_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     0.9776 1.0255 0.9226]
+
+closest misses, (c) per-isotypic traces of sqrt(C) (C Hermitian PSD) vs the Letter's point   [identity: 0.2070]
+   resid 0.1007  word [L_PL2 . R_PL1]  G-inv defect 8e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.281  1.2707 1.0578]
+   resid 0.1007  word [R_PL2 . L_PL1]  G-inv defect 8e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.281  1.2707 1.0578]
+   resid 0.1349  word [L_PL2 . Pi+ . L_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.1573 1.1856 0.9385]
+   resid 0.1349  word [L_PL1 . Pi+ . L_PL1]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.1573 1.1856 0.9385]
+   resid 0.1349  word [R_PL2 . Pi+ . R_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.1573 1.1856 0.9385]
+   resid 0.1349  word [R_PL1 . Pi+ . R_PL1]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.1573 1.1856 0.9385]
+
+closest misses, (b)+(c) among G_Omega-invariant words: per-isotypic traces   [identity: 0.2070]
+   resid 0.2070  word [1 (identity)]  G-inv defect 2e-17  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1. 1. 1. 1.]
+   resid 0.2241  word [L_P2]  G-inv defect 1e-17  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     0.9634 0.8946 0.    ]
+   resid 0.2241  word [R_P2]  G-inv defect 2e-17  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     0.9634 0.8946 0.    ]
+   resid 0.2304  word [sigma]  G-inv defect 1e-17  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [ 1.  1.  1. -1.]
+   resid 0.2858  word [L_P2 . Pi+ . L_P2]  G-inv defect 1e-17  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.463  2.7169 0.    ]
+   resid 0.2858  word [R_P2 . Pi+ . R_P2]  G-inv defect 2e-17  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.463  2.7169 0.    ]
+
+best (c) miss, detail:   [identity: 0.2070]
+   resid 0.1008  word [L_PL2 . Pi+ . L_PL2]  G-inv defect 6e-02  class means of diagonal (odd, evmix, evsame, comm), rel. to odd: [1.     1.3994 1.371  0.9735]
+   per-isotypic traces, Letter vs best miss (rescaled):
+     (1,1)+       3.4641    2.8707
+     (1,3)-      10.3485    6.2068
+     (1,5)+       8.6603    7.2413
+     (8,1)-       8.0000    8.3792
+     (8,1)+      13.8564   11.2757
+     (8,3)-      48.0000   51.5166
+     (8,3)+      67.8823   71.3785
+     (10,1)-     10.0000   10.0861
+     (10b,1)-    10.0000   10.8619
+     (27,1)+     46.7654   39.8013
+
+minimum residual over F1 / residual of the identity (0 = exact reproduction):
+   rM       0.2471 / 0.2471
+   rK       0.4572 / 0.4674
+   rtM      0.1008 / 0.2070
+   abs_rM   0.2471 / 0.2471
+   abs_rtM  0.0912 / 0.2070
+   sq_rM    0.2471 / 0.2471
+   sq_rtM   0.1007 / 0.2070
+   (rM, rK: diagonal vs sqrt(k), k; rtM: per-isotypic traces vs the Letter's point; abs_/sq_: same for |C|, sqrt(C))
+
+==============================================================================
+5. Family F2: survival x attribution dressings (operator form of the Letter's mechanism)
+==============================================================================
+E'_Q, E'_q, sigma and the four occupation projectors map R into R; E' = E'_Q E'_q on R: True
+joint eigen-labels (type, E', E'_Q, E'_q, sigma): dim
+    ('QQ', -1, -1, 1, 1) 28
+    ('QQ', 1, 1, 1, 1) 36
+    ('comm', -1, 1, -1, -1) 3
+    ('mix', -1, -1, 1, 1) 24
+    ('mix', -1, 1, -1, 1) 24
+    ('mix', 1, -1, -1, 1) 24
+    ('mix', 1, 1, 1, 1) 24
+    ('qq', -1, 1, -1, 1) 3
+    ('qq', 1, 1, 1, 1) 6
+distinct single-exchange factors: 291  (7 survival operators x 81 attributions = 567 )
+ordered pairs of exchanges: 321489  -> distinct dressings K on R: 19926
+dressings equal to M_L on R: 1
+dressings with a local attribution (d_e credited only to records with a letter at an e-slot): 1992 ; of these equal to M_L: 0
+number of (survival, attribution) pairs giving M_L, and two of them:
+    36 ordered choices; [(('1', (None, None, None, 'Q')), ("Pi+(sigma E')", ('Q', 'Q', 'q', 'q'))), (('1', (None, None, None, 'q')), ("Pi+(sigma E')", ('Q', 'Q', 'q', 'Q')))]
+   every one credits d_Q = 3 to the E'-even q1q2 records and to the commutator records, which carry no qutrit letter: True
+Letter's Table S5 weight-law rows realized as F2 dressings (numerator found; local?):
+    computed (Letter)      79+48r2+42r3+3r6       1/value   137.036  in F2: True  local: False
+    two ends swapped       79+42r2+48r3+3r6       1/value   135.894  in F2: True  local: False
+    both at qubit end      85+90r2+0r3+0r6        1/value   146.524  in F2: True  local: False
+    both at qutrit end     88+0r2+90r3+0r6        1/value   127.536  in F2: True  local: False
+    X where letters sit    85+54r2+36r3+0r6       1/value   139.030  in F2: True  local: True
+    qq moved by Y          79+48r2+36r3+9r6       1/value   134.485  in F2: True  local: False
+    copies separate        79+0r2+42r3+51r6       1/value   112.423  in F2: True  local: False
+    no own sign            82+48r2+42r3+0r6       1/value   139.713  in F2: True  local: False
+    comm survive X only    79+48r2+45r3+0r6       1/value   138.348  in F2: True  local: False
+    no weights             172+0r2+0r3+0r6        1/value   180.837  in F2: True  local: True
+local dressings: distinct values 1054 ; 1/value range [61.714, 180.837]
+local dressings closest to M_L as operators (||M - M_L||_HS / ||M_L||_HS):
+    dist 0.0570  numerator 97+48r2+36r3+0r6       1/value   136.880  diagonal on records: True  X: ("Pi+(sigma E')", (None, 'q', None, 'q'))  Y: ("Pi+(sigma E')", ('Q', 'q', 'q', 'q'))
+    dist 0.0616  numerator 85+54r2+36r3+0r6       1/value   139.030  diagonal on records: True  X: ('1', (None, None, None, 'q'))  Y: ("Pi+(sigma E')", ('Q', 'q', 'q', 'q'))
+    dist 0.0697  numerator 94+51r2+36r3+0r6       1/value   136.135  diagonal on records: True  X: ('1', (None, 'q', None, 'q'))  Y: ("Pi+(sigma E')", ('Q', 'q', 'q', 'q'))
+    dist 0.0736  numerator 82+57r2+36r3+0r6       1/value   138.262  diagonal on records: True  X: ('1', (None, 'q', None, 'q'))  Y: ("Pi+(sigma E')", ('Q', None, 'q', 'q'))
+    dist 0.1069  numerator 91+51r2+36r3+0r6       1/value   137.946  diagonal on records: True  X: ("Pi+(E')", (None, 'q', None, None))  Y: ("Pi+(sigma E')", ('Q', 'q', 'q', 'q'))
+local dressings closest in value to 1/alpha(CODATA 2022):
+    1/value   137.18646  numerator 214+9r2+0r3+0r6        diagonal on records: False  X: ("Pi+(E'_Q)", (None, None, 'q', 'q'))  Y: ("Pi+(E'_Q)", (None, 'q', 'q', 'q'))
+    1/value   137.19043  numerator 88+54r2+36r3+0r6       diagonal on records: True  X: ('1', (None, 'q', None, None))  Y: ("Pi+(sigma E')", ('Q', 'q', 'q', 'q'))
+    1/value   137.19043  numerator 88+54r2+36r3+0r6       diagonal on records: False  X: ("Pi+(E')", (None, 'q', None, None))  Y: ("Pi+(E'_Q)", ('Q', 'q', 'q', 'q'))
+    1/value   137.19043  numerator 88+54r2+36r3+0r6       diagonal on records: False  X: ("Pi+(E'_Q)", ('Q', 'q', None, None))  Y: ("Pi+(sigma E'_q)", (None, 'q', 'q', 'q'))
+    1/value   136.87967  numerator 97+48r2+36r3+0r6       diagonal on records: False  X: ('1', (None, 'q', None, None))  Y: ("Pi+(E'_Q)", ('Q', 'q', 'q', None))
+all F2 dressings: distinct values 11570 ; within 1e-3 relative of 1/alpha: 49 ; of these local: 0
+local distinct values with 1/value in (120,155): 241 -> density 6.89 per unit; expected in the +-1e-3 relative window: 1.89
+
+SUMMARY
+  F1 ( 56355 words; 29679 formed explicitly, the rest are left extensions of duplicate images; 11973 distinct nonzero compressions): no word, twirled word, |word| or sqrt(word) reproduces sqrt(k_r) or k_r as an operator, its diagonal, or its per-isotypic traces.
+  every class-scalar pattern found in F1 (raw, twirled, |C|, sqrt C; 242 cases) has entries in {0, +1, -1}: True
+  F2 ( 321489 dressings, 19926 distinct): M_L is reproduced exactly, but only with a non-local attribution (qutrit factor on records without qutrit letters).

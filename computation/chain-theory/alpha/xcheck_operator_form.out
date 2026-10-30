@@ -1,0 +1,13 @@
+records: 172
+class, (N_Q, N_q), eigenvalue of M_nat, letter at a qutrit slot? -> count
+   ('comm', 0, 1, sqrt(6), False) -> 3
+   ('evmix', 1, 1, sqrt(2), True) -> 48
+   ('evsame', 0, 2, sqrt(3), False) -> 6
+   ('evsame', 2, 0, sqrt(3), True) -> 36
+   ('odd', 0, 2, 1, False) -> 3
+   ('odd', 1, 1, 1, True) -> 48
+   ('odd', 2, 0, 1, True) -> 28
+sum of eigenvalues: 3*sqrt(6) + 48*sqrt(2) + 42*sqrt(3) + 79
+1/value: 137.035999189566155029183744021
+records with no qutrit letter, by class: {'evsame': 6, 'odd': 3, 'comm': 3}  total: 12
+M_nat equals the Letter's sqrt(k_r) on every record: True

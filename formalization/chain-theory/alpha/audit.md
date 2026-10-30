@@ -17,6 +17,7 @@
 | F-CT-9 | The imported read-cap lemma is cross-checked numerically: Choi's map is positive and non-decomposable (SDP), also after embedding. | Computed |
 | F-CT-10 | The Letter's exchange $E$ does not commute with the symmetry group $G_\Omega$ of its own joint state, and its record span is not $G_\Omega$-invariant. The covariant version $E'$ gives identical counts and value. Symmetry leaves a 9-parameter (real) family of readouts (10 complex parameters). | Proven (numerical, exact structure) |
 | F-CT-8 | Exploration: the record weights are not the vacuum amplitudes or norms of the record operators. | Computed (negative) |
+| F-CT-11 | Operator origin of the weights (CT-G01). The dressed insertion has an exact operator form in the model's primitives, $M=(1+(\sqrt3-1)S\Pi_X)(1+(\sqrt2-1)S\Pi_Y)$, but $\Pi_X$ encodes the end rule (CT-G02). No word of length ≤ 3 in 38 primitives and no local survival × attribution dressing reproduces the weights; a Galois lemma, a factorization theorem and a locality proposition extend the negatives. | Proven (finite linear algebra; negative within declared families) |
 | F-CT-7 | The construction's formula $f(d_Q,d_q)$ at other dimension pairs gives values far from $\alpha^{-1}$. $(3,2)$ is the only pair within 1% of $\alpha^{-1}$; the next closest, $(2,3)$, is 2.5% away. | Computed |
 
 ---
@@ -209,6 +210,16 @@ Labelled exploration, toward CT-G01. The joint read state is exactly $\lvert\Ome
 
 So the weight law is not the vacuum amplitude or norm of the record operators. This does not exclude other operator constructions; CT-G01 remains open.
 
+## F-CT-11 Operator origin of the weights (CT-G01; negative)
+
+Full statement: `formalization/chain-theory/alpha/operator-origin.md` (`operator_origin.py`); coordinator cross-check of Prop. 2: `xcheck_operator_form.py`.
+
+1. **Operator form.** With occupation numbers $\hat N_Q,\hat N_q$ built from partial traces, $\sigma=(-1)^{\hat N}$ and $S=\tfrac12(1+\sigma E')$, the Letter's dressed insertion is, exactly on $R$, $M=(1+(\sqrt3-1)S\Pi_X)(1+(\sqrt2-1)S\Pi_Y)$ with $\Pi_X=[\hat N_Q\hat N_q=0]$, $\Pi_Y=[\hat N_q=1]$. The cross-check applies these superoperators to each of the 172 covariant records: every record is a joint eigenvector, $M$ has eigenvalue $\sqrt{k_r}$, and the trace is $79+48\sqrt2+42\sqrt3+3\sqrt6$.
+2. **Why this is not a derivation.** 12 records have no qutrit letter (6 E′-even and 3 E′-odd qubit–qubit products, 3 commutator records). $\Pi_X$ gives 9 of them (6 even, 3 commutator) the qutrit factor $\sqrt3$. A *local* rule, which credits an end's dimension only to records with a letter at that end, gives them $k\in\{1,2,4,\dots\}$ and so cannot give the Letter's 3 and 6 (Prop. 5). Table S5's "X where letters sit" (139.030) is such a local rule.
+3. **Negatives.** No word of length ≤ 3 in 38 primitives (56 355 words; 11 973 distinct compressions) reproduces $\sqrt{k_r}$ or $k_r$ as operator, diagonal or per-isotypic traces, also after twirling, $|C|$ or $\sqrt C$. Lemma 3 (all primitives are $\mathbb Q(i)$-rational) and Theorem 4 (Q|q-product primitives cannot give the mixed records a $\sqrt2:1$ even/odd ratio) extend this to every word length.
+
+CT-G01 therefore reduces to CT-G02 (which end each exchange is credited to) and CT-G08 (amplitude level). The value and F-CT-1–F-CT-10 are unchanged.
+
 ## Graded ledger (α Letter)
 
 | Claim | Mathematical validity | Physical validity |
@@ -216,6 +227,6 @@ So the weight law is not the vacuum amplitude or norm of the record operators. T
 | CT-014, 015, 017, 018 (counts, value) | Proven (independently) | n/a |
 | CT-005 (read cap) | Proven from imported theorems + definition of "fix" | n/a |
 | CT-007, 012 (acting charge, uniqueness) | Proven under reading A; fails under A*, B, C | n/a |
-| CT-016 (weight law) | Definition; three wording clauses; alternatives give 112–147 | Untested |
+| CT-016 (weight law) | Definition; three wording clauses; alternatives give 112–147. Has an operator form but no local operator origin (F-CT-11) | Untested |
 | CT-019 (on-shell $Z_3$) | Analogy, not derivation | Open |
 | CT-020 (Photon Conjecture) | Conjecture | Agrees at 0.6σ; decisive test needs $u\lesssim 2.5\times10^{-9}$; hypercharge vs EM gap (CT-G06) open |

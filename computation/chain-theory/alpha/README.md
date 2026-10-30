@@ -1,6 +1,6 @@
 # Chain Theory α audit — computations
 
-Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip install numpy==2.5.3 sympy==1.14.0 mpmath==1.3.0`). Randomness only with fixed seeds (`readcap_lemmas.py`: 20261030; `symmetry.py`: 7).
+Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip install numpy==2.5.3 sympy==1.14.0 mpmath==1.3.0`). Randomness only with fixed seeds (`readcap_lemmas.py`: 20261030; `symmetry.py`: 7; `operator_origin.py`: 20261030).
 
 | Script | Purpose | Runtime | Output |
 |---|---|---|---|
@@ -11,6 +11,8 @@ Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip insta
 | `readcap_lemmas.py` | SDP cross-check of imported read-cap lemmas: Choi map positive and non-decomposable, also after embedding (needs `cvxpy==1.6.0`) | ~4 s | `readcap_lemmas.out` |
 | `config_enumeration.py` | Independent enumeration of Thm S-config (76/42/23) and of Theorem 1's selection under readings A, A*, B | <1 s | `config_enumeration.out` |
 | `symmetry.py` | Covariance of the records under the symmetry group of the joint state; isotypic decomposition; commutant (F-CT-10) | ~10 s | `symmetry.out` |
+| `operator_origin.py` | Bounded search for an operator origin of the weights $\sqrt{k_r}$ (CT-G01, CT-G12): covariance, Q\|q factorization and rationality of 38 primitives; $M$ as a polynomial in natural projectors; family F1 (all 56 355 words of length ≤ 3, tested as operator, diagonal and per-isotypic traces, also twirled, $|C|$, $\sqrt C$) and family F2 (321 489 survival × attribution dressings). Imports `records_independent.py` and `symmetry.py` (`formalization/chain-theory/alpha/operator-origin.md`) | ~16 min | `operator_origin.out` |
+| `xcheck_operator_form.py` | Coordinator cross-check of `operator-origin.md` Prop. 2: applies $S$, $\Pi_X$, $\Pi_Y$ (partial traces, $E'$) to each covariant record; eigenvalues $\sqrt{k_r}$, trace, and the 12 records with no qutrit letter. Imports `symmetry.py` | ~1 min | `xcheck_operator_form.out` |
 | `mutations_values.py` | 1/value and σ for the readouts that the author's Lean `mutations.py` printed (log `upstream_mutations_lean.out`, Lean 4.35.0) | <1 s | `mutations_values.out` |
 | `mutations_classified.py` | The 19 Lean mutation readouts of `upstream_mutations_lean.out`, row by row: exact numerator, 1/value, equal to a Table S5 row?, in the declared space B? (with a witness rule whose numerator equals Lean's exactly). Also checks all 16 closed-form rows of Table S5 against their printed inverses, with the relative change and B-membership of each (F-CT-4 A, D; referee CT-2, CT-022) | <1 s | `mutations_classified.out` |
 | `algebraic.py` | Minimal polynomial, Galois conjugates, $f(d_Q,d_q)$, deviations from measurements (F-CT-6, F-CT-7) | <1 s | `algebraic.out` |
@@ -18,7 +20,7 @@ Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip insta
 Run all of them:
 
 ```bash
-for s in records_independent freedom charge_conventions algebraic weight_functionals config_enumeration readcap_lemmas symmetry mutations_classified; do python3 $s.py > $s.out; done
+for s in records_independent freedom charge_conventions algebraic weight_functionals config_enumeration readcap_lemmas symmetry mutations_classified operator_origin xcheck_operator_form; do python3 $s.py > $s.out; done
 ```
 
 These scripts were written from the Letter's prose. They do not import or copy the author's code. The cross-check against the author's `records.csv` is described in `formalization/chain-theory/alpha/audit.md` (F-CT-1).
