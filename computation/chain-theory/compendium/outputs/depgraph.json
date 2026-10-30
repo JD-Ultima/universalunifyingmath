@@ -33875,16 +33875,16 @@
   "35.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
-    "THEOREM": 13,
     "CONDITIONAL": 6,
-    "OPEN": 12
-   },
-   "transitive": {
-    "THEOREM": 13,
     "DEFINITION": 6,
     "OPEN": 12,
-    "CONDITIONAL": 6
+    "THEOREM": 13
+   },
+   "transitive": {
+    "CONDITIONAL": 6,
+    "DEFINITION": 6,
+    "OPEN": 12,
+    "THEOREM": 13
    },
    "open": [
     "2.4",
@@ -33912,16 +33912,16 @@
   "40.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
-    "THEOREM": 6,
     "CONDITIONAL": 5,
-    "OPEN": 6
+    "DEFINITION": 6,
+    "OPEN": 6,
+    "THEOREM": 6
    },
    "transitive": {
-    "THEOREM": 13,
+    "CONDITIONAL": 7,
     "DEFINITION": 6,
     "OPEN": 12,
-    "CONDITIONAL": 7
+    "THEOREM": 13
    },
    "open": [
     "2.4",
@@ -33942,16 +33942,16 @@
   "41.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
-    "THEOREM": 6,
     "CONDITIONAL": 6,
-    "OPEN": 6
+    "DEFINITION": 6,
+    "OPEN": 6,
+    "THEOREM": 6
    },
    "transitive": {
-    "THEOREM": 13,
+    "CONDITIONAL": 8,
     "DEFINITION": 6,
     "OPEN": 12,
-    "CONDITIONAL": 8
+    "THEOREM": 13
    },
    "open": [
     "2.4",
@@ -33984,12 +33984,12 @@
   "54.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
-    "CONDITIONAL": 1
+    "CONDITIONAL": 1,
+    "DEFINITION": 6
    },
    "transitive": {
-    "DEFINITION": 6,
-    "CONDITIONAL": 1
+    "CONDITIONAL": 1,
+    "DEFINITION": 6
    },
    "open": [],
    "conditional": [
@@ -33999,16 +33999,16 @@
   "59.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 1,
-    "THEOREM": 1,
-    "OPEN": 1
+    "DEFINITION": 6,
+    "OPEN": 1,
+    "THEOREM": 1
    },
    "transitive": {
-    "DEFINITION": 6,
     "CONDITIONAL": 1,
-    "THEOREM": 1,
-    "OPEN": 1
+    "DEFINITION": 6,
+    "OPEN": 1,
+    "THEOREM": 1
    },
    "open": [
     "57.2"
@@ -34020,16 +34020,16 @@
   "61.1": {
    "grade": "THEOREM",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 4,
-    "THEOREM": 6,
-    "OPEN": 1
+    "DEFINITION": 6,
+    "OPEN": 1,
+    "THEOREM": 6
    },
    "transitive": {
-    "THEOREM": 44,
-    "OPEN": 53,
     "CONDITIONAL": 72,
-    "DEFINITION": 6
+    "DEFINITION": 6,
+    "OPEN": 53,
+    "THEOREM": 44
    },
    "open": [
     "9.8"
@@ -34044,16 +34044,16 @@
   "64.1": {
    "grade": "THEOREM",
    "direct": {
-    "DEFINITION": 6,
-    "THEOREM": 11,
     "CONDITIONAL": 6,
-    "OPEN": 7
-   },
-   "transitive": {
-    "THEOREM": 11,
     "DEFINITION": 6,
     "OPEN": 7,
-    "CONDITIONAL": 6
+    "THEOREM": 11
+   },
+   "transitive": {
+    "CONDITIONAL": 6,
+    "DEFINITION": 6,
+    "OPEN": 7,
+    "THEOREM": 11
    },
    "open": [
     "2.4",
@@ -34076,16 +34076,16 @@
   "64.2": {
    "grade": "THEOREM",
    "direct": {
-    "DEFINITION": 6,
-    "THEOREM": 11,
     "CONDITIONAL": 6,
-    "OPEN": 7
-   },
-   "transitive": {
-    "THEOREM": 11,
     "DEFINITION": 6,
     "OPEN": 7,
-    "CONDITIONAL": 6
+    "THEOREM": 11
+   },
+   "transitive": {
+    "CONDITIONAL": 6,
+    "DEFINITION": 6,
+    "OPEN": 7,
+    "THEOREM": 11
    },
    "open": [
     "2.4",
@@ -34108,16 +34108,16 @@
   "65.1": {
    "grade": "THEOREM",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 2,
-    "THEOREM": 9,
-    "OPEN": 6
+    "DEFINITION": 6,
+    "OPEN": 6,
+    "THEOREM": 9
    },
    "transitive": {
-    "THEOREM": 15,
+    "CONDITIONAL": 6,
     "DEFINITION": 6,
     "OPEN": 12,
-    "CONDITIONAL": 6
+    "THEOREM": 15
    },
    "open": [
     "9.8",
@@ -34139,10 +34139,10 @@
     "THEOREM": 20
    },
    "transitive": {
-    "THEOREM": 44,
-    "OPEN": 53,
     "CONDITIONAL": 72,
-    "DEFINITION": 6
+    "DEFINITION": 6,
+    "OPEN": 53,
+    "THEOREM": 44
    },
    "open": [],
    "conditional": [
@@ -34165,16 +34165,16 @@
   "83.1": {
    "grade": "THEOREM",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 13,
+    "DEFINITION": 6,
     "OPEN": 7,
     "THEOREM": 1
    },
    "transitive": {
-    "THEOREM": 17,
     "CONDITIONAL": 19,
     "DEFINITION": 6,
-    "OPEN": 21
+    "OPEN": 21,
+    "THEOREM": 17
    },
    "open": [
     "H.1",
@@ -34208,10 +34208,10 @@
     "THEOREM": 23
    },
    "transitive": {
-    "THEOREM": 44,
-    "OPEN": 53,
     "CONDITIONAL": 72,
-    "DEFINITION": 6
+    "DEFINITION": 6,
+    "OPEN": 53,
+    "THEOREM": 44
    },
    "open": [],
    "conditional": [
@@ -34234,16 +34234,16 @@
   "141.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 4,
-    "THEOREM": 4,
-    "OPEN": 4
+    "DEFINITION": 6,
+    "OPEN": 4,
+    "THEOREM": 4
    },
    "transitive": {
-    "THEOREM": 44,
-    "OPEN": 53,
     "CONDITIONAL": 72,
-    "DEFINITION": 6
+    "DEFINITION": 6,
+    "OPEN": 53,
+    "THEOREM": 44
    },
    "open": [
     "18.5",
@@ -34261,16 +34261,16 @@
   "143.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 6,
-    "THEOREM": 6,
-    "OPEN": 12
+    "DEFINITION": 6,
+    "OPEN": 12,
+    "THEOREM": 6
    },
    "transitive": {
-    "THEOREM": 44,
-    "OPEN": 53,
     "CONDITIONAL": 73,
-    "DEFINITION": 6
+    "DEFINITION": 6,
+    "OPEN": 53,
+    "THEOREM": 44
    },
    "open": [
     "18.5",
@@ -34298,16 +34298,16 @@
   "146.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 5,
-    "THEOREM": 4,
-    "OPEN": 5
+    "DEFINITION": 6,
+    "OPEN": 5,
+    "THEOREM": 4
    },
    "transitive": {
-    "THEOREM": 44,
-    "OPEN": 53,
     "CONDITIONAL": 72,
-    "DEFINITION": 6
+    "DEFINITION": 6,
+    "OPEN": 53,
+    "THEOREM": 44
    },
    "open": [
     "18.5",
@@ -34327,16 +34327,16 @@
   "147.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 8,
-    "THEOREM": 10,
-    "OPEN": 5
+    "DEFINITION": 6,
+    "OPEN": 5,
+    "THEOREM": 10
    },
    "transitive": {
-    "THEOREM": 44,
-    "OPEN": 53,
     "CONDITIONAL": 72,
-    "DEFINITION": 6
+    "DEFINITION": 6,
+    "OPEN": 53,
+    "THEOREM": 44
    },
    "open": [
     "9.8",
@@ -34359,16 +34359,16 @@
   "163.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 6,
-    "THEOREM": 12,
-    "OPEN": 12
+    "DEFINITION": 6,
+    "OPEN": 12,
+    "THEOREM": 12
    },
    "transitive": {
-    "THEOREM": 21,
+    "CONDITIONAL": 8,
     "DEFINITION": 6,
     "OPEN": 25,
-    "CONDITIONAL": 8
+    "THEOREM": 21
    },
    "open": [
     "9.8",
@@ -34396,16 +34396,16 @@
   "171.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 2,
-    "THEOREM": 8,
-    "OPEN": 3
+    "DEFINITION": 6,
+    "OPEN": 3,
+    "THEOREM": 8
    },
    "transitive": {
-    "THEOREM": 14,
+    "CONDITIONAL": 6,
     "DEFINITION": 6,
     "OPEN": 9,
-    "CONDITIONAL": 6
+    "THEOREM": 14
    },
    "open": [
     "9.8",
@@ -34420,16 +34420,16 @@
   "172.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 3,
-    "THEOREM": 5,
-    "OPEN": 2
+    "DEFINITION": 6,
+    "OPEN": 2,
+    "THEOREM": 5
    },
    "transitive": {
-    "THEOREM": 14,
+    "CONDITIONAL": 7,
     "DEFINITION": 6,
     "OPEN": 10,
-    "CONDITIONAL": 7
+    "THEOREM": 14
    },
    "open": [
     "9.8",
@@ -34444,15 +34444,15 @@
   "173.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 1,
+    "DEFINITION": 6,
     "OPEN": 1
    },
    "transitive": {
-    "THEOREM": 14,
+    "CONDITIONAL": 8,
     "DEFINITION": 6,
     "OPEN": 11,
-    "CONDITIONAL": 8
+    "THEOREM": 14
    },
    "open": [
     "172.2"
@@ -34464,16 +34464,16 @@
   "185.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 3,
-    "THEOREM": 4,
-    "OPEN": 4
+    "DEFINITION": 6,
+    "OPEN": 4,
+    "THEOREM": 4
    },
    "transitive": {
-    "THEOREM": 14,
+    "CONDITIONAL": 6,
     "DEFINITION": 6,
     "OPEN": 9,
-    "CONDITIONAL": 6
+    "THEOREM": 14
    },
    "open": [
     "18.5",
@@ -34490,16 +34490,16 @@
   "197.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 1,
+    "DEFINITION": 6,
     "OPEN": 5,
     "THEOREM": 2
    },
    "transitive": {
-    "THEOREM": 17,
     "CONDITIONAL": 20,
     "DEFINITION": 6,
-    "OPEN": 21
+    "OPEN": 21,
+    "THEOREM": 17
    },
    "open": [
     "D.1",
@@ -34515,16 +34515,16 @@
   "197.3": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 1,
+    "DEFINITION": 6,
     "OPEN": 5,
     "THEOREM": 2
    },
    "transitive": {
-    "THEOREM": 17,
     "CONDITIONAL": 20,
     "DEFINITION": 6,
-    "OPEN": 21
+    "OPEN": 21,
+    "THEOREM": 17
    },
    "open": [
     "D.1",
@@ -34540,16 +34540,16 @@
   "197.4": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 1,
+    "DEFINITION": 6,
     "OPEN": 5,
     "THEOREM": 2
    },
    "transitive": {
-    "THEOREM": 17,
     "CONDITIONAL": 20,
     "DEFINITION": 6,
-    "OPEN": 21
+    "OPEN": 21,
+    "THEOREM": 17
    },
    "open": [
     "D.1",
@@ -34565,16 +34565,16 @@
   "197.5": {
    "grade": "OPEN",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 1,
+    "DEFINITION": 6,
     "OPEN": 5,
     "THEOREM": 2
    },
    "transitive": {
-    "THEOREM": 17,
     "CONDITIONAL": 20,
     "DEFINITION": 6,
-    "OPEN": 21
+    "OPEN": 21,
+    "THEOREM": 17
    },
    "open": [
     "D.1",
@@ -34590,16 +34590,16 @@
   "198.3": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 15,
+    "DEFINITION": 6,
     "OPEN": 7,
     "THEOREM": 1
    },
    "transitive": {
-    "THEOREM": 17,
     "CONDITIONAL": 21,
     "DEFINITION": 6,
-    "OPEN": 21
+    "OPEN": 21,
+    "THEOREM": 17
    },
    "open": [
     "H.1",
@@ -34631,16 +34631,16 @@
   "206.3": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 5,
-    "THEOREM": 5,
-    "OPEN": 7
+    "DEFINITION": 6,
+    "OPEN": 7,
+    "THEOREM": 5
    },
    "transitive": {
-    "THEOREM": 18,
+    "CONDITIONAL": 9,
     "DEFINITION": 6,
     "OPEN": 24,
-    "CONDITIONAL": 9
+    "THEOREM": 18
    },
    "open": [
     "18.5",
@@ -34662,16 +34662,16 @@
   "90.2": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 3,
-    "THEOREM": 8,
-    "OPEN": 13
+    "DEFINITION": 6,
+    "OPEN": 13,
+    "THEOREM": 8
    },
    "transitive": {
-    "THEOREM": 13,
+    "CONDITIONAL": 4,
     "DEFINITION": 6,
     "OPEN": 17,
-    "CONDITIONAL": 4
+    "THEOREM": 13
    },
    "open": [
     "9.8",
@@ -34697,16 +34697,16 @@
   "115.1": {
    "grade": "CONDITIONAL",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 3,
-    "THEOREM": 6,
-    "OPEN": 8
+    "DEFINITION": 6,
+    "OPEN": 8,
+    "THEOREM": 6
    },
    "transitive": {
-    "THEOREM": 13,
+    "CONDITIONAL": 4,
     "DEFINITION": 6,
     "OPEN": 17,
-    "CONDITIONAL": 4
+    "THEOREM": 13
    },
    "open": [
     "9.8",
@@ -34727,16 +34727,16 @@
   "217.1": {
    "grade": "THEOREM",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 3,
-    "THEOREM": 3,
-    "OPEN": 7
+    "DEFINITION": 6,
+    "OPEN": 7,
+    "THEOREM": 3
    },
    "transitive": {
-    "THEOREM": 13,
+    "CONDITIONAL": 6,
     "DEFINITION": 6,
     "OPEN": 12,
-    "CONDITIONAL": 6
+    "THEOREM": 13
    },
    "open": [
     "18.5",
@@ -34756,16 +34756,16 @@
   "220.3": {
    "grade": "THEOREM",
    "direct": {
+    "CONDITIONAL": 1,
     "DEFINITION": 6,
-    "THEOREM": 3,
     "OPEN": 10,
-    "CONDITIONAL": 1
+    "THEOREM": 3
    },
    "transitive": {
-    "THEOREM": 19,
+    "CONDITIONAL": 7,
     "DEFINITION": 6,
     "OPEN": 24,
-    "CONDITIONAL": 7
+    "THEOREM": 19
    },
    "open": [
     "217.3",
@@ -34786,16 +34786,16 @@
   "221.1": {
    "grade": "THEOREM",
    "direct": {
+    "CONDITIONAL": 1,
     "DEFINITION": 6,
     "OPEN": 10,
-    "THEOREM": 3,
-    "CONDITIONAL": 1
+    "THEOREM": 3
    },
    "transitive": {
-    "THEOREM": 21,
+    "CONDITIONAL": 7,
     "DEFINITION": 6,
     "OPEN": 25,
-    "CONDITIONAL": 7
+    "THEOREM": 21
    },
    "open": [
     "218.1",
@@ -34816,16 +34816,16 @@
   "225.1": {
    "grade": "THEOREM",
    "direct": {
-    "DEFINITION": 6,
     "CONDITIONAL": 4,
-    "THEOREM": 7,
-    "OPEN": 5
+    "DEFINITION": 6,
+    "OPEN": 5,
+    "THEOREM": 7
    },
    "transitive": {
-    "THEOREM": 48,
     "CONDITIONAL": 75,
+    "DEFINITION": 6,
     "OPEN": 55,
-    "DEFINITION": 6
+    "THEOREM": 48
    },
    "open": [
     "18.5",
@@ -34869,50 +34869,18 @@
   ]
  ],
  "theorems_with_open_or_conditional_premise": [
-  "3.1",
-  "8.1",
-  "9.2",
-  "9.3",
-  "9.4",
-  "9.5",
-  "9.6",
-  "11.1",
-  "13.1",
-  "16.1",
-  "18.2",
-  "27.1",
-  "28.1",
-  "28.2",
-  "28.5",
-  "39.1",
-  "55.1",
-  "56.1",
-  "57.1",
-  "58.1",
-  "61.1",
-  "62.1",
-  "64.1",
-  "64.2",
-  "65.1",
-  "65.2",
-  "69.1",
-  "70.1",
-  "73.1",
-  "74.1",
-  "74.4",
-  "78.3",
-  "79.1",
-  "80.1",
-  "83.1",
-  "86.1",
   "104.1",
+  "11.1",
   "118.1",
+  "13.1",
   "134.1",
   "135.1",
   "145.1",
   "151.1",
   "154.1",
+  "16.1",
   "170.1",
+  "18.2",
   "181.5",
   "186.1",
   "191.1",
@@ -34947,6 +34915,38 @@
   "235.2",
   "235.3",
   "235.4",
+  "27.1",
+  "28.1",
+  "28.2",
+  "28.5",
+  "3.1",
+  "39.1",
+  "55.1",
+  "56.1",
+  "57.1",
+  "58.1",
+  "61.1",
+  "62.1",
+  "64.1",
+  "64.2",
+  "65.1",
+  "65.2",
+  "69.1",
+  "70.1",
+  "73.1",
+  "74.1",
+  "74.4",
+  "78.3",
+  "79.1",
+  "8.1",
+  "80.1",
+  "83.1",
+  "86.1",
+  "9.2",
+  "9.3",
+  "9.4",
+  "9.5",
+  "9.6",
   "D.3",
   "D.4",
   "H.3",

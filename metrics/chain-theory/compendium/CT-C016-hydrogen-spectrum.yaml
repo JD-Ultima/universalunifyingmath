@@ -1,0 +1,27 @@
+claim_id: CT-C016
+source_statement: "143.1 Hydrogen from the held carrier (CONDITIONAL); 144.1 hyperfine (OPEN); abstract: 'the hydrogen spectrum'"
+source_location: "compendium/tex/parts/07-cell-3-2-photon.tex:481-568"
+source_commit: a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+formalization_status:
+  value: not_formalized
+  detail: "Seven opaque Props and one decide-proof (under an opaque hypothesis) over a 1-row String table (key C-EQLA, E1=YES, E2=YES, letter=COMPOSED). No rational, ladder or 1/n^2 in Lean."
+internal_consistency:
+  value: partial
+  detail: "Printed identities hold exactly: 36*201/(2^30 3^18) = 67/(2^28 3^15); 36*67/(2^31 3^17) = 67/(2^29 3^15); ratio 2 between faces, both printed and none selected. Body registers are 'not re-derived on the page'. OPEN premises 18.5, 18.6, 28.3, 28.4, 57.2, H.1, H.2, H.4-H.8."
+proof_status:
+  value: partial_conditional
+  detail: "Derived: E_n = E1/n^2 for n = 1..8 at the two-vertex level (per-record ladder is not a pure power). Under reconstruction R (twirled Sym^(n-1)(C^m), two-vertex read), 1/n^2 holds iff m = 2. Fine structure: formula without value, 'a posed step'. Lamb: sign only. Hyperfine: OPEN, computed reading zero."
+novelty:
+  value: low
+  detail: "1/n^2 arises from dim Sym^(n-1)(C^2) = n, a standard representation-theory fact; no Coulomb dynamics."
+reproducibility:
+  value: reproduced_arithmetic
+  detail: "computation/chain-theory/compendium/hydrogen_audit.py; Monte Carlo twirl check seeded (20261030)."
+empirical_testability:
+  value: fails_on_scale
+  detail: "With 'electron unit' = m_e c^2: E1(whole)/(alpha^2 mu/2) = 6.54e-10, E1(cut) = 3.27e-10 (9.18 and 9.49 orders low); E1 has no alpha dependence (effective exponent k = 6.30 / 6.44 vs 2). Matched: exponent 2 of n, sign of the Lamb interval."
+dependencies: ["124.1 (C)", "141.1 (C)", "18.1/18.3/18.4 (C)", "18.5/18.6 (O)", "28.3/28.4 (O)", "57.2 (O)", "H.1, H.2, H.4-H.8 (O)", "H.9 (C)"]
+discrete_choices_vs_digits: {choices: ">= 7", digits_matched: 0, structural_matches: ["n^-2 exponent (n<=8)", "Lamb sign"]}
+confidence:
+  value: medium_high
+  justification: "Arithmetic and the scale comparison are exact; the scale finding depends on reading 'electron unit' as m_e c^2 (the reading the compendium uses for m_p in 176.1). The 1/n^2 mechanism is a reconstruction (R) and is flagged as such."

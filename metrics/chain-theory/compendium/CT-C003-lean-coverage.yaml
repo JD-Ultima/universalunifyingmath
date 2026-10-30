@@ -1,0 +1,20 @@
+claim_id: CT-C003
+source_statement: "64 of the 100 theorems are tied to named Lean declarations, which check the finite computations their derivations use"
+source_location: "compendium/tex/front.tex:25; compendium/README.md 'What the Lean checks'; compendium/lean/"
+source_commit: a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+formalization_status:
+  value: classified_by_script
+  detail: "computation/chain-theory/compendium/lean_classify.py reads 915 .lean files as text (not built)."
+internal_consistency:
+  value: count_consistent; content_weak
+  detail: "64 reproduced. The tie is per section (inherited by every statement of the section). Of 64: 11 cite only opaque Props/aliases/OpenResult records; 37 at best data-table checks; 16 a restated AlphaDerivation theorem or kernel module. 137/150 data modules have String-only Row fields. For 141.1, 143.1, 64.1, 64.2, 65.1 no arithmetic of the chapter appears in Lean."
+proof_status:
+  value: not_rebuilt
+  detail: "Build record and axiom report (6,662 declarations; no sorryAx) not re-verified here (memory)."
+novelty: {value: not_applicable}
+reproducibility: {value: reproduced_classification}
+empirical_testability: {value: not_applicable}
+dependencies: []
+confidence:
+  value: high
+  justification: "Classification is syntactic and the cited declarations were read verbatim for the five audited statements; the README itself states that 'the physical reading of the result lives in the text, not in the Lean statement'."

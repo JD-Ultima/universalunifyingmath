@@ -35,3 +35,37 @@ print("  the Koide ratio equals 2/3 'in the field at no reading'. Measured (PDG 
 me, mmu, mtau = mp.mpf("0.51099895"), mp.mpf("105.6583755"), mp.mpf("1776.93")
 Q = (me + mmu + mtau)/(mp.sqrt(me) + mp.sqrt(mmu) + mp.sqrt(mtau))**2
 print(f"  Q = {mp.nstr(Q, 10)} (2/3 = {mp.nstr(mp.mpf(2)/3, 10)}); the source predicts no number to compare.")
+
+print("\n[L] 54.1 'The Lorentz group as the isometries of the Hermitian split' (04-spacetime-and-symmetry.tex:167)")
+import sympy as sp
+s1, s2, s3 = sp.Matrix([[0, 1], [1, 0]]), sp.Matrix([[0, -sp.I], [sp.I, 0]]), sp.Matrix([[1, 0], [0, -1]])
+E2 = sp.eye(2)
+def gram(basis):
+    return sp.Matrix(len(basis), len(basis), lambda i, j: sp.simplify((basis[i]*basis[j]).trace()))
+def signature(M):
+    ev = M.eigenvals()
+    pos = sum(m for v, m in ev.items() if v > 0); neg = sum(m for v, m in ev.items() if v < 0)
+    return (pos, neg)
+B_split = [E2, sp.I*s1, sp.I*s2, sp.I*s3]     # Hermitian unit + three anti-Hermitian derived directions
+B_herm = [E2, s1, s2, s3]                      # Hermitian unit + three Hermitian directions
+G1, G2 = gram(B_split), gram(B_herm)
+print(f"  plain trace form tr(XY) on span{{1, i sigma_k}}: Gram diag {list(G1.diagonal())}, signature {signature(G1)}")
+print(f"  plain trace form tr(XY) on span{{1, sigma_k}}:   Gram diag {list(G2.diagonal())}, signature {signature(G2)}")
+# isometry algebra of eta = G1: {A : A^T eta + eta A = 0}, dimension and Killing signature
+eta = G1
+syms = sp.symbols("a0:16"); A = sp.Matrix(4, 4, syms)
+sol = sp.solve(list(A.T*eta + eta*A), syms, dict=True)[0]
+Agen = A.subs(sol)
+free = sorted(Agen.free_symbols, key=lambda x: int(str(x)[1:]))
+basis = [Agen.subs({f: (1 if f == g else 0) for f in free}) for g in free]
+print(f"  isometry algebra of that form: dimension {len(basis)} (Lorentz algebra: 6)")
+def coords(M):
+    v = sp.Matrix([M[i, j] for i in range(4) for j in range(4)])
+    Bm = sp.Matrix.hstack(*[sp.Matrix([b[i, j] for i in range(4) for j in range(4)]) for b in basis])
+    return (Bm.T*Bm).inv()*Bm.T*v
+def ad(X):
+    return sp.Matrix.hstack(*[coords(X*b - b*X) for b in basis])
+K = sp.Matrix(len(basis), len(basis), lambda i, j: (ad(basis[i])*ad(basis[j])).trace())
+print(f"  Killing form signature (pos, neg): {signature(K)} (printed: three and three)")
+print("  => signature (1,3) arises from pairing the Hermitian unit with anti-Hermitian directions under tr(XY);")
+print("     with Hermitian directions the same form is Euclidean (4,0). The choice of split fixes the signature.")

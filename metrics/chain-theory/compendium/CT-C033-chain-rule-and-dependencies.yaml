@@ -1,0 +1,20 @@
+claim_id: CT-C033
+source_statement: "Front matter: 'every theorem prints at its statement the union of the conditions of the results it rests on, a composed claim carrying the lowest status in its chain'"
+source_location: "compendium/tex/front.tex ('The status words'); compendium/index/statements.tsv"
+source_commit: a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+formalization_status:
+  value: checked_by_script
+  detail: "computation/chain-theory/compendium/depgraph.py; interpretive choices C1-C4 documented; sensitivity run --no-chapter-form."
+internal_consistency:
+  value: violated
+  detail: "66/100 THEOREMs list >=1 OPEN premise directly (66 also without chapter-form strings); 84/100 list OPEN or CONDITIONAL (78). 22-statement premise cycle incl. 124.1 under the index's designator mapping (2-cycles 124.1<->16.1, 124.1<->58.1); acyclic without chapter-form strings. Premise/used_by reciprocity 43.4%. 3 dangling references (238.1, 239.1, 240.1)."
+proof_status: {value: not_applicable}
+novelty: {value: not_applicable}
+reproducibility:
+  value: reproduced
+  detail: "Headline 100/109/198/64 reproduced exactly; README 'Tables 56' not reproduced (54)."
+empirical_testability: {value: not_applicable}
+dependencies: ["most load-bearing unproven premises: 2.2 (C), 2.4, 2.5, 2.7, 2.8 (O): 183 of 209 T+C statements transitively; 9.1, 9.7 (C), 9.8 (O): 175; 18.1/18.3/18.4 (C), 18.5/18.6 (O): 152"]
+confidence:
+  value: medium_high
+  justification: "Counts are exact given the parse; premise lists are chapter-granular, so an edge records declared, not verified, dependence. The OPEN-premise count (66) does not depend on the only ambiguous parsing step (C3)."

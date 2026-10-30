@@ -32,7 +32,8 @@ python3 -I register_checks.py                                    > outputs/regis
 python3 -I boxes.py         $SRC 141.1 143.1 64.2               # prints box text (helper)
 ```
 
-Wall time: each script < 10 s. `hydrogen_audit.py` uses a fixed seed (20261030); its Monte Carlo
+Wall time: each script < 10 s. Outputs are identical across runs and across `PYTHONHASHSEED` values
+(checked). `hydrogen_audit.py` uses a fixed seed (20261030); its Monte Carlo
 eigenvalues are reproducible to the printed 3 decimals.
 
 ## Files

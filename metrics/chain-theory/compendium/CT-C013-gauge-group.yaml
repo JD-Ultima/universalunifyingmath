@@ -1,0 +1,27 @@
+claim_id: CT-C013
+source_statement: "64.2 The gauge group as the face group of the tether (THEOREM); 65.1 The gauge group as a corollary of one construction (THEOREM); abstract: 'the gauge group SU(3) x SU(2) x U(1) ... as theorems'"
+source_location: "compendium/tex/parts/05-gauge-structure.tex:30-83; compendium/tex/parts/01-framework.tex:52-56, 344, 350"
+source_commit: a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+formalization_status:
+  value: not_formalized_in_source; formalizable
+  detail: "Source Lean: two opaque Props (64.x) and two decide-proofs over 8-row key/value String tables (65.1). The mathematics (G1-G3) is Mathlib-formalizable (unitary groups, Kronecker products, Lie algebras)."
+internal_consistency:
+  value: math_consistent; grade_inconsistent
+  detail: "All printed group data verified: dims 7,12,19,17,24,31 and |central scalar| 0,1,2,0,1,0 of the genre matrix; ker = Z6; diag(3,3,-2,-2,-2) = 6Y on the 5; monomial group orders 4,32,384,6144. Graded THEOREM while listing OPEN premises (2.4, 2.5, 2.7, 2.8, 9.8, 18.5, 18.6; 65.1 also D.1, D.2, D.5-D.7) against the stated chain rule."
+proof_status:
+  value: proven_math_conditional_selection
+  detail: "S(U(2)xU(3)) = image of U(2)xU(3) on C^2 (x) C^3 = (SU(2)xSU(3)xU(1))/Z6 is proven (standard). Selection of the (3,2) genre requires read cap d1 d2 <= 6 (9.1, CONDITIONAL) and d1 != d2 (9.2); cap 8 selects (3,2) and (4,2). The 'dim 12, rank 4' uniqueness cell uses the Standard Model's numbers as targets."
+novelty:
+  value: none_for_the_math
+  detail: "Textbook isomorphism (Baez-Huerta 2010, cited by the source). Novelty, if any, is in the identification of the SM group with the local unitaries of a qubit-qutrit link."
+reproducibility:
+  value: reproduced
+  detail: "computation/chain-theory/compendium/gauge_audit.py (exact sympy)."
+empirical_testability:
+  value: weak
+  detail: "Lie algebra su(3)+su(2)+u(1) is matched by construction once (3,2) is chosen. The Z6 global form is consistent with every observed field (all satisfy t/3 + d/2 + Y in Z) but is not experimentally distinguished from Z1, Z2, Z3 (Tong 2017). Falsifier: a state violating t/3 + d/2 + Y in Z."
+dependencies: ["9.1 (C, read cap)", "9.2 (T, acting centre)", "9.7 (C)", "9.8 (O)", "2.2 (C)", "2.4, 2.5, 2.7, 2.8 (O)", "18.1/18.3/18.4 (C)", "18.5/18.6 (O)", "D.1, D.2, D.5-D.7 (O, for 65.1)"]
+discrete_choices_vs_digits: {choices: 6, numbers_matched_beyond_choice: 0}
+confidence:
+  value: high
+  justification: "Exact computation; the dependence of the genre selection on the read cap is shown by direct enumeration; the grade inconsistency is read off statements.tsv and is robust to the chapter-form resolution."

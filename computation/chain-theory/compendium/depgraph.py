@@ -254,14 +254,14 @@ def main(cdir, json_out=None, no_chapter_form=False):
     for d in allst[:12]:
         print(f"  {d['number']:>6} {d['grade']:<11} in-degree {d['direct']:>3}  {d['title']}")
     roots = [x for x in by_num if not prem[x] and children[x]]
-    print(f"\nroots (no premise, >=1 user): {len(roots)} -> grades {dict(collections.Counter(G(x) for x in roots))}")
+    print(f"\nroots (no premise, >=1 user): {len(roots)} -> grades {dict(sorted(collections.Counter(G(x) for x in roots).items()))}")
 
     # statements resting on the alpha theorem 124.1 (audited separately; see papers/alpha)
     if "124.1" in by_num:
         D = descendants("124.1") - {"124.1"}
         print(f"\nstatements listing 124.1 (alpha) as a premise: {len(children['124.1'])} "
-              f"{dict(collections.Counter(G(y) for y in children['124.1']))}; transitively resting on it: {len(D)} "
-              f"{dict(collections.Counter(G(y) for y in D))}")
+              f"{dict(sorted(collections.Counter(G(y) for y in children['124.1']).items()))}; transitively resting on it: {len(D)} "
+              f"{dict(sorted(collections.Counter(G(y) for y in D).items()))}")
         print("   direct users:", sorted(children["124.1"]))
 
     # physics claims of the abstract
@@ -274,16 +274,16 @@ def main(cdir, json_out=None, no_chapter_form=False):
     for x in focus:
         if x not in by_num: continue
         ps = sorted(prem[x], key=lambda s: [int(t) if t.isdigit() else ord(t[0]) * 1000 for t in re.split(r"\.", s)])
-        gc = collections.Counter(G(p) for p in ps)
+        gc = dict(sorted(collections.Counter(G(p) for p in ps).items()))
         anc = ancestors(x)
-        ga = collections.Counter(G(p) for p in anc)
+        ga = dict(sorted(collections.Counter(G(p) for p in anc).items()))
         op = [p for p in ps if G(p) == "OPEN"]
         cd = [p for p in ps if G(p) == "CONDITIONAL"]
         out_focus[x] = dict(grade=G(x), direct=dict(gc), transitive=dict(ga), open=op, conditional=cd)
         print(f"  {x} [{G(x)}] direct {dict(gc)}; transitive {dict(ga)}\n      CONDITIONAL premises: {cd}\n      OPEN premises: {op}")
     if json_out:
         json.dump(dict(edges=sorted(edges), unproven_top=unproven[:40], focus=out_focus,
-                       sccs=sccs, theorems_with_open_or_conditional_premise=th_direct),
+                       sccs=sorted(sccs), theorems_with_open_or_conditional_premise=sorted(th_direct)),
                   open(json_out, "w"), indent=1)
     return 0
 

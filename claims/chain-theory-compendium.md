@@ -1,0 +1,82 @@
+# Claim Register: Chain Theory compendium, release 0.1
+
+Source: A. D. Wissner-Gross, *Chain Theory: Toward Fundamental Physics from Distilling Networks of
+Entangled Qudits. A Compendium of Preliminary Findings*, release 0.1, repository `chain-theory`, commit
+`a28db8998bce5bd5ef11195c05f13c86cd9dac5c` (2026-10-24). Paths below are relative to `compendium/`.
+The alpha Letter (`papers/alpha`) is audited separately; here only dependence on it is recorded.
+
+Type codes: **a** source asserts; **b** our reconstruction; **c** proven or computed here;
+**d** conjectured (by the source); **e** empirically testable. Author grade: T = THEOREM,
+C = CONDITIONAL, O = OPEN, – = not a boxed statement. "Premises" lists the CONDITIONAL (C:) and OPEN (O:)
+statements among the direct premises in `index/statements.tsv` (Definitions 1.1-1.6 and THEOREM premises
+omitted; chapter-form premises resolved as in `computation/chain-theory/compendium/README.md`, C3).
+Every number comes from `computation/chain-theory/compendium/outputs/` or a cited source.
+
+## A. Census (task 1)
+
+| | THEOREM | Lean-tied T | CONDITIONAL | OPEN | TABLE | DEF |
+|---|---|---|---|---|---|---|
+| I | 20 | 17 | 9 | 23 | 4 | 6 |
+| II | 0 | 0 | 0 | 0 | 1 | 0 |
+| III | 1 | 0 | 8 | 4 | 1 | 0 |
+| IV | 6 | 3 | 5 | 4 | 1 | 0 |
+| V | 14 | 8 | 6 | 24 | 2 | 0 |
+| VI | 2 | 0 | 17 | 30 | 2 | 0 |
+| VII | 5 | 1 | 10 | 9 | 3 | 0 |
+| VIII | 1 | 1 | 8 | 17 | 1 | 0 |
+| IX | 1 | 1 | 12 | 12 | 1 | 0 |
+| X | 6 | 2 | 18 | 8 | 2 | 0 |
+| XI | 2 | 1 | 3 | 2 | 0 | 0 |
+| XII | 1 | 1 | 9 | 16 | 2 | 0 |
+| XIII | 7 | 7 | 0 | 5 | 1 | 0 |
+| XIV | 6 | 6 | 0 | 3 | 1 | 0 |
+| XV | 11 | 11 | 1 | 5 | 0 | 0 |
+| XVI | 0 | 0 | 0 | 0 | 4 | 0 |
+| Appendices | 6 | 3 | 2 | 23 | 0 | 0 |
+| Instruments | 11 | 2 | 1 | 13 | 28 | 1 |
+| **all** | **100** | **64** | **109** | **198** | **54** | **7** |
+
+Headline 100 / 109 / 198 and 64 Lean-tied: reproduced. README "Tables 56": not reproduced (54).
+Parts VI-XI: 17 / 68 / 78 (reproduced).
+
+## B. Register
+
+| ID | Statement | Type | Author grade | Formalizable? | Source location |
+|---|---|---|---|---|---|
+| CT-C001 | The release holds 100 theorems, 109 conditional theorems, 198 open results; 64 theorems are tied to named Lean declarations. **Finding:** reproduced exactly. *Fails if* a recount of `statements.tsv` differs. | a, c | – | Yes (counting) | `tex/front.tex:25`; `README.md`; `index/counts.tex` |
+| CT-C002 | "Tables 56". **Finding:** the index has 54 TABLE boxes. *Fails (as stated)* — fails. | a, c | – | Yes | `README.md` "The count" |
+| CT-C003 | The 64 Lean declarations "check the finite computations their derivations use". **Finding:** the tie is per section (inherited by every statement of the section); of 64 tied theorems 11 cite only opaque Props/open-result records, 37 at best string-label table checks, 16 a restated AlphaDerivation theorem or kernel module. *Fails if* a cited declaration is shown to encode the chapter's computation. | a, c | – | Yes | `tex/front.tex:25`; `lean/`; `04-lean-coverage.md` |
+| CT-C004 | State space of a pair type = span of the act outputs. Premises C: 2.2, 9.1, 9.7, 18.1, 18.3, 18.4; O: 2.4, 2.5, 2.7, 2.8, 9.8, 18.5, 18.6, D.1, D.2, D.5-D.7. *Fails if* the span is shown not to be the whole register at some genre. | a | C (35.1) | Partly (finite linear algebra) | `tex/parts/03-quantum-mechanics.tex:31` |
+| CT-C005 | Born rule and unitarity: flat pair <=> coefficient matrix a multiple of a unitary; transport, join, step unitary. Premises C: 2.2, 18.1, 18.3, 18.4, 35.1; O: 2.4, 2.5, 2.7, 2.8, 18.5, 18.6. *Fails if* a tabulated matching is not a scaled partial isometry. | a | C (40.1) | Yes (finite) | `03-quantum-mechanics.tex:171` |
+| CT-C006 | Uncertainty relation from the Weyl relation (Robertson bound at d = 2, 3, 4). Premises C: 2.2, 18.1, 18.3, 18.4, 35.1, 40.1; O: 2.4, 2.5, 2.7, 2.8, 18.5, 18.6. Standard (Robertson 1929). *Fails if* a violating state exists (impossible for Hermitian observables). | a | C (41.1) | Yes | `03-quantum-mechanics.tex:232` |
+| CT-C007 | Rotation group = automorphisms of the three derived directions (so(3), finite lift dihedral of order 8). Premises: Definitions only; the condition is in the box text. | a | C (53.1) | Yes | `04-spacetime-and-symmetry.tex:144` |
+| CT-C008 | Lorentz group and signature: isometry algebra of the "Hermitian split" is 6-dim with Killing signature (3,3); form of signature (1,3). Premise C: 53.1. **Reconstruction:** tr(XY) on span{1, i sigma_k} has signature (1,3), isometry algebra dim 6, Killing (3,3) (verified); on span{1, sigma_k} it is (4,0). The signature is fixed by pairing the Hermitian unit with anti-Hermitian directions. Also I.23.1 (T, instruments). *Fails if* the split is not forced by the axiom. | a, b, c | C (54.1) | Yes | `04-spacetime-and-symmetry.tex:167`; `instruments.tex:767` |
+| CT-C009 | Parity: 48 signed permutations, identification group acts through 8 proper ones; "parity is not a symmetry of the records". Premises C: 53.1; O: 57.2. | a, e | C (59.1) | Yes (finite group) | `04-spacetime-and-symmetry.tex:481` |
+| CT-C010 | Time reversal and CPT: end swap, chain reversal, read reversal are involutions with identity product on every count. Abstract lists P, T, CPT as conditional; 61.1 is graded THEOREM; 60.1 (Weyl reflections) is OPEN. Premises C: 9.1, 9.7, 59.1, 124.1; O: 9.8. *Grade inconsistency* with the abstract and with the chain rule. | a | T (61.1); O (60.1) | Yes (finite) | `04-spacetime-and-symmetry.tex:567, 529` |
+| CT-C011 | "As a theorem, conservation laws." **Finding:** 74.1 (T) states the left kernel of the move matrix is *trivial* (rank 0) and lepton number and dart charge are broken; 74.4 (T) baryon number as junction count conserved at interactions; energy-momentum (74.2) and charge-like functionals (74.3) are C. 74.1 premises C: 1.7, 9.1, 9.7, 12.1, 18.1, 18.3, 18.4, 24.1, 66.4, 72.4, 163.1, 163.3, H.9, Q.1. *Fails if* a nontrivial conserved functional of the full move set exists. | a, e | T (74.1, 74.4); C (74.2, 74.3) | Yes (linear algebra over a given matrix) | `05-gauge-structure.tex:348-369` |
+| CT-C012 | Gauge invariance = the known clause: every readout of the (2,3) link is twirl-invariant. Premises C: 2.2, 9.1, 9.7, 18.1, 18.3, 18.4; O: 2.4, 2.5, 2.7, 2.8, 9.8, 18.5, 18.6. Invariance of a twirled trace is immediate (re-indexing). | a, c | T (64.1) | Yes | `05-gauge-structure.tex:25` |
+| CT-C013 | Gauge group: face group of the qutrit-qubit link = S(U(2)xU(3)) = (SU(2)xSU(3)xU(1))/Z6; three factors at three end kinds. **Findings** (`03-gauge-group.md`): G1 true and standard; G2 genre matrix reproduced; G3 (3,2) unique only under read cap 6 and d1 != d2 (cap 8 -> (3,2),(4,2)); G4 Z6 global form consistent with the SM, untested; 6 discrete choices. Premises of 64.2: as CT-C012; of 65.1: C 9.1, 9.7; O 9.8, D.1, D.2, D.5-D.7. *Fails if* a field with t/3 + d/2 + Y not in Z is observed (Z6 form), or if the read cap is shown to differ from 6. | a, b, c, e | T (64.2, 65.1) | Yes (Mathlib-level Lie theory) | `05-gauge-structure.tex:30, 54`; `01-framework.tex:52-56, 344, 350` |
+| CT-C014 | alpha(0) as an exact algebraic number at the one link. Premises (chapter form): C 1.7, 2.2, 9.1, 9.7, 12.1, 18.1, 18.3, 18.4, 24.1, 35.1, 40.1, 50.1, 51.1, 53.1. **Dependency only:** listed as premise by 22 statements, 70 rest on it transitively; lies on premise cycles with 16.1 and 58.1. Value audited with the Letter. | a, d, e | C (124.1) | (Letter) | `07-cell-3-2-photon.tex:26` |
+| CT-C015 | "Electron anomalous moment through third order": order-two readout = sum of 8 self-terms; order-three term zero. **Findings** (`01-electron-anomalous-moment.md`): no coefficient of (alpha/pi)^n is produced (C1, C2, C3 neither derived nor inserted); T3 = 0 is the general truncation of 146.1; under the literal identification T_n ~ C_n (alpha/pi)^n, T3 = 0 contradicts C3 = 1.1812414566 for every normalisation, 9.26e4 sigma against a_e (Rb alpha); equality holds at reading W1 only (W2, W3, PWONCE part). Premises C: 18.1, 18.3, 18.4, 124.1; O: 18.5, 18.6, 28.3, 28.4. | a, b, c, e | C (141.1) | Arithmetic only; constructions underdefined | `07-cell-3-2-photon.tex:426-444`; `lean/.../Data/D526870_PAET.lean` |
+| CT-C016 | "Hydrogen spectrum": level-one binding E1 = 67/(2^28 3^15) (whole) or 67/(2^29 3^15) (cut) "in the electron unit"; E_n = E1/n^2, n = 1..8; fine structure, Lamb shift stated without values; hyperfine OPEN (zero). **Findings** (`02-hydrogen-spectrum.md`): arithmetic correct; with electron unit = m_e c^2, E1 is 6.54e-10 (whole) / 3.27e-10 (cut) of alpha^2 mu/2, with no alpha dependence; 1/n^2 follows (reconstruction) iff the symmetric power is over a 2-dim register; matched: exponent 2 and the Lamb sign. Premises C: 18.1, 18.3, 18.4, 124.1, 141.1, H.9; O: 18.5, 18.6, 28.3, 28.4, 57.2, H.1, H.2, H.4-H.8. | a, b, c, e | C (143.1); O (144.1) | Arithmetic only | `07-cell-3-2-photon.tex:481-568` |
+| CT-C017 | Parity violation: lepton weak doublet as the internal read at the odd leg; L row doublet, R row singlet. Premises C: 9.1, 9.7, 18.1, 18.3, 18.4, 66.4; O: 9.8, 18.5, 18.6, 66.1-66.3, 66.5, D.1, D.2, D.5-D.7. *Fails if* the R row is not a singlet at some lepton web. | a | C (163.1) | Partly | `08-cell-4-2-weak.tex:312` |
+| CT-C018 | Weak angle: ratio of offices at the Z body = 784/1568 = 1/2, which "the literature calls the squared cosine of the weak mixing angle". **Finding:** (M_W/M_Z)^2 = 0.77679(26) (PDG 2024): 1/2 is 1067 sigma away; implied M_W/M_Z = 0.7071 vs 0.8814. The source displays "no value of the angle". *Fails* under the source's own stated correspondence. | a, c, e | C (164.5); 164.1 C; 164.2-164.4 O | Yes (arithmetic) | `08-cell-4-2-weak.tex:383, 436-452` |
+| CT-C019 | Confinement: no first-order read at the 494 qutrit-qutrit links; quark offices second-order. Premises C: 9.1, 9.7; O: 9.8, 28.3, 28.4. | a | C (171.1) | Partly | `09-cell-3-3-strong.tex:23` |
+| CT-C020 | Running of the couplings: scale = the body at its rest energy (147.1); strong coupling ratio 1/36 per rung, scale = 96 x depth (173.1). **Finding:** printed form is geometric in a count metric (alpha ~ 36^(-k)); QCD gives 1/alpha_s linear in ln Q^2 (b0 = 0.61 at n_f = 5); no map from count metric to energy, no beta-function coefficient. Premises of 147.1 C: 9.1, 9.7, 18.1, 18.3, 18.4, 50.1, 124.1, 146.1; O: 9.8, 18.5, 18.6, 28.3, 28.4. *Untestable as printed.* | a, c | C (147.1, 172.1, 173.1); O (172.2) | No (scale map undefined) | `07-cell-3-2-photon.tex:647`; `09-cell-3-3-strong.tex:63, 101` |
+| CT-C021 | Finiteness without renormalization: record sum carries exactly rungs 0, 1, 2 at 16 webs. Premises C: 18.1, 18.3, 18.4, 44.1, 124.1; O: 18.5, 18.6, 28.3, 28.4, 45.1. Implies all third- and higher-order terms vanish (see CT-C015). | a | C (146.1) | Partly | `07-cell-3-2-photon.tex:619` |
+| CT-C022 | Decay rates as finite sums: rate form at every non-sink, prefactor one over the Born square of the first power. Premises C: 18.1, 18.3, 18.4, 203.1, 203.3; O: 18.5, 18.6, 28.3, 28.4, 203.2, 203.4, 203.6. Decay board (205.1, TABLE): a derived cell at 6 of 38 targets, "every cell an exact count per tick with the tick a name"; the source states the cell ratios "against the ratios of the observed widths part at every pair by many orders". | a, e | C (206.1-206.4) | Partly | `12-decays-and-nuclei.tex:162-180` |
+| CT-C023 | Curvature as the graph Laplacian of the horizon composite. Premises C: 9.1, 9.7, H.9; O: 9.8, D.1, D.2, D.5-D.7, H.1, H.2, H.4-H.8. | a | C (90.2) | Yes (finite graphs) | `06-cell-2-2-metric-and-horizon.tex:68` |
+| CT-C024 | Cosmological term = closure constant 36 to the minus the depth exponent. Premises C: 9.1, 9.7, H.9; O: 9.8, H.1, H.2, H.4-H.8. The box gives no value of Lambda in physical units. | a | C (115.1) | Partly | `06-cell-2-2-metric-and-horizon.tex:1410` |
+| CT-C025 | Three generations: count three from the valence law at the three core sites of a closed triangle (83.1, T); generation as depth momentum, bound at hub dimension 4 (197.1, 197.3, C); generations as attach sites (197.5, O; "Face A ... is unmet", electron absent from the bounded sinks). 83.1 premises C: 185.1-185.12, H.9; O: H.1, H.2, H.4-H.8. *Fails if* a fourth rung is admitted at the adopted reading; the source prints readings beside at which the count is 0 (tau at rung 9), counts differ, or there is no bound. | a | T (83.1); C (197.1-197.4); O (197.5) | Partly | `05-gauge-structure.tex:651`; `10-cell-4-3-yukawa.tex:1217-1240` |
+| CT-C026 | Masses: mass unit and first power (185.x, C); unified mass readout (198.3, C). 176.1: lepton ratios "this compendium displays nowhere"; "the proton in the electron unit stands outside the comparison by orders". No mass compared successfully. | a | C (185.1-185.12, 198.3, 176.1) | Partly | `10-cell-4-3-yukawa.tex:27, 1272`; `09-cell-3-3-strong.tex:325` |
+| CT-C027 | Koide relation at the dock unit: equals 2/3 "in the field at no reading". Measured Q = 0.6666645 (PDG 2024 masses). No model number. | a | O (157.1) | Yes (field membership) | `07-cell-3-2-photon.tex:1161` |
+| CT-C028 | Casimir effect: excluded count between two sinks is definite with one sign; "a power at no chain and an exponential at no chain". Rests on 143.1 (C) and H.9 (C), opens H.x; graded T. The physical Casimir force is a power law (a^-4). | a, e | T (145.1) | Partly | `07-cell-3-2-photon.tex:572` |
+| CT-C029 | Second law: the boundary count is non-decreasing under every one-act read (228 reads of 14 bodies); stated by the source as a corollary of the record clause ("no read removes [a record]"). Premises C: 18.1, 18.3, 18.4; O: 18.5, 18.6, D.1, D.2, D.5-D.7. | a | T (217.1) | Yes (finite) | `13-thermodynamics.tex:23` |
+| CT-C030 | Distillation theorem: every pair joined at a forward edge has fidelity 1 to the flat pair "by the Axiom", so literature distillation protocols are "located as no path of the saturation" (holds by construction); phase transition: the class of a sink changes at critical register count W = 4. Premises (220.3) C: H.9; O: 217.3, 218.1, 218.2, H.1, H.2, H.4-H.8; (221.1) C: H.9; O: 218.1, 218.2, 220.1, H.x. | a | T (220.3, 221.1) | Partly | `13-thermodynamics.tex:195, 226` |
+| CT-C031 | Band structure at the periodic web. Premises C: 18.1, 18.3, 18.4, 44.1; O: 18.5, 18.6, 28.3, 28.4, 224.4. | a | T (225.1) | Yes (finite) | `14-condensed-matter-and-atoms.tex:70` |
+| CT-C032 | Chern number "as a theorem" (abstract). **Finding:** I.51.1 is a TABLE titled "The Chern number, awaited"; I.51.2-3 (T) are windings of the wash holonomy; I.51.4 (flux quantization premise) is O. | a | T (I.51.2, I.51.3); O (I.51.4) | Partly | `instruments.tex:1501-1520` |
+| CT-C033 | **Chain rule.** Front matter: a composed claim carries the lowest status in its chain. **Finding:** 66 of 100 THEOREMs list an OPEN statement among their direct premises (66 with or without chapter-form strings); 84 list an OPEN or CONDITIONAL one (78 without). *Fails if* premise fields are shown not to be logical premises (then the dependency data are not what they claim). | c | – | Yes (graph check) | `index/statements.tsv`; `00-dependency-structure.md` |
+| CT-C034 | **Cycles.** Under the index's designator resolution the premise graph has one 22-statement strongly connected component containing 124.1; 2-cycles 124.1 <-> 16.1, 124.1 <-> 58.1. None without the 23 chapter-form strings. | c | – | Yes | `00-dependency-structure.md` |
+| CT-C035 | **Load-bearing unproven premises.** 2.2 (C) and 2.4, 2.5, 2.7, 2.8 (O) underlie 183 of 209 T+C statements; 9.1, 9.7 (C) and 9.8 (O) underlie 175; 18.1/18.3/18.4 (C) and 18.5/18.6 (O) 152. | c | – | Yes | `00-dependency-structure.md` |
+| CT-C036 | **Bookkeeping reciprocity.** 43.4% of premise edges are echoed in the premise's `used_by`. | c | – | Yes | `index/statements.tsv` |
+| CT-C037 | Abstract: "no number taken from experiment enters any chapter" (Part VII intro). **Finding:** consistent with the three audited chapters, which also output no number comparable with experiment except the integers/sign listed in CT-C016 and the ratio 1/2 of CT-C018. | a, c | – | – | `07-cell-3-2-photon.tex:7` |

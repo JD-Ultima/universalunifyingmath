@@ -1,0 +1,27 @@
+claim_id: CT-C015
+source_statement: "141.1 The electron dipole factor at order three from the self-terms (CONDITIONAL); abstract: 'the electron anomalous moment through third order'"
+source_location: "compendium/tex/parts/07-cell-3-2-photon.tex:426-444; compendium/lean/ChainTheory/ChainTheory/Data/D526870_PAET.lean"
+source_commit: a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+formalization_status:
+  value: not_formalized
+  detail: "Lean names one opaque Prop (row_523203_AMSP), one OpenResult record and one decide-proof over an 8-row String table (labels EQUAL/ZERO/PARTING). Neither the prose claim nor its arithmetic (T1 = 309) is stated in Lean. The constructions (anomaly web, surviving exchange count, closure) are not defined precisely enough to formalize."
+internal_consistency:
+  value: partial
+  detail: "Printed arithmetic is correct (T1 = 3*(67+30+6) = 309, 309^2 = 95481, 14 unstruck links, 105 = C(15,2)). The equality 'order-two readout = sum of self-terms' holds at reading W1 only (W2, W3, PWONCE part, per the data table). Graded CONDITIONAL with OPEN premises 18.5, 18.6, 28.3, 28.4 and CONDITIONAL 124.1."
+proof_status:
+  value: no_physics_derivation
+  detail: "No coefficient of (alpha/pi)^n is derived or inserted. T3 = 0 is the general truncation asserted in 146.1 (record sum carries rungs 0,1,2 only)."
+novelty:
+  value: none_assessable
+  detail: "No new physical number is produced; QED values C1=1/2, C2=-0.328478965579194, C3=1.1812414565872 are cited in the literature paragraph only."
+reproducibility:
+  value: reproduced_arithmetic
+  detail: "computation/chain-theory/compendium/ae_audit.py reproduces every printed number; the closure term, the body's link list and seven of eight self-terms are not printed."
+empirical_testability:
+  value: falsified_under_literal_reading
+  detail: "Under T_n ~ C_n (alpha/pi)^n with any normalisation, T3 = 0 contradicts C3 != 0; C3 (alpha/pi)^3 = 1.48042e-8 = 9.26e4 sigma (a_e Fan et al. 2023 with Rb alpha). Under the source's 'correspondence by name' the statement makes no testable prediction for a_e."
+dependencies: ["124.1 (alpha, C)", "18.1 (C)", "18.3 (C)", "18.4 (C)", "18.5 (O)", "18.6 (O)", "28.3 (O)", "28.4 (O)", "146.1 (C, implicit: termination at order 2)"]
+discrete_choices_vs_digits: {choices: ">= 7", qed_digits_matched: 0}
+confidence:
+  value: high
+  justification: "The finding rests on text the chapter prints (no alpha/pi expression; 'no digit of any constant displayed here'; T3 = 0) and on standard QED values recomputed to 40 digits; the only interpretive step is the literal-identification hypothesis, which is stated as such and paired with the charitable reading."
