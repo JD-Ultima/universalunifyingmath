@@ -1,0 +1,10 @@
+claim_id: TH-022
+result: "'Negative space where n bubbles meet' is well posed as hull-minus-balls for n tangent unit balls at polyhedron vertices: n=4 interstice 0.207762 (covered fraction sqrt2*Omega = 0.779636, Rogers 1958), n=8 interstice 8-4pi/3 = 3.811210. Stated 'pole' counts match (V,F) of tetrahedron and cube only; no vertex-transitive cluster reproduces n=6 ('30 poles'), 12, 24."
+formalization_status: "Partial (regions well posed; 'poles' undefined, TH-G10)."
+internal_consistency: "Pole counts not reproducible by any single rule tried."
+proof_status: "Regions computed exactly; pole-count reading refuted for the tested rule."
+novelty: none
+reproducibility: "python3 computation/howard/lynchpin_geometry.py"
+empirical_testability: "Only once 'pole' is defined."
+dependencies: [TH-S2 transcript 31:28-34:29]
+confidence: "High for computed volumes; low for any interpretation of 'poles'."

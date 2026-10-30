@@ -94,7 +94,7 @@ tones = [Fr(81, 2), 81, 162, 324, 648]
 print("factorizations:", [(str(t), sp.factorrat(sp.Rational(t.numerator, t.denominator))) for t in map(Fr, tones)])
 print("successive ratios:", [str(Fr(tones[i + 1]) / Fr(tones[i])) for i in range(len(tones) - 1)])
 print("Pythagorean E over C=256 Hz: 256*81/64 =", Fr(256) * Fr(81, 64), "; /8 =", Fr(256) * Fr(81, 64) / 8)
-E1_ET = 440 * 2 ** (-29 / 12)         # E1 is 29 semitones below A4
+E1_ET = 440 * 2 ** (-41 / 12)         # E1 (MIDI 28) is 41 semitones below A4 (MIDI 69)
 print(f"12-TET (A4=440) E1 = {E1_ET:.4f} Hz; 40.5 Hz is {1200*math.log2(40.5/E1_ET):+.2f} cents from it")
 print(f"Pythagorean third 81/64 vs 12-TET third: {1200*math.log2(81/64) - 400:+.2f} cents")
 try:
@@ -124,3 +124,11 @@ counts = sorted(set(sum(1 for px, py in pts if math.hypot(px, py) <= R + 1e-9) f
 print("circle counts achievable by a disc truncation of the lattice (first values):", counts[:20],
       "; 64 achievable:", 64 in counts)
 print("64 = 4^3 = 2^6:", 4**3, 2**6)
+
+# ---------------------------------------------------------------- P-TH-1: 3-smoothness of the quoted constants
+print("\n== P-TH-1 3-smooth (2^a 3^b) constants ==")
+smooth = lambda q: set(sp.factorrat(sp.Rational(q)).keys()) <= {2, 3}
+for q in ["81/2", 81, 162, 324, 648, 186624, 432, 299752400, 300000000]:
+    print(f"  {q}: 3-smooth {smooth(q)}  {sp.factorrat(sp.Rational(q))}")
+print("  cross-framework remark: Chain Theory readout dimension 31104 =", sp.factorint(31104),
+      "(3-smooth because built from qubit/qutrit dimensions 2 and 3; no structural link claimed)")

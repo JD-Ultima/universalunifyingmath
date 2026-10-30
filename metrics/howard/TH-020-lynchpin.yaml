@@ -1,0 +1,10 @@
+claim_id: TH-020
+result: "Six pentagonal faces cannot close a sphere-type polyhedron (F >= 12; Lean). Under reconstruction L-T (six walls on the cone over a regular tetrahedron's 1-skeleton) the Lynchpin is well posed: walls = the six T_d mirror planes, rays at arccos(-1/3) = 109.471220634 deg, three walls per ray at 120 deg, complement = four trihedral cones; this is Plateau's four-film junction / Taylor's T-cone. Regular pentagons cannot be the walls (1.47122063449 deg mismatch); an explicit pentagonal instance exists (K = {V.x<=3} cap [-2,2]^3); sphere truncation gives wall area 3 arccos(-1/3) r^2 (density 1.82452034391)."
+formalization_status: "Partial: patent text not obtained (TH-G13); L-T is our hypothesis; G1 in Lean; T1-T3 exact sympy."
+internal_consistency: "Consistent under L-T."
+proof_status: "Proven under L-T (exact computation + elementary proofs; T1.5 imported from Taylor 1976)."
+novelty: "None for the object (Plateau 1873, Taylor 1976). The identification of the patent's 'six pentangular areas / four pyramidal inner spaces' with the T-cone is new but conjectural."
+reproducibility: "python3 computation/howard/lynchpin_geometry.py; lean HowardArith.lean"
+empirical_testability: "Compare with patent figures / physical Lynchpin angles (expect 109.47 deg and 120 deg if L-T is right)."
+dependencies: [TH-S6 abstract via search summary, JRE 75:07 and 31:28 descriptions, Taylor 1976]
+confidence: "High for the mathematics; low-medium that L-T is Howard's construction."

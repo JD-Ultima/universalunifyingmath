@@ -1,0 +1,10 @@
+claim_id: TH-005
+result: "(sqrt2)^3 = 2 sqrt2 and (sqrt2)^3/2 = sqrt2 exactly; x^3 = 2x iff x^2 = 2 (x != 0); sqrt(c) is fixed by x^3/c for every c>0; the fixed point is repelling (f' = 3): float64 iteration leaves 1e-3 of sqrt2 at step 28 (predicted 27.28); in 47 of 111 mpmath precisions (dps 10..120) the rounded map fixes the rounded sqrt2 exactly. Quoted digits of (sqrt2)^3 differ from the true value in the 9th decimal."
+formalization_status: "Exact (sympy) + stated-precision floating checks."
+internal_consistency: "Howard's arithmetic steps are correct; his inference ('unnatural equation') is not a mathematical statement."
+proof_status: "Proven (arithmetic part)."
+novelty: none
+reproducibility: "python3 computation/howard/numerics.py"
+empirical_testability: "Transcript digit discrepancy checkable against the audio (TH-S2 is a machine transcript)."
+dependencies: [TH-S2 transcript accuracy]
+confidence: "High (exact)."

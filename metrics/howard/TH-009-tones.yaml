@@ -1,0 +1,10 @@
+claim_id: TH-009
+result: "The quoted element 'tones' 40.5, 81, 162, 324 Hz are exactly 3^4 2^(k-1): the Pythagorean E (81/64) over scientific-pitch C=256 Hz, -29.81 cents from 12-TET E1 (A4=440). No tested element observable (Z, atomic weight, first ionization energy) doubles along H->C->Si->Co->Rh or Li->Na->K."
+formalization_status: "Partial: numerical identification exact; physical claim needs a definition of 'tone' (TH-G06)."
+internal_consistency: "Internally consistent as a doubling sequence."
+proof_status: "Identification proven (exact). Physical doubling refuted for Z, mass, IE1 (mendeleev 1.3.0 data); untested for spectral lines."
+novelty: "The Pythagorean-E identification is, as far as we know, not previously noted."
+reproducibility: "python3 computation/howard/numerics.py (requires mendeleev==1.3.0)"
+empirical_testability: "Yes once 'tone' is defined (NIST ASD line lists)."
+dependencies: [TH-S2 transcript, mendeleev bundled data]
+confidence: "High for the arithmetic; medium for the physical refutation (only three observables tested)."

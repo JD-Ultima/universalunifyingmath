@@ -1,0 +1,10 @@
+claim_id: TH-001   # with TH-002 (H2 from "the square root of four is two")
+result: "No operation on Z, Q or R satisfies 1(x)1=2 and 2(x)2=4 together with {LD,RD}, {LD,AS}, {LD,CM}, {RD,AS} or {RD,CM}; hence no ring, semiring or (left/right) near-ring over ordinary + realises Howard's two data points. Sharp: Z/4 with a(x)b=2ab satisfies H1,H2,LD,RD."
+formalization_status: "Fully formal (Lean 4.24.0 core): nogo_generic (any additive magma, no axioms), nogo_int, nogo_int_ld_assoc, nogo_int_ld_comm, nogo_int_rd_assoc, char4_*"
+internal_consistency: "The source rule set {H1, H2} plus any one distributive law and AS or CM is inconsistent. {H1,H2} alone is consistent (witnesses a+b, 2b, 2a)."
+proof_status: "Proven (Lean; z3 UNSAT on ground instances, axiom_lattice.out). All 128 subsets of {H1,H2,LD,RD,AS,CM,INC} decided over R: 58 inconsistent, 70 consistent, 0 open."
+novelty: "Low. The 2(x)2=8 tension was noted by Lipton & Regan (2018, TH-S9). The complete axiom lattice, the one-sided cores and the Lean certificates are new as far as we know."
+reproducibility: "lean proofs/lean/howard/HowardArith.lean; python3 computation/howard/axiom_lattice.py"
+empirical_testability: n/a
+dependencies: [H2 inferred from RS 2015 wording (TH-G04), ordinary + on the carrier (TH-G02)]
+confidence: "High for the mathematics (machine-checked, elementary). Medium that H2 is Howard's intent: it rests on one sentence quoted second-hand, and the primary book was not obtained (TH-G01)."

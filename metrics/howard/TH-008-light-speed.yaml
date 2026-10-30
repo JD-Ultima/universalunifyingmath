@@ -1,0 +1,10 @@
+claim_id: TH-008
+result: "Quoted c = 299,752,400 m/s differs from the exact SI value 299,792,458 by 40,058 m/s (1.336e-4 rel.); quoted 186,624 mi/s differs from the exact 186,282.397051 mi/s by 341.60 (1.834e-3 rel.); 186,624 = 432^2 = 2^8 3^6 exactly."
+formalization_status: "Exact arithmetic against definitional constants."
+internal_consistency: "The two quoted figures are mutually inconsistent (they imply different c)."
+proof_status: "Disproven as values of c (exact)."
+novelty: none
+reproducibility: "python3 computation/howard/numerics.py"
+empirical_testability: "c is defined exactly since 1983 (BIPM); no measurement needed."
+dependencies: [BIPM SI Brochure 2019, 1959 mile definition]
+confidence: "High."

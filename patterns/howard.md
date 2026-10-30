@@ -1,0 +1,13 @@
+# Pattern catalogue — Howard (exploration, not results)
+
+These are conjectures awaiting formalization or data. Each has a status and a falsifier. Numbers come from `computation/howard/*.out`.
+
+| ID | Pattern / conjecture | Evidence so far | Status | Falsifier |
+|---|---|---|---|---|
+| P-TH-1 | **3-limit numerology.** Most dimensional constants Howard quotes are 3-smooth ($2^a3^b$): $40.5=3^4/2$, 81, 162, $324=256\cdot81/64$ (Pythagorean E over C = 256 Hz), $186\,624=432^2=2^83^6$. | 5 of the 7 dimensional figures he quotes in TH-S2 are 3-smooth: 40.5, 81, 162, 324 Hz and 186 624 mi/s. The exceptions are 299 752 400 and the rounded 300 000 000 (`numerics.out`). 648 Hz (rhodium) comes only from third-party notes (TH-S13). Caveat: the four frequencies are one doubling sequence, so this is 2 independent 3-smooth figures out of 3. | Observation (computed) | Non-3-smooth constants in the book (TH-S5). |
+| P-TH-2 | **"Every unit is a pair."** Howard's "equal and opposite" ontology (JRE 15:18, 20:00) corresponds to the forced operation $\otimes_2$: $(\mathbb Z,+,\otimes_2)\cong(2\mathbb Z,+,\cdot)$, so 1 pair × 1 pair = 2 pairs. | Theorem A4 (Lean) | Reconstruction (proven structure; the attribution of intent is conjecture) | A primary text defining $\otimes$ differently. |
+| P-TH-3 | **Octave reading of 1×1=2.** If numerals count octaves (base-2 log of frequency ratios) and "×" composes intervals, then 1 octave ∘ 1 octave = 2 octaves. This is the log₂-semiring of `arithmetic.md` §5, in which H1 and H2 hold with distributivity. It fits his heavy use of "doubled in each octave" (TH-009). | `semirings.out` | Speculative link | Book defines × without reference to doubling or scaling. |
+| P-TH-4 | **"Pole" counts = (spheres, windows) of the cluster.** | Matches tetrahedron (4,4) and cube (8,6). Fails for the octahedron, which gives (6,8) against "30 poles" (`lynchpin_geometry.out`). | Weak; numerology risk | Already fails at $n=6$ under the vertex-transitive reading. |
+| P-TH-5 | **Curved = Plateau-compliant.** The insistence on curvature ("no straight lines", "naturally curved dodecahedron") is the classical frustration $108°$ vs $\arccos(-\tfrac13)$, and $116.57°$ vs $120°$. Conjecture: Howard's physical models are Plateau-compliant foam cells. | T1, T2 in `geometry.md` | Testable conjecture | Measured angles on his models or CAD that violate Plateau's laws. |
+| P-TH-6 | The $\sqrt2$ "loop" is a special case of the fact that $\sqrt c$ is fixed by $x\mapsto x^3/c$. Nothing about 2 is special. | N1 | Proven | — |
+| P-TH-7 | Cross-framework: the Chain Theory readout dimension $31104=2^73^5$ is also 3-smooth. | `numerics.out` | Coincidence. CT's factors come from qudit dimensions 2 and 3. **No structural link claimed.** | — |

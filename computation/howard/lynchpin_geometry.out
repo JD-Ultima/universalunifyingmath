@@ -1,0 +1,69 @@
+sympy 1.14.0 numpy 2.5.3
+
+== L-T.1  rays O->V_i ==
+pairwise ray angles: {acos(-1/3)} = [109.471220634] deg
+'one on the top and three ... 120 degrees apart': azimuths of the other three rays differ by [120.000000000] deg
+
+== L-T.2  the six wall planes span(V_i, V_j) are exactly the mirror planes of T_d ==
+  plane(V1,V2) normal (0, 2, -2): reflection permutes vertices: True
+  plane(V1,V3) normal (-2, 0, 2): reflection permutes vertices: True
+  plane(V1,V4) normal (2, -2, 0): reflection permutes vertices: True
+  plane(V2,V3) normal (2, 2, 0): reflection permutes vertices: True
+  plane(V2,V4) normal (-2, 0, -2): reflection permutes vertices: True
+  plane(V3,V4) normal (0, 2, 2): reflection permutes vertices: True
+
+== L-T.3  dihedral angles between the three walls meeting along a ray ==
+  along ray V1: [120.000000000] deg
+  along ray V2: [120.000000000] deg
+  along ray V3: [120.000000000] deg
+  along ray V4: [120.000000000] deg
+
+== L-T.4  complement of the six walls = four open trihedral cones ('four pyramidal inner spaces') ==
+  sum of V_i = (0, 0, 0) (positive spanning set => the four face-cones cover R^3)
+  200000 random directions (seed 0), number of open face-cones containing each: {0: np.int64(0), 1: np.int64(200000), 2: np.int64(0), 3: np.int64(0), 4: np.int64(0)}
+
+== L-T.5  regular pentagons cannot be the walls ==
+  regular pentagon interior angle: 108.000000000 deg; wall apex angle arccos(-1/3): 109.471220634 deg
+  mismatch arccos(-1/3) - 108 deg = 1.47122063449 deg
+  symmetric equilateral pentagon, apex 108 deg  -> angles (O, A, B): [108.000000000, 108.000000000, 108.000000000]
+  symmetric equilateral pentagon, apex arccos(-1/3) -> angles (O, A, B): [109.471220634, 106.813205002, 108.451184681]
+
+== L-T.6  an explicit well-posed 'six pentangular areas' object ==
+  wall in plane(V1,V2): vertices [(0, 0, 0), (1, 1, 1), (2, 1/2, 1/2), (2, -1/2, -1/2), (1, -1, -1)]
+  edge lengths: [sqrt(3), sqrt(6)/2, sqrt(2), sqrt(6)/2, sqrt(3)]
+  interior angles (deg): [109.471220634, 90.0000000000, 125.264389683, 125.264389683, 90.0000000000]  sum: 540.000000000
+
+== L-T.7  sphere-truncated walls ('circular internal lynchpin', D1002750 title) ==
+  total wall area inside a ball of radius r: 3*arccos(-1/3)*r^2 = 5.73189970875 * r^2
+  area density relative to a flat disc (pi r^2): 1.82452034391  (Y-cone: 3/2)
+
+== L-T.8  the 108 deg vs Plateau mismatch for a 12-neighbour (dodecahedral) cell ==
+  dodecahedron face angle 108 deg vs Plateau vertex angle 109.471220634
+  dodecahedron dihedral angle arccos(-1/sqrt5) = 116.565051177 deg vs Plateau 120 deg
+
+== L-B.1  'negative space where four bubbles meet' (4 tangent unit balls at tetrahedron vertices) ==
+  vertex solid angle 3*arccos(1/3) - pi = 0.551285598433 ; equals arccos(23/27): True
+  tetrahedron (edge 2) volume: 2*sqrt(2)/3 = 0.942809041582
+  interstice volume (r=1): -4*acos(1/3) + 2*sqrt(2)/3 + 4*pi/3 = 0.207761577005
+  fraction of tetrahedron covered by the balls sqrt2*Omega = 0.779635570044 (Rogers 1958)
+
+== L-B.2  eight tangent unit balls at cube vertices ==
+  interstice inside cube (edge 2): 8 - 4*pi/3 = 3.81120979521 ; central gap radius sqrt3-1 = 0.732050807569
+
+== L-B.3  vertex/face/edge counts of candidate n-ball clusters vs stated 'pole' counts ==
+  tetrahedron            V= 4 E= 6 F= 4  V-F= +0  | Howard (n=4): 4 contractive poles
+  octahedron             V= 6 E=12 F= 8  V-F= -2  | Howard (n=6): 30 poles; 6 unaccounted electrical
+  cube                   V= 8 E=12 F= 6  V-F= +2  | Howard (n=8): 8 contractive, 6 magnetic
+  square antiprism       V= 8 E=16 F=10  V-F= -2  | Howard (n=8): 8 contractive, 6 magnetic
+  icosahedron            V=12 E=30 F=20  V-F= -8  | Howard (n=12): 4 unaccounted electrical
+  cuboctahedron          V=12 E=24 F=14  V-F= -2  | Howard (n=12): 4 unaccounted electrical
+  truncated tetrahedron  V=12 E=18 F= 8  V-F= +4  | Howard (n=12): 4 unaccounted electrical
+  truncated octahedron   V=24 E=36 F=14  V-F=+10  | Howard (n=24): all accounted (0 unaccounted)
+  truncated cube         V=24 E=36 F=14  V-F=+10  | Howard (n=24): all accounted (0 unaccounted)
+  rhombicuboctahedron    V=24 E=48 F=26  V-F= -2  | Howard (n=24): all accounted (0 unaccounted)
+  snub cube              V=24 E=60 F=38  V-F=-14  | Howard (n=24): all accounted (0 unaccounted)
+
+== G1  closed sphere-type polyhedra with all faces pentagons need F >= 12 (Lean: pentagon_faces_ge_12) ==
+  F= 6: E=15, V=11, 2E>=3V? False
+  F=11: E=55/2, V=37/2, 2E>=3V? False
+  F=12: E=30, V=20, 2E>=3V? True

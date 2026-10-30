@@ -1,6 +1,7 @@
 'Howard.nogo_int' depends on axioms: [propext, Quot.sound]
 'Howard.nogo_generic' does not depend on any axioms
 'Howard.nogo_int_ld_assoc' depends on axioms: [propext, Quot.sound]
+'Howard.nogo_int_rd_comm' depends on axioms: [propext, Quot.sound]
 'Howard.biadditive_classification' depends on axioms: [propext, Quot.sound]
 'Howard.forced_two_ab' depends on axioms: [propext, Quot.sound]
 'Howard.op2_assoc' depends on axioms: [propext]

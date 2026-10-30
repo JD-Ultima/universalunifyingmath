@@ -1,7 +1,7 @@
 /-
   HowardArith.lean — core lemmas for the "1 ⊗ 1 = 2" reconstructions (claims TH-001, TH-002).
-  Lean 4 core only (no Mathlib, no imports). Checked with Lean 4.24.0:
-      lean formalization/howard/lean/HowardArith.lean
+  Lean 4 core only (no Mathlib, no imports). Checked with Lean 4.24.0 and 4.35.0 (identical output):
+      lean proofs/lean/howard/HowardArith.lean
   Write-up: formalization/howard/arithmetic.md (theorem numbers A1–A9 refer to it).
 
   Notation. `op` is a candidate operation ⊗. H1 : op 1 1 = 2.  H2 : op 2 2 = 4.
@@ -93,6 +93,14 @@ theorem nogo_int_rd_assoc (op : Int → Int → Int)
   have e1 : op 2 2 = op 1 2 + op 1 2 := by have := hr 1 1 2; simpa using this
   have e2 : op 2 1 = op 1 1 + op 1 1 := by have := hr 1 1 1; simpa using this
   rw [h1] at hassoc
+  omega
+
+theorem nogo_int_rd_comm (op : Int → Int → Int)
+    (hr : ∀ a b c, op (a + b) c = op a c + op b c)
+    (hcomm : op 2 1 = op 1 2)
+    (h1 : op 1 1 = 2) (h2 : op 2 2 = 4) : False := by
+  have e1 : op 2 2 = op 1 2 + op 1 2 := by have := hr 1 1 2; simpa using this
+  have e2 : op 2 1 = op 1 1 + op 1 1 := by have := hr 1 1 1; simpa using this
   omega
 
 /-! ### A3. Classification on ℤ: every bi-additive ⊗ is a ⊗ b = a·b·(1 ⊗ 1). -/
@@ -243,6 +251,7 @@ end Howard
 #print axioms Howard.nogo_int
 #print axioms Howard.nogo_generic
 #print axioms Howard.nogo_int_ld_assoc
+#print axioms Howard.nogo_int_rd_comm
 #print axioms Howard.biadditive_classification
 #print axioms Howard.forced_two_ab
 #print axioms Howard.op2_assoc

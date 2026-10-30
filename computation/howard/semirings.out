@@ -1,0 +1,10 @@
+sympy 1.14.0
+log2-semiring:
+  H1  1(x)1 = 2 ; H2  2(x)2 = 4
+  1(+)1 = 2 ; 2(+)2 = 3
+  numerals nbar = n-fold (+)-sum of 1 = 1 + log2 n: {1: 1, 2: 2, 4: 3, 8: 4}
+  2bar (x) 2bar = 4 = 8bar: True ; 4bar = 3
+  (x) distributes over (+): True
+  iso x -> 2^x: 2^(a(x)b) = 2^a*2^b: True ; 2^(a(+)b) = 2^a + 2^b: True
+tropical:
+  1 max 1 = 1 ; distributivity a+max(b,c) = max(a+b,a+c) on a grid: True

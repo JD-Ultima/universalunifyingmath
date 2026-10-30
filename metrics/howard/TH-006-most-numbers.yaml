@@ -1,0 +1,10 @@
+claim_id: TH-006
+result: "'square root of a number added to itself exceeds the number ... most numbers': reading R1 (2 sqrt n > n) holds iff 0<n<4; reading R2 (x+x > x^2) iff 0<x<2; among integers 1..10^6 exactly 3 resp. 1 satisfy it. False under natural density."
+formalization_status: "Fully formal (two readings, exact inequality solving)."
+internal_consistency: n/a
+proof_status: "Disproven (both readings)."
+novelty: none
+reproducibility: "python3 computation/howard/numerics.py"
+empirical_testability: n/a
+dependencies: [reading choice R1/R2 (transcript wording)]
+confidence: "High that both readings fail; medium that R1/R2 exhaust the intended meaning."

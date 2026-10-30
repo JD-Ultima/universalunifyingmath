@@ -1,0 +1,10 @@
+claim_id: TH-004
+result: "'Multiplication makes more' (a(x)b >= a) is inconsistent with left distributivity on any carrier closed under + and division by positive integers (Q>0, R>0), with no regularity assumption; consistent on Z>=1 (witness 2ab). Regular (continuous, strictly increasing, associative) increasing operations are conjugate to addition (imported Aczel/Craigen-Pales)."
+formalization_status: "Paper proof (3 lines, Archimedean); finite z3 certificate for the H1 instance (1(x)1/4 = 1/2 < 1); A7 imported."
+internal_consistency: "INC with + is consistent (a(x)b = a+b satisfies H1,H2,SQ,INC,BAL,AS,CM)."
+proof_status: "Proven (paper + z3 ground certificate). Not in Lean (core Lean lacks Q/R)."
+novelty: "Low-moderate (elementary; we know of no prior statement in the Howard literature)."
+reproducibility: "python3 computation/howard/axiom_lattice.py (core H1+LD+INC UNSAT; LD+INC, RD+INC paper cores)"
+empirical_testability: n/a
+dependencies: [Archimedean property of Q/R, Aczel 1966 s6.2, Craigen & Pales 1989]
+confidence: "High."
