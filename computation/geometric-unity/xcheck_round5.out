@@ -1,0 +1,62 @@
+
+######## (14,0) ########
+X0  Gamma^2 = -1; Gamma E_K Gamma^-1 = (-1)^|K| E_K on 40 random monomials: True
+X1  four templates Tr-symmetric (Mt = M) on random data: True; untwisted W_C Tr-skew: True
+X2  random algebraic R (Scal = 86): W_A F_R = -*(G e^a(x)gamma^b): True;  W'_A F_R = -*(G e^a(x)gamma^b Gamma): True;  W_C.AdG F_R = 0: True;  W'_C.AdG F_R = 0: True   [universal form factor K = 1 in the convention Psi(alpha^zeta) = sum Tr(alpha_a [i g_abc, zeta_bc]_s)]
+X3  48 basis types met by 6000 random monomial triples; ratios consistent: True
+     W_A      : O0,3: -2, O1,2: -2, O2,5: -2, O3,4: -2, O4,7: -2, O5,6: -2, O6,9: -2, O7,8: -2, O8,11: -2, O9,10: -2, O10,13: -2, O11,12: -2
+     W'_A     : E0,11: 2, E1,10: 2, E2,9: 2, E2,13: 2, E3,12: 2, E3,8: 2, E4,11: 2, E4,7: 2, E5,10: 2, E5,6: 2, E6,9: 2, E7,8: 2
+     W_C.AdG  : O1,4: -2*I, O2,3: 2*I, O3,6: -2*I, O4,5: 2*I, O5,8: -2*I, O6,7: 2*I, O7,10: -2*I, O8,9: 2*I, O9,12: -2*I, O10,11: 2*I, O11,14: -2*I, O12,13: 2*I
+     W'_C.AdG : E1,12: 2*I, E2,11: -2*I, E3,14: 2*I, E3,10: 2*I, E4,13: -2*I, E4,9: -2*I, E5,12: 2*I, E5,8: 2*I, E6,7: -2*I, E6,11: -2*I, E7,10: 2*I, E8,9: -2*I
+X3b real form u(128): all four operators are real for -i x (code normalisation), i.e. Phi^E (p_t in i^(eps_j+eps_l) R on every block): True
+X4  C(T+a) - C(T-a) = 2 dC_T(a) + 2 C(a) with dC_T(a) = <a, 3Q(T)> (all four, dense random T): True
+X5  all 48 types: Q_t(T_e), Q_t(T_o) have zero g_ev part: True;  2B_t(T_e,T_o) has ZERO g_odd part for every type: True;  types with 2B_t(T_e,T_o) != 0 (necessarily g_ev): 48
+X6  twist identity:
+     untwisted lemma p(T, W_C(T^T)) = 0 (random mixed T)
+     W_C.AdG  : C(T) = 32, 2 Psi(T_o^T_e^T_e) = 32, equal: True;  Q(T_o) = 0: True;  Q(T_e) = (2/3) Shiab(T_e^T_e): True;  Shiab(T_o^T_o) != 0 (survives in printed (9.7)): True
+     W'_C.AdG : C(T) = 16, 2 Psi(T_o^T_e^T_e) = 16, equal: True;  Q(T_o) = 0: True;  Q(T_e) = (2/3) Shiab(T_e^T_e): True;  Shiab(T_o^T_o) != 0 (survives in printed (9.7)): True
+X7  sampled system (24411 rows x 48): rank mod (2^61-1) = 44 => dim{Psi: Q(T_o) = 0 for all odd T} <= 4 (rank over Q >= rank mod p);  the four named elements give Q(T_o) = 0 on a fresh sample: {'O0,3': True, 'E0,11': True, 'W_C.AdG': True, "W'_C.AdG": True}
+X8  invariant sector (every T-term of the invariant form, all a: True):  c1 = kappa*t + 312*t**2*x + 208*t*u*y + 104*u**2*x;  c13 = kappa*u + 104*t**2*y + 208*t*u*x + 312*u**2*y;  equal to I6: True
+X8p printed (9.7) in the same sector: c1^pr = kappa*t + 312*t**2*x + 312*u**2*x;  c13^pr = kappa*u + 312*t**2*y + 312*u**2*y
+X9  constraint Shiab(v ^ (a A + b B)) on the Lambda^1 constituent (v = e^0): output grades [2, 12];  det = I*(w*y + x*z)
+X9  constraint Shiab(v ^ (a A + b B)) on the [2,1]_0 constituent (v = e^0): output grades [2, 12];  det = I*(w*y + x*z)
+X9  Lambda^3 constituent: output grades [2, 4, 10, 12]; nonzero 2x2 minors (up to a common constant): [-I*(w*x - y*z), -x**2 - y**2, I*(w*y + x*z), w**2 + z**2]
+X10 symmetric theta (2 samples): Q_W_A = -*(G(R_theta) e(x)gamma), Q_W'_A = -(1/3)*(G(R_theta) e(x)gamma Gamma), twisted Q = 0, with R_theta = 4(theta_ac theta_bd - theta_ad theta_bc): True
+
+######## (7,7) ########
+X0  Gamma^2 = 1; Gamma E_K Gamma^-1 = (-1)^|K| E_K on 40 random monomials: True
+X1  four templates Tr-symmetric (Mt = M) on random data: True; untwisted W_C Tr-skew: True
+X2  random algebraic R (Scal = 6): W_A F_R = -*(G e^a(x)gamma^b): True;  W'_A F_R = -*(G e^a(x)gamma^b Gamma): True;  W_C.AdG F_R = 0: True;  W'_C.AdG F_R = 0: True   [universal form factor K = 1 in the convention Psi(alpha^zeta) = sum Tr(alpha_a [i g_abc, zeta_bc]_s)]
+X3  48 basis types met by 6000 random monomial triples; ratios consistent: True
+     W_A      : O0,3: -2, O1,2: -2, O2,5: -2, O3,4: -2, O4,7: -2, O5,6: -2, O6,9: -2, O7,8: -2, O8,11: -2, O9,10: -2, O10,13: -2, O11,12: -2
+     W'_A     : E0,11: 2, E1,10: 2, E2,9: 2, E2,13: 2, E3,8: 2, E3,12: 2, E4,11: 2, E4,7: 2, E5,6: 2, E5,10: 2, E6,9: 2, E7,8: 2
+     W_C.AdG  : O1,4: -2*I, O2,3: 2*I, O3,6: -2*I, O4,5: 2*I, O5,8: -2*I, O6,7: 2*I, O7,10: -2*I, O8,9: 2*I, O9,12: -2*I, O10,11: 2*I, O11,14: -2*I, O12,13: 2*I
+     W'_C.AdG : E1,12: 2*I, E2,11: -2*I, E3,14: 2*I, E3,10: 2*I, E4,9: -2*I, E4,13: -2*I, E5,8: 2*I, E5,12: 2*I, E6,11: -2*I, E6,7: -2*I, E7,10: 2*I, E8,9: -2*I
+X3b real form u(64,64): all four operators are real for code normalisation (p_t in i^(eps_j+eps_l) R on every block): True
+X4  C(T+a) - C(T-a) = 2 dC_T(a) + 2 C(a) with dC_T(a) = <a, 3Q(T)> (all four, dense random T): True
+X5  all 48 types: Q_t(T_e), Q_t(T_o) have zero g_ev part: True;  2B_t(T_e,T_o) has ZERO g_odd part for every type: True;  types with 2B_t(T_e,T_o) != 0 (necessarily g_ev): 48
+X6  twist identity:
+     untwisted lemma p(T, W_C(T^T)) = 0 (random mixed T)
+     W_C.AdG  : C(T) = -24, 2 Psi(T_o^T_e^T_e) = -24, equal: True;  Q(T_o) = 0: True;  Q(T_e) = (2/3) Shiab(T_e^T_e): True;  Shiab(T_o^T_o) != 0 (survives in printed (9.7)): True
+     W'_C.AdG : C(T) = -64, 2 Psi(T_o^T_e^T_e) = -64, equal: True;  Q(T_o) = 0: True;  Q(T_e) = (2/3) Shiab(T_e^T_e): True;  Shiab(T_o^T_o) != 0 (survives in printed (9.7)): True
+X7  sampled system (29583 rows x 48): rank mod (2^61-1) = 44 => dim{Psi: Q(T_o) = 0 for all odd T} <= 4 (rank over Q >= rank mod p);  the four named elements give Q(T_o) = 0 on a fresh sample: {'O0,3': True, 'E0,11': True, 'W_C.AdG': True, "W'_C.AdG": True}
+X8  invariant sector (every T-term of the invariant form, all a: True):  c1 = kappa*t + 312*t**2*x - 208*t*u*y - 104*u**2*x;  c13 = kappa*u + 104*t**2*y + 208*t*u*x - 312*u**2*y;  equal to I6: True
+X8p printed (9.7) in the same sector: c1^pr = kappa*t + 312*t**2*x - 312*u**2*x;  c13^pr = kappa*u + 312*t**2*y - 312*u**2*y
+X9  constraint Shiab(v ^ (a A + b B)) on the Lambda^1 constituent (v = e^0): output grades [2, 12];  det = I*(-w*y + x*z)
+X9  constraint Shiab(v ^ (a A + b B)) on the [2,1]_0 constituent (v = e^0): output grades [2, 12];  det = I*(-w*y + x*z)
+X9  Lambda^3 constituent: output grades [2, 4, 10, 12]; nonzero 2x2 minors (up to a common constant): [(-w + z)*(w + z), -(x - y)*(x + y), -I*(w*x - y*z), I*(-w*y + x*z), I*(w*x - y*z)]
+X10 symmetric theta (2 samples): Q_W_A = -*(G(R_theta) e(x)gamma), Q_W'_A = -(1/3)*(G(R_theta) e(x)gamma Gamma), twisted Q = 0, with R_theta = 4(theta_ac theta_bd - theta_ad theta_bc): True
+
+######## reduction algebra (I7) ########
+(14,0) u(128)-real (x = -i x', t = i s, u = i r): x'G + e1 g = 0, y'G + e13 g = 0 with e1 = kappa*s + 104*r**2*x' + 208*r*s*y' + 312*s**2*x', e13 = kappa*r + 312*r**2*y' + 208*r*s*x' + 104*s**2*y'; Shiab#: e1 = kappa*s + 104*r**2 + 312*s**2, e13 = r*(kappa + 208*s)
+  (P) branch r = 0: e1 = kappa*s + 312*s**2, min at s = -kappa/624: -kappa**2/1248;  branch s = -kappa/208: e1 = kappa**2/416 + 104*r**2  => Lambda_4 in [Lambda_P - c_H kappa^2/1248, oo) for x' = 1
+  general x' = X > 0, y' = 0: branch r = 0 minimum of e1/x' = -kappa**2/(1248*X**2)  (so the stated bound c_H kappa^2/1248 is the x' = 1 value)
+  (E) [F6: Z1, lambda = 1/5, Ric(g) = 0, G = 15/(2c_V) g_aleph]: kappa*s + 104*r**2 + 312*s**2 + 15/(2*c_V) = 0 on r*(kappa + 208*s) = 0; branch r = 0 discriminant = (c_V*kappa**2 - 9360)/c_V (>= 0 iff c_V kappa^2 >= 9360); branch s = -kappa/208: kappa**2/416 + 104*r**2 + 15/(2*c_V) > 0
+  configurations solving Upsilon = 0 AT s(X) in this sector (= (E); the only case Cor. I2.1 can reach there): e1 = -15/(2c_V), Lambda_P(Z1, 1/5) = 15*c_H/(2*c_V), so their (P) value is Lambda_4 = 0 (fixed, = 0), not free
+(7,7): Shiab#: c1 = kappa*t + 312*t**2 - 104*u**2, c13 = u*(kappa + 208*t);  branch u = 0: Lambda_4 - Lambda_P = -c_H(kappa*t + 312*t**2) <= c_H kappa^2/1248;  branch t = -kappa/208: -c_H(kappa**2/416 - 104*u**2) >= -c_H kappa^2/416;  union = R
+(7,7) printed (9.7), Shiab# (= W_A here): c1^pr = kappa*t + 312*t**2 - 312*u**2, c13^pr = kappa*u;  for kappa != 0 the curve forces u = 0, so Lambda_4 - Lambda_P = -c_H(kappa*t + 312*t**2) <= c_H kappa^2/1248: NOT every real value (the second branch t = -kappa/208 comes from the -h/3 term, absent in the draft)
+(7,7) members with x = y = 0 (no Einstein output): c1 = kappa*t, c13 = kappa*u; Shiab F_0 = 0, so T = 0 solves Upsilon = 0 identically (the (E) 'no solution' needs (x,y) != 0)
+
+X9 summary: (14,0) Lambda^1 det = I*(w*y + x*z), [2,1]_0 det = I*(w*y + x*z); (7,7) Lambda^1 det = I*(-w*y + x*z), [2,1]_0 det = I*(-w*y + x*z)
+
+runtime 28 s
