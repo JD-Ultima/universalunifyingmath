@@ -38,7 +38,7 @@ opaque_alias_record_names:
   aliases: {of_an_opaque: 2, implication_of_two_opaques: 1}
   opaque_only_rows_assert: nothing
 verdicts_48:
-  rule: "round 6's: a clause has a counterpart when a tied declaration states its finite content under the library's own definitions of its words (ENTERED: a relation evaluated over entered per-instance values). RECORDED (an entered string recording the clause's verdict, count or letter) is not a counterpart; it gives the label-inclusive bound. MATCH every clause, PARTIAL some, NONE none."
+  rule: "round 6's, refined for REL-form checks: a clause has a counterpart when a tied declaration states its finite content under the library's own definitions of its words (ENTERED: a relation evaluated over entered per-instance values). As applied, a clause counts when some part of its finite content is stated (corrected after review 2026-10-30, R4-CT-9; see reports/CORRECTIONS.md). RECORDED (an entered string recording the clause's verdict, count or letter, or an entered value that is the clause's conclusion) is not a counterpart; it gives the label-inclusive bound. MATCH every clause, PARTIAL some, NONE none."
   box_quotes_verbatim: "248 of 248"
   clauses: {stated: 5, recorded_only: 44, none: 199}
   MATCH: []
@@ -46,6 +46,7 @@ verdicts_48:
   NONE: 46
   label_inclusive: {MATCH: 1, PARTIAL: 22, NONE: 25}
   sensitivity_REL_graded_RECORDED: {checks: ["WAMR wash_moved_acts == 0 (28.1)", "SLBC 0 <= R_diff_site (217.1)"], if_ENTERED: "28.1 becomes PARTIAL 1 of 5; nothing else changes"}
+  sensitivity_strict: {rule: "a clause counts only when all its finite content is stated", clauses_stated_in_part: ["217.1 clause 3: only rows.length = 228 checked (14 bodies, 114 links, 78 open, 150 washed not)", "217.1 clause 4: only the site bound checked", "234.1 clause 2: sums checked per network and polarity (246 rows), no per-link row"], verdicts: {"217.1": "PARTIAL 2 of 8", "234.1": NONE}, rows_stating_a_clause: 1, clauses_stated: 2, note: "corrected after review 2026-10-30, R4-CT-9; see reports/CORRECTIONS.md"}
   whole_box_verdict_cell_rows: 33
 printed_numbers:
   rule: "numbers >= 5 printed in the box (digits, cardinal and ordinal words); literal lookup, coincidences included"
@@ -73,6 +74,10 @@ coverage_64:
   by_kind_unchanged: {restated_or_kernel: 16, table_checks: 37, opaque_or_records_only: 11}
   by_content: {MATCH: 1, PARTIAL: 7, NONE: 56}
   rows_stating_a_clause: 8
+  by_content_reading: "headline: round 7's ENTERED/RECORDED split applied to all 64 rows; a clause counts when some part of its finite content is stated (corrected after review 2026-10-30, R4-CT-8; see reports/CORRECTIONS.md)"
+  sensitivity: {round6_entered_conclusions_count: {MATCH: 1, PARTIAL: 8, NONE: 55, change: "28.1 PARTIAL 1 of 5"}, strict_whole_clause: {MATCH: 0, PARTIAL: 7, NONE: 57, change: "9.4 PARTIAL 2 of 3; 234.1 NONE; 217.1 PARTIAL 2 of 8"}, source: "outputs/lean_tables.txt [10]"}
+  match_9_4: "third clause credited through LemmaB.zeroTransfer over 172 entered step triples: third triple (0,0,0) is the entered conclusion (RECORDED); second = -first is a relation over entered triples (ENTERED), read as 'zero register displacement' by position only (library displacement of the object of record is (-1,1,0), unused). MATCH only through that part; PARTIAL 2 of 3 under the strict reading"
+  basis_of_the_8: "6 through round 6's restated/kernel declarations, partly over entered inputs (9.4's entered step table; 18.2's definitional weight identity over entered parity and kind fields); 2 through relations over entered Int tables (corrected after review 2026-10-30, R4-CT-10; see reports/CORRECTIONS.md)"
   none_split: {computation_of_another_box: 10, table_labels_only: 21, table_nothing: 14, opaque_records: 11}
   label_inclusive: {MATCH: 2, PARTIAL: 32, NONE: 30}
   changes_to_09: "table tier resolved (37 -> 2 PARTIAL, 35 NONE; with the 9 re-tiered 46 -> 2 / 44); opaque tier 12 NONE; README 'coverage by content 6 / 46 / 12' -> 8 stating a clause / 56 none"
@@ -93,8 +98,8 @@ proof_status:
 reproducibility: {value: reproduced, detail: "python3 -I lean_tables.py $SRC --axioms outputs/lean_axioms.txt --checks outputs/lean_table_checks.txt --round6-tsv outputs/lean_resolve.tsv --tsv ... --clauses-tsv ...; about 11 s; identical across two runs with hash randomisation"}
 confidence:
   value: high
-  justification: "Every clause and check anchor is verified verbatim by the script; the classification of conjunct forms is mechanical; the counterpart judgments are recorded clause by clause with a stated rule and one sensitivity."
+  justification: "Every clause and check anchor is verified verbatim by the script; the classification of conjunct forms is mechanical; the counterpart judgments are recorded clause by clause with a stated rule and two stated sensitivities (entered conclusions; partly stated clauses), which give 1/8/55 and 0/7/57 against the headline 1/7/56."
 limits:
-  - "Clause boundaries and RECORDED lexical matches are judgments; the keys of key/value tables are not interpreted."
+  - "Clause boundaries and RECORDED lexical matches are judgments; the keys of key/value tables are not interpreted, while ENTERED counterparts read entered columns as the box's quantities by their field names (217.1's W_* columns as the boundary count; corrected after review 2026-10-30, R4-CT-11; see reports/CORRECTIONS.md)."
   - "Only declarations tied by the index are graded; the untied own modules of 181.5 and 200.6 are reported, not graded."
   - "Axiom sets are those of Lean 4.35.0 (round 6's Build B); the pinned 4.32.1 was not used."

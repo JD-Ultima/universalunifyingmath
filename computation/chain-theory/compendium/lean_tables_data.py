@@ -5,7 +5,9 @@ Every quoted string is checked verbatim by lean_tables.py: each clause against t
 
 The rule is round 6's (09-lean-audit-at-scale.md §3 and §8): each box is split into clauses; a clause has a
 counterpart when a tied declaration states its finite content under the library's own definitions of its words;
-MATCH = every clause has a counterpart, PARTIAL = some clause does, NONE = no clause does.
+MATCH = every clause has a counterpart, PARTIAL = some clause does, NONE = no clause does. As applied here and in round 6,
+a clause counts when its counterpart states some part of its finite content; PART_ONLY (at the end) lists the credited
+clauses that are stated only in part, and lean_tables.py [10] prints the strict reading without them (REVIEW4-CT).
 
 Counterpart kinds used here:
   ENTERED   the check evaluates the relation the clause asserts over entered per-instance values of the quantities the
@@ -483,4 +485,22 @@ OWN_BOX = {
 OWN_BOX_ANCHORS = {
     "D525257_HTOR": "the three open reads $X$, $XZ$ and $XZ^{2}$ fix none and free three",
     "D532499_HPK2": "the sixteen deciding webs standing at their grammar, dressing and direct sum",
+}
+
+# Strict reading (REVIEW4-CT, R4-CT-8 and R4-CT-9). The verdicts above (and round 6's in lean_resolve_data.py) count a
+# clause when its counterpart states some part of its finite content. These credited clauses are stated only in part;
+# under the strict reading (a clause counts only when all its finite content is stated) they do not count.
+# (row, clause number from 1) -> the part that is stated, and what is not
+PART_ONLY = {
+    ("9.4", 3): "LemmaB.zeroTransfer over the 172 entered step triples: the third triple (0,0,0) is the conclusion "
+                "'zero transfer' as entered; second = minus first is a relation over entered triples, read as "
+                "'zero register displacement' by position only (the library's displacement of the object of record, "
+                "LemmaB.massless_faces, is (-1,1,0) and is not used)",
+    ("196.2", 2): "12 open sites at the kit tau are computed; the 17 sites are only in derived_bodies_counts, outside "
+                  "`checks`",
+    ("217.1", 3): "only rows.length = 228 is checked; 14 bodies, 114 links, 78 open and 150 washed are not",
+    ("217.1", 4): "only the site bound is checked (W); the free-direction fields are not checked, and the directions "
+                  "read (R_diff_site >= 0) are RECORDED",
+    ("234.1", 2): "the sums are checked at the 246 network-and-polarity rows (82 networks x 3 polarities); no per-link "
+                  "row is entered",
 }

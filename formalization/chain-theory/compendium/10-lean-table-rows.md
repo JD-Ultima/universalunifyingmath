@@ -107,16 +107,19 @@ tied). Some of their printed numbers occur nowhere in the tree: 17689 (170.1) an
 
 ## 4. Do the declarations state the boxes? ([4], [5])
 
-**Rule.** The rule is round 6's (09 §3 and §8).
+**Rule.** The rule is round 6's (09 §3 and §8), refined below for REL-form checks over entered tables; §5 regrades
+round 6's 16 rows under the refinement (corrected after review 2026-10-30, R4-CT-8; see `reports/CORRECTIONS.md`).
 - Each box is split into clauses, quoted verbatim. Here that gives 248 quotes, all found.
 - A clause has a counterpart when a tied declaration states its finite content under the library's own definitions of
-  its words.
+  its words. As applied here and in round 6, a clause counts when *some part* of its finite content is stated; the
+  strict reading, in which all of it must be stated, is given under Sensitivity (corrected after review 2026-10-30, R4-CT-9; see `reports/CORRECTIONS.md`).
 - MATCH means every clause has a counterpart, PARTIAL some, NONE none.
 
 Applied to tables, two kinds of check are separated:
 - **ENTERED (a counterpart).** The check evaluates the relation the clause asserts over entered per-instance values of
-  the quantities the clause is about. This is round 6's ENTERED kind: `LemmaB_zero_transfer` evaluates the entered
-  step triples.
+  the quantities the clause is about. This is round 6's ENTERED kind (`LemmaB_zero_transfer` evaluates the entered
+  step triples), restricted to relations: an entered value that is itself the clause's conclusion is RECORDED, and §5
+  applies this to 9.4 (corrected after review 2026-10-30, R4-CT-8; see `reports/CORRECTIONS.md`).
 - **RECORDED (not a counterpart).** The check confirms that the entered list holds a string that records the clause's
   conclusion. That string is a verdict (`YES`, `MONOTONE`, `NONE`), a count written as a string (`"5 of 5"`, `"13"`),
   or a per-instance verdict flag. The library defines none of the words of the key. The string is the claim.
@@ -143,12 +146,27 @@ Applied to tables, two kinds of check are separated:
 | 28.5, 57.1, 65.1, 181.5, 186.1, 200.6, 203.5, 217.2, 224.2, 235.1, 235.2, D.4, H.3, I.7.1 | NONE | NONE | nothing of the box; see below |
 | 62.1, 64.1, 64.2, 73.1, 170.1, 229.1, 232.2, 233.1, 233.2, 233.4, I.16.2 | NONE | NONE | opaque/records only (§3) |
 
-**Sensitivity.** Two REL-form checks are graded RECORDED, because the entered value is the clause's conclusion:
-- WAMR's `wash_moved_acts == 0` (28.1: "unmoved under every change confined to a washed end");
-- SLBC's `0 <= R_diff_site`, an entered difference.
+**Sensitivity.** Two choices change verdicts. [4] and [10] print both.
+- **Entered conclusions.** Two REL-form checks are graded RECORDED, because the entered value is the clause's
+  conclusion:
+  - WAMR's `wash_moved_acts == 0` (28.1: "unmoved under every change confined to a washed end");
+  - SLBC's `0 <= R_diff_site`, an entered difference.
 
-Counting them ENTERED, as round 6 counted the entered zero transfer of 9.4, adds one PARTIAL (28.1, 1/5). The other
-verdicts are unchanged.
+  Counting them ENTERED, as round 6's rule would (round 6 did not separate an entered conclusion from a relation over
+  entered values; §5, 9.4), adds one PARTIAL (28.1, 1/5). The other verdicts are unchanged (corrected after review 2026-10-30, R4-CT-8; see `reports/CORRECTIONS.md`).
+- **Partly stated clauses** (corrected after review 2026-10-30, R4-CT-9; see `reports/CORRECTIONS.md`). Three credited clauses of the 48 are stated only in part:
+  - 217.1, clause 3 ("at all 228 one-act reads of the fourteen bodies (two per link at 114 links, 78 with an open far
+    end, 150 washed)"): only `rows.length = 228` is checked, a LEN conjunct; the 14 bodies, 114 links, 78 open and 150
+    washed are not. This is the only LEN conjunct credited in this round (230.1's `rows.length = 14` is counted a
+    coincidence).
+  - 217.1, clause 4 ("rises or stays at the site bound, at the free-direction bound and at the directions read"): only
+    the site bound (W) is checked. The free-direction fields are not checked, and the directions read
+    (`0 <= R_diff_site`) are RECORDED.
+  - 234.1, clause 2 ("summing to the records at every link and network"): NCRE checks the sums at its 246
+    network-and-polarity rows (82 networks × 3 polarities). No per-link row is entered.
+
+  Under the strict reading 217.1 is PARTIAL 2/8 (clauses 2 and 5, both the W non-decrease) and 234.1 is NONE. Of the 48
+  rows, 1 then states a clause, and 2 clauses are stated rather than 5. The 64-row table under each reading is in §6.
 
 **Printed numbers** (numbers of 5 or more, literal lookup as in round 6, so coincidences count). There are 135
 (row, number) pairs:
@@ -209,6 +227,22 @@ DIM1, LTGO, RTSE, GPOE, NRGE, NVCI, AJBP and TLWN.
 - None of the 9 has a REL conjunct (kinds: LEN 9, KV 22, CAT 7). Under the rule they add no counterpart, so round 6's
   verdicts (MATCH 1, PARTIAL 5, NONE 10) hold over all tied declarations. They are recomputed here from
   `lean_resolve_data.py` and equal `lean_resolve.tsv` at 16 of 16.
+- **9.4 under the refinement of §4** (corrected after review 2026-10-30, R4-CT-8; see `reports/CORRECTIONS.md`). Round 6's only MATCH has an entered counterpart for its
+  third clause, "zero register displacement equals zero momentum transfer at the one-link star"
+  (`01-framework.tex:360`). It is credited to `LemmaB_objectOfRecord_electromagneticLike` through its field
+  `zeroTransfer` = `steps.all fun s => s.2.2.2 == (0,0,0) && (first + second) == (0,0,0)`, over the 172 entered step
+  triples of `AlphaDerivation/Data/Records.lean` (09 §2 item 4). That check has two parts:
+  - (A) the third triple is $(0,0,0)$ in all 172. This is the conclusion "zero transfer", entered, so it is RECORDED
+    under §4's refinement;
+  - (B) the second triple is minus the first in all 172 (first triples $82\times(0,0,0)$, $48\times(1,-1,0)$,
+    $42\times(-1,1,0)$). This is a relation over entered values, so ENTERED. It reads as "zero register displacement"
+    only by the position of the triples, which carry no field names; the library's own
+    `displacement (chain objectOfRecord)`, which is $(-1,1,0)$ (`LemmaB.massless_faces`), is not used.
+
+  9.4 therefore stays MATCH 3/3 if (B) is taken as the clause's displacement half (the practice of §4), and is
+  PARTIAL 2/3 under the strict reading. Round 6's treatment counts (A) as well and also gives MATCH. The other 15
+  verdicts do not depend on the refinement. Under the strict reading 196.2's clause 2 is also stated only in part (12
+  open sites are computed; the 17 sites lie outside `checks`), which leaves 196.2 PARTIAL.
 - Label-inclusive, five NONE rows become PARTIAL:
   - 2.6: TTCF has 32 rows, each `eq = YES`.
   - 2.9: DIM1 has `C-EQD1 ... EXCLUDED`.
@@ -235,9 +269,24 @@ DIM1, LTGO, RTSE, GPOE, NRGE, NVCI, AJBP and TLWN.
 
 - **All 64:** MATCH 1, PARTIAL 7, NONE 56. **8 of 64 rows** have a tied declaration that states at least one clause of
   the box.
+- **Sensitivity** ([10]) (corrected after review 2026-10-30, R4-CT-8; see `reports/CORRECTIONS.md`). The headline depends on two choices of §4 and §5:
+
+  | reading | 9.4 | 28.1 | 217.1 | 234.1 | MATCH / PARTIAL / NONE | rows stating a clause |
+  |---|---|---|---|---|---|---|
+  | round 6's: an entered conclusion counts | MATCH | PARTIAL 1/5 | PARTIAL 4/8 | PARTIAL 1/7 | 1 / 8 / 55 | 9 |
+  | headline: round 7's ENTERED/RECORDED split; a clause counts when any part of its finite content is stated | MATCH, through (B) | NONE | PARTIAL 4/8 | PARTIAL 1/7 | 1 / 7 / 56 | 8 |
+  | strict: round 7's split; a clause counts only when all its finite content is stated | PARTIAL 2/3 | NONE | PARTIAL 2/8 | NONE | 0 / 7 / 57 | 7 |
+
+  The other 60 rows have the same verdict under all three. The headline uses the middle reading. It applies this
+  round's ENTERED/RECORDED split to all 64 rows, and it is the clause-counting practice recorded clause by clause in
+  `lean_tables_data.py` and `lean_resolve_data.py`. The strict reading needs a further judgment, of where each clause's
+  finite content ends; [10] lists the five credited clauses it removes. All three readings agree that at most one row
+  (9.4) states its whole box, that none does under the strict reading, and that 7 to 9 of the 64 state some clause.
 - **Label-inclusive upper bound:** MATCH 2, PARTIAL 32, NONE 30.
-- Of the 8, 6 rest on computation (round 6). The other 2 rest on relations checked over entered `Int` tables, whose
-  values are not derived in Lean.
+- Of the 8, 6 rest on round 6's restated/kernel declarations, partly over entered inputs: 9.4's zero transfer is an
+  entered step table (§5), and 18.2's weights are a definitional identity applied to the entered parity and kind
+  fields of the 172 records (09 §2 item 5). The other 2 rest on relations checked over entered `Int` tables, whose
+  values are not derived in Lean (corrected after review 2026-10-30, R4-CT-10; see `reports/CORRECTIONS.md`).
 
 What changes:
 - **04.**
@@ -280,10 +329,13 @@ found `Classical.choice` entering at 4.35.0 through core `Int` order instances. 
 ## 8. Limits
 
 - **Judgments.** Clause boundaries and the RECORDED lexical matches are judgments. They are recorded clause by clause
-  in `lean_tables_data.py`, and their quotes and anchors are checked. The ENTERED/RECORDED line for REL-form checks is
-  stated, with its sensitivity (§4).
+  in `lean_tables_data.py`, and their quotes and anchors are checked. The ENTERED/RECORDED line for REL-form checks and
+  the counting of partly stated clauses are stated, with their sensitivities (§4, §6).
 - **Keys.** The keys of the key/value tables are not interpreted. A RECORDED match says only that a key's words or
-  numbers are the clause's.
+  numbers are the clause's. The ENTERED grade does interpret field names: 217.1's counterparts read the entered columns
+  `W_source_site`, `W_target_site` and `W_diff_site` as the box's boundary count (the entanglement entropy across a
+  cut), a reading that rests on the column names and that no library definition supports. In the ENTERED case a
+  relation is computed over the entered values; in the RECORDED case a string is compared (corrected after review 2026-10-30, R4-CT-11; see `reports/CORRECTIONS.md`).
 - **Scope.** Only declarations tied by the index are graded. The untied modules of 181.5 and 200.6 are reported, not
   graded. The 9 table checks of the 16 rows are graded only as to whether they could add a counterpart.
 - **Toolchain.** Axiom sets are those of round 6 (Lean 4.35.0, Build B). The pinned 4.32.1 was not used.

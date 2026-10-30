@@ -147,13 +147,19 @@ consistent with all observed fields but is not experimentally established (CT-C0
   - The 37 table-check rows cite 37 data modules. All of them enter their rows as literal lists, and all 618 check
     lemmas are `decide`. 560 conjuncts confirm a key/value string pair. Only 8 test `Int` fields, in WAMR, SLBC and
     NCRE. The 13 conditional checks have opaque hypotheses that are never used.
-  - Clause by clause, under round 6's rule, 2 rows state part of their box:
+  - Clause by clause, under round 6's rule (refined for REL-form checks; a clause counts when some part of its finite
+    content is stated), 2 rows state part of their box:
     - 217.1: the W count is non-decreasing at 228 entered reads. In the entered rows it never changes.
-    - 234.1: the orders and kinds sum to the records at 246 entered rows.
+    - 234.1: the orders and kinds sum to the records at 246 entered network-and-polarity rows. Under the strict reading
+      (all of a clause's finite content stated) 234.1 states no clause, since no per-link row is entered
+      (corrected after review 2026-10-30, R4-CT-9; see `reports/CORRECTIONS.md`).
   - The other 35 table rows state no clause. In 21 of them an entered label records some clause.
   - The 11 opaque-only rows cite 94 names that are not theorems and that no library theorem mentions, so their Lean
     asserts nothing. 170.1 and 229.1 say their deciding table is "re-derived in Lean".
-  - Over all 64 rows: MATCH 1, PARTIAL 7, NONE 56.
+  - Over all 64 rows: MATCH 1, PARTIAL 7, NONE 56. This depends on how entered tables are counted: 1 / 8 / 55 under
+    round 6's treatment of entered conclusions, 0 / 7 / 57 under the strict reading. The single MATCH, 9.4, holds only
+    if the relation "second step triple $=-$ first" over the entered triples is taken as its "zero register
+    displacement" (corrected after review 2026-10-30, R4-CT-8; see `reports/CORRECTIONS.md`).
   - Further findings:
     - 223.2 prints "every one of the 43" for its asymmetric Onsager pairs; its table enters `onsg.asym.pairs = "24"`.
     - 145.1's and 225.1's tables stop at 60 entries, short of the 44 chains and 20 networks printed.

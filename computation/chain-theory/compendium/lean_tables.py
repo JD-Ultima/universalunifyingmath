@@ -353,7 +353,7 @@ def main():
       f"{sum(1 for v in rowinfo.values() for x in v['nums5'] if v['where'][x] == '-')}; nowhere in the tree "
       f"{sum(len(v['nowhere']) for v in rowinfo.values())}")
     P(f"  REL-form checks graded RECORDED (an entered per-instance value that is the clause's conclusion): {rel_recorded}")
-    P(f"  sensitivity, counting them as ENTERED (round 6 counted the entered zero transfer of 9.4): verdicts "
+    P(f"  sensitivity, counting them as ENTERED (round 6's treatment of an entered conclusion): verdicts "
       f"{dict(collections.Counter(verdict_a.values()))}; rows that change: {[x for x in verdict if verdict_a[x] != verdict[x]]}")
     diffs = []
     for no in [r["number"] for r in pop + sixteen]:
@@ -545,6 +545,32 @@ def main():
     P(f"  all 64: {dict(tot)}; label-inclusive: {dict(totl)}")
     P(f"  rows stating at least one clause: {tot['MATCH'] + tot['PARTIAL']} of 64 "
       f"(round 6: {sum(1 for x in v6.values() if x != 'NONE')} of the 16, the 48 not resolved)")
+    # sensitivity of the 64-row table to how entered conclusions and partly stated clauses are counted (REVIEW4-CT,
+    # R4-CT-8 and R4-CT-9); D.PART_ONLY lists the credited clauses that are stated only in part
+    for (no, i), why in D.PART_ONLY.items():
+        credited = (any(c[0] == no and c[1] == i and c[2] == "stated" for c in clause_rows) if no in verdict
+                    else no in D6.ROWS and bool(D6.ROWS[no][i - 1][1]))
+        if not credited:
+            fails.append((no, f"PART_ONLY clause {i} is not a credited clause"))
+    strict = {no: vword(rowinfo[no]["hit"] - sum(1 for n_, _ in D.PART_ONLY if n_ == no), rowinfo[no]["clauses"])
+              for no in allv}
+    r6v = dict(allv); r6v.update(verdict_a)
+    fmt3 = lambda c: f"{c['MATCH']} / {c['PARTIAL']} / {c['NONE']}"
+    P("  sensitivity of the 64-row table (MATCH / PARTIAL / NONE; rows stating at least one clause):")
+    for label, vv in (("round 6's treatment: an entered value that is the clause's conclusion counts (the REL checks "
+                       "graded RECORDED in [4] count)", r6v),
+                      ("headline: round 7's ENTERED/RECORDED split; a clause counts when any part of its finite content "
+                       "is stated", allv),
+                      ("strict: round 7's split; a clause counts only when all its finite content is stated", strict)):
+        c = collections.Counter(vv.values())
+        P(f"    {fmt3(c)}; {c['MATCH'] + c['PARTIAL']} rows  {label}"
+          + (f"; rows that change: {[x for x in vv if vv[x] != allv[x]]}" if vv is not allv else ""))
+    P("    credited clauses stated only in part (not counted under the strict reading):")
+    for (no, i), why in D.PART_ONLY.items():
+        P(f"      {no:<6} clause {i}: {why}")
+    s48 = [no for no in verdict if strict[no] != "NONE"]
+    P(f"    the 48 under the strict reading: rows stating a clause {len(s48)} {s48}; clauses stated "
+      f"{sum(1 for c in clause_rows if c[2] == 'stated') - sum(1 for n_, _ in D.PART_ONLY if n_ in verdict)}")
     if a.tsv:
         with open(a.tsv, "w", newline="", encoding="utf-8") as fh:
             w = csv.writer(fh, delimiter="\t", lineterminator="\n")

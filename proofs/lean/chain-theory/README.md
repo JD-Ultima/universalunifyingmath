@@ -85,7 +85,7 @@ LEAN=/path/to/lean-4.35.0-linux/bin/lean ./run_gauge.sh > GaugeSelection.out
 
 `ChainAlpha.selection_under_read_cap` in the upstream alpha Lean already proves the core arithmetic: under the cap, as a hypothesis, $d_1,d_2\ge2$ with $d_1\ne d_2$ gives $(2,3)$ or $(3,2)$. This file adds the dependence on each input and the G1/G2 algebra.
 
-## `mutation_spotcheck.sh`: Lean check of the mechanical mutation space (F-CT-4 E)
+## `mutation_spotcheck.sh`: Lean check of the mechanical mutation family (F-CT-4 E)
 
 This script checks the transcription used by `computation/chain-theory/alpha/mechanical_mutations.py` against Lean itself (`formalization/chain-theory/alpha/mechanical-trial-factor.md`). For every single mutant, and for a seeded sample of 300 pairs (seed 20261030), it writes Parts 0–1 of the pinned `ChainAlpha.lean` with the mutation's text edits, followed by `#eval readout objectWorld objectTwoPoint`, into a temporary directory. The upstream file is not modified.
 
@@ -99,4 +99,5 @@ LEAN=/path/to/lean-4.35.0-linux/bin/lean UPSTREAM=/path/to/chain-theory ./mutati
 - The output is in `mutation_spotcheck.out`.
   - Lean agrees with the Python prediction on all 1118 files: 770 + 266 identical readouts, 47 + 31 predicted elaboration failures, and 1 + 3 resource aborts ("deep recursion") on the list-doubling mutant `addRoot:CONS:2=dup0`, which the transcription does not evaluate.
   - It also prints the Lean integer conventions (Euclidean division on `Int`, $x/0=0$, truncated `Nat` subtraction) that the transcription follows.
-- Pairs outside the sample are evaluated only by the transcription.
+- Pairs outside the sample are evaluated only by the transcription. The referee check of REVIEW4-CT ran Lean 4.35.0 on 6 further pairs outside the sample and on 4 triples (`computation/chain-theory/alpha/xcheck_mechanical.out` [7]); all 10 agree with the transcription.
+- The check validates the transcription's values. It does not bear on the statistics of `mechanical_mutations.out`, whose reference counts belong to an illustrative random-target model (F-CT-4 B, E) and are not calibrated p-values.

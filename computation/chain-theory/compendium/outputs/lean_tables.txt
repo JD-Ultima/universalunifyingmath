@@ -1661,7 +1661,7 @@ Round 7: the table-check and opaque-only rows of the 64 Lean-tied THEOREMs
   rows with a whole-box verdict cell (cell.C-EQ.. in a checked pair): 33
   printed numbers >= 5 (row, number): 135; in tied checks 23, entered rows only 11, other tied only 1, not in tied 100; nowhere in the tree 15
   REL-form checks graded RECORDED (an entered per-instance value that is the clause's conclusion): [('28.1', 4, 'row_526019_WAMR', 'rows.all (fun r => r.wash_moved_acts == 0) = true'), ('217.1', 4, 'row_525335_SLBC', 'rows.all (fun r => decide (0 <= r.R_diff_site)) = true')]
-  sensitivity, counting them as ENTERED (round 6 counted the entered zero transfer of 9.4): verdicts {'NONE': 45, 'PARTIAL': 3}; rows that change: ['28.1']
+  sensitivity, counting them as ENTERED (round 6's treatment of an entered conclusion): verdicts {'NONE': 45, 'PARTIAL': 3}; rows that change: ['28.1']
   number extraction, round 6's numbers_in -> this round's parser (numbers >= 5), boxes where they differ:
     13.1   [8, 12, 20] -> [8, 12, 24]
     28.1   [229] -> [228]
@@ -1767,5 +1767,16 @@ Round 7: the table-check and opaque-only rows of the 64 Lean-tied THEOREMs
   table            states some clause                                   2
   all 64: {'PARTIAL': 7, 'NONE': 56, 'MATCH': 1}; label-inclusive: {'PARTIAL': 32, 'NONE': 30, 'MATCH': 2}
   rows stating at least one clause: 8 of 64 (round 6: 6 of the 16, the 48 not resolved)
+  sensitivity of the 64-row table (MATCH / PARTIAL / NONE; rows stating at least one clause):
+    1 / 8 / 55; 9 rows  round 6's treatment: an entered value that is the clause's conclusion counts (the REL checks graded RECORDED in [4] count); rows that change: ['28.1']
+    1 / 7 / 56; 8 rows  headline: round 7's ENTERED/RECORDED split; a clause counts when any part of its finite content is stated
+    0 / 7 / 57; 7 rows  strict: round 7's split; a clause counts only when all its finite content is stated; rows that change: ['9.4', '234.1']
+    credited clauses stated only in part (not counted under the strict reading):
+      9.4    clause 3: LemmaB.zeroTransfer over the 172 entered step triples: the third triple (0,0,0) is the conclusion 'zero transfer' as entered; second = minus first is a relation over entered triples, read as 'zero register displacement' by position only (the library's displacement of the object of record, LemmaB.massless_faces, is (-1,1,0) and is not used)
+      196.2  clause 2: 12 open sites at the kit tau are computed; the 17 sites are only in derived_bodies_counts, outside `checks`
+      217.1  clause 3: only rows.length = 228 is checked; 14 bodies, 114 links, 78 open and 150 washed are not
+      217.1  clause 4: only the site bound is checked (W); the free-direction fields are not checked, and the directions read (R_diff_site >= 0) are RECORDED
+      234.1  clause 2: the sums are checked at the 246 network-and-polarity rows (82 networks x 3 polarities); no per-link row is entered
+    the 48 under the strict reading: rows stating a clause 1 ['217.1']; clauses stated 2
 
   quote and anchor failures (all sections): []

@@ -1,7 +1,8 @@
-"""Mechanical trial-factor space for the Chain Theory alpha readout (audit F-CT-4, next step 4; gap CT-G10).
+"""Mechanically generated rule family for the Chain Theory alpha readout: rule-family sensitivity (audit F-CT-4 E;
+gap CT-G10).
 
-F-CT-4 bounds the trial factor with a hand-declared rule space B (46 080 rules, freedom.py). This script replaces B by
-a space generated mechanically from the Lean definitions themselves:
+F-CT-4 B measures sensitivity over a hand-declared rule space B (46 080 rules, freedom.py). This script adds a second
+declared family, generated mechanically from the Lean definitions themselves (the operator set is also ours):
 
   1. It reads the pinned `ChainAlpha.lean` (sha256 below) as text, masks comments, splits Part 1 into definitions and
      computes the dependency cone of the readout `readout objectWorld objectTwoPoint` (the last conjunct of `main`):
@@ -14,8 +15,12 @@ a space generated mechanically from the Lean definitions themselves:
      Parts 0-1 with one hook per site). The transcription is validated here on the unmutated file and on the
      author's 19 rewordings (it reproduces upstream_mutations_lean.out line for line) and, against Lean itself, on
      every single mutant and a seeded sample of pairs by proofs/lean/chain-theory/mutation_spotcheck.sh.
-  4. It prints the F-CT-4 metrics for the mechanical space (distinct exact values, density near 1/alpha, expected
-     chance hits within 1 sigma of CODATA 2022, closest values) and compares them with B.
+  4. It prints the F-CT-4 metrics for the mechanical family (distinct exact values, density near 1/alpha, closest
+     values) and compares them with B. As in freedom.py, an illustrative random-target model is reported separately:
+     the target U is uniform on (120,155) while the rule outputs remain fixed, and the expected number of distinct
+     outputs within 1 sigma of U is the total length of their +-sigma intervals, clipped to the band, divided by 35.
+     This reference count is not a calibrated p-value for the observed alpha, and neither declared family identifies
+     the construction's search history. The density depends on the mutation depth (here at most 2).
 
 Values are compared exactly: sqrt k is reduced to s sqrt m with m squarefree, and distinct squarefree radicals are
 linearly independent over Q. 1/value is evaluated with mpmath (40 digits).
@@ -1025,7 +1030,15 @@ def _eval_pairs(chunk):
 
 # ---------- statistics ----------
 
-def stats(keys, label, nspace):
+def uniform_target_count(values, lo, hi):
+    """Illustrative model of freedom.py: U uniform on (lo,hi), the outputs `values` fixed. E[#{v : |v-U| <= SIG}] is
+    the total length of the intervals [v-SIG, v+SIG] clipped to (lo,hi), divided by hi-lo. No independence between
+    the intervals is needed."""
+    lo, hi = mp.mpf(lo), mp.mpf(hi)
+    return mp.fsum(max(mp.mpf(0), min(hi, v + SIG) - max(lo, v - SIG)) for v in values) / (hi - lo)
+
+
+def stats(keys, label):
     """keys: list of canonical keys (one per mutant). Prints the F-CT-4 metrics for the well-defined ones."""
     good = [k for k in keys if len(k) == 2]
     distinct = sorted(set(good))
@@ -1036,22 +1049,22 @@ def stats(keys, label, nspace):
           f"{len(distinct)} distinct values ({neg} negative)")
     band = sorted(inv[k] for k in distinct if 120 < inv[k] < 155)
     dens = mp.mpf(len(band)) / 35
-    exp_hits = dens * 2 * SIG
-    print(f"    distinct values with 1/value in (120,155): {len(band)}; density {mp.nstr(dens, 4)} per unit; "
-          f"expected chance values within +-1 sigma: {mp.nstr(exp_hits, 3)}")
+    ref = uniform_target_count(inv.values(), 120, 155)
+    print(f"    distinct values with 1/value in (120,155): {len(band)}; density {mp.nstr(dens, 4)} per unit")
+    print("    illustrative model: target U uniform on (120,155); rule outputs fixed")
+    print(f"    expected match count in that model within +-1 sigma: {mp.nstr(ref, 4)}")
+    print("    this reference count is not a calibrated p-value for the observed alpha or a search-history estimate")
     for lo, hi in ((130, 145), (136, 138)):
         nb = sum(1 for k in distinct if lo < inv[k] < hi)
         print(f"    distinct values in ({lo},{hi}): {nb}; density {mp.nstr(mp.mpf(nb) / (hi - lo), 4)} per unit; "
-              f"expected within +-1 sigma at that density: {mp.nstr(mp.mpf(nb) / (hi - lo) * 2 * SIG, 3)}")
+              f"same model with U uniform on ({lo},{hi}): {mp.nstr(uniform_target_count(inv.values(), lo, hi), 4)}")
     for w in ("1e-2", "1e-3", "1e-4", "1e-6"):
         n = sum(1 for k in distinct if abs(inv[k] - INV_CODATA) / INV_CODATA < mp.mpf(w))
         print(f"    distinct values within relative {w} of 1/alpha: {n}")
     if len(band) > 1:
         gaps = sorted(b - a for a, b in zip(band, band[1:]))
         print(f"    median gap between adjacent distinct values in (120,155): {mp.nstr(gaps[len(gaps) // 2], 4)}")
-    if exp_hits > 0:
-        print(f"    mutants needed for an O(1) chance hit at this density: ~{mp.nstr(nspace / exp_hits, 3)}")
-    return distinct, inv, dens, exp_hits
+    return distinct, inv, dens, ref
 
 
 def closest(distinct, inv, who, n=10):
@@ -1222,9 +1235,9 @@ def part0_defs(src):
 
 
 def report(src, ms, defs, order, sites, byid, muts, ill, pairs):
-    print("Mechanical trial-factor space for the readout of ChainAlpha.lean (audit F-CT-4, next step 4)")
+    print("Mechanically generated rule family for the readout of ChainAlpha.lean: rule-family sensitivity (audit F-CT-4 E)")
     print(f"Source: ChainAlpha.lean, sha256 {PIN} (pinned upstream file; read as data, never run here).")
-    print("\n== 1. Inventory and declared space (fixed before any value is computed) ==")
+    print("\n== 1. Inventory and declared space (printed in this run before any value is computed) ==")
     p1 = [n for n, v in defs.items() if v[0] == "def"]
     print(f"Part 1 has {len(p1)} definitions and {len(defs) - len(p1)} structures/abbreviations.")
     print(f"The readout `readout objectWorld objectTwoPoint` (the last conjunct of `main`) depends on {len(order)} of "
@@ -1369,9 +1382,9 @@ def report(src, ms, defs, order, sites, byid, muts, ill, pairs):
         else:
             who[k].append(None)
     print("\nF-CT-4 metrics (distinct exact values; CODATA 2022 1/alpha = 137.035999177, sigma = 2.1e-8):")
-    stats(single_keys, "singles", len(muts))
-    stats(pair_keys, "pairs", len(pairs))
-    dist, inv, dens, eh = stats(single_keys + pair_keys, "singles + pairs", len(muts) + len(pairs))
+    stats(single_keys, "singles")
+    stats(pair_keys, "pairs")
+    dist, inv, dens, eh = stats(single_keys + pair_keys, "singles + pairs")
     print("  closest distinct values to CODATA 2022 (singles + pairs):")
     closest(dist, inv, who, 12)
 
@@ -1381,14 +1394,17 @@ def report(src, ms, defs, order, sites, byid, muts, ill, pairs):
     for ks, kc, nc, power, nN, num in MC.B.values():
         bkeys.append(canonical(([(1, num[0]), (2, num[1]), (3, num[2]), (6, num[3])], MC.NS[nN])))
     assert len(set(bkeys)) == 15639
-    bd, binv, bdens, beh = stats(bkeys, "B (one entry per distinct value)", 46080)
+    bd, binv, bdens, beh = stats(bkeys, "B (one entry per distinct value)")
     sb, sm = set(bd), set(dist)
     both = sb & sm
     band = lambda S, I: {k for k in S if 120 < I[k] < 155}
     print(f"  distinct values in both spaces: {len(both)}; with 1/value in (120,155): "
           f"{len(band(both, inv))} (mechanical {len(band(sm, inv))}, B {len(band(sb, binv))})")
+    uinv = dict(inv)
+    uinv.update(binv)
     print(f"  union of the two spaces: density in (120,155) {mp.nstr(mp.mpf(len(band(sm, inv) | band(sb, binv))) / 35, 4)}"
-          f" per unit; expected within +-1 sigma {mp.nstr(mp.mpf(len(band(sm, inv) | band(sb, binv))) / 35 * 2 * SIG, 3)}")
+          f" per unit; expected match count in the illustrative model above: "
+          f"{mp.nstr(uniform_target_count(uinv.values(), 120, 155), 4)}")
     print("  the author's 19 rewordings (upstream_mutations_lean.out), by value:")
     sk, pk = set(single_keys), set(pair_keys)
     for name, line, ro in rows[1:]:
@@ -1402,6 +1418,16 @@ def report(src, ms, defs, order, sites, byid, muts, ill, pairs):
         where = "single" if k in sk else "pair" if k in pk else "not reached"
         print(f"    {name:42s} 1/value {printed:>8.3f}  in B: {'yes' if k in sb else 'no '}  mechanical: {where}"
               + (f" (e.g. {who[k][0]})" if where != "not reached" else ""))
+    # every mutant with the value of the Born-weight row (review R4-CT-3: the rows above print one example per value)
+    vec, N = [(v, N) for name, v, N, printed in MC.S5[1:] if name == "Born weights k_r"][0]
+    born = canonical(([(1, vec[0]), (2, vec[1]), (3, vec[2]), (6, vec[3])], N))
+    bw = [mu.id for mu, k in zip(muts, single_keys) if k == born]
+    nbs = len(bw)
+    bw += [f"{muts[a].id} & {muts[b].id}" for (a, b), k in zip(pairs, pair_keys) if k == born]
+    print(f"  every mutant with the value of 'Born weights k_r' ({fmt_key(born)}): {len(bw)} ({nbs} singles, "
+          f"{len(bw) - nbs} pairs)")
+    for x in bw:
+        print(f"    {x}")
 
 
 def main():

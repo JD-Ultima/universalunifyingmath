@@ -1,7 +1,7 @@
-Mechanical trial-factor space for the readout of ChainAlpha.lean (audit F-CT-4, next step 4)
+Mechanically generated rule family for the readout of ChainAlpha.lean: rule-family sensitivity (audit F-CT-4 E)
 Source: ChainAlpha.lean, sha256 522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da (pinned upstream file; read as data, never run here).
 
-== 1. Inventory and declared space (fixed before any value is computed) ==
+== 1. Inventory and declared space (printed in this run before any value is computed) ==
 Part 1 has 52 definitions and 5 structures/abbreviations.
 The readout `readout objectWorld objectTwoPoint` (the last conjunct of `main`) depends on 44 of them (identifier references, transitively, from readout, objectWorld, objectTwoPoint):
   pairKet                LIT 2, REL 2, LOG 1, IF 1, AOR 1, VAR 5
@@ -115,35 +115,41 @@ Single mutants by operator (well-defined / distinct values / equal to the Letter
 
 F-CT-4 metrics (distinct exact values; CODATA 2022 1/alpha = 137.035999177, sigma = 2.1e-8):
   singles: 818 mutants, 742 well-defined, 244 equal to the Letter's value, 163 distinct values (1 negative)
-    distinct values with 1/value in (120,155): 38; density 1.086 per unit; expected chance values within +-1 sigma: 4.56e-8
-    distinct values in (130,145): 23; density 1.533 per unit; expected within +-1 sigma at that density: 6.44e-8
-    distinct values in (136,138): 4; density 2.0 per unit; expected within +-1 sigma at that density: 8.4e-8
+    distinct values with 1/value in (120,155): 38; density 1.086 per unit
+    illustrative model: target U uniform on (120,155); rule outputs fixed
+    expected match count in that model within +-1 sigma: 4.56e-8
+    this reference count is not a calibrated p-value for the observed alpha or a search-history estimate
+    distinct values in (130,145): 23; density 1.533 per unit; same model with U uniform on (130,145): 6.44e-8
+    distinct values in (136,138): 4; density 2.0 per unit; same model with U uniform on (136,138): 8.4e-8
     distinct values within relative 1e-2 of 1/alpha: 6
     distinct values within relative 1e-3 of 1/alpha: 1
     distinct values within relative 1e-4 of 1/alpha: 1
     distinct values within relative 1e-6 of 1/alpha: 1
     median gap between adjacent distinct values in (120,155): 0.6024
-    mutants needed for an O(1) chance hit at this density: ~1.79e+10
   pairs: 331490 mutants, 272246 well-defined, 29048 equal to the Letter's value, 10340 distinct values (159 negative)
-    distinct values with 1/value in (120,155): 1105; density 31.57 per unit; expected chance values within +-1 sigma: 1.33e-6
-    distinct values in (130,145): 494; density 32.93 per unit; expected within +-1 sigma at that density: 1.38e-6
-    distinct values in (136,138): 70; density 35.0 per unit; expected within +-1 sigma at that density: 1.47e-6
+    distinct values with 1/value in (120,155): 1105; density 31.57 per unit
+    illustrative model: target U uniform on (120,155); rule outputs fixed
+    expected match count in that model within +-1 sigma: 1.326e-6
+    this reference count is not a calibrated p-value for the observed alpha or a search-history estimate
+    distinct values in (130,145): 494; density 32.93 per unit; same model with U uniform on (130,145): 1.383e-6
+    distinct values in (136,138): 70; density 35.0 per unit; same model with U uniform on (136,138): 1.47e-6
     distinct values within relative 1e-2 of 1/alpha: 91
     distinct values within relative 1e-3 of 1/alpha: 9
     distinct values within relative 1e-4 of 1/alpha: 1
     distinct values within relative 1e-6 of 1/alpha: 1
     median gap between adjacent distinct values in (120,155): 0.02192
-    mutants needed for an O(1) chance hit at this density: ~2.5e+11
   singles + pairs: 332308 mutants, 272988 well-defined, 29292 equal to the Letter's value, 10340 distinct values (159 negative)
-    distinct values with 1/value in (120,155): 1105; density 31.57 per unit; expected chance values within +-1 sigma: 1.33e-6
-    distinct values in (130,145): 494; density 32.93 per unit; expected within +-1 sigma at that density: 1.38e-6
-    distinct values in (136,138): 70; density 35.0 per unit; expected within +-1 sigma at that density: 1.47e-6
+    distinct values with 1/value in (120,155): 1105; density 31.57 per unit
+    illustrative model: target U uniform on (120,155); rule outputs fixed
+    expected match count in that model within +-1 sigma: 1.326e-6
+    this reference count is not a calibrated p-value for the observed alpha or a search-history estimate
+    distinct values in (130,145): 494; density 32.93 per unit; same model with U uniform on (130,145): 1.383e-6
+    distinct values in (136,138): 70; density 35.0 per unit; same model with U uniform on (136,138): 1.47e-6
     distinct values within relative 1e-2 of 1/alpha: 91
     distinct values within relative 1e-3 of 1/alpha: 9
     distinct values within relative 1e-4 of 1/alpha: 1
     distinct values within relative 1e-6 of 1/alpha: 1
     median gap between adjacent distinct values in (120,155): 0.02192
-    mutants needed for an O(1) chance hit at this density: ~2.51e+11
   closest distinct values to CODATA 2022 (singles + pairs):
         0.598388 sigma  1/value   137.035999189566  (79 + 48√2 + 42√3 + 3√6)/31104           29292 mutant(s), e.g. pairKet:IF:0=swap
         993967.0 sigma  1/value    137.05687248307  (149 + 45√3)/31104                       20 mutant(s), e.g. recs:REL:1=strict & linkSwap:VAR:0=read2
@@ -160,17 +166,19 @@ F-CT-4 metrics (distinct exact values; CODATA 2022 1/alpha = 137.035999177, sigm
 
 Comparison with the hand-declared space B of F-CT-4 (freedom.py; rebuilt from mutations_classified.py):
   B (one entry per distinct value): 15639 mutants, 15639 well-defined, 1 equal to the Letter's value, 15639 distinct values (0 negative)
-    distinct values with 1/value in (120,155): 3638; density 103.9 per unit; expected chance values within +-1 sigma: 4.37e-6
-    distinct values in (130,145): 1570; density 104.7 per unit; expected within +-1 sigma at that density: 4.4e-6
-    distinct values in (136,138): 211; density 105.5 per unit; expected within +-1 sigma at that density: 4.43e-6
+    distinct values with 1/value in (120,155): 3638; density 103.9 per unit
+    illustrative model: target U uniform on (120,155); rule outputs fixed
+    expected match count in that model within +-1 sigma: 4.366e-6
+    this reference count is not a calibrated p-value for the observed alpha or a search-history estimate
+    distinct values in (130,145): 1570; density 104.7 per unit; same model with U uniform on (130,145): 4.396e-6
+    distinct values in (136,138): 211; density 105.5 per unit; same model with U uniform on (136,138): 4.431e-6
     distinct values within relative 1e-2 of 1/alpha: 288
     distinct values within relative 1e-3 of 1/alpha: 28
     distinct values within relative 1e-4 of 1/alpha: 4
     distinct values within relative 1e-6 of 1/alpha: 1
     median gap between adjacent distinct values in (120,155): 0.007026
-    mutants needed for an O(1) chance hit at this density: ~1.06e+10
   distinct values in both spaces: 333; with 1/value in (120,155): 100 (mechanical 1105, B 3638)
-  union of the two spaces: density in (120,155) 132.7 per unit; expected within +-1 sigma 5.57e-6
+  union of the two spaces: density in (120,155) 132.7 per unit; expected match count in the illustrative model above: 5.572e-6
   the author's 19 rewordings (upstream_mutations_lean.out), by value:
     fixesFar_always_true                 1/value  137.0359992  in B: yes  mechanical: single (e.g. pairKet:IF:0=swap)
     reads_at_qubit                       1/value    150.78591  in B: yes  mechanical: single (e.g. pairKet:VAR:0=j)
@@ -207,3 +215,11 @@ Comparison with the hand-declared space B of F-CT-4 (freedom.py; rebuilt from mu
     normalised by the 172 records              1/value    0.758  in B: no   mechanical: not reached
     no weights                                 1/value  180.837  in B: yes  mechanical: single (e.g. sameForm:REL:0=neg)
     smallest readable configuration            1/value    3.535  in B: no   mechanical: pair (e.g. readoutDim:AOR:5=/ & objectWorld:LIT:2=2)
+  every mutant with the value of 'Born weights k_r' ((319)/31104): 7 (0 singles, 7 pairs)
+    recs:REL:0=neg & sameForm:REL:0=neg
+    recs:REL:0=neg & sameForm:REL:1=neg
+    recs:REL:0=neg & survives:AOR:0=+
+    recs:REL:0=neg & survives:AOR:0=-
+    recs:REL:0=neg & survives:AOR:0=%
+    recs:REL:0=neg & addRoot:IF:0=swap
+    recs:REL:0=neg & addRoot:REL:0=neg

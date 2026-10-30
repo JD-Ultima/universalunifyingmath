@@ -494,16 +494,22 @@ All 248 box quotes and every check anchor are checked verbatim.
   229.1 say "the deciding table is re-derived in Lean", and their tied declarations are records.
 
 **F28. Of the 48 rows, 2 state a clause of their box** (c).
-- Round 6's rule is used. A check that an entered string records the clause's verdict, count or letter is not a
-  counterpart; it gives a label-inclusive bound.
+- Round 6's rule is used, refined for REL-form checks over entered tables. A check that an entered string records the
+  clause's verdict, count or letter is not a counterpart; it gives a label-inclusive bound. A clause counts when some
+  part of its finite content is stated (corrected after review 2026-10-30, R4-CT-9; see `reports/CORRECTIONS.md`).
 - **PARTIAL: 2.**
   - 217.1, 4 of 8 clauses: SLBC checks `W_target - W_source = W_diff >= 0` at the 228 entered reads.
   - 234.1, 1 of 7: NCRE checks that orders and kinds sum to the records at the 246 entered rows.
 - **NONE: 46.**
 - **Clauses:** 248 in all; 5 stated, 44 recorded only, 199 with nothing.
 - **Label-inclusive:** MATCH 1 (28.2: `"5 of 5"`, `"10 of 10"`, `BUILT`), PARTIAL 22, NONE 25.
-- **Sensitivity.** Counting WAMR's `wash_moved_acts == 0` as a counterpart, as round 6 counted the entered zero
-  transfer, makes 28.1 PARTIAL. Nothing else changes.
+- **Sensitivity.**
+  - Counting WAMR's `wash_moved_acts == 0` as a counterpart, as round 6's treatment of entered conclusions would, makes
+    28.1 PARTIAL. Nothing else changes (corrected after review 2026-10-30, R4-CT-8; see `reports/CORRECTIONS.md`).
+  - Strict reading, in which a clause counts only when all its finite content is stated: 217.1's clauses 3 (only
+    `rows.length = 228` is checked, not the 14 bodies, 114 links, 78 open and 150 washed) and 4 (only the site bound) and
+    234.1's clause 2 (sums checked per network and polarity, not per link) drop out. 217.1 is then PARTIAL 2/8 and 234.1
+    NONE: 1 of the 48 rows states a clause, and 2 clauses are stated (corrected after review 2026-10-30, R4-CT-9; see `reports/CORRECTIONS.md`).
 - **Notable.**
   - 223.2 says the asymmetric Onsager pairs "are exactly the pairs at a non-zero production difference at every one of
     the 43". Its table enters and checks `onsg.asym.pairs = "24"`. The key is not defined, so the two may count
@@ -522,8 +528,21 @@ All 248 box quotes and every check anchor are checked verbatim.
 **F29. The 64-row table by content** (c).
 - Round 6's 16 rows also cite 9 table checks. None has an `Int` relation, so they add no counterpart and round 6's
   verdicts hold over all tied declarations. Recomputed, they agree with round 6 at 16 of 16.
+- **9.4 regraded** under the refinement (corrected after review 2026-10-30, R4-CT-8; see `reports/CORRECTIONS.md`). Its third clause, "zero register displacement equals
+  zero momentum transfer", rests on `zeroTransfer` over the 172 entered step triples. Its "third triple $(0,0,0)$" part
+  is the entered conclusion (RECORDED); its "second triple $=-$ first" part is a relation over entered triples
+  (ENTERED), read as the displacement only by position (the library's own displacement of the object of record is
+  $(-1,1,0)$ and is not used). 9.4 stays MATCH through that part, and is PARTIAL 2/3 under the strict reading.
 - **All 64:** MATCH 1, PARTIAL 7, NONE 56. **8 rows** have a tied declaration that states part or all of their box:
-  6 by computation (round 6) and 2 by relations over entered tables.
+  6 through round 6's restated/kernel declarations, partly over entered inputs (9.4's step table; 18.2's definitional
+  weight identity over entered parity and kind fields), and 2 by relations over entered `Int` tables
+  (corrected after review 2026-10-30, R4-CT-10; see `reports/CORRECTIONS.md`).
+- **Sensitivity** (corrected after review 2026-10-30, R4-CT-8; see `reports/CORRECTIONS.md`). Round 6's treatment of entered conclusions gives 1 / 8 / 55 (28.1 PARTIAL);
+  the headline reading gives 1 / 7 / 56; the strict reading gives 0 / 7 / 57 (9.4 PARTIAL, 234.1 NONE). The headline
+  applies this round's ENTERED/RECORDED split to all 64 rows with the clause-counting practice recorded in the curated
+  data; the strict reading needs a further judgment of where each clause's finite content ends. Under every reading at
+  most one row (9.4) states its whole box, none does under the strict one, and 7 to 9 rows state some clause
+  (`lean_tables.txt` [10]).
 - **NONE: 56.**
   - 10: the computation belongs to another box.
   - 35: table checks. In 21 of these the labels record some clause; in 14 they record nothing of the box.
