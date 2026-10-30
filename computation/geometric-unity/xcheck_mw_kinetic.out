@@ -1,3 +1,5 @@
 C+: Spin-invariant (max defect 0.0e+00); antisymmetric; |S+ x S+| = 0.0e+00, |S+ x S-| = 1.0e+00; kinetic block on S+: max |M| = 1.0e+00, max |M + M^T| = 0.0e+00
 C-: Spin-invariant (max defect 0.0e+00); symmetric; |S+ x S+| = 0.0e+00, |S+ x S-| = 1.0e+00; kinetic block on S+: max |M| = 1.0e+00, max |M + M^T| = 0.0e+00
 => for a single MW spinor the kinetic matrices C gamma^mu are antisymmetric on S+: psi^T M d psi is a total derivative for Grassmann psi (no Majorana-Weyl kinetic term in (7,7)).
+RS kinetic block (zeta in S-): max |block| = 1.0e+00, max |symmetric part of full matrix| = 0.0e+00
+=> the Rarita-Schwinger kinetic term of a single Majorana-Weyl zeta is also a total derivative in (7,7)

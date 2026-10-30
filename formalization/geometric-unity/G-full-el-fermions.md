@@ -304,4 +304,4 @@ Gaps:
 - both pair $S^+$ with $S^-$ and vanish on $S^+\times S^+$;
 - every Dirac kinetic block $C\gamma^\mu|_{S^+\times S^+}$ is exactly antisymmetric.
 
-For a Grassmann field, $\int\psi^TM\partial\psi$ only sees the symmetric part of $M$, so a single Majorana–Weyl spinor has no Dirac kinetic term in $(7,7)$. The script also tests the Rarita–Schwinger block, including its vector-index antisymmetry; see its output. This supports Theorem G7 and the doubling to complex Weyl.
+For a Grassmann field, $\int\psi^TM\partial\psi$ only sees the symmetric part of $M$, so a single Majorana–Weyl spinor has no Dirac kinetic term in $(7,7)$. It also finds that the full Rarita–Schwinger kinetic matrix $(C\gamma^{\mu\nu\rho})$ on $(T^*\otimes S^-)^{\otimes2}$, including its vector-index antisymmetry, has exactly zero symmetric part for both $C_\pm$. So a single Majorana–Weyl $\zeta$ also has no Rarita–Schwinger kinetic term. This supports Theorem G7 and the doubling to complex Weyl.
