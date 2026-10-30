@@ -1,0 +1,171 @@
+
+######## (14,0) ########
+X0  base normalisation: c1, c13 of I6 from the round-5 Q (Y_a = c1 gamma_a + c13 gamma_a Gamma)
+     c1 = kappa*t + 312*t**2*x + 208*t*u*y + 104*u**2*x;  c13 = kappa*u + 104*t**2*y + 208*t*u*x + 312*u**2*y
+  [True] (14,0) X0 c1, c13 equal I6 (whole family)
+  [True] (14,0) X0 direct bilinear 2B = polarisation of Q (random P_2, P_12 inputs, all four operators)
+X1  J1 closure of the even equation on the vector sector (all 14 basis covectors, both maps, four operators)
+     S = [[0, 0], [-24*x, -24*y], [24*I*w, -24*I*z], [0, 0]]
+     M = [[kappa, 0, 208*t*y - 208*u*x, 0], [0, kappa + 224*t*x + 224*u*y, 384*I*t*w - 384*I*u*z, 16*t*y - 16*u*x], [16*t*y - 16*u*x, -384*I*t*w + 384*I*u*z, kappa + 544*t*x + 544*u*y, 0], [0, 208*t*y - 208*u*x, 0, kappa]]
+  [True] (14,0) J1 outputs are g_ev-valued and exactly of the form sum_j s_j P_j(e^c) for every c
+  [True] (14,0) J1 same coefficients for all 14 covectors (hence all v by linearity)
+  [True] (14,0) J1(a) S equals the write-up's matrix
+  [True] (14,0) J1(b) M equals the write-up's compact form (sigma, theta, delta, epsilon = +1)
+  [True] (14,0) J1(b) det M = (rho + 224 k s)(rho + 544 k s) - eps (384 k theta)^2
+  [True] (14,0) J1(b) z, w enter M only through theta; A, B couple to C, D only through delta
+  [True] (14,0) J1(d) leading order C = 24/k (x dt + eps' y du), D = 24i/k (-w dt + z du) [eps' = +1]
+  [True] (14,0) J1(d) W_A: Sigma has only Sigma_Ct = 24k/(k^2+224kt-3328 eps u^2), Sigma_Bt = 4992u/(...)
+  [True] (14,0) J1(d) Shiab#: all four components of T_e nonzero at a point with u != 0
+  [True] (14,0) slaved T_e lies in u(128) (A, D imaginary, C, B real coefficients) for real (s, r), two members
+X2  J2 derivative map on all 196 basis tensors e^p (x) e^q, k = 0, 2, 12, 14, four operators
+     k =  0 (A): E1: 0;  E13: 0;  w3: -x;  w11: -y
+     k =  2 (C): E1: 24*x;  E13: 24*y;  w3: 11*I*z;  w11: 11*I*w
+     k = 12 (D): E1: 24*I*w;  E13: -24*I*z;  w3: 11*y;  w11: -11*x
+     k = 14 (B): E1: 0;  E13: 0;  w3: -I*w;  w11: I*z
+  [True] (14,0) J2 derivative outputs are g_odd-valued, only grades 1, 13, 3, 11 (exact reconstruction)
+  [True] (14,0) J2 derivative map is exactly l (N^T - tr N g) in E1, E13 and l dA in w3, w11 (all 196 tensors)
+  [True] (14,0) J2 derivative table equals the write-up's table
+X2b J2 quadratic map 2B(P_k(e^p), P_l(e^q)) on sampled basis pairs [(0, 1), (0, 0), (1, 0), (5, 5), (3, 9), (9, 3), (13, 2), (4, 11)] (p <= q when k = l)
+     (A, A): 0
+     (A, C): w3: -22*x/3; w11: -22*y/3
+     (A, D): E1: (0, -16*y, 16*y); E13: (0, 16*x, -16*x)
+     (A, B): w3: 2*y/3; w11: -2*x/3
+     (C, C): E1: (-224*x, -224*x, -176*x); E13: (-224*y, -224*y, -176*y)
+     (C, D): E1: (-32*I*w, -32*I*w, -352*I*w); E13: (32*I*z, 32*I*z, 352*I*z); w3: -266*y/3; w11: 266*x/3
+     (C, B): E1: (16*y, 0, -16*y); E13: (-16*x, 0, 16*x)
+     (D, D): E1: (-160*x, -160*x, 528*x); E13: (-160*y, -160*y, 528*y)
+     (D, B): w3: 22*x/3; w11: 22*y/3
+     (B, B): 0
+  [True] (14,0) J2 quadratic outputs are g_odd-valued, only grades 1, 13, 3, 11 (sampled pairs)
+  [True] (14,0) J2 quadratic map has the form b1 A(x)A' + b2 A'(x)A + b3 <A,A'> g, b4 A^A' (sampled pairs)
+  [True] (14,0) J2 quadratic table equals the write-up's table (all 10 pairs (k,l))
+  [True] (14,0) J2(d) the twisted pair enters Q(T_e) only through the (C, D) cross term
+X3  Cor. J2.1 (own assembly from the X1/X2 tables)
+  [True] (14,0) J2.1(b) leading-order H = -l_E S / kappa equals the write-up's matrix
+  [True] (14,0) J2.1(b) det H_0 = 576^2 (xz + yw)^2 / kappa^2
+  [True] (14,0) l_E and S vanish off the (C, D) block, so det H = det(l_CD) det((M^-1)_CD) det(S_CD) exactly
+  [True] (14,0) det l_CD * det S_CD = 576^2 (xz + yw)^2
+  [True] (14,0) exact, whole family: det H = 576^2 (xz + yw)^2 kappa^2 / det M (3 random rational points; the write-up states this only for Shiab# and at leading order)
+  [True] (14,0) J2.1(b) real form: Hessian coefficient -K with K = (576/kappa) Gram((x',w'),(y',-z'))
+  [True] (14,0) J2.1(b) det K = 576^2 (x'z' + y'w')^2 / kappa^2
+  [True] (14,0) remark: for kappa < 0, K is negative definite (so 'positive semidefinite' needs kappa > 0)
+  [True] (14,0) J2.1(c) exact H for Shiab# equals (576 k/det M)[[k^2+544kt-3328 eps u^2, -eps 384ku],[-384ku, k^2+224kt-3328 eps u^2]]
+  [True] (14,0) J2.1(c) det H# = 576^2 kappa^2 / det M#
+  [True] (14,0) J2.1(c) H for W_A = 576k/(k^2+224kt-3328 eps u^2) diag(1, 0) (rank 1)
+     varpi[E1] leading = -46080*w*(w*y + x*z)/kappa**2
+     varpi[E13] leading = 46080*z*(w*y + x*z)/kappa**2
+     varpi[w3] leading = -88320*I*y*(w*y + x*z)/kappa**2
+     varpi[w11] leading = 88320*I*x*(w*y + x*z)/kappa**2
+  [True] (14,0) J2.1(e) leading Lambda^2 coefficients equal the write-up's (all O(kappa^-2))
+  [True] (14,0) J2.1(d) gradient terms O(kappa^-2) and z, w-dependent (e.g. leading Q^(1)_tt = -36864*x*(19*w**2 + 7*x**2)/kappa**2)
+     Shiab# exact varpi[E13] = -9216*kappa**2*(-5*kappa**4 + 1600*kappa**3*t + 609280*kappa**2*t**2 + 930304*kappa**2*u**2 + 56016896*kappa*t*u**2 - 587005952*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4)**2
+  [True] (14,0) J2.1(e) exact varpi^(13) for Shiab# equals the printed formula; = 46080/kappa^2 at T_o = 0
+     W_A exact varpi: E1 = 1916928*kappa*u/(kappa**2 + 224*kappa*t - 3328*u**2)**2; E13 = 0; w3 = 0; w11 = 0
+  [True] (14,0) observation: for W_A the exact varpi^(1) is nonzero for u != 0 (O(kappa^-3)), so dt^du = 0 is forced for W_A too wherever u != 0
+  [(14,0) done, 19 s]
+
+######## (7,7) ########
+X0  base normalisation: c1, c13 of I6 from the round-5 Q (Y_a = c1 gamma_a + c13 gamma_a Gamma)
+     c1 = kappa*t + 312*t**2*x - 208*t*u*y - 104*u**2*x;  c13 = kappa*u + 104*t**2*y + 208*t*u*x - 312*u**2*y
+  [True] (7,7) X0 c1, c13 equal I6 (whole family)
+  [True] (7,7) X0 direct bilinear 2B = polarisation of Q (random P_2, P_12 inputs, all four operators)
+X1  J1 closure of the even equation on the vector sector (all 14 basis covectors, both maps, four operators)
+     S = [[0, 0], [-24*x, 24*y], [24*I*w, -24*I*z], [0, 0]]
+     M = [[kappa, 0, -208*t*y + 208*u*x, 0], [0, kappa + 224*t*x - 224*u*y, -384*I*t*w + 384*I*u*z, -16*t*y + 16*u*x], [16*t*y - 16*u*x, -384*I*t*w + 384*I*u*z, kappa + 544*t*x - 544*u*y, 0], [0, 208*t*y - 208*u*x, 0, kappa]]
+  [True] (7,7) J1 outputs are g_ev-valued and exactly of the form sum_j s_j P_j(e^c) for every c
+  [True] (7,7) J1 same coefficients for all 14 covectors (hence all v by linearity)
+  [True] (7,7) J1(a) S equals the write-up's matrix
+  [True] (7,7) J1(b) M equals the write-up's compact form (sigma, theta, delta, epsilon = -1)
+  [True] (7,7) J1(b) det M = (rho + 224 k s)(rho + 544 k s) - eps (384 k theta)^2
+  [True] (7,7) J1(b) z, w enter M only through theta; A, B couple to C, D only through delta
+  [True] (7,7) J1(d) leading order C = 24/k (x dt + eps' y du), D = 24i/k (-w dt + z du) [eps' = -1]
+  [True] (7,7) J1(d) W_A: Sigma has only Sigma_Ct = 24k/(k^2+224kt-3328 eps u^2), Sigma_Bt = 4992u/(...)
+  [True] (7,7) J1(d) Shiab#: all four components of T_e nonzero at a point with u != 0
+  [True] (7,7) slaved T_e lies in u(64,64) (A, D imaginary, C, B real coefficients) for real (t, u), two members
+X2  J2 derivative map on all 196 basis tensors e^p (x) e^q, k = 0, 2, 12, 14, four operators
+     k =  0 (A): E1: 0;  E13: 0;  w3: -x;  w11: -y
+     k =  2 (C): E1: 24*x;  E13: 24*y;  w3: 11*I*z;  w11: 11*I*w
+     k = 12 (D): E1: -24*I*w;  E13: -24*I*z;  w3: -11*y;  w11: -11*x
+     k = 14 (B): E1: 0;  E13: 0;  w3: I*w;  w11: I*z
+  [True] (7,7) J2 derivative outputs are g_odd-valued, only grades 1, 13, 3, 11 (exact reconstruction)
+  [True] (7,7) J2 derivative map is exactly l (N^T - tr N g) in E1, E13 and l dA in w3, w11 (all 196 tensors)
+  [True] (7,7) J2 derivative table equals the write-up's table
+X2b J2 quadratic map 2B(P_k(e^p), P_l(e^q)) on sampled basis pairs [(0, 1), (0, 0), (1, 0), (7, 7), (8, 8), (0, 7), (7, 0), (7, 8), (8, 7), (10, 12), (2, 11), (12, 4)] (p <= q when k = l)
+     (A, A): 0
+     (A, C): w3: -22*x/3; w11: -22*y/3
+     (A, D): E1: (0, 16*y, -16*y); E13: (0, 16*x, -16*x)
+     (A, B): w3: -2*y/3; w11: -2*x/3
+     (C, C): E1: (-224*x, -224*x, -176*x); E13: (-224*y, -224*y, -176*y)
+     (C, D): E1: (32*I*w, 32*I*w, 352*I*w); E13: (32*I*z, 32*I*z, 352*I*z); w3: 266*y/3; w11: 266*x/3
+     (C, B): E1: (-16*y, 0, 16*y); E13: (-16*x, 0, 16*x)
+     (D, D): E1: (160*x, 160*x, -528*x); E13: (160*y, 160*y, -528*y)
+     (D, B): w3: -22*x/3; w11: -22*y/3
+     (B, B): 0
+  [True] (7,7) J2 quadratic outputs are g_odd-valued, only grades 1, 13, 3, 11 (sampled pairs)
+  [True] (7,7) J2 quadratic map has the form b1 A(x)A' + b2 A'(x)A + b3 <A,A'> g, b4 A^A' (sampled pairs)
+  [True] (7,7) J2 quadratic table equals the write-up's table (all 10 pairs (k,l))
+  [True] (7,7) J2(d) the twisted pair enters Q(T_e) only through the (C, D) cross term
+X3  Cor. J2.1 (own assembly from the X1/X2 tables)
+  [True] (7,7) J2.1(b) leading-order H = -l_E S / kappa equals the write-up's matrix
+  [True] (7,7) J2.1(b) det H_0 = 576^2 (xz - yw)^2 / kappa^2
+  [True] (7,7) l_E and S vanish off the (C, D) block, so det H = det(l_CD) det((M^-1)_CD) det(S_CD) exactly
+  [True] (7,7) det l_CD * det S_CD = 576^2 (xz - yw)^2
+  [True] (7,7) exact, whole family: det H = 576^2 (xz - yw)^2 kappa^2 / det M (3 random rational points; the write-up states this only for Shiab# and at leading order)
+  [True] (7,7) J2.1(b) diag(1,-1) H_0 symmetric with det = -576^2 (xz - yw)^2/kappa^2 (indefinite)
+  [True] (7,7) J2.1(c) exact H for Shiab# equals (576 k/det M)[[k^2+544kt-3328 eps u^2, -eps 384ku],[-384ku, k^2+224kt-3328 eps u^2]]
+  [True] (7,7) J2.1(c) det H# = 576^2 kappa^2 / det M#
+  [True] (7,7) J2.1(c) H for W_A = 576k/(k^2+224kt-3328 eps u^2) diag(1, 0) (rank 1)
+     varpi[E1] leading = 46080*w*(-w*y + x*z)/kappa**2
+     varpi[E13] leading = 46080*z*(-w*y + x*z)/kappa**2
+     varpi[w3] leading = 88320*I*y*(-w*y + x*z)/kappa**2
+     varpi[w11] leading = 88320*I*x*(-w*y + x*z)/kappa**2
+  [True] (7,7) J2.1(e) leading Lambda^2 coefficients equal the write-up's (all O(kappa^-2))
+  [True] (7,7) J2.1(d) gradient terms O(kappa^-2) and z, w-dependent (e.g. leading Q^(1)_tt = -36864*x*(-19*w**2 + 7*x**2)/kappa**2)
+     Shiab# exact varpi[E13] = -9216*kappa**2*(-5*kappa**4 + 1600*kappa**3*t + 609280*kappa**2*t**2 - 930304*kappa**2*u**2 - 56016896*kappa*t*u**2 - 587005952*u**4)/(kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4)**2
+  [True] (7,7) J2.1(e) exact varpi^(13) for Shiab# equals the printed formula; = 46080/kappa^2 at T_o = 0
+     W_A exact varpi: E1 = -1916928*kappa*u/(kappa**2 + 224*kappa*t + 3328*u**2)**2; E13 = 0; w3 = 0; w11 = 0
+  [True] (7,7) observation: for W_A the exact varpi^(1) is nonzero for u != 0 (O(kappa^-3)), so dt^du = 0 is forced for W_A too wherever u != 0
+  [(7,7) done, 21 s]
+
+######## J4 (reduction along s(X), n = 4; own bookkeeping; F3/F4 inputs taken as given) ########
+  [True] vertical traces: tr G_0 = (9 + 1/(1-4 lam))/c_V, |tau|^2 = 4/(c_V(1-4 lam)) (explicit 10x10 Gram)
+  [True] F inputs consistent: trace of the F3/F4(c) Ricci blocks equals s_Y of F3/F4(b), in Z1 and Z2
+     Z1: G^Y = (-(8*Lambda_g*c_V*lambda - 2*Lambda_g*c_V - 45*c_H*lambda + 12*c_H)/(2*c_H*c_V*(4*lambda - 1))) h + (-(16*Lambda_g*c_V*lambda - 4*Lambda_g*c_V - 35*c_H*lambda + 10*c_H)/(2*c_H*(4*lambda - 1))) G_0 + ((32*Lambda_g*c_V*lambda**2 - 8*Lambda_g*c_V*lambda - 90*c_H*lambda**2 + 29*c_H*lambda - c_H)/(4*c_H*(4*lambda - 1))) tau tau;  beta = -1/(2*c_V*(4*lambda - 1))
+     Z2: G^Y = (-(2*Lambda_g*c_V - 9*c_H)/(2*c_H*c_V)) h + (-(4*Lambda_g*c_V - 7*c_H)/(2*c_H)) G_0 + ((8*Lambda_g*c_V*lambda - 18*c_H*lambda + c_H)/(4*c_H)) tau tau;  beta = 0
+  [True] Z1 beta = 1/(2 c_V (1 - 4 lam)) from II of F4(a); Z2 beta = 0
+     Z1: rho = (5*lambda - 1)/(c_V*(4*lambda - 1));  Theta = -3*(15*lambda - 2)/(2*c_V*(4*lambda - 1)) + (-11/c_H) Lambda_g
+     Z2: rho = 1/c_V;  Theta = -9/(2*c_V) + (-11/c_H) Lambda_g
+  [True] J4(b) balance identity [h] - [G_0]/c_V: x_i (Lambda_g/c_H + rho) = sum H_i,phi (beta a_phi - p_phi/c_V), identity in generic Sigma, dSigma, l and b (Z1, Z2)
+  [True] J4(b) rho_Z2 = 1/c_V, rho_Z1 = (5 lam - 1)/(c_V (4 lam - 1))
+  [True] J4(c) a = 0 branch: c_i = x_i Theta, sum H p = x_i (G_G0 - c_V G_h), sum H q = x_i (G_tt + lam c_V G_h) is the unique solution (generic Sigma, l, b)
+  [True] J4(c) Theta = Theta_0 - (11/c_H) Lambda_g with Theta_0(Z2) = -9/(2c_V), Theta_0(Z1) = 3(2-15lam)/(2c_V(4lam-1)); Theta_0(Z1, 1/5) = 15/(2c_V)
+  [True] J4(c) at the F6 point (Z1, lam = 1/5, Lambda_g = 0): G^Y = (15/(2c_V)) g_aleph and the p, q right-hand sides vanish
+  [True] J4(e) radial Z1 at a = 0: Lambda_g = c_H (1 - 5 lam)/(c_V (4 lam - 1)), zero exactly at lam = 1/5
+  [True] (14,0) J4(c) image condition exact: every column of l_E is (x,y) up to a multiple of (xz + yw), so im H(t,u) is contained in span(x,y) whenever det H_0 = 0 (not only at leading order)
+  [True] (7,7) J4(c) image condition exact: every column of l_E is (x,y) up to a multiple of (xz - yw), so im H(t,u) is contained in span(x,y) whenever det H_0 = 0 (not only at leading order)
+  [True] (14,0) J4(d) Shiab# real form: e1 = ks + 312s^2 + 104r^2 on r(k+208s) = 0; e1 >= -k^2/1248; det M = k^2(k+224s)(k+544s) on r = 0 (nonzero for s >= -k/624, k > 0): a = 0 branch gives exactly [c_H/11 (Theta_0 - k^2/1248), oo)
+  [True] (7,7) J4(d) Shiab#: curve u(k+208t) = 0; det M = k^2(k+224t)(k+544t) on u = 0, = v^2+554/13 k^2 v+21/169 k^4 > 0 on t = -k/208; c1 covers [-k^2/1248, oo) (t >= -k/624, det M != 0) and (-oo, k^2/416]: every real Lambda_g
+
+X4b J4 beyond the a = 0 branch (ansatz (J) with a_phi != 0)
+  [True] J4, a != 0: the six equations reduce to c_i = x_i Theta + 13 beta (H a)_i - |tau|^2 B_i(alpha) (dSigma drops out); exact identity test at 4 random rational points per metric (Z1, Z2), generic Sigma, dSigma, l, b
+  [True] (14,0) Z2, x W_A + z W_C.AdG (incl. Shiab#): Theta = -e1 - 312|tau|^2 alpha_C^2 - 104|tau|^2 |alpha_D|^2 <= -e1 for every a (alpha_C real, alpha_D imaginary, X1 reality check), so the half-line of J4(d) is exact in Z2 also for a != 0 (an argument the write-up does not give)
+     Z2, (14,0), T_o = 0 on s(X), a = (0, 1): Theta - c1/x = |tau|^2 B_1/x with B_1 = -59904*(-4*w*y*z + 3*x*y**2 + x*z**2)/kappa**2
+  [True] J4 with a != 0: the effective cosmological constant at s(X) depends on (z, w) (here through B_1; in Z1 also through 13 beta (H a)), so 'never on the cosmological term' holds only for the zeroth-order term c_i g
+     Z1, lambda = 0, c_H = c_V = kappa = 1, Shiab#, t = i/1000, u = 0, a_t = i*(-51/16000), a_u = 0: Lambda_g = -984211/1375000 = -0.715790;  p_t = -24174663*I/11000000000, q_t = 17*I/4000;  det M = 29529/15625;  a = 0 lower bound -3745/13728 = -0.272800
+  [True] (14,0) J4(d) 'In (14,0) it takes exactly the values in [c_H/11 (Theta_0 - k^2/1248), oo)' fails in Z1 for ansatz (J): exact real solution of all six equations (a != 0, det M != 0) with Lambda_g below that bound
+  [True] (14,0) Z1, slice u = a_u = 0: the a != 0 range extends down to c_H/11 (Theta_0 - k^2/1248 - 39/(8 c_V (1 - 4 lam))) (78 beta^2/|tau|^2 = 39/(8 c_V (1 - 4 lam)))
+
+######## J5 (radial ansatz, Z2) ########
+  [True] J5(a) G_lam|_y(y, k) = (1 - 4 lam) tr(y^-1 k) and G_lam|_y(y, y) = 4(1 - 4 lam), so |ds|^2 = 1/(4 c_V (1 - 4 lam))
+  [True] J5(c) B^T y + y B = 0 for y = e_i (x) e_i (i = 1..4) forces B = 0
+     base (1, 1, 1, 1): R.h traceless: True;  F(e_a, e_b; h) not identically 0 for (a,b) in [(0, 0), (0, 1), (0, 2), (0, 3), (1, 1), (1, 2), (1, 3), (2, 2), (2, 3), (3, 3)];  F(e0,e0) = 4*(3*h1**2 + 3*h2**2 + 3*h3**2 + 3*h4**2 + 5*h4*h7 + 5*h4*h9 + h5**2 + h6**2 + 3*h7**2 + 5*h7*h9 + h8**2 + 3*h9**2)
+     base (1, -1, -1, -1): R.h traceless: True;  F(e_a, e_b; h) not identically 0 for (a,b) in [(0, 0), (0, 1), (0, 2), (0, 3), (1, 1), (1, 2), (1, 3), (2, 2), (2, 3), (3, 3)];  F(e0,e0) = -4*(3*h1**2 + 3*h2**2 + 3*h3**2 - 3*h4**2 - 5*h4*h7 - 5*h4*h9 - h5**2 - h6**2 - 3*h7**2 - 5*h7*h9 - h8**2 - 3*h9**2)
+     base (1, 1, -1, -1): R.h traceless: True;  F(e_a, e_b; h) not identically 0 for (a,b) in [(0, 0), (0, 1), (0, 2), (0, 3), (1, 1), (1, 2), (1, 3), (2, 2), (2, 3), (3, 3)];  F(e0,e0) = 4*(3*h1**2 - 3*h2**2 - 3*h3**2 + 3*h4**2 - 5*h4*h7 - 5*h4*h9 - h5**2 - h6**2 + 3*h7**2 + 5*h7*h9 + h8**2 + 3*h9**2)
+  [True] J5(d) R.h is g-traceless (the lambda-term drops), all three signatures
+  [True] J5(d) leaf condition fails for constant curvature k != 0, Riemannian base
+  [True] J5(d) leaf condition fails for constant curvature k != 0, Lorentzian base
+  [True] J5(d) leaf condition fails for constant curvature k != 0, base (2,2) (also gives (7,7), A5; not in the write-up)
+
+SUMMARY: 90 checks, 90 True, 0 False
+
+runtime 49 s
