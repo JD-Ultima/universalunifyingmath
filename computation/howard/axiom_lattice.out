@@ -1,0 +1,36 @@
+z3 5.3.3
+
+Part 1: certified inconsistent cores (ground instances only)
+   H1+H2+LD+RD        unsat
+   H1+H2+LD+AS        unsat
+   H1+H2+LD+CM        unsat
+   H1+H2+RD+AS        unsat
+   H1+H2+RD+CM        unsat
+   H1+LD+INC          unsat
+  minimality: every proper subset of each core is satisfied by a witness:
+   H1+H2+LD+RD        minimal
+   H1+H2+LD+AS        minimal
+   H1+H2+LD+CM        minimal
+   H1+H2+RD+AS        minimal
+   H1+H2+RD+CM        minimal
+   H1+LD+INC          not minimal: LD+INC alone is inconsistent (Thm A6); H1 only shortens the certificate
+  witness a(x)b = 2a satisfies RD, H1, H2 (z3): True
+
+Part 2: all 2^7 = 128 subsets of ['H1', 'H2', 'LD', 'RD', 'AS', 'CM', 'INC']
+  inconsistent: 29
+  consistent: 70
+  open: 29
+  maximal consistent subsets found:
+     ['H1', 'H2', 'LD']
+     ['H1', 'H2', 'RD']
+     ['H1', 'H2', 'AS', 'CM', 'INC']
+     ['H1', 'LD', 'RD', 'AS', 'CM']
+     ['H2', 'LD', 'RD', 'AS', 'CM']
+  open subsets: [('LD', 'INC'), ('RD', 'INC'), ('H1', 'RD', 'INC'), ('H2', 'LD', 'INC'), ('H2', 'RD', 'INC'), ('LD', 'RD', 'INC'), ('LD', 'AS', 'INC'), ('LD', 'CM', 'INC'), ('RD', 'AS', 'INC'), ('RD', 'CM', 'INC'), ('H1', 'H2', 'RD', 'INC'), ('H1', 'RD', 'AS', 'INC'), ('H1', 'RD', 'CM', 'INC'), ('H2', 'LD', 'RD', 'INC'), ('H2', 'LD', 'AS', 'INC'), ('H2', 'LD', 'CM', 'INC'), ('H2', 'RD', 'AS', 'INC'), ('H2', 'RD', 'CM', 'INC'), ('LD', 'RD', 'AS', 'INC'), ('LD', 'RD', 'CM', 'INC'), ('LD', 'AS', 'CM', 'INC'), ('RD', 'AS', 'CM', 'INC'), ('H1', 'RD', 'AS', 'CM', 'INC'), ('H2', 'LD', 'RD', 'AS', 'INC'), ('H2', 'LD', 'RD', 'CM', 'INC'), ('H2', 'LD', 'AS', 'CM', 'INC'), ('H2', 'RD', 'AS', 'CM', 'INC'), ('LD', 'RD', 'AS', 'CM', 'INC'), ('H2', 'LD', 'RD', 'AS', 'CM', 'INC')]
+  adding the paper cores LD+INC, RD+INC (Thm A6): {'inconsistent': 58, 'consistent': 70, 'open': 0}
+  every previously open subset contains LD+INC or RD+INC: True
+
+Part 3: bi-additive a(x)b = k*a*b on Z/n with H1 and H2, n <= 12  -> (n, k, 2 != 0 in Z/n)
+   [(1, 0, False), (2, 0, False), (4, 2, True)]
+   brute force Z/2: 16 tables, 2 bi-additive, k-values [0, 1] (None would mean a non-k*a*b solution)
+   brute force Z/3: 19683 tables, 3 bi-additive, k-values [0, 1, 2] (None would mean a non-k*a*b solution)

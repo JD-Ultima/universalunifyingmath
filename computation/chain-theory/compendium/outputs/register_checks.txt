@@ -1,0 +1,21 @@
+[W] 164.5 'The weak angle as the ratio of offices at the Z body' (08-cell-4-2-weak.tex:436-452)
+  printed offices 784/101761 and 1568/101761 -> ratio 1/2; source: 'the literature calls [this ratio]
+  the squared cosine of the weak mixing angle' (correspondence by name)
+  on-shell cos^2(theta_W) = (M_W/M_Z)^2 = 0.7767905 +- 0.00026; printed 1/2 differs by 1067.3 sigma (M_W/M_Z predicted 1/sqrt2 = 0.707107 vs 0.881357)
+  MS-bar sin^2(theta_W)(M_Z) = 0.23122 (PDG 2024) -> cos^2 = 0.76878; printed value implies sin^2 = 1/2
+
+[R] 173.1 'The strong coupling at the depth scale' (09-cell-3-3-strong.tex:101)
+  printed: coupling ratio between successive rungs = 1/36; scale at rung = 96 x depth (count metric).
+  => alpha(rung k) proportional to 36^(-k) with scale linear in k: alpha ~ exp(-(ln 36/96) * scale).
+     ln36/96 = 0.0373283 per count-metric unit. One-loop QCD instead gives
+     1/alpha_s linear in ln(Q^2): alpha_s ~ 1/(b0 ln(Q^2/Lambda^2)), b0 = (33 - 2 n_f)/(12 pi).
+     n_f=3: b0 = 0.716197
+     n_f=4: b0 = 0.663146
+     n_f=5: b0 = 0.610094
+     n_f=6: b0 = 0.557042
+  The map from 'count metric' to energy is not given, so the functional form is the only testable content:
+  geometric (exponential) running in a scale variable vs logarithmic running in Q. Untestable as printed.
+
+[K] 157.1 'The Koide relation at the dock unit' (07-cell-3-2-photon.tex:1161) -- OPEN; printed only that
+  the Koide ratio equals 2/3 'in the field at no reading'. Measured (PDG 2024 masses, MeV):
+  Q = 0.6666644634 (2/3 = 0.6666666667); the source predicts no number to compare.

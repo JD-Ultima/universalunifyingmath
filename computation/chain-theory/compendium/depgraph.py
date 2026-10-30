@@ -256,6 +256,14 @@ def main(cdir, json_out=None, no_chapter_form=False):
     roots = [x for x in by_num if not prem[x] and children[x]]
     print(f"\nroots (no premise, >=1 user): {len(roots)} -> grades {dict(collections.Counter(G(x) for x in roots))}")
 
+    # statements resting on the alpha theorem 124.1 (audited separately; see papers/alpha)
+    if "124.1" in by_num:
+        D = descendants("124.1") - {"124.1"}
+        print(f"\nstatements listing 124.1 (alpha) as a premise: {len(children['124.1'])} "
+              f"{dict(collections.Counter(G(y) for y in children['124.1']))}; transitively resting on it: {len(D)} "
+              f"{dict(collections.Counter(G(y) for y in D))}")
+        print("   direct users:", sorted(children["124.1"]))
+
     # physics claims of the abstract
     focus = ["35.1", "40.1", "41.1", "53.1", "54.1", "59.1", "61.1", "64.1", "64.2", "65.1", "74.1",
              "83.1", "124.1", "141.1", "143.1", "146.1", "147.1", "163.1", "171.1", "172.1", "173.1",

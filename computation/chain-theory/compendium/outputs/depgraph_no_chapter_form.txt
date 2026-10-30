@@ -60,14 +60,17 @@ Top statements by direct in-degree (times listed as a premise):
 
 roots (no premise, >=1 user): 20 -> grades {'DEFINITION': 6, 'THEOREM': 5, 'CONDITIONAL': 6, 'OPEN': 3}
 
+statements listing 124.1 (alpha) as a premise: 22 {'THEOREM': 6, 'CONDITIONAL': 6, 'OPEN': 9, 'TABLE': 1}; transitively resting on it: 32 {'THEOREM': 12, 'CONDITIONAL': 7, 'OPEN': 12, 'TABLE': 1}
+   direct users: ['125.1', '128.1', '129.1', '130.1', '131.1', '132.1', '134.1', '135.1', '140.1', '141.1', '143.1', '146.1', '147.1', '148.1', '150.1', '16.1', '58.1', '61.1', '85.1', '86.1', '88.1', 'F.1']
+
 Physics claims: direct premises by grade, and OPEN premises listed
-  35.1 [CONDITIONAL] direct {'DEFINITION': 6, 'THEOREM': 13, 'CONDITIONAL': 6, 'OPEN': 12}; transitive {'CONDITIONAL': 6, 'THEOREM': 13, 'DEFINITION': 6, 'OPEN': 12}
+  35.1 [CONDITIONAL] direct {'DEFINITION': 6, 'THEOREM': 13, 'CONDITIONAL': 6, 'OPEN': 12}; transitive {'DEFINITION': 6, 'OPEN': 12, 'THEOREM': 13, 'CONDITIONAL': 6}
       CONDITIONAL premises: ['2.2', '9.1', '9.7', '18.1', '18.3', '18.4']
       OPEN premises: ['2.4', '2.5', '2.7', '2.8', '9.8', '18.5', '18.6', 'D.1', 'D.2', 'D.5', 'D.6', 'D.7']
-  40.1 [CONDITIONAL] direct {'DEFINITION': 6, 'THEOREM': 6, 'CONDITIONAL': 5, 'OPEN': 6}; transitive {'CONDITIONAL': 7, 'THEOREM': 13, 'DEFINITION': 6, 'OPEN': 12}
+  40.1 [CONDITIONAL] direct {'DEFINITION': 6, 'THEOREM': 6, 'CONDITIONAL': 5, 'OPEN': 6}; transitive {'DEFINITION': 6, 'OPEN': 12, 'THEOREM': 13, 'CONDITIONAL': 7}
       CONDITIONAL premises: ['2.2', '18.1', '18.3', '18.4', '35.1']
       OPEN premises: ['2.4', '2.5', '2.7', '2.8', '18.5', '18.6']
-  41.1 [CONDITIONAL] direct {'DEFINITION': 6, 'THEOREM': 6, 'CONDITIONAL': 6, 'OPEN': 6}; transitive {'CONDITIONAL': 8, 'THEOREM': 13, 'DEFINITION': 6, 'OPEN': 12}
+  41.1 [CONDITIONAL] direct {'DEFINITION': 6, 'THEOREM': 6, 'CONDITIONAL': 6, 'OPEN': 6}; transitive {'DEFINITION': 6, 'OPEN': 12, 'THEOREM': 13, 'CONDITIONAL': 8}
       CONDITIONAL premises: ['2.2', '18.1', '18.3', '18.4', '35.1', '40.1']
       OPEN premises: ['2.4', '2.5', '2.7', '2.8', '18.5', '18.6']
   53.1 [CONDITIONAL] direct {'DEFINITION': 6}; transitive {'DEFINITION': 6}
@@ -76,90 +79,90 @@ Physics claims: direct premises by grade, and OPEN premises listed
   54.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 1}; transitive {'DEFINITION': 6, 'CONDITIONAL': 1}
       CONDITIONAL premises: ['53.1']
       OPEN premises: []
-  59.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'THEOREM': 1, 'OPEN': 1}; transitive {'DEFINITION': 6, 'THEOREM': 1, 'CONDITIONAL': 1, 'OPEN': 1}
+  59.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'THEOREM': 1, 'OPEN': 1}; transitive {'DEFINITION': 6, 'THEOREM': 1, 'OPEN': 1, 'CONDITIONAL': 1}
       CONDITIONAL premises: ['53.1']
       OPEN premises: ['57.2']
-  61.1 [THEOREM] direct {'DEFINITION': 6, 'CONDITIONAL': 4, 'THEOREM': 6, 'OPEN': 1}; transitive {'CONDITIONAL': 22, 'THEOREM': 19, 'OPEN': 22, 'DEFINITION': 6}
+  61.1 [THEOREM] direct {'DEFINITION': 6, 'CONDITIONAL': 4, 'THEOREM': 6, 'OPEN': 1}; transitive {'CONDITIONAL': 22, 'DEFINITION': 6, 'OPEN': 22, 'THEOREM': 19}
       CONDITIONAL premises: ['9.1', '9.7', '59.1', '124.1']
       OPEN premises: ['9.8']
-  64.1 [THEOREM] direct {'DEFINITION': 6, 'THEOREM': 11, 'CONDITIONAL': 6, 'OPEN': 7}; transitive {'CONDITIONAL': 6, 'THEOREM': 11, 'DEFINITION': 6, 'OPEN': 7}
+  64.1 [THEOREM] direct {'DEFINITION': 6, 'THEOREM': 11, 'CONDITIONAL': 6, 'OPEN': 7}; transitive {'DEFINITION': 6, 'OPEN': 7, 'THEOREM': 11, 'CONDITIONAL': 6}
       CONDITIONAL premises: ['2.2', '9.1', '9.7', '18.1', '18.3', '18.4']
       OPEN premises: ['2.4', '2.5', '2.7', '2.8', '9.8', '18.5', '18.6']
-  64.2 [THEOREM] direct {'DEFINITION': 6, 'THEOREM': 11, 'CONDITIONAL': 6, 'OPEN': 7}; transitive {'CONDITIONAL': 6, 'THEOREM': 11, 'DEFINITION': 6, 'OPEN': 7}
+  64.2 [THEOREM] direct {'DEFINITION': 6, 'THEOREM': 11, 'CONDITIONAL': 6, 'OPEN': 7}; transitive {'DEFINITION': 6, 'OPEN': 7, 'THEOREM': 11, 'CONDITIONAL': 6}
       CONDITIONAL premises: ['2.2', '9.1', '9.7', '18.1', '18.3', '18.4']
       OPEN premises: ['2.4', '2.5', '2.7', '2.8', '9.8', '18.5', '18.6']
-  65.1 [THEOREM] direct {'DEFINITION': 6, 'CONDITIONAL': 2, 'THEOREM': 9, 'OPEN': 6}; transitive {'CONDITIONAL': 6, 'THEOREM': 15, 'DEFINITION': 6, 'OPEN': 12}
+  65.1 [THEOREM] direct {'DEFINITION': 6, 'CONDITIONAL': 2, 'THEOREM': 9, 'OPEN': 6}; transitive {'DEFINITION': 6, 'OPEN': 12, 'THEOREM': 15, 'CONDITIONAL': 6}
       CONDITIONAL premises: ['9.1', '9.7']
       OPEN premises: ['9.8', 'D.1', 'D.2', 'D.5', 'D.6', 'D.7']
   74.1 [THEOREM] direct {}; transitive {}
       CONDITIONAL premises: []
       OPEN premises: []
-  83.1 [THEOREM] direct {'DEFINITION': 6, 'CONDITIONAL': 13, 'OPEN': 7, 'THEOREM': 1}; transitive {'CONDITIONAL': 19, 'THEOREM': 17, 'OPEN': 21, 'DEFINITION': 6}
+  83.1 [THEOREM] direct {'DEFINITION': 6, 'CONDITIONAL': 13, 'OPEN': 7, 'THEOREM': 1}; transitive {'CONDITIONAL': 19, 'DEFINITION': 6, 'OPEN': 21, 'THEOREM': 17}
       CONDITIONAL premises: ['185.1', '185.2', '185.3', '185.4', '185.5', '185.6', '185.7', '185.8', '185.9', '185.10', '185.11', '185.12', 'H.9']
       OPEN premises: ['H.1', 'H.2', 'H.4', 'H.5', 'H.6', 'H.7', 'H.8']
   124.1 [CONDITIONAL] direct {}; transitive {}
       CONDITIONAL premises: []
       OPEN premises: []
-  141.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 4, 'THEOREM': 4, 'OPEN': 4}; transitive {'CONDITIONAL': 7, 'THEOREM': 14, 'DEFINITION': 6, 'OPEN': 9}
+  141.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 4, 'THEOREM': 4, 'OPEN': 4}; transitive {'DEFINITION': 6, 'THEOREM': 14, 'OPEN': 9, 'CONDITIONAL': 7}
       CONDITIONAL premises: ['18.1', '18.3', '18.4', '124.1']
       OPEN premises: ['18.5', '18.6', '28.3', '28.4']
-  143.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 6, 'THEOREM': 6, 'OPEN': 12}; transitive {'CONDITIONAL': 10, 'THEOREM': 18, 'OPEN': 22, 'DEFINITION': 6}
+  143.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 6, 'THEOREM': 6, 'OPEN': 12}; transitive {'CONDITIONAL': 10, 'DEFINITION': 6, 'THEOREM': 18, 'OPEN': 22}
       CONDITIONAL premises: ['18.1', '18.3', '18.4', '124.1', '141.1', 'H.9']
       OPEN premises: ['18.5', '18.6', '28.3', '28.4', '57.2', 'H.1', 'H.2', 'H.4', 'H.5', 'H.6', 'H.7', 'H.8']
-  146.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 5, 'THEOREM': 4, 'OPEN': 5}; transitive {'CONDITIONAL': 11, 'THEOREM': 17, 'OPEN': 22, 'DEFINITION': 6}
+  146.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 5, 'THEOREM': 4, 'OPEN': 5}; transitive {'CONDITIONAL': 11, 'DEFINITION': 6, 'THEOREM': 17, 'OPEN': 22}
       CONDITIONAL premises: ['18.1', '18.3', '18.4', '44.1', '124.1']
       OPEN premises: ['18.5', '18.6', '28.3', '28.4', '45.1']
-  147.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 8, 'THEOREM': 10, 'OPEN': 5}; transitive {'CONDITIONAL': 13, 'THEOREM': 18, 'OPEN': 22, 'DEFINITION': 6}
+  147.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 8, 'THEOREM': 10, 'OPEN': 5}; transitive {'THEOREM': 18, 'CONDITIONAL': 13, 'DEFINITION': 6, 'OPEN': 22}
       CONDITIONAL premises: ['9.1', '9.7', '18.1', '18.3', '18.4', '50.1', '124.1', '146.1']
       OPEN premises: ['9.8', '18.5', '18.6', '28.3', '28.4']
-  163.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 6, 'THEOREM': 12, 'OPEN': 12}; transitive {'CONDITIONAL': 8, 'THEOREM': 21, 'OPEN': 25, 'DEFINITION': 6}
+  163.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 6, 'THEOREM': 12, 'OPEN': 12}; transitive {'DEFINITION': 6, 'OPEN': 25, 'THEOREM': 21, 'CONDITIONAL': 8}
       CONDITIONAL premises: ['9.1', '9.7', '18.1', '18.3', '18.4', '66.4']
       OPEN premises: ['9.8', '18.5', '18.6', '66.1', '66.2', '66.3', '66.5', 'D.1', 'D.2', 'D.5', 'D.6', 'D.7']
-  171.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 2, 'THEOREM': 8, 'OPEN': 3}; transitive {'CONDITIONAL': 6, 'THEOREM': 14, 'DEFINITION': 6, 'OPEN': 9}
+  171.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 2, 'THEOREM': 8, 'OPEN': 3}; transitive {'DEFINITION': 6, 'THEOREM': 14, 'OPEN': 9, 'CONDITIONAL': 6}
       CONDITIONAL premises: ['9.1', '9.7']
       OPEN premises: ['9.8', '28.3', '28.4']
-  172.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 3, 'THEOREM': 5, 'OPEN': 2}; transitive {'CONDITIONAL': 7, 'THEOREM': 14, 'DEFINITION': 6, 'OPEN': 10}
+  172.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 3, 'THEOREM': 5, 'OPEN': 2}; transitive {'DEFINITION': 6, 'THEOREM': 14, 'OPEN': 10, 'CONDITIONAL': 7}
       CONDITIONAL premises: ['9.1', '9.7', '171.1']
       OPEN premises: ['9.8', '171.2']
-  173.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'OPEN': 1}; transitive {'CONDITIONAL': 8, 'THEOREM': 14, 'DEFINITION': 6, 'OPEN': 11}
+  173.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'OPEN': 1}; transitive {'DEFINITION': 6, 'THEOREM': 14, 'OPEN': 11, 'CONDITIONAL': 8}
       CONDITIONAL premises: ['172.1']
       OPEN premises: ['172.2']
-  185.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 3, 'THEOREM': 4, 'OPEN': 4}; transitive {'CONDITIONAL': 6, 'THEOREM': 14, 'DEFINITION': 6, 'OPEN': 9}
+  185.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 3, 'THEOREM': 4, 'OPEN': 4}; transitive {'DEFINITION': 6, 'THEOREM': 14, 'OPEN': 9, 'CONDITIONAL': 6}
       CONDITIONAL premises: ['18.1', '18.3', '18.4']
       OPEN premises: ['18.5', '18.6', '28.3', '28.4']
-  197.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'OPEN': 5, 'THEOREM': 2}; transitive {'CONDITIONAL': 20, 'THEOREM': 17, 'OPEN': 21, 'DEFINITION': 6}
+  197.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'OPEN': 5, 'THEOREM': 2}; transitive {'CONDITIONAL': 20, 'DEFINITION': 6, 'OPEN': 21, 'THEOREM': 17}
       CONDITIONAL premises: ['152.1']
       OPEN premises: ['D.1', 'D.2', 'D.5', 'D.6', 'D.7']
-  197.3 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'OPEN': 5, 'THEOREM': 2}; transitive {'CONDITIONAL': 20, 'THEOREM': 17, 'OPEN': 21, 'DEFINITION': 6}
+  197.3 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'OPEN': 5, 'THEOREM': 2}; transitive {'CONDITIONAL': 20, 'DEFINITION': 6, 'OPEN': 21, 'THEOREM': 17}
       CONDITIONAL premises: ['152.1']
       OPEN premises: ['D.1', 'D.2', 'D.5', 'D.6', 'D.7']
-  197.4 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'OPEN': 5, 'THEOREM': 2}; transitive {'CONDITIONAL': 20, 'THEOREM': 17, 'OPEN': 21, 'DEFINITION': 6}
+  197.4 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'OPEN': 5, 'THEOREM': 2}; transitive {'CONDITIONAL': 20, 'DEFINITION': 6, 'OPEN': 21, 'THEOREM': 17}
       CONDITIONAL premises: ['152.1']
       OPEN premises: ['D.1', 'D.2', 'D.5', 'D.6', 'D.7']
-  197.5 [OPEN] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'OPEN': 5, 'THEOREM': 2}; transitive {'CONDITIONAL': 20, 'THEOREM': 17, 'OPEN': 21, 'DEFINITION': 6}
+  197.5 [OPEN] direct {'DEFINITION': 6, 'CONDITIONAL': 1, 'OPEN': 5, 'THEOREM': 2}; transitive {'CONDITIONAL': 20, 'DEFINITION': 6, 'OPEN': 21, 'THEOREM': 17}
       CONDITIONAL premises: ['152.1']
       OPEN premises: ['D.1', 'D.2', 'D.5', 'D.6', 'D.7']
-  198.3 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 15, 'OPEN': 7, 'THEOREM': 1}; transitive {'CONDITIONAL': 21, 'THEOREM': 17, 'OPEN': 21, 'DEFINITION': 6}
+  198.3 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 15, 'OPEN': 7, 'THEOREM': 1}; transitive {'CONDITIONAL': 21, 'DEFINITION': 6, 'OPEN': 21, 'THEOREM': 17}
       CONDITIONAL premises: ['152.1', '155.1', '185.1', '185.2', '185.3', '185.4', '185.5', '185.6', '185.7', '185.8', '185.9', '185.10', '185.11', '185.12', 'H.9']
       OPEN premises: ['H.1', 'H.2', 'H.4', 'H.5', 'H.6', 'H.7', 'H.8']
-  206.3 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 5, 'THEOREM': 5, 'OPEN': 7}; transitive {'CONDITIONAL': 9, 'THEOREM': 18, 'OPEN': 24, 'DEFINITION': 6}
+  206.3 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 5, 'THEOREM': 5, 'OPEN': 7}; transitive {'DEFINITION': 6, 'THEOREM': 18, 'OPEN': 24, 'CONDITIONAL': 9}
       CONDITIONAL premises: ['18.1', '18.3', '18.4', '203.1', '203.3']
       OPEN premises: ['18.5', '18.6', '28.3', '28.4', '203.2', '203.4', '203.6']
-  90.2 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 3, 'THEOREM': 8, 'OPEN': 13}; transitive {'CONDITIONAL': 4, 'THEOREM': 13, 'OPEN': 17, 'DEFINITION': 6}
+  90.2 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 3, 'THEOREM': 8, 'OPEN': 13}; transitive {'DEFINITION': 6, 'OPEN': 17, 'THEOREM': 13, 'CONDITIONAL': 4}
       CONDITIONAL premises: ['9.1', '9.7', 'H.9']
       OPEN premises: ['9.8', 'D.1', 'D.2', 'D.5', 'D.6', 'D.7', 'H.1', 'H.2', 'H.4', 'H.5', 'H.6', 'H.7', 'H.8']
-  115.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 3, 'THEOREM': 6, 'OPEN': 8}; transitive {'CONDITIONAL': 4, 'THEOREM': 13, 'OPEN': 17, 'DEFINITION': 6}
+  115.1 [CONDITIONAL] direct {'DEFINITION': 6, 'CONDITIONAL': 3, 'THEOREM': 6, 'OPEN': 8}; transitive {'DEFINITION': 6, 'OPEN': 17, 'THEOREM': 13, 'CONDITIONAL': 4}
       CONDITIONAL premises: ['9.1', '9.7', 'H.9']
       OPEN premises: ['9.8', 'H.1', 'H.2', 'H.4', 'H.5', 'H.6', 'H.7', 'H.8']
-  217.1 [THEOREM] direct {'DEFINITION': 6, 'CONDITIONAL': 3, 'THEOREM': 3, 'OPEN': 7}; transitive {'CONDITIONAL': 6, 'THEOREM': 13, 'DEFINITION': 6, 'OPEN': 12}
+  217.1 [THEOREM] direct {'DEFINITION': 6, 'CONDITIONAL': 3, 'THEOREM': 3, 'OPEN': 7}; transitive {'DEFINITION': 6, 'OPEN': 12, 'THEOREM': 13, 'CONDITIONAL': 6}
       CONDITIONAL premises: ['18.1', '18.3', '18.4']
       OPEN premises: ['18.5', '18.6', 'D.1', 'D.2', 'D.5', 'D.6', 'D.7']
-  220.3 [THEOREM] direct {'DEFINITION': 6, 'THEOREM': 3, 'OPEN': 10, 'CONDITIONAL': 1}; transitive {'CONDITIONAL': 7, 'THEOREM': 19, 'OPEN': 24, 'DEFINITION': 6}
+  220.3 [THEOREM] direct {'DEFINITION': 6, 'THEOREM': 3, 'OPEN': 10, 'CONDITIONAL': 1}; transitive {'DEFINITION': 6, 'OPEN': 24, 'THEOREM': 19, 'CONDITIONAL': 7}
       CONDITIONAL premises: ['H.9']
       OPEN premises: ['217.3', '218.1', '218.2', 'H.1', 'H.2', 'H.4', 'H.5', 'H.6', 'H.7', 'H.8']
-  221.1 [THEOREM] direct {'DEFINITION': 6, 'OPEN': 10, 'THEOREM': 3, 'CONDITIONAL': 1}; transitive {'CONDITIONAL': 7, 'THEOREM': 21, 'OPEN': 25, 'DEFINITION': 6}
+  221.1 [THEOREM] direct {'DEFINITION': 6, 'OPEN': 10, 'THEOREM': 3, 'CONDITIONAL': 1}; transitive {'THEOREM': 21, 'DEFINITION': 6, 'OPEN': 25, 'CONDITIONAL': 7}
       CONDITIONAL premises: ['H.9']
       OPEN premises: ['218.1', '218.2', '220.1', 'H.1', 'H.2', 'H.4', 'H.5', 'H.6', 'H.7', 'H.8']
-  225.1 [THEOREM] direct {'DEFINITION': 6, 'CONDITIONAL': 4, 'THEOREM': 7, 'OPEN': 5}; transitive {'CONDITIONAL': 10, 'THEOREM': 20, 'OPEN': 22, 'DEFINITION': 6}
+  225.1 [THEOREM] direct {'DEFINITION': 6, 'CONDITIONAL': 4, 'THEOREM': 7, 'OPEN': 5}; transitive {'CONDITIONAL': 10, 'OPEN': 22, 'THEOREM': 20, 'DEFINITION': 6}
       CONDITIONAL premises: ['18.1', '18.3', '18.4', '44.1']
       OPEN premises: ['18.5', '18.6', '28.3', '28.4', '224.4']
