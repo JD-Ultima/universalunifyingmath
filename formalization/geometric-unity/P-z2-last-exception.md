@@ -43,7 +43,7 @@ with $\ell$ null, $e_i\perp\ell$ and $H$ symmetric (pp-wave type). Their Ricci t
 
 (a) The entries of $A_y(\mathfrak b)$ and $b_y(\mathfrak b)$ are polynomials in $(y,(\det y)^{-1})$. $A$ is affine in $\mathfrak b$, and $b$ is linear in $\mathfrak b$.
 
-(b) The dilation field $y$ (that is, $\nabla s$), with $\xi=0$, lies in $\ker A_y(\mathfrak b)$ for every $(y,\mathfrak b)$. Hence $\mathrm{rank}\,A\le19$.
+(b) The dilation field $y$ (a constant multiple of $\nabla s$), with $\xi=0$, lies in $\ker A_y(\mathfrak b)$ for every $(y,\mathfrak b)$. Hence $\mathrm{rank}\,A\le19$.
 
 (c) At the section $y=\eta$: $\mathcal A_{\mathfrak b}(\eta)=0$ and $\nabla\mathcal A_{\mathfrak b}(\eta)=0$ for $\mathfrak b\in\mathrm{Sym}^2\mathfrak k$. So $A_\eta=:A_0$ does not depend on $\mathfrak b$, it has rank 19, and $b_\eta=0$.
 
@@ -57,7 +57,7 @@ with $\ell$ null, $e_i\perp\ell$ and $H$ symmetric (pp-wave type). Their Ricci t
 - (a) $G$, Γ, the Killing fields and their covariant derivatives are polynomial in $y$ and $y^{-1}=\mathrm{adj}(y)/\det y$.
 - (b) $\nabla s$ is parallel, so $R^F(\cdot,\cdot)\nabla s=0$.
 - (c) $\xi_K(\eta)=0$ for $K\in\mathfrak k$. The rank is computed.
-- (d) A 20-minor is a polynomial times a power of $(\det y)^{-1}$. $F$ is connected (L9) and open in $\mathrm{Sym}^2$, so a minor that is not identically zero is nonzero on a dense open set. There $\mathrm{rank}[A|b]=20>\mathrm{rank}\,A$.
+- (d) A 20-minor is a polynomial times a power of $(\det y)^{-1}$. Its numerator is a polynomial on $\mathrm{Sym}^2$ and $F$ is open in $\mathrm{Sym}^2$, so a minor that is not identically zero on $F$ is nonzero on a dense open subset of $F$, and one that vanishes on a nonempty open subset vanishes identically (connectedness is not needed; R12-5(a)). There $\mathrm{rank}[A|b]=20>\mathrm{rank}\,A$.
 - In case (ii), $\mathrm{rank}[A|b]\le19$ everywhere, so the system is consistent wherever $\mathrm{rank}\,A=19$. Near η, $\mathrm{rank}\,A\ge19$ by semicontinuity.
 - Consistency on an open set gives $\mathrm{rank}[A|b]\le19$ there, so every 20-minor vanishes there, hence identically. ∎
 
@@ -66,7 +66,7 @@ with $\ell$ null, $e_i\perp\ell$ and $H$ symmetric (pp-wave type). Their Ricci t
 *Proof.*
 1. Let $X\in\mathfrak{gl}(4)$ and $P_\varepsilon=1+\varepsilon X$. By P1(c), $\Sigma_{P_\varepsilon\eta P_\varepsilon^\top}(\mathfrak b)$ is $\Sigma_\eta(\mathfrak b^{P_\varepsilon})$; write it $A(\varepsilon)\zeta=b(\varepsilon)$.
 2. $K'_a(\varepsilon)=K_a+\varepsilon[X^\top,K_a]+O(\varepsilon^2)$, so $\xi_{K'_a}(\eta)=O(\varepsilon)$ and $\mathcal A=O(\varepsilon^2)$. Hence $A(\varepsilon)=A_0+O(\varepsilon^2)$ and $b(\varepsilon)=\varepsilon\,b_1(\mathfrak b,X)+O(\varepsilon^2)$, with $b_1$ linear in $\mathfrak b$.
-3. By P2(c), (d)(ii) the system is consistent and $\mathrm{rank}\,A(\varepsilon)=19$ for small ε. Cramer's rule on a nonsingular $19\times19$ minor of $A_0$ gives an analytic solution $\zeta(\varepsilon)$, with $\zeta(0)=0$ since $b(0)=0$. At order ε: $A_0\zeta_1(X)=b_1(\mathfrak b,X)$ for every $X$.
+3. By P2(c), (d)(ii) the system is consistent and $\mathrm{rank}\,A(\varepsilon)=19$ for small ε. Fix a nonsingular $19\times19$ minor $A_{0,IJ}$ of $A_0$. For small ε, $A_{IJ}(\varepsilon)$ is invertible and the rows $I$ span the row space of $[A(\varepsilon)|b(\varepsilon)]$ (both have rank 19). So $\zeta_J=A_{IJ}(\varepsilon)^{-1}b_I(\varepsilon)$, $\zeta_{J^c}=0$ is an analytic solution, with $\zeta(0)=0$ since $b(0)=0$ (R12-5(b)). At order ε: $A_0\zeta_1(X)=b_1(\mathfrak b,X)$ for every $X$.
 4. Computed, in each of the four base signatures: the linear system "$b_1(\mathfrak b,X)=A_0\zeta_1(X)$ for the 16 matrix units $X$" has 7200 rows and 341 unknowns ($\mathfrak b\in\mathrm{Sym}^2\mathfrak k$ and the $\zeta_1(X)$). Its solution space has dimension $17=16+1$, and its $\mathfrak b$-projection is $\mathbb R\,\mathrm{Cas}$. ∎
 
 *Second construction.* At first order $b_1(\mathfrak b,X)$ is L7's $q(\mathfrak b)(X,\cdot,\cdot)$. The image of $A_0$ on $T S$ is spanned by $c_0(V\,\cdot,\cdot,\cdot)$ and $\Xi(Y)Z-\Xi(Z)Y$. So P3 says that the **relaxed (C1)**
@@ -108,7 +108,7 @@ Then $\mu(w)\equiv0$ on Ω.
 - If $R_g(x)\notin\mathcal Z$, P5 gives a $q\in\Omega$ where $\Sigma_q$ is inconsistent. But $(\nabla w/\mu,\mu'dw/\mu)(q)$ solves it.
 - If $R_g(x)\in\mathcal Z$, then $\mathcal A_x\equiv0$ (P5). M9's flat-case argument (as corrected after R9-2) uses only $\mathcal A_x\equiv0$, and it gives $\mu(w)=0$. ∎
 
-P6 needs no point of $s(X)$. It implies L7 (the case $\Omega\ni g(x)$). It also strengthens M5, whose order-$\varepsilon^2$ test at the section admits Lorentzian $R$ with $\mathcal R^2=-\tfrac1{12}(c_H/c_V)^2\mathrm{Id}$ (M5(d)): no Ω, with or without $g(x)$, carries a solution.
+P6 needs no point of $s(X)$. It implies L7 (the case $\Omega\ni g(x)$). It also strengthens M5, whose order-$\varepsilon^2$ test at the section admits Lorentzian $R$ with $\mathcal R^2=-\tfrac1{12}(c_H/c_V)^2\mathrm{Id}$ (M5(d)): no Ω, with or without $g(x)$, carries a solution with $\mu(w)\neq0$.
 
 **Corollary P7 (M10(b) has no exception).** *Proven.* Assume (H). For every member with $(x,y)\neq0$, in (14,0) and in (7,7), $\Upsilon=0$ has **no solution on any nonempty open $U\subset Y$**. With M8: under (H) without $(x,y)\neq0$, $\Upsilon=0$ holds on a nonempty open set iff $(x,y)=0$ and $T=0$.
 
@@ -119,16 +119,16 @@ P6 needs no point of $s(X)$. It implies L7 (the case $\Omega\ni g(x)$). It also 
 4. On $W\cap F_x$ the function $w=r|_{F_x}$ solves (F) (O'Neill, $T=0$), with $\mu(w)=xF'/H\neq0$: $x\neq0$, $F'\neq0$, and $H$ is finite and nonzero on $W$.
 5. $W\neq\emptyset$. For $x_0\in\pi(W)$, $W\cap F_{x_0}$ is a nonempty open subset of $F_{x_0}$, and P6 gives a contradiction. ∎
 
-**Remark P8 (one argument for every line equation).** *Proven.* Wherever L and M reduce $\Upsilon=0$ on an open set to $(\star)$ with $\mu'\neq0$ on a nonempty open subset, L6 and P6 give the contradiction directly. The cases are:
+**Remark P8 (one argument for every line equation).** *Proven.* Wherever L and M reduce $\Upsilon=0$ on an open set to $(\star)$ with $\mu'\neq0$ and $\mu(r)\neq0$ on a nonempty open subset, L6 and P6 give the contradiction directly. The cases are:
 - L8(B) step 5: $\mu=-\tfrac7{18}r$;
 - M6(b), (c): $\mu=-\tfrac7{18}r$ and $-\tfrac3{289}r$;
 - M7(b): $\mu=-\tfrac5{12}r$;
 - M6(a), on $W$.
 
-So L7, M5, L9's analytic continuation and M6 steps 4–6 are not needed for L9, M6, M7(b) and M10. They remain correct; they are the order-$\varepsilon^2$ statements at the section that P6 strengthens. The hypothesis "$U$ meets $s(X)$" appears nowhere.
+So L7, M5, L9's analytic continuation and M6 steps 4–6 are not needed for L9, M6, M7(b) and M10. They remain correct; they are the order-$\varepsilon^2$ statements at the section that P6 strengthens. For the members with linear μ the route through L7 and L9 needs neither P3 nor P4 and remains their computation-light proof (R12-5(f)). The hypothesis "$U$ meets $s(X)$" appears nowhere.
 
 **Answers.**
-1. *$\mathcal Z$.* It is $\{\mathcal R^2=0\}$: $\{0\}$ in base (4,0), and in indefinite bases also the null (pp-wave type) curvatures. On $\mathcal Z$ the A-term vanishes identically on the fibre, and the flat-case argument applies verbatim (P5, P6). In M5(d)'s terms: of the conditions $\mathcal R^2=k\,\mathrm{Id}$ (the Casimir line, which contains M5(d)'s value), only $k=0$ survives. The line passes orders 1 and 2 at the section but fails at order 3 (P3, P4).
+1. *$\mathcal Z$.* It is $\{\mathcal R^2=0\}$: $\{0\}$ in base (4,0), and in indefinite bases also the null curvatures ($R\neq0$, $\mathcal R^2=0$). They include the pp-wave type tensors of P1(b) and, in Lorentzian bases, tensors of other type, e.g. $F_1\otimes F_1-F_2\otimes F_2$ with $F_1=e^{01}+e^{23}$, $F_2=e^{02}+e^{31}$ (REVIEW11-GU R12-3). On $\mathcal Z$ the A-term vanishes identically on the fibre, and the flat-case argument applies verbatim (P5, P6). In M5(d)'s terms: of the conditions $\mathcal R^2=k\,\mathrm{Id}$ (the Casimir line, which contains M5(d)'s value), only $k=0$ survives. The line passes orders 1 and 2 at the section but fails at order 3 (P3, P4).
 2. *Horizontal equations, nonlinearity of μ.* Neither is needed. P6 holds for every μ, because the relaxation already discards $\mu'$.
 3. *Flat base.* M9's flat case gives $\mu(w)=0$, against $\mu=xF'/H\neq0$. So flat bases are excluded on $U$, and by the same argument every $R\in\mathcal Z$.
 4. *No solution exists.* The exception of M10(b) is empty, and under (H) the Z2 family has no neighbourhood solution for $(x,y)\neq0$ (P7).

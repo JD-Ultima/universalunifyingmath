@@ -1,4 +1,4 @@
-result: "P. The last Z2 exception of round 9 is empty: M9's exceptional set Z of base curvatures (where the first integrability condition of the fibre equation Hess_F w = mu(w) (Ric_F + A) could hold on an open set) is exactly {R : (curvature operator)^2 = 0} = {R : A_x vanishes identically on the fibre}, i.e. {0} over a (4,0) base and the null (pp-wave type) curvatures over (1,3), (3,1), (2,2) bases; with M9's flat-case argument the fibre equation has no local solution with mu != 0 for any base curvature and any mu, so under (H) Upsilon = 0 in Z2 has no solution on any nonempty open set for every member with (x, y) != 0, including x (W_A + c W'_C Ad_Gamma), c != 0, with xz +- yw = 0, away from s(X) (kappa != 0, slaved T_e in V, det M != 0)"
+result: "P. The last Z2 exception of round 9 is empty: M9's exceptional set Z of base curvatures (where the first integrability condition of the fibre equation Hess_F w = mu(w) (Ric_F + A) could hold on an open set) is exactly {R : (curvature operator)^2 = 0} = {R : A_x vanishes identically on the fibre}, i.e. {0} over a (4,0) base and the null curvatures (R != 0 with R^2 = 0, e.g. of pp-wave type) over (1,3), (3,1), (2,2) bases; with M9's flat-case argument the fibre equation has no local solution with mu != 0 for any base curvature and any mu, so under (H) Upsilon = 0 in Z2 has no solution on any nonempty open set for every member with (x, y) != 0 (two steps, P3 and P4, computer-assisted), including x (W_A + c W'_C Ad_Gamma), c != 0, with xz +- yw = 0, away from s(X) (kappa != 0, slaved T_e in V, det M != 0)"
 claim_id: [GU-054]
 gaps: [GU-G14, GU-G16]
 writeup: formalization/geometric-unity/P-z2-last-exception.md (Propositions P1; Lemmas P2, P3, P4; Theorems P5, P6; Corollary P7; Remark P8); answers the open item of formalization/geometric-unity/M-z2-remaining-members.md, section M.3, and the exception of Corollary M10(b) (as corrected after REVIEW7-GU)
@@ -48,8 +48,9 @@ empirical_testability: >
   not treated (T_e outside V, T_o outside the invariant sector).
 dependencies: ["M1", "M2", "M3", "M4", "M6", "M9", "M10", "L2", "L6", "L7", "J5d-L0", "F1", "F3", "L-F1", "REVIEW7-GU-2"]
 confidence: >
-  High for P1, P2, P5-P8: each step is a hand proof whose algebraic content is an exact identity. P3 and P4 are exact
+  High for P1, P2, and for P5-P8 given P3, P4: each step is a hand proof whose algebraic content is an exact identity. P3 and P4 are exact
   finite computations (no sampling enters their conclusions: P3 is a nullspace over Q of an explicit system at the
-  section point; P4's local proof is one exact rank at one rational direction), each confirmed by an independent
-  construction. Not covered: Z1; the Z2 signatures (8,6), (10,4), ...; T_e outside V or crossing det M = 0; T_o outside
+  section point; P4's local proof is one exact rank at one rational direction), P3 also by the relaxed (C1) with REVIEW7-GU's tensors; both confirmed by REVIEW11-GU's independent construction
+  (xcheck_round12.py: Koszul Christoffels, coordinate Riemann tensor, expansion at y(eps) along lines and orbit curves,
+  minors at other points). Not covered: Z1; the Z2 signatures (8,6), (10,4), ...; T_e outside V or crossing det M = 0; T_o outside
   the invariant sector.

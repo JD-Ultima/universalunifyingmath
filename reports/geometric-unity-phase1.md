@@ -218,7 +218,7 @@ Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $
   - Not covered:
     - $T_o$ outside the invariant sector;
     - $T_e$ outside the vector sector for large $|T_o|$;
-    - neighbourhood solutions in Z1 beyond Rounds 10 and 13 (limit points of Einstein pieces without analyticity; open sets away from $s(X)$); in Z2 beyond the radial ansatz, nothing left under the hypotheses of Round 8 (Rounds 8, 9, 12);
+    - neighbourhood solutions in Z1 beyond Rounds 10 and 13 (limit points of Einstein pieces without analyticity; open sets away from $s(X)$); in Z2 beyond the radial ansatz, nothing left under the hypotheses of Round 8 (Rounds 8, 9, 12; two steps of Round 12 computer-assisted);
     - reading (A).
 
 ## Round 8 — $\Upsilon=0$ beyond the radial Z2 ansatz (GU-054, GU-G14, GU-G16)
@@ -270,12 +270,12 @@ Write-up: `formalization/geometric-unity/O-gimel-variation.md`. Code: `computati
 
 ## Round 12 — the last Z2 exception (GU-054, GU-G14, GU-G16)
 
-Write-up: `formalization/geometric-unity/P-z2-last-exception.md`. Code: `computation/geometric-unity/P_last_exception.py`, output committed, exact, 39 asserted checks, ~12 min (715 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/P-z2-last-exception.yaml`. Not yet internally reviewed.
+Write-up: `formalization/geometric-unity/P-z2-last-exception.md`. Code: `computation/geometric-unity/P_last_exception.py`, output committed, exact, 39 asserted checks, ~12 min (715 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/P-z2-last-exception.yaml`. Refereed in `reports/reviews/REVIEW11-GU-2026-10-31.md` (independent check `computation/geometric-unity/xcheck_round12.py`, 37/37).
 
 Hypotheses of Round 8 ((H) of L.0).
 - The O'Neill term $\mathcal A_x$ of the fibre equation $\mathrm{Hess}^Fw=\mu(w)(\mathrm{Ric}_F+\mathcal A_x)$ is quadratic in Killing fields of the fibre and depends on the base curvature only through $\mathcal R^2$ (P1). Over (1,3), (3,1), (2,2) bases, null curvatures ($\mathcal R^2=0$, $R\neq0$, e.g. pp-waves) give $\mathcal A_x\equiv0$.
-- M9's relaxed first integrability condition is a pointwise linear system (20 unknowns, equivalent to M9's 295). It holds on an open subset of a fibre only if it holds near the section. There the first-order term allows only $\mathcal R^2\propto\mathrm{Id}$, and the third-order term excludes that (P3, P4; exact computations, each confirmed by an independent construction).
-- **Results.** M9's exceptional set is $\mathcal Z=\{\mathcal R^2=0\}$, on which $\mathcal A_x\equiv0$ (P5). The fibre equation has no local solution with $\mu\neq0$ for any base curvature and any μ (P6). So the exception of Round 9 is empty: under (H), $\Upsilon=0$ in Z2 has no solution on any open subset of $Y$ for every member with $(x,y)\neq0$, and for $(x,y)=0$ only $T=0$ (P7, M8). The same argument replaces L7, L9's continuation, M5 and M6 steps 4–6 (P8).
+- M9's relaxed first integrability condition is a pointwise linear system (20 unknowns, equivalent to M9's 295). It holds on an open subset of a fibre only if it holds near the section. There the first-order term allows only $\mathcal R^2\propto\mathrm{Id}$, and the third-order term excludes that (P3, P4; exact computations without hand proof, both confirmed by the independent construction of REVIEW11-GU, `xcheck_round12.py`).
+- **Results.** M9's exceptional set is $\mathcal Z=\{\mathcal R^2=0\}$, on which $\mathcal A_x\equiv0$ (P5). The fibre equation has no local solution with $\mu\neq0$ for any base curvature and any μ (P6). So the exception of Round 9 is empty: under (H), $\Upsilon=0$ in Z2 has no solution on any open subset of $Y$ for every member with $(x,y)\neq0$, and for $(x,y)=0$ only $T=0$ (P7, M8). The same argument also settles the cases handled by L7, L9's continuation, M5 and M6 steps 4–6 (P8). For linear μ those steps remain the proof without computer-assisted input.
 - **Open.** Z1 beyond Rounds 10 and 13; other sectors; the rule for $T$ off $s(X)$.
 - No statement made before Round 12 is contradicted.
 
