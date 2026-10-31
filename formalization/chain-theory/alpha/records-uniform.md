@@ -29,7 +29,7 @@
 4. **One identification rule gives it** (Thms 6, 7). The rule (ID): a record is orthogonal to every identification whose action the exchange preserves. Then $R=D\cap\mathrm{Comp}_f^\perp$.
    - **Plain $E$:** $R=R_E$, the Letter's 172 records exactly, with no exception clause.
    - **Every covariant exchange:** $\mathrm{Comp}_f=1\oplus\mathrm{Lie}(G_\Omega)$, the infinitesimal identifications that fix the joint state. So $R=P_2\oplus C^+$, canonically.
-   - This equals $R_f$, with the Letter's sectors, value and isotypic table, iff $\varepsilon_q=-1$. Then the exchange acts on the read qubits by the unitary $(\sigma_y\otimes\sigma_y)\,\mathrm{SWAP}$, the matching that undoes the conjugation in the Letter's readers remark (alpha.tex:79).
+   - This equals $R_f$, with the Letter's sectors, value and isotypic table, iff $\varepsilon_q=-1$. Then the exchange acts on the read qubits by the unitary $(\sigma_y\otimes\sigma_y)\,\mathrm{SWAP}$, the plain swap followed by the qubit-pair matching $V\otimes\bar V$, $V=i\sigma_y$, which undoes the conjugation (R5-CT-11(d); $W$ itself is not a matching) in the Letter's readers remark (alpha.tex:79).
    - For $E'$ ($\varepsilon_q=+1$, F-CT-10) the Letter's commutator records are the matchings $C$, which (ID) removes. The rule's records sorted by $E'$ give $1/\text{value}=139.713$ ($M_L$) or $138.348$ (word rule).
 5. **Difference vs sum** (Sec. 6). The suggested reason, "the sum is the action of the identification algebra and is not a record, as the global phase is not", is exactly (ID).
    - It selects the Letter's difference in the plain frame and in the covariant frames with $\varepsilon_q=-1$.
@@ -105,13 +105,13 @@ Let $V=\bigoplus_sV_s$ (22 letters), $m:V\otimes V\to B(H)$ the product, $\tau$ 
 **Theorem 2 (order-definiteness; Proven, out §3).**
 1. At an end of dimension $d$, the traceless part of $\{A,B\}$ vanishes for all letters $A,B$ iff $d=2$. Always $m(\Lambda^2V_d)=V_d$. Hence $m(\mathrm{Sym}^2V_d)\cap m(\Lambda^2V_d)$ is $0$ at $d=2$ and $V_d$ at $d\ge3$ (computed at $d=2,3,4$).
 2. $m(V\otimes V)=P_{\le2}$; $m_+=1\oplus P_2\oplus V_Q$ (dim 186); $m_-=V_Q\oplus V_q$ (dim 22). So $A:=m_+\cap m_-=V_Q$.
-3. $\tau$ induces a well-defined map on $m(V\otimes V)/B$ (that is, $m(x)\in B\Rightarrow m(\tau x)\in B$) iff $B\supseteq A$. On $m(V\otimes V)/A$ it is the involution with eigenspaces $m_\pm/A$.
+3. $\tau$ induces a well-defined map on $m(V\otimes V)/B$ (that is, $m(x)\in B\Rightarrow m(\tau x)\in B$) only if $B\supseteq A$. For $B\supseteq A$ it does so exactly when $B/A$ is invariant under the induced involution, i.e. $B=A+(B\cap m_+)+(B\cap m_-)$; in particular for $B=A$. (Corrected after review 2026-10-30, R5-CT-7; the text had "iff $B\supseteq A$", whose sufficiency fails, e.g. for $B=A\oplus\mathbb C(1+\sigma_x^{(q_1)})$.) On $m(V\otimes V)/A$ it is the involution with eigenspaces $m_\pm/A$.
 4. With the trace pairing, $D:=A^\perp\cap P_{\le2}=1\oplus P_2\oplus V_q$ (dim 176). The induced order sign is $+1$ on $1\oplus P_2$ and $-1$ on $V_q$; it equals the own sign $\sigma$ there.
 
 *Proof.*
 1. For $d=2$, $\{a\cdot\sigma,b\cdot\sigma\}=2(a\cdot b)\,1$. For $d\ge3$, take $A=B=E_{01}+E_{10}$: $A^2=E_{00}+E_{11}$ has a nonzero traceless part. The map $\mathrm{Sym}^2V_d\to V_d$ is $\mathfrak{su}(d)$-equivariant and $V_d$ is irreducible, so the map is onto. $[V_d,V_d]=V_d$ because $\mathfrak{sl}(d)$ is perfect.
 2. For $s\ne t$, $a^{(s)}b^{(t)}=b^{(t)}a^{(s)}$. So $\Lambda^2$ maps to $0$ there and $\mathrm{Sym}^2$ maps onto $V_s\otimes V_t$. Then add the same-slot terms from (1).
-3. Necessity: for $y\in A$, write $y=m(x_+)=m(x_-)$. Then $x=x_+-x_-$ has $m(x)=0$ and $m(\tau x)=2y$. Sufficiency: if $m(x)\in A$, then $m(x_+)=m(x)-m(x_-)\in m_-\cap m_+=A$, so $m(\tau x)=2m(x_+)-m(x)\in A$.
+3. Necessity: for $y\in A$, write $y=m(x_+)=m(x_-)$. Then $x=x_+-x_-$ has $m(x)=0$ and $m(\tau x)=2y$. For $B=A$: if $m(x)\in A$, then $m(x_+)=m(x)-m(x_-)\in m_-\cap m_+=A$, so $m(\tau x)=2m(x_+)-m(x)\in A$. For general $B\supseteq A$ the same computation modulo $A$ shows that well-definedness is equivalent to invariance of $B/A$ under the induced involution.
 4. This follows from (2), and from the fact that $A$ is a sum of slot blocks orthogonal to the rest.
 
 ∎
@@ -127,6 +127,7 @@ Let $V=\bigoplus_sV_s$ (22 letters), $m:V\otimes V\to B(H)$ the product, $\tau$ 
 - The Letter's sentence "at the qutrit no two reads anticommute" is true of invertible reads, and the determinant argument covers only those. Its records, however, are built from Gell-Mann letters.
 - The rule taken literally, with those letters, adds four $E$-odd qutrit records, giving $79+48\sqrt2+46\sqrt3+3\sqrt6$ and $1/\text{value}=132.977$ (out §9).
 - At the qutrit the count is basis-dependent (0 to 5 pairs). At the qubit it is 3 in every basis.
+  - *Upper bound (after review, R5-CT-11(b)).* A traceless Hermitian $A$ with an anticommuting partner $B\neq0$ has $\mathrm{spec}\,A=\{a,-a,0\}$ ($B$ maps $E_a\to E_{-a}$ and $\ker A$ to itself), and its traceless Hermitian anticommutant is the 2-dimensional space of off-diagonal Hermitian matrices on $S=E_a\oplus E_{-a}$. So a letter has at most two partners in an orthogonal basis, and with two the three letters span $\mathfrak{su}(S)$ and anticommute pairwise. Two such triangles would need $\mathfrak{su}(S_1)\perp\mathfrak{su}(S_2)$ for 2-planes meeting in a line $\mathbb Cv$, but $\operatorname{tr}[(|v\rangle\langle v|-|u_1\rangle\langle u_1|)(|v\rangle\langle v|-|u_2\rangle\langle u_2|)]=1+|\langle u_1|u_2\rangle|^2>0$. So the anticommutation graph on the 8 letters is at most one triangle plus disjoint edges: at most $3+2=5$ pairs, attained by Gell-Mann.
 - (OD) gives the Letter's exclusion without a basis.
 
 ## 4. Sign rules and isotypic sums
@@ -180,7 +181,7 @@ Let $\mathrm{ad}_X=[X,\cdot\,]$ on $P_{\le2}$. Define:
 ∎
 
 **Theorem 7 (the covariant exchanges; Proven, out §5).** Call an exchange *letter-wise* if it is $\mathrm{swap}\circ\bigotimes_s\varphi_s$, with unital linear maps $\varphi_s$ from slot $s$ to its partner slot that carry letters to letters and preserve the trace pairing.
-1. The letter-wise involutive exchanges that commute with $G_\Omega$ are exactly the four $f_{\varepsilon_Q,\varepsilon_q}$. By Schur, the $G_\Omega$-intertwiners $V_{q_1}\to V_{q_2}$ and $V_{Q_1}\to V_{Q_2}$ are lines, spanned by $b\mapsto b^{\mathsf T}$. So $\varphi_s=c_s\,T$. Preserving the pairing gives $c_s=\pm1$, and being an involution gives $c_s=c_{s'}$ on partner slots. $E$ is an automorphism and is not covariant.
+1. The letter-wise involutive exchanges that commute with $G_\Omega$ are exactly the four $f_{\varepsilon_Q,\varepsilon_q}$. By Schur, the $G_\Omega$-intertwiners $V_{q_1}\to V_{q_2}$ and $V_{Q_1}\to V_{Q_2}$ are lines, spanned by $b\mapsto b^{\mathsf T}$. So $\varphi_s=c_s\,T$. Such exchanges carry Hermitian letters to Hermitian letters, so $c_s$ is real; preserving the pairing then gives $c_s=\pm1$ (R5-CT-11(a); with complex $c_s$ the circle $c_s=e^{i\theta}$, $c_{s'}=e^{-i\theta}$ is also covariant and involutive, with non-Hermitian odd spaces), and being an involution gives $c_s=c_{s'}$ on partner slots. $E$ is an automorphism and is not covariant.
 2. $E'$ is an anti-automorphism of $B(H)$. The other three are neither automorphisms nor anti-automorphisms (out §5 tests all products of two letters).
 3. All four give the Letter's sectors $79/48/42/3$, its value, and the same isotypic table (Prop. 1(4), Prop. 5(5)).
 4. For $\varepsilon_q=-1$ the exchange acts on the read qubits as $\mathrm{Ad}_W$ with $W=(\sigma_y\otimes\sigma_y)\,\mathrm{SWAP}_{q}$, a unitary. This is checked on all 16 basis operators of $P_{\le2}$ without qutrit letters, using $-b^{\mathsf T}=\sigma_yb\sigma_y$. At the qutrit copies no unitary intertwines $U$ with $\bar U$, so the transpose is forced there (conjugation.md Remark (b); `supplement.tex:170`).
@@ -265,7 +266,7 @@ Values are given under $M_L$ of the stated frame and under the word rule (out §
    - (a) Single-letter composites are admitted at the qubit and not at the qutrit. This is (OD), a uniform rule (Thm 2).
    - (b) Only the exchange-odd combination is kept. This is (ID) when the exchange acts on the read qubits as an automorphism ($E$, or $\varepsilon_q=-1$) (Thm 6).
 3. For $E'$, (b) is "the order-definite matchings are records". The covariant two-clause form is $R_{E'}=P_2\oplus(D_0\cap\mathrm{stab}_\Omega)=D_0\cap(P_2+\mathrm{Lie}(G_\Omega))$.
-4. Without (b), the record space is $D_0$ (175 records; 135.248 or 133.969). Without (a), it is $P_2\oplus\mathrm{Lie}(G_\Omega)$ (180; 129.152) or $P_{\le2,0}$ (191).
+4. Without (b), the record space is $D_0$ (175 records; 135.248 or 133.969). Without (a), it is $P_2\oplus\mathrm{Lie}(G_\Omega)$ (180; 129.152); without (a) and (b), $P_{\le2,0}$ (191).
 
 ## 10. Status
 
@@ -281,7 +282,7 @@ Values are given under $M_L$ of the stated frame and under the word rule (out §
 
 ## 11. Consequences for the gaps
 
-- **CT-G09. Resolved conditionally.**
+- **CT-G09. Met in the Letter's plain frame under (OD) and (ID); covariantly reduced to (OD), (ID) and (R)** (R5-CT-5).
   - In the Letter's frame, (OD)+(ID) define the 172 records with no exception clause: $R_E=D\cap\mathrm{Comp}_E^\perp$.
   - Covariantly, the same rule gives the canonical $G_\Omega$-invariant space $P_2\oplus C^+$. It carries the Letter's sectors and value iff the exchange identifies the read qubits by $\sigma_y$ ($\varepsilon_q=-1$).
   - Under $E'$ (CT-G11 as written) the Letter's records need the second clause of Cor. 11(3). The uniform rule then gives 139.713 or 138.348.
@@ -293,4 +294,4 @@ Values are given under $M_L$ of the stated frame and under the word rule (out §
 - **Committed statements this sharpens.**
   - `gaps/chain-theory-alpha.md` (CT-G09 row): "Only the difference is kept, not the sum" is true for the Letter's $E$. Covariantly the invariant statement is "only the exchange-odd combination". Under $E'$ that combination contains the $y$ sum.
   - `formalization/chain-theory/alpha/audit.md:52` and `:174`, and `computation/chain-theory/alpha/algebraic.py:23`, count $\binom b2$ commutator records at even $d_q$. At $d_q=4$ that is 105 records. But the commutators of the 15 letters at one slot span only 15 dimensions, so 105 orthogonal records do not exist. Lean's `commutatorRecs` gives none at $d_q=4$ (`weylIsSign 4 = false`), and so does (OD).
-  - F-CT-7's $(2,4)$ entry, 216.04, becomes 331.40 with no commutator records, or 307.91 with 15. Its conclusion, that $(3,2)$ is the only pair within 1%, is unaffected.
+  - F-CT-7's $(2,4)$ entry, 216.04, becomes 331.40 with no commutator records, or 307.91 with 15. Its conclusion, that $(3,2)$ is the only pair within 1%, holds with the commutator records at the far end. Under (OD) at a qubit centre, $(2,3)$ comes within 1% (F-CT-7; R5-CT-8).

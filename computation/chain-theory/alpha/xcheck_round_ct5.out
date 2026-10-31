@@ -1,0 +1,244 @@
+
+A1. Relabellings eps in {+1,-1}^2 (conjugation.md Thm 3)
+--------------------------------------------------------
+  [  1] (2,2): d rho_eps(g) (dim 7) and d rho_eps(su+su) (dim 6) are the same spaces for all four eps: True
+  [  2] (2,3): d rho_eps(g) (dim 12) and d rho_eps(su+su) (dim 11) are the same spaces for all four eps: True
+  [  3] (3,3): d rho_eps(g) (dim 17) and d rho_eps(su+su) (dim 16) are the same spaces for all four eps: True
+  Q = i(d2 1, -d1 1) in the Letter's labels h_W; its scalar on L under rho_eps, and acting = (i 1_L in d rho_eps(h_W)):
+  [  4] eps=(1, 1), (2,2): Q acts on L as 0 = i(e1 d2 - e2 d1); acting False: True
+  [  5] eps=(1, 1), (2,3): Q acts on L as 1i = i(e1 d2 - e2 d1); acting True: True
+  [  6] eps=(1, 1), (3,3): Q acts on L as 0 = i(e1 d2 - e2 d1); acting False: True
+  [  7] eps=(-1, -1), (2,2): Q acts on L as 0 = i(e1 d2 - e2 d1); acting False: True
+  [  8] eps=(-1, -1), (2,3): Q acts on L as -1i = i(e1 d2 - e2 d1); acting True: True
+  [  9] eps=(-1, -1), (3,3): Q acts on L as 0 = i(e1 d2 - e2 d1); acting False: True
+  [ 10] eps=(1, -1), (2,2): Q acts on L as 4i = i(e1 d2 - e2 d1); acting True: True
+  [ 11] eps=(1, -1), (2,3): Q acts on L as 5i = i(e1 d2 - e2 d1); acting True: True
+  [ 12] eps=(1, -1), (3,3): Q acts on L as 6i = i(e1 d2 - e2 d1); acting True: True
+  [ 13] eps=(-1, 1), (2,2): Q acts on L as -4i = i(e1 d2 - e2 d1); acting True: True
+  [ 14] eps=(-1, 1), (2,3): Q acts on L as -5i = i(e1 d2 - e2 d1); acting True: True
+  [ 15] eps=(-1, 1), (3,3): Q acts on L as -6i = i(e1 d2 - e2 d1); acting True: True
+  [ 16] (2,2): the acting predicate depends on eps only through e1 e2: True
+  [ 17] (2,3): the acting predicate depends on eps only through e1 e2: True
+  [ 18] (3,3): the acting predicate depends on eps only through e1 e2: True
+  [ 19] (2,2): d rho_eps(h_W) is the same space for eps = (1,1) and (1,-1): False (dims 6, 7); the image of the identification algebra is not relabelling-invariant at d1 = d2: True
+  [ 20] (2,3): d rho_eps(h_W) is the same space for eps = (1,1) and (1,-1): True (dims 12, 12); the image of the identification algebra is not relabelling-invariant at d1 = d2: True
+  [ 21] (3,3): d rho_eps(h_W) is the same space for eps = (1,1) and (1,-1): False (dims 16, 17); the image of the identification algebra is not relabelling-invariant at d1 = d2: True
+  [ 22] tr conj(X) = -tr X on a basis of u(2), so theta_eps*(tr1 + tr2) = e1 tr1 + e2 tr2: True
+  [ 23] tr conj(X) = -tr X on a basis of u(3), so theta_eps*(tr1 + tr2) = e1 tr1 + e2 tr2: True
+  [ 24] (X1(x)1 + 1(x)X2)^T = -(conj X1 (x) 1 + 1 (x) conj X2) on bases at (2,2),(2,3),(3,3) (Remark (c)): True
+  [ 25] sigma_y conj(U) sigma_y = U for U = [[3/5, 4i/5],[4i/5, 3/5]] in SU(2): True
+  [ 26] for V = e^{i phi} U: sigma_y conj(V) sigma_y = e^{-2 i phi} V (the central U(1) is inverted): True
+  [ 27] U = diag(i,i,-1) in SU(3): tr U = -1+2i != tr conj U = -1-2i, so conj is outer on SU(3) (Remark (b)): True
+
+A2. Stabilizer of the pair ket; centres at (2,3) under A and A* (Thm 4(1), Prop. 6, Thm S-stabilizer)
+-----------------------------------------------------------------------------------------------------
+  [ 28] (2,2): dim stab_g(omega) = 4 = d1^2 + (d2-d1)^2; m_0 (dim 4) fixes omega and lies in it: True
+  [ 29] (2,3): dim stab_g(omega) = 5 = d1^2 + (d2-d1)^2; m_0 (dim 4) fixes omega and lies in it: True
+  [ 30] (3,3): dim stab_g(omega) = 9 = d1^2 + (d2-d1)^2; m_0 (dim 9) fixes omega and lies in it: True
+  [ 31] (2,4): dim stab_g(omega) = 8 = d1^2 + (d2-d1)^2; m_0 (dim 4) fixes omega and lies in it: True
+  [ 32] (3,4): dim stab_g(omega) = 10 = d1^2 + (d2-d1)^2; m_0 (dim 9) fixes omega and lies in it: True
+  [ 33] A : h_W cap stab (labels) has dim 4; its centre has dim 1: True
+      centre, labels: i diag(1, 1, -1, -1, 0); operator pair: i diag(1, 1, -1, -1, 0)
+  [ 34] A : centre is diagonal and acts on L as a multiple of 1 (x) diag(0,0,1): True
+  [ 35] A*: h_W cap stab (labels) has dim 4; its centre has dim 1: True
+      centre, labels: i diag(1, 1, 1, 1, -4); operator pair: i diag(1, 1, -1, -1, 4)
+  [ 36] A*: centre is diagonal and acts on L as a multiple of 1 (x) diag(0,0,1): True
+  [ 37] A: centre = U = i diag(1,1;-1,-1,0), as Thm S-stabilizer states: True
+  [ 38] A*: centre = i diag(1,1;1,1,-4) in labels (not U): True
+  [ 39] as operators on L the two stabilizers coincide (Prop. 6(3)): True
+  [ 40] A*: the label stabilizer contains the su(2) part of the matchings but not the matching phase U_m; A contains U_m (Prop. 6(2)): True
+  [ 41] Supplement e_1..e_12 span the Letter's h_W at (2,3): True
+  [ 42] the Supplement's null-space basis e1+e4, e2-e7, e3-e10, e3+2e11-e12 spans the A stabilizer (labels = operators): True
+  [ 43] under A* (far block acting by its conjugate) e2-e7, e3-e10 and e3+2e11-e12 do not annihilate omega: True
+  [ 44] -8e10-16e11+8e12 = 24 U lies in the A stabilizer (the Supplement's centre): True
+  [ 45] finite matchings: |G2| = 32, |G3| = 384; pairs fixing the pair ket: 128 (A), 128 (A*), of 12288: True
+  [ 46] of the 128 matching pairs fixing the pair ket (G3 acts on the whole qutrit, the third level's phase is free), 32 lie in the identification group S(U(2) x U(3)) (det g2 det g3 = 1): the Letter's matchings are not all identifications: True
+
+A3. Matching closure (Thm 4(2),(3))
+-----------------------------------
+  [ 47] (2,2): m_0 in h_[a:b] iff a = b, for [a:b] in [(1, 1), (2, 2), (-3, -3), (1, -1), (2, 3), (3, 2), (1, 0), (0, 1), (3, -2), (5, 4)]: True
+  [ 48] (2,3): m_0 in h_[a:b] iff a = b, for [a:b] in [(1, 1), (2, 2), (-3, -3), (1, -1), (2, 3), (3, 2), (1, 0), (0, 1), (3, -2), (5, 4)]: True
+  [ 49] (3,3): m_0 in h_[a:b] iff a = b, for [a:b] in [(1, 1), (2, 2), (-3, -3), (1, -1), (2, 3), (3, 2), (1, 0), (0, 1), (3, -2), (5, 4)]: True
+  [ 50] (3,2): m_0 in h_[a:b] iff a = b, for [a:b] in [(1, 1), (2, 2), (-3, -3), (1, -1), (2, 3), (3, 2), (1, 0), (0, 1), (3, -2), (5, 4)]: True
+  [ 51] (2,2): in eps-labels the matchings act on L as the same operators and lie in h_W iff e1 = e2: True
+  [ 52] (2,3): in eps-labels the matchings act on L as the same operators and lie in h_W iff e1 = e2: True
+  [ 53] (3,3): in eps-labels the matchings act on L as the same operators and lie in h_W iff e1 = e2: True
+
+A4. Generation (Thm 5)
+----------------------
+  [ 54] (2,2): <su+su, m_0> has dim 7 and equals s(u(2)+u(2)) = h_+: True
+  [ 55] (2,2): <su+su, full stabilizer> has dim 7 (h_+): True
+  [ 56] (2,2): i 1_L in d rho(su+su) + d rho(m_0): False (iff d1 != d2): True
+  [ 57] (2,3): <su+su, m_0> has dim 12 and equals s(u(2)+u(3)) = h_+: True
+  [ 58] (2,3): <su+su, full stabilizer> has dim 13 (all of g): True
+  [ 59] (2,3): i 1_L in d rho(su+su) + d rho(m_0): True (iff d1 != d2): True
+  [ 60] (3,3): <su+su, m_0> has dim 17 and equals s(u(3)+u(3)) = h_+: True
+  [ 61] (3,3): <su+su, full stabilizer> has dim 17 (h_+): True
+  [ 62] (3,3): i 1_L in d rho(su+su) + d rho(m_0): False (iff d1 != d2): True
+  [ 63] (2,3): the trace map X -> (tr X1, tr X2) has rank 2 on the full stabilizer, so no h_[a:b] contains it: True
+
+A5. Theorem 1's selection per reading, through config_enumeration.py's predicates (Thm 8, Cor. 9)
+-------------------------------------------------------------------------------------------------
+  [ 64] config_enumeration.py imported unmodified; its printout equals config_enumeration.out: True
+      A   h_+ (trace on H1+H2)                   acts (2,2),(3,2): False True   MC (2,2),(3,2): True  True   selected: ['c3: 2R 2R 2U']
+  [ 65] A h_+ (trace on H1+H2): selection ['c3: 2R 2R 2U']: True
+      A*  h_- (trace on H1+conj H2)              acts (2,2),(3,2): True  True   MC (2,2),(3,2): False False  selected: ['c2: 2R 2R 2U', 'c3: 2R 2R 2U']
+  [ 66] A* h_- (trace on H1+conj H2): selection ['c2: 2R 2R 2U', 'c3: 2R 2R 2U']: True
+      A*  labels h_W, eps=(1,-1)                 acts (2,2),(3,2): True  True   MC (2,2),(3,2): False False  selected: ['c2: 2R 2R 2U', 'c3: 2R 2R 2U']
+  [ 67] A* labels h_W, eps=(1,-1): selection ['c2: 2R 2R 2U', 'c3: 2R 2R 2U']: True
+      B   (d rho)^-1 su(L)                       acts (2,2),(3,2): False False  MC (2,2),(3,2): True  False  selected: []
+  [ 68] B (d rho)^-1 su(L): selection []: True
+      C   all of g                               acts (2,2),(3,2): True  True   MC (2,2),(3,2): True  True   selected: ['c2: 2R 2R 2U', 'c3: 2R 2R 2U']
+  [ 69] C all of g: selection ['c2: 2R 2R 2U', 'c3: 2R 2R 2U']: True
+      MC with the full stabilizer, P at (2,2)    acts (2,2),(3,2): False True   MC (2,2),(3,2): True  True   selected: ['c3: 2R 2R 2U']
+  [ 70] MC with the full stabilizer, P at (2,2): selection ['c3: 2R 2R 2U']: True
+      W' = H1+conj H2 (1,-1)                     acts (2,2),(3,2): True  True   MC (2,2),(3,2): False False  selected: ['c2: 2R 2R 2U', 'c3: 2R 2R 2U']
+  [ 71] W' = H1+conj H2 (1,-1): selection ['c2: 2R 2R 2U', 'c3: 2R 2R 2U']: True
+      Lambda^2 L (d2,d1)(d1d2-1)                 acts (2,2),(3,2): False False  MC (2,2),(3,2): True  False  selected: []
+  [ 72] Lambda^2 L (d2,d1)(d1d2-1): selection []: True
+      L' = H1 (x) conj H2 (d2,-d1)               acts (2,2),(3,2): True  True   MC (2,2),(3,2): False False  selected: ['c2: 2R 2R 2U', 'c3: 2R 2R 2U']
+  [ 73] L' = H1 (x) conj H2 (d2,-d1): selection ['c2: 2R 2R 2U', 'c3: 2R 2R 2U']: True
+  [ 74] fixed [a:b] over the 80 nonzero pairs in [-4,4]^2: {'obj': 8, 'both': 70, 'qub': 2, 'none': 0}; object alone iff a = b, qubit configuration alone iff [a:b] = [2:3]: True
+
+A6. Trace calculus against explicit representation matrices; hypercharges (Thm 8(1), Prop. 1)
+---------------------------------------------------------------------------------------------
+  [ 75] (2,2): tr of the representation matrices = Thm 8's polynomials for Lambda^2 W, Lambda^2 W', L, Lambda^2 L, L' on a basis of g: True
+  [ 76] (2,3): tr of the representation matrices = Thm 8's polynomials for Lambda^2 W, Lambda^2 W', L, Lambda^2 L, L' on a basis of g: True
+  [ 77] (3,3): tr of the representation matrices = Thm 8's polynomials for Lambda^2 W, Lambda^2 W', L, Lambda^2 L, L' on a basis of g: True
+  [ 78] (2,3): Q acts on the H1(x)H2 block of Lambda^2 W as 6i Y with Y = 1/6 (the 10): True
+  [ 79] (2,3): ad Q on Hom(H2,H1) = E_{a,b}, a in H1, b in H2: Y = 5/6 (the 24): True
+
+A7. The clause P relative to the Letter's definition; Prop. 6(4)
+----------------------------------------------------------------
+  [ 80] (2,2): h_W is a proper subalgebra (dim 7) under every eps, and MC in labels <=> e1 = e2: True
+  [ 81] (2,3): h_W is a proper subalgebra (dim 12) under every eps, and MC in labels <=> e1 = e2: True
+  [ 82] (3,3): h_W is a proper subalgebra (dim 17) under every eps, and MC in labels <=> e1 = e2: True
+  [ 83] within the Letter's family (h_W, any eps): Theorem 1 selects the object alone <=> MC (P holds automatically): True
+  [ 84] (2,2): centre of h_+ (operator pairs) is the line of i(-1, 1); of the form (ix 1, ix 1), x != 0: False: True
+  [ 85] (2,2): centre of h_- (operator pairs) is the line of i(1, 1); of the form (ix 1, ix 1), x != 0: True: True
+  [ 86] (2,2), A* in labels: the centre of h_W is (i, -i) (no nonzero (ix, ix)), and it acts on L as 2i under rho_(1,-1): True
+
+B1. Model: real letters (Lean's tracelessBasis), structure constants, P<=2
+--------------------------------------------------------------------------
+  [ 87] d = 2: identity + 3 real letters, orthogonal under tr(A^T B); products expanded exactly: True
+  [ 88] d = 3: identity + 8 real letters, orthogonal under tr(A^T B); products expanded exactly: True
+  [ 89] d = 4: identity + 15 real letters, orthogonal under tr(A^T B); products expanded exactly: True
+  [ 90] P<=2 has dim 192 = 1 + 16 + 6 + 169; slot-pair sizes [9, 24, 24, 24, 24, 64]: True
+
+B2. The order-sign domain D (records-uniform.md Thm 2)
+------------------------------------------------------
+  [ 91] 22 letters (8, 3, 8, 3): True
+  [ 92] dim m(V(x)V) = 192, dim m(Sym^2 V) = 186, dim m(Lambda^2 V) = 22: True
+  [ 93] m(Sym^2 V) = 1 + P2 + V_Q and m(Lambda^2 V) = V_Q + V_q: True
+  [ 94] A = m(Sym^2) cap m(Lambda^2) = V_Q (dim 16): True
+  [ 95] D = A^perp in P<=2 = 1 + P2 + V_q (dim 176 = 192 - 16, every element orthogonal to A): True
+  [ 96] each basis operator of D lies in exactly one of m(Sym^2), m(Lambda^2); the order sign equals the own sign (-1)^N: True
+  [ 97] d = 2: the traceless part of {A,B} vanishes for all letters: True: True
+  [ 98] d = 3: the traceless part of {A,B} vanishes for all letters: False: True
+  [ 99] d = 4: the traceless part of {A,B} vanishes for all letters: False: True
+  [100] x = sx(x)sx - (iy(x)sz - sz(x)iy)/2 at q1: m(x) = 1 + sigma_x^(q1), m(flip x) = 1 - sigma_x^(q1): True
+  [101] B = A + span{1 + sigma_x^(q1)} contains A, m(x) in B, m(flip x) not in B: Thm 2(3)'s 'iff B contains A' fails (only B = A, or B/A flip-stable, works): True
+
+B3. C_L, C, C+ and Lie(G_Omega) (Prop. 1)
+-----------------------------------------
+  [102] C_L = V_q^{E=-1}, C = V_q^{E'=-1}, C+ = V_q^{E'=+1} are 3-dimensional: True
+  [103] dim(C_L cap C) = 2, dim(C_L cap C+) = 1, dim(C cap C+) = 0: True
+  [104] C = {D_x, S_y, D_z}, C+ = {S_x, D_y, S_z}, C_L = {D_x, D_y, D_z}: True
+  [105] the Letter's three records [s_mu,s_nu]_q1 - [s_mu,s_nu]_q2 span C_L: True
+  [106] Lie(G_Omega) = span{a^(1) - (a^T)^(2)} (dim 11) = the E'-odd single letters: True
+  [107] C is the qubit part of Lie(G_Omega): True
+  [108] plain frame: C_L cap Lie(G_Omega) = {D_x, D_z}, C_L+ cap Lie(G_Omega) = {S_y}: True
+
+B4. Frames: classes and values under the Letter's weight law (Prop. 1(4), Sec. 8)
+---------------------------------------------------------------------------------
+  [109] R_E = P2 + V_q^(E=-1): classes (79, 48, 42, 3), numerator 79+48r2+42r3+3r6, 1/value = 137.035999189566: True
+  [110] R_E' = P2 + V_q^(E'=-1): classes (79, 48, 42, 3), numerator 79+48r2+42r3+3r6, 1/value = 137.035999189566: True
+  [111] R_Fm = P2 + V_q^(Fm=-1): classes (79, 48, 42, 3), numerator 79+48r2+42r3+3r6, 1/value = 137.035999189566: True
+  [112] R_FQ = P2 + V_q^(FQ=-1): classes (79, 48, 42, 3), numerator 79+48r2+42r3+3r6, 1/value = 137.035999189566: True
+  [113] R_sE' = P2 + V_q^(sE'=-1): classes (79, 48, 42, 3), numerator 79+48r2+42r3+3r6, 1/value = 137.035999189566: True
+  [114] V_q^{f=-1}: C for E' and (-1)^NQ E'; C+ for Fm and sigma E': True
+  [115] P2 + C+ sorted by E', M_L: numerator (82, 48, 42, 0), 1/value 139.712642717695: True
+  [116] P2 + C+ sorted by E', word rule: numerator (79, 48, 45, 0), 1/value 138.347888396726: True
+  [117] M_L gives an f-odd single qubit letter k = 6 and an f-odd single qutrit letter k = 3: True
+  [118] variant P2 only: numerator (79, 48, 42, 0), 1/value 141.621038703585: True
+  [119] variant D_0 under E', M_L: numerator (82, 48, 42, 3), 1/value 135.248393218932: True
+  [120] variant D_0, word rule: numerator (79, 48, 45, 3), 1/value 133.969062383568: True
+  [121] variant P2 + Lie(G_Omega): numerator (79, 48, 50, 3), 1/value 129.151596097725: True
+  [122] variant P<=2,0, M_L: numerator (90, 48, 50, 3), 1/value 123.510293778539: True
+  [123] variant P<=2,0, word: numerator (79, 48, 61, 3), 1/value 119.683328862504: True
+  [124] E: (sigma, f) classes on D_0 = (90, 79, 3, 3): True
+  [125] E': (sigma, f) classes on D_0 = (90, 79, 3, 3): True
+  [126] Fm: (sigma, f) classes on D_0 = (90, 79, 3, 3): True
+
+B5. Exchanges: G_Omega covariance, involution, algebra type, Schur intertwiners, Fm = Ad_W (Thm 7)
+--------------------------------------------------------------------------------------------------
+  [127] E: involution True; commutes with ad_K for all 11 generators K of Lie(G_Omega) on P<=2: False; automorphism: True
+  [128] E': involution True; commutes with ad_K for all 11 generators K of Lie(G_Omega) on P<=2: True; anti-automorphism: True
+  [129] Fm: involution True; commutes with ad_K for all 11 generators K of Lie(G_Omega) on P<=2: True; neither: True
+  [130] FQ: involution True; commutes with ad_K for all 11 generators K of Lie(G_Omega) on P<=2: True; neither: True
+  [131] sE': involution True; commutes with ad_K for all 11 generators K of Lie(G_Omega) on P<=2: True; neither: True
+  [132] d = 2: the G_Omega-intertwiners V_q1 -> V_q2 form a line, spanned by b -> b^T: True
+  [133] d = 3: the G_Omega-intertwiners V_Q1 -> V_Q2 form a line, spanned by b -> b^T: True
+  [134] Fm acts on the 16 qubit-only basis operators of P<=2 as Ad_W, W = (sigma_y (x) sigma_y) SWAP: True
+  [135] sigma_y (x) sigma_y = -(V (x) conj V), V = i sigma_y: on the read qubits Fm = Ad_(V (x) conj V) o (plain swap), a G_Omega matching after E: True
+
+B6. Identification rule (Thm 6)
+-------------------------------
+  [136] I = P<=1 has dim 23: True
+  [137] stab_Omega = {X in I : X Omega in C Omega} = 1 + Lie(G_Omega) (dim 12): True
+  [138] Comp_E = I^E (the E-even identifications, dim 12) != stab_Omega: True
+  [139] Comp_f = stab_Omega for the four covariant exchanges: True
+  [140] P2 is orthogonal to I: True
+  [141] E: D cap Comp_f^perp = P2 + C_L (the Letter 172): True
+  [142] E': D cap Comp_f^perp = P2 + C+: True
+  [143] Fm: D cap Comp_f^perp = P2 + C+: True
+  [144] FQ: D cap Comp_f^perp = P2 + C+: True
+  [145] sE': D cap Comp_f^perp = P2 + C+: True
+  [146] E: D cap (I^f)^perp = R_f (single-letter part C_L): True
+  [147] E': D cap (I^f)^perp = R_f (single-letter part C): True
+  [148] Fm: D cap (I^f)^perp = R_f (single-letter part C+): True
+  [149] [C+, C+] = C: D cap I^{E'} = 1 + C+ is not a Lie algebra: True
+  [150] [C, C] in C (1 + C = D cap I^{Fm} is a Lie algebra) and [C_L+, C_L+] in C_L+ (1 + C_L+ = D cap I^E): True
+
+B7. Anticommuting letters (Prop. 3); the qutrit and d = 4
+---------------------------------------------------------
+  [151] Gell-Mann: anticommuting pairs [(1, 2), (1, 3), (2, 3), (4, 5), (6, 7)]: True
+  [152] their commutators span {lambda_1, lambda_2, lambda_3, lambda_8} (dim 4): True
+  [153] lambda_1..lambda_7 singular, lambda_8 invertible: True
+  [154] Gell-Mann literal: R_E + 4 E-odd qutrit differences at k = 3: numerator (79, 48, 46, 3), 1/value 132.977030722092: True
+  [155] an E-odd single qutrit letter has k = 3 under M_L (Pi_Y = 0: the centre is not moved): True
+  [156] Lean's tracelessBasis 3: 5 anticommuting pairs [(1, 4), (1, 7), (2, 5), (3, 6), (4, 7)]: True
+  [157] Weyl letters X^a Z^b at d = 3: no anticommuting pair: True
+  [158] Weyl letters at d = 4: 36 anticommuting pairs (e.g. X^2, Z); their commutators span 15 = all traceless: True
+  [159] d = 4: the 105 commutators of the 15 letters span 15 dims, so 105 independent commutator records do not exist: True
+      (Lean's tracelessBasis 4 has 22 anticommuting pairs; weylIsSign 4 = false in Lean gives no commutator records)
+
+B8. Collapse kappa(X) = X|Omega> (Prop. 8)
+------------------------------------------
+  [160] kappa(C) = 0: True
+  [161] dim kappa(C+) = 3; plain frame: dim kappa(C_L) = 1, dim kappa(C_L+) = 2: True
+  [162] kappa(C+) lies in kappa(P2); rank kappa on P<=2 = 36: True
+
+B9. F-CT-7: the construction at other (dQ, dq), by enumeration
+--------------------------------------------------------------
+  [163] (3,2): classes {'odd': 79, 'em': 48, 'es': 42}, N = 31104, 1/value = 137.035999190: True
+  [164] (2,2) with   3 commutator records: numerator 30 + 30*sqrt(2), N = 2304, 1/value = 31.8116015903: True
+  [165] (2,3) with   0 commutator records: numerator 42*sqrt(2) + 79 + 48*sqrt(3), N = 31104, 1/value = 140.401934964: True
+  [166] (3,3) with   0 commutator records: numerator 184 + 200*sqrt(3), N = 419904, 1/value = 791.659041376: True
+  [167] (4,2) with   3 commutator records: numerator 96*sqrt(2) + 450, N = 184320, 1/value = 314.665705031: True
+  [168] (2,4) with   0 commutator records: numerator 126*sqrt(2) + 378, N = 184320, 1/value = 331.397002476: True
+  [169] (2,4) with  15 commutator records: numerator 156*sqrt(2) + 378, N = 184320, 1/value = 307.909569531: True
+  [170] (2,4) with 105 commutator records: numerator 378 + 336*sqrt(2), N = 184320, 1/value = 216.039893887: True
+  [171] (3,4) with   0 commutator records: numerator 156*sqrt(3) + 853, N = 2488320, 1/value = 2215.38476138: True
+  [172] (4,4) with   0 commutator records: numerator 2040, N = 14745600, 1/value = 7228.23529412: True
+  [173] (5,4) with   0 commutator records: numerator 420*sqrt(5) + 2541, N = 57600000, 1/value = 16551.0176256: True
+  [174] (2,3): A = m(Sym^2) cap m(Lambda^2) = the far qutrit letters (16); the 6 qubit-centre letters are order-definite: True
+  [175] (2,3): (OD)+(ID) with the plain exchange keeps 3 single-letter records, the centre differences: True
+  [176] (2,3) has the same classes (79, 48, 42) and N = 31104 as (3,2): True
+  [177] (2,3) with 3 commutator records at the qubit centre, weight sqrt2 (M_L at a qubit centre: Pi_X = 1, Pi_Y = 0): 1/value = 137.763613992, 0.53% from 1/alpha (< 1%): True
+  [178] (2,3) with 3 commutator records at the qubit centre, weight sqrt3: 1/value = 137.184253879, 0.11% from 1/alpha (< 1%): True
+  [179] (2,3) with 3 commutator records at the qubit centre, weight sqrt6 (the (3,2) commutator weight): 1/value = 135.894237395, 0.83% from 1/alpha (< 1%): True
+  [180] (2,3) with none (far-end placement, F-CT-7): 1/value = 140.401934964, 2.46% from 1/alpha: True
+
+SUMMARY: 180 checks, 180 True, 0 False
+runtime: 15.6 s
