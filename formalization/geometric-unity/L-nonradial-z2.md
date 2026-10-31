@@ -212,7 +212,7 @@ Run: `cd computation/geometric-unity && python3 L_nonradial.py > L_nonradial.out
 - **Hypotheses kept from J5.**
   - Z2: in Z1 the Euler field is not Killing, so L6 and the radial structure are unavailable. Z1 is treated in `N-z1-neighbourhood.md` (round 10): there $E$ is a gradient with $\nabla E=\tfrac12P_H$ and $\mathrm{Ric}(E,\cdot)=-E^\flat/c$; for the members of L8 there is no solution near $s(X)$ in (7,7), and in (14,0) only $\lambda=\tfrac15$ over a Ricci-flat base, flat with $T_e\equiv0$ for analytic fields (N12).
   - The real forms (14,0) and (7,7) of J1–J2; the signatures (8,6), (10,4), … are not set up.
-  - $\kappa\neq0$; $T_e$ the slaved field in $\mathcal V$ with $\det M\neq0$ on $U$. Solutions crossing $\{\det M=0\}$, and $T_e$ outside $\mathcal V$ for large $|T_o|$, are not covered.
+  - $\kappa\neq0$; $T_e$ the slaved field in $\mathcal V$ with $\det M\neq0$ on $U$. Solutions crossing $\{\det M=0\}$, and $T_e$ outside $\mathcal V$ for large $|T_o|$, are not covered. (2026-10-31, round 14, `R-even-operator.md` R5, not yet internally reviewed: "$T_e$ the slaved field in $\mathcal V$" may be replaced by (R), $\det M\neq0$ on $U$ and $(t,u)\in Z_\perp$ only on a set with empty interior, with $T_e$ arbitrary; open sets on which $(t,u)\in Z_\perp$ are not covered.)
   - $T_o$ in the invariant sector.
 - L2 is stated and proven for $n=4$ (traces 9 and 4; J5d L1 at $n=4$).
 - L7 uses only the order-$\varepsilon^2$ jet of the fibre equation at one point of $s(X)$. L9 replaces "meets $s(X)$" by analytic continuation along one fibre.

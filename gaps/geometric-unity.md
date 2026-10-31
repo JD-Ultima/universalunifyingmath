@@ -115,3 +115,15 @@ Each gap is a point where [W21] is underspecified, circular or type-inconsistent
   - Open: the twisted cone in (14,0) at $\lambda=\tfrac15$ away from Π ($\mathrm{rank}\,\mathrm{Ric}_g\le1$ there, S15); other sectors.
 - **GU-G16.** In Z1 the twisted cone is again the one member with an open case, now only in (14,0) at $\lambda=\tfrac15$ away from Π.
 
+**Note (2026-10-31, round 14; `formalization/geometric-unity/R-even-operator.md`; not yet internally reviewed).** The rows above and the earlier notes are not edited. Setting of J: $T_o=t\Phi^1+u\Phi^1\Gamma$, $\kappa\neq0$, both real forms.
+- **GU-G15.**
+  - The even operator $L_{T_o}$ is computed on all of $\Lambda^1\otimes\mathfrak g_{\rm ev}=4\Lambda^1\oplus4\Lambda^3\oplus4\Lambda^5\oplus2\Lambda^7_\pm\oplus2H_2\oplus2H_4\oplus2H_6$. It has 4×4 blocks on $\Lambda^1$ (J's $M$), $\Lambda^3$, $\Lambda^5$ and 2×2 blocks on the others, all functions of $\sigma,\theta,\delta$ (R1, R2).
+  - $\det L_{T_o}=(\det M)^{14}$ times six further factors, each coprime to $\det M$. $544|\sigma|+384|\theta|+208|\delta|<|\kappa|$ suffices for invertibility (R3).
+  - The source lies in $\mathcal V$, so off $Z=\{\det L_{T_o}=0\}$ the slaved field is unique and lies in $\mathcal V$ (R4).
+  - $Z$ is nonempty for $\circledast_\sharp$ and $W_A$ in both real forms. On the positive t-axis the first singular point is $t=3\kappa/136$ (hook $H_2$), where $\det M\neq0$ (R6).
+  - In (14,0) every nonzero member has $Z_\perp\neq\emptyset$. In (7,7), $Z=\emptyset$ iff $(x,y)=0$ or $(z,w)=c(y,x)$ with $c^2>\tfrac{25}{144}$ (R7).
+- **GU-G14.**
+  - The hypothesis "$T_e$ the slaved field in $\mathcal V$, $\det M\neq0$" of rounds 6–13 reduces to (R): $\det M\neq0$ on $U$, and $(t,u)\in Z_\perp$ only on a set with empty interior. Then every solution has $T_e=\Sigma(dt,du)^\top$ (R5), and the results of rounds 6–13 hold for arbitrary $T_e$.
+  - Open: open sets on which $(t,u)\in Z_\perp$. There $dt\wedge du=0$, and $T_e$ may have a component in the kernel of a non-vector block. Example: the flat-base root $s=-\kappa/400$ of $\circledast_\sharp$ in (14,0) at $c_V\kappa^2=\tfrac{150000}{11}$ (R9).
+- **GU-G16.** $\ell$ is, up to sign, the Jacobian of $(\sigma,\theta)$. In (7,7) the members with everywhere invertible $L_{T_o}$ have $\ell=0$ or $(x,y)=0$.
+

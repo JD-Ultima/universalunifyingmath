@@ -203,7 +203,7 @@ Run: `cd computation/geometric-unity && python3 J5d_leaf.py > J5d_leaf.out 2>&1`
 - **Other signatures.** The Z2 signatures (8,6), (10,4), (9,5), (13,1) and their mirrors are not covered. The leaf argument would apply there, but J5(b) is not established, since J1–J2 are not set up. (Added after review 2026-10-30, R7-2.)
 - **Still not covered** (unchanged from J.3):
   - $\Upsilon=0$ on a neighbourhood beyond the radial Z2 ansatz: Z1, where the Euler field is not Killing and $s$ is not parallel; non-radial $t,u$ (settled for the members of L8 in `L-nonradial-z2.md`);
-  - components of $T_e$ outside $\mathcal V$ for large $|T_o|$;
+  - components of $T_e$ outside $\mathcal V$ (round 14, `R-even-operator.md` R5, not yet internally reviewed: excluded under (R), a condition on $(t,u)$; open only on open sets where $(t,u)\in Z_\perp$);
   - $T_o$ outside the invariant sector.
 - O'Neill's formulas are used in indefinite signature, as in J5. They are algebraic identities for nondegenerate fibres (L-F1; O'Neill 1983). Here the fibres of $Y'\to X$ carry $c_VG_0$ on traceless forms, which is nondegenerate, and the horizontal block $c_Hg$ is nondegenerate.
 - Theorem L1 and Proposition L3 hold for every algebraic curvature tensor; Proposition L4 is stated for Einstein $R$ and $n=4$. J5 itself is stated for $n=4$; L1 would serve any $n$.

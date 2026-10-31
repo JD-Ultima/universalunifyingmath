@@ -1,0 +1,58 @@
+result: "R. The even operator L_{T_o} on all of Lambda^1 (x) g_ev for invariant T_o = t Phi^1 + u Phi^1 Gamma: seven Schur blocks besides M, det L_{T_o} = (det M)^14 times six coprime factors; off Z = {det L = 0} (more precisely under (R): det M != 0 and (t, u) in Z_perp only on a set with empty interior) the even equation forces T_e = Sigma (dt, du) in V, so the hypothesis 'T_e slaved in V' of rounds 6-13 reduces to a condition on (t, u); Z_perp is nonempty for Shiab#, W_A (both real forms) and every (14,0) member, empty in (7,7) exactly for (x, y) = 0 and (z, w) = c (y, x), c^2 > 25/144"
+claim_id: [GU-054]
+gaps: [GU-G15, GU-G14, GU-G16]
+writeup: formalization/geometric-unity/R-even-operator.md (Propositions R1, R2, R4, R6, R7, R8; Theorem R3; Corollary R5; Remark R9); answers the item "components of T_e outside V" of J.3 in formalization/geometric-unity/J-slaved-sector.md and the corresponding items of J5d.3, L.3, M.3, N.3, P.3, Q.3
+code: [computation/geometric-unity/R_even_operator.py, computation/geometric-unity/R_even_operator.out]
+formalization_status: >
+  Formalized in the setting of J (unitary gauge of G1, true Upsilon of D5, family x W_A + y W'_A + z W_C Ad_Gamma +
+  w W'_C Ad_Gamma, real forms (14,0) and (7,7)), for T_o = t Phi^1 + u Phi^1 Gamma, kappa != 0. L_{T_o} T_e =
+  Y_ev[kappa T_e + 2B(T_e, T_o)] is a pointwise Spin-equivariant endomorphism of Lambda^1 (x) g_ev (dim 114688).
+  Steps: (1) Lambda^1 (x) g_ev = 4 Lam1 + 4 Lam3 + 4 Lam5 + 2 Lam7+ + 2 Lam7- + 2 H2 + 2 H4 + 2 H6 (hooks H_k =
+  [2,1^(k-1)]), with explicit copies c(omega) = [gamma_a omega]_(m-1), w(omega) = [gamma_a omega]_(m+1) and right
+  multiplication by Gamma; V is the Lam1-isotypic part; (2) the blocks: 4x4 on Lam1 (J's M), Lam3, Lam5, 2x2 on Lam7+-
+  and the hooks, all functions of sigma = tx + eps uy, theta = tw - uz, delta = ty - ux, invariant under M1; (3) det L =
+  (det M)^14 (det B3)^364 (det B5)^2002 (det B7)^3432 (det B_H2)^896 (det B_H4)^11648 (det B_H6)^36608, the 2x2 dets
+  (kappa + a sigma)(kappa + b sigma) - eps g^2 theta^2, explicit quartics for Lam3, Lam5; diagonal dominance for
+  544|sigma| + 384|theta| + 208|delta| < |kappa|; (4) the source Shiab(d_0 T_o) lies in V (Schur), so the solutions of
+  Upsilon_ev = 0 are T_e = Sigma (dt, du) + k with k in the kernel of the non-vector blocks; (5) hypothesis (R): det M !=
+  0 on U and (t, u)^{-1}(Z_perp) with empty interior implies T_e = Sigma (dt, du) for every continuous T_e; open sets
+  with (t, u) in Z_perp carry extra branches (dt ^ du = 0 there); (6) Shiab# and W_A: t-axis singular points -1/a (18),
+  invertibility interval -kappa/544 < t < 3 kappa/136, factored determinants, exact kernel elements; (7) (14,0): Z_perp
+  nonempty for every nonzero member; (7,7): Z empty iff (x, y) = 0 or (z, w) = c (y, x) with c^2 > 25/144.
+internal_consistency: >
+  The Lam1 block and the source matrix S are recomputed and equal J's own j1. Every block is fitted with zero residual on
+  two test vectors (index sets inside and across the signature blocks), for both maps and all four operators, and the
+  two test vectors give the same matrices; equivariance is spot-checked for two so(eta) generators on every constituent.
+  The decomposition and all blocks with their multiplicities are tested against direct traces over the whole fibre
+  (orbit representatives of e^a (x) E_K under signed permutations in SO(eta), 14 types in (14,0), 112 in (7,7)): all
+  eight tr L_(op, map) = 0, all 64 tr(L_a L_b) in (14,0) by second application, tr((L - kappa)^2) at a numeric member
+  in (7,7). Ten exact kernel elements outside or inside V are evaluated on the Clifford algebra (L T_e = 0) with
+  non-kernel controls. The (7,7) classification uses hand discriminants for the 2x2 blocks and Lam1 and an exact sympy
+  certificate (monotonicity in c^2, nonnegativity at c^2 = 25/144 by real-root isolation) for Lam3, Lam5.
+proof_status: >
+  Proven: R1 (decomposition; standard so(14) tensor rule, confirmed by Weyl dimensions and the trace identities); R4
+  (source in V; structure of the solution set of the even equation); R5 (the hypothesis (R)); R7(a) (14,0), R7(b) (7,7)
+  for the 2x2 blocks and Lam1 by hand, for Lam3 and Lam5 by exact certificate; R8. Computed (exact, Schur reduction of
+  an equivariant map): R2 (blocks), R3 (determinants, factorisations, coprimality), R6 (Shiab#, W_A), R9. Open: whether
+  the extra branches over Z_perp (open sets with (t, u) in Z_perp, T_e = Sigma (dt, du) + k, k != 0) solve the odd
+  equation.
+novelty: >
+  New within this audit: the full even operator of the invariant sector. The vector sector V is not the whole story
+  away from small |T_o|: for Shiab# and W_A the operator is already singular at t = 3 kappa/136 on the t-axis, on a
+  hook block, where det M != 0; in (14,0) every member has such points. Off the singular set the hypothesis "T_e
+  slaved in V" of rounds 6-13 is automatic, so their results hold for arbitrary T_e under a condition on (t, u) alone;
+  in (7,7) the members with (x, y) = 0 or (z, w) = c (y, x), c^2 > 25/144, need no condition at all. Side results:
+  tr L_{T_o} = 114688 kappa; M1 is a symmetry of the whole even operator; ell = xz +- yw is the Jacobian of (sigma,
+  theta). Not in the source.
+reproducibility: "Exact (Fractions, sympy rationals and Gaussian rationals); no randomness; one core: 342 s, a second run 353 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 R_even_operator.py > R_even_operator.out 2>&1 (48 checks, 48 True, each asserted). Imports J_slaved_sector.py unmodified."
+empirical_testability: >
+  None new. The result removes the hypothesis on T_e from the neighbourhood no-go results of rounds 6-13 except on
+  configurations where (t, u) takes values in the singular curve Z_perp on an open set; those branches, and the
+  physically relevant rule for T off s(X), remain undecided.
+dependencies: ["I2", "I2.2", "J1", "M1", "H7", "I7(b)", "N12(c)", "Q15"]
+confidence: >
+  High for R1-R8: the blocks are exact Schur reductions of an equivariant map, each confirmed on two test vectors, and
+  the whole decomposition is tested against direct traces over the 114688-dimensional fibre, including all 64
+  second moments in (14,0); kernel elements are verified directly on Clifford elements. The (7,7) classification for
+  Lam3, Lam5 rests on an exact computer certificate. Not covered: the extra branches over Z_perp; T_o outside the
+  invariant sector; solutions crossing det M = 0; the Z2 signatures (8,6), (10,4), ....

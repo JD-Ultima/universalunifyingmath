@@ -217,7 +217,7 @@ Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $
   - No statement made before round 6 is contradicted: round 5's (E) statements are all scoped to the invariant sector, which has $T_e\equiv0$ by definition (confirmed by REVIEW4-GU, R6-11). This round's own J4(d) range was too broad and is corrected (R6-1, `reports/CORRECTIONS.md`).
   - Not covered:
     - $T_o$ outside the invariant sector;
-    - $T_e$ outside the vector sector for large $|T_o|$;
+    - $T_e$ outside the vector sector: reduced in Round 14 (not yet internally reviewed) to a condition on $(t,u)$ (R5); open only where $(t,u)$ stays in the singular curve $Z_\perp$ on an open set;
     - neighbourhood solutions in Z1 beyond Rounds 10 and 13 (after Round 15, not yet internally reviewed: the twisted cone in (14,0) at $\lambda=\tfrac15$ away from the parallel set); in Z2 beyond the radial ansatz, nothing left under the hypotheses of Round 8 (Rounds 8, 9, 12; two steps of Round 12 computer-assisted);
     - reading (A).
 
@@ -303,6 +303,18 @@ Hypotheses of rounds 10 and 13, without the section.
 - **Result.** In (7,7), no solution on any open set for any member with $(x,y)\neq0$, as in Z2. In (14,0), $\lambda=\tfrac15$, and except for the twisted cone exactly the flat-base solutions with constant odd part and $T_e\equiv0$, without analyticity. Rests on N6(f), α and round 13's certificate; the complex-continuation steps (S8, S14) are the most delicate.
 - Open: the twisted cone in (14,0) at $\lambda=\tfrac15$ away from the parallel set; other sectors.
 - No statement made before round 15 is contradicted (Q4's remark on F9 is too pessimistic).
+
+## Round 14 — the even operator on all of $\Lambda^1\otimes\mathfrak g_{\rm ev}$ (GU-G15, GU-G14, GU-054)
+
+Write-up: `formalization/geometric-unity/R-even-operator.md`. Code: `computation/geometric-unity/R_even_operator.py`, output committed, exact, 48 asserted checks, ~6 min (342 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/R-even-operator.yaml`. **Not yet internally reviewed.**
+
+Rounds 6–13 assume that $T_e$ is the slaved field in the vector sector $\mathcal V$; only the $\mathcal V$-block $M$ of $L_{T_o}$ had been computed (J.3).
+- **Blocks.** For $T_o=t\Phi^1+u\Phi^1\Gamma$, $\Lambda^1\otimes\mathfrak g_{\rm ev}=4\Lambda^1\oplus4\Lambda^3\oplus4\Lambda^5\oplus2\Lambda^7_+\oplus2\Lambda^7_-\oplus2H_2\oplus2H_4\oplus2H_6$ ($H_k$ hooks). By Schur, $L_{T_o}$ has seven blocks, all functions of $\sigma,\theta,\delta$ (R1, R2). Checked by exact fits, an equivariance spot check and direct traces over the whole 114688-dimensional fibre.
+- **Determinant.** $\det L_{T_o}=(\det M)^{14}(\det B_{\Lambda^3})^{364}(\det B_{\Lambda^5})^{2002}(\det B_{\Lambda^7})^{3432}(\det B_{H_2})^{896}(\det B_{H_4})^{11648}(\det B_{H_6})^{36608}$. $\det M$ is coprime to the other six factors. $544|\sigma|+384|\theta|+208|\delta|<|\kappa|$ suffices for invertibility (R3).
+- **The hypothesis "$T_e\in\mathcal V$".** The source lies in $\mathcal V$. So the even equation forces $T_e=\Sigma(dt,du)^\top$ wherever $L_{T_o}$ is invertible, and more generally under (R): $\det M\neq0$, and $(t,u)\in Z_\perp$ only on a set with empty interior (R4, R5). The results of rounds 6–13 hold for arbitrary $T_e$ under (R).
+- **Singular set.** Nonempty for $\circledast_\sharp$ and $W_A$ in both real forms; on the t-axis the nearest singular points are $t=-\kappa/544$ ($\det M$) and $t=3\kappa/136$ (hook $H_2$, where $\det M\neq0$) (R6). In (14,0), $Z_\perp\neq\emptyset$ for every nonzero member. In (7,7), $L_{T_o}$ is invertible everywhere exactly for $(x,y)=0$ and $(z,w)=c(y,x)$ with $c^2>\tfrac{25}{144}$ (R7; the $\Lambda^3$, $\Lambda^5$ step is an exact certificate).
+- **Open.** Open sets on which $(t,u)$ takes values in $Z_\perp$ (there $dt\wedge du=0$), with $T_e$ having a component in a non-vector kernel. Example: the (14,0) flat-base root $s=-\kappa/400$ of $\circledast_\sharp$ at $c_V\kappa^2=\tfrac{150000}{11}$ (R9), where the "$T_e\equiv0$" conclusion of N12/Q15 relies on the $\mathcal V$ hypothesis.
+- No statement made before Round 14 is contradicted.
 
 ## F4(c) for every $n$ (round 2 F, completed)
 

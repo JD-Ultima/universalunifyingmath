@@ -1,0 +1,159 @@
+=== R0. Constituents of Lambda^1 (x) g_ev (so(14, C); both real forms complexify to it) ===
+  Weyl dimensions (D_7, rho = (6,...,0)): {'Lam1': 14, 'Lam3': 364, 'Lam5': 2002, 'Lam7+': 1716, 'Lam7-': 1716, 'H2': 896, 'H4': 11648, 'H6': 36608}
+  [1] Lam^m = C(14, m) for m = 1, 3, 5 and Lam7+- = C(14, 7)/2: True
+  [2] H_k = 14 C(14, k) - C(14, k+1) - C(14, k-1) for k = 2, 4, 6 (the hook is all of ker(wedge) cap ker(contraction)): True
+  [3] dim V (x) Lambda^k = sum of its constituents, every even k: True
+  multiplicities: {'Lam1': 4, 'Lam3': 4, 'H2': 2, 'Lam5': 4, 'H4': 2, 'Lam7+': 2, 'Lam7-': 2, 'H6': 2}
+  [4] sum mult * dim = 14 * 2^13 = 114688: True
+
+=== R1 (14,0). The blocks of L_(T_o) on every constituent (exact; Schur) ===
+  [5] copies: nonzero, in the stated grades; hook vectors in ker(wedge) cap ker(contraction); Lam7: c(om)G = w(omG), w(om)G = c(omG); Lam1 copies = J's P_0, P_2, P_12, P_14: True
+  [6] L(copy_i(v)) = sum_j B_ji copy_j(v) exactly (zero residual), every constituent, both test vectors, t and u maps, four operators: True
+  [7] the block matrices B are the same for both test vectors (index sets inside one signature block and across): True
+  Lam1 (copies ('c', 'w', 'wG', 'cG'), grades (0, 2, 12, 14)): B = [[kappa, 0, 208*delta, 0], [0, kappa + 224*sigma, 384*I*theta, 16*delta], [16*delta, -384*I*theta, kappa + 544*sigma, 0], [0, 208*delta, 0, kappa]]
+  Lam3 (copies ('c', 'w', 'wG', 'cG'), grades (2, 4, 10, 12)): B = [[kappa + 112*sigma/3, 0, 352*delta/3, 64*I*theta], [0, kappa + 240*sigma, 320*I*theta, 32*delta], [32*delta, -320*I*theta, kappa + 400*sigma, 0], [-64*I*theta, 352*delta/3, 0, kappa + 272*sigma/3]]
+  Lam5 (copies ('c', 'w', 'wG', 'cG'), grades (4, 6, 8, 10)): B = [[kappa + 96*sigma, 0, 48*delta, 128*I*theta], [0, kappa + 704*sigma/3, 256*I*theta, 80*delta/3], [80*delta/3, -256*I*theta, kappa + 832*sigma/3, 0], [-128*I*theta, 48*delta, 0, kappa + 160*sigma]]
+  Lam7 (copies ('c', 'cR', 'w', 'wR'), grades (6, 6, 8, 8)): B = [[kappa + 176*sigma, 0, 0, 192*I*theta], [0, kappa + 176*sigma, -192*I*theta, 0], [0, 192*I*theta, kappa + 208*sigma, 0], [-192*I*theta, 0, 0, kappa + 208*sigma]]
+  H2 (copies ('X', 'XG'), grades (2, 12)): B = [[kappa - 56*sigma/3, -32*I*theta], [32*I*theta, kappa - 136*sigma/3]]
+  H4 (copies ('X', 'XG'), grades (4, 10)): B = [[kappa - 24*sigma, -32*I*theta], [32*I*theta, kappa - 40*sigma]]
+  H6 (copies ('X', 'XG'), grades (6, 8)): B = [[kappa - 88*sigma/3, -32*I*theta], [32*I*theta, kappa - 104*sigma/3]]
+  [8] every block equals the printed template in sigma = tx + uy, theta = tw - uz, delta = ty - ux (eps = +1): True
+  [9] Lam1 block = J's M (J's own j1); J's S recomputed in R1c: True
+  Gamma^2 = -1; Lam7 splits on the R_Gamma-eigenspaces (eigenvalues [I, -I]): [[[kappa + 176*sigma, 192*theta], [192*theta, kappa + 208*sigma]], [[kappa + 176*sigma, -192*theta], [-192*theta, kappa + 208*sigma]]]
+  [10] B_Lam7 commutes with R_Gamma; both eigenspaces are B-invariant; det B_7+ = det B_7- = kappa**2 + 384*kappa*sigma + 36608*sigma**2 - 36864*theta**2; det B_Lam7 = (det B_7+)^2: True
+
+=== R1b (14,0). Equivariance spot check (two generators, every constituent, all operators) ===
+  [11] Phi^1 and Phi^1 Gamma are invariant, and L_op,lab(delta X) = delta L_op,lab(X) for generators (0,1), (2,9): True
+
+=== R1c (14,0). The source Shiab(d_0 T_o) lies in V (exact, all 14 basis covectors) ===
+  S = [[0, 0], [-24*x, -24*y], [24*I*w, -24*I*z], [0, 0]]
+  [12] Y_ev[Shiab(e^c ^ Phi^1)], Y_ev[Shiab(e^c ^ Phi^1 Gamma)] = sum_k P_k(S_k e^c) with zero residual (no component outside V), the same S for all 14 c; S = J's S: True
+
+=== R1d (14,0). Traces over all of Lambda^1 (x) g_ev (orbit representatives) ===
+  [13] 14 orbit types of basis elements e^a (x) E_K, counts summing to 114688: True
+  tr L_(op,lab) direct: ['0', '0', '0', '0', '0', '0', '0', '0']
+  [14] tr L_(op,lab) = sum_rho dim rho tr B_rho,(op,lab) for all 8 (op, lab); all vanish, so tr L_(T_o) = 114688 kappa: True
+  [15] tr(L_a L_b) direct (second application) = block prediction for all 64 ordered pairs a, b of (op, lab) (12 nonzero): True
+  [(14,0) done, 90 s]
+
+=== R1 (7,7). The blocks of L_(T_o) on every constituent (exact; Schur) ===
+  [16] copies: nonzero, in the stated grades; hook vectors in ker(wedge) cap ker(contraction); Lam7: c(om)G = w(omG), w(om)G = c(omG); Lam1 copies = J's P_0, P_2, P_12, P_14: True
+  [17] L(copy_i(v)) = sum_j B_ji copy_j(v) exactly (zero residual), every constituent, both test vectors, t and u maps, four operators: True
+  [18] the block matrices B are the same for both test vectors (index sets inside one signature block and across): True
+  Lam1 (copies ('c', 'w', 'wG', 'cG'), grades (0, 2, 12, 14)): B = [[kappa, 0, -208*delta, 0], [0, kappa + 224*sigma, -384*I*theta, -16*delta], [16*delta, -384*I*theta, kappa + 544*sigma, 0], [0, 208*delta, 0, kappa]]
+  Lam3 (copies ('c', 'w', 'wG', 'cG'), grades (2, 4, 10, 12)): B = [[kappa + 112*sigma/3, 0, -352*delta/3, -64*I*theta], [0, kappa + 240*sigma, -320*I*theta, -32*delta], [32*delta, -320*I*theta, kappa + 400*sigma, 0], [-64*I*theta, 352*delta/3, 0, kappa + 272*sigma/3]]
+  Lam5 (copies ('c', 'w', 'wG', 'cG'), grades (4, 6, 8, 10)): B = [[kappa + 96*sigma, 0, -48*delta, -128*I*theta], [0, kappa + 704*sigma/3, -256*I*theta, -80*delta/3], [80*delta/3, -256*I*theta, kappa + 832*sigma/3, 0], [-128*I*theta, 48*delta, 0, kappa + 160*sigma]]
+  Lam7 (copies ('c', 'cR', 'w', 'wR'), grades (6, 6, 8, 8)): B = [[kappa + 176*sigma, 0, 0, -192*I*theta], [0, kappa + 176*sigma, -192*I*theta, 0], [0, -192*I*theta, kappa + 208*sigma, 0], [-192*I*theta, 0, 0, kappa + 208*sigma]]
+  H2 (copies ('X', 'XG'), grades (2, 12)): B = [[kappa - 56*sigma/3, 32*I*theta], [32*I*theta, kappa - 136*sigma/3]]
+  H4 (copies ('X', 'XG'), grades (4, 10)): B = [[kappa - 24*sigma, 32*I*theta], [32*I*theta, kappa - 40*sigma]]
+  H6 (copies ('X', 'XG'), grades (6, 8)): B = [[kappa - 88*sigma/3, 32*I*theta], [32*I*theta, kappa - 104*sigma/3]]
+  [19] every block equals the printed template in sigma = tx - uy, theta = tw - uz, delta = ty - ux (eps = -1): True
+  [20] Lam1 block = J's M (J's own j1); J's S recomputed in R1c: True
+  Gamma^2 = 1; Lam7 splits on the R_Gamma-eigenspaces (eigenvalues [1, -1]): [[[kappa + 176*sigma, -192*I*theta], [-192*I*theta, kappa + 208*sigma]], [[kappa + 176*sigma, 192*I*theta], [192*I*theta, kappa + 208*sigma]]]
+  [21] B_Lam7 commutes with R_Gamma; both eigenspaces are B-invariant; det B_7+ = det B_7- = kappa**2 + 384*kappa*sigma + 36608*sigma**2 + 36864*theta**2; det B_Lam7 = (det B_7+)^2: True
+
+=== R1b (7,7). Equivariance spot check (two generators, every constituent, all operators) ===
+  [22] Phi^1 and Phi^1 Gamma are invariant, and L_op,lab(delta X) = delta L_op,lab(X) for generators (0,1), (2,9): True
+
+=== R1c (7,7). The source Shiab(d_0 T_o) lies in V (exact, all 14 basis covectors) ===
+  S = [[0, 0], [-24*x, 24*y], [24*I*w, -24*I*z], [0, 0]]
+  [23] Y_ev[Shiab(e^c ^ Phi^1)], Y_ev[Shiab(e^c ^ Phi^1 Gamma)] = sum_k P_k(S_k e^c) with zero residual (no component outside V), the same S for all 14 c; S = J's S: True
+
+=== R1d (7,7). Traces over all of Lambda^1 (x) g_ev (orbit representatives) ===
+  [24] 112 orbit types of basis elements e^a (x) E_K, counts summing to 114688: True
+  tr L_(op,lab) direct: ['0', '0', '0', '0', '0', '0', '0', '0']
+  [25] tr L_(op,lab) = sum_rho dim rho tr B_rho,(op,lab) for all 8 (op, lab); all vanish, so tr L_(T_o) = 114688 kappa: True
+  [26] tr((L - kappa)^2) at (x, y, z, w) = (2, -1, 3i, i), (t, u) = (1/7, -1/3): direct = 20883439616/21 = block prediction: True
+  [(7,7) done, 334 s]
+
+=== R2. Determinants ===
+  (14,0):
+    det B_Lam1 = 11075584*delta**4 - 6656*delta**2*kappa**2 - 2555904*delta**2*kappa*sigma + kappa**4 + 768*kappa**3*sigma + 121856*kappa**2*sigma**2 - 147456*kappa**2*theta**2
+    det B_Lam3 = (126877696*delta**4 - 67584*delta**2*kappa**2 - 25952256*delta**2*kappa*sigma - 1239941120*delta**2*sigma**2 + 1384120320*delta**2*theta**2 + 9*kappa**4 + 6912*kappa**3*sigma + 1631744*kappa**2*sigma**2 - 958464*kappa**2*theta**2 + 130088960*kappa*sigma**3 - 141557760*kappa*sigma*theta**2 + 2924544000*sigma**4 - 6658457600*sigma**2*theta**2 + 3774873600*theta**4)/9
+    det B_Lam5 = (14745600*delta**4 - 23040*delta**2*kappa**2 - 8847360*delta**2*kappa*sigma - 739246080*delta**2*sigma**2 + 754974720*delta**2*theta**2 + 9*kappa**4 + 6912*kappa**3*sigma + 1903616*kappa**2*sigma**2 - 737280*kappa**2*theta**2 + 220725248*kappa*sigma**3 - 226492416*kappa*sigma*theta**2 + 8996782080*sigma**4 - 18656264192*sigma**2*theta**2 + 9663676416*theta**4)/9
+    det B_Lam7 = kappa**2 + 384*kappa*sigma + 36608*sigma**2 - 36864*theta**2  (each of Lam7+, Lam7-)
+    det B_H2 = (9*kappa**2 - 576*kappa*sigma + 7616*sigma**2 - 9216*theta**2)/9
+    det B_H4 = kappa**2 - 64*kappa*sigma + 960*sigma**2 - 1024*theta**2
+    det B_H6 = (9*kappa**2 - 576*kappa*sigma + 9152*sigma**2 - 9216*theta**2)/9
+  (7,7):
+    det B_Lam1 = 11075584*delta**4 + 6656*delta**2*kappa**2 + 2555904*delta**2*kappa*sigma + kappa**4 + 768*kappa**3*sigma + 121856*kappa**2*sigma**2 + 147456*kappa**2*theta**2
+    det B_Lam3 = (126877696*delta**4 + 67584*delta**2*kappa**2 + 25952256*delta**2*kappa*sigma + 1239941120*delta**2*sigma**2 + 1384120320*delta**2*theta**2 + 9*kappa**4 + 6912*kappa**3*sigma + 1631744*kappa**2*sigma**2 + 958464*kappa**2*theta**2 + 130088960*kappa*sigma**3 + 141557760*kappa*sigma*theta**2 + 2924544000*sigma**4 + 6658457600*sigma**2*theta**2 + 3774873600*theta**4)/9
+    det B_Lam5 = (14745600*delta**4 + 23040*delta**2*kappa**2 + 8847360*delta**2*kappa*sigma + 739246080*delta**2*sigma**2 + 754974720*delta**2*theta**2 + 9*kappa**4 + 6912*kappa**3*sigma + 1903616*kappa**2*sigma**2 + 737280*kappa**2*theta**2 + 220725248*kappa*sigma**3 + 226492416*kappa*sigma*theta**2 + 8996782080*sigma**4 + 18656264192*sigma**2*theta**2 + 9663676416*theta**4)/9
+    det B_Lam7 = kappa**2 + 384*kappa*sigma + 36608*sigma**2 + 36864*theta**2  (each of Lam7+, Lam7-)
+    det B_H2 = (9*kappa**2 - 576*kappa*sigma + 7616*sigma**2 + 9216*theta**2)/9
+    det B_H4 = kappa**2 - 64*kappa*sigma + 960*sigma**2 + 1024*theta**2
+    det B_H6 = (9*kappa**2 - 576*kappa*sigma + 9152*sigma**2 + 9216*theta**2)/9
+  [27] det L_(T_o) = det(M)^14 det(B_3)^364 det(B_5)^2002 det(B_7)^3432 det(B_H2)^896 det(B_H4)^11648 det(B_H6)^36608 (Lam7: det B_7+ = det B_7-, each to the power 1716): the degrees add up to 114688: True
+  [28] every block determinant is a real polynomial in (kappa, sigma, theta, delta); at T_o = 0 it is kappa^n: True
+  [29] det M = (rho + 224 kappa sigma)(rho + 544 kappa sigma) - eps (384 kappa theta)^2, rho = kappa^2 - 3328 eps delta^2 (J1(b)): True
+  [30] 2x2 blocks: det = (kappa + a sigma)(kappa + b sigma) - eps c^2 theta^2 with (a, b, c) = Lam7 (176, 208, 192), H2 (-56/3, -136/3, 32), H4 (-24, -40, 32), H6 (-88/3, -104/3, 32): True
+  [31] 4x4 blocks (order c, w, wG, cG): at theta = 0, det = [d_c d_wG - eps P delta^2][d_w d_cG - eps P delta^2] (P = 3328, 11264/3, 1280); at delta = 0, det = [d_c d_cG - eps q^2 theta^2][d_w d_wG - eps r^2 theta^2] ((q, r) = (0, 384), (64, 320), (128, 256)); d = kappa + (diagonal) sigma: True
+  [32] det M is coprime to every other block determinant (as polynomials in kappa, sigma, theta, delta): True
+  number of irreducible factors over Q (generic member): {(1, 'Lam1'): 1, (1, 'Lam3'): 1, (1, 'Lam5'): 1, (1, 'Lam7'): 1, (1, 'H2'): 1, (1, 'H4'): 1, (1, 'H6'): 1, (-1, 'Lam1'): 1, (-1, 'Lam3'): 1, (-1, 'Lam5'): 1, (-1, 'Lam7'): 1, (-1, 'H2'): 1, (-1, 'H4'): 1, (-1, 'H6'): 1}
+  [33] every row of every block: |diagonal sigma-coefficient| <= 544, sum |theta-coefficients| <= 384, sum |delta-coefficients| <= 208; so L_(T_o) is invertible whenever 544|sigma| + 384|theta| + 208|delta| < |kappa|: True
+  [34] (14,0) real form: sigma, theta, delta in (x, y, z, w, t, u) = (-i x', ..., i t', i u') are the same expressions in the primed real variables: True
+  [35] d(sigma, theta)/d(t, u) = -(xz + eps yw) = -l (H7's factor): l != 0 iff sigma, theta are coordinates on the (t, u) plane: True
+  [36] Shiab#: (sigma, theta, delta) = (t, -u, -u), W_A: (t, 0, -u) (both real forms); the dominance bound reads 544|t| + 592|u| < |kappa|, resp. 544|t| + 208|u| < |kappa|: True
+
+=== R3. Singular sets Z = {det L_(T_o) = 0} in real (t, u); kernels ===
+  (14,0) Shiab#: Lam1: kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 - 154112*kappa**2*u**2 - 2555904*kappa*t*u**2 + 11075584*u**4;  Lam3: (9*kappa**4 + 6912*kappa**3*t + 1631744*kappa**2*t**2 - 1026048*kappa**2*u**2 + 130088960*kappa*t**3 - 167510016*kappa*t*u**2 + 2924544000*t**4 - 7898398720*t**2*u**2 + 5285871616*u**4)/9;  Lam5: (9*kappa**4 + 6912*kappa**3*t + 1903616*kappa**2*t**2 - 760320*kappa**2*u**2 + 220725248*kappa*t**3 - 235339776*kappa*t*u**2 + 8996782080*t**4 - 19395510272*t**2*u**2 + 10433396736*u**4)/9;  Lam7: kappa**2 + 384*kappa*t + 36608*t**2 - 36864*u**2;  H2: (9*kappa**2 - 576*kappa*t + 7616*t**2 - 9216*u**2)/9;  H4: kappa**2 - 64*kappa*t + 960*t**2 - 1024*u**2;  H6: (9*kappa**2 - 576*kappa*t + 9152*t**2 - 9216*u**2)/9
+  (14,0) W_A: Lam1: (kappa**2 + 224*kappa*t - 3328*u**2)*(kappa**2 + 544*kappa*t - 3328*u**2);  Lam3: (3*kappa**2 + 992*kappa*t + 65280*t**2 - 11264*u**2)*(3*kappa**2 + 1312*kappa*t + 44800*t**2 - 11264*u**2)/9;  Lam5: (3*kappa**2 + 1120*kappa*t + 79872*t**2 - 3840*u**2)*(3*kappa**2 + 1184*kappa*t + 112640*t**2 - 3840*u**2)/9;  Lam7: (kappa + 176*t)*(kappa + 208*t);  H2: (-3*kappa + 56*t)*(-3*kappa + 136*t)/9;  H4: (-kappa + 24*t)*(-kappa + 40*t);  H6: (-3*kappa + 88*t)*(-3*kappa + 104*t)/9
+  (7,7) Shiab#: Lam1: kappa**4 + 768*kappa**3*t + 121856*kappa**2*t**2 + 154112*kappa**2*u**2 + 2555904*kappa*t*u**2 + 11075584*u**4;  Lam3: (9*kappa**4 + 6912*kappa**3*t + 1631744*kappa**2*t**2 + 1026048*kappa**2*u**2 + 130088960*kappa*t**3 + 167510016*kappa*t*u**2 + 2924544000*t**4 + 7898398720*t**2*u**2 + 5285871616*u**4)/9;  Lam5: (9*kappa**4 + 6912*kappa**3*t + 1903616*kappa**2*t**2 + 760320*kappa**2*u**2 + 220725248*kappa*t**3 + 235339776*kappa*t*u**2 + 8996782080*t**4 + 19395510272*t**2*u**2 + 10433396736*u**4)/9;  Lam7: kappa**2 + 384*kappa*t + 36608*t**2 + 36864*u**2;  H2: (9*kappa**2 - 576*kappa*t + 7616*t**2 + 9216*u**2)/9;  H4: kappa**2 - 64*kappa*t + 960*t**2 + 1024*u**2;  H6: (9*kappa**2 - 576*kappa*t + 9152*t**2 + 9216*u**2)/9
+  (7,7) W_A: Lam1: (kappa**2 + 224*kappa*t + 3328*u**2)*(kappa**2 + 544*kappa*t + 3328*u**2);  Lam3: (3*kappa**2 + 992*kappa*t + 65280*t**2 + 11264*u**2)*(3*kappa**2 + 1312*kappa*t + 44800*t**2 + 11264*u**2)/9;  Lam5: (3*kappa**2 + 1120*kappa*t + 79872*t**2 + 3840*u**2)*(3*kappa**2 + 1184*kappa*t + 112640*t**2 + 3840*u**2)/9;  Lam7: (kappa + 176*t)*(kappa + 208*t);  H2: (-3*kappa + 56*t)*(-3*kappa + 136*t)/9;  H4: (-kappa + 24*t)*(-kappa + 40*t);  H6: (-3*kappa + 88*t)*(-3*kappa + 104*t)/9
+  t-axis (u = 0, any member with sigma = t there, e.g. Shiab#, W_A; kappa = 1): singular t = -1/a for every diagonal entry kappa + a t;  18 values:
+    t = -3/112: kernel = ['Lam3:c']
+    t = -3/272: kernel = ['Lam3:cG']
+    t = -1/96: kernel = ['Lam5:c']
+    t = -1/160: kernel = ['Lam5:cG']
+    t = -1/176: kernel = ['Lam7:c', 'Lam7:cR']
+    t = -1/208: kernel = ['Lam7:w', 'Lam7:wR']
+    t = -1/224: kernel = ['Lam1:w']
+    t = -3/704: kernel = ['Lam5:w']
+    t = -1/240: kernel = ['Lam3:w']
+    t = -3/832: kernel = ['Lam5:wG']
+    t = -1/400: kernel = ['Lam3:wG']
+    t = -1/544: kernel = ['Lam1:wG']
+    t = 3/136: kernel = ['H2:XG']
+    t = 1/40: kernel = ['H4:XG']
+    t = 3/104: kernel = ['H6:XG']
+    t = 3/88: kernel = ['H6:X']
+    t = 1/24: kernel = ['H4:X']
+    t = 3/56: kernel = ['H2:X']
+  [37] on u = 0 every block of Shiab# and W_A is diagonal with entries kappa + a t (a as listed), both real forms; the component of invertibility containing 0 is -kappa/544 < t < 3 kappa/136 (kappa > 0), while det M vanishes only at t = -kappa/224, -kappa/544: True
+  exact kernel elements T_e (outside V unless stated) with L_(T_o) T_e = 0, checked on the Clifford algebra:
+    (14,0) Shiab#, kappa = 1, (t, u) = (3/136, 0): H2, copy vector [0, 1]: block kernel True, L T_e = 0 on the Clifford element True
+    (14,0) Shiab#, kappa = 1, (t, u) = (-1/400, 0): Lam3, copy vector [0, 0, 1, 0]: block kernel True, L T_e = 0 on the Clifford element True
+    (14,0) Shiab#, kappa = 1, (t, u) = (0, 1/32): H2, copy vector [1, I]: block kernel True, L T_e = 0 on the Clifford element True
+    (14,0) Shiab#, kappa = 1, (t, u) = (0, 1/32): H4, copy vector [1, I]: block kernel True, L T_e = 0 on the Clifford element True
+    (14,0) Shiab#, kappa = 1, (t, u) = (0, 1/32): H6, copy vector [1, I]: block kernel True, L T_e = 0 on the Clifford element True
+    (7,7) Shiab#, kappa = 1, (t, u) = (3/136, 0): H2, copy vector [0, 1]: block kernel True, L T_e = 0 on the Clifford element True
+    (7,7) W_A, kappa = 1, (t, u) = (-1/176, 0): Lam7, copy vector [1, 0, 0, 0]: block kernel True, L T_e = 0 on the Clifford element True
+    (7,7) W_A, kappa = 1, (t, u) = (-3/832, 0): Lam5, copy vector [0, 0, 1, 0]: block kernel True, L T_e = 0 on the Clifford element True
+    (14,0) W_A, kappa = 1, (t, u) = (-1831/52400, -17/524): Lam3, copy vector [25/2, 0, 1, 0]: block kernel True, L T_e = 0 on the Clifford element True
+    (14,0) W_A, kappa = 1, (t, u) = (-1/544, 0): Lam1, copy vector [0, 0, 1, 0]: block kernel True, L T_e = 0 on the Clifford element True
+  [38] each listed T_e is a nonzero element of the stated constituent with L_(T_o) T_e = 0 exactly; a non-kernel copy is not annihilated (control): True
+    (14,0) Shiab#, (t, u) = (0, kappa/32): block determinants {'Lam1': -2223/16, 'Lam3': 4048/9, 'Lam5': 16385/16, 'Lam7': -35, 'H2': 0, 'H4': 0, 'H6': 0}
+  [39] (14,0) Shiab# at (t, u) = (0, kappa/32): the three hook blocks have rank 1 and the others are invertible, so ker L_(T_o) = H2 + H4 + H6 (one copy each), of dimension 896 + 11648 + 36608 = 49152, and det M != 0 there: True
+  [40] (14,0), sigma = lambda theta: discriminant of (kappa + a sigma)(kappa + b sigma) - c^2 theta^2 in theta is kappa^2 ((a - b)^2 lambda^2 + 4 c^2) > 0: True
+  (7,7): classification of the members with Z empty
+    theta = c sigma, m = c^2: 2x2 block positive definite in (kappa, sigma) iff m > {'H2': 25/144, 'H4': 1/16, 'H6': 1/144, 'Lam7': 1/144}
+  [41] 2x2 thresholds (a - b)^2 / (4 c^2): H2 25/144 (the largest), H4 1/16, H6 1/144, Lam7 1/144: True
+  [42] Lam1 at theta = c sigma, as a quadratic in rho = kappa^2 + 3328 delta^2: minimum kappa^2 sigma^2 (384^2 m - 160^2), positive for m > 25/144, sigma != 0 (and rho^2 > 0 at sigma = 0): True
+    Lam3 (kappa = 1, theta = c sigma, m = c^2, r = delta^2): 9 det = 126877696 r^2 + (22528*(61440*m*sigma**2 + 55040*sigma**2 + 1152*sigma + 3)) r + (36864*m*sigma**2 + 30464*sigma**2 + 1152*sigma + 9)*(102400*m*sigma**2 + 96000*sigma**2 + 640*sigma + 1)
+      d/dm (9 det) = sigma^2 (8192*(921600*m*sigma**2 + 168960*r + 812800*sigma**2 + 17280*sigma + 117))
+      at m = 25/144: C = (64*sigma + 1)**2*(1024000*sigma**2 + 5760*sigma + 9) (>= 0), B = 22528*(197120*sigma**2 + 3456*sigma + 9)/3, 4AC - B^2 = -12992276070400*sigma**2*(43264*sigma**2 - 1152*sigma - 27)/9; B < 0 only inside [-25/1742, -3/943], where 4AC - B^2 has no root and is > 0
+    Lam5 (kappa = 1, theta = c sigma, m = c^2, r = delta^2): 9 det = 14745600 r^2 + (7680*(98304*m*sigma**2 + 96256*sigma**2 + 1152*sigma + 3)) r + (16384*m*sigma**2 + 15360*sigma**2 + 256*sigma + 1)*(589824*m*sigma**2 + 585728*sigma**2 + 4608*sigma + 9)
+      d/dm (9 det) = sigma^2 (16384*(1179648*m*sigma**2 + 46080*r + 1138688*sigma**2 + 13824*sigma + 45))
+      at m = 25/144: C = (163840*sigma**2 + 2304*sigma + 9)*(229376*sigma**2 + 1536*sigma + 3)/3 (>= 0), B = 2560*(339968*sigma**2 + 3456*sigma + 9), 4AC - B^2 = -53687091200*sigma**2*(346112*sigma**2 + 1152*sigma - 27); B > 0 everywhere
+  [43] Lam3, Lam5 at theta = c sigma (det even in theta and in delta): d/dm det = sigma^2 (alpha m sigma^2 + beta r + Q(sigma)) with alpha, beta >= 0 and Q positive definite; at m = 25/144, A r^2 + B r + C >= 0 on r >= 0; at sigma = 0 all coefficients > 0. Hence det > 0 for all real (sigma, delta) when m > 25/144: True
+  [44] (7,7), (x, y) = 0 (sigma = delta = 0): every block determinant is a positive-coefficient polynomial in kappa^2, theta^2, so Z is empty: True
+  [45] sigma, theta, delta (hence every block and det L) are invariant under M1(a) (SO(2) in (14,0), SO+(1,1) in (7,7), acting on (x,y), (z,w), (t,u)) and under M1(b) ((7,7): p -> -Kp, (t,u) -> (u,t)): True
+  [46] at c^2 = 25/144 the H2 determinant is (kappa - 32 sigma)^2: Z is nonempty for c^2 <= 25/144: True
+
+=== R4. Consequences ===
+  (14,0) Shiab#, u = 0, kappa = 1: roots of the I7(b) curve 312 s^2 + s + 15/(2 c_V) = 0 lie in (-1/312, 0); singular points there: {-1/544: 'Lam1', -1/400: 'Lam3'}
+  [47] the flat-base family meets Z only at s = -kappa/400 (Lam3, copy wG; c_V kappa^2 = 150000/11 >= 9360, det M != 0) and s = -kappa/544 (det M = 0; c_V kappa^2 = 277440/29): True
+  [48] at c_V kappa^2 = 150000/11 the other root s = -11/15600 kappa is regular (every block determinant != 0): True
+
+48 checks, 48 True (each asserted)
+runtime 342 s

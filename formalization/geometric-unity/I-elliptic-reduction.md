@@ -77,7 +77,7 @@ Exact check (output §I2): $Q_t(T_e)_{\rm ev}=Q_t(T_o)_{\rm ev}=0$ and $2B_t(T_e
 
 In particular no solution is $\mathfrak g_{\rm ev}$-valued near $\mathcal C$. Since $\mathcal C$ is unbounded in the fibres, $T_o$ cannot have compact support along the fibres either. This excludes a pure contorsion (an $\mathfrak{so}(14)$-valued $T$, i.e. a metric connection with torsion), a pure $\mathfrak u(1)$ field, and any combination of these. The displacement must have an odd part (grades $1,3,\dots,13$).
 
-*Corollary I2.2 (slaving).* Let $\kappa\neq0$. Then $L_{T_o}:=\kappa{*}+2B(\cdot,T_o)$ is invertible at $T_o=0$, where it is $\kappa{*}$, hence for $|T_o|$ small compared with κ. Where it is invertible, $\Upsilon_{\rm ev}=0$ is equivalent to
+*Corollary I2.2 (slaving).* Let $\kappa\neq0$. Then $L_{T_o}:=\kappa{*}+2B(\cdot,T_o)$ is invertible at $T_o=0$, where it is $\kappa{*}$, hence for $|T_o|$ small compared with κ. (2026-10-31, round 14, not yet internally reviewed: for $T_o=t\Phi^1+u\Phi^1\Gamma$, $L_{T_o}$ is computed on all of $\Lambda^1\otimes\mathfrak g_{\rm ev}$ in `R-even-operator.md`. It is invertible iff $(t,u)\notin Z$ (R3), and $544|\sigma|+384|\theta|+208|\delta|<|\kappa|$ suffices.) Where it is invertible, $\Upsilon_{\rm ev}=0$ is equivalent to
 $$T_e=-L_{T_o}^{-1}\circledast(d_0T_o).$$
 So $T_e$ is a first-order expression in $T_o$, and the ansatz $T_e=0$ is consistent iff $\circledast(d_0T_o)=0$.
 

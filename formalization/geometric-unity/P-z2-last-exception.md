@@ -155,7 +155,7 @@ Run: `cd computation/geometric-unity && python3 P_last_exception.py > P_last_exc
 - **P6 uses only the first integrability condition** (plus the flat case). It says nothing about solutions with $\mu\equiv0$ on the range of $w$, e.g. $w=as+b$.
 - **Hypotheses kept from (H).** Z2; $n=4$; the real forms (14,0), (7,7) of J1–J2 (bases (4,0); (1,3), (3,1), (2,2)); $\kappa\neq0$; $T_e$ the slaved field in $\mathcal V$ with $\det M\neq0$ on $U$; $T_o$ in the invariant sector. Not covered:
   - solutions crossing $\det M=0$;
-  - $T_e$ outside $\mathcal V$;
+  - $T_e$ outside $\mathcal V$ (round 14, `R-even-operator.md` R5, not yet internally reviewed: excluded under (R), a condition on $(t,u)$; still open on open sets where $(t,u)\in Z_\perp$; in (7,7) excluded for $(x,y)=0$ and, up to M1, $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ with $c^2>\tfrac{25}{144}$, R7);
   - other sectors;
   - the Z2 signatures (8,6), (10,4), ….
 - **M1** is a symmetry of the reduced system only (as in M.3).
