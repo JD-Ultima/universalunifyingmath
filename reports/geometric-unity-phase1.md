@@ -218,7 +218,7 @@ Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $
   - Not covered:
     - $T_o$ outside the invariant sector;
     - $T_e$ outside the vector sector for large $|T_o|$;
-    - neighbourhood solutions in Z1 beyond Round 10 (limit points of Einstein pieces without analyticity; the members left open by L.3); in Z2 beyond the radial ansatz, only the members with $xz\pm yw=0$, $x^2\pm y^2\neq0$, $(z,w)\neq0$ (up to symmetry $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, $c^2\neq\tfrac{11}6$ in (14,0)), away from $s(X)$ (Rounds 8, 9);
+    - neighbourhood solutions in Z1 beyond Rounds 10 and 13 (limit points of Einstein pieces without analyticity; open sets away from $s(X)$); in Z2 beyond the radial ansatz, only the members with $xz\pm yw=0$, $x^2\pm y^2\neq0$, $(z,w)\neq0$ (up to symmetry $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, $c^2\neq\tfrac{11}6$ in (14,0)), away from $s(X)$ (Rounds 8, 9);
     - reading (A).
 
 ## Round 8 — $\Upsilon=0$ beyond the radial Z2 ansatz (GU-054, GU-G14, GU-G16)
@@ -267,6 +267,18 @@ Write-up: `formalization/geometric-unity/O-gimel-variation.md`. Code: `computati
 - If the weight is used for all fields, the ϖ-equation becomes $w\Upsilon+\tfrac12\circledast(dw\wedge T)$, and for ray weights it forces $a=0$: no Einstein term.
 - On-shell: among round 10's flat-base Z1 solutions in (14,0), exactly those with $c_V\kappa^2=12480$ (for $x'=1$) also solve the ℷ-equation. None is known in (7,7).
 - G.2.5's list of ℷ-dependent ingredients included "vol", which is ℷ-independent in Z1; corrected there. No other earlier statement is contradicted.
+
+## Round 13 — the remaining members in Z1 (GU-054, GU-G14, GU-G16)
+
+Write-up: `formalization/geometric-unity/Q-z1-remaining-members.md`. Code: `computation/geometric-unity/Q_z1_remaining.py`, output committed, exact, 31 asserted checks, ~4.5 min (258 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/Q-z1-remaining-members.yaml`. Not yet internally reviewed.
+
+Hypotheses of round 10; for $(x,y)=0$ without $(x,y)\neq0$ and without the section.
+- Transfer. Round 9's reduced identities and symmetries do not involve the metric; the (7,7) swap metric $-g_\aleph$ is again Z1, with $(-c_H,-c_V)$. Z1 has no nonconstant concircular function on any open set.
+- $(x,y)=0$: only $T=0$, for every Z1 metric, on every open set. (7,7) null members: none near the section (F6). $x=\pm y$ with $xz-yw\neq0$: $\nabla^2r=-\tfrac5{12}r\,\mathrm{Ric}+\nu g$ on the invariant line, and round 10's degree-1 theorem allows only $\lambda\in\{\tfrac15,\tfrac{23}{100}\}$, so none.
+- $x(W_A+aW'_C\mathrm{Ad}_\Gamma)$, $a\neq0$: the remaining equation has a nonlinear μ. Round 10's degree-1 conditions hold with $\mu'(r_0)$ for $\mu_1$; along the radial set they become an ODE condition on μ, which an exact resultant certificate rules out for every admissible $\lambda\neq\tfrac15$. At $\lambda=\tfrac15$ round 10's pairing and a second pairing $\alpha''=-3c_V/(2c_H^2)$ remove the Weyl tensor; a flat base leaves nothing.
+- **Result.** With round 10, for every member with $(x,y)\neq0$: none near the section in (7,7); in (14,0) $\lambda=\tfrac15$ over a Ricci-flat base, and for analytic fields exactly flat-base solutions with constant odd part and $T_e\equiv0$, which exist for every (14,0) member iff $c_V\kappa^2\ge9360(x'^2+y'^2)$ ($c_V>0$; this answers R10-3's open item).
+- Rests on N6(f) (computer-assisted) and on exact computations. Open: limit points without analyticity; open sets away from the section; other sectors.
+- No statement made before round 13 is contradicted.
 
 ## F4(c) for every $n$ (round 2 F, completed)
 

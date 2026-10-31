@@ -218,7 +218,7 @@ So the Weyl tensor first enters at order $\varepsilon^2$ in the fibre (degree 2 
    - In (7,7), no solution on any neighbourhood of a point of $s(X)$.
    - In (14,0), only $\lambda=\tfrac15$ over a Ricci-flat base is possible. Under analyticity, exactly the flat-base, $T_e\equiv0$ solutions of I7(b) occur, and they exist (N12).
    - These are the first neighbourhood solutions of $\Upsilon=0$ recorded in the audit's invariant/slaved sector; they follow from F7 and I7(b), but had not been stated (I7(b) left (E) on a neighbourhood "not established"). They have $\Lambda_4=0$ and a flat base, and they live in the Euclidean real form (14,0), not in (7,7).
-3. *Other members.* N12 covers classes (A) and (B) of L8 in Z1. The members left open by L.3 remain open.
+3. *Other members.* N12 covers classes (A) and (B) of L8 in Z1. The members left open by L.3 are treated in round 13 (`Q-z1-remaining-members.md`, Q16).
 4. *The order.*
    - Degree 0 (2-jets) constrains nothing. Without J4's ansatz (J), $(\star)$ at $p$ just fixes the Hessian.
    - Degree 1 (3-jets) forces an Einstein base at each point of Σ. Hence $\mathrm{Ric}_g=0$ and $\lambda\in\{\tfrac15,\tfrac{13}{56}\}$ (N7).
@@ -248,7 +248,7 @@ Run: `cd computation/geometric-unity && python3 N_z1_neighbourhood.py > N_z1_nei
 - **N5** (agreement with Z2's A-terms to second order in the fibre) is computed only. It is a side result, used nowhere.
 - **Type-(iii) points.** In (14,0), without analyticity, $U\cap s(X)$ could consist of limits of Einstein pieces that do not reach it. Only $\mathrm{Ric}_g=0$ is proven there, not flatness.
 - **Indefinite bases in F9.** N10 uses $|W|^2$, which is definite only for a definite base. For a Lorentzian or (2,2) base at $\lambda=\tfrac15$ (signatures (8,6), (10,4), …, outside the setting) it gives $|W|^2=0$ only. F9 for those bases, and F9 on open sets away from $s(X)$, remain open.
-- **Members.** As L.3: the non-elliptic members other than the multiples of $W_A$, $x=\pm y$ in (7,7). The Z2 treatment of these members in round 9 (`M-z2-remaining-members.md`) was not transferred to Z1. For $(x,y)=0$, M8 states $T=0$ for every metric.
+- **Members.** As L.3: the non-elliptic members other than the multiples of $W_A$, $x=\pm y$ in (7,7), and $(x,y)=0$. They are treated in Z1 in `Q-z1-remaining-members.md` (round 13): near $s(X)$ the conclusions of N12 hold for every member with $(x,y)\neq0$, and for $(x,y)=0$ only $T=0$, on every open set (Q3, Q14, Q16). Away from $s(X)$ these members remain open in Z1.
 - **Hypotheses kept:** $n=4$; the real forms of J1–J2; $\kappa\neq0$; $T_e\in\mathcal V$ slaved with $\det M\neq0$; $T_o$ in the invariant sector.
 - **Reconstruction:** reading R-Z of F with Z1. This note changes no layer-(b) choice.
 
@@ -258,8 +258,8 @@ Run: `cd computation/geometric-unity && python3 N_z1_neighbourhood.py > N_z1_nei
   - Under the hypotheses of J5/L8 with Z1, for $\circledast_\sharp$, $W_A$ and classes (A), (B):
     - no neighbourhood solution exists in (7,7);
     - in (14,0) a neighbourhood solution forces $\lambda=\tfrac15$ and a Ricci-flat base, and (for analytic $t,u$, or for class (A)) it is exactly a flat-base solution with $T_e\equiv0$ (N12).
-  - For $\circledast_\sharp$ and $W_A$ these solutions exist (F7 with I7(b)) iff $c_V\kappa^2\ge9360$; for $x'W_A$ the condition is $c_V\kappa^2\ge9360x'^2$, and for the other members of (A), (B) existence was not examined (R10-3). They reproduce 4D vacuum GR with $\Lambda_4=0$ only in the trivial sense of a flat base.
-  - So in Z1 as in Z2, for analytic fields and for class (A), the neighbourhood equations do not reduce to a 4D theory with curved solutions in this sector; for smooth fields a curved Ricci-flat base is not excluded at type-(iii) points (N.3). The obstruction now sits at the 3-jet (Ricci, along the radial set Σ) and at the 4-jet (Weyl, along the fibre slice).
+  - For $\circledast_\sharp$ and $W_A$ these solutions exist (F7 with I7(b)) iff $c_V\kappa^2\ge9360$; for $x'W_A$ the condition is $c_V\kappa^2\ge9360x'^2$ (R10-3), and for every (14,0) member it is $c_V\kappa^2\ge9360(x'^2+y'^2)$, with $\det M\neq0$ at one root always (round 13, `Q-z1-remaining-members.md` Q15). They reproduce 4D vacuum GR with $\Lambda_4=0$ only in the trivial sense of a flat base.
+  - So in Z1 as in Z2, for analytic fields and for class (A), the neighbourhood equations do not reduce to a 4D theory with curved solutions in this sector; for smooth fields a curved Ricci-flat base is not excluded at type-(iii) points (N.3). For the remaining members it is settled near $s(X)$ in round 13 (`Q-z1-remaining-members.md`, Q16). The obstruction now sits at the 3-jet (Ricci, along the radial set Σ) and at the 4-jet (Weyl, along the fibre slice).
 - **GU-054.** Status unchanged (C). Round 5's (E) solutions (I7(b)) extend to all of $Y$ when the base is flat (N12(c)). Over a definite base, (E) holds on no neighbourhood of a point $p\in s(X)$ with $R_g(\pi(p))\neq0$ (N10; R10-4).
 - **F9.**
   - For Z1 at $n=4$: proven near $s(X)$ over definite bases (N10); over flat bases its exception occurs exactly at $\lambda=\tfrac15$ (N2) (R10-6).

@@ -1,0 +1,54 @@
+
+=== Q0. Inputs: the metric-free statements of round 9 (M's sections M0-M4, M6, M7), run silently   [0 s]
+  [  1] M.m0-m4, m6, m7 pass all their 22 asserted checks (L's J1/J2 inputs; M1(a) rotation/boost and M1(b) swap of the reduced system; the cone orbits and varpi; M3's channel of (x,0,0,w); M4's mu'; M7's x = +-y identities; M8's theta-structure). None of them involves the metric g_aleph: True
+
+=== Q1. Lemma Q1(b): the swap metric -g_aleph is Z1 with (-cH, -cV); Ric unchanged; (7,7) preserved   [113 s]
+  [  2] curved (1,3) base in general coordinates, lambda = 1/2, y0 != g(x0): the 2-jet of Z1(-2,-3) is minus that of Z1(2,3) (True); Ric equal (True); Ric(E, .) = -E^flat/c holds for both with c -> -c (True); c, b, beta_S change sign, B = 4bc = -24 does not (True); signature at the section point (n+, n-) = (7, 7), (7, 7): True
+
+=== Q2. Lemmas Q2, Q5: the N1(a) pairing used in Q2; the Einstein constant -1/c on int Z   [116 s]
+  [  3] for symmetric y (three signatures), symmetric Z, vectors X, Y and symbolic lambda: G_lambda(Z, X^flat . Y^flat + mu y(X,Y) y) = Z(X,Y), mu = lambda/(1 - 4 lambda); with N1(a), cV G_lambda(Z, sym (nabla_X Y)^V) = -(cH/2) Z(X,Y): True
+  [  4] dimension 14, Ric = -(1/c) g (N1(d)): G = 6/c g, so -xG + c1 g = 0 gives c1 = 6x/c; at lambda = 1/5, 6x/c = 15*x/(2*c_V): True
+
+=== Q3. Lemma Q6: the degree-1 system (*) with mu_1 -> k = mu'(r0) (N's star_system(D, k)), rhs / mu(r0)   [116 s]
+  [  5] (4,0), lambda = 1/7, constant curvature sigma_g = 1: predicted k = -4b/(c(sigma^2 - 16 b^2)) = -14/17; (rank, augmented rank, predicted solution v' = (2b - sigma/2) E, n' = -k beta_S v') = {'-14/17': ((28, 28), True), '0': ((28, 29), None), '-7/18': ((28, 29), None)}: solvable exactly at the predicted k: True
+  [  6] (4,0), lambda = 1/7, sigma_g = 4b = 8/9 (where 2b - sigma/2 = 0): not solvable for any sampled k, as (c) requires (k c (sigma^2 - 16 b^2) = 0 != -4b): {'0': ((28, 29), None), '-7/18': ((28, 29), None), '5': ((28, 29), None)}: True
+  [  7] (4,0), lambda = 1/7, flat base: solvable iff 4 k b c = 1, k = 1/B = 7/32: {'7/32': ((28, 28), True), '-7/18': ((28, 29), None)}: True
+  [  8] (4,0), lambda = 1/5 (b = 0): flat base solvable for every sampled k {'0': ((28, 28), True), '-7/18': ((28, 28), True), '1': ((28, 28), True)}; sigma_g = 1 only at k = 0 {'0': ((28, 28), True), '-7/18': ((28, 29), None)}: True
+  [  9] (1,3), lambda = 1/2 ((7,7) side), sigma_g = 1/2: predicted k = -2/45: {'-2/45': ((28, 28), True), '-5/12': ((28, 29), None)}: True
+
+=== Q4. Lemma Q7: persistence along Sigma, theta -> q_theta = (x0, e^theta g(x0)) an integral curve of E   [159 s]
+  [ 10] with e^(-theta) sigma_g = 4 b rho: (C) <=> B mu'(1 - rho^2) = 1 and (B) <=> dr/dtheta = (B/2) mu (1 - rho) (True, True); differentiating (C) along Sigma with rho' = -rho and (B) gives (B mu'/2)[Phi (1 - rho) + 4 rho^2], Phi = mu mu''/mu'^2, so (D): Phi (1 - rho) + 4 rho^2 = 0 (True): True
+  [ 11] k c sigma^2 = 4b(4kbc - 1) at k = mu_1 = -7/18 is N7(c) (True); linear mu = mu_1 r (Phi = 0, so (c) forces rho = 0): lambda in {1/5} u {4 mu_1 b c = 1} = {1/5, {'-7/18': 13/56, '-5/12': 23/100, '-3/289': 337/240}} for mu_1 = -7/18 (Shiab#, W_A: N7(d)), -5/12 (x = +-y line, M7(b)), -3/289 (a^2 = 11/6); 337/240 > 1/4 is not on the (14,0) side, where a^2 = 11/6 lives: True
+
+=== Q5. Proposition Q8: the twisted cone (x,0,0,ax), a != 0: mu', mu mu'' and the persistence certificate   [159 s]
+  [ 12] from M's reduced tables on u = 0 (r = F(t), F''/F' = q/H, mu = x F'/H): mu' = -N2/(18 D1^2) (M4) and mu mu'' = x (d mu'/dt)/H = A (6A - 11 eps) L Q2/(81 D1^4), both functions of (tau, A) only; hence Phi = mu mu''/mu'^2 = 4 A (6A - 11 eps) L Q2/N2^2, and mu' is constant on an interval iff A (6A - 11 eps) = 0: True
+  [ 13] (14,0): R~ := (Phi + 4X)^2 - X Phi^2, X = rho^2 = 1 - 1/(B mu'), has numerator of degree 12 in tau; the gcd of Res_B(R~(0), R~(1)) and Res_B(R~(0), R~(-1)) is 28179280429056*A**4*(3*A - 7)**2*(6*A - 11)**4; at each root A the common B-roots of R~(0), R~(1), R~(-1), R~(2) are (A, B-degree of their gcd, roots) = [(0, 2, [-18/7]), (11/6, 2, [-289/3]), (7/3, 0, [])]; R~ vanishes identically in tau exactly at (A, B) = [(0, -18/7), (11/6, -289/3)], where X = 0 (rho = 0) and B mu' = 1 (the linear cases: lambda = 13/56 for a = 0, 337/240 for a^2 = 11 eps/6)  [5 s]: True
+  [ 14] (7,7): R~ := (Phi + 4X)^2 - X Phi^2, X = rho^2 = 1 - 1/(B mu'), has numerator of degree 12 in tau; the gcd of Res_B(R~(0), R~(1)) and Res_B(R~(0), R~(-1)) is 28179280429056*A**4*(3*A + 7)**2*(6*A + 11)**4; at each root A the common B-roots of R~(0), R~(1), R~(-1), R~(2) are (A, B-degree of their gcd, roots) = [(-7/3, 0, []), (-11/6, 2, [-289/3]), (0, 2, [-18/7])]; R~ vanishes identically in tau exactly at (A, B) = [(-11/6, -289/3), (0, -18/7)], where X = 0 (rho = 0) and B mu' = 1 (the linear cases: lambda = 13/56 for a = 0, 337/240 for a^2 = 11 eps/6)  [5 s]: True
+  [ 15] hence for real a != 0 (A > 0) the only case is [(11/6, -289/3)] in (14,0), i.e. B = 16(1 - 5 lambda) = -289/3, lambda = [337/240], which is > 1/4 and so not on the (14,0) side: neither Q7(b) (mu' = 1/B constant) nor Q7(c) (R~ = 0 with rho != 0) holds on any interval for an admissible lambda != 1/5: True
+
+=== Q6. Lemma Q9: H, q, q' of the twisted cone in closed form; zeros of H   [199 s]
+  [ 16] on u = 0: H = 576 x^2 D1/(kappa Q2), q = -36864 x^3 Nq/(kappa^2 Q2^2), q' = 4608 x^3 Nq'/(kappa^2 Q2^2), det M = kappa^4 Q2 (both signatures): True
+  [ 17] Res_tau(D1, Nq) and Res_tau(D1, Q2): {1: (-24576*A*(A - 1)*(6*A - 11)**2, -4096*A*(6*A - 11)**2), -1: (-24576*A*(A + 1)*(6*A + 11)**2, 4096*A*(6*A + 11)**2)}. For real a != 0: in (7,7) none vanishes; in (14,0) they vanish only at A = 1 (where D1 = 2 is constant: H has no zero) and A = 11/6 (where the zero of H is a zero of det M). So H and q have no common zero where det M != 0: True
+
+=== Q7. Proposition Q11 (lambda = 1/5, zeros of H): the traced K-free condition (O2) = alpha'' |W|^2   [199 s]
+  [ 18] (cH, cV) = (2, 3), flat base: T~ = Ric + g/c vanishes to order 2 in the fibre (Einstein flat model, N2) (True ; all orders <= 2), so (O2) = 0 there (0)  [2 s]: True
+  [ 19] (cH, cV) = (2, 3), random Weyl W (seed 71, |W|^2 = 26779/3): T~ = 0 at p and its HH, VV blocks vanish to order 1 along the fibre (True); sum_k [tr_H d_k d^k T~_HH/(4 cH) - d_k d^k T~(E,E)/c] = -80337/8 = alpha'' |W|^2 with alpha'' = -9/8; for 2W it is 4 times as large (True: no linear part); the traceless HH pairing with (U eta^-1 W + W eta^-1 U)_0 is 0  [11 s]: True
+  [ 20] (cH, cV) = (2, 3), random Weyl W (seed 72, |W|^2 = 49909/3): T~ = 0 at p and its HH, VV blocks vanish to order 1 along the fibre (True); sum_k [tr_H d_k d^k T~_HH/(4 cH) - d_k d^k T~(E,E)/c] = -149727/8 = alpha'' |W|^2 with alpha'' = -9/8; for 2W it is 4 times as large (True: no linear part); the traceless HH pairing with (U eta^-1 W + W eta^-1 U)_0 is 0  [11 s]: True
+  [ 21] (cH, cV) = (1, 1), flat base: T~ = Ric + g/c vanishes to order 2 in the fibre (Einstein flat model, N2) (True ; all orders <= 2), so (O2) = 0 there (0)  [2 s]: True
+  [ 22] (cH, cV) = (1, 1), random Weyl W (seed 73, |W|^2 = 23056/3): T~ = 0 at p and its HH, VV blocks vanish to order 1 along the fibre (True); sum_k [tr_H d_k d^k T~_HH/(4 cH) - d_k d^k T~(E,E)/c] = -11528 = alpha'' |W|^2 with alpha'' = -3/2; for 2W it is 4 times as large (True: no linear part); the traceless HH pairing with (U eta^-1 W + W eta^-1 U)_0 is 0  [12 s]: True
+  [ 23] (cH, cV) = (3, 1/2), flat base: T~ = Ric + g/c vanishes to order 2 in the fibre (Einstein flat model, N2) (True ; all orders <= 2), so (O2) = 0 there (0)  [2 s]: True
+  [ 24] (cH, cV) = (3, 1/2), random Weyl W (seed 74, |W|^2 = 44062/3): T~ = 0 at p and its HH, VV blocks vanish to order 1 along the fibre (True); sum_k [tr_H d_k d^k T~_HH/(4 cH) - d_k d^k T~(E,E)/c] = -22031/18 = alpha'' |W|^2 with alpha'' = -1/12; for 2W it is 4 times as large (True: no linear part); the traceless HH pairing with (U eta^-1 W + W eta^-1 U)_0 is 0  [11 s]: True
+  [ 25] (cH, cV) = (2, 3), Weyl W (seed 71) plus random cubic terms (nabla R(x0) != 0): T~(p) = 0 and its HH, VV blocks vanish to order 1 (True); (O2) = -80337/8, the same as without cubic terms (True: no nabla R dependence, as the x -> -x parity requires)  [6 s]: True
+  [ 26] alpha'' is the same for the two Weyl tensors at (2, 3) (['-9/8', '-9/8']; Schur: an O(4)-invariant quadratic form on Weyl tensors is a multiple of |W|^2), and alpha'' = -3 cV/(2 cH^2) for all three parameter sets (True); never 0, so for a definite base (O2) forces W = 0: True
+
+=== Q8. Propositions Q12, Q13: flat base for any mu; the x = +-y line (lambda = 23/100)   [257 s]
+  [ 27] flat base, r = f(s): f' = 2bc mu(f) and f'' = bc mu(f) are compatible iff b*c*mu*(4*b*c*mu1 - 1) = 0, i.e. b mu (4 b c mu'(f) - 1) = 0: at lambda = 1/5 (b = 0) f' = 0; for b != 0 mu' = 1/(4bc) on the interval f(s): True
+  [ 28] x = +-y, ell != 0, (7,7): on the invariant line sigma = -kappa/208 the equation is linear with mu_1 = -5/12 (M7(b), checked in Q0); Q7(d): lambda in {1/5, 23/100}, both < 1/4, so none on the (7,7) side: True
+
+=== Q9. Proposition Q15: flat-base constant solutions for every (14,0) member (lambda = 1/5, T_e = 0)   [257 s]
+  [ 29] members (x, 0, z, w) (every member with (x,y) != 0 is of this form up to M1(a)): det M on u = 0 is kappa^2 (kappa^2 + 768 kappa t x + 121856 t^2 x^2 - 147456 eps w^2 t^2), independent of z; c1 = kappa t + x(312 t^2 +- 104 u^2), c13 = u (kappa + 208 x t): True
+  [ 30] (14,0) real variables (x = -i x', t = i s, u = i r, T = x' s, R = x' r): c1 = 15x/(2cV), c13 = 0 is r (kappa + 208 T) = 0 and 312 T^2 + kappa T + 104 R^2 + 15 x'^2/(2cV) = 0 (True); on r = 0 the discriminant is (c_V*kappa**2 - 9360*xp**2)/c_V (>= 0 iff cV kappa^2 >= 9360 x'^2); on T = -kappa/208 the left side is kappa**2/416 + 104 R^2 + 15x'^2/(2cV) > 0 (cV > 0): no solution: True
+  [ 31] det M at the roots, a := w'/x' (A = a^2): Res_T(312T^2 + kappa T + 15x'^2/(2cV), det M/kappa^2) in omega = 9360 x'^2/(cV kappa^2) has numerator 64*kappa**4*(331776*A**2*omega**2 - 548352*A*omega**2 + 3908736*A*omega - 3504384*A + 226576*omega**2 + 274248*omega - 485199) (degree <= 2 in omega, leading coefficient 1024*kappa**4*(144*A - 119)**2, constant term -97344*kappa**4*(2304*A + 319) < 0), so for each a at most two values of cV kappa^2/x'^2 put a root on det M = 0; both roots at once would need the two quadratics proportional, i.e. A = [-115/144] < 0. At a = 0: omega = [1131/1156] (cV kappa^2 = 277440/29, N12(c)): True
+
+31 checks, all True (each asserted).
+runtime 258 s

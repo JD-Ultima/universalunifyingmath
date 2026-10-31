@@ -1,0 +1,67 @@
+result: "Q. Upsilon = 0 near s(X) in the Zorro metric Z1 for the members round 10 leaves open (the cone xz +- yw = 0 other than the multiples of W_A, x = +-y in (7,7), (x,y) = 0), with kappa != 0 and the slaved T_e in V (det M != 0): for the twisted cone x(W_A + a W'_C Ad_Gamma), a != 0 (in (7,7) also the N < 0 family through the swap with g_aleph -> -g_aleph, which is Z1 with (-cH, -cV)), there is no solution on an open set meeting s(X) in (7,7), and in (14,0) a solution forces lambda = 1/5, a Ricci-flat base and no type-(ii) point, and for real-analytic t, u it is a flat-base solution with constant (t, u) and T_e = 0; the (7,7) null members and the members with x = +-y, xz - yw != 0 have no solution near s(X); for (x,y) = 0 the only solution is T = 0, for every Z1 metric, on every open set. With round 10 this settles the Z1 question near s(X) for every member of the family. The flat-base constant solutions exist for every (14,0) member iff cV kappa^2 >= 9360 (x'^2 + y'^2)"
+claim_id: [GU-054]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/Q-z1-remaining-members.md (Lemmas Q1, Q2, Q5, Q6, Q7, Q9; Propositions Q3, Q4, Q8, Q10, Q11, Q12, Q13, Q15; Theorem Q14; Corollary Q16); settles the "members" item of N.3 (formalization/geometric-unity/N-z1-neighbourhood.md) and, near s(X), the Z1 item of J.3 (J-slaved-sector.md) and L.3 (L-nonradial-z2.md); answers N.4's open existence question for the classes (A), (B) of L8 (REVIEW8-GU R10-3)
+code: [computation/geometric-unity/Q_z1_remaining.py, computation/geometric-unity/Q_z1_remaining.out]
+formalization_status: >
+  Formalized in the setting of N ((H1): the hypotheses of L8 with the metric Z1: n = 4, lambda != 1/4, cH cV != 0, real forms
+  (14,0) and (7,7), kappa != 0, T_o = t Phi^1 + u Phi^1 Gamma, T_e the slaved field Sigma (dt, du) in V with det M != 0,
+  Upsilon = 0 on a connected open U meeting s(X)); for (x,y) = 0 without (x,y) != 0 and without U meeting s(X). Steps:
+  (1) the reduced system and round 9's symmetries M1 are metric-free; the (7,7) swap metric -g_aleph is the Z1 metric with
+  (-cH, -cV), so (H1) is preserved; (2) Z1 has no nonconstant concircular function on any open set (fibre lemma L3(a),
+  then the Euler-field identity Ric(E, .) = -E^flat/c kills a parallel gradient), which settles (x,y) = 0 (only T = 0) and
+  the concircular branch for x = +-y; (3) for the null members T_e = 0 is forced and Z1 would be Einstein at s(X), so
+  lambda = 1/5 by F6, impossible in (7,7); (4) for the twisted cone the gamma-Gamma channel kills u, Einstein pieces are
+  allowed (they exist in Z1), and the remaining scalar equation Hess r = mu(r) Ric + nu g has a nonlinear mu; (5) the
+  degree-1 (3-jet) conditions at a point of s(X) are those of round 10 with mu'(r0) for mu_1:
+  k c sigma_g^2 = 4b(4kbc - 1), nabla r = mu0 (2b - sigma_g/2) E, Einstein base; (6) along the radial set Sigma these
+  become an ODE system for mu along r(Sigma), B mu'(1 - rho^2) = 1 and Phi (1 - rho) + 4 rho^2 = 0 (rho = e^-theta sigma_g/(4b),
+  Phi = mu mu''/mu'^2, B = 4bc = 16(1 - 5 lambda)), which for the twisted cone holds identically in tau only in the two
+  linear cases (exact resultant certificate), i.e. never for a != 0 and admissible lambda != 1/5, also through the zeros
+  of the Hessian coefficient H; (7) at lambda = 1/5 the Weyl tensor is removed by round 10's pairing alpha |W|^2 where
+  H != 0 and, where H vanishes identically along s(X), by a K-free second-order condition paired to alpha'' |W|^2,
+  alpha'' = -3 cV/(2 cH^2); (8) over a flat base no solution with dr != 0 remains (radial ODE, any mu); (9) for x = +-y
+  the invariant line carries the linear equation mu = -(5/12) r, and N7 gives lambda in {1/5, 23/100}, both below 1/4;
+  (10) existence: by M1(a) every (14,0) member reduces to y = 0, and the I6 equations with T_e = 0 over the flat Einstein
+  model have real solutions iff cV kappa^2 >= 9360 (x'^2 + y'^2), with det M != 0 at one root always.
+internal_consistency: >
+  The metric-free inputs are re-run from round 9's own code (M's sections M0-M4, M6, M7: 22 asserted checks, including L's
+  J1/J2 inputs). The swap metric is checked on 2-jets off the section over a curved Lorentzian base (Ric, N1(d), signature
+  (7,7)). The general-mu degree-1 statement is confirmed on the full 1274 x 28 system of round 10 (ranks and solution
+  vectors) at the predicted k and its failure elsewhere, including the case sigma_g = 4b where no k works and the flat
+  case k = 1/B. mu' and mu mu'' of the twisted cone are recomputed from M's reduced tables; the persistence certificate
+  (gcd of two resultants = const A^4 (3A - 7 eps)^2 (6A - 11 eps)^4, then the common B-roots of four specialisations at each candidate) reproduces round
+  10's lambda = 13/56 at a = 0 as its only other identically-satisfied case. alpha'' is computed from N's truncated
+  series: the same for two Weyl tensors, quadratic (2W gives 4 times), independent of nabla R, zero for the flat base,
+  of the monomial form -3 cV/(2 cH^2) for three (cH, cV).
+proof_status: >
+  Proven: Q1 (transfer; swap metric), Q2 (Z1 concircular functions), Q3 ((x,y) = 0), Q4 (null members), Q5 (channel and
+  trichotomy), Q12 (flat base, any mu), Q15 (existence; its det M clause by an exact resultant). Proven, using N6(f)
+  (computer-assisted, REVIEW8-GU R10-1): Q6, Q7, Q10, Q11, Q13, Q14, Q16. Computed exactly and used: the certificate of
+  Q8 (resultants and gcd), the resultants of Q9, alpha'' of Q11 (Schur and an x -> -x parity step reduce it to these
+  evaluations). Open: type-(iii) points in (14,0) without analyticity (as in round 10); every member on open sets away
+  from s(X) in Z1 (except (x,y) = 0); the null members away from s(X) reduce to F9 for indefinite bases. Imported: N1,
+  N2, N4, N6, N7, N9, N10, N11, N12; M1-M4, M7, M8; L1, L3, L5, L8; F4, F6, F7; I6, I7(b).
+novelty: >
+  New within this audit: the Z1 neighbourhood question near s(X) is settled for every member of the family x W_A + y W'_A
+  + z W_C Ad_Gamma + w W'_C Ad_Gamma in the slaved vector sector: no solution in (7,7); in (14,0) only lambda = 1/5 over a
+  Ricci-flat base, and for analytic fields exactly the flat-base solutions with constant (t, u), T_e = 0 and Lambda_4 =
+  0, which exist for every member (threshold cV kappa^2 >= 9360 (x'^2 + y'^2)). Round 10's quantisation of lambda along
+  the radial set extends to nonlinear mu as an ODE condition on mu, decided by an exact certificate. Z1 has no
+  nonconstant concircular functions (in Z2 it has parallel horizontal ones). Not in the source.
+reproducibility: "Exact (Fractions, N's truncated series with Fraction coefficients, sympy rationals); fixed seeds (random.Random(111) Q1, 121 Q2, 71-74 and 175 Q7); one core: 258 s, a second run 259 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 Q_z1_remaining.py > Q_z1_remaining.out 2>&1 (31 checks, 31 True, each asserted). Imports N_z1_neighbourhood.py and M_remaining.py (and through them L_nonradial.py, J_slaved_sector.py, F_jets.py) unmodified."
+empirical_testability: >
+  None new. In the slaved vector sector neither Z1 nor Z2 yields a curved 4D solution of Upsilon = 0 on a neighbourhood
+  of a point of s(X) for any member, except possibly at type-(iii) points for non-analytic fields in Z1 (only Ric_g = 0
+  is shown there); the only neighbourhood solutions (Z1, (14,0), lambda = 1/5) have a flat base and Lambda_4 = 0, in a
+  fibre signature that is not (7,7). The physically relevant reduction still depends on the rule for T off s(X), on Z1
+  versus Z2, and on sectors not treated.
+dependencies: ["N1", "N2", "N4", "N6", "N7", "N9", "N10", "N11", "N12", "M1", "M2", "M3", "M4", "M7", "M8", "L1", "L3", "L5", "L8", "F4", "F6", "F7", "I6", "I7"]
+confidence: >
+  High for Q1-Q5, Q12 and Q15: short proofs from proven statements, with the metric-free inputs re-run from round 9's code
+  and the swap metric checked by brute force. High for Q6, Q7, Q13: round 10's degree-1 argument with one coefficient
+  renamed, confirmed on the full linear system, including predictions at k != mu_1. Medium-high for Q8, Q11 and hence
+  Q14(a), (b) and Q16: each adds one exact computation (a resultant certificate; one pairing constant alpha'') to the
+  hand argument, and Q11's second-order expansion is a new hand step not independently cross-checked. Not covered:
+  type-(iii) accumulation points without analyticity; open sets away from s(X); T_e outside V or crossing det M = 0;
+  T_o outside the invariant sector.
