@@ -1,0 +1,71 @@
+
+=== X0. Inputs: F5 (Lambda_A, Lambda_P), I6 (c1, c13); the potential P~ from Euler homogeneity (O4)   [0 s]
+  [  1] F5: Lambda_A(Z1) = -c_H sigma_1/(2 c_V) = F5's general-n form = (5 c_H/4 c_V)(5 - 18 lam)/(1 - 4 lam); Lambda_P(Z1) = (3 c_H/2 c_V)(4 - 15 lam)/(1 - 4 lam); Lambda_A(Z2) = 9 c_H/(2 c_V); (A, P) at lam = 0, 1/2, 1: [(25/4, 6), (5, 21/4), (65/12, 11/2)]; zeros 5/18 (A), 4/15 (P): True
+  [  2] (14,0): from I6's c1, c13 and Euler homogeneity, the T-part of the density is 14 P~ with P~ = D_2/2 + D_3/3 = (t^2 + chi u^2)(kappa/2 + 104 a), a = t*x + u*y; grad P~ = (c1, chi c13); with <Phi^1, G e(x)gamma> = tr G = -6 s_Y the curvature part is 6 a s_Y (O4): True
+  [  3] (7,7): from I6's c1, c13 and Euler homogeneity, the T-part of the density is 14 P~ with P~ = D_2/2 + D_3/3 = (t^2 + chi u^2)(kappa/2 + 104 a), a = t*x - u*y; grad P~ = (c1, chi c13); with <Phi^1, G e(x)gamma> = tr G = -6 s_Y the curvature part is 6 a s_Y (O4): True
+
+=== X1. Proposition O2: Sym^2 Jacobian, naturality of mu_can, det G_lambda, det g_aleph with Gamma != 0, rho   [0 s]
+  [  4] O2(a): Jacobian of y -> P^T y P on Sym^2 is det(P)^(n+1) (n = 2 symbolic; n = 3, 4 random exact P): True
+  [  5] O2(a): mu_can = |det y|^(-n/2) d^n x d^N y is invariant under (x, y) -> (A x, A^-T y A^-1) (n = 3, 4, random exact A, y): True
+  [  6] O2(b): det G_lambda|_y = (1 - n lambda) 2^(N-n) det(y)^-(n+1) (n = 2, 3, 4; lambda symbolic; y of signature (n,0), (1,n-1), (2,n-2)): True
+  [  7] O2(c): det g_aleph = c_H^n det(h_H) det(c_V G_lambda) at random (y, Gamma != 0), Z1 (h_H = y) and Z2 (h_H = g); Z1: det g_aleph (det y)^n = c_H^n c_V^N (1 - n lam) 2^(N-n), the same for every y and Gamma (so dvol = C |det y|^(-n/2) d^n x d^N y, gimel- and Gamma-free); rho^2 = c_H^n det u (Z1), c_H^n (Z2) (n = 2, 3, 4; four signatures): True
+
+=== X2. Own brute force on Y = Met(R^n): controls, F3/F4(b), Lemma O8, the negative ray, Z2 off the section   [7 s]
+  [  8] control: own scalar-curvature routine gives 6 for S^3 (4|dx|^2/(1+|x|^2)^2) and -2 for H^2: True
+  [  9] n = 3, base (3, 0), lam = 0, (c_H, c_V) = (2, 3), random quadratic + cubic base metric: on the section s_Y^Z1 = R/c_H + sigma_1/c_V (F4(b)) and s_Y^Z2 = R/c_H + s_F (F3), R = -6: True
+  [ 10] Lemma O8, n = 3, base (3, 0), lam = 0: s_Y^Z1(eps) at y0 off the ray is the quadratic -2 + (-471/1058) eps + (-1185267/4477456) eps^2 (degree-3, -4 coefficients 0; a 6th value fits): constant sigma_1/c_V, linear tr(y0^-1 Ric_1)/c_H, quadratic != 0: True
+  [ 11] Lemma O8, base (3, 0): on the ray y0 = 2 g(0) the quadratic term vanishes (q_cg = 0): s_Y = sigma_1/c_V + R eps/(2 c_H); doubling c_H halves the linear and quarters the quadratic coefficient; dropping the cubic terms of g changes nothing (no d^2 Gamma)   [5 s]: True
+  [ 12] n = 3, base (2, 1), lam = 1/2, (c_H, c_V) = (2, 3), random quadratic + cubic base metric: on the section s_Y^Z1 = R/c_H + sigma_1/c_V (F4(b)) and s_Y^Z2 = R/c_H + s_F (F3), R = 12: True
+  [ 13] Lemma O8, n = 3, base (2, 1), lam = 1/2: s_Y^Z1(eps) at y0 off the ray is the quadratic -1 + (134/81) eps + (-10247/11664) eps^2 (degree-3, -4 coefficients 0; a 6th value fits): constant sigma_1/c_V, linear tr(y0^-1 Ric_1)/c_H, quadratic != 0: True
+  [ 14] Lemma O8, base (2, 1): on the ray y0 = 2 g(0) the quadratic term vanishes (q_cg = 0): s_Y = sigma_1/c_V + R eps/(2 c_H); doubling c_H halves the linear and quarters the quadratic coefficient; dropping the cubic terms of g changes nothing (no d^2 Gamma)   [5 s]: True
+  [ 15] n = 3, base (1, 2), lam = 1/2, (c_H, c_V) = (2, 3), random quadratic + cubic base metric: on the section s_Y^Z1 = R/c_H + sigma_1/c_V (F4(b)) and s_Y^Z2 = R/c_H + s_F (F3), R = 8: True
+  [ 16] Lemma O8, n = 3, base (1, 2), lam = 1/2: s_Y^Z1(eps) at y0 off the ray is the quadratic -1 + (149/32) eps + (-14235/256) eps^2 (degree-3, -4 coefficients 0; a 6th value fits): constant sigma_1/c_V, linear tr(y0^-1 Ric_1)/c_H, quadratic != 0: True
+  [ 17] Lemma O8, base (1, 2): on the ray y0 = 2 g(0) the quadratic term vanishes (q_cg = 0): s_Y = sigma_1/c_V + R eps/(2 c_H); doubling c_H halves the linear and quarters the quadratic coefficient; dropping the cubic terms of g changes nothing (no d^2 Gamma)   [5 s]: True
+  [ 18] O8 premises: s_Y^Z1(0, y0) is unchanged under a linear change of coordinates (y0 -> L^T y0 L) and under a cubic change x = x' + phi(x') that alters dGamma(0) but not Rm(0) (base (2,1)): s depends on the base only through Rm(0): True
+  [ 19] observation (R11-2): base (1,1), Z1 on the ray y = c g for c = 2, -2, -1/3: s_Y = R/(c c_H) + sigma_1/c_V, so on the negative ray (p = q) the R-coefficient changes sign; Z2: s_Y = R/c_H + s_F for every c (lam = 1/3, 1): True
+  [ 20] Z2 off the section (n = 3, bases (3,0) lam = 0 and (2,1) lam = 1/2, two y0 each): brute-force s_Y = R/c_H + s_F - |A|^2 with |A|^2 = (c_V/4c_H^2) sum eps_i eps_j G_y(R_ij.y, R_ij.y) != 0; Euclidean, y = diag(1/2, 2, 3): the eigen-formula of Lemma O9: True
+  [ 21] observation (R11-1): base (2,1), Rm(0) = omega (x) omega with omega = l ^ m, l null: Rm != 0, Ric = <m,m> l (x) l != 0, R = 0, and |A|^2 = 0 at three random off-section y0; brute-force Z2 s_Y = s_F there. So for Rm != 0, |A|^2 need not be unbounded (or nonzero) on the fibre in indefinite signature: True
+
+=== X3. Theorem O6 inputs: boosts on Sym^2 (spectra, diagonalisable, joint kernel R g), [p, p] = k; (4,0)   [25 s]
+  [ 22] base (1,1): 1 elementary boosts act on Sym^2 diagonalisably with eigenvalues in {0, +-1, +-2}; joint kernel = R g; [p, p] spans k (dim 0): True
+  [ 23] base (2,1): 2 elementary boosts act on Sym^2 diagonalisably with eigenvalues in {0, +-1, +-2}; joint kernel = R g; [p, p] spans k (dim 1): True
+  [ 24] base (1,3): 3 elementary boosts act on Sym^2 diagonalisably with eigenvalues in {0, +-1, +-2}; joint kernel = R g; [p, p] spans k (dim 3): True
+  [ 25] base (3,1): 3 elementary boosts act on Sym^2 diagonalisably with eigenvalues in {0, +-1, +-2}; joint kernel = R g; [p, p] spans k (dim 3): True
+  [ 26] base (2,2): 4 elementary boosts act on Sym^2 diagonalisably with eigenvalues in {0, +-1, +-2}; joint kernel = R g; [p, p] spans k (dim 2): True
+  [ 27] base (2,3): 6 elementary boosts act on Sym^2 diagonalisably with eigenvalues in {0, +-1, +-2}; joint kernel = R g; [p, p] spans k (dim 4): True
+  [ 28] base (4,0): every rotation acts on Sym^2 skew-symmetrically for the positive form tr(y1 y2): no real nonzero eigenvalue, no boost; K compact: True
+
+=== X4. Lemma O9 (Schur traces, n = 4), the |A|^2 formula, Gauss-Bonnet; null tensors; the kernel of B -> f_B   [25 s]
+  [ 29] Lemma O9: algebraic curvature tensors in dim 4: dims (all, Weyl, Ric_0, scalar) = (20, 10, 9, 1); for Q_u(R) = sum R_klij^2 f_kl at three random diagonal u, tr(Q|_V)/dim V = sum_(k!=l) f_kl/12 on all three parts ([239/60, 6, 127/270]), and sum_(k!=l) f_kl = 2 (tr u tr u^-1 - 16): True
+  [ 30] O9 / O10(b): at u = diag (Euclidean, n = 4) |A|^2 = (c_V/4c_H^2) sum R_klij^2 4 sinh^2((a_k - a_l)/2) from the definition; |Rm|^2 = E_GB + 4 |Ric_0|^2 (random algebraic R): True
+  [ 31] observation (R11-1): base (1, 3): R = omega (x) omega (omega = l ^ m, l null) has |A|^2 = 0 at three random y in F_x (Rm != 0); the linear map B -> f_B on Sym^2(so) (dim 21), f_B(y) = sum B_ab G_y(w_a.y, w_b.y), has a 1-dimensional kernel modulo constants, spanned by the Hodge star (eps_ijkl pattern). So |A|^2 == 0 on F_x iff sum eps_i eps_j R_ij (x) R_ij is a multiple of the Hodge star; with Bianchi this forces (R^)^2 = 0 and scal = 0 (REVIEW9-GU R11-1): True
+  [ 32] observation (R11-1): base (2, 2): R = omega (x) omega (omega = l ^ m, l null) has |A|^2 = 0 at three random y in F_x (Rm != 0); the linear map B -> f_B on Sym^2(so) (dim 21), f_B(y) = sum B_ab G_y(w_a.y, w_b.y), has a 1-dimensional kernel modulo constants, spanned by the Hodge star (eps_ijkl pattern). So |A|^2 == 0 on F_x iff sum eps_i eps_j R_ij (x) R_ij is a multiple of the Hodge star; with Bianchi this forces (R^)^2 = 0 and scal = 0 (REVIEW9-GU R11-1): True
+  [ 33] observation (R11-1): n = 3, bases (3,0), (2,1): the map B -> f_B on Sym^2(so) (dim 6) is injective modulo constants: True
+
+=== X5. Theorem O10, Cor. O11, Prop. O12, Remark O14: own reductions (sympy)   [27 s]
+  [ 34] (14,0): ray weight mu = sum w_k delta(tau_k) (three atoms, symbolic): Z1 reduced functional int (alpha R + beta), Lambda = -beta/(2 alpha) = (m_2/m_1)(Lambda_A - (7 c_H/6) P~/a), m_k = int e^(k tau) d mu; Z2: Lambda = Lambda_A - (7 c_H/6) P~/a for every mu; scaling consistency F'(1) = 0 <=> R_0 = 4 Lambda; closed form -c_H (t^2 + chi u^2)(7 kappa/(12 a) + 364/3); T -> 0: Lambda_A, first order -(7 c_H kappa/12)(t^2 + chi u^2)/a: True
+  [ 35] (14,0): Prop. O12(b) re-derived by hand (Z2, Bourguignon-Gauduchon): G + Lambda' g = 0 with Lambda' = Lambda_A - c_H (14 P~ - D)/(11 a) = Lambda_A - c_H (t^2 + chi u^2)(6 kappa/(11 a) + 104); equal to Lambda_O at leading order, first order -(6/11) c_H kappa (t^2 + chi u^2)/a (not -7/12): True
+  [ 36] (7,7): ray weight mu = sum w_k delta(tau_k) (three atoms, symbolic): Z1 reduced functional int (alpha R + beta), Lambda = -beta/(2 alpha) = (m_2/m_1)(Lambda_A - (7 c_H/6) P~/a), m_k = int e^(k tau) d mu; Z2: Lambda = Lambda_A - (7 c_H/6) P~/a for every mu; scaling consistency F'(1) = 0 <=> R_0 = 4 Lambda; closed form -c_H (t^2 + chi u^2)(7 kappa/(12 a) + 364/3); T -> 0: Lambda_A, first order -(7 c_H kappa/12)(t^2 + chi u^2)/a: True
+  [ 37] (7,7): Prop. O12(b) re-derived by hand (Z2, Bourguignon-Gauduchon): G + Lambda' g = 0 with Lambda' = Lambda_A - c_H (14 P~ - D)/(11 a) = Lambda_A - c_H (t^2 + chi u^2)(6 kappa/(11 a) + 104); equal to Lambda_O at leading order, first order -(6/11) c_H kappa (t^2 + chi u^2)/a (not -7/12): True
+  [ 38] Theorem O10(b), Z2, smooth natural weight (base (4,0)): reduced Lagrangian alpha R + beta + gamma |Ric_0|^2 + (Gauss-Bonnet) with O9's average; EL G + Lambda g + kappa_w E_|Ric_0|^2 = 0, Lambda = Lambda_O(Z2) and kappa_w = c_V F'/(6 c_H m_0), F' = int (tr u tr u^-1 - 16) w >= 0 (Cauchy-Schwarz; = 0 on the ray); Cor. O11(c): r Lambda_O(c_H) = Lambda_O(r c_H) in Z1 and Z2: True
+  [ 39] observation (R11-2): base (2,2), Z1, mu_+ = w_p delta_0, mu_- = w_m delta_0 (both natural): Lambda = ((w_p + w_m)/(w_p - w_m)) Lambda_O; mu = delta on the negative ray gives -Lambda_O (sign reversed); w_p = w_m gives alpha = 0 (no Einstein term): True
+  [ 40] (14,0): Remark O14 re-derived (Z2, ray weight, y = 0, R = 4 Lambda_O): u-equation 14 chi u (kappa + 208 t x) = 0; branch t = -kappa/(208 x): u^2 = -1(kappa^2/(43264 x^2) + 27/(728 c_V)), Lambda = Lambda_A; branch u = 0: t^2 = -27/(728 c_V), Lambda = 9 c_H/c_V - 7 c_H kappa t/(12 x): True
+  [ 41] (7,7): Remark O14 re-derived (Z2, ray weight, y = 0, R = 4 Lambda_O): u-equation 14 chi u (kappa + 208 t x) = 0; branch t = -kappa/(208 x): u^2 = 1(kappa^2/(43264 x^2) + 27/(728 c_V)), Lambda = Lambda_A; branch u = 0: t^2 = -27/(728 c_V), Lambda = 9 c_H/c_V - 7 c_H kappa t/(12 x): True
+  [ 42] Cor. O11(d), (e): at y = 0 the (P) value Lambda_P - c_H c1/x has first-order term -c_H kappa t/x, different from the gimel value; P~ = 0 on t = -kappa/(208 x) (y = 0), and in (7,7) on t = +-u: True
+
+=== X6. Corollary O15: Upsilon = 0 at the round-10 flat-base solutions together with the gimel-equation   [32 s]
+  [ 43] inputs: sigma_1(1/5) = -35/2; flat Z1 at lambda = 1/5 is Einstein with Ric = -(5/(4 c_V)) g_aleph, so s_Y = -35/(2 c_V) = sigma_1/c_V and G = (15/(2 c_V)) g_aleph; Lambda_A(Z1, 1/5) = 35 c_H/(4 c_V): True
+  [ 44] Cor. O15: Upsilon = 0 (x G = c1 g) is 312 x' s^2 + kappa s + 15 x'/(2 c_V) = 0, real iff c_V kappa^2 >= 9360 x'^2; with the flat-base gimel-equation beta = 0 (6 a sigma_1/c_V + 14 P~ = 0) the only solution with s != 0 is c_V kappa^2 = 12480 x'^2, s = -kappa/(416 x'); there det M = kappa^2 (kappa + 224 x' s)(kappa + 544 x' s) = -(24/169) kappa^4 != 0 (and 12480 != 277440/29); equivalently the cubic l(t) has a double root (l = 0 and, by the trace of Upsilon, d_t l = 0): True
+
+=== X7. Clifford checks with the round-5 referee templates: O4 terms, O13(b) grade-2 identity, Psi(T^xi^T) = 0   [32 s]
+  [ 45] (14,0): Gamma^2 = -chi; for T = t Phi^1 + u Phi^1 Gamma at four (t, u): <T, T> = 14 (t^2 + chi u^2) and (1/3) Psi(T^T^T) = 14 * 104 a (t^2 + chi u^2) per operator (W_A: a = t, W'_A: a = chi u, twisted: 0), in the round-5 referee's normalisation (O4): True
+  [ 46] (14,0): observation: the W'_A template on Y Gamma equals chi times the W_A template on Y for every odd Y (20 random), so W'_A(xi ^ Phi^1 Gamma) = chi W_A(xi ^ Phi^1) exactly, in all grades: True
+  [ 47] (14,0): Prop. O13(b): for xi = e^0, e^5, e^9 the grade-2 part of Shiab(xi ^ (t Phi^1 + u Phi^1 Gamma)) is (x t + chi y u) W_A(xi ^ Phi^1)_2 (z, w and the cross terms give no grade 2), and W_A(xi ^ Phi^1)_2 != 0: True
+  [ 48] (14,0): Prop. O13(a) input: Psi(T ^ xi ^ T) = 0 for the four templates on random T, xi (two samples); Psi(alpha ^ xi ^ T) != 0 in 1 of 8 controls: True
+  [ 49] (7,7): Gamma^2 = -chi; for T = t Phi^1 + u Phi^1 Gamma at four (t, u): <T, T> = 14 (t^2 + chi u^2) and (1/3) Psi(T^T^T) = 14 * 104 a (t^2 + chi u^2) per operator (W_A: a = t, W'_A: a = chi u, twisted: 0), in the round-5 referee's normalisation (O4): True
+  [ 50] (7,7): observation: the W'_A template on Y Gamma equals chi times the W_A template on Y for every odd Y (20 random), so W'_A(xi ^ Phi^1 Gamma) = chi W_A(xi ^ Phi^1) exactly, in all grades: True
+  [ 51] (7,7): Prop. O13(b): for xi = e^0, e^5, e^9 the grade-2 part of Shiab(xi ^ (t Phi^1 + u Phi^1 Gamma)) is (x t + chi y u) W_A(xi ^ Phi^1)_2 (z, w and the cross terms give no grade 2), and W_A(xi ^ Phi^1)_2 != 0: True
+  [ 52] (7,7): Prop. O13(a) input: Psi(T ^ xi ^ T) = 0 for the four templates on random T, xi (two samples); Psi(alpha ^ xi ^ T) != 0 in 4 of 8 controls: True
+
+SUMMARY: 52 checks, 52 True, 0 False
+runtime 32 s

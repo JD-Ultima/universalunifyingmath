@@ -191,7 +191,7 @@ The zeros are at $\lambda=5/18$ for (A) and $\lambda=4/15$ for (P), both on the 
 
 In 2D, $G\equiv0$, so (P)/(A) have no solutions unless $\Lambda=0$.
 
-*Remark (2026-10-30, round 11).* Reading (A) is what the ℷ-variation of (9.4) gives at first order in $T$ on the invariant sector, for the weight localised at $s(X)$ (`O-gimel-variation.md`, Cor. O11). For a ray weight μ, Z2 gives $\Lambda_A$ for every μ and Z1 gives $(m_2/m_1)\Lambda_A$. So where Z1 separates (A) from (P), the ℷ-variation selects (A).
+*Remark (2026-10-30, round 11).* Reading (A) is what the ℷ-variation of (9.4) gives at first order in $T$ on the invariant sector, for the weight localised at $s(X)$ (`O-gimel-variation.md`, Cor. O11). For a ray weight μ, Z2 gives $\Lambda_A$ for every μ and Z1 gives $(m_2/m_1)\Lambda_A$. So where Z1 separates (A) from (P), the ℷ-variation selects (A): for the localised weight the value is $\Lambda_A$, and for every ray weight Λ is a λ-independent multiple of $\Lambda_A$, with (A)'s zero $\lambda=5/18$ (not (P)'s $4/15$). This is the ℷ-equation alone, at $T\to0$, which is off-shell (O.3).
 
 **Theorem F6 (Einstein condition along the section; E2).** Let $n\ge2$. On $s(X)$, $\mathrm{Ric}(g_\aleph)=\kappa\,g_\aleph$ holds iff the reading is Z1, $\lambda=1/(n+1)$ and $\mathrm{Ric}(g)=0$. Then $\kappa=-(n+1)/(4c_V)$. Equivalently, (E) holds on $s(X)$ with $\Lambda_Y=-(d-2)(n+1)/(8c_V)$, which is $-15/(2c_V)$ for $n=4$.
 

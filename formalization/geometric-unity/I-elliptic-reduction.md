@@ -219,7 +219,7 @@ This is the algebraic part of (P): 4D Einstein + $\Lambda_P$ plus a **displaceme
   - The reduced-action reading (A) with $T\neq0$.
   - A chimeric-invariant ansatz using $\Gamma_X,\Gamma_V$.
   - The signatures (8,6) and (10,4) of the F6 case with base (1,3): the identities were computed in (14,0) and (7,7) only, and the real-root analysis of (E) was done only for (14,0)/$\mathfrak u(128)$.
-  - The ℷ-variation (G.2.5) stays open.
+  - The ℷ-variation (G.2.5) stays open. (2026-10-30: made precise on the invariant sector in `O-gimel-variation.md`, round 11.)
 - **Precise negative statements.**
   1. Reading (P) does not determine $T$ along $s(X)$. In the invariant sector the 4D cosmological constant is then a free parameter (I7(a)).
   2. Reading (E) at points of $s(X)$ is either impossible ((7,7), invariant sector, $(x,y)\neq0$), fixes $\Lambda_4=0$ ((14,0), invariant sector), or is vacuous pointwise (symmetric sector, for $|G^Y|\ll\kappa^2$). Its 4D content comes only from the constraint equations, whose remaining components involve normal derivatives of $T$ at $s(X)$; data on $s(X)$ do not fix these.

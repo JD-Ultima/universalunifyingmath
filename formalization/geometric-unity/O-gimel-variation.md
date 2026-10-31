@@ -34,7 +34,7 @@ $\sigma_1=-\tfrac{23}2-\tfrac{1+\lambda}{1-4\lambda}$ (F4(b)), $s_F=-9/c_V$; $\L
 | $s_Y$ | 2-jet only: $\sigma_1/c_V+\mathrm{tr}(y^{-1}\mathrm{Ric})/c_H+q_y$ (O8) | 2-jet only: $R/c_H+s_F-\lvert A\rvert^2$ (F3, L-F1) |
 | bundle of $\varpi$ | $(C,g_C)$ ℷ-independent: "fixed $\varpi$" is canonical | $g_C$ (or $g_\aleph$) depends on $ℷ_x$: needs an identification (O12) |
 
-Every term of $L$ depends on ℷ (vol and $*$ in all; $F_0$ in the first; $d_0$ in the second; ⊛ through $\Phi^1$). In Z2 the pulled-back metric is ℷ: R-Z0 has no other metric on $X$. With a fixed background $g_0$ in the HH block (not in the draft) Z2 would depend on ℷ only through ℵ.
+Every term of $L$ depends on ℷ ($*$ in all, and vol in Z2 only; $F_0$ in the first; $d_0$ in the second; ⊛ through $\Phi^1$). In Z2 the pulled-back metric is ℷ: R-Z0 has no other metric on $X$. With a fixed background $g_0$ in the HH block (not in the draft) Z2 would depend on ℷ only through ℵ.
 
 *Proof.* R-Z2, F2.4 and O2. The jet orders: Γ is the 1-jet, and the curvature of $g_\aleph$ needs $\partial^2g_\aleph\ni\partial^2\Gamma$. For $s_Y$ use O8 and L-F1. ∎
 
@@ -48,7 +48,7 @@ Every term of $L$ depends on ℷ (vol and $*$ in all; $F_0$ in the first; $d_0$ 
 
 **Proposition O3 (T = 0; proven, §O9).**
 - (a) $L\vert_{T=0}\equiv0$ for every ℷ, reading and ⊛. In the unitary gauge $\mathcal E_ℷ=0$ at $T=0$ for every weight: **the ℷ-equation at $T=0$ is empty.**
-- (b) At fixed $(\varepsilon,\varpi)$, $\partial_ℷ\pi'=-(1-\mathrm{Ad}_\varepsilon)\delta A_0$. So $\delta_ℷI(\varepsilon,\varpi)=\partial_ℷJ(S)-p_\nu\big((1-\mathrm{Ad}_\varepsilon)\delta A_0,E_J(S)\big)$. Off-shell this changes along a $\tau'$-orbit, e.g. at $T=0$, $\varepsilon\neq1$ it is $-p_\nu((1-\mathrm{Ad}_\varepsilon)\delta A_0,\circledast F_0)$. It is orbit-independent exactly on $\Upsilon=0$. Below, $\mathcal E_ℷ$ is taken at fixed $S$.
+- (b) At fixed $(\varepsilon,\varpi)$, $\partial_ℷ\pi'=-(1-\mathrm{Ad}_\varepsilon)\delta A_0$. So $\delta_ℷI(\varepsilon,\varpi)=\partial_ℷJ(S)-p_\nu\big((1-\mathrm{Ad}_\varepsilon)\delta A_0,E_J(S)\big)$. Off-shell this changes along a $\tau'$-orbit, e.g. at $T=0$, $\varepsilon\neq1$ it is $-p_\nu((1-\mathrm{Ad}_\varepsilon)\delta A_0,\circledast F_0)$. It is orbit-independent on $\Upsilon=0$. Below, $\mathcal E_ℷ$ is taken at fixed $S$.
 - (c) $\frac{d}{d\tau}\big|_0\mathcal E_ℷ(\tau\hat T)=\mathcal E_ℷ\big[p_\nu(\hat T,\circledast F_0)\big]$. For $\hat T=t\Phi^1+u\Phi^1\Gamma$ this is $a$ times the ℷ-variation of the weighted Einstein–Hilbert integral $\int6s_Y\rho\,d\nu$ (O4).
 
 *Proof.* (a) Every term of $L$ has a factor $T$ (G, R-G0). (b) $d_0\varepsilon=d\varepsilon+A_0\varepsilon-\varepsilon A_0$, then the chain rule with $E_J$ the gradient (G2). (c) $L=\Psi(T\wedge F_0)+O(T^2)$. ∎
@@ -70,8 +70,8 @@ with $c_1,c_{13}$ of I6. The kinetic term $\tfrac12\Psi(T\wedge d_0T)$ vanishes 
   - Z1: $\mathrm{Ric}(x)=0$, $q_y(\mathrm{Rm}(x))\equiv0$ and $6a\sigma_1/c_V+14\tilde P=0$.
 
   If $a=0$, it requires $\tilde P=0$. So for generic $(t,u)$ the fibre integral diverges at every $x$.
-- (c) At $T=0$ the action is $0$ for every weight. Its $T$-derivative, the weighted EH integral $\int_Fs_Y\rho\,dvol_F$, diverges at every $x$ in Z2 ($s_F\neq0$). In Z1 it diverges unless $\lambda=5/18$ ($\sigma_1=0$), $\mathrm{Ric}(x)=0$ and $q\equiv0$.
-- (d) The same holds for $t,u$ depending on $(x,s)$ only (the radial ansatz of J5, with $T_e=0$): $\int_Sdvol_S=\infty$, and for $\mathrm{Rm}\neq0$ $|A|^2$ is unbounded on $S$.
+- (c) At $T=0$ the action is $0$ for every weight. Its $T$-derivative, the weighted EH integral $\int_Fs_Y\rho\,dvol_F$, diverges at every $x$ in Z2: $s_Y\equiv0$ on $F_x$ would need $|A|^2\equiv0$, which for $n=4$ forces $\sum\epsilon_i\epsilon_jR_{ij}\otimes R_{ij}=0$ (the kernel of $B\mapsto f_B$ is $\mathbb R\star$, and Bianchi excludes $c\star$, $c\neq0$), hence $R(x)=0$, and $s_F\neq0$ (REVIEW9-GU R11-1). In Z1 it diverges unless $\lambda=5/18$ ($\sigma_1=0$), $\mathrm{Ric}(x)=0$ and $q\equiv0$.
+- (d) The same holds for $t,u$ depending on $(x,s)$ only (the radial ansatz of J5, with $T_e=0$): $\int_Sdvol_S=\infty$. Proven for flat bases, where the integrand is constant on $S$, and in Z2 for definite bases, where O9 and the triangle inequality on $K$-orbits apply. In indefinite signature $|A|^2$ can vanish identically for $\mathrm{Rm}\neq0$ (e.g. $R=\omega\otimes\omega$ with ω a null simple bivector), and for general curved indefinite bases the divergence is not shown. (Corrected after review 2026-10-30, R11-1.)
 
 *Proof.*
 - (a) Z2 by O2(d). Z1 by O2(d) and O8, using $q_{cy}=c^{-2}q_y$. Then Fubini on $\mathbb R\times S$, and $\int_{\mathbb R}|\sum_kc_ke^{k\tau}|\,d\tau=\infty$ unless every $c_k=0$.
@@ -80,7 +80,7 @@ with $c_1,c_{13}$ of I6. The kinetic term $\tfrac12\Psi(T\wedge d_0T)$ vanishes 
 
 **Theorem O6 (indefinite signature: no natural convergent weight; proven).** Let $pq>0$, and let $\nu$ be a signed Borel measure of finite total variation on $F_x$, invariant under $SO_0(g_x)$. Then $|\nu|$ is concentrated on $\mathrm{Fix}:=\{cg_x:c\in\mathbb R^\times\}\cap F_x$: the ray $\mathbb R_{>0}g_x$, plus $\mathbb R_{<0}g_x$ when $p=q$. Consequently:
 - (a) Every $SO_0(g_x)$-invariant $w\in L^1(F_x,dvol_F)$ vanishes a.e. In particular **no natural weight function** (built from $g_x$, $y$, e.g. from $s$ and $\mathrm{tr}\,u^k$) has finite fibre integral, unless it is 0 a.e.
-- (b) Suppose a natural $\nu$ gives a finite invariant-sector action for one flat base and one constant $(t,u)$ with $6as_F+14\tilde P\neq0$ (Z2), resp. $6a\sigma_1/c_V+14\tilde P\neq0$ (Z1). Then $\nu$ is a ray weight.
+- (b) Suppose a natural $\nu$ gives an absolutely convergent fibre integral $\int_{F_x}|\ell\rho|\,d|\nu_x|<\infty$ at one point of one flat base and one constant $(t,u)$ with $6as_F+14\tilde P\neq0$ (Z2), resp. $6a\sigma_1/c_V+14\tilde P\neq0$ (Z1). Then $\nu$ is a ray weight.
 
 *Proof.*
 - Let $X\in\mathfrak{so}(g_x)$ be a boost. Its action $y\mapsto X^Ty+yX$ on $\mathrm{Sym}^2$ is diagonalisable with real eigenvalues in $\{0,\pm\beta,\pm2\beta\}$ (§O6). Write $\mathrm{Sym}^2=V_+\oplus V_0\oplus V_-$ accordingly.
@@ -90,7 +90,7 @@ with $c_1,c_{13}$ of I6. The kinetic term $\tfrac12\Psi(T\wedge d_0T)$ vanishes 
 - (a) $|w|\,dvol_F$ is finite and invariant, and Fix is $dvol_F$-null.
 - (b) For a flat base, $\ell\rho$ is a nonzero constant (Z2) or a nonzero multiple of $e^{ns/2}$ (Z1), hence $K_x$-invariant. So $|\ell\rho|\,|\nu|$ is a finite invariant measure. ∎
 
-The mechanism: $K_x$ is non-compact, and regular $K_x$-orbits in $F_x$ have finite stabiliser (§O6), so invariance spreads any mass over infinite Haar volume. Gaussian or Wishart weights in $\mathrm{tr}\,u$ fail for a second reason: on $F_x$ for (1,3), $\mathrm{tr}\,u$ is unbounded below and $u$ can have complex eigenvalues (§O6).
+The mechanism: $K_x$ is non-compact, and regular $K_x$-orbits in $F_x$ have discrete (in fact finite) stabiliser (§O6), so invariance spreads any mass over infinite Haar volume. Gaussian or Wishart weights in $\mathrm{tr}\,u$ fail for a second reason: on $F_x$ for (1,3), $\mathrm{tr}\,u$ is unbounded below and $u$ can have complex eigenvalues (§O6).
 
 **Corollary O7 (classification of convergent natural weights; proven).**
 - (a) **Indefinite base**, i.e. every (7,7) case: (1,3), (3,1), (2,2). The natural weights for which the invariant-sector action converges for all bases and all constant $(t,u)$ are exactly the ray weights with $\mu(\mathbb R)<\infty$ (Z2), resp. $\int(e^\tau+e^{2\tau})\,d|\mu|<\infty$ (Z1, $n=4$).
@@ -140,7 +140,7 @@ $$\Lambda_O:=\Lambda_A-\tfrac{7c_H}6\,\frac{\tilde P}a=\Lambda_A-c_H(t^2+\chi u^
 
   So $\mathcal E_ℷ=0$ is **exactly the 4D vacuum Einstein equation** $G(ℷ)+\Lambda ℷ=0$, with
   $$\text{Z2: }\Lambda=\Lambda_O^{Z2}\ \text{(independent of }\mu),\qquad \text{Z1: }\Lambda=r_\mu\Lambda_O^{Z1},\quad r_\mu=m_2/m_1 .$$
-  For $\mu\ge0$, $r_\mu$ takes every value in $(0,\infty)$ ($\mu=\delta_{\tau_0}$ gives $e^{\tau_0}$). For $p=q$, $m_1=\int e^\tau d\mu_+-\int e^\tau d\mu_-$.
+  This needs $\alpha\neq0$, i.e. $m_1\neq0$; if $m_1=0$ there is no Einstein term and $\mathcal E_ℷ=\tfrac\beta2g$. For $\mu\ge0$ on the positive ray, $r_\mu$ takes every value in $(0,\infty)$ ($\mu=\delta_{\tau_0}$ gives $e^{\tau_0}$). For $p=q$, in Z1, $m_1=\int e^\tau d\mu_+-\int e^\tau d\mu_-$ and $m_2=\int e^{2\tau}d(\mu_++\mu_-)$ (the negative ray has $s_Y=-e^{-\tau}R/c_H+\sigma_1/c_V$). So $r_\mu$ takes every nonzero real value ($\mu_-=\delta_{\tau_0}$, $\mu_+=0$ gives $-e^{\tau_0}$). In Z2, $m_1=m_2=(\mu_++\mu_-)(\mathbb R)$ (R11-2).
 - **(b) Smooth natural weights, definite base.**
   - Z2: $\mathcal E_ℷ=0$ reads
     $$G+\Lambda_O^{Z2}g+\kappa_wE_{|\mathrm{Ric}_0|^2}=0,\qquad \kappa_w=\frac{c_V}{6c_H}\big\langle\mathrm{tr}\,u\,\mathrm{tr}\,u^{-1}-16\big\rangle_w\ge0,$$
@@ -152,7 +152,7 @@ In (a) and (b) every Einstein metric with that Λ is a solution; in (a) these ar
 
 *Proof.*
 - (a) On the ray, $s_Y=R/c_H+s_F$ in Z2 ($A=0$ there, by F3 and the isometry O2(d)) and $s_Y=e^{-\tau}R/c_H+\sigma_1/c_V$ in Z1 (F4(b) for the parallel section $e^\tau g$; O8). Take ρ from O2(c) and the density from O4. The composite is a functional of ℷ alone, including the moving ray. L-F6: $\delta\int(\alpha R+\beta)=-\alpha\int\langle G+\Lambda g,\delta g\rangle$ with $\Lambda=-\beta/(2\alpha)$.
-- (b) Use O9 and, in dimension 4, $|\mathrm{Rm}|^2=E_{GB}+4|\mathrm{Ric}_0|^2$; the Gauss–Bonnet integrand has identically vanishing EL tensor. $E_{|\mathrm{Ric}_0|^2}$ is linear in $\mathrm{Ric}_0$ and its derivatives.
+- (b) Use O9 and, in dimension 4, $|\mathrm{Rm}|^2=E_{GB}+4|\mathrm{Ric}_0|^2$; the Gauss–Bonnet integrand has identically vanishing EL tensor. $E_{|\mathrm{Ric}_0|^2}$ has a factor $\mathrm{Ric}_0$ or a derivative of it in every term, so it vanishes on Einstein metrics.
 - Z1: by O8 and $K_x$-invariance, $\int u^{-1}\rho\,d\nu=\tfrac14\int\mathrm{tr}(u^{-1})\rho\,d\nu\cdot I$. The $O(4)$-invariant quadratic forms on curvature tensors are spanned by $|W|^2$, $|\mathrm{Ric}_0|^2$, $R^2$, and in dimension 4 their EL tensors vanish on Einstein metrics (Bach tensor; $\delta\int R^2=2R(\mathrm{Ric}-\tfrac14Rg)+$ derivatives of $R$; Besse, *Einstein Manifolds*, §4.H).
 - (c) is immediate. ∎
 
@@ -161,7 +161,7 @@ In (a) and (b) every Einstein metric with that Λ is a solution; in (a) these ar
 - (b) *Localisation at $s(X)$* ($\mu=\delta_0$; or smooth $w\to\delta_{g_x}$ in definite signature, where $\kappa_w\to0$). The leading-order ℷ-equation is **F's reading (A)**, $G+\Lambda_Ag=0$ with $\Lambda_A$ of Cor. F5, in Z1 and in Z2. In Z1, $\Lambda_A\neq\Lambda_P$ (λ = ½: $5$ against $21/4$, in units of $c_H/c_V$). So the ℷ-variation selects (A), not (P).
 - (c) *Weight-independent statements.*
   - Z2: $\Lambda=\Lambda_O^{Z2}$ for every ray weight, and for the Einstein solutions under every smooth definite weight.
-  - Z1: the weight enters only through $r_\mu$. This is equivalent to the fibre scale $c_H/c_V\to r_\mu c_H/c_V$, which the draft leaves free (F.0). The sign of Λ and its zero $\lambda=5/18$ (at leading order) do not depend on the weight.
+  - Z1: the weight enters only through $r_\mu$. This is equivalent to the fibre scale $c_H/c_V\to r_\mu c_H/c_V$, which the draft leaves free (F.0). For $\mu\ge0$ on the positive ray (for $p\neq q$, every $\mu\ge0$), the sign of Λ does not depend on the weight. For $p=q$ a weight on the negative ray can reverse it (R11-2). The zero $\lambda=5/18$ (at leading order) does not depend on the weight whenever $m_1\neq0$.
 - (d) *Against (P) and (E).*
   - (P) of I7(a): $\Lambda_4=\Lambda_P-c_Hc_1/x$, first order $-c_H\kappa t/x$. The two differ at first order in $T$, also in Z2 where $\Lambda_P=\Lambda_A$.
   - (E) requires $g_\aleph$ Einstein on $s(X)$ (F6). The ℷ-equation neither implies (E) nor follows from it.
@@ -185,13 +185,13 @@ In (a) and (b) every Einstein metric with that Λ is a solution; in (a) these ar
 - $T_e$ has grades 0, 2, 12, 14, which the four operators send to grades other than 2 (I1(a)).
 - The conormals include non-null covectors, since $g_\aleph\vert_{V_0}$ is nondegenerate. ∎
 
-**Remark O14 (constant-mode system; computed §O7).** In (S2) the constant modes are not determined: $\Upsilon=0$ fails pointwise in this sector ($g_\aleph$ is not Einstein; F6, L2). Suppose one adds the minisuperspace equations $\partial_tI_\nu=\partial_uI_\nu=0$ (ray weight, Z2, $y=0$). Their solutions are:
+**Remark O14 (constant-mode system; computed §O7).** In (S2) the constant modes are not determined: $\Upsilon=0$ fails in this sector at every point of $s(X)$ except in Z1 at $\lambda=\tfrac15$ over a Ricci-flat base (F6), on every open set in Z2 (L2(a)), and near $s(X)$ in Z1 except for the flat-base solutions of O15 (N10, N12). Suppose one adds the minisuperspace equations $\partial_tI_\nu=\partial_uI_\nu=0$ (ray weight, Z2, $y=0$). Their solutions are:
 - $u=0$, $t^2=-27/(728c_V)$, $\Lambda=9c_H/c_V-7c_H\kappa t/(12x)$;
 - $t=-\kappa/(208x)$ with $u^2=\kappa^2/(43264x^2)+27/(728c_V)$ in (7,7), resp. $u^2=-\kappa^2/(43264x^2)-27/(728c_V)$ in (14,0), and $\Lambda=\Lambda_A^{Z2}$.
 
 For $c_H,c_V>0$ (the (7,7) sign rule A4 with $c_H>0$), only the second branch is real in (7,7), so $\Lambda=9c_H/(2c_V)$, the anti-de Sitter sign (F5). This truncation is not the restriction of either system: symmetric criticality is not available here.
 
-**Corollary O15 (an on-shell test of (S2); proven, computed §O7).** The flat-base solutions of round 10 are genuine solutions of $\Upsilon=0$ on all of $Y$: Z1, base (4,0), $\lambda=\tfrac15$, $c_V\kappa^2\ge9360x'^2$, $u=0$, $T_e\equiv0$, $312x's^2+\kappa s+\tfrac{15x'}{2c_V}=0$ (N12(c), I7(b); for $\circledast_\sharp$ and $x W_A$, i.e. $y=0$; $t=is$, $x=-ix'$). There O12 makes $\mathcal E_ℷ$ identification- and orbit-independent. At a flat base it reduces, for every admissible weight (ray or smooth), to $\beta=0$, i.e. $\Lambda_O^{Z1}=0$, with $\Lambda_A^{Z1}(\tfrac15)=\tfrac{35c_H}{4c_V}$. Together with $\Upsilon=0$ this holds **iff $c_V\kappa^2=12480\,x'^2$ and $s=-\kappa/(416x')$**, where $\det M=-\tfrac{24}{169}\kappa^4\neq0$. So among the N12(c) solutions exactly those with this one value of $c_V\kappa^2$ solve (S2) on all of $Y$. They are flat ($\Lambda_4=0$) and Euclidean. In (7,7) none is known: Z1 has none near $s(X)$ (N12), and Z2 none on open sets for $(x,y)\neq0$ (L, M).
+**Corollary O15 (an on-shell test of (S2); proven, computed §O7).** The flat-base solutions of round 10 are genuine solutions of $\Upsilon=0$ on all of $Y$: Z1, base (4,0), $\lambda=\tfrac15$, $c_V\kappa^2\ge9360x'^2$, $u=0$, $T_e\equiv0$, $312x's^2+\kappa s+\tfrac{15x'}{2c_V}=0$ (N12(c), I7(b); for $\circledast_\sharp$ and $x W_A$, i.e. $y=0$; $t=is$, $x=-ix'$). There O12 makes $\mathcal E_ℷ$ identification- and orbit-independent. At a flat base it reduces, for every admissible weight (ray or smooth), to $\beta=0$, i.e. $\Lambda_O^{Z1}=0$, with $\Lambda_A^{Z1}(\tfrac15)=\tfrac{35c_H}{4c_V}$. Together with $\Upsilon=0$ this holds **iff $c_V\kappa^2=12480\,x'^2$ and $s=-\kappa/(416x')$**, where $\det M=-\tfrac{24}{169}\kappa^4\neq0$. So among the N12(c) solutions exactly those with this one value of $c_V\kappa^2$ solve (S2) on all of $Y$. They are flat ($\Lambda_4=0$) and Euclidean. In (7,7) none is known: Z1 has none near $s(X)$ (N12), and in Z2 this sector has none on any open set for $(x,y)\neq0$ (L2(a): Z2 is Einstein on no open set).
 
 *Proof.* On a flat base $s_Y\equiv\sigma_1/c_V$ on $Y$, so the constant term of $I_\nu$ is $c_H^2(6a\sigma_1/c_V+14\tilde P)\int\rho\,d\nu$. The Einstein–Hilbert and quadratic terms have vanishing EL tensors at a flat metric. Eliminating between $\kappa t+312xt^2=\tfrac{15x}{2c_V}$ and $\kappa t+208xt^2=\tfrac{15x}{c_V}$ gives the result. ∎
 
@@ -204,10 +204,10 @@ For $c_H,c_V>0$ (the (7,7) sign rule A4 with $c_H>0$), only the second branch is
 3. *The equation.*
    - At $T=0$ it is empty.
    - At first order in $T$ it is the weighted EH equation of $g_\aleph$.
-   - On the invariant sector, under (S2) and ray weights, it is exactly 4D vacuum GR with $\Lambda=\Lambda_O^{Z2}$ (weight-independent) or $r_\mu\Lambda_O^{Z1}$, tending to $\Lambda_A$, i.e. reading (A).
+   - On the invariant sector, for ray weights, the ℷ-equation of (S2) (off-shell, at fixed $(t,u)$) is exactly 4D vacuum GR with $\Lambda=\Lambda_O^{Z2}$ (weight-independent) or $r_\mu\Lambda_O^{Z1}$, tending to $\Lambda_A$ (Z2) and $r_\mu\Lambda_A$ (Z1), i.e. reading (A). In this sector $\Upsilon=0$ itself holds near $s(X)$ only on round 10's flat-base solutions (O15, where $\Lambda_4=0$), and $T\to0$ is off-shell ($\Upsilon\vert_{T=0}\neq0$) (R11-3).
    - Under (S1) the weight also changes the ϖ-equation and forces $a=0$, which removes the Einstein term (O10, O11, O13).
    - On-shell, the only known solutions of (S2) are in Z1, (14,0), over a flat base, with $c_V\kappa^2=12480x'^2$ (O15).
-4. *Weight-independent.* Z2: Λ. Z1: Λ up to the free fibre scale; localisation onto $s(X)$ gives exactly (A) in both readings.
+4. *Weight-independent.* Z2: Λ. Z1: Λ up to the free fibre scale (for $p=q$ also its sign); localisation onto $s(X)$ gives exactly (A) in both readings.
 
 ## O.2 What is verified, precisely
 
@@ -228,14 +228,14 @@ Run: `cd computation/geometric-unity && python3 O_gimel.py > O_gimel.out 2>&1`. 
 
 ## O.3 Limits (layers b, d)
 
-- **Sector.** The explicit ℷ-equation covers only $T_o=t\Phi^1+u\Phi^1\Gamma$ with constant $t,u$ and $T_e=0$ (O5(d) also covers $t,u$ depending on $(x,s)$). Not treated:
+- **Sector.** The explicit ℷ-equation covers only $T_o=t\Phi^1+u\Phi^1\Gamma$ with constant $t,u$ and $T_e=0$ (O5(d) also covers $t,u$ depending on $(x,s)$, over flat bases, and in Z2 over definite bases). Not treated:
   - nonconstant $t,u$;
   - the slaved $T_e$ of rounds 6–9;
   - the symmetric sector θ (I4), whose density couples $\mathrm{Ric}^Y$ to θ.
 - **Z1 off the ray.** $q_y$ is not computed, and neither is the quadratic term for smooth definite weights in Z1.
 - **Class of weights.** Natural means built from $g_x$ and $y$. Weights using further structure (a timelike unit field, a background Riemannian metric, the curvature of ℷ) are outside the class: they break Diff(X)-naturality or add curvature terms. Conditionally convergent signed weights and Wick rotation between (4,0) and (1,3) are not considered.
 - **The draft fixes neither** the weight nor the system ((S1) or (S2)), nor the identification of configuration spaces for different ℷ. In Z2 the ℷ-equation off-shell depends on that identification beyond leading order (O12).
-- **Joint solutions.** In Z2 the slaved vector sector has no solution of $\Upsilon=0$ on open sets for $(x,y)\neq0$ (L, M), so (S2) has none there either. In Z1 the only known ones are those of O15: (14,0), a flat base, $c_V\kappa^2=12480x'^2$. O10 itself is an off-shell statement about the ℷ-equation at fixed $(t,u)$.
+- **Joint solutions.** In Z2, with $T_e=0$, $\Upsilon=0$ has no solution on open sets for $(x,y)\neq0$ (L2(a)), so (S2) has none there. In the slaved vector sector the same holds except for M10(b)'s members away from $s(X)$ (L, M). In Z1 the only known ones are those of O15: (14,0), a flat base, $c_V\kappa^2=12480x'^2$. O10 itself is an off-shell statement about the ℷ-equation at fixed $(t,u)$.
 - O9 and the $\kappa_w$ formula are stated for $n=4$. For general $n$ the factor $1/24$ becomes $1/(2n(n-1))$ (same bivector argument), which is not run.
 
 ## O.4 Consequences for gaps and claims
@@ -244,7 +244,7 @@ Run: `cd computation/geometric-unity && python3 O_gimel.py > O_gimel.out 2>&1`. 
   - The ℷ-variation needs a weight, because compactly supported variations of ℷ are not compactly supported on $Y$.
   - In every (7,7) case naturality and convergence force ray weights (O6, O7).
   - The equation is empty at $T=0$, and its linearisation is the weighted EH equation.
-  - On the invariant sector it is exactly 4D GR with $\Lambda=\Lambda_O$ under (S2), and has no Einstein term under (S1) (O10, O13).
+  - On the invariant sector the ℷ-equation of (S2) is, off-shell, exactly 4D GR with $\Lambda=\Lambda_O$; under (S1) it has no Einstein term (O10, O13). Υ = 0 itself holds in this sector near $s(X)$ only on the solutions of O15.
   - On-shell: among the round-10 solutions (Z1, (14,0), flat base) exactly those with $c_V\kappa^2=12480x'^2$ solve (S2) (O15). In (7,7) no joint solution is known.
   - Open: other sectors, and the draft's choice of weight and system.
 - **GU-G14.** The ℷ-route is F's reading (A) at leading order, not (P). In Z1 the two differ ($\Lambda_A\neq\Lambda_P$), so if the 4D equation is to come from varying ℷ, (A) is the candidate. Beyond leading order the ℷ-route gives $\Lambda_O(t,u)$, different from I7(a)'s (P) value.
