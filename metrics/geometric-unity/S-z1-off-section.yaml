@@ -1,0 +1,76 @@
+result: "S. Upsilon = 0 in the Zorro metric Z1 on open sets of Y that need not meet s(X), for every member with (x,y) != 0 (kappa != 0, slaved T_e in V, det M != 0): in (7,7) there is no solution on any nonempty open set, as in Z2; in (14,0) a solution forces lambda = 1/5, and for every member other than the twisted cone x(W_A + a W'_C Ad_Gamma), a != 0, the solutions on a connected open U are exactly the flat-base solutions with constant (t, u) and T_e = 0 (no analyticity assumed); for the twisted cone the same holds near the parallel set Pi, and away from Pi only rank Ric_g <= 1 is shown at lambda = 1/5. Conjecture F9 holds for Z1 at n = 4 on every open set and over every base signature: Z1 is Einstein on an open set W iff lambda = 1/5 and aleph is flat over pi(W)"
+claim_id: [GU-054]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/S-z1-off-section.md (Lemmas S1, S2, S4, S6, S13; Corollaries S3, S11, S16; Propositions S7, S8, S9, S12, S15; Theorems S5, S10, S14); answers the items "open sets away from s(X)" and "type-(iii) points without analyticity" of N.3 (N-z1-neighbourhood.md) and Q.3 (Q-z1-remaining-members.md), except for the twisted cone at lambda = 1/5 away from Pi; proves Conjecture F9 (F-zorro-reduction.md) for Z1 at n = 4; answers P.3's "whether the same pointwise method closes the Z1 cases of N.3" (P-z2-last-exception.md)
+code: [computation/geometric-unity/S_z1_off_section.py, computation/geometric-unity/S_z1_off_section.out]
+formalization_status: >
+  Formalized in the setting of N and Q ((H1): the hypotheses of L8 with the metric Z1, n = 4, lambda != 1/4, cH cV != 0,
+  real forms (14,0) and (7,7), kappa != 0, T_o = t Phi^1 + u Phi^1 Gamma, T_e the slaved field Sigma (dt, du) in V with
+  det M != 0, Upsilon = 0 on a connected open U) without the hypothesis that U meets s(X). Steps: (1) the Euler field:
+  (*)(E, .) gives only E(X^H r) = X^H r/2 and d(Er)|_V = (c nu - mu) ds|_V; L_E Ric != 0, so L6 has no analogue; the
+  fibre equation alone has solutions over the flat model for every lambda, so round 12's fibre-only method does not
+  transfer; (2) the parallel set Pi of points on sections of metrics with the same Levi-Civita connection is the set of
+  local-holonomy-invariant y; it is the radial set Sigma for generic curvature, larger for products and pp-waves, and
+  all of N and Q transfer to open sets meeting Pi; (3) along a fibre the coefficients of the pointwise degree-1 system of
+  the line equation (round 10's 1274 x 28 system), of its relaxation with a free covector (42 unknowns) and of the
+  Einstein condition are polynomial in (y, 1/det y), so consistency on an open subset of a fibre continues to every
+  full-rank point of the fibre (round 12's dichotomy P2(d) for Z1); the radial points q_theta = (x, e^theta g(x)) are
+  full-rank points (by round 10's hand proof); (4) Einstein pieces: the Einstein condition continues to the whole fibre,
+  so F6 at its section point forces lambda = 1/5 and Ric_g = 0; round 10's pairing alpha gives flatness over definite
+  bases; over indefinite bases the order-2 VV fibre coefficient is Z2's A-term (proven for Weyl tensors by Schur and
+  three exact evaluations), which forces R^2 = 0, and the null orbits (type N; eight classes in (2,2)) fail the
+  Einstein condition at a fibre point (exact evaluations); (5) linear mu (Shiab#, x W_A, the classes (A), (B) of L8,
+  x = +-y in (7,7)): the degree-1 conditions continue to Sigma, so round 10's quantisation applies there: Ric_g = 0 and
+  lambda in {1/5, 13/56} (resp. 23/100); 13/56 is excluded by continuing r and the trace equation along the complexified
+  fibre to Sigma, where r ~ e^(theta/2) and the trace equation has a nonzero 1/r^2 term; at 1/5 a local solution near
+  s(X) of the continued gradient equation satisfies the slice equation, so round 10's alpha |W|^2 = 0 gives a flat
+  base, which round 10's flat-base proposition excludes; (6) density: Einstein pieces lie over flat regions and type-(ii)
+  points are excluded, so int Z is dense, the base is flat and (t, u) is constant (no analyticity); (7) the twisted cone
+  (nonlinear mu): the relaxed system has full rank at Sigma for b != 0 (one exceptional theta), its rational solution has
+  xi parallel to v, so Q6 holds at Sigma with k(theta) = xi/v; t is an algebraic function of the fibre point (a root of
+  18 k D1^2 + N2), continued along the complexified fibre, and along Sigma Q7's relations hold for that branch; Q8's
+  certificate (algebraic) excludes sigma_g != 0, and for sigma_g = 0 the branch is constant on Sigma while the primitive
+  of v' is not; at lambda = 1/5 the same gives rank Ric_g <= 1.
+internal_consistency: >
+  The Euler-field identities are checked by brute-force 2-jets off the section over cubic random bases in general
+  coordinates. The parallel-set transfer is checked at points of Pi over a product base and a plane-wave base (Ric(Z1) is
+  F4(c) for the parallel metric; Einstein there exactly at lambda = 1/5; a control point off Pi fails), and bases g and 3g
+  give the same Z1. The fibre polynomiality is checked by exact interpolation (det(y)^3 Ric(Z1) of degree <= 13 along a
+  line, 20 nodes, all components). The dichotomy is illustrated: the degree-1 system has full rank 28 and is
+  inconsistent at section, radial and off-section points of a curved non-Einstein base, and over the flat base it is
+  consistent exactly at 13/56 and 1/5, with the radial solutions of round 10 as its solutions. The relaxed system has
+  rank 42 at section and radial points for random bases (and is inconsistent there), and drops exactly in the predicted
+  cases (Ric_g = -cH b g; rank-1 and zero Ricci at lambda = 1/5); for constant-curvature bases its unique solution is
+  Q6's with xi = k v^flat. The order-2 VV statement is computed for three Weyl tensors in each of (1,3) and (2,2) with
+  Z1 and Z2 series from round 10's truncated-series machinery; the null curvature tensors are checked to be Ricci-flat
+  curvature tensors with R^2 = 0. The constants of the 13/56 exclusion agree with round 10's N8.
+proof_status: >
+  Proven: S1 (Euler field), S2 (parallel set), S3 (transfer), S4 (polynomiality, dichotomy), S5(a), (b) (Einstein pieces;
+  F9 over definite bases, using alpha), S11, S12. Proven, computer-assisted: S5(c), (d) and S6 (F9 over indefinite bases:
+  Schur reduces S6 to three exact evaluations per signature; the null orbits to 2 + 16 exact evaluations). Proven, using
+  N6(f) (computer-assisted, REVIEW8-GU R10-1): S7, S8, S9, S10, S13, S14, S15, S16; S14 also uses Q8's certificate.
+  Open: the twisted cone x(W_A + a W'_C Ad_Gamma), a != 0, in (14,0) at lambda = 1/5 at type-(ii) points away from Pi
+  (there rank Ric_g <= 1, S15). The continuation arguments of S8 and S14 (along the complexified fibre) are the steps to
+  referee most carefully. Imported: N1-N4, N6, N7, N9-N11; Q1-Q8, Q12-Q15; P1(a), P2(d); F1, F2.4, F4, F6; L9; M3, M4.
+novelty: >
+  New within this audit: the Z1 question in the slaved vector sector is settled on every open set of Y, not only near
+  s(X): no solution in (7,7) for any member with (x,y) != 0 (as in Z2); in (14,0) lambda = 1/5 and, except for the
+  twisted cone away from Pi, exactly round 10's flat-base solutions, without analyticity. Conjecture F9 is proven for Z1
+  at n = 4 (with L2 for Z2, at n = 4 for both metrics). The method: polynomiality of the Z1 curvature along a whole fibre
+  turns pointwise integrability on any open set into integrability at the radial points, where round 10's hand analysis
+  applies. Not in the source.
+reproducibility: "Exact (Fractions, N's truncated series with Fraction coefficients, sympy rationals); fixed seeds (random.Random(101-102) S0, 111-112 S1, 121-122 S2, 131-136 S3, 141-142 S4, 151 S5); one core: 260 s, a second run 262 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 S_z1_off_section.py > S_z1_off_section.out 2>&1 (23 checks, 23 True, each asserted). Imports F_jets.py and N_z1_neighbourhood.py (and through it L_nonradial.py, J_slaved_sector.py, ...) unmodified."
+empirical_testability: >
+  None new. In the slaved vector sector neither Z1 nor Z2 yields a curved 4D solution of Upsilon = 0 on any open subset
+  of Y, except possibly for the twisted cone in Z1, (14,0), lambda = 1/5, away from Pi; the only solutions (Z1, (14,0),
+  lambda = 1/5) have a flat base and Lambda_4 = 0, in a fibre signature that is not (7,7). The physically relevant
+  reduction still depends on the rule for T off s(X), on Z1 versus Z2, and on sectors not treated.
+dependencies: ["N1", "N2", "N3", "N4", "N6", "N7", "N9", "N10", "N11", "Q1", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q12", "Q13", "Q14", "Q15", "P1", "P2", "F1", "F2", "F4", "F6", "L9", "M3", "M4"]
+confidence: >
+  High for S1-S4, S5(a), (b), S10's (7,7) part for the Einstein classes, S11, S12: hand proofs on proven inputs with
+  independent checks. High for S7, S9, S10: the continuation reduces them to round 10's refereed hand analysis at the
+  radial points (rank 28 there is a hand fact, also checked). Medium-high for S8 and S14: they continue r, resp. an
+  algebraic branch of t, along paths in the complexified fibre; each step is standard, but the arguments are new and
+  unrefereed. Medium-high for S5(c), (d): the Schur reduction of S6 and the orbit classification of null curvatures are
+  hand arguments, the evaluations exact. Not covered: the twisted cone at lambda = 1/5 away from Pi; T_e outside V or
+  crossing det M = 0; T_o outside the invariant sector; n != 4.

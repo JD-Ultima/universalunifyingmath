@@ -221,6 +221,8 @@ Status: steps 1 and 3 follow from F3–F6 together with C5. Step 2 is a derivati
 
 *Remark (2026-10-30, round 10).* For Z1 at $n=4$: over a flat base, $\mathrm{Ric}=\beta_Sg_\aleph+b(g_\aleph|_H+c\,ds^2)$, so $g_\aleph$ is Einstein on an open set iff $\lambda=\tfrac15$ (`N-z1-neighbourhood.md`, N2). Over a definite base, Einstein on a neighbourhood of a point of $s(X)$ forces $\lambda=\tfrac15$ and $R_g=0$ there (N10: the order-$\varepsilon^2$ fibre pairing $\alpha|W|^2$, $\alpha=45/(8c_H^2c_V)$). Open: indefinite bases, and open sets away from $s(X)$.
 
+*Remark (2026-10-31, round 15; not yet internally reviewed).* For Z1 at $n=4$ the conjecture holds on every open set and over every base signature: Z1 is Einstein on an open $W$ iff $\lambda=\tfrac15$ and ℵ is flat on $\pi(W)$ (`S-z1-off-section.md`, S5). Along a fibre the Z1 curvature is polynomial in $(y,(\det y)^{-1})$, so the Einstein condition continues to the section point, where F6 gives $\lambda=\tfrac15$ and $\mathrm{Ric}_g=0$. N10's pairing gives flatness over definite bases. Over indefinite bases the order-2 fibre term is Z2's A-term (S6, computer-assisted), which forces $\mathcal R^2=0$, and the null curvatures fail (exact evaluations). With L2, F9 would then be proven at $n=4$ for both readings.
+
 ## F.4 Grading (layers c–e)
 
 | Item | Status |
@@ -228,7 +230,7 @@ Status: steps 1 and 3 follow from F3–F6 together with C5. Step 2 is a derivati
 | Lemma F0, Prop. F1, Prop. F2, Theorem F3 (Z2), Theorem F4(a)(b), Cor. F5 for Z2 and for $\Lambda_A$ (Z1), Prop. F7 | **Proven** (with L-F1…L-F6), each also checked exactly |
 | Theorem F4(c) (Z1 Ricci blocks); hence $\Lambda_P$ (Z1) and the Z1 half of Theorem F6 | **Proven** for every $n$ (K, Theorem K and Cor. K4; 2026-10-30). Exact checks: R2, E1, R3, K4 ($n=2,\dots,6$) and, for F6, a Weyl base at $n=4$ (E2). The Z2 half of F6 (never Einstein) is proven. |
 | Prop. F8 (link to (9.7)–(9.10)) | **Conditional** on R-S/C5; constants $\alpha,\beta$ open |
-| Conjecture F9 | Conjectured; for Z2 at $n=4$ proven in a stronger form (no Einstein open set for any base; `L-nonradial-z2.md` L2); for Z1 at $n=4$ proven near $s(X)$ over definite bases (`N-z1-neighbourhood.md` N10); over flat bases its exception occurs exactly at $\lambda=\tfrac15$ (N2) |
+| Conjecture F9 | Conjectured; for Z2 at $n=4$ proven in a stronger form (no Einstein open set for any base; `L-nonradial-z2.md` L2); for Z1 at $n=4$ proven near $s(X)$ over definite bases (`N-z1-neighbourhood.md` N10); over flat bases its exception occurs exactly at $\lambda=\tfrac15$ (N2); on every open set and over every base signature in round 15 (`S-z1-off-section.md` S5; computer-assisted over indefinite bases; not yet internally reviewed) |
 | Which horizontal metric (Z1 vs Z2), $\lambda$, $c_V/c_H$, readout (P)/(A)/(E), domain of $\Upsilon=0$ | **Undefined in the draft**. The text favours Z1 (a3, a6, a8, a13, a17). |
 
 Claims:

@@ -218,7 +218,7 @@ Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $
   - Not covered:
     - $T_o$ outside the invariant sector;
     - $T_e$ outside the vector sector for large $|T_o|$;
-    - neighbourhood solutions in Z1 beyond Rounds 10 and 13 (limit points of Einstein pieces without analyticity; open sets away from $s(X)$); in Z2 beyond the radial ansatz, nothing left under the hypotheses of Round 8 (Rounds 8, 9, 12; two steps of Round 12 computer-assisted);
+    - neighbourhood solutions in Z1 beyond Rounds 10 and 13 (after Round 15, not yet internally reviewed: the twisted cone in (14,0) at $\lambda=\tfrac15$ away from the parallel set); in Z2 beyond the radial ansatz, nothing left under the hypotheses of Round 8 (Rounds 8, 9, 12; two steps of Round 12 computer-assisted);
     - reading (A).
 
 ## Round 8 — $\Upsilon=0$ beyond the radial Z2 ansatz (GU-054, GU-G14, GU-G16)
@@ -290,6 +290,19 @@ Hypotheses of round 10; for $(x,y)=0$ without $(x,y)\neq0$ and without the secti
 - **Result.** With round 10, for every member with $(x,y)\neq0$: none near the section in (7,7); in (14,0) $\lambda=\tfrac15$ over a Ricci-flat base, and for analytic fields exactly flat-base solutions with constant odd part and $T_e\equiv0$, which exist for every (14,0) member iff $c_V\kappa^2\ge9360(x'^2+y'^2)$ ($c_V>0$; this answers R10-3's open item).
 - Rests on N6(f) (computer-assisted) and on exact computations. Open: limit points without analyticity; open sets away from the section; other sectors.
 - No statement made before round 13 is contradicted.
+
+## Round 15 — Z1 on open sets away from the section (GU-054, GU-G14, F9)
+
+Write-up: `formalization/geometric-unity/S-z1-off-section.md`. Code: `computation/geometric-unity/S_z1_off_section.py`, output committed, exact, 23 asserted checks, ~4.5 min (260 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/S-z1-off-section.yaml`. **Not yet internally reviewed.**
+
+Hypotheses of rounds 10 and 13, without the section.
+- Method. Along a fibre the Z1 curvature is polynomial in $(y,(\det y)^{-1})$. So pointwise integrability on any open subset of a fibre continues to the radial points, where round 10's degree-1 analysis applies. The fibre equation alone carries no obstruction in Z1.
+- Points on sections of metrics with the same connection form the parallel set (equal to the radial set for generic curvature). Rounds 10 and 13 transfer to open sets meeting it.
+- F9 for Z1 at $n=4$: Einstein on an open set iff $\lambda=\tfrac15$ and the base is flat there, over every base (computer-assisted over indefinite bases).
+- Linear line equations: Ricci-flat base and quantised λ everywhere. $\tfrac{13}{56}$ is excluded by continuing the trace equation; at $\tfrac15$ the base is flat. Twisted cone: round 13's certificate excludes every admissible $\lambda\neq\tfrac15$ after an algebraic continuation.
+- **Result.** In (7,7), no solution on any open set for any member with $(x,y)\neq0$, as in Z2. In (14,0), $\lambda=\tfrac15$, and except for the twisted cone exactly the flat-base solutions with constant odd part and $T_e\equiv0$, without analyticity. Rests on N6(f), α and round 13's certificate; the complex-continuation steps (S8, S14) are the most delicate.
+- Open: the twisted cone in (14,0) at $\lambda=\tfrac15$ away from the parallel set; other sectors.
+- No statement made before round 15 is contradicted (Q4's remark on F9 is too pessimistic).
 
 ## F4(c) for every $n$ (round 2 F, completed)
 

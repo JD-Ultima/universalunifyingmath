@@ -104,3 +104,14 @@ Each gap is a point where [W21] is underspecified, circular or type-inconsistent
   - Open in Z1: limit points of Einstein pieces without analyticity; open sets away from $s(X)$; F9 for indefinite bases; other sectors.
 - **GU-G16.** In Z1 near $s(X)$ neither $xz\pm yw=0$ nor $x=\pm y$ is exceptional; for the nonlinear μ of the twisted cone, type-(ii) points are excluded by persistence along the radial set for $\lambda\neq\tfrac15$ and by the pairings α, α″ at $\lambda=\tfrac15$. In Z2 that member was the one exception away from $s(X)$ (M10(b)); round 12 (P6; refereed in REVIEW11-GU) closes it.
 
+**Note (2026-10-31, round 15; `formalization/geometric-unity/S-z1-off-section.md`; not yet internally reviewed).** The rows above and the earlier notes are not edited. Hypotheses of round 10, for every member with $(x,y)\neq0$, without $U\cap s(X)\neq\emptyset$.
+- **GU-G14.**
+  - Along a fibre the Z1 curvature is polynomial in $(y,(\det y)^{-1})$. Round 12's dichotomy therefore carries pointwise integrability from any open subset of a fibre to the radial points, where round 10's degree-1 analysis applies (S4, S7). L6 has no analogue; the Euler field gives only $E(X^Hr)=\tfrac12X^Hr$ (S1).
+  - Points on sections of metrics with the same connection are the holonomy-invariant ones (Π ⊇ Σ). N and Q transfer to open sets meeting Π (S2, S3).
+  - F9: Z1 at $n=4$ is Einstein on an open set iff $\lambda=\tfrac15$ and ℵ is flat there (S5; computer-assisted over indefinite bases).
+  - Linear line equations: Ricci-flat base and quantised λ at every point (S7). $\tfrac{13}{56}$ is excluded by continuing the trace equation (S8). At $\tfrac15$, round 10's pairing gives a flat base (S9).
+  - Twisted cone: a relaxed system and an algebraic continuation of $t$ carry round 13's persistence relations to Σ, where Q8's certificate excludes every admissible $\lambda\neq\tfrac15$ (S13, S14).
+  - Result: in (7,7), no solution on any open set (S16(a)), as in Z2. In (14,0), $\lambda=\tfrac15$, and for every member except the twisted cone exactly the flat-base solutions with constant $(t,u)$ and $T_e\equiv0$ (they exist iff $c_V\kappa^2\ge9360(x'^2+y'^2)$), with no analyticity assumption (S10). This rests on N6(f), α and Q8's certificate; the complex-continuation steps S8 and S14 are the most delicate.
+  - Open: the twisted cone in (14,0) at $\lambda=\tfrac15$ away from Π ($\mathrm{rank}\,\mathrm{Ric}_g\le1$ there, S15); other sectors.
+- **GU-G16.** In Z1 the twisted cone is again the one member with an open case, now only in (14,0) at $\lambda=\tfrac15$ away from Π.
+

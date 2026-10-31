@@ -63,7 +63,7 @@ So M8 holds in Z1 on every open set; its trace step is not needed.
 
 *Proof.* By M7(a)'s identities (Q1(a)), $E^{(1)}-sE^{(13)}=x^{-1}\sigma(\kappa+208\sigma)g$. So $\sigma\in\{0,-\kappa/208\}$ is constant on $U$, $d\sigma=0$ and $T_e=x^{-1}\Sigma_t\,d\sigma=0$. Then $E^{(1)}=-xG+c_1g=0$: Z1 is Einstein on $U$. At a point of $U\cap s(X)$ this forces $\lambda=\tfrac15$ (F6), against $\lambda>\tfrac14$. ∎
 
-Without $U\cap s(X)\neq\emptyset$ this would need F9 for indefinite bases, which is open.
+Without $U\cap s(X)\neq\emptyset$ this would need F9 for indefinite bases, which is open. (Round 15, not yet internally reviewed: not needed. The Einstein condition continues along the fibre to its section point, where F6 applies (S5(a)), so (C2) has no solution on any open set.)
 
 **Lemma Q5 (the γΓ-channel of (C1) in Z1; trichotomy).** *[proven]* Assume (H1), $p=(x,0,0,w)$, $x\neq0$.
 
@@ -272,8 +272,8 @@ Run: `cd computation/geometric-unity && python3 Q_z1_remaining.py > Q_z1_remaini
 - **Computer-assisted inputs.**
   - N6(f), as in N.3. Q6, Q7, Q10, Q11, Q13, Q14(a)–(c) and Q16 rest on it; Q1–Q5, Q8, Q9, Q12 and Q15 do not.
   - The certificate of Q8 (exact resultants and gcd), the resultants of Q9 and α″ of Q11 (exact evaluations; Schur and the parity step do the rest) are computations. Q15's $\det M$ statement is a computed resultant.
-- **Type-(iii) points.** As in N.3: in (14,0), without analyticity, only $\mathrm{Ric}_g=0$ is proven at limit points of Einstein pieces, not flatness.
-- **Away from $s(X)$.** Nothing is proven for (C1)–(C3) on open sets that do not meet $s(X)$. For (C2) it would follow from F9 for indefinite bases, which is open. (C4) is settled on every open set.
+- **Type-(iii) points.** As in N.3: in (14,0), without analyticity, only $\mathrm{Ric}_g=0$ is proven at limit points of Einstein pieces, not flatness. (Round 15, not yet internally reviewed: for (C1), $g$ is flat on $\pi(U\cap s(X))$ and $(t,u)$ is locally constant near $U\cap s(X)$ (S12); for the other members the analyticity hypotheses of Q14(b), Q16(b) are not needed (S10).)
+- **Away from $s(X)$.** Nothing is proven for (C1)–(C3) on open sets that do not meet $s(X)$. For (C2) it would follow from F9 for indefinite bases, which is open. (C4) is settled on every open set. (Round 15, `S-z1-off-section.md`, not yet internally reviewed: (C2) and (C3) have no solution on any open set (S10). (C1) has none in (7,7), and none in (14,0) unless $\lambda=\tfrac15$ (S14). Open: (C1) in (14,0) at $\lambda=\tfrac15$, at type-(ii) points away from the parallel set Π, where $\mathrm{rank}\,\mathrm{Ric}_g\le1$ (S15).)
 - **Definite base in Q11.** α″ is used through $|W|^2$, so only in (14,0); in (7,7), $\lambda=\tfrac15$ does not occur.
 - **M1** is a symmetry of the reduced system of J1–J2, not claimed for the full Υ (as M.3).
 - **Hypotheses kept:** $n=4$; the real forms of J1–J2; $\kappa\neq0$; $T_e\in\mathcal V$ slaved with $\det M\neq0$; $T_o$ in the invariant sector; for existence, $c_V>0$.
@@ -284,7 +284,7 @@ Run: `cd computation/geometric-unity && python3 Q_z1_remaining.py > Q_z1_remaini
 - **GU-G14.**
   - Under (H1), for every member of the family: in (7,7) no solution on a neighbourhood of a point of $s(X)$; in (14,0) a solution forces $\lambda=\tfrac15$ and a Ricci-flat base, and for analytic fields it is a flat-base solution with constant $(t,u)$ and $T_e\equiv0$; for $c_V>0$ these exist iff $c_V\kappa^2\ge9360(x'^2+y'^2)$, with strict inequality when $a^2=\tfrac{125}{576}$ (Q15). For $(x,y)=0$ only $T=0$ (Q16).
   - So the Z1 question near $s(X)$ in this sector is settled for every member, up to type-(iii) points for non-analytic fields in (14,0), as round 9 settled the Z2 question (M10(a)). The two metrics differ only in (14,0) at $\lambda=\tfrac15$: Z2 has no solution, Z1 has the flat-base solutions with $\Lambda_4=0$.
-  - Open in Z1: type-(iii) points without analyticity; open sets away from $s(X)$; other sectors.
+  - Open in Z1: type-(iii) points without analyticity; open sets away from $s(X)$; other sectors. (Round 15, not yet internally reviewed: closed except (C1) in (14,0) at $\lambda=\tfrac15$ away from Π, S16.)
 - **GU-G16.** In Z1, near $s(X)$, the cone $\ell=0$ and $N=0$ are no longer exceptional. For the twisted cone (nonlinear μ, M4), type-(ii) points are excluded by persistence along Σ for $\lambda\neq\tfrac15$ (Q8) and at $\lambda=\tfrac15$ by the pairings α, α″ and the flat-base ODE (Q10–Q12); in (14,0) at $\lambda=\tfrac15$ its flat-base solutions remain (Q15). In Z2 it was the one exception away from $s(X)$ (M10(b)); round 12 (`P-z2-last-exception.md`, P6; refereed in REVIEW11-GU) closes it.
 - **GU-054.** Status unchanged (C).
 - **N.3, N.4, J.3, L.3.** The "members" item is settled near $s(X)$. N.4's "for the other members of (A), (B) existence was not examined" is answered by Q15. Q2 shows that N3(b) holds without its Ricci hypothesis. No statement made before this note is contradicted.
