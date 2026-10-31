@@ -86,6 +86,15 @@ Each gap is a point where [W21] is underspecified, circular or type-inconsistent
   - Open: other sectors (nonconstant $t,u$, slaved $T_e$, symmetric sector); the weight and the system, which the draft does not specify.
 - **GU-G14.** At first order in $T$, localised at $s(X)$, the ℷ-equation is reading (A) with $\Lambda_A$ of Cor. F5, in Z1 and Z2. In Z1 $\Lambda_A\neq\Lambda_P$, so the ℷ-variation selects (A), not (P) (O11): exactly $\Lambda_A$ for the localised weight, and for every ray weight a λ-independent multiple of it. Beyond first order it differs from I7(a)'s (P) value; in Z2 the off-shell result beyond leading order also depends on the identification of configuration spaces for different ℷ (O12).
 
+**Note (2026-10-31, round 12; `formalization/geometric-unity/P-z2-last-exception.md`).** The rows above and the earlier notes are not edited. Hypotheses: (H) of L.0.
+- **GU-G14.**
+  - The O'Neill term $\mathcal A_x$ of the fibre equation is quadratic in Killing fields of the fibre and depends on the base curvature only through $\mathcal R^2$, the square of the curvature operator (P1).
+  - M9's relaxed first integrability condition can hold on an open subset of a fibre only if it holds near the section. There its first-order term leaves only $\mathcal R^2\propto\mathrm{Id}$, and its third-order term removes that (P3, P4; exact computations, each confirmed by an independent construction).
+  - So M9's exceptional set is $\mathcal Z=\{\mathcal R^2=0\}$: $\{0\}$ over a (4,0) base, the null (pp-wave type) curvatures over indefinite bases, and on it $\mathcal A_x\equiv0$ (P5). With M9's flat case, the fibre equation has no local solution with $\mu\neq0$ for any base curvature and any μ (P6).
+  - Result: the exception of round 9 is empty. Under (H), $\Upsilon=0$ in Z2 has no solution on any open subset of $Y$ for every member with $(x,y)\neq0$; for $(x,y)=0$ only $T=0$ (P7, M8). The same argument replaces the section-based steps of rounds 8 and 9 (L7, L9's continuation, M5, M6 steps 4–6; P8).
+  - Open: Z1 beyond rounds 10 and 13; other sectors; the rule for $T$ off $s(X)$.
+- **GU-G16.** $xz\pm yw$ no longer separates solvable from unsolved members in Z2. It only decides which channel does the work: the curvature-free channel for $\ell\neq0$, the first-order channel and the fibre theorem for $\ell=0$.
+
 **Note (2026-10-31, round 13; `formalization/geometric-unity/Q-z1-remaining-members.md`).** The rows above and the earlier notes are not edited. Hypotheses of round 10 (those of L8 with Z1 for Z2); for $(x,y)=0$ without $(x,y)\neq0$ and without $U\cap s(X)\neq\emptyset$.
 - **GU-G14.**
   - Round 9's reduced identities and symmetries are metric-free; its (7,7) swap metric $-g_\aleph$ is the Z1 metric with $(-c_H,-c_V)$ (Q1). Z1 has no nonconstant concircular function on any open set (Q2).

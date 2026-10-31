@@ -169,7 +169,7 @@ Consequences:
 
 (a) $\Upsilon=0$ has no solution on any open $U$ that meets $s(X)$.
 
-(b) $\Upsilon=0$ has no solution on any nonempty open $U$ at all, with one possible exception. The exception is the members with $\ell=0$, $N\neq0$ and $(z,w)\neq0$, i.e. up to M1 the members $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ and, in (7,7) with $N<0$, $y(W'_A+cW_C\mathrm{Ad}_\Gamma)$, with $c\neq0$ and, in (14,0), $c^2\neq\tfrac{11}6$ (M6(c)). For them a solution on a $U$ with $U\cap s(X)=\emptyset$ would need $(c_V/c_H)R_g(x)\in\mathcal Z\setminus\{0\}$ for every $x\in\pi(U)$ (M9). Indeed, M3 and M6 steps 1–2 do not use $s(X)$. On the dense open set $U'=U\cap\{H(t)\neq0\}$, $(\star)$ holds with $\nu=0$ and $\mu=xF'/H\neq0$, so M9 applies on $U'\cap F_x$ for $x\in\pi(U')$. Since $\pi(U')$ is dense in $\pi(U)$ and $\mathcal Z$ is closed, $(c_V/c_H)R_g(x)\in\mathcal Z$ on $\pi(U)$. At an $x$ with $R_g(x)=0$ and $U\cap F_x\subset\{H(t)=0\}$, M6 step 4 applies, since $\mathcal A_x\equiv0$. (Added after review, R9-3.)
+(b) $\Upsilon=0$ has no solution on any nonempty open $U$ at all, with one possible exception. The exception is the members with $\ell=0$, $N\neq0$ and $(z,w)\neq0$, i.e. up to M1 the members $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ and, in (7,7) with $N<0$, $y(W'_A+cW_C\mathrm{Ad}_\Gamma)$, with $c\neq0$ and, in (14,0), $c^2\neq\tfrac{11}6$ (M6(c)). For them a solution on a $U$ with $U\cap s(X)=\emptyset$ would need $(c_V/c_H)R_g(x)\in\mathcal Z\setminus\{0\}$ for every $x\in\pi(U)$ (M9). Indeed, M3 and M6 steps 1–2 do not use $s(X)$. On the dense open set $U'=U\cap\{H(t)\neq0\}$, $(\star)$ holds with $\nu=0$ and $\mu=xF'/H\neq0$, so M9 applies on $U'\cap F_x$ for $x\in\pi(U')$. Since $\pi(U')$ is dense in $\pi(U)$ and $\mathcal Z$ is closed, $(c_V/c_H)R_g(x)\in\mathcal Z$ on $\pi(U)$. At an $x$ with $R_g(x)=0$ and $U\cap F_x\subset\{H(t)=0\}$, M6 step 4 applies, since $\mathcal A_x\equiv0$. (Added after review, R9-3.) (Round 12, `P-z2-last-exception.md`.) The exception is empty: $\mathcal Z=\{R:\mathcal R^2=0\}$, on which $\mathcal A_x\equiv0$ (P5), and the fibre equation has no solution with $\mu(w)\neq0$ on any open subset of any fibre (P6). So $\Upsilon=0$ has no solution on any nonempty open $U$ for every member with $(x,y)\neq0$ (P7).
 
 For $(x,y)=0$ the solutions are exactly $T=0$, for every metric (M8).
 
@@ -212,14 +212,14 @@ Run: `cd computation/geometric-unity && python3 M_remaining.py > M_remaining.out
 
 ## M.3 Limits (layers b, d)
 
-- **Open.**
+- **Open after round 9** (closed in round 12, `P-z2-last-exception.md`, P5–P7).
   - The members $\ell=0$, $N\neq0$, $(z,w)\neq0$ (except $c^2=\tfrac{11}6$ in (14,0)) on open sets $U$ with $U\cap s(X)=\emptyset$. By M3 and L6 this is rigorously the scalar problem $\nabla^2r=\mu(r)\mathrm{Ric}^Y$, $Er=0$, with nonlinear $\mu$ (M4), and fibrewise $\mathrm{Hess}^Fw=\mu(w)(\mathrm{Ric}_F+\mathcal A)$.
   - L9's continuation along the fibre uses linearity. For nonlinear $\mu$ the continued solution can reach the singular values of $\mu$ ($H=0$ or $\det M=0$).
-  - M9 reduces the open case to base curvatures in the proper algebraic set $\mathcal Z$. $\mathcal Z$ is not determined: that would need the relaxed system with symbolic $R$.
+  - M9 reduces the open case to base curvatures in the proper algebraic set $\mathcal Z$. $\mathcal Z$ was not determined here. Round 12 determines it without symbolic $R$, by expanding the relaxed system at the section: $\mathcal Z=\{R:\mathcal R^2=0\}$, which is $\{0\}$ in base (4,0) and the null curvatures in indefinite bases, and on which $\mathcal A\equiv0$ (P5).
 - **Hypotheses kept from (H).** Z2; the real forms (14,0), (7,7) of J1–J2; $\kappa\neq0$; $T_e$ the slaved field in $\mathcal V$ with $\det M\neq0$ on $U$; $T_o$ in the invariant sector. M8 uses L3, hence Z2.
 - **M1** is a symmetry of the reduced system of J1–J2. It is not claimed for the full $\Upsilon$.
 - **M5(c)** is a certificate for the Ricci-flat case only. By M5(d) the solutions of (C1)$_0$ are exactly the curvatures with $\mathcal R^2=-\tfrac1{12}(c_H/c_V)^2\,\mathrm{Id}$; real ones exist only in Lorentzian bases, where M6 step 6 is needed.
-- **M9** is a computation at sample points, together with a genericity argument. It is not a proof for every base metric.
+- **M9** is a computation at sample points, together with a genericity argument. It is not a proof for every base metric. (Round 12: P3, P4 replace the sampling by exact computations at the section, and P5 determines $\mathcal Z$.)
 - **Untouched:** Z1; reading (A); the (P) system of J3(a); J3(b), (c) and J4(d′) for the members of this note.
 
 ## M.4 Consequences for gaps and claims
@@ -229,7 +229,7 @@ Run: `cd computation/geometric-unity && python3 M_remaining.py > M_remaining.out
   - It is settled on every open set except for the twisted members $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$ ($c^2\neq\tfrac{11}6$ in (14,0)), with $\ell=0$ (up to M1), away from $s(X)$ (M10(b)). Even there M9 confines a solution to special base curvature.
   - This includes $W'_A$ and all of $\mathrm{span}(W_A,W'_A)$ (M6(b)), $(1,0,0,1)$ in (14,0) near $s(X)$ (M6(a)), and every member with $x=\pm y$ in (7,7) (M7).
   - For $(x,y)=0$, $\Upsilon=0$ forces $T=0$ and leaves the metric free (M8). These members carry no gravitational equation at all in this sector.
-  - Open: the exception of M10(b); Z1; other sectors.
+  - Open: Z1; other sectors. (The exception of M10(b) is closed in round 12, P7.)
 - **GU-G16.**
   - $\ell$ is again what separates the cases. For $\ell=0$ the curvature-free row vanishes, the first-order channel removes one scalar (M3), and the remaining equation is nonlinear ($\mu'$ is a nonconstant function of $c=w/x$ and $\tau$) unless $c=0$ or, in (14,0), $c^2=\tfrac{11}6$.
   - The only weaker result in the family sits there.

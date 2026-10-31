@@ -218,7 +218,7 @@ Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $
   - Not covered:
     - $T_o$ outside the invariant sector;
     - $T_e$ outside the vector sector for large $|T_o|$;
-    - neighbourhood solutions in Z1 beyond Rounds 10 and 13 (limit points of Einstein pieces without analyticity; open sets away from $s(X)$); in Z2 beyond the radial ansatz, only the members with $xz\pm yw=0$, $x^2\pm y^2\neq0$, $(z,w)\neq0$ (up to symmetry $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, $c^2\neq\tfrac{11}6$ in (14,0)), away from $s(X)$ (Rounds 8, 9);
+    - neighbourhood solutions in Z1 beyond Rounds 10 and 13 (limit points of Einstein pieces without analyticity; open sets away from $s(X)$); in Z2 beyond the radial ansatz, nothing left under the hypotheses of Round 8 (Rounds 8, 9, 12);
     - reading (A).
 
 ## Round 8 — $\Upsilon=0$ beyond the radial Z2 ansatz (GU-054, GU-G14, GU-G16)
@@ -244,7 +244,7 @@ Hypotheses of round 8; for $(x,y)=0$ the same without $(x,y)\neq0$.
 - Symmetries of the reduced system: a rotation (14,0) / boost (7,7) of $(x,y)$, $(z,w)$, $(t,u)$, and in (7,7) a swap with $g_\aleph\to-g_\aleph$ (M1). Up to them the cone $xz\pm yw=0$ is $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, the (7,7) null members and $(x,y)=0$ (M2).
 - For $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$ the γΓ-channel forces $u\equiv0$; one scalar equation remains, nonlinear after reparametrisation for $c\neq0$ except $c^2=\tfrac{11}6$ in (14,0), which is then settled on every open set (M3, M4, M6(c)). At a point of $s(X)$ the fibre equation forces, for every $\mu$, $\mu'=0$ and the order-1 condition (C1)$_0$, which no Ricci-flat curvature satisfies (Gröbner certificate; M5). In Lorentzian bases non-Ricci-flat curvature does satisfy it (REVIEW7-GU R9-5), and M6 excludes that case by a separate step.
 - **Results.** No solution near $s(X)$ for any member with $xz\pm yw=0$, $(x,y)\neq0$ (M6(a), M7(a)); none on any open set for $\mathrm{span}(W_A,W'_A)$, including $W'_A$ (M6(b)), and for $x=\pm y$ in (7,7) (M7; invariant line $\sigma=-\kappa/208$ with $\nabla^2r=-\tfrac5{12}r\,\mathrm{Ric}$). For $(x,y)=0$, $\Upsilon=0$ iff $T=0$, for every metric (M8). With round 8: no solution near $s(X)$ for any member with $(x,y)\neq0$, and none on any open set except possibly the members with $xz\pm yw=0$, $x^2\pm y^2\neq0$, $(z,w)\neq0$ (up to M1 $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$, $c^2\neq\tfrac{11}6$ in (14,0)), away from $s(X)$ (M10).
-- **Open.** That exception (off the section the first integrability condition fails at every sampled point, so a solution would need special base curvature, M9, computed); Z1; other sectors.
+- **Open.** That exception (off the section the first integrability condition fails at every sampled point, so a solution would need special base curvature, M9, computed; closed in Round 12); Z1; other sectors.
 - No statement made before round 9 is contradicted.
 
 ## Round 10 — $\Upsilon=0$ on a neighbourhood in Z1 (GU-054, GU-G14)
@@ -267,6 +267,17 @@ Write-up: `formalization/geometric-unity/O-gimel-variation.md`. Code: `computati
 - If the weight is used for all fields, the ϖ-equation becomes $w\Upsilon+\tfrac12\circledast(dw\wedge T)$, and for ray weights it forces $a=0$: no Einstein term.
 - On-shell: among round 10's flat-base Z1 solutions in (14,0), exactly those with $c_V\kappa^2=12480$ (for $x'=1$) also solve the ℷ-equation. None is known in (7,7).
 - G.2.5's list of ℷ-dependent ingredients included "vol", which is ℷ-independent in Z1; corrected there. No other earlier statement is contradicted.
+
+## Round 12 — the last Z2 exception (GU-054, GU-G14, GU-G16)
+
+Write-up: `formalization/geometric-unity/P-z2-last-exception.md`. Code: `computation/geometric-unity/P_last_exception.py`, output committed, exact, 39 asserted checks, ~12 min (715 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/P-z2-last-exception.yaml`. Not yet internally reviewed.
+
+Hypotheses of Round 8 ((H) of L.0).
+- The O'Neill term $\mathcal A_x$ of the fibre equation $\mathrm{Hess}^Fw=\mu(w)(\mathrm{Ric}_F+\mathcal A_x)$ is quadratic in Killing fields of the fibre and depends on the base curvature only through $\mathcal R^2$ (P1). Over (1,3), (3,1), (2,2) bases, null curvatures ($\mathcal R^2=0$, $R\neq0$, e.g. pp-waves) give $\mathcal A_x\equiv0$.
+- M9's relaxed first integrability condition is a pointwise linear system (20 unknowns, equivalent to M9's 295). It holds on an open subset of a fibre only if it holds near the section. There the first-order term allows only $\mathcal R^2\propto\mathrm{Id}$, and the third-order term excludes that (P3, P4; exact computations, each confirmed by an independent construction).
+- **Results.** M9's exceptional set is $\mathcal Z=\{\mathcal R^2=0\}$, on which $\mathcal A_x\equiv0$ (P5). The fibre equation has no local solution with $\mu\neq0$ for any base curvature and any μ (P6). So the exception of Round 9 is empty: under (H), $\Upsilon=0$ in Z2 has no solution on any open subset of $Y$ for every member with $(x,y)\neq0$, and for $(x,y)=0$ only $T=0$ (P7, M8). The same argument replaces L7, L9's continuation, M5 and M6 steps 4–6 (P8).
+- **Open.** Z1 beyond Rounds 10 and 13; other sectors; the rule for $T$ off $s(X)$.
+- No statement made before Round 12 is contradicted.
 
 ## Round 13 — the remaining members in Z1 (GU-054, GU-G14, GU-G16)
 

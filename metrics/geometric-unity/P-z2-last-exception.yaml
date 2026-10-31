@@ -1,0 +1,55 @@
+result: "P. The last Z2 exception of round 9 is empty: M9's exceptional set Z of base curvatures (where the first integrability condition of the fibre equation Hess_F w = mu(w) (Ric_F + A) could hold on an open set) is exactly {R : (curvature operator)^2 = 0} = {R : A_x vanishes identically on the fibre}, i.e. {0} over a (4,0) base and the null (pp-wave type) curvatures over (1,3), (3,1), (2,2) bases; with M9's flat-case argument the fibre equation has no local solution with mu != 0 for any base curvature and any mu, so under (H) Upsilon = 0 in Z2 has no solution on any nonempty open set for every member with (x, y) != 0, including x (W_A + c W'_C Ad_Gamma), c != 0, with xz +- yw = 0, away from s(X) (kappa != 0, slaved T_e in V, det M != 0)"
+claim_id: [GU-054]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/P-z2-last-exception.md (Propositions P1; Lemmas P2, P3, P4; Theorems P5, P6; Corollary P7; Remark P8); answers the open item of formalization/geometric-unity/M-z2-remaining-members.md, section M.3, and the exception of Corollary M10(b) (as corrected after REVIEW7-GU)
+code: [computation/geometric-unity/P_last_exception.py, computation/geometric-unity/P_last_exception.out]
+formalization_status: >
+  Formalized in the setting of J, L and M under the hypotheses (H) of L.0 (Z2, n = 4, lambda != 1/4, the real forms
+  (14,0) with base (4,0) and (7,7) with bases (1,3), (3,1), (2,2), kappa != 0, T_o = t Phi^1 + u Phi^1 Gamma, T_e the
+  slaved field in V with det M != 0, Upsilon = 0 on a connected open U, (x, y) != 0). Steps: (1) the O'Neill term A_x
+  on the fibre is the image of b_R = c_A sum eps_i eps_j R_ij (x) R_ij in Sym^2 so(g_x) under K (x) K' -> xi_K (x) xi_K'
+  (Killing fields of the fibre), and b_R = -4 c_A R^2 Cas, so A_x sees only the square of the curvature operator; (2) the
+  first integrability condition of Hess_F w = mu(w)(Ric_F + A), relaxed in mu', is a pointwise linear system Sigma_y(b)
+  (20 unknowns, 450 rows) equivalent to M9's 295-unknown Taylor system; its entries are polynomial in (y, 1/det y), its
+  rank is <= 19 (dilation kernel) and = 19 at the section, so either it is inconsistent on a dense open set of the fibre
+  or consistent near the section; (3) consistency near the section, expanded in the distance (pull-back y = P eta P^T,
+  P = 1 + eps X), gives at first order a linear condition on b whose solutions are exactly R Cas (equivalently: the
+  relaxed (C1) of L7 holds only on R Cas); (4) on the line b = k Cas the third-order condition reads k b_3 in Im A_0
+  with b_3 not in Im A_0, so k = 0; (5) hence Z = {b_R = 0}; there A vanishes identically and M9's flat-case argument
+  gives mu = 0; (6) M3, M6 steps 1-2 and L6 reduce the exception of M10(b) to the fibre equation with mu = x F'/H != 0 on
+  a nonempty open subset of a fibre, which (5) excludes.
+internal_consistency: >
+  The pointwise system is validated four ways: exact ingredient identities at random fibre points (Gamma metric, G_1/4
+  parallel, Ric(R^F) = -G_1/4, Killing fields, the Killing-field formula for nabla A against an exact dual-number
+  derivative); a manufactured solution of the Ricci identity (w cubic in y, B := Hess w); lambda-independence; and
+  agreement with M9's own samples (same seeds and pull-back; ranks (19, 20) / (19, 19) against M9's (294, 295) /
+  (294, 294)) and with the referee's direct Taylor construction (xcheck_round9.relaxed_system). The first-order lemma is
+  computed twice: by the expansion of the own system and by the relaxed (C1) built from the referee's (C1) tensors
+  (xcheck_round9 c0t, qt). The Casimir line is excluded twice: at third order at the section, and globally by two
+  20-minors in Q[k] at off-section points with gcd k^2; at the remaining roots the own system, the referee's Taylor system
+  and M9's pull-back Taylor system (L.fibre_data) are all inconsistent.
+proof_status: >
+  Proven: P1 (A-term through b_R; null curvatures exist exactly in the indefinite bases), P2 (algebraic structure and
+  dichotomy), P5 (Z = {R^2 = 0}, from P2-P4), P6 (no local solution of the fibre equation with mu != 0, any R, any mu),
+  P7 (M10(b) without exception: under (H) no solution on any open set for every member with (x, y) != 0), P8 (one
+  argument for every line equation of L and M; L7, M5, L9's continuation and M6 steps 4-6 not needed for the
+  conclusions). Computed (exact linear algebra in each base signature; consequences proven): P3 (first order: b in Z
+  forces b in R Cas), P4 (Casimir line: third order forces k = 0). Open: none within (H) for Z2. Imported: M1-M4,
+  M6 steps 1-2, M9 (flat case), M10, L2, L6, L.0, J5d L0(a), F1, F3, L-F1, REVIEW7-GU section 2.
+novelty: >
+  New within this audit: the exceptional set of M9 is determined (it is the null-curvature set, nonempty beyond 0 only in
+  indefinite bases, and on it the A-term vanishes identically), and the fibre obstruction becomes a statement on every
+  open subset of every fibre with no reference to the section. With rounds 8 and 9 this settles the non-radial Z2
+  neighbourhood question for the whole family under (H). Not in the source.
+reproducibility: "Exact (Fractions, sympy rationals, sympy QQ[k]); fixed seeds (random.Random(20261201..20261205); M9's own seeds random.Random(5), 74, 90..95 for the reproduced samples; xcheck_round8.rand_curv streams); one core: 715 s, a second run 728 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 P_last_exception.py > P_last_exception.out 2>&1 (39 checks, 39 True, each asserted). Imports L_nonradial.py, xcheck_round9.py, xcheck_round8.py unmodified."
+empirical_testability: >
+  None new. The result removes the last candidate neighbourhood solution of the slaved vector sector in Z2 under (H);
+  the physically relevant reduction still depends on the undeclared rule for T off s(X), on Z1 versus Z2, and on sectors
+  not treated (T_e outside V, T_o outside the invariant sector).
+dependencies: ["M1", "M2", "M3", "M4", "M6", "M9", "M10", "L2", "L6", "L7", "J5d-L0", "F1", "F3", "L-F1", "REVIEW7-GU-2"]
+confidence: >
+  High for P1, P2, P5-P8: each step is a hand proof whose algebraic content is an exact identity. P3 and P4 are exact
+  finite computations (no sampling enters their conclusions: P3 is a nullspace over Q of an explicit system at the
+  section point; P4's local proof is one exact rank at one rational direction), each confirmed by an independent
+  construction. Not covered: Z1; the Z2 signatures (8,6), (10,4), ...; T_e outside V or crossing det M = 0; T_o outside
+  the invariant sector.
