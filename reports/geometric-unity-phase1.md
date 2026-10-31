@@ -281,7 +281,7 @@ Hypotheses of Round 8 ((H) of L.0).
 
 ## Round 13 — the remaining members in Z1 (GU-054, GU-G14, GU-G16)
 
-Write-up: `formalization/geometric-unity/Q-z1-remaining-members.md`. Code: `computation/geometric-unity/Q_z1_remaining.py`, output committed, exact, 31 asserted checks, ~4.5 min (258 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/Q-z1-remaining-members.yaml`. Not yet internally reviewed.
+Write-up: `formalization/geometric-unity/Q-z1-remaining-members.md`. Code: `computation/geometric-unity/Q_z1_remaining.py`, output committed, exact, 31 asserted checks, ~4.5 min (258 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/Q-z1-remaining-members.yaml`. Refereed in `reports/reviews/REVIEW10-GU-2026-10-31.md` (one error in an edge case of the existence clause, R13-1: at $a^2=\tfrac{125}{576}$ the threshold needs strict inequality; independent check `computation/geometric-unity/xcheck_round13.py`, 37/37).
 
 Hypotheses of round 10; for $(x,y)=0$ without $(x,y)\neq0$ and without the section.
 - Transfer. Round 9's reduced identities and symmetries do not involve the metric; the (7,7) swap metric $-g_\aleph$ is again Z1, with $(-c_H,-c_V)$. Z1 has no nonconstant concircular function on any open set.

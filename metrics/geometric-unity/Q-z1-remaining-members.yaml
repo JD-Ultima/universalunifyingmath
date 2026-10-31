@@ -1,4 +1,4 @@
-result: "Q. Upsilon = 0 near s(X) in the Zorro metric Z1 for the members round 10 leaves open (the cone xz +- yw = 0 other than the multiples of W_A, x = +-y in (7,7), (x,y) = 0), with kappa != 0 and the slaved T_e in V (det M != 0): for the twisted cone x(W_A + a W'_C Ad_Gamma), a != 0 (in (7,7) also the N < 0 family through the swap with g_aleph -> -g_aleph, which is Z1 with (-cH, -cV)), there is no solution on an open set meeting s(X) in (7,7), and in (14,0) a solution forces lambda = 1/5, a Ricci-flat base and no type-(ii) point, and for real-analytic t, u it is a flat-base solution with constant (t, u) and T_e = 0; the (7,7) null members and the members with x = +-y, xz - yw != 0 have no solution near s(X); for (x,y) = 0 the only solution is T = 0, for every Z1 metric, on every open set. With round 10 this settles the Z1 question near s(X) for every member of the family. The flat-base constant solutions exist for every (14,0) member iff cV kappa^2 >= 9360 (x'^2 + y'^2)"
+result: "Q. Upsilon = 0 near s(X) in the Zorro metric Z1 for the members round 10 leaves open (the cone xz +- yw = 0 other than the multiples of W_A, x = +-y in (7,7), (x,y) = 0), with kappa != 0 and the slaved T_e in V (det M != 0): for the twisted cone x(W_A + a W'_C Ad_Gamma), a != 0 (in (7,7) also the N < 0 family through the swap with g_aleph -> -g_aleph, which is Z1 with (-cH, -cV)), there is no solution on an open set meeting s(X) in (7,7), and in (14,0) a solution forces lambda = 1/5, a Ricci-flat base and no type-(ii) point, and for real-analytic t, u it is a flat-base solution with constant (t, u) and T_e = 0; the (7,7) null members and the members with x = +-y, xz - yw != 0 have no solution near s(X); for (x,y) = 0 the only solution is T = 0, for every Z1 metric, on every open set. With round 10 this settles the Z1 question near s(X) for every member of the family, up to type-(iii) points for non-analytic fields in (14,0) (where only Ric_g = 0 is shown). The flat-base constant solutions exist for every (14,0) member iff cV kappa^2 >= 9360 (x'^2 + y'^2)"
 claim_id: [GU-054]
 gaps: [GU-G14, GU-G16]
 writeup: formalization/geometric-unity/Q-z1-remaining-members.md (Lemmas Q1, Q2, Q5, Q6, Q7, Q9; Propositions Q3, Q4, Q8, Q10, Q11, Q12, Q13, Q15; Theorem Q14; Corollary Q16); settles the "members" item of N.3 (formalization/geometric-unity/N-z1-neighbourhood.md) and, near s(X), the Z1 item of J.3 (J-slaved-sector.md) and L.3 (L-nonradial-z2.md); answers N.4's open existence question for the classes (A), (B) of L8 (REVIEW8-GU R10-3)
@@ -23,7 +23,7 @@ formalization_status: >
   alpha'' = -3 cV/(2 cH^2); (8) over a flat base no solution with dr != 0 remains (radial ODE, any mu); (9) for x = +-y
   the invariant line carries the linear equation mu = -(5/12) r, and N7 gives lambda in {1/5, 23/100}, both below 1/4;
   (10) existence: by M1(a) every (14,0) member reduces to y = 0, and the I6 equations with T_e = 0 over the flat Einstein
-  model have real solutions iff cV kappa^2 >= 9360 (x'^2 + y'^2), with det M != 0 at one root always.
+  model have real solutions iff cV kappa^2 >= 9360 (x'^2 + y'^2), with det M != 0 at one root except at the threshold when a^2 = 125/576, where the double root has det M = 0 (so (H1) then needs the strict inequality; REVIEW10-GU R13-1).
 internal_consistency: >
   The metric-free inputs are re-run from round 9's own code (M's sections M0-M4, M6, M7: 22 asserted checks, including L's
   J1/J2 inputs). The swap metric is checked on 2-jets off the section over a curved Lorentzian base (Ric, N1(d), signature
@@ -43,7 +43,7 @@ proof_status: >
   from s(X) in Z1 (except (x,y) = 0); the null members away from s(X) reduce to F9 for indefinite bases. Imported: N1,
   N2, N4, N6, N7, N9, N10, N11, N12; M1-M4, M7, M8; L1, L3, L5, L8; F4, F6, F7; I6, I7(b).
 novelty: >
-  New within this audit: the Z1 neighbourhood question near s(X) is settled for every member of the family x W_A + y W'_A
+  New within this audit: the Z1 neighbourhood question near s(X) is settled (up to type-(iii) points for non-analytic fields) for every member of the family x W_A + y W'_A
   + z W_C Ad_Gamma + w W'_C Ad_Gamma in the slaved vector sector: no solution in (7,7); in (14,0) only lambda = 1/5 over a
   Ricci-flat base, and for analytic fields exactly the flat-base solutions with constant (t, u), T_e = 0 and Lambda_4 =
   0, which exist for every member (threshold cV kappa^2 >= 9360 (x'^2 + y'^2)). Round 10's quantisation of lambda along
@@ -62,6 +62,6 @@ confidence: >
   and the swap metric checked by brute force. High for Q6, Q7, Q13: round 10's degree-1 argument with one coefficient
   renamed, confirmed on the full linear system, including predictions at k != mu_1. Medium-high for Q8, Q11 and hence
   Q14(a), (b) and Q16: each adds one exact computation (a resultant certificate; one pairing constant alpha'') to the
-  hand argument, and Q11's second-order expansion is a new hand step not independently cross-checked. Not covered:
+  hand argument, and Q11's second-order expansion and alpha'' were recomputed independently in REVIEW10-GU (xcheck_round13). Not covered:
   type-(iii) accumulation points without analyticity; open sets away from s(X); T_e outside V or crossing det M = 0;
   T_o outside the invariant sector.
