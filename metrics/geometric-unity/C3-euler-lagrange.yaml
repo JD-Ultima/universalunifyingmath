@@ -5,7 +5,7 @@ code: [computation/geometric-unity/shiab_checks.py, computation/geometric-unity/
        computation/geometric-unity/C_rs_all_members.py, computation/geometric-unity/C_rs_all_members.out]
 formalization_status: >
   Formalized for family R-S: criterion (Lemma C6a) reduces formal self-adjointness of Shiab o d_B to
-  a pointwise antisymmetry condition; tested on all 6 bracket variants and the full operator for all c.
+  a pointwise antisymmetry condition; tested on all 8 bracket choices and the full operator for all c.
 internal_consistency: >
   INCONSISTENT for every member of R-S: L = Shiab o d_B is not formally self-adjoint (exact
   counterexample beta_0(T,a) = 256, beta_0(a,T) = 0 for the Einstein-reproducing member, all c;
@@ -21,5 +21,6 @@ reproducibility: "complex128, fixed seeds; S3/S4 sample values vary with RNG str
 empirical_testability: "None."
 dependencies: ["C2", "C1 (repair R-C1')", L-C2]
 confidence: >
-  High that (9.7) does not follow from (9.4) under R-S. Medium as a verdict on GU: a different Shiab
-  operator (outside R-S) could be self-adjoint; deciding this is pattern GU-P09 (finite linear algebra).
+  High that (9.7) does not follow from (9.4) under R-S. D3 exhibits a self-adjoint Einstein operator W_A
+  outside this bracket family, resolving GU-P09. D4 separately establishes the variational obstruction
+  under its fixed-operator and constant invariant-pairing hypotheses; self-adjointness alone does not settle it.

@@ -1,7 +1,7 @@
 # Internal review records
 
-These files preserve the project's internal review rounds, including AI-assisted analysis and responses to identified issues. Historical uses of “referee” describe this internal process. These records do not establish external peer review or validation of every result.
+These records preserve internal review rounds, including AI-assisted analysis and responses to identified issues. Historical uses of “referee” describe that process; they do not establish external peer review.
 
-Use the active formalizations and ../CORRECTIONS.md for current conclusions. A review's original text can contain a statement that was subsequently revised. The 2026-10-30 evidence and reproduction update supersedes earlier probability interpretations of local-density estimates and the claim that the Geometric Unity projected solution sets coincide.
+Use the [synthesis](../SYNTHESIS.md), [active formalizations](../../formalization/) and [correction log](../CORRECTIONS.md) for current conclusions. Historical findings can be superseded by later results. In particular, early probability interpretations of local-density estimates and the claimed equality of GU projected solution sets were corrected.
 
-The review process aims to find errors and clarify scope. Supporting and conflicting evidence are assessed with the same source, definition, and reproducibility requirements in ../../RESEARCH_PROMPT.md.
+Review evidence remains available to trace objections, reruns and repairs. Apply the source, definition and reproducibility standards in the [research charter](../../RESEARCH_PROMPT.md).

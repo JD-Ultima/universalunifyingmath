@@ -2,7 +2,7 @@
 
 For the current singular-field results and open questions, see the [research synthesis](../../reports/SYNTHESIS.md#geometric-unity).
 
-Date: 2026-11-01, overnight continuation. This note extends R10 to nonconstant invariant odd fields. It derives a necessary scalar condition, excludes two $W_A$ singular lines under a curvature sign condition, and rules out nonconstant motion along its six positive hook lines.
+Date: 2026-11-01. This note extends R10 to nonconstant invariant odd fields. It derives a necessary scalar condition, excludes two $W_A$ singular lines under a curvature sign condition, and rules out nonconstant motion along its six positive hook lines.
 
 Code: `computation/geometric-unity/T_singular_residual.py` → `.out`. It uses the earlier independent Clifford implementation `xcheck_round14.py`, with no imports from J, R, or the original field-equation evaluator. Result record: `metrics/geometric-unity/T-singular-residual.yaml`. Claims: GU-054 (context); gaps GU-G14, GU-G15. Internal cross-review: [T1–T5](../../reports/reviews/REVIEW13-GU-T-2026-11-02.md). No physical prediction is made.
 

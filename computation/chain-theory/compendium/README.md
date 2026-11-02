@@ -1,5 +1,7 @@
 # Computation: Chain Theory compendium 0.1 audit
 
+For bounded cross-platform verification, use the [selected suite](../../README.md#selected-suite). The full commands below also include the Linux/WSL Lean build and optional source-data checks.
+
 Source audited: `chain-theory` repository, commit `a28db8998bce5bd5ef11195c05f13c86cd9dac5c`
 (2026-10-24), directory `compendium/`. The source is treated as untrusted data: it is read as
 text only; none of its scripts, build files or Lean packages are executed or built. Exception (round 6):
@@ -20,7 +22,7 @@ and compiles the copies with `lean -o`; no lakefile, lake, script or `AxiomsChec
 
 Install: `pip install sympy==1.14.0 mpmath==1.3.0 numpy==2.5.3 scipy==1.18.1`. Round 2 optionally checks its PDG 2024
 transcription against `mass_width_2024.mcd` from `pip download particle==0.25.2` (data file read as text; the package is not imported).
-All scripts run with `python3 -I` (isolated mode). No network access is needed.
+The commands use `python3 -I` (isolated mode) and local inputs. Obtain the pinned source checkout, toolchain and any optional PDG file before running them.
 
 The commands below use Bash. The Lean build pipeline (`lean_audit.sh` and `lean_build.py`) requires Linux, including WSL: it uses `os.wait4` and Linux peak-memory units. On Windows, use Linux Python and a Linux Lean binary inside WSL for this pipeline. `lean_build.py` checks the platform before invoking Lean or copying sources. The static Python audits can run natively with `python -X utf8 -I script.py ...` so Unicode output uses UTF-8.
 
@@ -40,28 +42,30 @@ python3 -I register_checks.py                                    > outputs/regis
 python3 -I boxes.py         $SRC 141.1 143.1 64.2               # prints box text (helper)
 # round 2: numeric scorecard
 python3 -I scorecard_extract.py  $SRC --tsv outputs/scorecard_candidates.tsv > outputs/scorecard_extract.txt
-python3 -I scorecard.py --src $SRC --pdg-mcd $MCD --tsv outputs/scorecard.tsv > outputs/scorecard.txt
+python3 -I scorecard.py --src "$SRC" --tsv outputs/scorecard.tsv > outputs/scorecard.txt
 python3 -I scorecard_freedom.py                                       > outputs/scorecard_freedom.txt
 # round 3: mass cells
-python3 -I masscells.py $SRC --pdg-mcd $MCD --tsv outputs/masscells_readings.tsv  > outputs/masscells.txt
+python3 -I masscells.py "$SRC" --tsv outputs/masscells_readings.tsv > outputs/masscells.txt
 # round 4: statement-level premises (about 6 s)
 python3 -I premises.py $SRC --tsv outputs/premises_items.tsv > outputs/premises.txt
 # round 5: hydrogen body registers, the ladder beyond n = 8 (about 3 s; uses scipy.constants and masscells.parse_figure)
 python3 -I hydrogen_registers.py $SRC > outputs/hydrogen_registers.txt
 # round 6: Lean at scale (build with Lean 4.35.0 in WORK, #print axioms, own checks, resolution; see below for time)
-LEAN=/path/to/lean-4.35.0/bin/lean SRC=$SRC WORK=/fresh/scratch/dir ./lean_audit.sh
+LEAN=/path/to/lean-4.35.0/bin/lean
+WORK=/fresh/scratch/dir
+LEAN="$LEAN" SRC="$SRC" WORK="$WORK" ./lean_audit.sh
 python3 -I lean_resolve.py $SRC          # static part alone (about 5 s), without build, axioms or checks
 # round 7: the 37 table-check and 11 opaque-only rows (needs Build B in $WORK/B/out for the Lean part; about 2 s + 11 s)
-LEAN_PATH="$WORK/B/out" $LEAN lean_audit/TableChecks.lean > outputs/lean_table_checks.txt
+LEAN_PATH="$WORK/B/out" "$LEAN" lean_audit/TableChecks.lean > outputs/lean_table_checks.txt
 python3 -I lean_tables.py $SRC --axioms outputs/lean_axioms.txt --checks outputs/lean_table_checks.txt \
     --round6-tsv outputs/lean_resolve.tsv --tsv outputs/lean_tables.tsv --clauses-tsv outputs/lean_tables_clauses.tsv \
     > outputs/lean_tables.txt
-# MCD=.../particle/data/mass_width_2024.mcd (optional; without it the PDG transcription is not re-checked)
+# Optional: add --pdg-mcd /path/to/particle/data/mass_width_2024.mcd
+# to scorecard.py and masscells.py to re-check their PDG transcription.
 ```
 
 Wall time: each script < 10 s except `lean_tables.py` (round 7, about 11 s; `TableChecks.lean` about 2 s) (round 6: `lean_resolve.py` about 3 s; `lean_audit.sh` about 45 min, almost all of it
-Build B: 2494 s wall at 3 jobs on 4 shared cores, 5398 s summed over modules, peak 7677 MB; the axioms file 5 s). Outputs are identical across runs and across `PYTHONHASHSEED` values
-(checked). `hydrogen_audit.py` uses a fixed seed (20261030); its Monte Carlo
+Build B: 2494 s wall at 3 jobs on 4 shared cores, 5398 s summed over modules, peak 7677 MB; the axioms file 5 s). Recorded mathematical results were reproduced across runs and across `PYTHONHASHSEED` values. Timing, path and optional-PDG verification headers can differ. `hydrogen_audit.py` uses a fixed seed (20261030); its Monte Carlo
 eigenvalues are reproducible to the printed 3 decimals.
 
 ## Files
@@ -112,6 +116,8 @@ eigenvalues are reproducible to the printed 3 decimals.
   verified logical use.
 
 ## Recorded outputs (key lines; full text in `outputs/`)
+
+The blocks retain the successive audit stages. The final round-7 content comparison is 1 full match, 7 partial matches and 56 non-matches under its stated clause-counting rule. The earlier declaration-kind label “string-table checks” does not describe all 37 table rows: seven cite relation checks over entered `Int` fields.
 
 ```
 census:   THEOREM 100, CONDITIONAL 109, OPEN 198, THEOREM tied to Lean 64  -> all MATCH

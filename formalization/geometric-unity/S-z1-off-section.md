@@ -342,7 +342,7 @@ Run: `cd computation/geometric-unity && python3 S_z1_off_section.py > S_z1_off_s
 
 ## S.3 Limits (layers b, d)
 
-- **Open.** (C1), the twisted cone $x(W_A+aW'_C\mathrm{Ad}_\Gamma)$ with $a\neq0$, in (14,0) at $\lambda=\tfrac15$, at type-(ii) points away from Π. There the base has $\mathrm{rank}\,\mathrm{Ric}_g\le1$ (S15). The exact rank-one example of the dated S15 follow-up is excluded, but arbitrary Weyl tensors and remaining connection jets in that class are not. The relaxed system degenerates at Σ when $\mathrm{rank}\,\mathrm{Ric}_g\le1$ (S13(a)), and Q10/Q11 need $(\star)$ near a point of $s(X)$.
+- **Boundary of this note.** S15 leaves (C1), the twisted cone $x(W_A+aW'_C\mathrm{Ad}_\Gamma)$ with $a\neq0$, in (14,0) at $\lambda=\tfrac15$, at type-(ii) points away from Π, where $\mathrm{rank}\,\mathrm{Ric}_g\le1$. Later results exclude the nonzero rank-one-Ricci Weyl families of [CC](CC-diagonal-weyl.md), [EE](EE-zero-electric-weyl.md) and [FF](FF-joint-weyl.md), and every nonzero-curvature Ricci-zero point in [HH](HH-ricci-zero.md). Other joint-Weyl cases and the zero-curvature higher-jet boundary remain open under S.0. The relaxed system degenerates at Σ when $\mathrm{rank}\,\mathrm{Ric}_g\le1$ (S13(a)); the later certificates use other positive fibres.
 - **Computer-assisted inputs.**
   - N6(f), as in N.3. S7–S10 and S12–S16 rest on it; S1–S6 do not. S5(b) uses the computed constant α (N9) but not N6(f), since $\hat{\mathcal A}\equiv0$ there.
   - S6 is reduced by Schur to three exact evaluations per signature, and S5(c), (d) to 2 + 16 exact evaluations. They are used only for F9 over indefinite bases, which lie outside the GU setting at $\lambda=\tfrac15$.

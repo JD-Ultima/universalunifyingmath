@@ -70,27 +70,17 @@ source's own stated correspondences give numbers (cos^2 theta_W, hydrogen scale,
 experiment. The abstract's physics list should be read as correspondences by name, which is how the
 chapters themselves describe them.
 
-## Proposed order of further work
+## Open questions
 
-This is the plan as written after Phase 1. Items 1, 2, 5 and 6 have since been done: round 4 (statement-level premises, `07`), `proofs/lean/chain-theory/GaugeSelection.lean` (G1-G3 in core Lean, not Mathlib), round 5 (hydrogen registers, `08`), and rounds 6-7 (Lean at scale, `09`, `10`). Items 3, 4 and 7 remain open.
+The [current synthesis](SYNTHESIS.md#chain-theory-compendium-01) gives the overall status. The detailed [gap register](../gaps/chain-theory-compendium.md) identifies the remaining inputs:
 
+1. Derive the read cap and the selection inputs from the axiom, rather than treating them as parameters.
+2. Supply explicit identification maps for record order, mass/energy units, the count metric and ticks before strengthening physical comparisons.
+3. Resolve the per-box premises of shared derivations and ambiguous citations. The statement-level audit is complete within its documented interpretation rules, which do not remove these source ambiguities.
+4. Replace entered-table checks and unrelated tied declarations with formal statements about the mathematical objects of the unmatched claims. The source's pinned Lean 4.32.1 build remains unchecked.
+5. Extend the audit to the remaining Part XIII–XV claims, with explicit definitions and dependencies.
 
-1. **Statement-level premises** (cheap, decisive for F3/F4): ask for, or reconstruct, per-statement
-   logical premises for 2.2-2.8, 9.1, 18.x, 124.1, 200.x; re-grade under the chain rule; break the
-   124.1 cycles.
-2. **Formalize G1-G3 in Lean/Mathlib** (`03-gauge-group.md`): the only audited content that is precise
-   enough; it fixes exactly which inputs (cap 6, d1 != d2, alphabet) select (3,2).
-3. **Pin down the read cap** (9.1 and the Letter's read cap): it carries both the gauge-group selection
-   and, per the README, the alpha result; coordinate with the alpha audit.
-4. **Request the identification maps** (G1 in `gaps/`): record order -> alpha/pi, electron unit,
-   count metric -> energy, tick -> s. Without them CT-C015/16/20/22 are untestable; with them several
-   are already refuted.
-5. **Re-derive the hydrogen body registers** 2^30 3^18, 2^31 3^17 from the stated construction, and test
-   reconstruction R against the source's ladder beyond n = 8.
-6. **Lean audit at scale**: extend `lean_classify.py` to resolve restated AlphaDerivation theorems and
-   the three kernel modules; only those can certify any computation.
-7. Lower priority: Parts XIII-XV theorems (second law, distillation, bands), which appear to hold by
-   construction (e.g. fidelity 1 "by the Axiom") and need only a tautology check.
+The sections below preserve the evidence from successive audit stages. Completed gauge-selection, hydrogen-register and Lean-coverage work is recorded with its assumptions and limits.
 
 ## Round 2 — numeric scorecard
 
@@ -252,8 +242,7 @@ For the tau the reference counts are 0.04–0.23.
 
 Note: `formalization/chain-theory/compendium/07-statement-premises.md`. Code: `computation/chain-theory/compendium/premises.py`.
 Outputs: `outputs/premises.txt`, `outputs/premises_items.tsv` (1069 premise items, each with its verbatim quote and location).
-Metrics: `metrics/chain-theory/compendium/statement-premises.yaml`. The task is proposed further work item 1: re-derive
-F3 and F4 from what each derivation says it rests on.
+Metrics: `metrics/chain-theory/compendium/statement-premises.yaml`. This analysis re-derives F3 and F4 from each derivation's stated premises.
 
 **F17. Where the premises are** (a, c).
 - The index premise line is chapter-level by the source's own description: it is "generated mechanically from the
@@ -336,8 +325,7 @@ every row.
 ## Round 5 — hydrogen body registers and the ladder beyond n = 8
 
 Note: `formalization/chain-theory/compendium/08-hydrogen-registers.md`. Code: `computation/chain-theory/compendium/hydrogen_registers.py`.
-Output: `outputs/hydrogen_registers.txt`. Metrics: `metrics/chain-theory/compendium/hydrogen-registers.yaml`. The task is
-proposed further work item 5. All 53 quoted strings are checked verbatim.
+Output: `outputs/hydrogen_registers.txt`. Metrics: `metrics/chain-theory/compendium/hydrogen-registers.yaml`. All 53 quoted strings are checked verbatim.
 
 **F21. The body registers are re-derived** (a, b, c).
 - The rules are stated in other chapters:
@@ -406,8 +394,7 @@ Note: `formalization/chain-theory/compendium/09-lean-audit-at-scale.md`. Code, i
 `lean_audit/{ResolveChecks,Diagnose,AxiomTrace}.lean`. Outputs: `outputs/lean_resolve.{txt,tsv}`,
 `outputs/lean_build_{A,B}.{txt,tsv}`, `outputs/lean_axioms.txt`, `outputs/lean_resolve_checks.txt`,
 `outputs/lean_diagnose.txt` and `outputs/lean_axiom_trace.txt`. Metrics:
-`metrics/chain-theory/compendium/lean-audit-at-scale.yaml`. The task is proposed further work item 6. All 44 Lean
-quotes and all 52 box quotes are checked verbatim.
+`metrics/chain-theory/compendium/lean-audit-at-scale.yaml`. All 44 Lean quotes and all 52 box quotes are checked verbatim.
 
 **F24. What the 16 "restated or kernel" theorems cite** (c).
 - They cite 8 declarations: 7 restated `AlphaDerivation` conjunctions, with 26 conjuncts in all, and one kernel check.
@@ -479,7 +466,7 @@ Note: `formalization/chain-theory/compendium/10-lean-table-rows.md`. Code, in `c
 `lean_tables.py` and `lean_tables_data.py`, and `lean_audit/TableChecks.lean`. `lean_classify.py`, `lean_resolve.py`,
 `lean_resolve_data.py` and `boxes.py` are imported unchanged. Outputs: `outputs/lean_tables.{txt,tsv}`,
 `outputs/lean_tables_clauses.tsv` and `outputs/lean_table_checks.txt`. Metrics:
-`metrics/chain-theory/compendium/lean-table-rows.yaml`. The task is the rest of item 6: the 48 rows that round 6 left.
+`metrics/chain-theory/compendium/lean-table-rows.yaml`. This analysis resolves the 48 rows left by the preceding Lean audit.
 All 248 box quotes and every check anchor are checked verbatim.
 
 **F27. What the 37 table checks and the 94 other names prove** (c).
@@ -556,8 +543,8 @@ All 248 box quotes and every check anchor are checked verbatim.
 - 09's open table tier is resolved. "37 (+9 = 46)" becomes 2 PARTIAL and 44 NONE, and the opaque tier becomes 12 NONE.
   The README's "coverage by content: 6 / 46 / 12" becomes 8 rows stating a clause and 56 stating none.
 - Two earlier statements are wrong in detail (`reports/CORRECTIONS.md`, 2026-10-30, round 7):
-  - Round 6's printed-number list for 2.3 (`[5]`, a parser artefact; no verdict depends on it).
+  - The initial round-6 printed-number list for 2.3 (`[5]`, a parser artefact; no verdict depends on it). Both audits now share the corrected number-word parser and the regenerated round-6 output lists no number ≥5 for that box.
   - CT-C003's "37 at best string-label table checks". 7 of the 37 rows cite relation checks over entered `Int` fields.
-- G6 gets a dated note. Item 6 is done as far as the tied declarations go. Still open:
+- The tied-declaration audit is complete. The G6 update records the remaining gaps:
   - a build on 4.32.1;
   - Lean statements about the mathematical objects rather than entered tables.

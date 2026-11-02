@@ -91,10 +91,10 @@ For the field equation, fix the actual metric jet and one nonzero augmented 43-m
 
 *Proof.* Choose an orthonormal frame in which $\mathrm{Ric}_{x_0}=\rho p\otimes p$, $|p|=1$, $\rho\ne0$. The four-dimensional curvature decomposition with zero Weyl tensor gives $R_{x_0}=\rho R_p$. Riemann normal coordinates have the quadratic expansion in (Z1); their actual cubic and quartic terms belong to the arbitrary class covered by Z7. The remaining smooth Taylor remainder has zero four-jet. Naturality of the observer metric and relaxed system completes the transfer. ∎
 
-This removes the need to assume the special complete polynomial metric of U or the zero cubic jet of W. It still does not cover nonzero Weyl curvature or the Ricci-flat nonflat case.
+This removes the need to assume the special complete polynomial metric of U or the zero cubic jet of W. The theorem itself retains zero Weyl and nonzero rank-one Ricci hypotheses; later curvature extensions are linked below.
 
 ## Verification and remaining boundary
 
 The recorded run passes 35 assertions in 13.8 s. The symbolic calculation includes all 200 cubic coefficients and verifies every diagonal-vertical gradient identity in (Z2), including the vanishing three-horizontal Riemann variation. Exact controls with mixed cubic tensors change many other coefficients and RHS rows while preserving the 722-row subsystem, the three certificate rows and the fixed coefficient determinant. Reflection and affine-dependence identities are checked on the entire mixed control system. A cubic-plus-quartic control checks the combined scope.
 
-The unresolved rank-$\mathrm{Ric}\le1$ frontier can still include points with nonzero Weyl tensor and Ricci-flat nonflat points. Cubic and quartic freedom at a nonzero rank-one-Ricci, zero-Weyl point is no longer an obstruction to this particular proof. A further extension would need a declared nonzero Weyl family, or a separate argument for the Ricci-flat case; neither follows from these certificates.
+Separate certificates extend this method to the nonzero rank-one-Ricci Weyl families of [CC](CC-diagonal-weyl.md), [EE](EE-zero-electric-weyl.md) and [FF](FF-joint-weyl.md), and to every nonzero-curvature Ricci-zero point in [HH](HH-ricci-zero.md). These extensions are not consequences of Z's certificates alone. The [synthesis](../../reports/SYNTHESIS.md#geometric-unity) records their hypotheses and the remaining joint-Weyl and zero-curvature boundary.

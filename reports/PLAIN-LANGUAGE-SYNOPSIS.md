@@ -36,7 +36,7 @@ Every such result has a named set of assumptions. Other fields and geometric cas
 
 ## What “the tests passed” means
 
-The [verification record](MORNING-HANDOFF-2026-11-02.md#validation) shows which Chain Theory and Geometric Unity checks were run, their results, and their limits. The [README](../README.md#reproduce-selected-checks) explains how to run the current selected suite.
+The [verification guide](../computation/README.md#completed-validation) shows which Chain Theory and Geometric Unity checks were run, their results, and their limits. The [README](../README.md#reproduce-selected-checks) explains how to run the current selected suite.
 
 Some tests confirm an answer. Others confirm that a proposed rule fails, or that a known error is detected. Passing means the program produced the expected, checked result.
 

@@ -18,7 +18,8 @@ formalization_status: >
   544|sigma| + 384|theta| + 208|delta| < |kappa|; (4) the source Shiab(d_0 T_o) lies in V (Schur), so the solutions of
   Upsilon_ev = 0 are T_e = Sigma (dt, du) + k with k in the kernel of the non-vector blocks; (5) hypothesis (R): det M !=
   0 on U and (t, u)^{-1}(Z_perp) with empty interior implies T_e = Sigma (dt, du) for every continuous T_e; open sets
-  with (t, u) in Z_perp carry extra branches (dt ^ du = 0 there); (6) Shiab# and W_A: t-axis singular points -1/a (18),
+  with (t, u) in Z_perp admit kernel additions solving the even equation (dt ^ du = 0 there), subject to the
+  remaining odd equation; (6) Shiab# and W_A: t-axis singular points -1/a (18),
   invertibility interval -kappa/544 < t < 3 kappa/136, factored determinants, exact kernel elements; (7) (14,0): Z_perp
   nonempty for every nonzero member; (7,7): Z empty iff (x, y) = 0 or (z, w) = c (y, x) with c^2 > 25/144;
   (8) R10: in (14,0), u(128), a fixed constant real invariant To already solving the odd background equation,
@@ -38,9 +39,9 @@ proof_status: >
   (source in V; structure of the solution set of the even equation); R5 (the hypothesis (R)); R7(a) (14,0), R7(b) (7,7)
   for the 2x2 blocks and Lam1 by hand, for Lam3 and Lam5 by exact certificate; R8; R10 (pointwise cubic polarization,
   R4, the parallel isotypic splitting, positive compact trace pairing). Computed (exact, Schur reduction of
-  an equivariant map): R2 (blocks), R3 (determinants, factorisations, coprimality), R6 (Shiab#, W_A), R9. Open: whether
-  general extra branches over Z_perp (open sets with nonconstant (t, u) in Z_perp, T_e = Sigma (dt, du) + k,
-  k != 0) solve the odd equation. R10 closes R9's specific constant Euclidean background with det M != 0.
+  an equivariant map): R2 (blocks), R3 (determinants, factorisations, coprimality), R6 (Shiab#, W_A), R9. R does not
+  classify solutions of the odd equation on general extra even-equation branches over Z_perp, where
+  T_e = Sigma (dt, du) + k with k != 0. R10 closes R9's specific constant Euclidean background with det M != 0.
 novelty: >
   New within this audit: the full even operator of the invariant sector. The vector sector V is not the whole story
   away from small |T_o|: for Shiab# and W_A the operator is already singular at t = 3 kappa/136 on the t-axis, on a
@@ -56,8 +57,9 @@ reproducibility: "Exact (Fractions, sympy rationals and Gaussian rationals); no 
 empirical_testability: >
   None new. The result removes the hypothesis on T_e from the neighbourhood no-go results of rounds 6-13 except on
   configurations where (t, u) takes values in the singular curve Z_perp on an open set. R10 excludes additions to a
-  fixed constant Euclidean invariant background already solving the odd equation, with det M != 0. General
-  nonconstant singular branches, and the physically relevant rule for T off s(X), remain undecided.
+  fixed constant Euclidean invariant background already solving the odd equation, with det M != 0. Later
+  T/AA/AF/AG/AI give further singular-field constraints and scoped classifications; reports/SYNTHESIS.md records
+  the current open cases. R does not supply the physically relevant rule for T off s(X).
 dependencies: ["D2", "D5", "F7", "I2", "I2.2", "J1", "M1", "H7", "I7(b)", "N12(c)", "Q15"]
 confidence: >
   High for R1-R8: the blocks are exact Schur reductions of an equivariant map, each confirmed on two test vectors, and

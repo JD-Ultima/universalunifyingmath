@@ -1,6 +1,6 @@
 # Corrections and retractions log
 
-This log preserves the correction history of Chain Theory and Geometric Unity. New corrections are appended. Format: date — file — what changed — why.
+This log preserves the correction history of Chain Theory and Geometric Unity. New corrections are appended. Format: date — file — what changed — why. Entries describe their dated checkpoints; the [synthesis](SYNTHESIS.md) gives the current conclusions.
 
 - 2026-10-30 — `computation/chain-theory/alpha/freedom.py` (before first commit) — in three of the paper's alternatives ("both exchanges at the qubit/qutrit end", "X where the letters sit"), the commutator records' weight was first coded as $\sqrt d$ instead of $\sqrt{d\cdot d}=d$. The script's own check against the paper's printed values caught it. Fixed before any result was reported.
 - 2026-10-30 — `computation/chain-theory/alpha/freedom.py`, F-CT-4 in `audit.md`, `reports/chain-theory-alpha.md` (commit 1 → commit 2) — Commit 1 said the 30 720-rule space "contains every alternative the author lists". It did not: three published alternatives give commutator records $k=4$ or $k=9$. The commutator factor set is now $\{1,2,3,4,6,9\}$, and a programmatic containment check has been added. Revised numbers: 46 080 rules, 15 639 distinct values, density 103.9/unit, expected chance hits within 1σ $4.4\times10^{-6}$ (was $3.2\times10^{-6}$). The qualitative conclusion is unchanged.
@@ -282,3 +282,14 @@ The GU manuscript remains scoped to A–Q. The later results from R onward are s
 
 - The project scope is Chain Theory and Geometric Unity. The charter, README, synthesis, plain-language guide, review records and reproduction instructions now follow that scope. Dependencies match the retained computations.
 - The current selected suite passed all 46 commands with pinned Windows Python 3.12 and the pristine LF upstream snapshot, including 12 focused regression tests and six source-dependent checks. Changed-document links, selected-script paths, dependency pins and the current tracked-tree reference scan pass. Retained research calculations, proofs, recorded outputs and source pins are unchanged.
+
+## 2026-11-02 — Documentation and metadata alignment
+
+- Shortened the README and charter, consolidated environment/source/coverage instructions in computation/README.md, and removed the duplicated dated handoff after preserving its validation record. Repaired three review links and clarified the distinction between historical review records and current conclusions.
+- Corrected Chain Theory's family thresholds, sampled-versus-exhaustive triple wording, matching/trace gap descriptions, inverse-alpha uncertainty, chapter-designator sensitivity and parser/build status. Metadata now distinguishes five proof edits across two modules, the stated proper-algebra condition, and source cap six versus uniqueness at caps six and seven.
+- Updated GU's resolved frontiers and distinguished even-equation additions from full solutions. Clarified covering-group quotients, variational hypotheses, the constant-field reduction, kinetic-term qualifications and the resolved ellipticity criterion. Result IDs, numerical data, claim counts and source pins are unchanged.
+- Validation: all 12 focused tests passed; verifier preflight retains 40 self-contained or 46 source-inclusive commands. All 364 local links/anchors and 266 metadata evidence targets validate; all 70 YAML records and eight JSON files parse. Claim-register counts remain unchanged. The executable verifier AST, research calculations, outputs, Lean and manuscript sources are unchanged; no fresh Lean build or manuscript compilation is claimed.
+
+### Manuscript alignment
+
+The subsequent GU manuscript check found the same covering-group and kinetic-term wording in the draft. The spinor passage now uses the covering product and diagonal Z2 quotient, states generation counts as representation content, and limits the kinetic conclusion to the proposed single-copy ansatz. The current GU source compiled successfully with the desktop editor compiler on November 2. Representation formulas, counts and theorem references are unchanged.

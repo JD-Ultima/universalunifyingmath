@@ -88,7 +88,7 @@ own_checks:
   compile: true
   axiom_free: 3
   three_core_axioms: 4
-corrections: "reports/CORRECTIONS.md 2026-10-30 round 7: round 6's printed-number list for 2.3 ([5], a parser artefact); CT-C003 'string-label' for 7 rows"
+corrections: "reports/CORRECTIONS.md records the initial round-6 printed-number artefact [5] for 2.3 and CT-C003's overly narrow 'string-label' wording for seven rows. Both audits now share number_words.py; regenerated lean_resolve.txt lists no printed number >=5 for 2.3. The original parser remains only for the historical comparison, and no clause verdict or count changes."
 internal_consistency:
   value: kind_count_consistent; content_resolved
   detail: "All 37 table checks are decide proofs over entered literal lists; 2 of the 37 rows state a clause through relation checks over entered Int tables; the 11 opaque rows assert nothing."

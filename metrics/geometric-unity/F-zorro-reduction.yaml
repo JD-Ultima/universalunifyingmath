@@ -13,12 +13,14 @@ formalization_status: >
 internal_consistency: >
   Def 3.1 (s^* g_aleph = g with cH = 1) and V = N (3.42) hold in both readings. (9.10) holds in the (P)/(A) sense
   with a fiber-induced Lambda. In Z1, Lambda_P != Lambda_A (route-dependent). 14D Einstein along s(X) <=> 4D vacuum
-  GR only for Z1 with lambda = 1/(n+1) = 1/5, whose chimeric signature is (8,6)/(10,4), not the draft's (7,7).
+  GR only for Z1 with lambda = 1/(n+1) = 1/5. For a Lorentzian four-base its chimeric signature is
+  (8,6)/(10,4), not the draft's (7,7); a positive four-base with positive block scales gives (14,0).
 proof_status: >
   Proven: Lemma F0, Props F1-F2, Theorem F3 (Z2, O'Neill), Theorem F4(a)(b) (Z1; Gauss + Walczak), Cor F5,
   Theorem F6, Prop F7 (explicit Kaluza-Klein isometry with SL(n+1)/SO). Theorem F4(c) (Z1 Ricci blocks): proven
   for every n (K-z1-ricci-general-n.md, Theorem K, 2026-10-30); exact checks for n = 1, ..., 6.
-  Prop F8 (link to the draft's Upsilon): conditional on reconstruction R-S / Theorem C5; constants open.
+  Prop F8 (link to the draft's Upsilon): conditional on reconstruction R-S / Theorem C5 and its constant-t
+  ansatz. The coefficients left symbolic in that initial reduction are normalized in I6.
 novelty: >
   Z2 results are an application of O'Neill's formulas. The Z1 results (lambda-dependent cosmological terms,
   route dependence, Einstein condition iff lambda = 1/(n+1) and Ric(g) = 0, flat model = SL(n+1)/SO) are, to our

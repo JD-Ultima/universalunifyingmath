@@ -18,24 +18,21 @@ Claim IDs refer to `claims/chain-theory-compendium.md`.
 - 141.1: the "closure" part of T2 ("an exact element of the field of the two roots"), the link list of
   the two-dock body (13 multisets of eight measures give the printed 67), and the eight self-terms
   (only one appears, in the Lean data table).
-- 143.1: the two body registers 2^30 3^18 and 2^31 3^17 ("re-derived on the page not"); the "cut gain"
-  that sets the fine structure; the Lamb interval's value.
+- 143.1: the body registers 2^30 3^18 and 2^31 3^17 are reconstructed conditionally in `08-hydrogen-registers.md`; the port-only cut rule and mass face remain inputs. The fine-structure "cut gain" and Lamb interval's value remain unspecified.
 - 65.1: the end-kind assignment of the three factors is stated, not derived.
 
 ## G3. Grades inconsistent with the stated chain rule
 
-The front matter states that a composed claim carries the lowest status in its chain. 66 of 100
+The front matter states that a composed claim carries the lowest status in its chain. In the index premise fields, 66 of 100
 THEOREMs list an OPEN premise directly (robust to designator resolution); 84 list an OPEN or CONDITIONAL
-premise. Examples among the physics theorems: 64.1, 64.2, 65.1 (gauge), 74.1 (conservation), 83.1
+premise. The separate derivation-level audit finds at least 76 chain-rule violations, including 41 that explicitly declare an OPEN premise; 19 remain undetermined (`07-statement-premises.md`). Examples among the physics theorems: 64.1, 64.2, 65.1 (gauge), 74.1 (conservation), 83.1
 (three generations), 145.1 (Casimir, resting on CONDITIONAL 143.1), 217.1, 220.3, 221.1, 225.1. Also,
 premise lists label CONDITIONAL statements "Theorem" (e.g. "Theorem 124.1", "Theorem 141.1").
 Would close it: per-statement logical premises (not whole chapters), and re-grading under the rule.
 
 ## G4. Circular premise chains
 
-Under the index's own designator mapping, 124.1 (alpha) and 16.1, 58.1 list each other (via the
-chapter-form premises of 124.1); one strongly connected component of 22 statements. Would close it:
-statement-level premises for 124.1 and 200.1-200.4.
+Under the index's designator mapping, 124.1 (alpha) and 16.1, 58.1 list each other through chapter-form premises, in a 22-statement component. These particular cycles are absent from the derivations. The separate statement-level cycle through 124.1 and the gain lemma depends on the module-numbering interpretation and on “theorem” admitting CONDITIONAL; see `07-statement-premises.md` §4 and the dated G4 update below. Resolving the source's shared derivations and citation meanings remains necessary before strengthening the logical-cycle claim.
 
 ## G5. Cross-reference ambiguity
 
@@ -50,8 +47,7 @@ For 141.1, 143.1, 64.1, 64.2, 65.1 the named Lean declarations are opaque Props,
 or `decide` proofs about hand-entered `String` tables. No arithmetic of these chapters (T1 = 309,
 E1 = 67/(2^28 3^15), E_n = E1/n^2, the Z6 kernel) is in Lean. Across the 64 Lean-tied theorems, 11
 cite only opaque Props/records; 137 of 150 data modules hold only `String` fields. The build record and
-axiom report were not re-verified (not built). Would close it: Lean statements whose types mention the
-mathematical objects (matrices, groups, rationals) and whose proofs compute them.
+axiom report were later checked under Lean 4.35.0: the published tree fails in that environment, while five recorded proof edits allow all 493 modules to compile. The pinned 4.32.1 environment remains unchecked. The clause-level audit gives 1 full match, 7 partial matches and 56 non-matches under its stated rule (`09-lean-audit-at-scale.md`, `10-lean-table-rows.md`). Would close the content gap: Lean statements and proofs about the mathematical objects of the unmatched claims and unstated clauses.
 
 ## G7. Selection inputs that are not derived from the axiom
 

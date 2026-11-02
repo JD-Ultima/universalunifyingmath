@@ -229,9 +229,9 @@ Run: `cd computation/geometric-unity && python3 M_remaining.py > M_remaining.out
   - It is settled on every open set except for the twisted members $x(W_A+cW'_C\mathrm{Ad}_\Gamma)$, $c\neq0$ ($c^2\neq\tfrac{11}6$ in (14,0)), with $\ell=0$ (up to M1), away from $s(X)$ (M10(b)). Even there M9 confines a solution to special base curvature.
   - This includes $W'_A$ and all of $\mathrm{span}(W_A,W'_A)$ (M6(b)), $(1,0,0,1)$ in (14,0) near $s(X)$ (M6(a)), and every member with $x=\pm y$ in (7,7) (M7).
   - For $(x,y)=0$, $\Upsilon=0$ forces $T=0$ and leaves the metric free (M8). These members carry no gravitational equation at all in this sector.
-  - Open: Z1; other sectors. (The exception of M10(b) is closed in round 12, P7.)
+  - [P7](P-z2-last-exception.md) closes M10(b)'s remaining Z2 exception. Z1 is treated separately in [S](S-z1-off-section.md); the [synthesis](../../reports/SYNTHESIS.md#geometric-unity) states the current frontier and field-sector limits.
 - **GU-G16.**
   - $\ell$ is again what separates the cases. For $\ell=0$ the curvature-free row vanishes, the first-order channel removes one scalar (M3), and the remaining equation is nonlinear ($\mu'$ is a nonconstant function of $c=w/x$ and $\tau$) unless $c=0$ or, in (14,0), $c^2=\tfrac{11}6$.
-  - The only weaker result in the family sits there.
+  - This is the case in which M's argument needs the additional fibre obstruction supplied by P6.
   - $N=0$ is not special in the end: the line $\sigma=-\kappa/208$ carries a linear equation (M7(b)).
 - **GU-054.** Status unchanged (C). No statement made before this note is contradicted. L.3's list of open members and J.3's "Still open there" are answered as above.
