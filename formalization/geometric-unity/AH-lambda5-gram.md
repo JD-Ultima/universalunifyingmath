@@ -1,10 +1,10 @@
-# AH. Necessary Gram constraints on the Lambda5 conics
+# AH. Lambda5 Gram constraints and a cyclic-form obstruction
 
 The symmetric Gamma equation restricts both single $W_A$ Lambda5 kernel branches without classifying their five-forms. At a nonzero-$u$ point, the contraction Gram matrix must have rank thirteen or fourteen. It has rank fourteen on a left conic branch; on a right branch, rank thirteen is possible only when the slaved gradient is its annihilator direction. These conditions exclude forms supported in dimension at most twelve.
 
-They do not exclude every five-form. An explicit form with full fourteen-dimensional support has isotropic Gram matrix and satisfies the selected symmetric channel at regular real conic parameters. Its other field equations are not solved.
+An explicit form with full fourteen-dimensional support has isotropic Gram matrix and satisfies the selected symmetric channel at regular real conic parameters. AH5 examines its remaining equations and excludes its scaling/rotation orbit on the first branch at nonzero $u$. General five-forms remain unclassified.
 
-Code: `computation/geometric-unity/AH_lambda5_gram.py` → `.out`. Record: `metrics/geometric-unity/AH-lambda5-gram.yaml`. The helper uses T's accepted Clifford implementation and exact rational/polynomial controls, with no off-repository files. [Independent internal Review31](../../reports/reviews/REVIEW31-GU-AH-2026-11-02.md) accepts AH1–AH4 and reproduces all 25 checks. This is internal review, not external peer review.
+Code: `computation/geometric-unity/AH_lambda5_gram.py` → `.out`, with the cyclic-orbit certificate in `AH_cyclic_obstruction.py` → `.out`. Record: `metrics/geometric-unity/AH-lambda5-gram.yaml`. Both helpers use T's accepted Clifford implementation and exact rational/polynomial controls, with no off-repository files. [Independent internal Review31](../../reports/reviews/REVIEW31-GU-AH-2026-11-02.md) accepts AH1–AH4 and reproduces all 25 original checks. [Review34](../../reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md) separately accepts AH5 and reproduces its 14 checks. These are internal reviews, not external peer review.
 
 ## Setting and the two real kernels
 
@@ -99,14 +99,40 @@ They obey $f(a)=7/1152$, both kernel relations, $\delta=-152/9$ and the other ve
 $$\kappa^2w(1+208a)=480\sqrt{14}=240rs,$$
 which is precisely (AH2) when $N=14,S=5I,C=0$.
 
-This is an algebraic channel control. No observer metric, field jet satisfying all components, or full PDE solution has been constructed. The other equations may exclude this form; the Gram restriction alone does not.
+This is an algebraic channel control. No observer metric, field jet satisfying all components, or full PDE solution has been constructed. The Gram restriction admits this form, while AH5 below excludes its declared orbit from full solutions on the first branch at nonzero $w$.
+
+## AH5. The cyclic form fails the full equation on the first branch
+
+Let $\Omega$ be AH4's exact fourteen-term form. Keep the standing hypotheses, and restrict to the first $\Lambda^5:c/w\Gamma$ branch at a point with $w\ne0$.
+
+**Proposition AH5.** No full solution has $\omega=hR\Omega$ at that point, where $h\ne0$ is real and $R\in SO(14)$. This is a pointwise statement about one scaling/rotation orbit, not arbitrary five-forms.
+
+*Proof.* First take $R=I$. Its Gram tensor is $5h^2I$. Moving the isotropic terms in (AH2) to one side gives a scalar identity equal to $3328wC\otimes C$. Its two sides have incompatible ranks unless $C=0$, since $w\ne0$. Thus $v=0$ at the point. No derivative of $v$ is assumed zero.
+
+The kernel inputs have Clifford grades four and eight. In the $W_A$ derivative, a triple anticommutator with an even monomial retains even intersection sizes. The first input therefore yields grades three/seven, and the second grades seven/eleven. Connection and chart-weight derivatives preserve this exclusion of grades five/nine. Vector derivatives have input type $V\otimes V$, with no component in $V\otimes\Lambda^5$ or its right-Gamma dual. The invariant baseline has only grades one/thirteen, the curvature term grade one, and the quadratic vector and mixed terms vanish at $v=0$. The full grade-five/nine equations are consequently just those components of $Q(k)$.
+
+Direct integer Clifford polarization of the fixed form gives the following coefficients of $Q(k)/i$ for $h=1$:
+
+| external index | Clifford indices | coefficient |
+|---|---|---|
+| $0$ | $(2,3,4,5,6)$ | $-\frac83(7r^2-27s^2)$ |
+| $0$ | $(1,2,4,7,9)$ | $-160rs$ |
+| $0$ | $(0,1,3,4,6,8,9,10,11)$ | $-\frac{16}{3}(4r^2+17s^2)$ |
+
+The grade-nine coefficient is nonzero for every real nonzero chart. Scaling multiplies it by $h^2$. Equivariance makes the entire nonzero tensor remain nonzero under $SO(14)$ rotations. This proves the proposition. No general five-form contraction classification is used: the grade-five target has sixteen total input/output slots, so AA6's twelve-slot argument would not apply. ∎
+
+At AH4's regular weights $(r,s)=(\sqrt{14},2)$, the displayed coefficients are $80/3$, $-320\sqrt{14}$ and $-1984/3$. A direct phased call to the accepted T engine checks the polarization in every grade-five/nine slot and confirms that the same control still balances AH4's symmetric Gamma channel. The three coefficient polynomials also generate $(r^2,rs,s^2)$ exactly.
+
+The portable certificate `computation/geometric-unity/AH_cyclic_obstruction.py` includes the compact phase, real conic control and nonzero derivative controls. Arbitrary five-forms, the other Lambda-five pair, zero-$w$ endpoints and coincident kernels remain outside AH5.
 
 ## Reproduction and remaining boundary
 
-Run `python -X utf8 -I computation/geometric-unity/AH_lambda5_gram.py` from the repository root. The helper checks both compact phases, full symbolic-weight formulas on general forms, off-diagonal and full-support Grams, mixed and derivative controls, both exact kernel charts and the negative conic values. The cyclic limitation uses only its exact Gram calculation; no expensive full Clifford output for that fourteen-term form is needed. The regular channel parameters and remaining block regularity are checked exactly.
+Run `python -X utf8 -I computation/geometric-unity/AH_lambda5_gram.py` from the repository root. The original helper checks both compact phases, full symbolic-weight formulas on general forms, off-diagonal and full-support Grams, mixed and derivative controls, both exact kernel charts and the negative conic values. Its cyclic channel control uses the exact Gram calculation. The regular channel parameters and remaining block regularity are checked exactly.
 
-The all-form tensor identity follows from the contraction count, and the rank conclusions from positive Gram linear algebra. Finite controls check those conventions rather than classify five-forms. The helper shares T's accepted Clifford engine and supplies no independent physical evidence.
+Run `python -X utf8 -I computation/geometric-unity/AH_cyclic_obstruction.py` for AH5. It computes the three raw integer polarizations of the explicit cyclic form, then checks every grade-five/nine control slot with the actual compact phase. The grade-nine positive quadratic supplies the real nonzero-weight obstruction; the displayed polynomial ideal is an additional exact check.
 
-The recorded fresh run passes all 25 checks in 4.5 seconds with Python 3.12 and SymPy 1.14.0.
+The all-form tensor identity follows from the contraction count, and the rank conclusions from positive Gram linear algebra. Finite controls check those conventions rather than classify five-forms. Both helpers share T's accepted Clifford engine and supply no independent physical evidence.
+
+With Python 3.12 and SymPy 1.14.0, the recorded Gram run passes all 25 checks in 4.5 seconds. The cyclic-obstruction run passes all 14 checks in 5.5 seconds.
 
 Zero-$w$ points, coincident kernels, $\det M=0$, other Shiab members, non-invariant odd fields and indefinite real forms remain outside these nonzero-$w$ conclusions. The full nonlinear Lambda5 system and its PDE sufficiency are unresolved.

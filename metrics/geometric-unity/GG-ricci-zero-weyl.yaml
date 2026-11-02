@@ -1,0 +1,70 @@
+result: >
+  At a positive Riemannian four-metric point with Ric=0, W!=0 and both chiral Weyl
+  determinants zero, reconstructed Z1 at lambda=1/5 and positive cH,cV has no
+  fibre-open relaxed-system solution. Under the explicit S.0 slaved-vector
+  hypotheses the twisted cone has no Upsilon=0 solution on an open set meeting
+  that fibre. All higher metric jets are allowed at those nonzero-curvature points.
+  Zero-curvature points remain outside this theorem; the complete flat quadratic control has
+  coefficient/augmented ranks 28/28.
+claim_id: [GU-054]
+result_ids: [GG1, GG2, GG3, GG4, GG5, GG6]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/GG-ricci-zero-weyl.md
+internal_review: reports/reviews/REVIEW35-GU-GG-2026-11-02.md
+code:
+  - computation/geometric-unity/GG_ricci_zero_weyl.py
+  - computation/geometric-unity/GG_ricci_zero_weyl.out
+  - computation/geometric-unity/GG_rank_blocks.py
+  - computation/geometric-unity/GG_rank_certificates.json
+  - computation/geometric-unity/GG_chiral_action.py
+formalization_status: >
+  GG1 proves the positive real SO(4) orbit: Ric=0 and det W+=det W-=0 exactly
+  gives R=alpha E0+beta H in some frame. The two chiral blocks are (alpha+beta)D
+  and (alpha-beta)D, with D=diag(1,-1,0). Explicit independent chiral Lie actions
+  and a connected-group argument allow the two spectral diagonalizations.
+  GG2 proves Ricci-independent covariance, transferring rank and incompatibility
+  together to one positive fibre. GG3 supplies an exact SOS compatibility
+  polynomial. GG4 has new normalized Ricci-zero rank certificates; GG5 transfers
+  arbitrary higher jets, and GG6 uses nonzero Riemann rather than nonzero Ricci
+  in the U5 fixed-minor argument. No Ricci-zero neighbourhood is assumed.
+internal_consistency: >
+  At y*=diag(2,3,5,7), the selected determinant is
+  (529 alpha^4+1052 alpha^2 beta^2+735 beta^4)/14406000, strictly positive for
+  real nonzero pairs. For alpha=+/-1 and t=beta/abs(alpha), new constant block
+  certificates give invariant rank 38 for every t. J5K is a negative invertible
+  diagonal matrix times 35+6t^2; J7K is zero. Pure-mixed beta=+/-1 is checked
+  separately with invariant/full/augmented ranks 38/42/43. Positive covariance
+  covers other amplitudes using the whole normalized witness. The complete flat
+  quadratic control has ranks 28/28 and is not removed by a limit or a unit-ideal
+  claim. No rank statement for arbitrary higher jets at zero curvature is inferred.
+proof_status: >
+  Exact rational block and SOS certificates complement hand degree bounds,
+  Ricci-independent covariance, chiral orbit, generic higher-jet and local
+  fixed-minor arguments. Independent internal Review35 accepts GG1-GG6 and reproduces
+  the portable run. No Lean formalization or external peer review is claimed.
+novelty: >
+  Reaches a Ricci-zero nonflat part of the remaining curvature boundary. The
+  intrinsic hypothesis is singularity of both chiral Weyl blocks, not a preferred
+  Ricci eigenline. Coefficient data are computed anew rather than inherited from
+  nonzero-Ricci results. The origin rank defect and witness transport are explicit.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0, exact Fractions and rational polynomial algebra. Run
+  python -X utf8 -I computation/geometric-unity/GG_ricci_zero_weyl.py from the root.
+  The portable default freshly assembles the required union of 15 node systems
+  once in memory. The coefficient total degree<=2 and RHS<=3 bounds precede
+  interpolation. The compact rank JSON has no raw node matrices or scratch paths.
+  Separate chiral-action controls have no observer-engine dependency. The recorded
+  fresh run passes 10 main, 28 rank and 6 chiral checks in 20.9 s; rank data are 10,906 bytes.
+  Review35 independently reproduces the default in 20.9 s and checks a nonunit
+  transported witness at alpha=-2,beta=3,cH=5,cV=7 with exact ranks 42/43.
+empirical_testability: None new; a mathematical obstruction in the reconstructed sector.
+dependencies: [U1, U2, U5, S4, S5, Q5, DD3, BB1, BB3, W1, W2, Z1, Z2, Z3, Z4, xcheck_round10]
+confidence: >
+  Accepted in independent internal Review35. The exact SOS supplies real incompatibility,
+  new constant polynomial identities supply normalized rank, and covariance
+  transports the same full witness. The intrinsic normal form is a positive
+  real pointwise statement, with both chiral blocks singular and W nonzero.
+  It does not cover all Ricci-flat nonflat curvature or indefinite forms.
+pending_work: >
+  Ricci-zero points with a nonsingular chiral Weyl block, the zero-curvature
+  boundary and indefinite forms remain outside this theorem.

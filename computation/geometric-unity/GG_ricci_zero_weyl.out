@@ -1,0 +1,25 @@
+GG. Ricci zero with nonzero Weyl curvature and singular chiral blocks
+Fresh portable path: the required union of 15 node systems once in memory; no external caches.
+[01] both fixed tensors have zero Ricci and satisfy Bianchi: True
+  chiral geometric controls: 6 exact checks; independent action determinant -8.
+[02] compatibility and normalized-rank node sets agree with their proved interpolation bounds: True
+[03] the selected rows have only xi_13 and a common curvature-independent n term: True
+[04] all unused coefficient nodes check the reconstructed selected rows: True
+[05] the five extra normalized nodes independently check the RHS interpolation: True
+[06] the exact selected coefficient and RHS formulas match: True
+[07] the compatibility determinant is the exact positive SOS polynomial: True
+[08] the SOS is strictly positive away from the REAL origin and vanishes there: True
+  xi coefficients: [-(371*alpha**2 + 300*beta**2 + 1750)/4200, -(565*alpha**2 + 546*beta**2 + 4900)/11760, -(4113*alpha**2 + 3570*beta**2 + 24500)/58800]
+  RHS: [8*beta**2/245, (16*alpha**2 + 21*beta**2)/2744, 3*(8*alpha**2 + 91*beta**2)/13720]
+  exact compatibility determinant: (529*alpha**4 + 1052*alpha**2*beta**2 + 735*beta**4)/14406000
+  normalized alpha=1: 11 exact rank checks; invariant rank 38, J5-completed rank 42 for every real t.
+  normalized alpha=-1: 11 exact rank checks; invariant rank 38, J5-completed rank 42 for every real t.
+  pure-mixed beta=1: 3 exact checks; invariant/full/augmented ranks 38/42/43, J5 invertible.
+  pure-mixed beta=-1: 3 exact checks; invariant/full/augmented ranks 38/42/43, J5 invertible.
+[09] the flat origin retains coefficient/augmented ranks 28/28: True
+[10] all 15 exact node systems were assembled once: True
+The Ricci-independent covariance proof transports each normalized rank42 and incompatible witness TOGETHER to one positive fibre of the original metric.
+No claim that the original fixed numeric fibre works at every amplitude is used. The flat origin is excluded from the nonzero-Weyl theorem.
+Higher-jet and local scope use the fixed-curvature-independent support argument and nonzero Riemann curvature, without assuming Ricci remains zero nearby.
+
+10 main + 28 rank + 6 chiral checks, all True; runtime 20.9 s

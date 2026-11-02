@@ -108,3 +108,5 @@ Run `python -X utf8 -I computation/geometric-unity/FF_joint_weyl.py` from the re
 The recorded fresh run passes 31 main checks and 60 rank-helper checks in 107.1 s; Review32 independently reproduces them in 109.6 s. The certificate file is 46,360 bytes.
 
 This includes the one-parameter $a=b$ joint pencil and allows arbitrary independent amplitudes in the same two fixed directions. It does not cover commuting electric and magnetic matrices without a common kernel, noncommuting pairs, arbitrary joint Weyl curvature, or Ricci-flat nonflat points. CC and EE separately cover their respective pure-part conditions without FF's common-kernel restriction.
+
+[GG](GG-ricci-zero-weyl.md) separately treats a nonzero-Weyl Ricci-zero boundary with singular chiral blocks, using new rank certificates rather than a limit of this theorem.

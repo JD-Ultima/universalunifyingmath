@@ -4,15 +4,20 @@ result: >
   has rank 13 or 14. Left branches require support dimension 14; right rank 13 is
   possible only when the slaved gradient is its annihilator direction. Support
   dimension at most 12 is excluded. An isotropic full-support form satisfies the
-  selected channel at regular parameters, so no full Lambda5 exclusion follows.
+  selected channel at regular parameters. AH5 excludes that form's nonzero real
+  scaling/SO14 orbit from full solutions on the first c/wGamma branch at nonzero
+  w, using a remaining grade-nine coefficient. General five-forms remain open.
 claim_id: [GU-054]
-result_ids: [AH1, AH2, AH3, AH4]
+result_ids: [AH1, AH2, AH3, AH4, AH5]
 gaps: [GU-G14, GU-G15]
 writeup: formalization/geometric-unity/AH-lambda5-gram.md
 internal_review: reports/reviews/REVIEW31-GU-AH-2026-11-02.md
+supporting_review: reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md
 code:
   - computation/geometric-unity/AH_lambda5_gram.py
   - computation/geometric-unity/AH_lambda5_gram.out
+  - computation/geometric-unity/AH_cyclic_obstruction.py
+  - computation/geometric-unity/AH_cyclic_obstruction.out
 formalization_status: >
   True dualized equation, real compact (14,0), u(128), fixed parallel real WA,
   constant kappa!=0, invariant odd field and det M!=0. Only one Lambda5 kernel
@@ -28,29 +33,41 @@ proof_status: >
   rank S=13 or 14. AH3 gives branch signs and strict/equality gradient bounds.
   AH4 is an explicit algebraic channel limitation, not a full solution.
   Independently accepted in reports/reviews/REVIEW31-GU-AH-2026-11-02.md; all 25 checks reproduced.
+  AH5 uses that isotropic Gram to force C=0 at nonzero w on its declared orbit.
+  Kernel derivatives have grades 3/7/11 and vector derivatives no grades 5/9.
+  Direct cyclic-form polarization gives Q9/i coefficient -(16/3)(4r^2+17s^2),
+  nonzero for every real nonzero chart, so no derivative choice can complete it.
+  Independently accepted in reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md;
+  all 14 cyclic-obstruction checks reproduced.
 internal_consistency: >
   Exact controls include both real phases, general nondecomposable forms with
   off-diagonal Gram entries, full fourteen-dimensional support, mixed/derivative
   terms and both kernel charts. Cyclic supports give N=14, S=5I exactly. The
   regular first-conic channel point has nonzero vector factors and no other
-  non-vector kernel; its scalar channel balance is exact.
+  non-vector kernel; its scalar channel balance is exact. AH5's direct phased
+  output confirms that same balance and the nonzero remaining coefficients.
+  The three displayed coefficient polynomials generate (r^2,rs,s^2) exactly.
 reproducibility: >
   Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
-  computation/geometric-unity/AH_lambda5_gram.py. Fresh exact symbolic/rational
+  computation/geometric-unity/AH_lambda5_gram.py and python -X utf8 -I
+  computation/geometric-unity/AH_cyclic_obstruction.py. Fresh exact symbolic/rational
   controls use T's accepted Clifford implementation, not the J/R evaluator.
   No off-repository dependency, randomness or numerical parameter fitting.
-  The cyclic form is checked by its Gram matrix without a full Clifford run.
-  The recorded fresh default passes 25 exact checks in 4.5 seconds.
+  The original helper checks the cyclic form's Gram; AH5 adds integer Clifford
+  polarization and a direct phased control on the full form. The recorded runs
+  pass 25 exact checks in 4.5 seconds and 14 checks in 5.5 seconds, respectively.
 novelty: >
   Bounded necessary stress-spectrum reduction within this investigation for
-  the Lambda5 branches. No general five-form classification, full singular
+  the Lambda5 branches, with a full-equation obstruction for one explicit orbit
+  on the first pair. No general five-form classification, full singular
   classification or literature novelty is claimed.
 empirical_testability: None new; necessary field-equation constraints.
 dependencies: [R2, R4, R6, J1, AF1]
 confidence: >
-  Independently reviewed internally. The full-support channel control preserves the
-  distinction between a necessary Gram restriction and all nonlinear/PDE
-  equations. No nonzero-u Lambda5 exclusion or field solution is asserted.
+  AH1-AH4 and AH5 independently reviewed internally in their separate reports. The
+  full-support channel control remains valid, while a remaining equation excludes
+  that orbit on the first branch at nonzero w. No all-five-form exclusion or
+  field solution is asserted.
 pending_work: >
   The remaining nonlinear components, actual field existence, zero-u endpoints, coincident
   kernels and indefinite cases need separate analysis.
