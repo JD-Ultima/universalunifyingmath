@@ -1,6 +1,6 @@
 # Morning handoff — November 2, 2026
 
-This records the November 2 overnight research checkpoint submitted through [PR #2](https://github.com/JD-Ultima/universalunifyingmath/pull/2). The PR records its publication status; the [synthesis](SYNTHESIS.md) maintains the current findings.
+This records the Chain Theory and Geometric Unity work at the November 2 overnight research checkpoint submitted through [PR #2](https://github.com/JD-Ultima/universalunifyingmath/pull/2). The PR records its publication status; the [synthesis](SYNTHESIS.md) maintains the current findings.
 
 ## Results
 
@@ -12,14 +12,14 @@ The full-field curvature conclusions concern the reconstructed Z1 model at $\lam
 
 ## Validation
 
-All 49 selected commands passed locally with the pinned Windows Python 3.12 environment and pristine LF upstream snapshot, including 12 focused regression tests and six source-dependent checks. The final HH package freshly reproduces 9 main, 28 rank and six orbit checks. [Independent internal Review36](reviews/REVIEW36-GU-HH-2026-11-02.md) reproduces these checks in 77.6 seconds and separately tests nonunit scaling and a dense deterministic cubic/quartic perturbation. The universal argument uses exact identities and degree bounds; these extra examples are controls.
+The current Chain Theory and Geometric Unity suite passed **46 of 46 selected commands** locally with the pinned Windows Python 3.12 environment and pristine LF upstream snapshot. These include 12 focused regression tests and six source-dependent checks. The [README commands](../README.md#reproduce-selected-checks) reproduce the current suite. The final HH package freshly reproduces 9 main, 28 rank and six orbit checks. [Independent internal Review36](reviews/REVIEW36-GU-HH-2026-11-02.md) reproduces these checks in 77.6 seconds and separately tests nonunit scaling and a dense deterministic cubic/quartic perturbation. The universal argument uses exact identities and degree bounds; these extra examples are controls.
 
-The [CI matrix](../.github/workflows/verify.yml) runs the selected checks on Linux and Windows with Python 3.12 and 3.13; its current results are attached to the PR. Source-dependent checks additionally ran locally. Source pins are unchanged. The GU manuscript's scope/prose revision compiled November 2 and remains limited to A–Q; later results are research notes. CT/Howard sources retain their November 1 builds. No fresh Lean build or external peer review is claimed.
+The [CI workflow](../.github/workflows/verify.yml) runs the selected suite on Linux and Windows with Python 3.12 and 3.13; individual PRs record their check results. Source-dependent checks additionally ran locally. Source pins are unchanged. The GU manuscript's scope/prose revision compiled November 2 and remains limited to A–Q; later results are research notes. The Chain Theory manuscript retains its November 1 build. No fresh Lean build or external peer review is claimed.
 
 ## Remaining questions
 
 1. Nonflat Lambda3 endpoint equations; other full-support Lambda5 fields, their nonlinear derivative equations, coincident kernels and general hooks.
 2. Generic joint Weyl data at nonzero rank-one Ricci points outside FF's precise family; the zero-curvature higher-jet boundary. Y's origin-fibre obstruction alone is not a local full-field theorem.
-3. Independent principles for Chain Theory's defining inputs, ambiguous compendium premises, and missing Howard primary definitions.
+3. Independent principles for Chain Theory's defining inputs and ambiguous compendium premises.
 
 The README is a concise entry point; detailed derivations, source limits, negative results and corrections remain linked. Current summaries were consolidated and checked for stale claims after HH. Finding an underlying mathematical “source code” remains an open investigation with no predetermined physical conclusion.

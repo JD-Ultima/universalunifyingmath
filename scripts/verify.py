@@ -18,7 +18,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_COMMIT = "a28db8998bce5bd5ef11195c05f13c86cd9dac5c"
 DEPENDENCIES = {"numpy": "2.5.3", "sympy": "1.14.0", "mpmath": "1.3.0",
-                "scipy": "1.18.1", "z3-solver": "5.3.3.0"}
+                "scipy": "1.18.1"}
 SELECTED = [
     "chain-theory/alpha/records_independent.py",
     "chain-theory/alpha/config_enumeration.py",
@@ -30,9 +30,6 @@ SELECTED = [
     "geometric-unity/A_spin_obstruction.py",
     "geometric-unity/xcheck_round5.py",
     "geometric-unity/projection_regression.py",
-    "howard/arith_candidates.py",
-    "howard/axiom_lattice.py",
-    "howard/semirings.py",
 ]
 
 
