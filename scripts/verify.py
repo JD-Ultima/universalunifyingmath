@@ -52,10 +52,13 @@ RECENT = [
     ("geometric-unity/AA_conic_traces.py", []),
     ("geometric-unity/AA_exterior_derivative.py", []),
     ("geometric-unity/AA_lambda3_hook.py", []),
+    ("geometric-unity/AA_three_form_simple.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),
     ("geometric-unity/DD_mixed_weyl.py", []),
+    ("geometric-unity/EE_zero_electric_weyl.py", []),
+    ("geometric-unity/AF_symmetric_gamma.py", []),
 ]
 LEAN_SOURCE_SHA256 = "522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da"
 

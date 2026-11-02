@@ -7,13 +7,16 @@ result: >
   codifferential lifts; its principal symbol in the kernel form is injective for nonzero real covectors.
   On the single Lambda3 c/wGamma branch, a nonlinear H5 projection imposes an additional pointwise
   condition on the three-form and excludes explicit nondecomposable forms independently of derivatives.
+  In real positive dimension 14, its hook zero locus consists exactly of zero and decomposable
+  three-forms. This pointwise restriction does not suffice for the remaining field equations.
 claim_id: [GU-054]
-result_ids: [AA1, AA2, AA3, AA4, AA5, AA6]
+result_ids: [AA1, AA2, AA3, AA4, AA5, AA6, AA7]
 gaps: [GU-G14, GU-G15]
 writeup: formalization/geometric-unity/AA-conic-traces.md
 internal_review: reports/reviews/REVIEW20-GU-AA-2026-11-02.md
 supporting_review: reports/reviews/REVIEW25-GU-AA-HOOK-2026-11-02.md
 derivative_review: reports/reviews/REVIEW23-GU-AA-DERIV-2026-11-02.md
+simple_form_review: reports/reviews/REVIEW27-GU-AA-SIMPLE-2026-11-02.md
 code:
   - computation/geometric-unity/AA_conic_traces.py
   - computation/geometric-unity/AA_conic_traces.out
@@ -21,6 +24,8 @@ code:
   - computation/geometric-unity/AA_exterior_derivative.out
   - computation/geometric-unity/AA_lambda3_hook.py
   - computation/geometric-unity/AA_lambda3_hook.out
+  - computation/geometric-unity/AA_three_form_simple.py
+  - computation/geometric-unity/AA_three_form_simple.out
 formalization_status: >
   True compact (14,0), u(128), real fixed parallel WA, kappa constant and nonzero. Invariant odd field,
   Te=v+k with v slaved in the vector isotype and k in one exterior kernel, away from other singular
@@ -31,6 +36,9 @@ formalization_status: >
   differentials are used at u=0; writing them as functions of a is confined to nonzero-u conic arcs.
   AA6 restricts to the single Lambda3 c/wGamma kernel with real weights r3,s3 in a nonzero smooth chart.
   It requires no curvature-trace sign. Grade9 is converted by right multiplication by Gamma, not its inverse.
+  AA7 is a real positive-definite 14-dimensional exterior-algebra theorem. Its application to the field
+  equation is pointwise: the kernel form is zero or simple in any nonzero chart. No smooth global
+  factorization, integrability, indefinite extension or PDE sufficiency is claimed.
 proof_status: >
   AA1 derives both invariant traces and the explicit T2 baseline residual, retaining Delta(t) and
   |dt|^2. AA2 eliminates the kernel norm, yielding Delta(a)-delta_prime|da|^2/(2delta)
@@ -46,6 +54,11 @@ proof_status: >
   while baseline, mixed and derivative terms have no H5, giving a necessary pointwise hook condition.
   AA6 was independently reviewed in reports/reviews/REVIEW25-GU-AA-HOOK-2026-11-02.md,
   including all 26 nonlinear assertions.
+  AA7 proves the zero-locus classification by an annihilator argument. If F4 is nonzero, a rank-at-least-four
+  contraction is available; symplectic wedge injectivity and the rank cases force a nonzero annihilator,
+  contradicting positivity. F4=0 then gives Z=0, and a rank-two contraction splitting proves decomposability.
+  Independently reviewed in reports/reviews/REVIEW27-GU-AA-SIMPLE-2026-11-02.md, including all 24
+  exterior-algebra checks. The earlier review scopes are unchanged.
 internal_consistency: >
   Symbolic Gaussian-rational Clifford checks verify all four exterior pairs, compact phases, kernel
   identities, both quadratic traces, vector/kernel cross traces, and all derivative currents.
@@ -54,6 +67,9 @@ internal_consistency: >
   the Cartan-zero and excluded-copy nonzero controls, and the middle-grade Gamma cross pairing.
   Nonlinear checks include full fourteen-dimensional support, nondecomposable calibration forms, the
   exact right-Gamma conversion sign, projector denominators 6/10, and an explicit excluded component.
+  AA7 checks the wedge/contraction commutator on 625 basis forms in the proof's symplectic supports,
+  the primitive two-form dimension, exact projector and wedge identities, simple/non-simple controls,
+  the seven-dimensional comparison and the unique x-containing term in the final splitting argument.
 reproducibility: >
   Python 3.12, SymPy 1.14.0; run python -X utf8 -I computation/geometric-unity/AA_conic_traces.py.
   Uses T helpers through xcheck_round14, not the J/R evaluator. No randomness or numerical fitting.
@@ -62,16 +78,22 @@ reproducibility: >
   identities: 14 assertions, including 112 full coordinate-jet checks, pass in 0.2 seconds.
   Run python -X utf8 -I computation/geometric-unity/AA_lambda3_hook.py for the nonlinear identities:
   26 assertions pass in 6.3 seconds, with symbolic kernel weights and no off-repository dependencies.
+  Run python -X utf8 -I computation/geometric-unity/AA_three_form_simple.py for AA7: 24 checks with
+  standard-library exact rational exterior algebra, no Clifford-engine import and no external files.
+  The finite controls check the proof's conventions; the hand support argument supplies universality.
 novelty: >
   Bounded continuation within this investigation from the constant hook strata to nonconstant exterior
-  conics. No literature-level novelty or full singular-stratum classification is claimed.
+  conics, including the algebraic zero-locus classification for AA6 in positive dimension 14.
+  No literature-level novelty or full singular-stratum classification is claimed.
 empirical_testability: None new; necessary scalar and tensor equations in the reconstructed field system.
 dependencies: [R2, R4, R6, T1, T2, J1, F7]
 confidence: >
   Exact trace and sign identities under the stated compact assumptions, independently reviewed internally.
   The untraced odd equation still contains d0k and vector/kernel cross terms. Scalar conditions are
-  necessary only; monotone nonconstant fields on left arcs, right arcs and tensor/PDE sufficiency remain open.
+  necessary only. AF separately restricts the first Lambda3 c/wGamma branch to two constant-odd endpoints.
+  On the other conics, monotone left-arc fields, right arcs and tensor/PDE sufficiency remain open.
   AA4-AA5 are independently reviewed. The derivative result does not cover the w/cGamma pair and does not establish
   ellipticity of the full coupled field system, solve its quadratic term, or solve the full odd PDE.
-  AA6 is independently reviewed. Its hook zero locus, relation to decomposability and PDE sufficiency remain open;
-  coincident kernels, the other Lambda3 conic and Lambda5 nonlinear equations are not covered.
+  AA6 and AA7 are independently reviewed. AA7 supplies the real positive-dimension-14 hook zero-locus
+  classification. PDE sufficiency remains open. Coincident kernels,
+  the other Lambda3 conic and Lambda5 nonlinear equations are not covered.

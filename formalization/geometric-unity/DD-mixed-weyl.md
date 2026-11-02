@@ -1,5 +1,7 @@
 # DD. One mixed Weyl direction
 
+**Broader curvature class.** [EE](EE-zero-electric-weyl.md) treats every zero-electric Weyl tensor relative to the nonzero Ricci line. This note retains the simpler one-direction certificate.
+
 This result treats one Weyl direction with zero electric part and nonzero mixed components relative to the Ricci eigenline. Its nonzero members lie outside CC's vanishing-mixed-Weyl condition. Two finite fibre configurations give incompatible relaxed equations at every amplitude, and constant rational rank certificates hold at those same fibres. Arbitrary higher metric jets are included through a separate support argument.
 
 Code: `computation/geometric-unity/DD_mixed_weyl.py`, `DD_rank_blocks.py` and `DD_rank_certificates.json`; output: `DD_mixed_weyl.out`; record: `metrics/geometric-unity/DD-mixed-weyl.yaml`. The computation uses U's reviewed assembly and the earlier referee curvature engine. [Independent internal Review26](../../reports/reviews/REVIEW26-GU-DD-2026-11-02.md) accepts DD1–DD4 and reproduces the portable computation. This is internal review, not external peer review.

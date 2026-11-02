@@ -122,4 +122,4 @@ From the repository root, run `python -X utf8 -I computation/geometric-unity/CC_
 
 The recorded fresh run passes 32 main checks and 96 rank-helper checks in 98.3 s; Review24 independently reproduces them in 98.2 s. These are 60 curvature-engine assemblies followed by exact rational/polynomial certificate verification; no raw node matrices are stored in the repository.
 
-[DD](DD-mixed-weyl.md) separately excludes one nonzero mixed Weyl direction. Other mixed Weyl tensors relative to the Ricci eigenline and the Ricci-flat nonflat case remain open. The field-equation conclusion concerns the reconstructed geometric sector under the stated S.0 assumptions.
+[EE](EE-zero-electric-weyl.md) separately excludes every zero-electric Weyl tensor relative to the nonzero Ricci line, including DD's one-direction subcase. Simultaneously nonzero electric and mixed Weyl parts, and the Ricci-flat nonflat case, remain open. The field-equation conclusion concerns the reconstructed geometric sector under the stated S.0 assumptions.

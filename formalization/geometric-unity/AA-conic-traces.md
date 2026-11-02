@@ -1,8 +1,8 @@
-# AA. Traces and derivatives on the exterior conics
+# AA. Traces, derivatives and three-form constraints on the exterior conics
 
-This note reduces two invariant traces of the full equation on each of the four $W_A$ exterior conics. The extra kernel norm is algebraic, and the remaining scalar equation has a simple change of variable. On every left branch, a nonnegative curvature trace excludes a local maximum of $t/\kappa$. For the two $c/w\Gamma$ conics, it also gives the derivative term explicitly through weighted exterior derivatives and codifferentials. On the $\Lambda^3$ conic, a nonlinear hook projection gives a further pointwise obstruction. The remaining odd equations are unsolved.
+This note reduces two invariant traces of the full equation on each of the four $W_A$ exterior conics. The extra kernel norm is algebraic, and the remaining scalar equation has a simple change of variable. On every left branch, a nonnegative curvature trace excludes a local maximum of $t/\kappa$. For the two $c/w\Gamma$ conics, it also gives the derivative term explicitly through weighted exterior derivatives and codifferentials. On the first $\Lambda^3$ conic, a nonlinear hook condition forces the kernel three-form to be zero or decomposable at each point. This does not suffice to solve the remaining odd equations.
 
-Code: `computation/geometric-unity/AA_conic_traces.py` → `.out`, with supporting derivative identities in `AA_exterior_derivative.py` → `.out` and nonlinear identities in `AA_lambda3_hook.py` → `.out`. These use T's compact-real-form helpers and the earlier independent Clifford engine, with no imports from the J/R evaluator. Record: `metrics/geometric-unity/AA-conic-traces.yaml`. AA1–AA3 were independently reviewed in `reports/reviews/REVIEW20-GU-AA-2026-11-02.md`; all 23 assertions were reproduced. AA4–AA5 were independently reviewed in `reports/reviews/REVIEW23-GU-AA-DERIV-2026-11-02.md`, including all 14 supporting assertions. AA6 was independently reviewed in `reports/reviews/REVIEW25-GU-AA-HOOK-2026-11-02.md`, including all 26 nonlinear assertions. This is internal review, not external peer review. GU-054 supplies source-claim context; the results here are AA1–AA6.
+Code: `computation/geometric-unity/AA_conic_traces.py` → `.out`, with derivative identities in `AA_exterior_derivative.py` → `.out`, nonlinear identities in `AA_lambda3_hook.py` → `.out`, and exact exterior-algebra controls in `AA_three_form_simple.py` → `.out`. The first three scripts use T's compact-real-form helpers and the earlier independent Clifford engine, with no imports from the J/R evaluator; the last uses standard-library rational exterior algebra only. Record: `metrics/geometric-unity/AA-conic-traces.yaml`. AA1–AA3 were independently reviewed in `reports/reviews/REVIEW20-GU-AA-2026-11-02.md`; all 23 assertions were reproduced. AA4–AA5 were independently reviewed in `reports/reviews/REVIEW23-GU-AA-DERIV-2026-11-02.md`, including all 14 supporting assertions. AA6 was independently reviewed in `reports/reviews/REVIEW25-GU-AA-HOOK-2026-11-02.md`, including all 26 nonlinear assertions. AA7 was independently reviewed in `reports/reviews/REVIEW27-GU-AA-SIMPLE-2026-11-02.md`, including all 24 exterior-algebra checks. These are internal reviews, not external peer review. GU-054 supplies source-claim context; the results here are AA1–AA7.
 
 ## Setting and notation
 
@@ -186,7 +186,51 @@ For an explicit excluded form, take $\omega=e^{012}+e^{034}$. It has $F_4=2e^{12
 $$\big(\mathcal H_5Z\big)_5=-\frac15e^{12345}\ne0.$$
 It therefore cannot occur in a full solution on this branch for any nonzero real chart weights. Derivative choices cannot repair this component.
 
-The zero locus of (AA6.4) has not been classified here. Its relation to decomposability remains open in this investigation, and satisfying it does not solve the other algebraic or differential equations. The result does not cover a sum of coincident kernels, the other $\Lambda^3$ conic, or the $\Lambda^5$ conics.
+AA7 below classifies the algebraic zero locus of (AA6.4) in real positive dimension fourteen. Satisfying it still does not solve the other algebraic or differential equations. AA6 does not cover a sum of coincident kernels, the other $\Lambda^3$ conic, or the $\Lambda^5$ conics.
+
+## AA7. The hook zero locus in positive dimension fourteen
+
+**Theorem AA7.** Let $V$ be a real fourteen-dimensional positive-definite inner-product space and $\omega\in\Lambda^3V^*$. With $Z,F_4$ as in AA6,
+$$\mathcal H_5Z=0\quad\Longleftrightarrow\quad
+\omega=0\ \text{or}\ \omega\text{ is a decomposable three-form}.\tag{AA7.1}$$
+Consequently AA6's single-kernel full solutions require a zero or decomposable kernel three-form at each point. This is a necessary pointwise condition, not a sufficiency statement for the remaining equations.
+
+*Proof.* Write $F=F_4$. The hook equation is
+$$ (\iota_X\omega)\wedge\omega=\frac1{10}X^\flat\wedge F
+\qquad(X\in V).\tag{AA7.2}$$
+
+**Annihilator step.** If $Y\ne0$ annihilates $\omega$, contraction anticommutation also gives $\iota_YF=0$. Equation (AA7.2) gives $Y^\flat\wedge F=0$. Contracting it by $Y$ yields $|Y|^2F=0$, hence $F=0$ by positivity.
+
+**Symplectic wedge fact.** If a two-form $\theta$ is nondegenerate on a $2\ell$-dimensional space $S$, wedge multiplication $L_\theta$ is injective on $\Lambda^jS^*$ for $j<\ell$. To see this, choose a Darboux basis and an auxiliary positive inner product making that basis orthonormal. The adjoint $\Lambda$ satisfies $[\Lambda,L_\theta]=(\ell-j)I$ on degree $j$: a Darboux pair contributes $+1,-1,0$ when both its indices are absent, both present, or exactly one present. Thus
+$$\|L_\theta\eta\|^2-\|\Lambda\eta\|^2=(\ell-j)\|\eta\|^2,$$
+which proves injectivity. This auxiliary norm is used only for the algebraic wedge fact; it does not replace the metric defining $F$.
+
+**Why $F$ vanishes.** Suppose $F\ne0$. Some summand $(\iota_X\omega)^2$ in its orthonormal-basis definition is nonzero; otherwise the sum would be zero. This is not a positivity assertion about the four-form summands. Choose that unit $X$, put $x=X^\flat$, and write
+$$\theta=\iota_X\omega,\qquad \operatorname{rank}\theta=2\ell\ge4,
+\qquad \omega=x\wedge\theta+\psi.$$
+Split $X^\perp=S\oplus K$ into the symplectic support of $\theta$ and its kernel, of dimensions $2\ell$ and $13-2\ell$. The component of (AA7.2) not containing $x$ is $\theta\wedge\psi=0$. Decompose $\psi$ by its number of $K$ indices; wedge multiplication by $\theta$ preserves that number.
+
+- If $\ell\ge4$, every component has $S$-degree at most three, below $\ell$, so the wedge fact gives $\psi=0$. Since the two-form has rank at most twelve on $X^\perp$, $K$ is nonzero and annihilates $\omega$.
+- If $\ell=3$, every component containing a $K$ index has $S$-degree below three and vanishes. The remaining $\psi$ is supported on $S$, so $\omega$ has support of dimension at most seven and has a nonzero annihilator in $K$.
+- If $\ell=2$, the components containing two or three $K$ indices vanish. The remaining expression is
+  $$\psi=\psi_0+\zeta,\quad
+  \psi_0\in\Lambda^3S^*,\quad
+  \zeta\in P^2(S^*)\otimes K^*,\quad
+  P^2=\ker(L_\theta:\Lambda^2S^*\to\Lambda^4S^*).$$
+  Here $\dim S=4$, $\theta^2\ne0$ and $\dim P^2=6-1=5$. But $\dim K=9$. Therefore the linear map $Y\mapsto\iota_Y\zeta$ from $K$ to $P^2$ has a kernel of dimension at least four. Any nonzero vector in it annihilates $\omega$.
+
+All possible ranks provide a nonzero annihilator, so the annihilator step contradicts $F\ne0$. Hence $F=0$ and (AA7.2) gives $Z_X=0$ for all $X$.
+
+**Why $Z=0$ gives a simple form.** If $\omega\ne0$, choose a unit $X$ with $\theta=\iota_X\omega\ne0$. Contracting $Z_X=0$ by $X$ gives $\theta^2=0$, so $\theta$ has rank two. Choose orthonormal covectors $u,v$ perpendicular to $x=X^\flat$ with $\theta=\lambda u\wedge v$, $\lambda\ne0$. Define $K_0=(\operatorname{span}\{X,u^\sharp,v^\sharp\})^\perp$. Since the residual $\omega-x\wedge\theta$ contains no $x$, write
+$$\omega=u\wedge v\wedge(\lambda x+\nu)
++u\wedge\sigma+v\wedge\tau+\chi,$$
+where $\nu,\sigma,\tau,\chi$ are forms on $K_0$ of degrees one, two, two and three. The equation $Z_X=0$ forces $\chi=0$. Every contraction of $\omega$ has zero square, by contracting its corresponding $Z$ equation. For $u^\sharp$ that square's unique term containing $x$ is $2\lambda v\wedge x\wedge\sigma$, so $\sigma=0$. The same argument with $v^\sharp$ gives $\tau=0$. Thus $\omega=u\wedge v\wedge(\lambda x+\nu)$ is decomposable.
+
+Conversely, a decomposable three-form has $Z=F=0$, as does zero. This proves (AA7.1). ∎
+
+No smooth global choice of the three factors, integrability, or PDE solution is asserted. The proof is for real positive dimension fourteen. In particular its rank-four-contraction step uses $\dim K=9>5$; an indefinite null annihilator would not justify the positivity step. The exterior helper includes a seven-dimensional comparison form whose corresponding hook is zero with $F\ne0$, while its embedding in dimension fourteen has nonzero hook. No other-dimensional classification is inferred.
+
+[AF](AF-symmetric-gamma.md) combines AA7 with the symmetric grade-thirteen equation: on this first conic a full solution must have $u=0$ and a constant odd field at one of its two endpoints. That additional argument does not solve their remaining even-field equations.
 
 ## Evidence and remaining equations
 
@@ -195,6 +239,8 @@ The exact script checks both vector traces, all fourteen zero Gamma symbols, all
 The supporting derivative script checks 112 complete coordinate-jet outputs, mixed covariant jets, the variable-weight product rules, the compact phases and the positive symbol norm. A nonzero Cartan jet is annihilated on both declared copies and has nonzero output on both excluded $w/c\Gamma$ copies, for each degree. All 14 assertions passed in 0.2 seconds. The hand grade/counting proof supplies the universal statement; these exact controls check its conventions and coefficients.
 
 The nonlinear script checks both full grade identities and their hook projections with symbolic weights on a decomposable control and six nondecomposable forms, including one with full fourteen-dimensional support. It verifies the explicit excluded component, both projector traces, and baseline, mixed and variable-weight derivative controls. All 26 assertions passed in 6.3 seconds. The invariant-contraction argument supplies universality; no parameter range is inferred from those forms. The artificial diagonal curvature coefficients in one baseline control are algebraic test data, not an asserted observer metric.
+
+The AA7 helper uses exact rational exterior algebra without a Clifford-engine import. It checks the symplectic commutator on all 625 basis forms in the support dimensions and degrees used by the proof, the rank-four primitive dimension, projector conventions, decomposable and nondecomposable controls, the seven-dimensional boundary and the isolated term in the final rank-two argument. Its 24 checks also include the exact identity $\sum_a(\iota_a\omega)\wedge(\mathcal H_5Z)_a=\tfrac{n-7}{n-4}F\wedge\omega$, with a nonzero seven-form control. The hand annihilator/support proof supplies the classification.
 
 The untraced odd equation is still
 $$E_v+{*}^{-1}\circledast(d_0k)+2\mathcal B(v,k)+Q(k)=0.$$
