@@ -1,6 +1,6 @@
 # What we built and tested
 
-Imagine someone gives us three sets of building instructions and says they might help explain how the universe works. We are checking the instructions, one step at a time.
+Imagine someone gives us two sets of building instructions and says they might help explain how the universe works. We are checking the instructions, one step at a time.
 
 Our goal is to find clear rules that other people can check. We do not yet have a demonstrated “source code” for the universe.
 
@@ -16,7 +16,7 @@ We built a workshop with five kinds of tools:
 
 The programs and their recorded answers are saved so another person can repeat the work.
 
-## Three sets of instructions
+## Two sets of instructions
 
 ### Chain Theory
 
@@ -34,20 +34,12 @@ For specified versions of the model, we worked out which arrangements can satisf
 
 Every such result has a named set of assumptions. Other fields and geometric cases remain open. The detailed map is in the [synthesis](SYNTHESIS.md#geometric-unity).
 
-### Howard's arithmetic and shapes
-
-We wrote seven stated arithmetic rules down and checked every combination of them. Some groups work together. Others contradict one another when we keep ordinary addition and the specified number systems.
-
-We also checked stated numbers and clearly defined shape models. For example, six pentagons cannot make the particular closed convex solid being tested. This result applies to that shape specification.
-
-The missing primary book and full relevant patent texts limit what we can say about the original definitions.
-
 ## What “the tests passed” means
 
-The latest research checkpoint passed **49 selected commands locally**. These include 12 focused regression tests and six checks against pinned source material. Its push and PR runs also passed the Linux/Windows checks with Python 3.12 and 3.13. The [verification record](MORNING-HANDOFF-2026-11-02.md#validation) links the evidence.
+The [verification record](MORNING-HANDOFF-2026-11-02.md#validation) shows which Chain Theory and Geometric Unity checks were run, their results, and their limits. The [README](../README.md#reproduce-selected-checks) explains how to run the current selected suite.
 
 Some tests confirm an answer. Others confirm that a proposed rule fails, or that a known error is detected. Passing means the program produced the expected, checked result.
 
-This suite covers selected work. The recorded Lean checks and manuscript builds have their own scope; this run did not rebuild them. Internal reviews include AI-assisted work, and external peer review remains outstanding.
+This suite covers selected work. The recorded Lean checks and manuscript builds have their own scope; the selected suite does not rebuild them. Internal reviews include AI-assisted work, and external peer review remains outstanding.
 
 We have a better map of the ideas: parts that fit, parts that need repair, and parts we still need to explore. The next discoveries must earn their place through the same checks.

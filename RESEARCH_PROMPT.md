@@ -1,12 +1,12 @@
 # Research Charter: Evidence-Led Mathematical Exploration
 
-**Revision:** 2026-10-30. This charter updates the initial three-framework specification while retaining its evidence and correction requirements.
+**Revision:** 2026-11-02. This charter sets the scope and evidence standards for the Chain Theory and Geometric Unity investigations.
 
 ## Purpose
 
 Investigate the explicit mathematical rules, computational mechanisms, and relationships that could explain physical regularities and yield testable predictions. The project's informal goal of finding the **“source code”** means making those rules precise enough to implement, analyze, and test. Their form and explanatory scope are questions to investigate.
 
-The initial case studies are Chain Theory, Geometric Unity, and arithmetic and geometry associated with Terrence Howard. Additional approaches may be investigated when suitable sources and precise questions are available. No framework is assigned a preferred outcome before its statements are examined.
+The case studies are Chain Theory and Geometric Unity. Investigate each on its stated definitions and examine possible relationships only through explicit mathematical constructions. Neither framework is assigned a preferred outcome before its statements are examined.
 
 ## Evidence standards
 

@@ -86,17 +86,9 @@ The [GU report](geometric-unity-phase1.md) preserves the audit history. The prin
 | Ricci-zero and zero-curvature points | [All nonzero-curvature Ricci-zero points](../formalization/geometric-unity/HH-ricci-zero.md) · [Singular-block subcase](../formalization/geometric-unity/GG-ricci-zero-weyl.md) · [Zero-curvature quartic control](../formalization/geometric-unity/Y-zero-curvature-quartic.md) |
 | Base-metric variation | [Weighted section variation](../formalization/geometric-unity/O-gimel-variation.md) |
 
-### Howard: specified arithmetic and geometry
-
-With ordinary addition fixed, no ring, semiring or near-ring on ℕ, ℤ, ℚ or ℝ satisfies both $1\otimes1=2$ and $2\otimes2=4$. The seven-axiom consistency lattice is decided with z3 and Lean certificates. The conclusion is carrier-dependent: ℤ/4 supplies a ring model, and weaker axiom sets admit other operations. Several numerical statements and the specified six-pentagon closed-solid reconstruction fail their stated tests.
-
-The primary book and full relevant patent texts were not obtained. In particular, the reading of $2\otimes2=4$ relies on an interpretation of the available wording. Physical and chemistry claims remain outside this mathematical analysis.
-
-[Report](howard-phase1.md) · [Arithmetic](../formalization/howard/arithmetic.md) · [Geometry](../formalization/howard/geometry.md) · [Sources](../sources/howard.md)
-
 ## 2. What the comparisons support
 
-The recurring question is which defining choices determine a result. Convention changes, alternate operations, field sectors and observable-identification maps are tested explicitly. A counterexample applies to the statement and assumptions tested; it does not classify every possible reconstruction.
+The recurring question is which defining choices determine a result. Convention changes, field sectors and observable-identification maps are tested explicitly. A counterexample applies to the statement and assumptions tested; it does not classify every possible reconstruction.
 
 The group-theoretic connections are also precise but limited. Chain Theory's convention-A link lies in the $\mathbf{10}$ of SU(5), while its conjugate-convention link lies in the adjoint $\mathbf{24}$. GU's branching uses Spin(10)-type representations and the Pati–Salam subgroup. These embeddings provide a mathematical comparison; they do not establish a common dynamics or physical mechanism. [Pattern catalogue](../patterns/chain-theory.md)
 
@@ -106,9 +98,8 @@ The group-theoretic connections are also precise but limited. Chain Theory's con
 |---|---|---|
 | Comment on the α Letter | Reproduction, convention dependence, covariance, operator weights and bounded rule-family sensitivity | [TeX](../proofs/latex/ct-alpha-comment/comment.tex) |
 | Geometric Unity's algebraic core | Signatures, spinors, gauge identities, variation, ellipticity and reduction through the A–Q analyses. The newer results from R onward remain in research notes. | [TeX](../proofs/latex/gu-note/note.tex) |
-| Arithmetic reconstruction of “1 × 1 = 2” | Seven-axiom consistency lattice, alternative models and formal certificates; no novelty claim | [TeX](../proofs/latex/howard-note/note.tex) |
 
-The GU source compiled with the desktop editor's compiler after a scope/prose revision on November 2, 2026; the other two sources last compiled on November 1. Compilation checks document construction, not mathematical validity or external acceptance. The [verification guide](../README.md#reproduce-selected-checks) distinguishes the selected executable suite from long searches, fresh Lean builds and manuscript work.
+The GU source compiled with the desktop editor's compiler after a scope/prose revision on November 2, 2026; the Chain Theory source last compiled on November 1. Compilation checks document construction, not mathematical validity or external acceptance. The [verification guide](../README.md#reproduce-selected-checks) distinguishes the selected executable suite from long searches, fresh Lean builds and manuscript work.
 
 <a id="4-next-steps-in-priority-order"></a>
 
@@ -118,6 +109,5 @@ The GU source compiled with the desktop editor's compiler after a scope/prose re
 2. **GU remaining Z1 metrics.** Investigate nonzero rank-one Ricci points with both Weyl parts nonzero outside FF's commuting common-kernel family, and the zero-curvature higher-jet boundary. HH settles the nonzero-curvature Ricci-zero case within S.0; the general S15 twisted cone remains open. Choices of Z1/Z2, the off-section field rule and the fibre weight remain part of the reconstruction.
 3. **Chain Theory inputs.** Seek an independent rule fixing the weight attribution, matching closure, and the uniform-record assumptions. Their conditional mathematics is reproduced; an axiom-level derivation remains open.
 4. **Chain Theory scope.** Extend the mechanical family only with a declared mutation depth and resource bound. Resolve shared derivations and ambiguous premise citations before strengthening the compendium dependency conclusions. Physical comparisons need explicit identification maps.
-5. **Howard definitions.** Obtain the missing primary sources and apply the consistency analysis to the operations actually defined there.
 
 The [gap registers](../gaps/) retain individual questions and closure criteria. Detailed internal cross-reviews are in the [review records](reviews/).
