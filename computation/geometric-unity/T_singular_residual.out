@@ -1,0 +1,7 @@
+T1: compact real phases, cubic polarization, cross-term orthogonality, and 14 zero-current contractions passed.
+R10 control: t=-1/400, u=0, cV=150000/11 gives <To,E_V>=0.
+T4 line t=-kappa/176: <To,E_V>/kappa = -(119*kappa**2 + 1936*traceG + 3686144*u**2)/340736; strictly negative for kappa!=0, traceG>=0.
+T4 line t=-kappa/208: <To,E_V>/kappa = -(7*kappa**2 + 208*traceG + 302848*u**2)/43264; strictly negative for kappa!=0, traceG>=0.
+T2/T4: four real kernel cases (both kappa signs), WA du-source=0, scalar residual and full-minus-baseline pairing verified.
+T5: six hook copies have B(k,iPhi13)=0 and zero Gamma current; six distinct positive hook lines; other non-vector degeneracies occur at finitely many u values.
+T4 excludes its two Lambda7 lines under the stated metric hypotheses. T5 forces u constant on the positive hook lines; constant-field cases remain open.

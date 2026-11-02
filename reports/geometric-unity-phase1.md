@@ -1,6 +1,10 @@
 # Geometric Unity: Phase 1 report, with Phase 2 results on three claims
 
-**Scope.** E. Weinstein, *Geometric Unity: Author's Working Draft v1.0* (1 Apr 2021). Hypothesis-neutral: critiques are treated as leads, and every verdict below comes from our own derivation or computation. Files: `sources/`, `claims/`, `gaps/`, `patterns/` (`geometric-unity.md` in each), `formalization/geometric-unity/{A,…,J}-*.md`, `computation/geometric-unity/` (29 scripts, outputs committed; see its README), and `metrics/geometric-unity/*.yaml`.
+**Scope.** E. Weinstein, *Geometric Unity: Author's Working Draft v1.0* (1 Apr 2021). We reconstruct the mathematical claims under explicit readings and record source limits. The [synthesis](SYNTHESIS.md#geometric-unity) gives the current conclusions and open questions; the dated sections below preserve the development of the audit. An earlier section's open case may be closed or narrowed by a later result.
+
+The supporting [formalizations](../formalization/geometric-unity/), [computations](../computation/geometric-unity/README.md), [claim register](../claims/geometric-unity.md), [gap register](../gaps/geometric-unity.md), [metrics](../metrics/geometric-unity/) and [internal reviews](reviews/) retain the detailed evidence.
+
+**Latest bounded results, November 1–2.** [T](../formalization/geometric-unity/T-singular-residual.md) extends fixed-odd-field rigidity to nonconstant solved slaved baselines in the Euclidean compact real form and supplies a residual obstruction for other baselines. Its $W_A$ applications treat specified singular lines, leaving constant hook cases open. [U](../formalization/geometric-unity/U-rank-one-frontier.md) excludes a declared complete quadratic metric family from the remaining Z1 twisted-cone sector, using two exact minors and covariance. Arbitrary higher metric jets and general non-vector singular curves remain unresolved. These results have separate internal reviews, [T](reviews/REVIEW13-GU-T-2026-11-02.md) and [U](reviews/REVIEW14-GU-U-2026-11-02.md); they are not external peer review.
 
 ## 1. Sources
 
@@ -17,7 +21,7 @@
   - G17: "imposter" generation has two definitions.
   The underspecified core is the Zorro metric (G06), the Shiab operator (G10), the 14→4 reduction (G14), the reality conditions (G07) and symmetry breaking (G18).
 
-The draft's finite-dimensional algebra is largely correct and checkable. Its analytic core, from the action to the field equations, is not specified precisely enough to be well-posed. Under the most natural reconstruction it is inconsistent.
+The audit reproduces substantial finite-dimensional algebra and identifies specification gaps in the metric, operator and field-extension rules. The printed field equation fails the variational test under the reconstructions stated in C3 and D4; the reconstructed variational equation is analyzed separately.
 
 ## 3. Phase 2 results
 
@@ -29,7 +33,7 @@ The draft's finite-dimensional algebra is largely correct and checkable. Its ana
 | C2 | **Shiab operator** (reconstruction R-S: soldering invariants $\Phi^1,\Phi^2$). The degrees are consistent. It is gauge covariant only when tilted by $\varepsilon$; untilted, only for the centre $U(1)$. On Levi-Civita curvature, the operator with a commutator in the first term and $i$-anticommutators in the second gives $-\varepsilon^{-1}{*}G\,\varepsilon$ for $c=1$, the Einstein tensor of $Y^{14}$ (not $X^4$). The Weyl part is annihilated. | **Proven** for R-S |
 | C3 | **Field equation.** $\circledast\circ d_B$ is not formally self-adjoint: there is an exact counterexample for every $c$ for each of the 8 bracket choices (`C_rs_all_members.out`), and $O(1)$ defects for all variants. So the printed EL equation (9.7) ("Swervature = Displasion") is not the variation of the printed action (9.4), and no rescaling fixes this. The cubic term also lacks the needed symmetry. | **Proven** for R-S; open beyond R-S |
 
-**Empirical.** No claim is presently testable. The representation content predicts exotic spin-½ states (including charges $\pm\tfrac43,\pm\tfrac53,\pm2$, and colour sextets and octets) and spin-3/2 states, but no masses, couplings or breaking mechanism are given.
+**Empirical limits of this reconstruction.** No quantified physical prediction has been established. The branching contains exotic spin-½ states (including charges $\pm\tfrac43,\pm\tfrac53,\pm2$, and colour sextets and octets) and spin-3/2 states, but no masses, couplings or breaking mechanism are given.
 
 ## 4. Proposed formalization order
 

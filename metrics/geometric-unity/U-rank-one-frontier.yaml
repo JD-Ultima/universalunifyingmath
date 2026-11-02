@@ -1,0 +1,53 @@
+result: >
+  For the complete local metric polynomials g_(rho,p)(x)=I-rho R0(p)_iajb x^a x^b/3,
+  where |p|=1 and R0(p)=((p tensor p-I/6)/2) wedge I, every rho!=0 and positive cH,cV
+  at lambda=1/5 gives an inconsistent point of S's 42-unknown relaxed system in the
+  fibre over 0. There is no nonempty fibre-open consistent patch. In the hypotheses
+  of S.0 this excludes a twisted-cone Upsilon=0 solution on an open set meeting that
+  fibre. The result does not classify arbitrary rank-one-Ricci metrics.
+claim_id: [GU-054]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/U-rank-one-frontier.md
+internal_review: reports/reviews/REVIEW14-GU-U-2026-11-02.md
+code:
+  - computation/geometric-unity/U_rank_one_frontier.py
+  - computation/geometric-unity/U_rank_one_frontier.out
+formalization_status: >
+  A declared family of full local metric polynomials, positive definite near 0. Its
+  Ricci tensor at 0 is rho p tensor p and Weyl tensor is zero. The polynomial fixes
+  all required higher connection jets; no vanishing of arbitrary covariant higher
+  curvature derivatives is assumed. Base rotations, base dilation and fibre dilation
+  reduce all rho!=0 and positive metric scales to two signed canonical representatives.
+internal_consistency: >
+  The two canonical augmented matrices have exact nonzero 43-by-43 rational minors;
+  full row indices and determinants are printed. Separate nonunit controls at
+  (rho,cH,cV)=(4,5,7) and (-9,3/2,5/2) verify the full metric, Ricci, mixed Riemann and
+  nabla-Ricci pullbacks and ranks (42,43). The homothety change of relaxed unknowns
+  is explicitly (v,xi,n)->(v/alpha,xi,n/alpha^2), so invariance concerns the relaxed
+  system itself, not merely true solutions of the Hessian equation.
+proof_status: >
+  Proven, computer-assisted: U3's two rational minors and U4's declared family
+  exclusion. U1-U2 give the hand covariance and parameter-reduction proof; S4 supplies
+  the polynomial-minor continuation over each fibre. U5's stability is continuity of
+  the nonzero minor, with no quantitative radius. Its Upsilon conclusion also uses
+  S5 and Q5. Internal review confirmed U1-U5 and made the fixed-minor/base-neighbourhood and dense variable-patch
+  arguments explicit. This is not external peer review.
+novelty: >
+  Extends the specified rho=1, cH=2,cV=3 metric jet of S15 to both signs, all nonzero
+  amplitudes, all unit directions and every positive cH,cV in the declared family.
+  No new physical prediction or universal rank-one-Ricci classification.
+reproducibility: >
+  Python 3.12, sympy 1.14.0, exact Fractions and rational-domain elimination. No
+  randomness. Run python -X utf8 -I computation/geometric-unity/U_rank_one_frontier.py
+  from the repository root. 18 asserted checks, 4.3 s in the recorded run. Only the
+  earlier referee xcheck_round10.py is imported; its SHA256 is printed in the output.
+empirical_testability: None new; a mathematical obstruction in the stated reconstructed sector.
+dependencies: [S4, S5, Q5, xcheck_round10]
+confidence: >
+  The exact two signed minors and the covariance proof passed a separate internal review.
+  The parameter-family extension follows from the explicit maps,
+  not from sampling amplitudes. The broader rank-Ricci<=1 frontier remains open.
+pending_work: >
+  A next bounded calculation may free a declared quartic metric coefficient and derive an exact polynomial minor;
+  samples alone would not justify that extension. Arbitrary Weyl tensors, cubic and
+  quartic metric jets, and the Ricci-flat nonflat subcase are not classified here.

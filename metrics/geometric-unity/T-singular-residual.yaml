@@ -1,0 +1,45 @@
+result: "T. Residual/norm identity; rigidity for a fixed invariant odd field; two W_A Lambda7 singular lines excluded under a curvature-trace condition; u constant on the six positive W_A hook lines"
+claim_id: [GU-054]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/T-singular-residual.md
+internal_review: reports/reviews/REVIEW13-GU-T-2026-11-02.md
+code: [computation/geometric-unity/T_singular_residual.py, computation/geometric-unity/T_singular_residual.out]
+formalization_status: >
+  True dualized field equation, signature (14,0), compact gauge real form u(128), parallel four-parameter Shiab
+  family. Invariant real odd field To=i(t Phi1+u Phi1Gamma), not necessarily constant; kappa != 0, det M != 0.
+  The even equation gives Te=v+k, v=Sigma(dt,du) in the vector isotype, k in its orthogonal complement and ker LTo.
+  Ev is the odd residual of the slaved baseline (To,v), not a projection of that residual.
+internal_consistency: >
+  D2/R4 and the parallel isotypic splitting give <To,Dk>=0 without differentiating To. Cubic polarization and
+  preservation of the vector isotype give <To,2B(v,k)>=0. The even kernel equation gives
+  <To,Qk>=-kappa||k||^2/2. Thus the full odd contraction equals <To,Ev>-kappa||k||^2/2.
+proof_status: >
+  T1-T3: pointwise proof. Every full solution satisfies <To,Ev>/kappa=||k||^2/2 >= 0. If the scalar residual
+  vanishes on the whole open set, only the baseline can solve the full equation; in particular an already solved
+  slaved baseline has a unique real even field with that fixed invariant To. T4: real-form coefficient calculation
+  and sign proof for W_A with constant t, trace_G >= 0, t/kappa < -1/312, det M != 0. This excludes both
+  Lambda7 singular lines t=-kappa/176 and -kappa/208 with arbitrary smooth u; det M is positive on those lines.
+  T5: on each of the six positive W_A hook lines, a full solution on connected U has constant u. The Gamma trace
+  forces u=0 outside the finite Lambda3/5 kernel intersections; a continuous finite-valued u is constant.
+  Constant u=0 hook solutions and constant nonzero-u coincident-kernel cases remain open.
+reproducibility: >
+  Exact rational/Gaussian-rational Clifford checks, using only the earlier independent xcheck_round14 module;
+  no imports from J or R or their field-equation evaluator. About 4 seconds. Compact phases, cubic/current
+  identities, R10 zero-residual control, scalar residual, and four real singular-line cases with both kappa signs.
+  T5 checks all six hook copies, 84 Gamma-current directions, six hook ratios, Lambda7 invertibility, and nonzero
+  quartic leading coefficients. Deterministic output matches the recorded file.
+novelty: >
+  Within this investigation: R10's fixed-background uniqueness extends to any invariant odd field whose slaved
+  baseline already solves the equation, including nonconstant fields. For a general baseline the result is a
+  necessary scalar residual condition. T4 excludes two specified nonconstant singular strata under an explicit
+  geometric sign condition. No literature-level novelty claim is made.
+  The Gamma trace separately rules out nonconstant motion along the six positive W_A hook lines, without a
+  curvature-trace assumption; it does not settle full solutions at their constant values.
+empirical_testability: "No new physical prediction; these are conditional results in the reconstructed field system."
+dependencies: [D2, D5, I2, I6, J1, J2, R2, R4, R10, F7]
+confidence: >
+  The identities have pointwise proofs with explicit real-form and pairing conventions; exact checks verify the
+  phases and coefficients. No integration or compact-manifold assumption is used. A residual of the permitted
+  sign does not establish a full solution. T1-T5 were cross-reviewed internally by a separate agent, including a
+  symbolic expansion of T4 and the six T5 ratios. General nonconstant singular curves, constant positive-hook
+  branches, det M=0, and indefinite gauge real forms remain open.

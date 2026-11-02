@@ -41,6 +41,8 @@ RECENT = [
     ("chain-theory/alpha/xcheck_round_ct5.py", []),
     ("geometric-unity/xcheck_round14.py", []),
     ("geometric-unity/xcheck_round15.py", ["--geometry"]),
+    ("geometric-unity/T_singular_residual.py", []),
+    ("geometric-unity/U_rank_one_frontier.py", []),
 ]
 LEAN_SOURCE_SHA256 = "522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da"
 
