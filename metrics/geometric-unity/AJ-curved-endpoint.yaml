@@ -1,0 +1,50 @@
+result: >
+  A spectral rigidity criterion for positive Z1 at lambda=1/5 forces the observer
+  metric to be Einstein and the four-base to be flat. Applied to the first single
+  WA Lambda3 endpoint t/kappa=-1/400, u=0, it forces Te=0 and
+  cV*kappa^2=150000/11 without assuming base flatness, traceG>=0 or analyticity.
+claim_id: [GU-054]
+result_ids: [AJ1, AJ2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AJ-curved-endpoint.md
+internal_review: reports/reviews/REVIEW37-GU-AJ-2026-11-02.md
+code:
+  - computation/geometric-unity/AJ_curved_endpoint.py
+  - computation/geometric-unity/AJ_curved_endpoint.out
+formalization_status: >
+  AJ1 uses a smooth Riemannian four-base, reconstructed Z1, lambda=1/5,
+  positive constant cH,cV and a real constant h. AJ2 additionally keeps the true
+  dualized equation, compact (14,0), u(128), fixed parallel real WA, real fields,
+  constant kappa!=0, invariant odd endpoint, det M!=0 and one single c/wGamma
+  Lambda3 kernel away from every other non-vector factor on a connected open domain.
+proof_status: >
+  Proven from the stated reconstructed lemmas. The endpoint's grade-one stress
+  gives 3300B^2-380tr(B)B+9tr(B)^2 I=0 for B=Ghat-hI.
+  Rational fibre continuation and F4 along qg force h=15/(2cV).
+  N1's Euler eigenvector then forces tr(B)=0 and B=0 in the positive metric.
+  S5(b) supplies base flatness; its N10 curvature-pairing coefficient is
+  computer-assisted. The original stress trace forces k=0. AI3 supplies the
+  complete-equation converse and other-block regularity.
+internal_consistency: >
+  Eleven exact symbolic controls verify spectral, radial, Euler and scale
+  coefficients. Nonzero spectral and indefinite nilpotent controls keep the
+  geometric and positivity assumptions necessary to the stated proof explicit.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0; python -X utf8 -I
+  computation/geometric-unity/AJ_curved_endpoint.py. No Clifford or metric engine
+  imported. The helper checks algebraic combinations of imported geometric
+  lemmas; it does not independently reconstruct the observer metric.
+novelty: >
+  One newly closed endpoint within this investigation. A bounded primary-source
+  literature comparison is recorded in the write-up; no matching theorem was
+  identified there. Exhaustive literature novelty and external peer review
+  remain outstanding.
+empirical_testability: None new; a theorem in the specified reconstruction.
+dependencies: [AI2, AI3, AA4, AA6, AA7, F4, K, N1, S4, S5]
+confidence: >
+  Accepted in internal Review37 after exact symbolic controls and separate
+  derivation and scope reviews;
+  these remain AI-assisted internal checks, not external peer review.
+pending_work: >
+  The other three Lambda3 endpoints over nonflat Z1 without a curvature-trace
+  sign, Lambda5 branches, coincident kernels and other field sectors remain open.

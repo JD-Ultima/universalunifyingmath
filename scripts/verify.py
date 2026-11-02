@@ -55,6 +55,7 @@ RECENT = [
     ("geometric-unity/AH_lambda5_gram.py", []),
     ("geometric-unity/AH_cyclic_obstruction.py", []),
     ("geometric-unity/AI_flat_lambda3.py", []),
+    ("geometric-unity/AJ_curved_endpoint.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),

@@ -1,6 +1,6 @@
 # AI. The Lambda3 endpoints over a flat base
 
-Over flat-base Z1, the two single $W_A$ Lambda3 branches admit a complete endpoint classification. The contraction/exterior-Gamma branch retains one known constant odd, zero even solution at one scale. The opposite branch has no solution at positive scales. The result concerns the full reconstructed $\Upsilon=0$ equation on that fixed observer metric; it is not a classification over curved bases.
+Over flat-base Z1, the two single $W_A$ Lambda3 branches admit a complete endpoint classification. The contraction/exterior-Gamma branch retains one known constant odd, zero even solution at one scale. The opposite branch has no solution at positive scales. The result concerns the full reconstructed $\Upsilon=0$ equation on that fixed observer metric; [AJ](AJ-curved-endpoint.md) subsequently removes the flat-base assumption at the first branch's $-1/400$ endpoint. The other three endpoints remain open over nonflat Z1 without a curvature-trace sign.
 
 Code: [AI_flat_lambda3.py](../../computation/geometric-unity/AI_flat_lambda3.py) and [output](../../computation/geometric-unity/AI_flat_lambda3.out). Record: metrics/geometric-unity/AI-flat-lambda3.yaml. [Independent internal Review33](../../reports/reviews/REVIEW33-GU-AI-2026-11-02.md) accepts AI1–AI3 and reproduces all twelve controls in 1.7 seconds. This is internal review, not external peer review.
 
@@ -73,7 +73,7 @@ Under the assumptions above:
 $$i\left[\frac{15}{2c_V}+\kappa t+312t^2\right]\Phi^1=0,$$
 which holds at $t=-\kappa/400$ and the stated scale. This is the existing T/R10 constant-background solution, now shown to be the only solution in this single branch over flat Z1. The two vector determinant factors are nonzero there, as are all other non-vector factors. The preceding endpoint arguments give necessity and exclude the second row. ∎
 
-The result is local on the reconstructed observer domain and works for either sign of $\kappa$. Other field sectors, coincident kernels, indefinite pairings, other operators, nonflat bases and Lambda5 fields are not classified. It does not solve a separate weighted base-metric variation.
+The result is local on the reconstructed observer domain and works for either sign of $\kappa$. Other field sectors, coincident kernels, indefinite pairings, other operators, the remaining nonflat endpoints and Lambda5 fields are not classified here. It does not solve a separate weighted base-metric variation.
 
 ## Reproduction
 

@@ -47,4 +47,5 @@ confidence: >
   Independent internal Review33 accepts the source scope, endpoint residuals,
   stress/rank step and full-equation converse, and reproduces twelve controls. Either kappa sign is allowed.
 pending_work: >
-  Nonflat endpoint fields, Lambda5 branches, coincident kernels and other sectors remain open.
+  AJ subsequently closes the first branch's -1/400 endpoint without assuming base flatness.
+  The other three nonflat endpoints, Lambda5 branches, coincident kernels and other sectors remain open.

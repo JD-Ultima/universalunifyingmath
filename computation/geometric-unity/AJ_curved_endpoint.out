@@ -1,0 +1,15 @@
+AJ: first Lambda3 endpoint t/kappa=-1/400, u=0
+SymPy 1.14.0; exact symbolic controls; geometry imported.
+[01] simple-form eigenvalues give trace -2200*z: True
+[02] the full spectral polynomial vanishes identically: True
+[03] trace-square elimination retains the zero-form case: True
+[04] scalar limit forces delta=0: True
+[05] F4 radial eigenvalues have the claimed scalar limit: True
+[06] independent section control forces scalar curvature zero: True
+[07] N1 Euler eigenvalue equals trace(B)/12 at the forced scale: True
+[08] spectral polynomial on Euler field gives tau^2/4: True
+[09] baseline and scale cancel exactly for either kappa sign: True
+[10] nonzero spectral control prevents an unconditional B=0 inference: True
+[11] indefinite control keeps positivity explicit: True
+11 exact checks passed.
+One endpoint only; other curved endpoints and Lambda5 fields remain open.
