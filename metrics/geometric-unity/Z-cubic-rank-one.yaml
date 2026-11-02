@@ -1,0 +1,66 @@
+result: >
+  With U's nonzero rank-one-Ricci/zero-Weyl quadratic normal-coordinate jet,
+  arbitrary 200 cubic and 350 quartic metric coefficients and arbitrary smooth
+  remainder with zero four-jet, the relaxed system has coefficient rank 42 and
+  augmented rank 43 at a fibre witness. It is consistent on no fibre-open patch.
+  In S.0's slaved vector sector this excludes twisted-cone Upsilon=0 solutions
+  on open sets meeting the fibre. Normal-coordinate invariance extends the result
+  to every smooth Riemannian four-metric with nonzero rank-one Ricci and zero
+  Weyl tensor at the base point. Nonzero Weyl and Ricci-flat nonflat points remain open.
+claim_id: [GU-054]  # Source-claim context; new statements have result IDs below.
+result_ids: [Z1, Z2, Z3, Z4, Z5, Z6, Z7, Z8]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/Z-cubic-rank-one.md
+internal_review: reports/reviews/REVIEW19-GU-Z-2026-11-02.md
+code:
+  - computation/geometric-unity/Z_cubic_rank_one.py
+  - computation/geometric-unity/Z_cubic_rank_one.out
+formalization_status: >
+  The base jet is I-rho R_p x x/3+Q3+Q4+R5, rho!=0, with arbitrary symmetric
+  homogeneous cubic and quartic matrices and smooth R5 of zero four-jet. Observer
+  first jets are fixed, second jets affine in Q3 and third jets affine jointly
+  in Q3,Q4. Cubic curvature variation has only three-horizontal/one-off-diagonal-
+  vertical components; the Ricci variation has only H/off-diagonal-V components.
+  A diagonal-vertical gradient identity proves the missing components vanish.
+internal_consistency: >
+  Exact symbolic calculation covers all 200 cubic coefficients in that gradient
+  identity and curvature cancellation. The invariant coefficient row classes
+  VVV, H-D-H, H-V-D, H-H-D, D-D-H have counts 450,64,160,24,24, total 722.
+  Their exact rank is 38; the sparse kernel is v=0, xi_V=n_V=0, xi_H=c h_H n_H.
+  Four H-V-V rows change only in xi_5, already zero on the kernel; their kernel
+  restriction is diag(-1/45,-1/30,-2/45,-1/18). This proves rank 42 for every cubic
+  tensor and a fixed nonzero coefficient minor. Full pivot rows, sparse kernel
+  entries and exact determinants are recorded. Mixed controls test the invariant
+  rows, selected RHS, full reflection parity, affinity and combined quartic scope.
+proof_status: >
+  Z1-Z4 are hand jet-order, parity and tensor-support arguments. Z5-Z6 use exact
+  rational rank/kernel/restriction certificates to establish the all-cubic full
+  rank theorem. Z7 uses the three-row contradiction together with that full rank,
+  S4's rational-minor continuation and the local U5 field-equation argument.
+  Z8 uses the curvature decomposition and Riemann normal-coordinate expansion.
+  Independently accepted in REVIEW19-GU-Z, including the invariant-row classification,
+  normal-coordinate corollary and an actual 35-assertion rerun. This is internal,
+  not external peer review.
+novelty: >
+  Removes W's zero-cubic restriction while retaining the prescribed quadratic
+  curvature type. The missing rank step is proved by a 38-plus-4 subsystem, rather
+  than inferred from cubic samples. This yields an invariant condition on Ricci
+  and Weyl at one point, not merely a special complete polynomial family.
+reproducibility: >
+  Python 3.12, sympy 1.14.0, exact Fractions and rational-domain elimination.
+  No randomness. Run python -X utf8 -I computation/geometric-unity/Z_cubic_rank_one.py
+  from the repository root. Imports accepted U helpers and the earlier referee
+  xcheck_round10 engine. Assertion count, timings, the 38 pivot rows, sparse kernel
+  basis and exact coefficient determinants are printed in the recorded output.
+  The recorded run passes 35 assertions in 13.8 s.
+empirical_testability: None new; a mathematical obstruction in the declared reconstructed sector.
+dependencies: [U1, U2, U5, W1, W2, W3, S4, S5, Q5, xcheck_round10]
+confidence: >
+  High for the exact rank certificates and cubic support proof, subject to
+  REVIEW19-GU-Z. The full-rank statement is essential: pointwise
+  inconsistency alone would not establish the fibre-open exclusion when the
+  coefficient matrix varies. The all-cubic range follows from the invariant
+  subsystem and kernel argument, not sampled coefficients.
+pending_work: >
+  The remaining frontier includes nonzero Weyl curvature and Ricci-flat nonflat points. No
+  extension to those cases is claimed by these rank-one/zero-Weyl certificates.

@@ -1,0 +1,29 @@
+AA7. Exterior-algebra controls for the real Euclidean dimension-14 hook zero locus
+[01] symplectic support dimension 4: all 15 basis commutators have coefficient r-j: True
+[02] symplectic support dimension 6: all 42 basis commutators have coefficient r-j: True
+[03] symplectic support dimension 8: all 93 basis commutators have coefficient r-j: True
+[04] symplectic support dimension 10: all 176 basis commutators have coefficient r-j: True
+[05] symplectic support dimension 12: all 299 basis commutators have coefficient r-j: True
+[06] the symplectic commutator was checked on all 625 relevant basis forms: True
+[07] rank-four contraction: primitive Lambda2(S4) has dimension five: True
+[08] in dimension 14 the r=2 annihilator dimension bound is positive: True
+[09] zero: traces, projector and expected hook status: True
+[10] zero: exact (n-7) wedge identity: True
+[11] simple coordinate form: traces, projector and expected hook status: True
+[12] simple coordinate form: exact (n-7) wedge identity: True
+[13] simple rational change of factors: traces, projector and expected hook status: True
+[14] simple rational change of factors: exact (n-7) wedge identity: True
+[15] disjoint triples with F=0: traces, projector and expected hook status: True
+[16] disjoint triples with F=0: exact (n-7) wedge identity: True
+[17] shared-index nondecomposable form: traces, projector and expected hook status: True
+[18] shared-index nondecomposable form: exact (n-7) wedge identity: True
+[19] the explicit AA6 excluded form has F=2e1234 and H5(Z)_5=-e12345/5: True
+[20] an unused direction annihilates omega and F, but detects a nonzero hook component: True
+[21] the seven-dimensional comparison form has zero seven-dimensional hook but F!=0: True
+[22] embedding that form in dimension 14 has nonzero hook: True
+[23] the (n-7) wedge identity also holds when its seven-form side is nonzero: True
+[24] the rank-two contraction proof has the stated unique x-containing square term: True
+The proof classifies the hook zero locus as zero or decomposable real three-forms in positive dimension 14.
+This remains a necessary pointwise condition for AA6; no field-equation or PDE sufficiency is asserted.
+
+24 checks, all True; runtime 0.0 s

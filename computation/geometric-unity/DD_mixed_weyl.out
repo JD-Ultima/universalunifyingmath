@@ -1,0 +1,55 @@
+DD. One mixed-Weyl pencil, finite same-witness obstruction
+Fresh portable path: 16 exact node systems, once in memory; no external caches.
+[01] H has the stated mixed entries, curvature symmetries, Bianchi and zero Ricci/electric part: True
+[02] even sign flips fix H and odd sign flips reverse it: True
+[03] rank helper uses the same three unisolvent coefficient nodes: True
+[04] rho=1, y=(2, 3, 4, 5): selected rows have only xi_13 and the diagonal n combination: True
+[05] rho=1, y=(2, 3, 4, 5): the n combination is common and curvature independent: True
+[06] rho=1, y=(2, 3, 4, 5): fourth-node control checks the entire degree-two coefficient matrix: True
+[07] rho=1, y=(2, 3, 4, 5): exact RHS interpolation gives the stated quadratic formulas: True
+[08] rho=1, y=(2, 3, 4, 5): exact compatibility determinant has the stated polynomial: True
+  xi coefficients: [-(1350*w**2 + 7849)/43200, -(1800*w**2 + 24163)/57600, -(2700*w**2 + 36467)/86400]
+  RHS: [(125*w**2 + 8)/4000, (225*w**2 + 8)/36000, (225*w**2 + 1)/12000]
+  compatibility determinant: (419830*w**2 - 3933)/138240000
+  rank certificates rho=1, y=(2, 3, 4, 5): 10 exact checks; invariant rank 38, J7-completed rank 42 for every w.
+  rank certificate summary: {'checks': 10, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+[09] rho=1, y=(2, 3, 5, 7): selected rows have only xi_13 and the diagonal n combination: True
+[10] rho=1, y=(2, 3, 5, 7): the n combination is common and curvature independent: True
+[11] rho=1, y=(2, 3, 5, 7): fourth-node control checks the entire degree-two coefficient matrix: True
+[12] rho=1, y=(2, 3, 5, 7): exact RHS interpolation gives the stated quadratic formulas: True
+[13] rho=1, y=(2, 3, 5, 7): exact compatibility determinant has the stated polynomial: True
+  xi coefficients: [-(37800*w**2 + 99019)/529200, -(8190*w**2 + 74107)/176400, -(32130*w**2 + 224701)/529200]
+  RHS: [(672*w**2 + 25)/20580, (189*w**2 + 4)/24696, (819*w**2 + 2)/41160]
+  compatibility determinant: (39690*w**4 + 2320806*w**2 - 16867)/777924000
+  rank certificates rho=1, y=(2, 3, 5, 7): 10 exact checks; invariant rank 38, J7-completed rank 42 for every w.
+  rank certificate summary: {'checks': 10, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+[14] rho=1: the two compatibility numerators have an exact unit Bezout identity: True
+  Bezout coefficients: -333261054*w**2/17195562990649 - 19490001675/17195562990649 3525144578/17195562990649
+[15] rho=-1, y=(2, 3, 4, 5): selected rows have only xi_13 and the diagonal n combination: True
+[16] rho=-1, y=(2, 3, 4, 5): the n combination is common and curvature independent: True
+[17] rho=-1, y=(2, 3, 4, 5): fourth-node control checks the entire degree-two coefficient matrix: True
+[18] rho=-1, y=(2, 3, 4, 5): exact RHS interpolation gives the stated quadratic formulas: True
+[19] rho=-1, y=(2, 3, 4, 5): exact compatibility determinant has the stated polynomial: True
+  xi coefficients: [-(1350*w**2 + 29449)/43200, -(1800*w**2 + 24163)/57600, -(2700*w**2 + 36467)/86400]
+  RHS: [(125*w**2 + 8)/4000, (225*w**2 + 8)/36000, (225*w**2 + 1)/12000]
+  compatibility determinant: -(444170*w**2 - 5667)/138240000
+  rank certificates rho=-1, y=(2, 3, 4, 5): 10 exact checks; invariant rank 38, J7-completed rank 42 for every w.
+  rank certificate summary: {'checks': 10, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+[20] rho=-1, y=(2, 3, 5, 7): selected rows have only xi_13 and the diagonal n combination: True
+[21] rho=-1, y=(2, 3, 5, 7): the n combination is common and curvature independent: True
+[22] rho=-1, y=(2, 3, 5, 7): fourth-node control checks the entire degree-two coefficient matrix: True
+[23] rho=-1, y=(2, 3, 5, 7): exact RHS interpolation gives the stated quadratic formulas: True
+[24] rho=-1, y=(2, 3, 5, 7): exact compatibility determinant has the stated polynomial: True
+  xi coefficients: [-(37800*w**2 + 363619)/529200, -(8190*w**2 + 74107)/176400, -(32130*w**2 + 224701)/529200]
+  RHS: [(672*w**2 + 25)/20580, (189*w**2 + 4)/24696, (819*w**2 + 2)/41160]
+  compatibility determinant: (39690*w**4 - 2441994*w**2 + 27233)/777924000
+  rank certificates rho=-1, y=(2, 3, 5, 7): 10 exact checks; invariant rank 38, J7-completed rank 42 for every w.
+  rank certificate summary: {'checks': 10, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+[25] rho=-1: the two compatibility numerators have an exact unit Bezout identity: True
+  Bezout coefficients: 21688711035/15455594061071 - 352582146*w**2/15455594061071 -3945739778/15455594061071
+[26] all 16 exact node systems were assembled once: True
+At least one of the two finite fibres is incompatible for every real w, with coefficient rank 42 at the same fibre.
+Higher-jet transfer uses the curvature-independent BB3 support/parity/gradient proof, not even-sign symmetry of arbitrary higher jets.
+The result concerns one declared mixed-Weyl frame orbit and S.0's slaved-vector sector; no general-Weyl theorem is asserted.
+
+26 main checks, all True; rank-helper checks also passed; runtime 27.6 s

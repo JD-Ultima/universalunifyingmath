@@ -1,0 +1,37 @@
+AG: other Lambda3 w/cGamma branch, compact phase i, real WA
+sympy 1.14.0; Q9 conversion is Q9 right-multiplied by Gamma.
+[01] decomposable control: hook projector and expected zero/nonzero status: True
+[02] decomposable control: both full grade identities for symbolic r,s: True
+[03] decomposable control: both projected coefficients for symbolic r,s: True
+[04] two disjoint triples: hook projector and expected zero/nonzero status: True
+[05] two disjoint triples: both full grade identities for symbolic r,s: True
+[06] two disjoint triples: both projected coefficients for symbolic r,s: True
+[07] shared-index rank-four two-form factor: hook projector and expected zero/nonzero status: True
+[08] shared-index rank-four two-form factor: both full grade identities for symbolic r,s: True
+[09] shared-index rank-four two-form factor: both projected coefficients for symbolic r,s: True
+[10] three disjoint triples: hook projector and expected zero/nonzero status: True
+[11] three disjoint triples: both full grade identities for symbolic r,s: True
+[12] three disjoint triples: both projected coefficients for symbolic r,s: True
+[13] overlapping triples: hook projector and expected zero/nonzero status: True
+[14] overlapping triples: both full grade identities for symbolic r,s: True
+[15] overlapping triples: both projected coefficients for symbolic r,s: True
+[16] full support in fourteen dimensions: hook projector and expected zero/nonzero status: True
+[17] full support in fourteen dimensions: both full grade identities for symbolic r,s: True
+[18] full support in fourteen dimensions: both projected coefficients for symbolic r,s: True
+[19] unrestricted vector/kernel mixed term has zero H5 in both grades: True
+[20] baseline control has no H5 in either grade: True
+[21] covariant derivative retains weight jets but has no grade5/9/13 output: True
+[22] two hook coefficients have no common nonzero real weight pair: True
+[23] simple-form symmetric Gamma tensor has the same 3+11 eigenvalues as AF: True
+[24] non-coordinate simple form has the universal Gamma stress tensor: True
+[25] Cartan derivative controls survive on both copies, without the three projected grades: True
+[26] vector/kernel mixed control has zero symmetric Gamma tensor: True
+[27] first compact-phase kernel chart is exact modulo w squared minus f: True
+[28] alternate compact-phase kernel chart is exact modulo w squared minus f: True
+[29] the Gamma scalar candidate is outside this real conic: True
+[30] the only zero-w endpoints are -3/272 and -1/240: True
+Q5 = (8i/3)(3s^2-59r^2)Z-8i*r^2*w(F4).
+Q9*Gamma = (224i/3)rs*Z; right conversion sign fixed as displayed.
+AA7 and the symmetric Gamma rank argument exclude w!=0 on this single branch; endpoint equations remain open.
+
+30 checks, all True; runtime 8.6 s

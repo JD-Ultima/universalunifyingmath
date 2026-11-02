@@ -1,0 +1,29 @@
+U. Normal quadratic rank-one-Ricci family: exact sign certificates and scaling controls
+referee engine sha256: 92e1dcce1418190a1c355576a93997e32fcee8b3ea9907b82ba25fe6b8530cac
+sympy 1.14.0; lambda=1/5; canonical cH=2,cV=3; y=diag(2, 3, 4, 5)
+[01] rho=1: base Ricci is diag(rho,0,0,0): True
+[02] rho=1: 43 independent rows of the augmented 1274-by-43 matrix: True
+[03] rho=1: exact augmented minor is nonzero: True
+  zero-based row indices: [0, 1, 4, 5, 6, 7, 9, 10, 14, 16, 20, 21, 28, 31, 35, 42, 47, 48, 49, 56, 57, 70, 72, 84, 98, 112, 126, 140, 154, 168, 183, 184, 197, 211, 225, 239, 253, 267, 281, 295, 309, 323, 337]
+  determinant: 75682142809395696820582804977659740811736686770443825444041659216384067/1832160198446717606537615243074100510731548281877576609253294080000000000000000000000000000000000000000
+[04] rho=-1: base Ricci is diag(rho,0,0,0): True
+[05] rho=-1: 43 independent rows of the augmented 1274-by-43 matrix: True
+[06] rho=-1: exact augmented minor is nonzero: True
+  zero-based row indices: [0, 1, 4, 5, 6, 7, 9, 10, 14, 16, 20, 21, 28, 31, 35, 42, 47, 48, 49, 56, 57, 70, 72, 84, 98, 112, 126, 140, 154, 168, 183, 184, 197, 211, 225, 239, 253, 267, 281, 295, 309, 323, 337]
+  determinant: 11666782316251549817869334218336338771979380103523748742525870369522305318107237558141/26712895693353142703318430244020385446465973949775066962913027686400000000000000000000000000000000000000000
+[07] rho=4: base dilation gives canonical signed amplitude: True
+[08] rho=4: exact pulled-back metric agrees with canonical metric: True
+[09] rho=4: exact pulled-back covariant Ricci agrees: True
+[10] rho=4: exact pulled-back mixed Riemann agrees: True
+[11] rho=4: exact pulled-back covariant derivative of Ricci agrees: True
+[12] rho=4, cH=5, cV=7: ranks (42,43) after nonunit scaling: True
+[13] rho=-9: base dilation gives canonical signed amplitude: True
+[14] rho=-9: exact pulled-back metric agrees with canonical metric: True
+[15] rho=-9: exact pulled-back covariant Ricci agrees: True
+[16] rho=-9: exact pulled-back mixed Riemann agrees: True
+[17] rho=-9: exact pulled-back covariant derivative of Ricci agrees: True
+[18] rho=-9, cH=3/2, cV=5/2: ranks (42,43) after nonunit scaling: True
+The two exact minors prove the two signed representatives; the published naturality/homothety argument covers all nonzero amplitudes and positive cH,cV in the declared metric family.
+Arbitrary rank-one-Ricci metrics, Weyl tensors and free higher connection jets are not covered.
+
+18 checks, all True; runtime 4.3 s

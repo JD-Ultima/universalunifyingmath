@@ -1,12 +1,17 @@
 # R. The even operator $L_{T_o}$ on all of $\Lambda^1\otimes\mathfrak g_{\rm ev}$: where the slaved field leaves $\mathcal V$
 
+For the current singular-field results and open questions, see the [research synthesis](../../reports/SYNTHESIS.md#geometric-unity).
+
 Claims: GU-054 (context). Gaps: GU-G15, GU-G14 (and GU-G16 for the role of $\ell=xz\pm yw$). Code: `computation/geometric-unity/R_even_operator.py` → `.out` (sections R0–R4 with R1b–R1d; exact: Python Fractions, sympy rationals and Gaussian rationals; no randomness; 342 s on one core, a second run 353 s, identical apart from the timing annotations). It imports `J_slaved_sector.py` (and through it `I_elliptic_reduction.py`, `G_symbols.py`, `H_ellipticity.py`, `shiab_checks.py`), unmodified, and calls J's own `j1`. Output sections: §R0 constituents, §R1 blocks, §R1b equivariance, §R1c source, §R1d traces, §R2 determinants, §R3 singular sets and kernels, §R4 consequences. Record: `metrics/geometric-unity/R-even-operator.yaml`. Builds on I (I2, Cor. I2.2), J (J.0, J1), M (M1), H (H7) and, for R9, I7(b), N12(c), Q15. Layers: (b) reconstruction (that of J, unchanged), (c) proven, (d) open.
 
 ## R.0 Question and setting (layer b)
 
+**Internal review and bounded continuation (2026-11-01).** `reports/reviews/REVIEW12-GU-R-2026-11-01.md` reviews this note. `computation/geometric-unity/xcheck_round14.py` → `.out` reconstructs the Clifford product and polarized cubic without repository imports: 352 exact block-column checks cover all constituents, copies, operators and invariant maps in both signatures. R10 below closes the specific constant-background question in R9 under the positive pairing of the Euclidean gauge real form. General singular branches remain open.
+
 Rounds 6–13 take $T_e$ to be the slaved field $\Sigma(dt,du)^\top$ in the vector sector $\mathcal V$, with $\det M\neq0$. J.3 lists "components of $T_e$ outside $\mathcal V$" as not covered, because only the $\mathcal V$-block $M$ of $L_{T_o}$ was computed. This note computes $L_{T_o}$ on all of $\Lambda^1\otimes\mathfrak g_{\rm ev}$ for invariant $T_o$.
 
 **Setting.** That of J.0: unitary gauge, the true Υ (D5), the family $\circledast=xW_A+yW'_A+zW_C\mathrm{Ad}_\Gamma+wW'_C\mathrm{Ad}_\Gamma$, the real forms (14,0) and (7,7), and $Y_a=\eta_{aa}D_a$.
+- Throughout, $\kappa\ne0$, as in J.0. The blocks themselves are defined also where $\det M=0$; hypotheses about slaving and R10 state separately when $\det M\ne0$ is required.
 - $T_o=t\Phi^1+u\Phi^1\Gamma$. By I2 the even equation reads, pointwise,
 $$L_{T_o}T_e=-Y_{\rm ev}[\circledast(d_0T_o)],\qquad L_{T_o}T_e:=Y_{\rm ev}[\kappa T_e+2B(T_e,T_o)].$$
   It is algebraic in $T_e$. $L_{T_o}$ acts on the fibre $\Lambda^1\otimes\mathfrak g_{\rm ev}$, of complex dimension $14\cdot2^{13}=114688$, and depends only on the values of $(t,u)$ at the point.
@@ -43,7 +48,7 @@ $$B_{\Lambda^1}=M=\begin{pmatrix}\kappa&0&208\epsilon\delta&0\\0&\kappa+224\sigm
 $$B_{\Lambda^3}=\begin{pmatrix}\kappa+\tfrac{112}3\sigma&0&\tfrac{352}3\epsilon\delta&64i\epsilon\theta\\0&\kappa+240\sigma&320i\epsilon\theta&32\epsilon\delta\\32\delta&-320i\theta&\kappa+400\sigma&0\\-64i\theta&\tfrac{352}3\delta&0&\kappa+\tfrac{272}3\sigma\end{pmatrix},\qquad B_{\Lambda^5}=\begin{pmatrix}\kappa+96\sigma&0&48\epsilon\delta&128i\epsilon\theta\\0&\kappa+\tfrac{704}3\sigma&256i\epsilon\theta&\tfrac{80}3\epsilon\delta\\\tfrac{80}3\delta&-256i\theta&\kappa+\tfrac{832}3\sigma&0\\-128i\theta&48\delta&0&\kappa+160\sigma\end{pmatrix},$$
 $$B_{\Lambda^7_\pm}=\begin{pmatrix}\kappa+176\sigma&\pm192\theta\\\pm192\theta&\kappa+208\sigma\end{pmatrix}\ (14,0),\qquad B_{\Lambda^7_\pm}=\begin{pmatrix}\kappa+176\sigma&\mp192i\theta\\\mp192i\theta&\kappa+208\sigma\end{pmatrix}\ (7,7),$$
 $$B_{H_k}=\begin{pmatrix}\kappa+a_k\sigma&-32i\epsilon\theta\\32i\theta&\kappa+b_k\sigma\end{pmatrix},\qquad(a_k,b_k)=\big(-\tfrac{56}3,-\tfrac{136}3\big),\ (-24,-40),\ \big(-\tfrac{88}3,-\tfrac{104}3\big)\ \ (k=2,4,6).$$
-- (a) The twisted coefficients enter only through θ, and $\Phi^1\Gamma$ mixes the γ- and γΓ-channels only through δ. $\Lambda^7$ and the hooks have no δ-term. In the 4×4 blocks δ couples $c\leftrightarrow wR_\Gamma$ and $w\leftrightarrow cR_\Gamma$, and θ couples $c\leftrightarrow cR_\Gamma$ (absent for $\Lambda^1$) and $w\leftrightarrow wR_\Gamma$.
+- (a) The twisted coefficients enter only through θ. The $u\Phi^1\Gamma$ term can contribute to σ, θ and δ; off-diagonal couplings between γ- and γΓ-copies involve both θ and δ. $\Lambda^7$ and the hooks have no δ-term. In the 4×4 blocks δ couples $c\leftrightarrow wR_\Gamma$ and $w\leftrightarrow cR_\Gamma$, and θ couples $c\leftrightarrow cR_\Gamma$ (absent for $\Lambda^1$) and $w\leftrightarrow wR_\Gamma$.
 - (b) σ, θ, δ, hence every block, are invariant under M1(a) and M1(b) (output §R3). M1 was proven a symmetry of the reduced system of J1–J2; for $L_{T_o}$ it holds on all of $\Lambda^1\otimes\mathfrak g_{\rm ev}$.
 - (c) $\mathrm{tr}\,L_{T_o}=114688\,\kappa$: the σ-traces cancel, $768(14+364+2002)+384\cdot3432-64(896+11648+36608)=0$.
 
@@ -152,18 +157,44 @@ The component of $\{u=0\}\setminus Z$ containing 0 is $-\kappa/544<t<3\kappa/136
 
 **Proposition R8 (comparison with $\det M$; proven).** $\det M$ is a factor of $\det L_{T_o}$, with exponent 14. There are six further factors, $\det B_{\Lambda^3}$, $\det B_{\Lambda^5}$, $\det B_{\Lambda^7}$ and $\det B_{H_k}$, and each is coprime to $\det M$ (R3). So $Z_{\mathcal V}\subset Z$, strictly for $\circledast_\sharp$ and $W_A$: the six positive points of R6(a), and for $\circledast_\sharp$ in (14,0) the point $(0,\kappa/32)$, lie in $Z_\perp\setminus Z_{\mathcal V}$. "$\det M\neq0$" does not imply that $L_{T_o}$ is invertible.
 
-**Remark R9 (a flat-base configuration in $Z_\perp$; computed).** Take (14,0) and $\circledast_\sharp$ ($x'=z'=1$).
+**Remark R9 (a flat-base configuration in $Z_\perp$; computed).** Take (14,0), $\kappa>0$ and $\circledast_\sharp$ ($x'=z'=1$).
 - The flat-base solutions of I7(b), N12(c) and Q15 (Z1, $\lambda=\tfrac15$) have $u=0$ and constant $s=t$ with $312s^2+\kappa s+\tfrac{15}{2c_V}=0$, so $s\in(-\kappa/312,0)$.
 - That interval meets $Z$ only at two points. One is $s=-\kappa/400$: $\Lambda^3$, copy $wR_\Gamma$ (grade 10), $c_V\kappa^2=\tfrac{150000}{11}\ge9360$, $\det M\neq0$. The other is $s=-\kappa/544$: $\det M=0$, $c_V\kappa^2=\tfrac{277440}{29}$. At $c_V\kappa^2=\tfrac{150000}{11}$ the other root, $s=-\tfrac{11}{15600}\kappa$, is regular.
 - So for this one value of $c_V\kappa^2$, at the root $s=-\kappa/400$ the even equation is solved by $T_e=k$ for every section $k$ of $w(\Lambda^3)\Gamma$ (grade 10, rank 364). $(t,u)$ is constant there, so (R) fails on all of $U$.
-- Whether some $k\neq0$ also solves the odd equation was not examined. N12's and Q15's "$T_e\equiv0$" at that root rests on their hypothesis $T_e\in\mathcal V$.
+- At the time of the round-14 computation, whether some $k\ne0$ also solves the odd equation was not examined. The bounded continuation R10 now excludes such a field for this fixed constant $T_o$ in the Euclidean real form, including varying $k$. N12's and Q15's original "$T_e\equiv0$" at that root used their hypothesis $T_e\in\mathcal V$; R10 removes it for this configuration.
+
+**Proposition R10 (fixed constant Euclidean backgrounds; added 2026-11-01).** Work on an open set $U\subset Y$ in signature (14,0), with the compact **gauge real form** $\mathfrak u(128)$, the true field equation, and $\kappa\ne0$. Let
+$$T_o=t\Phi^1+u\Phi^1\Gamma$$
+be a real invariant field with constant real-form coefficients (the primed coefficients of I.0). Assume $T_o$ with $T_e=0$ already solves the odd equation on $U$, and $\det M(t,u)\ne0$. Then every real solution with this same $T_o$ has $T_e=0$. No compactness of $U$ or $Y$, integration, or boundary condition is assumed.
+
+*Proof.* Use the positive pointwise pairing on real $\mathfrak u(128)$-valued 1-forms
+$$\langle A,B\rangle=-\sum_a\operatorname{Tr}(A_aB_a).$$
+It is positive definite because the metric on $Y$ is positive definite and the gauge matrices are anti-Hermitian. Multiplying both the trace pairing and the action by $-1$ leaves the gradient field $Q$ unchanged. Polarizing its cubic potential gives the totally symmetric trilinear form
+$$\langle A,B(B',C)\rangle=\langle B',B(A,C)\rangle=\langle C,B(A,B')\rangle.$$
+(Here $B$ is I2's quadratic polarization, not a connection.)
+
+Since $d_0T_o=0$, R4 and $\det M\ne0$ force $T_e=k\in\mathcal V^\perp\cap\ker L_{T_o}$. The even equation, paired with $k$, therefore gives
+$$\kappa\|k\|^2+2\langle k,B(k,T_o)\rangle
+=\kappa\|k\|^2+2\langle T_o,Q(k)\rangle=0.\tag{R10.1}$$
+
+For a covector $\xi$ put $\mathcal D_\xi A:={*}^{-1}\circledast(\xi\wedge A)$, using the dualized $Y$ convention of J.0. D2's antisymmetric symbol form implies
+$$\langle T_o,\mathcal D_\xi v\rangle=-\langle v,\mathcal D_\xi T_o\rangle=0
+\qquad(v\in\mathcal V^\perp).\tag{R10.2}$$
+Indeed $\mathcal D_\xi T_o\in\mathcal V$ by R4(a), and inequivalent $\mathrm{Spin}(14)$ isotypic summands are orthogonal for the invariant positive pairing. The splitting $\mathcal V\oplus\mathcal V^\perp$ is $\nabla^0$-parallel: its constituent maps are built from the parallel metric, Clifford product and Γ. Hence $\nabla^0_a k\in\mathcal V^\perp$. Apply (R10.2) to each derivative in a normal frame to obtain the **pointwise** identity
+$$\langle T_o,{*}^{-1}\circledast(d_0k)\rangle=0.$$
+
+The odd background equation is zero by hypothesis. I2 therefore reduces the remaining odd equation to ${*}^{-1}\circledast(d_0k)+Q(k)=0$. Pairing with $T_o$ gives $\langle T_o,Q(k)\rangle=0$, so (R10.1) gives $\kappa\|k\|^2=0$. Positivity and $\kappa\ne0$ yield $k=0$. ∎
+
+*Application to R9.* For a flat base, Z1 with $\lambda=1/5$ is locally the Einstein symmetric-space metric of F7. At $c_V\kappa^2=150000/11$, the constant root $t=-\kappa/400$, $u=0$ solves the odd background equation and has $\det M\ne0$. Thus its 364-dimensional kernel supplies extra solutions of the even equation but no nonzero real $k$ solving the full equation with that same $T_o$. This includes varying kernel sections. The other singular root $t=-\kappa/544$, where $\det M=0$, is outside R10.
+
+*Exact check, with its scope.* `xcheck_round14.py` independently evaluates a real grade-10 kernel vector $k=w(E_{0,4,11})\Gamma$ at $\kappa=1$, $t=-1/400$: $Lk=0$, $\|k\|^2=11$, $\langle T_o,Q(k)\rangle=-11/2$. It checks (R10.2) for all 14 derivative covectors and both terms of $\circledast_\sharp$. The general conclusion is the proof above; this finite computation checks its conventions and identities. R10 does not exclude nonconstant $T_o$, fields crossing $\det M=0$, or branches in signature (7,7).
 
 **Answers.**
 1. *$L_{T_o}$ on all of $\Lambda^1\otimes\mathfrak g_{\rm ev}$.* It has seven blocks besides the 𝒱-block $M$: 4×4 on $\Lambda^3$ and $\Lambda^5$, and 2×2 on $\Lambda^7_\pm$, $H_2$, $H_4$, $H_6$ (R1, R2).
 2. *Where it is invertible.* Exactly off $Z$, with $\det L_{T_o}$ as in R3. $Z\neq\emptyset$ for $\circledast_\sharp$ and $W_A$ in both real forms (R6), for every nonzero member in (14,0), and in (7,7) for every member except $(x,y)=0$ and $(z,w)=c(y,x)$ with $c^2>\tfrac{25}{144}$ (R7).
 3. *Consequences.*
    - (a) Under (R), in particular off $Z$, the even equation has the unique solution $T_e=\Sigma(dt,du)^\top\in\mathcal V$, because the source lies in $\mathcal V$ (R4, R5). The hypothesis "$T_e\in\mathcal V$" of rounds 6–13 reduces to (R), a condition on $(t,u)$.
-   - (b) Over $Z_\perp$ the kernel is $\bigoplus_\rho\ker B_\rho\otimes\rho$. Generically this is one copy of one constituent ($\Lambda^3$, $\Lambda^5$, $\Lambda^7$ or a hook); at special points it has several (R6(c)). Additional solution branches of the even equation exist exactly on open sets where $(t,u)$ takes values in $Z_\perp$, and there $dt\wedge du=0$ (R5(b)). Whether they extend to solutions of $\Upsilon=0$ is open (R.3). Affected results: R.4.
+   - (b) Over $Z_\perp$ the kernel is $\bigoplus_\rho\ker B_\rho\otimes\rho$. Generically this is one copy of one constituent ($\Lambda^3$, $\Lambda^5$, $\Lambda^7$ or a hook); at special points it has several (R6(c)). Additional solution branches of the even equation exist exactly on open sets where $(t,u)$ takes values in $Z_\perp$, and there $dt\wedge du=0$ (R5(b)). Their full equations are open in general; R10 excludes additions to fixed constant Euclidean invariant backgrounds with $\det M\ne0$, including R9. Affected results: R.4.
 4. *Comparison.* $\det M$ is a factor of $\det L_{T_o}$ (exponent 14), and there are six further factors, coprime to it (R8).
 
 ## R.2 What is verified, precisely
@@ -179,12 +210,14 @@ The component of $\{u=0\}\setminus Z$ containing 0 is $-\kappa/544<t<3\kappa/136
 | R7 (§R2, §R3) | proof; discriminant identity; 2×2 thresholds; $\Lambda^1$ minimum; $\Lambda^3$, $\Lambda^5$ certificate (polynomial identities, real-root isolation); $(x,y)=0$ positivity; M1 invariance; $H_2$ at the threshold; the Jacobian $-\ell$ | (14,0) (a); (7,7) (b) |
 | R8 | from R3, R6 | both |
 | R9 (§R4) | the I7(b) roots on $u=0$ against $Z$; both values of $c_V\kappa^2$; regularity of the other root | (14,0), $\circledast_\sharp$ |
+| Independent R2 review | 352 exact block-column checks from a separate Clifford product and differentiated cubic, no repository imports; all constituents/copies, both maps, four operators | one test vector per constituent; both signatures |
+| R10 | cubic polarization; antisymmetric symbol and R4; parallel isotypic splitting; positive pointwise pairing. Independent kernel/current checks as described above | fixed constant real invariant background already solving the odd equation; (14,0), $\mathfrak u(128)$; $\det M\ne0$, $\kappa\ne0$ |
 
 Run: `cd computation/geometric-unity && python3 R_even_operator.py > R_even_operator.out 2>&1`. Result: 48 checks, 48 True, each asserted; 342 s on one core, a second run 353 s, with identical output apart from the timing annotations.
 
 ## R.3 Limits (layers b, d)
 
-- **The extra branches are not analysed.** On an open set where $(t,u)\in Z_\perp$, either $(t,u)$ is constant at a point of $Z_\perp$ or it moves along an arc of $Z_\perp$. There $T_e=\Sigma(dt,du)^\top+k$ with $k$ a section of $K(t,u)$. The odd equation then gains $\circledast(d_0k)+2B(\Sigma(dt,du)^\top,k)+Q(k)$, all odd by I2, which was not computed. These branches are outside every hypothesis list of rounds 6–13, and R does not decide whether they carry solutions of $\Upsilon=0$.
+- **General extra branches remain open.** On an open set where $(t,u)\in Z_\perp$, either $(t,u)$ is constant at a point of $Z_\perp$ or it moves along an arc of $Z_\perp$. There $T_e=\Sigma(dt,du)^\top+k$ with $k$ a section of $K(t,u)$. The odd equation gains $\circledast(d_0k)+2B(\Sigma(dt,du)^\top,k)+Q(k)$, all odd by I2. R10 excludes additions to a fixed constant invariant background that already solves the odd equation, in the Euclidean gauge real form with $\det M\ne0$. It does not compute or decide the general nonconstant branches. These were outside the hypotheses of rounds 6–13.
 - **Representation theory.** The multiplicities use the standard $\mathfrak{so}(14)$ rule for $V\otimes\Lambda^k$. They are confirmed by the dimension count and by the trace identities over the whole fibre, not re-derived from characters. Schur needs equivariance, which holds by construction and is spot-checked for two generators.
 - **R7(b)** for $\Lambda^3$ and $\Lambda^5$ rests on an exact computer certificate (sympy polynomial identities and real-root isolation). The 2×2 blocks and $\Lambda^1$ are done by hand.
 - **Real forms.** In (14,0), statements about real $(t,u)$ refer to the primed variables of I.0. The Z2 signatures (8,6), (10,4), … are not set up.
@@ -201,7 +234,7 @@ Run: `cd computation/geometric-unity && python3 R_even_operator.py > R_even_oper
   - J1(c)'s "this is *the* slaved $T_e$" holds off $Z$, not only for small $|T_o|$.
   - J3 and J4 are pointwise at $s(X)$; their existence statements are unaffected, and the "exactly" ranges of J4(d), (d′) are exact under (R) near $s(X)$. J4(d′)'s slice $u=a_u=0$, $s\ge-\kappa/624$, contains the six positive points of R6(a); at them the slaved field is one solution of the even equation among many.
   - J5, J5d (radial Z2), L8, L9, M6–M10, P7 (non-radial Z2), N12 and Q14–Q16 (Z1) are unchanged under (R).
-  - None of them covers open sets on which $(t,u)\in Z_\perp$ (R5(b)). For $W_A$ these include the radial configurations with $t\equiv3\kappa/136$ (or one of the other seven lines of R6(b)) and $u=h(s)$ arbitrary; there $T_e^{\mathcal V}=0$, since Σ has no $du$ column for $W_A$ (J1(d)), and $T_e=k$, e.g. $k\in H_2R_\Gamma$. For constant $(t,u)$ they include the flat-base root of R9.
+  - None of them covers open sets on which $(t,u)\in Z_\perp$ (R5(b)). For $W_A$ these include the radial configurations with $t\equiv3\kappa/136$ (or one of the other seven lines of R6(b)) and $u=h(s)$ arbitrary; there $T_e^{\mathcal V}=0$, since Σ has no $du$ column for $W_A$ (J1(d)), and $T_e=k$, e.g. $k\in H_2R_\Gamma$. For constant $(t,u)$ they include the flat-base root of R9 at the level of the even equation; R10 excludes nonzero additions solving the full equation with that fixed background.
   - For the (7,7) members of R7(b) no hypothesis on $T_e$ is needed at all (R7(d)).
 - **GU-G16.** $\ell=xz\pm yw$ is, up to sign, the Jacobian of $(\sigma,\theta)$ in $(t,u)$. In (7,7), $\ell\neq0$ forces $Z_\perp\neq\emptyset$; the members with globally invertible $L_{T_o}$ lie in $\ell=0$ or $(x,y)=0$ (R7).
 - **GU-054.** Status unchanged (C).

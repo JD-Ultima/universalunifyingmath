@@ -1,0 +1,74 @@
+result: >
+  At a smooth Riemannian four-metric point with nonzero rank-one Ricci tensor,
+  suppose the electric Weyl tensor W(p,u,p,v) vanishes for u,v perpendicular to
+  the Ricci eigenline p. The reconstructed Z1 relaxed system at lambda=1/5 and
+  positive cH,cV is inconsistent on every fibre-open patch. Under the explicit
+  S.0 slaved-vector assumptions the twisted cone has no Upsilon=0 solution on
+  an open set meeting that fibre. The mixed Weyl part and all higher metric jets
+  are arbitrary. Simultaneously nonzero electric/mixed Weyl and Ricci-flat
+  nonflat points remain outside the theorem.
+claim_id: [GU-054]
+result_ids: [EE1, EE2, EE3, EE4, EE5, EE6]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/EE-zero-electric-weyl.md
+internal_review: reports/reviews/REVIEW29-GU-EE-2026-11-02.md
+code:
+  - computation/geometric-unity/EE_zero_electric_weyl.py
+  - computation/geometric-unity/EE_zero_electric_weyl.out
+  - computation/geometric-unity/EE_rank_blocks.py
+  - computation/geometric-unity/EE_rank_certificates.json
+formalization_status: >
+  EE1 proves the intrinsic zero-electric condition equivalent to the pure-mixed
+  normal form W0123=alpha, W0231=beta, W0312=-alpha-beta. The magnetic matrix is
+  symmetric by Weyl Ricci contraction, tracefree by Bianchi and SO(3)-diagonalizable;
+  the spatial three-dimensional tensor vanishes because its Ricci tensor is -E=0.
+  EE2 proves total-degree bounds A<=2 and RHS<=3 before interpolation. EE3 gives
+  a three-fibre compatibility cover via unit ideals; EE4 supplies same-witness constant block ranks
+  and REAL positive completion factors. EE5 audits arbitrary higher jets and EE6
+  applies S4/U5. Full-field scope is compact (14,0), u(128), invariant odd field,
+  slaved vector even field, one fixed reconstructed Shiab member with (x,y)!=(0,0),
+  kappa!=0 and det M!=0.
+internal_consistency: >
+  At all three prior positive diagonal fibres and both Ricci signs, the selected
+  y33 rows reduce exactly to xi_13 and one common curvature-independent n term.
+  Their three quartic numerators generate the unit ideal in QQ[a,b]. Constant
+  even-sign character-block certificates give ranks 12, 6, 6, 6, 2, 2, 2, 2,
+  totaling 38, with the four explicit sparse kernel columns. J5/J6/J7 restrictions
+  have negative diagonal prefactors times positive constants plus squares of
+  a, b or a+b. The helper checks positive constants and PSD rational quadratic
+  matrices, establishing rank 42 for REAL parameters at each same configuration.
+  Complex compatibility is not confused with complex completion nonvanishing.
+proof_status: >
+  Exact computer-assisted polynomial, left-inverse and real positivity certificates
+  complement the hand magnetic normal form, degree bounds, fixed-curvature-independent
+  higher-jet transfer and fixed-minor local argument. Independent internal Review29
+  accepts EE1-EE6 and reproduces the portable run. No Lean formalization or external
+  peer review is claimed.
+novelty: >
+  Extends DD's one mixed Weyl pencil to every zero-electric Weyl tensor relative
+  to the nonzero Ricci eigenline. It complements CC's zero-mixed condition, with
+  arbitrary higher metric jets and a finite same-witness obstruction. It does
+  not cover a general Weyl tensor with both electric and mixed parts nonzero.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0, exact Fractions and rational polynomial algebra. Run
+  python -X utf8 -I computation/geometric-unity/EE_zero_electric_weyl.py from the root.
+  Default reproduction freshly assembles all 60 node systems once in memory.
+  The six unisolvent coefficient nodes and ten RHS nodes have absolute Vandermonde
+  determinants 4 and 576. The helper has no engine calls or external cache dependency.
+  Compact JSON stores rational row combinations and PSD completion data, not raw
+  node matrices. All-parameter scope rests on proved degrees and polynomial
+  identities; real completion sign uses exact inequalities, not samples.
+  The recorded fresh run passes 32 main checks and 72 rank-helper checks in 114.0 s;
+  the independent Review29 fresh rerun passes in 113.7 s. The compact certificate
+  file is 49,791 bytes.
+empirical_testability: None new; a mathematical obstruction in the reconstructed sector.
+dependencies: [U1, U2, U5, S4, S5, Q5, DD3, BB1, BB3, W1, W2, Z1, Z2, Z3, Z4, xcheck_round10]
+confidence: >
+  Accepted in independent internal Review29. Intrinsic scope follows from the full magnetic
+  normal form, not diagonal examples. Uniform compatibility and coefficient rank
+  use exact unit ideals and constant certificates; completion nonvanishing is
+  explicitly restricted to real parameters. Higher-jet transfer uses the generic
+  support proof, without imposing baseline even-sign symmetries on actual higher jets.
+pending_work: >
+  The remaining boundary is simultaneous nonzero electric and mixed Weyl tensors
+  relative to the Ricci eigenline, and Ricci-flat nonflat points.

@@ -1,0 +1,46 @@
+Z. Arbitrary cubic and quartic jets with rank-one Ricci and zero Weyl
+[01] the invariant row classes have counts 450,64,160,24,24: True
+  diagonal vertical coordinates [4, 8, 11, 13]; row counts {'VVV': 450, 'H-D-H': 64, 'H-V-D': 160, 'H-H-D': 24, 'D-D-H': 24}
+  38 independent invariant rows: [4, 18, 32, 42, 46, 50, 60, 74, 88, 98, 140, 168, 186, 200, 211, 214, 267, 309, 337, 354, 366, 368, 422, 464, 508, 633, 648, 662, 676, 704, 718, 746, 775, 776, 789, 817, 831, 859]
+  extra rows: [61, 229, 383, 523]; triples [(0, 5, 5), (1, 5, 5), (2, 5, 5), (3, 5, 5)]
+  sparse kernel basis: [[(14, '48/5'), (28, '1')], [(15, '72/5'), (29, '1')], [(16, '96/5'), (30, '1')], [(17, '24'), (31, '1')]]
+[02] all 200 cubic coefficients: every diagonal-vertical HV variation is a gradient: True
+[03] all 200 cubic coefficients: its three-horizontal Riemann variation vanishes: True
+[04] rho=1: invariant subsystem has exact rank 38: True
+[05] rho=1: the recorded 38 rows span that subsystem: True
+[06] rho=1: the sparse four-vector basis is its kernel: True
+[07] rho=1: four extra rows restrict to the nonzero diagonal matrix: True
+[08] rho=1: vertical Einstein defect S^5_5 is 1/432: True
+[09] rho=1: the recorded 42-by-42 coefficient minor is nonzero: True
+  rho=1: coefficient determinant 28309527132263058227/17143415568791424359597260793695457034503612006400000000000000000
+[10] rho=1: three-row certificate has defect 3933/800: True
+[11] rho=1: mixed cubic control changes other entries (1000 coefficients, 472 RHS rows): True
+[12] rho=1: all 722 invariant coefficient rows are fixed: True
+[13] rho=1: extra-row variations occur only in xi_5 (column 19): True
+[14] rho=1: the fixed 42-minor is unchanged by the mixed cubic tensor: True
+[15] rho=1: all selected coefficient rows and RHS are fixed: True
+[16] rho=1: full-system base-reflection parity holds: True
+[17] rho=1: cubic dependence is affine in the independent mixed control: True
+[18] rho=1: additional mixed quartics preserve the cubic coefficient matrix: True
+[19] rho=1: cubic-plus-quartic selected RHS stays fixed: True
+[20] rho=-1: invariant subsystem has exact rank 38: True
+[21] rho=-1: the recorded 38 rows span that subsystem: True
+[22] rho=-1: the sparse four-vector basis is its kernel: True
+[23] rho=-1: four extra rows restrict to the nonzero diagonal matrix: True
+[24] rho=-1: vertical Einstein defect S^5_5 is 1/432: True
+[25] rho=-1: the recorded 42-by-42 coefficient minor is nonzero: True
+  rho=-1: coefficient determinant 3711398931772838449/85717077843957121797986303968477285172518060032000000000000000000
+[26] rho=-1: three-row certificate has defect 5667/800: True
+[27] rho=-1: mixed cubic control changes other entries (1000 coefficients, 472 RHS rows): True
+[28] rho=-1: all 722 invariant coefficient rows are fixed: True
+[29] rho=-1: extra-row variations occur only in xi_5 (column 19): True
+[30] rho=-1: the fixed 42-minor is unchanged by the mixed cubic tensor: True
+[31] rho=-1: all selected coefficient rows and RHS are fixed: True
+[32] rho=-1: full-system base-reflection parity holds: True
+[33] rho=-1: cubic dependence is affine in the independent mixed control: True
+[34] rho=-1: additional mixed quartics preserve the cubic coefficient matrix: True
+[35] rho=-1: cubic-plus-quartic selected RHS stays fixed: True
+The full-rank extension rests on the proved invariant-row support and sparse kernel argument, not on sampling cubic coefficients.
+Arbitrary cubic and quartic jets are covered with the prescribed nonzero rank-one Ricci/zero-Weyl quadratic jet; nonzero Weyl and Ricci-flat nonflat points remain outside this result.
+
+35 checks, all True; runtime 13.8 s

@@ -4,6 +4,15 @@ Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip insta
 
 The complete reproduction loop below uses Bash and was run on Linux. `transport.py` requires the `fork` multiprocessing start method: its workers inherit the operator closures and large arrays built by the parent. On Windows, run it in WSL using Linux Python; it now exits immediately with that requirement on native Windows. The other Python scripts can run natively with `python -X utf8 script.py` so Unicode output uses UTF-8.
 
+**Pinned upstream bytes.** The source checks hash `papers/alpha/lean/ChainAlpha.lean` as raw bytes. Git's Windows `core.autocrlf=true` conversion changes those bytes even when `git status` is clean. Prepare a separate source checkout with LF endings; keep the SHA256 pin unchanged:
+
+```bash
+git -c core.autocrlf=false clone https://github.com/alexwg/chain-theory.git chain-theory-source
+git -C chain-theory-source -c core.autocrlf=false checkout --detach a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+```
+
+The expected raw-file SHA256 is `522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da`. A mismatch is rejected; the audit does not silently normalize or accept a changed source file.
+
 | Script | Purpose | Runtime | Output |
 |---|---|---|---|
 | `records_independent.py` | Operator-level rebuild of the 172 records; sectors; exact value; 60 digits (F-CT-1) | ~2 s | `records_independent.out` |
@@ -25,7 +34,7 @@ The complete reproduction loop below uses Bash and was run on Linux. `transport.
 | `xcheck_round_ct5.py` | Referee cross-check (REVIEW5-CT) of `conjugation.md` and `records-uniform.md`; imports only `config_enumeration.py` (unmodified; printout compared with `config_enumeration.out`): relabelling table, stabilizers and their centres, the Supplement's stabilizer basis, matching closure, Lie closures, selections per reading, trace polynomials; order-sign domain, the spans $C_L$, $C$, $C^+$ and their value, covariance of the four exchanges, Gell-Mann anticommuting pairs, the Theorem 2(3) counterexample, the F-CT-7 recomputation and the $(2,3)$ placement values | ~15 s (180 checks) | `xcheck_round_ct5.out` |
 | `algebraic.py` | Minimal polynomial, Galois conjugates, $f(d_Q,d_q)$, deviations from measurements (F-CT-6, F-CT-7) | <1 s | `algebraic.out` |
 
-Run all of them from this directory in Linux/WSL Bash:
+Run this main batch from the current directory in Linux/WSL Bash. Additional source-dependent commands follow; this loop does not cover every script in the table:
 
 ```bash
 for s in records_independent freedom charge_conventions algebraic weight_functionals config_enumeration readcap_lemmas symmetry mutations_classified operator_origin xcheck_operator_form transport; do python3 $s.py > $s.out; done

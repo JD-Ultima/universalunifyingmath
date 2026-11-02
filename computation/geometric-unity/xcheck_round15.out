@@ -1,0 +1,35 @@
+X0. Rational coefficients and exceptional amplitudes
+[01] epsilon=1: kappa constant only at A=0 or A=1*11/6: True
+[02] A=11/6: kappa=-3/289 and its algebraic fibre equation degenerates: True
+[03] constant kappa persistence needs lambda=337/240, outside (14,0): True
+[04] A=119/144: Q2 is linear and eta has a double pole at infinity: True
+[05] A=1: eta is regular at infinity (no blanket log-pole claim): True
+[06] epsilon=-1: kappa constant only at A=0 or A=-1*11/6: True
+X1. Linear-mu trace obstruction
+[07] P0(r) has nonzero r^-2 coefficient 13/(269746176 N^3): True
+[08] lambda=13/56: d(log r)/dtheta=1/2 on the continued radial orbit: True
+[09] a Laurent polynomial with this r^-2 term cannot be constant along r=r0*q: True
+X2. The pole calculation in the finite-cover proof (local models)
+[10] pole order 1, ramification 1: pullback exponent -1<0: True
+[11] pole order 1, ramification 2: pullback exponent -1<0: True
+[12] pole order 1, ramification 3: pullback exponent -1<0: True
+[13] pole order 1, ramification 4: pullback exponent -1<0: True
+[14] pole order 2, ramification 1: pullback exponent -2<0: True
+[15] pole order 2, ramification 2: pullback exponent -3<0: True
+[16] pole order 2, ramification 3: pullback exponent -4<0: True
+[17] pole order 2, ramification 4: pullback exponent -5<0: True
+[18] pole order 3, ramification 1: pullback exponent -3<0: True
+[19] pole order 3, ramification 2: pullback exponent -5<0: True
+[20] pole order 3, ramification 3: pullback exponent -7<0: True
+[21] pole order 3, ramification 4: pullback exponent -9<0: True
+These local models illustrate the proved general order e(m-1)+1; they do not prove the global continuation lemma.
+X3. One rank-one-Ricci jet in the unresolved S15 sector (exact example)
+[22] base jet has Ric=diag(1,0,0,0): True
+  section: rank(A),rank([A|b])=(41, 42)
+  off-section: rank(A),rank([A|b])=(42, 43)
+[23] rank-one control: relaxed coefficient rank at the section is 41: True
+[24] this off-section rank-one-Ricci jet is inconsistent: True
+By S4 the full-rank inconsistent point excludes every fibre-open consistent patch for this specified metric jet; arbitrary Weyl tensors and remaining connection jets are not covered.
+
+24 checks, all True; mode=geometry
+runtime 1.9 s

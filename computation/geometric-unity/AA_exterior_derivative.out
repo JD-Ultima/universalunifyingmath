@@ -1,0 +1,23 @@
+AA supporting calculation: exterior derivative of the two c/wGamma kernels
+sympy 1.14.0; compact (14,0), real WA, delta=-interior*nabla
+[01] p=3: all 56 coordinate-jet full-output identities: True
+[02] p=3: both identities on a mixed covariant jet: True
+[03] p=3: a nonzero Cartan jet is annihilated on both declared copies: True
+[04] p=3: the same Cartan jet survives on both excluded w/cGamma copies: True
+[05] p=3: variable-weight derivative includes both chain-rule terms: True
+[06] p=3: positive principal-symbol norm identity: True
+[07] p=3: compact phases and wedge/contraction norm decomposition: True
+  p=3: D(c) coefficients d=6, delta=-2; D(wGamma) coefficients d=18, delta=-22.
+[08] p=5: all 56 coordinate-jet full-output identities: True
+[09] p=5: both identities on a mixed covariant jet: True
+[10] p=5: a nonzero Cartan jet is annihilated on both declared copies: True
+[11] p=5: the same Cartan jet survives on both excluded w/cGamma copies: True
+[12] p=5: variable-weight derivative includes both chain-rule terms: True
+[13] p=5: positive principal-symbol norm identity: True
+[14] p=5: compact phases and wedge/contraction norm decomposition: True
+  p=5: D(c) coefficients d=10, delta=-6; D(wGamma) coefficients d=14, delta=-18.
+For alpha=A*omega and beta=B*omega use d(A*omega)=A*domega+dA wedge omega and delta(A*omega)=A*deltaomega-interior(grad A)omega.
+The derivative symbol in omega is injective for real nonzero covectors when real A,B are not both zero.
+This concerns the two c/wGamma conics only; Q(k) and the untraced full odd PDE remain unsolved.
+
+14 checks, all True; runtime 0.2 s

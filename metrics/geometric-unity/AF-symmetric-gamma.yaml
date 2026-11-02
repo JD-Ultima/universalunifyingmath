@@ -1,0 +1,52 @@
+result: >
+  In real compact (14,0), every full solution on the single WA Lambda3 c/wGamma
+  non-vector kernel branch, away from intersections and det M=0, has w=u/kappa=0.
+  On a connected domain the odd field is constant at a=t/kappa=-3/112 or -1/400.
+  These are necessary endpoints; their remaining even-field equations are not solved.
+claim_id: [GU-054]
+result_ids: [AF1, AF2, AF3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AF-symmetric-gamma.md
+internal_review: reports/reviews/REVIEW28-GU-AF-2026-11-02.md
+code:
+  - computation/geometric-unity/AF_symmetric_gamma.py
+  - computation/geometric-unity/AF_symmetric_gamma.out
+formalization_status: >
+  True dualized equation, real fixed parallel WA, compact u(128), kappa constant
+  and nonzero, invariant odd field, Te=Sigma(dt,du)+k with one Lambda3 c/wGamma
+  kernel and det M!=0. AA7 restricts the real three-form to zero or decomposable.
+  No curvature-trace sign or special observer metric is assumed. Both real chart
+  weights are nonzero at w!=0. Grade13 is converted by RIGHT Gamma multiplication.
+proof_status: >
+  AF1 derives the full symmetric converted equation from symbolic orbit
+  calibrations and universal contraction counts. The scalar identity has rank 14,
+  whereas the remaining tensor rank is at most four. The resulting rank one versus rank three
+  equality forces the three-form and slaved gradient to vanish at w!=0.
+  Its scalar part would force a=-1/208, where f(a)=-3/14872<0. AF2 excludes such
+  points; AF3 uses connectedness and the exact two conic endpoints.
+  Accepted in independent internal Review28.
+internal_consistency: >
+  Exact complete symbolic-weight Clifford output gives -88rs/3 and 40rs on the
+  simple three-plane and its perpendicular. Aligned vector output gives 16bc;
+  B0=208wC gives 3328w. Vector derivatives, kernel derivatives and mixed terms
+  have zero symmetric converted output. The invariant baseline contributes
+  -u*(kappa+208t). Ten exact controls include a non-coordinate simple plane.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
+  computation/geometric-unity/AF_symmetric_gamma.py. Ten controls pass in 2.7 seconds.
+  Uses T's accepted Clifford engine, without J/R evaluator imports or
+  off-repository dependencies. The rank proof is hand reasoning.
+novelty: >
+  A bounded continuation within this investigation: AA7's three-form
+  classification and the symmetric Gamma equation rule out the nonzero-u
+  part of one exterior conic. No literature novelty or general classification.
+empirical_testability: None new; a necessary field-equation obstruction.
+dependencies: [AA4, AA6, AA7, J1, T1]
+confidence: >
+  Independent internal Review28 accepts the phase, derivative and rank steps
+  and reproduces all ten exact controls in 2.6 seconds.
+  No endpoint solution, PDE sufficiency, indefinite extension or general
+  singular-stratum theorem is asserted.
+pending_work: >
+  Solve the remaining equations
+  at the two endpoints, other conics and coincident kernels separately.

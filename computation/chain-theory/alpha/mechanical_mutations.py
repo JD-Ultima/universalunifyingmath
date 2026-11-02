@@ -933,7 +933,11 @@ def load_lean(path):
     with open(path, "rb") as f:
         raw = f.read()
     h = hashlib.sha256(raw).hexdigest()
-    assert h == PIN, f"sha256 mismatch: {h}"
+    assert h == PIN, (
+        f"ChainAlpha.lean raw-byte pin mismatch: {h}; expected {PIN}. "
+        "The pin requires the repository's LF bytes. For a fresh Windows checkout use "
+        "git -c core.autocrlf=false clone, then check out a28db89 with core.autocrlf=false. "
+        "Do not change the pinned hash to accept converted or modified sources.")
     return raw.decode("utf-8")
 
 

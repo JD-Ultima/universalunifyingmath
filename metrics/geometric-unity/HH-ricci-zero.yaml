@@ -1,0 +1,87 @@
+result: >
+  At every positive Riemannian four-metric point with Ric=0 and Riemann!=0,
+  reconstructed Z1 at lambda=1/5 and cH,cV>0 has no nonempty fibre-open relaxed
+  consistency patch. Under S.0, the twisted-cone full equation has no Upsilon=0
+  domain meeting that fibre; all other nonzero reconstructed members are excluded
+  separately by S16(b), which already forces their base projection to be flat.
+  Arbitrary higher metric jets are allowed. Zero-curvature points remain outside this theorem.
+claim_id: [GU-054]
+result_ids: [HH1, HH2, HH3, HH4, HH5, HH6]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/HH-ricci-zero.md
+internal_review: reports/reviews/REVIEW36-GU-HH-2026-11-02.md
+code:
+  - computation/geometric-unity/HH_ricci_zero.py
+  - computation/geometric-unity/HH_ricci_zero.out
+  - computation/geometric-unity/HH_rank_blocks.py
+  - computation/geometric-unity/HH_rank_certificates.json
+  - computation/geometric-unity/HH_orbit_identity.py
+  - computation/geometric-unity/HH_orbit_certificate.json
+formalization_status: >
+  HH1 uses the real spectral theorem and GG1's surjective SO(4) chiral action.
+  Both singular chiral blocks are covered by reviewed GG1-GG6. Otherwise select
+  a nonsingular W+ block, then a spectral frame with nonzero compatibility
+  determinant using the exact 36-frame norm-cube identity. Normalize the chosen
+  nonzero first eigenvalue only after that frame selection. HH3 proves rank 42
+  for p=+/-1 and all real q,r,s. HH4 transfers the same complete actual witness
+  through higher jets and positive covariance. HH5 uses the rational fibre-minor
+  argument; HH6 distinguishes the new C1 consequence from S16(b)'s non-C1 corollary.
+internal_consistency: >
+  At y*=diag(2,3,5,7), the freshly computed selected determinant P is a homogeneous
+  quartic with 35 terms. A compact quadratic seed M satisfies
+  sum_sigma sigma(P)*sigma(M)=(X+Y)^3 over all 36 independent spectral permutations,
+  where X=tr(W+^2), Y=tr(W-^2). This gives a finite real compatibility cover without
+  a sign assumption on P. At p=+/-1, the invariant 722-row subsystem has rank 38:
+  a 12-column block, three 6-column blocks and four horizontal rank-two blocks.
+  One 6-column block uses a constant rank-four output plus a two-column residual
+  h_p I2 with exact SOS lower bound 35/3; all other block certificates are constant.
+  J5K=-(41r^2+58pr+41)*diag(1/700,3/1400,1/280,1/200), a strictly nonzero real
+  completion. The flat complete quadratic origin retains ranks 28/28.
+proof_status: >
+  Hand degree bounds precede exact interpolation. The portable main checks rational
+  row combinations, a positive residual SOS, the J5 square completion and all
+  84 degree-six slots of the finite orbit identity using freshly assembled systems.
+  Intrinsic frame choice, same-witness normalization, arbitrary-higher-jet support
+  and the nonzero-Riemann fixed-minor argument are supplied in the note. Independent
+  internal Review36 accepts HH1-HH6. This is internal AI-assisted mathematical
+  review; external peer review and a Lean proof are not claimed.
+novelty: >
+  Extends GG's both-singular case to every remaining nonflat Ricci-zero point. No additional Weyl
+  restriction or preferred Ricci eigenline is imposed at a Ricci-zero point.
+  The new rank certificates are computed at Ricci zero and do not use a limit
+  of a nonzero-Ricci theorem. No broader nonzero-Ricci Weyl classification follows.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0, exact Fractions and rational polynomial algebra.
+  Run python -X utf8 -I computation/geometric-unity/HH_ricci_zero.py from the root.
+  Default reproduction freshly assembles the required union of 45 node systems
+  once in memory, with no scratch paths, stored raw matrices or cache dependency.
+  Fifteen and 35 simplex nodes determine total degrees two and three in four
+  variables; ten nodes determine degree two at each normalized sign. The orbit
+  helper stores only the seed and frame list, accepts the fresh determinant and
+  rejects its incorrect doubled normalization. The fresh author run passes
+  9 main, 28 rank and 6 orbit checks in 76.4 seconds. Rational rank data are
+  94,410 bytes and orbit data 6,395 bytes. Review36 independently reproduces
+  the same checks in 77.6 seconds and reruns GG in 21.1 seconds. Its separate
+  nonunit witness at (-2,3,5,-7), cH=5,cV=7 and transported (28/15)y* has ranks
+  42/43. Its dense deterministic control has 180/200 cubic and 311/350 quartic coefficients nonzero,
+  changing 1,188 other coefficient and 636 RHS entries while preserving the
+  protected rows, J5K and ranks 42/43. These controls use the accepted referee engine.
+empirical_testability: None new; a mathematical obstruction in the reconstructed sector.
+dependencies: [GG1, GG2, GG3, GG4, GG5, GG6, DD3, BB1, S4, S5, S16, U5, Q5, xcheck_round10]
+scope: >
+  Positive real four-base and positive Z1 at lambda=1/5, cH,cV>0. Full-field S.0:
+  compact (14,0), u(128), invariant odd field, slaved vector even field with
+  det M!=0, one fixed reconstructed Shiab member with (x,y)!=(0,0), kappa!=0.
+  Q5/U5 treat C1; S16(b) supplies the all-other-member corollary. Ric=0 is assumed
+  only at the initial point, and Riemann!=0 supplies the local continuation step.
+  Arbitrary even fields, non-invariant odd fields and indefinite forms are not covered.
+confidence: >
+  Accepted in independent internal Review36, with exact author certificates and
+  a hand dependency argument. The matrix rank and incompatibility are paired at
+  the same selected normalized fibre and transported together to an original
+  positive fibre. No claim that one original numeric fibre works at all amplitudes.
+  Review36 does not independently reimplement the curvature engine, rederive every
+  imported geometric calculation, establish novelty or provide physical evidence.
+pending_work: >
+  The zero-curvature boundary, general nonzero rank-one-Ricci Weyl data and unrestricted fields remain
+  outside this theorem. No new experiment or physical solution classification is claimed.

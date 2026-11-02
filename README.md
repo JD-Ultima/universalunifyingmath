@@ -1,168 +1,88 @@
 # Universal Unifying Math
 
-**Evidence-led exploration of mathematical structures and physical models.**
+An open investigation into the rules behind mathematical and physical structure: the definitions, relationships, algorithms and mechanisms that might serve as its underlying **“source code.”** Finding such a structure remains an open research aim.
 
-This project investigates which explicit rules can explain observed structure, remain mathematically consistent, and produce testable predictions. Our goal is to find the underlying **“source code”**: definitions, relationships, algorithms, and mechanisms that can be stated precisely and examined through proof, computation, and measurement. The form of that underlying structure remains an open research question.
+For a nontechnical introduction, start with [what we built and tested](reports/PLAIN-LANGUAGE-SYNOPSIS.md).
 
-The research begins with questions. A framework's author, reputation, or agreement with an existing view does not determine its result here. Conclusions apply to the specified source, definitions, assumptions, and tests. Both supporting and conflicting evidence are recorded, and conclusions are revised when the evidence changes.
+The first case studies are Chain Theory, Geometric Unity, and arithmetic and geometry associated with Terrence Howard. We reconstruct explicit claims, test their consequences, and record both supporting results and failures. The [research charter](RESEARCH_PROMPT.md) sets the method; the [synthesis](reports/SYNTHESIS.md) gives the current findings and research frontier.
 
-**Status — October 30, 2026:** active exploratory research. The repository contains source reconstructions, computations, formal proofs, internal review records, and manuscript drafts. Internal reviews include AI-assisted analysis; external peer review remains outstanding. The [research charter](RESEARCH_PROMPT.md) defines the method, and the [correction log](reports/CORRECTIONS.md) records revisions.
+**Status — November 2, 2026:** active research with reproducible computations, Lean proofs and manuscript drafts. Internal reviews include AI-assisted work. External peer review remains outstanding. Revisions are tracked in the [correction log](reports/CORRECTIONS.md).
 
-## Research method
+## Current findings
 
-Every investigation separates five things:
-
-1. **Source statement:** what an identified, versioned source actually says.
-2. **Reconstruction:** the definitions and interpretive choices used to make the statement precise.
-3. **Verification:** the proof, computation, counterexample, or comparison supporting a result.
-4. **Open question:** what the available definitions or evidence do not settle.
-5. **Physical test:** a prediction with a specified observable, units, uncertainty, and failure condition.
-
-Numerical agreement is recorded at its stated precision. Statistical significance requires a justified probability model and an account of selection choices. A finite search establishes a result within its declared family. A Lean proof establishes its formal statement under its definitions and hypotheses. Physical interpretations require their own evidence.
-
-Exploration is welcome when it produces explicit questions and a route to testing them. Unverified interpretations are kept out of factual conclusions. Conclusions require traceable mathematical or empirical evidence.
-
-## Current investigations
-
-These are the initial case studies; the research scope can expand as suitable sources and questions become available.
-
-| Investigation | Material examined | Results and open questions |
+| Investigation | What the work establishes | What remains open |
 |---|---|---|
-| **Chain Theory — fine-structure constant** | A. D. Wissner-Gross's α(0) Letter v1.0.0, supplement, Lean definitions, and record table | Reproduces the 172-record construction and its numerical value. Examines conjugation conventions, covariance, weight assignments, and sensitivity to alternative rules. The physical identification and a calibrated statistical significance remain unresolved. [Report](reports/chain-theory-alpha.md) · [Detailed analysis](formalization/chain-theory/alpha/audit.md) |
-| **Chain Theory — compendium** | Release 0.1.0 at the recorded source commit | Examines statement dependencies, numerical identifications, and the content covered by Lean declarations. Coverage and dependency counts include documented interpretation rules. [Report](reports/chain-theory-compendium.md) · [Analysis](formalization/chain-theory/compendium/) |
-| **Geometric Unity** | E. Weinstein's 2021 working draft, obtained from a recorded mirror | Reconstructs signatures, spinor representations, gauge identities, field equations, ellipticity, and dimensional reduction under stated hypotheses. The projected and full field equations have different constraints; matching reduced algebraic equations does not establish identical solution sets. [Report](reports/geometric-unity-phase1.md) · [Analysis](formalization/geometric-unity/) |
-| **Arithmetic and geometry associated with Terrence Howard** | Identified interview material, a third-party transcript, and available patent metadata or summaries | Tests explicit arithmetic reconstructions, numerical statements, and geometric models. Results depend on the chosen operations and carrier. The primary book and full patent texts were unavailable in the recorded investigation. [Report](reports/howard-phase1.md) · [Analysis](formalization/howard/) |
+| **Chain Theory: α(0) Letter** | Independently reproduces the 172 records and candidate inverse $137.035\,999\,189\,566\ldots$. Classifies convention changes and covariant record constructions. | A principle fixing the weight attribution and other defining inputs; the physical identification with electromagnetic coupling. [Report](reports/chain-theory-alpha.md) |
+| **Chain Theory: compendium 0.1** | Audits statement dependencies, numerical identifications and Lean coverage. Of 64 Lean-tied theorem rows, 1 matches fully and 7 partly under the documented counting rule. | Ambiguous premise references, missing identification maps, and the gap between finite checks and the physical claims attached to them. [Report](reports/chain-theory-compendium.md) |
+| **Geometric Unity: 2021 draft** | Reconstructs signatures, operators and field equations; corrects gauge signs; classifies specified flat-base singular branches and excludes defined curvature families. | General singular fields, remaining joint-curvature and zero-curvature cases, and choices needed to define the physical system. [Current results](reports/SYNTHESIS.md#geometric-unity) |
+| **Howard: specified arithmetic and geometry** | Classifies explicit arithmetic reconstructions and checks numerical and geometric statements. With ordinary addition, no ring, semiring or near-ring on ℕ, ℤ, ℚ or ℝ satisfies both $1\otimes1=2$ and $2\otimes2=4$. | The primary definitions: the book and full relevant patent texts were not obtained. Other consistent operations exist under weaker axioms. [Report](reports/howard-phase1.md) |
 
-### Main results for review
+The α candidate is the **only distinct value within 1σ** in each of the hand-declared and mechanically generated rule families. These bounded comparisons describe sensitivity to the chosen rules; their illustrative density reference counts are not calibrated significance. The candidate itself fixes every digit and can be compared with future measurements. See the [α audit](formalization/chain-theory/alpha/audit.md).
 
-Each result is stated under the hypotheses given in the linked note, with code or Lean in the repository. Internal reviews are AI-assisted referee reports in [reports/reviews/](reports/reviews/); none of these results has had external peer review.
+Recent Geometric Unity results [classify the two single Lambda3 branches over flat-base Z1](formalization/geometric-unity/AI-flat-lambda3.md) and [exclude nonflat Ricci-zero points](formalization/geometric-unity/HH-ricci-zero.md) within the stated positive-metric, invariant-field sector. General singular fields and the remaining joint-curvature cases are open. Projection to a section, the full field equation on an open set, and variation of a weighted action are distinct tests. The [synthesis](reports/SYNTHESIS.md#geometric-unity) states the operator, field and invertibility assumptions, including the singular-threshold exception.
 
-- **Chain Theory, α Letter.**
-  - The 172-record construction and its value $1/\alpha=137.035\,999\,189\,566\ldots$ are reproduced independently (F-CT-1).
-  - The uniqueness theorem holds only under one far-end conjugation convention. Under the conjugate convention a second configuration qualifies, with $1/\text{value}=31.81$ (F-CT-3, Lean). Requiring the identification algebra to contain the matchings $U\otimes\bar U$ (acting trivially off the common support) forces the Letter's convention and its direct-sum trace. Within the Letter's own definition of that algebra, this one requirement is equivalent to the uniqueness theorem's selection; the Letter does not state it ([conjugation](formalization/chain-theory/alpha/conjugation.md)).
-  - The record set is not covariant under the symmetry group of the joint state. A covariant repair gives the same value (F-CT-10).
-  - The weights have an exact operator form, but its qutrit projector restates the end-attribution rule. No construction found in the declared search families avoids that rule (F-CT-11).
-  - The three commutator records enter the 172 by an exception clause. One rule replaces it, conditional on two readings the Letter does not state. With a covariant exchange it gives the Letter's sectors and value (commutator-type records $S_x,D_y,S_z$) only if the read qubits are identified by $\sigma_y$, not by the transpose ([records-uniform](formalization/chain-theory/alpha/records-uniform.md)).
-  - In a declared family of 46 080 rules and a mechanically generated family of 332 308 mutants of the author's Lean definitions, the Letter's value is the only one within relative $10^{-4}$. The accompanying reference counts are not calibrated significance (F-CT-4).
-  - Details: [audit](formalization/chain-theory/alpha/audit.md).
-- **Chain Theory, compendium.** Of 64 Lean-tied theorem rows, 1 is matched clause by clause, 7 partly and 56 not at all (1/8/55 and 0/7/57 under the alternative counting rules). 560 of the 618 table-check lemmas only confirm that an entered string occurs. Details: [report](reports/chain-theory-compendium.md).
-- **Geometric Unity, algebra.**
-  - The observerse signature is (7,7) exactly under the conditions of A4 and A5.
-  - The spinor content matches one Standard Model generation with $\nu_R$, plus a further generation in the 144.
-  - Lemmas 6.5 and 7.2 are false as printed, and repairable by one global sign choice.
-  - The field equation (9.7) is the variational equation of no functional, for every admissible Shiab operator (D4).
-  - A generic self-adjoint Shiab operator gives an elliptic complex in (14,0) for $\mathfrak u(128)$ with $\kappa\neq0$; the draft's own form (8.1) does not (H5).
-  - Details: [report](reports/geometric-unity-phase1.md).
-- **Geometric Unity, 14→4 reduction.**
-  - Theorem F4(c), the Ricci blocks of the Z1 metric along a section, holds for every $n$ (K).
-  - In the invariant odd sector, with the even displacement slaved to it in the vector sector ($\kappa\neq0$, $\det M\neq0$), $\Upsilon=0$ in Z2 has no solution on any open subset of $Y$ meeting the section, for every member with $(x,y)\neq0$ in (14,0) and (7,7), and none on any open subset at all; for $(x,y)=0$ the only solution is $T=0$, for every metric (round 6: J5; J5d; round 8: [L](formalization/geometric-unity/L-nonradial-z2.md); round 9: [M](formalization/geometric-unity/M-z2-remaining-members.md); round 12: [P](formalization/geometric-unity/P-z2-last-exception.md), which closes the last exception: the fibre equation has no local solution with $\mu(w)\neq0$ on any open subset of a fibre, for any base curvature; two steps, P3 and P4, are computer-assisted). Round 8 was refereed in [REVIEW6-GU](reports/reviews/REVIEW6-GU-2026-10-30.md): correct as stated, with two summary overstatements corrected. Round 9 was refereed in [REVIEW7-GU](reports/reviews/REVIEW7-GU-2026-10-30.md): correct, with one side claim corrected (the member $c^2=\tfrac{11}6$ in (14,0) is settled on every open set) and summary wording corrected. Round 12 was refereed in [REVIEW11-GU](reports/reviews/REVIEW11-GU-2026-10-31.md): correct; its two computer-assisted steps (P3, P4) are confirmed by an independent construction, and summary wording is corrected.
-  - In Z1 (round 10, [N](formalization/geometric-unity/N-z1-neighbourhood.md)), for $W_A+W_C\circ\mathrm{Ad}_\Gamma$, $W_A$ and the other members treated in round 8: no solution near the section in (7,7); in (14,0) only $\lambda=\tfrac15$ over a Ricci-flat base is possible, and for analytic fields exactly the flat-base solutions with constant odd part and zero even part. For $W_A+W_C\circ\mathrm{Ad}_\Gamma$ and $W_A$ these exist when $c_V\kappa^2\ge9360$, and they solve the field equation on all of $Y$, with $\Lambda_4=0$. One step (N6(f)) is computer-assisted. Round 10 was refereed in [REVIEW8-GU](reports/reviews/REVIEW8-GU-2026-10-30.md): no errors; N6(f) completed and summary wording corrected. Round 13 ([Q](formalization/geometric-unity/Q-z1-remaining-members.md)) extends this to every member of the family with $(x,y)\neq0$ (the cone $xz\pm yw=0$ and $x=\pm y$ in (7,7)); for $(x,y)=0$ only $T=0$, for every metric; the flat-base solutions exist for every (14,0) member iff $c_V\kappa^2\ge9360(x'^2+y'^2)$. Besides N6(f), round 13 uses exact computations (a resultant certificate and one pairing constant). Round 13 was refereed in [REVIEW10-GU](reports/reviews/REVIEW10-GU-2026-10-31.md): one edge case corrected (at $a^2=\tfrac{125}{576}$ the existence threshold is strict). Round 15 ([S](formalization/geometric-unity/S-z1-off-section.md)) drops the hypothesis that the open set meets the section. In (7,7) no member with $(x,y)\neq0$ has a solution on any open set, as in Z2. In (14,0) every solution has $\lambda=\tfrac15$, and except for one member away from a set of special points it is a flat-base solution with constant odd part, without analyticity. Z1 is Einstein on an open set iff $\lambda=\tfrac15$ and the base is flat there (Conjecture F9 at $n=4$). Round 15 is not yet internally reviewed.
-  - The variation in the section ℷ (round 11, [O](formalization/geometric-unity/O-gimel-variation.md)) needs a weight on the non-compact fibre. In every signature that gives (7,7), no natural weight function converges; the convergent natural weights are measures on the scaling ray through the section. With them, and with $\Upsilon=0$ kept as the draft's equation on $Y$, the ℷ-equation in the invariant sector is exactly 4D vacuum GR, with $\Lambda\to\Lambda_A$ (the reduced-action value of F5) as the displacement goes to zero; in Z1 this is $r_\mu\Lambda_A$, with a factor of the weight equivalent to a change of the free fibre scale, and equal to $\Lambda_A$ for the weight localised at the section. This is the ℷ-equation alone: in this sector $\Upsilon=0$ itself holds only for the flat-base solutions above. Using the weight also for the $Y$-fields removes the Einstein term. Round 11 was refereed in [REVIEW9-GU](reports/reviews/REVIEW9-GU-2026-10-30.md): one minor error in a side claim, off-shell qualifiers added.
-  - Round 14 ([R](formalization/geometric-unity/R-even-operator.md)) computes the even operator on all of $\Lambda^1\otimes\mathfrak g_{\rm ev}$. Besides the vector block it has six blocks ($\Lambda^3$, $\Lambda^5$, $\Lambda^7_\pm$, three hooks), and its determinant is $(\det M)^{14}$ times six coprime factors. Since the source lies in the vector sector, the results above hold for every even displacement whenever $\det M\neq0$ and the odd part takes values in the singular curve of the other blocks only on a set with empty interior. That curve is nonempty for $W_A+W_C\circ\mathrm{Ad}_\Gamma$ and $W_A$ (on the $t$-axis it starts at $t=3\kappa/136$, where $\det M\neq0$); configurations on it are not analysed. Not yet internally reviewed.
-- **Howard arithmetic.** No ring, semiring or near-ring on ℕ, ℤ, ℚ or ℝ realises $1\otimes1=2$ together with $2\otimes2=4$ (Lean). The lattice of the seven axioms is fully decided. Details: [report](reports/howard-phase1.md).
+## Read the evidence
 
-The open, well-posed problems are listed in order of priority in [SYNTHESIS §4](reports/SYNTHESIS.md#4-next-steps-in-priority-order) and, item by item, in [gaps/](gaps/).
+- [Synthesis and open questions](reports/SYNTHESIS.md): a current account across the case studies.
+- [Formalizations](formalization/): precise definitions, hypotheses and proofs.
+- [Claim registers](claims/) and [gaps](gaps/): attributed statements and unresolved inputs, with stable IDs.
+- [Computations](computation/) and [Lean proofs](proofs/lean/): implementations, recorded outputs and axiom reports.
+- [Source records](sources/): versions, hashes, citations and acquisition limits.
+- [Internal reviews](reports/reviews/) and [corrections](reports/CORRECTIONS.md): checks, objections and subsequent changes.
+- [Manuscript drafts](proofs/latex/): proposed written outputs; their scope and status are listed in the [synthesis](reports/SYNTHESIS.md#3-manuscript-drafts).
 
-See the [research synthesis](reports/SYNTHESIS.md) for the result ledger, [claim registers](claims/) for individual statements, [source records](sources/) for provenance, and [specification gaps](gaps/) for unresolved inputs.
+A mathematical result applies to its stated definitions and hypotheses. A finite search applies to its declared family. A Lean proof establishes its formal statement. Numerical agreement requires an explicit identification with an observable before it supports a physical claim.
+
+**Source limits matter.** Chain Theory uses pinned public sources. The Geometric Unity draft came from a recorded third-party mirror and was not verified against the author's host. The Howard investigation relies partly on a machine transcript not checked against audio, plus patent metadata and summaries. These limits are recorded alongside the relevant claims.
 
 ## Reproduce selected checks
 
-The recorded research environment used Python 3.13 and Lean 4.35.0. The selected Python verification suite targets Python 3.12 and 3.13, with pinned dependencies in [requirements.txt](requirements.txt).
+The selected suite supports Python 3.12 and 3.13 with pinned dependencies. Create an environment from the repository root:
 
-From the repository root:
-
-~~~bash
+```bash
 python -m venv .venv
-~~~
+```
 
-Activate the environment:
+Activate it with `source .venv/bin/activate` on Linux/macOS or `.\.venv\Scripts\Activate.ps1` in PowerShell, then run:
 
-~~~bash
-# Linux / macOS
-source .venv/bin/activate
-~~~
-
-~~~powershell
-# Windows PowerShell
-.\.venv\Scripts\Activate.ps1
-~~~
-
-Then install dependencies and run the selected checks:
-
-~~~bash
+```bash
 python -m pip install -r requirements.txt
-python -X utf8 scripts/verify.py
-~~~
+python -X utf8 scripts/verify.py --recent
+```
 
-The verifier runs script assertions and focused regression tests, including the projected-equation counterexample. It prints failures and returns a nonzero exit status if a check fails. It does not overwrite recorded outputs. The [GitHub Actions workflow](.github/workflows/verify.yml) runs this suite on Linux and Windows with Python 3.12 and 3.13.
+The verifier runs assertions and regression checks without overwriting recorded outputs. `--recent` adds newer Chain Theory checks and selected GU research checks. The [CI workflow](.github/workflows/verify.yml) runs the selected suite on Linux and Windows with both Python versions.
 
-For optional checks against the exact Chain Theory source snapshot:
+The November 2 research checkpoint passed **49 selected commands locally**, including 12 focused regression tests and six source-dependent checks. Its [push CI](https://github.com/JD-Ultima/universalunifyingmath/actions/runs/41426687791) and [PR CI](https://github.com/JD-Ultima/universalunifyingmath/actions/runs/41426694429) each passed all four platform/version jobs. These checks include exact reproductions and expected counterexamples; passing the suite does not establish a physical theory. The [verification record](reports/MORNING-HANDOFF-2026-11-02.md#validation) states the coverage and limits.
 
-~~~bash
-git clone https://github.com/alexwg/chain-theory.git ../chain-theory
-git -C ../chain-theory checkout a28db8998bce5bd5ef11195c05f13c86cd9dac5c
-python -X utf8 scripts/verify.py --upstream ../chain-theory
-~~~
+For source-dependent checks, prepare a pristine checkout of the exact Chain Theory snapshot:
 
-Use a pristine upstream checkout with no modified, untracked, or ignored files, including build artifacts. These additional checks inspect the source as data. The Lean-coverage classifier reads committed build and axiom logs; running it is separate from rebuilding Lean.
+```bash
+git clone --config core.autocrlf=false https://github.com/alexwg/chain-theory.git ../chain-theory
+git -C ../chain-theory checkout --detach a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+python -X utf8 scripts/verify.py --recent --upstream ../chain-theory
+```
 
-### Full computations and formal proofs
+Keep that checkout free of modified, untracked and ignored files, including build artifacts. The alpha checks require canonical LF bytes and retain strict SHA-256 pins. These checks read the upstream source as data; the Lean-coverage classifier uses recorded build and axiom logs.
 
-Each computation directory documents commands, dependencies, expected outputs, and runtimes:
+### Full reproduction
 
-- [Chain Theory α(0)](computation/chain-theory/alpha/README.md)
-- [Chain Theory compendium](computation/chain-theory/compendium/README.md)
-- [Geometric Unity](computation/geometric-unity/README.md)
-- [Howard arithmetic and geometry](computation/howard/README.md)
+Each area documents its commands, dependencies, outputs and runtimes:
 
-[requirements-optional.txt](requirements-optional.txt) adds the recorded CVXPY and element-data dependencies for scripts outside the selected suite. Those optional checks and the long searches are not run by the default verifier.
-
-**Platform requirements:** the full transport search requires the fork multiprocessing method; its recorded runs used Linux. The compendium build driver and shell pipeline require Linux, including WSL, for process accounting and shell tools. Both Python tools reject unsupported platforms before beginning expensive work. Other selected Python checks run natively on Windows; the UTF-8 flag handles mathematical output consistently.
-
-The [Lean instructions](proofs/lean/chain-theory/README.md) describe the Chain Theory checks. Standalone checks include:
-
-~~~bash
-lean proofs/lean/howard/HowardArith.lean
-lean proofs/lean/geometric-unity/GUTilt.lean
-lean proofs/lean/geometric-unity/GStueckelberg.lean
-~~~
-
-Use Lean **4.35.0** for the recorded checks. The upstream compendium pins **4.32.1**; the documented 4.35.0 compatibility build applies five recorded proof edits to scratch copies. Its build result applies to that configuration. The selected Python suite does not certify a fresh Lean build or reproduce every manuscript result. All three manuscript sources compiled with the desktop editor's compiler on October 30, 2026, before the pre-submission audit edits of the same day; the edited sources have not been recompiled. Compilation is separate from mathematical verification.
-
-## Evidence labels
-
-| Label | Meaning |
+| Area | Instructions |
 |---|---|
-| **Source statement** | An attributed assertion, with its source and acquisition status recorded. |
-| **Definition / reconstruction** | A specified object or interpretation used in an investigation. |
-| **Proven** | A statement established under its explicit mathematical hypotheses. |
-| **Computed / reproduced** | A calculation or source result checked at the stated precision and scope. |
-| **Conditional** | A result that depends on an identified convention, assumption, or interpretation. |
-| **Counterexample / inconsistent** | A specified statement fails under a demonstrated example or incompatible set of assumptions. |
-| **Open** | A question that the available definitions, proof, or evidence do not settle. |
+| Chain Theory α(0) | [Computation guide](computation/chain-theory/alpha/README.md) · [Lean guide](proofs/lean/chain-theory/README.md) |
+| Chain Theory compendium | [Computation guide](computation/chain-theory/compendium/README.md) |
+| Geometric Unity | [Computation guide](computation/geometric-unity/README.md) |
+| Howard | [Computation guide](computation/howard/README.md) |
 
-Established mathematical counterexamples remain part of the evidence. They concern the precise statements tested and do not decide every possible formulation of a research program.
+The recorded formal checks use **Lean 4.35.0**. The upstream compendium pins 4.32.1; its documented 4.35.0 compatibility build uses five recorded proof edits in scratch copies. The selected Python suite does not rebuild Lean, compile manuscripts, run long searches, or cover every research result. Optional dependencies are in [requirements-optional.txt](requirements-optional.txt).
 
-## Repository guide
-
-| Directory | Contents |
-|---|---|
-| [sources/](sources/) | Versioned bibliographies, acquisition limits, and imported results. |
-| [claims/](claims/) | Attributed statements with stable claim IDs. |
-| [gaps/](gaps/) | Missing definitions, inputs, and conditions needed to resolve questions. |
-| [patterns/](patterns/) | Documented observations and explicitly identified research questions. |
-| [formalization/](formalization/) | Definitions, hypotheses, derivations, and proofs. |
-| [computation/](computation/) | Python implementations and recorded outputs. |
-| [proofs/lean/](proofs/lean/) | Formal proofs and recorded axiom reports. |
-| [proofs/latex/](proofs/latex/) | Manuscript sources; compilation and review status are recorded separately. |
-| [metrics/](metrics/) | Result status, dependencies, and reproducibility records. |
-| [reports/](reports/) | Summaries, internal reviews, and correction history. |
-| [scripts/](scripts/) · [tests/](tests/) | Selected verification runner and regression checks. |
+The full transport search requires the `fork` multiprocessing method; recorded runs used Linux. The compendium build driver and shell pipeline require Linux or WSL. The selected Python checks run natively on Windows with UTF-8 output.
 
 ## Contributing
 
-Contributions should identify the question, source version, definitions, assumptions, method, and evidence. Include a reproducible command or proof where applicable. Distinguish a source quotation from an interpretation, and a mathematical result from a physical prediction. Report numerical uncertainty and any choices made after inspecting a target value.
+Name the question, source version, definitions and assumptions. Provide a proof, counterexample or reproducible command, and state the limits of the result. For physical comparisons, specify the observable, units and uncertainty; for significance claims, specify the probability and selection models.
 
-For an error report, provide the claim ID or file location, the failing statement, and a counterexample or reproduction command when available. Corrections update the active account and are appended to [CORRECTIONS.md](reports/CORRECTIONS.md). Historical reviews remain available with their context. See the [research charter](RESEARCH_PROMPT.md) for the full protocol.
+Error reports should identify the claim ID or file location and the statement that fails. Confirmed corrections update the active account and enter the [correction log](reports/CORRECTIONS.md); historical reviews remain available.
 
-No license has been selected for this repository. Upstream materials retain their respective terms, as recorded in [sources/](sources/).
+No license has been selected for this repository. Upstream materials retain their respective terms, recorded in [sources](sources/).

@@ -128,7 +128,10 @@ if ARGS.upstream:
     base = os.path.join(ARGS.upstream, "papers", "alpha")
     with open(os.path.join(base, "lean", "ChainAlpha.lean"), "rb") as fh:
         sha = hashlib.sha256(fh.read()).hexdigest()
-    check(sha == "522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da", "ChainAlpha.lean pin")
+    check(sha == "522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da",
+          f"ChainAlpha.lean raw-byte pin mismatch: {sha}. The pin requires the repository's LF bytes. "
+          "For a fresh Windows checkout use git -c core.autocrlf=false clone, then check out a28db89 "
+          "with core.autocrlf=false. Do not change the pinned hash to accept converted or modified sources.")
     print("ChainAlpha.lean sha256 matches the pin 522844e9...c331da")
     cache_src = {}
     for fn, ln, snip in ANCHORS:

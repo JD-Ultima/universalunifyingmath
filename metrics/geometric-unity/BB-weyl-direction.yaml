@@ -1,0 +1,75 @@
+result: >
+  For smooth Riemannian four-metrics whose curvature at a point is rho R0+omega W0,
+  rho!=0, in one orthonormal frame, every real Weyl amplitude is obstructed at
+  lambda=1/5 and positive cH,cV. W0 has sectional entries +1 at 01 and 23, -1 at
+  02 and 13, and zero at 03 and 12. Arbitrary cubic/quartic coefficients and smooth
+  zero-four-jet remainders are allowed. Some positive fibre witness has coefficient
+  rank 42 and augmented rank 43. No fibre-open consistent patch exists, and in
+  S.0's slaved vector sector the twisted cone has no Upsilon=0 solution on an open
+  set meeting the fibre. The full Weyl tensor outside the declared orbit is not covered.
+claim_id: [GU-054]
+result_ids: [BB1, BB2, BB3, BB4, BB5, BB6]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/BB-weyl-direction.md
+internal_review: reports/reviews/REVIEW22-GU-BB-JETS-2026-11-02.md
+auxiliary_review: reports/reviews/REVIEW21-GU-BB-2026-11-02.md
+code:
+  - computation/geometric-unity/BB_weyl_direction.py
+  - computation/geometric-unity/BB_weyl_direction.out
+  - computation/geometric-unity/BB_cubic_extension.py
+  - computation/geometric-unity/BB_cubic_extension.out
+formalization_status: >
+  The metric is I-(rho R0+omega W0)_iajb x^a x^b/3+Q3+Q4+R5, where Q3 and Q4
+  are arbitrary homogeneous symmetric cubic/quartic tensors and R5 has zero
+  four-jet. It is positive definite near 0. Naturality normalizes rho to +/-1,
+  w=omega/abs(rho), Q3 to Q3/abs(rho)^(3/2) and Q4 to Q4/rho^2. The auxiliary
+  complete quadratic metric has hand bounds degree A<=2 and RHS<=3 before exact
+  interpolation. The higher-jet support, parity and quartic gradient proofs do
+  not require zero Weyl curvature. Normal coordinates give the intrinsic conclusion
+  exactly for the declared simultaneous Ricci-axis/Weyl orthonormal-frame orbit.
+internal_consistency: >
+  W0 satisfies Bianchi and has zero Ricci. At two fibres the selected rows have
+  only xi_13 and a common n combination. Their exact compatibility quartics are
+  coprime for each sign. Auxiliary coefficient-minor products leave six rational
+  exceptions per sign. The 722 cubic-invariant rows annihilate four explicit K
+  columns identically in w by the degree bound. A generic nonzero 42-minor supplies
+  38 independent invariant rows, with kernel K, and cubic changes of its appended
+  rows annihilate K, preserving that minor. At all twelve exceptions the full
+  invariant subsystem at y1 has exact rank 38. J5K and J6K are nonzero diagonal
+  matrices times -(3w+sigma)^2 and -(3w-sigma)^2; at least one completion always
+  has rank four on K. The selected RHS is fixed by every cubic/quartic tensor.
+proof_status: >
+  BB1-BB2 retain the auxiliary quadratic proof, independently accepted in Review21.
+  BB3 proves universal higher-jet support/parity/gradient invariance; BB4 supplies
+  the polynomial kernel and unchanged-minor rank argument. BB5 applies S4 and the
+  local U5 field-equation reduction, and BB6 gives the declared intrinsic curvature
+  scope. Independent internal Review22 accepts BB3-BB6 and reproduces all 41
+  extension checks in 33.2 s. Review21 retains its auxiliary quadratic scope.
+  General Weyl curvature remains open.
+novelty: >
+  Covers one declared nonzero Weyl direction at every real amplitude, now with
+  arbitrary higher metric jets. Two witnesses remove compatibility roots; a
+  cubic-invariant kernel/completion argument preserves coefficient rank. The
+  conclusion depends only on curvature in the declared orbit, rather than a
+  special polynomial metric. It is not a universal rank-one-Ricci classification.
+reproducibility: >
+  Python 3.12, sympy 1.14.0, exact Fractions and QQ[w] domain determinants.
+  No randomness. From the root run python -X utf8 -I with each script in code.
+  The auxiliary polynomial run takes 52.3 s (independent rerun 54.1 s), printing
+  row polynomials, determinant factors and all twelve quadratic rank resolutions.
+  The extension run passes 41 checks in 33.1 s: both witnesses/signs at three
+  exact nodes, all twelve invariant ranks, exact J5/J6 restrictions and two
+  mixed nonzero-Weyl full-system controls. It reuses existing generic certificates
+  rather than recomputing polynomial 42-determinants. Controls supplement the
+  universal proof; no higher-jet range is inferred from samples.
+empirical_testability: None new; a mathematical obstruction in the declared reconstructed sector.
+dependencies: [U1, U2, U5, S4, S5, Q5, W1, W2, Z1, Z2, Z3, Z4, xcheck_round10]
+confidence: >
+  High for the quadratic certificates accepted in Review21 and higher-jet proof
+  separately accepted in Review22. Exact polynomial identities and invariant
+  rank resolution support the calculation. All-amplitude scope
+  follows from degree bounds and exact algebra, not sampled amplitudes; arbitrary
+  cubic/quartic scope follows from the hand support and rank-nullity arguments.
+pending_work: >
+  The remaining mathematical boundary is
+  nonzero Weyl tensors outside this orbit and the Ricci-flat nonflat case rho=0.

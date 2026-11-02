@@ -1,0 +1,8 @@
+signature (14,0): 176 independent block-column checks passed
+signature (7,7): 176 independent block-column checks passed
+R7 positivity: Lam3/Lam5 exact monotonicity and threshold certificates passed; Lam3 B<0 confined to [-149/10000,-3/1000].
+R9 kernel: kappa=1, t=-1/400; Lk=0; -Tr norm(k)^2=11; <To,Q(k)>=-11/2
+R10 current: 28 zero contractions (all 14 derivative directions, both sharp terms)
+R10 polarization: kappa||k||^2 + 2<To,Q(k)> = 0 exactly; Q(k) is nonzero.
+Conclusion uses the note's proof: fixed constant real To background, detM!=0, positive u(128) pairing; no boundary/integration assumptions.
+Total: 352 block-column checks, kernel/current/polarization checks passed; no repository imports.

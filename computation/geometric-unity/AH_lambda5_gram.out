@@ -1,0 +1,33 @@
+AH: necessary Lambda5 Gram spectrum, real compact WA
+[01] c/wGamma, unit simple: exact symbolic Gram formula and compact phase: True
+[02] c/wGamma, two disjoint five-forms: exact symbolic Gram formula and compact phase: True
+[03] c/wGamma, overlap with off-diagonal Gram: exact symbolic Gram formula and compact phase: True
+[04] c/wGamma, full support: exact symbolic Gram formula and compact phase: True
+[05] c/wGamma: nondecomposable control has a genuinely off-diagonal Gram entry: True
+[06] c/wGamma: vector/kernel mixed term has no symmetric converted component: True
+[07] c/wGamma: derivative and independent weight-jet control has no such component: True
+[08] c/wGamma, first: exact real kernel chart modulo w squared minus f: True
+[09] c/wGamma, alternate: exact real kernel chart modulo w squared minus f: True
+[10] c/wGamma: branch signs and negative scalar-candidate value: True
+  c/wGamma: left endpoint -1/96 right endpoint -3/832 ; f(-1/208)= -7/49920
+[11] w/cGamma, unit simple: exact symbolic Gram formula and compact phase: True
+[12] w/cGamma, two disjoint five-forms: exact symbolic Gram formula and compact phase: True
+[13] w/cGamma, overlap with off-diagonal Gram: exact symbolic Gram formula and compact phase: True
+[14] w/cGamma, full support: exact symbolic Gram formula and compact phase: True
+[15] w/cGamma: nondecomposable control has a genuinely off-diagonal Gram entry: True
+[16] w/cGamma: vector/kernel mixed term has no symmetric converted component: True
+[17] w/cGamma: derivative and independent weight-jet control has no such component: True
+[18] w/cGamma, first: exact real kernel chart modulo w squared minus f: True
+[19] w/cGamma, alternate: exact real kernel chart modulo w squared minus f: True
+[20] w/cGamma: branch signs and negative scalar-candidate value: True
+  w/cGamma: left endpoint -1/160 right endpoint -3/704 ; f(-1/208)= -1/43264
+[21] cyclic limitation: fourteen distinct supports with overlap at most two: True
+[22] cyclic limitation: exact full-support N=14 and S=5I: True
+[23] cyclic limitation: regular first-conic chart, separate from the other Lambda5 factor: True
+[24] cyclic limitation: all other non-vector factors are regular: True
+[25] cyclic limitation: the full symmetric Gamma channel balances with C=0: True
+Necessary reduction: S=alpha I-b C*C^T, b=(624/19)w/(rs), trace S=5N.
+N>0, rank S=13 or 14. Left branch: rank 14. Right: rank 13 only with C as annihilator.
+The isotropic full-support form passes this selected channel; no full Lambda5 exclusion or PDE solution follows.
+
+25 checks, all True; runtime 4.5 s

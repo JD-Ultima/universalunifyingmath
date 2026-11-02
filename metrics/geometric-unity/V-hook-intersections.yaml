@@ -1,0 +1,40 @@
+result: >
+  Exact intersection catalogue on six positive W_A hook lines; necessary Lambda and hook norms at each
+  intersection; a grade-five obstruction on the pure H2Gamma branch, retaining the full derivative equation.
+claim_id: [GU-054]  # Source-claim context; the result IDs below identify this investigation's statements.
+result_ids: [V1, V2, V3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/V-hook-intersections.md
+internal_review: reports/reviews/REVIEW16-GU-V-2026-11-02.md
+code: [computation/geometric-unity/V_hook_intersections.py, computation/geometric-unity/V_hook_intersections.out]
+formalization_status: >
+  Fixed (14,0) metric and spin connection, compact gauge real form u(128), true field equation, real W_A,
+  kappa != 0, det M != 0. Invariant odd field To=i(t Phi1+u Phi1Gamma); t/kappa is one of R6's six positive
+  hook ratios. T5 makes u constant on connected full-solution domains. The pure branch of V3 additionally
+  requires t=3kappa/136 and u=0, where the even kernel is grade-12 H2Gamma.
+proof_status: >
+  V1: exact rational factorization/comparison of all 24 squared intersections. Four distinct positive roots
+  per line, no det M collision, exactly one hook copy, plus one Lambda3 or Lambda5 copy at each nonzero root.
+  V2: Gamma trace, self-adjoint paired block and T2 give necessary norms for the Lambda and hook parts.
+  V3: Clifford degree argument separates odd grades 1, 5 and 11; a specified real kernel element has
+  nonzero grade-five quadratic term, which derivatives cannot cancel. These statements passed independent
+  internal review; the universal grade proof is expressed through explicit Gamma-duality identities.
+internal_consistency: >
+  Rational factors match the earlier independently verified R2 templates. Positive copy pairings have
+  compatible off-diagonal weights. Four direct Clifford controls verify the paired kernels and norm formula.
+  The explicit H2Gamma element has norm squared 4, lies in ker L, and has Q5=4i*w(E1234). A flat Z1 control
+  passes the two invariant traces while retaining this nonzero grade-five obstruction.
+reproducibility: >
+  Exact SymPy rationals/Gaussian algebra and the earlier independent xcheck_round14 engine through T's
+  compact-real-form helpers; no imports from the original R/J evaluator. About 6 seconds. No randomness.
+novelty: >
+  Within this investigation: T5's finite exception set is an explicit catalogue, with multiplicities and
+  additional necessary norm data. The grade-five certificate rules out specified even-kernel elements
+  even when their scalar trace conditions hold. No general classification or literature-level novelty claim.
+empirical_testability: "No new physical prediction; conditional results in the reconstructed field system."
+dependencies: [D2, D5, F7, I2, R2, R6, T1, T2, T4, T5]
+confidence: >
+  The exact finite catalogue, norm formulas and explicit algebraic certificate passed independent internal review.
+  The derivative d0k is retained as a separate grade-11 equation. Rejecting one element and its nonzero
+  multiples does not classify arbitrary hook fields. Constant hook solutions and the remaining tensor
+  equations, other singular curves, det M=0 and indefinite real forms remain open.

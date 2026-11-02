@@ -1,6 +1,10 @@
 # Geometric Unity: Phase 1 report, with Phase 2 results on three claims
 
-**Scope.** E. Weinstein, *Geometric Unity: Author's Working Draft v1.0* (1 Apr 2021). Hypothesis-neutral: critiques are treated as leads, and every verdict below comes from our own derivation or computation. Files: `sources/`, `claims/`, `gaps/`, `patterns/` (`geometric-unity.md` in each), `formalization/geometric-unity/{A,…,J}-*.md`, `computation/geometric-unity/` (29 scripts, outputs committed; see its README), and `metrics/geometric-unity/*.yaml`.
+**Scope.** E. Weinstein, *Geometric Unity: Author's Working Draft v1.0* (1 Apr 2021). We reconstruct the mathematical claims under explicit readings and record source limits. The [synthesis](SYNTHESIS.md#geometric-unity) gives the current conclusions and open questions; the dated sections below preserve the development of the audit. An earlier section's open case may be closed or narrowed by a later result.
+
+The supporting [formalizations](../formalization/geometric-unity/), [computations](../computation/geometric-unity/README.md), [claim register](../claims/geometric-unity.md), [gap register](../gaps/geometric-unity.md), [metrics](../metrics/geometric-unity/) and [internal reviews](reviews/) retain the detailed evidence.
+
+**Current account.** The [synthesis](SYNTHESIS.md#geometric-unity) states the current field-sector results, curvature obstructions and open questions, with direct proof and review links.
 
 ## 1. Sources
 
@@ -17,7 +21,7 @@
   - G17: "imposter" generation has two definitions.
   The underspecified core is the Zorro metric (G06), the Shiab operator (G10), the 14→4 reduction (G14), the reality conditions (G07) and symmetry breaking (G18).
 
-The draft's finite-dimensional algebra is largely correct and checkable. Its analytic core, from the action to the field equations, is not specified precisely enough to be well-posed. Under the most natural reconstruction it is inconsistent.
+The audit reproduces substantial finite-dimensional algebra and identifies specification gaps in the metric, operator and field-extension rules. The printed field equation fails the variational test under the reconstructions stated in C3 and D4; the reconstructed variational equation is analyzed separately.
 
 ## 3. Phase 2 results
 
@@ -29,7 +33,7 @@ The draft's finite-dimensional algebra is largely correct and checkable. Its ana
 | C2 | **Shiab operator** (reconstruction R-S: soldering invariants $\Phi^1,\Phi^2$). The degrees are consistent. It is gauge covariant only when tilted by $\varepsilon$; untilted, only for the centre $U(1)$. On Levi-Civita curvature, the operator with a commutator in the first term and $i$-anticommutators in the second gives $-\varepsilon^{-1}{*}G\,\varepsilon$ for $c=1$, the Einstein tensor of $Y^{14}$ (not $X^4$). The Weyl part is annihilated. | **Proven** for R-S |
 | C3 | **Field equation.** $\circledast\circ d_B$ is not formally self-adjoint: there is an exact counterexample for every $c$ for each of the 8 bracket choices (`C_rs_all_members.out`), and $O(1)$ defects for all variants. So the printed EL equation (9.7) ("Swervature = Displasion") is not the variation of the printed action (9.4), and no rescaling fixes this. The cubic term also lacks the needed symmetry. | **Proven** for R-S; open beyond R-S |
 
-**Empirical.** No claim is presently testable. The representation content predicts exotic spin-½ states (including charges $\pm\tfrac43,\pm\tfrac53,\pm2$, and colour sextets and octets) and spin-3/2 states, but no masses, couplings or breaking mechanism are given.
+**Empirical limits of this reconstruction.** No quantified physical prediction has been established. The branching contains exotic spin-½ states (including charges $\pm\tfrac43,\pm\tfrac53,\pm2$, and colour sextets and octets) and spin-3/2 states, but no masses, couplings or breaking mechanism are given.
 
 ## 4. Proposed formalization order
 
@@ -217,8 +221,8 @@ Round 5 settled the reduction only for $T_e=0$, where the twisted coefficients $
   - No statement made before round 6 is contradicted: round 5's (E) statements are all scoped to the invariant sector, which has $T_e\equiv0$ by definition (confirmed by REVIEW4-GU, R6-11). This round's own J4(d) range was too broad and is corrected (R6-1, `reports/CORRECTIONS.md`).
   - Not covered:
     - $T_o$ outside the invariant sector;
-    - $T_e$ outside the vector sector: reduced in Round 14 (not yet internally reviewed) to a condition on $(t,u)$ (R5); open only where $(t,u)$ stays in the singular curve $Z_\perp$ on an open set;
-    - neighbourhood solutions in Z1 beyond Rounds 10 and 13 (after Round 15, not yet internally reviewed: the twisted cone in (14,0) at $\lambda=\tfrac15$ away from the parallel set); in Z2 beyond the radial ansatz, nothing left under the hypotheses of Round 8 (Rounds 8, 9, 12; two steps of Round 12 computer-assisted);
+    - $T_e$ outside the vector sector: reduced in Round 14 (internally reviewed November 1) to a condition on $(t,u)$ (R5); open only where $(t,u)$ stays in the singular curve $Z_\perp$ on an open set;
+    - neighbourhood solutions in Z1 beyond Rounds 10 and 13 (after the November 1 review of Round 15: the twisted cone in (14,0) at $\lambda=\tfrac15$ away from the parallel set); in Z2 beyond the radial ansatz, nothing left under the hypotheses of Round 8 (Rounds 8, 9, 12; two steps of Round 12 computer-assisted);
     - reading (A).
 
 ## Round 8 — $\Upsilon=0$ beyond the radial Z2 ansatz (GU-054, GU-G14, GU-G16)
@@ -287,13 +291,13 @@ Hypotheses of round 10; for $(x,y)=0$ without $(x,y)\neq0$ and without the secti
 - Transfer. Round 9's reduced identities and symmetries do not involve the metric; the (7,7) swap metric $-g_\aleph$ is again Z1, with $(-c_H,-c_V)$. Z1 has no nonconstant concircular function on any open set.
 - $(x,y)=0$: only $T=0$, for every Z1 metric, on every open set. (7,7) null members: none near the section (F6). $x=\pm y$ with $xz-yw\neq0$: $\nabla^2r=-\tfrac5{12}r\,\mathrm{Ric}+\nu g$ on the invariant line, and round 10's degree-1 theorem allows only $\lambda\in\{\tfrac15,\tfrac{23}{100}\}$, so none.
 - $x(W_A+aW'_C\mathrm{Ad}_\Gamma)$, $a\neq0$: the remaining equation has a nonlinear μ. Round 10's degree-1 conditions hold with $\mu'(r_0)$ for $\mu_1$; along the radial set they become an ODE condition on μ, which an exact resultant certificate rules out for every admissible $\lambda\neq\tfrac15$. At $\lambda=\tfrac15$ round 10's pairing and a second pairing $\alpha''=-3c_V/(2c_H^2)$ remove the Weyl tensor; a flat base leaves nothing.
-- **Result.** With round 10, for every member with $(x,y)\neq0$: none near the section in (7,7); in (14,0) $\lambda=\tfrac15$ over a Ricci-flat base, and for analytic fields exactly flat-base solutions with constant odd part and $T_e\equiv0$, which exist for every (14,0) member iff $c_V\kappa^2\ge9360(x'^2+y'^2)$ ($c_V>0$; this answers R10-3's open item).
+- **Result.** With round 10, for every member with $(x,y)\neq0$: none near the section in (7,7); in (14,0) $\lambda=\tfrac15$ over a Ricci-flat base, and for analytic fields exactly flat-base solutions with constant odd part and $T_e\equiv0$, which exist for every (14,0) member iff $c_V\kappa^2\ge9360(x'^2+y'^2)$; under $\det M\ne0$, the rotated member with $a^2=125/576$ needs strict inequality (Q15; $c_V>0$).
 - Rests on N6(f) (computer-assisted) and on exact computations. Open: limit points without analyticity; open sets away from the section; other sectors.
 - No statement made before round 13 is contradicted.
 
 ## Round 15 — Z1 on open sets away from the section (GU-054, GU-G14, F9)
 
-Write-up: `formalization/geometric-unity/S-z1-off-section.md`. Code: `computation/geometric-unity/S_z1_off_section.py`, output committed, exact, 23 asserted checks, ~4.5 min (260 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/S-z1-off-section.yaml`. **Not yet internally reviewed.**
+Write-up: `formalization/geometric-unity/S-z1-off-section.md`. Code: `computation/geometric-unity/S_z1_off_section.py`, output committed, exact, 23 asserted checks, ~4.5 min (260 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/S-z1-off-section.yaml`. Internally reviewed in reports/reviews/REVIEW12-GU-S-2026-11-01.md: the continuation proof was repaired and a constant-coefficient exception was separated; the stated exclusions retain their hypotheses.
 
 Hypotheses of rounds 10 and 13, without the section.
 - Method. Along a fibre the Z1 curvature is polynomial in $(y,(\det y)^{-1})$. So pointwise integrability on any open subset of a fibre continues to the radial points, where round 10's degree-1 analysis applies. The fibre equation alone carries no obstruction in Z1.
@@ -306,14 +310,14 @@ Hypotheses of rounds 10 and 13, without the section.
 
 ## Round 14 — the even operator on all of $\Lambda^1\otimes\mathfrak g_{\rm ev}$ (GU-G15, GU-G14, GU-054)
 
-Write-up: `formalization/geometric-unity/R-even-operator.md`. Code: `computation/geometric-unity/R_even_operator.py`, output committed, exact, 48 asserted checks, ~6 min (342 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/R-even-operator.yaml`. **Not yet internally reviewed.**
+Write-up: `formalization/geometric-unity/R-even-operator.md`. Code: `computation/geometric-unity/R_even_operator.py`, output committed, exact, 48 asserted checks, ~6 min (342 s) on one core; a second run was identical apart from the timing lines. Record: `metrics/geometric-unity/R-even-operator.yaml`. Internally reviewed in reports/reviews/REVIEW12-GU-R-2026-11-01.md, with an independent 352-column Clifford check and a bounded continuation, R10.
 
 Rounds 6–13 assume that $T_e$ is the slaved field in the vector sector $\mathcal V$; only the $\mathcal V$-block $M$ of $L_{T_o}$ had been computed (J.3).
-- **Blocks.** For $T_o=t\Phi^1+u\Phi^1\Gamma$, $\Lambda^1\otimes\mathfrak g_{\rm ev}=4\Lambda^1\oplus4\Lambda^3\oplus4\Lambda^5\oplus2\Lambda^7_+\oplus2\Lambda^7_-\oplus2H_2\oplus2H_4\oplus2H_6$ ($H_k$ hooks). By Schur, $L_{T_o}$ has seven blocks, all functions of $\sigma,\theta,\delta$ (R1, R2). Checked by exact fits, an equivariance spot check and direct traces over the whole 114688-dimensional fibre.
+- **Blocks.** For $T_o=t\Phi^1+u\Phi^1\Gamma$, $\Lambda^1\otimes\mathfrak g_{\rm ev}=4\Lambda^1\oplus4\Lambda^3\oplus4\Lambda^5\oplus2\Lambda^7_+\oplus2\Lambda^7_-\oplus2H_2\oplus2H_4\oplus2H_6$ ($H_k$ hooks). By Schur, $L_{T_o}$ has eight isotypic blocks, grouped into seven determinant factors, all functions of $\sigma,\theta,\delta$ (R1, R2). Checked by exact fits, an equivariance spot check and direct traces over the whole 114688-dimensional fibre.
 - **Determinant.** $\det L_{T_o}=(\det M)^{14}(\det B_{\Lambda^3})^{364}(\det B_{\Lambda^5})^{2002}(\det B_{\Lambda^7})^{3432}(\det B_{H_2})^{896}(\det B_{H_4})^{11648}(\det B_{H_6})^{36608}$. $\det M$ is coprime to the other six factors. $544|\sigma|+384|\theta|+208|\delta|<|\kappa|$ suffices for invertibility (R3).
 - **The hypothesis "$T_e\in\mathcal V$".** The source lies in $\mathcal V$. So the even equation forces $T_e=\Sigma(dt,du)^\top$ wherever $L_{T_o}$ is invertible, and more generally under (R): $\det M\neq0$, and $(t,u)\in Z_\perp$ only on a set with empty interior (R4, R5). The results of rounds 6–13 hold for arbitrary $T_e$ under (R).
-- **Singular set.** Nonempty for $\circledast_\sharp$ and $W_A$ in both real forms; on the t-axis the nearest singular points are $t=-\kappa/544$ ($\det M$) and $t=3\kappa/136$ (hook $H_2$, where $\det M\neq0$) (R6). In (14,0), $Z_\perp\neq\emptyset$ for every nonzero member. In (7,7), $L_{T_o}$ is invertible everywhere exactly for $(x,y)=0$ and $(z,w)=c(y,x)$ with $c^2>\tfrac{25}{144}$ (R7; the $\Lambda^3$, $\Lambda^5$ step is an exact certificate).
-- **Open.** Open sets on which $(t,u)$ takes values in $Z_\perp$ (there $dt\wedge du=0$), with $T_e$ having a component in a non-vector kernel. Example: the (14,0) flat-base root $s=-\kappa/400$ of $\circledast_\sharp$ at $c_V\kappa^2=\tfrac{150000}{11}$ (R9), where the "$T_e\equiv0$" conclusion of N12/Q15 relies on the $\mathcal V$ hypothesis.
+- **Singular set.** Nonempty for $\circledast_\sharp$ and $W_A$ in both real forms; on the t-axis the nearest singular points are $t=-\kappa/544$ ($\det M$) and $t=3\kappa/136$ (hook $H_2$, where $\det M\neq0$) (R6). In (14,0), $Z_\perp\neq\emptyset$ for every nonzero member. In (7,7), $L_{T_o}$ is invertible everywhere exactly for $(x,y)=0$ or $(z,w)=c(y,x)$ with $c^2>\tfrac{25}{144}$ (R7; the $\Lambda^3$, $\Lambda^5$ step is an exact certificate).
+- **Continuation R10 (2026-11-01).** In (14,0) with compact $\mathfrak u(128)$, $\kappa\ne0$ and $\det M\ne0$, fix a constant invariant $T_o$ that already solves the odd background equation with $T_e=0$. No nonzero real even field can solve the full equation with that same $T_o$, even on a non-vector singular stratum. The proof is pointwise and uses cubic polarization, the skew symbol, and positivity; it needs no compact manifold or boundary assumption. This excludes additions to R9's root $s=-\kappa/400$, $c_V\kappa^2=150000/11$. General nonconstant backgrounds, indefinite real forms, and $\det M=0$ remain open.
 - No statement made before Round 14 is contradicted.
 
 ## F4(c) for every $n$ (round 2 F, completed)

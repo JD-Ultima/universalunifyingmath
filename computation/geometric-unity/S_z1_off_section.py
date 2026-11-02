@@ -706,9 +706,10 @@ def s5():
     res_sum = sp.limit(576 * D1 / Q2 * tau, tau, sp.oo)
     quad = sp.Poly(sp.expand(18 * kk * D1 ** 2 + N2), tau)
     ok_res = sp.simplify(res_sum - 576 * 544 * (1 - eps * A) / (121856 - 147456 * eps * A)) == 0
-    check(f"dG/dtau = 576 D1/Q2 (G = int H dt / x): the sum of its residues is {sp.factor(res_sum)}, nonzero unless eps A = 1, so G"
-          f" has logarithmic singularities at the zeros of Q2 (det M = 0) and at infinity (eps A != 1); kappa(tau) = k is the"
-          f" quadratic 18 k D1^2 + N2 = 0 in tau (degree {quad.degree()})", ok_res and quad.degree() == 2)
+    check(f"dG/dtau = 576 D1/Q2 (G = int H dt / x): for quadratic Q2 the generic residue sum is {sp.factor(res_sum)};"
+          f" kappa(tau) = k gives 18 k D1^2 + N2 = 0 (generic degree {quad.degree()}). The degree drop eps A = 119/144"
+          f" and the constant-kappa exception eps = 1, A = 11/6 are checked separately in xcheck_round15.py;"
+          f" S14 uses the rational-differential pole argument, not a blanket logarithmic-singularity claim", ok_res and quad.degree() == 2)
     B, x_, kv, kp, Hv, rv = sp.symbols('B x kappa kappa_p H rho', nonzero=True)
     tp = x_ * (B / 2) * (1 - rv) / Hv                          # (B): (H/x) dt/dtheta = c v_E = (B/2)(1 - rho)
     lhs = B * kp * tp * (1 - rv ** 2) + B * kv * (-2 * rv * (-rv))     # d/dtheta [B kappa(t)(1 - rho^2)], rho' = -rho

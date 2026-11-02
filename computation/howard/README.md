@@ -33,5 +33,3 @@ lean proofs/lean/howard/HowardArith.lean   # from the repo root
 The expected output is the `#print axioms` lines recorded in `proofs/lean/howard/HowardArith.lean.out`, one for each of the file's 80 theorems. It contains no errors and no `sorry`. The generic theorems use no axioms. The ℤ, ℤ/4 and Euler theorems use at most `propext` and `Quot.sound`. The ℚ instances also use `Classical.choice`, which core's own `Rat` lemmas (e.g. `Rat.le_trans`, `Rat.natCast_add`) depend on.
 
 Mathlib's cache hosts were blocked in this sandbox, and so was `release.lean-lang.org`. The toolchain was therefore installed from the GitHub release tarball `lean-4.24.0-linux.tar.zst` and registered with `elan toolchain link`. The 4.35.0 check used the core `lean` binary from the `lean-4.35.0-linux` release archive.
-
-The repository README lists `proofs/lean/` as the home for Lean files. This agent's write scope was `formalization/howard/`, so the coordinator may move the file there.

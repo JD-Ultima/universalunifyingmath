@@ -1,0 +1,43 @@
+W. Arbitrary symmetric quartic base terms: an exact three-row obstruction
+sympy 1.14.0; canonical lambda=1/5, cH=2, cV=3, y=diag(2, 3, 4, 5)
+[01] row indices encode (0,13,0), (1,13,1), (2,13,2): True
+  nonzero predicted RHS beta slopes: [(5, '3/2'), (20, '3'), (35, '9/2'), (57, '1/4'), (72, '9/32'), (87, '27/100')]
+[02] all 350 quartic coefficients: the diagonal-vertical HV variation is a gradient: True
+[03] all 350 quartic coefficients: the three principal mixed Ricci derivatives vanish: True
+[04] rho=1: coefficient matrix unchanged at beta=0,1,-2: True
+[05] rho=1: entire beta=1 RHS variation equals the proved six-row slope: True
+[06] rho=1: independent beta=-2 control agrees with affine formula: True
+[07] rho=1: all three certificate RHS rows have zero beta slope: True
+[08] rho=1: integer combination of the three coefficient rows is zero: True
+[09] rho=1: the same RHS combination is 3933/800 != 0: True
+[10] rho=1: coefficient rank remains 42: True
+  rows (168, 337, 492); weights (-445, 41538, -41093); RHS defect 3933/800
+  the hand affinity and zero-slope arguments extend this exact contradiction to every real beta
+[11] rho=-1: coefficient matrix unchanged at beta=0,1,-2: True
+[12] rho=-1: entire beta=1 RHS variation equals the proved six-row slope: True
+[13] rho=-1: independent beta=-2 control agrees with affine formula: True
+[14] rho=-1: all three certificate RHS rows have zero beta slope: True
+[15] rho=-1: integer combination of the three coefficient rows is zero: True
+[16] rho=-1: the same RHS combination is 5667/800 != 0: True
+[17] rho=-1: coefficient rank remains 42: True
+  rows (168, 337, 492); weights (445, 44862, -45307); RHS defect 5667/800
+  the hand affinity and zero-slope arguments extend this exact contradiction to every real beta
+[18] rho=1: mixed quartics leave the full coefficient matrix fixed: True
+[19] rho=1: mixed quartics leave all three certificate RHS rows fixed: True
+[20] rho=1: mixed quartics change other RHS rows (count 111): True
+[21] rho=1: mixed-quartic defect remains 3933/800: True
+[22] rho=-1: mixed quartics leave the full coefficient matrix fixed: True
+[23] rho=-1: mixed quartics leave all three certificate RHS rows fixed: True
+[24] rho=-1: mixed quartics change other RHS rows (count 111): True
+[25] rho=-1: mixed-quartic defect remains 5667/800: True
+[26] rho=4, beta=48/5: quartic invariant is beta/rho^2=3/5: True
+[27] rho=4: pulled-back metric and covariant Ricci agree: True
+[28] rho=4: pulled-back mixed Riemann agrees: True
+[29] rho=4: pulled-back covariant derivative of Ricci agrees: True
+[30] rho=-9, beta=-162/7: quartic invariant is beta/rho^2=-2/7: True
+[31] rho=-9: pulled-back metric and covariant Ricci agree: True
+[32] rho=-9: pulled-back mixed Riemann agrees: True
+[33] rho=-9: pulled-back covariant derivative of Ricci agrees: True
+Every homogeneous symmetric quartic Q4 is excluded with the fixed U quadratic jet and zero cubic terms at rho!=0. Arbitrary quadratic/Weyl and cubic jets, and the rho=0 frontier, are not classified.
+
+33 checks, all True; runtime 16.5 s

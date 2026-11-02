@@ -1,0 +1,17 @@
+AF: symmetric right-Gamma equation on the single Lambda3 c/wGamma conic
+SymPy 1.14.0; real compact phases, no observer-metric samples.
+[01] complete symbolic simple-form quadratic has the stated 3+11 eigenvalues: True
+[02] complete symbolic aligned-vector quadratic has coefficient 16bc: True
+[03] both vector derivatives have zero symmetric converted component: True
+[04] non-coordinate simple form obeys the full stress formula: True
+[05] vector/kernel mixed control has no symmetric converted component: True
+[06] kernel derivative control, including independent weight jets, has no such component: True
+[07] invariant baseline has scalar -u*(kappa+208t): True
+[08] slaved aligned-vector specialization has coefficient 3328w: True
+[09] the scalar Gamma candidate lies outside the real conic: True
+[10] the only zero-w endpoints are -3/112 and -1/400: True
+Symmetric equation: [-kappa²w(1+208a)+3328w|C|²+40nu]I =3328w C*C^T +(208/3)nu P3, nu=rs|omega|².
+AA7 plus rank14 versus rank<=4 rules out every w!=0 point on this single branch.
+Only two constant-odd endpoints remain; their even-field/PDE equations are not solved.
+
+10 checks, all True; runtime 2.7 s

@@ -1,0 +1,55 @@
+result: >
+  For the base four-jet g=(1+beta(p.x)^4)I with |p|=1, beta!=0, a smooth
+  zero-four-jet remainder, lambda=1/5 and positive cH,cV, the relaxed system is
+  inconsistent at a positive fibre witness over the origin. Its coefficient
+  rank is 28 throughout that fibre and it has an augmented rank-29 witness,
+  excluding any nonempty fibre-open consistent patch. No local full-field
+  Upsilon exclusion is inferred from this rank-deficient coefficient matrix.
+claim_id: [GU-054]  # Source-claim context; the result IDs below identify this investigation's statements.
+result_ids: [Y1, Y2]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/Y-zero-curvature-quartic.md
+internal_review: reports/reviews/REVIEW17-GU-Y-2026-11-02.md
+code:
+  - computation/geometric-unity/Y_zero_curvature_quartic.py
+  - computation/geometric-unity/Y_zero_curvature_quartic.out
+formalization_status: >
+  The base metric has zero curvature at the origin but need not be flat or
+  Ricci-flat on a neighbourhood. Its quadratic and cubic jets are zero, its
+  quartic term is beta(p.x)^4 I, and all higher terms have zero four-jet.
+  The observer coefficient matrix agrees with flat-base Z1 at every point
+  of the origin fibre. The RHS is exactly beta times the proved six-row slope.
+internal_consistency: >
+  Rows (5,20,191) have weights (4,-3,2), annihilating all 42 coefficient
+  columns with RHS -3 beta. At canonical parameters the ranks are (28,29).
+  An exact augmented 29-minor is recorded, with determinant
+  beta*30517578125/13249474533898474022240256. GL(4) isometries of flat-base
+  Z1 prove coefficient rank 28 across the positive fibre; rationality then
+  excludes a fibre-open consistent patch. Positive metric scales and unit
+  directions transfer by the reviewed covariance maps.
+proof_status: >
+  Hand jet-order, affine-dependence and GL(4) arguments combined with an exact
+  computer-assisted row/minor certificate. Independently reviewed in
+  reports/reviews/REVIEW17-GU-Y-2026-11-02.md; all 12 assertions were reproduced.
+  This is not external peer review or an independent curvature engine.
+novelty: >
+  A bounded origin-fibre obstruction in the rho=0 quartic conformal direction,
+  separate from W's nonzero-rho full-rank family theorem. It does not classify
+  the general zero-curvature or Ricci-flat nonflat frontier.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0 and exact rational arithmetic; no randomness.
+  Run python -X utf8 -I computation/geometric-unity/Y_zero_curvature_quartic.py
+  from the repository root. Imports W's point helper, U's assembly and the
+  accepted xcheck_round10 curvature engine. Exact rows, minor and beta=-2
+  control are checked. The recorded run passes 12 checks in 1.7 seconds.
+empirical_testability: None new; a necessary-system obstruction on one base fibre.
+dependencies: [W1, W2, U1, U2, S4, S5, xcheck_round10]
+confidence: >
+  The row certificate and all-beta extension are exact. The fibre conclusion
+  uses flat-model GL(4) transitivity, not a constant-rank assumption at nearby
+  base points. A nonzero augmented 29-minor cannot by itself establish base
+  persistence when the coefficient rank can rise above 28.
+pending_work: >
+  Arbitrary quartic tensors at rho=0,
+  arbitrary cubic and quadratic jets, and any full-field consequence requiring
+  further base-neighbourhood analysis remain open.
