@@ -1,5 +1,7 @@
 # BB. One declared nonzero-Weyl direction
 
+**Broader curvature class.** [CC](CC-diagonal-weyl.md) treats the complete diagonal Weyl plane, equivalently vanishing mixed Weyl components relative to the nonzero Ricci line. This note retains the simpler certificate for its subcase.
+
 The obstruction covers every amplitude in one specified Weyl direction, with arbitrary cubic, quartic and smooth higher metric jets. Two fibre witnesses remove the roots of a single compatibility certificate. A cubic-invariant subsystem and its four-dimensional kernel preserve coefficient rank, so the result excludes fibre-open solution patches rather than only individual points.
 
 Code: `computation/geometric-unity/BB_weyl_direction.py` and `BB_cubic_extension.py`, with their `.out` files; record: `metrics/geometric-unity/BB-weyl-direction.yaml`. Both use U's accepted relaxed-system assembly and the earlier referee curvature engine. [Independent internal Review21](../../reports/reviews/REVIEW21-GU-BB-2026-11-02.md) accepts the quadratic certificates BB1–BB2. [Independent internal Review22](../../reports/reviews/REVIEW22-GU-BB-JETS-2026-11-02.md) separately accepts BB3–BB6 and reproduces all 41 extension checks in 33.2 s. These are internal reviews, not external peer review.

@@ -1,0 +1,75 @@
+result: >
+  A smooth Riemannian four-metric with nonzero rank-one Ricci tensor and vanishing
+  mixed Weyl components W(p,u,v,w), for u,v,w perpendicular to its Ricci eigenline p,
+  has a fibre-open relaxed-system obstruction at lambda=1/5 and positive cH,cV.
+  Under the S.0 slaved-vector hypotheses the twisted cone has no Upsilon=0 solution
+  on an open set meeting that fibre. All cubic/quartic metric coefficients and smooth
+  zero-four-jet remainders are allowed. General mixed Weyl curvature and Ricci-flat
+  nonflat points are outside the theorem.
+claim_id: [GU-054]
+result_ids: [CC1, CC2, CC3, CC4, CC5, CC6]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/CC-diagonal-weyl.md
+internal_review: reports/reviews/REVIEW24-GU-CC-2026-11-02.md
+code:
+  - computation/geometric-unity/CC_diagonal_weyl.py
+  - computation/geometric-unity/CC_diagonal_weyl.out
+  - computation/geometric-unity/CC_rank_blocks.py
+  - computation/geometric-unity/CC_rank_certificates.json
+formalization_status: >
+  CC1 proves the intrinsic mixed-Weyl condition equivalent to a simultaneous frame
+  with Ric=rho e0 tensor e0 and sectional Weyl entries (a,b,-a-b) on the complementary
+  pairs 01/23,02/13,03/12. The Weyl electric matrix is tracefree by zero Weyl Ricci
+  contraction; the spatial three-dimensional tensor has Ricci minus that matrix.
+  CC2 supplies hand total-degree bounds A<=2, RHS<=3 before exact interpolation.
+  CC3 gives a four-configuration compatibility cover. CC4 certifies coefficient
+  rank at the same three numerical fibres, with the signed fourth obtained by
+  naturality. CC5 transfers all higher jets; CC6 applies S4/U5 to the full system.
+  The full-field consequence assumes compact (14,0), gauge algebra u(128), an
+  invariant odd field, slaved vector even field, one fixed reconstructed Shiab
+  member, kappa!=0 and det M!=0, as in S.0.
+internal_consistency: >
+  At fibres diag(2,3,4,5), diag(2,3,5,7), diag(2,4,5,9), the three selected rows reduce
+  to xi_13 and one common n combination. For each Ricci sign, their compatibility
+  quartics generate ((6a-rho)^2,(6a-rho)(6b-rho),(6b-rho)^2). Adding the signed-axis
+  rotated first configuration gives the unit ideal. The invariant 722-row subsystem
+  splits under baseline O(1)^4 into a 12-column trivial block, six 3-column off-diagonal
+  blocks and four 3-column horizontal blocks. Constant left inverses and two-row
+  polynomial Bezout certificates prove ranks 12, 3, 2. Thus its rank is 38 everywhere,
+  with the four sparse horizontal kernel columns. J5/J6/J7 completions restrict
+  to nonzero diagonal prefactors times squared linear factors whose sum is 3rho.
+  The same argument holds at all three fibres and both signs. No generic-diagonal
+  sparsity or density shortcut is used to match incompatibility with full rank.
+proof_status: >
+  Exact computer-assisted polynomial and rational row-combination certificates
+  complement hand normal-form, degree-bound, higher-jet and fixed-minor arguments.
+  Independent internal Review24 accepts CC1-CC6 and reproduces the portable fresh
+  60-node run. No Lean formalization or external peer review is claimed.
+novelty: >
+  Replaces BB's single Weyl direction by the complete two-parameter diagonal Weyl
+  plane with its intrinsic vanishing-mixed-Weyl characterization. A finite four-
+  configuration compatibility cover and same-witness rank proof remove amplitude
+  exceptions while retaining arbitrary higher metric jets. BB remains the simpler
+  one-direction calculation. This is not a universal rank-one-Ricci theorem.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0, exact Fractions and rational polynomial algebra. Run
+  python -X utf8 -I computation/geometric-unity/CC_diagonal_weyl.py from the root.
+  Default reproduction freshly computes all 60 node systems once in memory and
+  passes their six-node coefficient subsets to the rank helper. The compact JSON
+  stores sparse row-combination certificates, not raw sampled matrices. The
+  helper has no engine calls, off-repository paths or cache dependency. The
+  ten triangular nodes i+j<=3 have Vandermonde determinant 576; the first six
+  degree-two nodes have determinant 4. Exact identities follow within proved degrees.
+  The recorded fresh run passes 32 main checks and 96 rank-helper checks in 98.3 s;
+  the independent Review24 fresh rerun passes in 98.2 s.
+empirical_testability: None new; a mathematical obstruction in the reconstructed sector.
+dependencies: [U1, U2, U5, S4, S5, Q5, BB1, BB3, W1, W2, Z1, Z2, Z3, Z4, xcheck_round10]
+confidence: >
+  Accepted in independent internal Review24. The compatibility cover uses exact ideal equality
+  and a checked signed frame action. Uniform rank uses polynomial identities and
+  compact left-inverse/Bezout certificates, not sampled rank extrapolation. Higher-
+  jet scope follows from the curvature-independent support argument accepted in
+  BB3, with baseline reflection symmetry kept separate from arbitrary higher jets.
+pending_work: >
+  The remaining mathematical boundary is nonzero mixed Weyl curvature relative
+  to the Ricci eigenline and the Ricci-flat nonflat case.

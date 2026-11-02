@@ -53,6 +53,7 @@ RECENT = [
     ("geometric-unity/AA_exterior_derivative.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
+    ("geometric-unity/CC_diagonal_weyl.py", []),
 ]
 LEAN_SOURCE_SHA256 = "522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da"
 

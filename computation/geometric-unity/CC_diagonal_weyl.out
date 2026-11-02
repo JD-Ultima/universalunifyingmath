@@ -1,0 +1,80 @@
+CC. Diagonal Weyl curvature with arbitrary higher metric jets
+Fresh exact reproduction: all 60 node systems are assembled once in memory; no external caches.
+[01] both Weyl basis tensors have zero Ricci contraction and satisfy Bianchi: True
+[02] the signed perpendicular swap is in SO(4) and acts as (a,b)->(a,-a-b): True
+[03] total-degree node sets are unisolvent and agree with the rank verifier: True
+  degree-three nodes: ((0, 0), (0, 1), (1, 0), (0, 2), (1, 1), (2, 0), (0, 3), (1, 2), (2, 1), (3, 0))
+[04] rho=1, y=(2, 3, 4, 5): selected rows have only xi_13 and diagonal n coefficients: True
+[05] rho=1, y=(2, 3, 4, 5): the n combination is common to the three rows and curvature independent: True
+[06] rho=1, y=(2, 3, 4, 5): four additional nodes check every coefficient polynomial: True
+[07] rho=1, y=(2, 3, 4, 5): exact RHS polynomials have the stated quadratic square formulas: True
+  xi coefficients: [-(3816*a**2 + 5832*a*b - 1344*a + 4941*b**2 - 594*b + 7849)/43200, -(1500*a**2 + 600*a*b + 900*a + 1068*b**2 - 156*b + 24163)/57600, -(612*a**2 + 900*a*b + 96*a + 4500*b**2 + 2850*b + 36467)/86400]
+  RHS: [(3*a + 3*b - 1)**2/500, (6*b - 1)**2/4500, (6*a - 1)**2/12000]
+  primitive compatibility numerator: -219024*a**4 - 438048*a**3*b + 69984*a**3 + 259200*a**2*b**2 + 119664*a**2*b + 357552*a**2 + 914112*a*b**3 + 52704*a*b**2 - 28728*a*b - 124832*a + 457056*b**4 - 124416*b**3 - 874008*b**2 + 278708*b - 11799
+  rank certificates rho=1, y=(2, 3, 4, 5): 16 exact checks; invariant rank 38, completed rank 42, no exceptional parameter.
+  rank certificate summary: {'checks': 16, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+  fresh case runtime 12.7 s
+[08] rho=1, y=(2, 3, 5, 7): selected rows have only xi_13 and diagonal n coefficients: True
+[09] rho=1, y=(2, 3, 5, 7): the n combination is common to the three rows and curvature independent: True
+[10] rho=1, y=(2, 3, 5, 7): four additional nodes check every coefficient polynomial: True
+[11] rho=1, y=(2, 3, 5, 7): exact RHS polynomials have the stated quadratic square formulas: True
+  xi coefficients: [-(61650*a**2 + 101250*a*b - 26400*a + 86346*b**2 - 9936*b + 99019)/529200, -(6027*a**2 + 4704*a*b + 3234*a + 7152*b**2 - 816*b + 74107)/176400, -(8352*a**2 + 14112*a*b + 1920*a + 42777*b**2 + 26166*b + 224701)/529200]
+  RHS: [5*(3*a + 3*b - 1)**2/4116, (6*b - 1)**2/6174, (6*a - 1)**2/20580]
+  primitive compatibility numerator: -536787*a**4 - 1073574*a**3*b + 218700*a**3 + 952560*a**2*b**2 + 511272*a**2*b + 799902*a**2 + 2864430*a*b**3 + 260280*a*b**2 - 115362*a*b - 298496*a + 1432215*b**4 - 405000*b**3 - 2397285*b**2 + 753254*b - 33734
+  rank certificates rho=1, y=(2, 3, 5, 7): 16 exact checks; invariant rank 38, completed rank 42, no exceptional parameter.
+  rank certificate summary: {'checks': 16, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+  fresh case runtime 16.5 s
+[12] rho=1, y=(2, 4, 5, 9): selected rows have only xi_13 and diagonal n coefficients: True
+[13] rho=1, y=(2, 4, 5, 9): the n combination is common to the three rows and curvature independent: True
+[14] rho=1, y=(2, 4, 5, 9): four additional nodes check every coefficient polynomial: True
+[15] rho=1, y=(2, 4, 5, 9): exact RHS polynomials have the stated quadratic square formulas: True
+  xi coefficients: [-(62325*a**2 + 88200*a*b - 17250*a + 70344*b**2 - 11904*b + 74641)/388800, -(37908*a**2 + 2916*a*b + 24786*a + 12708*b**2 - 3264*b + 328403)/777600, -(12132*a**2 + 5832*a*b - 2100*a + 107892*b**2 + 70956*b + 660001)/1555200]
+  RHS: [7*(3*a + 3*b - 1)**2/8748, 5*(6*b - 1)**2/69984, (6*a - 1)**2/21870]
+  primitive compatibility numerator: -9644832*a**4 - 19289664*a**3*b + 2903040*a**3 + 4199040*a**2*b**2 + 2257632*a**2*b + 9769032*a**2 + 26961120*a*b**3 + 244080*a*b**2 - 442872*a*b - 3273836*a + 13480560*b**4 - 3780000*b**3 - 14389200*b**2 + 4535264*b - 89239
+  rank certificates rho=1, y=(2, 4, 5, 9): 16 exact checks; invariant rank 38, completed rank 42, no exceptional parameter.
+  rank certificate summary: {'checks': 16, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+  fresh case runtime 17.0 s
+[16] rho=1: the three compatibility polynomials generate the squared point ideal: True
+  exact compatibility Groebner basis: [a**2 - a/3 + 1/36, a*b - a/6 - b/6 + 1/36, b**2 - b/3 + 1/36]
+[17] rho=1: adding the rotated first witness gives the unit ideal: True
+  rotated primitive numerator at the sole original exception: -204984
+[18] rho=-1, y=(2, 3, 4, 5): selected rows have only xi_13 and diagonal n coefficients: True
+[19] rho=-1, y=(2, 3, 4, 5): the n combination is common to the three rows and curvature independent: True
+[20] rho=-1, y=(2, 3, 4, 5): four additional nodes check every coefficient polynomial: True
+[21] rho=-1, y=(2, 3, 4, 5): exact RHS polynomials have the stated quadratic square formulas: True
+  xi coefficients: [-(3816*a**2 + 5832*a*b + 1344*a + 4941*b**2 + 594*b + 29449)/43200, -(1500*a**2 + 600*a*b - 900*a + 1068*b**2 + 156*b + 24163)/57600, -(612*a**2 + 900*a*b - 96*a + 4500*b**2 - 2850*b + 36467)/86400]
+  RHS: [(3*a + 3*b + 1)**2/500, (6*b + 1)**2/4500, (6*a + 1)**2/12000]
+  primitive compatibility numerator: -219024*a**4 - 438048*a**3*b - 69984*a**3 + 259200*a**2*b**2 - 119664*a**2*b - 264528*a**2 + 914112*a*b**3 - 52704*a*b**2 - 28728*a*b - 82528*a + 457056*b**4 + 124416*b**3 + 784872*b**2 + 274252*b + 17001
+  rank certificates rho=-1, y=(2, 3, 4, 5): 16 exact checks; invariant rank 38, completed rank 42, no exceptional parameter.
+  rank certificate summary: {'checks': 16, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+  fresh case runtime 17.4 s
+[22] rho=-1, y=(2, 3, 5, 7): selected rows have only xi_13 and diagonal n coefficients: True
+[23] rho=-1, y=(2, 3, 5, 7): the n combination is common to the three rows and curvature independent: True
+[24] rho=-1, y=(2, 3, 5, 7): four additional nodes check every coefficient polynomial: True
+[25] rho=-1, y=(2, 3, 5, 7): exact RHS polynomials have the stated quadratic square formulas: True
+  xi coefficients: [-(61650*a**2 + 101250*a*b + 26400*a + 86346*b**2 + 9936*b + 363619)/529200, -(6027*a**2 + 4704*a*b - 3234*a + 7152*b**2 + 816*b + 74107)/176400, -(8352*a**2 + 14112*a*b - 1920*a + 42777*b**2 - 26166*b + 224701)/529200]
+  RHS: [5*(3*a + 3*b + 1)**2/4116, (6*b + 1)**2/6174, (6*a + 1)**2/20580]
+  primitive compatibility numerator: -536787*a**4 - 1073574*a**3*b - 218700*a**3 + 952560*a**2*b**2 - 511272*a**2*b - 560898*a**2 + 2864430*a*b**3 - 260280*a*b**2 - 115362*a*b - 155104*a + 1432215*b**4 + 405000*b**3 + 2138715*b**2 + 758746*b + 54466
+  rank certificates rho=-1, y=(2, 3, 5, 7): 16 exact checks; invariant rank 38, completed rank 42, no exceptional parameter.
+  rank certificate summary: {'checks': 16, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+  fresh case runtime 16.9 s
+[26] rho=-1, y=(2, 4, 5, 9): selected rows have only xi_13 and diagonal n coefficients: True
+[27] rho=-1, y=(2, 4, 5, 9): the n combination is common to the three rows and curvature independent: True
+[28] rho=-1, y=(2, 4, 5, 9): four additional nodes check every coefficient polynomial: True
+[29] rho=-1, y=(2, 4, 5, 9): exact RHS polynomials have the stated quadratic square formulas: True
+  xi coefficients: [-(62325*a**2 + 88200*a*b + 17250*a + 70344*b**2 + 11904*b + 269041)/388800, -(37908*a**2 + 2916*a*b - 24786*a + 12708*b**2 + 3264*b + 328403)/777600, -(12132*a**2 + 5832*a*b + 2100*a + 107892*b**2 - 70956*b + 660001)/1555200]
+  RHS: [7*(3*a + 3*b + 1)**2/8748, 5*(6*b + 1)**2/69984, (6*a + 1)**2/21870]
+  primitive compatibility numerator: -9644832*a**4 - 19289664*a**3*b - 2903040*a**3 + 4199040*a**2*b**2 - 2257632*a**2*b - 6819768*a**2 + 26961120*a*b**3 - 244080*a*b**2 - 442872*a*b - 2255764*a + 13480560*b**4 + 3780000*b**3 + 11530800*b**2 + 4104736*b + 169961
+  rank certificates rho=-1, y=(2, 4, 5, 9): 16 exact checks; invariant rank 38, completed rank 42, no exceptional parameter.
+  rank certificate summary: {'checks': 16, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+  fresh case runtime 17.7 s
+[30] rho=-1: the three compatibility polynomials generate the squared point ideal: True
+  exact compatibility Groebner basis: [a**2 + a/3 + 1/36, a*b + a/6 + b/6 + 1/36, b**2 + b/3 + 1/36]
+[31] rho=-1: adding the rotated first witness gives the unit ideal: True
+  rotated primitive numerator at the sole original exception: 209736
+[32] all 60 exact node systems were freshly assembled once: True
+The three numerical fibres and the signed-permutation fourth configuration provide finite same-witness rank and incompatibility.
+Higher-jet scope uses the proved cubic-invariant subsystem, unchanged diagonal-vertical certificate rows and completion restrictions; no reflection symmetry of arbitrary higher jets is assumed.
+This covers the declared simultaneous Ricci-axis/diagonal-Weyl frame orbit, not arbitrary Weyl tensors or Ricci-flat nonflat points.
+
+32 main checks, all True; rank-helper assertions also passed; runtime 98.3 s

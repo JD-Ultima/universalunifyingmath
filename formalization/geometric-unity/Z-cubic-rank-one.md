@@ -1,5 +1,7 @@
 # Z. The cubic extension and an invariant curvature condition
 
+**Broader curvature class.** [CC](CC-diagonal-weyl.md) treats the complete diagonal Weyl plane, equivalently vanishing mixed Weyl components relative to the nonzero Ricci line. This note retains the simpler certificate for its subcase.
+
 The obstruction survives arbitrary cubic metric coefficients as well as arbitrary quartic coefficients. The prescribed quadratic jet still has nonzero rank-one Ricci tensor and zero Weyl tensor. A fixed coefficient minor proves full rank for every cubic tensor, so the result excludes fibre-open solution patches rather than only the evaluated point.
 
 Code: `computation/geometric-unity/Z_cubic_rank_one.py`; output: `Z_cubic_rank_one.out`; record: `metrics/geometric-unity/Z-cubic-rank-one.yaml`. The code uses the accepted U assembly and the earlier referee engine. The rank certificates are exact rational calculations; the support, parity and normalization arguments establish the parameter ranges. It was independently accepted in `reports/reviews/REVIEW19-GU-Z-2026-11-02.md`, including the coordinate-invariant corollary and a 35-assertion rerun. This is internal review, not external peer review.
