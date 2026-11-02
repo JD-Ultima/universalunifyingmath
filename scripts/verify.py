@@ -49,6 +49,8 @@ RECENT = [
     ("geometric-unity/X_symmetric_hook.py", []),
     ("geometric-unity/Y_zero_curvature_quartic.py", []),
     ("geometric-unity/Z_cubic_rank_one.py", []),
+    ("geometric-unity/AA_conic_traces.py", []),
+    ("geometric-unity/BB_weyl_direction.py", []),
 ]
 LEAN_SOURCE_SHA256 = "522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da"
 

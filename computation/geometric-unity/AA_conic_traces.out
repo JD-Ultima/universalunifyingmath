@@ -1,0 +1,40 @@
+AA. Exact invariant traces on the four WA exterior conics
+sympy 1.14.0; compact (14,0), normalized -Tr pairing
+[01] vector phases, norms and both quadratic traces: True
+[02] vector derivative trace is 312 div(C); P14 trace is zero: True
+[03] Gamma source/current vanishes in all 14 directions: True
+  A=1+d*a, B=1+e*a, P=p*q; f=A*B/P; delta=1+224*a-3328*f.
+[04] Lambda3-c/wGamma compact pair and unrestricted quadratic traces: True
+[05] Lambda3-c/wGamma symbolic kernel and reduced trace formulas: True
+[06] Lambda3-c/wGamma both cross traces and all 28 non-vector currents vanish: True
+[07] Lambda3-c/wGamma Gamma norm elimination and T2 residual identity: True
+[08] Lambda3-c/wGamma exact left/right branch sign premises: True
+  Lambda3-c/wGamma: d=112/3, e=400, P=11264/3; left<=-3/112, right>=-1/400
+    f=(112*a + 3)*(400*a + 1)/11264; delta=-5*(116480*a**2 + 1440*a - 1)/44; R=7*(2186496*a**2 + 41120*a + 121)/704
+[09] Lambda3-w/cGamma compact pair and unrestricted quadratic traces: True
+[10] Lambda3-w/cGamma symbolic kernel and reduced trace formulas: True
+[11] Lambda3-w/cGamma both cross traces and all 28 non-vector currents vanish: True
+[12] Lambda3-w/cGamma Gamma norm elimination and T2 residual identity: True
+[13] Lambda3-w/cGamma exact left/right branch sign premises: True
+  Lambda3-w/cGamma: d=240, e=272/3, P=11264/3; left<=-3/272, right>=-1/240
+    f=(240*a + 1)*(272*a + 3)/11264; delta=-5*(208*a + 1)*(816*a - 1)/44; R=7*(208*a + 1)*(14352*a + 101)/704
+[14] Lambda5-c/wGamma compact pair and unrestricted quadratic traces: True
+[15] Lambda5-c/wGamma symbolic kernel and reduced trace formulas: True
+[16] Lambda5-c/wGamma both cross traces and all 28 non-vector currents vanish: True
+[17] Lambda5-c/wGamma Gamma norm elimination and T2 residual identity: True
+[18] Lambda5-c/wGamma exact left/right branch sign premises: True
+  Lambda5-c/wGamma: d=96, e=832/3, P=1280; left<=-1/96, right>=-3/832
+    f=(96*a + 1)*(832*a + 3)/3840; delta=-8*(129792*a**2 + 1400*a + 3)/15; R=7*(3264768*a**2 + 39584*a + 109)/240
+[19] Lambda5-w/cGamma compact pair and unrestricted quadratic traces: True
+[20] Lambda5-w/cGamma symbolic kernel and reduced trace formulas: True
+[21] Lambda5-w/cGamma both cross traces and all 28 non-vector currents vanish: True
+[22] Lambda5-w/cGamma Gamma norm elimination and T2 residual identity: True
+[23] Lambda5-w/cGamma exact left/right branch sign premises: True
+  Lambda5-w/cGamma: d=704/3, e=160, P=1280; left<=-1/160, right>=-3/704
+    f=(160*a + 1)*(704*a + 3)/3840; delta=-8*(208*a + 1)*(880*a + 3)/15; R=7*(208*a + 1)*(21840*a + 113)/240
+Gamma equation for w!=0: P*N/h +24920064*|da|^2/delta^2 =14*kappa^2*(1+208*a).
+Reduced trace: Delta(a)-delta_prime*|da|^2/(2*delta) =-delta*(traceG+kappa^2*R)/7488.
+On every left branch, delta<0 and R>0; traceG>=0 forbids an interior local maximum of a.
+The undivided Phi1 trace also excludes reaching a left endpoint u=0. No other odd tensor equation is solved.
+
+23 checks, all True; runtime 2.1 s

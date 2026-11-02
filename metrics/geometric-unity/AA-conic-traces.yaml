@@ -1,0 +1,39 @@
+result: >
+  Exact invariant trace reduction on each of the four nonconstant real WA Lambda3/5 conics away from
+  intersections and det M=0. The Gamma equation fixes the extra kernel norm, and the Phi1 trace reduces
+  to a scalar second-order equation. A nonnegative Einstein-tensor trace excludes an interior local
+  maximum of t/kappa on every left branch, including reaching its zero-u endpoint.
+claim_id: [GU-054]
+result_ids: [AA1, AA2, AA3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AA-conic-traces.md
+internal_review: reports/reviews/REVIEW20-GU-AA-2026-11-02.md
+code: [computation/geometric-unity/AA_conic_traces.py, computation/geometric-unity/AA_conic_traces.out]
+formalization_status: >
+  True compact (14,0), u(128), real fixed parallel WA, kappa constant and nonzero. Invariant odd field,
+  Te=v+k with v slaved in the vector isotype and k in one exterior kernel, away from other singular
+  factors and det M=0. Conic variable a=t/kappa, w=u/kappa obeys w^2=f(a). The divided Gamma norm formula
+  assumes w!=0; endpoint exclusion instead uses the undivided Phi1 equation.
+proof_status: >
+  AA1 derives both invariant traces and the explicit T2 baseline residual, retaining Delta(t) and
+  |dt|^2. AA2 eliminates the kernel norm, yielding Delta(a)-delta_prime|da|^2/(2delta)
+  =-delta*(traceG+kappa^2*R)/7488 and a right-branch gradient bound. AA3 uses a monotone change of
+  variable to obtain a strictly subharmonic function on every left branch when traceG>=0.
+  Independently reviewed in reports/reviews/REVIEW20-GU-AA-2026-11-02.md; all 23 assertions were reproduced.
+internal_consistency: >
+  Symbolic Gaussian-rational Clifford checks verify all four exterior pairs, compact phases, kernel
+  identities, both quadratic traces, vector/kernel cross traces, and all derivative currents.
+  The norm elimination, T2 contraction, polynomial potentials and branch-sign premises are exact.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0; run python -X utf8 -I computation/geometric-unity/AA_conic_traces.py.
+  Uses T helpers through xcheck_round14, not the J/R evaluator. No randomness or numerical fitting.
+  The recorded run passes 23 checks in about two seconds; polynomial output is supplied for all conics.
+novelty: >
+  Bounded continuation within this investigation from the constant hook strata to nonconstant exterior
+  conics. No literature-level novelty or full singular-stratum classification is claimed.
+empirical_testability: None new; necessary scalar equations in the reconstructed field system.
+dependencies: [R2, R4, R6, T1, T2, J1, F7]
+confidence: >
+  Exact trace and sign identities under the stated compact assumptions, independently reviewed internally.
+  The untraced odd equation still contains d0k and vector/kernel cross terms. Scalar conditions are
+  necessary only; monotone nonconstant fields on left arcs, right arcs and tensor/PDE sufficiency remain open.

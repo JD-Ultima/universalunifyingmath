@@ -1,0 +1,48 @@
+rho=1, y=diag(2, 3, 4, 5)
+  xi coefficients: [-(2925*w**2 - 750*w + 7849)/43200, -(1968*w**2 + 1056*w + 24163)/57600, -(4212*w**2 - 2754*w + 36467)/86400]
+  RHS: [1/500, (6*w + 1)**2/4500, (6*w - 1)**2/12000]
+  compatibility determinant: (21168*w**4 + 127440*w**3 - 487728*w**2 - 403540*w - 11799)/414720000
+  coefficient determinant V5: 299*(3*w - 1)**2*(3*w + 1)**18*(5*w - 3)*(6*w - 1)*(6*w + 1)*(21*w + 13)*(27*w - 5)*(39*w + 7)*(546*w**2 + 418*w - 6923)*(2520*w**2 - 8676*w + 445)*(5796*w**2 - 6168*w - 41093)**2/1285756167659356826969794559527159277587770900480000000000000000000
+  coefficient determinant V6: 299*(3*w - 1)**10*(3*w + 1)**10*(5*w - 3)*(6*w - 1)*(6*w + 1)*(21*w + 13)*(27*w - 5)*(39*w + 7)*(546*w**2 + 418*w - 6923)*(2520*w**2 - 8676*w + 445)*(5796*w**2 - 6168*w - 41093)**2/50168202853344817513224722944513454513407918080000000000000000000
+  case runtime 8.7 s
+rho=1, y=diag(2, 3, 5, 7)
+  xi coefficients: [-(46746*w**2 - 16464*w + 99019)/529200, -(8475*w**2 + 4050*w + 74107)/176400, -(37017*w**2 - 24246*w + 224701)/529200]
+  RHS: [5/4116, (6*w + 1)**2/6174, (6*w - 1)**2/20580]
+  compatibility determinant: (57132*w**4 + 372708*w**3 - 1482021*w**2 - 1051750*w - 33734)/1555848000
+  coefficient determinant V5: 209*(3*w - 1)**2*(3*w + 1)**18*(6*w - 1)*(6*w + 1)*(21*w + 13)*(39*w - 23)*(39*w + 7)*(69*w - 13)*(2898*w**2 - 9099*w + 595)*(3243*w**2 + 2594*w - 41894)*(21321*w**2 - 28614*w - 123302)**2/5289577800122373189681142555624103466409113157632000000000000000000000
+  coefficient determinant V6: 209*(3*w - 1)**10*(3*w + 1)**10*(6*w - 1)*(6*w + 1)*(21*w + 13)*(39*w - 23)*(39*w + 7)*(69*w - 13)*(2898*w**2 - 9099*w + 595)*(3243*w**2 + 2594*w - 41894)*(21321*w**2 - 28614*w - 123302)**2/47999970268880689593504608882768687923200000000000000000000000000000
+  case runtime 12.2 s
+rho=1: compatibility gcd = 1
+rho=1: exceptional product gcd = (3*w - 1)*(3*w + 1)*(6*w - 1)*(6*w + 1)*(21*w + 13)*(39*w + 7)/265356
+  w=-13/21, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+  w=-1/3, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+  w=-7/39, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+  w=-1/6, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+  w=1/6, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+  w=1/3, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+rho=1: every exceptional value is resolved; the two witnesses exclude every real w
+rho=-1, y=diag(2, 3, 4, 5)
+  xi coefficients: [-(2925*w**2 + 750*w + 29449)/43200, -(1968*w**2 - 1056*w + 24163)/57600, -(4212*w**2 + 2754*w + 36467)/86400]
+  RHS: [1/500, (6*w - 1)**2/4500, (6*w + 1)**2/12000]
+  compatibility determinant: (21168*w**4 - 127440*w**3 + 549072*w**2 - 356780*w + 17001)/414720000
+  coefficient determinant V5: -11*(3*w - 1)**18*(3*w + 1)**2*(6*w - 1)*(6*w + 1)*(15*w + 1)*(21*w - 1)*(27*w + 13)*(39*w - 19)*(546*w**2 - 418*w + 7477)*(2520*w**2 + 8676*w + 445)*(5796*w**2 + 6168*w + 45307)**2/428585389219785608989931519842386425862590300160000000000000000000
+  coefficient determinant V6: -11*(3*w - 1)**10*(3*w + 1)**10*(6*w - 1)*(6*w + 1)*(15*w + 1)*(21*w - 1)*(27*w + 13)*(39*w - 19)*(546*w**2 - 418*w + 7477)*(2520*w**2 + 8676*w + 445)*(5796*w**2 + 6168*w + 45307)**2/16722734284448272504408240981504484837802639360000000000000000000
+  case runtime 11.2 s
+rho=-1, y=diag(2, 3, 5, 7)
+  xi coefficients: [-(46746*w**2 + 16464*w + 363619)/529200, -(8475*w**2 - 4050*w + 74107)/176400, -(37017*w**2 + 24246*w + 224701)/529200]
+  RHS: [5/4116, (6*w - 1)**2/6174, (6*w + 1)**2/20580]
+  compatibility determinant: (57132*w**4 - 372708*w**3 + 1693179*w**2 - 913850*w + 54466)/1555848000
+  coefficient determinant V5: -47*(3*w - 1)**18*(3*w + 1)**2*(6*w - 1)*(6*w + 1)*(13*w + 1)*(21*w - 1)*(23*w + 11)*(39*w - 19)*(2898*w**2 + 9099*w + 595)*(3243*w**2 - 2594*w + 46306)*(21321*w**2 + 28614*w + 141298)**2/352638520008158212645409503708273564427274210508800000000000000000000
+  coefficient determinant V6: -47*(3*w - 1)**10*(3*w + 1)**10*(6*w - 1)*(6*w + 1)*(13*w + 1)*(21*w - 1)*(23*w + 11)*(39*w - 19)*(2898*w**2 + 9099*w + 595)*(3243*w**2 - 2594*w + 46306)*(21321*w**2 + 28614*w + 141298)**2/3199998017925379306233640592184579194880000000000000000000000000000
+  case runtime 12.0 s
+rho=-1: compatibility gcd = 1
+rho=-1: exceptional product gcd = (3*w - 1)*(3*w + 1)*(6*w - 1)*(6*w + 1)*(21*w - 1)*(39*w - 19)/265356
+  w=-1/3, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+  w=-1/6, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+  w=1/21, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+  w=1/6, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+  w=1/3, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+  w=19/39, y=diag(2, 3, 4, 5): exact coefficient rank 42, nonzero compatibility determinant
+rho=-1: every exceptional value is resolved; the two witnesses exclude every real w
+All exact assertions passed for both signs and every real w in the declared quadratic family.
+runtime 52.3 s

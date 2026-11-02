@@ -1,0 +1,64 @@
+result: >
+  For the complete normal quadratic metric with curvature rho R0+omega W0,
+  rho!=0, where W0 has sectional entries +1 at 01 and 23, -1 at 02 and 13,
+  and zero at 03 and 12, every real Weyl amplitude is obstructed at lambda=1/5
+  and positive cH,cV. Some positive fibre witness has coefficient rank 42 and
+  augmented rank 43. No fibre-open consistent patch exists, and in S.0's slaved
+  vector sector the twisted cone has no Upsilon=0 solution on an open set
+  meeting the fibre. Arbitrary higher jets and arbitrary Weyl tensors are not covered.
+claim_id: [GU-054]
+result_ids: [BB1, BB2]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/BB-weyl-direction.md
+internal_review: reports/reviews/REVIEW21-GU-BB-2026-11-02.md
+code:
+  - computation/geometric-unity/BB_weyl_direction.py
+  - computation/geometric-unity/BB_weyl_direction.out
+formalization_status: >
+  The complete metric is I-(rho R0+omega W0)_iajb x^a x^b/3, with cubic and
+  quartic metric coefficients fixed to zero. It is positive definite near 0;
+  its Ricci tensor there is rho e0 tensor e0 and Weyl tensor is omega W0.
+  Naturality normalizes rho to sigma=+/-1 and the dimensionless Weyl amplitude
+  to w=omega/abs(rho). The observer metric inverse at the origin is w-independent.
+  Hand jet bounds give degree A<=2 and degree RHS<=3 before exact interpolation.
+internal_consistency: >
+  W0 satisfies Bianchi and has zero Ricci tensor. At the two fibres diag(2,3,4,5)
+  and diag(2,3,5,7), the selected three rows have only xi_13 and one common n
+  combination. Their row polynomials and four compatibility quartics are recorded
+  exactly. The two compatibility quartics are coprime for each sign. Four
+  coefficient determinants per sign are computed over QQ[w] from degree-bounded
+  entries. The square-free gcd of their products with compatibility determinants
+  leaves six rational exceptions per sign; exact full coefficient ranks resolve
+  all twelve at the first witness, with nonzero compatibility determinant.
+proof_status: >
+  BB1 is a hand jet-degree bound. The sparse row identities, interpolation,
+  coefficient determinants, gcds and exceptional ranks are exact computer-assisted
+  certificates. BB2 uses those ranks, S4's rational fibre-minor argument and the
+  local U5 field-equation reduction. Independent internal Review21 accepts BB1-BB2
+  and reproduces the exact calculations. No arbitrary higher-jet or general-Weyl
+  extension is claimed.
+review: reports/reviews/REVIEW21-GU-BB-2026-11-02.md
+novelty: >
+  Extends the bounded complete-quadratic calculation to one declared nonzero
+  Weyl direction at every real amplitude. Two witnesses remove the roots of
+  one compatibility certificate, while coefficient-rank failures are audited
+  separately. This is not a universal rank-one-Ricci classification.
+reproducibility: >
+  Python 3.12, sympy 1.14.0, exact Fractions and QQ[w] domain determinants.
+  No randomness. Run python -X utf8 -I computation/geometric-unity/BB_weyl_direction.py
+  from the repository root. The recorded full run takes 52.3 s and passes all
+  exact driver assertions. Four signed witness analyses and twelve finite
+  exception ranks are printed, with complete row polynomials and determinant
+  factorizations. The entire coefficient matrix is checked at a fourth node.
+empirical_testability: None new; a mathematical obstruction in the declared reconstructed sector.
+dependencies: [U1, U2, U5, S4, S5, Q5, xcheck_round10]
+confidence: >
+  High for the exact calculations and degree-bound argument, independently checked
+  in internal Review21. The all-amplitude conclusion follows from polynomial identities and
+  finite exact rank resolution, not sampled amplitudes. The complete quadratic
+  metric assumption fixes the higher jets; arbitrary cubic/quartic coefficients
+  and nonzero Weyl tensors outside the declared direction remain open.
+pending_work: >
+  A next bounded problem is to test Z's cubic-invariant subsystem and kernel completion uniformly
+  over this Weyl pencil, including finite coefficient-minor exceptions, before
+  allowing arbitrary higher metric jets. The rho=0 frontier is not addressed.
