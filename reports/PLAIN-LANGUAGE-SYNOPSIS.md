@@ -30,7 +30,7 @@ We also checked the larger compendium. We asked whether its steps depend on unfi
 
 This proposal uses complicated geometry. We wrote down explicit versions of its objects and equations, checked how the parts fit, and repaired a sign problem. We also found that the printed equation does not follow from the proposed action under the stated assumptions.
 
-For specified versions of the model, we worked out which arrangements can satisfy the equations and which cannot. The newer work settles two particular branches on flat starting geometry and excludes several families of curved starting geometry. For one specific field case, we have now proved that the equations themselves require flat starting geometry and no extra even field; we no longer assume those conditions. One result covers points with zero Ricci curvature but nonzero total curvature. Those are two different ways of measuring curvature.
+For specified versions of the model, we worked out which arrangements can satisfy the equations and which cannot. The newer work completely settles two specified field branches across the positive Z1 models we defined. One allows only a fixed field over flat four-dimensional starting geometry, at one exact parameter relation. The other allows no solution. The larger observer geometry can still be curved. Separate results exclude several other families of curved starting geometry. One result covers points with zero Ricci curvature but nonzero total curvature. Those are two different ways of measuring curvature.
 
 Every such result has a named set of assumptions. Other fields and geometric cases remain open. The detailed map is in the [synthesis](SYNTHESIS.md#geometric-unity).
 

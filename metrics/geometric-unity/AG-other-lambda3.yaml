@@ -2,7 +2,7 @@ result: >
   On the single real WA Lambda3 w/cGamma kernel conic, full solutions have no
   nonzero-u point. A connected solution domain remaining in this branch has
   constant odd field at a=t/kappa=-3/272 or -1/240, w=u/kappa=0. These are
-  necessary endpoints; their remaining even-field/PDE equations are unresolved.
+  necessary endpoints within AG; AK subsequently excludes both over every positive Z1 metric.
 claim_id: [GU-054]
 result_ids: [AG1, AG2, AG3, AG4]
 gaps: [GU-G14, GU-G15]
@@ -50,5 +50,5 @@ confidence: >
   and conventions. No endpoint solution, Lambda5 extension, indefinite result
   or PDE sufficiency is asserted.
 pending_work: >
-  The remaining endpoint equations, Lambda5 branches and coincident kernels
-  require separate analysis.
+  AK settles these endpoints over every positive Z1 metric. Other metrics,
+  Lambda5 branches and coincident kernels require separate analysis.

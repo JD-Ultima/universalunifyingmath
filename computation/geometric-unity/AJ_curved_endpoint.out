@@ -12,4 +12,4 @@ SymPy 1.14.0; exact symbolic controls; geometry imported.
 [10] nonzero spectral control prevents an unconditional B=0 inference: True
 [11] indefinite control keeps positivity explicit: True
 11 exact checks passed.
-One endpoint only; other curved endpoints and Lambda5 fields remain open.
+AK subsequently classifies both Lambda3 branches on all positive Z1 metrics.
