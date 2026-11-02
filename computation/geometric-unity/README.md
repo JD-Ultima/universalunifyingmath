@@ -1,6 +1,6 @@
 # Geometric Unity — computations
 
-Use the pinned [requirements](../../requirements.txt). The selected suite runs on Python 3.12 and 3.13; historical outputs used Python 3.13.17, and the November 2 research checks used Python 3.12. NumPy 2.5.3 and SymPy 1.14.0 are pinned. `G_symbols.py`, `G_fermion.py` and `H_ellipticity.py` also use SciPy 1.18.1 for sparse connected components.
+Use the [shared setup and verification guide](../README.md) and pinned [requirements](../../requirements.txt). Historical GU outputs used Python 3.13.17; the November 2 research checks used Python 3.12. `G_symbols.py`, `G_fermion.py` and `H_ellipticity.py` use SciPy for sparse connected components.
 Randomness: fixed seeds only (`random.seed(20210401)`, `numpy.random.default_rng(20210401)` / `(1)`).
 No script reads the source PDF; inputs are transcribed in the code with section/equation references.
 
@@ -10,12 +10,12 @@ No script reads the source PDF; inputs are transcribed in the code with section/
 | `spinor_branching.py` | Weight-multiset branching $D_7\to D_2\times D_5\to D_2\times D_3\times D_2\to$ SM; $\nu\oplus\zeta$ content; comparison with the draft's tables (pp. 52–53) | GU-025…027, GU-029, GU-058…065 | exact (integers) | <1 s | `spinor_branching.out` |
 | `clifford77.py` | Explicit real $\mathrm{Cl}(7,7)$ on $\mathbb R^{128}$; Majorana–Weyl; invariant forms; grade rules for $\mathfrak{so}(64,64)$, $\mathfrak u(64,64)$; complex structure and commutant on $S^+_\mathbb R$ | GU-016…020 | exact except one SVD (tolerance printed) | ~25 s | `clifford77.out` |
 | `gauge_group_identities.py` | Inhomogeneous gauge group $\mathcal G=\mathcal H\ltimes\mathcal N$: group law, actions, $\tau$, stabiliser, $\pi$, $\mu$, augmented torsion (draft Secs. 5–7); sign repair | GU-034…044 | exact (sympy polynomial identities) | ~65 s | `gauge_group_identities.out` |
-| `xcheck_dewitt.py` | Independent coordinator cross-check of the fiber/chimeric signature tables | GU-010…015 | numerical (eigvalsh, tol $10^{-9}$) | <1 s | `xcheck_dewitt.out` |
-| `xcheck_144.py` | Independent coordinator cross-check: SM content of $144_\pm$ via explicit Cl(10) and Casimirs | GU-058…065 | numerical (eigh, tol $10^{-9}$) | ~2 s | `xcheck_144.out` |
+| `xcheck_dewitt.py` | Independent cross-check of the fiber/chimeric signature tables | GU-010…015 | numerical (eigvalsh, tol $10^{-9}$) | <1 s | `xcheck_dewitt.out` |
+| `xcheck_144.py` | Independent cross-check: SM content of $144_\pm$ via explicit Cl(10) and Casimirs | GU-058…065 | numerical (eigh, tol $10^{-9}$) | ~2 s | `xcheck_144.out` |
 | `D_rep_counts.py` | Exact multiplicities for $\mathrm{Hom}_{\mathrm{Spin}(7,7)}(\Lambda^2\otimes\mathfrak g,\Lambda^{13}\otimes\mathfrak g)$ via Weyl character formula (D1) | GU-045, GU-P09 | exact | ~3 min | `D_rep_counts.out` |
 | `D_selfadjoint_shiab.py` | Symbol criterion, self-adjoint subspace, Einstein/Weyl, Helmholtz no-go, true EL equation (D2–D5) | GU-047, 053, GU-P09 | exact (rational) | ~2 min | `D_selfadjoint_shiab.out` |
-| `xcheck_mw_kinetic.py` | Independent coordinator cross-check: own real Cl(7,7); invariant bilinears; Dirac and Rarita–Schwinger kinetic terms of a single MW spinor vanish | GU-056, Thm G7 | exact-structure numerics | ~3 min | `xcheck_mw_kinetic.out` |
-| `xcheck_shiab_dim.py` | Independent coordinator cross-check of D1 (dim S = 200 / 52 and dim S_sa = 48 / 12 for u(64,64) / so(64,64)) by the Brauer/Racah–Speiser sum over W(D7) | GU-045, D1, D2 | exact (integers) | ~3 min | `xcheck_shiab_dim.out` |
+| `xcheck_mw_kinetic.py` | Independent cross-check: own real Cl(7,7); invariant bilinears; Dirac and Rarita–Schwinger kinetic terms of a single MW spinor vanish | GU-056, Thm G7 | exact-structure numerics | ~3 min | `xcheck_mw_kinetic.out` |
+| `xcheck_shiab_dim.py` | Independent cross-check of D1 (dim S = 200 / 52 and dim S_sa = 48 / 12 for u(64,64) / so(64,64)) by the Brauer/Racah–Speiser sum over W(D7) | GU-045, D1, D2 | exact (integers) | ~3 min | `xcheck_shiab_dim.out` |
 | `register_stats.py` | Counts of claim types/statuses and gaps quoted in the report | — | exact | <1 s | `register_stats.out` |
 | `shiab_checks.py` | Shiab operator family in $d=14$, $\mathfrak u(64,64)\subset \mathrm{Cl}(7,7)\otimes\mathbb C$: degrees, Einstein contraction, Weyl annihilation, tilted equivariance, formal self-adjointness of $\circledast\circ d_B$, cubic term | GU-045, 047, 048, 050, 051, 053 | floating point (complex128), relative errors printed | ~35 s | `shiab_checks.out` |
 | `F_jets.py` | Library (no output): exact truncated-Taylor jets over $\mathbb Q(\lambda,c_H,c_V)$; curvature of a metric at a point from its 2-jet; DeWitt metric; Zorro metrics Z1/Z2 on $\mathrm{Met}(X)$ | — | exact | — | — |

@@ -302,14 +302,7 @@ What changes:
   - The README's "coverage by content: 6 / 46 / 12" becomes 8 rows stating a clause and 56 stating none (10 / 35 /
     11).
   - §8's limit "the 37 table-check rows and the 11 opaque rows were not content-checked" is lifted.
-- **Round 6's number lookup.** `outputs/lean_resolve.txt` [4] lists a printed 5 for 2.3. The box prints none:
-  `numbers_in` reads "four one-pair acts" as 4 + 1. The same parser reads "two hundred twenty-eight one-act" as 229,
-  "twenty-fourth" as 20, and "four, thirty-two, three hundred eighty-four and six thousand one hundred forty-four" as
-  one number.
-  - `lean_tables.py` ends a number phrase at punctuation and at a unit word that follows a unit word, and reads ordinal
-    words. [4] lists the 7 boxes where the two parsers differ.
-  - No round-6 verdict or count depends on this (2.3 is NONE, with no tied number). Recorded in
-    `reports/CORRECTIONS.md`.
+- **Number-word parser correction.** The initial round-6 parser read "four one-pair acts" as 4 + 1, "two hundred twenty-eight one-act" as 229 and "twenty-fourth" as 20, and merged comma-separated phrases. Both audits now use `number_words.py`, which separates phrases at punctuation and adjacent unit words and handles ordinals. The regenerated `outputs/lean_resolve.txt` correctly lists no printed number ≥5 for 2.3. Round 7's [4] retains the original parser only for its seven-box historical comparison. No clause verdict or count depends on the correction (`reports/CORRECTIONS.md`).
 
 ## 7. Own checks ([9], `lean_audit/TableChecks.lean`)
 

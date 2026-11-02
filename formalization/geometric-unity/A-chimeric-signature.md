@@ -85,6 +85,6 @@ Checks: `computation/geometric-unity/A_spin_obstruction.py` → `.out` (K1–K4,
 - Conjectural or physical content: none. The selection of $(7,7)$ over $(9,5)$ is stated as a choice ("more balanced"). The fact that a neutral chimeric signature essentially singles out $n=4$ (with $n=5$ the only other case, and there $\dim V=15$ is odd) is recorded as pattern GU-P01.
 - Failure conditions: Theorem A1 would fail if some inertia computation disagreed with the closed form; none of the 7×3×3 + 2·25 exact checks do. Theorem A4 depends on R-A2. A non-natural fiber metric, for example one that depends on a background structure, is outside its scope.
 
-## Independent cross-check (coordinator)
+## Independent cross-check
 
 The fiber and chimeric signature tables were recomputed independently, before this note was read, with a separate script. The script builds the numerical Gram matrix of $\mathrm{tr}(g^{-1}hg^{-1}k)-\lambda\,\mathrm{tr}(g^{-1}h)\mathrm{tr}(g^{-1}k)$ on a basis of $\mathrm{Sym}^2\mathbb R^4$ for $g$ of signature $(1,3)$, $(3,1)$, $(4,0)$ and $\lambda\in\{0,0.2,0.25,0.3,0.5,1\}$. Every fiber signature agrees: degenerate at $\lambda=\tfrac14$. Every block-sign combination agrees as well: $(7,7)$ only for a Lorentzian base with $\lambda>\tfrac14$ and the stated relative sign, and $(13,1)$ for a Riemannian base with $\lambda>\tfrac14$. The script is `computation/geometric-unity/xcheck_dewitt.py`.

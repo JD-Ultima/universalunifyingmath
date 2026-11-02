@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run selected assertions and regressions without rewriting recorded outputs.
 
-This suite excludes long searches, optional SDP/element checks, manuscript
+This suite excludes long searches, optional SDP checks, manuscript
 compilation, and fresh Lean builds. --upstream adds text/record consistency
 checks against the exact recorded Chain Theory commit. --recent includes
 selected checks of recent research results.

@@ -6,7 +6,7 @@ Location: L = Letter, S = Supplement. Type: Def / Ax / Thm / Pred / Ana / Num.
 
 | ID | Statement (minimal paraphrase) | Type | Formalizable? | Source |
 |---|---|---|---|---|
-| CT-001 | Axiom: nothing exists but finitely many maximally entangled pairs of qudits, some shared, known only by distilling them. | Ax | Partially. "Known", "distilling" need the five definitions; the axiom does not say whether a qudit's far end transforms by $U$ or $\bar U$ under basis changes (see CT-G03). | L §Model |
+| CT-001 | Axiom: nothing exists but finitely many maximally entangled pairs of qudits, some shared, known only by distilling them. | Ax | Partially. "Known", "distilling" need the five definitions; the axiom does not fix the identification algebra, matching-closure and trace choices (CT-G03/G04; `conjugation.md`). | L §Model |
 | CT-002 | Pair of type $(d_1,d_2)$ is $\lvert\omega_m\rangle=m^{-1/2}\sum_{i\le m}\lvert ii\rangle$, $m=\min(d_1,d_2)$. | Def | Yes | L Eq. 1 |
 | CT-003 | Distilling = projection $P_m=\lvert\omega_m\rangle\langle\omega_m\rvert$, with no failure branch. | Def | Yes (as a definition). Physically it is postselection; S1 acknowledges this. | L, S Cor. S2 |
 | CT-004 | A read at a prime-dimension end has $d+1$ MUB bases; their traceless projector parts span $su(d)$. | Thm (imported) | Yes. Standard (Wootters–Fields 1989). | L |

@@ -93,7 +93,7 @@ axioms:
 coverage_restated:
   by_kind_unchanged: {restated_or_kernel: 16, table_checks: 37, opaque_or_records_only: 11}
   by_content: {computation_states_whole_box: 1, computation_states_part_of_box: 5, unrelated_then_table_checks: 9, unrelated_then_opaque_only: 1, table_checks_not_resolved: 37, opaque_or_records_only: 11}
-  changes_to_04: "top tier by content 6 not 16; gloss 'hand-entered list' fails for 2 of 137 string-only modules (LGIS, ESRL); 'Build not re-run' superseded; no count wrong, no CORRECTIONS entry"
+  changes_to_04: "top tier by content 6 not 16; gloss 'hand-entered list' fails for 2 of 137 string-only modules (LGIS, ESRL); 'Build not re-run' superseded; counts unchanged; the hand-entered-list gloss and build-status correction are recorded in reports/CORRECTIONS.md"
 internal_consistency:
   value: kind_count_consistent; content_partial
   detail: "All 16 cite declarations whose proofs compute; for 10 of them the computation is that of another box of the section (or of none)."
@@ -105,6 +105,6 @@ confidence:
   value: high
   justification: "Resolution is mechanical (verbatim quotes, 44 Lean and 52 box anchors checked); verdicts are clause-level judgments recorded with their quotes; the build, axiom report and own checks are kernel outputs of Lean 4.35.0."
 limits:
-  - "Not built with the pinned Lean 4.32.1 (download refused by the session's permission policy); Build B differs from the published sources in two proofs."
+  - "Not built with the pinned Lean 4.32.1 (download refused by the session's permission policy); Build B differs from the published sources in five proofs across two modules, as recorded in lean_build_patch.tsv."
   - "Axiom sets under 4.35.0 differ from 4.32.1 because core library proofs changed; only sorryAx and non-core axioms are toolchain-independent findings."
   - "The 37 table-check rows and 11 opaque rows are not content-checked here."

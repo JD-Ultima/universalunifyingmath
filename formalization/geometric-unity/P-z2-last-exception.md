@@ -159,7 +159,7 @@ Run: `cd computation/geometric-unity && python3 P_last_exception.py > P_last_exc
   - other sectors;
   - the Z2 signatures (8,6), (10,4), ….
 - **M1** is a symmetry of the reduced system only (as in M.3).
-- **Z1 is not covered.** P6 is a statement about Z2's fibre and its O'Neill block $\mathrm{Ric}_F+\mathcal A$ (F1, F3). Whether the same pointwise method closes the Z1 cases of N.3 was not examined.
+- **Z1 is not covered by P6.** It is a statement about Z2's fibre and its O'Neill block $\mathrm{Ric}_F+\mathcal A$ (F1, F3). Z1 has a separate analysis in [S](S-z1-off-section.md) and the later curvature notes linked from the [synthesis](../../reports/SYNTHESIS.md#geometric-unity).
 - **Untouched:** reading (A); the (P) system of J3(a); J3(b), (c) and J4(d′) for these members.
 
 ## P.4 Consequences for gaps and claims
@@ -168,7 +168,7 @@ Run: `cd computation/geometric-unity && python3 P_last_exception.py > P_last_exc
   - Under (H), the non-radial Z2 neighbourhood question is settled for the whole family. For $(x,y)\neq0$, $\Upsilon=0$ has no solution on any nonempty open subset of $Y$ (P7). For $(x,y)=0$ the only solution is $T=0$, for every metric (M8).
   - The exception of M10(b) is empty, so the slaved vector sector of Z2 carries no neighbourhood solution except $T=0$ for the members without curvature.
   - The fibre equation $\mathrm{Hess}^Fw=\mu(w)(\mathrm{Ric}_F+\mathcal A)$ has no local solution with $\mu\neq0$, for any base curvature and any μ (P6). This replaces the section-based arguments of L7, L9, M5 and M6 steps 4–6 (P8).
-  - Open: Z1 beyond N; other sectors; the rule for $T$ off $s(X)$.
+  - The current Z1 and other-sector questions are recorded in the [synthesis](../../reports/SYNTHESIS.md#geometric-unity); P7's exclusion remains specific to Z2 under (H).
 - **GU-G16.** $\ell=xz\pm yw$ decides which channel does the work: the curvature-free channel for $\ell\neq0$ (L5, L8(A)), and for $\ell=0$ the first-order channel and then the fibre theorem (M3, P6). It no longer separates solvable from unsolved cases: in Z2 under (H) no member with $(x,y)\neq0$ has a neighbourhood solution.
 - **GU-054.** Status unchanged (C).
   - No committed statement is contradicted. M9's $\mathcal Z$ is now determined. It is not $\{0\}$ in indefinite bases, so the "$\mathcal Z\setminus\{0\}$" of M10(b) is nonempty in (7,7). But those curvatures have $\mathcal A\equiv0$ and fail by M9's own flat-case argument.

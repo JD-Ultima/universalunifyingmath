@@ -195,7 +195,7 @@ In 2D, $G\equiv0$, so (P)/(A) have no solutions unless $\Lambda=0$.
 
 **Theorem F6 (Einstein condition along the section; E2).** Let $n\ge2$. On $s(X)$, $\mathrm{Ric}(g_\aleph)=\kappa\,g_\aleph$ holds iff the reading is Z1, $\lambda=1/(n+1)$ and $\mathrm{Ric}(g)=0$. Then $\kappa=-(n+1)/(4c_V)$. Equivalently, (E) holds on $s(X)$ with $\Lambda_Y=-(d-2)(n+1)/(8c_V)$, which is $-15/(2c_V)$ for $n=4$.
 
-At $\lambda=1/5$ ($n=4$) the fiber is $(7,3)$, so $g_\aleph$ has signature $(8,6)$, $(10,4)$ or a mirror (Theorem A4), never $(7,7)$. For $\lambda>\tfrac14$, and in Z2 for every $\lambda$, $g_\aleph$ is nowhere Einstein on $s(X)$. In particular $G(g_\aleph)\neq0$ on $s(X)$ for every $g$, $\lambda$ and $c$, because $\mathrm{Ric}^Y_{VV}\neq0$.
+For a Lorentzian four-base at $\lambda=1/5$, the fiber is $(7,3)$, so $g_\aleph$ has signature $(8,6)$, $(10,4)$ or a mirror (Theorem A4), never $(7,7)$. A positive four-base with positive block scales instead gives $(14,0)$. For $\lambda>\tfrac14$, and in Z2 for every $\lambda$, $g_\aleph$ is nowhere Einstein on $s(X)$. In particular $G(g_\aleph)\neq0$ on $s(X)$ for every $g$, $\lambda$ and $c$, because $\mathrm{Ric}^Y_{VV}\neq0$.
 
 *Proof.* Use Theorems F3/F4, together with the fact that $G_\alpha\propto G_\lambda$ iff $\alpha=\lambda$ (compare the trace and traceless parts). ∎
 
@@ -208,14 +208,14 @@ E2 checks this on a Ricci-flat-at-the-point base ($\eta-\tfrac13Wxx$, with $W$ a
 **Proposition F8 (the draft's equation; conditional on R-S and Theorem C5).**
 
 1. At the Levi-Civita point ($\varepsilon=1$, $\varpi=0$, so $T_\omega=0$), $\Upsilon=-{*}(G^Y_{ab}e^a\otimes\gamma^b)$. Its Hodge-dual pull-back is $s^*({*}\Upsilon)=-(G(g)+\Lambda_Pg)_{\mu\nu}dx^\mu\otimes\gamma^\nu$, with no $\gamma^A$ components because $\mathrm{Ric}_{HV}=0$. This is the precise content of (9.10)'s "$S_\omega\leftrightarrow R_{\mu\nu}-\frac s2g_{\mu\nu}$". The "$\Lambda g$" appears from the fiber geometry with $T=0$. However, $\Upsilon\ne0$ there for every $\gimel$ (Theorem F6).
-2. For $\varpi=t\,\Phi^1$ (the soldering form, $T_\omega=t\Phi^1$), $d_{\nabla^0}\Phi^1=0$ (zero torsion). Then $F_{A_\omega}=F_{\nabla^0}+t^2\,\Phi^1\wedge\Phi^1$, the last term being the spin curvature of a constant-curvature tensor. By C5,
+2. For constant $t$ and $\varpi=t\,\Phi^1$ (the soldering form, $T_\omega=t\Phi^1$), $d_{\nabla^0}\Phi^1=0$ (zero torsion). Then $F_{A_\omega}=F_{\nabla^0}+t^2\,\Phi^1\wedge\Phi^1$, the last term being the spin curvature of a constant-curvature tensor. By C5,
    $$\Upsilon=-{*}\big((G^Y+\Lambda_Y(t)g_\aleph)_{ab}e^a\otimes\gamma^b\big),\qquad \Lambda_Y(t)=\alpha t^2+\beta\kappa_1t,$$
-   with $\alpha,\beta$ fixed by R-S normalisations that we have not computed.
+   with $\alpha,\beta$ left symbolic in this initial reduction; the normalized calculation is in [I6](I-elliptic-reduction.md).
 3. So, along $s(X)$, $\Upsilon=0$ is (E). By Theorem F6 it is equivalent to 4D vacuum GR with $\Lambda_4=0$ exactly when Z1 holds, $\lambda=1/(n+1)$ and $\Lambda_Y(t)=-15/(2c_V)$ has a real root $t$. Otherwise it has no solution of this form.
 
-Status: steps 1 and 3 follow from F3–F6 together with C5. Step 2 is a derivation sketch whose constants and sign conditions are open. The ε-dependence and $\varpi\notin\mathbb R\Phi^1$ are not explored. This bears on the Shiab normalisation studied separately (files `D-*`), which we did not touch.
+Status: steps 1 and 3 follow from F3–F6 together with C5. Step 2 was a derivation sketch in this note; [I6–I7](I-elliptic-reduction.md) subsequently determine the normalized coefficients and real-root conditions. F8 does not treat variable $t$ or general $\varpi$. Its sectionwise algebraic condition is distinct from the projected solution-set and neighbourhood questions separated in I6.1 and J.
 
-**Conjecture F9.** For curved $\aleph$, no $\lambda$ makes $g_\aleph$ Einstein on an open set of $Y$ unless $\aleph$ is flat. Evidence: E2(v) and the non-vanishing of $A$ off $s(X)$. Not proven.
+**Conjecture F9 (original statement; $n=4$ resolved below).** For curved $\aleph$, no $\lambda$ makes $g_\aleph$ Einstein on an open set of $Y$ unless $\aleph$ is flat. The initial evidence was E2(v) and the non-vanishing of $A$ off $s(X)$. The subsequent proofs and their dimensional scope are recorded below.
 
 *Remark (2026-10-30, round 8).* In Z2 with $n=4$, $g_\aleph$ is Einstein on no open subset of $Y$, for every $\lambda\neq\tfrac14$ and every base metric, flat or curved (`L-nonradial-z2.md`, L2(a) and the remark after it). So F9 holds for Z2 at $n=4$; its open content is Z1, where the flat model F7 is Einstein.
 
@@ -229,8 +229,8 @@ Status: steps 1 and 3 follow from F3–F6 together with C5. Step 2 is a derivati
 |---|---|
 | Lemma F0, Prop. F1, Prop. F2, Theorem F3 (Z2), Theorem F4(a)(b), Cor. F5 for Z2 and for $\Lambda_A$ (Z1), Prop. F7 | **Proven** (with L-F1…L-F6), each also checked exactly |
 | Theorem F4(c) (Z1 Ricci blocks); hence $\Lambda_P$ (Z1) and the Z1 half of Theorem F6 | **Proven** for every $n$ (K, Theorem K and Cor. K4; 2026-10-30). Exact checks: R2, E1, R3, K4 ($n=2,\dots,6$) and, for F6, a Weyl base at $n=4$ (E2). The Z2 half of F6 (never Einstein) is proven. |
-| Prop. F8 (link to (9.7)–(9.10)) | **Conditional** on R-S/C5; constants $\alpha,\beta$ open |
-| Conjecture F9 | Conjectured; for Z2 at $n=4$ proven in a stronger form (no Einstein open set for any base; `L-nonradial-z2.md` L2); for Z1 at $n=4$ proven near $s(X)$ over definite bases (`N-z1-neighbourhood.md` N10); over flat bases its exception occurs exactly at $\lambda=\tfrac15$ (N2); on every open set and over every base signature in round 15 (`S-z1-off-section.md` S5; computer-assisted over indefinite bases; internally reviewed 2026-11-01) |
+| Prop. F8 (link to (9.7)–(9.10)) | **Conditional** on R-S/C5 and its stated constant-field ansatz; normalized coefficients are determined in I6 |
+| Conjecture F9 | **Proven at $n=4$** for Z2 by L2 and for Z1 by S5–S6, on every open set and over every base signature. The indefinite Z1 proof has computer-assisted inputs. No other dimension is settled here. |
 | Which horizontal metric (Z1 vs Z2), $\lambda$, $c_V/c_H$, readout (P)/(A)/(E), domain of $\Upsilon=0$ | **Undefined in the draft**. The text favours Z1 (a3, a6, a8, a13, a17). |
 
 Claims:
@@ -242,4 +242,4 @@ Claims:
 
 **Testable (layer e).** No small parameter appears. In Z2 at $n=4$, $|\Lambda|=9/(2\ell_F^2)$ with $\ell_F^2=|c_V/c_H|$. Matching the observed $\Lambda=1.1056\times10^{-52}\,\mathrm m^{-2}$ needs $\ell_F\approx2.0\times10^{26}$ m (21 Gly; E3). A Planck-scale fiber overshoots by a factor $1.6\times10^{122}$, and the sign is anti-de Sitter. In Z1 only a tuning of $\lambda$ near $5/18$ (A) or $4/15$ (P) can make $\Lambda$ small.
 
-**Coordinator reproduction (2026-10-30).** All three F scripts were re-run. Outputs are identical to the committed `.out` files apart from timing annotations. `F_zorro_reduction.py` needs about 27 min on 4 shared cores.
+**Recorded reproduction (2026-10-30).** All three F scripts were re-run. Outputs are identical to the committed `.out` files apart from timing annotations. `F_zorro_reduction.py` needs about 27 min on 4 shared cores.

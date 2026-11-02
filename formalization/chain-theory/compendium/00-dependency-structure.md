@@ -1,4 +1,4 @@
-# Dependency structure of the compendium (tasks 1-2)
+# Dependency structure of the compendium index
 
 Data: `compendium/index/statements.tsv` (468 rows, CRLF), `designators.tsv`, section numbering re-derived
 from `compendium/tex`. Scripts: `computation/chain-theory/compendium/census.py`, `depgraph.py`
@@ -43,8 +43,7 @@ Two-cycles: 124.1 <-> 16.1 and 124.1 <-> 58.1 (16.1 and 58.1 list "Theorem 124.1
 "the theorems of Chapters 1-0 to 1-3, ... 4-5", whose ranges contain sections 16 and 58), and
 16.1 <-> 200.1-200.4, 69.1 <-> 200.1-200.4. Without chapter-form strings the graph is acyclic; the
 cycles are therefore carried by the chapter-level citations of 124.1 and 200.x. Separately, 82 of the
-162 chapter designators have two readings (two numberings); `designators.tsv` resolves 1-2 and 4-5
-uniquely, so the 124.1 cycles do not depend on that ambiguity.
+162 chapter designators have two readings (two numberings). The 1-2 mapping is unique, but 4-5 has two readings. Reading 4-5 by the module numbering removes the 124.1 ↔ 58.1 two-cycle (8366 edges; the component still has 22 members). Reading every chapter-form designator that way leaves a 13-member component and the 124.1 ↔ 16.1 two-cycle. These are index dependencies; the separate statement-level analysis and its qualified cycle result are in `07-statement-premises.md` §4.
 
 ## 3. The chain rule
 
@@ -88,4 +87,4 @@ select the (3,2) genre (`03-gauge-group.md`, G3), and the readout law of chapter
 124.1 is listed as a premise by 22 statements (6 THEOREM, 6 CONDITIONAL, 9 OPEN, 1 TABLE), among them
 141.1 (anomaly), 143.1 (hydrogen), 146.1 (finiteness), 147.1 (running), 58.1 (spin-c), 61.1 (three
 involutions), 16.1. 70 statements rest on it transitively (32 without chapter-form strings). These
-statements inherit whatever the coordinator's audit of the Letter finds.
+statements depend on the Letter's assumptions and results; see `../alpha/audit.md`.

@@ -1,4 +1,4 @@
-result: "G5-G9. The fermion operator (9.16): every Spin(7,7)-equivariant spinor Shiab flips chirality (printed labels inconsistent); the natural contraction gives the Rarita-Schwinger operator; no Majorana(-Weyl) action in (7,7) carries a Shiab (RS) kinetic term (Lambda^3 lies in Sym^2 S, not Lambda^2 S); consistent real readings need two MW copies (= complex Weyl, doubled content) or the Hermitian U(64,64) form; the symbol is invertible exactly off the null cone (elliptic in (14,0))"
+result: "G5-G9. The fermion operator (9.16): every Spin(7,7)-equivariant spinor Shiab flips chirality (printed labels inconsistent); the natural contraction gives the Rarita-Schwinger operator; for a single real copy with the proposed invariant bilinears in (7,7), the Majorana(-Weyl) Shiab kinetic term vanishes (Lambda^3 lies in Sym^2 S, not Lambda^2 S); two MW copies with antisymmetric internal pairing (= complex Weyl, doubled content) or the Hermitian U(64,64) form give the stated kinetic-term/relative-phase repair, not a proof of full dynamical consistency; the symbol is invertible exactly off the null cone (elliptic in (14,0))"
 claim_id: [GU-056, GU-063, GU-072]
 writeup: "formalization/geometric-unity/G-full-el-fermions.md (G.3 -- F0, Prop. G5, Lemma G6, Thm G7, Prop. G8, Thm G9)"
 code: [computation/geometric-unity/G_fermion.py, computation/geometric-unity/G_fermion.out]
@@ -7,9 +7,10 @@ formalization_status: >
   equivariant spinor Shiabs (span of Hom_K is 2-dim per chirality); real (B, B') and Hermitian (H) pairings.
 internal_consistency: >
   INCONSISTENT as printed: chirality labels of (9.16) cannot be realized by any equivariant Shiab.
-  INCONSISTENT with the Majorana-Weyl reading of B2-B4 if the zeta kinetic (Shiab) block is kept: its kernel has
-  the bosonic symmetry and drops out; the surviving MW operator has symbol rank 128 of 960 at every covector.
-  CONSISTENT in the complex Weyl / Dirac readings with the printed relative phases (u(64,64) elements i gamma_abc).
+  For the single Majorana-Weyl reading of B2-B4 with the proposed invariant bilinears, the zeta kinetic
+  (Shiab) block has the bosonic symmetry and drops out; the surviving MW operator has symbol rank 128 of 960
+  at every covector. The complex Weyl / Dirac readings have the stated compatible relative phases
+  (u(64,64) elements i gamma_abc). These kinetic-bilinear statements do not establish full dynamical consistency.
 proof_status: >
   Proven (representation theory + exact integer computations in the explicit real Cl(7,7)): symmetry types of
   C gamma_I on S^+- for all monomials of grades 1,3,5,7; Grassmann defect of full rank 2 on the equivariant

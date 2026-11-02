@@ -1,4 +1,6 @@
-# What the compendium's Lean checks, for the audited claims (task 4)
+# What the compendium's Lean checks, for the audited claims
+
+**Historical scope.** This is the initial static audit. The later [build and axiom audit](09-lean-audit-at-scale.md) supersedes its unbuilt status and the blanket hand-entered-list gloss: 135 of the 137 string-only modules enter their rows; two kernel modules compute them. The [full table-row audit](10-lean-table-rows.md) resolves all 64 tied theorem rows and distinguishes relational `Int` checks from string-label checks.
 
 Source: `compendium/lean/` (six core-Lean 4.32.1 packages, 915 `.lean` files). Read as text; not built
 (memory). The build record and `axioms_report.txt` were therefore not re-verified. Script:

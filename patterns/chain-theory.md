@@ -1,6 +1,6 @@
 # Pattern catalogue — Chain Theory
 
-These are conjectures and observations only. None is a result until it is formalized in `formalization/`.
+The catalogue distinguishes proven mathematical relations from conjectural comparisons and open physical interpretations. Each row states its status and points to the relevant formalization or gap.
 
 | ID | Pattern | Status |
 |---|---|---|

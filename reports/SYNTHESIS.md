@@ -21,7 +21,7 @@ The mathematical audit narrows the defining choices:
 - **Weights.** An exact operator form exists, but its attribution projector encodes the end rule. The declared operator and transport searches do not derive an independent principle fixing the weights or the amplitude-level reading.
 - **Rule sensitivity.** The candidate is the only distinct value within 1σ in both bounded rule families. In the mechanically generated family it is also the only value within relative $10^{-4}$; the hand-declared family has four such values. The density reference counts use illustrative random-target models and are not calibrated p-values or evidence of a construction search history.
 
-The fixed numerical conjecture is testable. If a consistent determination remains near the CODATA 2022 central value, uncertainty in $1/\alpha$ below about $2.5\times10^{-9}$ would separate it from the candidate at 5σ. This is a conditional sensitivity estimate, not a forecast of a measurement.
+If the measured central value remains near CODATA 2022, uncertainty in $1/\alpha$ below about $2.5\times10^{-9}$ would separate it from the candidate at 5σ. This is a conditional sensitivity estimate.
 
 [Report](chain-theory-alpha.md) · [Audit](../formalization/chain-theory/alpha/audit.md) · [Conjugation](../formalization/chain-theory/alpha/conjugation.md) · [Uniform records](../formalization/chain-theory/alpha/records-uniform.md) · [Mechanical family](../formalization/chain-theory/alpha/mechanical-trial-factor.md)
 
@@ -29,7 +29,7 @@ The fixed numerical conjecture is testable. If a consistent determination remain
 
 The audit distinguishes the source's index from statement-level derivations. Of 100 THEOREM boxes, 41 explicitly declare an OPEN premise in their derivation and at least 76 violate the source's chain rule under the documented reading. Several index cycles are chapter-citation artefacts; the separate cycle through the α theorem and gain lemma depends on the stated interpretation of chapter designators. Shared derivations and ambiguous any-of citations remain unresolved.
 
-The Lean audit also distinguishes a successful build from coverage of the written claim. The published tree does not build in the audited 4.35.0 environment; five recorded proof edits yield a build of all 493 modules with no `sorry`. The source's pinned 4.32.1 environment was not rebuilt here. Of 64 theorem rows tied to Lean, the principal clause-counting rule gives **1 full match, 7 partial matches and 56 non-matches**; alternative rules give 1/8/55 or 0/7/57. Of 618 table-check lemmas, 560 check the occurrence of an entered string.
+The Lean audit also distinguishes a successful build from coverage of the written claim. The published tree does not build in the audited 4.35.0 environment; five recorded proof edits yield a build of all 493 modules with no `sorry`. The source's pinned 4.32.1 environment was not rebuilt here. Of 64 theorem rows tied to Lean, the principal clause-counting rule gives **1 full match, 7 partial matches and 56 non-matches**; alternative counting rules are recorded in the coverage audit. Of 618 table-check lemmas, 560 check the occurrence of an entered string.
 
 Some finite results do have substantive formal coverage, including gauge-group selection from the declared alphabet and read cap. Physical comparisons are assessed separately: 11 of the 16 adopted numerical readings differ from their reference quantities by more than a factor of ten, while other printed readings give closer values. The scorecard records these alternatives and the identification choices required to compare them.
 
@@ -65,9 +65,9 @@ Three curvature conditions are excluded; electric and magnetic Weyl matrices are
 - **Vanishing electric Weyl part (EE):** $W_g(p,u,p,v)=0$ for $u,v\perp p$, with arbitrary mixed part.
 - **Joint Weyl part (FF):** the electric and magnetic matrices commute and have a common nonzero kernel vector. Both may be nonzero; this condition is narrower than arbitrary commuting matrices.
 
-All three results allow arbitrary higher metric jets. Exact finite compatibility covers and coefficient-rank certificates at those same positive fibres prove the obstruction. Under S.0's invariant-odd/slaved-vector assumptions, a solution domain cannot meet the fibre over a point satisfying any of these conditions. Z, BB and DD retain simpler zero-Weyl and one-direction certificates. For nonzero Ricci, joint Weyl cases beyond FF's common-kernel family remain open.
+All three results allow arbitrary higher metric jets. Exact finite compatibility covers and coefficient-rank certificates at those same positive fibres prove the obstruction. Under S.0's invariant-odd/slaved-vector assumptions, a solution domain cannot meet the fibre over a point satisfying any of these conditions. Joint Weyl cases beyond FF's common-kernel family remain open at nonzero Ricci.
 
-At **every Ricci-zero point with nonzero Riemann curvature**, [HH](../formalization/geometric-unity/HH-ricci-zero.md) excludes a fibre-open relaxed-system patch and, under S.0, a full-field solution domain meeting that fibre. All higher metric jets are allowed; Ricci zero is required only at the initial point. The proof independently diagonalizes the two real chiral Weyl blocks, then uses an exact 36-frame polynomial identity to select an incompatible witness. New coefficient-rank certificates apply at that same witness and transfer with it under positive normalization. [GG](../formalization/geometric-unity/GG-ricci-zero-weyl.md) supplies the simpler case where both chiral blocks are singular. Nonzero Riemann curvature, rather than nonzero Ricci, supplies local persistence. These results do not cover zero-curvature points.
+At **every Ricci-zero point with nonzero Riemann curvature**, [HH](../formalization/geometric-unity/HH-ricci-zero.md) excludes a fibre-open relaxed-system patch and, under S.0, a full-field solution domain meeting that fibre. All higher metric jets are allowed; Ricci zero is required only at the initial point. [GG](../formalization/geometric-unity/GG-ricci-zero-weyl.md) supplies the simpler case where both chiral blocks are singular. Nonzero Riemann curvature, rather than nonzero Ricci, supplies local persistence. These results do not cover zero-curvature points.
 
 At a zero-curvature base point, Y excludes a nonzero conformal quartic direction from the relaxed system on the origin fibre. Its coefficient/augmented ranks are 28/29. This gives a fibre obstruction, without W's full-rank base-neighbourhood persistence or a local full-field exclusion.
 
@@ -90,7 +90,7 @@ The [GU report](geometric-unity-phase1.md) preserves the audit history. The prin
 
 The recurring question is which defining choices determine a result. Convention changes, field sectors and observable-identification maps are tested explicitly. A counterexample applies to the statement and assumptions tested; it does not classify every possible reconstruction.
 
-The group-theoretic connections are also precise but limited. Chain Theory's convention-A link lies in the $\mathbf{10}$ of SU(5), while its conjugate-convention link lies in the adjoint $\mathbf{24}$. GU's branching uses Spin(10)-type representations and the Pati–Salam subgroup. These embeddings provide a mathematical comparison; they do not establish a common dynamics or physical mechanism. [Pattern catalogue](../patterns/chain-theory.md)
+The group-theoretic connections are also precise but limited. Chain Theory's convention-A link lies in the $\mathbf{10}$ of SU(5), while its conjugate-convention link lies in the adjoint $\mathbf{24}$. GU's branching uses Spin(10)-type representations and Pati–Salam factors, but its internal real form is noncompact Spin(6,4). That distinction is explicit in the [branching analysis](../formalization/geometric-unity/B-spinor-branching.md). These representation comparisons do not establish common dynamics or a physical mechanism. [Pattern catalogue](../patterns/chain-theory.md)
 
 ## 3. Manuscript drafts
 
@@ -99,7 +99,7 @@ The group-theoretic connections are also precise but limited. Chain Theory's con
 | Comment on the α Letter | Reproduction, convention dependence, covariance, operator weights and bounded rule-family sensitivity | [TeX](../proofs/latex/ct-alpha-comment/comment.tex) |
 | Geometric Unity's algebraic core | Signatures, spinors, gauge identities, variation, ellipticity and reduction through the A–Q analyses. The newer results from R onward remain in research notes. | [TeX](../proofs/latex/gu-note/note.tex) |
 
-The GU source compiled with the desktop editor's compiler after a scope/prose revision on November 2, 2026; the Chain Theory source last compiled on November 1. Compilation checks document construction, not mathematical validity or external acceptance. The [verification guide](../README.md#reproduce-selected-checks) distinguishes the selected executable suite from long searches, fresh Lean builds and manuscript work.
+The GU source last compiled on November 2, 2026; the Chain Theory source on November 1. Compilation checks document construction, not mathematical validity. The [verification guide](../computation/README.md) separates selected checks from long searches, fresh Lean builds and manuscript work.
 
 <a id="4-next-steps-in-priority-order"></a>
 
