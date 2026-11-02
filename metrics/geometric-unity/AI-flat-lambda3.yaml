@@ -1,0 +1,50 @@
+result: >
+  Over flat Riemannian four-base Z1 at lambda=1/5, cH,cV>0, the first single WA
+  Lambda3 c/wGamma branch has exactly the constant odd, zero even solution
+  To=-i*kappa*Phi1/400, Te=0 when cV*kappa^2=150000/11; it has none at other scales.
+  The opposite single Lambda3 w/cGamma branch has no full solution at positive scales.
+  This is a classification in the stated compact single-kernel sector only.
+claim_id: [GU-054]
+result_ids: [AI1, AI2, AI3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AI-flat-lambda3.md
+internal_review: reports/reviews/REVIEW33-GU-AI-2026-11-02.md
+code:
+  - computation/geometric-unity/AI_flat_lambda3.py
+  - computation/geometric-unity/AI_flat_lambda3.out
+formalization_status: >
+  True dualized Upsilon equation, compact real (14,0), u(128), fixed parallel
+  real WA, real fields, constant kappa!=0, invariant odd field and det M!=0.
+  A connected open observer domain remains in one single Lambda3 kernel,
+  away from every other non-vector singular factor. The base is flat Riemannian
+  four-dimensional, Z1 lambda=1/5, both observer scales positive.
+  F7 supplies RicY=-5/(4cV)g and GY=15/(2cV)g on the whole observer model.
+proof_status: >
+  AF/AG supply four constant odd endpoints. T2's norm identity excludes the
+  three ratios below -1/312 whenever traceG>=0, hence on flat Z1. At -1/400,
+  the sole even copy has no grade-one derivative; AA7's simple-form condition
+  and the full quadratic stress yield a scalar rank14 versus rank3 equation.
+  This forces k=0 and the exact scale. The known constant-background solution
+  supplies the full-equation converse. Accepted in independent internal Review33.
+internal_consistency: >
+  Twelve exact controls verify the endpoint residuals with arbitrary curvature
+  diagonal and symbolic kappa; coordinate/non-coordinate simple-form quadratic
+  tensors; derivative grades; the complete odd baseline and exact scale.
+  The normalized vector factors are nonzero at all four endpoints; the known
+  solution has exactly the intended Lambda3 kernel and all other blocks regular.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
+  computation/geometric-unity/AI_flat_lambda3.py. Twelve checks pass in 1.7 seconds.
+  Uses T's accepted Clifford engine. The helper imports the accepted flat
+  Einstein normalization as a premise; it is not a new metric reconstruction.
+novelty: >
+  A bounded endpoint completion within this investigation for both single
+  Lambda3 branches over the flat-base model. No literature novelty, curved-base
+  classification or general singular-field theorem is claimed.
+empirical_testability: None new; a classification in the reconstructed sector.
+dependencies: [AF2, AF3, AG3, AG4, AA4, AA7, T2, F7, R10]
+confidence: >
+  Independent internal Review33 accepts the source scope, endpoint residuals,
+  stress/rank step and full-equation converse, and reproduces twelve controls. Either kappa sign is allowed.
+pending_work: >
+  Nonflat endpoint fields, Lambda5 branches, coincident kernels and other sectors remain open.

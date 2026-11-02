@@ -1,0 +1,72 @@
+result: >
+  At a smooth Riemannian four-metric point with nonzero rank-one Ricci tensor,
+  assume the electric and magnetic Weyl matrices relative to its Ricci eigenline
+  commute and have a common nonzero kernel vector. The reconstructed Z1 relaxed
+  system at lambda=1/5 and positive cH,cV is inconsistent on every fibre-open
+  patch. Under the explicit S.0 slaved-vector assumptions the twisted cone has
+  no Upsilon=0 solution on an open set meeting that fibre. Arbitrary higher
+  metric jets are allowed. The common-kernel condition is essential to the scope.
+claim_id: [GU-054]
+result_ids: [FF1, FF2, FF3, FF4, FF5, FF6]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/FF-joint-weyl.md
+internal_review: reports/reviews/REVIEW32-GU-FF-2026-11-02.md
+code:
+  - computation/geometric-unity/FF_joint_weyl.py
+  - computation/geometric-unity/FF_joint_weyl.out
+  - computation/geometric-unity/FF_rank_blocks.py
+  - computation/geometric-unity/FF_rank_certificates.json
+formalization_status: >
+  FF1 proves the intrinsic condition equivalent to the simultaneous-frame orbit
+  Ric=rho e0 tensor e0 and W=alpha E0+beta H. Electric and magnetic profiles are
+  diag(alpha,-alpha,0) and diag(beta,-beta,0). Simultaneous orthogonal diagonalization
+  is carried out on the common kernel vector's orthogonal two-plane, with orientation
+  adjusted by eigenvector signs. FF2 establishes coefficient total degree<=2 and
+  RHS total degree<=3 before interpolation. FF3 gives a three-fibre compatibility
+  cover, FF4 constant same-witness ranks and direct J7 completion, FF5 arbitrary
+  higher jets and FF6 S4/U5 local consequences. Full-field scope is compact (14,0),
+  u(128), invariant odd field, slaved vector even field, a fixed reconstructed Shiab
+  member with (x,y)!=(0,0), kappa!=0 and det M!=0.
+internal_consistency: >
+  For each Ricci sign the three selected-row quartic numerators generate the unit
+  ideal in QQ[a,b]. At all three finite positive diagonal fibres, constant even-sign
+  character-block left inverses give ranks 12, 6, 6, 6 and horizontal rank-two outputs
+  give 2, 2, 2, 2, totaling invariant rank 38 with four explicit kernel columns.
+  Direct six-node reconstruction gives constant invertible J7 restrictions at all
+  three fibres, for both signs, hence full coefficient rank 42 at every parameter.
+  The rank proof is separate from compatibility and does not extrapolate the
+  one-parameter a=b result or infer ranks from evaluated node matrices.
+proof_status: >
+  Exact polynomial unit ideals and rational constant left-inverse/completion
+  certificates complement hand normal-form, degree-bound, higher-jet and fixed-minor
+  arguments. Independent internal Review32 accepts FF1-FF6 and reproduces the portable
+  run. No Lean formalization or external peer review is claimed. This is one
+  two-parameter simultaneous-frame orbit.
+novelty: >
+  Allows both electric and mixed Weyl parts to be nonzero, with arbitrary independent
+  amplitudes in two fixed directions. The intrinsic scope is commuting electric
+  and magnetic matrices with a common nonzero kernel vector, not arbitrary commuting
+  pairs or arbitrary Weyl tensors. CC and EE retain their separate pure-part scopes.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0, exact Fractions and rational polynomial algebra. Run
+  python -X utf8 -I computation/geometric-unity/FF_joint_weyl.py from the root.
+  Default reproduction freshly computes 60 exact node systems once in memory.
+  The six coefficient nodes and ten RHS nodes are unisolvent for total degrees
+  two and three, with absolute Vandermonde determinants 4 and 576. Compact JSON
+  stores constant rational row combinations rather than raw node matrices. The
+  helper has no engine calls or external cache dependency. All-parameter scope
+  follows from the prior degree bounds and polynomial identities, not samples.
+  The recorded fresh run passes 31 main checks and 60 rank-helper checks in 107.1 s;
+  the independent Review32 fresh rerun passes in 109.6 s. The compact certificate
+  file is 46,360 bytes.
+empirical_testability: None new; a mathematical obstruction in the reconstructed sector.
+dependencies: [U1, U2, U5, S4, S5, Q5, CC1, EE1, DD3, BB1, BB3, W1, W2, Z1, Z2, Z3, Z4, xcheck_round10]
+confidence: >
+  Accepted in independent internal Review32. The simultaneous-frame orbit has an explicit
+  commuting-plus-common-kernel characterization. Uniform compatibility and rank
+  rely on exact ideals and constant certificates at the same three finite fibres.
+  Higher-jet transfer uses the fixed-curvature-independent proof without imposing
+  auxiliary even-sign symmetries on actual higher jets.
+pending_work: >
+  Commuting pairs without a common kernel, noncommuting pairs and Ricci-flat
+  nonflat points remain outside this result.

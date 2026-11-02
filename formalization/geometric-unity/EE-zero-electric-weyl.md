@@ -111,4 +111,4 @@ Run `python -X utf8 -I computation/geometric-unity/EE_zero_electric_weyl.py` fro
 
 The recorded fresh run passes 32 main checks and 72 rank-helper checks in 114.0 s; Review29 independently reproduces them in 113.7 s. The compact certificate file is 49,791 bytes.
 
-This covers all zero-electric Weyl tensors relative to a nonzero Ricci eigenline, including DD's simpler subcase. CC covers the separate zero-mixed condition. Simultaneously nonzero electric and mixed Weyl parts, and Ricci-flat nonflat points, remain outside these conclusions. The field statement remains within the reconstructed sector and the explicit S.0 assumptions.
+This covers all zero-electric Weyl tensors relative to a nonzero Ricci eigenline, including DD's simpler subcase. CC covers the separate zero-mixed condition. [FF](FF-joint-weyl.md) separately treats the joint commuting/common-kernel family. Other cases with both parts nonzero, and Ricci-flat nonflat points, remain open. The field statement remains within the reconstructed sector and the explicit S.0 assumptions.

@@ -1,0 +1,21 @@
+AI: flat-base Z1, both single WA Lambda3 kernel branches
+SymPy 1.14.0; real compact (14,0), cV>0, kappa!=0.
+[01] endpoint a=-3/112: exact residual and strict-negative coefficients: True
+  pairing / kappa = -3*(112*G0 + 112*G1 + 112*G10 + 112*G11 + 112*G12 + 112*G13 + 112*G2 + 112*G3 + 112*G4 + 112*G5 + 112*G6 + 112*G7 + 112*G8 + 112*G9 + 309*kappa**2)/12544
+[02] endpoint a=-3/272: exact residual and strict-negative coefficients: True
+  pairing / kappa = -3*(4624*G0 + 4624*G1 + 4624*G10 + 4624*G11 + 4624*G12 + 4624*G13 + 4624*G2 + 4624*G3 + 4624*G4 + 4624*G5 + 4624*G6 + 4624*G7 + 4624*G8 + 4624*G9 + 1743*kappa**2)/1257728
+[03] endpoint a=-1/240: exact residual and strict-negative coefficients: True
+  pairing / kappa = -(400*G0 + 400*G1 + 400*G10 + 400*G11 + 400*G12 + 400*G13 + 400*G2 + 400*G3 + 400*G4 + 400*G5 + 400*G6 + 400*G7 + 400*G8 + 400*G9 + 7*kappa**2)/96000
+[04] coordinate simple form: complete grade-one quadratic tensor: True
+[05] coordinate derivative controls retain only grades nine/thirteen: True
+[06] non-coordinate simple form: complete grade-one quadratic tensor: True
+[07] non-coordinate derivative controls retain only grades nine/thirteen: True
+[08] remaining endpoint: full baseline is the stated grade-one scalar: True
+[09] flat Einstein normalization gives the unique positive scale: True
+[10] known zero-even solution has identically zero complete odd residual: True
+[11] both vector determinant factors are nonzero at every endpoint: True
+[12] known solution lies on only the intended non-vector factor: True
+First branch: only Te=0, t=-kappa/400, u=0, at cV*kappa²=150000/11.
+Second branch: no solution at positive scales. Nonflat endpoint equations remain open.
+
+12 checks, all True; runtime 1.7 s

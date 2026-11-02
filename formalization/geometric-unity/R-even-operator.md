@@ -1,5 +1,7 @@
 # R. The even operator $L_{T_o}$ on all of $\Lambda^1\otimes\mathfrak g_{\rm ev}$: where the slaved field leaves $\mathcal V$
 
+For the current singular-field results and open questions, see the [research synthesis](../../reports/SYNTHESIS.md#geometric-unity).
+
 Claims: GU-054 (context). Gaps: GU-G15, GU-G14 (and GU-G16 for the role of $\ell=xz\pm yw$). Code: `computation/geometric-unity/R_even_operator.py` → `.out` (sections R0–R4 with R1b–R1d; exact: Python Fractions, sympy rationals and Gaussian rationals; no randomness; 342 s on one core, a second run 353 s, identical apart from the timing annotations). It imports `J_slaved_sector.py` (and through it `I_elliptic_reduction.py`, `G_symbols.py`, `H_ellipticity.py`, `shiab_checks.py`), unmodified, and calls J's own `j1`. Output sections: §R0 constituents, §R1 blocks, §R1b equivariance, §R1c source, §R1d traces, §R2 determinants, §R3 singular sets and kernels, §R4 consequences. Record: `metrics/geometric-unity/R-even-operator.yaml`. Builds on I (I2, Cor. I2.2), J (J.0, J1), M (M1), H (H7) and, for R9, I7(b), N12(c), Q15. Layers: (b) reconstruction (that of J, unchanged), (c) proven, (d) open.
 
 ## R.0 Question and setting (layer b)

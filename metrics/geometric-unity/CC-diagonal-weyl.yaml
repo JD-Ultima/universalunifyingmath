@@ -71,5 +71,5 @@ confidence: >
   jet scope follows from the curvature-independent support argument accepted in
   BB3, with baseline reflection symmetry kept separate from arbitrary higher jets.
 pending_work: >
-  Curvature with simultaneously nonzero electric and mixed Weyl parts, and the
-  Ricci-flat nonflat case, remain open. EE separately treats the zero-electric case.
+  Joint curvature beyond FF's commuting/common-kernel family and the Ricci-flat
+  nonflat case remain open. EE separately treats the zero-electric case.

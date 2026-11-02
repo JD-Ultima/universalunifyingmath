@@ -73,6 +73,8 @@ These are necessary endpoints, not asserted solutions.
 
 The endpoint kernel and its derivative remain in the other equations. Coincident kernels, the other Lambda3 conic, the Lambda5 conics, $\det M=0$, non-invariant odd fields and indefinite real forms are outside this result. In particular this does not classify all constant singular fields.
 
+[AG](AG-other-lambda3.md) supplies the opposite Lambda3 endpoint reduction. [AI](AI-flat-lambda3.md) classifies both single branches over flat-base Z1; the remaining curved-base endpoint equations are not classified here.
+
 ## Reproduction
 
 From the repository root:

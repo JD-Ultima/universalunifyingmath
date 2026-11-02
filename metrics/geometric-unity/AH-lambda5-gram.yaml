@@ -1,0 +1,56 @@
+result: >
+  Necessary symmetric-Gamma restrictions on either single real WA Lambda5 conic.
+  At nonzero w=u/kappa the five-form is nonzero and its contraction Gram matrix
+  has rank 13 or 14. Left branches require support dimension 14; right rank 13 is
+  possible only when the slaved gradient is its annihilator direction. Support
+  dimension at most 12 is excluded. An isotropic full-support form satisfies the
+  selected channel at regular parameters, so no full Lambda5 exclusion follows.
+claim_id: [GU-054]
+result_ids: [AH1, AH2, AH3, AH4]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AH-lambda5-gram.md
+internal_review: reports/reviews/REVIEW31-GU-AH-2026-11-02.md
+code:
+  - computation/geometric-unity/AH_lambda5_gram.py
+  - computation/geometric-unity/AH_lambda5_gram.out
+formalization_status: >
+  True dualized equation, real compact (14,0), u(128), fixed parallel real WA,
+  constant kappa!=0, invariant odd field and det M!=0. Only one Lambda5 kernel
+  is present, away from all other non-vector singular factors. The c/wGamma
+  phase is i (grades 4/8); w/cGamma phase is 1 (grades 6/10). Real smooth weights
+  are not both zero in the chosen kernel chart and are both nonzero at w!=0.
+proof_status: >
+  AH1 derives Sym(Q13*Gamma/i)=(160/3)rs*N*I-(304/3)rs*S for arbitrary real
+  five-forms by the two-pattern metric-contraction count and symbolic calibration.
+  Derivative/mixed terms have no symmetric output by V tensor Lambda5 types;
+  AF supplies the unchanged vector/invariant terms. AH2 uses positive Gram
+  linear algebra and the two negative f(-1/208) values to obtain N>0 and
+  rank S=13 or 14. AH3 gives branch signs and strict/equality gradient bounds.
+  AH4 is an explicit algebraic channel limitation, not a full solution.
+  Independently accepted in reports/reviews/REVIEW31-GU-AH-2026-11-02.md; all 25 checks reproduced.
+internal_consistency: >
+  Exact controls include both real phases, general nondecomposable forms with
+  off-diagonal Gram entries, full fourteen-dimensional support, mixed/derivative
+  terms and both kernel charts. Cyclic supports give N=14, S=5I exactly. The
+  regular first-conic channel point has nonzero vector factors and no other
+  non-vector kernel; its scalar channel balance is exact.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
+  computation/geometric-unity/AH_lambda5_gram.py. Fresh exact symbolic/rational
+  controls use T's accepted Clifford implementation, not the J/R evaluator.
+  No off-repository dependency, randomness or numerical parameter fitting.
+  The cyclic form is checked by its Gram matrix without a full Clifford run.
+  The recorded fresh default passes 25 exact checks in 4.5 seconds.
+novelty: >
+  Bounded necessary stress-spectrum reduction within this investigation for
+  the Lambda5 branches. No general five-form classification, full singular
+  classification or literature novelty is claimed.
+empirical_testability: None new; necessary field-equation constraints.
+dependencies: [R2, R4, R6, J1, AF1]
+confidence: >
+  Independently reviewed internally. The full-support channel control preserves the
+  distinction between a necessary Gram restriction and all nonlinear/PDE
+  equations. No nonzero-u Lambda5 exclusion or field solution is asserted.
+pending_work: >
+  The remaining nonlinear components, actual field existence, zero-u endpoints, coincident
+  kernels and indefinite cases need separate analysis.

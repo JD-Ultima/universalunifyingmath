@@ -1,0 +1,70 @@
+FF. A two-parameter joint electric/mixed Weyl plane
+Fresh portable path: all 60 exact node systems once in memory; no external caches.
+[01] the fixed electric and mixed tensors satisfy curvature symmetries, Bianchi and zero Ricci: True
+[02] electric/magnetic profiles have the exact simultaneous normal form and common kernel: True
+[03] even sign flips fix the plane pointwise, while odd flips reverse only its mixed basis: True
+[04] total-degree node sets are unisolvent and agree with the rank helper: True
+[05] rho=1, y=(2, 3, 4, 5): selected rows have only xi_13 and diagonal n coefficients: True
+[06] rho=1, y=(2, 3, 4, 5): n coefficients are common and independent of curvature: True
+[07] rho=1, y=(2, 3, 4, 5): four additional nodes check the selected coefficient polynomials: True
+[08] rho=1, y=(2, 3, 4, 5): exact RHS interpolation has zero cubic coefficients: True
+  xi coefficients: [-(2925*a**2 - 750*a + 1350*b**2 + 7849)/43200, -(1968*a**2 + 1056*a + 1800*b**2 + 24163)/57600, -(4212*a**2 - 2754*a + 2700*b**2 + 36467)/86400]
+  RHS: [(125*b**2 + 8)/4000, (288*a**2 + 96*a + 225*b**2 + 8)/36000, (36*a**2 - 12*a + 225*b**2 + 1)/12000]
+  primitive compatibility numerator: 21168*a**4 + 127440*a**3 - 22680*a**2*b**2 - 487728*a**2 - 335520*a*b**2 - 403540*a + 1259490*b**2 - 11799
+  rank certificates rho=1, y=(2, 3, 4, 5): 10 exact checks; invariant rank 38, J7-completed rank 42 at every parameter.
+  rank certificate summary: {'checks': 10, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+[09] rho=1, y=(2, 3, 5, 7): selected rows have only xi_13 and diagonal n coefficients: True
+[10] rho=1, y=(2, 3, 5, 7): n coefficients are common and independent of curvature: True
+[11] rho=1, y=(2, 3, 5, 7): four additional nodes check the selected coefficient polynomials: True
+[12] rho=1, y=(2, 3, 5, 7): exact RHS interpolation has zero cubic coefficients: True
+  xi coefficients: [-(46746*a**2 - 16464*a + 37800*b**2 + 99019)/529200, -(8475*a**2 + 4050*a + 8190*b**2 + 74107)/176400, -(37017*a**2 - 24246*a + 32130*b**2 + 224701)/529200]
+  RHS: [(672*b**2 + 25)/20580, (144*a**2 + 48*a + 189*b**2 + 4)/24696, (72*a**2 - 24*a + 819*b**2 + 2)/41160]
+  primitive compatibility numerator: 57132*a**4 + 372708*a**3 + 113616*a**2*b**2 - 1482021*a**2 - 1589922*a*b**2 - 1051750*a + 79380*b**4 + 4641612*b**2 - 33734
+  rank certificates rho=1, y=(2, 3, 5, 7): 10 exact checks; invariant rank 38, J7-completed rank 42 at every parameter.
+  rank certificate summary: {'checks': 10, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+[13] rho=1, y=(2, 4, 5, 9): selected rows have only xi_13 and diagonal n coefficients: True
+[14] rho=1, y=(2, 4, 5, 9): n coefficients are common and independent of curvature: True
+[15] rho=1, y=(2, 4, 5, 9): four additional nodes check the selected coefficient polynomials: True
+[16] rho=1, y=(2, 4, 5, 9): exact RHS interpolation has zero cubic coefficients: True
+  xi coefficients: [-(44469*a**2 - 5346*a + 33210*b**2 + 74641)/388800, -(47700*a**2 + 28050*a + 40500*b**2 + 328403)/777600, -(114192*a**2 - 73056*a + 93960*b**2 + 660001)/1555200]
+  RHS: [(9801*b**2 + 280)/349920, (900*a**2 + 300*a + 3807*b**2 + 25)/349920, (576*a**2 - 192*a + 4941*b**2 + 16)/349920]
+  primitive compatibility numerator: 363312*a**4 + 4669488*a**3 + 897912*a**2*b**2 - 4177296*a**2 - 24617664*a*b**2 - 7809100*a + 699840*b**4 + 15895134*b**2 - 89239
+  rank certificates rho=1, y=(2, 4, 5, 9): 10 exact checks; invariant rank 38, J7-completed rank 42 at every parameter.
+  rank certificate summary: {'checks': 10, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+[17] rho=1: the three compatibility numerators generate the unit ideal: True
+  exact compatibility Groebner basis: [1]
+[18] rho=-1, y=(2, 3, 4, 5): selected rows have only xi_13 and diagonal n coefficients: True
+[19] rho=-1, y=(2, 3, 4, 5): n coefficients are common and independent of curvature: True
+[20] rho=-1, y=(2, 3, 4, 5): four additional nodes check the selected coefficient polynomials: True
+[21] rho=-1, y=(2, 3, 4, 5): exact RHS interpolation has zero cubic coefficients: True
+  xi coefficients: [-(2925*a**2 + 750*a + 1350*b**2 + 29449)/43200, -(1968*a**2 - 1056*a + 1800*b**2 + 24163)/57600, -(4212*a**2 + 2754*a + 2700*b**2 + 36467)/86400]
+  RHS: [(125*b**2 + 8)/4000, (288*a**2 - 96*a + 225*b**2 + 8)/36000, (36*a**2 + 12*a + 225*b**2 + 1)/12000]
+  primitive compatibility numerator: 21168*a**4 - 127440*a**3 - 22680*a**2*b**2 + 549072*a**2 + 335520*a*b**2 - 356780*a - 1332510*b**2 + 17001
+  rank certificates rho=-1, y=(2, 3, 4, 5): 10 exact checks; invariant rank 38, J7-completed rank 42 at every parameter.
+  rank certificate summary: {'checks': 10, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+[22] rho=-1, y=(2, 3, 5, 7): selected rows have only xi_13 and diagonal n coefficients: True
+[23] rho=-1, y=(2, 3, 5, 7): n coefficients are common and independent of curvature: True
+[24] rho=-1, y=(2, 3, 5, 7): four additional nodes check the selected coefficient polynomials: True
+[25] rho=-1, y=(2, 3, 5, 7): exact RHS interpolation has zero cubic coefficients: True
+  xi coefficients: [-(46746*a**2 + 16464*a + 37800*b**2 + 363619)/529200, -(8475*a**2 - 4050*a + 8190*b**2 + 74107)/176400, -(37017*a**2 + 24246*a + 32130*b**2 + 224701)/529200]
+  RHS: [(672*b**2 + 25)/20580, (144*a**2 - 48*a + 189*b**2 + 4)/24696, (72*a**2 + 24*a + 819*b**2 + 2)/41160]
+  primitive compatibility numerator: 57132*a**4 - 372708*a**3 + 113616*a**2*b**2 + 1693179*a**2 + 1589922*a*b**2 - 913850*a + 79380*b**4 - 4883988*b**2 + 54466
+  rank certificates rho=-1, y=(2, 3, 5, 7): 10 exact checks; invariant rank 38, J7-completed rank 42 at every parameter.
+  rank certificate summary: {'checks': 10, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+[26] rho=-1, y=(2, 4, 5, 9): selected rows have only xi_13 and diagonal n coefficients: True
+[27] rho=-1, y=(2, 4, 5, 9): n coefficients are common and independent of curvature: True
+[28] rho=-1, y=(2, 4, 5, 9): four additional nodes check the selected coefficient polynomials: True
+[29] rho=-1, y=(2, 4, 5, 9): exact RHS interpolation has zero cubic coefficients: True
+  xi coefficients: [-(44469*a**2 + 5346*a + 33210*b**2 + 269041)/388800, -(47700*a**2 - 28050*a + 40500*b**2 + 328403)/777600, -(114192*a**2 + 73056*a + 93960*b**2 + 660001)/1555200]
+  RHS: [(9801*b**2 + 280)/349920, (900*a**2 - 300*a + 3807*b**2 + 25)/349920, (576*a**2 + 192*a + 4941*b**2 + 16)/349920]
+  primitive compatibility numerator: 363312*a**4 - 4669488*a**3 + 897912*a**2*b**2 + 5153904*a**2 + 24617664*a*b**2 - 6360500*a + 699840*b**4 - 16764066*b**2 + 169961
+  rank certificates rho=-1, y=(2, 4, 5, 9): 10 exact checks; invariant rank 38, J7-completed rank 42 at every parameter.
+  rank certificate summary: {'checks': 10, 'invariant_rank': 38, 'completed_rank': 42, 'kernel_dimension': 4}
+[30] rho=-1: the three compatibility numerators generate the unit ideal: True
+  exact compatibility Groebner basis: [1]
+[31] all 60 exact node systems were assembled once: True
+Each finite compatibility configuration has constant coefficient rank42 at the SAME fibre for every parameter pair.
+Higher-jet transfer uses the fixed-curvature-independent DD3 argument; baseline even-sign symmetry is not imposed on actual higher jets.
+Intrinsic scope requires commuting electric/magnetic Weyl matrices AND a common nonzero kernel vector. General commuting pairs and general Weyl tensors remain outside it.
+
+31 main checks, all True; rank-helper checks also passed; runtime 107.1 s
