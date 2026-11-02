@@ -1,6 +1,6 @@
 # AG. The other Lambda3 exterior conic
 
-The second $W_A$ Lambda3 kernel branch also has no full solution at a nonzero-$u$ point. Its compact phase and nonlinear coefficients differ from AA6, while its simple-form symmetric Gamma tensor agrees with AF. A connected solution domain in this branch can therefore reach only two constant odd endpoints. Their remaining even-field equations are unresolved.
+The second $W_A$ Lambda3 kernel branch also has no full solution at a nonzero-$u$ point. Its compact phase and nonlinear coefficients differ from AA6, while its simple-form symmetric Gamma tensor agrees with AF. A connected solution domain in this branch can therefore reach only two constant odd endpoints. [AK](AK-lambda3-classification.md) subsequently excludes both endpoints on every positive Z1 metric.
 
 Code: `computation/geometric-unity/AG_other_lambda3.py` → `.out`. It uses T's accepted Clifford implementation, with no J/R evaluator or off-repository dependencies. Record: `metrics/geometric-unity/AG-other-lambda3.yaml`. [Independent internal Review30](../../reports/reviews/REVIEW30-GU-AG-2026-11-02.md) accepts AG1–AG4 and reproduces all 30 checks. This is internal review, not external peer review. The universal statements below use contraction, equivariance and rank arguments, rather than a sampled parameter range.
 
@@ -84,4 +84,4 @@ The recorded fresh run passes all 30 checks in 8.6 seconds with Python 3.12 and 
 
 The result concerns only this single real Lambda3 wedge/contraction-Gamma factor. Coincident kernels, Lambda5 branches, other Shiab members, non-invariant odd fields, $\det M=0$ and indefinite real forms are outside its scope. No endpoint solution, PDE sufficiency or classification of all singular strata is asserted.
 
-[AI](AI-flat-lambda3.md) completes the endpoint analysis over flat-base Z1 and gives a separate nonnegative-curvature-trace exclusion. AG's sign-free endpoint statement retains its original scope.
+[AK](AK-lambda3-classification.md) completes the endpoint analysis over every positive Z1 metric, using the derivative-grade facts above. [AI](AI-flat-lambda3.md) retains the flat-model argument; AG's endpoint reduction keeps its original scope.

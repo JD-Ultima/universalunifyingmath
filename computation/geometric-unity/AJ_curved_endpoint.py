@@ -78,7 +78,7 @@ def main():
           nilpotent != sp.zeros(2) and nilpotent**2 == sp.zeros(2)
           and nilpotent.T*eta == eta*nilpotent)
     print(f"{len(CHECKS)} exact checks passed.")
-    print("One endpoint only; other curved endpoints and Lambda5 fields remain open.")
+    print("AK subsequently classifies both Lambda3 branches on all positive Z1 metrics.")
 
 
 if __name__ == "__main__":

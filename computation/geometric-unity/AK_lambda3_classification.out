@@ -1,0 +1,33 @@
+AK: complete single-Lambda3 classification on positive Z1
+SymPy 1.14.0; real compact (14,0); imported metric lemmas.
+[01] c, coordinate: compact kernel and full grade-one stress: True
+[02] c, non-coordinate: compact kernel and full grade-one stress: True
+[03] c: all fourteen derivative directions retain the declared grades: True
+[04] c: complete constant-odd baseline coefficient b/kappa^2=309/1568: True
+[05] wGamma, coordinate: compact kernel and full grade-one stress: True
+[06] wGamma, non-coordinate: compact kernel and full grade-one stress: True
+[07] wGamma: all fourteen derivative directions retain the declared grades: True
+[08] wGamma: complete constant-odd baseline coefficient b/kappa^2=-11/20000: True
+[09] i*w, coordinate: compact kernel and full grade-one stress: True
+[10] i*w, non-coordinate: compact kernel and full grade-one stress: True
+[11] i*w: all fourteen derivative directions retain the declared grades: True
+[12] i*w: complete constant-odd baseline coefficient b/kappa^2=1/800: True
+[13] i*cGamma, coordinate: compact kernel and full grade-one stress: True
+[14] i*cGamma, non-coordinate: compact kernel and full grade-one stress: True
+[15] i*cGamma: all fourteen derivative directions retain the declared grades: True
+[16] i*cGamma: complete constant-odd baseline coefficient b/kappa^2=249/9248: True
+[17] wGamma: spectral elimination includes z=0 and scalar limits: True
+[18] wGamma: both 5/9 eigenvalue assignments violate the trace: True
+[19] i*w: spectral elimination includes z=0 and scalar limits: True
+[20] i*w: both 5/9 eigenvalue assignments violate the trace: True
+[21] i*cGamma: spectral elimination includes z=0 and scalar limits: True
+[22] i*cGamma: both 5/9 eigenvalue assignments violate the trace: True
+[23] universal multiplicity differences are exactly 2(A-B) and 6(A-B): True
+[24] general-lambda radial Einstein limits have positive 5/9 eigenvalues: True
+[25] radial eigenvalues coincide exactly at lambda=1/5: True
+[26] first-left symmetric equation contradicts the negative Euler Ricci eigenvalue: True
+[27] opposite endpoint b values are strictly positive for either kappa sign: True
+[28] surviving constant odd field has zero complete odd residual at the exact scale: True
+28 exact controls passed.
+First branch: flat base, lambda=1/5, cV*kappa^2=150000/11, t=-kappa/400, u=0, Te=0.
+Opposite branch: no solution. Other kernels, operators and field sectors remain open.

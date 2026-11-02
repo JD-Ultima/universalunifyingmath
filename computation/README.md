@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 31 |
-| **Self-contained total** | **41** |
+| Geometric Unity computations | 32 |
+| **Self-contained total** | **42** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **47** |
+| **Total with source checks** | **48** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 41 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 42 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -60,9 +60,9 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 ## Completed validation
 
-The AJ milestone on November 2, 2026 passed all **47/47** selected commands locally with pinned Windows Python 3.12 and the pristine LF upstream snapshot. This includes eleven new exact algebraic controls; [Review37](../reports/reviews/REVIEW37-GU-AJ-2026-11-02.md) records the proof assessment and its limits.
+The AK milestone on November 2, 2026 passed all **48/48** selected commands locally with pinned Windows Python 3.12 and the pristine LF upstream snapshot. This includes 28 new exact controls; [Review38](../reports/reviews/REVIEW38-GU-AK-2026-11-02.md) records the proof assessment and its limits.
 
-At [checkpoint 0ff2976](https://github.com/JD-Ultima/universalunifyingmath/commit/0ff297664f041bcfe432c7e2038074e1831e41cb) on November 2, 2026, all 46 selected commands passed locally with pinned Windows Python 3.12 and the pristine LF upstream snapshot. The [push run](https://github.com/JD-Ultima/universalunifyingmath/actions/runs/41470711589) and [PR run](https://github.com/JD-Ultima/universalunifyingmath/actions/runs/41470719523) each passed all four platform/version jobs.
+At [checkpoint 0ff2976](https://github.com/JD-Ultima/universalunifyingmath/commit/0ff297664f041bcfe432c7e2038074e1831e41cb) on November 2, 2026, all 46 selected commands passed locally with pinned Windows Python 3.12 and the pristine LF upstream snapshot. The [push run](https://github.com/JD-Ultima/universalunifyingmath/actions/runs/41470711589) and [PR run](https://github.com/JD-Ultima/universalunifyingmath/actions/runs/41470719523) each passed all four platform/version jobs. The subsequent [AJ milestone](https://github.com/JD-Ultima/universalunifyingmath/pull/5) passed 47 local commands and all eight CI jobs before AK.
 
 Per-result proof arguments, imported lemmas and additional controls are documented in the [formalizations](../formalization/) and [internal reviews](../reports/reviews/). For example, [Review36](../reports/reviews/REVIEW36-GU-HH-2026-11-02.md) reproduces HH's exact rank/orbit certificates and separately checks nonunit scaling and higher-jet perturbations.
 

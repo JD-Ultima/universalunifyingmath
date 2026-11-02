@@ -1,0 +1,55 @@
+result: >
+  Complete classification of both single WA Lambda3 kernel branches on positive
+  Z1 over smooth positive four-bases, for every lambda<1/4 and cH,cV>0.
+  The first branch has exactly To=-i*kappa*Phi1/400, Te=0 over a flat projected
+  base, at lambda=1/5 and cV*kappa^2=150000/11. The opposite branch has no solution.
+claim_id: [GU-054]
+result_ids: [AK1, AK2, AK3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AK-lambda3-classification.md
+internal_review: reports/reviews/REVIEW38-GU-AK-2026-11-02.md
+code:
+  - computation/geometric-unity/AK_lambda3_classification.py
+  - computation/geometric-unity/AK_lambda3_classification.out
+formalization_status: >
+  True dualized equation, smooth Riemannian four-base, reconstructed Z1,
+  lambda<1/4, positive constant cH,cV, positive observer dimension 14,
+  compact u(128), fixed parallel real WA, real fields, nonzero constant kappa,
+  invariant odd field, det M!=0 and a connected open domain in one single
+  Lambda3 kernel away from every other non-vector singular factor. Bundle,
+  Clifford and parallel-operator data are assumed defined on that domain;
+  no separate global topology or field-extension theorem is asserted.
+proof_status: >
+  AF/AG reduce both branches to four constant odd endpoints. A retained
+  antisymmetric derivative and N1's negative Euler Ricci eigenvalue exclude
+  the isotropic first endpoint. The other three yield a metric spectral
+  polynomial with 3/11 root multiplicities. S4 rational continuation and
+  F4/K's exact radial limit with multiplicities 5/9 force lambda=1/5 and
+  b=-15/(2cV). This excludes the opposite endpoints and fixes the surviving
+  scale. AJ supplies flatness and zero even field; AI supplies the complete
+  converse. AJ's imported S5b flatness proof has a computer-assisted N10 coefficient.
+internal_consistency: >
+  Twenty-eight exact controls verify compact phases, endpoint kernels,
+  coordinate/non-coordinate simple-form grade-one tensors, every coordinate
+  derivative direction for all four copies, baseline coefficients, zero-form
+  spectral identities, scalar limits, both multiplicity assignments, radial
+  coefficients and the complete surviving odd residual. No inequality or field
+  is continued along the fibre.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0; python -X utf8 -I
+  computation/geometric-unity/AK_lambda3_classification.py. Twenty-eight controls
+  pass in about 5 seconds. Uses T's accepted Clifford engine and the established
+  geometric formulas as inputs; no second observer-metric implementation.
+novelty: >
+  A newly completed two-branch classification within this reconstruction.
+  No literature-first claim or general singular-field classification is made.
+empirical_testability: None new; a mathematical theorem in the specified reconstruction.
+dependencies: [AA4, AA6, AA7, AF2, AF3, AG2, AG3, AG4, F4, K, N1, N6, S4, AJ1, AJ2, AI3]
+confidence: >
+  Accepted in internal Review38 after separate geometric, algebraic and
+  adversarial scope reviews and fresh public-helper reruns. These are
+  AI-assisted internal checks, not external peer review.
+pending_work: >
+  Lambda5 and hook fields, coincident kernels, other metrics/operators,
+  det M=0, non-invariant odd fields, indefinite real forms and a separate
+  weighted base-metric variation remain outside this classification.
