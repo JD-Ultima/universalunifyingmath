@@ -29,5 +29,63 @@ AH: necessary Lambda5 Gram spectrum, real compact WA
 Necessary reduction: S=alpha I-b C*C^T, b=(624/19)w/(rs), trace S=5N.
 N>0, rank S=13 or 14. Left branch: rank 14. Right: rank 13 only with C as annihilator.
 The isotropic full-support form passes this selected channel; no full Lambda5 exclusion or PDE solution follows.
+[26] AH6: trace reversal and the full Euler-component residual agree: True
+[27] AH6 i*c5: pure endpoint chart, det M and every other block regular: True
+[28] AH6 i*c5: positive baseline bI for either nonzero real kappa sign: True
+[29] AH6 i*c5: full all-slot stress on zero/simple/nondecomposable/off-diagonal/full-support controls: True
+[30] AH6 i*c5: all fourteen arbitrary-weight jet directions retain only the stated non-one grades: True
+[31] AH6 i*c5: complete first-pair AA4 covariant derivative formula: True
+[32] AH6 i*c5: exact Euler eigenvalue and sharp lower norm bound with mixed coefficients: True
+[33] AH6 i*c5: bound attained by a real-form Gram satisfying the full selected Euler vector equation: True
+[34] AH6 i*c5: a nondecomposable two-support Gram also meets that vector equation: True
+[35] AH6 i*c5: isotropic nonzero Gram is incompatible with positive Euler b,c: True
+  AH6 i*c5: a=-1/96, b/kappa^2=3/128, q=40/3, ell=32/3; N >= (b+6/c)/24; derivative grades [3, 7].
+[36] AH6 i*w5Gamma: pure endpoint chart, det M and every other block regular: True
+[37] AH6 i*w5Gamma: positive baseline bI for either nonzero real kappa sign: True
+[38] AH6 i*w5Gamma: full all-slot stress on zero/simple/nondecomposable/off-diagonal/full-support controls: True
+[39] AH6 i*w5Gamma: all fourteen arbitrary-weight jet directions retain only the stated non-one grades: True
+[40] AH6 i*w5Gamma: complete first-pair AA4 covariant derivative formula: True
+[41] AH6 i*w5Gamma: exact Euler eigenvalue and sharp lower norm bound with mixed coefficients: True
+[42] AH6 i*w5Gamma: bound attained by a real-form Gram satisfying the full selected Euler vector equation: True
+[43] AH6 i*w5Gamma: a nondecomposable two-support Gram also meets that vector equation: True
+[44] AH6 i*w5Gamma: isotropic nonzero Gram is incompatible with positive Euler b,c: True
+  AH6 i*w5Gamma: a=-3/832, b/kappa^2=3/6656, q=112, ell=-64; N >= (b+6/c)/48; derivative grades [7, 11].
+[45] AH6 w5: pure endpoint chart, det M and every other block regular: True
+[46] AH6 w5: positive baseline bI for either nonzero real kappa sign: True
+[47] AH6 w5: full all-slot stress on zero/simple/nondecomposable/off-diagonal/full-support controls: True
+[48] AH6 w5: all fourteen arbitrary-weight jet directions retain only the stated non-one grades: True
+[49] AH6 w5: nonzero Cartan jet remains in the other odd equations: True
+[50] AH6 w5: exact Euler eigenvalue and sharp lower norm bound with mixed coefficients: True
+[51] AH6 w5: bound attained by a real-form Gram satisfying the full selected Euler vector equation: True
+[52] AH6 w5: a nondecomposable two-support Gram also meets that vector equation: True
+[53] AH6 w5: isotropic nonzero Gram is incompatible with positive Euler b,c: True
+  AH6 w5: a=-3/704, b/kappa^2=87/61952, q=112/3, ell=320/3; N >= (b+6/c)/336; derivative grades [5, 9].
+[54] AH6 c5Gamma: pure endpoint chart, det M and every other block regular: True
+[55] AH6 c5Gamma: positive baseline bI for either nonzero real kappa sign: True
+[56] AH6 c5Gamma: full all-slot stress on zero/simple/nondecomposable/off-diagonal/full-support controls: True
+[57] AH6 c5Gamma: all fourteen arbitrary-weight jet directions retain only the stated non-one grades: True
+[58] AH6 c5Gamma: nonzero Cartan jet remains in the other odd equations: True
+[59] AH6 c5Gamma: exact Euler eigenvalue and sharp lower norm bound with mixed coefficients: True
+[60] AH6 c5Gamma: bound attained by a real-form Gram satisfying the full selected Euler vector equation: True
+[61] AH6 c5Gamma: a nondecomposable two-support Gram also meets that vector equation: True
+[62] AH6 c5Gamma: isotropic nonzero Gram is incompatible with positive Euler b,c: True
+  AH6 c5Gamma: a=-1/160, b/kappa^2=19/3200, q=40, ell=-32; N >= (b+6/c)/40; derivative grades [9, 13].
+AH6 bounds are sharp only for the selected algebraic Gram/Euler channel; no Z1 metric or full solution is constructed.
+AH6 requires a constant-odd endpoint domain; isolated zero-u points on a moving conic may retain Dv.
+[63] AH7: a nondecomposable normalized Gram shape is unchanged by nonzero scaling: True
+[64] AH7: genuinely different real five-form shapes have different normalized spectra: True
+[65] AH7 i*c5: full homogeneous characteristic identity with repeated spectral roots: True
+[66] AH7 i*c5: at zero trace only the nonzero self-adjoint fourteenth-power barrier remains: True
+[67] AH7 i*w5Gamma: full homogeneous characteristic identity with repeated spectral roots: True
+[68] AH7 i*w5Gamma: at zero trace only the nonzero self-adjoint fourteenth-power barrier remains: True
+[69] AH7 w5: full homogeneous characteristic identity with repeated spectral roots: True
+[70] AH7 w5: at zero trace only the nonzero self-adjoint fourteenth-power barrier remains: True
+[71] AH7 c5Gamma: full homogeneous characteristic identity with repeated spectral roots: True
+[72] AH7 c5Gamma: at zero trace only the nonzero self-adjoint fourteenth-power barrier remains: True
+[73] AH7: H=0 would give the positive Ricci scalar b/6, incompatible with N1: True
+[74] AH7: exact F4 radial trace and its strictly positive general-lambda limit: True
+AH7: no nonempty fibre-open patch can have constant normalized Gram spectrum on a constant-odd endpoint domain.
+Only the metric polynomial continues; connectedness and the zero-trace barrier carry the sign.
+Fixed SO14/scaling families are excluded; general varying shapes and the full PDE remain unresolved.
 
-25 checks, all True; runtime 4.5 s
+74 checks, all True; runtime 9.6 s
