@@ -1,0 +1,65 @@
+result: >
+  With the fixed U quadratic metric jet, zero cubic coefficients, arbitrary
+  homogeneous symmetric quartic Q4 and arbitrary smooth remainder with zero
+  derivatives through order four, the relaxed system remains obstructed for
+  rho!=0, lambda=1/5 and positive cH,cV. Its coefficient rank is 42 and augmented
+  rank 43 at a fibre witness. No fibre-open consistent patch exists. In S.0's
+  slaved vector sector the twisted cone has no Upsilon=0 solution on an open
+  set meeting that fibre. Arbitrary Weyl/quadratic and cubic jets remain open.
+claim_id: [GU-054]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/W-quartic-rank-one.md
+internal_review: reports/reviews/REVIEW15-GU-W-2026-11-02.md
+code:
+  - computation/geometric-unity/W_quartic_rank_one.py
+  - computation/geometric-unity/W_quartic_rank_one.out
+formalization_status: >
+  The base four-jet is I-rho R_p x x/3+Q4(x), with |p|=1 and
+  R_p=((p tensor p-I/6)/2) wedge I. Q4 has all 350 real symmetric quartic
+  coefficients free. Cubic coefficients are zero; higher smooth remainders
+  have zero four-jet. At the origin Ric=rho p tensor p and Weyl=0. A hand
+  jet-order proof makes the observer 2-jet and relaxed coefficient matrix
+  independent of Q4, and the observer 3-jet and RHS affine in Q4. For a diagonal
+  vertical coordinate, the cubic HV variation is a gradient, so the relevant
+  principal mixed Ricci derivatives cancel by commutation of fourth derivatives.
+internal_consistency: >
+  The symbolic calculation includes all 350 quartic coefficients and checks the
+  diagonal-vertical gradient identity and principal cancellation. Exact rational
+  combinations of rows (168,337,492) annihilate all 42 coefficient columns but
+  give RHS 3933/800 for rho=+1 and 5667/800 for rho=-1. W2 proves these RHS rows
+  unchanged for every Q4. Mixed-monomial controls change 111 other RHS rows while
+  preserving the coefficient matrix, certificate rows and defects. The earlier
+  beta*(p.x)^4 I direction retains its independently derived nonzero six-row slope
+  and a beta=-2 control. Nonunit tensor pullbacks verify the scaling conventions.
+proof_status: >
+  W1-W2 are hand proofs of jet order and arbitrary-quartic gradient cancellation.
+  W3 is an exact computer-assisted three-row certificate at Q4=0, extended to
+  every Q4 by those proofs. W4 uses U's reviewed covariance maps, S4's rational
+  minor argument and U5's local continuity/dense-variable-patch reduction. At each
+  fixed metric a genuinely nonzero augmented 43-minor, not the row weights, is
+  continued to a base neighbourhood. Independently accepted in REVIEW15-GU-W,
+  with all 33 assertions reproduced; this is internal, not external peer review.
+novelty: >
+  Frees all homogeneous symmetric quartic coefficients while preserving U's
+  quadratic jet and zero cubic jet; smooth terms above degree four are irrelevant
+  to the observer 3-jet. The three-row contradiction is smaller than the original
+  43-minor certificate. No universal rank-one-Ricci classification is claimed.
+reproducibility: >
+  Python 3.12, sympy 1.14.0, exact Fractions and symbolic rational arithmetic.
+  No randomness. Run python -X utf8 -I computation/geometric-unity/W_quartic_rank_one.py
+  from the repository root. 33 asserted checks pass in 16.5 s in the recorded run.
+  Imports accepted U helpers and referee xcheck_round10, not S, N or Q computations.
+  The MD shifts retain the required fourth base derivatives; the nonzero control
+  slope checks this explicitly.
+empirical_testability: None new; a mathematical obstruction in the stated reconstructed sector.
+dependencies: [U1, U2, U5, S4, S5, Q5, xcheck_round10]
+confidence: >
+  High for the exact row contradictions and the general jet/gradient proof,
+  independently accepted in REVIEW15-GU-W. The all-quartic claim follows from the
+  proof and symbolic identity, not from mixed samples. Normalization sends Q4 to
+  Q4/rho^2. At rho=0 a nonzero quartic term need not give a flat metric near the
+  origin, and that case is not classified. No uniform neighbourhood over quartic
+  coefficients or smooth remainders is asserted.
+pending_work: >
+  The next bounded direction is a declared cubic metric tensor, which can change the relaxed coefficient
+  matrix. Arbitrary quadratic/Weyl and cubic jets and the rho=0 frontier remain open.

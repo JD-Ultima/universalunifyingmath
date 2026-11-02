@@ -1,0 +1,15 @@
+a=t/kappa | hook kernel | r3c | r3w | r5c | r5w; r=(u/kappa)^2
+3/136 | H2G (896) | 15531/3255296 | 963/191488 | 6413/369920 | 1617/73984
+1/40 | H4G (11648) | 29/5120 | 343/56320 | 2023/96000 | 103/3840
+3/104 | H6G (36608) | 13203/1903616 | 14523/1903616 | 441/16640 | 7373/216320
+3/88 | H6 (36608) | 12075/1362944 | 13635/1362944 | 1081/30976 | 639/14080
+1/24 | H4 (11648) | 1219/101376 | 43/3072 | 113/2304 | 2231/34560
+3/56 | H2 (896) | 1413/78848 | 11931/551936 | 4773/62720 | 1273/12544
+All 24 squared intersections are positive; each line has four distinct roots, no detM collision, and one hook copy.
+At u=0 only that hook copy is singular; at each nonzero point add one Lambda3 (364) or Lambda5 (2002) copy.
+Four independent Clifford controls verify the Lambda kernels and the Gamma-trace norm formula.
+H2G witness: k=i(h(0,1;2)+h(0,3;4))Gamma, norm^2=4, Lk=0.
+Its grade-five quadratic term is exactly 4i*w(E1234), nonzero; all 14 tested derivative symbols have only grade11.
+Flat Z1 control: lambda=1/5, kappa=1, cV=36414/30599, traceG=152995/1734; both invariant odd traces vanish, but grade5 obstructs the full equation.
+The derivative d0k remains in the necessary grade11 equation; no assumption of a parallel k is made.
+Exact catalogue and bounded obstructions passed. Constant hook solutions and the other tensor equations remain open.

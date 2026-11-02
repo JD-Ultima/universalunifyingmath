@@ -1,0 +1,4 @@
+W internal review: independent mixed-quartic inputs; same accepted curvature engine
+rho=1: A and three certificate RHS rows fixed; 113 other RHS rows changed; defect 3933/800
+rho=-1: A and three certificate RHS rows fixed; 113 other RHS rows changed; defect 5667/800
+8 assertions passed; no arbitrary-cubic or arbitrary-Weyl conclusion follows.
