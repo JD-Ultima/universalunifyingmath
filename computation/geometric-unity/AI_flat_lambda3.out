@@ -16,6 +16,6 @@ SymPy 1.14.0; real compact (14,0), cV>0, kappa!=0.
 [11] both vector determinant factors are nonzero at every endpoint: True
 [12] known solution lies on only the intended non-vector factor: True
 First branch: only Te=0, t=-kappa/400, u=0, at cV*kappa²=150000/11.
-Second branch: no solution at positive scales. Nonflat endpoint equations remain open.
+Second branch: no solution at positive scales. AJ treats the curved -1/400 endpoint.
 
 12 checks, all True; runtime 1.7 s

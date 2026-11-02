@@ -113,7 +113,7 @@ def main():
           and all(block.rank() == block.cols for key, block in normalized.items() if key != "Lam3"))
 
     print("First branch: only Te=0, t=-kappa/400, u=0, at cV*kappa²=150000/11.", flush=True)
-    print("Second branch: no solution at positive scales. Nonflat endpoint equations remain open.", flush=True)
+    print("Second branch: no solution at positive scales. AJ treats the curved -1/400 endpoint.", flush=True)
     print(f"\n{len(CHECKS)} checks, all True; runtime {time.time() - start:.1f} s", flush=True)
 
 
