@@ -1,0 +1,23 @@
+Y. A quartic fibre obstruction at a zero-curvature base point
+sympy 1.14.0; rho=0, lambda=1/5, cH=2, cV=3, y=diag(2, 3, 4, 5)
+[01] rows encode (0,1,5), (0,2,6), (1,2,9): True
+[02] coefficient matrix fixed at beta=0,1,-2: True
+[03] flat control has zero RHS: True
+[04] beta=1 RHS is the proved six-row slope: True
+[05] beta=-2 control equals -2 times the slope: True
+[06] coefficient rank is 28: True
+[07] augmented rank is 29 at beta=1: True
+[08] all 42 coefficients match the three sparse equations: True
+[09] weights (4,-3,2) annihilate every coefficient column: True
+[10] the RHS combination is -3 at beta=1: True
+[11] recorded augmented 29-minor is nonzero: True
+[12] the beta=-2 minor scales by -2: True
+  rows (5, 20, 191); weights (4, -3, 2); RHS defect = -3*beta
+  29-minor rows: (0, 1, 4, 5, 6, 7, 9, 10, 14, 20, 21, 28, 35, 42, 46, 47, 48, 49, 56, 57, 70, 84, 98, 112, 126, 140, 154, 168, 191)
+  29-minor columns: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 42)
+  29-minor determinant at beta=1: 30517578125/13249474533898474022240256
+The jet-order proof gives A(beta)=A(0), b(beta)=beta*b(1); every nonzero beta is inconsistent at this witness.
+GL(4) covariance gives coefficient rank 28 throughout the positive fibre; the 29-minor excludes a fibre-open consistent patch.
+No base-neighbourhood persistence or local Upsilon exclusion is inferred from ranks (28,29).
+
+12 checks, all True; runtime 1.7 s

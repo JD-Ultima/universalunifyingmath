@@ -1,5 +1,7 @@
 # W. An obstruction with arbitrary quartic base terms
 
+**Later extension.** [Z](Z-cubic-rank-one.md) removes the higher-jet restrictions at a nonzero rank-one-Ricci, zero-Weyl point. This note retains the shorter certificate and proof for its declared family.
+
 The three-row obstruction of U survives every symmetric quartic term when the quadratic jet is fixed and the cubic jet is zero. Arbitrary higher terms are allowed. The conclusion concerns a declared class of metric four-jets; it does not classify all metrics whose Ricci tensor has rank one.
 
 Code: `computation/geometric-unity/W_quartic_rank_one.py`; output: `W_quartic_rank_one.out`; record: `metrics/geometric-unity/W-quartic-rank-one.yaml`. The code reuses U's independently reviewed relaxed-system assembly and the earlier referee curvature engine `xcheck_round10.py`. Its symbolic check includes all 350 quartic coefficients. Exact engine controls check the conventions; the universality follows from the jet and gradient arguments below. It was independently reviewed in `reports/reviews/REVIEW15-GU-W-2026-11-02.md`; all 33 assertions were reproduced. This is internal review, not external peer review.
@@ -101,4 +103,4 @@ The computed full slope matches this formula for both signs, and $\beta=-2$ is a
 
 The quadratic curvature tensor is fixed, so the Weyl tensor at the origin is zero; the cubic metric coefficients are also fixed to zero. W does not classify arbitrary cubic jets, arbitrary Weyl components, or the full rank-$\mathrm{Ric}\le1$ frontier.
 
-The case $\rho=0$ is outside this result. A nonzero quartic tensor can produce a curved metric near the origin even though its curvature vanishes at the origin; this case must not be identified with U's flat exception. A next bounded question is whether the certificate survives a declared cubic metric direction, which can change the relaxed coefficient matrix itself.
+The case $\rho=0$ is outside this result. A nonzero quartic tensor can produce a curved metric near the origin even though its curvature vanishes at the origin; this case must not be identified with U's flat exception. [Z](Z-cubic-rank-one.md) separately removes the cubic restriction through a coefficient-rank proof; nonzero Weyl curvature and the general zero-Ricci case remain outside these certificates.

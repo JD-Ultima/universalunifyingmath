@@ -1,7 +1,8 @@
 result: >
   Exact intersection catalogue on six positive W_A hook lines; necessary Lambda and hook norms at each
   intersection; a grade-five obstruction on the pure H2Gamma branch, retaining the full derivative equation.
-claim_id: [GU-054]
+claim_id: [GU-054]  # Source-claim context; the result IDs below identify this investigation's statements.
+result_ids: [V1, V2, V3]
 gaps: [GU-G14, GU-G15]
 writeup: formalization/geometric-unity/V-hook-intersections.md
 internal_review: reports/reviews/REVIEW16-GU-V-2026-11-02.md

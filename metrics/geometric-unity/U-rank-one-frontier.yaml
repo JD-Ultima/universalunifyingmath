@@ -5,7 +5,8 @@ result: >
   fibre over 0. There is no nonempty fibre-open consistent patch. In the hypotheses
   of S.0 this excludes a twisted-cone Upsilon=0 solution on an open set meeting that
   fibre. The result does not classify arbitrary rank-one-Ricci metrics.
-claim_id: [GU-054]
+claim_id: [GU-054]  # Source-claim context; the result IDs below identify this investigation's statements.
+result_ids: [U1, U2, U3, U4, U5]
 gaps: [GU-G14, GU-G16]
 writeup: formalization/geometric-unity/U-rank-one-frontier.md
 internal_review: reports/reviews/REVIEW14-GU-U-2026-11-02.md
@@ -48,6 +49,5 @@ confidence: >
   The parameter-family extension follows from the explicit maps,
   not from sampling amplitudes. The broader rank-Ricci<=1 frontier remains open.
 pending_work: >
-  A next bounded calculation may free a declared quartic metric coefficient and derive an exact polynomial minor;
-  samples alone would not justify that extension. Arbitrary Weyl tensors, cubic and
-  quartic metric jets, and the Ricci-flat nonflat subcase are not classified here.
+  Z now removes the cubic/quartic restrictions at nonzero rank-one-Ricci, zero-Weyl points.
+  Nonzero Weyl curvature and the Ricci-flat nonflat case still need separate arguments.

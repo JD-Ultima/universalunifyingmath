@@ -1,0 +1,38 @@
+result: >
+  Symbolic quadratic gradient on a common-axis symmetric traceless H2Gamma family; its grade-five term
+  vanishes, while its grade-one anisotropy excludes the family on the flat-base Z1 first hook branch.
+claim_id: [GU-054]  # Source-claim context; the result IDs below identify this investigation's statements.
+result_ids: [X1, X2, X3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/X-symmetric-hook.md
+internal_review: reports/reviews/REVIEW18-GU-X-2026-11-02.md
+code: [computation/geometric-unity/X_symmetric_hook.py, computation/geometric-unity/X_symmetric_hook.out]
+formalization_status: >
+  True compact (14,0), u(128), real W_A, kappa != 0, t=3kappa/136, u=0, det M=(1313/17)kappa^4>0.
+  At each point a unit axis r and real symmetric traceless S on r-perp define B_a=sum_b S_ab gamma_b gamma_r,
+  B_r=0, k=i B Gamma. Contraction zero places k in H2Gamma. For each fixed axis the family has dimension 90;
+  varying the axis gives a union of such families, not the full hook representation.
+proof_status: >
+  X1: exact polynomial identity in thirteen independent eigenvalues and SO(13) diagonalization/equivariance.
+  Q(k) has only grade 1: Q/i is 4S^2-2tr(S^2)I on r-perp and -2tr(S^2)/3 on rr, with zero mixed entries.
+  X2: comparison of the thirteen-dimensional trace with the rr entry forces S=0 if Q is scalar.
+  X3: flat-base Z1 at lambda=1/5,cH,cV>0 has a strictly positive scalar baseline, so no member of the family
+  satisfies the grade-one equation. Derivatives stay in grade 11 and cannot cancel it. Independently reviewed
+  in reports/reviews/REVIEW18-GU-X-2026-11-02.md; all executable checks were reproduced.
+internal_consistency: >
+  All fourteen component polynomials are checked before imposing trace zero. The two gradient terms are also
+  checked separately for the mixed diagonal-pair coefficient used in the proof. The norm, even-kernel condition,
+  compact phases, nondiagonal rational rotation, derivative grades, baseline coefficient and det M are checked.
+reproducibility: >
+  Exact SymPy polynomial/Gaussian-rational computation through the earlier independent Clifford engine and
+  T's compact helpers. No imports from the original R/J evaluator, no randomness, no numerical fitting.
+  About 3.5 seconds; -I invocation supported; output matches the committed text exactly.
+novelty: >
+  Within this investigation: a declared family passes the grade-five equation identically but is excluded
+  by a grade-one anisotropy trace. No general hook classification or literature-level novelty claim.
+empirical_testability: "No new physical prediction; an obstruction in the reconstructed field system."
+dependencies: [D5, F7, R2, T1, V3]
+confidence: >
+  Universal symbolic identity on the diagonal family, extended by equivariance and symmetric diagonalization;
+  independently reviewed internally. No derivative equation is replaced by a pointwise sample.
+  Arbitrary H2Gamma fields, other kernels and indefinite real forms remain open.

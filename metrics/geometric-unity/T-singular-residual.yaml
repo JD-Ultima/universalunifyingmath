@@ -1,5 +1,6 @@
 result: "T. Residual/norm identity; rigidity for a fixed invariant odd field; two W_A Lambda7 singular lines excluded under a curvature-trace condition; u constant on the six positive W_A hook lines"
-claim_id: [GU-054]
+claim_id: [GU-054]  # Source-claim context; the result IDs below identify this investigation's statements.
+result_ids: [T1, T2, T3, T4, T5]
 gaps: [GU-G14, GU-G15]
 writeup: formalization/geometric-unity/T-singular-residual.md
 internal_review: reports/reviews/REVIEW13-GU-T-2026-11-02.md

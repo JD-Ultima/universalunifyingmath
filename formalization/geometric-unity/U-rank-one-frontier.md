@@ -1,5 +1,7 @@
 # U. An obstruction for a declared rank-one-Ricci metric family
 
+**Later extension.** [Z](Z-cubic-rank-one.md) removes the higher-jet restrictions at a nonzero rank-one-Ricci, zero-Weyl point. This note retains the shorter certificate and proof for its declared family.
+
 At $\lambda=1/5$, S15 leaves the twisted cone open away from the parallel set when the base Ricci tensor has rank at most one. This note excludes a family of complete local metric polynomials, including both signs and every nonzero magnitude of the rank-one Ricci eigenvalue. It does not classify arbitrary metrics with rank-one Ricci curvature.
 
 The proof combines two exact augmented minors with coordinate covariance. Code: `computation/geometric-unity/U_rank_one_frontier.py`; certificates and checks: `U_rank_one_frontier.out`; record: `metrics/geometric-unity/U-rank-one-frontier.yaml`. The computation imports only the earlier referee engine `xcheck_round10.py`, not the S or N computation. The result is computer-assisted. Internal review: `reports/reviews/REVIEW14-GU-U-2026-11-02.md`.
@@ -81,4 +83,4 @@ The exception $\rho=0$ is the flat base. At $\lambda=1/5$, Z1 is Einstein there 
 
 The family theorem is stronger than S15's single specified jet but remains bounded. It uses the full normal quadratic metric (U1), not the assertion $\operatorname{rank}\mathrm{Ric}=1$ alone. The Weyl tensor, cubic metric coefficients and quartic metric coefficients were not free parameters. The stability corollary gives an open neighbourhood of each certified jet, without an explicit uniform bound.
 
-The next question is whether a full-rank inconsistent fibre point exists for every nonflat metric jet in the remaining rank-$\mathrm{Ric}\le1$ class, or whether exceptional jets survive. A useful next calculation would free a declared quartic metric coefficient while preserving the quadratic curvature tensor, and derive an exact minor as a function of that coefficient. A finite sample of quartic perturbations would not prove that statement. The Ricci-flat, nonflat subcase and arbitrary Weyl components also remain outside this family result.
+The higher-jet restrictions of this proof are removed by [W](W-quartic-rank-one.md) and [Z](Z-cubic-rank-one.md), culminating in the invariant nonzero rank-one-Ricci/zero-Weyl obstruction. The remaining rank-$\mathrm{Ric}\le1$ frontier includes nonzero Weyl curvature and Ricci-flat nonflat points. Those cases require separate certificates or arguments.

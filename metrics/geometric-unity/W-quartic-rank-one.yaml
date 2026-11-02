@@ -6,7 +6,8 @@ result: >
   rank 43 at a fibre witness. No fibre-open consistent patch exists. In S.0's
   slaved vector sector the twisted cone has no Upsilon=0 solution on an open
   set meeting that fibre. Arbitrary Weyl/quadratic and cubic jets remain open.
-claim_id: [GU-054]
+claim_id: [GU-054]  # Source-claim context; the result IDs below identify this investigation's statements.
+result_ids: [W1, W2, W3, W4]
 gaps: [GU-G14, GU-G16]
 writeup: formalization/geometric-unity/W-quartic-rank-one.md
 internal_review: reports/reviews/REVIEW15-GU-W-2026-11-02.md
@@ -61,5 +62,5 @@ confidence: >
   origin, and that case is not classified. No uniform neighbourhood over quartic
   coefficients or smooth remainders is asserted.
 pending_work: >
-  The next bounded direction is a declared cubic metric tensor, which can change the relaxed coefficient
-  matrix. Arbitrary quadratic/Weyl and cubic jets and the rho=0 frontier remain open.
+  Z now removes the cubic/quartic restrictions at nonzero rank-one-Ricci, zero-Weyl points.
+  Nonzero Weyl curvature and the Ricci-flat nonflat case still need separate arguments.
