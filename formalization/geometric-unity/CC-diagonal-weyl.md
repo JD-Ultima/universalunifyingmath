@@ -8,7 +8,7 @@ Code: `computation/geometric-unity/CC_diagonal_weyl.py`, `CC_rank_blocks.py` and
 
 ## Curvature condition and normalization
 
-Use the reconstructed Z1 observer metric at $\lambda=1/5$, with $c_H,c_V>0$. The full twisted-cone conclusion uses S.0's compact $(14,0)$ real form with gauge algebra $\mathfrak u(128)$, invariant odd field, slaved vector even field, one fixed reconstructed Shiab member, $\kappa\ne0$ and $\det M\ne0$. Let $p$ span the nonzero Ricci eigenline at the base point, and write $p^\flat$ for its metric-dual covector. The intrinsic hypotheses are
+Use the reconstructed Z1 observer metric at $\lambda=1/5$, with $c_H,c_V>0$. The full twisted-cone conclusion uses S.0's compact $(14,0)$ real form with gauge algebra $\mathfrak u(128)$, invariant odd field, slaved vector even field, one fixed reconstructed Shiab member with Einstein coefficients $(x,y)\ne(0,0)$, $\kappa\ne0$ and $\det M\ne0$. Let $p$ span the nonzero Ricci eigenline at the base point, and write $p^\flat$ for its metric-dual covector. The intrinsic hypotheses are
 $$\mathrm{Ric}=\rho\,p^\flat\otimes p^\flat,\qquad |p|=1,\quad \rho\ne0,
 \qquad W(p,u,v,w)=0\quad(u,v,w\perp p).\tag{CC1}$$
 
@@ -122,4 +122,4 @@ From the repository root, run `python -X utf8 -I computation/geometric-unity/CC_
 
 The recorded fresh run passes 32 main checks and 96 rank-helper checks in 98.3 s; Review24 independently reproduces them in 98.2 s. These are 60 curvature-engine assemblies followed by exact rational/polynomial certificate verification; no raw node matrices are stored in the repository.
 
-The remaining curvature boundary is a nonzero mixed Weyl component relative to the Ricci eigenline, or the Ricci-flat nonflat case. The field-equation conclusion concerns the reconstructed geometric sector under the stated S.0 assumptions.
+[DD](DD-mixed-weyl.md) separately excludes one nonzero mixed Weyl direction. Other mixed Weyl tensors relative to the Ricci eigenline and the Ricci-flat nonflat case remain open. The field-equation conclusion concerns the reconstructed geometric sector under the stated S.0 assumptions.

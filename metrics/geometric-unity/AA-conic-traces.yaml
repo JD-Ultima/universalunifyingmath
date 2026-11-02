@@ -5,17 +5,22 @@ result: >
   maximum of t/kappa on every left branch, including reaching its zero-u endpoint.
   On the two c/wGamma conics the full derivative factors through weighted exterior derivative and
   codifferential lifts; its principal symbol in the kernel form is injective for nonzero real covectors.
+  On the single Lambda3 c/wGamma branch, a nonlinear H5 projection imposes an additional pointwise
+  condition on the three-form and excludes explicit nondecomposable forms independently of derivatives.
 claim_id: [GU-054]
-result_ids: [AA1, AA2, AA3, AA4, AA5]
+result_ids: [AA1, AA2, AA3, AA4, AA5, AA6]
 gaps: [GU-G14, GU-G15]
 writeup: formalization/geometric-unity/AA-conic-traces.md
 internal_review: reports/reviews/REVIEW20-GU-AA-2026-11-02.md
-supporting_review: reports/reviews/REVIEW23-GU-AA-DERIV-2026-11-02.md
+supporting_review: reports/reviews/REVIEW25-GU-AA-HOOK-2026-11-02.md
+derivative_review: reports/reviews/REVIEW23-GU-AA-DERIV-2026-11-02.md
 code:
   - computation/geometric-unity/AA_conic_traces.py
   - computation/geometric-unity/AA_conic_traces.out
   - computation/geometric-unity/AA_exterior_derivative.py
   - computation/geometric-unity/AA_exterior_derivative.out
+  - computation/geometric-unity/AA_lambda3_hook.py
+  - computation/geometric-unity/AA_lambda3_hook.out
 formalization_status: >
   True compact (14,0), u(128), real fixed parallel WA, kappa constant and nonzero. Invariant odd field,
   Te=v+k with v slaved in the vector isotype and k in one exterior kernel, away from other singular
@@ -24,6 +29,8 @@ formalization_status: >
   AA4-AA5 concern only the c/wGamma copies in degrees m=3,5, with compact phases 1,i. Smooth kernel
   weights r_m,s_m obey the block equations and are not both zero in the chosen chart. General weight
   differentials are used at u=0; writing them as functions of a is confined to nonzero-u conic arcs.
+  AA6 restricts to the single Lambda3 c/wGamma kernel with real weights r3,s3 in a nonzero smooth chart.
+  It requires no curvature-trace sign. Grade9 is converted by right multiplication by Gamma, not its inverse.
 proof_status: >
   AA1 derives both invariant traces and the explicit T2 baseline residual, retaining Delta(t) and
   |dt|^2. AA2 eliminates the kernel norm, yielding Delta(a)-delta_prime|da|^2/(2delta)
@@ -34,22 +41,31 @@ proof_status: >
   conics. AA5 proves positive symbol norm and injectivity in the kernel form, with the conic field fixed.
   AA4-AA5 were independently reviewed in reports/reviews/REVIEW23-GU-AA-DERIV-2026-11-02.md,
   including all 14 supporting assertions.
+  AA6 derives full grade5 and converted grade9 quadratic identities by invariant contraction count and
+  exact symbolic-weight calibration. Their H5 coefficients have no common nonzero real weight zero,
+  while baseline, mixed and derivative terms have no H5, giving a necessary pointwise hook condition.
+  AA6 was independently reviewed in reports/reviews/REVIEW25-GU-AA-HOOK-2026-11-02.md,
+  including all 26 nonlinear assertions.
 internal_consistency: >
   Symbolic Gaussian-rational Clifford checks verify all four exterior pairs, compact phases, kernel
   identities, both quadratic traces, vector/kernel cross traces, and all derivative currents.
   The norm elimination, T2 contraction, polynomial potentials and branch-sign premises are exact.
   Supporting exact checks cover both derivative copies, all coordinate directions, weighted chain rules,
   the Cartan-zero and excluded-copy nonzero controls, and the middle-grade Gamma cross pairing.
+  Nonlinear checks include full fourteen-dimensional support, nondecomposable calibration forms, the
+  exact right-Gamma conversion sign, projector denominators 6/10, and an explicit excluded component.
 reproducibility: >
   Python 3.12, SymPy 1.14.0; run python -X utf8 -I computation/geometric-unity/AA_conic_traces.py.
   Uses T helpers through xcheck_round14, not the J/R evaluator. No randomness or numerical fitting.
   The recorded run passes 23 checks in about two seconds; polynomial output is supplied for all conics.
   Run python -X utf8 -I computation/geometric-unity/AA_exterior_derivative.py for the supporting derivative
   identities: 14 assertions, including 112 full coordinate-jet checks, pass in 0.2 seconds.
+  Run python -X utf8 -I computation/geometric-unity/AA_lambda3_hook.py for the nonlinear identities:
+  26 assertions pass in 6.3 seconds, with symbolic kernel weights and no off-repository dependencies.
 novelty: >
   Bounded continuation within this investigation from the constant hook strata to nonconstant exterior
   conics. No literature-level novelty or full singular-stratum classification is claimed.
-empirical_testability: None new; necessary scalar equations in the reconstructed field system.
+empirical_testability: None new; necessary scalar and tensor equations in the reconstructed field system.
 dependencies: [R2, R4, R6, T1, T2, J1, F7]
 confidence: >
   Exact trace and sign identities under the stated compact assumptions, independently reviewed internally.
@@ -57,3 +73,5 @@ confidence: >
   necessary only; monotone nonconstant fields on left arcs, right arcs and tensor/PDE sufficiency remain open.
   AA4-AA5 are independently reviewed. The derivative result does not cover the w/cGamma pair and does not establish
   ellipticity of the full coupled field system, solve its quadratic term, or solve the full odd PDE.
+  AA6 is independently reviewed. Its hook zero locus, relation to decomposability and PDE sufficiency remain open;
+  coincident kernels, the other Lambda3 conic and Lambda5 nonlinear equations are not covered.

@@ -1,0 +1,33 @@
+AA6: nonlinear Lambda3 c/wGamma hook projection, compact (14,0), real WA
+sympy 1.14.0; Q9 conversion is Q9 right-multiplied by Gamma.
+[01] decomposable control: normalized hook and expected zero/nonzero status: True
+[02] decomposable control: both full grade identities for symbolic r,s: True
+[03] decomposable control: both projected coefficients for symbolic r,s: True
+[04] two disjoint triples: normalized hook and expected zero/nonzero status: True
+[05] two disjoint triples: both full grade identities for symbolic r,s: True
+[06] two disjoint triples: both projected coefficients for symbolic r,s: True
+[07] explicit excluded form e012+e034: normalized hook and expected zero/nonzero status: True
+[08] explicit excluded form e012+e034: both full grade identities for symbolic r,s: True
+[09] explicit excluded form e012+e034: both projected coefficients for symbolic r,s: True
+[10] shared-index rank-four two-form factor: normalized hook and expected zero/nonzero status: True
+[11] shared-index rank-four two-form factor: both full grade identities for symbolic r,s: True
+[12] shared-index rank-four two-form factor: both projected coefficients for symbolic r,s: True
+[13] three disjoint triples: normalized hook and expected zero/nonzero status: True
+[14] three disjoint triples: both full grade identities for symbolic r,s: True
+[15] three disjoint triples: both projected coefficients for symbolic r,s: True
+[16] overlapping triples: normalized hook and expected zero/nonzero status: True
+[17] overlapping triples: both full grade identities for symbolic r,s: True
+[18] overlapping triples: both projected coefficients for symbolic r,s: True
+[19] full support in fourteen dimensions: normalized hook and expected zero/nonzero status: True
+[20] full support in fourteen dimensions: both full grade identities for symbolic r,s: True
+[21] full support in fourteen dimensions: both projected coefficients for symbolic r,s: True
+[22] explicit excluded form has H5(Z)_5=-e12345/5: True
+[23] unrestricted vector/kernel mixed term has zero H5 in both grades: True
+[24] baseline control has no H5 in either grade: True
+[25] covariant derivative control retains weight derivatives and has zero H5: True
+[26] two hook coefficients have no common nonzero real weight pair: True
+Q5 = (8i/3)[(43s^2-3r^2)Z+(4r^2-49s^2)w(F4)].
+Q9*Gamma = (32i/3)rs[5Z-7w(F4)]; right conversion sign fixed as displayed.
+Full single-kernel solutions therefore require H5(Z)=0 pointwise; no decomposability or PDE sufficiency claim.
+
+26 checks, all True; runtime 6.3 s

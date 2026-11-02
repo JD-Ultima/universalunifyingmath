@@ -1,0 +1,70 @@
+result: >
+  For smooth Riemannian four-metrics with a simultaneous orthonormal frame in which
+  Ric=rho e0 tensor e0, rho!=0, and W=omega H, the reconstructed Z1 relaxed system
+  at lambda=1/5 and positive cH,cV is inconsistent on every fibre-open patch over
+  the point. H has H0123=1, H0231=-1, H0312=0, with curvature symmetries and no other
+  independent components. Arbitrary higher metric jets are allowed. Under the
+  explicit S.0 slaved-vector assumptions the twisted cone has no Upsilon=0 solution
+  on an open set meeting that fibre. This is one mixed-Weyl frame orbit.
+claim_id: [GU-054]
+result_ids: [DD1, DD2, DD3, DD4]
+gaps: [GU-G14, GU-G16]
+writeup: formalization/geometric-unity/DD-mixed-weyl.md
+internal_review: reports/reviews/REVIEW26-GU-DD-2026-11-02.md
+code:
+  - computation/geometric-unity/DD_mixed_weyl.py
+  - computation/geometric-unity/DD_mixed_weyl.out
+  - computation/geometric-unity/DD_rank_blocks.py
+  - computation/geometric-unity/DD_rank_certificates.json
+formalization_status: >
+  H is the sum of symmetric two-form cross terms (01,23) and (02,13). Bianchi is
+  1-1+0=0; all nonzero components have four distinct indices, so RicH, the electric
+  part and sectional components vanish. Naturality normalizes rho to +/-1 and
+  w=omega/abs(rho), with arbitrary normalized cubic/quartic coefficients. Prior
+  hand jet arguments give coefficient degree<=2 and RHS degree<=3 before exact
+  interpolation. DD1 gives two coprime compatibility polynomials per Ricci sign;
+  DD2 supplies same-witness constant rank certificates. DD3 audits higher-jet
+  transfer for mixed quadratic curvature. DD4 applies S4 and the local U5 argument.
+  The full-field scope is compact (14,0), u(128), invariant odd field, slaved vector
+  even field, a fixed reconstructed Shiab member with (x,y)!=(0,0), kappa!=0 and det M!=0.
+internal_consistency: >
+  At fibres diag(2,3,4,5) and diag(2,3,5,7), the three selected y33 rows have only
+  xi_13 and one common curvature-independent n combination. Exact Bezout identities
+  for their two compatibility numerators give 1. The even-sign reflection subgroup
+  splits the invariant 722-row subsystem into a 12-column block, three complementary
+  off-diagonal 6-column blocks and four horizontal 3-column blocks. Constant left
+  inverses give ranks 12 and 6; constant rank-two outputs and the four-vector kernel
+  give horizontal rank 2. J7=(i,7,7) has a constant invertible diagonal restriction
+  on that kernel at both fibres, for both signs. Hence coefficient rank is 42 at
+  the same finite configurations, without amplitude exceptions or a density shortcut.
+proof_status: >
+  Exact rational left-inverse, polynomial compatibility and Bezout certificates
+  complement the hand degree-bound, symmetry, higher-jet and fixed-minor arguments.
+  Independent internal Review26 accepts DD1-DD4 and reproduces the portable run.
+  No Lean formalization or external peer review is claimed. The mixed-Weyl pencil
+  is not a general-Weyl theorem.
+novelty: >
+  Treats a mixed Weyl direction outside CC's vanishing-mixed-Weyl scope
+  when omega!=0. The constant completion eliminates rank exceptions at both
+  compatibility witnesses, and a curvature-independent support proof permits
+  arbitrary cubic, quartic and smooth higher metric terms.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0, exact Fractions and rational polynomial algebra. Run
+  python -X utf8 -I computation/geometric-unity/DD_mixed_weyl.py from the root.
+  Default reproduction freshly computes all 16 node systems once in memory;
+  the rank helper has no engine calls or external cache dependency. The compact
+  JSON stores rational row combinations rather than raw node matrices. Three
+  nodes certify coefficient identities within the proved degree bound; a fourth
+  checks the entire coefficient matrix and determines the selected RHS polynomials.
+  The recorded fresh run passes 26 main checks and 40 rank-helper checks in 27.6 s.
+  The independent Review26 fresh rerun passes in 26.3 s, with a separate eight-check
+  mixed higher-jet control verifying protected rows and exact ranks 42/43.
+empirical_testability: None new; a mathematical obstruction in the reconstructed sector.
+dependencies: [U1, U2, U5, S4, S5, Q5, BB1, BB3, W1, W2, Z1, Z2, Z3, Z4, xcheck_round10]
+confidence: >
+  Accepted in independent internal Review26. The all-amplitude compatibility and rank scope
+  follows from exact polynomial and constant left-inverse identities, not sampled
+  ranks. The higher-jet argument explicitly separates the auxiliary even-sign
+  symmetry from the curvature-independent support and simultaneous base reflection.
+pending_work: >
+  General mixed Weyl tensors outside this pencil and Ricci-flat nonflat points remain open.

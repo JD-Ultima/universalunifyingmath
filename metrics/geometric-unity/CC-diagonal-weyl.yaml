@@ -27,7 +27,7 @@ formalization_status: >
   naturality. CC5 transfers all higher jets; CC6 applies S4/U5 to the full system.
   The full-field consequence assumes compact (14,0), gauge algebra u(128), an
   invariant odd field, slaved vector even field, one fixed reconstructed Shiab
-  member, kappa!=0 and det M!=0, as in S.0.
+  member with Einstein coefficients (x,y)!=(0,0), kappa!=0 and det M!=0, as in S.0.
 internal_consistency: >
   At fibres diag(2,3,4,5), diag(2,3,5,7), diag(2,4,5,9), the three selected rows reduce
   to xi_13 and one common n combination. For each Ricci sign, their compatibility
@@ -71,5 +71,5 @@ confidence: >
   jet scope follows from the curvature-independent support argument accepted in
   BB3, with baseline reflection symmetry kept separate from arbitrary higher jets.
 pending_work: >
-  The remaining mathematical boundary is nonzero mixed Weyl curvature relative
-  to the Ricci eigenline and the Ricci-flat nonflat case.
+  Mixed Weyl curvature beyond the separately treated DD pencil and the Ricci-flat
+  nonflat case remain open.

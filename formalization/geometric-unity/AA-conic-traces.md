@@ -1,8 +1,8 @@
 # AA. Traces and derivatives on the exterior conics
 
-This note reduces two invariant traces of the full equation on each of the four $W_A$ exterior conics. The extra kernel norm is algebraic, and the remaining scalar equation has a simple change of variable. On every left branch, a nonnegative curvature trace excludes a local maximum of $t/\kappa$. For the two $c/w\Gamma$ conics, it also gives the derivative term explicitly through weighted exterior derivatives and codifferentials. The untraced odd equations remain unsolved.
+This note reduces two invariant traces of the full equation on each of the four $W_A$ exterior conics. The extra kernel norm is algebraic, and the remaining scalar equation has a simple change of variable. On every left branch, a nonnegative curvature trace excludes a local maximum of $t/\kappa$. For the two $c/w\Gamma$ conics, it also gives the derivative term explicitly through weighted exterior derivatives and codifferentials. On the $\Lambda^3$ conic, a nonlinear hook projection gives a further pointwise obstruction. The remaining odd equations are unsolved.
 
-Code: `computation/geometric-unity/AA_conic_traces.py` → `.out`, with supporting derivative identities in `AA_exterior_derivative.py` → `.out`. Both use T's compact-real-form helpers and the earlier independent Clifford engine, with no imports from the J/R evaluator. Record: `metrics/geometric-unity/AA-conic-traces.yaml`. AA1–AA3 were independently reviewed in `reports/reviews/REVIEW20-GU-AA-2026-11-02.md`; all 23 assertions were reproduced. AA4–AA5 were independently reviewed in `reports/reviews/REVIEW23-GU-AA-DERIV-2026-11-02.md`, including all 14 supporting assertions. This is internal review, not external peer review. GU-054 supplies source-claim context; the results here are AA1–AA5.
+Code: `computation/geometric-unity/AA_conic_traces.py` → `.out`, with supporting derivative identities in `AA_exterior_derivative.py` → `.out` and nonlinear identities in `AA_lambda3_hook.py` → `.out`. These use T's compact-real-form helpers and the earlier independent Clifford engine, with no imports from the J/R evaluator. Record: `metrics/geometric-unity/AA-conic-traces.yaml`. AA1–AA3 were independently reviewed in `reports/reviews/REVIEW20-GU-AA-2026-11-02.md`; all 23 assertions were reproduced. AA4–AA5 were independently reviewed in `reports/reviews/REVIEW23-GU-AA-DERIV-2026-11-02.md`, including all 14 supporting assertions. AA6 was independently reviewed in `reports/reviews/REVIEW25-GU-AA-HOOK-2026-11-02.md`, including all 26 nonlinear assertions. This is internal review, not external peer review. GU-054 supplies source-claim context; the results here are AA1–AA6.
 
 ## Setting and notation
 
@@ -147,11 +147,54 @@ Both coefficients are strictly positive for $m=3,5$. Since the two form norms su
 
 This is a statement about the derivative operator in the declared kernel parametrization with the conic field fixed. It does not establish ellipticity of the coupled full system, solve $Q(k)$, or supply a solution of its odd tensor equations.
 
+## AA6. A nonlinear hook obstruction on the $\Lambda^3$ conic
+
+Restrict to the single $\Lambda^3:c,w\Gamma$ kernel, the first row of the table, away from other non-vector singular factors. Keep the compact real $W_A$ setting, $\kappa\ne0$ and $\det M\ne0$. Choose either smooth nonzero kernel chart from AA4 and write
+$$k=r_3\mathsf c(\omega)+s_3\mathsf w(\omega)\Gamma,$$
+where $\omega$ is a real three-form and $r_3,s_3$ are real, not both zero. They and $\omega$ may vary. No curvature-trace sign is required for this result.
+
+For a field $U\in T^*\otimes\Lambda^5$, define
+$$\operatorname{Alt}U=\sum_a e^a\wedge U_a,\qquad
+\operatorname{Ctr}U=\sum_a\iota_{e_a}U_a,\qquad
+\mathcal H_5U=U-\frac16\mathsf c(\operatorname{Alt}U)-\frac1{10}\mathsf w(\operatorname{Ctr}U).$$
+The denominators follow from $\operatorname{Alt}\mathsf c=6$ on six-forms and $\operatorname{Ctr}\mathsf w=10$ on four-forms. This projects to the common kernel of the two traces.
+
+Put
+$$Z_a=(\iota_{e_a}\omega)\wedge\omega,\qquad
+F_4=\sum_a(\iota_{e_a}\omega)\wedge(\iota_{e_a}\omega).$$
+Then $\operatorname{Alt}Z=3\omega\wedge\omega=0$ and $\operatorname{Ctr}Z=F_4$, so $\mathcal H_5Z=Z-\mathsf w(F_4)/10$.
+
+Let $Q_5=[Q(k)]_5$ and $\widetilde Q_9=[Q(k)]_9\Gamma$. The conversion is **right multiplication by $\Gamma$**; since $\Gamma^2=-1$, it is not the inverse conversion $-[Q(k)]_9\Gamma$. The full grade identities are
+$$\boxed{Q_5=\frac{8i}{3}\big[(43s_3^2-3r_3^2)Z+(4r_3^2-49s_3^2)\mathsf w(F_4)\big],}\tag{AA6.1}$$
+$$\boxed{\widetilde Q_9=\frac{32i}{3}r_3s_3\big[5Z-7\mathsf w(F_4)\big].}\tag{AA6.2}$$
+Consequently
+$$\mathcal H_5Q_5=\frac{8i}{3}(43s_3^2-3r_3^2)\mathcal H_5Z,\qquad
+\mathcal H_5\widetilde Q_9=\frac{160i}{3}r_3s_3\mathcal H_5Z.\tag{AA6.3}$$
+
+*Proof of the universal identities.* After simplifying the paired $\Gamma$ factors, Clifford normal ordering gives metric contractions of two alternating three-tensors into one free vector slot and five alternating output slots. There are twelve tensor slots in total, below dimension fourteen, so an epsilon contraction cannot add a pattern. Contracting two indices in one input form, or pairing two of the five alternating output slots, gives zero.
+
+With no cross-input contraction, the free vector slot pairs with an input index and the unique surviving pattern is $Z$. With one cross-input contraction, the free vector slot must pair with one alternating output slot, giving $\mathsf w(F_4)$. Two cross-input contractions would force a forbidden output-output pairing. Thus these are the only two quadratic patterns. Calibrating complete outputs on $e^{012}+e^{345}$ and $e^{012}+2e^{034}$ fixes all coefficients polynomially in $r_3,s_3$: the first has $F_4=0$, while the second has nonzero $F_4$ and nonzero $\mathcal H_5Z$. They distinguish the two patterns. The exact differentiated cubic gives (AA6.1–2); the trace identities give (AA6.3). ∎
+
+**Necessary full-field condition.** Every full solution on this single kernel branch satisfies
+$$\boxed{\mathcal H_5\big((\iota_{e_a}\omega)\wedge\omega\big)=0.}\tag{AA6.4}$$
+
+*Proof.* In the untraced odd equation, neither the slaved baseline $E_v$, the mixed term $2\mathcal B(v,k)$ nor the derivative $\mathcal D(k)$ has an $H_5$ component in these two grades. The baseline need not solve its own equation: its invariant terms have grades one and thirteen, its curvature term has grade one, and its vector-field derivative and quadratic terms have input types $V\otimes V$, which contain no $H_5$. The mixed term has input type $V\otimes\Lambda^3=\Lambda^4\oplus\Lambda^2\oplus\mathcal H_3$, again with no $H_5$. AA4 puts the grade-five and converted grade-nine derivative terms, including all weight derivatives, in pure exterior lifts of four-forms; their hook projections vanish.
+
+Thus both projections in (AA6.3) must vanish. Their coefficients have no common nonzero real weight pair: if $r_3s_3=0$, the other coefficient is either $43s_3^2$ or $-3r_3^2$, which can vanish only when both weights are zero. The chosen kernel chart excludes that. This proves (AA6.4) at every point, including a zero-$w$ endpoint covered by a smooth chart. ∎
+
+For an explicit excluded form, take $\omega=e^{012}+e^{034}$. It has $F_4=2e^{1234}$ and
+$$\big(\mathcal H_5Z\big)_5=-\frac15e^{12345}\ne0.$$
+It therefore cannot occur in a full solution on this branch for any nonzero real chart weights. Derivative choices cannot repair this component.
+
+The zero locus of (AA6.4) has not been classified here. Its relation to decomposability remains open in this investigation, and satisfying it does not solve the other algebraic or differential equations. The result does not cover a sum of coincident kernels, the other $\Lambda^3$ conic, or the $\Lambda^5$ conics.
+
 ## Evidence and remaining equations
 
 The exact script checks both vector traces, all fourteen zero Gamma symbols, all four compact exterior pairs, their symbolic kernels, both kernel traces, cross-trace cancellation, and both currents on each pair. It then verifies the norm elimination, T2 identity and rational branch-sign premises symbolically. Its output prints $f$, $\delta$ and $\mathscr R$ for every conic. All 23 assertions passed in about two seconds.
 
 The supporting derivative script checks 112 complete coordinate-jet outputs, mixed covariant jets, the variable-weight product rules, the compact phases and the positive symbol norm. A nonzero Cartan jet is annihilated on both declared copies and has nonzero output on both excluded $w/c\Gamma$ copies, for each degree. All 14 assertions passed in 0.2 seconds. The hand grade/counting proof supplies the universal statement; these exact controls check its conventions and coefficients.
+
+The nonlinear script checks both full grade identities and their hook projections with symbolic weights on a decomposable control and six nondecomposable forms, including one with full fourteen-dimensional support. It verifies the explicit excluded component, both projector traces, and baseline, mixed and variable-weight derivative controls. All 26 assertions passed in 6.3 seconds. The invariant-contraction argument supplies universality; no parameter range is inferred from those forms. The artificial diagonal curvature coefficients in one baseline control are algebraic test data, not an asserted observer metric.
 
 The untraced odd equation is still
 $$E_v+{*}^{-1}\circledast(d_0k)+2\mathcal B(v,k)+Q(k)=0.$$
