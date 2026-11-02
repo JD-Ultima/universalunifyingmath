@@ -1,10 +1,12 @@
-# AA. Scalar constraints on the nonconstant exterior conics
+# AA. Traces and derivatives on the exterior conics
 
-This note reduces two invariant traces of the full equation on each of the four $W_A$ exterior conics. The extra kernel norm is algebraic, and the remaining scalar equation has a simple change of variable. On every negative branch, a nonnegative curvature trace excludes a local maximum of $t/\kappa$. The untraced odd equations remain unsolved.
+This note reduces two invariant traces of the full equation on each of the four $W_A$ exterior conics. The extra kernel norm is algebraic, and the remaining scalar equation has a simple change of variable. On every left branch, a nonnegative curvature trace excludes a local maximum of $t/\kappa$. For the two $c/w\Gamma$ conics, it also gives the derivative term explicitly through weighted exterior derivatives and codifferentials. The untraced odd equations remain unsolved.
 
-Code: `computation/geometric-unity/AA_conic_traces.py` → `.out`. It uses T's compact-real-form helpers and the earlier independent Clifford engine, with no imports from the J/R evaluator. Record: `metrics/geometric-unity/AA-conic-traces.yaml`. Independently reviewed in `reports/reviews/REVIEW20-GU-AA-2026-11-02.md`; all 23 assertions were reproduced. This is internal review, not external peer review. GU-054 supplies source-claim context; the results here are AA1–AA3.
+Code: `computation/geometric-unity/AA_conic_traces.py` → `.out`, with supporting derivative identities in `AA_exterior_derivative.py` → `.out`. Both use T's compact-real-form helpers and the earlier independent Clifford engine, with no imports from the J/R evaluator. Record: `metrics/geometric-unity/AA-conic-traces.yaml`. AA1–AA3 were independently reviewed in `reports/reviews/REVIEW20-GU-AA-2026-11-02.md`; all 23 assertions were reproduced. AA4–AA5 were independently reviewed in `reports/reviews/REVIEW23-GU-AA-DERIV-2026-11-02.md`, including all 14 supporting assertions. This is internal review, not external peer review. GU-054 supplies source-claim context; the results here are AA1–AA5.
 
 ## Setting and notation
+
+All derivatives, form degrees and norms below are on the fourteen-dimensional observer domain $U\subset Y$, with metric $g_Y$.
 
 Keep the true dualized equation, real $W_A$, signature $(14,0)$, compact gauge real form $\mathfrak u(128)$, the positive normalized $-\operatorname{Tr}$ pairing, constant $\kappa\ne0$ and $\det M\ne0$. The odd field is
 $$T_o=i\kappa(a\Phi^1+w\Phi^1\Gamma),\qquad a=t/\kappa,\quad w=u/\kappa.$$
@@ -98,9 +100,58 @@ A smooth function with strictly positive Laplacian cannot have an interior local
 
 For flat-base Z1 at $\lambda=1/5,c_V>0$, $\mathcal G=105/c_V>0$, so this bounded obstruction applies. It allows nonconstant motion without a local maximum on a left arc; it does not exclude every nonconstant field there. No compactness, integration or boundary condition is used.
 
+## AA4. The derivative on the two $c/w\Gamma$ conics
+
+Use $m=3,5$ for form degree; $p,q$ retain their off-diagonal block meanings in the table. Write $\mathsf c,\mathsf w$ for R1's contraction and exterior lifts, so the scalar $w=u/\kappa$ is distinct from $\mathsf w$. For a real $m$-form $\omega$, let
+$$\varepsilon_3=1,\qquad\varepsilon_5=i,\qquad
+k=\varepsilon_m[\mathsf c(\alpha)+\mathsf w(\beta)\Gamma],\qquad
+\alpha=r_m\omega,\quad\beta=s_m\omega.$$
+Here $r_m,s_m$ are real scalar kernel weights. The subscript distinguishes them from AA1's gradient scalar $s=|da|^2$. Both displayed lifts have the same compact phase $\varepsilon_m$: their grades are $(2,10)$ for $m=3$ and $(4,8)$ for $m=5$.
+
+On the first or third row of the table, the kernel conditions are
+$$Ar_m-pws_m=0,\qquad Bs_m-qwr_m=0.$$
+Two smooth kernel charts are $(r_m,s_m)=(pw,A)$ and $(B,qw)$. At least one is nonzero at every conic point, including $w=0$, since $A,B$ cannot both vanish. A real $m$-form $\omega$ then parametrizes the single kernel copy locally. The other two table rows, $w/c\Gamma$, are not included in this derivative reduction.
+
+Let $\delta_\nabla=-\sum_j\iota_{e_j}\nabla^0_{e_j}$ be the Riemannian codifferential, distinct from the scalar $\delta(a)$. Put $\mathcal D(k)={*}^{-1}W_A(d_0k)$ in the real-member conventions used above. The full covariant derivative is included. Then
+$$\boxed{\begin{aligned}
+\mathcal D(k)=i\varepsilon_m\big[&2m\,\mathsf w(d\alpha)-2(m-2)\mathsf c(\delta_\nabla\alpha)\\
+&+\{2(12-m)\mathsf w(d\beta)-2(14-m)\mathsf c(\delta_\nabla\beta)\}\Gamma\big].
+\end{aligned}}\tag{AA4.1}$$
+Thus the coefficient pairs $(d,\delta_\nabla)$ are $(6,-2),(18,-22)$ for $m=3$ and $(10,-6),(14,-18)$ for $m=5$, for the $c$ and $w\Gamma$ copies respectively.
+
+Variable weights must be differentiated:
+$$d(r_m\omega)=r_m d\omega+dr_m\wedge\omega,\qquad
+\delta_\nabla(r_m\omega)=r_m\delta_\nabla\omega-\iota_{\operatorname{grad}r_m}\omega,\tag{AA4.2}$$
+and likewise for $s_m$. On a conic arc with $w\ne0$, a sign of $w=\pm\sqrt{f(a)}$ is fixed locally and the weights may be treated as functions of $a$, giving $dr_m=r_m'(a)da$. At a zero-$w$ endpoint, $w$ need not be a smooth function of $a$. Use a smooth conic chart and the general differentials in (AA4.2); no division by $w$ is needed for (AA4.1).
+
+*Proof.* The lifts and $\Gamma$ are Levi-Civita parallel. In a normal frame the real-member operator is
+$$\mathcal D(k)_a=i\sum_{b,c}\{\gamma_{abc},\nabla^0_bk_c\},$$
+where $\gamma_{abc}$ is the alternating Clifford triple. For $\mathsf c(\omega)$ the anticommutator has grades $m-2,m+2$. For $\mathsf w(\omega)\Gamma$, move $\Gamma$ to the right: its anticommutator becomes a commutator before multiplication by $\Gamma$, with the same two pre-$\Gamma$ grades.
+
+The decomposition
+$$T^*\otimes\Lambda^m=\Lambda^{m+1}\oplus\Lambda^{m-1}\oplus\mathcal H_m$$
+has one Cartan summand $\mathcal H_m$. For $m=3,5$, it does not occur in $T^*\otimes(\Lambda^{m-2}\oplus\Lambda^{m+2})$ or its right-$\Gamma$ image. The middle-grade splitting when $m+2=7$ does not introduce $\mathcal H_5$. Equivariance therefore annihilates that summand and factors the derivative through $d\omega$ and $\delta_\nabla\omega$.
+
+The coefficients follow by counting complete basis-jet outputs. On $e^0\otimes(e^1\wedge\cdots\wedge e^m)$, only $d\omega$ is nonzero. The $c$ copy has $m$ contributing terms; the $w\Gamma$ copy has $14-m-2$. Each contributes twice the exterior lift, and all other output components vanish by Clifford parity. At $m=5$, the two equivalent grade-seven exterior copies are fixed by this full-output calibration and irreducibility of $\Lambda^6$; absence of $\mathcal H_5$ alone would not fix their coefficients. On $e^0\otimes(e^0\wedge\cdots\wedge e^{m-1})$, only the codifferential is nonzero. The counts are $m-2$ and $14-m$, with a minus sign from $\delta_\nabla=-\iota\nabla$. This gives (AA4.1); the ordinary covariant product rule gives (AA4.2). No parallelness of $\omega$ or the weights is assumed. ∎
+
+## AA5. Injectivity of the derivative symbol
+
+Freeze the smooth conic weights $r_m,s_m$, not both zero, and consider the principal derivative symbol in $\omega$ alone. For a real covector $\xi$, replacing $\nabla\omega$ by $\xi\otimes\omega$ in (AA4.1) gives
+$$\begin{aligned}
+\|\sigma_\xi\omega\|^2={}&4(13-m)[m^2r_m^2+(12-m)^2s_m^2]\,|\xi\wedge\omega|^2\\
+&+4(m-1)[(m-2)^2r_m^2+(14-m)^2s_m^2]\,|\iota_{\xi^\sharp}\omega|^2.
+\end{aligned}\tag{AA5.1}$$
+Both coefficients are strictly positive for $m=3,5$. Since the two form norms sum to $|\xi|^2|\omega|^2$, the symbol is injective for every real $\xi\ne0$.
+
+*Proof.* With the displayed compact phases, or equivalently the ordinary positive Clifford coefficient norm, the squared norms of the contraction and exterior lifts on real $j$-forms are $j$ and $14-j$ times the form norm. For $m=3$ all four output grades in (AA4.1) are distinct. For $m=5$ the two exterior lifts both have grade seven. On that real compact space, right multiplication by $\Gamma$ is orthogonal and squares to $-1$, hence is skew-adjoint. Its cross pairing with the same field is zero. All remaining cross terms have distinct grades. Applying these facts to (AA4.1) proves (AA5.1). Derivatives of the weights multiply $\omega$ without differentiating it and do not enter this symbol. ∎
+
+This is a statement about the derivative operator in the declared kernel parametrization with the conic field fixed. It does not establish ellipticity of the coupled full system, solve $Q(k)$, or supply a solution of its odd tensor equations.
+
 ## Evidence and remaining equations
 
 The exact script checks both vector traces, all fourteen zero Gamma symbols, all four compact exterior pairs, their symbolic kernels, both kernel traces, cross-trace cancellation, and both currents on each pair. It then verifies the norm elimination, T2 identity and rational branch-sign premises symbolically. Its output prints $f$, $\delta$ and $\mathscr R$ for every conic. All 23 assertions passed in about two seconds.
+
+The supporting derivative script checks 112 complete coordinate-jet outputs, mixed covariant jets, the variable-weight product rules, the compact phases and the positive symbol norm. A nonzero Cartan jet is annihilated on both declared copies and has nonzero output on both excluded $w/c\Gamma$ copies, for each degree. All 14 assertions passed in 0.2 seconds. The hand grade/counting proof supplies the universal statement; these exact controls check its conventions and coefficients.
 
 The untraced odd equation is still
 $$E_v+{*}^{-1}\circledast(d_0k)+2\mathcal B(v,k)+Q(k)=0.$$

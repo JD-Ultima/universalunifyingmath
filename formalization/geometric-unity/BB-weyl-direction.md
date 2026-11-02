@@ -1,8 +1,8 @@
 # BB. One declared nonzero-Weyl direction
 
-The complete normal quadratic metrics considered here are obstructed for every amplitude in the specified Weyl direction. Two fibre witnesses remove the exceptional roots of a single three-row certificate. Coefficient-rank exceptions are checked separately, so the conclusion excludes fibre-open patches rather than only individual points.
+The obstruction covers every amplitude in one specified Weyl direction, with arbitrary cubic, quartic and smooth higher metric jets. Two fibre witnesses remove the roots of a single compatibility certificate. A cubic-invariant subsystem and its four-dimensional kernel preserve coefficient rank, so the result excludes fibre-open solution patches rather than only individual points.
 
-Code: `computation/geometric-unity/BB_weyl_direction.py`; exact output: `BB_weyl_direction.out`; record: `metrics/geometric-unity/BB-weyl-direction.yaml`. The computation uses U's accepted relaxed-system assembly and the earlier referee curvature engine. [Independent internal review](../../reports/reviews/REVIEW21-GU-BB-2026-11-02.md) accepts BB1–BB2 and reproduces the exact calculations. Arbitrary cubic and quartic jets are not included in the present theorem.
+Code: `computation/geometric-unity/BB_weyl_direction.py` and `BB_cubic_extension.py`, with their `.out` files; record: `metrics/geometric-unity/BB-weyl-direction.yaml`. Both use U's accepted relaxed-system assembly and the earlier referee curvature engine. [Independent internal Review21](../../reports/reviews/REVIEW21-GU-BB-2026-11-02.md) accepts the quadratic certificates BB1–BB2. [Independent internal Review22](../../reports/reviews/REVIEW22-GU-BB-JETS-2026-11-02.md) separately accepts BB3–BB6 and reproduces all 41 extension checks in 33.2 s. These are internal reviews, not external peer review.
 
 ## The declared curvature and metric
 
@@ -11,18 +11,21 @@ $$\mathcal W_{0101}=\mathcal W_{2323}=1,\qquad
 \mathcal W_{0202}=\mathcal W_{1313}=-1,$$
 with $\mathcal W_{0303}=\mathcal W_{1212}=0$, all cross-pair components zero, and the usual curvature symmetries. The first Bianchi identity holds, and each diagonal Ricci component is the sum $1-1+0=0$; off-diagonal Ricci components vanish. Thus $\mathcal W$ is a genuine zero-Ricci Weyl tensor.
 
-For $\rho\ne0$, $\omega\in\mathbb R$, take the complete local metric
-$$g_{ij}(x)=\delta_{ij}-\tfrac13(\rho R_0+\omega\mathcal W)_{iajb}x^ax^b.\tag{BB1}$$
-It is positive definite near $0$. At the origin $\mathrm{Ric}=\rho e_0\otimes e_0$ and the Weyl tensor is $\omega\mathcal W$. Cubic and quartic metric coefficients are fixed to zero; the connection's higher derivatives are those of this complete polynomial metric.
+For $\rho\ne0$, $\omega\in\mathbb R$, consider
+$$g_{ij}(x)=\delta_{ij}-\tfrac13(\rho R_0+\omega\mathcal W)_{iajb}x^ax^b
++Q_{3;ij}(x)+Q_{4;ij}(x)+R_{5;ij}(x),\tag{BB1}$$
+where $Q_3,Q_4$ are arbitrary symmetric homogeneous cubic and quartic matrices, and the smooth symmetric remainder $R_5$ has all derivatives through order four zero at $0$. There are 200 free cubic and 350 free quartic coefficients. The metric is positive definite on some neighbourhood of $0$, with no uniform radius over the coefficients. At the origin $\mathrm{Ric}=\rho e_0\otimes e_0$ and the Weyl tensor is $\omega\mathcal W$.
 
 Use Z1 at $\lambda=1/5$, $c_H,c_V>0$. U's naturality and homothety maps normalize
 $$\rho=\sigma\in\{1,-1\},\qquad c_H=2,\quad c_V=3,\qquad
 w=\omega/|\rho|\in\mathbb R.\tag{BB2}$$
-The analysis below covers every real normalized $w$. It concerns this declared direction and its rotated orthonormal-frame copies, rather than arbitrary Weyl tensors.
+The normalized cubic and quartic tensors are $Q_3/|\rho|^{3/2}$ and $Q_4/\rho^2$; both remain arbitrary. The analysis covers every real normalized $w$ in this declared curvature direction and its rotated orthonormal-frame copies. The full Weyl tensor is not arbitrary.
 
 ## A degree bound before interpolation
 
-**Lemma BB1.** At a fixed fibre matrix $y$, the full relaxed coefficient matrix $A(w)$ has polynomial degree at most two in $w$, and its RHS $b(w)$ has degree at most three. Denominators are independent of $w$.
+First set $Q_3=Q_4=R_5=0$. This auxiliary complete quadratic metric supplies the exact polynomial certificates; higher-jet invariance is proved separately below.
+
+**Lemma BB1.** For this complete quadratic metric, at a fixed fibre matrix $y$, the full relaxed coefficient matrix $A(w)$ has polynomial degree at most two in $w$, and its RHS $b(w)$ has degree at most three. Denominators are independent of $w$.
 
 *Proof.* At $x=0$, the base metric is $I$, its first derivative vanishes, and its quadratic coefficient is affine in $w$. For the complete quadratic base metric, the connection's linear term is affine in $w$, its quadratic term is zero, and its cubic term has degree at most two in $w$. The observer metric at the point, and its inverse, are independent of $w$. Its first derivatives have degree at most one, and its second and third derivatives degree at most two: use $h_{HV}=-c_VG_y(\Psi,\cdot)$ and $h_{HH}=c_Hy+c_VG_y(\Psi,\Psi)$ with $\Psi(0)=0$.
 
@@ -91,16 +94,89 @@ E_-&=\{-1/3,-1/6,1/21,1/6,1/3,19/39\}.
 \end{aligned}$$
 For every member of $E_\sigma$, exact evaluation of the full reconstructed coefficient matrix at $y_1$ gives rank 42, while $P_{\sigma,1}\ne0$. The output records all twelve checks. These are evaluations of coefficient polynomials certified by BB1, rather than extrapolations from nearby amplitudes. No exceptional real amplitude remains.
 
-## Result and scope
+## The auxiliary quadratic result
 
-**Theorem BB2.** For every complete local metric (BB1), with $\rho\ne0$, $\omega\in\mathbb R$, and positive $c_H,c_V$ at $\lambda=1/5$, the relaxed system is consistent on no nonempty fibre-open patch over $0$. In the slaved vector sector of S.0, the twisted cone has no $\Upsilon=0$ solution on an open set meeting that fibre.
+**Theorem BB2.** For (BB1) with $Q_3=Q_4=R_5=0$, $\rho\ne0$, $\omega\in\mathbb R$, and positive $c_H,c_V$ at $\lambda=1/5$, the relaxed system is consistent on no nonempty fibre-open patch over $0$. In the slaved vector sector of S.0, the twisted cone has no $\Upsilon=0$ solution on an open set meeting that fibre.
 
 *Proof.* Outside $E_\sigma$, (BB5) supplies a witness with a nonzero compatibility determinant and a nonzero coefficient 42-minor. At every exceptional value the exact rank checks give the same two ranks. Hence some augmented 43-minor is nonzero for every real $w$. S4 excludes fibre-open consistency by the rational-minor argument. The parameter maps in (BB2) cover every nonzero $\rho$, every $\omega$ and positive observer scales.
 
 For the field equation, fix the actual parameters and one nonzero augmented minor at its positive coordinate fibre matrix. That fixed minor persists over a base neighbourhood. The base curvature is nonzero at the origin because its Ricci tensor is nonzero, so shrink the neighbourhood to preserve this as well. U5's argument then applies: S5 excludes Einstein pieces, while the Q5 reduction supplies an open variable patch with $H\ne0$ and therefore relaxed consistency, a contradiction. No continuation of a three-row weight relation is assumed. ∎
 
-The recorded full run takes 52.3 s and passes all exact driver assertions. The work consists of four signed witness analyses, polynomial gcd calculations, and twelve remaining coefficient-rank evaluations.
+The recorded quadratic run takes 52.3 s. It comprises four signed witness analyses, polynomial gcd calculations and twelve remaining coefficient-rank evaluations. Review21 independently reproduced these calculations in 54.1 s. The following argument supplies the additional proof needed for arbitrary higher jets.
 
-The result is bounded by the declared Weyl direction and complete quadratic metric. It does not yet allow arbitrary cubic or quartic metric coefficients in the nonzero-Weyl cases, and it does not cover arbitrary Weyl tensors or $\rho=0$. The zero-Weyl case $w=0$ has the separate, stronger higher-jet result Z; that does not automatically extend the present theorem to $w\ne0$.
+## Higher-jet invariance
 
-A useful next question is whether Z's cubic-invariant subsystem and its kernel-completion argument can be audited uniformly for this Weyl pencil, including the finite coefficient-minor exceptions. That additional proof is required before passing from the complete quadratic family to arbitrary higher jets.
+Write $H=\{0,1,2,3\}$, $V=\{4,\ldots,13\}$ and $D=\{4,8,11,13\}$ for horizontal, vertical and diagonal-vertical coordinates. The row convention remains $(a,b,d)$.
+
+**Lemma BB3.** At a diagonal positive fibre matrix, the three coefficient rows and RHS rows in (BB3) are independent of every $Q_3,Q_4,R_5$. All coefficient rows in the following 722-row subsystem are also independent of them:
+
+| row class | count |
+|---|---:|
+| $V,V,V$ | 450 |
+| $H,D,H$ | 64 |
+| $H,V,D$ | 160 |
+| $H,H,D$ | 24 |
+| $D,D,H$ | 24 |
+
+*Proof.* The jet-order, support and parity arguments of Z1–Z4 and W1–W2 do not require the fixed quadratic curvature to have zero Weyl tensor. Here is their dependence on that hypothesis explicitly. For any fixed quadratic metric jet, the connection has fixed linear part, degree-two part linear in $Q_3$, and degree-three part equal to a fixed curvature contribution plus a term linear in $Q_4$. Thus the observer first jet is fixed, its second jet is affine in $Q_3$, and its third jet is affine jointly in $Q_3,Q_4$. The coefficient matrix is affine in $Q_3$ and independent of $Q_4$; the RHS is affine jointly in $Q_3,Q_4$. The zero-four-jet remainder affects neither.
+
+Only mixed $HV$ second metric derivatives vary with $Q_3$. For a diagonal vertical slot $A=y_{aa}$, the degree-two mixed metric variation is a base gradient,
+$$\delta h_{jA}=\partial_jF_a,\qquad
+F_a=-\frac{c_V}{d_a}(Q_{3;aa}-\lambda\operatorname{tr}Q_3).$$
+Commuting third derivatives eliminates the Riemann variation with three horizontal slots and this diagonal vertical slot. Hence the only cubic curvature variation has three horizontal slots and one off-diagonal vertical slot; the Ricci variation has one horizontal and one off-diagonal vertical slot. Raising indices preserves this support at diagonal $y$. Substitution in the relaxed system fixes all 722 listed coefficient rows and the three selected rows.
+
+Base reflection $(x,y)\mapsto(-x,y)$ reverses $Q_3$ and fixes the quadratic and quartic jets. Each selected RHS row has two horizontal indices and therefore even parity. Affine cubic dependence then makes its cubic variation zero. For the quartic variation, replacing $Q_3$ by $Q_4$ gives the leading degree-three mixed metric variation. With lower observer jets fixed, its only contribution is the principal third-derivative Ricci term
+$$\delta(\nabla_i\mathrm{Ric})_{iA}
+=\tfrac12\sum_{c=0}^3h^{cc}
+\left(\partial_c\partial_i^2\partial_cF_a-
+\partial_c^2\partial_i\partial_iF_a\right)=0.$$
+The companion term $\delta(\nabla_A\mathrm{Ric})_{ii}$ vanishes by base order. This argument is independent of the fixed curvature, including its Weyl component. There are no mixed cubic-quartic terms. ∎
+
+## The invariant kernel and rank completion
+
+Let $M_{\sigma,j}(w)$ be the 722-row coefficient subsystem at $y_j$ for the auxiliary quadratic metric. For $y=\operatorname{diag}(d_0,d_1,d_2,d_3)$ define four independent sparse columns
+$$K_i=e_{28+i}+\frac{24d_i}{5}e_{14+i},\qquad i=0,1,2,3.\tag{BB6}$$
+The columns are in the ordering $(v^0,\ldots,v^{13},\xi_0,\ldots,\xi_{13},n^0,\ldots,n^{13})$. Thus they describe $v=0$, $\xi_V=n_V=0$, and $\xi_i=c h_{ii}n^i$ with $c=12/5$ and $h_{ii}=2d_i$.
+
+**Proposition BB4.** At the witness supplied by the quadratic certificates for each real $w$, the full coefficient matrix has rank 42 for every $Q_3,Q_4,R_5$.
+
+*Polynomial kernel certificate.* At both $y_j$ and both signs, exact evaluation gives $M_{\sigma,j}(w)K=0$ at $w=-1,0,1$. Every entry has degree at most two by BB1, so
+$$M_{\sigma,j}(w)K=0\quad\text{for all }w.\tag{BB7}$$
+This is a polynomial identity from a proved degree bound, rather than a sampled rank assertion. Since the four columns are independent, $\operatorname{rank}M\le38$.
+
+The exact restrictions of the two four-row completions are
+$$J_5K=-(3w+\sigma)^2\Delta_{j,5},\qquad
+J_6K=-(3w-\sigma)^2\Delta_{j,6},\tag{BB8}$$
+where all diagonal entries below are positive:
+
+| witness | $\Delta_{j,5}$ | $\Delta_{j,6}$ |
+|---|---|---|
+| $y_1$ | $\operatorname{diag}(1/45,1/30,2/45,1/18)$ | $\operatorname{diag}(1/20,3/40,1/10,1/8)$ |
+| $y_2$ | $\operatorname{diag}(1/45,1/30,1/18,7/90)$ | $\operatorname{diag}(9/125,27/250,9/50,63/250)$ |
+
+Again three exact nodes determine these identities within BB1's degree bound. Since $\sigma=\pm1$, their two scalar factors never vanish simultaneously.
+
+*Why cubics preserve a completed minor.* In a row $(i,O,O)$ with off-diagonal vertical coordinate $O=5$ or $6$, cubic curvature support excludes Riemann variation. The only variable Ricci coefficient is that of $\xi_O$. Every column in $K$ has $\xi_O=0$, so the row variation annihilates $K$. Quartics change no coefficients. Thus (BB8) is unchanged by all higher jets.
+
+For $w\notin E_\sigma$, the quadratic product-gcd argument supplies a nonzero $D_{\sigma,j,k}P_{\sigma,j}$. Its first 38 invariant rows are independent. By (BB7), their kernel is exactly $\operatorname{span}K$. A cubic change of an appended row annihilates $K$ and therefore belongs to the span of those 38 rows. Row operations leave that same 42-minor unchanged. No new polynomial determinant interpolation is needed.
+
+At every one of the twelve values $w\in E_\sigma$, exact rational evaluation at $y_1$ gives $\operatorname{rank}M_{\sigma,1}=38$; all twelve ranks are recorded by the extension script. Thus its kernel is exactly $\operatorname{span}K$, even if the originally recorded 38-row list becomes dependent. One of (BB8)'s two completions is invertible on this kernel, and remains so for every higher jet. Appending it to any 38 independent invariant rows gives rank 42. The original quadratic computation already checks $P_{\sigma,1}\ne0$ at these values. ∎
+
+## Smooth and intrinsic consequences
+
+**Theorem BB5.** For every smooth metric (BB1), arbitrary $Q_3,Q_4,R_5$, $\rho\ne0$, $\omega\in\mathbb R$, and positive $c_H,c_V$ at $\lambda=1/5$, the relaxed system is consistent on no nonempty fibre-open patch over $0$. Under the slaved-vector hypotheses of S.0, the twisted cone has no $\Upsilon=0$ solution on an open set meeting that fibre.
+
+*Proof.* Outside $E_\sigma$, use the witness with $D_{\sigma,j,k}P_{\sigma,j}\ne0$. At the twelve remaining amplitudes use $y_1$. Lemma BB3 preserves the nonzero compatibility determinant, while BB4 gives coefficient rank 42 for every higher jet. Consequently the augmented rank is 43. S4's rational fibre-minor argument excludes any fibre-open consistency patch. Naturality and homothety transfer the ranks to all original parameters.
+
+For a fixed actual metric, select one nonzero augmented 43-minor at its positive coordinate fibre witness. Its nonvanishing persists over a base neighbourhood. The nonzero base Ricci tensor at $0$ allows that neighbourhood to be chosen with nonzero curvature. S5 then excludes Einstein pieces; the Q5 reduction on its dense variable patch with $H\ne0$ supplies relaxed consistency, contradicting the fibrewise obstruction as in U5. The continued object is a fixed matrix minor, rather than the original three-row weights. The neighbourhood may depend on the entire metric jet; no uniform radius is asserted. ∎
+
+**Corollary BB6 (intrinsic scope).** Let a smooth Riemannian four-metric have an orthonormal frame at $x_0$ in which
+$$\mathrm{Ric}_{x_0}=\rho e_0\otimes e_0,\qquad
+W_{x_0}=\omega\mathcal W,\qquad \rho\ne0.$$
+Then BB5 holds over $x_0$. Rotated copies rotate the distinguished Ricci axis and the specified Weyl tensor together.
+
+*Proof.* The curvature decomposition gives $R_{x_0}=\rho R_0+\omega\mathcal W$. Riemann normal coordinates have precisely the quadratic term in (BB1). Their actual cubic and quartic terms belong to the arbitrary class just proved, and the smooth Taylor remainder has zero four-jet. Observer naturality completes the transfer. ∎
+
+The extension script checks the exact polynomial kernel and completion identities, all twelve exceptional invariant ranks, and mixed nonzero-Weyl cubic/quartic controls. The controls change other coefficients and RHS rows while preserving the proved subsystem, selected rows and completed minor; reflection and affine dependence are checked on the full control system. Universality follows from BB3–BB4, not these controls. No repeated polynomial 42-determinant computation is required by the extension script.
+
+The remaining boundary is arbitrary Weyl curvature outside this declared simultaneous orthonormal-frame orbit, and the Ricci-flat nonflat case $\rho=0$. The result places no additional higher-jet restriction inside its stated curvature orbit.
