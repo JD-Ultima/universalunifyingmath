@@ -1,6 +1,6 @@
 # S. Υ = 0 in the Zorro metric Z1 on open sets that need not meet $s(X)$
 
-Claims: GU-054 (context). Gaps: GU-G14 (and F9, GU-G16). Code: `computation/geometric-unity/S_z1_off_section.py` → `.out` (sections S0–S5; exact: Python Fractions, also as coefficients of N's truncated power series, and sympy rationals; fixed seeds; 260 s on one core, a second run 262 s, identical apart from the timing annotations). It imports `F_jets.py` and `N_z1_neighbourhood.py` (and through it `L_nonradial.py`, `J_slaved_sector.py`, …), all unmodified. Output sections: §S0 Lemma S1, §S1 Lemma S2 and Corollary S3, §S2 Lemma S4, §S3 Theorem S5 and Lemma S6, §S4 Propositions S7–S9, §S5 Lemma S13 and Theorem S14. Record: `metrics/geometric-unity/S-z1-off-section.yaml`. Builds on N (N1–N4, N6, N7, N9–N11), Q (Q1–Q8, Q12–Q15), P (P1(a), P2(d)), F (F1, F2.4, F4, F6), L (L9) and M (M3, M4). Layers: (b) reconstruction (that of J, unchanged), (c) proven, (d) open.
+Claims: GU-054 (context). Gaps: GU-G14 (and F9, GU-G16). Code: `computation/geometric-unity/S_z1_off_section.py` → `.out` (sections S0–S5; exact: Python Fractions, also as coefficients of N's truncated power series, and sympy rationals; fixed seeds; original runs 260 and 262 s on one core, identical apart from timing annotations; internal review reruns 110 s (original labels) and 121 s (scoped labels)). It imports `F_jets.py` and `N_z1_neighbourhood.py` (and through it `L_nonradial.py`, `J_slaved_sector.py`, …), all unmodified. Output sections: §S0 Lemma S1, §S1 Lemma S2 and Corollary S3, §S2 Lemma S4, §S3 Theorem S5 and Lemma S6, §S4 Propositions S7–S9, §S5 Lemma S13 and Theorem S14. Record: `metrics/geometric-unity/S-z1-off-section.yaml`. Builds on N (N1–N4, N6, N7, N9–N11), Q (Q1–Q8, Q12–Q15), P (P1(a), P2(d)), F (F1, F2.4, F4, F6), L (L9) and M (M3, M4). Layers: (b) reconstruction (that of J, unchanged), (c) proven, (d) open.
 
 ## S.0 Question and setting (layer b)
 
@@ -71,7 +71,7 @@ Output §S1:
 
 (b) *Dichotomy (P2(d) for Z1).* Let $A(y)\zeta=b(y)$ be such a linear system on $F_x$, and $r$ the maximal rank of $A$ on $F_x$.
 - If the system is consistent on a nonempty open $\Omega\subset F_x$, it is consistent at every $y\in F_x$ with $\mathrm{rank}\,A(y)=r$.
-- If $r$ is the number of unknowns, the solution $\zeta(y)$ is a rational function on $F_x$. Every polynomial identity in $y$, ζ and the fibre derivatives of ζ that holds on Ω holds on $F_x$, and on $F_x^{\mathbb C}$ off the poles.
+- If $r$ is the number of unknowns, the solution $\zeta(y)$ is a rational function on $F_x$. Every polynomial identity in $y$, ζ and the fibre derivatives of ζ that holds on Ω holds wherever these rational functions are regular, in both $F_x$ and $F_x^{\mathbb C}$.
 
 *Proof.*
 - (a) $g_\aleph=c_Hy(dx,dx)+c_VG_\lambda|_y(Dy,Dy)$. Here $G_\lambda|_y$ is polynomial in $y^{-1}=\mathrm{adj}(y)/\det y$, and $Dy=dy-\Psi\,dx$ with $\Psi_\mu=\Gamma_\mu^\top y+y\Gamma_\mu$ linear in $y$, the jets of Γ at $x$ being fixed. In the frame of horizontal lifts $\det g_\aleph$ is a nonzero constant times $(\det y)^{-4}$, since $\det G_\lambda|_y\propto(1-4\lambda)(\det y)^{-5}$. Derivatives of $y^{-1}$ are polynomial in $y^{-1}$.
@@ -114,7 +114,7 @@ So F9 holds for Z1 at $n=4$, on every open set and over every base: Z1 is Einste
   - $SO_0(2,2)$ acts through $SO_0(1,2)\times SO_0(1,2)$, transitively on each null cone up to positive scaling. So the nonzero null $W$ form eight orbits, $s_\pm\in\{-1,0,1\}$, not both 0.
   - Output §S3 evaluates a representative of each, for $c_V=\pm3$: none is Einstein at the fibre point. Hence $W=0$. ∎
 
-Over a plane-wave base Z1 is therefore Einstein (at $\lambda=\tfrac15$) exactly on the 6-dimensional set Π (S2, §S1), and on no open set. In Z2 the A-term vanishes identically there (P5); in Z1 the fibre correction does not.
+Over the tested plane-wave base Z1 is Einstein at $\lambda=\tfrac15$ on the 6-dimensional parallel set Π (S2, §S1), and S5 rules out an Einstein open set. The off-Π points evaluated in §S3 are not Einstein; these finite checks do not classify the complete pointwise Einstein locus. In Z2 the A-term vanishes identically for this plane-wave curvature (P5); in Z1 the fibre correction does not.
 
 **Lemma S6 (N5 at order 2 in the VV block, for Weyl tensors).** *[proven, computer-assisted]* Let the base be Ricci-flat at $x_0$, with Weyl tensor $W$, in any signature, and $c_Hc_V\neq0$. Then the order-2 Taylor coefficient in $h=y-g(x_0)$ of $\mathrm{Ric}_{VV}(\mathrm{Z1})$ along $F_{x_0}$ equals that of $-\tfrac54G_{1/5}|_y+\mathcal A_{x_0}$, at $\lambda=\tfrac15$.
 
@@ -153,7 +153,8 @@ Over a plane-wave base Z1 is therefore Einstein (at $\lambda=\tfrac15$) exactly 
    - Hence, for vertical $U$, $(\mathrm H)\ \nabla_Uv'=\widehat{\mathrm{Ric}}\,U+\nu'U-\mu_1\langle v',U\rangle v'$ holds on $W\cap F_x$, so on $F_x$ (S4(b)).
 2. *(Tr) as a relation between $r$ and $y$.* With $\rho(y):=13\big[\tfrac7{468}s_Y+\tfrac3{28}\mu_1^2|v'|^2-\mu_1\nu'\big]$, (Tr) reads $P_0(r)=\rho$. Here $P_0(r):=\Phi(r)/r=Ar^{-2}+a_0r^{-1}+a_1$ with $A\neq0$ (N3(d)). On a ball $B\subset W\cap F_x$ where $v'$ is regular: $d\log r=\mu_1v'^\flat$ and $P_0(r)=\rho$.
 3. *Continuation.* $F_x^{\mathbb C}$ is connected, and $v'$, ρ are holomorphic off a proper analytic subset $Z$, whose complement is connected.
-   - Continue along a path γ in $F_x^{\mathbb C}\setminus Z$ from $B$ to $q_{\theta_0}$, which is regular (rank 28): $r_\gamma=r(y_1)\exp(\mu_1\int_\gamma v'^\flat)$ is holomorphic and nonzero.
+   - The vertical rational form $\alpha:=\mu_1v'^\flat|_{F_x}$ is closed: $d_F\alpha=0$ on the real open ball $B$, since there $\alpha=d_F\log r$, hence identically after complexification. A local holomorphic primitive of $\alpha$ shows that the initial smooth nonzero $r$ is fibre-analytic (a negative real value is accommodated by its complex initial value).
+   - Continue its local germ along a path γ in $F_x^{\mathbb C}\setminus Z$ from $B$ to $q_{\theta_0}$, which is regular (rank 28), by $r_\gamma=r(y_1)\exp(\int_\gamma\alpha)$. This constructs nonzero local holomorphic germs along the path; a global single-valued primitive is not required.
    - $P_0(r_\gamma)-\rho$ vanishes near the start, so along γ.
 4. *Along the orbit.*
    - $v'=2bE$, so $\tfrac d{d\theta}\log r_\gamma(q_\theta)=2\mu_1bc=\tfrac12$.
@@ -238,6 +239,18 @@ Output §S5 gives:
 - for constant-curvature bases, the unique solution, which is Q6's: $\xi=k\,v'^\flat$ with $kc\sigma^2=4b(4kbc-1)$;
 - generic rank 42, and inconsistency, off the section.
 
+**Continuation lemma for S14–S15 (rational differentials).** Let $M$ be a Zariski-open subset of $F_x^{\mathbb C}$ on which the rational function $k$ and rational one-form $\omega$ are holomorphic. Let $K:\mathbb P^1\to\mathbb P^1$ be a nonconstant rational map and $\eta$ a nonzero rational differential on $\mathbb P^1$. Suppose on a real open subset there is a nonconstant local branch $\tau$ with $K(\tau)=k$ and $\eta(\tau)=\omega$ (pullback of differentials). The identities continue to the normalization of the component containing this branch of the finite cover
+$$M\times_{k,\mathbb P^1,K}\mathbb P^1\longrightarrow M.$$
+This cover includes points over the branch locus. At points over $M$, $\tau$ cannot take a pole value of $\eta$. If $C\subset M$ is a smooth curve on which $k$ is constant, then $\omega|_C=0$.
+
+*Proof.* A nonconstant rational map of $\mathbb P^1$ is finite. Its base change is finite and surjective, and the component containing the initial branch dominates $M$. After shrinking the real open set away from the finitely many critical values, the implicit-function theorem makes that branch holomorphic; an identity holding on its real open set extends as a meromorphic identity on the component. Normalization preserves finiteness. The identities $K(\tau)=k$ and $\tau^*\eta=\pi^*\omega$ therefore hold there.
+
+If $\eta$ has a pole of order $m\ge1$ at $\tau_*$ and $\tau-\tau_*=z^e$ times a unit along a prime divisor of its inverse image, its pullback has a pole of order $e(m-1)+1\ge1$. The same argument uses $1/\tau$ at infinity. This contradicts the holomorphic form $\pi^*\omega$; no logarithmic-divergence argument is needed.
+
+For the constant-$k$ conclusion, normalize a component of the inverse image of $C$ that dominates $C$. On this curve $\tau$ takes values in the finite fibre $K^{-1}(k|_C)$, so is constant. To justify restriction even if the cover is singular along this curve, work with functions. Since $d(\tau^*\eta)=0$ and $\pi$ is finite, separable and dominant, injectivity of pullback on rational differential forms gives $d\omega=0$. Near a base point choose a polydisc with $\omega=df$. Near a point of its inverse image, the already proved pole exclusion allows a holomorphic primitive $\eta=dH$ near the value of $\tau$. The holomorphic function $H\circ\tau-f\circ\pi$ has zero differential on the dense regular locus of the normal component, so is locally constant there and, by continuity, on the normal component itself. Restrict this function equality to the normalized curve: $\tau$ is constant, hence $f\circ\pi$ is constant. The curve dominates $C$, so $f|_C$ is constant and $\omega|_C=0$. This does not require restricting Kähler differentials across singular points. ∎
+
+Here and below, a branch constant on the initial fibre open set is handled directly: its differential makes $\omega=0$ on that open set, hence rationally on the fibre. In S14–S15 this already contradicts the displayed nonzero radial component of $\omega$. Thus the lemma is only used for a nonconstant initial branch.
+
 **Theorem S14 ((C1) away from $s(X)$, $\lambda\neq\tfrac15$).** *[proven; uses N6(f), S13 and the certificate of Q8]* Assume (H1′), (C1) and $\lambda\neq\tfrac15$. Then $U$ has no type-(ii) point. Hence in (7,7) there is **no solution**, and in (14,0) there is no solution unless $\lambda=\tfrac15$.
 
 *Proof.* Let $q$ be of type (ii), with $N$ as in Q5(c): $u=0$ and $(E_t)$ hold on $N$. Let Ω be a connected open subset of $N\cap U^*\cap\{H(t)\neq0\}$ on which $\mathfrak L^{\rm rel}$ has rank 42. There:
@@ -251,20 +264,19 @@ Fix $x\in\pi(\Omega)$; $b\neq0$.
 2. *The coefficient $k$.*
    - On Ω, $\xi=\mu'(r)v'^\flat$. So the 2×2 minors of $(\xi,v'^\flat)$ vanish on $F_x$, and $k:=\xi(Z)/v'^\flat(Z)$, for any fixed $Z$ with $v'^\flat(Z)\not\equiv0$, is a rational function on $F_x$ equal to $\kappa(\tau)$ on Ω.
    - Where $v_E(\theta)\neq0$, $\xi=k\,v'^\flat$ at $q_\theta$, so $(v',n')$ solves $\mathfrak L_{k(\theta)}(q_\theta)$. Q6(c) then gives $(\mathrm C')\ Bk(1-\rho_\theta^2)=1$.
-3. *An algebraic $t$.*
-   - On $\Omega\cap F_x$, τ is a root of the quadratic $18k(y)D_1(\tau)^2+N_2(\tau)=0$ (§S5): a branch of an algebraic function on $F_x$.
-   - $(H(t)/x)\,d_Ft=v'^\flat|_F$ there, since $dr/\mu=(H/x)dt$. The form $v'^\flat|_F$ is closed (it is exact on Ω).
-   - Let $m$ be its continued primitive and $\mathcal G:=\int H\,dt/x=576\int D_1/Q_2\,d\tau$. $\mathcal G$ has logarithmic singularities at the zeros of $Q_2$ (where $\det M=0$) and, for $\epsilon A\neq1$, at $\tau=\infty$; the residue sum is $306(\epsilon A-1)/(144\epsilon A-119)$ (§S5).
-   - The relations $k=\kappa(\tau)$, $(H/x)dt=v'^\flat$ and $\mathcal G(t)-m=\mathrm{const}$ continue along every path in $F_x^{\mathbb C}$ that avoids the branch and pole locus, a proper algebraic subset with connected complement.
+3. *The exceptional constant $\kappa$ and the algebraic cover.*
+   - By Q8(a), with $A=a^2>0$, $\kappa(\tau)$ is constant only at $\epsilon=1$, $A=\tfrac{11}6$, where $\kappa=-\tfrac3{289}$. Then $\xi=\kappa v'^\flat$ continues rationally, and Q6 at the radial points forces $\sigma_g=0$ and $B=-\tfrac{289}3$, i.e. $\lambda=\tfrac{337}{240}>\tfrac14$, outside (14,0). This case is excluded before asserting finite fibres of $\kappa$.
+   - Otherwise $K:=\kappa:\mathbb P^1\to\mathbb P^1$ is nonconstant. On $\Omega\cap F_x$, $K(\tau)=k$ and
+     $$\eta:=576\frac{D_1(\tau)}{Q_2(\tau)}d\tau=\omega:=v'^\flat|_{F_x},$$
+     since $dr/\mu=(H/x)dt$. Use the continuation lemma on the complement of the poles of $k,\omega$. The cover contains points over the radial curve even when that curve is in its branch locus. At its full-rank points $\omega$ is holomorphic, so the continued $\tau$ cannot take a pole value of $\eta$ there.
+   - This treats all finite and infinite poles, including repeated roots and degree drops. For $\epsilon A=\tfrac{119}{144}$, $Q_2$ is linear and $\eta$ has a double pole at infinity; the generic residue-sum expression alone does not cover it.
 4. *Along the orbit*, for the continued branch:
    $$(\mathrm B)\quad \frac{H(t)}x\,\frac{dt}{d\theta}=v'^\flat(E)=c\,v_E=\tfrac B2(1-\rho_\theta),\qquad k(\theta)=\kappa(\tau(\theta)).$$
    - *$\sigma_g\neq0$.* $k(\theta)=1/(B(1-\rho_\theta^2))$ is nonconstant. So, off finitely many θ, the branch is analytic and nonconstant.
      - Differentiating (C′) with (B) gives Q7's (D), $\Phi(1-\rho)+4\rho^2=0$, with $\Phi=(x\kappa'/H)/\kappa^2=\mu\mu''/\mu'^2$ (§S5, for any complex branch).
      - So $\tilde R(\tau(\theta))=0$ at infinitely many distinct τ, and $\tilde R\equiv0$ in τ.
      - Q8's certificate is an algebraic statement in $(A,B)$. It leaves only $(A,B)\in\{(0,-\tfrac{18}7),(\tfrac{11}6\epsilon,-\tfrac{289}3)\}$, where $\rho\equiv0$, against $\sigma_g\neq0$ ($A=a^2>0$).
-   - *$\sigma_g=0$.* $k(\theta)\equiv1/B$, so $t(q_\theta)$ is a continuous function with values in the finite set $\kappa^{-1}(1/B)\cup\{\infty\}$, hence constant, $=t_*$.
-     - $t_*$ is not a logarithmic singularity of $\mathcal G$: there $|\mathcal G|\to\infty$, while $m$ is finite near $q_\theta$, where $v'$ is regular.
-     - So $\mathcal G(t(q_\theta))$, and with it $m(q_\theta)$, is constant along the orbit. But $dm/d\theta=v'^\flat(E)=B/2\neq0$.
+   - *$\sigma_g=0$.* $k(\theta)\equiv1/B$. The continuation lemma makes $\omega$ vanish on the radial curve, whereas $\omega(E)=B/2\neq0$, a contradiction.
 5. *Conclusion.* In (7,7), $b\neq0$ always, and $\mathrm{int}\,Z=\emptyset$ (S5(a)), so $U=\emptyset$. In (14,0) with $\lambda\neq\tfrac15$, likewise. ∎
 
 **Proposition S15 ((C1), $\lambda=\tfrac15$, away from $s(X)$).** *[proven; partial]* Assume (H1′), (C1), (14,0) and $\lambda=\tfrac15$. Then:
@@ -275,7 +287,11 @@ Fix $x\in\pi(\Omega)$; $b\neq0$.
 *Proof of the last item.* If $\mathrm{rank}\,\mathrm{Ric}_g(x)\ge2$, S13(a) gives rank 42 at every $q_\theta$. As in S14:
 - $g$ is Einstein at $x$ with $\sigma_g\neq0$;
 - (C) reads $k(\theta)c\,e^{-2\theta}\sigma_g^2=0$, so $k\equiv0$ along the orbit;
-- $t(q_\theta)$ is then constant, with values in $\kappa^{-1}(0)\cup\{\infty\}$, while $dm/d\theta=c\,v_E=-ce^{-\theta}\sigma_g/2\neq0$. ∎
+- The constant-$\kappa$ case $A=\tfrac{11}6$ is already impossible because $\kappa=-\tfrac3{289}\neq0$. Otherwise apply the continuation lemma with $k|_\Sigma=0$: it forces $\omega|_\Sigma=0$, while $\omega(E)=c\,v_E=-ce^{-\theta}\sigma_g/2\neq0$. ∎
+
+**S15 follow-up (2026-11-01; one specified rank-one-Ricci jet).** `xcheck_round15.py --geometry` gives an exact obstruction inside the remaining rank-≤1 class. At $x=0$, take $g_0=I_4$, $\mathrm{Ric}_0=\mathrm{diag}(1,0,0,0)$, $W_0=0$, $P=\tfrac12(\mathrm{Ric}_0-\tfrac16I_4)$, $R=P\owedge I_4$, and the local metric
+$$g_{ij}(x)=\delta_{ij}-\tfrac13R_{iajb}x^ax^b.$$
+It is positive definite near 0 and fixes all jets used by the computation. For $\lambda=\tfrac15$, $(c_H,c_V)=(2,3)$, the relaxed system has ranks $(41,42)$ at $y=I_4$ and $(42,43)$ at $y=\mathrm{diag}(2,3,4,5)$. The latter is a full-column-rank inconsistent point, so a 43-by-43 minor of the augmented matrix is a nonzero rational function on the fibre. A fibre-open consistent patch would make every such minor vanish on a real open set, hence identically, a contradiction (S4(b)). Thus this specified base jet admits no nonempty fibre-open consistent patch. This goes beyond rejecting a solution only at the evaluated point. It does not classify arbitrary rank-one-Ricci jets: the Weyl tensor and the remaining connection jets were fixed here. A next obstruction must cover those jets, or state an additional hypothesis that fixes them.
 
 **Corollary S16 (Z1 under (H1′): the family on every open set).** *[proven; uses N6(f), α, α″, the certificate of Q8]*
 
@@ -322,21 +338,21 @@ Fix $x\in\pi(\Omega)$; $b\neq0$.
 | S13 | proof; §S5: ranks and consistency of the 42-unknown system at section and radial points (random, $\mathrm{Ric}_g=-c_Hbg$, rank-1 Ricci and Ricci-flat at λ=1/5), Q6's solution with $\xi=kv'^\flat$ for constant curvature, generic rank and inconsistency off the section | (1,3) λ=½; (4,0) λ=1/7, 1/5 |
 | S14, S15 | proof; §S5: residues of $576D_1/Q_2$; the quadratic $18kD_1^2+N_2$; the derivation of (D) from (C′), (B) for an arbitrary branch (sympy) | both real forms |
 
-Run: `cd computation/geometric-unity && python3 S_z1_off_section.py > S_z1_off_section.out 2>&1`. Result: 23 checks, 23 True, each asserted; 260 s on one core, a second run 262 s, with identical output apart from the timing annotations.
+Run: `cd computation/geometric-unity && python3 S_z1_off_section.py > S_z1_off_section.out 2>&1`. Result: 23 checks, 23 True, each asserted. Original runs took 260 and 262 s on one core. The internal-review rerun took 110 s with normalized output identical; after qualifying the generic residue/degree label it took 121 s, with the same computed values and assertions. Independent referee checks: `python3 -I xcheck_round15.py --geometry`, 24 asserted checks, 1.9 s.
 
 ## S.3 Limits (layers b, d)
 
-- **Open.** (C1), the twisted cone $x(W_A+aW'_C\mathrm{Ad}_\Gamma)$ with $a\neq0$, in (14,0) at $\lambda=\tfrac15$, at type-(ii) points away from Π. There the base has $\mathrm{rank}\,\mathrm{Ric}_g\le1$ (S15). The relaxed system degenerates at Σ when $\mathrm{rank}\,\mathrm{Ric}_g\le1$ (S13(a)), and Q10/Q11 need $(\star)$ near a point of $s(X)$.
+- **Open.** (C1), the twisted cone $x(W_A+aW'_C\mathrm{Ad}_\Gamma)$ with $a\neq0$, in (14,0) at $\lambda=\tfrac15$, at type-(ii) points away from Π. There the base has $\mathrm{rank}\,\mathrm{Ric}_g\le1$ (S15). The exact rank-one example of the dated S15 follow-up is excluded, but arbitrary Weyl tensors and remaining connection jets in that class are not. The relaxed system degenerates at Σ when $\mathrm{rank}\,\mathrm{Ric}_g\le1$ (S13(a)), and Q10/Q11 need $(\star)$ near a point of $s(X)$.
 - **Computer-assisted inputs.**
   - N6(f), as in N.3. S7–S10 and S12–S16 rest on it; S1–S6 do not. S5(b) uses the computed constant α (N9) but not N6(f), since $\hat{\mathcal A}\equiv0$ there.
   - S6 is reduced by Schur to three exact evaluations per signature, and S5(c), (d) to 2 + 16 exact evaluations. They are used only for F9 over indefinite bases, which lie outside the GU setting at $\lambda=\tfrac15$.
   - S14 uses Q8's certificate (exact resultants).
-- **Continuation arguments.**
-  - S8 and S14 continue $r$, resp. an algebraic branch $t$, along paths in the complexified fibre $F_x^{\mathbb C}$.
-  - The identities continued are polynomial (S8: $P_0(r)=\rho$; S14: $k=\kappa(\tau)$, $(H/x)dt=v'^\flat$, $\mathcal G(t)-m$ constant). The paths avoid proper analytic subsets, whose complements are connected.
-  - This is the step a referee should check most carefully.
+- **Continuation arguments (reviewed 2026-11-01).**
+  - S8 continues local nonzero holomorphic germs using the closed rational form $\mu_1v'^\flat|_F$; it does not require a single-valued primitive on the whole fibre.
+  - S14–S15 use a finite algebraic cover and the identity $\tau^*(576D_1/Q_2\,d\tau)=v'^\flat|_F$. The local pole-order argument handles ramification, finite/infinite poles and degree drops. The exceptional constant $\kappa$ at $A=11/6$ is separated first.
+  - See `reports/reviews/REVIEW12-GU-S-2026-11-01.md` and `computation/geometric-unity/xcheck_round15.py`. The independent checks verify the coefficient identities and exceptional cases; the continuation lemma is a proof, not a numerical test.
 - **The dichotomy needs a full-rank point on Σ.** S7 has it for every base. S13 has it except for $\mathrm{Ric}_g=-c_Hbe^\theta g$ (at most one θ) and, at $\lambda=\tfrac15$, for $\mathrm{rank}\,\mathrm{Ric}_g\le1$.
-- **Hypotheses kept:** $n=4$; the real forms of J1–J2; $\kappa\neq0$; $T_e\in\mathcal V$ slaved with $\det M\neq0$ on $U$ (solutions crossing $\det M=0$ are not covered; the continued branches in S14 may pass $\det M=0$ in $F_x^{\mathbb C}$, which is harmless); $T_o$ in the invariant sector; for existence, $c_V>0$.
+- **Hypotheses kept:** $n=4$; the real forms of J1–J2; $\kappa\neq0$; $T_e\in\mathcal V$ slaved with $\det M\neq0$ on $U$; $T_o$ in the invariant sector; for existence, $c_V>0$. The cover in S14 is an auxiliary algebraic construction. It does not extend a physical solution across $\det M=0$; poles of $\eta$ are excluded wherever $\omega$ is regular.
 - **M1** is a symmetry of the reduced system only (as M.3).
 - **Reconstruction:** reading R-Z of F with Z1. No layer-(b) choice is changed.
 

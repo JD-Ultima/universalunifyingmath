@@ -4,6 +4,15 @@ Environment: Python 3.13.17, numpy 2.5.3, sympy 1.14.0, mpmath 1.3.0 (`pip insta
 
 The complete reproduction loop below uses Bash and was run on Linux. `transport.py` requires the `fork` multiprocessing start method: its workers inherit the operator closures and large arrays built by the parent. On Windows, run it in WSL using Linux Python; it now exits immediately with that requirement on native Windows. The other Python scripts can run natively with `python -X utf8 script.py` so Unicode output uses UTF-8.
 
+**Pinned upstream bytes.** The source checks hash `papers/alpha/lean/ChainAlpha.lean` as raw bytes. Git's Windows `core.autocrlf=true` conversion changes those bytes even when `git status` is clean. Prepare a separate source checkout with LF endings; keep the SHA256 pin unchanged:
+
+```bash
+git -c core.autocrlf=false clone https://github.com/alexwg/chain-theory.git chain-theory-source
+git -C chain-theory-source -c core.autocrlf=false checkout --detach a28db8998bce5bd5ef11195c05f13c86cd9dac5c
+```
+
+The expected raw-file SHA256 is `522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da`. A mismatch is rejected; the audit does not silently normalize or accept a changed source file.
+
 | Script | Purpose | Runtime | Output |
 |---|---|---|---|
 | `records_independent.py` | Operator-level rebuild of the 172 records; sectors; exact value; 60 digits (F-CT-1) | ~2 s | `records_independent.out` |

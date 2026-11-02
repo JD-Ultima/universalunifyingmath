@@ -2,7 +2,8 @@ result: "S. Upsilon = 0 in the Zorro metric Z1 on open sets of Y that need not m
 claim_id: [GU-054]
 gaps: [GU-G14, GU-G16]
 writeup: formalization/geometric-unity/S-z1-off-section.md (Lemmas S1, S2, S4, S6, S13; Corollaries S3, S11, S16; Propositions S7, S8, S9, S12, S15; Theorems S5, S10, S14); answers the items "open sets away from s(X)" and "type-(iii) points without analyticity" of N.3 (N-z1-neighbourhood.md) and Q.3 (Q-z1-remaining-members.md), except for the twisted cone at lambda = 1/5 away from Pi; proves Conjecture F9 (F-zorro-reduction.md) for Z1 at n = 4; answers P.3's "whether the same pointwise method closes the Z1 cases of N.3" (P-z2-last-exception.md)
-code: [computation/geometric-unity/S_z1_off_section.py, computation/geometric-unity/S_z1_off_section.out]
+code: [computation/geometric-unity/S_z1_off_section.py, computation/geometric-unity/S_z1_off_section.out, computation/geometric-unity/xcheck_round15.py, computation/geometric-unity/xcheck_round15.out]
+internal_review: reports/reviews/REVIEW12-GU-S-2026-11-01.md
 formalization_status: >
   Formalized in the setting of N and Q ((H1): the hypotheses of L8 with the metric Z1, n = 4, lambda != 1/4, cH cV != 0,
   real forms (14,0) and (7,7), kappa != 0, T_o = t Phi^1 + u Phi^1 Gamma, T_e the slaved field Sigma (dt, du) in V with
@@ -27,8 +28,9 @@ formalization_status: >
   base, which round 10's flat-base proposition excludes; (6) density: Einstein pieces lie over flat regions and type-(ii)
   points are excluded, so int Z is dense, the base is flat and (t, u) is constant (no analyticity); (7) the twisted cone
   (nonlinear mu): the relaxed system has full rank at Sigma for b != 0 (one exceptional theta), its rational solution has
-  xi parallel to v, so Q6 holds at Sigma with k(theta) = xi/v; t is an algebraic function of the fibre point (a root of
-  18 k D1^2 + N2), continued along the complexified fibre, and along Sigma Q7's relations hold for that branch; Q8's
+  xi parallel to v, so Q6 holds at Sigma with k(theta) = xi/v; the exceptional constant kappa at A = 11/6 is excluded first; otherwise a finite algebraic cover carries
+  k = kappa(tau) and tau*(576 D1/Q2 d tau) = v-flat. Pullback pole orders exclude finite and infinite pole values
+  above regular radial points, including ramification and degree drops. Along the lifted radial curve Q7 applies; Q8's
   certificate (algebraic) excludes sigma_g != 0, and for sigma_g = 0 the branch is constant on Sigma while the primitive
   of v' is not; at lambda = 1/5 the same gives rank Ric_g <= 1.
 internal_consistency: >
@@ -49,9 +51,11 @@ proof_status: >
   F9 over definite bases, using alpha), S11, S12. Proven, computer-assisted: S5(c), (d) and S6 (F9 over indefinite bases:
   Schur reduces S6 to three exact evaluations per signature; the null orbits to 2 + 16 exact evaluations). Proven, using
   N6(f) (computer-assisted, REVIEW8-GU R10-1): S7, S8, S9, S10, S13, S14, S15, S16; S14 also uses Q8's certificate.
+  Internal review REVIEW12-GU-S repaired the S8 closedness/analyticity step and replaced S14-S15
+  path avoidance by a finite-cover proof, with constant kappa treated separately; the stated exclusions survive.
   Open: the twisted cone x(W_A + a W'_C Ad_Gamma), a != 0, in (14,0) at lambda = 1/5 at type-(ii) points away from Pi
-  (there rank Ric_g <= 1, S15). The continuation arguments of S8 and S14 (along the complexified fibre) are the steps to
-  referee most carefully. Imported: N1-N4, N6, N7, N9-N11; Q1-Q8, Q12-Q15; P1(a), P2(d); F1, F2.4, F4, F6; L9; M3, M4.
+  (there rank Ric_g <= 1, S15). The continuation arguments are now explicit proofs: S8 uses closed rational forms and local holomorphic germs,
+  S14-S15 use a finite algebraic cover and the local pole order e(m-1)+1. Numerical checks do not replace these proofs. Imported: N1-N4, N6, N7, N9-N11; Q1-Q8, Q12-Q15; P1(a), P2(d); F1, F2.4, F4, F6; L9; M3, M4.
 novelty: >
   New within this audit: the Z1 question in the slaved vector sector is settled on every open set of Y, not only near
   s(X): no solution in (7,7) for any member with (x,y) != 0 (as in Z2); in (14,0) lambda = 1/5 and, except for the
@@ -59,7 +63,7 @@ novelty: >
   at n = 4 (with L2 for Z2, at n = 4 for both metrics). The method: polynomiality of the Z1 curvature along a whole fibre
   turns pointwise integrability on any open set into integrability at the radial points, where round 10's hand analysis
   applies. Not in the source.
-reproducibility: "Exact (Fractions, N's truncated series with Fraction coefficients, sympy rationals); fixed seeds (random.Random(101-102) S0, 111-112 S1, 121-122 S2, 131-136 S3, 141-142 S4, 151 S5); one core: 260 s, a second run 262 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 S_z1_off_section.py > S_z1_off_section.out 2>&1 (23 checks, 23 True, each asserted). Imports F_jets.py and N_z1_neighbourhood.py (and through it L_nonradial.py, J_slaved_sector.py, ...) unmodified."
+reproducibility: "Exact (Fractions, N's truncated series with Fraction coefficients, sympy rationals); fixed seeds (random.Random(101-102) S0, 111-112 S1, 121-122 S2, 131-136 S3, 141-142 S4, 151 S5); one core: 260 s, a second run 262 s, identical apart from timing annotations. Run from computation/geometric-unity: python3 S_z1_off_section.py > S_z1_off_section.out 2>&1 (23 checks, 23 True, each asserted). Imports F_jets.py and N_z1_neighbourhood.py (and through it L_nonradial.py, J_slaved_sector.py, ...) unmodified. Internal review rerun: Python 3.12, 23/23 checks, 110 s, normalized output identical before the scoped print-label repair; the repaired-label rerun passed 23/23 checks in 121 s. Independent xcheck_round15.py: default/--quick 21 symbolic checks (0.1 s); --geometry 24 checks (1.9 s), importing only referee xcheck_round10 for its optional geometry."
 empirical_testability: >
   None new. In the slaved vector sector neither Z1 nor Z2 yields a curved 4D solution of Upsilon = 0 on any open subset
   of Y, except possibly for the twisted cone in Z1, (14,0), lambda = 1/5, away from Pi; the only solutions (Z1, (14,0),
@@ -69,8 +73,17 @@ dependencies: ["N1", "N2", "N3", "N4", "N6", "N7", "N9", "N10", "N11", "Q1", "Q3
 confidence: >
   High for S1-S4, S5(a), (b), S10's (7,7) part for the Einstein classes, S11, S12: hand proofs on proven inputs with
   independent checks. High for S7, S9, S10: the continuation reduces them to round 10's refereed hand analysis at the
-  radial points (rank 28 there is a hand fact, also checked). Medium-high for S8 and S14: they continue r, resp. an
-  algebraic branch of t, along paths in the complexified fibre; each step is standard, but the arguments are new and
-  unrefereed. Medium-high for S5(c), (d): the Schur reduction of S6 and the orbit classification of null curvatures are
+  radial points (rank 28 there is a hand fact, also checked). High for S8 and S14-S15 after internal review REVIEW12-GU-S: closedness and fibre analyticity are explicit
+  for S8; the finite-cover argument handles ramification, poles of every order and the constant-kappa exception.
+  This is internal review, not external peer review. Medium-high for S5(c), (d): the Schur reduction of S6 and the orbit classification of null curvatures are
   hand arguments, the evaluations exact. Not covered: the twisted cone at lambda = 1/5 away from Pi; T_e outside V or
   crossing det M = 0; T_o outside the invariant sector; n != 4.
+
+rank_one_follow_up: >
+  Exact example only, not a rank-one-Ricci classification. At x=0 use g0=I4, Ric0=diag(1,0,0,0), W0=0,
+  P=(Ric0-I4/6)/2, R=P wedge I4, and the complete local metric g_ij(x)=delta_ij-R_iajb x^a x^b/3,
+  lambda=1/5, cH=2, cV=3. This fixes the higher connection jets as well as Ric. Independent referee geometry
+  gives relaxed ranks (41,42) at y=I4 and (42,43) at y=diag(2,3,4,5). By S4 the full-rank inconsistent point
+  excludes every nonempty fibre-open consistent patch for this specified jet. Arbitrary Weyl tensors and remaining
+  connection jets in the rank-Ricci<=1 class remain open. The full pointwise plane-wave Einstein locus is also not
+  classified: Pi is Einstein and sampled off-Pi points fail; S5 proves that there is no Einstein open set.

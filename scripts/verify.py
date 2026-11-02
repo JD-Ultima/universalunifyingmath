@@ -3,9 +3,11 @@
 
 This suite excludes long searches, optional SDP/element checks, manuscript
 compilation, and fresh Lean builds. --upstream adds text/record consistency
-checks against the exact recorded Chain Theory commit.
+checks against the exact recorded Chain Theory commit. --recent includes
+bounded independent checks of the latest research rounds.
 """
 import argparse
+import hashlib
 import importlib.metadata
 import os
 from pathlib import Path
@@ -34,7 +36,24 @@ SELECTED = [
 ]
 
 
-def source_commands(path):
+RECENT = [
+    ("chain-theory/alpha/records_uniform.py", []),
+    ("chain-theory/alpha/xcheck_round_ct5.py", []),
+    ("geometric-unity/xcheck_round14.py", []),
+    ("geometric-unity/xcheck_round15.py", ["--geometry"]),
+]
+LEAN_SOURCE_SHA256 = "522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da"
+
+
+def check_alpha_source_bytes(path):
+    """Preserve the raw-byte pin used by the recent alpha source readers."""
+    lean_source = path / "papers/alpha/lean/ChainAlpha.lean"
+    if not lean_source.is_file() or hashlib.sha256(lean_source.read_bytes()).hexdigest() != LEAN_SOURCE_SHA256:
+        raise ValueError("recent alpha checks require the exact pinned LF source bytes; use a fresh clone with "
+                         "'git clone --config core.autocrlf=false ...' and the recorded commit")
+
+
+def source_commands(path, recent=False):
     compendium = path / "compendium"
     if not (compendium / "index/statements.tsv").is_file():
         raise ValueError("--upstream must point to a Chain Theory checkout")
@@ -50,7 +69,7 @@ def source_commands(path):
                          "use a fresh clone checked out at the recorded commit")
     prefix = ROOT / "computation/chain-theory/compendium"
     logs = prefix / "outputs"
-    return [
+    commands = [
         ("source census", [str(prefix / "census.py"), str(compendium / "index/statements.tsv")]),
         ("source premises", [str(prefix / "premises.py"), str(compendium)]),
         ("source hydrogen registers", [str(prefix / "hydrogen_registers.py"), str(compendium)]),
@@ -59,11 +78,20 @@ def source_commands(path):
             "--axioms", str(logs / "lean_axioms.txt"), "--checks", str(logs / "lean_table_checks.txt"),
             "--round6-tsv", str(logs / "lean_resolve.tsv")]),
     ]
+    if recent:
+        check_alpha_source_bytes(path)
+        alpha = ROOT / "computation/chain-theory/alpha"
+        commands += [
+            ("recent conjugation source anchors", [str(alpha / "conjugation.py"), "--upstream", str(path)]),
+            ("recent record source anchors", [str(alpha / "records_uniform.py"), "--upstream", str(path)]),
+        ]
+    return commands
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--upstream", type=Path, help="optional pristine Chain Theory checkout (no extra files)")
+    parser.add_argument("--recent", action="store_true", help="include bounded latest-round independent checks")
     parser.add_argument("--timeout", type=float, default=180, help="seconds per check (default: 180)")
     parser.add_argument("--list", action="store_true", help="list selected checks without running them")
     args = parser.parse_args()
@@ -71,9 +99,11 @@ def main():
         parser.error("--timeout must be positive")
     checks = [("focused regressions", ["-m", "unittest", "discover", "-s", "tests", "-v"])]
     checks += [(item, [str(ROOT / "computation" / item)]) for item in SELECTED]
+    if args.recent:
+        checks += [(item, [str(ROOT / "computation" / item), *options]) for item, options in RECENT]
     if args.upstream:
         try:
-            checks += source_commands(args.upstream.resolve())
+            checks += source_commands(args.upstream.resolve(), recent=args.recent)
         except (ValueError, OSError, subprocess.TimeoutExpired) as error:
             parser.error(str(error))
     if args.list:
