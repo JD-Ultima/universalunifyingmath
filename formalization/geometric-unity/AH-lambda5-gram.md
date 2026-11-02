@@ -4,7 +4,9 @@ The symmetric Gamma equation restricts both single $W_A$ Lambda5 kernel branches
 
 An explicit form with full fourteen-dimensional support has isotropic Gram matrix and satisfies the selected symmetric channel at regular real conic parameters. AH5 examines its remaining equations and excludes its scaling/rotation orbit on the first branch at nonzero $u$. General five-forms remain unclassified.
 
-Code: `computation/geometric-unity/AH_lambda5_gram.py` → `.out`, with the cyclic-orbit certificate in `AH_cyclic_obstruction.py` → `.out`. Record: `metrics/geometric-unity/AH-lambda5-gram.yaml`. Both helpers use T's accepted Clifford implementation and exact rational/polynomial controls, with no off-repository files. [Independent internal Review31](../../reports/reviews/REVIEW31-GU-AH-2026-11-02.md) accepts AH1–AH4 and reproduces all 25 original checks. [Review34](../../reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md) separately accepts AH5 and reproduces its 14 checks. These are internal reviews, not external peer review.
+AH6 treats constant-odd domains at all four zero-$u$ endpoints. It gives exact necessary norm bounds and Euler/Gram alignment, without a simplicity assumption. Real-form Grams attain these bounds for the selected algebraic channel; no observer metric or full field solution is constructed. AH7 excludes any constant normalized Gram spectrum on a fibre-open patch, including fixed scaling/rotation families, while leaving general varying shapes unresolved.
+
+Code: `computation/geometric-unity/AH_lambda5_gram.py` → `.out`, with the cyclic-orbit certificate in `AH_cyclic_obstruction.py` → `.out`. Record: `metrics/geometric-unity/AH-lambda5-gram.yaml`. Both helpers use T's accepted Clifford implementation and exact rational/polynomial controls, with no off-repository files. [Independent internal Review31](../../reports/reviews/REVIEW31-GU-AH-2026-11-02.md) accepts AH1–AH4 and reproduces all 25 original checks. [Review34](../../reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md) separately accepts AH5 and reproduces its 14 checks. [Review39](../../reports/reviews/REVIEW39-GU-AH-ENDPOINTS-2026-11-02.md) accepts AH6–AH7 and reproduces the final 74-control helper. These are internal reviews, not external peer review.
 
 ## Setting and the two real kernels
 
@@ -125,6 +127,86 @@ At AH4's regular weights $(r,s)=(\sqrt{14},2)$, the displayed coefficients are $
 
 The portable certificate `computation/geometric-unity/AH_cyclic_obstruction.py` includes the compact phase, real conic control and nonzero derivative controls. Arbitrary five-forms, the other Lambda-five pair, zero-$w$ endpoints and coincident kernels remain outside AH5.
 
+## AH6. Constant-odd endpoint domains: exact Euler/Gram bounds
+
+For this section also assume the reconstructed Z1 metric over a smooth positive four-base, with constant $c_H,c_V>0$ and $\lambda<1/4$. Put
+$$c=4c_V(1-4\lambda)>0.$$
+On an entire nonempty open observer domain, let $a$ equal one of the four endpoint constants below and let $u\equiv0$. Retain the single-kernel and regularity hypotheses above. Then $T_o=i\kappa a\Phi^1$ is parallel, the slaved vector field $v$ vanishes identically, and so does $D(v)$. A nonzero chart weight can be absorbed into a smooth real five-form $\omega$; the form itself may vanish. No simplicity assumption is made.
+
+This **constant-odd domain** assumption is essential. An isolated zero-$u$ point on a varying conic need not have $D(v)=0$, even if $v=0$ there, and is outside AH6.
+
+Write $G$ for the raised observer Einstein tensor and
+$$b=\kappa^2a(1+312a)>0.$$
+The complete quadratic grade-one tensor of each pure kernel copy is
+$$[Q(k)]_1/i=q_1NI+\ell S.$$
+Here $S$ and $N$ use the positive form norm defined in AH1. The constants and retained derivative grades are:
+
+| $a$ | compact kernel $k$ | $b/\kappa^2$ | $q_1$ | $\ell$ | grades of $D(k)$ |
+|---|---|---:|---:|---:|---|
+| $-1/96$ | $i\mathsf c(\omega)$ | $3/128$ | $40/3$ | $32/3$ | $3,7$ |
+| $-3/832$ | $i\mathsf w(\omega)\Gamma$ | $3/6656$ | $112$ | $-64$ | $7,11$ |
+| $-3/704$ | $\mathsf w(\omega)$ | $87/61952$ | $112/3$ | $320/3$ | $5,9$ |
+| $-1/160$ | $\mathsf c(\omega)\Gamma$ | $19/3200$ | $40$ | $-32$ | $9,13$ |
+
+*Universal tensor and derivative proof.* The twelve-slot metric-contraction count used in AH1 applies to the grade-one output as well. The only two-tensor contractions of two alternating five-tensors are $NI$ and $S$, both symmetric; an epsilon term cannot occur. The exact output on a unit simple form fixes the two constants in each row, and hence the full tensor for arbitrary forms. Separate nondecomposable, off-diagonal-Gram and full-support controls check its conventions.
+
+For the first pair, AA4 at form degree five gives the complete covariant identities, with $\delta_\nabla$ the codifferential:
+$$D(i\mathsf c\omega)=-10\mathsf w(d\omega)+6\mathsf c(\delta_\nabla\omega),$$
+$$D(i\mathsf w\omega\Gamma)=[-14\mathsf w(d\omega)+18\mathsf c(\delta_\nabla\omega)]\Gamma.$$
+They include derivatives of every absorbed weight. For the opposite pair, an even Clifford input of grade six or ten has only even intersection sizes in the triple anticommutator, giving the last two grade sets in the table. This does not impose AA4's first-pair factorization on the opposite pair: nonzero Cartan jets can survive. All four derivatives have no grade-one component, while their other equations remain required. Since the invariant baseline is $bI$ in grade one and $v\equiv0$, every full solution obeys
+$$\boxed{G=-(b+q_1N)I-\ell S.}\tag{AH6a}$$
+
+In dimension fourteen, $\mathrm{Ric}^{\sharp}=G-\operatorname{tr}(G)I/12$ and $\operatorname{tr}S=5N$. Thus
+$$\mathrm{Ric}^{\sharp}=\left[\frac b6+\frac{2q_1+5\ell}{12}N\right]I-\ell S.$$
+[N1(d)](N-z1-neighbourhood.md) gives a nonzero Euler field $E$ with $|E|^2=c$ and $\mathrm{Ric}^{\sharp}E=-E/c$. Set $e=E/\sqrt c$ and $\mu=S(e,e)=|\iota_e\omega|^2$. Since every $\ell\ne0$, the full vector identity requires the alignment
+$$Se=\mu e.$$
+The orthogonal decomposition $\omega=e^\flat\wedge\alpha+\beta$ on $e^\perp$ gives $0\le\mu\le N$. Writing $L=b+6/c>0$, the exact scalar consequence is
+$$\boxed{2L+(2q_1+5\ell)(N-\mu)+(2q_1-7\ell)\mu=0.}\tag{AH6b}$$
+It yields precisely the following bounds for this channel:
+
+| $a$ | required $\mu$ | lower bound on $N$ | possible $\mu/N$ |
+|---|---|---|---|
+| $-1/96$ | $(40N+L)/64$ | $N\ge L/24$ | $(5/8,1]$ |
+| $-3/832$ | $(48N-L)/384$ | $N\ge L/48$ | $[0,1/8)$ |
+| $-3/704$ | $(304N+L)/640$ | $N\ge L/336$ | $(19/40,1]$ |
+| $-1/160$ | $(40N-L)/192$ | $N\ge L/40$ | $[0,5/24)$ |
+
+In particular $N>0$. The coefficient pairs in (AH6b) are $(80,-48)$, $(-96,672)$, $(608,-672)$ and $(-80,304)$. Each pair has opposite signs, so these necessary Euler/Gram equations do not exclude the endpoint domains.
+
+The bounds are sharp **only for the selected algebraic grade-one/Euler channel**. For any allowed pair $(N,\mu)$, the real form
+$$\omega=\sqrt\mu\,e^{01234}+\sqrt{N-\mu}\,e^{56789},\qquad e=e_0,$$
+has the prescribed norm and contraction, with $e$ a Gram eigenvector. Defining the synthetic tensor $G$ by (AH6a) then satisfies the full selected Euler vector equation whenever (AH6b) holds. At each lower bound use a simple form with the Euler direction inside its support when $\ell>0$, or in its annihilator when $\ell<0$. These examples are not curvatures of constructed Z1 metrics and do not solve the other nonlinear or differential equations.
+
+As a separate consequence, every nonzero isotropic Gram $S=(5N/14)I$ is incompatible with these constant endpoint domains. In the four rows $q_1+5\ell/14$ equals $120/7$, $624/7$, $528/7$ and $200/7$, respectively. Equation (AH6a) would make $\mathrm{Ric}^{\sharp}$ a positive scalar, contradicting its negative Euler eigenvalue. This includes AH4's cyclic orbit at the four constant endpoints, without extending AH5 to general five-forms or isolated endpoints of moving fields.
+
+## AH7. No constant normalized Gram spectrum along a fibre patch
+
+Keep AH6's constant-odd endpoint domain $U$. Every full solution would have $N>0$ there. Fix any $x\in\pi(U)$ and any nonempty relative-open subset $\Omega\subset U\cap F_x$ of its positive fibre.
+
+**Proposition AH7.** The unordered eigenvalue multiset of $S/N$ cannot be constant on $\Omega$.
+
+*Proof.* Suppose this normalized spectrum is constant on $\Omega$. By AH6a, put
+$$H=G+bI=-NA,\qquad A=q_1I+\ell S/N,\qquad
+D=\operatorname{tr}A=14q_1+5\ell>0,\qquad \tau=\operatorname{tr}H=-DN.$$
+For a real five-form, $0\le S\le NI$. Consequently the eigenvalues $\alpha_1,\ldots,\alpha_{14}$ of $A$ are positive: the four uniform lower bounds are $40/3$, $48$, $112/3$ and $8$. They are constant on $\Omega$, with repetitions allowed, and $D$ is respectively $240$, $1248$, $1056$ or $400$.
+
+The characteristic polynomial of $A$ and Cayley–Hamilton give the homogeneous metric identity
+$$\boxed{\prod_{j=1}^{14}(DH-\alpha_j\tau I)=0.}\tag{AH7a}$$
+Indeed each factor on $\Omega$ is $-DN(A-\alpha_jI)$. All factors commute. No eigenvector frame or distinct-eigenvalue assumption is required.
+
+Fixing $x$ makes the $\alpha_j$ real constants. [S4(a)](S-z1-off-section.md) makes every coordinate entry of (AH7a) rational in the fibre matrix $y$, with denominators powers of $\det y$. Clear those denominators. Since the resulting polynomial vanishes on the nonempty real open set $\Omega$, it vanishes identically, so (AH7a) holds on the entire positive fibre. Only this metric identity is extended; no field, form, eigenvector, norm or inequality is continued.
+
+If $\tau=0$ anywhere on that fibre, (AH7a) gives $D^{14}H^{14}=0$. The positive observer metric makes $H$ self-adjoint, so all its eigenvalues vanish and $H=0$. Then $G=-bI$ and $\mathrm{Ric}^{\sharp}=bI/6$, contradicting N1's negative Euler eigenvalue $-1/c$. Thus the continuous scalar $\tau$ is nowhere zero on the whole positive fibre. That fibre is connected, so its sign is constant. On $\Omega$ its sign is negative, since $\tau=-DN<0$.
+
+There is a contradiction along the radial ray $y=\rho g(x)$, $\rho>0$. The metric $\rho g$ has the same connection as $g$, so [F4/K](K-z1-ricci-general-n.md) applies at these section points. Taking the scalar trace gives exactly
+$$\tau(\rho)=14b+\frac{30}{c}+\frac{135}{2c_V}
+-\frac{6R_g(x)}{\rho c_H}.$$
+Its limit as $\rho\to\infty$ is strictly positive. This contradicts the negative sign on the connected fibre. The sign is carried by continuity and the zero-trace barrier, not by analytic continuation of an inequality. ∎
+
+The normalized spectrum may depend on the base point $x$; constancy on just one nonempty fibre-open patch is already impossible. In particular, a fixed nonzero five-form's $SO(14)$ and nonzero-scaling orbit has constant normalized Gram spectrum and cannot describe such a patch. This includes zero/simple-form domains (zeros already violate AH6) and isotropic-Gram families. AH6 separately excludes isotropic values pointwise inside a constant endpoint domain. AH7 does not exclude isolated simple-form values in a field with generally varying normalized spectrum, and does not assert a nonzero spectral derivative at every point.
+
+These conclusions do not affect AH6's synthetic Gram/Euler examples: those establish only selected algebraic feasibility, not metric realizability on a fibre-open domain. General varying Gram shapes and the remaining nonlinear and derivative equations stay unresolved.
+
 ## Reproduction and remaining boundary
 
 Run `python -X utf8 -I computation/geometric-unity/AH_lambda5_gram.py` from the repository root. The original helper checks both compact phases, full symbolic-weight formulas on general forms, off-diagonal and full-support Grams, mixed and derivative controls, both exact kernel charts and the negative conic values. Its cyclic channel control uses the exact Gram calculation. The regular channel parameters and remaining block regularity are checked exactly.
@@ -133,6 +215,6 @@ Run `python -X utf8 -I computation/geometric-unity/AH_cyclic_obstruction.py` for
 
 The all-form tensor identity follows from the contraction count, and the rank conclusions from positive Gram linear algebra. Finite controls check those conventions rather than classify five-forms. Both helpers share T's accepted Clifford engine and supply no independent physical evidence.
 
-With Python 3.12 and SymPy 1.14.0, the recorded Gram run passes all 25 checks in 4.5 seconds. The cyclic-obstruction run passes all 14 checks in 5.5 seconds.
+The Gram helper preserves its original 25 controls and adds AH6's four compact endpoint copies, full grade-one outputs on general forms, all fourteen derivative directions, the complete first-pair derivative identities, surviving opposite-pair Cartan jets, exact bounds and real-Gram controls of the selected Euler vector equation. AH7 adds homogeneous characteristic-polynomial controls on an actual nondecomposable Gram, including repeated roots, the zero-trace power and the exact scalar radial limit. The recorded run passes 74 exact controls in 9.6 seconds with Python 3.12 and SymPy 1.14.0. It uses F4, S4 and N1 as geometric inputs; it does not reconstruct the metric engine. The tensor identities and fibre argument follow from the proofs; the finite controls do not establish metric or field existence. The separately recorded cyclic-obstruction run passes all 14 checks in 5.5 seconds.
 
-Zero-$w$ points, coincident kernels, $\det M=0$, other Shiab members, non-invariant odd fields and indefinite real forms remain outside these nonzero-$w$ conclusions. The full nonlinear Lambda5 system and its PDE sufficiency are unresolved.
+AH1–AH5 retain their stated scopes. AH6–AH7 concern entire constant-odd endpoint domains. Isolated zero-$w$ points of varying odd fields, coincident kernels, $\det M=0$, other Shiab members, non-invariant odd fields and indefinite real forms remain outside these conclusions. General varying Gram shapes, the full nonlinear Lambda5 system, actual endpoint existence and PDE sufficiency are unresolved.

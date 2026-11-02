@@ -6,13 +6,20 @@ result: >
   dimension at most 12 is excluded. An isotropic full-support form satisfies the
   selected channel at regular parameters. AH5 excludes that form's nonzero real
   scaling/SO14 orbit from full solutions on the first c/wGamma branch at nonzero
-  w, using a remaining grade-nine coefficient. General five-forms remain open.
+  w, using a remaining grade-nine coefficient. AH6 gives exact necessary norm
+  bounds and Euler/Gram alignment on all four constant-odd endpoint domains.
+  Those selected algebraic bounds are attained by real-form Grams, not by
+  constructed observer metrics or full field solutions. AH7 excludes a constant
+  normalized Gram spectrum on any nonempty fibre-open patch, including fixed
+  scaling/rotation families. General varying Gram shapes remain open.
 claim_id: [GU-054]
-result_ids: [AH1, AH2, AH3, AH4, AH5]
+result_ids: [AH1, AH2, AH3, AH4, AH5, AH6, AH7]
 gaps: [GU-G14, GU-G15]
 writeup: formalization/geometric-unity/AH-lambda5-gram.md
 internal_review: reports/reviews/REVIEW31-GU-AH-2026-11-02.md
-supporting_review: reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md
+supporting_review:
+  - reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md
+  - reports/reviews/REVIEW39-GU-AH-ENDPOINTS-2026-11-02.md
 code:
   - computation/geometric-unity/AH_lambda5_gram.py
   - computation/geometric-unity/AH_lambda5_gram.out
@@ -24,6 +31,10 @@ formalization_status: >
   is present, away from all other non-vector singular factors. The c/wGamma
   phase is i (grades 4/8); w/cGamma phase is 1 (grades 6/10). Real smooth weights
   are not both zero in the chosen kernel chart and are both nonzero at w!=0.
+  AH6 additionally assumes positive Z1 with constant cH,cV>0, lambda<1/4 and
+  c=4cV(1-4lambda)>0, on an entire constant-odd zero-u endpoint domain. Its
+  nonzero chart weight is absorbed into an arbitrary real five-form; no
+  simplicity is assumed. Isolated zero-u points on varying conics are not covered.
 proof_status: >
   AH1 derives Sym(Q13*Gamma/i)=(160/3)rs*N*I-(304/3)rs*S for arbitrary real
   five-forms by the two-pattern metric-contraction count and symbolic calibration.
@@ -39,6 +50,19 @@ proof_status: >
   nonzero for every real nonzero chart, so no derivative choice can complete it.
   Independently accepted in reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md;
   all 14 cyclic-obstruction checks reproduced.
+  AH6 derives complete Q1/i=q1*N*I+ell*S for each pure endpoint copy by the
+  twelve-slot contraction count and exact calibration. Kernel derivatives have
+  no grade one, and v=Dv=0 on a constant-odd domain. N1(d), trace reversal and
+  0<=mu=S(e,e)<=N give Se=mu*e and the exact lower norm bounds. Every bound
+  is algebraically attained with e a Gram eigenvector. Nonzero isotropic Grams
+  are excluded there. AH7 homogenizes the constant normalized stress
+  characteristic polynomial as product(D*H-alpha_j*tau*I)=0. S4 extends only
+  that metric identity over the positive fibre. At tau=0, self-adjointness
+  would force H=0 and violate N1; connectedness therefore preserves the actual
+  negative trace sign. F4's exact radial trace tends to
+  14b+30/c+135/(2cV)>0, giving a contradiction. AH6-AH7 are pending independent
+  Review39; no general varying-shape endpoint exclusion or full-system
+  existence result is claimed.
 internal_consistency: >
   Exact controls include both real phases, general nondecomposable forms with
   off-diagonal Gram entries, full fourteen-dimensional support, mixed/derivative
@@ -47,6 +71,15 @@ internal_consistency: >
   non-vector kernel; its scalar channel balance is exact. AH5's direct phased
   output confirms that same balance and the nonzero remaining coefficients.
   The three displayed coefficient polynomials generate (r^2,rs,s^2) exactly.
+  AH6 checks all four compact copies on zero, simple, nondecomposable,
+  off-diagonal and full-support forms, both kappa signs symbolically, all
+  fourteen derivative directions, first-pair AA4 identities and surviving
+  opposite-pair Cartan jets. Sharp and nondecomposable Gram controls satisfy
+  the full selected Euler vector equation, without asserting metric realizability.
+  AH7 checks actual nondecomposable normalized Grams, scale invariance,
+  different spectra, all four homogeneous characteristic polynomials with
+  repeated roots, the leading H^14 zero-trace term and the exact radial scalar
+  formula. No eigenframe, field or inequality is analytically continued.
 reproducibility: >
   Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
   computation/geometric-unity/AH_lambda5_gram.py and python -X utf8 -I
@@ -55,19 +88,28 @@ reproducibility: >
   No off-repository dependency, randomness or numerical parameter fitting.
   The original helper checks the cyclic form's Gram; AH5 adds integer Clifford
   polarization and a direct phased control on the full form. The recorded runs
-  pass 25 exact checks in 4.5 seconds and 14 checks in 5.5 seconds, respectively.
+  preserve the original 25 Gram controls and add 37 AH6 and 12 AH7 controls, passing 74
+  exact checks in 9.6 seconds. The separate AH5 run passes 14 checks in 5.5 seconds.
 novelty: >
   Bounded necessary stress-spectrum reduction within this investigation for
   the Lambda5 branches, with a full-equation obstruction for one explicit orbit
-  on the first pair. No general five-form classification, full singular
+  on the first pair, necessary constant-endpoint Euler/Gram bounds and a
+  fibre-open fixed-spectrum exclusion. No
+  general five-form classification, full singular
   classification or literature novelty is claimed.
 empirical_testability: None new; necessary field-equation constraints.
-dependencies: [R2, R4, R6, J1, AF1]
+dependencies: [R2, R4, R6, J1, AF1, AA4, N1, F4, S4]
 confidence: >
   AH1-AH4 and AH5 independently reviewed internally in their separate reports. The
   full-support channel control remains valid, while a remaining equation excludes
   that orbit on the first branch at nonzero w. No all-five-form exclusion or
-  field solution is asserted.
+  field solution is asserted. AH6-AH7 are accepted in independent internal Review39; their
+  exact controls pass, and algebraic channel feasibility is explicitly
+  distinguished from field or metric existence. AH7 concerns constant
+  normalized spectra on a relative-open fibre patch; it does not require
+  nonzero spectral derivatives at every point. AH6's isotropic pointwise
+  exclusion inside constant endpoint domains is separate.
 pending_work: >
-  The remaining nonlinear components, actual field existence, zero-u endpoints, coincident
-  kernels and indefinite cases need separate analysis.
+  General varying Gram shapes, remaining nonlinear components and actual constant-endpoint field existence,
+  isolated zero-u points of varying fields, coincident kernels and indefinite
+  cases need separate analysis.
