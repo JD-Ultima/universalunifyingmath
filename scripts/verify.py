@@ -65,6 +65,7 @@ RECENT = [
     ("geometric-unity/EE_zero_electric_weyl.py", []),
     ("geometric-unity/FF_joint_weyl.py", []),
     ("geometric-unity/GG_ricci_zero_weyl.py", []),
+    ("geometric-unity/HH_ricci_zero.py", []),
 ]
 LEAN_SOURCE_SHA256 = "522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da"
 

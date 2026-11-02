@@ -109,4 +109,4 @@ The recorded fresh run passes 31 main checks and 60 rank-helper checks in 107.1 
 
 This includes the one-parameter $a=b$ joint pencil and allows arbitrary independent amplitudes in the same two fixed directions. It does not cover commuting electric and magnetic matrices without a common kernel, noncommuting pairs, arbitrary joint Weyl curvature, or Ricci-flat nonflat points. CC and EE separately cover their respective pure-part conditions without FF's common-kernel restriction.
 
-[GG](GG-ricci-zero-weyl.md) separately treats a nonzero-Weyl Ricci-zero boundary with singular chiral blocks, using new rank certificates rather than a limit of this theorem.
+[HH](HH-ricci-zero.md) separately treats every nonzero-curvature Ricci-zero point, with [GG](GG-ricci-zero-weyl.md) as its singular-block subcase. Their rank certificates are computed at Ricci zero rather than obtained as a limit of this theorem.

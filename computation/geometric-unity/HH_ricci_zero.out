@@ -1,0 +1,20 @@
+HH. Every positive Ricci-zero point with nonzero Riemann curvature
+Fresh portable path: 45 required node systems once in memory; no raw stored matrices or disk caches.
+[01] all four curvature basis tensors satisfy Bianchi, pair symmetries and zero Ricci: True
+[02] compatibility nodes and normalized-rank nodes match the prior total-degree spaces: True
+[03] selected rows have only xi_13 and the same curvature-independent n term: True
+[04] all 30 unused coefficient nodes check the reconstructed selected rows: True
+[05] the ten additional normalized nodes check every selected RHS polynomial: True
+[06] the actual compatibility determinant is a homogeneous quartic with 35 terms: True
+  actual compatibility determinant P = 2353*p**4/76832000 + 2353*p**3*q/38416000 + 6603*p**3*r/76832000 + 39527*p**3*s/460992000 - p**2*q**2/39200 + 39709*p**2*q*r/460992000 + 14507*p**2*q*s/65856000 - 2221*p**2*r**2/3841600 - 2221*p**2*r*s/3841600 - p**2*s**2/39200 - 1017*p*q**3/7683200 - 14507*p*q**2*r/65856000 - 12447*p*q**2*s/153664000 - 2221*p*q*r**2/3841600 + p*q*r*s/1400 + 14033*p*q*s**2/11524800 + 6603*p*r**3/76832000 + 39709*p*r**2*s/460992000 - 14507*p*r*s**2/65856000 - 38599*p*s**3/460992000 - 1017*q**4/15366400 - 38599*q**3*r/460992000 - 3797*q**3*s/46099200 - q**2*r**2/39200 + 14033*q**2*r*s/11524800 + 14033*q**2*s**2/11524800 + 39527*q*r**3/460992000 + 14507*q*r**2*s/65856000 - 12447*q*r*s**2/153664000 - 3797*q*s**3/46099200 + 2353*r**4/76832000 + 2353*r**3*s/38416000 - r**2*s**2/39200 - 1017*r*s**3/7683200 - 1017*s**4/15366400
+  orbit certificate: 6 exact checks; 36 frames, all 84 degree-six coefficient slots agree.
+[07] the orbit certificate rejects an incorrectly doubled determinant: True
+  normalized p=1: 14 exact rank checks; invariant rank 38 and J5-completed rank 42 for every real q,r,s.
+  normalized p=-1: 14 exact rank checks; invariant rank 38 and J5-completed rank 42 for every real q,r,s.
+[08] the complete flat quadratic control retains ranks 28/28: True
+[09] all 45 exact systems were assembled once: True
+Both-singular chiral blocks use reviewed GG1-GG6. Otherwise choose a nonsingular W+, then a nonzero orbit term, THEN normalize its first eigenvalue p.
+The positive covariance transports rank42 and incompatibility TOGETHER from that selected normalized witness. No common original numeric fibre is asserted.
+Arbitrary higher jets use DD3/GG5, and the local fixed-minor step uses nonzero Riemann curvature. The flat origin and indefinite real forms remain outside this theorem.
+
+9 main + 28 rank + 6 orbit checks, all True; runtime 76.4 s

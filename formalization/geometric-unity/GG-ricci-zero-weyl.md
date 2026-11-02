@@ -1,5 +1,7 @@
 # GG. Ricci-zero points with singular chiral Weyl blocks
 
+[HH](HH-ricci-zero.md) extends the obstruction to all nonzero-curvature Ricci-zero points. This note preserves the simpler singular-block proof used there.
+
 The obstruction reaches a nonflat part of the Ricci-zero boundary. At a Riemannian four-metric point with $\mathrm{Ric}=0$, suppose $W\ne0$ and both chiral Weyl blocks are singular. An exact positive compatibility polynomial and new normalized rank certificates exclude fibre-open relaxed solutions. The complete flat quadratic control retains its lower rank; zero-curvature points remain outside the theorem. Arbitrary higher metric jets are allowed at the covered nonzero-curvature points.
 
 Unlike FF, there is no distinguished Ricci eigenline. The intrinsic normal form uses independent rotations of the two chiral three-spaces. The coefficient certificates below are calculated anew at Ricci zero; no nonzero-Ricci rank result is extended by taking a limit.
@@ -111,4 +113,4 @@ Run `python -X utf8 -I computation/geometric-unity/GG_ricci_zero_weyl.py` from t
 
 The recorded fresh run passes 10 main checks, 28 rank checks and 6 chiral checks in 20.9 s; Review35 independently reproduces them in 20.9 s. Its separate nonunit control at $\alpha=-2$, $\beta=3$, $c_H=5$, $c_V=7$ verifies ranks $42/43$ at the transported fibre matrix $(28/15)y_*$. The rank certificate is 10,906 bytes.
 
-The zero-curvature origin remains outside the exclusion. So do Ricci-zero Weyl tensors with a nonsingular chiral block and indefinite real forms. This is a pointwise curvature condition in the reconstructed sector, not a classification of all Ricci-flat metrics or a separate weighted base-metric equation.
+Ricci-zero Weyl tensors with a nonsingular chiral block are outside this note’s theorem; [HH](HH-ricci-zero.md) covers them. Zero-curvature points and indefinite real forms remain outside the present results. This is a pointwise curvature condition in the reconstructed sector, not a classification of all Ricci-flat metrics or a separate weighted base-metric equation.
