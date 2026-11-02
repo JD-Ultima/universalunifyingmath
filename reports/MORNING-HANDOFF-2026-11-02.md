@@ -1,6 +1,6 @@
 # Morning handoff — November 2, 2026
 
-The overnight work is checkpointed in [PR #2](https://github.com/JD-Ultima/universalunifyingmath/pull/2), on branch codex/continue-research-review. The PR remains open for owner review. It has not been merged.
+This records the November 2 overnight research checkpoint submitted through [PR #2](https://github.com/JD-Ultima/universalunifyingmath/pull/2). The PR records its publication status; the [synthesis](SYNTHESIS.md) maintains the current findings.
 
 ## Results
 

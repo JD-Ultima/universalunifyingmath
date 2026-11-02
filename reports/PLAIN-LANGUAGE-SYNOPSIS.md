@@ -1,0 +1,53 @@
+# What we built and tested
+
+Imagine someone gives us three sets of building instructions and says they might help explain how the universe works. We are checking the instructions, one step at a time.
+
+Our goal is to find clear rules that other people can check. We do not yet have a demonstrated “source code” for the universe.
+
+## Our math workshop
+
+We built a workshop with five kinds of tools:
+
+- **A source shelf:** records of where each idea came from and which version we read.
+- **Careful instructions:** definitions, assumptions and written mathematical arguments.
+- **Math calculators:** Python programs that recount objects, calculate formulas, try alternatives and look for contradictions.
+- **A proof checker:** Lean files that let a computer check certain mathematical statements, step by step.
+- **An inspection notebook:** reviews, corrections and a list of questions we have not answered.
+
+The programs and their recorded answers are saved so another person can repeat the work.
+
+## Three sets of instructions
+
+### Chain Theory
+
+One construction makes 172 mathematical pieces and uses them to calculate a particular number. We counted the pieces again and got the same number.
+
+Then we changed some of the rules to see which choices matter. The answer depends on choices that still need an independent reason. Getting the number again establishes that we can follow the recipe; showing why nature uses it would require more evidence.
+
+We also checked the larger compendium. We asked whether its steps depend on unfinished steps, and whether its computer proofs prove the claims written beside them. Some proofs establish useful mathematical facts. Many check narrower statements, such as counting entries in a supplied list.
+
+### Geometric Unity
+
+This proposal uses complicated geometry. We wrote down explicit versions of its objects and equations, checked how the parts fit, and repaired a sign problem. We also found that the printed equation does not follow from the proposed action under the stated assumptions.
+
+For specified versions of the model, we worked out which arrangements can satisfy the equations and which cannot. The newer work settles two particular branches on flat starting geometry and excludes several families of curved starting geometry. One result covers points with zero Ricci curvature but nonzero total curvature. Those are two different ways of measuring curvature.
+
+Every such result has a named set of assumptions. Other fields and geometric cases remain open. The detailed map is in the [synthesis](SYNTHESIS.md#geometric-unity).
+
+### Howard's arithmetic and shapes
+
+We wrote seven stated arithmetic rules down and checked every combination of them. Some groups work together. Others contradict one another when we keep ordinary addition and the specified number systems.
+
+We also checked stated numbers and clearly defined shape models. For example, six pentagons cannot make the particular closed convex solid being tested. This result applies to that shape specification.
+
+The missing primary book and full relevant patent texts limit what we can say about the original definitions.
+
+## What “the tests passed” means
+
+The latest research checkpoint passed **49 selected commands locally**. These include 12 focused regression tests and six checks against pinned source material. Its push and PR runs also passed the Linux/Windows checks with Python 3.12 and 3.13. The [verification record](MORNING-HANDOFF-2026-11-02.md#validation) links the evidence.
+
+Some tests confirm an answer. Others confirm that a proposed rule fails, or that a known error is detected. Passing means the program produced the expected, checked result.
+
+This suite covers selected work. The recorded Lean checks and manuscript builds have their own scope; this run did not rebuild them. Internal reviews include AI-assisted work, and external peer review remains outstanding.
+
+We have a better map of the ideas: parts that fit, parts that need repair, and parts we still need to explore. The next discoveries must earn their place through the same checks.

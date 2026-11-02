@@ -4,7 +4,7 @@
 
 The supporting [formalizations](../formalization/geometric-unity/), [computations](../computation/geometric-unity/README.md), [claim register](../claims/geometric-unity.md), [gap register](../gaps/geometric-unity.md), [metrics](../metrics/geometric-unity/) and [internal reviews](reviews/) retain the detailed evidence.
 
-**Current account.** The [synthesis](SYNTHESIS.md#geometric-unity) states the current field-sector results, curvature obstructions and open questions in one place, with direct proof and review links. Recent work includes the [singular residual identity](../formalization/geometric-unity/T-singular-residual.md), [nonconstant conic traces](../formalization/geometric-unity/AA-conic-traces.md), [invariant curvature obstruction](../formalization/geometric-unity/Z-cubic-rank-one.md) and [declared Weyl family](../formalization/geometric-unity/BB-weyl-direction.md). The dated sections below preserve the audit history.
+**Current account.** The [synthesis](SYNTHESIS.md#geometric-unity) states the current field-sector results, curvature obstructions and open questions, with direct proof and review links.
 
 ## 1. Sources
 

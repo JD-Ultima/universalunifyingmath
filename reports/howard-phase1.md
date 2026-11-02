@@ -53,7 +53,7 @@ Howard's stated data are:
 - The element "tones" 40.5/81/162/324 Hz are exactly the Pythagorean E over C = 256 Hz. No tested element property doubles.
 - 64 is not a Flower-of-Life lattice count.
 
-**(c) Lynchpin.** The sources alone do not define it well. Six pentagons cannot close a polyhedron (Lean). Under reconstruction L-T (six walls, four pyramidal chambers, tetrahedral support), the resulting mathematical object is the four-film junction of Plateau's laws, i.e. Taylor's T-cone: rays at 109.47°, walls meeting at 120°. That object is well posed but classical. Regular pentagons miss the required angle by 1.4712°. An explicit pentagonal instance is given. "Wave conjugation", "super symmetrical system" and "poles" are undefined, so they cannot be formalized.
+**(c) Lynchpin.** The sources alone do not define it well. A polyhedral sphere with only pentagonal faces and vertex degrees at least three needs at least twelve faces, so six pentagons cannot form the specified closed convex solid (Lean). Under reconstruction L-T (six walls, four pyramidal chambers, tetrahedral support), the resulting mathematical object is the four-film junction of Plateau's laws, i.e. Taylor's T-cone: rays at 109.47°, walls meeting at 120°. That object is well posed but classical. Regular pentagons miss the required angle by 1.4712°. An explicit pentagonal instance is given. "Wave conjugation", "super symmetrical system" and "poles" are undefined, so they cannot be formalized.
 
 ## 3. Assessment
 

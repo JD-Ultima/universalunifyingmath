@@ -6,7 +6,9 @@ separately and enters here only as a dependency. Register: `claims/chain-theory-
 (CT-C001-CT-C037). Notes: `formalization/chain-theory/compendium/00-10`. Code and recorded outputs:
 `computation/chain-theory/compendium/`. Metrics: `metrics/chain-theory/compendium/*.yaml`.
 
-## Findings
+The [synthesis](SYNTHESIS.md#chain-theory-compendium-01) gives the current conclusions, including the later statement-level premise audit, Lean coverage and patched-build results. The initial findings below preserve the audit history; later sections refine their counts, coverage assessment and build status.
+
+## Initial findings (historical)
 
 **F1. Census reproduced** (c). 100 THEOREM / 109 CONDITIONAL / 198 OPEN boxes; 64 theorems tied to
 Lean; Parts VI-XI 17/68/78. README's "Tables 56" is not reproduced (54).

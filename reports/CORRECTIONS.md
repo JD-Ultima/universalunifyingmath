@@ -286,3 +286,11 @@ No fresh Lean build, exhaustive higher-depth mutation search, physical predictio
 - **Validation.** The latest integrated Windows Python 3.12 run in the pinned environment with the pristine LF upstream snapshot passed all 49 selected commands, including 12 focused regression tests and six source checks. HH's fresh 45-system certificate passed nine main, 28 rank and six orbit checks; the earlier AH5 and GG controls also passed. Independent Review36 reproduced HH and separately tested nonunit scaling and dense higher jets. Earlier field, curvature and source certificates also passed. Result/review metadata and local evidence links validated; the staged whitespace check passed. No manuscript source changed in this refinement. The GU scope/prose revision compiled with the desktop editor on November 2; the unchanged CT/Howard manuscripts retain their November 1 builds.
 
 The GU manuscript remains scoped to A–Q. The later results from R onward are supporting research notes. No new physical evidence, fresh Lean build or general singular/rank-one classification is claimed.
+
+## 2026-11-02 — Publication cleanup
+
+- Updated the README with the flat-base Lambda3 classification, the scoped nonflat Ricci-zero result, the recorded research validation and a plain-language guide to the project.
+- Replaced the blanket description of recent GU checks as independent with “selected research checks”; several calculations share reviewed engines. Clarified the verifier's help text without changing commands, assertions or source pins.
+- Marked the compendium report's opening findings as historical, removed a stale GU highlights list and an obsolete coordinator note, and qualified the six-pentagon obstruction by its sphere/vertex-degree assumptions. Corrected an alpha guide command heading that implied complete coverage.
+- Made the dated morning handoff's publication status refer to the PR, so its historical checkpoint remains readable after merging. Mathematical evidence, original sources, correction history and valid negative results are preserved.
+- Publication checks: all 12 existing focused regression tests passed; verifier preflight/listing retained all 49 source-inclusive commands against the pristine LF snapshot. Local documentation links and heading anchors passed; no research calculation or recorded output changed.

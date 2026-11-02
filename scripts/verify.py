@@ -4,7 +4,7 @@
 This suite excludes long searches, optional SDP/element checks, manuscript
 compilation, and fresh Lean builds. --upstream adds text/record consistency
 checks against the exact recorded Chain Theory commit. --recent includes
-bounded independent checks of the latest research rounds.
+selected checks of recent research results.
 """
 import argparse
 import hashlib
@@ -116,7 +116,7 @@ def source_commands(path, recent=False):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--upstream", type=Path, help="optional pristine Chain Theory checkout (no extra files)")
-    parser.add_argument("--recent", action="store_true", help="include bounded latest-round independent checks")
+    parser.add_argument("--recent", action="store_true", help="include selected recent research checks")
     parser.add_argument("--timeout", type=float, default=180, help="seconds per check (default: 180)")
     parser.add_argument("--list", action="store_true", help="list selected checks without running them")
     args = parser.parse_args()

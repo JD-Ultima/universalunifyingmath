@@ -34,7 +34,7 @@ The expected raw-file SHA256 is `522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed
 | `xcheck_round_ct5.py` | Referee cross-check (REVIEW5-CT) of `conjugation.md` and `records-uniform.md`; imports only `config_enumeration.py` (unmodified; printout compared with `config_enumeration.out`): relabelling table, stabilizers and their centres, the Supplement's stabilizer basis, matching closure, Lie closures, selections per reading, trace polynomials; order-sign domain, the spans $C_L$, $C$, $C^+$ and their value, covariance of the four exchanges, Gell-Mann anticommuting pairs, the Theorem 2(3) counterexample, the F-CT-7 recomputation and the $(2,3)$ placement values | ~15 s (180 checks) | `xcheck_round_ct5.out` |
 | `algebraic.py` | Minimal polynomial, Galois conjugates, $f(d_Q,d_q)$, deviations from measurements (F-CT-6, F-CT-7) | <1 s | `algebraic.out` |
 
-Run all of them from this directory in Linux/WSL Bash:
+Run this main batch from the current directory in Linux/WSL Bash. Additional source-dependent commands follow; this loop does not cover every script in the table:
 
 ```bash
 for s in records_independent freedom charge_conventions algebraic weight_functionals config_enumeration readcap_lemmas symmetry mutations_classified operator_origin xcheck_operator_form transport; do python3 $s.py > $s.out; done

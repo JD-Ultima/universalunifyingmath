@@ -2,6 +2,8 @@
 
 An open investigation into the rules behind mathematical and physical structure: the definitions, relationships, algorithms and mechanisms that might serve as its underlying **“source code.”** Finding such a structure remains an open research aim.
 
+For a nontechnical introduction, start with [what we built and tested](reports/PLAIN-LANGUAGE-SYNOPSIS.md).
+
 The first case studies are Chain Theory, Geometric Unity, and arithmetic and geometry associated with Terrence Howard. We reconstruct explicit claims, test their consequences, and record both supporting results and failures. The [research charter](RESEARCH_PROMPT.md) sets the method; the [synthesis](reports/SYNTHESIS.md) gives the current findings and research frontier.
 
 **Status — November 2, 2026:** active research with reproducible computations, Lean proofs and manuscript drafts. Internal reviews include AI-assisted work. External peer review remains outstanding. Revisions are tracked in the [correction log](reports/CORRECTIONS.md).
@@ -12,12 +14,12 @@ The first case studies are Chain Theory, Geometric Unity, and arithmetic and geo
 |---|---|---|
 | **Chain Theory: α(0) Letter** | Independently reproduces the 172 records and candidate inverse $137.035\,999\,189\,566\ldots$. Classifies convention changes and covariant record constructions. | A principle fixing the weight attribution and other defining inputs; the physical identification with electromagnetic coupling. [Report](reports/chain-theory-alpha.md) |
 | **Chain Theory: compendium 0.1** | Audits statement dependencies, numerical identifications and Lean coverage. Of 64 Lean-tied theorem rows, 1 matches fully and 7 partly under the documented counting rule. | Ambiguous premise references, missing identification maps, and the gap between finite checks and the physical claims attached to them. [Report](reports/chain-theory-compendium.md) |
-| **Geometric Unity: 2021 draft** | Reconstructs signatures, representations and field equations; corrects gauge signs; derives variational limits, singular-field constraints and curvature obstructions in specified sectors. | Remaining Z1 and singular-field branches, more general odd fields, and choices needed to define the full physical system. [Report](reports/geometric-unity-phase1.md) |
+| **Geometric Unity: 2021 draft** | Reconstructs signatures, operators and field equations; corrects gauge signs; classifies specified flat-base singular branches and excludes defined curvature families. | General singular fields, remaining joint-curvature and zero-curvature cases, and choices needed to define the physical system. [Current results](reports/SYNTHESIS.md#geometric-unity) |
 | **Howard: specified arithmetic and geometry** | Classifies explicit arithmetic reconstructions and checks numerical and geometric statements. With ordinary addition, no ring, semiring or near-ring on ℕ, ℤ, ℚ or ℝ satisfies both $1\otimes1=2$ and $2\otimes2=4$. | The primary definitions: the book and full relevant patent texts were not obtained. Other consistent operations exist under weaker axioms. [Report](reports/howard-phase1.md) |
 
 The α candidate is the **only distinct value within 1σ** in each of the hand-declared and mechanically generated rule families. These bounded comparisons describe sensitivity to the chosen rules; their illustrative density reference counts are not calibrated significance. The candidate itself fixes every digit and can be compared with future measurements. See the [α audit](formalization/chain-theory/alpha/audit.md).
 
-For Geometric Unity, projection to a section, the full field equation on an open set, and variation of a weighted action are distinct tests. The strongest reduction conclusions require a specified metric, operator family and field sector. The [synthesis](reports/SYNTHESIS.md#geometric-unity) keeps these hypotheses and the singular-threshold exception together.
+Recent Geometric Unity results [classify the two single Lambda3 branches over flat-base Z1](formalization/geometric-unity/AI-flat-lambda3.md) and [exclude nonflat Ricci-zero points](formalization/geometric-unity/HH-ricci-zero.md) within the stated positive-metric, invariant-field sector. General singular fields and the remaining joint-curvature cases are open. Projection to a section, the full field equation on an open set, and variation of a weighted action are distinct tests. The [synthesis](reports/SYNTHESIS.md#geometric-unity) states the operator, field and invertibility assumptions, including the singular-threshold exception.
 
 ## Read the evidence
 
@@ -48,7 +50,9 @@ python -m pip install -r requirements.txt
 python -X utf8 scripts/verify.py --recent
 ```
 
-The verifier runs assertions and regression checks without overwriting recorded outputs. `--recent` adds the newer Chain Theory record checks and independent GU checks. The [CI workflow](.github/workflows/verify.yml) runs the selected suite on Linux and Windows with both Python versions.
+The verifier runs assertions and regression checks without overwriting recorded outputs. `--recent` adds newer Chain Theory checks and selected GU research checks. The [CI workflow](.github/workflows/verify.yml) runs the selected suite on Linux and Windows with both Python versions.
+
+The November 2 research checkpoint passed **49 selected commands locally**, including 12 focused regression tests and six source-dependent checks. Its [push CI](https://github.com/JD-Ultima/universalunifyingmath/actions/runs/41426687791) and [PR CI](https://github.com/JD-Ultima/universalunifyingmath/actions/runs/41426694429) each passed all four platform/version jobs. These checks include exact reproductions and expected counterexamples; passing the suite does not establish a physical theory. The [verification record](reports/MORNING-HANDOFF-2026-11-02.md#validation) states the coverage and limits.
 
 For source-dependent checks, prepare a pristine checkout of the exact Chain Theory snapshot:
 
