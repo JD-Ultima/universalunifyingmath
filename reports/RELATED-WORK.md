@@ -18,7 +18,9 @@ The survey was primarily read-only, with two fresh reproductions after source re
 
 ## Next verification
 
-A compatible Lean toolchain and the required Mathlib cache were not found in the checked local locations; the fresh build remains pending. First rebuild pinned math-lab in isolation, inspect the Woronowicz/PPT theorem semantics and axiom dependencies, and bridge its actual positive-map definitions to our readability predicate. Preserve licenses and provenance. This would strengthen an imported mathematical premise, not derive alpha's physical identification or weights.
+A compatible Lean toolchain and the required Mathlib cache were not found in the checked local locations; the fresh build remains pending. Source inspection shows that math-lab's operator predicate matches the Letter and its cap has the same binder as the author's abstract [`ReadCap`](https://github.com/physical-superintelligence/chain-theory/blob/a28db8998bce5bd5ef11195c05f13c86cd9dac5c/papers/alpha/lean/ChainAlpha.lean#L477). Math-lab already supplies the corresponding conditional [selection theorem](https://github.com/SproutSeeds/math-lab/blob/48d14da643ec5f6e40ea0e2ed9f2a5eb9c8d5fda/MathLab/ChainTheory/LocalUnitary.lean#L259); another selection proof is unnecessary.
+
+First rebuild the pinned Woronowicz/PPT dependency chain, inspect its axioms and compile the small cap adapter. Keep the author's lowercase `readable` predicate distinct: it admits `(3,3)`, which operator readability excludes. Operational certainty and implementation of reads still require explicit modelling. Preserve licenses and provenance; the imported mathematics does not derive alpha's physical identification or weights.
 
 [Kleis at `20ed142`](https://github.com/eatikrh/kleis/tree/20ed1427f3c8ec0bd241444600d4a7d2820282bd) is also useful for a claim/premise ledger, but its inspected obstruction conclusions depend on explicitly assumed bridges. Its shadow-model assignments do not establish independence from the full GU construction; its non-commercial license also requires separate reuse consideration.
 
