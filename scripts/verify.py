@@ -61,6 +61,8 @@ RECENT = [
     ("geometric-unity/AM_global_flat_models.py", []),
     ("geometric-unity/AP_first_lambda5_obstruction.py", []),
     ("geometric-unity/AQ_opposite_lambda5_conservation.py", []),
+    ("geometric-unity/AR_opposite_lambda5_geometry.py", []),
+    ("geometric-unity/AS_opposite_lambda5_system.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),

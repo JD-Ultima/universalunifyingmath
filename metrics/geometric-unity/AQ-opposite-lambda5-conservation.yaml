@@ -59,9 +59,10 @@ confidence: >
   run in 1.764 seconds. Exact controls share an accepted Clifford
   implementation and do not establish existence of observer metrics.
 pending_work: >
-  The remaining opposite-conic tensor equations and extension of AQ3 through
-  critical points are unsettled. Moving isolated endpoints, coincident kernels,
-  det M=0, other operators, indefinite real forms and non-invariant odd fields
-  remain outside this result.
+  AR subsequently excludes every zero-w contact and strengthens the geometric
+  restrictions; AS gives the full tensor system. Actual metric/form solutions
+  and extension through nonzero-w critical points remain unsettled.
+  Coincident kernels, det M=0, other operators, indefinite real forms and
+  non-invariant odd fields remain outside this result.
   Local isoparametricity neither supplies a full solution nor excludes every
   moving field, and implies no nonzero derivative at every point.

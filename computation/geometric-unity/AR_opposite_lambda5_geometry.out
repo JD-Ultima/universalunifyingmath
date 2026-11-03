@@ -1,0 +1,47 @@
+AR: opposite moving Lambda5 Euler and Ricci-Hessian geometry.
+Exact scalar/frame controls; no observer metric or PDE solution is constructed.
+[01] U roots lie strictly inside the forbidden conic gap: True
+[02] U is strictly positive on the entire real left arc: True
+[03] U is strictly positive on the entire real right arc: True
+  U(left-x) = 9464*x**2 + 143*x/6 + 47/3200
+  U(right+x) = 9464*x**2 + 9113*x/660 + 877/185856
+[04] dimension14 constant negative Einstein tensor has positive Ricci: True
+[05] algebraic Euler data have the N1 length and Ricci eigenvalue: True
+[06] all14 components of the covector Euler transport: True
+[07] Euler derivative of p retains its full coefficient: True
+[08] Euler norm transport from the full Hessian: True
+[09] gradient transport of p includes the horizontal norm term: True
+[10] self-adjoint Euler contraction gives the Ricci dichotomy: True
+[11] Euler Cauchy defect is the full perpendicular norm: True
+[12] AQ Ricci-gradient eigenvalue agrees with Euler transport: True
+[13] opposite-conic delta factorization: True
+[14] full quadratic-gradient Hessian term cancels: True
+[15] Ricci and free scalar coefficients are mu and minus mu*L: True
+[16] mu derivative in R includes both chain-rule factors: True
+[17] affine k has a genuine rational inverse: True
+[18] da equals delta times (dR/mu)/576: True
+[19] mu times its second R derivative: True
+[20] Q is the exact rational quadratic in k: True
+[21] Q has nonzero value at the rational-square pole: True
+[22] Q7 D gives precisely the claimed rational rho: True
+[23] denominator-cleared square relation is exact: True
+[24] cleared identity has nonzero constant coefficient for B!=0: True
+  k(a) = 16*(676*a - 53)/2565
+  a(k) = (2565*k + 848)/10816
+  Q(k) = -(57*k + 20)*(141075*k + 48668)/200070
+  Cleared constant coefficient = 947429689600*B
+[25] ordered horizontal symmetric/skew cross term cancels identically: True
+[26] complete ordered HH contraction has the minus3 integrability norm: True
+[27] Walczak addition gives minus4/c0 minus2 integrability norm: True
+  Frame signs checked with all160 independent b/A components.
+[28] implicit profile coefficient D equals V minus11W/2: True
+[29] fixed Ricci-gradient equation reduces Bianchi to the exact linear profile: True
+[30] D zero is a real regular left-arc level, so no division by D is allowed: True
+  D(a) = -832*(26416*a + 491)/285 ; zero = -491/26416
+[31] both opposite endpoints have the exact nonzero delta and conic slope: True
+[32] twice-differentiated conic gives a positive semidefinite Hessian of chi: True
+[33] both endpoint scalar Ricci contributions are strictly positive: True
+[34] endpoint Ricci and the Euler identity have a strictly positive gap: True
+  Moving endpoint Hessian factors = (14400/7, 126720/7)
+Density, ODE uniqueness, global reconstruction and continuation use the stated hand proofs.
+34 exact controls passed; runtime 0.294 s.
