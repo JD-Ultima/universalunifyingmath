@@ -1,0 +1,63 @@
+result: >
+  Global realization of Q15's complete constant invariant bosonic family on
+  AM's complete positive flat observer and translation-torus quotients.
+  With n=X^2+Y^2>0, the real roots exist exactly when C=cV*kappa^2/n>=9360.
+  An explicit hand factorization gives the unique vector-singular scale
+  Cstar(A), where A=((XW-YZ)/n)^2, and the exact regular-sector root counts.
+  Scalar and axial Clifford fields and the fixed operator descend for every
+  torus spin choice. Singular roots still solve the constant-ansatz equation
+  but lie outside the sector imposing det M!=0.
+claim_id: [GU-054]
+result_ids: [AO1, AO2, AO3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AO-global-invariant-family.md
+internal_review: reports/reviews/REVIEW45-GU-AO-2026-11-03.md
+code: []
+formalization_status: >
+  Standard affine R4 or its translation torus, oriented positive Z1 at
+  lambda=1/5, positive constant cH,cV, compact u(128), full Dirac bundle,
+  true reconstructed bosonic equation and nonzero real constant kappa.
+  The member has J.0 compact-real coefficients (x,y,z,w)=-i(X,Y,Z,W),
+  with real X,Y,Z,W and n=X^2+Y^2>0. The exact ansatz is
+  To=i(S*Phi1+R*Phi1*Gamma), Te=0 with real constant S,R.
+  The determinant condition is imposed only for the stated regular-sector
+  count, not for the existence of the underlying constant-ansatz roots.
+proof_status: >
+  AO1 takes direct sum/difference channels of I6, excluding the nonzero-delta
+  alternative by strict positivity and solving the remaining quadratic.
+  It does not assume M1 is a symmetry of arbitrary full fields. AO2 uses
+  the full J1 determinant kappa^4*(1+Lplus*zeta)*(1+Lminus*zeta), with
+  Lplus/minus=384+/-32*sqrt(25+144A). The minus factor is positive on
+  -1/312<zeta<0, so only zeta=-1/Lplus can be singular. This gives
+  Cstar=960*(12+sqrt(25+144A))^2/(9+4*sqrt(25+144A))>=9360,
+  with equality only at A=125/576 and the stated branch labels.
+  AO3 uses AM's oriented frame and central spin descent of Phi1 and Gamma;
+  both scalar and axial anti-Hermitian fields and the fixed operator descend.
+internal_consistency: >
+  All formulas retain both signs of kappa and the full four-by-four vector
+  determinant. At threshold det M=kappa^4*(125-576A)/1521. At A=0 the
+  singular scale is 277440/29, agreeing with Q15. Two distinct roots are
+  counted as coefficient pairs in the fixed ansatz, without a claim of gauge
+  inequivalence. No extra even fields at singular factors are classified.
+reproducibility: >
+  A hand proof from the existing I6, J1, Q15 and AM inputs. No new executable
+  certificate, numerical controls, unchanged-check reruns or independent metric
+  engine are claimed. Review45 records the independent hand review of the
+  public direct-channel, determinant and global-descent arguments.
+novelty: >
+  Q15's constant invariant solutions and AM's classical metric realization
+  are existing results. This note records complete global scalar/axial
+  realizations and an explicit hand replacement for Q15's computed
+  vector-singularity argument. No new local-solution or literature-first
+  claim is made.
+empirical_testability: None new; a result within the stated reconstructed equation and ansatz.
+dependencies: [I3, I4, I6, J1, Q15, AM1, AM2]
+confidence: >
+  Independent internal Review45 accepts the direct-channel, determinant,
+  threshold, branch-label and global-descent proof. No external peer review,
+  new metric-engine reproduction or physical confirmation is claimed.
+pending_work: >
+  Arbitrary odd/even fields, additional even kernels at det M=0, indefinite
+  real forms, orientation-reversing or non-translation quotients, fermions,
+  joint base variation, finite action and physical interpretation are outside
+  this result. The n=0 zero-field sector is treated separately by Q3.

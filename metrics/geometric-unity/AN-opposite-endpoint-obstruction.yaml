@@ -1,0 +1,54 @@
+result: >
+  No smooth full bosonic solution exists on a nonempty constant-odd domain
+  at either opposite Lambda5 endpoint a=-3/704,-1/160 on positive Z1.
+  Contracted Bianchi forces constant five-form norm; rational continuation
+  of the resulting metric trace contradicts its positive radial limit.
+  Together with AH9 this excludes all four declared constant endpoints.
+claim_id: [GU-054]
+result_ids: [AN1, AN2, AN3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AN-opposite-endpoint-obstruction.md
+internal_review: reports/reviews/REVIEW44-GU-AN-2026-11-03.md
+code: []
+formalization_status: >
+  Retains AL's entire constant-odd single-kernel domain hypotheses: smooth
+  positive four-base, reconstructed Z1, cH,cV positive constants, lambda<1/4,
+  positive observer dimension fourteen, compact u(128), true dualized equation,
+  fixed parallel real WA, real fields, nonzero constant kappa and det M!=0.
+  The odd field has u=0 and one fixed endpoint a throughout the domain;
+  all chart weights and derivatives are absorbed into the real five-form.
+  The observer Levi-Civita connection is used in both AL and Bianchi.
+proof_status: >
+  Direct tensor differentiation gives divS=<CtrJ,i_b omega>+dN/2-
+  <i_b AltJ,omega>. AL's determined jets and scalar trace identities yield
+  divS=89[Omega^3]1/36 or -2[Omega^3 Gamma]1/3. Contracted Bianchi gives
+  1768[Omega^3]1/3=0 or 256[Omega^3 Gamma]1/3=0; hence dN=0.
+  AH6 ensures N0>0. The actual metric trace tau=tr(G+bI) is the constant
+  -D*N0 on a fibre-open patch, D=1056 or 400. S4 clears det(y) denominators
+  and extends only this equality to the whole positive fibre. Its exact
+  radial limit 14b+30/c+135/(2cV)>0 contradicts the negative constant.
+internal_consistency: >
+  Retains the ordinary versus axial pairing sign and the whole observer
+  covariant jet. Synthetic AL first jets need not satisfy Bianchi and remain
+  valid within their recorded scope. No field, inequality or point norm is
+  analytically continued. No arbitrary-form classification is required.
+reproducibility: >
+  Hand proof from AL1-AL3, AH6, S4(a) and the F4/K radial trace formula.
+  No new executable artifact, computation, test or previous check rerun.
+  Previously recorded computational dependencies retain their own receipts;
+  this milestone adds an independent symbolic derivation and internal review.
+novelty: >
+  A completed constant-endpoint exclusion within this investigation, using
+  contracted Bianchi to supply the missing metric compatibility condition.
+  No literature-first claim, physical prediction or general Lambda5
+  classification is asserted.
+empirical_testability: None new; a mathematical obstruction in the specified reconstruction.
+dependencies: [AL1, AL2, AL3, AH6, AH9, S4, F4, K]
+confidence: >
+  Independent hand audit confirms the tensor-divergence signs, rational
+  coefficients, constant-parameter assumptions, fibre continuation and radial
+  contradiction. Review44 records scope and the inherited computation boundary.
+pending_work: >
+  Nonzero-u Lambda5 conics, isolated endpoints of moving odd fields, coincident
+  kernels, det M=0, other operators and indefinite real forms remain outside
+  this theorem. Their metric and derivative compatibility is not settled here.

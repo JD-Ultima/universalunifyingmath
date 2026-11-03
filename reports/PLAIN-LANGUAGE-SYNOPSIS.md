@@ -26,25 +26,23 @@ Then we changed some of the rules to see which choices matter. The answer depend
 
 We also rebuilt an existing computer-checked proof of the mathematical read cap and connected it to the author's dimension-selection theorem. This checks those precise definitions; explaining how the proposed physical reads implement them still needs work.
 
-We also checked the larger compendium. We asked whether its steps depend on unfinished steps, and whether its computer proofs prove the claims written beside them. Some proofs establish useful mathematical facts. Many check narrower statements, such as counting entries in a supplied list.
+We checked the larger compendium too: whether its steps depend on unfinished steps, and whether its computer proofs prove the claims written beside them. Some proofs establish useful mathematical facts. Many check narrower statements, such as whether an entered statement appears in a supplied table.
 
 ### Geometric Unity
 
 This proposal uses complicated geometry. We wrote down explicit versions of its objects and equations, checked how the parts fit, and repaired a sign problem. We also found that the printed equation does not follow from the proposed action under the stated assumptions.
 
-For specified versions of the model, we worked out which fields can satisfy the equations. We completely settled two field families across the positive Z1 models we defined. One allows only a fixed field over flat four-dimensional starting geometry, at one exact parameter relation. The other allows no solution. The larger observer geometry is curved in this example.
+For two specified field families, we found every allowed solution in the positive Z1 version of the model. One allows only a fixed field over flat four-dimensional starting geometry, at one exact parameter relation. The other allows no solution. The larger observer geometry is curved in this example.
 
-For a harder family, called Lambda5, we proved that rotating and resizing one fixed kind of shape cannot give a solution on an open region. A further proof rules out two specified constant-field endpoint cases: their equations force exactly that forbidden kind of shape. Another counting argument limits how many curvature directions can be zero or negative. More general changing fields remain open.
+For a harder family, called Lambda5, we have now ruled out all four specified endpoint cases where the odd part of the field stays constant. Two force a shape that cannot fit the geometry. The other two must obey a conservation rule, which forces a constant size that also cannot fit. This closes those four cases; fields whose odd part changes remain open.
 
-We showed that one known working field extends across a complete global model, including versions with a periodic four-dimensional starting space. Its geodesics—the geometry's straightest paths—have no artificial stopping point. This establishes mathematical examples within our reconstruction.
-
-For two remaining endpoint cases, we rewrote the equations so that a field's value fixes how it must change. If a solution exists on a chosen geometry, its value at one point determines the rest. Finding values that fit the geometry everywhere remains unfinished.
+We also extended a known family of working fields across complete global models, including versions with a periodic four-dimensional starting space. Their geodesics—the geometry's straightest paths—have no artificial stopping point. For fixed model parameters, an exact formula gives zero, one or two constant field configurations in the regular family. These are mathematical examples within our reconstruction; distinct physical states have not been established.
 
 Separate results exclude several families of curved starting geometry, including points with zero Ricci curvature but nonzero total curvature. Those are different ways of measuring curvature. Every result has a named set of assumptions; the [synthesis](SYNTHESIS.md#geometric-unity) gives the precise map.
 
 ## Existing work we can use
 
-Other people have already checked parts of these ideas. We found published programs and computer-checked mathematics that overlap ours. We will verify those pieces and their assumptions, give credit, and use them where they fit. The [prior-work survey](RELATED-WORK.md) lists the useful starting points. None of the work we assessed proves either entire physical theory.
+Other people provide useful programs and computer-checked mathematics that overlap ours. We have reproduced some of that work, including the read-cap proof above. The [prior-work survey](RELATED-WORK.md) gives credit and distinguishes what we reran from what we only inspected. None of the work we assessed proves either entire physical theory.
 
 ## What “the tests passed” means
 

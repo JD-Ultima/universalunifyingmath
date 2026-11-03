@@ -1,6 +1,6 @@
 # AL. The opposite Lambda5 constant endpoint system
 
-The two remaining constant endpoints admit an exact reduction retaining the complete covariant jet, including its Cartan component. Each has one algebraic higher-grade constraint and one determined first-order equation. Exact first-jet controls permit nonzero norm currents. Smooth solutions on one fixed background, if they exist, are determined by one point value; existence remains unresolved.
+The two opposite constant endpoints admit an exact reduction retaining the complete covariant jet, including its Cartan component. Each has one algebraic higher-grade constraint and one determined first-order equation. Exact first-jet controls permit nonzero norm currents. Smooth solutions on one fixed background, if they exist, are determined by one point value. The subsequent [AN obstruction](AN-opposite-endpoint-obstruction.md) excludes actual positive-Z1 endpoint domains by combining these identities with contracted Bianchi and the fibre geometry.
 
 Use [AH6](AH-lambda5-gram.md)'s hypotheses: a smooth positive four-base, reconstructed Z1, positive constant $c_H,c_V$, $\lambda<1/4$, positive fourteen-dimensional observer metric, compact $\mathfrak u(128)$, the true dualized equation, fixed parallel real $W_A$, real fields, constant $\kappa\ne0$ and $\det M\ne0$. On a connected open observer domain, fix $u\equiv0$ and one constant $a=t/\kappa$ throughout:
 
@@ -65,7 +65,7 @@ $$\begin{aligned}
 \mathsf w:\quad&\omega=e^{01234}+e^{12567}+e^{34567},&dN&=-\tfrac{157}{9}e^0,\\
 \mathsf c\Gamma:\quad&\omega=e^{01234}+e^{05678}+e^{0,9,10,11,12},&dN&=\tfrac{48}{5}e^{13}.
 \end{aligned}$$
-Their forced jets satisfy both higher-grade equations and the first derivative of the unused algebraic constraint in all fourteen directions. They do not construct Z1 metric jets or smooth solutions. Synthetic $G$ controls check the complete odd residual, without asserting that such $G$ is an observer Einstein tensor. Curvature integrability, higher prolongations and actual metric realization remain unresolved.
+Their forced jets satisfy both higher-grade equations and the first derivative of the unused algebraic constraint in all fourteen directions. They do not construct Z1 metric jets or smooth solutions. Synthetic $G$ controls check the complete odd residual, without asserting that such $G$ is an observer Einstein tensor. AN shows that an actual solution must also satisfy contracted Bianchi, which kills both norm currents and leads to a geometric contradiction.
 
 ## AL4. Conditional point-value uniqueness
 
@@ -75,8 +75,6 @@ Fix the smooth observer background, connection, parameters and endpoint copy. Tw
 
 This supplies no existence theorem, admissibility of arbitrary point values, or uniqueness across different unknown metrics. The algebraic and metric constraints may prohibit the data.
 
-**Flat-base boundary.** Neither remaining endpoint admits a solution domain over a locally flat base patch. Every positive fibre metric then extends locally as a parallel metric, so the entire observer lies in AH8's actual parallel set. The base Ricci rank is zero, and AH8 excludes both endpoints there. This requires a flat neighbourhood; curvature vanishing at just one base point is insufficient.
-
 ## Evidence and boundary
 
-Run `python -X utf8 -I computation/geometric-unity/AL_opposite_lambda5_system.py`. Its exact controls share T's accepted Clifford engine and AH's Gram calculation. The exhaustive linear/quadratic basis certificates and hand trace proofs supply universality; finite controls do not replace AL4's ODE proof. This reduction covers only the two constant endpoints. Nonzero-$u$ fields, moving-odd isolated endpoints, coincident kernels, indefinite real forms and actual positive-Z1 solution existence remain open or outside its scope.
+Run `python -X utf8 -I computation/geometric-unity/AL_opposite_lambda5_system.py`. Its recorded exact controls share T's accepted Clifford engine and AH's Gram calculation. The exhaustive linear/quadratic basis certificates and hand trace proofs supply universality; finite controls do not replace AL4's ODE proof. AN settles nonexistence for these two positive-Z1 constant-endpoint domains. Nonzero-$u$ fields, isolated endpoints of moving odd fields, coincident kernels and indefinite real forms remain outside that conclusion.
