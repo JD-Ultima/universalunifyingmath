@@ -4,6 +4,8 @@ Use the [shared setup and verification guide](../README.md) and pinned [requirem
 Randomness: fixed seeds only (`random.seed(20210401)`, `numpy.random.default_rng(20210401)` / `(1)`).
 No script reads the source PDF; inputs are transcribed in the code with section/equation references.
 
+The later [AN endpoint obstruction](../../formalization/geometric-unity/AN-opposite-endpoint-obstruction.md) and [AO global family](../../formalization/geometric-unity/AO-global-invariant-family.md) are hand proofs using recorded inputs below. They add no executable checks. Outputs retain their historical scope; consult the [synthesis](../../reports/SYNTHESIS.md#geometric-unity) for current conclusions.
+
 | Script | Purpose | Claims | Exact? | Runtime | Output |
 |---|---|---|---|---|---|
 | `fiber_signature.py` | Signature of the DeWitt family $G_\lambda$ on $\mathrm{Sym}^2$; chimeric signature on $V\oplus H^*$; classification of neutral cases; GL-invariance; Stiefel–Whitney classes of $C$ | GU-010…015, GU-022, GU-023 | exact (Fractions, sympy) | ~3 s | `fiber_signature.out` |

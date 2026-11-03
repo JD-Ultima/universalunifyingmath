@@ -1,6 +1,6 @@
 # AM. Complete observer models over flat bases
 
-[F7](F-zorro-reduction.md) already identifies flat Z1 locally with a symmetric space. This note gives global coordinates, complete torus quotients and descent of the known [AI3](AI-flat-lambda3.md) bosonic field. The geometry is classical: Lovrić–Min-Oo–Ruh construct this symmetric-space metric on Gaussian parameters, distinct from the Fisher metric ([primary paper](https://math.mcmaster.ca/minoo/mypapers/lmr.pdf), §§2–3). Globke–Quiroga-Barranco explicitly discuss that distinction ([2019 paper](https://arxiv.org/abs/1904.12921)). No new symmetric-space or information-geometric metric is claimed.
+[F7](F-zorro-reduction.md) already identifies flat Z1 locally with a symmetric space. This note gives global coordinates, complete torus quotients and descent of the known [AI3](AI-flat-lambda3.md) bosonic field. [AO](AO-global-invariant-family.md) extends the construction to Q15's whole constant invariant family. The geometry is classical: Lovrić–Min-Oo–Ruh construct this symmetric-space metric on Gaussian parameters, distinct from the Fisher metric ([primary paper](https://math.mcmaster.ca/minoo/mypapers/lmr.pdf), §§2–3). Globke–Quiroga-Barranco explicitly discuss that distinction ([2019 paper](https://arxiv.org/abs/1904.12921)). No new symmetric-space or information-geometric metric is claimed.
 
 Use the standard flat connection on $X=\mathbb R^4$, positive fibre matrices $y$, constant $c_H,c_V>0$, and $\lambda=1/5$. Then
 $$

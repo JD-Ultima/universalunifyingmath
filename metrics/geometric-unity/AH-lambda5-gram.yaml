@@ -17,7 +17,8 @@ result: >
   base Ricci rank at most two. AH9 separately excludes BOTH first-pair
   constant endpoints a=-1/96,-3/832: their complete higher-grade equations
   force zero/simple five-forms, and AH7 excludes the resulting spectrum.
-  Nonzero-u conic fields and the opposite-pair endpoints remain open.
+  AN subsequently excludes the opposite-pair constant domains as well.
+  General nonzero-u conic fields remain open.
 claim_id: [GU-054]
 result_ids: [AH1, AH2, AH3, AH4, AH5, AH6, AH7, AH8, AH9]
 gaps: [GU-G14, GU-G15]
@@ -157,6 +158,6 @@ confidence: >
   assessment is Review41. All Q controls share T's accepted Clifford engine;
   the separate elementary simplicity proof supplies the universal implication.
 pending_work: >
-  General nonzero-u conic fields, varying Gram shapes and actual field existence
-  at the opposite-pair constant endpoints, isolated zero-u points of varying odd
-  fields, coincident kernels and indefinite cases need separate analysis.
+  AN settles the opposite-pair constant endpoints using AL and contracted
+  Bianchi. General nonzero-u conic fields, isolated zero-u points of moving
+  odd fields, coincident kernels and indefinite cases need separate analysis.

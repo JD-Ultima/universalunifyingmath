@@ -6,7 +6,8 @@ result: >
   one unused-grade algebraic constraint and a determined full covariant jet.
   Exact first-jet controls permit nonzero ordinary and axial norm currents. Smooth fixed-background
   solutions, if they exist, are determined by one point value on a connected
-  common domain. No observer metric or local solution is constructed.
+  common domain. No observer metric or local solution is constructed. The later
+  AN obstruction excludes actual positive-Z1 constant-endpoint domains.
 claim_id: [GU-054]
 result_ids: [AL1, AL2, AL3, AL4]
 gaps: [GU-G14, GU-G15]
@@ -70,7 +71,7 @@ confidence: >
   Public 59-control helper independently reproduced all controls in 6.276 seconds; Review43 accepts its proof and scope. Shared-engine
   arithmetic and the hand linear/quadratic basis arguments have explicit scopes.
 pending_work: >
-  Curvature commutator integrability, higher prolongations and actual positive-Z1
-  metric realization remain unresolved. Nonzero-u conic fields, moving-odd
-  isolated endpoints, coincident kernels, det M=0 and indefinite real forms
-  are outside this reduction. AL4 does not assert existence for any point value.
+  AN settles nonexistence of these positive-Z1 constant-endpoint domains by
+  contracted Bianchi and the rational metric trace. Nonzero-u conic fields,
+  isolated endpoints of moving odd fields, coincident kernels, det M=0 and
+  indefinite real forms remain outside that theorem. AL4 supplies no existence.
