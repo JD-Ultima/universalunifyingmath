@@ -66,6 +66,7 @@ RECENT = [
     ("geometric-unity/AT_opposite_profile_crossing.py", []),
     ("geometric-unity/AU_opposite_ricci_spectrum.py", []),
     ("geometric-unity/AV_opposite_gram_transport.py", []),
+    ("geometric-unity/AW_lambda5_conic_classification.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),

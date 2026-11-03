@@ -67,12 +67,8 @@ confidence: >
   supply universality. External peer review and Lean verification are
   not claimed, and no independent observer metric engine is supplied.
 pending_work: >
-  Decide whether the residual symmetric cubic, or its pair-tracefree
-  projection, is already implied by the actual zero-order Gram and FULL
-  AS compatibility equations on the allowed real data. Ordinary polynomial
-  ideal nonmembership alone would not supply admissible counterdata.
-  No exact datum satisfying all those
-  equations with nonzero residual is known here. Actual metric/form
-  realization and other prolongations remain open. Critical points,
-  coincident kernels, det M=0, other operators, non-invariant odd fields
-  and indefinite real forms retain their separate scope.
+  AW excludes actual positive-Z1 single-conic domains by normal moments and
+  conservation. The separate question whether real zero-order Gram plus full
+  AS compatibility implies the cubic trace remains open. Ordinary ideal
+  nonmembership supplies no admissible counterexample. Other kernels, det M=0,
+  operators and indefinite forms retain separate scope.

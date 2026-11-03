@@ -1,0 +1,46 @@
+[01] case1: positive Hermitian form phases and genuinely noncommuting U,V: True
+[02] case1: all four full normal sandwich pairings, including factor2: True
+[03] case1: square pairings and the normal E-channel pairings are exact: True
+[04] case1: full AS normal component has the two stated signed moment equations: True
+  moments M30,M12,M21,M03 = (12, 4, 18, -36)
+[05] case2: positive Hermitian form phases and genuinely noncommuting U,V: True
+[06] case2: all four full normal sandwich pairings, including factor2: True
+[07] case2: square pairings and the normal E-channel pairings are exact: True
+[08] case2: full AS normal component has the two stated signed moment equations: True
+  moments M30,M12,M21,M03 = (36, 36, 8, -24)
+[09] case3: positive Hermitian form phases and genuinely noncommuting U,V: True
+[10] case3: all four full normal sandwich pairings, including factor2: True
+[11] case3: square pairings and the normal E-channel pairings are exact: True
+[12] case3: full AS normal component has the two stated signed moment equations: True
+  moments M30,M12,M21,M03 = (36, -12, -4, -36)
+[13] normal plus square trace residuals cancel every third moment: True
+[14] delta equals the exact conic expression: True
+[15] normal moment coefficient ratios have no remaining tau: True
+[16] normal and tangent norm pieces sum to actual norm: True
+[17] actual Gram normal eigenvalue is M: True
+[18] moment relation is exactly linear in c and kappa squared: True
+[19] actual Gram and full normal compatibility force stated rational norm: True
+[20] uncancelled norm identity has only a scalar rational prefactor: True
+[21] norm denominator is a nonzero polynomial of degree five: True
+[22] rational norm numerator and denominator are coprime: True
+[23] forced norm has exact nonzero linear rational coefficient: True
+[24] AR reduced profile has exact nonzero linear rational coefficient: True
+[25] the remaining AR source divided by a has zero rational limit: True
+[26] cleared AR identity has exact degree thirteen: True
+[27] highest cleared coefficient is nonzero times t: True
+[28] same contradiction follows directly from rational leading orders: True
+[29] full converted Gamma trace recovers the actual form norm: True
+[30] the norm coefficient is nonzero as a rational function: True
+[31] direct AQ elimination recovers AR5b with its sign and normalization: True
+[32] the rational profile coefficient has the exact finite value at zero: True
+[33] the rational source has the exact finite value at zero: True
+[34] finite-value certificate also contradicts every positive constant scale: True
+  Moment norm coefficient at a=0 = -4672630976/37698489
+  Leading F/a = -35575543/31723328
+  Leading (D F_prime+P F+Q)/a = 3138842736144/15324925
+  Leading source R/a = 0
+  Finite coefficient H(0) = 35018717715292549351/51860784957622875 ; source R(0) = 20296/19
+  Cleared residual degree = 13 ; leading coefficient = 3202906730881248700955630955569647392741811814400*t
+Universality, finite-exception avoidance and rational-identity contradiction use the stated hand proof.
+No observer field or inequality is continued to zero or infinity.
+34 exact controls passed; runtime 0.544 s.

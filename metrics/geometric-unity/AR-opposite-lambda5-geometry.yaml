@@ -5,7 +5,8 @@ result: >
   of the actual local-parallel set. A Ricci-Hessian bridge transfers the
   existing geometric relaxed-system obstructions. The odd gradient has the
   fixed negative Euler Ricci eigenvalue, and regular scalar profiles satisfy
-  an implicit linear ODE. Full solution existence remains open.
+  an implicit linear ODE. AW subsequently excludes actual full solutions in
+  this single-conic setting using AR1 and AR5.
 claim_id: [GU-054]
 result_ids: [AR1, AR2, AR3, AR4, AR5]
 gaps: [GU-G14, GU-G15, GU-G16]
@@ -67,8 +68,7 @@ confidence: >
   replace the inherited computer-assisted N6(f) input or supply an independent
   metric reproduction.
 pending_work: >
-  Solve the remaining opposite-conic form and metric system on its narrowed
-  geometric corner. AT settles the exceptional profile level; AU restricts
-  other critical values and the Ricci spectrum. Coincident kernels, det M=0, other operators,
-  indefinite real forms and fields leaving the single-kernel stratum are
-  outside this theorem. No complete opposite-conic exclusion is claimed.
+  AW uses AR1 and AR5 to exclude actual opposite single-conic domains. The
+  geometric bridge, scalar and spectral intermediate results retain their
+  stated scope. Coincident kernels, det M=0, other operators, indefinite forms
+  and zero-component conic crossings remain separate cases.

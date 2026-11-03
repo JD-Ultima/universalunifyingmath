@@ -1,0 +1,94 @@
+result: >
+  No smooth full bosonic solution exists on a nonempty positive-Z1 observer
+  domain in the opposite single WA Lambda5 w/cGamma conic under the original
+  compact-real, true-equation, regular-vector and noncoincident-kernel assumptions.
+  A direct ambient Clifford normal-moment identity and the actual Gram force a
+  rational norm profile incompatible with AR5b at constant positive kappa^2*c0.
+  Combined with AP3, both single WA Lambda5 conic domains are empty. Smooth
+  persistence and R2/R4 also exclude a nonzero extra even Lambda5 component
+  of a smooth full solution at any point away from coincident factors,
+  without requiring the odd field
+  globally to remain on a conic. Zero-component contacts are not excluded.
+claim_id: [GU-054]
+result_ids: [AW1, AW2, AW3, AW4, AW5]
+
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AW-lambda5-conic-classification.md
+internal_review:
+  - reports/reviews/REVIEW53-GU-AW-2026-11-03.md
+  - reports/reviews/REVIEW54-GU-AW-2026-11-03.md
+code:
+  - computation/geometric-unity/AW_lambda5_conic_classification.py
+  - computation/geometric-unity/AW_lambda5_conic_classification.out
+formalization_status: >
+  Smooth positive four-base, reconstructed positive Z1, positive constant cH,cV,
+  lambda<1/4, compact real (14,0)/u(128), true dualized equation, fixed parallel
+  real WA, real fields, nonzero constant kappa and det M!=0. The entire connected
+  open domain stays in one declared Lambda5 conic away from every other
+  non-vector singular factor. The full even field includes the slaved vector
+  part, and the form and both chart weights may vary. AR1 supplies w!=0 and
+  dense regular da!=0 patches for the opposite conic, including the exclusion
+  of moving endpoint contacts. AP3 supplies the separate first-conic result.
+  AW5 relaxes the global conic requirement: a nonzero Lambda5 projection
+  persists locally, while all other non-vector factors, including the other
+  Lambda5 factor, are required invertible there.
+proof_status: >
+  Canonically absorb r into eta without dropping dr, and put tau=s/r. In a
+  C-normal frame decompose eta=e0 wedge phi+psi. Use the ambient Cl14 scalar
+  trace, retaining the sandwich anticommutator. Four universal normal pairings
+  and the AS square traces cancel all third moments to give
+  (A*alpha+p)*|phi|^2=(B*zeta+q)*|psi|^2. No commutation, simultaneous
+  eigenbasis or finite joint-spectrum bound is needed. Actual Gram and norm
+  identities then give Lstar*c+Kstar*kappa^2=0 with nonzero rational Lstar.
+  Its finite exceptional scalar levels can be avoided on a smaller actual
+  regular patch, yielding c=kappa^2*F(a). AR5b requires the rational identity
+  t*H(a)+R0(a)=0 at constant t=kappa^2*c0>0. Its nonzero leading coefficient
+  forces t=0; independently H(0)>0 and R0(0)>0 contradict the same identity.
+  No actual field, domain, form or positivity is continued to those formal
+  coefficient-test values. AR1 and AP3 give the two entire-domain conclusions.
+  R2/R4 and smooth persistence reduce any proposed nonzero Lambda5 addition
+  away from intersections to one of those prohibited local domains.
+internal_consistency: >
+  Scalar trace is taken in ambient even dimension fourteen, rather than
+  substituted by an odd-dimensional single-chirality trace. Right Gamma
+  multiplication gives the negative factor two in the normal pairing table.
+  The cross term in Omega*e0*Omega is the full anticommutator, not a deleted
+  commutator. No norm piece or form is assumed nonzero when taking the moments;
+  only rho=|C|>0 and the real nonzero chart are used on the regular patch.
+  The proof keeps the actual Gram and full AS compatibility, not merely its
+  traced constraints. Potential rational coefficient zeros are retained by
+  selecting an open scalar interval away from a finite set before division.
+reproducibility: >
+  Run python -X utf8 -I computation/geometric-unity/AW_lambda5_conic_classification.py
+  from the repository root in the pinned Python/SymPy environment. The public
+  helper passes 34 exact controls in 0.544 seconds with Python 3.12 and
+  SymPy 1.14.0: twelve normal-pairing convention checks on three declared
+  noncommuting inputs, and twenty-two exact scalar certificates. The forms
+  are not asserted to satisfy AS. Reviews53–54 reproduce all 34 controls in 0.538 and 0.531 seconds,
+  respectively. The hand proof
+  supplies universal normal-trace and regular-interval arguments. Exact
+  scalar definitions derive F and H without a giant cleared-polynomial dump.
+  Supporting imported Clifford and geometric statements retain their own
+  recorded evidence; no independent observer metric engine is asserted.
+novelty: >
+  Completes the opposite single-conic actual-domain obstruction within this
+  reconstruction and combines it with AP's first-conic result. It does not
+  claim a literature-first classification, a result for coincident kernels,
+  arbitrary Lambda5 fields or other operator members, or physical confirmation.
+empirical_testability: None new; a mathematical obstruction in the specified sectors.
+
+dependencies: [AS2, AS3, AQ1, AQ3, AR1, AR5, AP3, R2, R4]
+confidence: >
+  Independent internal Review53 accepts the public whole argument. Review54
+  accepts its phase conventions and scope, disclosing its contributor's role
+  in the private convention controls adapted into the public helper. Both
+  reproduce all 34 controls. External peer review remains outstanding.
+  The new proof does not require
+  AR3's base-rank classification or the earlier geometric rank certificates;
+  imported AS/AQ/AR inputs retain their existing evidence and assumptions.
+pending_work: >
+  The separate AS/AV zero-order question of cubic-trace implication and real admissible
+  feasibility is not decided by actual-domain nonexistence. Coincident kernels,
+  det M=0, other operators, non-invariant odd fields and indefinite real forms
+  remain outside this theorem. Odd-field conic contacts or crossings with
+  zero Lambda5 component are not excluded by the pointwise corollary.

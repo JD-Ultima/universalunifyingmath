@@ -3,7 +3,8 @@ result: >
   w/cGamma conic. Within the declared ansatz, Upsilon=0 is equivalent to
   AQ1.1 with the actual form norm/Gram, the entire AH2 Gamma tensor, a
   determined full covariant five-form jet and one algebraic compatibility
-  tensor. Neither existence nor a general nonzero-w exclusion is proved.
+  tensor. AS alone proves neither existence nor a general nonzero-w exclusion.
+  AW subsequently excludes actual domains under these positive-Z1 assumptions.
 claim_id: [GU-054]
 result_ids: [AS1, AS2, AS3]
 gaps: [GU-G14, GU-G15]
@@ -61,8 +62,8 @@ confidence: >
   shifted-square identity. This is not external peer review; arithmetic
   shares the accepted Clifford engine.
 pending_work: >
-  Actual metric/form realization, curvature commutator compatibility, the
-  algebraic hook constraint and higher prolongations remain unresolved.
-  AR excludes zero-w moving points on entire single-conic domains; the
-  divisions here are restricted to nonzero w. Coincident kernels, det M=0, other members,
-  non-invariant odd fields and indefinite real forms are outside this result.
+  AW rules out smooth actual solutions of this full positive-Z1 single-conic
+  system. Whether the AV cubic is implied by the actual zero-order Gram and
+  full algebraic compatibility remains open; no admissible nonzero-residual
+  datum is supplied. Other kernels, operator members and real forms retain
+  their separate scope.
