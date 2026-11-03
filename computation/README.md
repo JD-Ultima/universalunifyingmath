@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 38 |
-| **Self-contained total** | **48** |
+| Geometric Unity computations | 41 |
+| **Self-contained total** | **51** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **54** |
+| **Total with source checks** | **57** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 48 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 51 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -60,7 +60,9 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 ## Completed validation
 
-The AR/AS helpers pass **34** and **52** new exact controls, independently reproduced. [Review48](../reports/reviews/REVIEW48-GU-AR-2026-11-03.md) and [Review49](../reports/reviews/REVIEW49-GU-AS-2026-11-03.md) assess the hand geometric proof, inherited computer-assisted inputs and complete form-system certificates. The current manifest contains 54 commands with optional source checks; these focused runs do not repeat an unchanged full local suite.
+The AT/AU/AV helpers pass **13**, **24** and **13** new exact controls, independently reproduced. [Review50](../reports/reviews/REVIEW50-GU-AT-2026-11-03.md), [Review51](../reports/reviews/REVIEW51-GU-AU-2026-11-03.md) and [Review52](../reports/reviews/REVIEW52-GU-AV-2026-11-03.md) assess the analytic crossing, Ricci spectrum and cubic transport proofs. AU shares the accepted metric-jet library; AV uses a separate Clifford implementation for finite convention checks. The current manifest contains 57 commands with optional source checks. These focused runs do not repeat an unchanged full local suite.
+
+The preceding [AR/AS milestone](https://github.com/JD-Ultima/universalunifyingmath/pull/14) passed 34 and 52 exact controls and all eight CI jobs, each running its 48-command self-contained suite. [Review48](../reports/reviews/REVIEW48-GU-AR-2026-11-03.md) and [Review49](../reports/reviews/REVIEW49-GU-AS-2026-11-03.md) retain the geometric continuation and full field-system assessments.
 
 The preceding [AP/AQ milestone](https://github.com/JD-Ultima/universalunifyingmath/pull/13) passed 40 and 23 exact controls and all eight final-head CI jobs, each running its 46-command self-contained suite. [Review46](../reports/reviews/REVIEW46-GU-AP-2026-11-03.md) and [Review47](../reports/reviews/REVIEW47-GU-AQ-2026-11-03.md) retain the corresponding proof assessments and shared-engine limits.
 

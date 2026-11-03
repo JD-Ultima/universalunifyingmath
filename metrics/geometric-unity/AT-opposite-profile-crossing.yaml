@@ -1,0 +1,62 @@
+result: >
+  At the simple zero a*=-491/26416 of AR5b's leading coefficient, the scalar
+  profile has a unique bounded analytic germ with exact forced value and slope.
+  An actual AR solution cannot have a critical point at that level. Any actual
+  crossing is therefore regular and requires 0<kappa^2*c0<3241880613/6380808980.
+  Positive scalar germs in this interval do not establish metric/form existence.
+claim_id: [GU-054]
+result_ids: [AT1, AT2, AT3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AT-opposite-profile-crossing.md
+internal_review: reports/reviews/REVIEW50-GU-AT-2026-11-03.md
+code:
+  - computation/geometric-unity/AT_opposite_profile_crossing.py
+  - computation/geometric-unity/AT_opposite_profile_crossing.out
+formalization_status: >
+  Actual-field statements retain all AR hypotheses: smooth positive four-base,
+  positive Z1, constant positive cH,cV, lambda<1/4, compact (14,0)/u(128),
+  true bosonic equation, fixed parallel real WA, real fields, constant nonzero
+  kappa, det M!=0 and an entire opposite single-Lambda5-conic observer domain
+  away from coincident non-vector factors. AR supplies nonzero w, lambda=1/5
+  and the fixed Ricci-gradient identity, including at critical points.
+  AT1 itself is a scalar analytic-ODE lemma near a*, where delta!=0.
+proof_status: >
+  AT1 normalizes the profile to x*y'+p(x)y=q(x;t), p(0)=153/127>0.
+  An explicit analytic integrating factor and a convergent weighted integral
+  construct the unique analytic germ. The homogeneous differences diverge as
+  |x|^(-153/127), proving bounded uniqueness from either side. Exact value,
+  slope and scale threshold follow. AT2 differentiates AR5a at C=0 to get
+  (Ric+I/c0)H=0 and 24H^2+(L+1/c0)H=0. Positive self-adjointness fixes all
+  nonzero Hessian eigenvalues eta<0 and puts E in that eigenspace. The actual
+  Euler curve accesses a bounded one-sided regular profile; AT1 forces the
+  threshold and slope, which would require a negative Hessian rank.
+  AT3 applies AT1 at the necessarily regular actual crossing.
+internal_consistency: >
+  No division by the vanishing leading coefficient is used. The equality-scale
+  scalar germ has a simple zero and is positive only on its right side;
+  critical-field exclusion uses the actual Euler curve and Hessian rank, not
+  an assumed two-sided regular profile at a critical point. Only a scalar ODE
+  germ is analytically extended, with no observer field or Gram continuation.
+reproducibility: >
+  Run python -X utf8 -I computation/geometric-unity/AT_opposite_profile_crossing.py
+  in the pinned Python/SymPy environment. The standalone helper uses only
+  SymPy and the standard library, with no old helper, private source, metric
+  engine, randomness or cache. The recorded run passes 13 exact controls in
+  0.091 seconds with Python 3.12 and SymPy 1.14.0. Independent Review50
+  reproduces all 13 controls in 0.092 seconds. Integral convergence, bounded
+  uniqueness and the critical Euler-curve passage are hand proofs.
+novelty: >
+  Bounded exceptional-level analysis within this reconstruction, using an
+  elementary regular-singular scalar equation. No literature-first claim,
+  general Lambda5 classification or physical prediction is asserted.
+empirical_testability: None new; necessary mathematical restrictions in the declared sector.
+dependencies: [AR1, AR5, AQ3, N1]
+confidence: >
+  Independent internal Review50 accepts the public scalar, spectral and actual
+  Euler-curve arguments and reproduces its 13 exact controls. External peer
+  review remains outstanding; no actual metric/form existence follows.
+pending_work: >
+  Determine whether any permitted positive germ satisfies the actual five-form
+  Gram constraints, full AS algebraic compatibility and observer metric
+  equations. Critical points at other a, other singular strata, coincident
+  kernels, det M=0 and other real/operator settings are outside this result.

@@ -68,7 +68,7 @@ confidence: >
   metric reproduction.
 pending_work: >
   Solve the remaining opposite-conic form and metric system on its narrowed
-  geometric corner, including nonzero-w critical points and the implicit ODE's
-  exceptional profile level. Coincident kernels, det M=0, other operators,
+  geometric corner. AT settles the exceptional profile level; AU restricts
+  other critical values and the Ricci spectrum. Coincident kernels, det M=0, other operators,
   indefinite real forms and fields leaving the single-kernel stratum are
   outside this theorem. No complete opposite-conic exclusion is claimed.
