@@ -1,0 +1,32 @@
+AQ: opposite moving Lambda5 stress and Bianchi compatibility.
+Real compact WA; all derivatives retained; no existence claim.
+[01] complete symbolic aligned-vector grade-one quadratic: True
+[02] complete vector derivative orbit (0,0), copy1: True
+[03] complete vector derivative orbit (0,0), copy3: True
+[04] complete vector derivative orbit (0,1), copy1: True
+[05] complete vector derivative orbit (0,1), copy3: True
+[06] complete vector derivative orbit (1,0), copy1: True
+[07] complete vector derivative orbit (1,0), copy3: True
+[08] unit-simple symbolic calibration: all196 stress coefficients: True
+[09] unit-simple symbolic calibration: entire mixed grade-one output vanishes: True
+[10] nondecomposable full-support control: all196 stress coefficients: True
+[11] nondecomposable full-support control: entire mixed grade-one output vanishes: True
+[12] complete invariant grade-one baseline: True
+[13] all14 five-form derivative directions have zero grade-one output: True
+[14] exact grade-one scalar and rank-one elimination: True
+[15] symmetric-Gamma scalar equation retained: True
+[16] symmetric-Gamma rank-one equation retained: True
+[17] contraction-Gram trace retained: True
+[18] transverse Bianchi coefficient and its single zero: True
+[19] the transverse zero is on the real left arc, so cannot be divided away: True
+[20] dimension14 trace reversal: True
+[21] complete divergence collection: True
+[22] full covector Bianchi identity with every coefficient derivative: True
+[23] the mean-curvature coefficient has exactly one exceptional level: True
+  U = (208*a + 1)*(21840*a + 113)/480
+  V = -64*(402896*a + 1719)/285
+  W = -1024*(676*a - 53)/285
+  A_c = 32*(816608*a + 5155)/285
+  Exceptional a levels: -5155/816608 and 2537/43264
+Local isoparametricity uses the hand covariant/density proof, not finite sampling.
+23 exact controls passed; runtime 1.724 s.

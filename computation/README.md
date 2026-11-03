@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 34 |
-| **Self-contained total** | **44** |
+| Geometric Unity computations | 36 |
+| **Self-contained total** | **46** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **50** |
+| **Total with source checks** | **52** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 44 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 46 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -59,6 +59,8 @@ python -X utf8 scripts/verify.py --recent --upstream ../chain-theory
 Keep that checkout free of modified, untracked and ignored files, including build artifacts. The verifier checks the commit and raw source hashes; CRLF conversion is rejected. These commands read upstream material as data. The Lean-coverage classifier uses recorded build and axiom logs.
 
 ## Completed validation
+
+The AP/AQ helpers pass **40** and **23** new exact controls, independently reproduced. [Review46](../reports/reviews/REVIEW46-GU-AP-2026-11-03.md) and [Review47](../reports/reviews/REVIEW47-GU-AQ-2026-11-03.md) assess the universal algebraic and covariant arguments, including their shared-engine limits. These focused checks do not repeat the earlier 50-command local milestone below; the current suite contains 52 commands when source checks are included.
 
 The November 3 AL/AM milestone passed all **50/50** selected commands with pinned Windows Python 3.12 and the pristine LF upstream snapshot. It includes **59** exact endpoint-system controls and **12** global-model controls. [Review42](../reports/reviews/REVIEW42-GU-AM-2026-11-03.md) and [Review43](../reports/reviews/REVIEW43-GU-AL-2026-11-03.md) record their proof assessments and limits.
 

@@ -1,0 +1,67 @@
+result: >
+  On the single opposite moving Lambda5 conic, the complete grade-one and
+  symmetric Gamma equations give an exact metric reduction in the odd scalar
+  a. Contracted Bianchi forces |da|^2 and Delta a to be locally functions of a
+  on every regular patch. The gradient is a Ricci eigenvector with eigenvalue
+  locally depending only on a. These necessary conditions do not classify or
+  construct full solutions.
+claim_id: [GU-054]
+result_ids: [AQ1, AQ2, AQ3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AQ-opposite-lambda5-conservation.md
+internal_review: reports/reviews/REVIEW47-GU-AQ-2026-11-03.md
+code:
+  - computation/geometric-unity/AQ_opposite_lambda5_conservation.py
+  - computation/geometric-unity/AQ_opposite_lambda5_conservation.out
+formalization_status: >
+  Smooth positive four-base and reconstructed positive Z1, positive constant
+  cH,cV, lambda<1/4, observer signature (14,0), compact u(128), true dualized
+  bosonic equation, fixed parallel real WA, real fields, nonzero constant
+  kappa and det M!=0. Only the single opposite w/cGamma Lambda5 kernel is
+  present, away from coincident factors, on a smooth nonzero-w arc. The full
+  even field is v+k with v=P2(C)+P14(208wC), C=24da/delta. Arbitrary smooth
+  form and chart-weight derivatives are retained. AQ3 is local where da!=0.
+proof_status: >
+  AQ1 retains the full D(v) Hessian and Q(v) tensor, and proves the all-form
+  grade-one stress q*n*g+ell*S with q=112r^2/3+40s^2 and
+  ell=320r^2/3-32s^2. D(k) and mixed(v,k) have no grade-one module. AH1
+  eliminates n and S algebraically, giving explicit U,V,W independent of
+  chart scale. AQ2 derives both the raw weight/form-divergence identity and
+  the full reduced Bianchi covector identity. AQ3 uses its affine transverse
+  coefficient to get dc wedge da=0; the second affine coefficient makes
+  Delta chi a function of a. Both exceptional levels are handled by density
+  and continuity on regular patches, not division. Independent internal
+  Review47 accepts the public argument and its scope.
+internal_consistency: >
+  Complete symbolic grade-one calibrations include both chart weights, a
+  full-support nondecomposable form and every covariant form-jet
+  direction. The contraction proof is restricted to grade one; higher
+  quadratic channels are not replaced by endpoint formulas. No AN
+  constant-endpoint norm cancellation, field continuation, inequality
+  continuation, global foliation or space-form classification is used.
+reproducibility: >
+  Run python -X utf8 -I computation/geometric-unity/AQ_opposite_lambda5_conservation.py
+  with the repository's pinned Python/SymPy environment. The portable helper
+  combines the opposite-conic stress and scalar coefficient controls, using
+  T's accepted Clifford operations and AH's positive Gram operations without
+  private imports, new dependencies, randomness or a new metric engine.
+  The recorded portable run passes 23 exact controls in 1.724 seconds:
+  thirteen stress/derivative and ten scalar elimination/Bianchi controls.
+novelty: >
+  A bounded necessary conservation and local level-set reduction within this
+  reconstruction. The definition of isoparametric is classical (Wang 1987);
+  no literature-first, physical prediction or PDE existence claim is made.
+empirical_testability: None new; a necessary mathematical condition in the declared sector.
+dependencies: [J1, J2, AA1, AH1, AH2]
+confidence: >
+  Independent internal Review47 confirms the public coefficient table,
+  complete Bianchi bracket and continuity argument, with a fresh 23-control
+  run in 1.764 seconds. Exact controls share an accepted Clifford
+  implementation and do not establish existence of observer metrics.
+pending_work: >
+  The remaining opposite-conic tensor equations and extension of AQ3 through
+  critical points are unsettled. Moving isolated endpoints, coincident kernels,
+  det M=0, other operators, indefinite real forms and non-invariant odd fields
+  remain outside this result.
+  Local isoparametricity neither supplies a full solution nor excludes every
+  moving field, and implies no nonzero derivative at every point.

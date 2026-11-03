@@ -1,0 +1,45 @@
+AP: first Lambda5 c/wGamma conic, exact all-slot orbit certificates.
+[01] omega pair intersection 0: compact phase and complete odd support: True
+[02] intersection 0: complete grade 5 invariant identity: True
+[03] intersection 0: gamma trace at grade 5: True
+[04] intersection 0: complete grade 9 invariant identity: True
+[05] intersection 0: gamma trace at grade 9: True
+[06] omega pair intersection 1: compact phase and complete odd support: True
+[07] intersection 1: complete grade 5 invariant identity: True
+[08] intersection 1: gamma trace at grade 5: True
+[09] intersection 1: complete grade 9 invariant identity: True
+[10] intersection 1: gamma trace at grade 9: True
+[11] omega pair intersection 2: compact phase and complete odd support: True
+[12] intersection 2: complete grade 5 invariant identity: True
+[13] intersection 2: gamma trace at grade 5: True
+[14] intersection 2: complete grade 9 invariant identity: True
+[15] intersection 2: gamma trace at grade 9: True
+[16] omega pair intersection 3: compact phase and complete odd support: True
+[17] intersection 3: complete grade 5 invariant identity: True
+[18] intersection 3: gamma trace at grade 5: True
+[19] intersection 3: complete grade 9 invariant identity: True
+[20] intersection 3: gamma trace at grade 9: True
+[21] omega pair intersection 4: compact phase and complete odd support: True
+[22] intersection 4: complete grade 5 invariant identity: True
+[23] intersection 4: gamma trace at grade 5: True
+[24] intersection 4: complete grade 9 invariant identity: True
+[25] intersection 4: gamma trace at grade 9: True
+[26] omega pair intersection 5: compact phase and complete odd support: True
+[27] intersection 5: complete grade 5 invariant identity: True
+[28] intersection 5: gamma trace at grade 5: True
+[29] intersection 5: complete grade 9 invariant identity: True
+[30] intersection 5: gamma trace at grade 9: True
+[31] C axis 0: arbitrary vector weights and kernel mixed support: True
+[32] jet axis 0: all weighted-kernel derivatives retain only grades 3/7/11: True
+[33] C axis 5: arbitrary vector weights and kernel mixed support: True
+[34] jet axis 5: all weighted-kernel derivatives retain only grades 3/7/11: True
+[35] vector jet axis 0: no grade 5/9: True
+[36] vector jet axis 1: no grade 5/9: True
+[37] quadratic vector field with independent covectors has no grade 5/9: True
+[38] scalar-square reduction has a strictly positive two-by-two determinant: True
+Residual determinant = 32*(35*r**4 + 176*r**2*s**2 + 405*s**4)/9
+[39] cross traces extract complementary square components with nonzero coefficient: True
+[40] at either zero-weight endpoint both ordinary trace factors remain nonzero: True
+No derivative was set to zero before the grade 5/9 separation.
+Universality uses the complete SO14 equivariance/polarization proof in AP-first-lambda5-obstruction.md.
+40 exact controls passed; runtime 1.412 s.
