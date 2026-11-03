@@ -1,0 +1,70 @@
+result: >
+  Positive Z1 has an exact vertical Ricci formula with a positive semidefinite
+  curvature-action correction. In the full AR opposite-conic sector, no open
+  patch has scalar gradient parallel to Euler. The Euler Ricci eigenvalue has
+  multiplicity at least two everywhere. Critical Hessian ranks are at least
+  four, and at fixed positive scale there are at most 33 critical scalar values
+  among eleven explicit cubics. These are necessary conditions, not existence.
+claim_id: [GU-054]
+result_ids: [AU1, AU2, AU3]
+gaps: [GU-G14, GU-G15, GU-G16]
+writeup: formalization/geometric-unity/AU-opposite-ricci-spectrum.md
+internal_review: reports/reviews/REVIEW51-GU-AU-2026-11-03.md
+code:
+  - computation/geometric-unity/AU_opposite_ricci_spectrum.py
+  - computation/geometric-unity/AU_opposite_ricci_spectrum.out
+formalization_status: >
+  AU1 applies to smooth positive n-bases, positive cH,cV and lambda<1/n.
+  AU2-AU3 retain all AR assumptions: positive four-base/Z1, compact (14,0),
+  u(128), true bosonic equation, fixed parallel real WA, real smooth fields,
+  constant nonzero kappa, regular vector block and entire connected opposite
+  single-Lambda5-conic domain away from coincident non-vector factors. AR
+  supplies lambda=1/5 and the smooth fixed Ricci-gradient identity.
+proof_status: >
+  Along a vertical geodesic in normal base coordinates, Koszul gives a
+  symmetric-plus-skew horizontal connection operator. The Riccati trace,
+  constant logarithmic fibre speed and intrinsic fibre Ricci prove AU1.
+  No Riemannian-submersion assumption is used on Z1. The correction is a Gram
+  form into so(H), hence positive and rank at most six at n=4, with Euler in
+  its kernel. An open Euler-collinear solution would make this correction a
+  scalar metric on nine tracefree vertical directions. Rank forces it zero;
+  the actual fibre-open curvature action then forces a flat base and a
+  constant odd patch, excluded by AR1. Continuity of 13-minors proves the
+  repeated Ricci eigenvalue everywhere. At a critical point the full shifted
+  Ricci endomorphism is positive semidefinite; its vertical kernel supplies
+  at least four nonzero Hessian directions. The actual Euler curve and AR5b
+  give denominator-free critical-rank equations, factoring to eleven cubics.
+internal_consistency: >
+  A local fibre-geodesic vector field is extended independently of base
+  coordinates. Its bracket with horizontal lifts vanishes along the whole
+  selected fibre, which justifies its vertical derivative. Positivity is
+  used in the correction Gram form and the full shifted-Ricci kernel step.
+  The 33 bound counts distinct scalar values, not critical points. AT excludes
+  D=0; no root of delta or any vector factor is divided away. Left-arc scalar
+  candidates remain, so the cubic equations do not exclude the full branch.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
+  computation/geometric-unity/AU_opposite_ricci_spectrum.py. The new helper
+  uses the accepted F_jets library, without running any old check main.
+  All 24 controls pass in 2.161 seconds: four declared positive curved-base
+  off-section jets in n=2,3,4 (245 vertical tensor entries), correction ranks
+  and Euler kernel, and exact critical-curve polynomial coefficients.
+  Independent Review51 reproduces all 24 controls in 2.148 seconds.
+  Universal geometry, density and critical-point arguments are hand proofs.
+novelty: >
+  Bounded vertical-Ricci and opposite-conic spectral reductions in this
+  reconstruction, with a finite necessary critical-value bound. No
+  literature-first claim, full classification or physical evidence.
+empirical_testability: None new; mathematical restrictions in the specified reconstruction.
+dependencies: [F1, N1, N2, AR1, AR3, AR5, AQ3, AT2]
+confidence: >
+  Independent internal Review51 accepts the public geometric, spectral and
+  critical-level proofs and reproduces all 24 controls. External peer review
+  remains outstanding.
+  Fresh metric controls share the accepted jet engine and are finite checks,
+  not a second metric implementation or a universal proof by sampling.
+pending_work: >
+  Decide whether the allowed Ricci spectrum, scalar profiles and cubic levels
+  can be realized by an actual metric and five-form satisfying the whole AS
+  system. Other singular strata, coincident kernels, det M=0, real forms and
+  operator members remain outside these field conclusions.

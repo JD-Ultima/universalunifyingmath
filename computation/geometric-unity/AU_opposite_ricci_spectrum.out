@@ -1,0 +1,30 @@
+[01] n=2, lambda=1/3: positive off-section fibre and block parameters: True
+[02] n=2, lambda=1/3: all 9 vertical Ricci entries match: True
+[03] n=2, lambda=1/3: the curvature-action correction is nonzero: True
+[04] n=2, lambda=1/3: every curvature action is orthogonal to Euler: True
+[05] n=2, lambda=1/3: exact correction rank respects the skew-horizontal bound: True
+  correction rank=1; metric control 0.119s
+[06] n=3, lambda=1/4: positive off-section fibre and block parameters: True
+[07] n=3, lambda=1/4: all 36 vertical Ricci entries match: True
+[08] n=3, lambda=1/4: the curvature-action correction is nonzero: True
+[09] n=3, lambda=1/4: every curvature action is orthogonal to Euler: True
+[10] n=3, lambda=1/4: exact correction rank respects the skew-horizontal bound: True
+  correction rank=3; metric control 0.334s
+[11] n=4, lambda=1/5: positive off-section fibre and block parameters: True
+[12] n=4, lambda=1/5: all 100 vertical Ricci entries match: True
+[13] n=4, lambda=1/5: the curvature-action correction is nonzero: True
+[14] n=4, lambda=1/5: every curvature action is orthogonal to Euler: True
+[15] n=4, lambda=1/5: exact correction rank respects the skew-horizontal bound: True
+  correction rank=6; metric control 0.837s
+[16] n=4, lambda=1/7: positive off-section fibre and block parameters: True
+[17] n=4, lambda=1/7: all 100 vertical Ricci entries match: True
+[18] n=4, lambda=1/7: the curvature-action correction is nonzero: True
+[19] n=4, lambda=1/7: every curvature action is orthogonal to Euler: True
+[20] n=4, lambda=1/7: exact correction rank respects the skew-horizontal bound: True
+  correction rank=6; metric control 0.818s
+[21] critical-curve left coefficient has the exact universal factorization: True
+[22] critical-curve right coefficient has the exact universal factorization: True
+[23] all eleven retained rank equations are genuine cubics at positive scale: True
+[24] scalar critical-rank curves still admit positive left-arc scale candidates: True
+Finite metric controls support the hand proof; scalar candidates do not construct full fields.
+24 exact controls passed; runtime 2.161 s.

@@ -1,0 +1,78 @@
+result: >
+  On actual regular solution patches of the single opposite Lambda5 conic,
+  the ordinary and right-Gamma symmetric cubic Clifford trace tensors
+  vanish when all three indices are perpendicular to C. The first Gram
+  transport condition reduces to a positive multiple of one symmetric
+  cubic tensor plus a cyclic-zero tensor. Full zero-order compatibility
+  kills the latter away from finitely many parameter levels, retained by
+  continuity. Zero-order redundancy of the remaining cubic is unresolved.
+claim_id: [GU-054]
+result_ids: [AV1, AV2, AV3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AV-opposite-gram-transport.md
+internal_review: reports/reviews/REVIEW52-GU-AV-2026-11-03.md
+code:
+  - computation/geometric-unity/AV_opposite_gram_transport.py
+  - computation/geometric-unity/AV_opposite_gram_transport.out
+formalization_status: >
+  Retains AS's smooth positive four-base, positive Z1, positive constant
+  cH,cV, lambda<1/4, compact real (14,0)/u(128), true dualized equation,
+  fixed parallel real WA, real fields, nonzero constant kappa, det M!=0,
+  and one opposite w/cGamma Lambda5 kernel away from coincident factors.
+  Work where w!=0 and da!=0. The canonical change eta=r*omega and tau=s/r
+  absorbs all weight derivatives. Actual form Grams and the entire AS
+  compatibility tensor are retained. No simplicity assumption is imposed.
+proof_status: >
+  AV1 derives the canonical full jet from AS2 and explicit K inverse
+  identities on X/Y/Z and the four quadratic patterns. AV2 proves the
+  ordinary and axial Gram-variation formulas by cyclic scalar trace and
+  reversion, including the right-Gamma sign; both cubic tensors are fully
+  symmetric. The C=t*e0 decomposition proves the C-linear tensor's cyclic
+  sum is zero and B(Z)=-B(Y). Applying the Gram map to full AS compatibility
+  separates the symmetric and cyclic-zero parts. The exact positive
+  coefficient is (741+436x+55x^2)/(6*(38+11x)), x=tau^2.
+  AV3 differentiates the actual Gram equation on tangent indices. A
+  nonzero polynomial numerator and dx/da=672/(5*(1+160a)^2)>0 retain all
+  exceptional levels by density rather than division, forcing both cubic
+  traces to vanish on actual regular solutions.
+internal_consistency: >
+  Raw Gram tensors are decomposed before removing pair traces; no
+  unproved harmonic or tracefree property is assumed. The derivative
+  projection contains no omitted projector derivative or unknown scalar
+  Hessian. Finite convention forms are not asserted to satisfy AS, and
+  supply neither an admissible counterexample nor a universal basis cover.
+  A shifted scalar square is not used to infer simplicity. The theorem
+  gives a necessary transport condition, not its algebraic independence.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
+  computation/geometric-unity/AV_opposite_gram_transport.py.
+  A standalone positive Clifford dictionary uses exact Fraction arithmetic
+  with no repository-engine or private-file import. Nine finite convention
+  controls compare identities and symmetries in all 2744 slots on three
+  declared forms; four scalar controls check the coefficient and density
+  premises. The fresh portable author run passes all 13 controls in
+  0.507 seconds. Independent Review52 reproduces all 13 controls in 0.514
+  seconds. No existing helper or suite is rerun.
+novelty: >
+  A bounded necessary cubic Gram-transport reduction in the declared
+  reconstruction. No claim that it is independent of zero-order AS,
+  no admissible-feasibility classification, no literature-first claim,
+  no field-existence or physical confirmation is asserted.
+empirical_testability: None new; a mathematical necessary condition.
+dependencies: [AS1, AS2, AS3, AQ3, AH1, AH2]
+confidence: >
+  Independent internal Review52 accepts the public derivation and reproduces
+  all 13 controls. Finite exact controls support conventions; cyclic trace,
+  reversion, contraction anticommutation and covariant density proofs
+  supply universality. External peer review and Lean verification are
+  not claimed, and no independent observer metric engine is supplied.
+pending_work: >
+  Decide whether the residual symmetric cubic, or its pair-tracefree
+  projection, is already implied by the actual zero-order Gram and FULL
+  AS compatibility equations on the allowed real data. Ordinary polynomial
+  ideal nonmembership alone would not supply admissible counterdata.
+  No exact datum satisfying all those
+  equations with nonzero residual is known here. Actual metric/form
+  realization and other prolongations remain open. Critical points,
+  coincident kernels, det M=0, other operators, non-invariant odd fields
+  and indefinite real forms retain their separate scope.

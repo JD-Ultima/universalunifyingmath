@@ -1,0 +1,22 @@
+AT: bounded scalar profile and critical-point incompatibility at D=0.
+[01] D has exactly the stated simple zero and leading coefficient: True
+[02] the level is on the real left arc with both vector factors regular: True
+[03] dimensionless equation has the exact regular-singular normalization: True
+[04] normalized coefficients are regular and the indicial number is 153/127: True
+[05] bounded profile has the exact forced value: True
+[06] differentiated equation has the exact forced slope: True
+[07] forced norm has the stated exact positive scale threshold: True
+[08] forced slope is strictly positive for every positive scale: True
+[09] integrating-factor transformation has the correct derivative sign: True
+[10] critical Hessian polynomial gives the exact trace-rank relation: True
+[11] actual Euler-curve Taylor ratio fixes the profile slope: True
+[12] the threshold slope forces the stated negative normalized Hessian eigenvalue: True
+[13] critical-point compatibility would require a negative rank: True
+  a_star = -491/26416
+  p0 = 153/127 ; homogeneous exponent = -153/127
+  forced y0(t) = -95*(6380808980*t - 3241880613)/259536139978752
+  forced y1(t) = (103523628088901644*t + 54385536931208595)/788642454954332160
+  tau_star = 3241880613/6380808980
+  critical c0*eta = -53607532260267/929045787488000 ; incompatible rank = -109962574640284/53607532260267
+Analytic scalar-germ existence is a hand proof, not a metric/form existence result.
+13 exact controls passed; runtime 0.091 s.

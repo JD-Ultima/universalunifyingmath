@@ -1,0 +1,21 @@
+AV: opposite-conic Gram transport, independent exact Clifford convention controls.
+[01] simple convention check: ordinary Gram identity in all 2744 slots: True
+[02] simple convention check: right-Gamma Gram identity in all 2744 slots: True
+[03] simple convention check: both cubic tensors are fully symmetric: True
+[04] disjoint and shared convention check: ordinary Gram identity in all 2744 slots: True
+[05] disjoint and shared convention check: right-Gamma Gram identity in all 2744 slots: True
+[06] disjoint and shared convention check: both cubic tensors are fully symmetric: True
+[07] epsilon mixed convention check: ordinary Gram identity in all 2744 slots: True
+[08] epsilon mixed convention check: right-Gamma Gram identity in all 2744 slots: True
+[09] epsilon mixed convention check: both cubic tensors are fully symmetric: True
+[10] projected compatibility leaves the positive symmetric cubic coefficient: True
+[11] compatibility coefficient factors are positive in tau squared: True
+[12] the exact hook coefficient has a nonzero finite-level numerator: True
+[13] the canonical squared ratio has strictly positive a derivative: True
+  d(tau) = 16*(1568750*tau**10 + 565335*tau**8 - 50705892*tau**6 - 81149677*tau**4 + 138437232*tau**2 + 46051632)/(315*tau*(16*tau**2 + 61)*(19*tau**2 + 64)*(25*tau**2 - 66))
+  Positive cubic coefficient = (55*tau**4 + 436*tau**2 + 741)/(6*(11*tau**2 + 38))
+  Finite exceptional levels are retained by the density proof; no root search is needed.
+No control form is asserted to satisfy the full AS zero-order constraints.
+Cyclic trace/reversion and the stated hand proof supply universality.
+Zero-order redundancy of the residual symmetric cubic remains unresolved.
+13 new controls passed; runtime 0.507 s
