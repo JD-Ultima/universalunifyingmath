@@ -1,0 +1,61 @@
+result: >
+  The flat positive Z1 observer over standard affine R4, at lambda=1/5 and
+  arbitrary positive cH,cV, is globally isometric to the determinant-one SPD5
+  symmetric space with cV times its trace metric and is geodesically complete.
+  Translation torus quotients remain complete; the Levi-Civita spin connection
+  and Clifford-soldering form descend for all sixteen torus spin structures.
+  AI3's known constant odd, zero even bosonic field descends at
+  cV*kappa^2=150000/11, with full slaving determinant -99*kappa^4/625.
+claim_id: [GU-054]
+result_ids: [AM1, AM2, AM3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AM-global-flat-models.md
+internal_review: reports/reviews/REVIEW42-GU-AM-2026-11-03.md
+code:
+  - computation/geometric-unity/AM_global_flat_models.py
+  - computation/geometric-unity/AM_global_flat_models.out
+formalization_status: >
+  R4 has its standard flat affine connection; the positive metric fibre is
+  SPD4, lambda=1/5, and cH,cV are positive constants. Torus quotients use a
+  full translation lattice and any of its sixteen central spin lifts. AM3
+  retains the true dualized equation, compact positive dimension fourteen,
+  gauge algebra u(128), fixed parallel real WA, real nonzero constant kappa
+  and the field To=-i*kappa*Phi1/400, Te=0. The vector block is regular.
+proof_status: >
+  F7 supplies the existing local symmetric-space identification. An explicit
+  global Schur-complement inverse proves surjectivity and smooth invertibility;
+  all-time matrix-exponential geodesics prove completeness. Translation
+  congruences give complete free torus quotients. A translation-invariant
+  orthonormal frame and all Z4-to-sign characters prove spin connection and
+  soldering-form descent. AI3 supplies the full local bosonic equation,
+  which descends by covariance. No field classification beyond AI/AK is added.
+internal_consistency: >
+  Twelve exact SymPy controls check the global inverse, determinant one,
+  all 196 pullback metric coefficients at nonzero x and nonunit scales,
+  translation congruence, bosonic normalization and a wrong-scale negative
+  control, the actual four-by-four determinant with kappa=2 and -3, the
+  imported flat Ricci sign pattern, and an exact boost geodesic and its speed.
+reproducibility: >
+  Python 3.12 and SymPy 1.14.0; python -X utf8 -I
+  computation/geometric-unity/AM_global_flat_models.py. No scratch files,
+  external data, metric engine or Clifford engine are imported. The finite
+  controls supplement the hand proofs rather than certify general topology.
+novelty: >
+  No new symmetric-space or information-geometric metric is claimed. F7's
+  local identification is existing repository work. The classical related
+  Gaussian-parameter symmetric metric is due to Lovric, Min-Oo and Ruh;
+  it differs from the Fisher metric. This note records global completeness,
+  torus spin descent and the global realization of the known AI3 field.
+primary_sources:
+  - https://math.mcmaster.ca/minoo/mypapers/lmr.pdf
+  - https://arxiv.org/abs/1904.12921
+empirical_testability: None new; a global model of the stated reconstructed equation.
+dependencies: [F7, N2, J1, AI3, AK3]
+confidence: >
+  Independent internal Review42 accepts the proof and independently reproduces all twelve exact controls.
+  No external peer review or independent observer-metric reproduction is claimed.
+pending_work: >
+  Fermions, joint variation of the base metric,
+  finite action, physical interpretation and other field sectors are outside
+  this result. The unipotent translation lattice is not asserted to have finite
+  covolume in SL5.

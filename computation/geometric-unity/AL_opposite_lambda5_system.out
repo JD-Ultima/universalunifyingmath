@@ -1,0 +1,66 @@
+AL: opposite Lambda5 constant endpoint systems; real compact WA, all jets retained.
+[01] w jet orbit 0: complete derivative in all slots and grades: True
+[02] w jet orbit 0: exact full jet inverse: True
+[03] w jet orbit 5: complete derivative in all slots and grades: True
+[04] w jet orbit 5: exact full jet inverse: True
+[05] w pair overlap0: compact exact endpoint kernel: True
+[06] w pair overlap0: both universal quadratic all-slot formulas: True
+[07] w pair overlap0: both complete gamma contractions: True
+[08] w pair overlap1: compact exact endpoint kernel: True
+[09] w pair overlap1: both universal quadratic all-slot formulas: True
+[10] w pair overlap1: both complete gamma contractions: True
+[11] w pair overlap2: compact exact endpoint kernel: True
+[12] w pair overlap2: both universal quadratic all-slot formulas: True
+[13] w pair overlap2: both complete gamma contractions: True
+[14] w pair overlap3: compact exact endpoint kernel: True
+[15] w pair overlap3: both universal quadratic all-slot formulas: True
+[16] w pair overlap3: both complete gamma contractions: True
+[17] w pair overlap4: compact exact endpoint kernel: True
+[18] w pair overlap4: both universal quadratic all-slot formulas: True
+[19] w pair overlap4: both complete gamma contractions: True
+[20] w pair overlap5: compact exact endpoint kernel: True
+[21] w pair overlap5: both universal quadratic all-slot formulas: True
+[22] w pair overlap5: both complete gamma contractions: True
+  w coefficients: (-3/704, 52, 48, 152/3, 16/3, 272, -512/3)
+[23] cG jet orbit 0: complete derivative in all slots and grades: True
+[24] cG jet orbit 0: exact full jet inverse: True
+[25] cG jet orbit 5: complete derivative in all slots and grades: True
+[26] cG jet orbit 5: exact full jet inverse: True
+[27] cG pair overlap0: compact exact endpoint kernel: True
+[28] cG pair overlap0: both universal quadratic all-slot formulas: True
+[29] cG pair overlap0: both complete gamma contractions: True
+[30] cG pair overlap1: compact exact endpoint kernel: True
+[31] cG pair overlap1: both universal quadratic all-slot formulas: True
+[32] cG pair overlap1: both complete gamma contractions: True
+[33] cG pair overlap2: compact exact endpoint kernel: True
+[34] cG pair overlap2: both universal quadratic all-slot formulas: True
+[35] cG pair overlap2: both complete gamma contractions: True
+[36] cG pair overlap3: compact exact endpoint kernel: True
+[37] cG pair overlap3: both universal quadratic all-slot formulas: True
+[38] cG pair overlap3: both complete gamma contractions: True
+[39] cG pair overlap4: compact exact endpoint kernel: True
+[40] cG pair overlap4: both universal quadratic all-slot formulas: True
+[41] cG pair overlap4: both complete gamma contractions: True
+[42] cG pair overlap5: compact exact endpoint kernel: True
+[43] cG pair overlap5: both universal quadratic all-slot formulas: True
+[44] cG pair overlap5: both complete gamma contractions: True
+  cG coefficients: (-1/160, -44/3, 8/3, -40/3, -56/3, 256/3, -176/3)
+[45] Cartan jet has zero exterior traces but survives K unchanged: True
+[46] w compatible pair2: complete higher residual and first constraint prolongation: True
+[47] w compatible pair3: complete higher residual and first constraint prolongation: True
+[48] cG compatible pair0: complete higher residual and first constraint prolongation: True
+[49] cG compatible pair1: complete higher residual and first constraint prolongation: True
+[50] w ordinary triple: complete cubic norm-current formula: True
+[51] cG ordinary triple: complete cubic norm-current formula: True
+[52] w axial triple: complete cubic norm-current formula: True
+[53] cG axial triple: complete cubic norm-current formula: True
+[54] w general full support: complete cubic norm-current formula: True
+[55] cG general full support: complete cubic norm-current formula: True
+[56] w nonconstant-norm real-form jet meets both higher equations and first algebraic prolongation: True
+[57] w complete odd residual agrees with the channel reduction for synthetic algebraic G: True
+  w countercontrol: grad N=-157/9*e0; no observer metric or solution constructed.
+[58] cG nonconstant-norm real-form jet meets both higher equations and first algebraic prolongation: True
+[59] cG complete odd residual agrees with the channel reduction for synthetic algebraic G: True
+  cG countercontrol: grad N=48/5*e13; no observer metric or solution constructed.
+59 exact controls passed; runtime 4.962 s.
+Exact channel reduction and conditional uniqueness; curvature integrability and actual positive-Z1 realization remain open.

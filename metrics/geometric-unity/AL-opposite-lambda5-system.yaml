@@ -1,0 +1,76 @@
+result: >
+  Exact covariant first-order reduction of the two opposite Lambda5 constant
+  endpoints a=-3/704,-1/160. Full derivatives retain the Cartan component and
+  have only grade 5 or grade 9, respectively. Within the declared ansatz the
+  full bosonic Upsilon equation is equivalent to AH6's metric/Gram equation,
+  one unused-grade algebraic constraint and a determined full covariant jet.
+  Exact first-jet controls permit nonzero ordinary and axial norm currents. Smooth fixed-background
+  solutions, if they exist, are determined by one point value on a connected
+  common domain. No observer metric or local solution is constructed.
+claim_id: [GU-054]
+result_ids: [AL1, AL2, AL3, AL4]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AL-opposite-lambda5-system.md
+internal_review: reports/reviews/REVIEW43-GU-AL-2026-11-03.md
+code:
+  - computation/geometric-unity/AL_opposite_lambda5_system.py
+  - computation/geometric-unity/AL_opposite_lambda5_system.out
+formalization_status: >
+  Smooth positive four-base, reconstructed Z1, positive constant cH,cV,
+  lambda<1/4, positive observer dimension 14, compact u(128), true dualized
+  equation, fixed parallel real WA, real fields, constant nonzero kappa and
+  det M!=0. On an entire connected open observer domain To=i*kappa*a*Phi1,
+  u=0 and a is the declared endpoint constant. Only its single non-vector
+  kernel is present, away from all coincident factors. The compact phase is 1
+  on w5 and c5Gamma. Chart weights are absorbed into the real five-form,
+  retaining every derivative; v=Dv=0 identically. Moving-odd isolated endpoints
+  are outside the hypotheses. AL4 fixes the background, connection, endpoint
+  copy, parameters and form identification in comparing solutions.
+proof_status: >
+  AL1 proves D(w5 omega)=-16i*K(J), D(c5 omega Gamma)=-8i*K(J)*Gamma,
+  K=I-cAlt-wCtr, with eigenvalues -5,-9,1 and inverse
+  I-cAlt/5-wCtr/9. Both linear coordinate-jet orbits are checked in every
+  output slot; SO14 equivariance and linearity cover the full jet space.
+  AL2 proves both Q5/Q9 sandwich tables and nonzero trace factors by the
+  six complete symbolic quadratic basis-pair orbits and polarization.
+  Endpoint even mass is automatic and the only remaining odd grades are 1,5,9,
+  proving equivalence to the full bosonic equation within this ansatz.
+  AL3 derives dN=(157/18)[Omega^3]1 or (8/5)[Omega^3 Gamma]1 from cyclic
+  scalar trace. Actual real-form first jets have nonzero norm currents while
+  satisfying the higher equations and first unused-constraint prolongation.
+  AL4 uses locally Lipschitz pathwise ODE uniqueness for the determined jet.
+  It supplies no multivariable existence, arbitrary-data admissibility or
+  uniqueness across different unknown metrics. Accepted in independent internal Review43.
+internal_consistency: >
+  Exact controls cover all output slots in the two linear jet orbits, K inverse,
+  both compact endpoint kernels, all six symbolic quadratic pair orbits,
+  contraction factors, nonzero Cartan jet, compatible non-simple pairs and
+  first algebraic prolongations. General full-support forms check both cubic
+  current formulas. Two nonconstant-norm triples satisfy the full higher
+  residual and the first prolongation in all fourteen directions. Synthetic
+  G controls verify the complete odd-channel equivalence without asserting
+  an observer curvature realization. AL4 is a hand ODE proof, not a finite test.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
+  computation/geometric-unity/AL_opposite_lambda5_system.py. The recorded
+  portable run passes 59 exact controls in 4.962 seconds. Uses T's accepted
+  Clifford implementation and AH's Gram calculation, with no off-repository
+  source, randomness, installation or new metric engine. The private
+  57-control predecessor was independently rerun; the two additional public
+  controls check complete synthetic-G residuals. No second Q evaluator.
+novelty: >
+  Bounded exact endpoint-system reduction and conditional uniqueness within
+  this investigation. No literature-first claim, physical confirmation,
+  general Lambda5 classification or existence theorem is asserted.
+empirical_testability: None new; an exact mathematical reduction of the specified reconstruction.
+dependencies: [AH6, AH9, R2, R6, J1]
+confidence: >
+  Frozen private proof, phase/right-Gamma conventions, inverse and norm currents
+  independently accepted internally, with a fresh 57-control private rerun.
+  Public 59-control helper independently reproduced all controls in 6.276 seconds; Review43 accepts its proof and scope. Shared-engine
+  arithmetic and the hand linear/quadratic basis arguments have explicit scopes.
+pending_work: >
+  Curvature commutator integrability, higher prolongations and actual positive-Z1
+  metric realization remain unresolved. Nonzero-u conic fields, moving-odd
+  isolated endpoints, coincident kernels, det M=0 and indefinite real forms
+  are outside this reduction. AL4 does not assert existence for any point value.

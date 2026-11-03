@@ -1,0 +1,469 @@
+{
+  "schema_version": 1,
+  "date_utc": "2026-11-03",
+  "result": "passed",
+  "scope": "Fresh selected Woronowicz local-source build and exact public adapter compilation; not the entire MathLab library or a Mathlib source rebuild.",
+  "compiler": {
+    "version": "4.35.0-rc4",
+    "commit": "c29b6dda4f7c20e3eeaa717c4e565663c5cfa364",
+    "platform": "x86_64-unknown-linux-gnu",
+    "release_url": "https://github.com/leanprover/lean4/releases/download/v4.35.0-rc4/lean-4.35.0-rc4-linux.tar.zst",
+    "release_metadata_url": "https://api.github.com/repos/leanprover/lean4/releases/tags/v4.35.0-rc4",
+    "release_bytes": 594452193,
+    "release_sha256": "e78e14c54c39a145945833cfcdb219458d650c210847a90dcef8fa8ff05ab51a"
+  },
+  "sources": {
+    "mathlab": {
+      "url": "https://github.com/SproutSeeds/math-lab",
+      "rev": "48d14da643ec5f6e40ea0e2ed9f2a5eb9c8d5fda",
+      "fresh_module_count": 54,
+      "modules": [
+        {
+          "module": "ThreeCopyQutritWerner.Imports",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Imports.lean",
+          "sha256": "e27fc71506ec1b76836308fca4140f1eefb4e9f85f3bcfee5f4e072380427209"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.Basic",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Basic.lean",
+          "sha256": "5b92028c6c5142755a332e204eb9b7d3ec8e7cd37220ec60abb39d62fb99856e"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoQubitSpinDeterminant",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoQubitSpinDeterminant.lean",
+          "sha256": "e92bb628dce758bab21565b30d41fd4c2f64551c85c9bdd35195555900dffcc5"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.Product",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Product.lean",
+          "sha256": "936547dc169203fadcea4fecd257b8006433a06032ee85c24b1f1b366fcd2f05"
+        },
+        {
+          "module": "MathLab.ChainTheory.ChoiDark",
+          "path": "MathLab/ChainTheory/ChoiDark.lean",
+          "sha256": "266f34ff7abca90b184b7f40648337a4fb157fefa30261bdb7904bc076832a47"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.Witness",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Witness.lean",
+          "sha256": "3075f752f5d48c1c9d7a7bbf8192e7fd65bf6552dd22ee5e1a9495ff33053488"
+        },
+        {
+          "module": "MathLab.ChainTheory.ReadCap",
+          "path": "MathLab/ChainTheory/ReadCap.lean",
+          "sha256": "88fc5ac1eaa4339026c82fda44f40ea819035da5f25d9854bfac840685d9a82f"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.FamilyI",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/FamilyI.lean",
+          "sha256": "5b4eca6d1cf35eb4e7908f742a59dccb0041bf88bb0aaa4f118ded6b9c6bfaea"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoCutDefs",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoCutDefs.lean",
+          "sha256": "24b159bf2bd62c2c70b7065b446ae0efeb5d8c2ecf4b66335d55c03f0ec766aa"
+        },
+        {
+          "module": "MathLab.ChainTheory.Duality",
+          "path": "MathLab/ChainTheory/Duality.lean",
+          "sha256": "c7552273f8c606b8f3bd2cd0b9a9779ee0bdcbea85823a54124708b7b7b25c7f"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoCutSOS",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoCutSOS.lean",
+          "sha256": "7e580da6dfa1dad4e824b0b4d00f62a48a8911928e4635e15813d8fcc22cb376"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoCutRotate",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoCutRotate.lean",
+          "sha256": "02dbc841a5255934e8e4e691e14bc1b073ff8354e93030ca66f6504140d66baf"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.RankTwo",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/RankTwo.lean",
+          "sha256": "6d66963e8032c58547c5b727f1efc82247fffe7b53353fce11be5fd389c8fcb6"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.SymmetricRealification",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/SymmetricRealification.lean",
+          "sha256": "ac62cf30facf8f7b5a673fb99c243a93d17c2b79ec8ef1cecfc70317d60ecca5"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoCutIdentity",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoCutIdentity.lean",
+          "sha256": "2f7d6571e278ec842b023d4d885c8b8a6401295597829b712cb96bb3b0594844"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoCutFactor",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoCutFactor.lean",
+          "sha256": "2909883fa72f900abed79938b75713d0263082bee5dedd1a0b3f9bdd3d83eea4"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TakagiPositivePart",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TakagiPositivePart.lean",
+          "sha256": "054b3c651a4deeede1069661589416865a2ec18e197228a671aa365efc078e59"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.WernerPT",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/WernerPT.lean",
+          "sha256": "647603efb215c28a2bb842163fbbdfc121696af006d0fc4d2a4790c4cbc52f70"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.Continuation",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Continuation.lean",
+          "sha256": "e8f395be828665bfcd7f2a1763deb9d4e7073c36ddd1ce95493b61de7eee5c9d"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoPlane",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoPlane.lean",
+          "sha256": "94a1667ea75c5986e1e1652afaa39aeb66e5cf5047ea2cbf2496add108e295e7"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoCutTransport",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoCutTransport.lean",
+          "sha256": "8701443cc5caf5bafa66ff8331c79af852af97731a4e1ec5687d0ab6b3294624"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.RankBridge",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/RankBridge.lean",
+          "sha256": "63d27e0b5c08e265951cf01dffcf0026fc4445a9be21b5cbbe77d44df4628c59"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.Distillation",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Distillation.lean",
+          "sha256": "48610b80688f9cff77638518b279e39d9c7b3670c90352915d8996d853197e62"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.Elementary",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Elementary.lean",
+          "sha256": "a77a932fb5aae783c3363b3b6bba960ac695c91f944fade13f898c283d69010f"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoCutBalanced",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoCutBalanced.lean",
+          "sha256": "43a526e0a928aed36892ef61df56c3dfa31986d6546cde9ac5a25d6671c34219"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.Physical",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Physical.lean",
+          "sha256": "31a7d877ff5e54fa89622b450991e8d6dc3fcef551835af10932da1c127a12de"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoCutMain",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoCutMain.lean",
+          "sha256": "f7d24e4f9fbc9e36c407a8aa6fb54289b8f015d78b79258220eaf8cead9d70c1"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.InteriorReduction",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/InteriorReduction.lean",
+          "sha256": "fb89dc524b019578d99115e836f6fdf6e72e358cd3985728cecc687581c5949c"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.WernerState",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/WernerState.lean",
+          "sha256": "062bbd734bd5a1e0351d1e31316a5f3ac8184905b24dddf27b6582c51a7f9025"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.Overlap",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Overlap.lean",
+          "sha256": "3c9b7838702b918a8ad412b22ca163f5bee5f552a7597532c431d58de69e6594"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.Interior",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Interior.lean",
+          "sha256": "9b614a7ff14ffdb4cee23ac41c5178e8c4e3369c306a029a6507158e23e153f3"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.OverlapAttain",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/OverlapAttain.lean",
+          "sha256": "198e4b96815f390fe6b672064edba90e16ab1e4b26fea565416a1f9e9fd3d1ad"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.InteriorConverse",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/InteriorConverse.lean",
+          "sha256": "e8aca3b1ed86d0a1e19e8dcad533fb3bd5587a56d1e9f427d5fc1f99923dea9f"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.PPTRegion",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/PPTRegion.lean",
+          "sha256": "257ae4c37691aa16048215d6ac1a4550be403cd8a0f36337a4c3fca59d6ed6cf"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.Embedding",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Embedding.lean",
+          "sha256": "cfb94a2c6195da6d470b11265037035cf800aa2cdea2ad83884d1cdd56d84cb5"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.OrthonormalMatrixCompletion",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/OrthonormalMatrixCompletion.lean",
+          "sha256": "d88f7eadd7bade4d8095956b5f303b57a08bb0b6898dd3a94e45e8ad232d2eec"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.Corollaries",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/Corollaries.lean",
+          "sha256": "068b3358486ffcbd73c90cbefd65d81c957a35eb46be3fcfa0c562098d1a2447"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoQubitPolygon",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoQubitPolygon.lean",
+          "sha256": "af5e99d716d0f787d0c6a051762d053d7cbf728698e3c2ec1cf7e6b565b96bf5"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.QubitEndpoint",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/QubitEndpoint.lean",
+          "sha256": "1f774856ddbe80e914efa71b921fea5eea1d7b5be03194242581e49f368d4604"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.BinaryZeros",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/BinaryZeros.lean",
+          "sha256": "0c29c6c6ccbabc94cc59ee7e05b22c61f197499c4f475be0dbb825ebd8d1ef13"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoQubitPolygonDeterminant",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoQubitPolygonDeterminant.lean",
+          "sha256": "2df3598742c5b762f87d033d3576b10b78e52910696a17c33fe425bd10c55b6b"
+        },
+        {
+          "module": "MathLab.Positivity.NormalCompletion",
+          "path": "MathLab/Positivity/NormalCompletion.lean",
+          "sha256": "bd9f71f4258ca5c2a5434a31314f04006ad6c15ee318353ec6b4a444cd0338b0"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoQubitProductVectors",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoQubitProductVectors.lean",
+          "sha256": "9469bbda8dc0083e4aab2852c0a8be385eaafa7fed5dcf728485a119ff383f69"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TakagiFamily",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TakagiFamily.lean",
+          "sha256": "458328e313027716c7a6081188e6261560c80505edb2b195f96a50f407854e20"
+        },
+        {
+          "module": "MathLab.Positivity.NormalSpectral",
+          "path": "MathLab/Positivity/NormalSpectral.lean",
+          "sha256": "c699b2357cc3fe638362e87fb8bfdd7a9a2ed81743e01e3cd567665dab744dad"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TakagiSquare",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TakagiSquare.lean",
+          "sha256": "90b64132bbf282e00760dc1946a682ce83f9ef0cc77f9c01abc6c38eebee779e"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoQubitHadamard",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoQubitHadamard.lean",
+          "sha256": "43cb10ff3c8c9799700598d49c11902e15f11df2502fce210303f95cca820023"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.PositiveSpinFactor",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/PositiveSpinFactor.lean",
+          "sha256": "fdf15cb94aae5dc6cb957aab88eaae633c34263075ce0730f4c7658c4c50a0a4"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoQubitSpinInvariants",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoQubitSpinInvariants.lean",
+          "sha256": "24d2ce63e0f9ec693c6a99b30a5f2b33e09904047cd66bc0bbf8c88c25740096"
+        },
+        {
+          "module": "ThreeCopyQutritWerner.TwoQubitPPTSufficiency",
+          "path": "ThirdParty/PSI/ThreeCopyQutritWerner/TwoQubitPPTSufficiency.lean",
+          "sha256": "f155569cdbffa5181bb056244bb2b5b674e3c8235cd41aaa2c34de7c5548f869"
+        },
+        {
+          "module": "MathLab.ChainTheory.Stormer",
+          "path": "MathLab/ChainTheory/Stormer.lean",
+          "sha256": "f54ce0fa1f224962acbadff927d4a14164c958f59b269abccaedd1c488a99082"
+        },
+        {
+          "module": "MathLab.ChainTheory.WoronowiczBase",
+          "path": "MathLab/ChainTheory/WoronowiczBase.lean",
+          "sha256": "f272056d2b049425cfa3f30cc2140a4edfbf0d8ef8b43a47bcd7f05408aca7b8"
+        },
+        {
+          "module": "MathLab.ChainTheory.PPTFace",
+          "path": "MathLab/ChainTheory/PPTFace.lean",
+          "sha256": "de428e94321e54c88b7c0f2db378fe48fe69957ff4dc5c5315f8c1ab78226be7"
+        },
+        {
+          "module": "MathLab.ChainTheory.Woronowicz",
+          "path": "MathLab/ChainTheory/Woronowicz.lean",
+          "sha256": "98205153a64a0c198202986f294cd9aac612244493964f924db77dbc0d6269f9"
+        }
+      ]
+    },
+    "mathlib": {
+      "url": "https://github.com/leanprover-community/mathlib4",
+      "rev": "1b3c41969602424bd2f04b3d4f731734e5b00cde",
+      "configuration_sha256": {
+        "lakefile.lean": "aebb402a31f74fa2133624684774c8bf41f064faad33ad5344aa72306a71767d",
+        "lake-manifest.json": "f1d8e21114ed0d7446c81bd002dad81cfaf537728e4780728911a4df45857f5d",
+        "lean-toolchain": "d21cafaf30fee7c3ac0c4111aba1639904f48d96174ca1c7e45899cd8b991f87"
+      }
+    },
+    "author": {
+      "url": "https://github.com/physical-superintelligence/chain-theory",
+      "rev": "a28db8998bce5bd5ef11195c05f13c86cd9dac5c",
+      "path": "papers/alpha/lean/ChainAlpha.lean",
+      "sha256": "522844e911cf5f6091b603db0d1d042f50544d2ec8d10ed9336b722945c331da",
+      "unchanged_temporary_copy": true
+    },
+    "vendored_psi_provenance": {
+      "url": "https://github.com/physical-superintelligence/oqp-batch-2026",
+      "rev": "1a14caf4fac73942d6a24777a6f4cbcd06a597f3",
+      "path": "oqp02-three-copy-werner/lean/",
+      "modules": 45
+    },
+    "transitive_dependencies": [
+      {
+        "name": "plausible",
+        "url": "https://github.com/leanprover-community/plausible",
+        "rev": "aef59637faa9e85fa2486acaaf906ce3f572af7c"
+      },
+      {
+        "name": "LeanSearchClient",
+        "url": "https://github.com/leanprover-community/LeanSearchClient",
+        "rev": "234d9e074fbd6e911b920baf32db5291c3125be0"
+      },
+      {
+        "name": "importGraph",
+        "url": "https://github.com/leanprover-community/import-graph",
+        "rev": "579f558774c4ac6840e715ba60dabf3030619349"
+      },
+      {
+        "name": "proofwidgets",
+        "url": "https://github.com/leanprover-community/ProofWidgets4",
+        "rev": "d5ad4a0b79fa7f9818fe1380d05a3f6143823c09"
+      },
+      {
+        "name": "aesop",
+        "url": "https://github.com/leanprover-community/aesop",
+        "rev": "04879b1e1de744d5c9777c8cf63fa55a8f652e5e"
+      },
+      {
+        "name": "Qq",
+        "url": "https://github.com/leanprover-community/quote4",
+        "rev": "e7c4cdd2f1bf9df361ef7f621b4d6867012ab65e"
+      },
+      {
+        "name": "batteries",
+        "url": "https://github.com/leanprover-community/batteries",
+        "rev": "b71aaf60877e673fdb921f06f20987d12ee8a290"
+      },
+      {
+        "name": "Cli",
+        "url": "https://github.com/leanprover/lean4-cli",
+        "rev": "82c11b9717083154aefc5fe8d4cba4bbf046298f"
+      }
+    ]
+  },
+  "cache": {
+    "endpoint": "https://cache.mathlib.org/mathlib4-master",
+    "container": "master",
+    "fork_or_unsafe_fallback": false,
+    "required_artifacts": 9010,
+    "missing": 0,
+    "compressed_payload_bytes": 454519186,
+    "mathlib_no_build_jobs_up_to_date": 9024,
+    "trust": "Official source/toolchain-keyed Mathlib master CI cache; imported artifacts were not all rebuilt from source."
+  },
+  "runs": {
+    "initial_cache": {
+      "command": "lake --no-cache exe cache --repo=leanprover-community/mathlib4 --cache-from=master get Mathlib",
+      "exit_code": 0,
+      "seconds": 151
+    },
+    "mathlib_no_build": {
+      "command": "lake --no-cache --no-build build +Mathlib:olean",
+      "exit_code": 0
+    },
+    "fresh_woronowicz": {
+      "command": "lake --no-cache --fail-fast build +MathLab.ChainTheory.Woronowicz:olean",
+      "exit_code": 0,
+      "seconds": 65,
+      "fresh_local_modules": 54,
+      "total_jobs": 9079,
+      "style_warnings": 94
+    },
+    "unchanged_author": {
+      "command": "lake --no-cache env lean -o .lake/build/lib/lean/ChainAlpha.olean ChainAlpha.lean",
+      "exit_code": 0
+    },
+    "public_adapter": {
+      "command": "lake --no-cache env lean -o .lake/build/lib/lean/ReadCapReuse.olean ReadCapReuse.lean",
+      "exit_code": 0,
+      "start_utc": "2026-11-03T12:16:49Z",
+      "end_utc": "2026-11-03T12:16:52Z",
+      "seconds": 3,
+      "timing_resolution_seconds": 1,
+      "public_source_sha256": "11cee3f3d014a4bc46e031a587fb4ace7629cf0507ba9bdd7908b81e286756bf",
+      "temporary_copy_sha256": "11cee3f3d014a4bc46e031a587fb4ace7629cf0507ba9bdd7908b81e286756bf",
+      "raw_stdout": {
+        "bytes": 1890,
+        "sha256": "a931377d05edfe4c8b641110c38571256751563842352a7a095c54dec8b167c9"
+      }
+    }
+  },
+  "axiom_reports": {
+    "ChainWoronowicz.sep_of_extreme": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ChainWoronowicz.woronowicz": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ChainWoronowicz.readable_two_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ChainWoronowicz.readcap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ReadCapReuse.author_read_cap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ReadCapReuse.operator_iff_readableByReads": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ReadCapReuse.selection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ReadCapReuse.weaker_readable_three_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "ReadCapReuse.not_operator_readable_three_three": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "artifacts": {
+    "ReadCapReuse.lean": {
+      "bytes": 2190,
+      "sha256": "11cee3f3d014a4bc46e031a587fb4ace7629cf0507ba9bdd7908b81e286756bf"
+    },
+    "ReadCapReuse.out": {
+      "bytes": 2579,
+      "sha256": "78b2e5af56b39782dcf2678018d0c8cceae7d379824abe56d13e675bc432022b"
+    }
+  },
+  "transcript_policy": "ReadCapReuse.out has an explanatory header followed by the complete unmodified public-adapter stdout. Full initial setup/build logs are private. Metadata commands use temporary-project-relative paths; compiler stdout needed no path normalization.",
+  "limits": [
+    "No new classical read-cap or duplicate selection proof.",
+    "No fresh whole-Mathlib rebuild or full 512-theorem MathLab-suite claim.",
+    "Operator/readableByReads equivalence assumes both dimensions are at least two; lowercase author readable is strictly weaker.",
+    "No proof of single-copy certainty, operational realization of every Kraus map, model weights, or photon/coupling identification."
+  ]
+}

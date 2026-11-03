@@ -1,0 +1,4 @@
+# Preserve the bytes of the verified read-cap artifacts.
+proofs/lean/chain-theory/readcap-reuse/*.lean text eol=lf
+proofs/lean/chain-theory/readcap-reuse/*.out text eol=lf
+proofs/lean/chain-theory/readcap-reuse/*.json text eol=lf

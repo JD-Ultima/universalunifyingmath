@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 32 |
-| **Self-contained total** | **42** |
+| Geometric Unity computations | 34 |
+| **Self-contained total** | **44** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **48** |
+| **Total with source checks** | **50** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 42 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 44 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -60,9 +60,9 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 ## Completed validation
 
-The current AH9 milestone on November 2, 2026 passed all **48/48** selected commands locally with pinned Windows Python 3.12 and the pristine LF upstream snapshot. Its AH helper passes **144/144** exact controls, preserving all 94 controls through AH8. [Review41](../reports/reviews/REVIEW41-GU-AH9-2026-11-02.md) records the proof assessment and its limits.
+The November 3 AL/AM milestone passed all **50/50** selected commands with pinned Windows Python 3.12 and the pristine LF upstream snapshot. It includes **59** exact endpoint-system controls and **12** global-model controls. [Review42](../reports/reviews/REVIEW42-GU-AM-2026-11-03.md) and [Review43](../reports/reviews/REVIEW43-GU-AL-2026-11-03.md) record their proof assessments and limits.
 
-The preceding [prior-work/AH8 milestone](https://github.com/JD-Ultima/universalunifyingmath/pull/8) passed all 48 local commands and all eight push/PR CI jobs before merging. The [prior-work survey](../reports/RELATED-WORK.md) separately records two small upstream reproductions; these are outside the selected suite. No fresh external Lean build is included.
+The preceding [AH9 milestone](https://github.com/JD-Ultima/universalunifyingmath/pull/9) passed 48 local commands and all eight final-head CI jobs before merging; its AH helper retains 144 controls. The separate [read-cap reuse verification](../reports/chain-theory-readcap-reuse.md) records a fresh Lean target rebuild and adapter check. That build is outside the Python suite.
 
 Per-result proof arguments, imported lemmas and additional controls are documented in the [formalizations](../formalization/) and [internal reviews](../reports/reviews/). For example, [Review36](../reports/reviews/REVIEW36-GU-HH-2026-11-02.md) reproduces HH's exact rank/orbit certificates and separately checks nonunit scaling and higher-jet perturbations.
 
@@ -78,6 +78,6 @@ Command counts are not theorem counts. Passing tests confirms the expected resul
 
 Long searches, optional SDP checks, manuscript compilation and fresh Lean builds run separately. Additional dependencies are in [requirements-optional.txt](../requirements-optional.txt).
 
-Recorded formal checks use Lean 4.35.0. The upstream compendium pins 4.32.1; its documented 4.35.0 compatibility build uses five proof edits in scratch copies. The selected suite does not repeat that build. See the [coverage audit](../formalization/chain-theory/compendium/10-lean-table-rows.md) for what the formal statements establish.
+Earlier recorded formal checks use Lean 4.35.0; the read-cap reuse check pins Lean 4.35.0-rc4 and its own Mathlib/dependency revisions. The upstream compendium pins 4.32.1; its documented 4.35.0 compatibility build uses five proof edits in scratch copies. The selected suite does not repeat that build. See the [coverage audit](../formalization/chain-theory/compendium/10-lean-table-rows.md) for what the formal statements establish.
 
 The transport search requires the fork multiprocessing method; recorded runs used Linux. The compendium build driver and shell pipeline require Linux or WSL. Selected Python checks run natively on Windows with UTF-8 output. Manuscript scope and recorded build dates are listed in the [synthesis](../reports/SYNTHESIS.md#3-manuscript-drafts).
