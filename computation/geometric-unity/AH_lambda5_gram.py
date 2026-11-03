@@ -38,6 +38,12 @@ AH8 uses the same endpoint Ricci/Gram identity to bound the number of
 nonpositive Ricci eigenvalues by 7,10,10,11. F4/S3 give ten negative vertical
 directions on the actual local-parallel set Pi, yielding additional necessary
 conditions there. These pointwise inequalities are not continued away from Pi.
+
+AH9 treats only the two first-pair constant endpoints. Full symbolic basis-pair
+orbits certify the universal Q5/Q9 sandwich identities; their contractions and
+an orthogonal-involution argument force omega to be zero or simple. AH7 then
+excludes both endpoint domains. No result is transferred to the opposite pair
+or to moving-odd endpoints outside the constant-domain hypothesis.
 """
 import pathlib
 import sys
@@ -318,6 +324,106 @@ def inertia_controls():
     print('No inertia inequality, field or exclusion is continued away from Pi.', flush=True)
 
 
+HIGHER_DATA = (
+    (sp.Rational(28, 3), -sp.Rational(8, 3), sp.Rational(40, 3), -sp.Integer(24), -sp.Integer(64), -sp.Rational(592, 3)),
+    (-sp.Integer(36), sp.Rational(112, 3), -sp.Integer(40), -sp.Rational(16, 3), sp.Rational(1552, 3), sp.Integer(128)),
+)
+
+
+def higher_output(value, degree):
+    return [{mask: sp.expand(coefficient/sp.I) for mask, coefficient in grade(item, degree).items()}
+            for item in value]
+
+
+def sandwich_prediction(omega, copy, degree):
+    square = ALG.mul(omega, omega)
+    sandwich, wedge = HIGHER_DATA[copy][0:2] if degree == 5 else HIGHER_DATA[copy][2:4]
+    return [X.plus(X.scaled(grade(ALG.mul(ALG.mul(omega, {1 << a: 1}), omega), degree), sandwich),
+                   X.scaled(grade(ALG.mul({1 << a: 1}, square), degree), wedge)) for a in range(X.N)]
+
+
+def gamma_contraction(field):
+    total = {}
+    for a, item in enumerate(field):
+        total = X.plus(total, ALG.mul({1 << a: 1}, item))
+    return {mask: sp.expand(value) for mask, value in total.items() if sp.expand(value) != 0}
+
+
+def first_pair_controls():
+    """AH9: exhaustive quadratic basis orbits, plus convention/countercontrols."""
+    alpha, beta = sp.symbols('A B', real=True)
+    kappa = sp.symbols('kappa', real=True, nonzero=True)
+    slot_counts = ((0, 10), (0, 6), (6, 0), (10, 0), (0, 0), (0, 0))
+    for copy, row in enumerate(ENDPOINTS[:2]):
+        name, pair, r, s, endpoint, *_ = row
+        for overlap in range(6):
+            I = tuple(range(5))
+            J = tuple(range(overlap))+tuple(range(5, 10-overlap))
+            omega = X.plus(form(I, alpha), form(J, beta))
+            field = kernel(omega, pair, r, s)
+            Q = T.quadratic(field, MEMBER)
+            mass = X.fplus(T.scale(field, kappa), T.mix(field, T.invariant(kappa*endpoint, 0), MEMBER))
+            outputs = {degree: higher_output(Q, degree) for degree in (5, 9)}
+            counts = tuple(sum(len(item) for item in outputs[degree]) for degree in (5, 9))
+            check(f'AH9 {name} overlap{overlap}: real phase, kernel and all-slot quadratic support',
+                  T.antihermitian(field) and not any(X.normalized(mass)) and counts == slot_counts[overlap]
+                  and all(mask.bit_count() in (1, 5, 9) for item in Q for mask in item)
+                  and all(sp.cancel(value/(alpha*beta)).is_Rational
+                          for out in outputs.values() for item in out for value in item.values()))
+            check(f'AH9 {name} overlap{overlap}: both full symbolic sandwich identities',
+                  all(X.normalized(outputs[degree]) == X.normalized(sandwich_prediction(omega, copy, degree))
+                      for degree in (5, 9)))
+            square = ALG.mul(omega, omega)
+            check(f'AH9 {name} overlap{overlap}: both complete gamma-contraction identities',
+                  all(gamma_contraction(outputs[degree])
+                      == X.scaled(grade(square, degree-1), HIGHER_DATA[copy][4+index])
+                      for index, degree in enumerate((5, 9))))
+        print(f'  AH9 {name}: all symbolic A,B overlaps0..5 cover diagonal and mixed basis coefficients.', flush=True)
+    controls = [X.plus(X.plus(form((0, 1, 2, 3, 4)), form((0, 1, 5, 6, 7), 2)), form((3, 8, 9, 10, 11), -3)),
+                X.plus(X.plus(X.plus(form((0, 1, 2, 3, 4), -2), form((5, 6, 7, 8, 9), 3)),
+                              form((0, 10, 11, 12, 13))), form((1, 3, 5, 7, 11), -1))]
+    for number, omega in enumerate(controls, 1):
+        square = ALG.mul(omega, omega)
+        check(f'AH9 general form{number}: scalar/sandwich reversal grade bounds',
+              all(mask.bit_count() in (0, 4, 8) for mask, value in square.items() if value != 0)
+              and all(mask.bit_count() in (1, 5, 9) for a in range(X.N)
+                      for mask, value in ALG.mul(ALG.mul(omega, {1 << a: 1}), omega).items() if value != 0))
+        for copy, row in enumerate(ENDPOINTS[:2]):
+            name, pair, r, s, *_ = row
+            Q = T.quadratic(kernel(omega, pair, r, s), MEMBER)
+            check(f'AH9 {name} general form{number}: both all-slot identities, including full support',
+                  all(X.normalized(higher_output(Q, degree)) == X.normalized(sandwich_prediction(omega, copy, degree))
+                      for degree in (5, 9)))
+    for name, pair, r, s, *_ in ENDPOINTS[:2]:
+        derivative = T.derivative(kernel(controls[0], pair, r, s), 7, MEMBER)
+        allowed = (3, 7) if r else (7, 11)
+        check(f'AH9 {name}: a nonzero derivative remains in its separate allowed grades',
+              any(derivative) and all(mask.bit_count() in allowed for item in derivative for mask in item))
+    weak = {}
+    for triple in ((2, 3, 4), (5, 6, 7), (8, 9, 10), (11, 12, 13)):
+        weak = X.plus(weak, form((0, 1)+triple))
+    norm, gram = stress(weak)
+    check('AH9 weak-condition counterexample: full support N=4, S=diag(4,4,1x12)',
+          norm == 4 and gram == sp.diag(4, 4, *([1]*12)) and gram.rank() == 14)
+    square = ALG.mul(weak, weak)
+    check('AH9 weak-condition counterexample: scalar square and every wedge contraction vanish',
+          square == {0: 4} and all(not grade(ALG.mul(item, weak), 9) for item in lifts(weak)[0]))
+    mask = sum(1 << j for j in (3, 4, 5, 6, 7))
+    for copy, row in enumerate(ENDPOINTS[:2]):
+        name, pair, r, s, *_ = row
+        Q = T.quadratic(kernel(weak, pair, r, s), MEMBER)
+        check(f'AH9 {name} weak-condition counterexample: Q9=0 but the stated Q5 slot survives',
+              not any(higher_output(Q, 9))
+              and higher_output(Q, 5)[2].get(mask, 0) == (-sp.Rational(56, 3) if copy == 0 else 72))
+    check('AH9 weak-condition counterexample: scalar square alone does not imply vector sandwich',
+          grade(ALG.mul(ALG.mul(weak, {1 << 2: 1}), weak), 5).get(mask, 0) == -2)
+    check('AH9: all four gamma-contraction coefficients are exact and nonzero',
+          all((14-4)*a5-4*b5 == c5 != 0 and (14-8)*a9-4*b9 == c9 != 0
+              for b5, a5, b9, a9, c5, c9 in HIGHER_DATA))
+    print('AH9: the complete quadratic basis cover and simplicity proof exclude the two first-pair constant endpoint domains via AH7.', flush=True)
+    print('Opposite-pair derivatives can contain grades5/9; moving odd endpoints remain outside the hypothesis.', flush=True)
+
+
 def main():
     start = time.time()
     print('AH: necessary Lambda5 Gram spectrum, real compact WA', flush=True)
@@ -399,6 +505,7 @@ def main():
     endpoint_controls(examples, omega)
     spectrum_controls(examples)
     inertia_controls()
+    first_pair_controls()
     print(f'\n{len(CHECKS)} checks, all True; runtime {time.time()-start:.1f} s', flush=True)
 
 

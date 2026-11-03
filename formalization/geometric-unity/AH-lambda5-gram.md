@@ -1,14 +1,10 @@
 # AH. Lambda5 Gram and curvature constraints
 
-The symmetric Gamma equation restricts both single $W_A$ Lambda5 kernel branches without classifying their five-forms. At a nonzero-$u$ point, the contraction Gram matrix must have rank thirteen or fourteen. It has rank fourteen on a left conic branch; on a right branch, rank thirteen is possible only when the slaved gradient is its annihilator direction. These conditions exclude forms supported in dimension at most twelve.
+At a nonzero-$u$ point of either single $W_A$ Lambda5 conic, the symmetric Gamma equation forces contraction-Gram rank thirteen or fourteen. Left arcs require full support; on right arcs, rank thirteen is possible only when the slaved gradient is the annihilator direction. Forms supported in dimension at most twelve are excluded. An explicit full-support cyclic form passes this selected channel, but AH5 excludes its scaling/rotation orbit from full solutions on the first conic. General nonzero-$u$ fields remain unclassified.
 
-An explicit form with full fourteen-dimensional support has isotropic Gram matrix and satisfies the selected symmetric channel at regular real conic parameters. AH5 examines its remaining equations and excludes its scaling/rotation orbit on the first branch at nonzero $u$. General five-forms remain unclassified.
+On positive Z1, neither constant-odd endpoint of the first $c/w\Gamma$ pair admits a full solution (AH9). Its higher quadratic equations force a nonzero simple five-form, whose fixed normalized Gram spectrum contradicts AH7. The opposite pair's constant endpoints remain open: AH6 gives necessary norm/Euler-alignment bounds and an isotropic-Gram exclusion; AH7 excludes fixed normalized spectra on fibre-open patches; AH8 bounds their nonpositive Ricci indices and restricts intersections with the actual local-parallel set. These results retain every derivative channel and distinguish selected algebraic feasibility from field existence.
 
-AH6 treats constant-odd domains at all four zero-$u$ endpoints. It gives exact necessary norm bounds and Euler/Gram alignment, without a simplicity assumption. Real-form Grams attain these bounds for the selected algebraic channel; no observer metric or full field solution is constructed. AH7 excludes any constant normalized Gram spectrum on a fibre-open patch, including fixed scaling/rotation families, while leaving general varying shapes unresolved.
-
-AH8 bounds the nonpositive observer Ricci index at these endpoints. On the actual local-parallel set, its ten negative vertical directions give further restrictions; all four endpoint domains avoid its points above base Ricci rank at most two. No exclusion away from that set is inferred.
-
-Code: `computation/geometric-unity/AH_lambda5_gram.py` → `.out`, with the cyclic-orbit certificate in `AH_cyclic_obstruction.py` → `.out`. Record: `metrics/geometric-unity/AH-lambda5-gram.yaml`. Both helpers use T's accepted Clifford implementation and exact rational/polynomial controls, with no off-repository files. [Independent internal Review31](../../reports/reviews/REVIEW31-GU-AH-2026-11-02.md) accepts AH1–AH4 and reproduces all 25 original checks. [Review34](../../reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md) separately accepts AH5 and reproduces its 14 checks. [Review39](../../reports/reviews/REVIEW39-GU-AH-ENDPOINTS-2026-11-02.md) accepts AH6–AH7 and reproduces the 74-control helper through AH7. [Review40](../../reports/reviews/REVIEW40-GU-AH8-2026-11-02.md) accepts AH8 and reproduces the expanded 94-control helper. These are internal reviews, not external peer review.
+Code: `computation/geometric-unity/AH_lambda5_gram.py` → `.out`, with the cyclic-orbit certificate in `AH_cyclic_obstruction.py` → `.out`. Record: `metrics/geometric-unity/AH-lambda5-gram.yaml`. Both helpers use T's accepted Clifford implementation and exact rational/polynomial controls, with no off-repository files. [Independent internal Review31](../../reports/reviews/REVIEW31-GU-AH-2026-11-02.md) accepts AH1–AH4 and reproduces all 25 original checks. [Review34](../../reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md) separately accepts AH5 and reproduces its 14 checks. [Review39](../../reports/reviews/REVIEW39-GU-AH-ENDPOINTS-2026-11-02.md) accepts AH6–AH7 and reproduces the 74-control helper through AH7. [Review40](../../reports/reviews/REVIEW40-GU-AH8-2026-11-02.md) accepts AH8 and reproduces the 94-control helper through AH8. [Review41](../../reports/reviews/REVIEW41-GU-AH9-2026-11-02.md) records the independent AH9 proof and coefficient audit. These are internal reviews, not external peer review.
 
 ## Setting and the two real kernels
 
@@ -207,7 +203,7 @@ Its limit as $\rho\to\infty$ is strictly positive. This contradicts the negative
 
 The normalized spectrum may depend on the base point $x$; constancy on just one nonempty fibre-open patch is already impossible. In particular, a fixed nonzero five-form's $SO(14)$ and nonzero-scaling orbit has constant normalized Gram spectrum and cannot describe such a patch. This includes zero/simple-form domains (zeros already violate AH6) and isotropic-Gram families. AH6 separately excludes isotropic values pointwise inside a constant endpoint domain. AH7 does not exclude isolated simple-form values in a field with generally varying normalized spectrum, and does not assert a nonzero spectral derivative at every point.
 
-These conclusions do not affect AH6's synthetic Gram/Euler examples: those establish only selected algebraic feasibility, not metric realizability on a fibre-open domain. General varying Gram shapes and the remaining nonlinear and derivative equations stay unresolved.
+These conclusions do not affect AH6's synthetic Gram/Euler examples: those establish only selected algebraic feasibility, not metric realizability on a fibre-open domain. AH9 below separately excludes the two first-pair constant endpoints; the opposite pair's general varying shapes and remaining equations stay unresolved.
 
 ## AH8. Ricci inertia and the local-parallel set
 
@@ -250,7 +246,52 @@ The vertical block is negative definite in all ten directions. Relative to the p
 
 In particular, all four domains avoid $\Pi$ above every base point with $\operatorname{rank}\mathrm{Ric}_g\le2$. The kernel of the base Ricci tensor then has dimension at least two, and on it $\mathrm{Ric}_g-(c_H/c)y$ is strictly negative because $c_H/c>0$ and $y$ is positive. Together with the ten vertical directions this gives at least twelve negative directions. This argument needs no simultaneous diagonalization of $y$ and $\mathrm{Ric}_g$.
 
-AH8 uses pointwise trace budgets and the geometric blocks only where the domain meets $\Pi$. It continues no inertia inequality or field to other fibre points. Domains avoiding $\Pi$, general varying Gram shapes and the remaining equations are still unresolved. As in AH6, isolated zero-$u$ points of varying odd fields are outside the constant-domain hypothesis. [Review40](../../reports/reviews/REVIEW40-GU-AH8-2026-11-02.md) records the separate internal derivation and adversarial checks.
+AH8 uses pointwise trace budgets and the geometric blocks only where the domain meets $\Pi$. It continues no inertia inequality or field to other fibre points. AH9 below supplies a separate obstruction for the first-pair endpoints. Other domains allowed by these index bounds remain unresolved. As in AH6, isolated zero-$u$ points of varying odd fields are outside the constant-domain hypothesis. [Review40](../../reports/reviews/REVIEW40-GU-AH8-2026-11-02.md) records the separate internal derivation and adversarial checks.
+
+## AH9. The first-pair constant endpoint domains are empty
+
+Keep AH6's standing constant-odd endpoint-domain hypotheses, for either $a=-1/96$ with $k=i\mathsf c(\omega)$ or $a=-3/832$ with $k=i\mathsf w(\omega)\Gamma$. The chart weight is absorbed into an arbitrary smooth real five-form. Then $v=D(v)=0$. AA4 retains every form and weight derivative in $D(k)$, whose grades are respectively $3,7$ or $7,11$. The curvature and constant invariant baseline have grade one, and the even equation gives $L_{T_o}k=0$. Hence every full solution requires
+$$[Q(k)]_5=[Q(k)]_9=0.$$
+
+Write $\Omega$ for the Clifford image of $\omega$, $P_j$ for grade projection and $F_j=P_j(\Omega^2)$. The following identities hold for every real five-form and every orthonormal generator $\gamma_a$:
+
+| compact copy | $[Q(k)_a]_5/i$ | $[Q(k)_a]_9/i$ |
+|---|---|---|
+| $i\mathsf c(\omega)$ | $\frac{28}{3}P_5(\Omega\gamma_a\Omega)-\frac83P_5(\gamma_a\Omega^2)$ | $\frac{40}{3}P_9(\Omega\gamma_a\Omega)-24P_9(\gamma_a\Omega^2)$ |
+| $i\mathsf w(\omega)\Gamma$ | $-36P_5(\Omega\gamma_a\Omega)+\frac{112}{3}P_5(\gamma_a\Omega^2)$ | $-40P_9(\Omega\gamma_a\Omega)-\frac{16}{3}P_9(\gamma_a\Omega^2)$ |
+
+**Quadratic basis proof of these identities.** Both sides are $SO(14)$-equivariant quadratic maps. For $\omega=\alpha e^{01234}+\beta e^J$ with symbolic independent real $\alpha,\beta$, the helper checks every output slot for intersections $|\{0,1,2,3,4\}\cap J|=0,\ldots,5$. Any pair of coordinate five-blades occupies at most ten axes. A signed coordinate permutation maps it to the representative of its intersection type; flip an unused axis if needed to repair its determinant without changing either input blade. Input reordering signs are absorbed by $\alpha,\beta$. Thus the representative checks cover every basis pair under $SO(14)$, including the diagonal case. Polarization then proves the complete quadratic identities on $\Lambda^5\mathbb R^{14}$. This is an exhaustive basis certificate, with no choice of eigenvectors or reflection convention required.
+
+For two distinct coordinate five-blades, the exact nonzero-slot counts for either copy are:
+
+| overlap | grade five | grade nine |
+|---|---:|---:|
+| $0$ | $0$ | $10$ |
+| $1$ | $0$ | $6$ |
+| $2$ | $6$ | $0$ |
+| $3$ | $10$ | $0$ |
+| $4$ | $0$ | $0$ |
+
+All nonzero coefficients are rational multiples of $\alpha\beta$. The universal zero-locus argument follows from the identities, rather than from this pair catalogue alone.
+
+**Scalar square and vector sandwich.** Clifford reversion fixes a real grade-five $\Omega$. Consequently $\Omega^2$ has only grades $0,4,8$, with scalar part $N=|\omega|^2$, and $\Omega\gamma_a\Omega$ has only grades $1,5,9$. The standard contraction $\sum_a\gamma_a\Omega\gamma_a=-4\Omega$ and the square-term contractions $10F_4$, $6F_8$ give
+
+| compact copy | $\sum_a\gamma_a[Q(k)_a]_5/i$ | $\sum_a\gamma_a[Q(k)_a]_9/i$ |
+|---|---|---|
+| $i\mathsf c(\omega)$ | $-64F_4$ | $-\frac{592}{3}F_8$ |
+| $i\mathsf w(\omega)\Gamma$ | $\frac{1552}{3}F_4$ | $128F_8$ |
+
+All four constants are nonzero. If both higher-grade equations vanish, then $F_4=F_8=0$ and $\Omega^2=N$. For $\omega\ne0$, positivity gives $N>0$ and $\Omega^{-1}=\Omega/N$. The nonzero sandwich coefficients in the first table then force its grades five and nine to vanish. Reversion leaves only grade one, so $T(v)=\Omega v\Omega^{-1}$ maps the vector space into itself.
+
+**Simplicity lemma.** This map $T$ preserves Clifford squares, hence is orthogonal; $\Omega^2=N$ also gives $T^2=I$. Choose an orthonormal eigenbasis with eigenvalues $\epsilon_a\in\{1,-1\}$. The relation $\Omega\gamma_a=\epsilon_a\gamma_a\Omega$ holds coefficientwise in the grade-five monomial expansion. Each such monomial commutes with $\gamma_a$ exactly when its five-set contains $a$, and anticommutes otherwise. Every nonzero coefficient must therefore have support equal to the entire $+1$ eigenset. This set has size five, since $\Omega$ is nonzero and homogeneous of grade five; only its one five-blade can occur. Thus $\omega$ is simple. Conversely a simple five-form has scalar square and vector sandwich, so both displayed higher-grade equations vanish. Their common real zero locus is precisely zero or simple five-forms.
+
+The full sandwich condition matters. For example,
+$$\omega=e^{01}\wedge(e^{234}+e^{567}+e^{8,9,10}+e^{11,12,13})$$
+has $N=4$ and $S=\operatorname{diag}(4,4,1,\ldots,1)$ of rank fourteen. It has scalar square $\Omega^2=4$ and $\omega\wedge\iota_X\omega=0$ for every $X$, yet is not simple. Both copies have $Q_9=0$ but a nonzero $Q_5$ coefficient: at external index $2$ and Clifford indices $(3,4,5,6,7)$, $Q_5/i$ is $-56/3$ and $72$, respectively. Thus neither the weaker wedge condition nor scalar square alone establishes simplicity.
+
+**Endpoint exclusion.** A full solution has $N>0$ by AH6. The preceding proof would make $\omega$ nonzero simple everywhere, with constant normalized Gram spectrum (five ones and nine zeros). Every nonempty observer domain contains a nonempty relative-open fibre patch. AH7 excludes that spectrum there. Hence neither first-pair constant endpoint admits a full solution, for any $\lambda<1/4$ or either sign of $\kappa$ under the standing hypotheses.
+
+This does not solve the remaining equations for a simple form; it uses necessary higher-grade equations and then AH7. For the opposite pair, $D(k)$ can have grades five or nine, so the separation used here does not apply. Moving-odd endpoints are outside the constant-domain hypothesis, and no exclusion is claimed there. Nonzero-$u$ conic fields, coincident kernels, $\det M=0$ and indefinite real forms remain outside AH9. [Review41](../../reports/reviews/REVIEW41-GU-AH9-2026-11-02.md) records the independent proof audit and the shared-engine verification boundary.
 
 ## Reproduction and remaining boundary
 
@@ -258,8 +299,8 @@ Run `python -X utf8 -I computation/geometric-unity/AH_lambda5_gram.py` from the 
 
 Run `python -X utf8 -I computation/geometric-unity/AH_cyclic_obstruction.py` for AH5. It computes the three raw integer polarizations of the explicit cyclic form, then checks every grade-five/nine control slot with the actual compact phase. The grade-nine positive quadratic supplies the real nonzero-weight obstruction; the displayed polynomial ideal is an additional exact check.
 
-The all-form tensor identity follows from the contraction count, and the rank conclusions from positive Gram linear algebra. Finite controls check those conventions rather than classify five-forms. Both helpers share T's accepted Clifford engine and supply no independent physical evidence.
+AH1 and AH6's all-form stress identities follow from the contraction count, and the rank conclusions from positive Gram linear algebra. AH9's higher-channel identities use the complete quadratic basis-orbit certificate proved above. The additional general-form controls do not classify arbitrary five-form orbits. Both helpers share T's accepted Clifford engine and supply no independent physical evidence.
 
-The Gram helper preserves its original 25 controls and AH6–AH7's 49 controls: four compact endpoint copies, full grade-one outputs on general forms, all fourteen derivative directions, the complete first-pair derivative identities, surviving opposite-pair Cartan jets, exact bounds, real-Gram Euler controls and homogeneous characteristic-polynomial identities. AH8 adds 20 exact trace-budget and parallel-block controls, including the strict zero-eigenvalue boundary. The recorded run passes 94 controls in 11.2 seconds with Python 3.12 and SymPy 1.14.0. It uses F4, S3–S4 and N1 as geometric inputs; it does not reconstruct the metric engine. The tensor identities and geometric conclusions follow from the proofs; the finite controls do not establish metric or field existence. The separately recorded cyclic-obstruction run passes all 14 checks in 5.5 seconds.
+The Gram helper preserves all 94 controls through AH8 and adds 50 AH9 controls. The symbolic all-slot orbit cover checks both copies at overlaps zero through five, including the diagonal terms; general forms, exact gamma contractions, separate derivative grades and a full-support weak-condition counterexample check the conventions. The elementary simplicity proof supplies the scalar-square/vector-sandwich implication. The recorded run passes 144 controls in 11.5 seconds with Python 3.12 and SymPy 1.14.0. It uses F4, S3–S4 and N1 as geometric inputs; it does not reconstruct the metric engine. Finite controls do not establish metric or field existence. The separately recorded cyclic-obstruction run passes all 14 checks in 5.5 seconds.
 
-AH1–AH5 retain their stated scopes. AH6–AH8 concern entire constant-odd endpoint domains. Isolated zero-$w$ points of varying odd fields, coincident kernels, $\det M=0$, other Shiab members, non-invariant odd fields and indefinite real forms remain outside these conclusions. General varying Gram shapes not excluded by these restrictions, the full nonlinear Lambda5 system, actual endpoint existence and PDE sufficiency are unresolved.
+AH1–AH5 retain their stated scopes. AH6–AH9 concern entire constant-odd endpoint domains, and AH9 excludes the first pair's two endpoints. Nonzero-$w$ conic fields, the opposite pair's varying Gram shapes and actual endpoint existence, isolated zero-$w$ points of varying odd fields, coincident kernels, $\det M=0$, other Shiab members, non-invariant odd fields and indefinite real forms remain open or outside these conclusions. The full nonlinear Lambda5 system and PDE sufficiency are unresolved.
