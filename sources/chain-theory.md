@@ -5,6 +5,8 @@ All primary sources were obtained from the author's public repository.
 **Repository:** `https://github.com/alexwg/chain-theory`, cloned 2026-10-30, commit
 `a28db8998bce5bd5ef11195c05f13c86cd9dac5c` (2026-10-24 00:53 UTC). Licenses: Apache-2.0 (code), CC BY 4.0 (text).
 
+November 2 follow-up: GitHub now identifies [physical-superintelligence/chain-theory](https://github.com/physical-superintelligence/chain-theory) as the canonical repository and `alexwg/chain-theory` as its fork. Both main heads still equal the exact commit above. The existing LF checkout, source versions and hashes are unchanged. The [prior-work survey](../reports/RELATED-WORK.md) identifies separate audits and formal proofs for selective reuse.
+
 | ID | Item | Path in repo | Version / date | sha256 | Status |
 |---|---|---|---|---|---|
 | CT-S1 | Letter: *A Parameter-Free Candidate for the Fine-Structure Constant from Entangled Qudits* | `papers/alpha/alpha.tex`, `alpha.pdf` | v1.0.0, dated 2026-10-23 | tex `2ed2833b…6fa7c6`; pdf `4bd42b02…22009` | **Primary.** Formal claims: Theorem 1 (Uniqueness), Theorem 2 (Value), Conjecture 1 (Photon). |

@@ -4,7 +4,7 @@ Research into the explicit mathematical rules that might explain physical struct
 
 The project examines **Chain Theory** and **Geometric Unity** through sourced claims, mathematical reconstructions, proofs and reproducible computations. The [research charter](RESEARCH_PROMPT.md) defines the evidence standards.
 
-Start with the [plain-language overview](reports/PLAIN-LANGUAGE-SYNOPSIS.md), the [current findings and open questions](reports/SYNTHESIS.md), or the [verification guide](computation/README.md).
+Start with the [plain-language overview](reports/PLAIN-LANGUAGE-SYNOPSIS.md), the [current findings and open questions](reports/SYNTHESIS.md), or the [verification guide](computation/README.md). The [prior-work survey](reports/RELATED-WORK.md) identifies existing proofs and implementations to verify and reuse.
 
 ## Current findings
 
@@ -16,7 +16,7 @@ Start with the [plain-language overview](reports/PLAIN-LANGUAGE-SYNOPSIS.md), th
 
 GU conclusions depend on explicit metric, operator, real-form and field-sector assumptions. Numerical agreement, a finite check and a formal proof establish different things; physical identification requires additional evidence.
 
-Internal reviews include AI-assisted work. External peer review remains outstanding. Source versions and acquisition limits are recorded in [sources](sources/); the GU draft was obtained from a mirror and has not been verified against the author's host.
+Internal reviews include AI-assisted work. External peer review remains outstanding. Source versions and acquisition limits are recorded in [sources](sources/). The GU draft's preserved mirror now matches the file retrieved from the author's host byte for byte.
 
 ## Reproduce selected checks
 

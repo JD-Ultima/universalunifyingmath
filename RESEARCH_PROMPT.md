@@ -18,10 +18,11 @@ Neither framework has a preferred outcome. Assess supporting results, contradict
 ## Investigation workflow
 
 1. Identify the source statement and stable claim ID.
-2. Define a precise question and its reconstruction choices.
-3. Seek a proof, counterexample or reproducible test.
-4. Record the method, dependencies, code, outputs and limitations. Distinguish recorded build logs from newly executed builds.
-5. Update the relevant claim, gap and result records, then the [current synthesis](reports/SYNTHESIS.md).
+2. Check primary literature and existing implementations for a result to verify and reuse; record its version, hypotheses and provenance. The [prior-work survey](reports/RELATED-WORK.md) lists current targets.
+3. Define a precise question and its reconstruction choices.
+4. Seek a proof, counterexample or reproducible test.
+5. Record the method, dependencies, code, outputs and limitations. Distinguish recorded build logs from newly executed builds.
+6. Update the relevant claim, gap and result records, then the [current synthesis](reports/SYNTHESIS.md).
 
 Keep useful negative and inconclusive results. Missing definitions are documented gaps rather than grounds for assuming either correctness or error.
 

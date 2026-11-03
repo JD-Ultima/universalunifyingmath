@@ -30,9 +30,13 @@ We also checked the larger compendium. We asked whether its steps depend on unfi
 
 This proposal uses complicated geometry. We wrote down explicit versions of its objects and equations, checked how the parts fit, and repaired a sign problem. We also found that the printed equation does not follow from the proposed action under the stated assumptions.
 
-For specified versions of the model, we worked out which arrangements can satisfy the equations and which cannot. The newer work completely settles two specified field branches across the positive Z1 models we defined. One allows only a fixed field over flat four-dimensional starting geometry, at one exact parameter relation. The other allows no solution. The larger observer geometry can still be curved. For specified Lambda5 endpoints, another proof rules out whole families obtained by rotating and resizing one fixed mathematical shape. More general changing shapes remain open. Separate results exclude several other families of curved starting geometry. One result covers points with zero Ricci curvature but nonzero total curvature. Those are two different ways of measuring curvature.
+For specified versions of the model, we worked out which arrangements can satisfy the equations and which cannot. The newer work completely settles two specified field branches across the positive Z1 models we defined. One allows only a fixed field over flat four-dimensional starting geometry, at one exact parameter relation. The other allows no solution. The larger observer geometry can still be curved. For specified Lambda5 endpoints, another proof rules out whole families obtained by rotating and resizing one fixed mathematical shape. More general changing shapes remain open. A further counting argument limits how many curvature directions can be zero or negative. This rules out some endpoint cases where the starting geometry has few nonzero Ricci directions, provided its metric extends locally as a parallel metric. Separate results exclude several other families of curved starting geometry. One result covers points with zero Ricci curvature but nonzero total curvature. Those are two different ways of measuring curvature.
 
 Every such result has a named set of assumptions. Other fields and geometric cases remain open. The detailed map is in the [synthesis](SYNTHESIS.md#geometric-unity).
+
+## Existing work we can use
+
+Other people have already checked parts of these ideas. We found published programs and computer-checked mathematics that overlap ours. We will verify those pieces and their assumptions, give credit, and use them where they fit. The [prior-work survey](RELATED-WORK.md) lists the useful starting points. None of the work we assessed proves either entire physical theory.
 
 ## What “the tests passed” means
 

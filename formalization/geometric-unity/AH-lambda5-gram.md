@@ -1,4 +1,4 @@
-# AH. Lambda5 Gram constraints and a cyclic-form obstruction
+# AH. Lambda5 Gram and curvature constraints
 
 The symmetric Gamma equation restricts both single $W_A$ Lambda5 kernel branches without classifying their five-forms. At a nonzero-$u$ point, the contraction Gram matrix must have rank thirteen or fourteen. It has rank fourteen on a left conic branch; on a right branch, rank thirteen is possible only when the slaved gradient is its annihilator direction. These conditions exclude forms supported in dimension at most twelve.
 
@@ -6,7 +6,9 @@ An explicit form with full fourteen-dimensional support has isotropic Gram matri
 
 AH6 treats constant-odd domains at all four zero-$u$ endpoints. It gives exact necessary norm bounds and Euler/Gram alignment, without a simplicity assumption. Real-form Grams attain these bounds for the selected algebraic channel; no observer metric or full field solution is constructed. AH7 excludes any constant normalized Gram spectrum on a fibre-open patch, including fixed scaling/rotation families, while leaving general varying shapes unresolved.
 
-Code: `computation/geometric-unity/AH_lambda5_gram.py` → `.out`, with the cyclic-orbit certificate in `AH_cyclic_obstruction.py` → `.out`. Record: `metrics/geometric-unity/AH-lambda5-gram.yaml`. Both helpers use T's accepted Clifford implementation and exact rational/polynomial controls, with no off-repository files. [Independent internal Review31](../../reports/reviews/REVIEW31-GU-AH-2026-11-02.md) accepts AH1–AH4 and reproduces all 25 original checks. [Review34](../../reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md) separately accepts AH5 and reproduces its 14 checks. [Review39](../../reports/reviews/REVIEW39-GU-AH-ENDPOINTS-2026-11-02.md) accepts AH6–AH7 and reproduces the final 74-control helper. These are internal reviews, not external peer review.
+AH8 bounds the nonpositive observer Ricci index at these endpoints. On the actual local-parallel set, its ten negative vertical directions give further restrictions; all four endpoint domains avoid its points above base Ricci rank at most two. No exclusion away from that set is inferred.
+
+Code: `computation/geometric-unity/AH_lambda5_gram.py` → `.out`, with the cyclic-orbit certificate in `AH_cyclic_obstruction.py` → `.out`. Record: `metrics/geometric-unity/AH-lambda5-gram.yaml`. Both helpers use T's accepted Clifford implementation and exact rational/polynomial controls, with no off-repository files. [Independent internal Review31](../../reports/reviews/REVIEW31-GU-AH-2026-11-02.md) accepts AH1–AH4 and reproduces all 25 original checks. [Review34](../../reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md) separately accepts AH5 and reproduces its 14 checks. [Review39](../../reports/reviews/REVIEW39-GU-AH-ENDPOINTS-2026-11-02.md) accepts AH6–AH7 and reproduces the 74-control helper through AH7. [Review40](../../reports/reviews/REVIEW40-GU-AH8-2026-11-02.md) accepts AH8 and reproduces the expanded 94-control helper. These are internal reviews, not external peer review.
 
 ## Setting and the two real kernels
 
@@ -207,6 +209,49 @@ The normalized spectrum may depend on the base point $x$; constancy on just one 
 
 These conclusions do not affect AH6's synthetic Gram/Euler examples: those establish only selected algebraic feasibility, not metric realizability on a fibre-open domain. General varying Gram shapes and the remaining nonlinear and derivative equations stay unresolved.
 
+## AH8. Ricci inertia and the local-parallel set
+
+Keep all of AH6's constant-odd endpoint-domain hypotheses: positive Z1 with constant $c_H,c_V>0$, $\lambda<1/4$ and $c=4c_V(1-4\lambda)>0$, the fixed real $W_A$ and compact real form, $\kappa\ne0$, $\det M\ne0$ and the declared single kernel. No simplicity or constant normalized spectrum is assumed. Let $n_{\le0}$ count all zero or negative eigenvalues of the self-adjoint raised observer Ricci tensor, with multiplicity.
+
+**Proposition AH8.** Every full solution on such a domain satisfies:
+
+| constant endpoint $a$ | strict trace-budget limit | upper bound on $n_{\le0}$ |
+|---|---:|---:|
+| $-1/96$ | $8$ | $7$ |
+| $-3/832$ | $72/7$ | $10$ |
+| $-3/704$ | $200/19$ | $10$ |
+| $-1/160$ | $216/19$ | $11$ |
+
+These also bound the strictly negative index. They are necessary bounds; no attainment by five-form Grams or observer metrics is asserted.
+
+*Proof.* AH6 gives $N>0$, $0\le S\le NI$, $\operatorname{tr}S=5N$ and
+$$\mathrm{Ric}^{\sharp}=\xi I-\ell S,\qquad
+\xi=\frac b6+\frac{2q_1+5\ell}{12}N,\qquad b>0.$$
+For $\ell>0$, $\xi>0$. Each nonpositive Ricci eigenvalue corresponds to an $S$ eigenvalue at least $\xi/\ell$. Simultaneous orthogonal diagonalization and the trace budget therefore give
+$$n_{\le0}\le\frac{5\ell N}{\xi}
+<\frac{60\ell}{2q_1+5\ell}.$$
+For $\ell<0$, instead put
+$$S'=NI-S\ge0,\quad\operatorname{tr}S'=9N,\quad
+\zeta=\frac b6+\frac{2q_1-7\ell}{12}N>0.$$
+Then $\mathrm{Ric}^{\sharp}=\zeta I-|\ell|S'$, giving
+$$n_{\le0}\le\frac{9|\ell|N}{\zeta}
+<\frac{108|\ell|}{2q_1-7\ell}.$$
+The final inequalities are strict because $b>0$, including when some Ricci eigenvalues are exactly zero. Substitution of AH6's four coefficient pairs gives the table. In particular the first bound permits at most seven, rather than eight, nonpositive directions. ∎
+
+Now let $\Pi$ be [S2's parallel set](S-z1-off-section.md): $(x,y)\in\Pi$ when $y$ extends to a positive $\aleph$-parallel metric near $x$, equivalently it is fixed by the relevant local holonomy. Pointwise annihilation by the curvature endomorphisms alone is not this definition. [S3](S-z1-off-section.md) transfers [F4/K](K-z1-ricci-general-n.md) through the parallel metric, whose connection and covariant base Ricci tensor agree with those of $g$. At a point of $\Pi$,
+$$\mathrm{Ric}^Y_{HH}=\mathrm{Ric}_g-\frac{c_H}{c}y,\qquad
+\mathrm{Ric}^Y_{HV}=0,\qquad
+\mathrm{Ric}^Y_{VV}=-\frac54G_{1/5}|_y.$$
+The vertical block is negative definite in all ten directions. Relative to the positive observer metric its trace-free nine-space has eigenvalue $-5/(4c_V)$ and its Euler line eigenvalue $-1/c$. These signs hold for every $\lambda<1/4$. The orthogonal block decomposition adds the Ricci indices, so at a possible domain point in $\Pi$:
+
+- The $a=-1/96$ row is impossible: ten negative vertical directions already exceed seven. Its entire domain must avoid $\Pi$.
+- The $a=-3/832,-3/704$ rows require $\mathrm{Ric}_g-(c_H/c)y$ to be positive definite; there is no remaining allowance for even a zero horizontal eigenvalue.
+- The $a=-1/160$ row allows at most one nonpositive horizontal direction.
+
+In particular, all four domains avoid $\Pi$ above every base point with $\operatorname{rank}\mathrm{Ric}_g\le2$. The kernel of the base Ricci tensor then has dimension at least two, and on it $\mathrm{Ric}_g-(c_H/c)y$ is strictly negative because $c_H/c>0$ and $y$ is positive. Together with the ten vertical directions this gives at least twelve negative directions. This argument needs no simultaneous diagonalization of $y$ and $\mathrm{Ric}_g$.
+
+AH8 uses pointwise trace budgets and the geometric blocks only where the domain meets $\Pi$. It continues no inertia inequality or field to other fibre points. Domains avoiding $\Pi$, general varying Gram shapes and the remaining equations are still unresolved. As in AH6, isolated zero-$u$ points of varying odd fields are outside the constant-domain hypothesis. [Review40](../../reports/reviews/REVIEW40-GU-AH8-2026-11-02.md) records the separate internal derivation and adversarial checks.
+
 ## Reproduction and remaining boundary
 
 Run `python -X utf8 -I computation/geometric-unity/AH_lambda5_gram.py` from the repository root. The original helper checks both compact phases, full symbolic-weight formulas on general forms, off-diagonal and full-support Grams, mixed and derivative controls, both exact kernel charts and the negative conic values. Its cyclic channel control uses the exact Gram calculation. The regular channel parameters and remaining block regularity are checked exactly.
@@ -215,6 +260,6 @@ Run `python -X utf8 -I computation/geometric-unity/AH_cyclic_obstruction.py` for
 
 The all-form tensor identity follows from the contraction count, and the rank conclusions from positive Gram linear algebra. Finite controls check those conventions rather than classify five-forms. Both helpers share T's accepted Clifford engine and supply no independent physical evidence.
 
-The Gram helper preserves its original 25 controls and adds AH6's four compact endpoint copies, full grade-one outputs on general forms, all fourteen derivative directions, the complete first-pair derivative identities, surviving opposite-pair Cartan jets, exact bounds and real-Gram controls of the selected Euler vector equation. AH7 adds homogeneous characteristic-polynomial controls on an actual nondecomposable Gram, including repeated roots, the zero-trace power and the exact scalar radial limit. The recorded run passes 74 exact controls in 9.6 seconds with Python 3.12 and SymPy 1.14.0. It uses F4, S4 and N1 as geometric inputs; it does not reconstruct the metric engine. The tensor identities and fibre argument follow from the proofs; the finite controls do not establish metric or field existence. The separately recorded cyclic-obstruction run passes all 14 checks in 5.5 seconds.
+The Gram helper preserves its original 25 controls and AH6–AH7's 49 controls: four compact endpoint copies, full grade-one outputs on general forms, all fourteen derivative directions, the complete first-pair derivative identities, surviving opposite-pair Cartan jets, exact bounds, real-Gram Euler controls and homogeneous characteristic-polynomial identities. AH8 adds 20 exact trace-budget and parallel-block controls, including the strict zero-eigenvalue boundary. The recorded run passes 94 controls in 11.2 seconds with Python 3.12 and SymPy 1.14.0. It uses F4, S3–S4 and N1 as geometric inputs; it does not reconstruct the metric engine. The tensor identities and geometric conclusions follow from the proofs; the finite controls do not establish metric or field existence. The separately recorded cyclic-obstruction run passes all 14 checks in 5.5 seconds.
 
-AH1–AH5 retain their stated scopes. AH6–AH7 concern entire constant-odd endpoint domains. Isolated zero-$w$ points of varying odd fields, coincident kernels, $\det M=0$, other Shiab members, non-invariant odd fields and indefinite real forms remain outside these conclusions. General varying Gram shapes, the full nonlinear Lambda5 system, actual endpoint existence and PDE sufficiency are unresolved.
+AH1–AH5 retain their stated scopes. AH6–AH8 concern entire constant-odd endpoint domains. Isolated zero-$w$ points of varying odd fields, coincident kernels, $\det M=0$, other Shiab members, non-invariant odd fields and indefinite real forms remain outside these conclusions. General varying Gram shapes not excluded by these restrictions, the full nonlinear Lambda5 system, actual endpoint existence and PDE sufficiency are unresolved.

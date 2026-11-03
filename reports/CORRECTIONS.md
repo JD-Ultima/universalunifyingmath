@@ -293,3 +293,9 @@ The GU manuscript remains scoped to A–Q. The later results from R onward are s
 ### Manuscript alignment
 
 The subsequent GU manuscript check found the same covering-group and kinetic-term wording in the draft. The spinor passage now uses the covering product and diagonal Z2 quotient, states generation counts as representation content, and limits the kinetic conclusion to the proposed single-copy ansatz. The current GU source compiled successfully with the desktop editor compiler on November 2. Representation formulas, counts and theorem references are unchanged.
+
+
+## 2026-11-02 — Prior work and source-provenance follow-up
+
+- The original GU PDF became reachable. Its 2,087,649 bytes and SHA-256 `3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4` match the preserved mirror exactly. The retrieval occurred at 2026-11-03 01:04 UTC (November 2 in America/New_York). The source record, README, report and GU-G01 now resolve that provenance check. Initial acquisition restrictions and the original pins remain recorded; no mathematical claim was regraded on this basis.
+- The [prior-work survey](RELATED-WORK.md) identifies overlapping proofs and implementations, with explicit verification limits. The charter now requires this comparison before developing another proof. Existing result IDs and valid evidence are preserved; overlap is not a literature-wide novelty verdict.

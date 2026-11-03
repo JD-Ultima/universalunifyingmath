@@ -33,6 +33,11 @@ fibre patch of such a domain. Homogeneous Cayley-Hamilton continues only a
 metric identity. The positive self-adjoint zero-trace barrier and connectedness
 preserve the actual negative trace sign, contradicting F4's positive radial
 trace limit. No field or inequality is analytically continued.
+
+AH8 uses the same endpoint Ricci/Gram identity to bound the number of
+nonpositive Ricci eigenvalues by 7,10,10,11. F4/S3 give ten negative vertical
+directions on the actual local-parallel set Pi, yielding additional necessary
+conditions there. These pointwise inequalities are not continued away from Pi.
 """
 import pathlib
 import sys
@@ -258,6 +263,61 @@ def spectrum_controls(examples):
     print('Fixed SO14/scaling families are excluded; general varying shapes and the full PDE remain unresolved.', flush=True)
 
 
+def inertia_controls():
+    """AH8's strict trace budgets and parallel-set normalization controls."""
+    b, norm = sp.symbols('b N', positive=True)
+    sigma = sp.symbols('sigma', real=True)
+    limits = (sp.Integer(8), sp.Rational(72, 7), sp.Rational(200, 19), sp.Rational(216, 19))
+    caps = (7, 10, 10, 11)
+    for row, expected_limit, cap in zip(ENDPOINTS, limits, caps):
+        name, _, _, _, endpoint, q, ell, bcoef, _ = row
+        xi = b/6+(2*q+5*ell)*norm/12
+        ric = xi-ell*sigma
+        if ell > 0:
+            scalar, rate, budget = xi, ell, 5
+            rewritten = scalar-rate*sigma
+            denominator = 2*q+5*ell
+        else:
+            scalar = b/6+(2*q-7*ell)*norm/12
+            rate, budget = -ell, 9
+            rewritten = scalar-rate*(norm-sigma)
+            denominator = 2*q-7*ell
+        limit = sp.cancel(12*budget*rate/denominator)
+        check('AH8 '+name+': positive baseline and exact complementary Ricci rewrite',
+              endpoint*(1+312*endpoint) == bcoef > 0 and scalar.is_positive
+              and sp.expand(ric-rewritten) == 0)
+        check('AH8 '+name+': exact rational budget and strictly positive finite-norm gap',
+              limit == expected_limit and sp.simplify(limit-budget*rate*norm/scalar).is_positive)
+        gap = sp.expand((cap+1)*scalar/rate-budget*norm)
+        check('AH8 '+name+': the first forbidden nonpositive index violates the trace budget',
+              sp.ceiling(limit)-1 == cap and gap.is_positive)
+        check('AH8 '+name+': zero eigenvalues cannot attain the forbidden threshold',
+              gap.coeff(b) > 0 and gap.coeff(norm) >= 0)
+        print(f'  AH8 {name}: negative/nonpositive Ricci index <= {cap}, '
+              f'strict limit {limit}, forbidden-count gap {gap}.', flush=True)
+    cV, c = sp.symbols('cV c', positive=True)
+    lam = sp.symbols('lambda', real=True)
+    euler_ricci = sp.cancel((-sp.Rational(5, 4))*(4-sp.Rational(16, 5))/(cV*(4-16*lam)))
+    check('AH8: F4 vertical trace and trace-free eigenvalues are negative for every lambda<1/4',
+          sp.simplify(euler_ricci+1/(4*cV*(1-4*lam))) == 0
+          and (-1/c).is_negative and (-sp.Rational(5, 4)/cV).is_negative)
+    vertical = sp.diag(-1/c, *([-sp.Rational(5, 4)/cV]*9))
+    combined = sp.diag(sp.diag(2, 1, -1, -2), vertical)
+    check('AH8: orthogonal HV-zero blocks add their strictly negative indices',
+          sum(value.is_negative is True for value in combined.diagonal()) == 12)
+    combined = sp.diag(sp.diag(2, 1, 0, -1), vertical)
+    check('AH8: horizontal zero directions count only toward the nonpositive index',
+          sum(value.is_negative is True for value in combined.diagonal()) == 11
+          and sum(value.is_nonpositive is True for value in combined.diagonal()) == 12)
+    rho1, rho2, shift = sp.symbols('rho1 rho2 shift', positive=True)
+    shifted = sp.diag(rho1, rho2, 0, 0)-shift*sp.eye(4)
+    check('AH8: a rank-two base Ricci kernel supplies two negative horizontal directions',
+          shifted[2, 2].is_negative and shifted[3, 3].is_negative and max(caps) < 12)
+    print('AH8: all four constant-endpoint domains avoid Pi above rank(Ric_g)<=2.', flush=True)
+    print('Pi means extension to a local parallel metric, not merely pointwise curvature annihilation.', flush=True)
+    print('No inertia inequality, field or exclusion is continued away from Pi.', flush=True)
+
+
 def main():
     start = time.time()
     print('AH: necessary Lambda5 Gram spectrum, real compact WA', flush=True)
@@ -338,6 +398,7 @@ def main():
     print('The isotropic full-support form passes this selected channel; no full Lambda5 exclusion or PDE solution follows.', flush=True)
     endpoint_controls(examples, omega)
     spectrum_controls(examples)
+    inertia_controls()
     print(f'\n{len(CHECKS)} checks, all True; runtime {time.time()-start:.1f} s', flush=True)
 
 

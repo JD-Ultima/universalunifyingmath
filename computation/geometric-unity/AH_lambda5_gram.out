@@ -87,5 +87,32 @@ AH6 requires a constant-odd endpoint domain; isolated zero-u points on a moving 
 AH7: no nonempty fibre-open patch can have constant normalized Gram spectrum on a constant-odd endpoint domain.
 Only the metric polynomial continues; connectedness and the zero-trace barrier carry the sign.
 Fixed SO14/scaling families are excluded; general varying shapes and the full PDE remain unresolved.
+[75] AH8 i*c5: positive baseline and exact complementary Ricci rewrite: True
+[76] AH8 i*c5: exact rational budget and strictly positive finite-norm gap: True
+[77] AH8 i*c5: the first forbidden nonpositive index violates the trace budget: True
+[78] AH8 i*c5: zero eigenvalues cannot attain the forbidden threshold: True
+  AH8 i*c5: negative/nonpositive Ricci index <= 7, strict limit 8, forbidden-count gap b/8.
+[79] AH8 i*w5Gamma: positive baseline and exact complementary Ricci rewrite: True
+[80] AH8 i*w5Gamma: exact rational budget and strictly positive finite-norm gap: True
+[81] AH8 i*w5Gamma: the first forbidden nonpositive index violates the trace budget: True
+[82] AH8 i*w5Gamma: zero eigenvalues cannot attain the forbidden threshold: True
+  AH8 i*w5Gamma: negative/nonpositive Ricci index <= 10, strict limit 72/7, forbidden-count gap 5*N/8 + 11*b/384.
+[83] AH8 w5: positive baseline and exact complementary Ricci rewrite: True
+[84] AH8 w5: exact rational budget and strictly positive finite-norm gap: True
+[85] AH8 w5: the first forbidden nonpositive index violates the trace budget: True
+[86] AH8 w5: zero eigenvalues cannot attain the forbidden threshold: True
+  AH8 w5: negative/nonpositive Ricci index <= 10, strict limit 200/19, forbidden-count gap 9*N/40 + 11*b/640.
+[87] AH8 c5Gamma: positive baseline and exact complementary Ricci rewrite: True
+[88] AH8 c5Gamma: exact rational budget and strictly positive finite-norm gap: True
+[89] AH8 c5Gamma: the first forbidden nonpositive index violates the trace budget: True
+[90] AH8 c5Gamma: zero eigenvalues cannot attain the forbidden threshold: True
+  AH8 c5Gamma: negative/nonpositive Ricci index <= 11, strict limit 216/19, forbidden-count gap N/2 + b/16.
+[91] AH8: F4 vertical trace and trace-free eigenvalues are negative for every lambda<1/4: True
+[92] AH8: orthogonal HV-zero blocks add their strictly negative indices: True
+[93] AH8: horizontal zero directions count only toward the nonpositive index: True
+[94] AH8: a rank-two base Ricci kernel supplies two negative horizontal directions: True
+AH8: all four constant-endpoint domains avoid Pi above rank(Ric_g)<=2.
+Pi means extension to a local parallel metric, not merely pointwise curvature annihilation.
+No inertia inequality, field or exclusion is continued away from Pi.
 
-74 checks, all True; runtime 9.6 s
+94 checks, all True; runtime 11.2 s
