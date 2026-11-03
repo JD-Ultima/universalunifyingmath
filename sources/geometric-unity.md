@@ -54,3 +54,13 @@ Search-result snippets list a Martin Wood Lecture on 23 May 2013 and a seminar "
 | L-C1 | The gauge transformation of a connection is $A\cdot h=h^{-1}Ah+h^{-1}dh$. Covariant derivative of a section of $\mathrm{Ad}\,P$: $d_{A}h=dh+[A,h]$. Curvature covariance $F_{A\cdot h}=h^{-1}F_Ah$. | Kobayashi–Nomizu I, II.5 |
 | L-C2 | Integration by parts for a first-order operator $L=K\circ\nabla$ whose coefficient tensor $K$ is $\nabla$-parallel. Formal self-adjointness is equivalent to a pointwise symbol identity. | Lawson–Michelsohn II.5 (formal adjoints) |
 | L-C3 | Algebraic curvature tensors satisfy $R=W+P\owedge g$ (Kulkarni–Nomizu product with the Schouten tensor), where $W$ is totally traceless. | Besse, *Einstein Manifolds*, 1.G (1.110–1.116) |
+
+
+## 4. Classical geometry used in the global models
+
+Accessed November 3, 2026. [AM](../formalization/geometric-unity/AM-global-flat-models.md) reuses the existing F7 symmetric-space identification and proves its global inverse, completeness and torus field descent. The Gaussian-parameter geometry is classical:
+
+- Lovrić, Min-Oo and Ruh, *Multivariate Normal Distributions Parametrized as a Riemannian Symmetric Space*, Journal of Multivariate Analysis 74 (2000), 36–48; [author-hosted paper](https://math.mcmaster.ca/minoo/mypapers/lmr.pdf), §§2–3.
+- Globke and Quiroga-Barranco, *Information geometry and asymptotic geodesics on the space of normal distributions*, [arXiv:1904.12921v1](https://arxiv.org/abs/1904.12921v1) (2019), subsequently published in Information Geometry (2021).
+
+These sources distinguish the symmetric-space metric from the Fisher metric. No physical identification between Gaussian parameters and the observer fields is assumed.

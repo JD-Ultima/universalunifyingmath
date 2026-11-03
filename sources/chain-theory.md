@@ -18,7 +18,7 @@ November 2 follow-up: GitHub now identifies [physical-superintelligence/chain-th
 
 Full hashes are reproducible with `sha256sum` on the files at the commit above.
 
-## External results the Letter imports (to be checked as lemmas, not assumed)
+## External results the Letter imports
 
 | Lemma | Reference | Used for |
 |---|---|---|
@@ -30,4 +30,4 @@ Full hashes are reproducible with `sha256sum` on the files at the commit above.
 | CODATA 2022: $\alpha^{-1}=137.035\,999\,177(21)$ | Mohr et al., RMP 97, 025002 (2025) | comparison |
 | $\alpha^{-1}=137.035\,999\,166(15)$ (electron $g-2$); $137.035\,999\,206(11)$ (Rb); $137.035\,999\,046(27)$ (Cs) | Fan et al. PRL 130, 071801 (2023); Morel et al. Nature 588, 61 (2020); Parker et al. Science 360, 191 (2018) | comparison |
 
-These are standard published theorems and measurements. We use them as stated and do not re-prove them.
+These are standard published theorems and measurements. The [November 3 read-cap check](../reports/chain-theory-readcap-reuse.md) freshly compiles the imported operator-cap mathematics and its exact interface to the author's formal selection theorem. Other items remain imported results as stated. The mathematical cap does not establish operational certainty, the weight law or a physical coupling identification.

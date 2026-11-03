@@ -20,6 +20,10 @@ Theorems added (see `formalization/chain-theory/alpha/audit.md`, F-CT-3):
 - `weight_is_class_function` — Prop. 2 of the audit (F-CT-2): on the object, the upstream `kOf` equals a function of (commutator?, `parity` under `exchAssign`, `sameEnd`) only. Proved by `decide +kernel` over all 172 records.
 - `ReviewCheck.third_config_under_conjugate_convention` (referee addition, review CT-4) — the upstream `readable` is $d_1,d_2\le3$, not the read cap. So under the conjugate convention the (3,3) configuration 3R 3R 3U also satisfies the hypotheses of `configuration_unique`. The `#eval`s give the readouts of the all-qubit and all-qutrit worlds: $(30+30\sqrt2)/2304$, and $(184+200\sqrt3)/419904$.
 
+## Reused operator read cap: fresh verification, November 3, 2026
+
+[ReadCapReuse.lean](readcap-reuse/ReadCapReuse.lean) connects the pinned external operator-theoretic cap to the author's unchanged abstract binder, selection theorem and reader predicate. Its [transcript](readcap-reuse/ReadCapReuse.out) and [receipt](readcap-reuse/verification.json) record the fresh Lean 4.35.0-rc4 check. The [reuse report](../../../reports/chain-theory-readcap-reuse.md) gives the source pins, build scope, cache trust and remaining physical interpretation. This file imports the external MathLab project and author module; the older standalone checks below retain their own scope.
+
 ## `Conjugation.lean`: far-end conjugation and matching closure (CT-G03, CT-G04)
 
 Standalone (no upstream file, no imports), Lean 4.35.0, core library only. See `formalization/chain-theory/alpha/conjugation.md`.
@@ -94,7 +98,7 @@ LEAN=/path/to/lean-4.35.0-linux/bin/lean ./run_gauge.sh > GaugeSelection.out
   - $\det(\lambda1_d)=\lambda^d$ for $d\ne2,3$.
 
   For $(2,3)$ the upstream alpha Lean checks the ranks 12 and 11 with its own `rank` function: `ChainAlpha.generators_independent` and `ChainAlpha.center_one_dimensional`, built by `run.sh`.
-- **Inputs and physics.** The read cap itself (9.1, CONDITIONAL) is a parameter here; the file shows what each value selects. That the readability and acting-centre criteria are the right ones is not a mathematical statement. The physics identifications are not addressed (G5).
+- **Inputs and physics.** The read cap is a parameter in this file; the separate reuse check above verifies the operator-theoretic theorem and its author-binder interface. Here, the file shows what each value selects. Choosing these as physical selection criteria remains a modelling assumption. The physics identifications are not addressed (G5).
 
 `ChainAlpha.selection_under_read_cap` in the upstream alpha Lean already proves the core arithmetic: under the cap, as a hypothesis, $d_1,d_2\ge2$ with $d_1\ne d_2$ gives $(2,3)$ or $(3,2)$. This file adds the dependence on each input and the G1/G2 algebra.
 

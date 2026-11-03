@@ -73,7 +73,7 @@ Under the assumptions above:
 $$i\left[\frac{15}{2c_V}+\kappa t+312t^2\right]\Phi^1=0,$$
 which holds at $t=-\kappa/400$ and the stated scale. This is the existing T/R10 constant-background solution, now shown to be the only solution in this single branch over flat Z1. The two vector determinant factors are nonzero there, as are all other non-vector factors. The preceding endpoint arguments give necessity and exclude the second row. ∎
 
-The result is local on the reconstructed observer domain and works for either sign of $\kappa$. Other field sectors, coincident kernels, indefinite pairings, other operators and Lambda5 fields are not classified here. AK supplies the broader positive-Z1 Lambda3 result. It does not solve a separate weighted base-metric variation.
+The classification is local on the reconstructed observer domain and works for either sign of $\kappa$. [AM](AM-global-flat-models.md) globally realizes its known solution on complete flat-space and torus observer models. Other field sectors, coincident kernels, indefinite pairings, other operators and Lambda5 fields are not classified here. AK supplies the broader positive-Z1 Lambda3 result. It does not solve a separate weighted base-metric variation.
 
 ## Reproduction
 

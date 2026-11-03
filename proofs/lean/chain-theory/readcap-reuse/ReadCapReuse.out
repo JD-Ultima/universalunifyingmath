@@ -1,0 +1,33 @@
+# Selected actual verification transcript, 2026-11-03
+# Complete stdout of the fresh public ReadCapReuse.lean compilation.
+# Full cache/setup and 54-module upstream build logs are retained privately; they are not reproduced here.
+# Compiler: Lean 4.35.0-rc4, c29b6dda4f7c20e3eeaa717c4e565663c5cfa364, Linux x86_64.
+# Command in the temporary pinned project:
+# lake --no-cache env lean -o .lake/build/lib/lean/ReadCapReuse.olean ReadCapReuse.lean
+# Exit code: 0. UTC timestamp duration: 3 seconds (one-second resolution).
+# Public source/copy SHA256: 11cee3f3d014a4bc46e031a587fb4ace7629cf0507ba9bdd7908b81e286756bf
+# Compiler stdout below is unmodified; no path normalization was needed.
+
+def ChainReadCap.ReadCap : (ℕ → ℕ → Prop) → Prop :=
+fun Readable => ∀ (d1 d2 : ℕ), 2 ≤ d1 → 2 ≤ d2 → (Readable d1 d2 ↔ d1 * d2 ≤ 6)
+def ChainAlpha.ReadCap : (ℕ → ℕ → Prop) → Prop :=
+fun Readable => ∀ (d1 d2 : ℕ), 2 ≤ d1 → 2 ≤ d2 → (Readable d1 d2 ↔ d1 * d2 ≤ 6)
+ChainWoronowicz.woronowicz : ChainReadCap.AllDecomposable 2 3
+ChainWoronowicz.readable_two_three : ChoiDark.Readable 2 3
+ChainWoronowicz.readcap : ChainReadCap.ReadCap ChoiDark.Readable
+ReadCapReuse.author_read_cap : ChainAlpha.ReadCap ChoiDark.Readable
+ReadCapReuse.operator_iff_readableByReads (d1 d2 : ℕ) (h1 : 2 ≤ d1) (h2 : 2 ≤ d2) :
+  ChoiDark.Readable d1 d2 ↔ ChainAlpha.readableByReads d1 d2
+ReadCapReuse.selection (d1 d2 : ℕ) (h1 : 2 ≤ d1) (h2 : 2 ≤ d2) (hr : ChoiDark.Readable d1 d2)
+  (hq : ChainAlpha.actingCharge d1 d2) : d1 = 2 ∧ d2 = 3 ∨ d1 = 3 ∧ d2 = 2
+ReadCapReuse.weaker_readable_three_three : ChainAlpha.readable 3 3
+ReadCapReuse.not_operator_readable_three_three : ¬ChoiDark.Readable 3 3
+'ChainWoronowicz.sep_of_extreme' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChainWoronowicz.woronowicz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChainWoronowicz.readable_two_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChainWoronowicz.readcap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReadCapReuse.author_read_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReadCapReuse.operator_iff_readableByReads' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReadCapReuse.selection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReadCapReuse.weaker_readable_three_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReadCapReuse.not_operator_readable_three_three' depends on axioms: [propext, Classical.choice, Quot.sound]

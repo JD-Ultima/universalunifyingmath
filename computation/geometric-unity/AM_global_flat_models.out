@@ -1,0 +1,15 @@
+[01] positive scale satisfies 2*cV*s^2=cH: True
+[02] arbitrary-block SPD target has exact determinant one: True
+[03] inverse uses the positive fifth root of det(y): True
+[04] global inverse reconstructs all twenty-five target entries: True
+[05] all 196 pullback coefficients agree at nonzero x and nonunit scales: True
+[06] translation is the exact SL5 congruence action: True
+[07] full invariant residual vanishes at the accepted scale: True
+[08] incorrect scale negative control has nonzero residual: True
+[09] full four-by-four vector block is regular, including kappa=2 and -3: True
+[10] flat positive Z1 Ricci spectrum has fourteen negative directions: True
+[11] explicit boost maps globally to its determinant-one geodesic: True
+[12] boost has constant squared speed 2*cV in both metrics: True
+12 exact controls passed; no metric or Clifford engine imported.
+AM1-AM2 global completeness and spin descent are proved in the note, not inferred from samples.
+F7 supplies the existing local identification; AI3 supplies the full bosonic equation.
