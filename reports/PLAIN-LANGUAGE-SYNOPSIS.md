@@ -34,7 +34,7 @@ This proposal uses complicated geometry. We wrote down explicit versions of its 
 
 For two specified field families, we found every allowed solution in the positive Z1 version of the model. One allows only a fixed field over flat four-dimensional starting geometry, at one exact parameter relation. The other allows no solution. The larger observer geometry is curved in this example.
 
-For a harder family, called Lambda5, we have now ruled out all four specified endpoint cases where the odd part of the field stays constant. Two force a shape that cannot fit the geometry. The other two must obey a conservation rule, which forces a constant size that also cannot fit. This closes those four cases; fields whose odd part changes remain open.
+The harder Lambda5 family has two branches. We ruled out the entire first branch in the declared model, even when its odd field changes: two required equations demand incompatible kinds of shape. On the other branch, two fixed endpoints are ruled out. Where its parameter is changing, conservation requires its rate of change to depend locally only on its value. This narrows the remaining search; it does not construct a solution.
 
 We also extended a known family of working fields across complete global models, including versions with a periodic four-dimensional starting space. Their geodesics—the geometry's straightest paths—have no artificial stopping point. For fixed model parameters, an exact formula gives zero, one or two constant field configurations in the regular family. These are mathematical examples within our reconstruction; distinct physical states have not been established.
 

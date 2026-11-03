@@ -1,0 +1,67 @@
+result: >
+  No full bosonic solution exists on a nonempty positive-Z1 observer domain
+  in the first single Lambda5 c/wGamma conic. Full higher-grade equations
+  force a zero or simple five-form for every nonzero real kernel chart.
+  At nonzero w this contradicts AH2's positive Gram-rank bound; AH9 excludes
+  the remaining constant zero-w endpoint domains.
+claim_id: [GU-054]
+result_ids: [AP1, AP2, AP3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AP-first-lambda5-obstruction.md
+internal_review: reports/reviews/REVIEW46-GU-AP-2026-11-03.md
+code:
+  - computation/geometric-unity/AP_first_lambda5_obstruction.py
+  - computation/geometric-unity/AP_first_lambda5_obstruction.out
+formalization_status: >
+  True reconstructed dualized equation, compact real (14,0), u(128), fixed
+  parallel real WA, real fields, constant nonzero kappa, invariant odd field
+  and det M!=0. Only the first Lambda5 c/wGamma kernel is present, away from
+  every other non-vector singular factor. Both odd parameters, the five-form
+  and the real chart weights may vary. The full even field retains the slaved
+  vector field P2(C)+P14(208wC). AP3 additionally assumes a smooth positive
+  four-base, reconstructed Z1, positive constant cH,cV and lambda<1/4.
+proof_status: >
+  AP1 proves the full grade-five/nine quadratic identities, including the
+  mixed rs right-Gamma terms, by all six symbolic coordinate-blade pair
+  orbits, every output slot and SO14 equivariance/polarization. Gamma traces
+  separately detect grades 4/6 and 8/10, forcing scalar Clifford square.
+  The remaining two-by-two matrix has determinant
+  (32/9)*(35r^4+176r^2s^2+405s^4)>0 for nonzero real chart weights.
+  Its vector sandwich condition and the elementary orthogonal-involution
+  argument force zero or simple five-forms. AP2 retains every form/weight
+  derivative and proves the mixed vector/kernel term has only grades 3/7/11.
+  Thus the full equation forces the AP1 constraint. AH2 gives N>0 and Gram
+  rank at least thirteen at nonzero w, contradicting simple rank five.
+  AP3 reduces an entirely zero-w domain to the two endpoints excluded by AH9.
+internal_consistency: >
+  The mixed support certificate allows independent arbitrary P2/P14 covectors,
+  rather than setting the slaved vector field to zero. Two complete vector/
+  blade orbits and two derivative-jet orbits cover inside/outside axis types.
+  Vector-only derivative and quadratic controls cover equal/unequal axes.
+  No constant-odd, parallel-five-form or curvature-trace assumption is used
+  for the nonzero-w obstruction. All Gamma conversions are right products;
+  the resulting negative matrix entry uses Gamma^2=-1.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
+  computation/geometric-unity/AP_first_lambda5_obstruction.py.
+  The portable helper records 40 exact controls using T's accepted Clifford
+  implementation, without private paths, caches, randomness or new installs.
+  The fresh portable author run passes all 40 controls in 1.412 seconds. The private
+  40-control predecessor was independently reproduced in 1.445 seconds;
+  independent public-package Review46 reproduced all 40 controls in 1.418 seconds.
+novelty: >
+  A completed first-conic mathematical obstruction within this reconstruction,
+  extending the established constant endpoints to moving odd fields.
+  No literature-first claim, arbitrary Lambda5 classification or physical
+  confirmation is asserted.
+empirical_testability: None new; an exact obstruction in the specified reconstruction.
+dependencies: [AA4, AH1, AH2, AH9, J1, R2, T1]
+confidence: >
+  Independent internal Review46 accepts the public proof and exhaustive
+  all-slot helper; this is not external peer review.
+  Arithmetic shares the accepted Clifford engine, while the basis cover,
+  strict positive determinant and simplicity argument are explicit hand steps.
+pending_work: >
+  The opposite moving conic, coincident kernels, det M=0, other operator
+  members, non-invariant odd fields and indefinite real forms are outside
+  this theorem. AP3 constructs no fields, observer metric or physical model.
