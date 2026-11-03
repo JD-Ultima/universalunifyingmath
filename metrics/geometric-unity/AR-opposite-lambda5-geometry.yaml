@@ -1,0 +1,74 @@
+result: >
+  The remaining single opposite Lambda5 conic has no zero-u points, no open
+  constant-odd patch and no open Euler-invariant scalar patch on positive Z1.
+  A solution requires lambda=1/5, base Ricci rank at most one, and avoidance
+  of the actual local-parallel set. A Ricci-Hessian bridge transfers the
+  existing geometric relaxed-system obstructions. The odd gradient has the
+  fixed negative Euler Ricci eigenvalue, and regular scalar profiles satisfy
+  an implicit linear ODE. Full solution existence remains open.
+claim_id: [GU-054]
+result_ids: [AR1, AR2, AR3, AR4, AR5]
+gaps: [GU-G14, GU-G15, GU-G16]
+writeup: formalization/geometric-unity/AR-opposite-lambda5-geometry.md
+internal_review: reports/reviews/REVIEW48-GU-AR-2026-11-03.md
+code:
+  - computation/geometric-unity/AR_opposite_lambda5_geometry.py
+  - computation/geometric-unity/AR_opposite_lambda5_geometry.out
+formalization_status: >
+  Entire connected open single opposite w/cGamma Lambda5 conic domain,
+  initially allowing zero w. Smooth positive four-base, reconstructed Z1,
+  cH,cV positive constants, lambda<1/4, compact real (14,0)/u(128), true
+  dualized equation, fixed parallel real WA, real smooth fields, nonzero
+  constant kappa, det M!=0, and no coincident non-vector factors. All vector,
+  kernel and chart-weight derivatives are retained. AR1 proves w!=0, so the
+  remaining results use AQ's smooth nonzero-w metric identity. Critical
+  points of a at nonzero w are not excluded.
+proof_status: >
+  AN makes nonzero w dense; continuity extends only AQ's smooth actual-domain
+  metric tensor to endpoints. Twice differentiating the conic gives a
+  positive semidefinite Hessian for chi there, forcing positive Ricci and
+  contradicting N1. U>0 also excludes constant-a open patches. AR2 constructs
+  Hess psi=mu Ric+nu g, with mu positive, mu'=k affine in a, and mu*mu'' a
+  rational quadratic in k. AR3 uses same-minor Cramer reconstruction on a
+  product base/fibre neighbourhood, including base derivatives, and a scalar
+  ODE barrier at delta roots. Q7 radial persistence would make a rational
+  square have a simple pole when lambda!=1/5; at lambda=1/5 Q6/S13 excludes
+  base Ricci rank at least two. AR4 transfers geometric consistency
+  obstructions and excludes the parallel set. AR5 derives the all-y horizontal
+  Ricci trace from Koszul and the accepted orthogonal-splitting identity,
+  excludes open E(a)=0 patches, fixes the gradient Ricci eigenvalue, and
+  derives the implicit profile ODE without dividing its admissible zero.
+internal_consistency: >
+  The continued scalar is reconstructed from the metric compatibility
+  solution; neither omega nor real conic inequalities extend to radial
+  witnesses. The same row minor on a base-product patch justifies base
+  derivatives. Critical a values are retained. Endpoint contacts with dw=0
+  are covered. CC/EE/FF transfer only under their nonzero rank-one Ricci/Weyl
+  hypotheses, HH at Ricci-zero nonflat points; no original S.0 field-sector
+  corollary is copied. The profile equation is necessary, not sufficient.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0; run python -X utf8 -I
+  computation/geometric-unity/AR_opposite_lambda5_geometry.py.
+  The portable helper passes 34 new exact controls in 0.294 seconds and
+  imports no old helper, private file or observer metric engine. Its frame
+  contractions and scalar certificates support the hand derivations; the
+  inherited N6(f) and geometric rank certificates retain their earlier
+  computational scope and were not rebuilt here.
+novelty: >
+  A bounded opposite-conic geometric reduction and new transfer of existing
+  compatibility results within this investigation. No literature-first,
+  arbitrary-field classification, opposite-conic existence or physical claim.
+empirical_testability: None new; restrictions within the specified reconstruction.
+dependencies: [AQ1, AQ2, AQ3, AN2, N1, N2, F2.4, Q6, Q7, Q12, S3, S4, S13, CC, EE, FF, HH]
+confidence: >
+  Independent internal Review48 accepts the public endpoint, transverse
+  geometry, reparametrization, full-rank continuation and profile arguments;
+  its new helper run passes 34 controls in 0.300 seconds. New controls do not
+  replace the inherited computer-assisted N6(f) input or supply an independent
+  metric reproduction.
+pending_work: >
+  Solve the remaining opposite-conic form and metric system on its narrowed
+  geometric corner, including nonzero-w critical points and the implicit ODE's
+  exceptional profile level. Coincident kernels, det M=0, other operators,
+  indefinite real forms and fields leaving the single-kernel stratum are
+  outside this theorem. No complete opposite-conic exclusion is claimed.

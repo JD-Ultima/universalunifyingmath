@@ -1,6 +1,6 @@
 # AQ. Conservation on the opposite moving Lambda5 conic
 
-For the remaining single $W_A$ conic, the grade-one and symmetric Gamma equations reduce to a metric equation for the odd scalar. Contracted Bianchi then forces that scalar to be locally isoparametric wherever its gradient is nonzero. These are necessary conditions; the other tensor equations and existence of a full solution remain unsettled.
+For the remaining single $W_A$ conic, the grade-one and symmetric Gamma equations reduce to a metric equation for the odd scalar. Contracted Bianchi then forces that scalar to be locally isoparametric wherever its gradient is nonzero. The later [AR](AR-opposite-lambda5-geometry.md) strengthens the geometric restrictions and excludes moving zero-$w$ contacts; [AS](AS-opposite-lambda5-system.md) retains the full form system. Actual solution existence remains open.
 
 The [helper](../../computation/geometric-unity/AQ_opposite_lambda5_conservation.py) and [recorded output](../../computation/geometric-unity/AQ_opposite_lambda5_conservation.out) check the coefficients. Record: [AQ metadata](../../metrics/geometric-unity/AQ-opposite-lambda5-conservation.yaml). [Independent internal Review47](../../reports/reviews/REVIEW47-GU-AQ-2026-11-03.md) accepts the proof and scope; external peer review remains outstanding.
 
@@ -86,7 +86,7 @@ has just one zero. Its complement is again dense on the regular patch. Consequen
 
 With $H(a)=24/\delta$, the identities $c=H^2|da|^2$ and $h=H\Delta a+H'|da|^2$ prove (AQ3). Equation (AQ2.2) then proves the Ricci alignment. ∎
 
-Here “locally isoparametric” means precisely the two scalar identities (AQ3), following the definition in [Qi-Ming Wang, *Isoparametric Functions on Riemannian Manifolds. I*, Math. Ann. 277 (1987), 639–646, first page](https://gdz.sub.uni-goettingen.de/fulltext/PPN235181684_0277/00000645?_format=xml). No global foliation, constant principal curvatures or space-form classification is inferred. Critical points, isolated moving endpoints and the remaining full tensor equations require separate analysis.
+Here “locally isoparametric” means precisely the two scalar identities (AQ3), following the definition in [Qi-Ming Wang, *Isoparametric Functions on Riemannian Manifolds. I*, Math. Ann. 277 (1987), 639–646, first page](https://gdz.sub.uni-goettingen.de/fulltext/PPN235181684_0277/00000645?_format=xml). No global foliation, constant principal curvatures or space-form classification is inferred. AR subsequently excludes zero-$w$ points on entire single-conic domains. Critical points at nonzero $w$ and actual realization of AS's full system remain open.
 
 ## Reproduction and limits
 

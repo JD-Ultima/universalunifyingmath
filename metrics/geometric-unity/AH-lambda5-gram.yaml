@@ -161,7 +161,7 @@ confidence: >
   assessment is Review41. All Q controls share T's accepted Clifford engine;
   the separate elementary simplicity proof supplies the universal implication.
 pending_work: >
-  AP settles the first single conic, and AN settles the opposite-pair constant
-  endpoints. The opposite moving conic remains open; AQ forces local
-  isoparametricity on regular patches. Critical/isolated endpoint points,
-  coincident kernels and indefinite cases need separate analysis.
+  AP settles the first single conic. AR excludes all opposite-pair endpoint
+  contacts and narrows the geometry; AS retains the full remaining system.
+  Actual nonzero-w solutions, critical points, coincident kernels and
+  indefinite cases need separate analysis.

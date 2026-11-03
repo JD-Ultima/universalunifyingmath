@@ -1,0 +1,58 @@
+AS: opposite moving Lambda5 w/cGamma, full tensor and jet system.
+[01] quadratic pair intersection 0: correct phase and full support: True
+[02] intersection 0: entire grade-thirteen tensor, without symmetrization: True
+[03] intersection 0: full grade 5 identity including rs terms: True
+[04] intersection 0: full grade 5 gamma contraction: True
+[05] intersection 0: full grade 9 identity including rs terms: True
+[06] intersection 0: full grade 9 gamma contraction: True
+[07] quadratic pair intersection 1: correct phase and full support: True
+[08] intersection 1: entire grade-thirteen tensor, without symmetrization: True
+[09] intersection 1: full grade 5 identity including rs terms: True
+[10] intersection 1: full grade 5 gamma contraction: True
+[11] intersection 1: full grade 9 identity including rs terms: True
+[12] intersection 1: full grade 9 gamma contraction: True
+[13] quadratic pair intersection 2: correct phase and full support: True
+[14] intersection 2: entire grade-thirteen tensor, without symmetrization: True
+[15] intersection 2: full grade 5 identity including rs terms: True
+[16] intersection 2: full grade 5 gamma contraction: True
+[17] intersection 2: full grade 9 identity including rs terms: True
+[18] intersection 2: full grade 9 gamma contraction: True
+[19] quadratic pair intersection 3: correct phase and full support: True
+[20] intersection 3: entire grade-thirteen tensor, without symmetrization: True
+[21] intersection 3: full grade 5 identity including rs terms: True
+[22] intersection 3: full grade 5 gamma contraction: True
+[23] intersection 3: full grade 9 identity including rs terms: True
+[24] intersection 3: full grade 9 gamma contraction: True
+[25] quadratic pair intersection 4: correct phase and full support: True
+[26] intersection 4: entire grade-thirteen tensor, without symmetrization: True
+[27] intersection 4: full grade 5 identity including rs terms: True
+[28] intersection 4: full grade 5 gamma contraction: True
+[29] intersection 4: full grade 9 identity including rs terms: True
+[30] intersection 4: full grade 9 gamma contraction: True
+[31] quadratic pair intersection 5: correct phase and full support: True
+[32] intersection 5: entire grade-thirteen tensor, without symmetrization: True
+[33] intersection 5: full grade 5 identity including rs terms: True
+[34] intersection 5: full grade 5 gamma contraction: True
+[35] intersection 5: full grade 9 identity including rs terms: True
+[36] intersection 5: full grade 9 gamma contraction: True
+[37] mixed vector/blade orbit 0: full support only 5/9: True
+[38] mixed orbit 0: exact converted grade 5 invariant coefficients: True
+[39] mixed orbit 0: exact converted grade 9 invariant coefficients: True
+[40] derivative orbit 0: full weighted derivative and right-Gamma sign: True
+[41] mixed vector/blade orbit 5: full support only 5/9: True
+[42] mixed orbit 5: exact converted grade 5 invariant coefficients: True
+[43] mixed orbit 5: exact converted grade 9 invariant coefficients: True
+[44] derivative orbit 5: full weighted derivative and right-Gamma sign: True
+[45] weight Wronskian identity retains all variable-weight derivatives: True
+[46] elimination combines both mixed terms and the Wronskian exactly: True
+[47] eliminated quadratic tensor has the exact four invariant coefficients: True
+[48] eliminated gamma traces retain separate grade-four and grade-six channels: True
+[49] combined gradient traces give the exact contraction/exterior coefficients: True
+[50] general full-support jet with independent dr/ds: full derivative identity: True
+[51] general full-support jet: exact common-jet cancellation with nonzero Wronskian: True
+[52] the full K inverse retains all jet components in the moving system: True
+Exact higher system: -16 K(nabla(r omega))+Z5=0; +8 K(nabla(s omega))+Z9=0.
+Algebraic compatibility: s Z5+2r Z9+16 K((r ds-s dr) tensor omega)=0.
+Full equivalence also retains AQ1.1, the actual form Gram tensor and the entire AH2 equation.
+No simplicity, observer-metric realization or full-solution existence is inferred.
+52 exact controls passed; runtime 1.373 s.

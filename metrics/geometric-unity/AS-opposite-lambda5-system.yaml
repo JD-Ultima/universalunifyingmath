@@ -1,0 +1,68 @@
+result: >
+  Exact full bosonic-system formulation on the nonzero-w opposite Lambda5
+  w/cGamma conic. Within the declared ansatz, Upsilon=0 is equivalent to
+  AQ1.1 with the actual form norm/Gram, the entire AH2 Gamma tensor, a
+  determined full covariant five-form jet and one algebraic compatibility
+  tensor. Neither existence nor a general nonzero-w exclusion is proved.
+claim_id: [GU-054]
+result_ids: [AS1, AS2, AS3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AS-opposite-lambda5-system.md
+internal_review: reports/reviews/REVIEW49-GU-AS-2026-11-03.md
+code:
+  - computation/geometric-unity/AS_opposite_lambda5_system.py
+  - computation/geometric-unity/AS_opposite_lambda5_system.out
+formalization_status: >
+  Smooth positive four-base, reconstructed Z1 with positive constant cH,cV
+  and lambda<1/4, observer signature (14,0), compact u(128), true dualized
+  equation, fixed parallel real WA, real smooth fields, constant nonzero
+  kappa and det M!=0. Only the opposite Lambda5 w/cGamma kernel is present,
+  away from coincident non-vector factors, on a smooth nonzero-w conic arc.
+  Both real chart weights are nonzero. The full even field retains
+  P2(C)+P14(208wC), and every form and weight derivative is included.
+proof_status: >
+  AS1 proves complete weighted K derivatives, both invariant mixed tensors,
+  the full quadratic grade-five/nine table including rs terms, and the
+  entire converted grade-thirteen tensor without symmetrization. Complete
+  two-orbit linear/bilinear and six-orbit symbolic quadratic certificates
+  cover all basis coefficients by SO14 equivariance and polarization.
+  AS2 combines J1/R2 even-equation slaving, AQ1.1, the full J2/AH2 Gamma
+  equation and invertibility of K to prove full equivalence within the
+  ansatz. The form norm/Gram and full algebraic hook constraint are retained.
+  Conditional uniqueness fixes background and smooth odd field/weights.
+  AS3 derives the chart-covariant Wronskian identity, traced square
+  relations and a shifted scalar-square identity, without claiming simplicity.
+internal_consistency: >
+  Right multiplication by Gamma gives the positive eight coefficient in
+  D9*Gamma/i and the negative mixed quadratic terms upon a second product.
+  Cartan jets survive K with eigenvalue one; no derivative component is
+  discarded. Every entire Q13*Gamma tensor is checked in all 196 entries
+  on the six complete symbolic pair orbits. The vector Gamma tensor is
+  symmetric because B=208wC; Dv has no Gamma part for WA. The eliminated
+  AQ1.3 metric equation alone is not equivalent to a realized full solution.
+reproducibility: >
+  Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
+  computation/geometric-unity/AS_opposite_lambda5_system.py.
+  The portable helper includes six entire grade-thirteen tensor controls.
+  It imports accepted
+  T/AL/AH operations without running their earlier suites, uses no private
+  source, randomness or caches. The fresh portable author run passes all
+  52 exact controls in 1.373 seconds, recorded in the companion output.
+  Independent public-package Review49 reproduced all 52 controls in 1.384 seconds.
+novelty: >
+  Exact opposite-conic system and compatibility reduction within this
+  investigation. No literature-first claim, general Lambda5 classification,
+  existence theorem or physical confirmation is asserted.
+empirical_testability: None new; a mathematical reduction in the specified reconstruction.
+dependencies: [AL1, AL2, AH1, AH2, AQ1, J1, J2, R2]
+confidence: >
+  Independent internal Review49 accepts the full public system, mixed
+  coefficients, Wronskian, elimination signs, entire Gamma tensor and
+  shifted-square identity. This is not external peer review; arithmetic
+  shares the accepted Clifford engine.
+pending_work: >
+  Actual metric/form realization, curvature commutator compatibility, the
+  algebraic hook constraint and higher prolongations remain unresolved.
+  AR excludes zero-w moving points on entire single-conic domains; the
+  divisions here are restricted to nonzero w. Coincident kernels, det M=0, other members,
+  non-invariant odd fields and indefinite real forms are outside this result.
