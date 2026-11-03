@@ -2,7 +2,7 @@
 
 Research into the explicit mathematical rules that might explain physical structure. Finding an underlying “source code” remains an open goal.
 
-The project examines **Chain Theory** and **Geometric Unity** through sourced claims, mathematical reconstructions, proofs and reproducible computations. The [research charter](RESEARCH_PROMPT.md) defines the evidence standards.
+The project examines **Chain Theory** and **Geometric Unity** through sourced claims, mathematical reconstructions, proofs and reproducible computations. The [research charter](RESEARCH_PROMPT.md) combines structural reasoning, thought experiments, useful approximations and empirical testing with explicit evidence standards.
 
 Start with the [plain-language overview](reports/PLAIN-LANGUAGE-SYNOPSIS.md), the [current findings and open questions](reports/SYNTHESIS.md), or the [verification guide](computation/README.md). The [prior-work survey](reports/RELATED-WORK.md) identifies existing proofs and implementations to verify and reuse.
 
