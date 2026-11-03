@@ -18,9 +18,10 @@ result: >
   constant endpoints a=-1/96,-3/832: their complete higher-grade equations
   force zero/simple five-forms, and AH7 excludes the resulting spectrum.
   AN subsequently excludes the opposite-pair constant domains as well.
-  AP later excludes the entire first single c/wGamma conic, including moving
-  odd fields. The opposite conic remains open with AQ's local conservation
-  constraints.
+  AP excludes the entire first single c/wGamma conic, including moving odd
+  fields. AW subsequently excludes the opposite conic and combines with AP
+  to close both smooth single-conic actual-domain cases under the declared
+  assumptions. The pointwise Gram restrictions are retained.
 claim_id: [GU-054]
 result_ids: [AH1, AH2, AH3, AH4, AH5, AH6, AH7, AH8, AH9]
 gaps: [GU-G14, GU-G15]
@@ -161,7 +162,8 @@ confidence: >
   assessment is Review41. All Q controls share T's accepted Clifford engine;
   the separate elementary simplicity proof supplies the universal implication.
 pending_work: >
-  AP settles the first single conic. AR excludes all opposite-pair endpoint
-  contacts and narrows the geometry; AS retains the full remaining system.
-  Actual nonzero-w solutions, critical points, coincident kernels and
-  indefinite cases need separate analysis.
+  AW excludes both single WA Lambda5 conic domains and nonzero Lambda5
+  additions away from factor intersections in the positive-Z1 setting. The
+  recorded pointwise Gram and jet constraints remain valid. Zero-order form
+  feasibility, coincident kernels, det M=0, other operators and indefinite
+  real forms retain separate scope.

@@ -56,7 +56,7 @@ confidence: >
   Euler-curve arguments and reproduces its 13 exact controls. External peer
   review remains outstanding; no actual metric/form existence follows.
 pending_work: >
-  Determine whether any permitted positive germ satisfies the actual five-form
-  Gram constraints, full AS algebraic compatibility and observer metric
-  equations. Critical points at other a, other singular strata, coincident
-  kernels, det M=0 and other real/operator settings are outside this result.
+  AW excludes realization of the permitted scalar germs as full fields in this
+  single-conic setting. The one-variable analytic germ theorem remains valid.
+  Other singular strata, coincident kernels, det M=0 and real/operator
+  settings are separate questions.

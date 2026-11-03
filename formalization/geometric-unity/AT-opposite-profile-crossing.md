@@ -1,6 +1,6 @@
 # AT. The exceptional opposite-conic profile level
 
-At the zero of AR's leading profile coefficient, boundedness selects one analytic scalar germ with a forced norm and slope. An actual field cannot have a critical point at this level. Consequently any actual crossing is regular and obeys an exact scale bound. The positive scalar germs below that bound do not establish existence of a metric, five-form or full solution.
+At the zero of AR's leading profile coefficient, boundedness selects one analytic scalar germ with a forced norm and slope. An actual field cannot have a critical point there, so any actual crossing would be regular and obey an exact scale bound. [AW](AW-lambda5-conic-classification.md) now excludes realization by a full field in this sector. The scalar analytic-germ theorem remains an independent one-variable result.
 
 Code: [AT helper](../../computation/geometric-unity/AT_opposite_profile_crossing.py) and [output](../../computation/geometric-unity/AT_opposite_profile_crossing.out). Record: [AT metadata](../../metrics/geometric-unity/AT-opposite-profile-crossing.yaml). [Independent internal Review50](../../reports/reviews/REVIEW50-GU-AT-2026-11-03.md) accepts AT1–AT3 and independently reproduces the helper. External peer review remains outstanding.
 
@@ -83,7 +83,7 @@ Its local profile is the unique positive germ of AT1, with the norm and slope (A
 
 *Proof.* AT2 excludes a critical point. On a regular patch, AQ gives a smooth positive profile $c(a)$ on a two-sided interval about its attained value. AT1 supplies the conclusion. ∎
 
-The result does not prove that any permitted germ is the Gram tensor of a real five-form, meets AS's full compatibility or is realized by a Z1 metric. It does not exclude critical points at other values of $a$ or classify the remaining conic.
+The permitted positive scalar germs do not realize a full single-conic field: AW excludes such actual domains. AT supplies only its stated scalar and critical-level results; it does not classify other field sectors or settle zero-order form feasibility.
 
 ## Evidence
 
