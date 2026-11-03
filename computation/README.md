@@ -60,9 +60,10 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 ## Completed validation
 
-The current milestone on November 2, 2026 passed all **48/48** selected commands locally with pinned Windows Python 3.12 and the pristine LF upstream snapshot. The suite includes AK's 28 controls and the AH helper's 94 controls, preserving its original 25. [Review38](../reports/reviews/REVIEW38-GU-AK-2026-11-02.md), [Review39](../reports/reviews/REVIEW39-GU-AH-ENDPOINTS-2026-11-02.md) and [Review40](../reports/reviews/REVIEW40-GU-AH8-2026-11-02.md) record the proof assessments and their limits.
+The current AH9 milestone on November 2, 2026 passed all **48/48** selected commands locally with pinned Windows Python 3.12 and the pristine LF upstream snapshot. Its AH helper passes **144/144** exact controls, preserving all 94 controls through AH8. [Review41](../reports/reviews/REVIEW41-GU-AH9-2026-11-02.md) records the proof assessment and its limits.
 
-The earlier [AK classification](https://github.com/JD-Ultima/universalunifyingmath/pull/6) and [AH6–AH7 endpoint results](https://github.com/JD-Ultima/universalunifyingmath/pull/7) each passed all eight push/PR CI jobs before merging. The [prior-work survey](../reports/RELATED-WORK.md) separately records two small upstream reproductions; these are outside the selected suite. No fresh external Lean build is included.
+The preceding [prior-work/AH8 milestone](https://github.com/JD-Ultima/universalunifyingmath/pull/8) passed all 48 local commands and all eight push/PR CI jobs before merging. The [prior-work survey](../reports/RELATED-WORK.md) separately records two small upstream reproductions; these are outside the selected suite. No fresh external Lean build is included.
+
 Per-result proof arguments, imported lemmas and additional controls are documented in the [formalizations](../formalization/) and [internal reviews](../reports/reviews/). For example, [Review36](../reports/reviews/REVIEW36-GU-HH-2026-11-02.md) reproduces HH's exact rank/orbit certificates and separately checks nonunit scaling and higher-jet perturbations.
 
 Command counts are not theorem counts. Passing tests confirms the expected result of each check, including counterexamples. Some checks share an underlying calculation engine. These records do not constitute external peer review or physical confirmation.

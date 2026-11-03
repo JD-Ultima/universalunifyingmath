@@ -30,9 +30,11 @@ We also checked the larger compendium. We asked whether its steps depend on unfi
 
 This proposal uses complicated geometry. We wrote down explicit versions of its objects and equations, checked how the parts fit, and repaired a sign problem. We also found that the printed equation does not follow from the proposed action under the stated assumptions.
 
-For specified versions of the model, we worked out which arrangements can satisfy the equations and which cannot. The newer work completely settles two specified field branches across the positive Z1 models we defined. One allows only a fixed field over flat four-dimensional starting geometry, at one exact parameter relation. The other allows no solution. The larger observer geometry can still be curved. For specified Lambda5 endpoints, another proof rules out whole families obtained by rotating and resizing one fixed mathematical shape. More general changing shapes remain open. A further counting argument limits how many curvature directions can be zero or negative. This rules out some endpoint cases where the starting geometry has few nonzero Ricci directions, provided its metric extends locally as a parallel metric. Separate results exclude several other families of curved starting geometry. One result covers points with zero Ricci curvature but nonzero total curvature. Those are two different ways of measuring curvature.
+For specified versions of the model, we worked out which fields can satisfy the equations. We completely settled two field families across the positive Z1 models we defined. One allows only a fixed field over flat four-dimensional starting geometry, at one exact parameter relation. The other allows no solution. The larger observer geometry can still be curved.
 
-Every such result has a named set of assumptions. Other fields and geometric cases remain open. The detailed map is in the [synthesis](SYNTHESIS.md#geometric-unity).
+For a harder family, called Lambda5, we proved that rotating and resizing one fixed kind of shape cannot give a solution on an open region. A further proof rules out two specified constant-field endpoint cases: their equations force exactly that forbidden kind of shape. Another counting argument limits how many curvature directions can be zero or negative. More general changing fields remain open.
+
+Separate results exclude several families of curved starting geometry, including points with zero Ricci curvature but nonzero total curvature. Those are different ways of measuring curvature. Every result has a named set of assumptions; the [synthesis](SYNTHESIS.md#geometric-unity) gives the precise map.
 
 ## Existing work we can use
 
@@ -45,5 +47,3 @@ The [verification guide](../computation/README.md#completed-validation) shows wh
 Some tests confirm an answer. Others confirm that a proposed rule fails, or that a known error is detected. Passing means the program produced the expected, checked result.
 
 This suite covers selected work. The recorded Lean checks and manuscript builds have their own scope; the selected suite does not rebuild them. Internal reviews include AI-assisted work, and external peer review remains outstanding.
-
-We have a better map of the ideas: parts that fit, parts that need repair, and parts we still need to explore. The next discoveries must earn their place through the same checks.

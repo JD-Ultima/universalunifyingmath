@@ -14,17 +14,20 @@ result: >
   scaling/rotation families. AH8 bounds the nonpositive Ricci index by
   7,10,10,11 in endpoint order, giving additional restrictions on the actual
   local-parallel set Pi. All four constant-endpoint domains avoid Pi above
-  base Ricci rank at most two. No exclusion away from Pi or general
-  varying-Gram classification is inferred.
+  base Ricci rank at most two. AH9 separately excludes BOTH first-pair
+  constant endpoints a=-1/96,-3/832: their complete higher-grade equations
+  force zero/simple five-forms, and AH7 excludes the resulting spectrum.
+  Nonzero-u conic fields and the opposite-pair endpoints remain open.
 claim_id: [GU-054]
-result_ids: [AH1, AH2, AH3, AH4, AH5, AH6, AH7, AH8]
+result_ids: [AH1, AH2, AH3, AH4, AH5, AH6, AH7, AH8, AH9]
 gaps: [GU-G14, GU-G15]
 writeup: formalization/geometric-unity/AH-lambda5-gram.md
-internal_review: reports/reviews/REVIEW40-GU-AH8-2026-11-02.md
+internal_review: reports/reviews/REVIEW41-GU-AH9-2026-11-02.md
 supporting_review:
   - reports/reviews/REVIEW31-GU-AH-2026-11-02.md
   - reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md
   - reports/reviews/REVIEW39-GU-AH-ENDPOINTS-2026-11-02.md
+  - reports/reviews/REVIEW40-GU-AH8-2026-11-02.md
 code:
   - computation/geometric-unity/AH_lambda5_gram.py
   - computation/geometric-unity/AH_lambda5_gram.out
@@ -36,10 +39,13 @@ formalization_status: >
   is present, away from all other non-vector singular factors. The c/wGamma
   phase is i (grades 4/8); w/cGamma phase is 1 (grades 6/10). Real smooth weights
   are not both zero in the chosen kernel chart and are both nonzero at w!=0.
-  AH6-AH8 additionally assume positive Z1 with constant cH,cV>0, lambda<1/4 and
+  AH6-AH9 additionally assume positive Z1 with constant cH,cV>0, lambda<1/4 and
   c=4cV(1-4lambda)>0, on an entire constant-odd zero-u endpoint domain. Its
   nonzero chart weight is absorbed into an arbitrary real five-form; no
   simplicity is assumed. Isolated zero-u points on varying conics are not covered.
+  AH9's full endpoint exclusion concerns ONLY the first c/wGamma pair's two
+  constant endpoints. No higher-grade derivative term is dropped there:
+  Dk has grades3/7 or7/11. Opposite-pair derivatives can have grades5/9.
 proof_status: >
   AH1 derives Sym(Q13*Gamma/i)=(160/3)rs*N*I-(304/3)rs*S for arbitrary real
   five-forms by the two-pattern metric-contraction count and symbolic calibration.
@@ -72,8 +78,14 @@ proof_status: >
   eigenvalues. F4/S3 supply ten negative vertical directions and HV=0 at Pi:
   row1 cannot meet Pi, rows2/3 require a positive-definite horizontal block,
   and row4 allows at most one nonpositive horizontal direction. AH8 is accepted
-  in independent internal Review40. No general varying-shape endpoint exclusion
-  or full-system existence result is claimed.
+  in independent internal Review40. AH9 establishes universal Q5/Q9 sandwich
+  formulas on both first-pair endpoints by the complete symbolic quadratic
+  basis-pair orbit cover. Gamma contractions give nonzero multiples of
+  (Omega^2)4 and (Omega^2)8. Higher-grade vanishing forces Omega^2=N and vector
+  sandwich. An orthogonal-involution eigenbasis argument then forces every
+  nonzero real grade-five Omega to be a simple blade. AH7 gives the endpoint
+  contradiction. Independently accepted in internal Review41. No full-system
+  existence result or general opposite-pair endpoint exclusion is claimed.
 internal_consistency: >
   Exact controls include both real phases, general nondecomposable forms with
   off-diagonal Gram entries, full fourteen-dimensional support, mixed/derivative
@@ -96,6 +108,14 @@ internal_consistency: >
   negative/nonpositive block conventions and the rank-two Ricci-kernel control.
   Pi retains the local-parallel/holonomy definition; no inequality continues
   to other fibre points and no attainable-index sharpness is asserted.
+  AH9 checks all14 external slots with symbolic independent real A,B for
+  intersections0..5 on both copies, including the diagonal case. Signed
+  permutations with an unused-axis determinant repair give the SO14 orbit
+  cover, and polarization proves the all-form identities. General full-support
+  controls, scalar/sandwich grade bounds and retained derivatives check the
+  conventions. A full-support counterexample has scalar square and vanishing
+  wedge contractions but nonzero Q5, so weaker conditions do not replace the
+  vector-sandwich step. The simplicity proof is not replaced by finite tests.
 reproducibility: >
   Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
   computation/geometric-unity/AH_lambda5_gram.py and python -X utf8 -I
@@ -105,23 +125,25 @@ reproducibility: >
   The original helper checks the cyclic form's Gram; AH5 adds integer Clifford
   polarization and a direct phased control on the full form. The recorded runs
   preserve the original 25 Gram controls and AH6-AH7's 49 controls, adding
-  20 AH8 controls. The recorded run passes 94 exact checks in 11.2 seconds.
+  20 AH8 controls and 50 AH9 controls. The recorded run passes 144 exact checks
+  in 11.5 seconds.
   The separate AH5 run passes 14 checks in 5.5 seconds.
 novelty: >
   Bounded necessary stress-spectrum reduction within this investigation for
   the Lambda5 branches, with a full-equation obstruction for one explicit orbit
   on the first pair, necessary constant-endpoint Euler/Gram bounds and a
   fibre-open fixed-spectrum exclusion, plus Ricci-index and parallel-set
-  restrictions. No
-  general five-form classification, full singular
-  classification or literature novelty is claimed.
+  restrictions and the first-pair constant-endpoint exclusion. The common
+  higher-quadratic zero locus is classified for those two copies; no arbitrary
+  five-form orbit classification, full singular classification or literature
+  novelty is claimed.
 empirical_testability: None new; necessary field-equation constraints.
 dependencies: [R2, R4, R6, J1, AF1, AA4, N1, F4, S2, S3, S4]
 confidence: >
   AH1-AH4 and AH5 independently reviewed internally in their separate reports. The
   full-support channel control remains valid, while a remaining equation excludes
-  that orbit on the first branch at nonzero w. No all-five-form exclusion or
-  field solution is asserted. AH6-AH7 are accepted in independent internal Review39; their
+  that orbit on the first branch at nonzero w. No all-five-form nonzero-u
+  exclusion or field solution is asserted. AH6-AH7 are accepted in independent internal Review39; their
   exact controls pass, and algebraic channel feasibility is explicitly
   distinguished from field or metric existence. AH7 concerns constant
   normalized spectra on a relative-open fibre patch; it does not require
@@ -130,7 +152,11 @@ confidence: >
   AH8's bounded inertia proof is accepted in independent internal Review40
   and has passing exact controls. It does not classify fields away from Pi
   or replace the full nonlinear equations.
+  AH9's explicit algebraic proof and derivative separation exclude both
+  first-pair constant endpoint domains through AH7; the independent internal
+  assessment is Review41. All Q controls share T's accepted Clifford engine;
+  the separate elementary simplicity proof supplies the universal implication.
 pending_work: >
-  General varying Gram shapes, remaining nonlinear components and actual constant-endpoint field existence,
-  isolated zero-u points of varying fields, coincident kernels and indefinite
-  cases need separate analysis.
+  General nonzero-u conic fields, varying Gram shapes and actual field existence
+  at the opposite-pair constant endpoints, isolated zero-u points of varying odd
+  fields, coincident kernels and indefinite cases need separate analysis.

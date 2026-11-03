@@ -114,5 +114,59 @@ Fixed SO14/scaling families are excluded; general varying shapes and the full PD
 AH8: all four constant-endpoint domains avoid Pi above rank(Ric_g)<=2.
 Pi means extension to a local parallel metric, not merely pointwise curvature annihilation.
 No inertia inequality, field or exclusion is continued away from Pi.
+[95] AH9 i*c5 overlap0: real phase, kernel and all-slot quadratic support: True
+[96] AH9 i*c5 overlap0: both full symbolic sandwich identities: True
+[97] AH9 i*c5 overlap0: both complete gamma-contraction identities: True
+[98] AH9 i*c5 overlap1: real phase, kernel and all-slot quadratic support: True
+[99] AH9 i*c5 overlap1: both full symbolic sandwich identities: True
+[100] AH9 i*c5 overlap1: both complete gamma-contraction identities: True
+[101] AH9 i*c5 overlap2: real phase, kernel and all-slot quadratic support: True
+[102] AH9 i*c5 overlap2: both full symbolic sandwich identities: True
+[103] AH9 i*c5 overlap2: both complete gamma-contraction identities: True
+[104] AH9 i*c5 overlap3: real phase, kernel and all-slot quadratic support: True
+[105] AH9 i*c5 overlap3: both full symbolic sandwich identities: True
+[106] AH9 i*c5 overlap3: both complete gamma-contraction identities: True
+[107] AH9 i*c5 overlap4: real phase, kernel and all-slot quadratic support: True
+[108] AH9 i*c5 overlap4: both full symbolic sandwich identities: True
+[109] AH9 i*c5 overlap4: both complete gamma-contraction identities: True
+[110] AH9 i*c5 overlap5: real phase, kernel and all-slot quadratic support: True
+[111] AH9 i*c5 overlap5: both full symbolic sandwich identities: True
+[112] AH9 i*c5 overlap5: both complete gamma-contraction identities: True
+  AH9 i*c5: all symbolic A,B overlaps0..5 cover diagonal and mixed basis coefficients.
+[113] AH9 i*w5Gamma overlap0: real phase, kernel and all-slot quadratic support: True
+[114] AH9 i*w5Gamma overlap0: both full symbolic sandwich identities: True
+[115] AH9 i*w5Gamma overlap0: both complete gamma-contraction identities: True
+[116] AH9 i*w5Gamma overlap1: real phase, kernel and all-slot quadratic support: True
+[117] AH9 i*w5Gamma overlap1: both full symbolic sandwich identities: True
+[118] AH9 i*w5Gamma overlap1: both complete gamma-contraction identities: True
+[119] AH9 i*w5Gamma overlap2: real phase, kernel and all-slot quadratic support: True
+[120] AH9 i*w5Gamma overlap2: both full symbolic sandwich identities: True
+[121] AH9 i*w5Gamma overlap2: both complete gamma-contraction identities: True
+[122] AH9 i*w5Gamma overlap3: real phase, kernel and all-slot quadratic support: True
+[123] AH9 i*w5Gamma overlap3: both full symbolic sandwich identities: True
+[124] AH9 i*w5Gamma overlap3: both complete gamma-contraction identities: True
+[125] AH9 i*w5Gamma overlap4: real phase, kernel and all-slot quadratic support: True
+[126] AH9 i*w5Gamma overlap4: both full symbolic sandwich identities: True
+[127] AH9 i*w5Gamma overlap4: both complete gamma-contraction identities: True
+[128] AH9 i*w5Gamma overlap5: real phase, kernel and all-slot quadratic support: True
+[129] AH9 i*w5Gamma overlap5: both full symbolic sandwich identities: True
+[130] AH9 i*w5Gamma overlap5: both complete gamma-contraction identities: True
+  AH9 i*w5Gamma: all symbolic A,B overlaps0..5 cover diagonal and mixed basis coefficients.
+[131] AH9 general form1: scalar/sandwich reversal grade bounds: True
+[132] AH9 i*c5 general form1: both all-slot identities, including full support: True
+[133] AH9 i*w5Gamma general form1: both all-slot identities, including full support: True
+[134] AH9 general form2: scalar/sandwich reversal grade bounds: True
+[135] AH9 i*c5 general form2: both all-slot identities, including full support: True
+[136] AH9 i*w5Gamma general form2: both all-slot identities, including full support: True
+[137] AH9 i*c5: a nonzero derivative remains in its separate allowed grades: True
+[138] AH9 i*w5Gamma: a nonzero derivative remains in its separate allowed grades: True
+[139] AH9 weak-condition counterexample: full support N=4, S=diag(4,4,1x12): True
+[140] AH9 weak-condition counterexample: scalar square and every wedge contraction vanish: True
+[141] AH9 i*c5 weak-condition counterexample: Q9=0 but the stated Q5 slot survives: True
+[142] AH9 i*w5Gamma weak-condition counterexample: Q9=0 but the stated Q5 slot survives: True
+[143] AH9 weak-condition counterexample: scalar square alone does not imply vector sandwich: True
+[144] AH9: all four gamma-contraction coefficients are exact and nonzero: True
+AH9: the complete quadratic basis cover and simplicity proof exclude the two first-pair constant endpoint domains via AH7.
+Opposite-pair derivatives can contain grades5/9; moving odd endpoints remain outside the hypothesis.
 
-94 checks, all True; runtime 11.2 s
+144 checks, all True; runtime 11.5 s
