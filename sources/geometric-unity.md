@@ -1,21 +1,25 @@
 # Geometric Unity (E. Weinstein): sources
 
-Access date for everything below: 2026-10-30. Network policy in this environment: `geometricunity.org`, `geometricunity.nyc3.digitaloceanspaces.com`, `web.archive.org`, `scribd.com`, `fliphtml5.com`, `semanticscholar.org`, `theportal.wiki`, `timothynguyen.org` and `arxiv.org` could not be reached (DNS failure or proxy 403). `github.com` was reachable.
+Initial acquisition: 2026-10-30; follow-up verification: November 2, 2026 (America/New_York), at 2026-11-03 01:04 UTC. The initial network restrictions below describe the original audit, not current availability.
+
+At initial acquisition, `geometricunity.org`, `geometricunity.nyc3.digitaloceanspaces.com`, `web.archive.org`, `scribd.com`, `fliphtml5.com`, `semanticscholar.org`, `theportal.wiki`, `timothynguyen.org` and `arxiv.org` could not be reached (DNS failure or proxy 403). `github.com` was reachable.
 
 ## 1. Primary sources
 
-### [W21] *Geometric Unity: Author's Working Draft, v 1.0*, E. Weinstein, dated Thursday April 1st, 2021 (69 pp.). **Obtained via a third-party mirror. Not verified against the original host.**
+### [W21] *Geometric Unity: Author's Working Draft, v 1.0*, E. Weinstein, dated Thursday April 1st, 2021 (69 pp.). **Initial mirror verified against the author-hosted PDF on November 2, 2026.**
 
 | Field | Value |
 |---|---|
-| Original URL (unreachable) | `https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf` |
+| Original URL | [Author-hosted PDF](https://geometricunity.nyc3.digitaloceanspaces.com/Geometric_Unity-Draft-April-1st-2021.pdf), initially unreachable; retrieved in the follow-up verification |
 | Copy used | `github.com/CarbonEdge/moonstar-physics`, commit `9f39e97b0c6d1a9c61a325f4b63da0d6c6495d89` (2026-10-11), path `papers/pdfs/geometric-unity.pdf` (identical copy at `docs/papers/geometric-unity.pdf`) |
 | sha256 | `3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4` |
 | Size, pages | 2,087,649 bytes; 69 pages; US Letter |
 | PDF metadata | Creator TeX; Producer pdfTeX-1.40.21; CreationDate = ModDate = Thu Apr 1 16:26:28 2021 UTC |
 | Consistency checks | Title page, date and table of contents match the bibliographic data quoted by search engines and Wikipedia ("Author's Working Draft, v 1.0", April 1, 2021). The internal timestamps match the release date. |
-| Status | Treated as the primary text. All Claim-Register locations (section, equation, page) refer to this file. If a hash of the original becomes available and differs, every GU claim location must be re-checked; log that in `reports/CORRECTIONS.md`. |
+| Status | The author-hosted retrieval has exactly the recorded SHA-256 and size. The mirror and original are byte-identical; all existing claim locations and source pins are retained. This resolves the PDF provenance check, not the mathematical or physical claims. |
 | Rights | The front-matter footnote says the work "may not be built upon, renamed, or profited from without express permission of the author". This repository does not redistribute the PDF. We quote short passages for analysis and criticism and transcribe tables only to compare them with our computations. |
+
+Follow-up method: an HTTPS download from the original URL was hashed with PowerShell `Get-FileHash -Algorithm SHA256`. The file is retained locally for verification and is not redistributed. The exact digest and 2,087,649-byte length match the initial mirror. Other acquisition statuses below refer to the original audit unless separately updated.
 
 How it was read: `pdftotext -layout` (poppler) for text. Pages 19, 22, 41, 43, 44 and 51–53 were also rendered with `pdftoppm` at 80–220 dpi to check equations and tables that the text layer garbles. The Shiab equation (9.3) on p. 43 and the bars on SU(3) labels in the p. 53 table were read from the renders.
 
@@ -33,7 +37,7 @@ Search-result snippets list a Martin Wood Lecture on 23 May 2013 and a seminar "
 | Ref | Item | Access | Use |
 |---|---|---|---|
 | [NP21] | T. Nguyen, T. Polya, "A Response to Geometric Unity" (2021) | **Not obtained** (timothynguyen.org blocked; no mirror found) | Search snippets describe it only as a critique in which the undefined Shiab operator is central. We do not attribute any specific argument to it. The objections we test are the obvious ones raised by the draft itself: well-definedness and gauge covariance of the Shiab operator, the complexification Spin(7,7)→U(64,64), and consistency of the field equations. Phase-2 results on these are in `formalization/geometric-unity/C-gauge-shiab.md` and `B-spinor-branching.md`. |
-| — | `CarbonEdge/moonstar-physics` `reviews/geometric-unity/*` | Present in the mirror repository | An AI-generated review. Not read for content and not used. |
+| — | `CarbonEdge/moonstar-physics` `reviews/geometric-unity/*` | Present in the mirror repository | Not used in the original audit. A November 2 follow-up inspected the newer [review](https://github.com/CarbonEdge/moonstar-physics/blob/4c227aba2ffdcc99162695a7c9d147d536cc1e47/reviews/geometric-unity/review.md#L80): its half-spin verdict applies the full Dirac dimension. It is not a proof source for our GU results. |
 
 ## 3. Imported lemmas (standard results used in `formalization/geometric-unity/`)
 

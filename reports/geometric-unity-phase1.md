@@ -8,7 +8,7 @@ The supporting [formalizations](../formalization/geometric-unity/), [computation
 
 ## 1. Sources
 
-- **Obtained: the 2021 draft**, via a third-party GitHub mirror. sha256 `3f28d742…86d4`, 69 pp., PDF timestamps 2021-04-01. The original host was unreachable here, so the copy is unverified against the original.
+- **Obtained: the 2021 draft**, initially via a third-party GitHub mirror. SHA-256 `3f28d742…86d4`, 69 pp., PDF timestamps 2021-04-01. A November 2 follow-up retrieved the author-hosted PDF and confirmed identical bytes; see the [source record](../sources/geometric-unity.md).
 - **Not obtained:** the 2013 Oxford lectures, the 2020 "First Look" video, all transcripts, and Nguyen–Polya (2021). We attribute no content to any of them.
 
 ## 2. Phase 1

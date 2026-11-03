@@ -11,13 +11,18 @@ result: >
   Those selected algebraic bounds are attained by real-form Grams, not by
   constructed observer metrics or full field solutions. AH7 excludes a constant
   normalized Gram spectrum on any nonempty fibre-open patch, including fixed
-  scaling/rotation families. General varying Gram shapes remain open.
+  scaling/rotation families. AH8 bounds the nonpositive Ricci index by
+  7,10,10,11 in endpoint order, giving additional restrictions on the actual
+  local-parallel set Pi. All four constant-endpoint domains avoid Pi above
+  base Ricci rank at most two. No exclusion away from Pi or general
+  varying-Gram classification is inferred.
 claim_id: [GU-054]
-result_ids: [AH1, AH2, AH3, AH4, AH5, AH6, AH7]
+result_ids: [AH1, AH2, AH3, AH4, AH5, AH6, AH7, AH8]
 gaps: [GU-G14, GU-G15]
 writeup: formalization/geometric-unity/AH-lambda5-gram.md
-internal_review: reports/reviews/REVIEW31-GU-AH-2026-11-02.md
+internal_review: reports/reviews/REVIEW40-GU-AH8-2026-11-02.md
 supporting_review:
+  - reports/reviews/REVIEW31-GU-AH-2026-11-02.md
   - reports/reviews/REVIEW34-GU-AH-CYCLIC-2026-11-02.md
   - reports/reviews/REVIEW39-GU-AH-ENDPOINTS-2026-11-02.md
 code:
@@ -31,7 +36,7 @@ formalization_status: >
   is present, away from all other non-vector singular factors. The c/wGamma
   phase is i (grades 4/8); w/cGamma phase is 1 (grades 6/10). Real smooth weights
   are not both zero in the chosen kernel chart and are both nonzero at w!=0.
-  AH6 additionally assumes positive Z1 with constant cH,cV>0, lambda<1/4 and
+  AH6-AH8 additionally assume positive Z1 with constant cH,cV>0, lambda<1/4 and
   c=4cV(1-4lambda)>0, on an entire constant-odd zero-u endpoint domain. Its
   nonzero chart weight is absorbed into an arbitrary real five-form; no
   simplicity is assumed. Isolated zero-u points on varying conics are not covered.
@@ -60,9 +65,15 @@ proof_status: >
   that metric identity over the positive fibre. At tau=0, self-adjointness
   would force H=0 and violate N1; connectedness therefore preserves the actual
   negative trace sign. F4's exact radial trace tends to
-  14b+30/c+135/(2cV)>0, giving a contradiction. AH6-AH7 are pending independent
-  Review39; no general varying-shape endpoint exclusion or full-system
-  existence result is claimed.
+  14b+30/c+135/(2cV)>0, giving a contradiction. AH6-AH7 are accepted in
+  independent internal Review39, which reproduced the 74-control helper.
+  AH8 uses the positive Gram trace budget, or its complement NI-S, to bound
+  the NONPOSITIVE Ricci index. Strictness follows from b>0 even at zero
+  eigenvalues. F4/S3 supply ten negative vertical directions and HV=0 at Pi:
+  row1 cannot meet Pi, rows2/3 require a positive-definite horizontal block,
+  and row4 allows at most one nonpositive horizontal direction. AH8 is accepted
+  in independent internal Review40. No general varying-shape endpoint exclusion
+  or full-system existence result is claimed.
 internal_consistency: >
   Exact controls include both real phases, general nondecomposable forms with
   off-diagonal Gram entries, full fourteen-dimensional support, mixed/derivative
@@ -80,6 +91,11 @@ internal_consistency: >
   different spectra, all four homogeneous characteristic polynomials with
   repeated roots, the leading H^14 zero-trace term and the exact radial scalar
   formula. No eigenframe, field or inequality is analytically continued.
+  AH8 checks complementary Ricci rewrites, all strict rational caps and
+  first-forbidden-index gaps, vertical signs for every lambda<1/4, additive
+  negative/nonpositive block conventions and the rank-two Ricci-kernel control.
+  Pi retains the local-parallel/holonomy definition; no inequality continues
+  to other fibre points and no attainable-index sharpness is asserted.
 reproducibility: >
   Python 3.12, SymPy 1.14.0. Run python -X utf8 -I
   computation/geometric-unity/AH_lambda5_gram.py and python -X utf8 -I
@@ -88,17 +104,19 @@ reproducibility: >
   No off-repository dependency, randomness or numerical parameter fitting.
   The original helper checks the cyclic form's Gram; AH5 adds integer Clifford
   polarization and a direct phased control on the full form. The recorded runs
-  preserve the original 25 Gram controls and add 37 AH6 and 12 AH7 controls, passing 74
-  exact checks in 9.6 seconds. The separate AH5 run passes 14 checks in 5.5 seconds.
+  preserve the original 25 Gram controls and AH6-AH7's 49 controls, adding
+  20 AH8 controls. The recorded run passes 94 exact checks in 11.2 seconds.
+  The separate AH5 run passes 14 checks in 5.5 seconds.
 novelty: >
   Bounded necessary stress-spectrum reduction within this investigation for
   the Lambda5 branches, with a full-equation obstruction for one explicit orbit
   on the first pair, necessary constant-endpoint Euler/Gram bounds and a
-  fibre-open fixed-spectrum exclusion. No
+  fibre-open fixed-spectrum exclusion, plus Ricci-index and parallel-set
+  restrictions. No
   general five-form classification, full singular
   classification or literature novelty is claimed.
 empirical_testability: None new; necessary field-equation constraints.
-dependencies: [R2, R4, R6, J1, AF1, AA4, N1, F4, S4]
+dependencies: [R2, R4, R6, J1, AF1, AA4, N1, F4, S2, S3, S4]
 confidence: >
   AH1-AH4 and AH5 independently reviewed internally in their separate reports. The
   full-support channel control remains valid, while a remaining equation excludes
@@ -109,6 +127,9 @@ confidence: >
   normalized spectra on a relative-open fibre patch; it does not require
   nonzero spectral derivatives at every point. AH6's isotropic pointwise
   exclusion inside constant endpoint domains is separate.
+  AH8's bounded inertia proof is accepted in independent internal Review40
+  and has passing exact controls. It does not classify fields away from Pi
+  or replace the full nonlinear equations.
 pending_work: >
   General varying Gram shapes, remaining nonlinear components and actual constant-endpoint field existence,
   isolated zero-u points of varying fields, coincident kernels and indefinite
