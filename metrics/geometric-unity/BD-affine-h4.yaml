@@ -1,0 +1,79 @@
+result: >
+  No affine-G-invariant full bosonic field exists on the pure H4 branch
+  t=kappa/24,u=0 over a flat positive base, Z1 lambda=1/5, for any
+  positive constant observer scales. The complete invariant derivative
+  kernel has dimension six; eighteen necessary grade5/9 quadratics and
+  exact rank-one monomial elimination force its amplitudes to vanish.
+  The remaining strictly positive grade-one baseline excludes zero.
+claim_id: [GU-054]
+result_ids: [BD1, BD2, BD3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BD-affine-h4.md
+internal_review:
+  - reports/reviews/REVIEW64-GU-BD-2026-11-04.md
+  - reports/reviews/REVIEW65-GU-BD-2026-11-04.md
+code:
+  - computation/geometric-unity/BD_h4_affine.py
+  - computation/geometric-unity/BD_h4_affine.out
+formalization_status: >
+  True dualized bosonic equation, fixed parallel real WA, observer
+  signature (14,0), compact u(128), real smooth fields and constant
+  kappa!=0. Flat positive four-base, Z1 lambda=1/5, constant cH,cV>0.
+  The actual grade-four even tensor is the restriction of an invariant
+  tensor under GL+(4) semidirect R4 acting on G/SO4. R/V leave precisely
+  iC4 in H4 with regular vector block. Affine invariance is an essential
+  extra assumption; neither smoothness nor constant odd coefficients
+  imply it. Hodge duality enters derivative closure only; Q acts on C4.
+proof_status: >
+  BD1 reconstructs BC's full20 invariant tensors,13 weighted hooks and
+  rank7 closure map using all-slot Nomizu action. Its six-dimensional
+  kernel is recomputed, not read from a private receipt. A fixed
+  invertible change and primitive normalization give six amplitudes.
+  Eighteen actual covariant Q5/Q9 output coefficients are computed from
+  the full differentiated cubic by exact matched-mask sums. Their
+  18x21 matrix on raw monomials x_i*x_j has rank18 and kernel dimension
+  three, parametrized by y44,y45,y55. BD2 retains exact rank-one
+  relations: mixed3j products exclude x3!=0; with x3=0 the nonzero
+  y55 coefficient in y33 handles x4=0. On x4!=0, z=x5/x4 gives a
+  quadratic F from y33 and a quartic G from y00*y11-y01^2. Their QQ
+  gcd is one; an explicitly checked integer Bezout identity excludes
+  that chart. Thus all amplitudes are zero. BD3 uses the positive
+  baseline15/(2cV)+7kappa^2/12 and proves positive-scale transfer:
+  covariant Q5 scales by h^-2, Q9 by1 under constant homothety.
+reproducibility: >
+  Run python -X utf8 -I computation/geometric-unity/BD_h4_affine.py
+  with the pinned environment. Author runtime1.829 seconds. The helper
+  imports public BC as a library, without running BC's main or reading
+  private data. It reconstructs the actual invariant and closure bases,
+  compares all18 selected outputs with the complete cubic gradient on
+  three individual controls and one mixed-amplitude polarization
+  control:72 coefficient comparisons, including nonzero grades5/9.
+  The mixed control tests off-diagonal assembly. The helper prints all
+  coefficient rows, exact nullspace, minor, F/G and integer Bezout data.
+  Rank18, nullity3, chart conditions, gcd1 and successful elimination
+  are asserted. Fraction and SymPy QQ arithmetic are exact. The three
+  individual controls and the mixed control support the algebraic
+  extraction; they are not a substitute for computing the full
+  coefficient polynomials or a second independent algebra engine.
+internal_consistency: >
+  All tensor slots are covariant, contraction uses the inverse Gram,
+  and derivatives include the coefficient covector and every form
+  slot. Actual C4 is used in Q(iC4)/i, with no Gamma insertion.
+  The matched-mask coefficient includes the external Gram factor.
+  Mixed raw monomials carry coefficient2Qij. The monomial kernel is
+  not treated as arbitrary amplitude data or a PSD relaxation.
+  Only18 necessary outputs are used; no unproved upper-rank claim
+  for the entire higher-grade map is needed. Neither the scalar-only
+  test nor a failure of a bounded numerical search supplies the proof.
+limitations: >
+  General nonhomogeneous H4 fields, curved bases, other lambda, other
+  hook copies, intersections, singular vector blocks, other operators
+  and indefinite real forms are not excluded. No physical conclusion,
+  literature priority or field construction is asserted. Internal
+  Reviews64-65 accept the public argument and record prior contributions;
+  external peer review remains outstanding.
+dependencies: [AZ1, BA1, BA2, BC1, BC2, R2, V1, F7]
+pending_work: >
+  General noninvariant H4 fields, curved bases, other metric parameters,
+  the other hook copies and coincident kernels retain their own scope.
+  The exact homogeneous elimination does not decide any of these cases.

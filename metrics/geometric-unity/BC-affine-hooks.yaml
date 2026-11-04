@@ -1,0 +1,66 @@
+result: >
+  No affine-G-invariant full field exists on the pure H6Gamma branch
+  t=3kappa/104,u=0 over a flat positive base at Z1 lambda=1/5,
+  for any positive constant observer scales. The necessary invariant
+  closure map has rank22 on23 dimensions; its sole real line has
+  anisotropic nonlinear grade-one moments. The analogous actual H4
+  derivative map has rank7 on13 dimensions and leaves six candidates.
+claim_id: [GU-054]
+result_ids: [BC1, BC2, BC3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BC-affine-hooks.md
+internal_review:
+  - reports/reviews/REVIEW62-GU-BC-2026-11-04.md
+  - reports/reviews/REVIEW63-GU-BC-2026-11-04.md
+code:
+  - computation/geometric-unity/BC_affine_hooks.py
+  - computation/geometric-unity/BC_affine_hooks.out
+  - computation/geometric-unity/BC_h6_closed_generator.json
+  - computation/geometric-unity/BC_quadratic_xcheck.py
+  - computation/geometric-unity/BC_quadratic_xcheck.out
+formalization_status: >
+  True dualized bosonic equation, fixed parallel real WA, observer
+  signature (14,0), compact u(128), real smooth fields and constant
+  kappa!=0. Flat positive four-base, Z1 lambda1/5 and cH,cV>0.
+  The even hook tensor is the restriction of a tensor invariant under
+  GL+(4) semidirect R4 acting on G/SO4. BA/R/V make the indicated hook the
+  entire even kernel, with a regular vector block and zero source.
+  Affine invariance is an essential extra assumption; it is not
+  inferred from smoothness, closure, parallelism or constant odd fields.
+proof_status: >
+  BC1 keeps both even-sign characters0 and15, then averages complete
+  coordinate orbits over24 orientation-preserving signed permutation
+  representatives. Exact six-generator invariance and inverse-Gram
+  hook equations construct the full13/23 invariant hook spaces.
+  All-slot Nomizu derivatives and exact nullspaces, with nonzero
+  square minors, give ranks7/22 and kernels6/1. Actual H4 uses H10
+  dual closure, equivalently form-slot co-closure. BC2 independently
+  reconstructs the1358-entry H6 generator before comparing its JSON
+  certificate. Two Clifford implementations agree on norm-normalized
+  grade-one diagonal moments -13589/13023,-162854/117207,-8522/13023.
+  Horizontal minus trace-free-vertical is positive40553/117207 times
+  the squared norm. An isotropic positive baseline therefore forces
+  zero hook, then contradicts its own positivity. BC3 proves that
+  affine conjugacy and positive homothety preserve the obstruction
+  for every positive observer scale at the same lambda.
+reproducibility: >
+  Run python -X utf8 -I computation/geometric-unity/BC_affine_hooks.py
+  and BC_quadratic_xcheck.py with the pinned environment. The first
+  uses standard-library rational tensor/Clifford arithmetic and exact
+  SymPy QQ elimination; the second uses a separate sorted-generator
+  Clifford product and nested cubic-gradient lookup with no earlier
+  engine import. The main construction also compares42 selected
+  coefficients with a complete cubic-gradient evaluator. Both write
+  stdout only. The explicit JSON generator is fully reconstructed
+  by the main helper rather than trusted as a selected input.
+limitations: >
+  This excludes the affine-invariant H6Gamma ansatz only. General
+  smooth H6Gamma fields, curved bases and other lambda values remain
+  open. BC1 leaves six actual H4 derivative candidates; BD subsequently
+  excludes them in the same affine ansatz. Coincident kernels remain
+  separate. Higher quadratic grades are not assumed solved; failure
+  of the necessary grade-one equation suffices for the stated exclusion.
+  No full ambient H6 curvature rank, physical conclusion or literature
+  priority is claimed. Internal AI-assisted reviews are distinct from
+  external peer review.
+dependencies: [AZ1, BA1, BA2, R2, V1, T2, F7]

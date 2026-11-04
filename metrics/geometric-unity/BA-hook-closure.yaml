@@ -1,0 +1,52 @@
+result: >
+  The full WA derivative on iB*Gamma, B in Hq for q=2,6,10, is
+  equivalent to covariant exterior closure. This supplies necessary
+  closure and coefficient-curvature compatibility for the remaining
+  pure H6Gamma and H4 branches; it does not solve their nonlinear equations.
+claim_id: [GU-054]
+result_ids: [BA1, BA2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BA-hook-closure.md
+internal_review:
+  - reports/reviews/REVIEW61-GU-BA-2026-11-04.md
+code:
+  - computation/geometric-unity/BA_hook_closure.py
+  - computation/geometric-unity/BA_hook_closure.out
+formalization_status: >
+  Observer signature (14,0), compact u(128), real smooth fields,
+  fixed parallel real WA and the reconstructed true dualized equation.
+  BA1 is a tensor identity on Hq for q=2,6,10. BA2 additionally assumes
+  constant kappa!=0 and one pure invariant-odd pair: (3kappa/136,0),
+  (3kappa/104,0), or (kappa/24,0). R/V leave exactly the corresponding
+  even hook; the vector block and all other even blocks are regular.
+proof_status: >
+  A direct Clifford commutator expansion retains the lower q-3 term,
+  which cancels by differentiated contraction. The differentiated
+  alternating identity reduces the other terms to 2(dB-ea wedge D).
+  Contraction has nonzero factors -22,-14,-6. Compact-real phase and
+  reversion separate actual derivative grades 11,7,3 from quadratic
+  grades 1 mod4. Every full field therefore has d_nabla B=0, D=0
+  and F^(T*) wedge B=0 on these branches. H4 uses the dual H10
+  variable, so its equivalent form-slot equation is delta_nabla C4=0.
+reproducibility: >
+  Run python -X utf8 -I computation/geometric-unity/BA_hook_closure.py.
+  Standalone integer bit-mask Clifford arithmetic checks 84 orbit
+  controls in 0.034 seconds in the recorded author run. A D/R
+  generator-span proof and unused-axis determinant repair supply
+  the universal linear coverage. All output slots and Clifford
+  grades are compared; unconstrained controls detect lower-grade terms.
+  The helper writes no files and imports no previous engine or output.
+limitations: >
+  BA2 supplies necessary conditions, not full-field existence or a
+  new unrestricted hook exclusion. AZ already excludes H2Gamma in
+  positive Z1. No H6 curvature rank is supplied. H10 dimension11648
+  exceeds the curvature codomain1274, forcing kernel dimension at
+  least10374; AZ-style curvature injectivity is impossible there.
+  Other pure copies, all coincidences, other operators/real forms,
+  singular vector blocks and non-invariant odd fields remain separate.
+novelty: >
+  Extends the previously recorded H2 derivative identity to the
+  complementary degrees6 and10 in this reconstructed sector.
+  No literature priority or physical confirmation is asserted.
+empirical_testability: None new; a necessary mathematical field condition.
+dependencies: [R2, V1, V3, AX1]
