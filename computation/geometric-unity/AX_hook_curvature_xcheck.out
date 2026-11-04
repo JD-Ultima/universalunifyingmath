@@ -1,0 +1,24 @@
+Nonorthogonal Sym0(R5) basis; direct matrix-entry coordinates.
+Exact integer curvature identities: metric skewness, Bianchi, Ric=-5*g.
+Prime verified by trial division: 104729
+character | raw columns | full modular rank
+00000 94 94
+00011 85 85
+00101 85 85
+00110 85 85
+01001 85 85
+01010 85 85
+01100 85 85
+01111 66 66
+10001 85 85
+10010 85 85
+10100 85 85
+10111 66 66
+11000 85 85
+11011 66 66
+11101 66 66
+11110 66 66
+Combined Alt/Ctr/curvature matrix has full column rank 1274 modulo p.
+Therefore rational/real kernel is zero; curvature is injective on H2.
+This is a maximal-minor certificate, not a deficient-rank inference.
+Runtime 0.251 seconds.

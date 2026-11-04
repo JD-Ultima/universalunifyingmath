@@ -1,0 +1,66 @@
+result: >
+  The entire first pure WA hook H2Gamma admits no smooth full solution over
+  flat-base positive Z1 at lambda=1/5. Covariant closure and full ambient
+  curvature force the even field to vanish, contradicting grade one.
+claim_id: [GU-054]
+result_ids: [AX1, AX2, AX3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AX-hook-curvature.md
+internal_review:
+  - reports/reviews/REVIEW55-GU-AX-2026-11-03.md
+  - reports/reviews/REVIEW56-GU-AX-2026-11-03.md
+code:
+  - computation/geometric-unity/AX_hook_derivative.py
+  - computation/geometric-unity/AX_hook_derivative.out
+  - computation/geometric-unity/AX_hook_curvature.py
+  - computation/geometric-unity/AX_hook_curvature.out
+  - computation/geometric-unity/AX_hook_curvature_xcheck.py
+  - computation/geometric-unity/AX_hook_curvature_xcheck.out
+formalization_status: >
+  True dualized equation, (14,0), compact u(128), fixed parallel real WA,
+  positive constant cH,cV, constant real kappa!=0, invariant odd field
+  t=3kappa/136 and u=0. The even equation leaves exactly iB*Gamma with B in
+  H2; vector determinant is automatically positive and other even blocks
+  invertible. AX1 holds on any positive observer metric. AX2 and AX3 use
+  a flat positive four-base, Z1 and lambda=1/5, locally SL5(R)/SO5.
+proof_status: >
+  AX1: normal-frame commutator and both differentiated hook identities give
+  (D_WA k)_a*Gamma=2[(d_nabla B)_a-ea wedge div_external B]; contraction
+  gives -22 div_external B. The grade-eleven equation is exactly covariant
+  closure. AX2: d_nabla squared acts by coefficient-covector curvature.
+  The full SL5/SO5 ambient map is injective on H2. Exact rational elimination
+  plus sixteen square determinant witnesses give combined rank 1274 after
+  378 hook constraints, hence curvature rank 896 on H2. An independent
+  nonorthogonal-basis integer construction proves maximal rank modulo the
+  prime 104729, which also proves real injectivity. AX3: the even field is
+  zero, contradicting V3's nonzero positive flat-model grade-one baseline.
+internal_consistency: >
+  All tensor slots are covariant. Covector curvature is -R transpose;
+  contraction uses the inverse metric in each non-unit basis. Matrix-coordinate
+  AM curvature is -[[X,Y],Z]/4; the certificate's fourfold scale has the same
+  kernel. Metric skewness, Bianchi and Ric=-5 times the trace metric are
+  checked. Constant-sectional-curvature tensors annihilate all of H2 in
+  the rational control, so no general injectivity claim is inferred.
+reproducibility: >
+  Three standalone helpers, without earlier helper imports or output writes.
+  The derivative helper checks all 12,544 basis columns, a universal linear
+  certificate. The curvature helpers use exact SymPy QQ and independent
+  standard-library modular elimination respectively. Commands are included
+  in scripts/verify.py --recent. Fresh timings and review receipts are
+  recorded in the outputs and linked reviews.
+novelty: >
+  Extends X's declared common-axis exclusion to the entire first pure hook
+  on the specified flat-base model. The symmetric-space geometry and
+  exterior covariant derivative identities are classical. No literature-first
+  theorem, classification of other hooks or physical conclusion is asserted.
+empirical_testability: None new; a conditional mathematical exclusion.
+dependencies: [V3, R2, F7, AM1]
+confidence: >
+  Two different bases and elimination implementations agree on full rank.
+  Internal reviews assess the derivative bridge, coefficient-covector action
+  and scope. External peer review remains outstanding.
+pending_work: >
+  Other pure hook cases, all coincident factors, curved bases, other lambda,
+  other operators and real forms remain open. AX1 supplies a necessary
+  differential equation in the general positive first-hook sector; neither
+  a symbol kernel nor algebraic compatibility proves field existence.

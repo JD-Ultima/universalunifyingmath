@@ -1,5 +1,7 @@
 # V. Intersections on the positive hook lines and a grade-five obstruction
 
+For the later exclusion of the entire first pure hook over flat-base positive Z1 at $\lambda=1/5$, see [AX](AX-hook-curvature.md). The other pure cases and all coincident factors retain their separate scope.
+
 This note resolves the finite intersection set used in T5. It also separates the remaining odd equations on the first hook branch and gives an even-kernel field that passes both invariant trace equations but fails the full odd equation.
 
 Code: `computation/geometric-unity/V_hook_intersections.py` → `.out`. It uses T's compact-real-form helpers and the earlier independent Clifford engine `xcheck_round14.py`, not R or J's evaluator. Record: `metrics/geometric-unity/V-hook-intersections.yaml`. Internal review: `reports/reviews/REVIEW16-GU-V-2026-11-02.md`.
@@ -97,4 +99,4 @@ At $t=3/136$, $u=0$, the field $k_0$ solves the even equation and passes both in
 
 The script checks all 24 squared intersections, vector-block regularity, multiplicities, and the norm formulas with exact rationals. Four separate Clifford controls on the first hook line cover all four paired block types. It verifies (V3.2), anti-Hermitian phases, the even-kernel condition, both scalar traces in the flat-model control, and all 14 derivative symbols of the displayed element.
 
-The catalogue reduces the six line branches to finitely many constant odd pairs. It does not solve the full odd equations for those pairs. In particular, constant $u=0$ hook solutions remain open; (V3.1) displays their tensor and derivative constraints. The coincident hook–$\Lambda^3/\Lambda^5$ cases, nonconstant motion on other singular curves, $\det M=0$, and indefinite real forms also remain open.
+The catalogue reduces the six line branches to finitely many constant odd pairs. It does not solve the full odd equations for those pairs. V3.1 displays the pure first-hook tensor and derivative constraints; AX later excludes that entire branch over flat-base positive Z1 at $\lambda=1/5$. The other pure hook cases and curved-base first-hook problem remain open. The coincident hook–$\Lambda^3/\Lambda^5$ cases, nonconstant motion on other singular curves, $\det M=0$, and indefinite real forms also remain open.
