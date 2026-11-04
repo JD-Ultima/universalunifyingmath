@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 42 |
-| **Self-contained total** | **52** |
+| Geometric Unity computations | 45 |
+| **Self-contained total** | **55** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **58** |
+| **Total with source checks** | **61** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 52 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 55 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -60,7 +60,9 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 ## Completed validation
 
-The AW helper passes **34** new exact controls. [Review53](../reports/reviews/REVIEW53-GU-AW-2026-11-03.md) accepts the normal-moment/conservation proof and independently reproduces the public helper; [Review54](../reports/reviews/REVIEW54-GU-AW-2026-11-03.md) records the phase/scope audit and discloses its contributor's role in the convention controls. The standalone helper checks noncommuting Clifford pairings and exact rational certificates; the universal trace and actual-interval arguments are hand proofs. The current manifest contains 58 commands with optional source checks. These focused runs do not repeat an unchanged full local suite.
+The [AX proof](../formalization/geometric-unity/AX-hook-curvature.md) has three standalone certificates: all **12,544 derivative columns** on the 896-dimensional hook, sixteen exact rational full-rank curvature blocks with nonzero determinant witnesses, and a separate maximal-rank certificate using a different matrix basis and modular elimination. The rational helper also checks the full constant-curvature counterexample to general injectivity. [Review55](../reports/reviews/REVIEW55-GU-AX-2026-11-03.md) and [Review56](../reports/reviews/REVIEW56-GU-AX-2026-11-03.md) record the new reproductions and scope audits. The current manifest has 55 self-contained commands, 61 with optional source checks.
+
+The AW helper passes **34** new exact controls. [Review53](../reports/reviews/REVIEW53-GU-AW-2026-11-03.md) accepts the normal-moment/conservation proof and independently reproduces the public helper; [Review54](../reports/reviews/REVIEW54-GU-AW-2026-11-03.md) records the phase/scope audit and discloses its contributor's role in the convention controls. The standalone helper checks noncommuting Clifford pairings and exact rational certificates; the universal trace and actual-interval arguments are hand proofs. That milestone contained 58 commands with optional source checks. Its focused runs did not repeat an unchanged full local suite.
 
 The preceding [AT/AU/AV milestone](https://github.com/JD-Ultima/universalunifyingmath/pull/15) passed 13, 24 and 13 new exact controls and all eight CI jobs, each running its 51-command self-contained suite. [Review50](../reports/reviews/REVIEW50-GU-AT-2026-11-03.md), [Review51](../reports/reviews/REVIEW51-GU-AU-2026-11-03.md) and [Review52](../reports/reviews/REVIEW52-GU-AV-2026-11-03.md) retain the analytic, metric-jet and independent Clifford convention assessments.
 

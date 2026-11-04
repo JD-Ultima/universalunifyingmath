@@ -35,4 +35,6 @@ dependencies: [D5, F7, R2, T1, V3]
 confidence: >
   Universal symbolic identity on the diagonal family, extended by equivariance and symmetric diagonalization;
   independently reviewed internally. No derivative equation is replaced by a pointwise sample.
-  Arbitrary H2Gamma fields, other kernels and indefinite real forms remain open.
+  AX later excludes arbitrary H2Gamma fields on this same flat-base positive Z1 model at
+  lambda=1/5 by derivative and curvature compatibility. Curved bases, other kernels
+  and indefinite real forms remain outside that exclusion.

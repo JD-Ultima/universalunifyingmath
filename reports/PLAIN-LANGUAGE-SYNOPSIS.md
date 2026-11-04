@@ -36,6 +36,8 @@ For two specified field families, we found every allowed solution in the positiv
 
 The harder Lambda5 family has two specified branches. We have now ruled out both in the declared positive Z1 model, including fields that change across the geometry. For the second branch, its field equations force one formula for the form’s size, while conservation requires an incompatible formula. Both requirements cannot hold together. This closes those cases; other field families and different assumptions still need investigation.
 
+For another candidate, called the first pure hook, we checked all 896 possible directions rather than a convenient small family. In the specified flat-base model, its derivative equation and the observer geometry force the field to be zero. Another part of the equation requires it to do something nonzero. That contradiction rules out this candidate in that model; it does not rule out every hook or curved starting geometry.
+
 We also extended a known family of working fields across complete global models, including versions with a periodic four-dimensional starting space. Their geodesics—the geometry's straightest paths—have no artificial stopping point. For fixed model parameters, an exact formula gives zero, one or two constant field configurations in the regular family. These are mathematical examples within our reconstruction; distinct physical states have not been established.
 
 Separate results exclude several families of curved starting geometry, including points with zero Ricci curvature but nonzero total curvature. Those are different ways of measuring curvature. Every result has a named set of assumptions; the [synthesis](SYNTHESIS.md#geometric-unity) gives the precise map.

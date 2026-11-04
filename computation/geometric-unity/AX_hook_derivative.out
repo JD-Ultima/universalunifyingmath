@@ -1,0 +1,5 @@
+896 explicit integer basis tensors satisfy both hook identities.
+12544/12544 derivative columns match the full commutator formula.
+All contracted columns give -22 times the external divergence.
+This certifies a linear identity on all first hook jets, not fields.
+Runtime 4.267 seconds.

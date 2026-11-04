@@ -1,6 +1,6 @@
 # X. A pointwise obstruction for a symmetric hook family with one common axis
 
-V leaves the pure $H_2\Gamma$ branch open after separating its odd equations by grade. This note excludes a declared family inside that branch over the flat-base Z1 model. The calculation is symbolic in all thirteen eigenvalues; the extension to nondiagonal tensors uses equivariance, not parameter sampling.
+[AX](AX-hook-curvature.md) later excludes the entire pure $H_2\Gamma$ branch over flat-base positive Z1 at $\lambda=1/5$ using its derivative and curvature equations. This earlier note excludes a declared family by a separate pointwise argument. The calculation is symbolic in all thirteen eigenvalues; the extension to nondiagonal tensors uses equivariance, not parameter sampling.
 
 Code: `computation/geometric-unity/X_symmetric_hook.py` → `.out`. It uses T's compact-real-form helpers and the earlier independent Clifford engine. Record: `metrics/geometric-unity/X-symmetric-hook.yaml`. Independently reviewed in `reports/reviews/REVIEW18-GU-X-2026-11-02.md`; all executable checks were reproduced. This is internal review, not external peer review.
 
@@ -67,4 +67,4 @@ This is a pointwise obstruction, so allowing $S$ or the axis $r$ to vary does no
 
 The script checks (X3) with thirteen independent real symbolic eigenvalues, then imposes their trace-zero relation and verifies the even-kernel condition and norm. A rational nondiagonal rotation is a separate convention check. It also checks all fourteen derivative symbols on that control, the positive flat-model scalar and the nonzero vector-block determinant.
 
-The result does not classify arbitrary $H_2\Gamma$ fields, the other hook branches or coincident kernels. It does not address nonconstant motion on other singular curves, $\det M=0$, or indefinite real forms. A useful next question is whether a larger declared tensor family has an anisotropy obstruction or can pass the remaining grade-one and grade-five equations. Passing those pointwise equations would still leave the grade-eleven differential equation.
+The result does not classify arbitrary $H_2\Gamma$ fields, the other hook branches or coincident kernels. It does not address nonconstant motion on other singular curves, $\det M=0$, or indefinite real forms. AX supplies the later full-branch exclusion on this flat model. The identities here remain useful algebraic information; their extension to curved-base fields would still require the full tensor and differential equations.
