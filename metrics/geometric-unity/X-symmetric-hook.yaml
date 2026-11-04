@@ -35,6 +35,6 @@ dependencies: [D5, F7, R2, T1, V3]
 confidence: >
   Universal symbolic identity on the diagonal family, extended by equivariance and symmetric diagonalization;
   independently reviewed internally. No derivative equation is replaced by a pointwise sample.
-  AX5 later excludes arbitrary H2Gamma fields over every smooth positive four-base with Z1 at
-  lambda=1/5, using covariant closure, the flat-model certificate and fibrewise metric density.
-  Other lambda, other kernels and indefinite real forms remain outside that exclusion.
+  AZ later excludes arbitrary first-pure-hook H2Gamma fields over every smooth positive four-base
+  with positive Z1 for all lambda<1/4, using covariant closure, a polynomial flat-model certificate
+  and fibrewise metric density. Other kernels and indefinite real forms remain outside it.

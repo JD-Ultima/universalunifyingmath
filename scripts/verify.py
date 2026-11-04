@@ -70,6 +70,7 @@ RECENT = [
     ("geometric-unity/AX_hook_derivative.py", []),
     ("geometric-unity/AX_hook_curvature.py", []),
     ("geometric-unity/AX_hook_curvature_xcheck.py", []),
+    ("geometric-unity/AZ_flat_lambda.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),

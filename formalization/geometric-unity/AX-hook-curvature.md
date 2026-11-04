@@ -1,5 +1,7 @@
 # AX. Curvature excludes the first pure hook on positive Z1 at $\lambda=1/5$
 
+[AZ](AZ-first-hook-classification.md) subsequently extends the exclusion to every positive Z1 parameter $\lambda<1/4$. This note preserves the earlier $\lambda=1/5$ proofs and their exact inputs.
+
 The first pure hook candidate in [V3](V-hook-intersections.md#v3-the-grade-five-equation-is-not-automatic) admits no smooth full solution over any smooth positive four-base with reconstructed positive Z1 at $\lambda=1/5$. The argument covers its entire 896-dimensional even kernel, extending [X](X-symmetric-hook.md)'s exclusion of a specified common-axis family.
 
 The derivative equation forces covariant closure of a hook tensor. An exact, computer-assisted calculation proves that the flat-base observer's ambient curvature annihilates no nonzero such tensor. An exact radial rescaling then gives curvature injectivity on a dense open subset of each positive fibre for an arbitrary smooth base. Continuity forces the actual field to vanish on its own domain, contradicting the grade-one equation.
@@ -226,4 +228,4 @@ As in AX3, the full grade-five equation remains a necessary equation; derivative
 
 AX4–AX5 are hand scaling, continuity and fibre-analytic arguments using the unchanged AX1–AX2 certificates and AU1's metric identity. They add no executable check. Smooth base metrics and fields suffice; the analytic object is the metric-only matrix as a function of a fixed fibre. Curvature injectivity is asserted on an open dense subset of each fibre, not at every observer point.
 
-AX5 closes the first pure hook at $\lambda=1/5$ over arbitrary smooth positive four-bases. The other five pure hook cases, all hook–Lambda intersections, other $\lambda$, operators and real forms remain outside the exclusion. In particular AW does not remove the coincident hook–Lambda5 candidates. Neither a symbol-kernel description nor a formal curvature constraint constructs a field. No literature-first or physical claim is made.
+AX5 closes the first pure hook at $\lambda=1/5$ over arbitrary smooth positive four-bases. AZ supplies the subsequent full positive-parameter result. The other five pure hook cases, all hook–Lambda intersections, other operators and real forms remain outside that classification. In particular AW does not remove the coincident hook–Lambda5 candidates. Neither a symbol-kernel description nor a formal curvature constraint constructs a field. No literature-first or physical claim is made.

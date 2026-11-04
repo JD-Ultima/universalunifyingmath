@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 45 |
-| **Self-contained total** | **55** |
+| Geometric Unity computations | 46 |
+| **Self-contained total** | **56** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **61** |
+| **Total with source checks** | **62** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 55 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 56 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -60,7 +60,9 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 ## Completed validation
 
-The [AX proof](../formalization/geometric-unity/AX-hook-curvature.md) has three standalone certificates: all **12,544 derivative columns** on the 896-dimensional hook, sixteen exact rational full-rank curvature blocks with nonzero determinant witnesses, and a separate maximal-rank certificate using a different matrix basis and modular elimination. The rational helper also checks the full constant-curvature counterexample to general injectivity. [Review55](../reports/reviews/REVIEW55-GU-AX-2026-11-03.md) and [Review56](../reports/reviews/REVIEW56-GU-AX-2026-11-03.md) record the new reproductions and scope audits. The curved-base extension AX4–AX5 is a hand proof using those unchanged certificates; [Review57](../reports/reviews/REVIEW57-GU-AX-2026-11-03.md) and [Review58](../reports/reviews/REVIEW58-GU-AX-2026-11-03.md) assess its full-metric rescaling, fibre density and Euler contradiction. No helper or recorded output changed, and no old local computation was rerun for the extension. The current manifest remains 55 self-contained commands, 61 with optional source checks.
+The [AZ classification](../formalization/geometric-unity/AZ-first-hook-classification.md) adds a standalone exact affine-geometry and polynomial-parameter certificate. Ten symbolic maximal minors cover five character-weight orbits; their common roots reduce the remaining positive parameters to three exact cases, all with full rational rank. The full parameter range follows from that exhaustive cover, not a rank sample. [Review59](../reports/reviews/REVIEW59-GU-AZ-2026-11-03.md) and [Review60](../reports/reviews/REVIEW60-GU-AZ-2026-11-03.md) assess the model, certificate and general-base field argument. The current manifest has 56 self-contained commands, 62 with optional source checks.
+
+The [AX proof](../formalization/geometric-unity/AX-hook-curvature.md) has three standalone certificates: all **12,544 derivative columns** on the 896-dimensional hook, sixteen exact rational full-rank curvature blocks with nonzero determinant witnesses, and a separate maximal-rank certificate using a different matrix basis and modular elimination. The rational helper also checks the full constant-curvature counterexample to general injectivity. [Review55](../reports/reviews/REVIEW55-GU-AX-2026-11-03.md) and [Review56](../reports/reviews/REVIEW56-GU-AX-2026-11-03.md) record the new reproductions and scope audits. The curved-base extension AX4–AX5 is a hand proof using those unchanged certificates; [Review57](../reports/reviews/REVIEW57-GU-AX-2026-11-03.md) and [Review58](../reports/reviews/REVIEW58-GU-AX-2026-11-03.md) assess its full-metric rescaling, fibre density and Euler contradiction. No helper or recorded output changed, and no old local computation was rerun for the extension. That milestone retained 55 self-contained commands, 61 with optional source checks.
 
 The AW helper passes **34** new exact controls. [Review53](../reports/reviews/REVIEW53-GU-AW-2026-11-03.md) accepts the normal-moment/conservation proof and independently reproduces the public helper; [Review54](../reports/reviews/REVIEW54-GU-AW-2026-11-03.md) records the phase/scope audit and discloses its contributor's role in the convention controls. The standalone helper checks noncommuting Clifford pairings and exact rational certificates; the universal trace and actual-interval arguments are hand proofs. That milestone contained 58 commands with optional source checks. Its focused runs did not repeat an unchanged full local suite.
 
