@@ -55,11 +55,12 @@ reproducibility: >
   by the main helper rather than trusted as a selected input.
 limitations: >
   This excludes the affine-invariant H6Gamma ansatz only. General
-  smooth H6Gamma fields, curved bases, other lambda values, the six
-  actual H4 derivative candidates and all coincident kernels remain
-  open. Higher quadratic grades are not assumed solved; failure of
-  the necessary grade-one equation suffices for the stated exclusion.
-  No full ambient H6 curvature rank, physical conclusion or
-  literature-priority claim is made. Internal AI-assisted reviews
-  are distinct from external peer review.
+  smooth H6Gamma fields, curved bases and other lambda values remain
+  open. BC1 leaves six actual H4 derivative candidates; BD subsequently
+  excludes them in the same affine ansatz. Coincident kernels remain
+  separate. Higher quadratic grades are not assumed solved; failure
+  of the necessary grade-one equation suffices for the stated exclusion.
+  No full ambient H6 curvature rank, physical conclusion or literature
+  priority is claimed. Internal AI-assisted reviews are distinct from
+  external peer review.
 dependencies: [AZ1, BA1, BA2, R2, V1, T2, F7]

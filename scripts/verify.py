@@ -74,6 +74,7 @@ RECENT = [
     ("geometric-unity/BA_hook_closure.py", []),
     ("geometric-unity/BC_affine_hooks.py", []),
     ("geometric-unity/BC_quadratic_xcheck.py", []),
+    ("geometric-unity/BD_h4_affine.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),

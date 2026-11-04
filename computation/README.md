@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 49 |
-| **Self-contained total** | **59** |
+| Geometric Unity computations | 50 |
+| **Self-contained total** | **60** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **65** |
+| **Total with source checks** | **66** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 59 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 60 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -62,7 +62,7 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 The new [BA closure identity](../formalization/geometric-unity/BA-hook-closure.md) has a standalone 84-case exact Clifford certificate. A generator-span and symmetry argument establishes complete linear coverage; the helper retains every derivative grade and output slot. [Review61](../reports/reviews/REVIEW61-GU-BA-2026-11-04.md) independently audits the proof and reproduces the controls. BA gives necessary conditions on two further pure hooks.
 
-The [BC certificate](../formalization/geometric-unity/BC-affine-hooks.md) constructs their complete affine-invariant spaces and derivative kernels, then excludes the remaining H6 line by exact nonlinear grade-one moments. A separate Clifford implementation checks those moments against an explicit generator that the main helper independently reconstructs. [Review62](../reports/reviews/REVIEW62-GU-BC-2026-11-04.md) and [Review63](../reports/reviews/REVIEW63-GU-BC-2026-11-04.md) assess the homogeneous proof and its limits; the unrestricted fields remain open.
+The [BC certificate](../formalization/geometric-unity/BC-affine-hooks.md) constructs their complete affine-invariant spaces and derivative kernels, then excludes the remaining H6 line by exact nonlinear grade-one moments. A separate Clifford implementation checks those moments against an explicit generator that the main helper independently reconstructs. [Review62](../reports/reviews/REVIEW62-GU-BC-2026-11-04.md) and [Review63](../reports/reviews/REVIEW63-GU-BC-2026-11-04.md) assess the homogeneous proof and its limits. [BD](../formalization/geometric-unity/BD-affine-h4.md) then excludes the actual H4 invariant kernel using eighteen necessary quadratic coefficients and an exact Bezout identity. [Review64](../reports/reviews/REVIEW64-GU-BD-2026-11-04.md) and [Review65](../reports/reviews/REVIEW65-GU-BD-2026-11-04.md) assess that separate certificate; unrestricted fields in both branches remain open.
 
 The [AZ classification](../formalization/geometric-unity/AZ-first-hook-classification.md) uses exact affine geometry, ten polynomial maximal minors and all fifteen exceptional rational rank cases. These cover the entire positive parameter range rather than extrapolating sampled ranks. [Review59](../reports/reviews/REVIEW59-GU-AZ-2026-11-03.md) and [Review60](../reports/reviews/REVIEW60-GU-AZ-2026-11-03.md) assess its certificate and general-base field argument. Before this milestone, all eight Linux/Windows Python3.12/3.13 jobs passed its 56-command suite in [PR #19](https://github.com/JD-Ultima/universalunifyingmath/pull/19).
 
