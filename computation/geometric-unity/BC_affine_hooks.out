@@ -1,0 +1,33 @@
+Flat positive Z1: lambda=1/5, cH=2, cV=1; all tensor slots covariant.
+Gram diagonal: ('2', '2', '2', '2', '8', '8', '8', '8', '8', '8', '8', '24', '48', '16/5')
+DEGREE 4
+Even-sign candidate columns 1736 finite subgroup invariant dimension 80
+Exact six-generator invariance rank 60 invariant dimension 20
+Invariant hook constraints rank 7 hook dimension 13
+Closure rank: 7 ; kernel dimension: 6
+Nonzero minor rows (external index, form bitmask): ((0, 4094), (0, 11773), (0, 12215), (0, 16369), (4, 10751), (4, 15347), (4, 15356))
+Nonzero minor columns: (0, 1, 2, 3, 4, 5, 6)
+Nonzero minor determinant: -284375/2918332558536081408
+Kernel amplitude vectors: [((0, '374'), (1, '-30'), (2, '-99'), (5, '30'), (7, '65')), ((0, '34'), (1, '28'), (2, '-9'), (5, '24'), (8, '-26')), ((0, '544'), (1, '-150'), (2, '-144'), (5, '150'), (9, '65')), ((3, '60'), (4, '28'), (6, '9'), (10, '35')), ((0, '68'), (1, '-425'), (2, '-18'), (5, '100'), (11, '260')), ((0, '68'), (1, '-425'), (2, '-18'), (5, '100'), (12, '260'))]
+All six isotropy generators, both weighted hook traces and full derivative slots verified.
+H4 uses dual H10 closure: Hodge square, connection commutation and delta equivalence verified.
+DEGREE 6
+Even-sign candidate columns 5268 finite subgroup invariant dimension 216
+Exact six-generator invariance rank 186 invariant dimension 30
+Invariant hook constraints rank 7 hook dimension 23
+Closure rank: 22 ; kernel dimension: 1
+Nonzero minor rows (external index, form bitmask): ((0, 443), (0, 494), (0, 1150), (0, 1522), (0, 1780), (0, 1976), (0, 8318), (0, 8413), (0, 8615), (0, 8690), (0, 9652), (0, 9937), (4, 758), (4, 761), (4, 1269), (4, 1274), (4, 8437), (4, 8442), (4, 8915), (4, 8924), (4, 8933), (4, 8938))
+Nonzero minor columns: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22)
+Nonzero minor determinant: -132966527198300209152000
+Kernel amplitude vectors: [((1, '4320'), (4, '-4320'), (7, '-920'), (8, '109'), (9, '-161'), (12, '-230'), (13, '644'), (14, '-322'), (15, '-24'), (20, '-1920'))]
+All six isotropy generators, both weighted hook traces and full derivative slots verified.
+Independently reconstructed H6 generator equals the explicit JSON certificate.
+H6 closed generator: nonzero coefficients 1358 ; norm squared 14650875/4096
+Q1 metric-relative diagonal on H4, Sym0(9), I: ('-15287625/4096', '-10178375/2048', '-4793625/2048')
+Norm-normalized diagonal: ('-13589/13023', '-162854/117207', '-8522/13023')
+All14 diagonal coefficients and trace Q1=-(52/3)*norm squared verified.
+42 selected coefficients agree with the complete cubic-gradient evaluator.
+Affine-invariant pure H6Gamma: nonzero fields have anisotropic Q1; zero field has positive baseline.
+H4 remains a six-dimensional linear candidate family; nonlinear sufficiency is not asserted.
+No exclusion of arbitrary nonhomogeneous fields, other parameters or coincident kernels.
+Runtime 8.144 seconds.

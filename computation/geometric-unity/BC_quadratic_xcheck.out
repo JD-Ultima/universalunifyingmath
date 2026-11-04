@@ -1,0 +1,11 @@
+1358 real all-covariant entries: degree6, unique slots, Alt=0, Ctr=0.
+Independent sorted-generator products; nested cubic gradient; only H0,O01,I targets.
+Volume square and hand 312Phi normalization verified.
+Primitive norm^2: 14650875/4096
+Q1 / metric, H0 O01 I: -15287625/4096 -10178375/2048 -4793625/2048
+Norm-normalized: -13589/13023 -162854/117207 -8522/13023
+SO4-weighted trace: -63487125/1024 = -(52/3) norm^2.
+All three moments differ: no nonzero real amplitude has isotropic Q1.
+Input SHA-256: 2cac3aa23dac4cdedfcdcf030c8b866f4c6dc8bed583a4006377b3734b2f0eb1
+No closure rank, full Clifford output or field solution was recomputed.
+Runtime 0.404 seconds.

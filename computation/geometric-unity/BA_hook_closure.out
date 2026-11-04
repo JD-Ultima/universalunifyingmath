@@ -1,0 +1,13 @@
+PASS k 2 type D : all14 covectors, every output slot, lower-grade cancellation and contraction
+PASS k 2 type R : all14 covectors, every output slot, lower-grade cancellation and contraction
+Hk dimension 896 ; converted grade 3 ; actual derivative grade 11 ; contraction coefficient -22
+PASS k 6 type D : all14 covectors, every output slot, lower-grade cancellation and contraction
+PASS k 6 type R : all14 covectors, every output slot, lower-grade cancellation and contraction
+Hk dimension 36608 ; converted grade 7 ; actual derivative grade 7 ; contraction coefficient -14
+PASS k 10 type D : all14 covectors, every output slot, lower-grade cancellation and contraction
+PASS k 10 type R : all14 covectors, every output slot, lower-grade cancellation and contraction
+Hk dimension 11648 ; converted grade 11 ; actual derivative grade 3 ; contraction coefficient -6
+84 exact orbit controls passed; generator span and SO14 covariance supply universality.
+Lower-grade terms on unconstrained inputs are not silently dropped.
+No curvature rank, quadratic coefficient or full-field existence claim.
+Runtime 0.034 seconds.
