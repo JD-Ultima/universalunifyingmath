@@ -1,0 +1,98 @@
+result: >
+  The first pure WA hook t=3kappa/136, u=0 admits no smooth full bosonic
+  solution on a nonempty open observer domain over any smooth positive
+  four-base, for reconstructed positive Z1 with any lambda<1/4.
+  The flat observer's full ambient curvature-wedge map has rank 896 on H2
+  for every mu=1/(1-4lambda)>0. Fixed-parameter radial rescaling and
+  metric-only fibre density force the actual hook field to vanish;
+  grade one then contradicts the negative Euler Ricci value.
+claim_id: [GU-054]
+result_ids: [AZ1, AZ2, AZ3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/AZ-first-hook-classification.md
+internal_review:
+  - reports/reviews/REVIEW59-GU-AZ-2026-11-03.md
+  - reports/reviews/REVIEW60-GU-AZ-2026-11-03.md
+code:
+  - computation/geometric-unity/AZ_flat_lambda.py
+  - computation/geometric-unity/AZ_flat_lambda.out
+formalization_status: >
+  Smooth positive four-base, reconstructed Z1, constant cH,cV>0 and
+  lambda<1/4; observer signature (14,0), compact u(128), true dualized
+  equation, fixed parallel real WA, real smooth fields, and constant
+  kappa!=0. Fix the invariant odd field t=3kappa/136, u=0 on an open
+  observer domain. R2 leaves exactly iB*Gamma with B in H2, with
+  det M=(1313/17)kappa^4>0 and every other even block invertible.
+  No field or base analyticity, parallel-form, support, boundary,
+  compactness or radial-domain-access assumption is imposed.
+proof_status: >
+  AZ1 identifies the flat observer with the affine homogeneous space,
+  using generator tangent (v,S)->(v,-2S), metric gH=2I and
+  gV=4[tr(ST)-lambda tr(S)tr(T)]. Torsion-free metric Nomizu maps give
+  every ambient curvature channel; arbitrary positive scales are
+  recovered by homothety and coordinate dilation. AZ2 constructs the
+  all-covariant alternating, inverse-Gram contraction and -R-transpose
+  curvature-wedge matrix, affine in mu. Sixteen character blocks have
+  five coordinate-permutation weight orbits. Two exact polynomial
+  maximal minors per representative have possible common positive
+  roots only at mu=1,3,7. All fifteen rational exceptional blocks have
+  explicitly asserted maximal rank. Thus combined rank is 1274 and
+  restricted hook rank is 896 for every positive mu. AZ3 applies AX1
+  covariant closure and its curvature integrability, then AX4's exact
+  radial lift at the same fixed lambda. Full metric two-jets tend to
+  the affine flat model. One global maximal minor persists at a finite
+  radial point; no curved sign-block symmetry is assumed. Fibre-analytic
+  density and continuity make B zero on each actual open fibre slice.
+  V3 then requires Ric=(bH/6)g with bH=201kappa^2/1156>0, whereas AU1
+  gives Ric(E,E)=-1 and |E|^2=4cV(1-4lambda)>0.
+internal_consistency: >
+  sym(vw) is (vw^T+wv^T)/2, and R(S,v)=-Lambda_(Sv), not
+  -(Lambda_S)v. The symmetric generator S is not its actual fibre
+  tangent -2S. All raw B slots are covariant; contraction uses the
+  inverse Gram, whose scalar vertical entry is mu/16. Curvature on the
+  coefficient covector is -R transpose. Row normalization clears only
+  constant rational factors, never a parameter polynomial. Coordinate
+  permutations may mix the diagonal basis but still intertwine
+  same-weight character spaces. The entire positive-Z1 range is
+  mu>0, including negative lambda. SL5/SO5 is used only at mu=5;
+  the radial limit at other parameters is the full affine model.
+  The minor and finite witness may depend on the base point. Actual
+  fibre slices may be disconnected. Neither fields nor their
+  equations are continued outside their actual domain.
+reproducibility: >
+  Run python -X utf8 -I computation/geometric-unity/AZ_flat_lambda.py
+  from the repository root with the pinned Python/SymPy environment.
+  The recorded author run completes in 43.867 seconds. The standalone
+  exact helper checks zero torsion, symbolic metric compatibility,
+  Bianchi and general Ricci; all 1274 curvature columns at mu=5 match
+  the explicit SPD5 isometry and -1/4 double-commutator normalization.
+  It records ten exact polynomial determinants, selected row lists,
+  five gcd covers and all fifteen exceptional rational rank checks.
+  The finite parameters 5 and 2 only choose rows; polynomial arithmetic
+  supplies the parameter cover. No floating-point or modular rank is
+  used. Model, derivative, parameter-degree, symmetry, radial, analytic
+  density and field-continuity arguments retain their stated hand
+  proofs. This is not an independent symbolic or observer metric engine.
+novelty: >
+  Extends AX's first pure-hook exclusion from lambda=1/5 to every
+  positive Z1 parameter and every smooth positive four-base within
+  the same reconstructed sector. The affine homogeneous geometry and
+  exterior covariant derivative methods are classical. No
+  literature-first theorem, general hook classification or physical
+  conclusion is asserted.
+empirical_testability: None new; a conditional mathematical exclusion.
+dependencies: [R2, V3, AX1, AX4, AU1, AM1]
+confidence: >
+  Exact parameter certificates support a separately derived homogeneous
+  model and the previously reviewed derivative and radial mechanisms.
+  Internal Reviews59-60 accept the complete argument and freshly
+  reproduce the public helper in 41.502 and 35.218 seconds. Their
+  earlier private contributions and shared symbolic implementation are
+  disclosed. These AI-assisted reviews are distinct from external peer
+  review, which remains outstanding.
+pending_work: >
+  The other five pure hooks, all coincident hook-Lambda factors, singular vector blocks,
+  other operators, non-invariant odd fields and indefinite real forms
+  retain their separate scope. No grade-five zero-locus classification
+  or field construction is supplied, and AW does not eliminate the
+  hook-Lambda5 intersection candidates.

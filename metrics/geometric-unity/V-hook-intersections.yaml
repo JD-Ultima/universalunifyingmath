@@ -36,6 +36,6 @@ dependencies: [D2, D5, F7, I2, R2, R6, T1, T2, T4, T5]
 confidence: >
   The exact finite catalogue, norm formulas and explicit algebraic certificate passed independent internal review.
   The derivative d0k is retained as a separate grade-11 equation. Rejecting one element and its nonzero
-  multiples does not classify arbitrary hook fields. AX later excludes the entire pure first hook
-  over every smooth positive four-base with Z1 at lambda=1/5. Other pure cases, other lambda, intersections, other
-  singular curves, det M=0 and indefinite real forms remain open.
+  multiples does not classify arbitrary hook fields. AZ later excludes the entire pure first hook
+  over every smooth positive four-base with Z1 for all lambda<1/4. The other five pure cases,
+  intersections, other singular curves, det M=0 and indefinite real forms remain open.
