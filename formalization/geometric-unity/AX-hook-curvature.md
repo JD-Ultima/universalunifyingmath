@@ -1,12 +1,14 @@
-# AX. Curvature excludes the first pure hook over flat-base Z1
+# AX. Curvature excludes the first pure hook on positive Z1 at $\lambda=1/5$
 
-The first pure hook candidate in [V3](V-hook-intersections.md#v3-the-grade-five-equation-is-not-automatic) admits no smooth full solution over the positive flat-base Z1 model at $\lambda=1/5$. The argument covers its entire 896-dimensional even kernel, extending [X](X-symmetric-hook.md)'s exclusion of a specified common-axis family.
+The first pure hook candidate in [V3](V-hook-intersections.md#v3-the-grade-five-equation-is-not-automatic) admits no smooth full solution over any smooth positive four-base with reconstructed positive Z1 at $\lambda=1/5$. The argument covers its entire 896-dimensional even kernel, extending [X](X-symmetric-hook.md)'s exclusion of a specified common-axis family.
 
-The derivative equation forces covariant closure of a hook tensor. Full ambient observer curvature then forces that tensor to vanish, while the grade-one equation requires a nonzero quadratic term. The curvature step is an exact, computer-assisted linear-algebra proof, with a separate implementation and basis.
+The derivative equation forces covariant closure of a hook tensor. An exact, computer-assisted calculation proves that the flat-base observer's ambient curvature annihilates no nonzero such tensor. An exact radial rescaling then gives curvature injectivity on a dense open subset of each positive fibre for an arbitrary smooth base. Continuity forces the actual field to vanish on its own domain, contradicting the grade-one equation.
+
+AX1–AX3 retain the derivative reduction, flat curvature certificate and flat-base exclusion. AX4–AX5 give the rescaling, fibre-density argument and general-base consequence. No field or base analyticity, continuation of an unknown field, or access of its domain to a radial point is assumed.
 
 ## Setting
 
-Use the reconstructed true dualized equation, signature $(14,0)$, compact gauge real form $\mathfrak u(128)$, fixed parallel real $W_A$, positive constant $c_H,c_V$, and constant real $\kappa\ne0$. Fix
+Let $g$ be a smooth positive four-metric, and let $g_Y$ be its reconstructed Z1 observer metric with $\lambda=1/5$ and constant $c_H,c_V>0$. Use the true dualized equation, observer signature $(14,0)$, compact gauge real form $\mathfrak u(128)$, fixed parallel real $W_A$, real smooth fields, and constant real $\kappa\ne0$. On a nonempty open observer domain fix
 $$
 T_o=it\Phi^1,\qquad t=3\kappa/136,\qquad u=0.
 $$
@@ -21,7 +23,7 @@ $$
 $$
 These are the alternating and contraction conditions in an orthonormal frame. The grade-12 matrices $B_a\Gamma$ are Hermitian, so $k$ is anti-Hermitian. Every other even block is invertible at this odd pair; no additional even component is omitted.
 
-The derivative reduction below holds for any positive observer metric. The curvature calculation and exclusion require a flat positive four-base, Z1 and $\lambda=1/5$. No analyticity, boundary condition, compactness or parallel-field assumption is imposed on $B$.
+The derivative reduction holds for any positive observer metric. AX2–AX3 concern the flat-base Z1 model; AX4–AX5 allow arbitrary smooth positive bases at the same $\lambda$. No boundary condition, compactness or parallel-field assumption is imposed on $B$.
 
 ## AX1. The full derivative equation is covariant closure
 
@@ -127,6 +129,94 @@ The left side is zero; the coefficient on the right is strictly positive. This i
 
 The grade-five equation has not been replaced by its scalar traces or assumed automatic. The necessary derivative and grade-one equations already contradict each other; imposing grade five cannot repair that contradiction.
 
+## AX4. Radial rescaling and dense fibre injectivity
+
+For every smooth positive four-base and every base point $p$, the curvature map AX2b is injective on an open dense subset of the positive fibre over $p$. Injectivity at every curved-base observer point is not asserted.
+
+*Full ambient curvature limit.* Choose $g$-normal base coordinates $x$ centred at $p$, with $g(0)=I$. Write the Z1 metric as
+$$
+g_Y=c_Hy_{ij}\,dx^i dx^j+c_VG_{\lambda,y}(D_gy,D_gy),\qquad
+D_gy=dy-(\Gamma_g^{\mathsf T}y+y\Gamma_g),
+$$
+where $\Gamma_g$ is a matrix-valued connection one-form. For $\varepsilon>0$ put
+$$
+d_\varepsilon(z)=\varepsilon z,\qquad
+g_\varepsilon=\varepsilon^{-2}d_\varepsilon^*g,\qquad
+\Psi_\varepsilon(z,h)=(\varepsilon z,\varepsilon^{-2}h). \tag{AX4a}
+$$
+The component functions of $g_\varepsilon$ are $g_{ij}(\varepsilon z)$. Constant metric scaling preserves the Levi-Civita connection, so
+$$
+(\Gamma_\varepsilon)_\mu(z)=\varepsilon(\Gamma_g)_\mu(\varepsilon z).
+$$
+The fibre factor in $\Psi_\varepsilon$ is the inverse-pullback factor for covariant metrics under $d_\varepsilon$. Direct substitution gives
+$$
+\Psi_\varepsilon^*(D_gy)=\varepsilon^{-2}D_{g_\varepsilon}h,\qquad
+\boxed{\Psi_\varepsilon^*g_Y(g;c_H,c_V)=g_Y(g_\varepsilon;c_H,c_V).} \tag{AX4b}
+$$
+Indeed the horizontal factors $\varepsilon^{-2}$ and $\varepsilon^2$ cancel, while
+$G_{\lambda,ah}(aU,aV)=G_{\lambda,h}(U,V)$ for $a>0$. This identity includes every mixed metric term and keeps $c_H,c_V,\lambda$ fixed.
+
+At $(z,h)=(0,I)$, $\Gamma_\varepsilon=0$, so all the metrics on the right of AX4b have exactly the same positive tangent inner product
+$$
+c_H I_4\oplus c_VG_{1/5,I}.
+$$
+Also
+$$
+\partial_z^\beta\Gamma_\varepsilon(0)
+=\varepsilon^{|\beta|+1}\partial_x^\beta\Gamma_g(0). \tag{AX4c}
+$$
+The full metric two-jet therefore converges to the constant-base model's two-jet. To include the vertical and mixed derivatives explicitly, set
+$K_\mu=\Gamma_{\varepsilon,\mu}^{\mathsf T}h+h\Gamma_{\varepsilon,\mu}$.
+Its three coordinate blocks are
+$$
+\begin{aligned}
+(g_Y)_{\mu\nu}&=c_Hh_{\mu\nu}+c_VG_{\lambda,h}(K_\mu,K_\nu),\\
+(g_Y)_{\mu A}&=-c_VG_{\lambda,h}(K_\mu,E_A),\\
+(g_Y)_{AB}&=c_VG_{\lambda,h}(E_A,E_B),
+\end{aligned} \tag{AX4d}
+$$
+where $E_A$ are coordinate symmetric matrices. On a fixed relatively compact positive neighbourhood of $h=I$, differentiate the difference from the constant-base metric up to total order two in $(z,h)$. Every resulting term is a smooth function of $h,h^{-1}$ multiplying $\Gamma_\varepsilon$, its first two base derivatives, or their products. Those connection jets tend to zero. The tautological horizontal term $c_Hh$ and the vertical block are already independent of $\varepsilon$. Smoothness of the base metric supplies the finite derivative bounds.
+
+Curvature depends continuously on the metric two-jet. In one fixed orthonormal frame for the displayed common tangent inner product, its entire ambient tensor consequently converges to the flat-base tensor, with no omitted horizontal, mixed or vertical channel. Under $d\Psi_\varepsilon$, that frame becomes an orthonormal frame at
+$(p,qg_p)$ for $q=\varepsilon^{-2}$: horizontal vectors scale by $q^{-1/2}$ and vertical vectors by $q$. Thus there is no changing-frame normalization left in the limit. The limiting curvature is AM1's full $SL(5,\mathbb R)/SO(5)$ curvature with the $-1/4$ normalization used in AX2.
+
+The hook subspace at the comparison point is fixed because its metric is fixed. In fixed complete tensor bases, the flat-limit combined alternating, contraction and curvature map is injective by AX2, so choose **one nonzero global 1274-column maximal minor**. Keep that row selection; continuity preserves its nonvanishing for sufficiently small positive $\varepsilon$. The curved matrix need not retain any character-block symmetry; no separate continuation of the sixteen flat character blocks is used. Hence, for each fixed $p$, some sufficiently large **finite** $q$ gives injectivity at $(p,qg_p)$. No uniform choice of $q$ over base points is prescribed.
+
+*Metric-only fibre density.* Fix $p$ and use all 1274 raw **covariant** components of $B$ in the coordinate tangent/coframe basis. The combined linear map is
+$$
+\mathcal L_p(y)B
+=\big(\operatorname{Alt}B,\operatorname{Ctr}_{g_Y}B,
+F^{T^*Y}\wedge B\big). \tag{AX4e}
+$$
+Its alternating row has no metric weight, its contraction uses the full inverse observer metric, and curvature acts on the coefficient covector by the negative transpose of its tangent action. These are the tensor conventions of AX2, also in nonorthonormal coordinates.
+
+Every entry of $\mathcal L_p(y)$ is rational, hence real analytic, in the positive fibre matrix $y$. The coefficients involve only a finite smooth base jet at $p$: the Z1 metric, inverse metric, connection and curvature are obtained from the displayed metric formula by finite coordinate derivatives and matrix inversions. All denominators are nonzero on the positive cone under the standing assumptions. No analyticity in the base variables is required.
+
+At the finite radial witness, changing from the comparison frame to the coordinate tensor bases is invertible. Thus select one global maximal coordinate minor of $\mathcal L_p(y)$ that is nonzero there. It is not the zero analytic function on that connected cone. Its nonzero locus is open dense, and there the combined map has full column rank. Equivalently, the curvature map restricted to the hook has zero kernel there. The chosen minor, like the radial witness, may depend on $p$. This proves the assertion. Only a matrix built from the metric has been used outside an actual solution domain; no field or field equation is continued. ∎
+
+## AX5. No full solution over an arbitrary smooth positive base
+
+Under the standing assumptions, there is no smooth full solution on a nonempty open positive-Z1 observer domain at $\lambda=1/5$ with
+$t=3\kappa/136$, $u=0$, and arbitrary real even field.
+
+*Proof.* The even equation again forces $T_e=iB\Gamma$ with $B\in H_2$. V3 and AX1 give $d_\nabla B=0$, hence $F^{T^*Y}\wedge B=0$. If the solution domain is $U$, then for each $p\in\pi(U)$ the intersection $U_p$ is open in its positive fibre. That slice may be disconnected: density on the whole connected positive cone still makes the injective locus dense in every open slice. Thus $B=0$ on a dense subset of $U_p$, and continuity gives $B=0$ on all of $U_p$. Doing this for every $p$ gives $B=0$ throughout $U$. The radial witnesses need not belong to $U$.
+
+V3's full grade-one equation now becomes
+$$
+G^Y=-b_Hg_Y,\qquad b_H=\frac{201}{1156}\kappa^2>0.
+$$
+In dimension fourteen, trace reversal gives
+$\operatorname{Ric}^Y=(b_H/6)g_Y$, so Ricci is positive definite.
+But [AU1](AU-opposite-ricci-spectrum.md#au1-the-vertical-ricci-tensor) is a general positive-Z1 metric identity, independent of its later opposite-conic field hypotheses. Applied to the nonzero vertical Euler vector $E=y$, its curvature-action correction vanishes and gives
+$$
+\operatorname{Ric}^Y(E,E)
+=-\frac54\operatorname{tr}I+\frac14(\operatorname{tr}I)^2
+=-1,\qquad |E|^2=\frac{4c_V}{5}>0.
+$$
+This contradicts $\operatorname{Ric}^Y(E,E)=(b_H/6)|E|^2>0$. Both signs of $\kappa$ are included. ∎
+
+As in AX3, the full grade-five equation remains a necessary equation; derivative compatibility and grade one already contradict each other. No grade-five classification or pointwise shape assumption for $B$ is used.
+
 ## Evidence and boundary
 
 - [Derivative certificate](../../computation/geometric-unity/AX_hook_derivative.py) · [output](../../computation/geometric-unity/AX_hook_derivative.out): all 896 hook basis tensors and 14 derivative directions, **12,544 exact columns**. The basis contains two columns per distinct triple and twelve tracefree repeated-index columns per remaining index. It spans the whole hook, rather than sampled supports.
@@ -134,4 +224,6 @@ The grade-five equation has not been replaced by its scalar traces or assumed au
 - [Independent curvature implementation](../../computation/geometric-unity/AX_hook_curvature_xcheck.py) · [output](../../computation/geometric-unity/AX_hook_curvature_xcheck.out): different matrix basis and elimination method, proving maximal rank by an integer minor modulo a prime.
 - [Result record](../../metrics/geometric-unity/AX-hook-curvature.yaml). Internal reviews are linked there; external peer review remains outstanding.
 
-AX3 closes only the first pure hook over this flat-base metric. The other five pure hook cases, all hook–Lambda intersections, curved bases, other $\lambda$, operators and real forms remain outside the exclusion. AX1 is a useful necessary equation in the more general positive first-hook problem; neither its symbol kernel nor curvature compatibility constructs a field. No literature-first or physical claim is made.
+AX4–AX5 are hand scaling, continuity and fibre-analytic arguments using the unchanged AX1–AX2 certificates and AU1's metric identity. They add no executable check. Smooth base metrics and fields suffice; the analytic object is the metric-only matrix as a function of a fixed fibre. Curvature injectivity is asserted on an open dense subset of each fibre, not at every observer point.
+
+AX5 closes the first pure hook at $\lambda=1/5$ over arbitrary smooth positive four-bases. The other five pure hook cases, all hook–Lambda intersections, other $\lambda$, operators and real forms remain outside the exclusion. In particular AW does not remove the coincident hook–Lambda5 candidates. Neither a symbol-kernel description nor a formal curvature constraint constructs a field. No literature-first or physical claim is made.
