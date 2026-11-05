@@ -1,0 +1,13 @@
+Phi is metric-isometric; all140 tangent columns calibrate the full SO5 action.
+On SO4-fixed tensors, C=-4 sum(horizontal Nomizu tensor actions squared).
+Explicit nonzero H6 generator: both hooks, SO4 invariance and entire covariant closure verified.
+Positive tensor norm: 14650875/4096
+Positive 2x2 Gram determinant: 143009296875/8192
+Gram ranks on (B,CB) and (B,CB,C^2B): 2,2.
+Every component verifies C^2B-58CB+720B=0; minimal polynomial=(c-18)(c-40).
+Nonzero orthogonal projection norms: 313875/88 455625/45056
+Every projection component verifies Cv18=18v18 and Cv40=40v40.
+Sphere degrees3,5 have harmonic dimensions30,91; the hand intertwining proof gives orbit span121.
+Contained curvature-kernel module only; no whole-kernel rank or nonlinear solution is asserted.
+The pointwise polynomial is not asserted as a global differential-Casimir field identity.
+Runtime 1.101 seconds.

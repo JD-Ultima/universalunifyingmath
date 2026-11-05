@@ -1,0 +1,24 @@
+PASS independent full derivative/non-unit-weight comparison, control 0
+PASS independent full derivative/non-unit-weight comparison, control 1
+PASS independent real-B quadratic phase/complete-output comparison, including nonzero grade5.
+Even-sign candidate columns 160 finite subgroup invariant dimension 7
+Exact six-generator invariance rank 4 invariant dimension 3
+Invariant hook constraints rank 1 hook dimension 2
+All three raw SO4 invariants have no external13 component; hook constraints are unchanged for every mu.
+BASIS 0 [(0, (1, 4), '1'), (0, (2, 5), '1'), (0, (3, 6), '1'), (0, (0, 10), '1'), (0, (0, 11), '1'), (0, (0, 12), '1'), (1, (0, 4), '1'), (1, (2, 7), '1'), (1, (3, 8), '1'), (1, (1, 10), '-1'), (1, (1, 11), '1'), (1, (1, 12), '1'), (2, (0, 5), '1'), (2, (1, 7), '1'), (2, (3, 9), '1'), (2, (2, 11), '-2'), (2, (2, 12), '1'), (3, (0, 6), '1'), (3, (1, 8), '1'), (3, (2, 9), '1'), (3, (3, 12), '-3')]
+BASIS 1 [(0, (0, 13), '9'), (1, (1, 13), '9'), (2, (2, 13), '9'), (3, (3, 13), '9'), (4, (4, 13), '-16'), (5, (5, 13), '-16'), (6, (6, 13), '-16'), (7, (7, 13), '-16'), (8, (8, 13), '-16'), (9, (9, 13), '-16'), (10, (10, 13), '-16'), (11, (11, 13), '-48'), (12, (12, 13), '-96')]
+Full all-slot derivative computed first; grade5 cancels on both hook basis directions.
+Metric-relative derivative H,Sym0,I: (27*mu*y/16 - 9*x/16, -mu*y + x/4, 9*mu*y/4)
+Metric-relative quadratic H,Sym0,I: (-51*mu*y**2/16 - 3*x**2/16, -109*mu*y**2/24 - 11*x**2/24, -117*mu*y**2/8 - 3*x**2/8)
+All fourteen grade1 diagonals and every off-diagonal checked.
+Selected genuine grade5 coefficient (external0;0,1,2,4,5): -4*x**2/3
+Trace checks: trD=0, trQ=-(28/3)N, N=(9/16)(x^2+13mu*y^2).
+Normalized Einstein H,Sym0,I: (3*mu/8 + 45/8, 5*mu/8 + 35/8, 3*mu/8 + 45/8) ; rho=cV*kappa^2>0.
+After grade5 forces x=0, H-I= 3*mu*y*(61*y - 3)/16 ; hence y=0 or3/61.
+Horizontal residual at y=0: 3*(49*mu + 124*rho + 735)/392 >0.
+Horizontal residual at y=3/61: 3*(218932*mu + 461404*rho + 2734935)/1458632 >0; extra contribution= 2241*mu/29768
+Every exact coefficient is free of Float; mu=5 calibration agrees with the original tables.
+All positive observer scales use B/cV and rho=cV*kappa^2; no parameter sampling or solve is used.
+Only affine-invariant actual H2 on flat positive Z1 is excluded, not arbitrary fields or curved bases.
+No old helper main was run; basis and equations use no private data or saved receipts.
+Runtime 0.464 seconds.
