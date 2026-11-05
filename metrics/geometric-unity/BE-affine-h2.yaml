@@ -1,0 +1,89 @@
+result: >
+  No affine-G-invariant full bosonic field exists on the pure actual H2
+  branch t=3kappa/56,u=0 over a flat positive four-base with reconstructed
+  Z1, for every lambda<1/4, positive constant observer scales and real
+  kappa!=0. A grade5 coefficient forces the first invariant amplitude
+  to zero; the remaining grade1 possibilities have a strictly positive
+  horizontal residual for all mu,rho>0.
+claim_id: [GU-054]
+result_ids: [BE1, BE2, BE3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BE-affine-h2.md
+internal_review:
+  - reports/reviews/REVIEW66-GU-BE-2026-11-05.md
+  - reports/reviews/REVIEW67-GU-BE-2026-11-05.md
+code:
+  - computation/geometric-unity/BE_h2_affine.py
+  - computation/geometric-unity/BE_h2_affine.out
+formalization_status: >
+  True dualized bosonic equation, fixed parallel real WA, observer
+  signature (14,0), compact u(128), real smooth fields and constant
+  kappa!=0. Flat positive four-base, constant lambda<1/4 and cH,cV>0.
+  The even tensor is the restriction of an invariant tensor under
+  GL+(4) semidirect R4 on G/SO4. Actual B2 is real anti-Hermitian,
+  with no i or Gamma. R/V leave precisely H2 on the stated odd
+  pair, with regular vector block and no other even kernel. The
+  positive parameters are mu=1/(1-4lambda) and rho=cV*kappa^2.
+proof_status: >
+  BE1 reconstructs all three SO4 tensor invariants using public BC
+  functions. None has an external13 component; thus the only
+  parameter-dependent contraction weight mu/16 never enters on the
+  entire invariant space. Alternation and contraction maps are
+  unchanged for every mu>0 and leave precisely the same two hooks,
+  including at exceptional parameter values. Own symbolic Nomizu
+  maps include every tensor slot and never mutate BC globals/caches.
+  The anticommutator derivative has an external Gram factor; grade5
+  cancels by differentiated Alt after full evaluation. Q(B)/i is
+  the negative of BC's Q(iB)/i. BE2 computes complete symbolic
+  two-amplitude outputs. A genuine grade5 coefficient -4x^2/3
+  forces x=0. The normalized Einstein eigenvalues are
+  GH=GI=3(mu+15)/8, GS=5(mu+7)/8. BE3 uses H-I=3mu*y*(61y-3)/16,
+  leaving y=0 or3/61. Horizontal residual is GH+93rho/98 in the
+  first case; the second adds2241mu/29768>0. Both are positive.
+  Positive-scale normalization uses B/cV and rho=cV*kappa^2 after
+  affine coordinate dilation and multiplication of grade1 by cV.
+reproducibility: >
+  Run python -X utf8 -I computation/geometric-unity/BE_h2_affine.py
+  with the pinned environment. Author runtime0.464 seconds. The
+  helper imports BC and T/xcheck as libraries without their mains,
+  and reads no private data or saved basis. It asserts completeness
+  guards, full symbolic derivative/quadratic outputs, all14 grade1
+  diagonal/off-diagonal coefficients, direct weighted norm, traces,
+  floating-point absence, mu5 calibration and both positive residuals.
+  Three complete-output T/xcheck comparisons verify two non-unit
+  derivative controls and the real quadratic phase with nonzero
+  grade5 controls. They are independent convention checks rather
+  than a second full parameter-dependent residual computation.
+internal_consistency: >
+  Real actual B2 has the opposite quadratic sign from iB2. All
+  derivative slots include the coefficient covector. No extra
+  inverse b,c weights are inserted outside the Clifford triple.
+  The norm is9(x^2+13mu*y^2)/16 and trQ=-(28/3)N, agreeing with
+  the kernel ratio3/56. The same two example tensors persisting
+  would not prove completeness; external13 absence is checked on
+  the full raw invariant space before imposing hooks. The generic
+  affine model is not called SL5/SO5, which occurs only at mu5.
+  Its Einstein tensor is not assumed scalar. Metric-relative
+  derivative scales h^-2, quadratic grade1 h^-3 and the Einstein
+  tensor h^-1; B/h and rho=h*kappa^2 produce the displayed
+  normalized equation. No closure assumption or parameter sampling
+  replaces any full-field equation.
+limitations: >
+  Arbitrary noninvariant H2 fields, curved bases, other hook copies,
+  intersections, singular vector blocks, other operators and
+  indefinite real forms retain their separate scope. Affine
+  invariance is an essential ansatz. Internal Reviews66-67 accept
+  the argument and disclose prior contributions; external peer review
+  is outstanding. No physical or
+  literature-first claim or field construction is asserted.
+dependencies: [AZ1, BC1, BC2, R2, V1, T2]
+pending_work: >
+  Noninvariant actual H2 fields, curved bases and the other hook
+  copies and kernel intersections retain their own scope. No
+  classification of general smooth H2 fields is supplied.
+confidence: >
+  Internal reproductions complete in0.457 and0.448 seconds versus
+  the author's0.464 seconds. Reviewers separately audit the uniform
+  parameter space and positive residual argument, while disclosing
+  shared libraries and earlier contributions. These checks are
+  distinct from external peer review.
