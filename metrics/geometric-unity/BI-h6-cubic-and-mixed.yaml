@@ -1,0 +1,55 @@
+claim_id: [GU-054]
+result_ids: [BI1, BI2, BI3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BI-h6-cubic-and-mixed.md
+result: >
+  At flat positive Z1 lambda=1/5, the whole real 30-dimensional
+  harmonic-cubic H6 summand has no nonzero value with scalar symmetric
+  grade-one quadratic. A specified A5-fixed mixed harmonic-3/5 family
+  also has no nonzero scalar-quadratic value. Full pure H6Gamma fields
+  cannot take either kind of value at even one point. Positive observer
+  scales and variable amplitudes are allowed under the declared assumptions.
+code:
+  - computation/geometric-unity/BI_h3_stress.py
+  - computation/geometric-unity/BI_h3_stress.out
+  - computation/geometric-unity/BI_mixed_h6.py
+  - computation/geometric-unity/BI_mixed_h6.out
+internal_review:
+  - reports/reviews/REVIEW72-GU-BI-BJ-2026-11-06.md
+  - reports/reviews/REVIEW73-GU-BI-BJ-2026-11-06.md
+formalization_status: >
+  Real all-covariant H6 over the flat positive four-base, reconstructed
+  Z1 at lambda=1/5, constant positive observer scales. BF/BG identify
+  harmonic degrees three/five by the specified normalized intertwiners.
+  Field consequences retain the true dualized equation, parallel real
+  WA, signature (14,0), compact u(128), real smooth fields, constant
+  nonzero kappa and t=3kappa/104,u=0, with no coincident even kernel.
+proof_status: >
+  The classical orthogonal invariant-tensor theorem and valence counting
+  leave four contractions for the cubic stress. Exact calibration fixes
+  their coefficients. An explicit scalar/H2/H4/Young22 decomposition
+  of self-adjoint operators on Sym0(R5) gives three nonzero nonscalar
+  multipliers. Scalar stress would force the positive Gram L_T*L_T
+  scalar, contradicting its rank at most five in dimension fourteen.
+  The separate mixed-family test constructs complete quarter-rotated
+  values and checks all cross terms. A positive-square diagonal moment
+  difference excludes both real amplitudes. BA separates derivative
+  grade seven; the positive baseline excludes zero.
+reproducibility: >
+  Run BI_h3_stress.py and BI_mixed_h6.py in the pinned environment.
+  They read public adjacent data, import BC/BF/BG and the separate
+  Clifford implementation without their mains, and write stdout only.
+  Exact contraction/channel/phase and polynomial controls supplement
+  the separately stated completeness and rank arguments.
+limitations: >
+  The mixed family is not the whole sum of the harmonic modules and
+  does not allow independently rotated components. The pure degree-five
+  module, general mixed values, the full ambient curvature kernel,
+  curved bases, other parameters and coincident branches remain open.
+  No physical or literature-priority claim; external peer review is outstanding.
+dependencies: [BA1, BA2, BC1, BF1, BF2, BG1, AM1]
+confidence: >
+  Internal Reviews72-73 accept the stated arguments and reproduce
+  the new helpers with exact non-timing output matches. Classical
+  imported mathematics, hand proofs, scalar controls and shared-library
+  contributions are distinguished. External peer review is outstanding.

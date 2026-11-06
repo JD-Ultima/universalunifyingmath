@@ -64,3 +64,10 @@ Accessed November 3, 2026. [AM](../formalization/geometric-unity/AM-global-flat-
 - Globke and Quiroga-Barranco, *Information geometry and asymptotic geodesics on the space of normal distributions*, [arXiv:1904.12921v1](https://arxiv.org/abs/1904.12921v1) (2019), subsequently published in Information Geometry (2021).
 
 These sources distinguish the symmetric-space metric from the Fisher metric. No physical identification between Gaussian parameters and the observer fields is assumed.
+
+
+## 5. Invariant tensors and compact averaging
+
+Accessed November 6, 2026. [BI](../formalization/geometric-unity/BI-h6-cubic-and-mixed.md) imports the classical orthogonal invariant-tensor theorem: invariant even tensors are spanned by metric pairings. Roe Goodman, *Multiplicity-Free Spaces and Schur-Weyl-Howe Duality*, revised July 3, 2003, [Theorem 7.4 and Corollary 7.5, printed p. 26](https://sites.math.rutgers.edu/~goodman/pub/nuslect.pdf#page=26), gives the tensor statement. BI supplies its specific four-pattern count, coefficient calibration and Gram-rank consequence separately.
+
+[BJ](../formalization/geometric-unity/BJ-h6-orbit-averages.md) uses classical compact averaging and matrix-coefficient orthogonality. Peter Woit's [2012 Peter-Weyl notes](https://www.math.columbia.edu/~woit/LieGroups-2012/peterweyl.pdf), pp. 1 and 4–7, describe induction, reciprocity and these projections. BJ proves its concrete sphere profile, measure-theoretic limit and field obstruction with their own assumptions. Neither note claims a new general invariant-theory or harmonic-analysis theorem.

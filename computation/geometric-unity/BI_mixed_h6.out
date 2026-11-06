@@ -1,0 +1,37 @@
+Flat positive Z1: lambda=1/5, cH=2, cV=1; real mixed H6 point values.
+Declared family: B6=A*iota3(H3(sum xi^3))+B*iota5(H5(sum xi^5)).
+Both harmonic polynomials are permutation invariant; A5 acts inside SO5.
+Polynomial Lie-action ranks: (10, 10) ; both infinitesimal stabilizers are zero.
+Every nonzero family value is outside all conjugate-SO4-fixed spaces.
+Quarter turns use (7D+D^3)/6 and (149D+30D^3+D^5)/120; full tensor annihilators checked.
+Mapped supports: (8916, 9045) ; both hooks and full Casimir eigenvalues 18,40 checked.
+Actual compact field i*B6*Gamma; coordinate-volume quadratic multiplied by det Gram.
+Positive norm polynomial: 1569375*A**2/88 + 2278125*B**2/45056
+GRADE1 DIAGONAL 0 -375*(7359232*A**2 + 11680*A*B + 21825*B**2)/123904
+GRADE1 DIAGONAL 1 -375*(7359232*A**2 + 11680*A*B + 21825*B**2)/123904
+GRADE1 DIAGONAL 2 -375*(7359232*A**2 + 11680*A*B + 21825*B**2)/123904
+GRADE1 DIAGONAL 3 -375*(7359232*A**2 + 11680*A*B + 21825*B**2)/123904
+GRADE1 DIAGONAL 4 -375*(7359232*A**2 + 11680*A*B + 21825*B**2)/123904
+GRADE1 DIAGONAL 5 -375*(7359232*A**2 + 11680*A*B + 21825*B**2)/123904
+GRADE1 DIAGONAL 6 -375*(7359232*A**2 + 11680*A*B + 21825*B**2)/123904
+GRADE1 DIAGONAL 7 -375*(7359232*A**2 + 11680*A*B + 21825*B**2)/123904
+GRADE1 DIAGONAL 8 -375*(7359232*A**2 + 11680*A*B + 21825*B**2)/123904
+GRADE1 DIAGONAL 9 -375*(7359232*A**2 + 11680*A*B + 21825*B**2)/123904
+GRADE1 DIAGONAL 10 -9375*(1141760*A**2 - 4672*A*B + 2853*B**2)/495616
+GRADE1 DIAGONAL 11 -9375*(1141760*A**2 - 4672*A*B + 2853*B**2)/495616
+GRADE1 DIAGONAL 12 -9375*(1141760*A**2 - 4672*A*B + 2853*B**2)/495616
+GRADE1 DIAGONAL 13 -9375*(1141760*A**2 - 4672*A*B + 2853*B**2)/495616
+Exact full diagonal trace=-(52/3)*norm; every A*B coefficient retained.
+Three independent nested Clifford targets agree at amplitudes (2,-3).
+Projective chart A=0,B!=0 differences: [0, 0, 0, 0, 0, 0, 0, 0, 0, 5990625/495616, 5990625/495616, 5990625/495616, 5990625/495616]
+For A!=0, z=B/A, exact common diagonal gcd: z**2 + 32704*z/3195 + 892928/15975
+Exact real-root intervals: []
+Diagonal13-diagonal0=(375/495616)(892928A^2+163520AB+15975B^2).
+Positive coefficient-matrix determinant: 7579827200
+Verified squares: 892928(A+2555B/27904)^2+(7402175/872)B^2.
+Every nonzero real amplitude pair fails scalar grade-one moments.
+Zero fails the positive pure-branch baseline; no field is constructed.
+No off-diagonal or higher-grade check is needed for this family obstruction.
+This helper tests only the declared mixed family, not complete modules or general H6 fields.
+No imported main, invariant solve, full gradient or source-pin change was run.
+Runtime 17.284 seconds.
