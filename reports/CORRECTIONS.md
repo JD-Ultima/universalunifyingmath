@@ -299,3 +299,8 @@ The subsequent GU manuscript check found the same covering-group and kinetic-ter
 
 - The original GU PDF became reachable. Its 2,087,649 bytes and SHA-256 `3f28d742234a9841fc8e51ff172053200aa3eddf3ece38154a3328b9ebd186d4` match the preserved mirror exactly. The retrieval occurred at 2026-11-03 01:04 UTC (November 2 in America/New_York). The source record, README, report and GU-G01 now resolve that provenance check. Initial acquisition restrictions and the original pins remain recorded; no mathematical claim was regraded on this basis.
 - The [prior-work survey](RELATED-WORK.md) identifies overlapping proofs and implementations, with explicit verification limits. The charter now requires this comparison before developing another proof. Existing result IDs and valid evidence are preserved; overlap is not a literature-wide novelty verdict.
+
+
+## 2026-11-05 — Prior component work
+
+The refreshed [related-work survey](RELATED-WORK.md) records actual-H2 component equations in disruptionjoe's K2375 that were absent from our earlier comparison. [BE](../formalization/geometric-unity/BE-affine-h2.md) now credits that overlap and distinguishes the signature, operator, metric and derivative conventions. The existing proof and source pins are unchanged. The survey's bounded failure to locate a matching recent result is not a novelty claim.

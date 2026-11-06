@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 52 |
-| **Self-contained total** | **62** |
+| Geometric Unity computations | 55 |
+| **Self-contained total** | **65** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **68** |
+| **Total with source checks** | **71** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 62 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 65 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -60,9 +60,9 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 ## Completed validation
 
-[BE](../formalization/geometric-unity/BE-affine-h2.md) reconstructs the complete affine H2 space and evaluates its derivative/quadratic coefficients symbolically for every positive Z1 parameter. Two exact cases both contradict positivity; no parameter grid is used. [Review66](../reports/reviews/REVIEW66-GU-BE-2026-11-05.md) and [Review67](../reports/reviews/REVIEW67-GU-BE-2026-11-05.md) assess the model, phase and scale arguments.
+[BG](../formalization/geometric-unity/BG-h6-fixed-values.md) reconstructs the complete stabilizer-fixed H6 curvature kernel and checks its nonlinear positive-square obstruction. [BH](../formalization/geometric-unity/BH-h6-degree2.md) covers every value in its degree-two module using a complete diagonal section and a hand spectrum lemma. Three new exact helpers retain full curvature channels, all quadratic cross terms and targeted comparisons with a separate Clifford implementation. Reviews70–71 in the [review records](../reports/reviews/) assess the computation/proof boundary and disclose shared contributions. These are restricted mathematical exclusions, not a classification of arbitrary fields.
 
-[BF](../formalization/geometric-unity/BF-h6-curvature-module.md) checks the full SO5 action calibration and every component of a Casimir relation. A separate representation proof identifies the resulting 121-dimensional contained curvature module. [Review68](../reports/reviews/REVIEW68-GU-BF-2026-11-05.md) and [Review69](../reports/reviews/REVIEW69-GU-BF-2026-11-05.md) assess that bridge and the pointwise/global limits. These checks do not solve the remaining nonlinear field equations.
+The preceding [BE](../formalization/geometric-unity/BE-affine-h2.md) all-positive-parameter affine H2 exclusion and [BF](../formalization/geometric-unity/BF-h6-curvature-module.md) contained-module calculation retain their recorded validation in Reviews66–69. BG extends BF's 121-dimensional bound to 135; neither computes the whole ambient curvature kernel.
 
 Earlier validation remains in the per-result notes and reviews:
 

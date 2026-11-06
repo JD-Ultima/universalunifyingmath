@@ -1,0 +1,50 @@
+claim_id: [GU-054]
+result_ids: [BH1, BH2, BH3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BH-h6-degree2.md
+result: >
+  Every nonzero real value in BG's full 14-dimensional SO5 harmonic
+  degree-two H6 curvature summand has nonscalar grade-one quadratic.
+  At flat positive Z1 lambda=1/5 and positive scales, a smooth full
+  pure H6Gamma solution cannot take a value in that summand at any point.
+code:
+  - computation/geometric-unity/BH_h6_degree2.py
+  - computation/geometric-unity/BH_h6_degree2.out
+  - computation/geometric-unity/BG_h6_curvature_kernel.json
+internal_review:
+  - reports/reviews/REVIEW70-GU-BG-BH-2026-11-05.md
+  - reports/reviews/REVIEW71-GU-BG-BH-2026-11-05.md
+formalization_status: >
+  Real all-covariant H6 over the flat positive four-base, reconstructed
+  Z1 at lambda=1/5, constant positive observer scales. The geometric
+  module is BG's pointwise degree-two spherical orbit span, identified
+  with Sym0(R5). The field consequence retains BA's true equation,
+  parallel real WA, signature (14,0), compact u(128), real smooth fields,
+  constant nonzero kappa and t=3kappa/104,u=0.
+proof_status: >
+  The equivariant Sym0(R5) identification and quarter rotations of the
+  zonal seed give a complete four-amplitude diagonal section. Full
+  hook/Casimir/Gram identities are checked. All ten off-diagonal tangent
+  stress moments have the exact polynomial a(si^2+sj^2)+b si sj+c tr(S^2),
+  where a=-2375/32, b=1125/16, c=-3625/2. An elementary five-eigenvalue
+  lemma with b nonzero and b-3a nonzero forces S=0 if these ten moments
+  are equal. SO5 diagonalization covers every module value. BA separates
+  derivative grade seven; the positive scalar baseline excludes zero.
+reproducibility: >
+  Run BH_h6_degree2.py in the pinned environment. It reads the public
+  BG tensor certificate, imports BC/BF/X without their mains and writes
+  stdout only. Exact symbolic polarization retains every quadratic cross
+  term; ten independent nested-Clifford targets check conventions. The
+  diagonalization and spectrum lemma remain separately stated hand proofs.
+limitations: >
+  This does not exclude mixtures with harmonic degrees three/five or
+  other ambient curvature components. No closed-field lift is constructed;
+  it is unnecessary for this negative pointwise test. Other parameters,
+  curved bases, coincident kernels, physical interpretation and literature
+  priority are outside the result. External peer review is outstanding.
+dependencies: [BG1, BA1, BA2, BF1, BF2, BC1, AM1]
+confidence: >
+  Internal Reviews70-71 accept the stated arguments and reproduce all
+  three new helpers with every non-timing output line matching. Exact
+  rational certificates, hand proofs and shared-library contributions
+  are distinguished. External peer review remains outstanding.

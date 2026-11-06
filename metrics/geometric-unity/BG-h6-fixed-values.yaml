@@ -1,0 +1,57 @@
+claim_id: [GU-054]
+result_ids: [BG1, BG2, BG3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BG-h6-fixed-values.md
+result: >
+  At flat positive Z1 lambda=1/5 and all positive observer scales, the
+  complete SO4-fixed H6 coefficient-curvature restriction has rank 20
+  on a 23-dimensional domain and kernel dimension three. Its SO5 orbit
+  span has dimension 135, a contained module rather than the whole
+  ambient kernel. The quadratic grade-one difference is positive
+  definite on the three fixed values. A smooth full pure H6Gamma
+  solution cannot take a value fixed by that SO4 or a conjugate at any point.
+code:
+  - computation/geometric-unity/BG_h6_curvature.py
+  - computation/geometric-unity/BG_h6_curvature.out
+  - computation/geometric-unity/BG_h6_curvature_kernel.json
+  - computation/geometric-unity/BG_h6_moments.py
+  - computation/geometric-unity/BG_h6_moments.out
+internal_review:
+  - reports/reviews/REVIEW70-GU-BG-BH-2026-11-05.md
+  - reports/reviews/REVIEW71-GU-BG-BH-2026-11-05.md
+formalization_status: >
+  All-covariant real H6 over the flat positive four-base, reconstructed
+  Z1 at lambda=1/5. SO4 fixes the last unit vector in the SO5 symmetric
+  model. The geometric kernel statement needs no field operator.
+  The full-field implication retains BA2: true dualized equation,
+  fixed parallel real WA, signature (14,0), compact u(128), real
+  smooth fields, constant nonzero kappa and t=3kappa/104,u=0.
+proof_status: >
+  The invariant basis and hook constraints give domain 23 and target
+  30. A nonzero rank-20 minor and three independent full-output
+  nullvectors prove completeness. Exact Casimir eigenvalues 10,18,40
+  and BF's spherical bridge give orbit dimensions 14,30,91. All six
+  quadratic amplitude coefficients, volume phase, norm and trace
+  give an exact strictly positive sum of squares for qI-qH. BA's
+  universal differentiated-hook identity leaves derivative grade
+  seven only; the scalar positive baseline fails at zero. Naturality
+  gives conjugate-stabilizer and positive-scale transfer.
+reproducibility: >
+  Run BG_h6_curvature.py and BG_h6_moments.py in the pinned Python
+  environment. They write stdout only. The curvature helper reconstructs
+  and checks the complete adjacent JSON certificate. The moment helper
+  checks all cross terms and 12 targeted independent nested-Clifford
+  comparisons. Both reuse BC/BF libraries without invoking their mains.
+limitations: >
+  This is not the full ambient curvature-kernel rank or a general
+  H6 exclusion. Arbitrary combinations in the 135-dimensional orbit
+  span remain separate. No closed-field lift of the new degree-two
+  value is inferred. Other parameters, curved bases, coincident
+  kernels and physical interpretation remain open. No literature
+  priority is claimed; external peer review is outstanding.
+dependencies: [BA1, BA2, BC1, BF1, BF2, BF3, AM1, AZ1]
+confidence: >
+  Internal Reviews70-71 accept the stated arguments and reproduce all
+  three new helpers with every non-timing output line matching. Exact
+  rational certificates, hand proofs and shared-library contributions
+  are distinguished. External peer review remains outstanding.
