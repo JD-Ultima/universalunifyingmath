@@ -1,0 +1,16 @@
+BI: harmonic-cubic H6 stress; normalized flat positive Z1, lambda=1/5,cH=2,cV=1.
+Calibration values satisfy both weighted hooks and the full ten-term Casimir eigenvalue 18.
+Four-contraction calibration determinant: -4096/60025
+Coefficients alpha,beta,gamma,delta: (-9124875/968, 4095875/484, -268625/484, 1031625/484)
+Scalar channel: -9520875/88
+H2 channel: 21455875/1936
+H4 channel: 190750/121
+Young22 channel: -142625/88
+625-component reshuffle identities: scalar 3/10, H2 1/10, H4 1, Young22 -1/2.
+Both cubic intertwiners have identical positive norm ratio: 2197125/352
+All 28 diagonal coefficient controls match the four-pattern formula.
+Nonzero symmetric off-diagonal mixture control: -59625/11
+Both nested-gradient off-diagonal controls agree.
+Universal metric-contraction count and Gram-rank obstruction are supplied by the hand proof.
+No earlier main, invariant solve, full quadratic gradient or curvature rank was run.
+Runtime 4.076 seconds.

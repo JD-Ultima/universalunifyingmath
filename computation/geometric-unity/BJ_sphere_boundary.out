@@ -1,0 +1,8 @@
+Degree 3 : zonal= 7*t**3/4 - 3*t/4 ; norm squared= 1/30
+Signed hemisphere moment= -1/16 ; normalized field limit= -15/8
+Degree 5 : zonal= 33*t**5/8 - 15*t**3/4 + 5*t/8 ; norm squared= 1/91
+Signed hemisphere moment= 3/128 ; normalized field limit= 273/128
+Orthogonality, sphere Casimir eigenvalues18/40 and both boundary constants verified.
+The averaged lift of Bstar has boundary multiplier33/128; the affine seed has multiplier1.
+No field profile, dominated-convergence argument or nonlinear equation is verified by these scalar checks.
+Runtime 0.103 seconds.

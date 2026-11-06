@@ -1,0 +1,57 @@
+claim_id: [GU-054]
+result_ids: [BJ1, BJ2, BJ3, BJ4]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BJ-h6-orbit-averages.md
+result: >
+  On the full simply connected flat positive Z1 model at lambda=1/5,
+  every finite real signed Borel measure on SO5/SO4 defines a real
+  analytic closed H6 orbit average of BC's seed. No such field, including
+  any finite real linear combination of SL5-translates, can satisfy the
+  full pure H6Gamma equation on any nonempty open subset. A particular
+  compact-average construction is a 121-dimensional equivariant right
+  inverse to evaluation. Positive-scale transfers are included.
+code:
+  - computation/geometric-unity/BJ_sphere_boundary.py
+  - computation/geometric-unity/BJ_sphere_boundary.out
+internal_review:
+  - reports/reviews/REVIEW72-GU-BI-BJ-2026-11-06.md
+  - reports/reviews/REVIEW73-GU-BI-BJ-2026-11-06.md
+formalization_status: >
+  Full simply connected SL5(R)/SO5 model, reconstructed flat positive
+  Z1 at lambda=1/5. A fixed finite real signed Borel measure, with finite
+  total variation, is used globally; it cannot vary with the observer
+  point. The geometric closure construction needs no field operator.
+  The nonlinear obstruction retains BA's true equation, fixed parallel
+  real WA, signature (14,0), compact u(128), real fields, constant nonzero
+  kappa and pure pair t=3kappa/104,u=0. Observer scales are positive constants.
+proof_status: >
+  The connected parabolic fixes the entire closed seed. Its KP
+  decomposition gives an exact profile B(s^T n/||s^T n||), with no
+  character or measure-change factor. Compactness and finite total
+  variation preserve closure and permit locally uniform analytic
+  expansions. Tonelli supplies an axis whose equator has zero total
+  variation. Along its diagonal degeneration, dominated convergence
+  makes the transported field a scalar multiple of a rotated seed.
+  Nonzero multiples fail the known grade-one anisotropy; zero fails
+  the positive baseline. Analytic identity gives the open-restriction
+  consequence. Compact Schur averaging separately constructs the
+  121-dimensional lift and the stated hemisphere constants.
+reproducibility: >
+  The theorem is a hand proof using the previously certified seed and
+  its anisotropy. BJ_sphere_boundary.py is an independent standalone
+  exact scalar control for zonal normalization, eigenvalues, orthogonality
+  and signed hemisphere integrals. It does not numerically test the
+  measure theorem, analytic identity theorem or nonlinear field equation.
+limitations: >
+  This is a specified global extension class, not every closed H6 field,
+  every field with the same value at one point, or the whole contained
+  curvature module. Positive-order distributions are outside the measure
+  hypothesis. No quotient descent, curved-base/other-parameter result,
+  physical conclusion or literature priority is asserted. External
+  peer review remains outstanding.
+dependencies: [AM1, BA1, BA2, BC1, BF1, BF2, BF3, BG2, BG3]
+confidence: >
+  Internal Reviews72-73 accept the stated arguments and reproduce
+  the new helpers with exact non-timing output matches. Classical
+  imported mathematics, hand proofs, scalar controls and shared-library
+  contributions are distinguished. External peer review is outstanding.

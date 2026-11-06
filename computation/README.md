@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 55 |
-| **Self-contained total** | **65** |
+| Geometric Unity computations | 58 |
+| **Self-contained total** | **68** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **71** |
+| **Total with source checks** | **74** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 65 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 68 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -60,9 +60,9 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 ## Completed validation
 
-[BG](../formalization/geometric-unity/BG-h6-fixed-values.md) reconstructs the complete stabilizer-fixed H6 curvature kernel and checks its nonlinear positive-square obstruction. [BH](../formalization/geometric-unity/BH-h6-degree2.md) covers every value in its degree-two module using a complete diagonal section and a hand spectrum lemma. Three new exact helpers retain full curvature channels, all quadratic cross terms and targeted comparisons with a separate Clifford implementation. Reviews70–71 in the [review records](../reports/reviews/) assess the computation/proof boundary and disclose shared contributions. These are restricted mathematical exclusions, not a classification of arbitrary fields.
+[BI](../formalization/geometric-unity/BI-h6-cubic-and-mixed.md) combines a universal four-contraction proof with exact coefficient controls and a Gram-rank obstruction on the whole cubic module. Its separate mixed-family helper checks complete diagonal quadratics and a positive-square identity. [BJ](../formalization/geometric-unity/BJ-h6-orbit-averages.md) is a geometric/analytic proof for finite-measure orbit averages; its standalone helper checks only the sphere constants, not the global theorem. Reviews72–73 in the [review records](../reports/reviews/) distinguish hand arguments, finite calculations and shared contributions.
 
-The preceding [BE](../formalization/geometric-unity/BE-affine-h2.md) all-positive-parameter affine H2 exclusion and [BF](../formalization/geometric-unity/BF-h6-curvature-module.md) contained-module calculation retain their recorded validation in Reviews66–69. BG extends BF's 121-dimensional bound to 135; neither computes the whole ambient curvature kernel.
+The preceding [BG](../formalization/geometric-unity/BG-h6-fixed-values.md)/[BH](../formalization/geometric-unity/BH-h6-degree2.md) kernel and degree-two results retain their validation in Reviews70–71. [BE](../formalization/geometric-unity/BE-affine-h2.md)/[BF](../formalization/geometric-unity/BF-h6-curvature-module.md) retain Reviews66–69. The 135-dimensional contained kernel is not a full ambient-rank calculation, and none of these checks confirms the proposed physics.
 
 Earlier validation remains in the per-result notes and reviews:
 
