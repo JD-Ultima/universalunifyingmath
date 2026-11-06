@@ -1,0 +1,33 @@
+BG: flat positive Z1, lambda=1/5, cH=2, cV=1; SO4-fixed H6 point values.
+Gram: ('2', '2', '2', '2', '8', '8', '8', '8', '8', '8', '8', '24', '48', '16/5')
+Even-sign candidate columns 5268 finite subgroup invariant dimension 216
+Exact six-generator invariance rank 186 invariant dimension 30
+Invariant hook constraints rank 7 hook dimension 23
+Complete target: Hodge(raw degree-six invariants), dimension 30
+Target coordinate-isomorphism rows (external, eight-form mask): ((0, 509), (0, 1467), (0, 1758), (0, 3570), (0, 4024), (0, 8635), (0, 8686), (0, 9342), (0, 9714), (0, 9972), (0, 10168), (4, 703), (4, 1743), (4, 1782), (4, 1785), (4, 2806), (4, 2809), (4, 3555), (4, 3564), (4, 8160), (4, 8950), (4, 8953), (4, 9327), (4, 9461), (4, 9466), (4, 9699), (4, 9708), (13, 1151), (13, 1523), (13, 1532))
+Target coordinate-isomorphism determinant: -762939453125/92914730183440548515602497523162968389687345205477137505445767717926490664227537053776085826647061390596515234217801178222116930854588514304
+Full ambient Phi curvature: metric skewness, Bianchi and Ric=-5g/4 verified.
+All six SO4 tangent actions intertwine Phi; all HH, HV and VV channels retained.
+Full invariant coefficient-curvature rank: 20
+Full invariant coefficient-curvature nullity: 3
+Nonzero curvature minor rows: ((0, 509), (0, 1467), (0, 1758), (0, 3570), (0, 4024), (0, 8635), (0, 8686), (0, 9342), (0, 9714), (0, 9972), (0, 10168), (4, 703), (4, 1782), (4, 1785), (4, 2806), (4, 8950), (4, 8953), (4, 9461), (4, 9466), (4, 9699))
+Nonzero curvature minor columns: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 21)
+Nonzero curvature minor determinant: -3971266945655899580006400000
+Curvature kernel amplitude vectors in reconstructed hook basis: [((7, '40'), (8, '-17'), (9, '13'), (12, '-50'), (13, '-52'), (14, '26'), (15, '72')), ((1, '1296'), (4, '-1296'), (7, '-272'), (8, '31'), (9, '-47'), (12, '-74'), (13, '188'), (14, '-94'), (20, '-576')), ((2, '36'), (3, '-36'), (16, '4'), (17, '5'), (18, '-9'), (19, '4'), (21, '-52'), (22, '64'))]
+Every slot of the full sparse curvature output vanishes on all 3 nullvectors.
+Bstar hook amplitudes: ('0', '-270', '0', '0', '270', '0', '0', '115/2', '-109/16', '161/16', '0', '0', '115/8', '-161/4', '161/8', '3/2', '0', '0', '0', '0', '120', '0', '0')
+Casimir Bstar hook amplitudes: ('0', '-5040', '0', '0', '5040', '0', '0', '1020', '-209/2', '341/2', '0', '0', '335', '-682', '341', '-68', '0', '0', '0', '0', '2240', '0', '0')
+Bstar and Casimir Bstar in the complete curvature-kernel basis: [[1/48, -17/18], [-5/24, -35/9], [0, 0]]
+Known span dimension: 2
+Additional invariant curvature directions beyond the known two: 1
+Positive SO5 Casimir matrix in the complete invariant curvature kernel: [[352/9, 76/9, 0], [20/9, 170/9, 0], [0, 0, 10]]
+Casimir characteristic polynomial: (z - 40)*(z - 18)*(z - 10)
+Casimir eigenvalue 10 multiplicity 1 kernel-amplitude eigenspace: [('0', '0', '1')]
+Casimir eigenvalue 18 multiplicity 1 kernel-amplitude eigenspace: [('-2/5', '1', '0')]
+Casimir eigenvalue 40 multiplicity 1 kernel-amplitude eigenspace: [('19/2', '1', '0')]
+Complete three-tensor and Casimir certificate reconstructed and matched.
+Receipt tensor term counts: (738, 1358, 878)
+Source coordinate-isomorphism rows: ((0, 126), (0, 221), (0, 423), (0, 498), (0, 1460), (0, 1745), (0, 8247), (0, 8347), (0, 8628), (0, 8673), (0, 9329), (4, 245), (4, 250), (4, 723), (4, 732), (4, 741), (4, 746), (4, 2544), (4, 8307), (4, 8316), (4, 8371), (4, 8380), (4, 8688))
+Source coordinate-isomorphism determinant: -52776558133248000000
+Boundary: invariant point VALUES only; no closure restriction, no full SO5 kernel or GU solution claim.
+Runtime 7.742 seconds.

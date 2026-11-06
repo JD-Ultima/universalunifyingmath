@@ -40,7 +40,7 @@ For another candidate, called the first pure hook, we checked all 896 possible d
 
 For fields with a specified affine symmetry, we ruled out three more hook families over flat starting geometry. In one, an exact calculation leaves only two possible choices, and each makes a required equation positive instead of zero. This holds for every parameter that keeps the specified Z1 metric positive. In the other two families at one specified parameter, the derivative test leaves one and six directions; their nonlinear equations then give contradictions. Fields with less symmetry remain open.
 
-We also identified at least 121 independent tensor directions at a point that the curvature test allows. They still need to satisfy the nonlinear equations and fit together from point to point before they can form a working field.
+The curvature test now allows at least 135 independent tensor directions at a point. Passing that test is only the first hurdle. We proved that two precisely defined groups within those directions fail the next equation, including a whole 14-dimensional group without assuming its values stay constant. Combinations outside those groups still need testing, and allowed values must fit together from point to point to form a working field.
 
 We also extended a known family of working fields across complete global models, including versions with a periodic four-dimensional starting space. Their geodesics—the geometry's straightest paths—have no artificial stopping point. For fixed model parameters, an exact formula gives zero, one or two constant field configurations in the regular family. These are mathematical examples within our reconstruction; distinct physical states have not been established.
 

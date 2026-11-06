@@ -1,0 +1,35 @@
+Flat positive Z1: lambda=1/5, cH=2, cV=1; all tensor slots covariant.
+SO(4)-fixed point values: B6=A*v18+B*v40+Z*v10; Casimir eigenvalues 18,40,10.
+Actual field i*B6*Gamma. Gamma=sqrt(det Gram)*E; Q(i*B6*E)/i is multiplied by det Gram.
+Receipt tensor supports: (738, 1358, 878)
+Orthogonal positive norm Gram: [[313875/88, 0, 0], [0, 455625/45056, 0], [0, 0, 18225/16]]
+Quadratic coefficient order: A^2, A*B, A*Z, B^2, B*Z, Z^2.
+MATRIX H4 [[-880875/242, -635625/15488, 0], [-635625/15488, -5090625/495616, 0], [0, 0, -48375/32]]
+COEFFICIENTS H4 (-880875/242, -635625/7744, 0, -5090625/495616, 0, -48375/32)
+EIGENVALUE H4 -1125*(1603584*A**2 + 36160*A*B + 4525*B**2 + 665984*Z**2)/495616
+MATRIX Sym0_9 [[-2418875/484, 83125/3872, 0], [83125/3872, -3759375/247808, 0], [0, 0, -11625/8]]
+COEFFICIENTS Sym0_9 (-2418875/484, 83125/1936, 0, -3759375/247808, 0, -11625/8)
+EIGENVALUE Sym0_9 -125*(9907712*A**2 - 85120*A*B + 30075*B**2 + 2880768*Z**2)/247808
+MATRIX I1 [[-1105875/484, -28125/968, 0], [-28125/968, 579375/247808, 0], [0, 0, -2475/4]]
+COEFFICIENTS I1 (-1105875/484, -28125/484, 0, 579375/247808, 0, -2475/4)
+EIGENVALUE I1 -225*(2516480*A**2 + 64000*A*B - 2575*B**2 + 681472*Z**2)/247808
+B*=v18+v40 recovers BC moments: (-15287625/4096, -10178375/2048, -4793625/2048)
+Exact weighted trace=-(52/3)*N; N= 313875*A**2/88 + 455625*B**2/45056 + 18225*Z**2/16
+PASS independent nested Clifford moments at (1, 1, 0)
+PASS independent nested Clifford moments at (1, 0, 1)
+PASS independent nested Clifford moments at (0, 1, 1)
+PASS independent nested Clifford moments at (2, -3, 1)
+Independent comparison targets: 12.
+DIFFERENCE S-H [[-657125/484, 968125/15488, 0], [968125/15488, -2428125/495616, 0], [0, 0, 1875/32]]
+Principal minors, ordered by sizes 1,2,3: (-657125/484, -2428125/495616, 1875/32, 680078125/247808, -1232109375/15488, -4552734375/15859712, 1275146484375/7929856)
+Difference polynomial: -125*(5383168*A**2 - 495680*A*B + 19425*B**2 - 232320*Z**2)/495616
+DIFFERENCE I-H [[59625/44, 16875/1408, 0], [16875/1408, 568125/45056, 0], [0, 0, 28575/32]]
+Principal minors, ordered by sizes 1,2,3: (59625/44, 568125/45056, 28575/32, 8397421875/495616, 1703784375/1408, 16234171875/1441792, 239956330078125/15859712)
+Difference polynomial: 225*(271360*A**2 + 4800*A*B + 2525*B**2 + 178816*Z**2)/45056
+All I-H leading principal minors are positive; coefficients contain no Float.
+Verified I-H=(1125/45056)[54272(A+15B/1696)^2+(26540/53)B^2]+(28575/32)Z^2.
+Scalar grade-one moments force A=B=Z=0 over the reals.
+Zero fails the pure-branch baseline L=15/(2cV)+(15/52)kappa^2>0.
+Pointwise obstruction on this fixed three-space only; no full-module or field-construction claim.
+No imported main, invariant solve, curvature rank or full quadratic gradient was run.
+Runtime 2.806 seconds.
