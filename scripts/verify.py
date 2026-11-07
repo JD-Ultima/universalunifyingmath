@@ -83,6 +83,8 @@ RECENT = [
     ("geometric-unity/BI_h3_stress.py", []),
     ("geometric-unity/BI_mixed_h6.py", []),
     ("geometric-unity/BJ_sphere_boundary.py", []),
+    ("geometric-unity/BK_quintic_gram.py", []),
+    ("geometric-unity/BK_symmetric_quintics.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),
