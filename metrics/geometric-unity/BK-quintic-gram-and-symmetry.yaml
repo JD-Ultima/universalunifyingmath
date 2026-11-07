@@ -1,0 +1,58 @@
+claim_id: [GU-054]
+result_ids: [BK1, BK2, BK3, BK4]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BK-quintic-gram-and-symmetry.md
+result: >
+  The full grade-one equation on the pure real quintic H6 module is
+  equivalent to an explicit scalar Gram identity and norm normalization.
+  The general real Gram problem remains open. Its complete four-dimensional
+  coordinate-permutation fixed space and one-dimensional standard-simplex
+  fixed space have no nonzero solution. These exclusions extend to their
+  SO5 conjugates and all positive constant observer scales.
+code:
+  - computation/geometric-unity/BK_quintic_gram.py
+  - computation/geometric-unity/BK_quintic_gram.out
+  - computation/geometric-unity/BK_symmetric_quintics.py
+  - computation/geometric-unity/BK_symmetric_quintics.out
+internal_review:
+  - reports/reviews/REVIEW74-GU-BK-2026-11-06.md
+  - reports/reviews/REVIEW75-GU-BK-2026-11-06.md
+formalization_status: >
+  Real harmonic symmetric five-tensors on positive R5, with BF's normalized
+  quintic-to-H6 intertwiner. The observer is flat positive Z1 lambda=1/5.
+  Field consequences retain BA's true dualized equation, fixed parallel
+  real WA, signature (14,0), compact u(128), real smooth fields, constant
+  nonzero kappa and t=3kappa/104,u=0. Scales cH,cV are positive constants.
+proof_status: >
+  Fourteen-slot polarized invariant-pairing completeness gives four
+  contractions and excludes an antisymmetric grade-one component.
+  Exact calibration and nonzero nonscalar operator multipliers prove
+  Q1 scalar iff L_T*L_T=(||T||^2/14)Id; the full equation also fixes
+  ||B||^2=21ell/26. Contraction adjoints give an equivalent isometry
+  with five self-adjointness constraints, retaining full tensor symmetry.
+  All625 invariant-family Gram slots reduce to four quadrics; four
+  rational polynomial unit identities cover highest-nonzero-coordinate
+  projective strata. The simplex invariant line has a nonzero exact
+  Gram mismatch, with all1296 projected ambient coefficients checked.
+reproducibility: >
+  Run the two new BK helpers in the pinned environment. The first reads
+  adjacent public tensor data and imports existing libraries without
+  their mains. The second reconstructs the complete finite-family
+  polynomial spaces, contraction matrices and rational certificates.
+  Both write stdout only; no private input, prior output or source
+  checkout is required. Hand arguments provide invariant completeness,
+  isometry equivalence and the field-scope transfer.
+limitations: >
+  The 91-dimensional real quintic Gram problem is not solved. Its
+  contraction map has enough rank for an isometry; the cubic obstruction
+  does not carry over. Higher quadratic grades and actual closed-field
+  reconstruction remain separate even if a Gram candidate is found.
+  Arbitrary mixed fields, other parameters and other singular sectors
+  retain their separate scope. No physical or literature-priority claim;
+  external peer review remains outstanding.
+dependencies: [BA1, BA2, BF1, BF2, BG1, BI1, AM1]
+confidence: >
+  Internal Reviews74-75 accept the stated arguments and reproduce both
+  new helpers with exact non-timing output matches. Contributions,
+  shared engines, classical invariant theory and hand-proof dependencies
+  are disclosed. External peer review remains outstanding.

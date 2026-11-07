@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 58 |
-| **Self-contained total** | **68** |
+| Geometric Unity computations | 60 |
+| **Self-contained total** | **70** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **74** |
+| **Total with source checks** | **76** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 68 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 70 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -60,9 +60,9 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 ## Completed validation
 
-[BI](../formalization/geometric-unity/BI-h6-cubic-and-mixed.md) combines a universal four-contraction proof with exact coefficient controls and a Gram-rank obstruction on the whole cubic module. Its separate mixed-family helper checks complete diagonal quadratics and a positive-square identity. [BJ](../formalization/geometric-unity/BJ-h6-orbit-averages.md) is a geometric/analytic proof for finite-measure orbit averages; its standalone helper checks only the sphere constants, not the global theorem. Reviews72–73 in the [review records](../reports/reviews/) distinguish hand arguments, finite calculations and shared contributions.
+[BK](../formalization/geometric-unity/BK-quintic-gram-and-symmetry.md) gives a universal four-contraction quintic identity, exact coefficient controls and the complete grade-one Gram criterion. Its second helper reconstructs two full symmetry classes, checks every Gram coefficient and expands four rational polynomial certificates to one. The constrained-isometry equivalence and scope transfer are hand proofs. Reviews74–75 in the [review records](../reports/reviews/) distinguish these arguments from finite controls and disclose shared contributions.
 
-The preceding [BG](../formalization/geometric-unity/BG-h6-fixed-values.md)/[BH](../formalization/geometric-unity/BH-h6-degree2.md) kernel and degree-two results retain their validation in Reviews70–71. [BE](../formalization/geometric-unity/BE-affine-h2.md)/[BF](../formalization/geometric-unity/BF-h6-curvature-module.md) retain Reviews66–69. The 135-dimensional contained kernel is not a full ambient-rank calculation, and none of these checks confirms the proposed physics.
+The [BI](../formalization/geometric-unity/BI-h6-cubic-and-mixed.md)/[BJ](../formalization/geometric-unity/BJ-h6-orbit-averages.md) cubic, mixed and global orbit results retain Reviews72–73. Their scalar sphere helper does not verify the global analytic theorem. [BG](../formalization/geometric-unity/BG-h6-fixed-values.md)/[BH](../formalization/geometric-unity/BH-h6-degree2.md) retain Reviews70–71, and [BE](../formalization/geometric-unity/BE-affine-h2.md)/[BF](../formalization/geometric-unity/BF-h6-curvature-module.md) Reviews66–69. None computes the full ambient curvature kernel or confirms the proposed physics.
 
 Earlier validation remains in the per-result notes and reviews:
 

@@ -1,0 +1,22 @@
+BK: pure harmonic-quintic W40; normalized flat positive Z1, lambda=1/5,cH=2,cV=1.
+Full weighted hooks and all ten Casimir terms checked on all three declared values.
+Polynomial bridge D3 D2 D1 D0 z5=120*x0*x1*x2*x3*x4 checked exactly.
+Zonal/product calibration minor is zero; xyz*(11*x4^2-|x|^2) supplies an independent row.
+Calibration input/axis rows: ((0, 0), (0, 4), (0, 13), (2, 0))
+Calibration determinant: 131072/49413375
+Four coefficients alpha,beta,gamma,delta: (-2311875/32768, 2244375/32768, 1873125/32768, 860625/16384)
+Scalar multiplier: -5923125/8192
+H2 multiplier: 20300625/131072
+H4 multiplier: 3594375/32768
+Young22 multiplier: 253125/8192
+Calibration Gram operator 0 rank: 14 ; spectrum: {28/1089: 4, 4/3267: 9, 140/1089: 1}
+Calibration Gram operator 1 rank: 10 ; spectrum: {1/1200: 10, 0: 4}
+Calibration Gram operator 2 rank: 10 ; spectrum: {1/3: 3, 0: 4, 61/300: 3, 1/300: 3, 16/75: 1}
+Common positive intertwiner norm ratio: 1366875/32768
+All 42 diagonal coefficient controls match the universal four-pattern formula.
+Ordered off-diagonal entries q_ab=q_ba: -568125/11264 ; both independent nested targets agree.
+Exact remaining condition: K_T=(||T||^2/14)*Id on Sym0(R5).
+L_T maps 14 inputs to H3 of dimension 30: no cubic-style rank contradiction follows.
+No scalar-Gram candidate, closed-field lift or universal quintic exclusion is inferred.
+No earlier main, recorded output, invariant solve or full quadratic gradient was run/imported.
+Runtime 7.423 seconds.
