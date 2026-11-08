@@ -1,0 +1,48 @@
+claim_id: [GU-054]
+result_ids: [BM1, BM2, BM3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BM-mixed-grade-nine-obstruction.md
+result: >
+  The exact real mixed scalarity zero certified by BL cannot satisfy the
+  full pointwise field equation. One grade-nine coefficient is nonzero
+  throughout its entire fixed-slice rational box. Other mixed zeros
+  and general field existence remain open.
+code:
+  - computation/geometric-unity/BM_mixed_grade9.py
+  - computation/geometric-unity/BM_mixed_grade9.out
+internal_review:
+  - reports/reviews/REVIEW77-GU-BM-2026-11-07.md
+formalization_status: >
+  BL's compact-real pure H6Gamma branch on flat positive Z1 at lambda=1/5,
+  normalized observer scales cH=2,cV=1, true dualized equation, parallel
+  real WA, constant nonzero kappa and t=3kappa/104,u=0. Both harmonic
+  intertwiners retain BI/BK normalization. The zero/nonzero condition
+  transfers through the stated positive-scale orthonormal identifications.
+proof_status: >
+  Full-frequency rational SO2 interpolation rotates both public zonal
+  H6 seeds. Exact polynomial coordinate matrices and signed ambient
+  permutation averaging reconstruct the complete six-amplitude basis.
+  Hook, full Casimir, sign-character, full norm-Gram and actual grade-one
+  phase controls verify the reconstruction. All 21 coefficients of one
+  actual grade-nine quadratic receiver are computed exactly. A rational
+  center/gradient/Hessian bound keeps it nonzero on BL's whole box.
+  Baseline grade one and derivative grade seven cannot cancel it.
+reproducibility: >
+  The BM helper reconstructs its tensors in memory from adjacent public
+  seed data. It imports declared libraries without running older mains.
+  It requires no private tensor cache, numerical solver or recorded
+  output, and writes stdout only. A separate nested-Clifford target
+  control shares the declared mathematical quadratic formula.
+limitations: >
+  The obstruction is limited to the specified rational slice/box and
+  its nonzero scaled or rotated copies. It does not exclude every
+  scalarity zero or the complete six-amplitude family, solve closure,
+  or classify arbitrary mixed fields. BL's grade-one existence theorem
+  is unchanged. No physical or literature-priority claim is made.
+dependencies: [BA1, BA2, BF1, BF2, BG1, BI1, BK1, BL1, BL2, BL3]
+confidence: >
+  Exact tensor and polynomial reconstructions, a rational box bound and
+  declared independent target controls support the computer-assisted
+  result. The linked internal review records fresh reproduction,
+  contributions and shared-engine limits. External peer review remains
+  outstanding.
