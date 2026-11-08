@@ -7,7 +7,7 @@ result: >
   grade-one field equation after positive amplitude normalization.
   A rational contraction certificate proves existence on a specified
   slice of the complete six-amplitude coordinate-permutation family.
-  Higher quadratic grades and closed-field reconstruction remain open.
+  Other quadratic constraints and full field solutions remain separate.
 code:
   - computation/geometric-unity/BL_mixed_stress.py
   - computation/geometric-unity/BL_mixed_stress.out
@@ -44,8 +44,10 @@ reproducibility: >
 limitations: >
   The zero is unique only on its fixed-coordinate slice and inside the
   stated rational box. Its coordinates are not claimed rational. No
-  higher-grade equation, covariant closure, local or global field, or
-  arbitrary mixed-family classification is solved. The general pure
+  simultaneous full field system, local or global solution, or arbitrary
+  mixed-family classification is solved. BJ4 already supplies closed
+  hook extensions of these point values; it does not impose their
+  nonlinear field equations. The general pure
   quintic Gram problem remains open. BM separately excludes this
   certified box by a nonzero grade-nine coefficient. No physical or literature-priority
   claim is made; external peer review remains outstanding.

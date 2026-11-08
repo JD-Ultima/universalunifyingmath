@@ -4,7 +4,7 @@ The cubic and quintic H6 modules admit a nonzero real mixed value with
 scalar **full** grade-one stress. Its existence follows from an exact
 rational contraction certificate, rather than a small numerical residual.
 An overall real amplitude then satisfies the grade-one field equation.
-The higher quadratic grades and covariant closure are not solved here.
+This is a pointwise result; it constructs no full field solution.
 
 Evidence: the [cross-term calibration](../../computation/geometric-unity/BL_mixed_stress.py),
 [complete finite-family reduction](../../computation/geometric-unity/BL_symmetric_mixed.py)
@@ -232,8 +232,11 @@ The positive target $\ell$ uses the actual scales.
 
 This theorem establishes grade one only. [BM](BM-mixed-grade-nine-obstruction.md)
 separately proves that this certified box fails grade nine, so the
-candidate cannot be a full pointwise solution. No covariantly closed
-local or global field has been constructed. The general pure-quintic Gram problem and
+candidate cannot be a full pointwise solution. No full local or global
+solution is constructed. [BJ4](BJ-h6-orbit-averages.md#bj4-a-constructive-121-dimensional-closed-family)
+already gives a closed hook extension of every value in this cubic/quintic
+module; such an extension need not satisfy the nonlinear equations.
+The general pure-quintic Gram problem and
 arbitrary mixed-family classification remain open. This result shows why
 the separate pure-module exclusions cannot be extended to all mixed
 values at grade one. It supplies no physical or literature-priority claim.
