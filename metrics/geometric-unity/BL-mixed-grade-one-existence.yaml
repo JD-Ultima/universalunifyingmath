@@ -1,0 +1,57 @@
+claim_id: [GU-054]
+result_ids: [BL1, BL2, BL3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BL-mixed-grade-one-existence.md
+result: >
+  A real nonzero mixed cubic/quintic H6 value satisfies the complete
+  grade-one field equation after positive amplitude normalization.
+  A rational contraction certificate proves existence on a specified
+  slice of the complete six-amplitude coordinate-permutation family.
+  Higher quadratic grades and closed-field reconstruction remain open.
+code:
+  - computation/geometric-unity/BL_mixed_stress.py
+  - computation/geometric-unity/BL_mixed_stress.out
+  - computation/geometric-unity/BL_symmetric_mixed.py
+  - computation/geometric-unity/BL_symmetric_mixed.out
+  - computation/geometric-unity/BL_real_certificate.py
+  - computation/geometric-unity/BL_real_certificate.out
+internal_review:
+  - reports/reviews/REVIEW76-GU-BL-2026-11-07.md
+formalization_status: >
+  Flat positive Z1 at lambda=1/5, real harmonic cubic and quintic tensors
+  on R5, and the BI/BK normalized SO5 intertwiners into H6. Field
+  consequences retain BA's true dualized equation, parallel real WA,
+  signature (14,0), compact u(128), real smooth fields, constant nonzero
+  kappa and t=3kappa/104,u=0. Observer scales are positive constants.
+proof_status: >
+  A ten-slot polarized pairing argument completes the pure-cubic full
+  symmetry statement. The twelve-slot cross argument gives three
+  independent ordered contractions; nonsingular exact calibration makes
+  the actual cross symmetric and traceless, with H2/H4 output only.
+  All 196 scalarity equations on six amplitudes reduce coefficientwise
+  to four exact quadrics. On a fixed rational slice, an exact inverse
+  Jacobian and Hessian bound give a self-map contraction of a rational
+  box. Banach proves a unique real zero within that box, with both
+  modules nonzero. Positive homogeneity fixes the grade-one norm.
+reproducibility: >
+  The three BL helpers run in the pinned Python environment and write
+  stdout only. Cross calibration uses existing Clifford libraries and
+  adjacent public seed data without running earlier mains. The finite
+  reduction reconstructs every coefficient and verifies exported integer
+  rows. The real certificate imports those rows, verifies canonical JSON
+  data and uses rational arithmetic throughout. No private input,
+  numerical solver or timing-bearing output is required.
+limitations: >
+  The zero is unique only on its fixed-coordinate slice and inside the
+  stated rational box. Its coordinates are not claimed rational. No
+  higher-grade equation, covariant closure, local or global field, or
+  arbitrary mixed-family classification is solved. The general pure
+  quintic Gram problem remains open. BM separately excludes this
+  certified box by a nonzero grade-nine coefficient. No physical or literature-priority
+  claim is made; external peer review remains outstanding.
+dependencies: [BA1, BA2, BF1, BF2, BG1, BI1, BK1, BK4]
+confidence: >
+  Exact coefficient and rational inequality certificates support the
+  stated computer-assisted result. The linked internal review records
+  fresh reproduction, hand checks, contributions and shared engines.
+  This is AI-assisted internal review, not external peer review.

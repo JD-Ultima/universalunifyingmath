@@ -1,0 +1,12 @@
+BL cross polarization: Q(B3+B5)-Q(B3)-Q(B5), no half factor.
+BI/BK zonal normalizations, weighted hooks, full Casimirs and norm ratios verified.
+Three-pattern calibration rows: (((0, 0), 0, 0), ((0, 1), 0, 13), ((0, 1), 13, 0))
+Exact calibration matrix: [[2/11, -4/77, -4/77], [-32/55, -32/77, -384/385], [-32/55, -384/385, -32/77]]
+Exact calibration determinant: -6144/33275
+Coefficients v1,v2,v3: (-2131875/2816, 2874375/11264, 2874375/11264)
+Twelve additional ordered coefficient controls match.
+Four ordered cross entries agree with the independent nested-gradient implementation.
+Antisymmetric coefficient v2-v3: 0
+Observed ordered difference q_0,13-q_13,0 at(z3,D0z5): 0
+The hand pairing count supplies universality; scalarity and field equations require separate checks.
+Runtime 4.169 seconds.

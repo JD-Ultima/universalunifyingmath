@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 60 |
-| **Self-contained total** | **70** |
+| Geometric Unity computations | 64 |
+| **Self-contained total** | **74** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **76** |
+| **Total with source checks** | **80** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 70 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 74 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -59,6 +59,8 @@ python -X utf8 scripts/verify.py --recent --upstream ../chain-theory
 Keep that checkout free of modified, untracked and ignored files, including build artifacts. The verifier checks the commit and raw source hashes; CRLF conversion is rejected. These commands read upstream material as data. The Lean-coverage classifier uses recorded build and axiom logs.
 
 ## Completed validation
+
+[BL](../formalization/geometric-unity/BL-mixed-grade-one-existence.md) supplies the complete cubic/quintic cross formula and an exact real mixed solution of the grade-one equations. Its three helpers calibrate ordered Clifford coefficients, reduce all 196 finite-family scalarity equations to four quadrics, and verify a rational contraction certificate. The pure-cubic full-symmetry completion and contraction theorem are hand arguments. [BM](../formalization/geometric-unity/BM-mixed-grade-nine-obstruction.md) reconstructs the actual six H6 tensors and proves that candidate fails grade nine throughout its certified box. [Review76](../reports/reviews/REVIEW76-GU-BL-2026-11-07.md) and [Review77](../reports/reviews/REVIEW77-GU-BM-2026-11-07.md) record fresh reproduction and its limits. Other scalarity zeros and closed-field construction remain open.
 
 [BK](../formalization/geometric-unity/BK-quintic-gram-and-symmetry.md) gives a universal four-contraction quintic identity, exact coefficient controls and the complete grade-one Gram criterion. Its second helper reconstructs two full symmetry classes, checks every Gram coefficient and expands four rational polynomial certificates to one. The constrained-isometry equivalence and scope transfer are hand proofs. Reviews74–75 in the [review records](../reports/reviews/) distinguish these arguments from finite controls and disclose shared contributions.
 
