@@ -1,0 +1,20 @@
+claim_id: [GU-054]
+result_ids: [DA1, DB1, DB2]
+gaps: [GU-G14, GU-G15]
+writeup:
+  - formalization/geometric-unity/DA-h6-finite-mixture-growth.md
+  - formalization/geometric-unity/DB-h6-bounded-analytic-lifts.md
+computation:
+  - computation/geometric-unity/DA_h6_mixed_growth.py
+  - computation/geometric-unity/DB_h6_bounded_average.py
+internal_review:
+  - reports/reviews/REVIEW107-GU-DA-DB-2026-11-14.md
+result: >-
+  Bounded global analytic linear lifts realize all 6,820
+  admissible H6 values. The type (5,5) lift can vanish uniformly
+  at infinity. The stated finite and measure mixtures with
+  triangular fields are excluded from the full nonlinear equations.
+limitations: >-
+  The exclusion concerns the declared globally analytic ansatz.
+  Other singular center measures and general full fields remain open.
+dependencies: [BR3, BU1, BV1, BW1, CU3, CU4]
