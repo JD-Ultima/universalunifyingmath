@@ -1,0 +1,86 @@
+{
+  "records": [
+    {
+      "weight": [
+        7,
+        5
+      ],
+      "dimension": 1309,
+      "cross_casimir": 20,
+      "symbol_squared_eigenvalue": "0",
+      "source_entries": 4,
+      "image_entries": 0,
+      "contraction_entries": 0
+    },
+    {
+      "weight": [
+        6,
+        5
+      ],
+      "dimension": 715,
+      "cross_casimir": 4,
+      "symbol_squared_eigenvalue": "0",
+      "source_entries": 30,
+      "image_entries": 0,
+      "contraction_entries": 0
+    },
+    {
+      "weight": [
+        6,
+        4
+      ],
+      "dimension": 810,
+      "cross_casimir": -6,
+      "symbol_squared_eigenvalue": "26/27",
+      "source_entries": 95,
+      "image_entries": 3,
+      "contraction_entries": 1
+    },
+    {
+      "weight": [
+        5,
+        5
+      ],
+      "dimension": 286,
+      "cross_casimir": -10,
+      "symbol_squared_eigenvalue": "7/3",
+      "source_entries": 143,
+      "image_entries": 5,
+      "contraction_entries": 0
+    },
+    {
+      "weight": [
+        5,
+        4
+      ],
+      "dimension": 429,
+      "cross_casimir": -20,
+      "symbol_squared_eigenvalue": "5/6",
+      "source_entries": 374,
+      "image_entries": 17,
+      "contraction_entries": 8
+    },
+    {
+      "weight": [
+        5,
+        3
+      ],
+      "dimension": 455,
+      "cross_casimir": -28,
+      "symbol_squared_eigenvalue": "223/210",
+      "source_entries": 746,
+      "image_entries": 46,
+      "contraction_entries": 20
+    }
+  ],
+  "domain_dimension": 4004,
+  "kernel_dimension": 2024,
+  "complement_dimension": 1980,
+  "real_ellipticity_constant": "5/48",
+  "seconds": 0.5518913269042969,
+  "scope": "Exact real ellipticity of pure55 exterior closure; decomposition completeness uses BO unique Casimir70 type and the six verified highest vectors with dimensions summing4004.",
+  "automatic_coclosure": true,
+  "weitzenbock_curvature_scalar": "-7",
+  "rough_laplacian_eigenvalue": "7",
+  "periodic_evaluation_error_bound": "1/4"
+}

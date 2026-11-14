@@ -104,6 +104,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 [CW](../formalization/geometric-unity/CW-h4-fixed-positive-moment.md) checks the rational positive covariance on the full H4 permutation-fixed space. Full mode rebuilds all integer evaluations. [CX](../formalization/geometric-unity/CX-hook-sparse-support.md) verifies the forest and cyclic support examples and the exact H4 rank-four partial value.
 
+[DE](../formalization/geometric-unity/DE-h6-elliptic-periodic.md) checks the pure H6 type \((5,5)\) symbol spectrum, its automatic covariant coclosure, the Hodge curvature \(-7\), and the periodization normalization.
+
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
 [BT](../formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed character spaces. The selected check rebuilds the closed basis, tests independent Clifford coordinates and ranks 16 selected quadratic columns. The full 2,701-column certificate requires `--full` and is outside the selected suite.
