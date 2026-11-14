@@ -1,0 +1,14 @@
+branch: H4
+curvature_kernel_dimension: 10388
+absolute_weight_minimum: 4
+real_support_dimension: 960
+positive_weight_complex_dimension: 480
+highest_columns: 98
+multiplicity_blocks: 15
+strict_receiver_lower: "1/20"
+receiver_norm_square_upper: "3/400"
+strict_complete_residual_square_lower: "1/3"
+coefficient_reconstruction:
+  primes: 10
+  signed_numerator_bound_bits: 190
+  modulus_bits: 200

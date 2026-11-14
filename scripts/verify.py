@@ -137,6 +137,7 @@ RECENT = [
     ("geometric-unity/DK_h6_mixed_gradient.py", []),
     ("geometric-unity/DK_h6_characteristic_cover.py", []),
     ("geometric-unity/DK_h6_characteristic_global.py", []),
+    ("geometric-unity/DN_high_cartan.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),
