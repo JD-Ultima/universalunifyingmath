@@ -93,7 +93,9 @@ Their total dimension is 6,534. Selecting a finite spanning subset
 of rotated evaluations gives a linear right inverse to evaluation
 on this direct sum. Each resulting field is a finite sum of global
 analytic closed fields. The proof gives a lower bound on the
-rotated span. It leaves types $(5,5)$ and $(2,0)$ unresolved.
+rotated span. [BU](BU-h6-second-jet-obstruction.md) excludes the
+type $(2,0)$ from all smooth closed field values. The type $(5,5)$
+remains unresolved.
 
 ## BR4. The larger affine symmetry and its character modes
 
