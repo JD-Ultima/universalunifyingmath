@@ -62,6 +62,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 [BV](../formalization/geometric-unity/BV-h6-triangular-positive-obstruction.md) excludes the full 952-dimensional triangular closed family. The selected check verifies the receiver, positivity of all stored matrices, and exact rational and modular reconstruction on one block. Use `--full` on `BV_h6_an_positive.py` to reconstruct all sixteen blocks.
 
+[BW](../formalization/geometric-unity/BW-h6-triangular-orbit-averages.md) excludes fixed finite signed averages of rotated triangular closed fields. The diagonal limit is analytic and uses the BR and BV certificates.
+
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
 [BT](../formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed character spaces. The selected check rebuilds the closed basis, tests independent Clifford coordinates and ranks 16 selected quadratic columns. The full 2,701-column certificate requires `--full` and is outside the selected suite.

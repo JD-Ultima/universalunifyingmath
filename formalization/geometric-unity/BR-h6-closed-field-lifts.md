@@ -129,7 +129,8 @@ of BR3 generally lose the constant-norm property on taking sums.
 They solve the linear closure equation with all coefficient and
 form slots included. [BV](BV-h6-triangular-positive-obstruction.md)
 subsequently excludes the full 952-dimensional invariant family.
-General nonlinear feasibility for rotated sums and arbitrary fields
-remains open here.
+[BW](BW-h6-triangular-orbit-averages.md) excludes the full equation
+for the rotated sums and their fixed finite-measure averages.
+General nonlinear feasibility for arbitrary closed fields remains open.
 Positive observer scales transfer through BC's dilation and
 homothety. External peer review remains outstanding.
