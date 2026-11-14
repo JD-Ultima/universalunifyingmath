@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 116 |
-| **Self-contained total** | **126** |
+| Geometric Unity computations | 117 |
+| **Self-contained total** | **127** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **132** |
+| **Total with source checks** | **133** |
 
 Inspect the actual command list without executing it:
 
@@ -119,6 +119,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 [DM](../formalization/geometric-unity/DM-h6-first-tableau.md) verifies exact closure and contraction ranks by highest type. The selected command checks five blocks and full mode checks all 38. [DO](../formalization/geometric-unity/DO-h6-sharp-tableau-stress.md) rebuilds the complete sharp derivative spectrum on the closed tableau and gives improved H6 stress gradient bounds.
 
 [DP](../formalization/geometric-unity/DP-h6-eight-axial-characters.md) extends the exact H6 axial exclusion to eight sign characters and 1,165 local value directions. Its selected command verifies the new character 6 geometry. The full command rebuilds all eight Grams.
+
+[DR](../formalization/geometric-unity/DR-h6-rank-two-stress.md) checks the sharp ambient two-plane stress spectrum and both compact moment-form rank certificates. It proves a strict bound for every curvature-compatible real derivative plane.
 
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
