@@ -1,0 +1,25 @@
+claim_id: [GU-054]
+result_ids: [CR1, CS1, CV1, CV2, CZ1]
+gaps: [GU-G14, GU-G15]
+writeup:
+  - formalization/geometric-unity/CR-h6-orbit-closure.md
+  - formalization/geometric-unity/CS-h6-high-frequency-stress.md
+  - formalization/geometric-unity/CV-h6-axial-sign-trivial.md
+  - formalization/geometric-unity/CZ-h6-axial-local.md
+computation:
+  - computation/geometric-unity/CR_h6_orbit_closure.py
+  - computation/geometric-unity/CS_h6_highpass.py
+  - computation/geometric-unity/CV_h6_axial.py
+  - computation/geometric-unity/CZ_h6_axial_local.py
+internal_review:
+  - reports/reviews/REVIEW106-GU-CR-CS-CV-2026-11-14.md
+result: >-
+  Exact compact-orbit closure rigidity at the BS partial value,
+  a high-frequency exclusion across all H6 sign characters in a
+  stated cone, and a common all-frequency receiver on the complete
+  axial sign-trivial closure kernels. A separate positive receiver
+  excludes all local sign-trivial axial profiles pointwise.
+limitations: >-
+  Scope is restricted to the orbit and frequency families in the
+  proofs. General nonlinear fields remain open.
+dependencies: [BR1, BS1, BV1, CE1, CJ3, CL1]

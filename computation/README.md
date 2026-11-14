@@ -96,6 +96,10 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 [CU and CT](../formalization/geometric-unity/CU-h6-global-analytic-closure.md) verify the tensor and Lie algebra for the global analytic H6 closure lift, its symbolic block factorization, and the 88-column rank certificate for the local cohomology class.
 
+[CR](../formalization/geometric-unity/CR-h6-orbit-closure.md) checks compact-orbit rank, and its full mode checks a shifted Gram throughout the BS box. [CS](../formalization/geometric-unity/CS-h6-high-frequency-stress.md) checks the axial and cone high-frequency stress bounds. [CV](../formalization/geometric-unity/CV-h6-axial-sign-trivial.md) verifies the 43 polynomial closure chains and a common receiver at all axial frequencies on the sign-trivial block. Its full mode also rebuilds the integer Clifford Gram data.
+
+[CZ](../formalization/geometric-unity/CZ-h6-axial-local.md) checks a positive pointwise receiver on the full 107-dimensional local axial sign-trivial value space. Full mode rebuilds all Gram entries using nine primes.
+
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
 [BT](../formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed character spaces. The selected check rebuilds the closed basis, tests independent Clifford coordinates and ranks 16 selected quadratic columns. The full 2,701-column certificate requires `--full` and is outside the selected suite.
