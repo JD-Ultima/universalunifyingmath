@@ -1,0 +1,18 @@
+claim_id: [GU-054]
+result_ids: [CU1, CU2, CU3, CU4, CT1]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CU-h6-global-analytic-closure.md
+computation:
+  - computation/geometric-unity/CU_h6_local_field.py
+  - computation/geometric-unity/CU_h6_global_field.py
+  - computation/geometric-unity/CT_h6_potential_obstruction.py
+internal_review:
+  - reports/reviews/REVIEW105-GU-CU-CT-2026-11-14.md
+result: >-
+  All 6,820 H2-free values have global real analytic linear closure
+  lifts. A nonzero type (5,5) field represents a nonzero degree-six
+  germ in the curvature-kernel covariant exterior complex.
+limitations: >-
+  Linear closure. General nonlinear field equations and bounded
+  global extensions of the new pure type are open.
+dependencies: [BO1, BQ1, BR3, BU1, CF2]

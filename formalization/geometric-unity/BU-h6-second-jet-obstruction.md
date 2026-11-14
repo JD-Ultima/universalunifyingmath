@@ -103,6 +103,8 @@ BR gives analytic closed lifts on a 6,534-dimensional submodule,
 leaving the 286-dimensional type $(5,5)$ between the explicit
 lower bound and the 6,820-dimensional upper bound.
 [CF](CF-h6-fourth-linear-jet.md) proves finite compatibility
-through the fourth Taylor order for that type. An actual closed
-lift and the nonlinear equations remain open. External peer
-review remains outstanding.
+through the fourth Taylor order for that type. The later
+[CU construction](CU-h6-global-analytic-closure.md) gives
+global analytic lifts and attains this exact upper bound.
+The nonlinear equations remain open. External peer review
+remains outstanding.
