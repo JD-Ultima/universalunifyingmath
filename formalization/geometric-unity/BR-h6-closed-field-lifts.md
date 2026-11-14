@@ -94,8 +94,9 @@ of rotated evaluations gives a linear right inverse to evaluation
 on this direct sum. Each resulting field is a finite sum of global
 analytic closed fields. The proof gives a lower bound on the
 rotated span. [BU](BU-h6-second-jet-obstruction.md) excludes the
-type $(2,0)$ from all smooth closed field values. The type $(5,5)$
-remains unresolved.
+type $(2,0)$ from all smooth closed field values.
+[CU](CU-h6-global-analytic-closure.md) constructs global analytic
+closed lifts of the remaining type $(5,5)$ by a different method.
 
 ## BR4. The larger affine symmetry and its character modes
 

@@ -5,9 +5,9 @@ The unresolved 286-dimensional type $(5,5)$ in
 with a verified fourth-order Taylor jet satisfying the linear
 covariant closure equations through degree three. The certificate
 checks all coefficients over $\mathbb Q$ in the split model and
-takes the compact real part. This is finite-order compatibility.
-The existence of a genuine closed field with that value remains
-open.
+takes the compact real part. The later
+[CU construction](CU-h6-global-analytic-closure.md) gives a
+genuine closed field with that value.
 
 ## CF1. Radial frame and the closure identities
 
@@ -91,7 +91,7 @@ span of such finite jets contains the entire irreducible type.
 records the independent commutator and normalization checks.
 The exact verifier uses rational identities throughout. Prime
 arithmetic was used to propose the certificate. The calculation
-gives finite Taylor data for linear closure. Higher-order
-compatibility in characteristic zero, convergent field lifts and
-the nonlinear condition remain open. External peer review
-remains outstanding.
+gives finite Taylor data for linear closure.
+[CM](CM-h6-sixth-linear-jet.md) verifies higher-order
+compatibility over the rationals. The nonlinear condition
+remains open. External peer review remains outstanding.
