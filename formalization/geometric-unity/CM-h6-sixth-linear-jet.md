@@ -85,6 +85,7 @@ standard-library rational backend.
 [Review104](../../reports/reviews/REVIEW104-GU-CM-2026-11-14.md)
 records the two exhaustive runs and the independent geometry
 controls. The result supplies finite-order data for linear
-closure. Formal integrability, a field on an open set and the
-nonlinear equations remain open. External peer review remains
-outstanding.
+closure. [CU](CU-h6-global-analytic-closure.md) subsequently
+constructs analytic fields by a different method. General
+formal integrability and the nonlinear equations remain open.
+External peer review remains outstanding.
