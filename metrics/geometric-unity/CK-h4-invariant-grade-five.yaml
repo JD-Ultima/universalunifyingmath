@@ -1,0 +1,15 @@
+claim_id: [GU-054]
+result_ids: [CK1, CK2, CK3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CK-h4-invariant-grade-five.md
+computation: computation/geometric-unity/CK_h4_invariant_forms.py
+internal_review:
+  - reports/reviews/REVIEW100-GU-CK-2026-11-14.md
+result: >-
+  The H4 invariant grade-five form has exact signature (5893,4495,0)
+  on the full H4 curvature kernel. Definite supports are excluded,
+  and both spectral signs must carry positive norm at a zero.
+limitations: >-
+  The fixed compact real pure H4 branch. The invariant grade-five
+  equation is one necessary condition for the full system.
+dependencies: [BQ1, BX1, CA2, CB1, CH1]
