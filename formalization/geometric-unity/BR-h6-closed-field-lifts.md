@@ -127,6 +127,9 @@ equations at the identity would transport them globally, because
 its closure is exact and the background is invariant. The fields
 of BR3 generally lose the constant-norm property on taking sums.
 They solve the linear closure equation with all coefficient and
-form slots included. Their nonlinear feasibility is open.
+form slots included. [BV](BV-h6-triangular-positive-obstruction.md)
+subsequently excludes the full 952-dimensional invariant family.
+General nonlinear feasibility for rotated sums and arbitrary fields
+remains open here.
 Positive observer scales transfer through BC's dilation and
 homothety. External peer review remains outstanding.

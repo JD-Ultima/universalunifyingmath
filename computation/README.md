@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 72 |
-| **Self-contained total** | **82** |
+| Geometric Unity computations | 73 |
+| **Self-contained total** | **83** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **88** |
+| **Total with source checks** | **89** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 82 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 83 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -59,6 +59,8 @@ python -X utf8 scripts/verify.py --recent --upstream ../chain-theory
 Keep that checkout free of modified, untracked and ignored files, including build artifacts. The verifier checks the commit and raw source hashes; CRLF conversion is rejected. These commands read upstream material as data. The Lean-coverage classifier uses recorded build and axiom logs.
 
 ## Completed validation
+
+[BV](../formalization/geometric-unity/BV-h6-triangular-positive-obstruction.md) excludes the full 952-dimensional triangular closed family. The selected check verifies the receiver, positivity of all stored matrices, and exact rational and modular reconstruction on one block. Use `--full` on `BV_h6_an_positive.py` to reconstruct all sixteen blocks.
 
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 

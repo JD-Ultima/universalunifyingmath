@@ -18,7 +18,7 @@ The [positive-Z1 hook results](reports/SYNTHESIS.md#geometric-unity) give the [f
 
 Internal reviews include AI-assisted work. External peer review remains outstanding. Source versions and acquisition limits are recorded in [sources](sources/), including the byte-for-byte comparison of the GU draft mirror with the recorded author-host download.
 
-The [upper triangular closure construction](formalization/geometric-unity/BR-h6-closed-field-lifts.md) gives 952 invariant closed real fields of constant norm. Finite sums of their rotations give analytic closed extensions of every value in a 6,534-dimensional submodule. The [quadratic character obstruction](formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed subspaces. Full fields outside those exclusions remain open.
+The [upper triangular closure construction](formalization/geometric-unity/BR-h6-closed-field-lifts.md) gives a 952-dimensional family of invariant closed real fields of constant norm. One [exact positive receiver](formalization/geometric-unity/BV-h6-triangular-positive-obstruction.md) excludes that entire family from the full nonlinear equation. Finite sums of differently rotated fields still provide analytic closed extensions of every value in a 6,534-dimensional submodule.
 
 An exact [second-derivative obstruction](formalization/geometric-unity/BU-h6-second-jet-obstruction.md) rules out the 14-dimensional type $(2,0)$ as a component of any smooth closed hook on this observer. This leaves a 6,820-dimensional upper bound on possible closed values.
 
