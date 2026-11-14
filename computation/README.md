@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 117 |
-| **Self-contained total** | **127** |
+| Geometric Unity computations | 118 |
+| **Self-contained total** | **128** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **133** |
+| **Total with source checks** | **134** |
 
 Inspect the actual command list without executing it:
 
@@ -121,6 +121,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 [DP](../formalization/geometric-unity/DP-h6-eight-axial-characters.md) extends the exact H6 axial exclusion to eight sign characters and 1,165 local value directions. Its selected command verifies the new character 6 geometry. The full command rebuilds all eight Grams.
 
 [DR](../formalization/geometric-unity/DR-h6-rank-two-stress.md) checks the sharp ambient two-plane stress spectrum and both compact moment-form rank certificates. It proves a strict bound for every curvature-compatible real derivative plane.
+
+[DT](../formalization/geometric-unity/DT-h4-coherent-cartan-exclusion.md) checks a rational receiver on the 56-dimensional real H4 slice of the two highest Cartan weights \((3,3)\). Full mode recreates all ten modular Gram images.
 
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
