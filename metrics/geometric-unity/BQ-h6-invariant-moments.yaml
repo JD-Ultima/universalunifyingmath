@@ -1,0 +1,38 @@
+claim_id: [GU-054]
+result_ids: [BQ1, BQ2, BQ3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BQ-h6-invariant-moments.md
+result: >-
+  Exact invariant grade-five and grade-nine forms on every H6 curvature
+  isotypic type exclude all 15 single types and at least 94 two-type
+  supports. They give a sharp 753/1285 upper bound on the energy fraction
+  in the old 135-dimensional module under these two scalar equations.
+code:
+  - computation/geometric-unity/BQ_h6_invariant_forms.py
+  - computation/geometric-unity/BQ_h6_invariant_forms.json
+  - computation/geometric-unity/BQ_h6_invariant_forms.out
+internal_review:
+  - reports/reviews/REVIEW81-GU-BQ-2026-11-14.md
+formalization_status: >-
+  Uses BO's full curvature kernel and BN's fixed flat positive compact
+  pure H6Gamma conventions. All norm fractions refer to the positive
+  physical metric.
+proof_status: >-
+  Invariant forms reduce to multiplicity-space matrices. Polarization on
+  synchronized highest-vector real parts calibrates all entries exactly.
+  Positive principal minors check each support exclusion and the
+  semidefinite energy bound.
+reproducibility: >-
+  The helper rebuilds the receivers and transports BO's adjacent data.
+  Exact matrix entries are recomputed from public inputs in --full mode.
+  The default recalibrates three blocks and checks all positivity and
+  energy certificates. The helper writes stdout only.
+limitations: >-
+  Cancelling two invariant projections does not impose every nonlinear
+  coefficient or covariant closure. General full pointwise and field
+  solutions remain open.
+dependencies: [BA2, BN1, BN2, BO1, BO2, BP2]
+confidence: >-
+  An independent internal Clifford implementation compared every receiver
+  coefficient in the calibration. Exact arithmetic establishes the
+  displayed positive certificates. External peer review is outstanding.
