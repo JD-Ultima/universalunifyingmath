@@ -109,6 +109,7 @@ RECENT = [
     ("geometric-unity/CI_h4_cartan_support.py", ["--full-independent"]),
     ("geometric-unity/CJ_h6_stress_gradient.py", []),
     ("geometric-unity/CK_h4_invariant_forms.py", []),
+    ("geometric-unity/CL_h6_oscillating_carriers.py", ["--full"]),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),
