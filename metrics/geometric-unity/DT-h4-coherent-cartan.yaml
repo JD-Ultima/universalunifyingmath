@@ -1,0 +1,9 @@
+branch: H4
+curvature_kernel_dimension: 10388
+cartan_weights: [3, 3]
+highest_complex_dimension: 28
+real_slice_dimension: 56
+strict_receiver_lower: "19/20"
+receiver_norm_square_upper: "9/2"
+strict_complete_residual_square_lower: "1/5"
+exact_modular_images: 10
