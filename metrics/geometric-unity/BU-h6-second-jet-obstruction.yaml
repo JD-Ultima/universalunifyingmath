@@ -1,0 +1,32 @@
+claim_id: [GU-054]
+result_ids: [BU1, BU2, BU3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BU-h6-second-jet-obstruction.md
+result: >-
+  Every smooth closed H6 hook on the declared flat positive observer
+  has zero type (2,0) component in the full linear curvature kernel.
+  The possible value subspace has dimension at most 6820.
+code:
+  - computation/geometric-unity/BU_h6_h2_prolongation.py
+internal_review:
+  - reports/reviews/REVIEW85-GU-BU-2026-11-14.md
+formalization_status: >-
+  BO's symmetric-space curvature and standard real covariant
+  exterior closure. The result transfers to positive constant scales.
+proof_status: >-
+  Differentiated closure constrains the symmetric jet by an equivariant
+  linear cokernel condition. Exact character accounting and highest
+  equations give seven possible lifts on type (2,0). An eight-row
+  exact obstruction rejects every lift.
+reproducibility: >-
+  The verifier rebuilds the four required kernel modules and all seven
+  highest jets from public BO witnesses. It reconstructs the augmented
+  minor and verifies the rational cokernel functional.
+limitations: >-
+  This gives an upper bound on possible closed field values and does
+  not realize every value in that upper bound. The full nonlinear
+  field equations and the type (5,5) lift remain open.
+dependencies: [BA2, BO1, BO2, BR3]
+confidence: >-
+  Exact rational tensors and a nonzero rational cokernel certificate
+  establish the obstruction. External peer review remains outstanding.

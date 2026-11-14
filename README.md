@@ -20,6 +20,8 @@ Internal reviews include AI-assisted work. External peer review remains outstand
 
 The [upper triangular closure construction](formalization/geometric-unity/BR-h6-closed-field-lifts.md) gives 952 invariant closed real fields of constant norm. Finite sums of their rotations give analytic closed extensions of every value in a 6,534-dimensional submodule. The [quadratic character obstruction](formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed subspaces. Full fields outside those exclusions remain open.
 
+An exact [second-derivative obstruction](formalization/geometric-unity/BU-h6-second-jet-obstruction.md) rules out the 14-dimensional type $(2,0)$ as a component of any smooth closed hook on this observer. This leaves a 6,820-dimensional upper bound on possible closed values.
+
 An [exact partial point value](formalization/geometric-unity/BS-h6-certified-partial-value.md) now satisfies all grade-one and grade-thirteen equations and both invariant higher-grade projections. A required grade-nine coefficient is positive at that value, so full pointwise feasibility remains open.
 
 ## Reproduce selected checks
