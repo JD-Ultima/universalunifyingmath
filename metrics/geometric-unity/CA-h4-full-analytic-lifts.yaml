@@ -1,0 +1,19 @@
+claim_id: [GU-054]
+result_ids: [CA1, CA2, CA3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CA-h4-full-analytic-lifts.md
+computation: computation/geometric-unity/BX_data/verify_h4_lift.py
+internal_review:
+  - reports/reviews/REVIEW91-GU-CA-2026-11-14.md
+result: >-
+  All 10,388 H4 curvature values admit global real analytic closed
+  lifts as finite sums of compact translates of 28 triangular fields.
+proof_status: >-
+  Exact triangular closure and 57 highest vectors, with nonzero
+  Hermitian pairing determinants in all 22 types at two Gaussian
+  primes. Independent checks used exact Hodge closure and another
+  Gaussian rational transport.
+limitations: >-
+  The declared pure real H4 branch at flat lambda 1/5. This establishes
+  complete feasibility of the linear point-value extension equations.
+dependencies: [BA2, BR1, BX1, BX2]

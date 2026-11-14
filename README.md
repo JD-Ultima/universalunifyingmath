@@ -24,7 +24,7 @@ An exact [second-derivative obstruction](formalization/geometric-unity/BU-h6-sec
 
 An [exact partial point value](formalization/geometric-unity/BS-h6-certified-partial-value.md) now satisfies all grade-one and grade-thirteen equations and both invariant higher-grade projections. A required grade-nine coefficient is positive at that value, so full pointwise feasibility remains open.
 
-For the separate [pure H4 branch](formalization/geometric-unity/BX-h4-curvature-and-closed-fields.md), exact linear checks give a 10,388-dimensional pointwise curvature kernel and a 6,643-dimensional space of upper triangular invariant closed fields. The [grade-five equation](formalization/geometric-unity/BY-h4-low-isotype-obstruction.md) excludes a 24-dimensional sum of curvature types. General nonlinear feasibility remains open.
+For the separate [pure H4 branch](formalization/geometric-unity/BX-h4-curvature-and-closed-fields.md), exact linear checks give a 10,388-dimensional pointwise curvature kernel and a 6,643-dimensional space of upper triangular invariant closed fields. Every curvature-compatible value has a [global analytic closed lift](formalization/geometric-unity/CA-h4-full-analytic-lifts.md). The [grade-five equation](formalization/geometric-unity/BY-h4-low-isotype-obstruction.md) excludes a 24-dimensional sum of curvature types. General nonlinear feasibility remains open.
 
 ## Reproduce selected checks
 
