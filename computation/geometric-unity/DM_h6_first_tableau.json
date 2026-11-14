@@ -1,0 +1,428 @@
+{
+  "blocks": [
+    {
+      "output": [
+        1,
+        0
+      ],
+      "source_copies": 2,
+      "closure_rank": 0,
+      "closure_kernel_copies": 2,
+      "delta_image_copies": 2,
+      "raw_source_entries": 23009
+    },
+    {
+      "output": [
+        1,
+        1
+      ],
+      "source_copies": 1,
+      "closure_rank": 1,
+      "closure_kernel_copies": 0,
+      "delta_image_copies": 0,
+      "raw_source_entries": 9340
+    },
+    {
+      "output": [
+        2,
+        1
+      ],
+      "source_copies": 6,
+      "closure_rank": 3,
+      "closure_kernel_copies": 3,
+      "delta_image_copies": 3,
+      "raw_source_entries": 46013
+    },
+    {
+      "output": [
+        2,
+        2
+      ],
+      "source_copies": 2,
+      "closure_rank": 0,
+      "closure_kernel_copies": 2,
+      "delta_image_copies": 2,
+      "raw_source_entries": 11055
+    },
+    {
+      "output": [
+        3,
+        0
+      ],
+      "source_copies": 6,
+      "closure_rank": 1,
+      "closure_kernel_copies": 5,
+      "delta_image_copies": 5,
+      "raw_source_entries": 31456
+    },
+    {
+      "output": [
+        3,
+        1
+      ],
+      "source_copies": 5,
+      "closure_rank": 4,
+      "closure_kernel_copies": 1,
+      "delta_image_copies": 1,
+      "raw_source_entries": 27044
+    },
+    {
+      "output": [
+        3,
+        2
+      ],
+      "source_copies": 8,
+      "closure_rank": 3,
+      "closure_kernel_copies": 5,
+      "delta_image_copies": 5,
+      "raw_source_entries": 30020
+    },
+    {
+      "output": [
+        3,
+        3
+      ],
+      "source_copies": 1,
+      "closure_rank": 1,
+      "closure_kernel_copies": 0,
+      "delta_image_copies": 0,
+      "raw_source_entries": 2228
+    },
+    {
+      "output": [
+        4,
+        0
+      ],
+      "source_copies": 1,
+      "closure_rank": 1,
+      "closure_kernel_copies": 0,
+      "delta_image_copies": 0,
+      "raw_source_entries": 4016
+    },
+    {
+      "output": [
+        4,
+        1
+      ],
+      "source_copies": 13,
+      "closure_rank": 5,
+      "closure_kernel_copies": 8,
+      "delta_image_copies": 7,
+      "raw_source_entries": 35245
+    },
+    {
+      "output": [
+        4,
+        2
+      ],
+      "source_copies": 7,
+      "closure_rank": 3,
+      "closure_kernel_copies": 4,
+      "delta_image_copies": 4,
+      "raw_source_entries": 16940
+    },
+    {
+      "output": [
+        4,
+        3
+      ],
+      "source_copies": 6,
+      "closure_rank": 3,
+      "closure_kernel_copies": 3,
+      "delta_image_copies": 3,
+      "raw_source_entries": 8206
+    },
+    {
+      "output": [
+        5,
+        0
+      ],
+      "source_copies": 8,
+      "closure_rank": 0,
+      "closure_kernel_copies": 8,
+      "delta_image_copies": 4,
+      "raw_source_entries": 9830
+    },
+    {
+      "output": [
+        5,
+        1
+      ],
+      "source_copies": 10,
+      "closure_rank": 5,
+      "closure_kernel_copies": 5,
+      "delta_image_copies": 3,
+      "raw_source_entries": 14222
+    },
+    {
+      "output": [
+        5,
+        2
+      ],
+      "source_copies": 14,
+      "closure_rank": 3,
+      "closure_kernel_copies": 11,
+      "delta_image_copies": 7,
+      "raw_source_entries": 13179
+    },
+    {
+      "output": [
+        5,
+        3
+      ],
+      "source_copies": 7,
+      "closure_rank": 5,
+      "closure_kernel_copies": 2,
+      "delta_image_copies": 2,
+      "raw_source_entries": 5151
+    },
+    {
+      "output": [
+        5,
+        4
+      ],
+      "source_copies": 4,
+      "closure_rank": 1,
+      "closure_kernel_copies": 3,
+      "delta_image_copies": 2,
+      "raw_source_entries": 1347
+    },
+    {
+      "output": [
+        5,
+        5
+      ],
+      "source_copies": 1,
+      "closure_rank": 1,
+      "closure_kernel_copies": 0,
+      "delta_image_copies": 0,
+      "raw_source_entries": 143
+    },
+    {
+      "output": [
+        6,
+        0
+      ],
+      "source_copies": 3,
+      "closure_rank": 1,
+      "closure_kernel_copies": 2,
+      "delta_image_copies": 1,
+      "raw_source_entries": 1759
+    },
+    {
+      "output": [
+        6,
+        1
+      ],
+      "source_copies": 14,
+      "closure_rank": 2,
+      "closure_kernel_copies": 12,
+      "delta_image_copies": 3,
+      "raw_source_entries": 5967
+    },
+    {
+      "output": [
+        6,
+        2
+      ],
+      "source_copies": 11,
+      "closure_rank": 3,
+      "closure_kernel_copies": 8,
+      "delta_image_copies": 3,
+      "raw_source_entries": 4023
+    },
+    {
+      "output": [
+        6,
+        3
+      ],
+      "source_copies": 9,
+      "closure_rank": 2,
+      "closure_kernel_copies": 7,
+      "delta_image_copies": 2,
+      "raw_source_entries": 1847
+    },
+    {
+      "output": [
+        6,
+        4
+      ],
+      "source_copies": 4,
+      "closure_rank": 1,
+      "closure_kernel_copies": 3,
+      "delta_image_copies": 1,
+      "raw_source_entries": 465
+    },
+    {
+      "output": [
+        6,
+        5
+      ],
+      "source_copies": 2,
+      "closure_rank": 0,
+      "closure_kernel_copies": 2,
+      "delta_image_copies": 0,
+      "raw_source_entries": 68
+    },
+    {
+      "output": [
+        7,
+        0
+      ],
+      "source_copies": 4,
+      "closure_rank": 0,
+      "closure_kernel_copies": 4,
+      "delta_image_copies": 1,
+      "raw_source_entries": 359
+    },
+    {
+      "output": [
+        7,
+        1
+      ],
+      "source_copies": 8,
+      "closure_rank": 2,
+      "closure_kernel_copies": 6,
+      "delta_image_copies": 0,
+      "raw_source_entries": 979
+    },
+    {
+      "output": [
+        7,
+        2
+      ],
+      "source_copies": 10,
+      "closure_rank": 0,
+      "closure_kernel_copies": 10,
+      "delta_image_copies": 1,
+      "raw_source_entries": 790
+    },
+    {
+      "output": [
+        7,
+        3
+      ],
+      "source_copies": 6,
+      "closure_rank": 2,
+      "closure_kernel_copies": 4,
+      "delta_image_copies": 0,
+      "raw_source_entries": 327
+    },
+    {
+      "output": [
+        7,
+        4
+      ],
+      "source_copies": 3,
+      "closure_rank": 0,
+      "closure_kernel_copies": 3,
+      "delta_image_copies": 0,
+      "raw_source_entries": 64
+    },
+    {
+      "output": [
+        7,
+        5
+      ],
+      "source_copies": 2,
+      "closure_rank": 0,
+      "closure_kernel_copies": 2,
+      "delta_image_copies": 0,
+      "raw_source_entries": 12
+    },
+    {
+      "output": [
+        8,
+        0
+      ],
+      "source_copies": 1,
+      "closure_rank": 0,
+      "closure_kernel_copies": 1,
+      "delta_image_copies": 0,
+      "raw_source_entries": 28
+    },
+    {
+      "output": [
+        8,
+        1
+      ],
+      "source_copies": 4,
+      "closure_rank": 0,
+      "closure_kernel_copies": 4,
+      "delta_image_copies": 0,
+      "raw_source_entries": 65
+    },
+    {
+      "output": [
+        8,
+        2
+      ],
+      "source_copies": 4,
+      "closure_rank": 0,
+      "closure_kernel_copies": 4,
+      "delta_image_copies": 0,
+      "raw_source_entries": 62
+    },
+    {
+      "output": [
+        8,
+        3
+      ],
+      "source_copies": 3,
+      "closure_rank": 0,
+      "closure_kernel_copies": 3,
+      "delta_image_copies": 0,
+      "raw_source_entries": 24
+    },
+    {
+      "output": [
+        8,
+        4
+      ],
+      "source_copies": 1,
+      "closure_rank": 0,
+      "closure_kernel_copies": 1,
+      "delta_image_copies": 0,
+      "raw_source_entries": 4
+    },
+    {
+      "output": [
+        9,
+        1
+      ],
+      "source_copies": 1,
+      "closure_rank": 0,
+      "closure_kernel_copies": 1,
+      "delta_image_copies": 0,
+      "raw_source_entries": 3
+    },
+    {
+      "output": [
+        9,
+        2
+      ],
+      "source_copies": 1,
+      "closure_rank": 0,
+      "closure_kernel_copies": 1,
+      "delta_image_copies": 0,
+      "raw_source_entries": 1
+    },
+    {
+      "output": [
+        9,
+        3
+      ],
+      "source_copies": 1,
+      "closure_rank": 0,
+      "closure_kernel_copies": 1,
+      "delta_image_copies": 0,
+      "raw_source_entries": 1
+    }
+  ],
+  "source_dimension": 95480,
+  "closure_rank": 17251,
+  "closure_kernel_dimension": 78229,
+  "delta_image_dimension_on_closure_kernel": 15953,
+  "closed_and_coclosed_dimension": 62276,
+  "scope": "Complete exact first tableau on K6820. It is not a formal-integrability or nonlinear-solvability theorem."
+}

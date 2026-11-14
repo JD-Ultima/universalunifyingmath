@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 113 |
-| **Self-contained total** | **123** |
+| Geometric Unity computations | 115 |
+| **Self-contained total** | **125** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **129** |
+| **Total with source checks** | **131** |
 
 Inspect the actual command list without executing it:
 
@@ -115,6 +115,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 [DK](../formalization/geometric-unity/DK-h6-mixed-gradients.md) checks the mixed H6 gradient equations for the \((5,5)\) projection. The characteristic cover certifies the entire real Weyl chamber. [DL](../formalization/geometric-unity/DL-h6-balanced-characteristic-lift.md) uses the global bundle computation to verify the local Lie algebra, regularized coefficient and base value of the balanced mixed field.
 
 [DN](../formalization/geometric-unity/DN-h4-high-cartan-real-exclusion.md) verifies a common rational receiver on 960 real high-Cartan directions in H4. The selected check includes every source geometry test and all 15 shifted Gram bounds, and replays one modular Gram image. Full mode reconstructs all ten images.
+
+[DM](../formalization/geometric-unity/DM-h6-first-tableau.md) verifies exact closure and contraction ranks by highest type. The selected command checks five blocks and full mode checks all 38. [DO](../formalization/geometric-unity/DO-h6-sharp-tableau-stress.md) rebuilds the complete sharp derivative spectrum on the closed tableau and gives improved H6 stress gradient bounds.
 
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
