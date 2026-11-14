@@ -1,0 +1,18 @@
+claim_id: [GU-054]
+result_ids: [CF1, CF2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CF-h6-fourth-linear-jet.md
+computation: computation/geometric-unity/CF_h6_fourth_jet.py
+internal_review:
+  - reports/reviews/REVIEW93-GU-CF-2026-11-14.md
+result: >-
+  An exact even fourth-order H6 jet with nonzero compact-real
+  type (5,5) origin value solves linear closure through cubic order.
+proof_status: >-
+  Full rational coefficient identities, including 23,744 nonzero
+  cubic closure entries. A separate rational matrix-commutator
+  implementation checked complete evaluated identities.
+limitations: >-
+  Finite Taylor data on the flat positive observer. Actual closed
+  fields and the nonlinear equation remain open.
+dependencies: [BA2, BO1, BR1, BU3]
