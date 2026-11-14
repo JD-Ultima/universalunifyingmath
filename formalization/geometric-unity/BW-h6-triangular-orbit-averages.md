@@ -96,5 +96,7 @@ transfer by BC's dilation and homothety. The averaging uses a fixed
 finite total-variation measure with values in $W$.
 [BZ](BZ-h6-triangular-limit-separation.md) extends the limit to
 finite rotation derivatives and distributions with support in
-a common regular QR cell. General closed fields remain open.
+a common regular QR cell. [CE](CE-h6-oscillating-triangular-fields.md)
+allows sufficiently small imaginary character frequencies in a
+joint finite rotation measure. General closed fields remain open.
 External peer review remains outstanding.
