@@ -160,12 +160,24 @@ def source_commands(path, recent=False):
     return commands
 
 
+def shard_argument(value):
+    try:
+        index, count = map(int, value.split("/"))
+    except ValueError as error:
+        raise argparse.ArgumentTypeError("use INDEX/COUNT, starting at index 1") from error
+    if not 1 <= index <= count:
+        raise argparse.ArgumentTypeError("shard index must be between 1 and its count")
+    return index - 1, count
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--upstream", type=Path, help="optional pristine Chain Theory checkout (no extra files)")
     parser.add_argument("--recent", action="store_true", help="include selected recent research checks")
     parser.add_argument("--timeout", type=float, default=180, help="seconds per check (default: 180)")
     parser.add_argument("--list", action="store_true", help="list selected checks without running them")
+    parser.add_argument("--shard", type=shard_argument, default=(0, 1),
+                        metavar="INDEX/COUNT", help="run one partition of the selected checks")
     args = parser.parse_args()
     if args.timeout <= 0:
         parser.error("--timeout must be positive")
@@ -178,6 +190,10 @@ def main():
             checks += source_commands(args.upstream.resolve(), recent=args.recent)
         except (ValueError, OSError, subprocess.TimeoutExpired) as error:
             parser.error(str(error))
+    index, count = args.shard
+    checks = checks[index::count]
+    if not checks:
+        parser.error("the selected shard has no checks")
     if args.list:
         for label, _ in checks:
             print(label)
