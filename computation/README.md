@@ -74,6 +74,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 [CB](../formalization/geometric-unity/CB-h4-certified-partial-value.md) verifies the real H4 partial point value, the complete grade-one and grade-nine detectors, and its separating grade-five coefficient. The selected check reconstructs all invariant grade-five terms.
 
+[CD](../formalization/geometric-unity/CD-hook-clifford-identities.md) compares two exact Clifford implementations and verifies the exterior identities and operator sum of squares on rational controls.
+
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
 [BT](../formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed character spaces. The selected check rebuilds the closed basis, tests independent Clifford coordinates and ranks 16 selected quadratic columns. The full 2,701-column certificate requires `--full` and is outside the selected suite.

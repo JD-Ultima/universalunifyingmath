@@ -1,0 +1,16 @@
+claim_id: [GU-054]
+result_ids: [CD1, CD2, CD3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CD-hook-clifford-identities.md
+computation: computation/geometric-unity/CD_clifford_hook_identities.py
+internal_review:
+  - reports/reviews/REVIEW95-GU-CD-2026-11-14.md
+result: >-
+  The real H4 and H6 quadratics satisfy all exterior traces, the
+  displayed Clifford contraction, and an operator sum of squares.
+  At full solutions the resulting norm-relative spectral caps
+  are 2 and 78/43, respectively.
+limitations: >-
+  The raw spans concern all real positive hooks. The norm and spectral
+  conclusions impose necessary conditions on full pointwise zeros.
+dependencies: [BA2, BS1, CB1]
