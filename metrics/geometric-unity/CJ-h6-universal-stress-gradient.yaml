@@ -1,0 +1,15 @@
+claim_id: [GU-054]
+result_ids: [CJ1, CJ2, CJ3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CJ-h6-universal-stress-gradient.md
+computation: computation/geometric-unity/CJ_h6_stress_gradient.py
+internal_review:
+  - reports/reviews/REVIEW99-GU-CJ-2026-11-14.md
+result: >-
+  On the normalized flat positive observer every full pure H6
+  field has squared gradient greater than 1731/25000 times its norm
+  squared. Independent rational curvature assembly confirms the bound.
+limitations: >-
+  Pure compact-real H6 on the stated observer. These are necessary
+  inequalities for second-order field compatibility.
+dependencies: [BA2, BO2, BQ1, BS1, CH1]

@@ -82,6 +82,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 [CI](../formalization/geometric-unity/CI-h4-grade-five-cartan-support.md) verifies the exact highest-weight exclusions extending BY to a 512-dimensional H4 support. The selected check compares all 136 necessary coefficients in two exact Clifford engines.
 
+[CJ](../formalization/geometric-unity/CJ-h6-universal-stress-gradient.md) verifies the H6 gradient estimate using two positive invariant curvature pencils across all 15 types.
+
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
 [BT](../formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed character spaces. The selected check rebuilds the closed basis, tests independent Clifford coordinates and ranks 16 selected quadratic columns. The full 2,701-column certificate requires `--full` and is outside the selected suite.
