@@ -1,0 +1,16 @@
+linear_first_tableau:
+  fiber_dimension: 6820
+  derivative_source_dimension: 95480
+  highest_output_types: 38
+  closure_rank: 17251
+  closure_kernel_dimension: 78229
+  contraction_rank_on_closure_kernel: 15953
+  joint_kernel_dimension: 62276
+stress_derivative:
+  nonzero_multiplicity_blocks: 34
+  sharp_lower_coefficient: "-2-1/sqrt(5)"
+  saturation_types: [[8, 1], [8, 3]]
+  saturation_dimension: 2565
+  mixed_55_gradient_penalty: "1/sqrt(5)"
+  full_solution_gradient_square_lower: "5193/(25000*(2+1/sqrt(5)))"
+  minimum_full_solution_derivative_rank: 2
