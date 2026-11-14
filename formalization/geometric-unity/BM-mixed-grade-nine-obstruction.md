@@ -7,6 +7,9 @@ coefficient is nonzero throughout BL's certified rational box. This
 excludes that candidate, not every mixed value or every scalarity zero
 in the six-amplitude family.
 
+[BN](BN-h6-invariant-grade-nine.md) subsequently excludes the entire
+135-dimensional BG module by an invariant grade-nine projection.
+
 Evidence: the [exact reconstruction and coefficient helper](../../computation/geometric-unity/BM_mixed_grade9.py)
 and its [output](../../computation/geometric-unity/BM_mixed_grade9.out).
 [Review77](../../reports/reviews/REVIEW77-GU-BM-2026-11-07.md) records the

@@ -1,0 +1,37 @@
+claim_id: [GU-054]
+result_ids: [BN1, BN2, BN3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BN-h6-invariant-grade-nine.md
+result: >-
+  The invariant grade-nine projection is positive on every nonzero real
+  value in BG's contained 135-dimensional H6 curvature module. The zero
+  value fails the positive grade-one baseline, excluding the whole module
+  from the declared full pointwise field equation.
+code:
+  - computation/geometric-unity/BN_h6_invariant_grade9.py
+  - computation/geometric-unity/BN_h6_invariant_grade9.out
+internal_review:
+  - reports/reviews/REVIEW78-GU-BN-2026-11-14.md
+formalization_status: >-
+  Flat positive Z1 at lambda=1/5, compact (14,0)/u(128) real form,
+  fixed parallel real WA, constant nonzero kappa, To=i(3kappa/104)Phi and
+  Te=iB Gamma in the pure H6 hook. Positive constant observer scales transfer.
+proof_status: >-
+  Trace equivariance gives an invariant grade-nine receiver. Irreducibility
+  and metric self-adjointness reduce its quadratic pairing to three
+  scalar calibrations. Every calibration uses exact rational coefficients
+  and includes all 1143 receiver entries. The full variable derivative
+  term has grade seven, so it cannot cancel the obstruction.
+reproducibility: >-
+  The public helper reconstructs the receiver and seeds from adjacent
+  public inputs, writes stdout only, and checks twelve nested Clifford
+  coefficients by default. The --full-nested mode compares all 3429.
+limitations: >-
+  The positivity conclusion concerns the contained module. Values in
+  other curvature components, closure for general fields, other branches
+  and physical identification remain outside its scope.
+dependencies: [BA1, BA2, BF1, BF2, BG1, BM2, BM3]
+confidence: >-
+  Exact arithmetic, an independently reconstructed receiver, a complete
+  nested-Clifford comparison and the hand equivariance proof support the
+  result. External peer review remains outstanding.

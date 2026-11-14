@@ -126,8 +126,8 @@ and its scalarity condition are natural. Hence the kernel dimension,
 positive obstruction and field exclusion hold for all positive scales.
 The positive baseline retains the displayed $c_V$ dependence.
 
-The complete ambient curvature kernel, arbitrary combinations in its
-135-dimensional contained module, other parameters, curved bases and
-coincident branches remain open. [BH](BH-h6-degree2.md) separately treats
-every value in the new degree-two summand. These are conditional
-mathematical exclusions, not a physical test or a literature-priority claim.
+The complete ambient curvature kernel, other parameters, curved bases
+and coincident branches are outside BG's scope. [BH](BH-h6-degree2.md)
+treats the degree-two summand, and [BN](BN-h6-invariant-grade-nine.md)
+excludes the whole contained module from the full equation on this
+branch.

@@ -1,0 +1,7 @@
+Receiver: 1143 entries, gcd 10000000000, norm squared 2835/2097152
+All ten infinitesimal SO(5) actions vanish.
+Harmonic degree 2 norm squared 18225/16 projection 26325/2048 ratio 13/1152
+Harmonic degree 3 norm squared 313875/88 projection 25875/1408 ratio 23/4464
+Harmonic degree 5 norm squared 455625/45056 projection 354375/5767168 ratio 7/1152
+Ordered nested Clifford comparisons: 3429
+35712 L9 = 403 ||B2||^2 + 184 ||B3||^2 + 217 ||B5||^2.
