@@ -120,6 +120,8 @@ RECENT = [
     ("geometric-unity/CS_h6_highpass.py", []),
     ("geometric-unity/CV_h6_axial.py", []),
     ("geometric-unity/CZ_h6_axial_local.py", []),
+    ("geometric-unity/DA_h6_mixed_growth.py", []),
+    ("geometric-unity/DB_h6_bounded_average.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),

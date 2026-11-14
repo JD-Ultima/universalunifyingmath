@@ -1,0 +1,18 @@
+{
+  "dimension": 286,
+  "base_real_norm_squared": "3/131072",
+  "evaluation_density_normalizer": "37486592/3",
+  "schur_scalar": "3/37486592",
+  "uniform_lift_bound": "sqrt(286)*norm(v)",
+  "endpoint_power": "5/2",
+  "uniform_decay_power": "5/24",
+  "exact_checks": [
+    "Compression cofactor identity by positive block diagonalization",
+    "Gaussian radial and normalized S4 constants",
+    "Exact S4 one-coordinate density and small-strip bound",
+    "Uniform decay exponent balance",
+    "Irreducible dimension286 and exact Schur constants"
+  ],
+  "seconds": 0.11759829521179199,
+  "scope": "Scalar and determinant normalizations only. DA supplies the CU majorant; DB_h6_bounded_average_proof.txt proves the integration, C0, analytic, value-lifting and mixed nonlinear statements."
+}
