@@ -1,0 +1,12 @@
+branch: H4
+derivative_source_dimension: 145432
+highest_output_types: 36
+highest_copies: 577
+contraction_rank: 4810
+coclosed_tableau_dimension: 140622
+exterior_rank_on_coclosed_tableau: 24024
+joint_kernel_dimension: 116598
+sharp_stress_range: ["-3", "17/5"]
+equality_dimensions: [42537, 19019]
+rank_two_sharp_stress_range: ["-7/5", "7/5"]
+curvature_compatible_rank_two_endpoint_witnesses: 2

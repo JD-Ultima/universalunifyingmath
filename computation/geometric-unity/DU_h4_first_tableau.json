@@ -1,0 +1,2556 @@
+{
+  "blocks": [
+    {
+      "output": [
+        0,
+        0
+      ],
+      "source_copies": 1,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 1,
+      "wedge_image_copies": 1,
+      "raw_source_entries": 4228
+    },
+    {
+      "output": [
+        1,
+        0
+      ],
+      "source_copies": 10,
+      "coclosed_rank": 1,
+      "coclosed_kernel_copies": 9,
+      "wedge_image_copies": 3,
+      "raw_source_entries": 42596
+    },
+    {
+      "output": [
+        1,
+        1
+      ],
+      "source_copies": 8,
+      "coclosed_rank": 1,
+      "coclosed_kernel_copies": 7,
+      "wedge_image_copies": 2,
+      "raw_source_entries": 33537
+    },
+    {
+      "output": [
+        2,
+        0
+      ],
+      "source_copies": 8,
+      "coclosed_rank": 1,
+      "coclosed_kernel_copies": 7,
+      "wedge_image_copies": 4,
+      "raw_source_entries": 24878
+    },
+    {
+      "output": [
+        2,
+        1
+      ],
+      "source_copies": 32,
+      "coclosed_rank": 5,
+      "coclosed_kernel_copies": 27,
+      "wedge_image_copies": 8,
+      "raw_source_entries": 90653
+    },
+    {
+      "output": [
+        2,
+        2
+      ],
+      "source_copies": 21,
+      "coclosed_rank": 1,
+      "coclosed_kernel_copies": 20,
+      "wedge_image_copies": 7,
+      "raw_source_entries": 45788
+    },
+    {
+      "output": [
+        3,
+        0
+      ],
+      "source_copies": 24,
+      "coclosed_rank": 2,
+      "coclosed_kernel_copies": 22,
+      "wedge_image_copies": 6,
+      "raw_source_entries": 42879
+    },
+    {
+      "output": [
+        3,
+        1
+      ],
+      "source_copies": 35,
+      "coclosed_rank": 4,
+      "coclosed_kernel_copies": 31,
+      "wedge_image_copies": 9,
+      "raw_source_entries": 60242
+    },
+    {
+      "output": [
+        3,
+        2
+      ],
+      "source_copies": 46,
+      "coclosed_rank": 4,
+      "coclosed_kernel_copies": 42,
+      "wedge_image_copies": 12,
+      "raw_source_entries": 56674
+    },
+    {
+      "output": [
+        3,
+        3
+      ],
+      "source_copies": 21,
+      "coclosed_rank": 2,
+      "coclosed_kernel_copies": 19,
+      "wedge_image_copies": 4,
+      "raw_source_entries": 16987
+    },
+    {
+      "output": [
+        4,
+        0
+      ],
+      "source_copies": 11,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 11,
+      "wedge_image_copies": 4,
+      "raw_source_entries": 9649
+    },
+    {
+      "output": [
+        4,
+        1
+      ],
+      "source_copies": 47,
+      "coclosed_rank": 4,
+      "coclosed_kernel_copies": 43,
+      "wedge_image_copies": 10,
+      "raw_source_entries": 38771
+    },
+    {
+      "output": [
+        4,
+        2
+      ],
+      "source_copies": 43,
+      "coclosed_rank": 3,
+      "coclosed_kernel_copies": 40,
+      "wedge_image_copies": 11,
+      "raw_source_entries": 25735
+    },
+    {
+      "output": [
+        4,
+        3
+      ],
+      "source_copies": 35,
+      "coclosed_rank": 2,
+      "coclosed_kernel_copies": 33,
+      "wedge_image_copies": 7,
+      "raw_source_entries": 12489
+    },
+    {
+      "output": [
+        4,
+        4
+      ],
+      "source_copies": 12,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 12,
+      "wedge_image_copies": 3,
+      "raw_source_entries": 2090
+    },
+    {
+      "output": [
+        5,
+        0
+      ],
+      "source_copies": 19,
+      "coclosed_rank": 1,
+      "coclosed_kernel_copies": 18,
+      "wedge_image_copies": 4,
+      "raw_source_entries": 6898
+    },
+    {
+      "output": [
+        5,
+        1
+      ],
+      "source_copies": 27,
+      "coclosed_rank": 2,
+      "coclosed_kernel_copies": 25,
+      "wedge_image_copies": 5,
+      "raw_source_entries": 8999
+    },
+    {
+      "output": [
+        5,
+        2
+      ],
+      "source_copies": 39,
+      "coclosed_rank": 1,
+      "coclosed_kernel_copies": 38,
+      "wedge_image_copies": 8,
+      "raw_source_entries": 8825
+    },
+    {
+      "output": [
+        5,
+        3
+      ],
+      "source_copies": 24,
+      "coclosed_rank": 1,
+      "coclosed_kernel_copies": 23,
+      "wedge_image_copies": 4,
+      "raw_source_entries": 3116
+    },
+    {
+      "output": [
+        5,
+        4
+      ],
+      "source_copies": 14,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 14,
+      "wedge_image_copies": 3,
+      "raw_source_entries": 803
+    },
+    {
+      "output": [
+        5,
+        5
+      ],
+      "source_copies": 3,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 3,
+      "wedge_image_copies": 0,
+      "raw_source_entries": 50
+    },
+    {
+      "output": [
+        6,
+        0
+      ],
+      "source_copies": 4,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 4,
+      "wedge_image_copies": 1,
+      "raw_source_entries": 423
+    },
+    {
+      "output": [
+        6,
+        1
+      ],
+      "source_copies": 21,
+      "coclosed_rank": 1,
+      "coclosed_kernel_copies": 20,
+      "wedge_image_copies": 3,
+      "raw_source_entries": 2169
+    },
+    {
+      "output": [
+        6,
+        2
+      ],
+      "source_copies": 17,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 17,
+      "wedge_image_copies": 3,
+      "raw_source_entries": 1103
+    },
+    {
+      "output": [
+        6,
+        3
+      ],
+      "source_copies": 16,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 16,
+      "wedge_image_copies": 2,
+      "raw_source_entries": 547
+    },
+    {
+      "output": [
+        6,
+        4
+      ],
+      "source_copies": 6,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 6,
+      "wedge_image_copies": 1,
+      "raw_source_entries": 78
+    },
+    {
+      "output": [
+        6,
+        5
+      ],
+      "source_copies": 2,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 2,
+      "wedge_image_copies": 0,
+      "raw_source_entries": 9
+    },
+    {
+      "output": [
+        7,
+        0
+      ],
+      "source_copies": 5,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 5,
+      "wedge_image_copies": 1,
+      "raw_source_entries": 137
+    },
+    {
+      "output": [
+        7,
+        1
+      ],
+      "source_copies": 5,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 5,
+      "wedge_image_copies": 0,
+      "raw_source_entries": 98
+    },
+    {
+      "output": [
+        7,
+        2
+      ],
+      "source_copies": 9,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 9,
+      "wedge_image_copies": 1,
+      "raw_source_entries": 132
+    },
+    {
+      "output": [
+        7,
+        3
+      ],
+      "source_copies": 4,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 4,
+      "wedge_image_copies": 0,
+      "raw_source_entries": 24
+    },
+    {
+      "output": [
+        7,
+        4
+      ],
+      "source_copies": 2,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 2,
+      "wedge_image_copies": 0,
+      "raw_source_entries": 5
+    },
+    {
+      "output": [
+        8,
+        1
+      ],
+      "source_copies": 3,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 3,
+      "wedge_image_copies": 0,
+      "raw_source_entries": 12
+    },
+    {
+      "output": [
+        8,
+        2
+      ],
+      "source_copies": 1,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 1,
+      "wedge_image_copies": 0,
+      "raw_source_entries": 2
+    },
+    {
+      "output": [
+        8,
+        3
+      ],
+      "source_copies": 1,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 1,
+      "wedge_image_copies": 0,
+      "raw_source_entries": 1
+    },
+    {
+      "output": [
+        9,
+        0
+      ],
+      "source_copies": 1,
+      "coclosed_rank": 0,
+      "coclosed_kernel_copies": 1,
+      "wedge_image_copies": 0,
+      "raw_source_entries": 1
+    }
+  ],
+  "source_dimension": 145432,
+  "coclosed_rank": 4810,
+  "coclosed_kernel_dimension": 140622,
+  "wedge_image_dimension_on_coclosed_kernel": 24024,
+  "character_graph": {
+    "value_dimension": 10388,
+    "derivative_dimension": 145432,
+    "output_types": 36,
+    "highest_copies": 577,
+    "maximum_block_copies": 47,
+    "records": [
+      {
+        "output": [
+          9,
+          0
+        ],
+        "dimension": 385,
+        "source_copies": 1,
+        "sources": [
+          {
+            "fiber": [
+              7,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          8,
+          3
+        ],
+        "dimension": 1729,
+        "source_copies": 1,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          8,
+          2
+        ],
+        "dimension": 1330,
+        "source_copies": 1,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          8,
+          1
+        ],
+        "dimension": 836,
+        "source_copies": 3,
+        "sources": [
+          {
+            "fiber": [
+              7,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          }
+        ]
+      },
+      {
+        "output": [
+          7,
+          4
+        ],
+        "dimension": 1326,
+        "source_copies": 2,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          7,
+          3
+        ],
+        "dimension": 1190,
+        "source_copies": 4,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          }
+        ]
+      },
+      {
+        "output": [
+          7,
+          2
+        ],
+        "dimension": 935,
+        "source_copies": 9,
+        "sources": [
+          {
+            "fiber": [
+              7,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          }
+        ]
+      },
+      {
+        "output": [
+          7,
+          1
+        ],
+        "dimension": 595,
+        "source_copies": 5,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          }
+        ]
+      },
+      {
+        "output": [
+          7,
+          0
+        ],
+        "dimension": 204,
+        "source_copies": 5,
+        "sources": [
+          {
+            "fiber": [
+              7,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              0
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          }
+        ]
+      },
+      {
+        "output": [
+          6,
+          5
+        ],
+        "dimension": 715,
+        "source_copies": 2,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          6,
+          4
+        ],
+        "dimension": 810,
+        "source_copies": 6,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          6,
+          3
+        ],
+        "dimension": 770,
+        "source_copies": 16,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 2,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              3
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          }
+        ]
+      },
+      {
+        "output": [
+          6,
+          2
+        ],
+        "dimension": 625,
+        "source_copies": 17,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 2,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              6,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              5,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          }
+        ]
+      },
+      {
+        "output": [
+          6,
+          1
+        ],
+        "dimension": 405,
+        "source_copies": 21,
+        "sources": [
+          {
+            "fiber": [
+              7,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 2,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              5,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              0
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              1
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          }
+        ]
+      },
+      {
+        "output": [
+          6,
+          0
+        ],
+        "dimension": 140,
+        "source_copies": 4,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          5,
+          5
+        ],
+        "dimension": 286,
+        "source_copies": 3,
+        "sources": [
+          {
+            "fiber": [
+              5,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          }
+        ]
+      },
+      {
+        "output": [
+          5,
+          4
+        ],
+        "dimension": 429,
+        "source_copies": 14,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 2,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              4,
+              3
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          }
+        ]
+      },
+      {
+        "output": [
+          5,
+          3
+        ],
+        "dimension": 455,
+        "source_copies": 24,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 2,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              5,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              4,
+              3
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              3,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          }
+        ]
+      },
+      {
+        "output": [
+          5,
+          2
+        ],
+        "dimension": 390,
+        "source_copies": 39,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 2,
+            "total_copies": 8
+          },
+          {
+            "fiber": [
+              5,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              0
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              3
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              1
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              2
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          }
+        ]
+      },
+      {
+        "output": [
+          5,
+          1
+        ],
+        "dimension": 260,
+        "source_copies": 27,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              5,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 2,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              1
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              4,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              3,
+              1
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          }
+        ]
+      },
+      {
+        "output": [
+          5,
+          0
+        ],
+        "dimension": 91,
+        "source_copies": 19,
+        "sources": [
+          {
+            "fiber": [
+              7,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              6,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              5,
+              0
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              1
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              0
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          }
+        ]
+      },
+      {
+        "output": [
+          4,
+          4
+        ],
+        "dimension": 165,
+        "source_copies": 12,
+        "sources": [
+          {
+            "fiber": [
+              5,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              4,
+              3
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          }
+        ]
+      },
+      {
+        "output": [
+          4,
+          3
+        ],
+        "dimension": 231,
+        "source_copies": 35,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              3
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              4,
+              3
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 2,
+            "total_copies": 8
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              1
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              3,
+              2
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          }
+        ]
+      },
+      {
+        "output": [
+          4,
+          2
+        ],
+        "dimension": 220,
+        "source_copies": 43,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              2
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              5,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              4
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              4,
+              3
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 2,
+            "total_copies": 8
+          },
+          {
+            "fiber": [
+              4,
+              1
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              4,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              3,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              3,
+              2
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              1
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              2,
+              2
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          }
+        ]
+      },
+      {
+        "output": [
+          4,
+          1
+        ],
+        "dimension": 154,
+        "source_copies": 47,
+        "sources": [
+          {
+            "fiber": [
+              6,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              5,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              5,
+              0
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              3
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              1
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 2,
+            "total_copies": 12
+          },
+          {
+            "fiber": [
+              3,
+              2
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              1
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              3,
+              0
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              2,
+              1
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          }
+        ]
+      },
+      {
+        "output": [
+          4,
+          0
+        ],
+        "dimension": 55,
+        "source_copies": 11,
+        "sources": [
+          {
+            "fiber": [
+              5,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              3,
+              1
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              2,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          3,
+          3
+        ],
+        "dimension": 84,
+        "source_copies": 21,
+        "sources": [
+          {
+            "fiber": [
+              5,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              3
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              3,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              3,
+              2
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              1
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          }
+        ]
+      },
+      {
+        "output": [
+          3,
+          2
+        ],
+        "dimension": 105,
+        "source_copies": 46,
+        "sources": [
+          {
+            "fiber": [
+              5,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              3
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              1
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              3,
+              2
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 2,
+            "total_copies": 12
+          },
+          {
+            "fiber": [
+              3,
+              1
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              3,
+              0
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              2,
+              2
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              2,
+              1
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          }
+        ]
+      },
+      {
+        "output": [
+          3,
+          1
+        ],
+        "dimension": 81,
+        "source_copies": 35,
+        "sources": [
+          {
+            "fiber": [
+              5,
+              1
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              4,
+              1
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              4,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              3,
+              3
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              3,
+              2
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              1
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 2,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              2,
+              2
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              2,
+              1
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              2,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          3,
+          0
+        ],
+        "dimension": 30,
+        "source_copies": 24,
+        "sources": [
+          {
+            "fiber": [
+              5,
+              0
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          },
+          {
+            "fiber": [
+              4,
+              1
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              2
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              0
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              2,
+              1
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              1,
+              0
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          }
+        ]
+      },
+      {
+        "output": [
+          2,
+          2
+        ],
+        "dimension": 35,
+        "source_copies": 21,
+        "sources": [
+          {
+            "fiber": [
+              4,
+              2
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              3,
+              2
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              1
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              2,
+              2
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              2,
+              1
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              2,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          2,
+          1
+        ],
+        "dimension": 35,
+        "source_copies": 32,
+        "sources": [
+          {
+            "fiber": [
+              4,
+              1
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              2
+            ],
+            "fiber_copies": 6,
+            "derivative_multiplicity": 1,
+            "total_copies": 6
+          },
+          {
+            "fiber": [
+              3,
+              1
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              3,
+              0
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              2,
+              2
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              2,
+              1
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 2,
+            "total_copies": 8
+          },
+          {
+            "fiber": [
+              1,
+              0
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          }
+        ]
+      },
+      {
+        "output": [
+          2,
+          0
+        ],
+        "dimension": 14,
+        "source_copies": 8,
+        "sources": [
+          {
+            "fiber": [
+              4,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          },
+          {
+            "fiber": [
+              3,
+              1
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              2,
+              2
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              2,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          1,
+          1
+        ],
+        "dimension": 10,
+        "source_copies": 8,
+        "sources": [
+          {
+            "fiber": [
+              3,
+              1
+            ],
+            "fiber_copies": 3,
+            "derivative_multiplicity": 1,
+            "total_copies": 3
+          },
+          {
+            "fiber": [
+              2,
+              1
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              2,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      },
+      {
+        "output": [
+          1,
+          0
+        ],
+        "dimension": 5,
+        "source_copies": 10,
+        "sources": [
+          {
+            "fiber": [
+              3,
+              0
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              2,
+              1
+            ],
+            "fiber_copies": 4,
+            "derivative_multiplicity": 1,
+            "total_copies": 4
+          },
+          {
+            "fiber": [
+              1,
+              0
+            ],
+            "fiber_copies": 2,
+            "derivative_multiplicity": 1,
+            "total_copies": 2
+          }
+        ]
+      },
+      {
+        "output": [
+          0,
+          0
+        ],
+        "dimension": 1,
+        "source_copies": 1,
+        "sources": [
+          {
+            "fiber": [
+              2,
+              0
+            ],
+            "fiber_copies": 1,
+            "derivative_multiplicity": 1,
+            "total_copies": 1
+          }
+        ]
+      }
+    ],
+    "scope": "Exact character inventory only; no first-tableau rank inferred."
+  }
+}
