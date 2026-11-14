@@ -1,0 +1,757 @@
+{
+  "exact_dimension": 10388,
+  "blocks": [
+    {
+      "weight": [
+        0,
+        0
+      ],
+      "columns": 498,
+      "rows": 168,
+      "exact_rank": 166,
+      "real_dimension": 332
+    },
+    {
+      "weight": [
+        0,
+        1
+      ],
+      "columns": 455,
+      "rows": 144,
+      "exact_rank": 143,
+      "real_dimension": 624
+    },
+    {
+      "weight": [
+        1,
+        0
+      ],
+      "columns": 455,
+      "rows": 144,
+      "exact_rank": 143,
+      "real_dimension": 624
+    },
+    {
+      "weight": [
+        1,
+        -1
+      ],
+      "columns": 402,
+      "rows": 128,
+      "exact_rank": 127,
+      "real_dimension": 550
+    },
+    {
+      "weight": [
+        1,
+        1
+      ],
+      "columns": 402,
+      "rows": 128,
+      "exact_rank": 127,
+      "real_dimension": 550
+    },
+    {
+      "weight": [
+        2,
+        0
+      ],
+      "columns": 326,
+      "rows": 98,
+      "exact_rank": 97,
+      "real_dimension": 458
+    },
+    {
+      "weight": [
+        0,
+        2
+      ],
+      "columns": 326,
+      "rows": 98,
+      "exact_rank": 97,
+      "real_dimension": 458
+    },
+    {
+      "weight": [
+        2,
+        1
+      ],
+      "columns": 299,
+      "rows": 84,
+      "exact_rank": 84,
+      "real_dimension": 430
+    },
+    {
+      "weight": [
+        2,
+        -1
+      ],
+      "columns": 299,
+      "rows": 84,
+      "exact_rank": 84,
+      "real_dimension": 430
+    },
+    {
+      "weight": [
+        1,
+        2
+      ],
+      "columns": 299,
+      "rows": 84,
+      "exact_rank": 84,
+      "real_dimension": 430
+    },
+    {
+      "weight": [
+        1,
+        -2
+      ],
+      "columns": 299,
+      "rows": 84,
+      "exact_rank": 84,
+      "real_dimension": 430
+    },
+    {
+      "weight": [
+        2,
+        2
+      ],
+      "columns": 211,
+      "rows": 56,
+      "exact_rank": 56,
+      "real_dimension": 310
+    },
+    {
+      "weight": [
+        2,
+        -2
+      ],
+      "columns": 211,
+      "rows": 56,
+      "exact_rank": 56,
+      "real_dimension": 310
+    },
+    {
+      "weight": [
+        3,
+        0
+      ],
+      "columns": 195,
+      "rows": 49,
+      "exact_rank": 49,
+      "real_dimension": 292
+    },
+    {
+      "weight": [
+        0,
+        3
+      ],
+      "columns": 195,
+      "rows": 49,
+      "exact_rank": 49,
+      "real_dimension": 292
+    },
+    {
+      "weight": [
+        3,
+        -1
+      ],
+      "columns": 168,
+      "rows": 42,
+      "exact_rank": 42,
+      "real_dimension": 252
+    },
+    {
+      "weight": [
+        3,
+        1
+      ],
+      "columns": 168,
+      "rows": 42,
+      "exact_rank": 42,
+      "real_dimension": 252
+    },
+    {
+      "weight": [
+        1,
+        3
+      ],
+      "columns": 168,
+      "rows": 42,
+      "exact_rank": 42,
+      "real_dimension": 252
+    },
+    {
+      "weight": [
+        1,
+        -3
+      ],
+      "columns": 168,
+      "rows": 42,
+      "exact_rank": 42,
+      "real_dimension": 252
+    },
+    {
+      "weight": [
+        3,
+        2
+      ],
+      "columns": 123,
+      "rows": 26,
+      "exact_rank": 26,
+      "real_dimension": 194
+    },
+    {
+      "weight": [
+        3,
+        -2
+      ],
+      "columns": 123,
+      "rows": 26,
+      "exact_rank": 26,
+      "real_dimension": 194
+    },
+    {
+      "weight": [
+        2,
+        3
+      ],
+      "columns": 123,
+      "rows": 26,
+      "exact_rank": 26,
+      "real_dimension": 194
+    },
+    {
+      "weight": [
+        2,
+        -3
+      ],
+      "columns": 123,
+      "rows": 26,
+      "exact_rank": 26,
+      "real_dimension": 194
+    },
+    {
+      "weight": [
+        4,
+        0
+      ],
+      "columns": 84,
+      "rows": 17,
+      "exact_rank": 17,
+      "real_dimension": 134
+    },
+    {
+      "weight": [
+        0,
+        4
+      ],
+      "columns": 84,
+      "rows": 17,
+      "exact_rank": 17,
+      "real_dimension": 134
+    },
+    {
+      "weight": [
+        4,
+        1
+      ],
+      "columns": 77,
+      "rows": 14,
+      "exact_rank": 14,
+      "real_dimension": 126
+    },
+    {
+      "weight": [
+        4,
+        -1
+      ],
+      "columns": 77,
+      "rows": 14,
+      "exact_rank": 14,
+      "real_dimension": 126
+    },
+    {
+      "weight": [
+        1,
+        4
+      ],
+      "columns": 77,
+      "rows": 14,
+      "exact_rank": 14,
+      "real_dimension": 126
+    },
+    {
+      "weight": [
+        1,
+        -4
+      ],
+      "columns": 77,
+      "rows": 14,
+      "exact_rank": 14,
+      "real_dimension": 126
+    },
+    {
+      "weight": [
+        3,
+        3
+      ],
+      "columns": 65,
+      "rows": 12,
+      "exact_rank": 12,
+      "real_dimension": 106
+    },
+    {
+      "weight": [
+        3,
+        -3
+      ],
+      "columns": 65,
+      "rows": 12,
+      "exact_rank": 12,
+      "real_dimension": 106
+    },
+    {
+      "weight": [
+        4,
+        2
+      ],
+      "columns": 50,
+      "rows": 8,
+      "exact_rank": 8,
+      "real_dimension": 84
+    },
+    {
+      "weight": [
+        4,
+        -2
+      ],
+      "columns": 50,
+      "rows": 8,
+      "exact_rank": 8,
+      "real_dimension": 84
+    },
+    {
+      "weight": [
+        2,
+        4
+      ],
+      "columns": 50,
+      "rows": 8,
+      "exact_rank": 8,
+      "real_dimension": 84
+    },
+    {
+      "weight": [
+        2,
+        -4
+      ],
+      "columns": 50,
+      "rows": 8,
+      "exact_rank": 8,
+      "real_dimension": 84
+    },
+    {
+      "weight": [
+        5,
+        0
+      ],
+      "columns": 28,
+      "rows": 3,
+      "exact_rank": 3,
+      "real_dimension": 50
+    },
+    {
+      "weight": [
+        4,
+        3
+      ],
+      "columns": 28,
+      "rows": 3,
+      "exact_rank": 3,
+      "real_dimension": 50
+    },
+    {
+      "weight": [
+        4,
+        -3
+      ],
+      "columns": 28,
+      "rows": 3,
+      "exact_rank": 3,
+      "real_dimension": 50
+    },
+    {
+      "weight": [
+        3,
+        4
+      ],
+      "columns": 28,
+      "rows": 3,
+      "exact_rank": 3,
+      "real_dimension": 50
+    },
+    {
+      "weight": [
+        3,
+        -4
+      ],
+      "columns": 28,
+      "rows": 3,
+      "exact_rank": 3,
+      "real_dimension": 50
+    },
+    {
+      "weight": [
+        0,
+        5
+      ],
+      "columns": 28,
+      "rows": 3,
+      "exact_rank": 3,
+      "real_dimension": 50
+    },
+    {
+      "weight": [
+        5,
+        1
+      ],
+      "columns": 22,
+      "rows": 2,
+      "exact_rank": 2,
+      "real_dimension": 40
+    },
+    {
+      "weight": [
+        5,
+        -1
+      ],
+      "columns": 22,
+      "rows": 2,
+      "exact_rank": 2,
+      "real_dimension": 40
+    },
+    {
+      "weight": [
+        1,
+        5
+      ],
+      "columns": 22,
+      "rows": 2,
+      "exact_rank": 2,
+      "real_dimension": 40
+    },
+    {
+      "weight": [
+        1,
+        -5
+      ],
+      "columns": 22,
+      "rows": 2,
+      "exact_rank": 2,
+      "real_dimension": 40
+    },
+    {
+      "weight": [
+        5,
+        2
+      ],
+      "columns": 16,
+      "rows": 1,
+      "exact_rank": 1,
+      "real_dimension": 30
+    },
+    {
+      "weight": [
+        5,
+        -2
+      ],
+      "columns": 16,
+      "rows": 1,
+      "exact_rank": 1,
+      "real_dimension": 30
+    },
+    {
+      "weight": [
+        2,
+        5
+      ],
+      "columns": 16,
+      "rows": 1,
+      "exact_rank": 1,
+      "real_dimension": 30
+    },
+    {
+      "weight": [
+        2,
+        -5
+      ],
+      "columns": 16,
+      "rows": 1,
+      "exact_rank": 1,
+      "real_dimension": 30
+    },
+    {
+      "weight": [
+        4,
+        4
+      ],
+      "columns": 9,
+      "rows": 1,
+      "exact_rank": 1,
+      "real_dimension": 16
+    },
+    {
+      "weight": [
+        4,
+        -4
+      ],
+      "columns": 9,
+      "rows": 1,
+      "exact_rank": 1,
+      "real_dimension": 16
+    },
+    {
+      "weight": [
+        5,
+        3
+      ],
+      "columns": 6,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 12
+    },
+    {
+      "weight": [
+        5,
+        -3
+      ],
+      "columns": 6,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 12
+    },
+    {
+      "weight": [
+        3,
+        5
+      ],
+      "columns": 6,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 12
+    },
+    {
+      "weight": [
+        3,
+        -5
+      ],
+      "columns": 6,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 12
+    },
+    {
+      "weight": [
+        6,
+        1
+      ],
+      "columns": 5,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 10
+    },
+    {
+      "weight": [
+        6,
+        -1
+      ],
+      "columns": 5,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 10
+    },
+    {
+      "weight": [
+        6,
+        0
+      ],
+      "columns": 5,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 10
+    },
+    {
+      "weight": [
+        1,
+        6
+      ],
+      "columns": 5,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 10
+    },
+    {
+      "weight": [
+        1,
+        -6
+      ],
+      "columns": 5,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 10
+    },
+    {
+      "weight": [
+        0,
+        6
+      ],
+      "columns": 5,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 10
+    },
+    {
+      "weight": [
+        6,
+        2
+      ],
+      "columns": 2,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 4
+    },
+    {
+      "weight": [
+        6,
+        -2
+      ],
+      "columns": 2,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 4
+    },
+    {
+      "weight": [
+        5,
+        4
+      ],
+      "columns": 2,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 4
+    },
+    {
+      "weight": [
+        5,
+        -4
+      ],
+      "columns": 2,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 4
+    },
+    {
+      "weight": [
+        4,
+        5
+      ],
+      "columns": 2,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 4
+    },
+    {
+      "weight": [
+        4,
+        -5
+      ],
+      "columns": 2,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 4
+    },
+    {
+      "weight": [
+        2,
+        6
+      ],
+      "columns": 2,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 4
+    },
+    {
+      "weight": [
+        2,
+        -6
+      ],
+      "columns": 2,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 4
+    },
+    {
+      "weight": [
+        7,
+        0
+      ],
+      "columns": 1,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 2
+    },
+    {
+      "weight": [
+        6,
+        3
+      ],
+      "columns": 1,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 2
+    },
+    {
+      "weight": [
+        6,
+        -3
+      ],
+      "columns": 1,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 2
+    },
+    {
+      "weight": [
+        3,
+        6
+      ],
+      "columns": 1,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 2
+    },
+    {
+      "weight": [
+        0,
+        7
+      ],
+      "columns": 1,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 2
+    },
+    {
+      "weight": [
+        3,
+        -6
+      ],
+      "columns": 1,
+      "rows": 0,
+      "exact_rank": 0,
+      "real_dimension": 2
+    }
+  ],
+  "rank_method": "Two-prime lower bound plus full exact rational row-space interpolation",
+  "elapsed_seconds": 68.7680370999733
+}

@@ -1,0 +1,202 @@
+{
+  "format": 1,
+  "exact_dimension": 6643,
+  "primes": [
+    65537,
+    65521
+  ],
+  "blocks": [
+    {
+      "character": 0,
+      "shape": [
+        442,
+        814
+      ],
+      "denominator": 1152,
+      "operator_sha256": "ac527242ad8f9db6dad13869cb6c6f5f545ff106890aafc31c45a803543a2290",
+      "witness": "h4_an_witness_00.json.gz",
+      "witness_sha256": "ad6b71ce7383ccda922b6769ab7a8c3d3c2f46d8f2e412d38b499d7cca54089c",
+      "exact_dimension": 378
+    },
+    {
+      "character": 3,
+      "shape": [
+        463,
+        859
+      ],
+      "denominator": 1152,
+      "operator_sha256": "c38ddabf091e18236218d83bb15d4912c73652be11c2598e4a134883fe712744",
+      "witness": "h4_an_witness_03.json.gz",
+      "witness_sha256": "a8afbbb97c0f36d307cd8b8628802123d7535dd1fd7578ea0e3cf1ef24ba8754",
+      "exact_dimension": 403
+    },
+    {
+      "character": 5,
+      "shape": [
+        463,
+        859
+      ],
+      "denominator": 1152,
+      "operator_sha256": "cf0927e58b80b2aa54f4f2386b1cb72a9657beed83bb5bdf23c9627d07d6646f",
+      "witness": "h4_an_witness_05.json.gz",
+      "witness_sha256": "bc67557a399f56f6316898be2dc1fe7b76539650619767c7e8ee5a2539533733",
+      "exact_dimension": 403
+    },
+    {
+      "character": 6,
+      "shape": [
+        463,
+        859
+      ],
+      "denominator": 1152,
+      "operator_sha256": "e1709b7ce8c9142f3724b3d0759be2df9dd1a98a7d18312e26d0268902d56992",
+      "witness": "h4_an_witness_06.json.gz",
+      "witness_sha256": "6eafece8e205928584a25fcd9cf88161d1f61419e5e048ed4b9979ca6091e22c",
+      "exact_dimension": 403
+    },
+    {
+      "character": 9,
+      "shape": [
+        463,
+        859
+      ],
+      "denominator": 1152,
+      "operator_sha256": "4af0089eba1feeed9b194d0cd43370d110c7d18941312edb9c9c5feef3fc7208",
+      "witness": "h4_an_witness_09.json.gz",
+      "witness_sha256": "e7c9bf8c093abc571c855d0e3a8264d17d45aeb306ce179df687c9ffd7e63629",
+      "exact_dimension": 403
+    },
+    {
+      "character": 10,
+      "shape": [
+        463,
+        859
+      ],
+      "denominator": 1152,
+      "operator_sha256": "dd21c6ad3a3264dda02ce59b1b346c4064bf1236963ab72d31e50a55b78b154d",
+      "witness": "h4_an_witness_10.json.gz",
+      "witness_sha256": "43e5d5be0323eaf8a59eebf8a43f06f0198007e4ec6aa412c409c60c3aa045b9",
+      "exact_dimension": 403
+    },
+    {
+      "character": 12,
+      "shape": [
+        463,
+        859
+      ],
+      "denominator": 1152,
+      "operator_sha256": "890d28420ec626d68023258a9cf44dc3cfd66ed6f4b99bf788a59cb0e558cc45",
+      "witness": "h4_an_witness_12.json.gz",
+      "witness_sha256": "e74c493dbe462f7a6deef694cd2a02379e41dbe6269cef9ab0add4bc924c648b",
+      "exact_dimension": 403
+    },
+    {
+      "character": 15,
+      "shape": [
+        478,
+        922
+      ],
+      "denominator": 1152,
+      "operator_sha256": "9785f7465e2cf1618a7f6945c41b6011c1ece3e3d718d58408a0d1883562d007",
+      "witness": "h4_an_witness_15.json.gz",
+      "witness_sha256": "c630770f0089d0c2218d7e98e39de4bca458fb24271663c56c92b79a2892aa9a",
+      "exact_dimension": 447
+    },
+    {
+      "character": 17,
+      "shape": [
+        463,
+        859
+      ],
+      "denominator": 1152,
+      "operator_sha256": "fcfcc779d74fbc469a9e6c62ef77d7ceb4c2dadc748b595ce1b65655f14f4f9b",
+      "witness": "h4_an_witness_17.json.gz",
+      "witness_sha256": "6c1f9ee0091325e8467d5bf55d6f2610a579c3df1dbaf9e21960fe9ebd0a8bc0",
+      "exact_dimension": 403
+    },
+    {
+      "character": 18,
+      "shape": [
+        463,
+        859
+      ],
+      "denominator": 1152,
+      "operator_sha256": "22796df81b15353b35d63c6d561a8fabd0356a139c286109b13e3dd951a3ed49",
+      "witness": "h4_an_witness_18.json.gz",
+      "witness_sha256": "dceab98a53f74833aaaefd00733ddd25d5b0a8c232fb888a1ccf697eebfc5835",
+      "exact_dimension": 403
+    },
+    {
+      "character": 20,
+      "shape": [
+        463,
+        859
+      ],
+      "denominator": 1152,
+      "operator_sha256": "06c6edca91d5c2eaf9122b96d5a542f501cdf37fcdc445dc5ab1f265759323da",
+      "witness": "h4_an_witness_20.json.gz",
+      "witness_sha256": "41dc976889335b28c7fb83cadad0aa13cdc91cd1c8fbc5e0e97aa42b4186ecf3",
+      "exact_dimension": 403
+    },
+    {
+      "character": 23,
+      "shape": [
+        478,
+        922
+      ],
+      "denominator": 1152,
+      "operator_sha256": "b84a251f53e2aa40c3d094a8e397fa7fc98d8dee4c006d23cdbf397a5fb7a96e",
+      "witness": "h4_an_witness_23.json.gz",
+      "witness_sha256": "e68031374869d6df2dd950e9063a5f24e5b91f59fbf358e661f114551384a301",
+      "exact_dimension": 447
+    },
+    {
+      "character": 24,
+      "shape": [
+        463,
+        859
+      ],
+      "denominator": 1152,
+      "operator_sha256": "a5dbcc85734292caa3dd6291b3ee269fc83cea2aaa34d48b00cacc19b9644648",
+      "witness": "h4_an_witness_24.json.gz",
+      "witness_sha256": "ec685dd77efdfb3270ce9c08a84058e3761925fa4614ce6a33d263789c1e80eb",
+      "exact_dimension": 403
+    },
+    {
+      "character": 27,
+      "shape": [
+        478,
+        922
+      ],
+      "denominator": 1152,
+      "operator_sha256": "4856f5ff35c78417ac573a6328b128f47b5d1fe0d88ff7b5d1a24632c7a30ef2",
+      "witness": "h4_an_witness_27.json.gz",
+      "witness_sha256": "d212bff3d19baab85111b528073aef09c7ec61bbee4c0e0e62b6004f8b292ac7",
+      "exact_dimension": 447
+    },
+    {
+      "character": 29,
+      "shape": [
+        478,
+        922
+      ],
+      "denominator": 1152,
+      "operator_sha256": "a7280bb5e0ee5dc4c0b8b6b8aaf2abf8b11993b2834aca207f83c93a99f0e29d",
+      "witness": "h4_an_witness_29.json.gz",
+      "witness_sha256": "4bb371298bba17c9911f682ee591084d17b55ce143ea5f3ceac3c1c3d28df75d",
+      "exact_dimension": 447
+    },
+    {
+      "character": 30,
+      "shape": [
+        478,
+        922
+      ],
+      "denominator": 1152,
+      "operator_sha256": "99639a364b60016e05436ba13ca3ccd00b883024f808816e210395385209467f",
+      "witness": "h4_an_witness_30.json.gz",
+      "witness_sha256": "399f7a04c2e30bcc7c038fd119a665cfd655b0ec2b67eef544406ec1df17d5ef",
+      "exact_dimension": 447
+    }
+  ]
+}
