@@ -1,0 +1,37 @@
+claim_id: [GU-054]
+result_ids: [BV1, BV2, BV3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BV-h6-triangular-positive-obstruction.md
+result: >-
+  One invariant dyadic receiver is strictly positive on every nonzero
+  real value in the complete 952-dimensional triangular closed H6 space.
+  The positive baseline excludes zero on the declared full branch.
+code:
+  - computation/geometric-unity/BV_h6_an_positive.py
+  - computation/geometric-unity/BV_receiver.json
+  - computation/geometric-unity/BV_basis_coefficients.json.gz
+internal_review:
+  - reports/reviews/REVIEW86-GU-BV-2026-11-14.md
+formalization_status: >-
+  BR's simply transitive triangular field construction, with BN and
+  BS's compact-real pure H6Gamma field equations on the flat positive
+  observer at lambda=1/5.
+proof_status: >-
+  The invariant receiver has no inter-character cross terms. Exact
+  finite-field Clifford arithmetic and signed integer reconstruction
+  give strictly positive leading minors on all approximate dyadic
+  bases. An explicit rational perturbation bound preserves strict
+  positivity on the spanning exact closed bases.
+reproducibility: >-
+  Selected checking verifies the full stored positivity data and
+  recomputes an exact block. Use the full option to rebuild every
+  rational closure basis and every finite-field Clifford matrix.
+limitations: >-
+  The result excludes the full triangular family including arbitrary
+  mixtures of its sign blocks. The larger family of differently rotated
+  sums and general smooth field equations remain open.
+dependencies: [BA2, BN3, BR1, BR2, BS1]
+confidence: >-
+  Exact margins exceed a rigorous approximation allowance, backed by
+  independent rational closure, Clifford and matrix checks.
+  External peer review remains outstanding.
