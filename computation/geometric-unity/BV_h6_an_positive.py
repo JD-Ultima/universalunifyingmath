@@ -248,7 +248,7 @@ def reconstruct(record):
  error2=maximum*maximum*D.size;assert error2==F(*record['frobenius_error_squared_bound']) and error2<F(1,10**16)
  gram=D.astype(object).T@D.astype(object);scale=1<<(2*dp)
  lower=min(int(gram[i,i])-sum(abs(int(gram[i,j])) for j in range(m) if i!=j) for i in range(m));upper=max(sum(abs(int(v)) for v in row) for row in gram)
- assert 2*lower>scale and upper<4*scale
+ assert 2*lower>scale and 10000*upper<10001*scale
  return coords,D,gram
 def check_contraction(record,cert,receiver):
  coords,D,gram=reconstruct(record);m=D.shape[1];primes=cert['crt_primes'];modulus=math.prod(primes);J=np.array(cert['matrix_integer'],dtype=object)

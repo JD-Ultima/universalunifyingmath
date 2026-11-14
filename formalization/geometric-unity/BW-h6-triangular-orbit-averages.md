@@ -93,6 +93,8 @@ Every arbitrary $G$ translate of an individual $B_b$ is a compact
 translate because $G=KS$ and $S$ fixes $B_b$. Thus finite sums of
 these more general translates are included. Positive observer scales
 transfer by BC's dilation and homothety. The averaging uses a fixed
-finite total-variation measure with values in $W$. More general
-closed fields and positive-order distributions remain open.
+finite total-variation measure with values in $W$.
+[BZ](BZ-h6-triangular-limit-separation.md) extends the limit to
+finite rotation derivatives and distributions with support in
+a common regular QR cell. General closed fields remain open.
 External peer review remains outstanding.
