@@ -225,8 +225,9 @@ The single-type fields satisfy linear closure. The exact
 that type is \(L_5=-65\|B\|^2/12\), which excludes any
 nonzero pure \((5,5)\) value from the full equation. The
 construction adds this type to the available space for mixed
-nonlinear fields. General nonlinear feasibility and bounded
-global lifts of the new type remain open.
+nonlinear fields. [DB](DB-h6-bounded-analytic-lifts.md) subsequently
+obtains bounded global lifts by compact averaging. General
+nonlinear feasibility remains open.
 
 ## CT1. The local cohomology class
 

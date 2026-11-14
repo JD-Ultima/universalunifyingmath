@@ -1,0 +1,17 @@
+{
+  "stabilizer_generators": 7,
+  "highest_determinant_weight": 5,
+  "exact_checks": [
+    "All W-stabilizer generators act on b0 by5 trace_W",
+    "Symmetric Sylvester determinant4detR trR",
+    "Symmetric congruence determinant(detD)^3",
+    "Full transverse volume J0=q^-4/trR",
+    "Hamiltonian positive-graph block triangularization",
+    "Exact center-coordinate identity v^T=b4^T A4^-1 E4[I;S]",
+    "Positive metric Gram calibration",
+    "Common real Cholesky path and exact rho^-10 scaling",
+    "Sherman-Morrison bounded coefficient identity"
+  ],
+  "seconds": 0.4109151363372803,
+  "scope": "Finite exact algebra used by DA_h6_mixed_growth_proof.txt. The proof separately supplies positivity, norm inequalities, compact multiplier bounds and finite-group elimination. No claim about arbitrary bounded fields or infinite CU measures."
+}
