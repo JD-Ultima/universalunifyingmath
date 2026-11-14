@@ -1,0 +1,13 @@
+{
+  "global_denominator": "tr(R), strictly positive on real Y by CU",
+  "extra_coordinate": "w=R11/tr(R)",
+  "regular_coefficient": "n_W H n_W^T",
+  "H": "[[R12*w,R11*(1-w)],[R11*(1-w),R21*(1-w)]]",
+  "local_multiplier_before_normalizing": "exp(3u)/(1+exp(2u))^3",
+  "normalizing_factor": 8,
+  "base_dw": "(e12-e13)/2",
+  "origin_matches_DK_local": true,
+  "global_holomorphic_branch_required": false,
+  "scope": "Exact group/branch-cancellation/base calibrations; global real analyticity and closure follow by CU spectral regularity and the analytic identity theorem as detailed in the proof.",
+  "seconds": 0.09831523895263672
+}

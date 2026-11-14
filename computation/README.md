@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 109 |
-| **Self-contained total** | **119** |
+| Geometric Unity computations | 112 |
+| **Self-contained total** | **122** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **125** |
+| **Total with source checks** | **128** |
 
 Inspect the actual command list without executing it:
 
@@ -111,6 +111,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 [DS](../formalization/geometric-unity/DS-h6-axial-multisign.md) verifies three complete axial sign-character spaces and a common positive receiver. The selected command checks the geometry of the exceptional character 15. [DI](../formalization/geometric-unity/DI-h6-decaying-and-periodic-lifts.md) checks its Gaussian-profile orbit witnesses. [DH](../formalization/geometric-unity/DH-h6-pure-type-spectral-gap.md) checks the weight and Casimir factors for the pure-type bundle gap.
 
 [DG](../formalization/geometric-unity/DG-h4-three-value-moment-and-h6-rank.md) checks the rank-three H4 covariance, its quartic bound, and an exact H6 hook attaining the external-rank bound with scalarity and zero top grade. Full covariance mode rebuilds 338 integer evaluations. [DJ](../formalization/geometric-unity/DJ-hook-weight-and-commutator-bounds.md) verifies Cartan incidence bounds, complex weight-space dimensions and the Clifford commutator constants.
+
+[DK](../formalization/geometric-unity/DK-h6-mixed-gradients.md) checks the mixed H6 gradient equations for the \((5,5)\) projection. The characteristic cover certifies the entire real Weyl chamber. [DL](../formalization/geometric-unity/DL-h6-balanced-characteristic-lift.md) uses the global bundle computation to verify the local Lie algebra, regularized coefficient and base value of the balanced mixed field.
 
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 

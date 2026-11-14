@@ -1,0 +1,237 @@
+{
+  "records": [
+    {
+      "output": [
+        6,
+        4
+      ],
+      "labels": [
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ]
+      ],
+      "rank": 1,
+      "lower_only_rank": 1,
+      "can_cancel_pure55": true
+    },
+    {
+      "output": [
+        5,
+        5
+      ],
+      "labels": [
+        [
+          5,
+          5,
+          0
+        ]
+      ],
+      "rank": 1,
+      "lower_only_rank": 0,
+      "can_cancel_pure55": false
+    },
+    {
+      "output": [
+        5,
+        4
+      ],
+      "labels": [
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          5,
+          2,
+          1
+        ]
+      ],
+      "rank": 1,
+      "lower_only_rank": 0,
+      "can_cancel_pure55": false
+    },
+    {
+      "output": [
+        5,
+        3
+      ],
+      "labels": [
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          6,
+          3,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ],
+        [
+          5,
+          2,
+          0
+        ],
+        [
+          5,
+          2,
+          1
+        ],
+        [
+          5,
+          1,
+          0
+        ]
+      ],
+      "rank": 5,
+      "lower_only_rank": 4,
+      "can_cancel_pure55": false
+    }
+  ],
+  "allowed_55_derivative_types": [
+    [
+      7,
+      5
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      4
+    ]
+  ],
+  "channel64_norm_ratios": [
+    {
+      "fiber": [
+        5,
+        5
+      ],
+      "wedge_squared": "26/27",
+      "contraction_squared": "13/27"
+    },
+    {
+      "fiber": [
+        7,
+        3
+      ],
+      "wedge_squared": "221/198",
+      "contraction_squared": "221/99"
+    },
+    {
+      "fiber": [
+        6,
+        3
+      ],
+      "wedge_squared": "35/18",
+      "contraction_squared": "5/63"
+    },
+    {
+      "fiber": [
+        6,
+        2
+      ],
+      "wedge_squared": "980/3069",
+      "contraction_squared": "640/3069"
+    }
+  ],
+  "axial_Q_spectrum": [
+    {
+      "p": 0,
+      "dimension": 11,
+      "Q_eigenvalue": -90
+    },
+    {
+      "p": 1,
+      "dimension": 20,
+      "Q_eigenvalue": -45
+    },
+    {
+      "p": 2,
+      "dimension": 27,
+      "Q_eigenvalue": -10
+    },
+    {
+      "p": 3,
+      "dimension": 32,
+      "Q_eigenvalue": 15
+    },
+    {
+      "p": 4,
+      "dimension": 35,
+      "Q_eigenvalue": 30
+    },
+    {
+      "p": 5,
+      "dimension": 36,
+      "Q_eigenvalue": 35
+    },
+    {
+      "p": 6,
+      "dimension": 35,
+      "Q_eigenvalue": 30
+    },
+    {
+      "p": 7,
+      "dimension": 32,
+      "Q_eigenvalue": 15
+    },
+    {
+      "p": 8,
+      "dimension": 27,
+      "Q_eigenvalue": -10
+    },
+    {
+      "p": 9,
+      "dimension": 20,
+      "Q_eigenvalue": -45
+    },
+    {
+      "p": 10,
+      "dimension": 11,
+      "Q_eigenvalue": -90
+    }
+  ],
+  "TTstar": 945,
+  "delta_to_d_squared_ratio": "1/2",
+  "scope": "Exact mixed first-order closure projection; no nonlinear existence conclusion.",
+  "seconds": 3.453742027282715
+}

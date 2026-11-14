@@ -1,0 +1,23 @@
+{
+  "leaf_dimension": 8,
+  "compact_coefficient_centralizer_dimension": 4,
+  "complex_h_dimension": 12,
+  "transverse_dimension": 6,
+  "real_form_preserves_h": false,
+  "origin_entries": [
+    [
+      1,
+      4875,
+      "1"
+    ],
+    [
+      1,
+      8971,
+      "-1"
+    ]
+  ],
+  "compact_real_origin_norm_squared": "1/131072",
+  "origin_decomposition": "(F_alpha1^2 b73 - 2 b55)/6",
+  "scope": "Local holomorphic field restricted to the real symmetric space; taking its real part preserves all linear equations. No global extension is asserted.",
+  "seconds": 0.09152412414550781
+}

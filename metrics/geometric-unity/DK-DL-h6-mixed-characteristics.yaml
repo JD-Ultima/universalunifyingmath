@@ -1,0 +1,24 @@
+mixed_projection:
+  fiber: [5, 5]
+  fiber_dimension: 286
+  vanishing_derivative_types: [[5, 5], [5, 4], [5, 3]]
+  allowed_derivative_types: [[7, 5], [6, 5], [6, 4]]
+  coupling_fiber_types: [[7, 3], [6, 3], [6, 2]]
+  derivative_coupling_output: [6, 4]
+  exterior_squared_multiplier: "26/27"
+  contraction_squared_multiplier: "13/27"
+  compact_support_vanishing: true
+  finite_energy_lower_channel_bound: "93/1886"
+characteristic:
+  real_projective_orbits: 1
+  representative_eigenvalues: [1, 1, 0, -1, -1]
+  kernel_real_dimension: 4
+  rational_cover_nodes: 700
+  local_leaves: 27
+  positive_leaves: 324
+balanced_field:
+  global_analytic: true
+  components: [[7, 3], [5, 5]]
+  real_base_norm_squared: "1/131072"
+  transverse_multiplier_variables: 6
+  nonzero_full_solution: false
