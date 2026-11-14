@@ -1,4 +1,4 @@
-"""DS: one exact H6 separator for three complete local axial value spaces."""
+"""Verify the DS and DP positive receivers on exact H6 axial value spaces."""
 
 import argparse
 from fractions import Fraction as F
@@ -18,10 +18,16 @@ import CV_h6_axial as CV
 # Curvature dimension, image dimension, joint rank, rank with D, chain counts.
 BLOCKS = {
     0: (389, 64, 628, None, (2, 23, 13, 5)),
+    3: (423, 83, 653, None, (3, 27, 19, 6)),
+    5: (423, 83, 653, None, (3, 27, 19, 6)),
+    6: (423, 83, 653, None, (3, 27, 19, 6)),
+    9: (423, 83, 653, None, (3, 27, 19, 6)),
     15: (443, 105, 628, 372, (4, 35, 26, 6)),
+    17: (423, 83, 653, None, (3, 27, 19, 6)),
     27: (443, 110, 634, None, (4, 31, 29, 7)),
 }
-LOCAL_DIMS = {0: 107, 15: 187, 27: 181}
+THREE_SIGNS = (0, 15, 27)
+LOCAL_DIMS = {0: 107, 3: 138, 5: 138, 6: 138, 9: 138, 15: 187, 17: 138, 27: 181}
 BITS = 46
 RECEIVER_DEN = 1 << 20
 
@@ -183,8 +189,8 @@ def quotient_proof(ch, coords, A, D, R, source, E, dim):
           f"quotient joint rank lower bound {joint-t_dim}.", flush=True)
 
 
-def unit_proxy(ch, coords, raw, proof):
-    change = archive(f"DS_coordinates_{ch:02d}.json.gz")
+def unit_proxy(ch, coords, raw, proof, prefix):
+    change = archive(f"{prefix}_coordinates_{ch:02d}.json.gz")
     n = len(raw)
     assert change["character"] == ch and change["raw_basis_size"] == n
     rows = change["coordinate_matrix"]
@@ -212,9 +218,9 @@ def unit_proxy(ch, coords, raw, proof):
     return W
 
 
-def physical_certificate(ch, coords, raw, Y, full):
-    proof = archive(f"DS_positive_{ch:02d}.json.gz")
-    W = unit_proxy(ch, coords, raw, proof)
+def physical_certificate(ch, coords, raw, Y, full, prefix):
+    proof = archive(f"{prefix}_positive_{ch:02d}.json.gz")
+    W = unit_proxy(ch, coords, raw, proof, prefix)
     n = W.shape[1]
     assert proof["character"] == ch and proof["C"] == BITS and proof["receiver_gram"] == RECEIVER_DEN
     H = np.asarray(proof["polarization_integer"], dtype=object)
@@ -254,9 +260,9 @@ def physical_certificate(ch, coords, raw, Y, full):
     print(f"Character {ch}: rigorous physical receiver margin {float(margin):.9g}.", flush=True)
 
 
-def main(full, selected, geometry_only):
+def main(full, selected, geometry_only, prefix="DS"):
     t = perf_counter()
-    common = archive("DS_receiver.json.gz")
+    common = archive(f"{prefix}_receiver.json.gz")
     assert common["denominator"] == RECEIVER_DEN
     Y = common["rows"]
     valid = set(CV.BV.RECEIVERS)
@@ -268,7 +274,7 @@ def main(full, selected, geometry_only):
         R, source, E = read_point_space(ch, coords, A, D)
         quotient_proof(ch, coords, A, D, R, source, E, dim[ch])
         if not geometry_only:
-            physical_certificate(ch, coords, R + E, Y, full)
+            physical_certificate(ch, coords, R + E, Y, full, prefix)
     if not geometry_only:
         print(f"One receiver is > 1/1250 times squared norm on the direct sum of {sum(LOCAL_DIMS[ch] for ch in selected)} dimensions.", flush=True)
     print(f"Runtime {perf_counter()-t:.3f} seconds.", flush=True)
@@ -279,5 +285,10 @@ if __name__ == "__main__":
     parser.add_argument("--full", action="store_true", help="verify all CRT primes")
     parser.add_argument("--character", type=int, choices=BLOCKS, action="append", help="verify specified sign masks")
     parser.add_argument("--geometry-only", action="store_true", help="skip the quadratic receiver blocks")
+    parser.add_argument("--eight-signs", action="store_true", help="verify the full DP eight-character domain")
     args = parser.parse_args()
-    main(args.full, args.character or list(BLOCKS), args.geometry_only)
+    available = tuple(BLOCKS) if args.eight_signs else THREE_SIGNS
+    selected = args.character or available
+    if not set(selected) <= set(available):
+        parser.error("new character certificates require --eight-signs")
+    main(args.full, selected, args.geometry_only, "DP" if args.eight_signs else "DS")
