@@ -1,0 +1,14 @@
+claim_id: [GU-054]
+result_ids: [CO1, CO2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CO-h6-twisted-receiver-indefiniteness.md
+computation: computation/geometric-unity/CO_h6_twisted_receiver.py
+internal_review:
+  - reports/reviews/REVIEW102-GU-CO-2026-11-14.md
+result: >-
+  The BV Hermitian receiver is indefinite on the trivial sign block
+  of the H6 closure kernel at character differential 4i e^13.
+limitations: >-
+  A single exact frequency and the specific BV receiver. Nonlinear
+  existence and alternative receiver constructions remain open.
+dependencies: [BR1, BV1, CE1, CL1]
