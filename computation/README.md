@@ -76,6 +76,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 [CD](../formalization/geometric-unity/CD-hook-clifford-identities.md) compares two exact Clifford implementations and verifies the exterior identities and operator sum of squares on rational controls.
 
+[CG](../formalization/geometric-unity/CG-hook-quadratic-separation-limits.md) verifies the exact invariant receiver counts and moment witnesses that limit quadratic separation on the full H4 curvature kernel and the 6,534-dimensional H6 liftable submodule.
+
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
 [BT](../formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed character spaces. The selected check rebuilds the closed basis, tests independent Clifford coordinates and ranks 16 selected quadratic columns. The full 2,701-column certificate requires `--full` and is outside the selected suite.

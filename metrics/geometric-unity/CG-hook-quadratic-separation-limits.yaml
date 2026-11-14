@@ -1,0 +1,15 @@
+claim_id: [GU-054]
+result_ids: [CG1, CG2, CG3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CG-hook-quadratic-separation-limits.md
+computation: computation/geometric-unity/CG_hook_no_separator.py
+internal_review:
+  - reports/reviews/REVIEW96-GU-CG-2026-11-14.md
+result: >-
+  Both branches admit strictly positive quadratic moment matrices on
+  their stated invariant domains. A quadratic receiver nonnegative
+  on one of those domains vanishes identically there.
+limitations: >-
+  The declared compact-real pure branches on the flat positive
+  observer. These are properties of the quadratic moment relaxation.
+dependencies: [BQ1, BQ3, BR3, BX1, CD1, CD2]
