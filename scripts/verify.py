@@ -106,6 +106,7 @@ RECENT = [
     ("geometric-unity/CD_clifford_hook_identities.py", []),
     ("geometric-unity/CG_hook_no_separator.py", ["--full-lie", "--all-coefficients"]),
     ("geometric-unity/CH_h4_second_order_stress.py", []),
+    ("geometric-unity/CI_h4_cartan_support.py", ["--full-independent"]),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),
