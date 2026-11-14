@@ -121,5 +121,7 @@ this forces the zero field value, which fails the positive
 grade-one baseline. The result includes arbitrary mixtures of
 the sixteen triangular sign characters. Finite sums of fields
 rotated by different compact group elements have a larger value
-space and remain outside this exclusion. General full fields and
-physical identification remain open.
+space. [BW](BW-h6-triangular-orbit-averages.md) excludes those
+fields from the full equation via a limiting value in a rotation
+of the invariant space. General full fields and physical
+identification remain open.

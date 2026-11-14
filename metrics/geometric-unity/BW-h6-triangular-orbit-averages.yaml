@@ -1,0 +1,31 @@
+claim_id: [GU-054]
+result_ids: [BW1, BW2, BW3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BW-h6-triangular-orbit-averages.md
+result: >-
+  No finite-total-variation measure average of rotated BR triangular
+  closed fields solves the full declared equation on a nonempty open set.
+  Finite sums of arbitrary SL(5,R) translates are included.
+internal_review:
+  - reports/reviews/REVIEW87-GU-BW-2026-11-14.md
+formalization_status: >-
+  The positive flat observer, compact real H6Gamma branch, and exact
+  triangular field space of BR/BV. The measure is fixed and finite.
+proof_status: >-
+  QR decomposition gives the analytic transport formula. Leading minors
+  and Haar Fubini supply a common oriented diagonal limit almost
+  everywhere. Dominated convergence places the limiting point value in
+  a rotation of W. BV and the positive baseline contradict the full
+  pointwise equations on that limit.
+reproducibility: >-
+  The proof is analytic, with the exact triangular and quadratic
+  certificates in BR and BV. No numerical flag calculation is a premise.
+limitations: >-
+  The result concerns fixed finite measures on the compact rotation
+  group. Arbitrary smooth closed fields, distributional sums and the
+  other observer branches remain open.
+dependencies: [BA2, BN3, BR1, BR2, BR3, BV3]
+confidence: >-
+  Internal reviewers independently derived the radial QR frame,
+  normalized exterior limits, and analytic integration argument.
+  External peer review remains outstanding.
