@@ -20,6 +20,8 @@ Internal reviews include AI-assisted work. External peer review remains outstand
 
 The [upper triangular closure construction](formalization/geometric-unity/BR-h6-closed-field-lifts.md) gives 952 invariant closed real fields of constant norm. Finite sums of their rotations give analytic closed extensions of every value in a 6,534-dimensional submodule. The full nonlinear equations on those extensions remain open.
 
+An [exact partial point value](formalization/geometric-unity/BS-h6-certified-partial-value.md) now satisfies all grade-one and grade-thirteen equations and both invariant higher-grade projections. A required grade-nine coefficient is positive at that value, so full pointwise feasibility remains open.
+
 ## Reproduce selected checks
 
 After preparing the pinned environment described in the [verification guide](computation/README.md#selected-suite), run:

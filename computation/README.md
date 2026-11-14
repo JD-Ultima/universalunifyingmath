@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 69 |
-| **Self-contained total** | **79** |
+| Geometric Unity computations | 70 |
+| **Self-contained total** | **80** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **85** |
+| **Total with source checks** | **86** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 79 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 80 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -59,6 +59,8 @@ python -X utf8 scripts/verify.py --recent --upstream ../chain-theory
 Keep that checkout free of modified, untracked and ignored files, including build artifacts. The verifier checks the commit and raw source hashes; CRLF conversion is rejected. These commands read upstream material as data. The Lean-coverage classifier uses recorded build and axiom logs.
 
 ## Completed validation
+
+[BS](../formalization/geometric-unity/BS-h6-certified-partial-value.md) certifies a real unit point value satisfying complete grade one and grade thirteen, together with the invariant grade-five and grade-nine projections. The default check verifies the rational contraction, detector scope, and separation from a full equation. The helper's `--full` mode reconstructs all affine tensor and polynomial data and takes several minutes.
 
 [BR](../formalization/geometric-unity/BR-h6-closed-field-lifts.md) constructs a 952-dimensional family of closed fields. The default helper checks the seven real closure witnesses, the orbit minors for the 6,534-dimensional lifted submodule and the exact 73-dimensional sign block. The selected suite also checks the affine character identity. The helper's `--full-exact` mode reconstructs every sign block.
 

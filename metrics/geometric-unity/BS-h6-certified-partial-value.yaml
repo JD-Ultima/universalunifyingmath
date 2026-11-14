@@ -1,0 +1,37 @@
+claim_id: [GU-054]
+result_ids: [BS1, BS2, BS3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BS-h6-certified-partial-value.md
+result: >-
+  A real norm-one value in the full H6 curvature kernel solves complete
+  grade-one scalarity and grade thirteen and has zero invariant grade-five
+  and grade-nine projections. One exact grade-nine coefficient stays
+  positive on its entire certified rational box.
+code:
+  - computation/geometric-unity/BS_h6_partial_value.py
+  - computation/geometric-unity/BS_h6_partial_value.out
+  - computation/geometric-unity/partial_fields.json.gz
+  - computation/geometric-unity/partial_isotypes.json.gz
+  - computation/geometric-unity/partial_polynomials.json
+internal_review:
+  - reports/reviews/REVIEW83-GU-BS-2026-11-14.md
+formalization_status: >-
+  BO's physical compact-real flat observer and pure branch. This is
+  a pointwise certificate using general hook identities.
+proof_status: >-
+  Representation dimensions and verified coordinate determinants certify
+  complete low and high grade detectors. Rational tensor contractions and
+  exact Casimir projections recover every row of the affine system.
+  A rational contraction proves existence. A separate polynomial gives
+  a whole-box grade-nine obstruction.
+reproducibility: >-
+  The default helper checks the certificate and representative contractions.
+  Full mode verifies every rational affine generator, Casimir component,
+  lower-grade polynomial and separating coefficient.
+limitations: >-
+  This root fails a required grade-nine coordinate. General values and
+  full field equations remain open.
+dependencies: [BA1, BA2, BC2, BN1, BO1, BQ1]
+confidence: >-
+  Complete rational checks and independent nested Clifford controls
+  support the pointwise result. External peer review remains outstanding.
