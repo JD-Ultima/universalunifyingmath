@@ -63,6 +63,12 @@ localizes the transformed vector to the same level set.
 Absolute continuity makes that vector zero. Applying this
 to each scalar component of \(f\) proves the result.
 
+    python -X utf8 computation/geometric-unity/DF_h6_l2_vanishing.py
+
+The exact check verifies the Casimir constant and the positive
+split-center Gram matrices for all fifteen proper standard
+block parabolics.
+
 The argument uses the full regular representation and the
 calibrated bundle Casimir. It concerns the entire symmetric
 space. General mixed hooks and fields on its quotients remain

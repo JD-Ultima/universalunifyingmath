@@ -4,7 +4,9 @@ gaps: [GU-G14, GU-G15]
 writeup:
   - formalization/geometric-unity/DE-h6-elliptic-periodic.md
   - formalization/geometric-unity/DF-h6-l2-vanishing.md
-computation: computation/geometric-unity/DE_h6_elliptic_periodic.py
+computation:
+  - computation/geometric-unity/DE_h6_elliptic_periodic.py
+  - computation/geometric-unity/DF_h6_l2_vanishing.py
 internal_review:
   - reports/reviews/REVIEW109-GU-DE-2026-11-14.md
 result: >-
