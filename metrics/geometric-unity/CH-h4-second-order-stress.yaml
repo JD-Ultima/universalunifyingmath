@@ -1,0 +1,15 @@
+claim_id: [GU-054]
+result_ids: [CH1, CH2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CH-h4-second-order-stress.md
+computation: computation/geometric-unity/CH_h4_second_order_stress.py
+internal_review:
+  - reports/reviews/REVIEW97-GU-CH-2026-11-14.md
+result: >-
+  The H4 stress double divergence gives a necessary gradient
+  bound above 0.48716697 for squared norm through the CB box.
+  The curvature source has full kernel inertia (8822,1566,0).
+limitations: >-
+  Norm and gradient use the normalized positive observer metric.
+  The gradient bound on the CB box permits nonstationary lifts.
+dependencies: [BA2, BX1, CA2, CB1, CB2]
