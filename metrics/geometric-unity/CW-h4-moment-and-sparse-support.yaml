@@ -1,0 +1,21 @@
+claim_id: [GU-054]
+result_ids: [CW1, CW2, CX1, CX2, CX3]
+gaps: [GU-G14, GU-G15]
+writeup:
+  - formalization/geometric-unity/CW-h4-fixed-positive-moment.md
+  - formalization/geometric-unity/CX-hook-sparse-support.md
+computation:
+  - computation/geometric-unity/CW_h4_s5_moment.py
+  - computation/geometric-unity/CX_sparse_hook_support.py
+  - computation/geometric-unity/CX_h4_minimum_external_rank.py
+internal_review:
+  - reports/reviews/REVIEW108-GU-CW-CX-2026-11-14.md
+result: >-
+  A rational positive covariance annihilates every homogeneous
+  output on the full H4 permutation-fixed space. Scalarity gives
+  external-rank bounds and characteristic-two forest and cycle
+  support exclusions on the real pure H4 and H6 branches.
+limitations: >-
+  The H4 moment is a relaxation. The sparse-support results cover
+  the graph classes in the proof. Full nonlinear feasibility is open.
+dependencies: [BS1, BX1, CB1, CD1, CN1]

@@ -102,6 +102,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 [DA and DB](../formalization/geometric-unity/DB-h6-bounded-analytic-lifts.md) verify the exact transverse and spherical normalizations for bounded H6 linear lifts and the mixed-family degeneration proof.
 
+[CW](../formalization/geometric-unity/CW-h4-fixed-positive-moment.md) checks the rational positive covariance on the full H4 permutation-fixed space. Full mode rebuilds all integer evaluations. [CX](../formalization/geometric-unity/CX-hook-sparse-support.md) verifies the forest and cyclic support examples and the exact H4 rank-four partial value.
+
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
 [BT](../formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed character spaces. The selected check rebuilds the closed basis, tests independent Clifford coordinates and ranks 16 selected quadratic columns. The full 2,701-column certificate requires `--full` and is outside the selected suite.
