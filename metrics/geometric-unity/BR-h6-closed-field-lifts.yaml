@@ -1,0 +1,37 @@
+claim_id: [GU-054]
+result_ids: [BR1, BR2, BR3, BR4]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BR-h6-closed-field-lifts.md
+result: >-
+  Exactly 952 closed real H6 fields are invariant under the simply
+  transitive AN action, and their rotated span supplies global analytic
+  closed lifts on a 6534-dimensional curvature-kernel submodule.
+  The one-parameter full affine character ansatz has a kernel line
+  with zero type (2,0) component at every character.
+code:
+  - computation/geometric-unity/BR_h6_an_closed.py
+  - computation/geometric-unity/BR_h6_an_closed_witnesses.json
+internal_review:
+  - reports/reviews/REVIEW82-GU-BR-2026-11-14.md
+formalization_status: >-
+  Flat positive Z1 at lambda=1/5 with the BG symmetric-space
+  identification and BC Gram. Positive constant scales transfer.
+proof_status: >-
+  A metric torsion-free connection in the simply transitive frame reduces
+  invariant closure to an exact linear stack. Modular ranks and rational
+  basis witnesses agree on sixteen blocks. Nonzero complex highest
+  pairing minors give the orbit-span lower bound.
+reproducibility: >-
+  The default verifier checks seven complete closure witnesses,
+  all orbit pairing minors and a full selected block. The --full-exact
+  mode reconstructs every rank and exact nullspace. The optional
+  --parabolic-characters mode checks the full parameter identity.
+limitations: >-
+  The results concern linear covariant closure. The orbit proof gives a
+  lower bound on the span and leaves two types unresolved. Finite rotated
+  sums need not have constant norm. Full nonlinear fields remain open.
+dependencies: [BA1, BA2, BG1, BO1, BO2, BP2]
+confidence: >-
+  All block ranks and rational products were verified. Independent
+  Chevalley-Eilenberg assembly agreed on every stack coefficient.
+  External peer review remains outstanding.

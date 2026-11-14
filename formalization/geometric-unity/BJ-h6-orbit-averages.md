@@ -142,4 +142,8 @@ The scalar helper checks zonal normalization, orthogonality, the two sphere eige
 
 ## Scope
 
+[BR](BR-h6-closed-field-lifts.md) subsequently gives a larger space of
+closed fields using the simply transitive upper triangular subgroup.
+The finite-measure exclusion below concerns BJ's orbit construction.
+
 The measure is fixed, real and of finite total variation on the full model sphere. Point-dependent measures, positive-order distributions such as derivatives of Dirac masses, infinite-variation expressions and unspecified completions of the orbit span are not covered. There is no claim about arbitrary smooth closed $H_6$ fields, arbitrary 135-module mixtures, all fields with values in a pointwise curvature-kernel module, other extensions sharing one value, curved bases, other metric parameters, coincident kernels, quotient descent or other operators/real forms. No physical conclusion or literature priority is asserted.

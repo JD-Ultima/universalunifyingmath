@@ -93,6 +93,7 @@ RECENT = [
     ("geometric-unity/BO_h6_full_kernel.py", []),
     ("geometric-unity/BP_h6_cartan_grade9.py", []),
     ("geometric-unity/BQ_h6_invariant_forms.py", []),
+    ("geometric-unity/BR_h6_an_closed.py", ["--parabolic-characters"]),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),
