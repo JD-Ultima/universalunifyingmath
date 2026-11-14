@@ -101,6 +101,8 @@ Positive constant scales transfer by the established dilation and
 homothety, preserving covariant closure and the kernel types.
 BR gives analytic closed lifts on a 6,534-dimensional submodule,
 leaving the 286-dimensional type $(5,5)$ between the explicit
-lower bound and the 6,820-dimensional upper bound. Membership in
-the upper bound alone does not give a closed lift or satisfy
-the nonlinear equations. External peer review remains outstanding.
+lower bound and the 6,820-dimensional upper bound.
+[CF](CF-h6-fourth-linear-jet.md) proves finite compatibility
+through the fourth Taylor order for that type. An actual closed
+lift and the nonlinear equations remain open. External peer
+review remains outstanding.
