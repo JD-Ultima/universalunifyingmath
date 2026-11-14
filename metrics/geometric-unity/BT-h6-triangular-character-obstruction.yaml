@@ -1,0 +1,32 @@
+claim_id: [GU-054]
+result_ids: [BT1, BT2, BT3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BT-h6-triangular-character-obstruction.md
+result: >-
+  The homogeneous necessary quadratics exclude every nonzero complex
+  point value in each of BR's 73-dimensional closed subspaces with
+  character masks 15 and 30. The positive baseline excludes the zero
+  real value.
+code:
+  - computation/geometric-unity/BT_h6_an73_quadratic.py
+internal_review:
+  - reports/reviews/REVIEW84-GU-BT-2026-11-14.md
+formalization_status: >-
+  The fixed positive flat observer and H6Gamma branch of BR and BS.
+  The exclusion uses a rational homogeneous quadratic and its complexification.
+proof_status: >-
+  The invariant receiver map has 3488 rows and 2701 monomial columns.
+  Subtracting the grade-one trace ensures all inclusions are necessary
+  homogeneous equations. The coefficient matrix has complete modular
+  column rank. Full rank makes every quadratic monomial vanish. Axis
+  reversal transfers the result to character 30.
+reproducibility: >-
+  Default rebuilds the exact closed basis and tests rational receivers
+  and a rank subset. Full mode recomputes the complete modular rank.
+limitations: >-
+  The two character blocks are excluded individually. Mixtures of
+  triangular characters and the unrestricted branch remain open.
+dependencies: [BR1, BR2, BS1]
+confidence: >-
+  Exact rational controls and independently ordered nonzero modular
+  minors support the result. External peer review remains outstanding.

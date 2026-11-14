@@ -18,7 +18,7 @@ The [positive-Z1 hook results](reports/SYNTHESIS.md#geometric-unity) give the [f
 
 Internal reviews include AI-assisted work. External peer review remains outstanding. Source versions and acquisition limits are recorded in [sources](sources/), including the byte-for-byte comparison of the GU draft mirror with the recorded author-host download.
 
-The [upper triangular closure construction](formalization/geometric-unity/BR-h6-closed-field-lifts.md) gives 952 invariant closed real fields of constant norm. Finite sums of their rotations give analytic closed extensions of every value in a 6,534-dimensional submodule. The full nonlinear equations on those extensions remain open.
+The [upper triangular closure construction](formalization/geometric-unity/BR-h6-closed-field-lifts.md) gives 952 invariant closed real fields of constant norm. Finite sums of their rotations give analytic closed extensions of every value in a 6,534-dimensional submodule. The [quadratic character obstruction](formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed subspaces. Full fields outside those exclusions remain open.
 
 An [exact partial point value](formalization/geometric-unity/BS-h6-certified-partial-value.md) now satisfies all grade-one and grade-thirteen equations and both invariant higher-grade projections. A required grade-nine coefficient is positive at that value, so full pointwise feasibility remains open.
 
