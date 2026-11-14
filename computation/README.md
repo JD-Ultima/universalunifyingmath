@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 67 |
-| **Self-contained total** | **77** |
+| Geometric Unity computations | 68 |
+| **Self-contained total** | **78** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **83** |
+| **Total with source checks** | **84** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 77 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the 78 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -59,6 +59,8 @@ python -X utf8 scripts/verify.py --recent --upstream ../chain-theory
 Keep that checkout free of modified, untracked and ignored files, including build artifacts. The verifier checks the commit and raw source hashes; CRLF conversion is rejected. These commands read upstream material as data. The Lean-coverage classifier uses recorded build and axiom logs.
 
 ## Completed validation
+
+[BQ](../formalization/geometric-unity/BQ-h6-invariant-moments.md) evaluates two invariant pairings on all 15 isotypic types. The selected suite reconstructs the receivers and three representative blocks, and checks the exact positivity and energy certificates on every listed block. The helper's `--full` option recalibrates every matrix.
 
 [BO](../formalization/geometric-unity/BO-h6-full-curvature-kernel.md) computes the full 6,834-dimensional kernel from 185 modular ranks and 18 rational extremal vectors. It also verifies a negative grade-nine witness in the physical frame. [BP](../formalization/geometric-unity/BP-h6-cartan-grade-nine.md) transports four of the extremal vectors and checks their nonzero Cartan-square outputs. [Review79](../reports/reviews/REVIEW79-GU-BO-2026-11-14.md) and [Review80](../reports/reviews/REVIEW80-GU-BP-2026-11-14.md) record independent checks.
 
