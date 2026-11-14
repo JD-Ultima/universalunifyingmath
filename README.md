@@ -18,6 +18,8 @@ The [positive-Z1 hook results](reports/SYNTHESIS.md#geometric-unity) give the [f
 
 Internal reviews include AI-assisted work. External peer review remains outstanding. Source versions and acquisition limits are recorded in [sources](sources/), including the byte-for-byte comparison of the GU draft mirror with the recorded author-host download.
 
+The [upper triangular closure construction](formalization/geometric-unity/BR-h6-closed-field-lifts.md) gives 952 invariant closed real fields of constant norm. Finite sums of their rotations give analytic closed extensions of every value in a 6,534-dimensional submodule. The full nonlinear equations on those extensions remain open.
+
 ## Reproduce selected checks
 
 After preparing the pinned environment described in the [verification guide](computation/README.md#selected-suite), run:
