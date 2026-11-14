@@ -1,0 +1,15 @@
+claim_id: [GU-054]
+result_ids: [CN1, CN2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CN-h4-permutation-cubic-exclusions.md
+computation: computation/geometric-unity/CN_h4_s5_cubic.py
+internal_review:
+  - reports/reviews/REVIEW103-GU-CN-2026-11-14.md
+result: >-
+  The actual grade-five equations have only the zero value over
+  the complex numbers on the stated 31-dimensional permutation-fixed
+  and 28-dimensional permutation-sign subspaces of the H4 curvature kernel.
+limitations: >-
+  The certificates concern the specified supports and their compact
+  rotations. General nonlinear feasibility remains open.
+dependencies: [BX1, CD1, CK1]
