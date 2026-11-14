@@ -1,0 +1,15 @@
+claim_id: [GU-054]
+result_ids: [BZ1, BZ2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BZ-h6-triangular-limit-separation.md
+internal_review:
+  - reports/reviews/REVIEW90-GU-BZ-2026-11-14.md
+result: >-
+  Compact support in a common regular QR cell permits finite-order
+  rotation distributions, including finite rotation jets. Their fields
+  fail the full equation on any open set. A common explicit uniform
+  approximation gap is R/100000 for a fixed solution norm R.
+limitations: >-
+  The pure H6 branch and declared constant scales. Distribution supports
+  must admit a common regular ray. The approximation gap is global.
+dependencies: [BS1, BV3, BW1, BW2, BW3]
