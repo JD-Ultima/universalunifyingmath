@@ -104,6 +104,7 @@ RECENT = [
     ("geometric-unity/CF_h6_fourth_jet.py", []),
     ("geometric-unity/CB_h4_partial_value.py", ["--full"]),
     ("geometric-unity/CD_clifford_hook_identities.py", []),
+    ("geometric-unity/CG_hook_no_separator.py", ["--full-lie", "--all-coefficients"]),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),
