@@ -1,0 +1,35 @@
+claim_id: [GU-054]
+result_ids: [BP1, BP2, BP3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BP-h6-cartan-grade-nine.md
+result: >-
+  The grade-nine quadratic has only the zero value on the complexified
+  184-dimensional sum of full H6 curvature kernel types (3,2), (3,0),
+  (2,1), and (2,0). The real zero value fails the positive baseline
+  on BN's branch.
+code:
+  - computation/geometric-unity/BP_h6_cartan_grade9.py
+  - computation/geometric-unity/BP_h6_cartan_grade9.out
+internal_review:
+  - reports/reviews/REVIEW80-GU-BP-2026-11-14.md
+formalization_status: >-
+  The grade-nine calculation uses BO's module and the complexification
+  of BN's real polynomial. The real field consequence retains BN's
+  compact pure hook, observer, fixed operator and background.
+proof_status: >-
+  Exact nonzero coefficients on four highest vectors activate the
+  corresponding Cartan projections. A dual orbit argument proves
+  these projections are nonzero at every nonzero pure input. Dominance
+  bounds isolate one output at a time on the four-module sum.
+reproducibility: >-
+  The public helper transports four existing BO witnesses to the BC frame,
+  checks both real and imaginary membership, and evaluates the displayed
+  physical coefficients by exact real polarization. It writes stdout only.
+limitations: >-
+  The argument excludes only the specified sum. Other kernel types
+  can reach its output channels. General pointwise and field feasibility,
+  curved observers and other branches remain open.
+dependencies: [BA2, BN2, BN3, BO2]
+confidence: >-
+  The hand Cartan argument and exact coefficient checks agree across
+  independent inner-loop implementations. External peer review is outstanding.

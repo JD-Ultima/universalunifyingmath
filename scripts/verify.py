@@ -90,6 +90,8 @@ RECENT = [
     ("geometric-unity/BL_real_certificate.py", []),
     ("geometric-unity/BM_mixed_grade9.py", []),
     ("geometric-unity/BN_h6_invariant_grade9.py", []),
+    ("geometric-unity/BO_h6_full_kernel.py", []),
+    ("geometric-unity/BP_h6_cartan_grade9.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),

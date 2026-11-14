@@ -95,7 +95,8 @@ positive factor, preserving its vanishing condition. The baseline stays
 positive for every $c_V>0$.
 
 The obstruction applies even when a candidate field leaves the
-135-dimensional module elsewhere in its domain. The classification of
-values outside this module and genuine closed fields satisfying the
-full nonlinear equations remain open here. The result is restricted to
-the stated flat positive branch. External peer review remains outstanding.
+135-dimensional module elsewhere in its domain. [BO](BO-h6-full-curvature-kernel.md)
+classifies the full linear curvature kernel and verifies that $L_9$
+has both signs there. General nonlinear feasibility and corresponding
+closed fields remain open on the stated branch. External peer review
+remains outstanding.
