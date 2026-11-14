@@ -1,0 +1,21 @@
+claim_id: [GU-054]
+result_ids: [BX1, BX2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BX-h4-curvature-and-closed-fields.md
+computation: computation/geometric-unity/BX_h4_kernels.py
+internal_review:
+  - reports/reviews/REVIEW88-GU-BX-2026-11-14.md
+result: >-
+  The flat positive observer pure H4 branch has a 10,388-dimensional
+  pointwise dual-curvature kernel with 57 copies of 22 types. The
+  triangular-invariant closed field space has dimension 6,643.
+proof_status: >-
+  Modular minors give lower ranks. Exact rational interpolation
+  proves matching upper ranks for the curvature stack. Independent
+  integer null vectors certify the triangular stack. Independent
+  Koszul, Hodge-closure and direct curvature calculations agree.
+limitations: >-
+  The pure compact-real H4 branch at flat lambda 1/5. The invariant
+  dimension concerns the derivative equation. The pointwise kernel
+  gives a necessary condition for general smooth closed fields.
+dependencies: [BA2, BC1, BD1, BO1, BR1]

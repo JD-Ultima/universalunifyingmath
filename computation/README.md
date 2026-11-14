@@ -64,6 +64,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 [BW](../formalization/geometric-unity/BW-h6-triangular-orbit-averages.md) excludes fixed finite signed averages of rotated triangular closed fields. The diagonal limit is analytic and uses the BR and BV certificates.
 
+[BX](../formalization/geometric-unity/BX-h4-curvature-and-closed-fields.md) verifies the exact dimensions and curvature representation types for the pure H4 branch. Its selected check runs the complete rational upper and modular lower rank bounds and every triangular null vector.
+
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
 [BT](../formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed character spaces. The selected check rebuilds the closed basis, tests independent Clifford coordinates and ranks 16 selected quadratic columns. The full 2,701-column certificate requires `--full` and is outside the selected suite.

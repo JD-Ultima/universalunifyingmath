@@ -1,0 +1,205 @@
+{
+  "dimension": 10388,
+  "irreducible_types": 22,
+  "number_of_copies": 57,
+  "components": [
+    {
+      "weight": [
+        7,
+        0
+      ],
+      "copies": 1,
+      "dimension": 204,
+      "combined": 204
+    },
+    {
+      "weight": [
+        6,
+        3
+      ],
+      "copies": 1,
+      "dimension": 770,
+      "combined": 770
+    },
+    {
+      "weight": [
+        6,
+        2
+      ],
+      "copies": 1,
+      "dimension": 625,
+      "combined": 625
+    },
+    {
+      "weight": [
+        6,
+        1
+      ],
+      "copies": 2,
+      "dimension": 405,
+      "combined": 810
+    },
+    {
+      "weight": [
+        5,
+        4
+      ],
+      "copies": 1,
+      "dimension": 429,
+      "combined": 429
+    },
+    {
+      "weight": [
+        5,
+        3
+      ],
+      "copies": 2,
+      "dimension": 455,
+      "combined": 910
+    },
+    {
+      "weight": [
+        5,
+        2
+      ],
+      "copies": 4,
+      "dimension": 390,
+      "combined": 1560
+    },
+    {
+      "weight": [
+        5,
+        1
+      ],
+      "copies": 2,
+      "dimension": 260,
+      "combined": 520
+    },
+    {
+      "weight": [
+        5,
+        0
+      ],
+      "copies": 2,
+      "dimension": 91,
+      "combined": 182
+    },
+    {
+      "weight": [
+        4,
+        4
+      ],
+      "copies": 1,
+      "dimension": 165,
+      "combined": 165
+    },
+    {
+      "weight": [
+        4,
+        3
+      ],
+      "copies": 4,
+      "dimension": 231,
+      "combined": 924
+    },
+    {
+      "weight": [
+        4,
+        2
+      ],
+      "copies": 4,
+      "dimension": 220,
+      "combined": 880
+    },
+    {
+      "weight": [
+        4,
+        1
+      ],
+      "copies": 6,
+      "dimension": 154,
+      "combined": 924
+    },
+    {
+      "weight": [
+        4,
+        0
+      ],
+      "copies": 1,
+      "dimension": 55,
+      "combined": 55
+    },
+    {
+      "weight": [
+        3,
+        3
+      ],
+      "copies": 2,
+      "dimension": 84,
+      "combined": 168
+    },
+    {
+      "weight": [
+        3,
+        2
+      ],
+      "copies": 6,
+      "dimension": 105,
+      "combined": 630
+    },
+    {
+      "weight": [
+        3,
+        1
+      ],
+      "copies": 3,
+      "dimension": 81,
+      "combined": 243
+    },
+    {
+      "weight": [
+        3,
+        0
+      ],
+      "copies": 4,
+      "dimension": 30,
+      "combined": 120
+    },
+    {
+      "weight": [
+        2,
+        2
+      ],
+      "copies": 3,
+      "dimension": 35,
+      "combined": 105
+    },
+    {
+      "weight": [
+        2,
+        1
+      ],
+      "copies": 4,
+      "dimension": 35,
+      "combined": 140
+    },
+    {
+      "weight": [
+        2,
+        0
+      ],
+      "copies": 1,
+      "dimension": 14,
+      "combined": 14
+    },
+    {
+      "weight": [
+        1,
+        0
+      ],
+      "copies": 2,
+      "dimension": 5,
+      "combined": 10
+    }
+  ]
+}
