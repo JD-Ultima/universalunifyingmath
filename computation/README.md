@@ -92,6 +92,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 
 [CN](../formalization/geometric-unity/CN-h4-permutation-cubic-exclusions.md) verifies cubic ideal exclusions from actual H4 grade-five coefficients. The selected check covers the 16- and 21-dimensional subsupports. Use the documented full command for the 28- and 31-dimensional supports.
 
+[CM](../formalization/geometric-unity/CM-h6-sixth-linear-jet.md) verifies the exact H6 sixth-order linear closure jet at a nonzero \((5,5)\) value. The selected command verifies all of CF and selected rational sixth-order identities. Use the documented \(\texttt{--full}\) command to expand and verify the entire sixth-order polynomial.
+
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
 [BT](../formalization/geometric-unity/BT-h6-triangular-character-obstruction.md) excludes each of two 73-dimensional closed character spaces. The selected check rebuilds the closed basis, tests independent Clifford coordinates and ranks 16 selected quadratic columns. The full 2,701-column certificate requires `--full` and is outside the selected suite.

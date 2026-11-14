@@ -1,0 +1,21 @@
+{
+  "files": {
+    "CM_h6_sixth_aux.json.gz": {
+      "bytes": 45589,
+      "sha256": "29c1f0f7d4fa15dfe1f829a1cf5668f90c1ade8c328c393b1ff56f0afde62273"
+    },
+    "CM_h6_sixth_coefficients.bin.gz": {
+      "bytes": 14314834,
+      "sha256": "506d3534c2dfedda5165c223e78da81094643ad92fa672101c186660924aa846"
+    },
+    "CM_h6_sixth_vectors.bin.gz": {
+      "bytes": 7412586,
+      "sha256": "10146074e28d891f74b3fd7e86148adeefb2228bad0c8902dcba3aead5f9a4f6"
+    }
+  },
+  "basis_vectors": 3963,
+  "basis_entries": 1876484,
+  "coefficients": 296775,
+  "denominators": 39652,
+  "seconds": 5.972037076950073
+}

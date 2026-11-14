@@ -1,0 +1,14 @@
+claim_id: [GU-054]
+result_ids: [CM1, CM2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CM-h6-sixth-linear-jet.md
+computation: computation/geometric-unity/CM_h6_sixth_jet.py
+internal_review:
+  - reports/reviews/REVIEW104-GU-CM-2026-11-14.md
+result: >-
+  A nonzero real H6 type (5,5) value has exact sixth-order
+  Taylor data satisfying covariant closure through degree five.
+limitations: >-
+  Compatibility at finite order for the linear closure system.
+  Genuine local fields and the nonlinear conditions remain open.
+dependencies: [BR3, BU1, CF1, CF2]
