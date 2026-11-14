@@ -1,0 +1,20 @@
+claim_id: [GU-054]
+result_ids: [BY1, BY2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BY-h4-low-isotype-obstruction.md
+computation: computation/geometric-unity/BY_data/verify_h4_low.py
+internal_review:
+  - reports/reviews/REVIEW89-GU-BY-2026-11-14.md
+result: >-
+  The grade-five equations force zero on the complete 24-dimensional
+  H4 isotypic sum of types (1,0) and (2,0). The positive baseline
+  excludes a field taking a value there.
+proof_status: >-
+  Exact Casimir and linear kernel checks, modular rank 297 on 300
+  monomials, and six independent principal-minor quadratics in the
+  three free linear coordinates. Independent coefficient assembly
+  reproduced all 89,100 entries modulo 65,537.
+limitations: >-
+  Declared compact-real pure H4 branch on the flat positive observer.
+  Only the stated isotypic sum is excluded by this proof.
+dependencies: [BA2, BC2, BD3, BX1]
