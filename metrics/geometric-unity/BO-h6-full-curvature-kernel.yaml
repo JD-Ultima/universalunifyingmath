@@ -1,0 +1,37 @@
+claim_id: [GU-054]
+result_ids: [BO1, BO2, BO3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/BO-h6-full-curvature-kernel.md
+result: >-
+  The complete H6 coefficient-curvature kernel for the declared normalized
+  flat positive Z1 observer has dimension 6834 and 18 irreducible copies
+  across 15 types. An exact real witness shows that BN's grade-nine
+  functional has both signs on this kernel.
+code:
+  - computation/geometric-unity/BO_h6_full_kernel.py
+  - computation/geometric-unity/BO_h6_full_kernel.out
+  - computation/geometric-unity/BO_h6_full_kernel_witnesses.json
+internal_review:
+  - reports/reviews/REVIEW79-GU-BO-2026-11-14.md
+formalization_status: >-
+  Flat positive Z1, lambda=1/5, with BG's metric and symmetric-space
+  curvature. The linear rank transfers to positive constant observer
+  scales. The obstruction comparison uses BN's real quadratic convention.
+proof_status: >-
+  Modular ranks of 185 reconstructed weight blocks bound the characteristic
+  zero rank from below. Eighteen exact rational highest vectors and
+  complete reducibility give the matching kernel bound. The real witness
+  is checked directly in the physical frame.
+reproducibility: >-
+  The public verifier rebuilds the rational model, checks all extremal
+  vectors, recomputes all modular ranks, and verifies the physical grade-nine
+  witness from adjacent data. It writes stdout only.
+limitations: >-
+  This classifies a pointwise linear necessary condition. Full nonlinear
+  feasibility, smooth local realization of general compatible values,
+  curved observers and other branches remain outside the result.
+dependencies: [BA2, BG1, BG3, BN1, BN2]
+confidence: >-
+  Exact witnesses, reproducible finite-field ranks and independent
+  internal reassembly support the computer-assisted proof. External
+  peer review remains outstanding.

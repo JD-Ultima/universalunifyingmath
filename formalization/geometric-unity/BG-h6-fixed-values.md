@@ -72,10 +72,10 @@ give harmonic degrees two, three and five, of dimensions 14, 30 and 91.
 Thus
 $$\boxed{\dim\operatorname{span}_\mathbb R K\cdot(\ker\mathcal R)^L=135,
 \qquad \dim\ker\mathcal R\ge135.}$$
-Equivalently, the full map has rank at most $36608-135=36473$.
-This is not its exact full rank: further components without $L$-fixed
-vectors have not been classified. The new $v_{10}$ has no demonstrated
-covariantly closed field lift.
+Equivalently, BG1 gives the upper rank bound $36608-135=36473$.
+[BO](BO-h6-full-curvature-kernel.md) subsequently computes the exact
+rank $29774$ and the full decomposition. BG1 does not construct a
+covariantly closed field lift of $v_{10}$.
 
 ## BG2. A positive quadratic obstruction on all three fixed values
 
@@ -126,8 +126,8 @@ and its scalarity condition are natural. Hence the kernel dimension,
 positive obstruction and field exclusion hold for all positive scales.
 The positive baseline retains the displayed $c_V$ dependence.
 
-The complete ambient curvature kernel, other parameters, curved bases
-and coincident branches are outside BG's scope. [BH](BH-h6-degree2.md)
+Other parameters, curved bases and coincident branches are outside
+BG's scope. [BH](BH-h6-degree2.md)
 treats the degree-two summand, and [BN](BN-h6-invariant-grade-nine.md)
 excludes the whole contained module from the full equation on this
 branch.

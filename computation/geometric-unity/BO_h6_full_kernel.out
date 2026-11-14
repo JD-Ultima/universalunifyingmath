@@ -1,0 +1,21 @@
+Weight (7, 3) copies 1 dimension each 1190
+Weight (7, 2) copies 1 dimension each 935
+Weight (7, 1) copies 1 dimension each 595
+Weight (6, 3) copies 1 dimension each 770
+Weight (6, 2) copies 1 dimension each 625
+Weight (6, 1) copies 2 dimension each 405
+Weight (5, 5) copies 1 dimension each 286
+Weight (5, 2) copies 2 dimension each 390
+Weight (5, 1) copies 1 dimension each 260
+Weight (5, 0) copies 1 dimension each 91
+Weight (4, 1) copies 2 dimension each 154
+Weight (3, 2) copies 1 dimension each 105
+Weight (3, 0) copies 1 dimension each 30
+Weight (2, 1) copies 1 dimension each 35
+Weight (2, 0) copies 1 dimension each 14
+Exact extremal-vector lower bound: 6834
+Rank modulo 65537 on 185 weight blocks: 35208
+H6 dimension 36608; curvature rank on H6 29774; kernel dimension 6834.
+Full ambient Phi curvature: metric skewness, Bianchi and Ric=-5g/4 verified.
+All six SO4 tangent actions intertwine Phi; all HH, HV and VV channels retained.
+Real negative grade-nine witness: support 96 norm squared 1/2048 projection / norm squared -1/384
