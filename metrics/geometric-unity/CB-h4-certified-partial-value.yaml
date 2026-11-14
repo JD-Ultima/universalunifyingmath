@@ -1,0 +1,19 @@
+claim_id: [GU-054]
+result_ids: [CB1, CB2, CB3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CB-h4-certified-partial-value.md
+computation: computation/geometric-unity/CB_h4_partial_value.py
+internal_review:
+  - reports/reviews/REVIEW94-GU-CB-2026-11-14.md
+result: >-
+  A certified real unit H4 curvature value satisfies full grade-one
+  scalarity, full grade nine, and the invariant grade-five projection.
+  A required independent grade-five coefficient is negative.
+proof_status: >-
+  A rational fixed-point box verifies all 34 equations. Full nested
+  Clifford coefficient reconstruction gives an exact separator.
+limitations: >-
+  The pure H4 branch on the fixed flat positive observer. The exact
+  conditions refer to a point value. The full nonlinear field problem
+  remains open.
+dependencies: [BA2, BD3, BX1, CA3]

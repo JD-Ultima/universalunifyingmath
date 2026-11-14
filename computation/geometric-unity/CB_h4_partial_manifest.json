@@ -1,0 +1,13 @@
+{
+  "raw_sha256": "d3f359e41bf1dc2d7efed5c4f66af8c2376ec1a6a983e04b0f7ef2a44d89950a",
+  "cert_conditions": 34,
+  "class_tag": "S5 sign",
+  "exact_field_generators": 35,
+  "geometry": "both hooks and R wedge star C in the physical BC frame",
+  "full_row_order": [
+    "four scalarity receivers",
+    "twenty-eight exterior square receivers",
+    "norm squared minus one",
+    "grade-five invariant"
+  ]
+}
