@@ -1,0 +1,14 @@
+branch: H6
+maximum_derivative_rank: 2
+ambient_two_plane_dimension: 38764
+ambient_sharp_stress_coefficient: "-5/3"
+ambient_equality_dimension: 495
+curvature_equality_on_nonzero_real_jets: false
+moment_form_injective_maps:
+  - removed_compact_algebra: so3
+    moment_forms: 7
+    rank: 3003
+  - removed_compact_algebra: so2_plus_so2
+    moment_forms: 8
+    rank: 3003
+full_solution_gradient_square_lower: "15579/125000"

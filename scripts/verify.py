@@ -141,6 +141,7 @@ RECENT = [
     ("geometric-unity/DM_h6_first_tableau.py", []),
     ("geometric-unity/DO_h6_stress_spectrum.py", []),
     ("geometric-unity/DS_h6_axial_multisign.py", ["--eight-signs", "--character", "6", "--geometry-only"]),
+    ("geometric-unity/DR_h6_rank_two.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),

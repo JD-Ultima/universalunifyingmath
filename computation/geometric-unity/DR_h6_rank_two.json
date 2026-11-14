@@ -1,0 +1,237 @@
+{
+  "ambient_blocks": [
+    {
+      "inside": 0,
+      "outside": 4,
+      "character_multiplicity": 495,
+      "kernel_dimension": 16,
+      "minimum": "-5/3",
+      "normalized_characteristic": "(t - 1)**7*(t + 1)**7*(3*t - 5)*(3*t + 5)/9"
+    },
+    {
+      "inside": 0,
+      "outside": 6,
+      "character_multiplicity": 924,
+      "kernel_dimension": 10,
+      "minimum": "-1",
+      "normalized_characteristic": "(t - 1)**5*(t + 1)**5"
+    },
+    {
+      "inside": 1,
+      "outside": 3,
+      "character_multiplicity": 440,
+      "kernel_dimension": 8,
+      "minimum": "0",
+      "normalized_characteristic": "t**8"
+    },
+    {
+      "inside": 1,
+      "outside": 5,
+      "character_multiplicity": 1584,
+      "kernel_dimension": 6,
+      "minimum": "-5/19",
+      "normalized_characteristic": "t**4*(t - 1)*(19*t + 5)/19"
+    },
+    {
+      "inside": 2,
+      "outside": 4,
+      "character_multiplicity": 495,
+      "kernel_dimension": 8,
+      "minimum": "-1",
+      "normalized_characteristic": "(t + 1)**7*(3*t - 5)/3"
+    },
+    {
+      "inside": 2,
+      "outside": 6,
+      "character_multiplicity": 924,
+      "kernel_dimension": 5,
+      "minimum": "-1",
+      "normalized_characteristic": "-(t + 1)**5"
+    }
+  ],
+  "ambient_rank_two_tableau_dimension": 38764,
+  "ambient_sharp_lower_bound": "-5/3",
+  "ambient_equality_dimension": 495,
+  "curvature_nonattainment": "all real derivative planes",
+  "moment_form_prime": 65537,
+  "moment_form_annihilators": [
+    {
+      "removed_subalgebra": "so3",
+      "number_of_twoforms": 7,
+      "blocks": [
+        {
+          "character": 0,
+          "columns": 193,
+          "rank_mod_prime": 193
+        },
+        {
+          "character": 3,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 5,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 6,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 9,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 10,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 12,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 15,
+          "columns": 182,
+          "rank_mod_prime": 182
+        },
+        {
+          "character": 17,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 18,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 20,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 23,
+          "columns": 182,
+          "rank_mod_prime": 182
+        },
+        {
+          "character": 24,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 27,
+          "columns": 182,
+          "rank_mod_prime": 182
+        },
+        {
+          "character": 29,
+          "columns": 182,
+          "rank_mod_prime": 182
+        },
+        {
+          "character": 30,
+          "columns": 182,
+          "rank_mod_prime": 182
+        }
+      ],
+      "exact_annihilator_dimension": 0
+    },
+    {
+      "removed_subalgebra": "torus",
+      "number_of_twoforms": 8,
+      "blocks": [
+        {
+          "character": 0,
+          "columns": 193,
+          "rank_mod_prime": 193
+        },
+        {
+          "character": 3,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 5,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 6,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 9,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 10,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 12,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 15,
+          "columns": 182,
+          "rank_mod_prime": 182
+        },
+        {
+          "character": 17,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 18,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 20,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 23,
+          "columns": 182,
+          "rank_mod_prime": 182
+        },
+        {
+          "character": 24,
+          "columns": 190,
+          "rank_mod_prime": 190
+        },
+        {
+          "character": 27,
+          "columns": 182,
+          "rank_mod_prime": 182
+        },
+        {
+          "character": 29,
+          "columns": 182,
+          "rank_mod_prime": 182
+        },
+        {
+          "character": 30,
+          "columns": 182,
+          "rank_mod_prime": 182
+        }
+      ],
+      "exact_annihilator_dimension": 0
+    }
+  ],
+  "rank_two_full_solution_gradient_bound": "15579/125000",
+  "explicit_uniform_gap_below_5_over_3": null,
+  "scope": "The universal centralizer classification and curvature reduction are proved in DR_h6_rank_two_proof.txt. Modular full column rank proves the two exact injectivity statements.",
+  "seconds": 7.027203321456909
+}
