@@ -1,0 +1,15 @@
+claim_id: [GU-054]
+result_ids: [CI1, CI2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CI-h4-grade-five-cartan-support.md
+computation: computation/geometric-unity/CI_h4_cartan_support.py
+internal_review:
+  - reports/reviews/REVIEW98-GU-CI-2026-11-14.md
+result: >-
+  The grade-five quadratic has only the zero value over the
+  complex numbers on the complete 512-dimensional H4 sum of
+  types (3,1), (2,2), (2,1), (2,0), (1,0).
+limitations: >-
+  The declared pure H4 branch. Other mixtures of curvature types
+  remain open.
+dependencies: [BA2, BX1, BY2]
