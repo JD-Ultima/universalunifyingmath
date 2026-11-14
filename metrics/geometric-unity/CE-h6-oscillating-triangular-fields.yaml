@@ -1,0 +1,21 @@
+claim_id: [GU-054]
+result_ids: [CE1, CE2, CE3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CE-h6-oscillating-triangular-fields.md
+internal_review:
+  - reports/reviews/REVIEW92-GU-CE-2026-11-14.md
+result: >-
+  No finite joint frequency and rotation measure of closed H6
+  triangular fields with sufficiently small imaginary characters
+  solves the full equation on a nonempty open set.
+proof_status: >-
+  Continuity of the closed stack gives uniform Hermitian positivity
+  of the triangular receiver for small frequencies. The radial QR
+  limit is a Fourier transform of a finite vector measure. Product
+  Fubini and Cesaro averaging isolate its frequency atoms, where the
+  receiver contradicts the fixed positive solution norm.
+limitations: >-
+  The flat positive compact-real pure H6 branch at lambda 1/5.
+  Frequencies are in a neighborhood of zero and total variation is
+  finite. Arbitrary closed fields remain open.
+dependencies: [BR1, BR3, BV3, BW1, BW2]
