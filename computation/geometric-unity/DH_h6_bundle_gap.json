@@ -1,0 +1,100 @@
+{
+  "weight_dimension": 286,
+  "SO2_frequency_bound": 5,
+  "SL2_lowest_K_weight_bound": 5,
+  "SL2_Harish_Chandra_parameter_bound": 4,
+  "trace_rho_squared": 10,
+  "tempered_Casimir_upper_bound": 6,
+  "rough_Laplacian_lower_bound": "29/4",
+  "closed_field_eigenvalue": 7,
+  "spectral_gap": "1/4",
+  "families": [
+    {
+      "blocks": [
+        1,
+        2,
+        2
+      ],
+      "split_dimension": 2,
+      "number_SL2_blocks": 2,
+      "casimir_upper_bound": 6
+    },
+    {
+      "blocks": [
+        2,
+        1,
+        2
+      ],
+      "split_dimension": 2,
+      "number_SL2_blocks": 2,
+      "casimir_upper_bound": 6
+    },
+    {
+      "blocks": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "split_dimension": 3,
+      "number_SL2_blocks": 1,
+      "casimir_upper_bound": -2
+    },
+    {
+      "blocks": [
+        2,
+        2,
+        1
+      ],
+      "split_dimension": 2,
+      "number_SL2_blocks": 2,
+      "casimir_upper_bound": 6
+    },
+    {
+      "blocks": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "split_dimension": 3,
+      "number_SL2_blocks": 1,
+      "casimir_upper_bound": -2
+    },
+    {
+      "blocks": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "split_dimension": 3,
+      "number_SL2_blocks": 1,
+      "casimir_upper_bound": -2
+    },
+    {
+      "blocks": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "split_dimension": 3,
+      "number_SL2_blocks": 1,
+      "casimir_upper_bound": -2
+    },
+    {
+      "blocks": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "split_dimension": 4,
+      "number_SL2_blocks": 0,
+      "casimir_upper_bound": -10
+    }
+  ],
+  "scope": "Exact finite calibrations; transfer to the full L2 bundle spectrum uses the representation-theoretic proof in DH_h6_bundle_gap_proof.txt."
+}

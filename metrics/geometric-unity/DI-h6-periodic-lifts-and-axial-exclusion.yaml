@@ -1,0 +1,22 @@
+claim_id: [GU-054]
+result_ids: [DS1, DI1, DI2, DI3, DH1, DH2]
+gaps: [GU-G14, GU-G15]
+writeup:
+  - formalization/geometric-unity/DS-h6-axial-multisign.md
+  - formalization/geometric-unity/DI-h6-decaying-and-periodic-lifts.md
+  - formalization/geometric-unity/DH-h6-pure-type-spectral-gap.md
+computation:
+  - computation/geometric-unity/DS_h6_axial_multisign.py
+  - computation/geometric-unity/DI_h6_axial_gaussian_lifts.py
+  - computation/geometric-unity/DH_h6_bundle_gap.py
+internal_review:
+  - reports/reviews/REVIEW111-GU-DS-DH-DI-2026-11-14.md
+result: >-
+  Three exact axial sign spaces have a common nonlinear
+  separating receiver. All 6,820 admissible H6 values have
+  decaying and flat-periodic analytic closure lifts. The pure
+  type (5,5) has a strict L2 bundle spectral gap.
+limitations: >-
+  Scoped axial and mixed-family nonlinear exclusions. General
+  pointwise feasibility and general nonlinear fields remain open.
+dependencies: [BR3, CV1, DB3, DE1, DE2, DF1, DF2]
