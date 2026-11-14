@@ -102,6 +102,7 @@ RECENT = [
     ("geometric-unity/BY_data/verify_h4_low.py", ["--exhaustive"]),
     ("geometric-unity/BX_data/verify_h4_lift.py", ["--exhaustive"]),
     ("geometric-unity/CF_h6_fourth_jet.py", []),
+    ("geometric-unity/CB_h4_partial_value.py", ["--full"]),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),
