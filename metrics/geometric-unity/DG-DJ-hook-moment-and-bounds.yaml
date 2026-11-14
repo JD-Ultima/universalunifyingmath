@@ -1,0 +1,25 @@
+branches:
+  h4_sign:
+    domain_dimension: 110
+    complete_output_dimension: 227
+    algebraic_covariance_rank: 3
+    moment_map_rank_on_support: 5
+    physical_quartic_gap_on_support: "1/426888"
+    complex_nonzero_points_on_support: false
+    exact_integer_evaluations_full: 338
+  h6_rank_example:
+    curvature_imposed: false
+    external_rank: 6
+    squared_norm: 84
+    complete_scalarity: true
+    complete_grade_13_zero: true
+    remaining_nonzero_grades: [5, 9]
+  cartan_and_commutator:
+    branches: [H4, H6]
+    zero_norm_complex_linear_dimensions: [480, 573]
+    absolute_weight_6_energy_upper: ["6/7", "72/91"]
+    absolute_weight_7_energy_upper: ["4/7", "8/21"]
+    universal_ordered_commutator_lower: ["5833/264992", "2501/113568"]
+    full_equation_ordered_commutator_lower: ["191/8281", "3257/138411"]
+    grade_two_commutator_Ricci: "-2 E"
+    external_Gram_traceless_energy_coefficient: "2/3"
