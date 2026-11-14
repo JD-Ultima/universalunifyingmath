@@ -1,0 +1,16 @@
+claim_id: [GU-054]
+result_ids: [CL1, CL2, CL3]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/CL-h6-oscillating-carriers.md
+computation: computation/geometric-unity/CL_h6_oscillating_carriers.py
+internal_review:
+  - reports/reviews/REVIEW101-GU-CL-2026-11-14.md
+result: >-
+  A 52-dimensional triangular carrier space produces real analytic
+  constant-norm closed H6 fields with arbitrarily large gradients.
+  Its bounded rotated profiles are excluded from the full equation.
+limitations: >-
+  Pure H6 on the fixed flat positive observer. The open-domain
+  nonlinear exclusion uses analytic profiles. The global exclusion
+  only needs an integrable bounded-amplitude representation.
+dependencies: [BA2, BR1, BV3, BW2, CE3]
