@@ -1,0 +1,21 @@
+claim_id: [GU-054]
+result_ids: [DE1, DE2, DE3, DF1, DF2]
+gaps: [GU-G14, GU-G15]
+writeup:
+  - formalization/geometric-unity/DE-h6-elliptic-periodic.md
+  - formalization/geometric-unity/DF-h6-l2-vanishing.md
+computation:
+  - computation/geometric-unity/DE_h6_elliptic_periodic.py
+  - computation/geometric-unity/DF_h6_l2_vanishing.py
+internal_review:
+  - reports/reviews/REVIEW109-GU-DE-2026-11-14.md
+result: >-
+  Exterior closure is real elliptic on the pure H6 type (5,5).
+  Closed fields are covariantly harmonic. Each value has a
+  bounded global analytic lift invariant under a sufficiently
+  long cyclic geodesic translation. Full group Plancherel
+  excludes nonzero square-integrable pure-type closed fields.
+limitations: >-
+  Pure-type linear closure. The nonlinear equations and periodic
+  lifts by general mixed fields remain open.
+dependencies: [BO1, BQ1, CU3, DB3]
