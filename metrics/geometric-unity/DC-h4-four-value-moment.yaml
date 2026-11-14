@@ -1,0 +1,15 @@
+claim_id: [GU-054]
+result_ids: [DC1, DC2]
+gaps: [GU-G14, GU-G15]
+writeup: formalization/geometric-unity/DC-h4-four-value-moment.md
+computation: computation/geometric-unity/DC_h4_rank4_moment.py
+internal_review:
+  - reports/reviews/REVIEW110-GU-DC-2026-11-14.md
+result: >-
+  An exact rank-four H4 covariance annihilates every homogeneous
+  output. Its four-dimensional span has a positive quartic
+  residual bound and no nonzero complex common zero.
+limitations: >-
+  The covariance is a moment result. The exclusion is on the
+  stated span. General nonlinear feasibility remains open.
+dependencies: [CB1, CW1, CW2]

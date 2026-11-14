@@ -127,6 +127,7 @@ RECENT = [
     ("geometric-unity/CX_h4_minimum_external_rank.py", []),
     ("geometric-unity/DE_h6_elliptic_periodic.py", []),
     ("geometric-unity/DF_h6_l2_vanishing.py", []),
+    ("geometric-unity/DC_h4_rank4_moment.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),

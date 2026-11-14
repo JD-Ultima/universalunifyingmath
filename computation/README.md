@@ -33,10 +33,10 @@ The verifier runs assertions and regressions without overwriting recorded output
 |---|---:|
 | Focused regressions, containing 12 tests | 1 |
 | Chain Theory computations | 9 |
-| Geometric Unity computations | 73 |
-| **Self-contained total** | **83** |
+| Geometric Unity computations | 103 |
+| **Self-contained total** | **113** |
 | Optional pinned-source checks below | 6 |
-| **Total with source checks** | **89** |
+| **Total with source checks** | **119** |
 
 Inspect the actual command list without executing it:
 
@@ -44,7 +44,7 @@ Inspect the actual command list without executing it:
 python -X utf8 scripts/verify.py --recent --list
 ```
 
-The [CI workflow](../.github/workflows/verify.yml) runs the 83 self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
+The [CI workflow](../.github/workflows/verify.yml) runs the self-contained commands on Linux and Windows with Python 3.12 and 3.13. Source-dependent checks additionally require the exact checkout below.
 
 ## Pinned upstream sources
 
@@ -105,6 +105,8 @@ Keep that checkout free of modified, untracked and ignored files, including buil
 [CW](../formalization/geometric-unity/CW-h4-fixed-positive-moment.md) checks the rational positive covariance on the full H4 permutation-fixed space. Full mode rebuilds all integer evaluations. [CX](../formalization/geometric-unity/CX-hook-sparse-support.md) verifies the forest and cyclic support examples and the exact H4 rank-four partial value.
 
 [DE](../formalization/geometric-unity/DE-h6-elliptic-periodic.md) checks the pure H6 type \((5,5)\) symbol spectrum, its automatic covariant coclosure, the Hodge curvature \(-7\), and the periodization normalization.
+
+[DC](../formalization/geometric-unity/DC-h4-four-value-moment.md) checks a rank-four all-grade H4 covariance and a quartic exclusion on its exact four-dimensional span. Full mode reconstructs all 306 integer Clifford evaluations.
 
 [BU](../formalization/geometric-unity/BU-h6-second-jet-obstruction.md) removes the full 14-dimensional type $(2,0)$ from every closed H6 field. The verifier reconstructs the complete seven-dimensional equivariant jet test and proves the cokernel obstruction in exact rational arithmetic.
 
