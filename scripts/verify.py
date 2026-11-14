@@ -111,6 +111,7 @@ RECENT = [
     ("geometric-unity/CK_h4_invariant_forms.py", []),
     ("geometric-unity/CL_h6_oscillating_carriers.py", ["--full"]),
     ("geometric-unity/CO_h6_twisted_receiver.py", []),
+    ("geometric-unity/CN_h4_s5_cubic.py", []),
     ("geometric-unity/BB_weyl_direction.py", []),
     ("geometric-unity/BB_cubic_extension.py", []),
     ("geometric-unity/CC_diagonal_weyl.py", []),
